@@ -86,6 +86,8 @@ Initialize your AI session by providing it with the contents of the `.agent/brai
 * **walkthrough.md**: What we did in the last session.
 * **implementation_plan.md**: The long-term roadmap.
 
+The `implementation_plan.md` must serve as the **Long-Term Strategic Roadmap**. Unlike `task.md` (which is for today) or `walkthrough.md` (which is for the past), this file defines the **Vision** and **Phases** of the DSOM project.
+
 To engage DSOM, initialize your AI session with the **Master Directive**.
 
 **Example Prompt:**
