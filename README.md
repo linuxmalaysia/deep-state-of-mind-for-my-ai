@@ -142,6 +142,14 @@ git push
 
 ---
 
+### 🚦 Your Day 1 Starting Point
+
+When you sit down tomorrow, your first prompt to the AI will be:
+
+> *"Initialize DSOM Protocol. Perform the Intelligence Audit. Then, use DSOM_TEMPLATE.md to initialize today's session log in .agent/brain/walkthrough.md based on the current task."*
+
+---
+
 ## 👤 Authors and Acknowledgment
 
 * **Lead Architect & Author:** [Harisfazillah Jamel](https://www.google.com/search?q=https://github.com/harisfazillah) – A veteran with 35+ years of ICT & Open Source Leadership.
