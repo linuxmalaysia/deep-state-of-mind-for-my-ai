@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Reanimation Manifest Generator (v1.4)
+# 📜 DSOM Reanimation Manifest Generator (v1.5)
 # 
 # Date:    2026-01-08
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -8,9 +8,8 @@
 # License: GNU GPL v3.0 or later
 # 
 # Description:
-# Aggregates ALL core DSOM artifacts, Git logs, and README. Prompts for manual
-# EOD input. Ends with mandatory Handshake instructions to finalize the 
-# Start of Day (SOD) reanimation.
+# Aggregates ALL core DSOM artifacts. Features an interactive multi-line 
+# input for EOD summaries using CTRL+D as the sentinel signal.
 # ==============================================================================
 
 # 1. Setup Variables
@@ -26,7 +25,7 @@ BRAIN_DIR="$REPO_ROOT/.agent/brain"
 DOCS_DIR="$REPO_ROOT/docs"
 README_FILE="$REPO_ROOT/README.md"
 
-# 2. Interactive Input
+# 2. Interactive Input with Clear Instructions
 echo "----------------------------------------------------------------------"
 echo "🧠 DSOM Manual State Injection"
 echo "----------------------------------------------------------------------"
@@ -34,8 +33,17 @@ read -p "❓ Do you have a manual EOD Summary or Master Prompt addition? (y/N): 
 
 MANUAL_INPUT=""
 if [[ "$choice" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    echo "📝 Enter/Paste your summary/prompt (Press CTRL+D when finished):"
+    echo ""
+    echo "📝 PASTE/TYPE YOUR CONTENT BELOW:"
+    echo "----------------------------------------------------------------------"
+    echo "👉 [INSTRUCTION]: When finished, press [ENTER] then [CTRL+D] to save."
+    echo "----------------------------------------------------------------------"
+    
+    # Capture multi-line input
     MANUAL_INPUT=$(cat)
+    
+    echo "----------------------------------------------------------------------"
+    echo "✅ Input captured successfully."
 fi
 
 # 3. Define the Gathering Logic
@@ -93,6 +101,6 @@ generate_manifest() {
 generate_manifest | tee "$OUTPUT_FILE"
 
 echo ""
-echo "📝 Manifest also saved to: $OUTPUT_FILE"
+echo "📝 Manifest saved to: $OUTPUT_FILE"
 echo "🛡️  REMINDER: Run tools/privacy-guardian.sh before sharing this manifest."
 
