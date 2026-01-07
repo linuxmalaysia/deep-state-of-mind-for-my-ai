@@ -4,6 +4,11 @@
 
 > **Bridging the gap between Human Architectural Intent and AI Execution for Open Source Sovereignty.**
 
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
+[![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
+[![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
+[![Partner](https://img.shields.io/badge/AI%20Partner-Google%20Gemini-purple.svg)]()
+
 ## 📝 Description
 
 **Deep State of Mind (DSOM)** is a metacognitive framework designed to prevent "Context Decay" in AI-assisted software development. While standard AI interactions are transactional, DSOM creates a **persistent and structural** bridge between the developer's expertise and the AI's generation capabilities.
@@ -45,30 +50,20 @@ The DSOM workflow ensures that the AI's "Mind" is always synced with the "Physic
 * **Environment:** Any programming language (The auditor auto-detects PHP, Node.js, Python, and Go).
 
 ### Setup
-
-1. **Clone the Repository:**
-```bash
-git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git
-cd deep-state-of-mind-for-my-ai
-
-```
-
-
-2. **Initialize the Brain:**
-Run the initializer to create the required context files:
-```bash
-./tools/init-brain.sh
-
-```
-
-
-3. **Set Executable Permissions:**
-```bash
-chmod +x tools/*.sh
-
-```
-
-
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git)
+    cd deep-state-of-mind-for-my-ai
+    ```
+2.  **Initialize the Brain:**
+    Create the required context files (this will not overwrite existing files):
+    ```bash
+    bash tools/init-brain.sh
+    ```
+3.  **Set Permissions:**
+    ```bash
+    chmod +x tools/*.sh
+    ```
 
 ---
 
@@ -127,6 +122,23 @@ I am open to contributions that enhance the strictness and reliability of the pr
 * **Requirements:** All PRs must include a `walkthrough.md` logic update.
 * **Standard:** Use Atomic Commits (one file per commit with descriptive messages).
 * **Documentation:** New patterns must be documented in the Project Knowledge Graph.
+
+I use **Atomic Commits** for this project. Please ensure each pull request or commit targets a single file or logic change with a descriptive message.
+
+### Example: The Final Atomic Commit
+Now, let's practice the "one-by-one" method you requested to save this to your repo:
+
+```bash
+# 1. Add the README
+git add README.md
+
+# 2. Commit with detailed comment
+git commit -m "docs: finalize README.md with detailed DSOM architecture, visual workflow descriptions, and tool usage"
+
+# 3. Push to GitHub
+git push
+
+```
 
 ---
 
