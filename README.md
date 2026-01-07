@@ -97,7 +97,39 @@ To engage DSOM, initialize your AI session with the **Master Directive**.
 **Expected Output:**
 The AI will acknowledge your architectural laws (e.g., "Zero-Global Pattern") and refuse to proceed until it has verified the current Git delta.
 
+### 🚀 Updated `README.md` Section: The Reanimation Engine
 
+Add this content under your **Tools** or **Workflow** section:
+
+```markdown
+## 🚀 The Reanimation Engine (`tools/reanimate.sh`)
+
+The `reanimate.sh` script is the primary mechanism for maintaining the **Deep State of Mind (DSOM)** across different AI sessions, providers (Gemini, Claude, GPT), or hardware changes. It automates the "Knowledge Injection" process required for a successful Start of Day (SOD).
+
+### 🛠️ What it Does
+1. **Aggregates Brain Artifacts:** Combines `task.md`, the full `walkthrough.md`, and `implementation_plan.md`.
+2. **Contextualizes Identity:** Injects the `README.md` and `AI-MASTER-PROTOCOL.md` to establish the AI's role and the Lead Architect's authority.
+3. **Physical Sync:** Appends the last 30 Git commits to ensure the AI understands the actual code changes made on disk.
+4. **Manual State Injection:** Prompts the user for any uncommitted "Mental Flow" or Master Prompt overrides from previous sessions.
+5. **Enforces Handshake:** Appends the mandatory Handshake command for the AI to summarize the last Mental Anchor.
+
+### 📋 Usage (Start of Day Ritual)
+
+1. **Generate the Manifest:**
+   ```bash
+   bash tools/reanimate.sh
+
+```
+
+2. **Review & Secure:**
+Run `tools/privacy-guardian.sh` to ensure no sensitive data is present in the generated `sod_manifest_YYYY-MM-DD.txt`.
+3. **Reanimate the AI:**
+Upload the manifest file to your AI chat and provide the following prompt:
+> *"Summarize the current Mental Anchor after you have read the file uploaded."*
+
+* **Output:** Both terminal screen and a timestamped file (`sod_manifest_yyyy-mm-dd.txt`).
+
+```
 ## 🕯️ The Ritual of Transition (Persistence Logic)
 
 To maintain the **Deep State of Mind** across different AI models (Gemini, Claude, or local LLMs) and different accounts, users must follow the **Ritual of Transition**. 
