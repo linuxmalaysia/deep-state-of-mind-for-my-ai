@@ -97,11 +97,10 @@ To engage DSOM, initialize your AI session with the **Master Directive**.
 **Expected Output:**
 The AI will acknowledge your architectural laws (e.g., "Zero-Global Pattern") and refuse to proceed until it has verified the current Git delta.
 
-### 🚀 Updated `README.md` Section: The Reanimation Engine
+### 🚀 The Reanimation Engine
 
 Add this content under your **Tools** or **Workflow** section:
 
-```markdown
 ## 🚀 The Reanimation Engine (`tools/reanimate.sh`)
 
 The `reanimate.sh` script is the primary mechanism for maintaining the **Deep State of Mind (DSOM)** across different AI sessions, providers (Gemini, Claude, GPT), or hardware changes. It automates the "Knowledge Injection" process required for a successful Start of Day (SOD).
@@ -119,8 +118,6 @@ The `reanimate.sh` script is the primary mechanism for maintaining the **Deep St
    ```bash
    bash tools/reanimate.sh
 
-```
-
 2. **Review & Secure:**
 Run `tools/privacy-guardian.sh` to ensure no sensitive data is present in the generated `sod_manifest_YYYY-MM-DD.txt`.
 3. **Reanimate the AI:**
@@ -129,7 +126,7 @@ Upload the manifest file to your AI chat and provide the following prompt:
 
 * **Output:** Both terminal screen and a timestamped file (`sod_manifest_yyyy-mm-dd.txt`).
 
-```
+
 ## 🕯️ The Ritual of Transition (Persistence Logic)
 
 To maintain the **Deep State of Mind** across different AI models (Gemini, Claude, or local LLMs) and different accounts, users must follow the **Ritual of Transition**. 
