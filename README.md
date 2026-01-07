@@ -97,10 +97,6 @@ To engage DSOM, initialize your AI session with the **Master Directive**.
 **Expected Output:**
 The AI will acknowledge your architectural laws (e.g., "Zero-Global Pattern") and refuse to proceed until it has verified the current Git delta.
 
-### 🚀 The Reanimation Engine
-
-Add this content under your **Tools** or **Workflow** section:
-
 ## 🚀 The Reanimation Engine (`tools/reanimate.sh`)
 
 The `reanimate.sh` script is the primary mechanism for maintaining the **Deep State of Mind (DSOM)** across different AI sessions, providers (Gemini, Claude, GPT), or hardware changes. It automates the "Knowledge Injection" process required for a successful Start of Day (SOD).
