@@ -95,6 +95,18 @@ To engage DSOM, initialize your AI session with the **Master Directive**.
 **Expected Output:**
 The AI will acknowledge your architectural laws (e.g., "Zero-Global Pattern") and refuse to proceed until it has verified the current Git delta.
 
+
+## 🕯️ The Ritual of Transition (Persistence Logic)
+
+To maintain the **Deep State of Mind** across different AI models (Gemini, Claude, or local LLMs) and different accounts, users must follow the **Ritual of Transition**. 
+
+This protocol ensures that:
+1.  The AI is **reanimated** with the correct architectural laws.
+2.  The "Mental Anchor" is preserved so work resumes exactly where it stopped.
+3.  The project remains **Sovereign**—independent of any specific AI provider's memory limits.
+
+See [docs/RITUAL-OF-TRANSITION.md](docs/RITUAL-OF-TRANSITION.md) for the full checklist.
+
 ---
 
 ## 🛠️ Included Tools
