@@ -215,7 +215,7 @@ You can add this table to your `README.md` to help others understand the "Trinit
 
 ## 🤝 Contributing
 
-I am open to contributions that enhance the strictness and reliability of the protocol.
+We welcome contributions that improve the strictness and reliability of the protocol. Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, atomic commit standards, and the DSOM Trinity sync process.
 
 * **Requirements:** All PRs must include a `walkthrough.md` logic update.
 * **Standard:** Use Atomic Commits (one file per commit with descriptive messages).
