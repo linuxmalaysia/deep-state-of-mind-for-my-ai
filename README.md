@@ -247,6 +247,32 @@ When you sit down tomorrow, your first prompt to the AI will be:
 > *"Initialize DSOM Protocol. Perform the Intelligence Audit. Then, use DSOM_TEMPLATE.md to initialize today's session log in .agent/brain/walkthrough.md based on the current task."*
 
 ---
+## 🏗️ Starting a New Project (The DSOM Template)
+
+You can use this repository as a boilerplate for any new AI-assisted project.
+
+### 📋 Cloning Workflow
+1. **Clone the DSOM framework:**
+   ```bash
+   git clone [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git) my-new-app
+   cd my-new-app
+
+```
+
+2. **Run the Reset Tool:**
+```bash
+bash tools/template-reset.sh
+
+```
+
+
+*This will delete the old `.git` history, initialize a fresh Git repo, and clear the brain files.*
+3. **Initialize the AI:**
+Generate your first manifest (`bash tools/reanimate.sh`) and use the **Universal DSOM Reanimation Prompt** to start your new Gemini/Claude session.
+
+```
+
+---
 
 ## 👤 Authors and Acknowledgment
 
@@ -267,5 +293,5 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 **ACTIVE.** This framework is the primary governance model for LinuxMalaysia's AI-assisted development.
 **ACTIVE.** The DSOM protocol is actively used to govern the development of CMSForNerd and related high-availability infrastructure projects.
 
-20260107
+20260108
 
