@@ -272,6 +272,13 @@ Generate your first manifest (`bash tools/reanimate.sh`) and use the **Universal
 
 ---
 
+### 🧠 Personalization Ritual (Saved Info)
+To establish a permanent **Cognitive Digital Twin** relationship, utilize Gemini's **Saved Info** feature. This ensures the AI persists your identity, architectural laws, and linguistic standards across all chat sessions.
+
+Refer to [docs/PERSONALIZATION.md](docs/PERSONALIZATION.md) for the configuration blocks.
+
+---
+
 ## 👤 Authors and Acknowledgment
 
 * **Lead Architect & Author:** [Harisfazillah Jamel](https://www.google.com/search?q=https://github.com/harisfazillah) – A veteran with 35+ years of ICT & Open Source Leadership.
