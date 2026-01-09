@@ -8,6 +8,7 @@
 * [⚖️ AI Master Protocol](docs/AI-MASTER-PROTOCOL.md)
 * [🕯️ Ritual of Transition](docs/RITUAL-OF-TRANSITION.md)
 * [🏛️ Contributing Guidelines](CONTRIBUTING.md)
+* [🧠 Personalization Ritual](docs/PERSONALIZATION.md)
 
 ## 🧠 The AI Brain (Internal)
 
