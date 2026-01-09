@@ -270,8 +270,6 @@ bash tools/template-reset.sh
 3. **Initialize the AI:**
 Generate your first manifest (`bash tools/reanimate.sh`) and use the **Universal DSOM Reanimation Prompt** to start your new Gemini/Claude session.
 
-```
-
 ---
 
 ## 👤 Authors and Acknowledgment
@@ -293,5 +291,5 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 **ACTIVE.** This framework is the primary governance model for LinuxMalaysia's AI-assisted development.
 **ACTIVE.** The DSOM protocol is actively used to govern the development of CMSForNerd and related high-availability infrastructure projects.
 
-20260108
+20260109
 
