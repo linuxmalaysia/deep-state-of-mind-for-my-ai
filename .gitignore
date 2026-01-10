@@ -1,65 +1,60 @@
-# gitignore template for Drupal 8 projects
+# ==============================================================================
+# 📜 DSOM Sovereign .gitignore
 #
-# earlier versions of Drupal are tracked in `community/PHP/`
-#
-# follows official upstream conventions:
-# https://www.drupal.org/docs/develop/using-composer
+# Protocol: Deep State of Mind (DSOM) For My AI Protocol
+# Logic:    Excludes local hardware noise while protecting the 'Brain'.
+# ==============================================================================
 
-# Ignore configuration files that may contain sensitive information
-/web/sites/*/*settings*.php
-/web/sites/*/*services*.yml
+# --- [ AI & DSOM Artifacts ] ---
+# Exclude temporary session manifests but KEEP the core brain templates
+sod_manifest_*.txt
+eod_summary_*.txt
+DSOM-CLAUDE-INIT.md
+*.tmp
+*.bak
 
-# Ignore paths that may contain user-generated content
-/web/sites/*/files
-/web/sites/*/public
-/web/sites/*/private
-/web/sites/*/files-public
-/web/sites/*/files-private
+# --- [ Sensitive Data (Sovereign Security) ] ---
+# Never push keys or environment-specific secrets
+*.key
+*.pem
+*.p12
+*.crt
+*.csr
+.env
+.env.*
+secret.yml
+vault_pass.txt
 
-# Ignore paths that may contain temporary files
-/web/sites/*/translations
-/web/sites/*/tmp
-/web/sites/*/cache
+# --- [ Ansible & Infrastructure ] ---
+*.retry
+*.log
+.ansible_cache
+.python_history
+inventory/hosts.ini
+# If you use Proxmox/OpenShift local configs
+*.kubeconfig
+*.tfstate*
 
-# Ignore drupal core (if not versioning drupal sources)
-/web/vendor
-/web/core
-/web/modules/README.txt
-/web/modules/contrib
-/web/profiles/README.txt
-/web/profiles/contrib
-/web/sites/development.services.yml
-/web/sites/example.settings.local.php
-/web/sites/example.sites.php
-/web/sites/README.txt
-/web/themes/README.txt
-/web/themes/contrib
-/web/.csslintrc
-/web/.editorconfig
-/web/.eslintignore
-/web/.eslintrc.json
-/web/.gitattributes
-/web/.htaccess
-/web/.ht.router.php
-/web/autoload.php
-/web/composer.json
-/web/composer.lock
-/web/example.gitignore
-/web/index.php
-/web/INSTALL.txt
-/web/LICENSE.txt
-/web/README.txt
-/web/robots.txt
-/web/update.php
-/web/web.config
+# --- [ System & IDE Noise ] ---
+# OS Generated
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Ignore vendor dependencies and scripts
-/vendor
-/composer.phar
-/composer
-/robo.phar
-/robo
-/drush.phar
-/drush
-/drupal.phar
-/drupal
+# IDEs (VS Code, Cursor, IDX)
+.vscode/
+.idea/
+*.swp
+*~
+.clinerules.bak
+
+# --- [ Containers & Virtualisation ] ---
+.container-diff
+.docker-build-lock
+dump.rdb
+
+# --- [ DSOM Brain Protection ] ---
+# We explicitly allow the brain artifacts even if a global rule might catch them
+!.agent/brain/*.md
+!docs/*.md
+
