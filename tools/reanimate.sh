@@ -54,6 +54,15 @@ generate_manifest() {
     echo "Project Root: $REPO_ROOT"
     echo "======================================================================"
     echo ""
+# ==============================================================================
+# 📜 DSOM Reanimation Script
+# Protocol: Deep State of Mind (DSOM) For My AI Protocol
+# ==============================================================================
+    echo "------------------------------------------------------------"
+    echo " 🧠 REANIMATING: Deep State of Mind (DSOM) For My AI Protocol"
+    echo " 📍 NODE: $(hostname) | USER: Harisfazillah Jamel"
+    echo "------------------------------------------------------------"
+    echo ""
 
     if [ -n "$MANUAL_INPUT" ]; then
         echo "### [0] MANUAL STATE INJECTION (Last Session EOD/Master Prompt)"
@@ -95,6 +104,7 @@ generate_manifest() {
     echo "Handshake: Ask the AI: \"Summarize the current Mental Anchor after you have read the file uploaded\""
     echo ""
     echo "⚠️  REMINDER: Upload this manifest file as part of your Start of Day (SOD)."
+
 }
 
 # 4. Execute and Capture
