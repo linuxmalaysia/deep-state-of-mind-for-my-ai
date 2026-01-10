@@ -9,11 +9,19 @@
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
 [![Partner](https://img.shields.io/badge/AI%20Partner-Google%20Gemini-purple.svg)]()
 
+## 🛠️ Framework Overview
+The **Deep State of Mind (DSOM) For My AI Protocol** ensures architectural sovereignty through:
+1.  **Contextual Persistence:** Using `.agent/brain/` artifacts.
+2.  **Multi-AI Alignment:** Synchronising Gemini, Claude, and Copilot.
+3.  **Linguistic Standards:** UK English and DBP-standard Malay.
+
 ## 📝 Description
 
 **Deep State of Mind (DSOM)** is a metacognitive framework designed to prevent "Context Decay" in AI-assisted software development. While standard AI interactions are transactional, DSOM creates a **persistent and structural** bridge between the developer's expertise and the AI's generation capabilities.
 
-This project provides the tools and directory structures necessary to transform a standard AI (like Google Gemini, Claude, or ChatGPT) into a **Cognitive Digital Twin** of the Lead Architect. It enforces high-availability standards, strict architectural laws, and pedagogical integrity across long-term open-source projects.
+The Deep State of Mind (DSOM) protocol is designed to ensure the synchronisation of architectural intent across diverse AI agents. It prioritises the authorisation of local 'Brain' artifacts as the single source of truth, preventing vendor lock-in and ensuring sovereign portability.
+
+This project provides the tools and directory structures necessary to transform a standard AI (like Google Gemini, Claude, Copilot or ChatGPT) into a **Cognitive Digital Twin** of the Lead Architect. It enforces high-availability standards, strict architectural laws, and pedagogical integrity across long-term open-source projects.
 
 It was forged in the **CMSForNerd v3.5 Laboratory** to ensure that AI agents (Gemini, Copilot, Cursor) operate not just as coders, but as **Cognitive Digital Twins** of the Lead Architect. It enforces high-availability standards, strict architectural laws (Zero-Global, Pair-Logic), and pedagogical integrity across long-term open-source projects.
 
