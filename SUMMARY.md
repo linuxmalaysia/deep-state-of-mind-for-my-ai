@@ -22,3 +22,7 @@
 * [🚀 Reanimation Engine](tools-and-automation/reanimation-engine.md)
 * [🛡️ Privacy Guardian](tools-and-automation/privacy-guardian.md)
 * [🏗️ Template Reset](tools-and-automation/template-reset.md)
+
+## 🤖 AI Provider Support
+* [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
+* [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
