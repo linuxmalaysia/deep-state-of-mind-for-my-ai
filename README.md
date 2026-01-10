@@ -283,6 +283,11 @@ Refer to [docs/PERSONALIZATION.md](docs/PERSONALIZATION.md) for the configuratio
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 
+### 🛡️ GitHub Copilot Setup
+Copilot is also configured to follow DSOM protocols using UK English and DBP-standard Malay.
+- **Auto-pilot:** Instructions are pulled from `.github/copilot-instructions.md`.
+- **Manual Control:** Refer to [docs/COPILOT-SETUP.md](docs/COPILOT-SETUP.md) for chat commands and file references.
+
 ---
 
 ## 👤 Authors and Acknowledgment

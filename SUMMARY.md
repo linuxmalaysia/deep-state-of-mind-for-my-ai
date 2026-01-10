@@ -26,3 +26,4 @@
 ## 🤖 AI Provider Support
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
+* [🛡️ GitHub Copilot Setup](docs/COPILOT-SETUP.md)
