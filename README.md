@@ -1,6 +1,6 @@
 # README.md
 
-# 🧠 Deep State of Mind (DSOM) Protocol
+# 🧠 Deep State of Mind (DSOM) For My AI Protocol
 
 > **Bridging the gap between Human Architectural Intent and AI Execution for Open Source Sovereignty.**
 
@@ -284,9 +284,9 @@ Refer to [docs/PERSONALIZATION.md](docs/PERSONALIZATION.md) for the configuratio
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 
 ### 🛡️ GitHub Copilot Setup
-Copilot is also configured to follow DSOM protocols using UK English and DBP-standard Malay.
-- **Auto-pilot:** Instructions are pulled from `.github/copilot-instructions.md`.
-- **Manual Control:** Refer to [docs/COPILOT-SETUP.md](docs/COPILOT-SETUP.md) for chat commands and file references.
+Copilot is also synchronised to follow DSOM protocols using UK English and DBP-standard Malay.
+- **Automated Guardrails:** Instructions are sourced from `.github/copilot-instructions.md`.
+- **Contextual References:** See [docs/COPILOT-SETUP.md](docs/COPILOT-SETUP.md) for manual chat commands and file reference rituals.
 
 ---
 
