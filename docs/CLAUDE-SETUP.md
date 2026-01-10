@@ -46,7 +46,6 @@ When finishing a session in Claude:
 
 If moving from Gemini to Claude (or vice versa), the `.agent/brain/` remains the **Single Source of Truth**. Use the reanimation scripts for the respective AI to bridge the state.
 
-```
 
 ---
 
