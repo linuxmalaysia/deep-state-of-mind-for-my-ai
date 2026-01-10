@@ -50,16 +50,3 @@ If moving from Gemini to Claude (or vice versa), the `.agent/brain/` remains the
 
 ---
 
-### 📝 2. Update `SUMMARY.md`
-
-Ensure this new document is visible in your GitBook sidebar:
-
-```markdown
-## 🤖 AI Provider Support
-* [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
-* [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
-
-```
-
----
-
