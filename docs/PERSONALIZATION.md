@@ -40,4 +40,42 @@ Storing information in Gemini's **"Saved Info" (Personalization)** feature is a 
 | **HOW** | Through the use of `.agent/brain/` artifacts, environment auditing scripts, and strict Master Protocol directives. |
 
 ---
+
+To verify that Gemini has successfully integrated your **DSOM Personalization** (the five blocks), you need a prompt that forces the AI to cross-reference your identity, your laws, and your external sources.
+
+Copy and paste the following "Handshake" prompt into a **fresh, new chat session** where you have not uploaded any files yet.
+
+---
+
+### 🛠️ DSOM Reanimation Handshake Test
+
+**"Perform a System Integrity Check (DSOM Handshake).**
+
+**I am initiating a new session. To confirm that my 'Cognitive Digital Twin' is fully active, please provide a report covering the following 5 verification points based on your Saved Info:**
+
+1. **Identity:** Who am I, what is my professional background, and what is my core expertise?
+2. **Governance:** List the 5 DSOM Laws that must govern all our code and architectural decisions.
+3. **Persistence Ritual:** What must you ask me before starting any major task, and what specific folder/files must we sync?
+4. **Linguistic Standard:** What are our rules regarding the use of Bahasa Melayu Malaysia?
+5. **External Sourcing:** Provide the official links to our GitHub repository and our GitBook documentation.
+
+**If all points are correct, state: 'DSOM Handshake Successful. Architect recognized. Ready for Start-of-Day (SOD) Manifest.'**"
+
+---
+
+### 📊 How to Interpret the Results
+
+| Response Quality | Status | Meaning |
+| --- | --- | --- |
+| **Full Detail** | ✅ **Success** | Gemini has correctly indexed all 5 blocks. You can start work immediately. |
+| **Partial Info** | ⚠️ **Sync Error** | Gemini knows who you are but forgot the laws or links. You may need to refresh the "Saved Info" page in Firefox. |
+| **Generic/Refusal** | ❌ **Failure** | Personalization is turned off. Check **Settings > Personal Context** and ensure "Your instructions for Gemini" is toggled **ON**. |
+
+---
+
+### 🏁 Next Step for Haris
+
+Once you run this prompt and get a successful handshake, you are ready to feed it your **reanimated manifest** for the specific project you are working on today.
+
+---
 *Generated as part of the DSOM Ritual of Transition.*
