@@ -279,6 +279,12 @@ Refer to [docs/PERSONALIZATION.md](docs/PERSONALIZATION.md) for the configuratio
 
 ---
 
+## 🤖 AI Provider Support
+* [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
+* [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
+
+---
+
 ## 👤 Authors and Acknowledgment
 
 * **Lead Architect & Author:** [Harisfazillah Jamel](https://www.google.com/search?q=https://github.com/harisfazillah) – A veteran with 35+ years of ICT & Open Source Leadership.
