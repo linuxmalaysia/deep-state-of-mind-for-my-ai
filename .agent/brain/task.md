@@ -1,9 +1,8 @@
-# Current Task: DSOM Infrastructure Deployment
-- [x] Create .agent/brain directory
-- [x] Push DSOM README to GitHub
-- [x] Synchronize final walkthrough.md
-- [ ] To review all the scipts making sure detail comments for training DSOM and education
-- [ ] Initialize next technical module (Sitemap Logic)
+## 🛠️ Next Steps for Tomorrow (SOD Plan) 12 Jan 2026
+
+* [ ] **RecursiveCrawler Interactor:** Implement the Use Case logic (UK English/DBP Malay).
+* [ ] **Interface Adapter:** Draft the JSON/XML generator for the Crawler output.
+* [ ] **Infrastructure Layer:** Test the crawler execution in a Podman container (Sovereign Portability).
 
 # 🎯 Current Task: Morning Reanimation
 - [x] Finalize core DSOM documentation logic.
