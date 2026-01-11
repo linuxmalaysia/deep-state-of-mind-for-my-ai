@@ -15,6 +15,19 @@ The **Deep State of Mind (DSOM) For My AI Protocol** ensures architectural sover
 2.  **Multi-AI Alignment:** Synchronising Gemini, Claude, and Copilot.
 3.  **Linguistic Standards:** UK English and DBP-standard Malay.
 
+## 🏛️ The Sovereign Framework (5W1H)
+
+The **Deep State of Mind (DSOM)** is a metacognitive governance framework designed to prevent "Context Decay" in AI-assisted development. It transforms a standard LLM into a **Cognitive Digital Twin** of the Lead Architect.
+
+* **Who:** Managed by the **Lead Architect** (Harisfazillah Jamel) and the **AI Partner**.
+* **What:** Integrates **Clean Architecture** with the **CRISP Operational Strategy**.
+* **When:** Executed daily via **SOD/EOD Rituals** and weekly via the **Sunday Audit**.
+* **Where:** Hosted in the sovereign `.agent/brain/` artifacts.
+* **Why:** To ensure **Sovereign Portability** and eliminate vendor lock-in.
+* **How:** Enforced through **Atomic Git Hygiene** and mandatory Handshake protocols.
+
+---
+
 ## 📝 Description
 
 **Deep State of Mind (DSOM)** is a metacognitive framework designed to prevent "Context Decay" in AI-assisted software development. While standard AI interactions are transactional, DSOM creates a **persistent and structural** bridge between the developer's expertise and the AI's generation capabilities.
@@ -190,25 +203,52 @@ We will break down these three core files using the **Why, What, Who, When, and 
 
 ---
 
-### 🏁 Summary Table for README.md Integration
+## 🕯️ The Rituals of Transition
 
-You can add this table to your `README.md` to help others understand the "Trinity of Persistence":
+### 🌅 1. Reanimation (Start-of-Day)
+Before writing code, run the bootloader to inject the "Deep State" into the AI:
+```bash
+bash tools/reanimate.sh
 
-| File | Temporal State | Primary Purpose | Authority |
+```
+
+*Ask the AI:* "Summarise the current Mental Anchor and verify layer compliance."
+
+### 🛠️ 2. Active Flow (The Guardrails)
+
+Maintain the **Zero-Global Pattern** and **Sovereign Portability**. Update the `walkthrough.md` after every successful logic breakthrough.
+
+### 🌙 3. Hibernation (End-of-Session)
+
+Secure the session state to prevent context loss:
+
+1. Define the **Mental Anchor** (current logical stopping point).
+2. Update `task.md` with tomorrow's **SOD targets**.
+3. Perform a **Sovereign Save** (Atomic commit of brain artifacts).
+4. Request a **Metacognitive Briefing** for the next agent.
+
+### 📅 4. Sunday Audit (Human Refresh)
+
+Every Sunday, the Lead Architect performs a **Dry-Run Audit** of all repository files to re-index the human mental map and ensure system-wide synchronisation.
+
+---
+
+## 📂 The Trinity of Persistence
+
+| Artifact | Temporal State | Primary Purpose | Authority |
 | --- | --- | --- | --- |
 | `task.md` | **Present** | Immediate focus & checklist. | AI-Driven |
 | `walkthrough.md` | **Past** | Context, "Why", & Mental Anchors. | Hybrid |
-| `implementation_plan.md` | **Future** | Roadmap & Strategic Guardrails. | Human-Driven |
+| `implementation_plan.md` | **Future** | Strategic Roadmap & Phases. | Human-Driven |
 | `AI-MASTER-PROTOCOL.md` | **Eternal** | Governance, Laws, & Identity. | Human-Driven |
 
 ---
 
-## 🛠️ Included Tools
+## ⚙️ Setup & Tools
 
-| Tool | Purpose | License |
-| --- | --- | --- |
-| `init-brain.sh` | Safely creates the `.agent/brain` structure without overwriting data. | GPLv3 |
-| `audit-pre-flight.sh` | Checks for Git drift, required artifacts, and project environment. | GPLv3 |
+1. **Initialise:** `bash tools/init-brain.sh`
+2. **Audit Environment:** `./tools/audit-pre-flight.sh`
+3. **Privacy Check:** `./tools/privacy-guardian.sh` (Run before sharing manifests).
 
 ---
 
@@ -334,6 +374,9 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 ## ⚠️ Disclaimer & Usage Policy
 
 ### 🎯 Purpose of this Protocol
+
+At Your Own Risk: This protocol is shared for educational purposes. The author is not liable for data loss or AI hallucinations. Users are responsible for validating the stability of their own "Digital Twins."
+
 The **Deep State of Mind (DSOM) For My AI Protocol** was developed by Harisfazillah Jamel (LinuxMalaysia) to solve the challenge of **Context Decay** and **Knowledge Divergence** across multiple AI platforms (e.g., Google Gemini, Anthropic Claude, GitHub Copilot). 
 
 The goal is to maintain a "Sovereign Mental Anchor" that ensures different AI agents and chat sessions respond with the same pedagogical logic, linguistic standards, and technical precision, regardless of the platform used.
@@ -354,5 +397,4 @@ The goal is to maintain a "Sovereign Mental Anchor" that ensures different AI ag
 **ACTIVE.** This framework is the primary governance model for LinuxMalaysia's AI-assisted development.
 **ACTIVE.** The DSOM protocol is actively used to govern the development of CMSForNerd and related high-availability infrastructure projects.
 
-20260111
-
+Current Status: ACTIVE | Last Human Audit: 2026-01-12
