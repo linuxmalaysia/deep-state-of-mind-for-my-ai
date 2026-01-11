@@ -5,6 +5,20 @@
 # Logic:    Excludes local hardware noise while protecting the 'Brain'.
 # ==============================================================================
 
+# ==============================================================================
+# 🧠 DSOM Brain Preservation
+# ==============================================================================
+# Explicitly unignore the .agent directory and its brain artifacts
+!.agent/
+!.agent/brain/
+!.agent/brain/*.md
+
+# Ensure docs are also tracked
+!docs/*.md
+!SUMMARY.md
+!README.md
+# ==============================================================================
+
 # --- [ AI & DSOM Artifacts ] ---
 # Exclude temporary session manifests but KEEP the core brain templates
 sod_manifest_*.txt
