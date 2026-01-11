@@ -305,6 +305,16 @@ This project implements the **Deep State of Mind (DSOM) For My AI Protocol** lay
 * **Layered Security:** Clear boundaries between business logic and drivers.
 * **AI-Navigable:** Structured for high-precision context retrieval via CRISP strategy.
 
+## 🛡️ The CRISP Operational Strategy
+
+To prevent context decay and architectural drift, all interactions within this repository follow the **CRISP** strategy. This ensures the "Sovereign Core" remains untainted by AI hallucinations.
+
+1. **Context Awareness:** Always initialise sessions by synchronising with the `.agent/brain/` artifacts.
+2. **Review & Record:** Every logic change must be documented in `walkthrough.md` and committed via **Atomic Git Hygiene**.
+3. **Iteration:** Progress is achieved through incremental, atomic changes. We avoid monolithic refactors to maintain stability.
+4. **Single-purpose Prompts:** Each interaction must focus on a specific sub-task (e.g., a single Use Case or Entity) to ensure high-precision output.
+5. **Partnership:** The AI operates as a **Senior Systems Architect (Cognitive Digital Twin)**, upholding the standards set by Harisfazillah Jamel.
+
 ---
 
 ## 👤 Authors and Acknowledgment
@@ -326,5 +336,5 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 **ACTIVE.** This framework is the primary governance model for LinuxMalaysia's AI-assisted development.
 **ACTIVE.** The DSOM protocol is actively used to govern the development of CMSForNerd and related high-availability infrastructure projects.
 
-20260109
+20260111
 
