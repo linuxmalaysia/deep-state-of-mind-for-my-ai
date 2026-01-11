@@ -53,6 +53,48 @@ Maintaining a **Clean DSOM (C-DSOM)** requires constant vigilance.
     - **Single-purpose:** If a task spans multiple Clean Architecture layers, break it into separate prompts.
     - **Partnership:** Challenge the AI. If it suggests a global variable, invoke the **Zero-Global Pattern** law.
 
+Maintaining a **Clean DSOM (C-DSOM)** requires constant vigilance. The "Active Flow" is the execution phase where the Architect and the Cognitive Twin work in tandem. To prevent the degradation of the **Sovereign Core**, the following CRISP filters must be applied to every interaction.
+
+### 2.1 The CRISP Filter in Operation
+
+#### **C - Context Awareness (The 'Anchor' Check)**
+
+* **Artifact Consultation:** Never allow the AI to guess the project structure. Before every architectural decision, explicitly prompt: *"Refer to `.agent/brain/task.md` and `walkthrough.md` to ensure this logic aligns with our current trajectory."*
+* **Boundary Enforcement:** Ensure the AI is aware of which **Clean Architecture** layer is being modified. If we are in the "Entity" layer, the AI must be prohibited from suggesting database-specific or framework-specific code.
+
+#### **R - Review & Record (The 'Black Box' Logger)**
+
+* **Immediate Capture:** Update `walkthrough.md` immediately after a logic breakthrough—*before* the code is even finished. This captures the **Pedagogical Logic** while it is fresh.
+* **Peer Review:** The Architect must review the AI’s output not just for "Does it work?" but for "Does it follow the Sovereign Laws?" (e.g., UK English, Zero-Global Pattern).
+
+#### **I - Iteration (Atomic Git Hygiene)**
+
+* **Single-File Focus:** Apply **Atomic Git Hygiene**. Commit one file at a time using the `type(scope): message` format (e.g., `feat(domain): initialise sitemap entity`).
+* **Incremental Stability:** Avoid monolithic blocks of code. Each iteration must be a "functional unit" that could theoretically be deployed or tested in isolation.
+
+#### **S - Single-purpose (Anti-Complexity Filter)**
+
+* **Layer Isolation:** If a task spans multiple Clean Architecture layers (e.g., adding a new field to an Entity and updating the Database Driver), break it into **separate prompts**.
+* **Prompt Precision:** A prompt should only ask for one outcome. This reduces "AI Hallucinations" by limiting the cognitive load on the LLM's attention mechanism.
+
+#### **P - Partnership (The Peer Challenge)**
+
+* **Socratic Dialogue:** Challenge the AI. If it suggests a global variable, invoke the **Zero-Global Pattern** law.
+* **Correction Ritual:** If the AI uses Indonesian vocabulary (e.g., *standar* instead of *piawai*), immediately correct it to maintain **DBP-standard Bahasa Melayu Malaysia**. The AI must acknowledge the correction before proceeding.
+
+---
+
+### 🏛️ 2.2 Enforcing Clean Architecture during Flow
+
+During Active Flow, the **Dependency Rule** is your primary guardrail. All dependencies must point inwards.
+
+| Layer | Guardrail Action |
+| --- | --- |
+| **Entities** | Strictly no imports from external libraries or other layers. Pure logic only. |
+| **Use Cases** | Must only interact with Entities and Interfaces. No knowledge of the UI or DB. |
+| **Adapters** | This is the only place where data transformation occurs. |
+| **Frameworks** | Isolate specific tools (e.g., Podman commands) here to ensure **Sovereign Portability**. |
+
 ---
 
 ## 🌙 Section 3: Hibernation (The Context-Preservation Ritual)
