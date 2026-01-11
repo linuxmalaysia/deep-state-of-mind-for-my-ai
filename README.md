@@ -73,7 +73,7 @@ The DSOM workflow ensures that the AI's "Mind" is always synced with the "Physic
 ### Setup
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git)
+    git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git
     cd deep-state-of-mind-for-my-ai
     ```
 2.  **Initialize the Brain:**
