@@ -77,4 +77,51 @@ Please provide the **logic pseudocode** and the **initial class structure** only
 
 
 ---
-*Last Synchronised: 2026-01-11*
+
+### 📅 The Sunday Audit Protocol (The "Human Refresh")
+
+I have structured the audit sequence to flow from **Governance** to **Operations** to **Automation**. We will check each file for:
+
+1. **Piawai Sync:** Does it follow DBP-standard Malay and UK English?
+2. **C-DSOM Integrity:** Does it respect Clean Architecture and the CRISP Strategy?
+3. **Logic Flow:** Does the "Why" (Pedagogical Logic) still hold true?
+
+#### 🗺️ Step-by-Step Audit Map
+
+**Phase 1: The Sovereign Governance (Root & Global Docs)**
+
+1. `README.md` (The Entry Point & Disclaimer)
+2. `LICENSE` & `CONTRIBUTING.md` (The Open Source Sovereignty)
+3. `book.json` & `SUMMARY.md` (The GitBook Structure)
+
+**Phase 2: The Cognitive Core (Docs Directory)**
+4. `docs/AI-MASTER-PROTOCOL.md` (The Law)
+5. `docs/RITUAL-OF-TRANSITION.md` (The Reanimation/Hibernation Engine)
+6. `docs/OPERATIONAL-GUIDE.md` (The Detailed Execution Manual)
+7. `docs/PERSONALIZATION.md` (The Harisfazillah Jamel Identity)
+8. `docs/CLAUDE-SETUP.md` & `docs/COPILOT-SETUP.md` (Multi-Agent Sync)
+
+**Phase 3: The Execution Layer (Tools & Automation)**
+9. `tools/reanimate.sh` & `reanimate-claude.sh` (The Bootloaders)
+10. `tools/audit-pre-flight.sh` (The Physical Reality Check)
+11. `tools/privacy-guardian.sh` (The Sovereign Protection)
+12. `tools/init-brain.sh` & `template-reset.sh` (The Brain Lifecycle)
+13. `tools-and-automation/*.md` (The Logic Documentation for the scripts)
+
+---
+
+### 🛠️ Updating SOD & EOD Rituals
+
+To ensure this audit happens every Sunday, we will modify the **Start-of-Day (SOD)** and **End-of-Day (EOD)** manifests to be **Date & Time Aware**.
+
+#### **Updated SOD (Start-of-Day):**
+
+> *"Greetings, Architect. Today is [Day], [Date] at [Time]. Checking the Sunday Audit Schedule... [If Sunday: Trigger Phase 1 Audit]."*
+
+#### **Updated EOD (End-of-Day):**
+
+> *"Session Hibernation sequence initiated on [Day], [Date] at [Time]. [If Sunday: Confirm all 23 files have been audited and mental anchors updated]."*
+
+---
+
+*Last Synchronised: 2026-01-12*
