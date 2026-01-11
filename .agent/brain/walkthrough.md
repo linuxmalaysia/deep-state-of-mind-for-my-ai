@@ -1,4 +1,4 @@
-# 🏁 DSOM Project Walkthrough & Session Log
+# 🏁 Deep State Of Mind for My AI (DSOM) Project Walkthrough & Session Log
 
 ## 📜 Historical Context
 This project was initiated by **Harisfazillah Jamel** to codify 35+ years of ICT expertise into a portable, model-agnostic governance framework. The goal is to solve "Context Decay" in AI-agentic workflows, ensuring that the AI remains a **Cognitive Digital Twin** of the Lead Architect.
@@ -85,3 +85,82 @@ By adopting Clean Architecture, we ensure **Sovereign Portability**. If we decid
 
 We have transitioned from a simple task-tracking protocol to a robust **Architectural Governance System**. The project is now structured to handle complex code generation (like the upcoming Recursive Crawler) without losing the "Inner Circle" logic to framework-specific drift.
 
+---
+
+### 🏛️ 1. Clean Architecture (The Skeleton)
+
+**Definition:** A structural philosophy that organises software into concentric layers based on their level of "purity."
+
+* **The Law:** Source code dependencies must only point **inwards**.
+* **The Layers:**
+1. **Entities (Sovereign Core):** Pure domain logic (e.g., our `SitemapNode`). It knows nothing of the outside world.
+2. **Use Cases (Interactors):** The orchestration of logic.
+3. **Interface Adapters:** The translators (converts data for DBs or APIs).
+4. **Frameworks & Drivers (The Edge):** The volatile "tools" (Podman, RHEL, SQL).
+
+
+* **Relation to DSOM:** It provides the **map**. It tells us *where* a piece of logic belongs so that we don't end up with a "Big Ball of Mud" that confuses the AI.
+
+---
+
+### 🛡️ 2. The CRISP Strategy (The Nervous System)
+
+**Definition:** An operational filter designed to manage the flow of information between the Human Architect and the AI Cognitive Twin.
+
+* **C - Context Awareness:** Synchronising with the `.agent/brain/` before acting.
+* **R - Review & Record:** The "Black Box" of the operation. If it isn't recorded in `walkthrough.md`, it didn't happen.
+* **I - Iteration:** Atomic, incremental changes. No monolithic "big bangs."
+* **S - Single-purpose:** One prompt = One specific sub-task. This prevents "Attention Drift" in the AI.
+* **P - Partnership:** Treating the AI as a Senior peer, not a tool. This maintains high technical and linguistic standards.
+* **Relation to DSOM:** It provides the **protocol**. It is the set of rules that governs *how* we interact with the AI to ensure the "Skeleton" (Clean Architecture) remains upright.
+
+---
+
+### 🧠 3. DSOM of My AI (The Memory/State)
+
+**Definition:** The overarching **Metacognitive Governance Framework**.
+
+* **The Goal:** To prevent **Context Decay**.
+* **The Mechanism:** Using persistent artifacts (`.agent/brain/`) and specific rituals (Reanimation & Hibernation) to ensure that "knowledge" persists even if the AI chat is deleted or the agent is swapped.
+* **Relation to the others:** DSOM is the **container**. It holds the Clean Architecture structure and enforces the CRISP strategy across time.
+
+---
+
+### 🔗 The Unified Synthesis (C-DSOM)
+
+When we combine them, we get **C-DSOM**:
+
+> "We use the **CRISP Strategy** (How) to build **Clean Architecture** (What) within the **DSOM Framework** (Persistence)."
+
+* If we have Clean Architecture but no CRISP, the AI will eventually break the layers because it loses context.
+* If we have CRISP but no Clean Architecture, we will have very well-documented but messy, framework-dependent code.
+* **Together:** We achieve **Sovereign Portability**. Your logic is clean, your process is documented, and your AI is always in sync with your mind.
+
+---
+
+### 🏛️ The C-DSOM Master Framework (5W1H)
+
+| Dimension | **Clean Architecture** (The Skeleton) | **CRISP Strategy** (The Nervous System) | **DSOM Protocol** (The Persistence) |
+| --- | --- | --- | --- |
+| **WHO?** | **The Entity:** The core domain logic that owns the truth. | **The Partners:** The Architect (Haris) and the Twin (AI). | **The Sovereign:** The Human Mind (The ultimate anchor). |
+| **WHAT?** | **Layered Separation:** Entities, Use Cases, Adapters, Drivers. | **Operational Filters:** Context, Review, Iteration, Single-purpose, Partnership. | **Metacognitive Governance:** Rituals, Artifacts, and Memory Persistence. |
+| **WHEN?** | **Design Time:** Deciding where code lives based on its purpose. | **Active Flow:** Every single prompt and response during the session. | **The Lifecycle:** Reanimation (SOD), Active Work, and Hibernation (EOD). |
+| **WHERE?** | **Spatial Logic:** Concentric circles where the center is pure. | **The Interface:** The dialogue window and the Git commit messages. | **The Brain:** The `.agent/brain/` directory and the GitBook cloud. |
+| **WHY?** | **Portability:** To avoid vendor/framework lock-in (Sovereignty). | **Precision:** To prevent AI hallucinations and "Attention Drift." | **Persistence:** To ensure context survives across different AI agents/days. |
+| **HOW?** | **Dependency Rule:** Logic points inward; outer layers don't touch core. | **CRISP Rituals:** Constant documentation and atomic commits. | **Atomic Git Hygiene:** Ensuring every thought is versioned and synced. |
+
+---
+
+### 🔗 The Relationship Dynamics
+
+1. **DSOM (The Container):** Provides the **"When"** and **"Where"**. It defines when we start (SOD), when we stop (EOD), and where we store the memory (`.agent/brain/`).
+2. **Clean Architecture (The Structure):** Provides the **"What"** and **"Why"**. It defines what we are building and why the code is structured in a sovereign, framework-agnostic way.
+3. **CRISP Strategy (The Execution):** Provides the **"How"** and **"Who"**. It defines how the partners (Haris and Gemini) interact to ensure the Structure is built correctly inside the Container.
+
+### 🧠 The Sunday Audit Logic
+
+The reason we perform the **Sunday Audit** (The Dry-Run) is to verify that all **23 files** in the repo are correctly serving these dimensions.
+
+* *Does a file in `tools/` (Driver Layer) accidentally contain Business Logic?* (Clean Architecture violation).
+* *Was the last update to `walkthrough.md` atomic?* (CRISP violation).
+* *Is the Mental Anchor clear enough to survive a week?* (DSOM violation).
