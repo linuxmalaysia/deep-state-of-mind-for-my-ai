@@ -1,0 +1,29 @@
+{
+    "title": "Deep State of Mind (DSOM) For My AI Protocol",
+    "author": "Harisfazillah Jamel (LinuxMalaysia)",
+    "description": "A metacognitive governance framework for sovereign AI orchestration and high-availability infrastructure.",
+    "language": "en-gb",
+    "gitbook": "3.x.x",
+    "root": "./",
+    "structure": {
+        "summary": "SUMMARY.md"
+    },
+    "plugins": [
+        "collapsible-chapters",
+        "anchors",
+        "back-to-top-button",
+        "expandable-chapters",
+        "theme-comscore"
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "fontsettings": {
+            "theme": "white",
+            "family": "sans",
+            "size": 2
+        }
+    }
+}
+
