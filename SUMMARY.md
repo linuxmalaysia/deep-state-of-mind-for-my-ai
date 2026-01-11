@@ -1,12 +1,5 @@
 # Deep State of Mind (DSOM) For My AI Protocol
 
-
-## 🛠️ Framework Overview
-The **Deep State of Mind (DSOM) For My AI Protocol** ensures architectural sovereignty through:
-1.  **Contextual Persistence:** Using `.agent/brain/` artifacts.
-2.  **Multi-AI Alignment:** Synchronising Gemini, Claude, and Copilot.
-3.  **Linguistic Standards:** UK English and DBP-standard Malay.
-
 # Table of contents
 
 * [🚀 Home](README.md)
@@ -36,3 +29,9 @@ The **Deep State of Mind (DSOM) For My AI Protocol** ensures architectural sover
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 * [🛡️ GitHub Copilot Setup](docs/COPILOT-SETUP.md)
+
+## 🛠️ Framework Overview
+The **Deep State of Mind (DSOM) For My AI Protocol** ensures architectural sovereignty through:
+1.  **Contextual Persistence:** Using `.agent/brain/` artifacts.
+2.  **Multi-AI Alignment:** Synchronising Gemini, Claude, and Copilot.
+3.  **Linguistic Standards:** UK English and DBP-standard Malay.
