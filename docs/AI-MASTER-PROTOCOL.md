@@ -98,6 +98,17 @@ To prevent context decay and maintenance debt, all interactions must follow the 
 4. **Single-purpose Prompts:** Focus on one sub-task at a time (e.g., *only* the Sitemap Crawler logic).
 5. **Partnership:** The AI acts as a **Senior Architect (Cognitive Twin)**, not a junior coder.
 
+## 🏗️ 8. Structural Standard: Clean Architecture
+
+The **Deep State of Mind (DSOM) For My AI Protocol** enforces a layered approach to ensure Sovereign Portability:
+
+1.  **Entities (Domain Core):** Pure data structures and business rules. No dependencies.
+2.  **Use Cases (Interactors):** Orchestration of data flow to/from Entities.
+3.  **Interface Adapters:** Conversion logic (e.g., JSON to Entity, CLI to Use Case).
+4.  **Frameworks & Drivers:** External tools (Podman, Logstash, Kafka, Redis).
+
+**The Dependency Rule:** Dependencies must only point **inwards**. Inner circles must remain oblivious to outer circles.
+
 ---
 *Created by Harisfazillah Jamel with Google Gemini | Licensed under GPLv3*
 

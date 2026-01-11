@@ -298,6 +298,15 @@ Copilot is also synchronised to follow DSOM protocols using UK English and DBP-s
 
 ---
 
+## 🏛️ Technical Architecture
+This project implements the **Deep State of Mind (DSOM) For My AI Protocol** layered with **Clean Architecture** principles:
+
+* **Sovereign Logic:** Framework-independent core.
+* **Layered Security:** Clear boundaries between business logic and drivers.
+* **AI-Navigable:** Structured for high-precision context retrieval via CRISP strategy.
+
+---
+
 ## 👤 Authors and Acknowledgment
 
 * **Lead Architect & Author:** [Harisfazillah Jamel](https://www.google.com/search?q=https://github.com/harisfazillah) – A veteran with 35+ years of ICT & Open Source Leadership.
