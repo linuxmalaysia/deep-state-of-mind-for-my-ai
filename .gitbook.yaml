@@ -1,5 +1,17 @@
 # .gitbook.yaml
+# ==============================================================================
+# 📜 DSOM GitBook Orchestration (Cloud Config)
+# Protocol: Deep State of Mind (DSOM) For My AI Protocol
+# ==============================================================================
 root: ./
 structure:
   readme: README.md
   summary: SUMMARY.md
+
+# Ensure UK English is prioritised in the cloud UI
+language: en-gb
+
+# Customise the appearance to match the DSOM professional aesthetic
+theme:
+  style: documentation
+  show_level: true
