@@ -57,3 +57,31 @@ By adopting Clean Architecture, we ensure **Sovereign Portability**. If we decid
 **CRISP Application:**
 - **S**ingle-purpose: We build one layer at a time.
 - **I**teration: Starting from the Entity (SitemapNode) and moving outwards.
+
+
+# 📜 DSOM END-OF-DAY (EOD) MANIFEST
+
+**Date:** 2026-01-11
+
+**Project:** Deep State of Mind (DSOM) For My AI Protocol
+
+**Architect:** Harisfazillah Jamel (LinuxMalaysia)
+
+**Status:** Architecture Hardened & Synchronised
+
+---
+
+## ✅ Accomplishments (Tugasan Selesai)
+
+1. **CRISP Strategy Integration:** Formally embedded the CRISP mandate into the `reanimate.sh` tool and Gemini's core persona.
+2. **Clean Architecture Alignment:** Codified the **C-DSOM** standard in `docs/AI-MASTER-PROTOCOL.md`, enforcing the concentric dependency rule (Entities → Use Cases → Adapters).
+3. **Sovereign Documentation:** Updated `README.md` with a professional disclaimer and a clear project purpose statement for the LinuxMalaysia community.
+4. **Brain Sync:** Unignored the `.agent/brain/` directory to ensure GitBook cloud rendering of the "Sovereign Core."
+5. **Community Outreach:** Generated a strategic blog post for `linuxmalaysia.com` to communicate the DSOM value proposition.
+
+---
+
+## 📍 Current Mental Anchor (Walkthrough.md Summary)
+
+We have transitioned from a simple task-tracking protocol to a robust **Architectural Governance System**. The project is now structured to handle complex code generation (like the upcoming Recursive Crawler) without losing the "Inner Circle" logic to framework-specific drift.
+
