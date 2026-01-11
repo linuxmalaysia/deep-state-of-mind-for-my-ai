@@ -12,13 +12,33 @@ This guide provides the technical depth behind the **Deep State of Mind (DSOM) P
 
 ---
 
-## 🌅 Section 1: Reanimation (Start-of-Day Ritual)
+### 🌅 Section 1: Reanimation (Start-of-Day Ritual)
 
-Reanimation is not just opening a chat; it is the **Initialisation of a Cognitive Twin**.
+Reanimation is the process of restoring the AI's "Mental State" from the repository's cold storage. It is not a casual greeting; it is a **Formal Initialisation Sequence** consisting of three critical verification gates.
 
-* **The Audit:** Verify that the local environment (Podman containers, Linux logs) matches the last recorded state in `walkthrough.md`.
-* **The Directive Injection:** By loading `docs/AI-MASTER-PROTOCOL.md`, you set the "Guardrails." This prevents the AI from drifting into non-standard coding patterns or Indonesian vocabulary.
-* **Contextual Handshake:** Use the "Handshake" to ensure the AI's internal weights are aligned with the project's **Clean Architecture** layers. If the AI cannot explain the "Why" behind the last Mental Anchor, do not proceed.
+#### 1.1 The Environment Audit (Physical Reality Sync)
+
+Before engaging the AI, the Architect must verify that the physical infrastructure matches the last recorded state in the `.agent/brain/`.
+
+* **Infrastructure Check:** Run `tools/audit-pre-flight.sh`. This script should verify container status (Podman/Docker), service health (Systemd), and directory integrity.
+* **Log Inspection:** Check the last 50 lines of the system logs. If a service failed overnight, this "Physical Reality" must be fed to the AI as immediate context.
+* **Artifact Integrity:** Ensure `walkthrough.md` was not left in a "Dirty State" from an uncommitted session.
+
+#### 1.2 The Directive Injection (Establishing Sovereignty)
+
+Loading `docs/AI-MASTER-PROTOCOL.md` is the act of defining the AI's **Operating System**. It overwrites generic AI training with **Sovereign Mandates**.
+
+* **Linguistic Guardrails:** Re-establishes the requirement for **UK English** (e.g., 'initialise', 'centre') and **DBP-standard Bahasa Melayu Malaysia** (Piawai). This prevents "Linguistic Drift" into Indonesian vocabulary.
+* **Architectural Guardrails:** Re-injects the **Zero-Global Pattern** and **HA-Ready** constraints.
+* **Role Assumption:** Forces the AI to move from "General Assistant" to "Senior Systems Architect / Cognitive Digital Twin."
+
+#### 1.3 The Contextual Handshake (Cognitive Alignment)
+
+The Handshake is the final gate. You are verifying that the AI has successfully processed the **Clean Architecture** layers of the current project.
+
+* **The Anchor Test:** Ask the AI to explain the *logic* (the "Why") behind the current **Mental Anchor**, not just repeat the text.
+* **Layer Verification:** Require the AI to identify which Clean Architecture layer (Entity, Use Case, Adapter, or Driver) is the current priority.
+* **The "Stop" Condition:** **If the AI fails to explain the connection between the current task and the sovereign laws, do not proceed.** You must re-inject the protocol or clear the context.
 
 ---
 
