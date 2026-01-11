@@ -45,3 +45,15 @@ This project was initiated by **Harisfazillah Jamel** to codify 35+ years of ICT
 - **Accomplished:** Successfully migrated DSOM framework to a new notebook environment.
 - **Current State:** Git identity configured, SSH keys established, and DSOM tools verified (`audit-pre-flight.sh` passed).
 - **Mental Anchor:** Hardware transition complete. The "Cognitive Digital Twin" is now synchronized with the new local workstation.
+
+## 🛰️ Mental Anchor: [2026-01-11]
+### Decision: Integration of Clean Architecture
+
+**Context:** Standardising the project structure to prevent "Big Ball of Mud" degradation during AI-assisted development.
+
+**Logic:**
+By adopting Clean Architecture, we ensure **Sovereign Portability**. If we decide to move from Python to Node.js or from Podman to a bare-metal HA cluster, our **Entities** and **Use Cases** remain untouched.
+
+**CRISP Application:**
+- **S**ingle-purpose: We build one layer at a time.
+- **I**teration: Starting from the Entity (SitemapNode) and moving outwards.
