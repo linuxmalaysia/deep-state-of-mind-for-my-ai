@@ -26,6 +26,23 @@ The **Deep State of Mind (DSOM)** is a metacognitive governance framework design
 * **Why:** To ensure **Sovereign Portability** and eliminate vendor lock-in.
 * **How:** Enforced through **Atomic Git Hygiene** and mandatory Handshake protocols.
 
+### 🏛️ Section 1.1: The CRISP² Methodological Hierarchy
+
+To maintain **Sovereign Integrity**, the DSOM protocol is structured using a four-level hierarchical process model. This ensures that every action taken by the **Cognitive Digital Twin** is mapped to a specific level of abstraction.
+
+| Level | CRISP-DM Category | DSOM Implementation | SSoT Artifact |
+| --- | --- | --- | --- |
+| **L1** | **Phases** | **Rituals:** Start-of-Day (SOD), Active Flow, and End-of-Day (EOD). | `RITUAL-OF-TRANSITION.md` |
+| **L2** | **Generic Tasks** | **Mandates:** The CRISP Pillars (Context, Review, Iteration, Single-purpose, Partnership). | `AI-MASTER-PROTOCOL.md` |
+| **L3** | **Specialised Tasks** | **Architectural Layers:** Implementation of Entities, Use Cases, and Drivers. | `OPERATIONAL-GUIDE.md` |
+| **L4** | **Process Instances** | **History:** The concrete record of logic breakthroughs and mental anchors. | `.agent/brain/walkthrough.md` |
+
+### 🧠 The Logic of the Hierarchy (The 'Why')
+
+* **Stability (L1-L2):** The Phases and Mandates are **Stable**. They do not change regardless of whether the project is in Python, PHP, or Bash.
+* **Flexibility (L3):** The Specialised Tasks adapt to the **Clean Architecture** requirements of the specific project.
+* **Auditability (L4):** The Process Instances provide the **Audit Trail** required for the **Sunday Human Refresh**, ensuring the Architect's mental map is always in sync with the repository state.
+
 ---
 
 ## 📝 Description
@@ -345,9 +362,9 @@ This project implements the **Deep State of Mind (DSOM) For My AI Protocol** lay
 * **Layered Security:** Clear boundaries between business logic and drivers.
 * **AI-Navigable:** Structured for high-precision context retrieval via CRISP strategy.
 
-## 🛡️ The CRISP Operational Strategy
+## 🛡️ The DOSM CRISP Operational Strategy
 
-To prevent context decay and architectural drift, all interactions within this repository follow the **CRISP** strategy. This ensures the "Sovereign Core" remains untainted by AI hallucinations.
+To prevent context decay and architectural drift, all interactions within this repository follow the **DOSM CRISP** strategy. This ensures the "Sovereign Core" remains untainted by AI hallucinations.
 
 1. **Context Awareness:** Always initialise sessions by synchronising with the `.agent/brain/` artifacts.
 2. **Review & Record:** Every logic change must be documented in `walkthrough.md` and committed via **Atomic Git Hygiene**.
@@ -355,16 +372,37 @@ To prevent context decay and architectural drift, all interactions within this r
 4. **Single-purpose Prompts:** Each interaction must focus on a specific sub-task (e.g., a single Use Case or Entity) to ensure high-precision output.
 5. **Partnership:** The AI operates as a **Senior Systems Architect (Cognitive Digital Twin)**, upholding the standards set by Harisfazillah Jamel.
 
+---
 
-#### **The CRISP² Methodological Matrix**
+**CRISP-DM** (Cross-Industry Standard Process for Data Mining) is the industry-standard methodology for managing data science and data mining projects. Developed in the late 1990s by a consortium including Daimler-Benz, NCR, and SPSS, it was designed to be **non-proprietary**, **tool-neutral**, and **application-independent**.
 
-| CRISP-DM Level | DSOM CRISP Pillar | Functional Description | Artifact Location |
-| --- | --- | --- | --- |
-| **1. Phases** | **Partnership** | High-level session rituals (Reanimation, Flow, Hibernation). | `RITUAL-OF-TRANSITION.md` |
-| **2. Generic Tasks** | **Context & Review** | Stable architectural laws (Zero-Global, UK English, DBP-Malay). | `AI-MASTER-PROTOCOL.md` |
-| **3. Specialized Tasks** | **Single-purpose** | Implementation of **Clean Architecture** layers (Entities vs. Drivers). | `OPERATIONAL-GUIDE.md` |
-| **4. Process Instances** | **Iteration** | The concrete record of actions and logic breakthroughs. | `.agent/brain/walkthrough.md` |
+### 🏛️ The 4-Level Hierarchical Structure
 
+One of the most powerful (and often overlooked) aspects of CRISP-DM is its hierarchical process model. It breaks down projects into four levels of abstraction:
+
+1. **Phases (L1):** High-level stages of the data mining process (e.g., Business Understanding).
+2. **Generic Tasks (L2):** Stable actions that apply to all projects (e.g., "Clean Data").
+3. **Specialised Tasks (L3):** Specific actions tailored to a particular situation (e.g., "Clean missing categorical values in a SQL database").
+4. **Process Instances (L4):** A concrete record of what *actually* happened in a specific project (e.g., the logs of a Python cleaning script run on Jan 12th).
+
+### 🔄 The 6 Operational Phases
+
+The life cycle of a CRISP-DM project is cyclical, meaning insights from later phases often trigger a return to earlier ones.
+
+1. **Business Understanding:** Focuses on project objectives from a business perspective.
+2. **Data Understanding:** Initial collection and familiarisation to identify quality issues or hidden insights.
+3. **Data Preparation:** The "heavy lifting" phase where data is cleaned, transformed, and formatted for modelling.
+4. **Modelling:** Selecting and applying various modelling techniques (e.g., machine learning algorithms).
+5. **Evaluation:** Ensuring the model actually meets the business objectives set in Phase 1.
+6. **Deployment:** Organising the results and integrating the model into a production environment.
+
+### 🧠 Why This Matters for Our AI Protocol
+
+In our **DSOM framework**, we use this same hierarchy to prevent "Context Decay." By mapping your AI interactions to these levels:
+
+* **L1-L2 (Rituals & Protocols):** Stay stable and never change.
+* **L3 (Clean Architecture):** Adapts to the specific code.
+* **L4 (Walkthrough Artifacts):** Captures the "Mental Anchor" of our current work.
 
 ---
 
@@ -408,4 +446,5 @@ The goal is to maintain a "Sovereign Mental Anchor" that ensures different AI ag
 **ACTIVE.** This framework is the primary governance model for LinuxMalaysia's AI-assisted development.
 **ACTIVE.** The DSOM protocol is actively used to govern the development of CMSForNerd and related high-availability infrastructure projects.
 
+---
 Current Status: ACTIVE | Last Human Audit: 2026-01-12
