@@ -46,5 +46,36 @@ Design a dynamic, high-availability sitemap generation logic that is framework-a
 ## 🏁 Mental Anchor (Walkthrough Reference)
 The sitemap logic will serve as the "Navigation Brain" for the upcoming web orchestration layer. We are avoiding static XML files in favour of a memory-resident map to ensure sub-millisecond response times in the Proxmox cluster.
 
+### 🛠️ The CRISP-Filtered Prompt
+
+Copy and paste the block below to initialise the Sitemap Crawler sub-task:
+
+---
+
+**Role:** Senior Systems Architect (DSOM Cognitive Twin)
+**Strategy:** CRISP-Filtered / Single-purpose
+**Task:** Recursive Sitemap Crawler Logic (Core Engine)
+
+**Context:**
+We are implementing the navigation layer for a high-availability infrastructure. The goal is to build a recursive crawler that maps internal URIs for the **Deep State of Mind (DSOM) For My AI Protocol** ecosystem.
+
+**Architectural Constraints:**
+
+1. **UK English & DBP Malay:** All variables and comments must follow these standards.
+2. **Zero-Global Pattern:** The crawler must be an object-oriented or functional class with strict state management.
+3. **HA-Ready:** Logic must include a "visited" cache (e.g., Redis-ready) to prevent infinite loops in a cluster environment.
+4. **Sovereign Portability:** Use standard Linux-agnostic libraries (e.g., Python `requests` and `BeautifulSoup` or Node.js `Axios`).
+
+**Requirements:**
+
+* Define a method `initialise_crawl(seed_url)`.
+* Implement a depth-limited recursion to prevent resource exhaustion.
+* Output a structured JSON map containing: `url`, `title`, `last_modified`, and `priority`.
+* Ensure Malay slugs follow the 'Piawai' standard (e.g., use `pengurusan` not `manajemen`).
+
+**Output Delivery:**
+Please provide the **logic pseudocode** and the **initial class structure** only. Do not implement the full database integration yet (Iteration pillar).
+
+
 ---
 *Last Synchronised: 2026-01-11*
