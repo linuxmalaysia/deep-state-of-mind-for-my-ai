@@ -88,17 +88,30 @@ git push
 
 ```
 
+## 🛡️ 7. The CRISP Operational Strategy
+
+To prevent context decay and maintenance debt, all interactions must follow the **CRISP** strategy:
+
+1. **Context Awareness:** Always initialise sessions by reading the `.agent/brain/`.
+2. **Review & Record:** Every architectural change must be recorded in the `walkthrough.md` and committed via Atomic Git.
+3. **Iteration:** Build logic incrementally; never attempt massive refactors in a single turn.
+4. **Single-purpose Prompts:** Focus on one sub-task at a time (e.g., *only* the Sitemap Crawler logic).
+5. **Partnership:** The AI acts as a **Senior Architect (Cognitive Twin)**, not a junior coder.
+
 ---
 *Created by Harisfazillah Jamel with Google Gemini | Licensed under GPLv3*
 
 ```bash
 # ==============================================================================
-# 📜 DSOM Sovereign Manifest Generator (v1.6)
+# 📜 DSOM Sovereign Manifest Generator (v1.7)
 #
-# Protocol: Deep State of Mind (DSOM) For My AI
+# Protocol: Deep State of Mind (DSOM) For My AI Protocol
 # Date:     2026-01-11
 # Author:   Harisfazillah Jamel (LinuxMalaysia)
 # Partner:  Generated with the help of Google Gemini
+# Strategy: CRISP (Context, Review, Iteration, Single-purpose, Partnership)
+# Language: UK English | Standard: Bahasa Melayu Dewan Bahasa Dan Pustaka (DBP) (Piawai)
 # License:  GNU GPL v3.0 or later
 # ==============================================================================
+
 ```
