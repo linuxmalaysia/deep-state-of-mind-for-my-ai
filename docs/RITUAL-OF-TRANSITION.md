@@ -28,8 +28,9 @@ To ensure stability across AI providers, every transition ritual is mapped to th
 2.  **Linguistic & Sovereignty Injection:**
     * Load `docs/AI-MASTER-PROTOCOL.md`.
     * **Mandate:** Force the AI to adopt **UK English** and **DBP-standard Malay (Piawai)**.
-3.  **Brain Synchronisation (Memory Load):**
-    * Provide `.agent/brain/walkthrough.md`, `task.md`, and `implementation_plan.md`.
+3. **Brain Synchronisation (Memory Load):**
+    * Provide `.agent/brain/walkthrough.md`, **`.agent/brain/task.md`**, and `implementation_plan.md`.
+    * **Logic:** Loading `task.md` allows the AI to immediately resume the specific L4 Process Instance (the current checklist).
 4.  **The Contextual Handshake (L4 Instance Sync):**
     * Ask the AI: *"Summarise the current Mental Anchor and verify how it fits within our Clean Architecture layers (Entities/Use Cases)."*
     * **Stop Condition:** If the AI cannot explain the "Why" behind the anchor, do not proceed.
@@ -55,8 +56,10 @@ To ensure stability across AI providers, every transition ritual is mapped to th
 1.  **Define the Mental Anchor:**
     * Document the exact logical "stopping point."
     * **Specific Constraint:** Identify which layer is "open" (e.g., *"Entity validation logic is complete; the Use Case interactor remains pending injection"*).
-2.  **Target Localisation:**
-    * Update `task.md` with the **Start-of-Day (SOD)** targets for the next session.
+2. **Target Localisation & Task Update:**
+    * **Update `.agent/brain/task.md`:** * Mark completed sub-tasks as `[x] Selesai`.
+        * Define the **Start-of-Day (SOD)** targets for the next session.
+        * **Constraint:** Tasks must remain 'Atomic' and mapped to a specific Clean Architecture layer.
 3.  **Sovereign Save (Atomic Sync):**
     ```bash
     # Save today's Process Instance
@@ -76,4 +79,3 @@ Every Sunday, the **Lead Architect** (Harisfazillah Jamel) performs a **Dry-Run 
 *Standard: Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel*
 
 **Current Status:** `ACTIVE` | **Last Human Audit:** 2026-01-12 (Monday Dry-Run)
-
