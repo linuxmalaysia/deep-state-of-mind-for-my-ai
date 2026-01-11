@@ -72,6 +72,18 @@ Copy and paste the following "Handshake" prompt into a **fresh, new chat session
 | **Generic/Refusal** | ❌ **Failure** | Personalization is turned off. Check **Settings > Personal Context** and ensure "Your instructions for Gemini" is toggled **ON**. |
 
 ---
+# ♊ Gemini CRISP-Ready Configuration
+
+To align Gemini with the **Deep State of Mind (DSOM) For My AI Protocol**, ensure the "Saved Info" contains the CRISP Mandate.
+
+## 🚀 The Reanimation Prompt
+When starting a new chat session, if Gemini seems out of sync, paste this:
+> "Sync with the Master Protocol: Apply CRISP strategy. Initialise context from the latest manifest. Maintain UK English and DSOM Sovereign Laws."
+
+## ⚖️ Strategy Pillars in Gemini
+- **Context:** Gemini uses the Reanimation Manifest as its short-term memory.
+- **Single-purpose:** We use specific chat threads for specific sub-tasks to prevent context leakage.
+---
 
 ### 🏁 Next Step for Haris
 
