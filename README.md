@@ -355,6 +355,17 @@ To prevent context decay and architectural drift, all interactions within this r
 4. **Single-purpose Prompts:** Each interaction must focus on a specific sub-task (e.g., a single Use Case or Entity) to ensure high-precision output.
 5. **Partnership:** The AI operates as a **Senior Systems Architect (Cognitive Digital Twin)**, upholding the standards set by Harisfazillah Jamel.
 
+
+#### **The CRISP² Methodological Matrix**
+
+| CRISP-DM Level | DSOM CRISP Pillar | Functional Description | Artifact Location |
+| --- | --- | --- | --- |
+| **1. Phases** | **Partnership** | High-level session rituals (Reanimation, Flow, Hibernation). | `RITUAL-OF-TRANSITION.md` |
+| **2. Generic Tasks** | **Context & Review** | Stable architectural laws (Zero-Global, UK English, DBP-Malay). | `AI-MASTER-PROTOCOL.md` |
+| **3. Specialized Tasks** | **Single-purpose** | Implementation of **Clean Architecture** layers (Entities vs. Drivers). | `OPERATIONAL-GUIDE.md` |
+| **4. Process Instances** | **Iteration** | The concrete record of actions and logic breakthroughs. | `.agent/brain/walkthrough.md` |
+
+
 ---
 
 ## 👤 Authors and Acknowledgment
