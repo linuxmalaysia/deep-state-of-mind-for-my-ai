@@ -1,7 +1,7 @@
 {
     "title": "Deep State of Mind (DSOM) For My AI Protocol",
     "author": "Harisfazillah Jamel (LinuxMalaysia)",
-    "description": "A metacognitive governance framework for sovereign AI orchestration and high-availability infrastructure.",
+    "description": "A metacognitive governance framework integrating Clean Architecture and the CRISP Strategy for sovereign AI orchestration.",
     "language": "en-gb",
     "gitbook": "3.x.x",
     "root": "./",
@@ -26,4 +26,3 @@
         }
     }
 }
-
