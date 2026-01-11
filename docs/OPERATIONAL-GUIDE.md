@@ -14,6 +14,14 @@ This guide provides the technical depth behind the **Deep State of Mind (DSOM) P
 
 ### 🌅 Section 1: Reanimation (Start-of-Day Ritual)
 
+*Objective: Re-establish the CRISP Context.*
+
+1.  **Environment Audit:** Run `tools/audit-pre-flight.sh`. Ensure the physical state (files/logs) matches your mental state.
+2.  **Protocol Injection:** Load `docs/AI-MASTER-PROTOCOL.md`. This forces the AI to adopt the **Cognitive Twin** persona and apply **UK English/DBP Malay** standards.
+3.  **Brain Synchronisation:** Provide `.agent/brain/walkthrough.md` and `task.md`.
+4.  **The Handshake:** Ask the AI: *"Summarise the current Mental Anchor and verify how it fits within our Clean Architecture layers (Entities/Use Cases)."*
+
+
 Reanimation is the process of restoring the AI's "Mental State" from the repository's cold storage. It is not a casual greeting; it is a **Formal Initialisation Sequence** consisting of three critical verification gates.
 
 #### 1.1 The Environment Audit (Physical Reality Sync)
@@ -98,6 +106,8 @@ During Active Flow, the **Dependency Rule** is your primary guardrail. All depen
 ---
 
 ## 🌙 Section 3: Hibernation (The Context-Preservation Ritual)
+
+*Objective: Secure the Mental Anchor.*
 
 In an HA-Ready mindset, Hibernation is a **Graceful Shutdown** with state persistence.
 
