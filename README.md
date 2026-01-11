@@ -331,6 +331,24 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 
 ---
 
+## ⚠️ Disclaimer & Usage Policy
+
+### 🎯 Purpose of this Protocol
+The **Deep State of Mind (DSOM) For My AI Protocol** was developed by Harisfazillah Jamel (LinuxMalaysia) to solve the challenge of **Context Decay** and **Knowledge Divergence** across multiple AI platforms (e.g., Google Gemini, Anthropic Claude, GitHub Copilot). 
+
+The goal is to maintain a "Sovereign Mental Anchor" that ensures different AI agents and chat sessions respond with the same pedagogical logic, linguistic standards, and technical precision, regardless of the platform used.
+
+### 🛡️ Responsibility & Risk
+* **At Your Own Risk:** The documentation, scripts, and configurations provided in this repository are shared for educational and "Proof of Concept" purposes. Use of these materials is strictly at your own risk.
+* **No Warranty:** These tools are provided "as is" without warranty of any kind, express or implied. The author shall not be held liable for any data loss, infrastructure failure, or AI hallucinations resulting from the implementation of this protocol.
+* **Sovereign Implementation:** Users are encouraged to adapt the ideas presented here to their own specific environments, but they remain responsible for validating the security and stability of their own "Cognitive Digital Twins."
+
+---
+
+*By using this protocol, you acknowledge that you have read and understood these terms.*
+
+---
+
 ## 🚦 Project Status
 
 **ACTIVE.** This framework is the primary governance model for LinuxMalaysia's AI-assisted development.
