@@ -87,6 +87,26 @@ git push
 
 ```
 
+## ⚖️ Law 9: The Documentation Standard (LDP-Compliance)
+
+All user-facing guides, manuals, and 'HOWTO' documents generated within this protocol must adhere to the **Linux Documentation Project (LDP)** standards to ensure modularity and community portability.
+
+### 1. The Mandatory HOWTO Structure
+Every HOWTO must follow this hierarchy:
+1. **Header/Meta:** Title, Author (Harisfazillah Jamel), Version, and License (GPL/CC-BY-SA).
+2. **Introduction:** Scope and target audience.
+3. **Prerequisites:** Tools, environment (RHEL/Podman), and DSOM artifacts needed.
+4. **The Procedure:** Use the **Command/Result** pattern (Action -> Code -> Outcome).
+5. **Troubleshooting:** Address common 'Gotchas' and error codes.
+6. **References:** Links to the Primary Repository and GitBook.
+
+### 2. Linguistic Enforcement (Piawai)
+* **Instructional Malay:** Use imperative verbs (e.g., *Sila jalankan*, *Pastikan*) following DBP standards.
+* **Terminology:** Strictly use 'Tugasan' (Task), 'Piawai' (Standard), and 'Rangka Kerja' (Framework).
+
+### 3. The Copy-Paste Test
+All code blocks must be atomic and functional. A user must be able to copy the block directly into a Linux terminal without manual editing of logic.
+
 ---
 
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Licensed under GPLv3*
