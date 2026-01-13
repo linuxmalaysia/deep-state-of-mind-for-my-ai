@@ -1,4 +1,4 @@
-# 📜 DSOM Master Directive: AI Governance Protocol (v5.1)
+# 📜 DSOM Master Directive: AI Governance Protocol (v5.2)
 
 > **"Sovereignty through Persistence. Integrity through Structure."**
 
@@ -86,14 +86,25 @@ All user-facing guides and 'HOWTO' documents MUST adhere to the **Linux Document
 5. **Troubleshooting:** Address common pitfalls.
 6. **References:** Links to Primary Repo and GitBook.
 
-### ii) Linguistic Enforcement (Piawai)
-* **Instructional Malay:** Use imperative verbs (e.g., *Sila jalankan*, *Pastikan*) following DBP standards.
-* **Terminology:** Use 'Tugasan' (Task), 'Piawai' (Standard), and 'Rangka Kerja' (Framework).
+---
 
-### iii) The Copy-Paste Test
-All code blocks must be atomic. A user must be able to copy the block directly into a terminal and succeed without manual logic edits.
+## 📜 10. The Changelog Standard (Semantic Integrity)
+To maintain transparency and a professional audit trail, the project must maintain a `CHANGELOG.md` at the root directory.
+
+### i) Format & Compliance
+* **Standard:** The format is based on **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/)**.
+* **Versioning:** Adhere strictly to **[Semantic Versioning (SemVer) 2.0.0](https://semver.org/spec/v2.0.0.html)**.
+
+### ii) Categorisation of Changes
+Every entry must be grouped under:
+* **Added:** For new features/artifacts.
+* **Changed:** For changes in existing functionality or protocols.
+* **Deprecated:** For soon-to-be-removed features.
+* **Removed:** For features removed in this version.
+* **Fixed:** For any bug fixes or linguistic corrections.
+* **Security:** In case of vulnerabilities or access control updates.
 
 ---
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Licensed under GPLv3*
-**Last Human Audit:** 2026-01-13
+**Last Human Audit:** 2026-01-14
 
