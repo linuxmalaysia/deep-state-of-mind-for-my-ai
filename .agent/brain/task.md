@@ -22,6 +22,7 @@
 
 ### Phase 3: Driver Layer & Tools (Level 4 Implementation)
 - [ ] **tools/*.sh**: Audit shell logic for Zero-Global compliance.
+- [x] **tools/*.ps1**: Create PowerShell equivalents for all bash scripts. (NEW)
 - [ ] **tools-and-automation/*.md**: Verify logic documentation for scripts.
 
 ---
@@ -30,6 +31,11 @@
 - [x] Define CRISP-DM Hierarchical levels (L1, L2, L3, L4).
 - [x] Synchronise the "Start-of-Day" manifest generator logic.
 - [ ] Map `OPERATIONAL-GUIDE.md` specifically to **L3 Specialised Tasks**.
+- [x] Convert `audit-pre-flight.sh` to `audit-pre-flight.ps1`.
+- [x] Convert `init-brain.sh` to `init-brain.ps1`.
+- [x] Convert `reanimate.sh` to `reanimate.ps1`.
+- [x] Convert `privacy-guardian.sh` to `privacy-guardian.ps1`.
+- [x] Convert `template-reset.sh` to `template-reset.ps1`.
 
 ---
 
