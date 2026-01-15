@@ -130,7 +130,11 @@ function Generate-Manifest {
     git ls-tree -r HEAD --name-only | ForEach-Object { Write-Output "  - $_" }
     Write-Output "`n---`n"
 
-    Write-Output "### [8] GIT HISTORY (Last 30 Atomic Commits)"
+    Write-Output "### [8] GIT HISTORY"
+    Write-Output "#### Recent Activity (Last 48 Hours)"
+    git log --since="48 hours ago" --pretty=format:"%h - %an (%ar): %s"
+    Write-Output "`n"
+    Write-Output "#### Context (Last 30 Commits)"
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     Write-Output "`n`n---`n"
 
