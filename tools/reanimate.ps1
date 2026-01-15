@@ -138,7 +138,11 @@ function Generate-Manifest {
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     Write-Output "`n`n---`n"
 
-    Write-Output "### [9] RITUAL OF TRANSITION (Operational Guidance)"
+    Write-Output "### [9] SOD RITUAL (The Cognitive Handshake)"
+    if (Test-Path "$DocsDir\SOD-RITUAL.md") { Get-Content "$DocsDir\SOD-RITUAL.md" -Raw -Encoding UTF8 }
+    Write-Output "`n`n---`n"
+
+    Write-Output "### [10] RITUAL OF TRANSITION (Operational Guidance)"
     if (Test-Path "$DocsDir\RITUAL-OF-TRANSITION.md") { Get-Content "$DocsDir\RITUAL-OF-TRANSITION.md" -Raw -Encoding UTF8 }
     
     Write-Output ""
