@@ -119,7 +119,11 @@ generate_manifest() {
     git ls-tree -r HEAD --name-only | while read file; do echo "  - $file"; done
     echo -e "\n---\n"
 
-    echo "### [8] GIT HISTORY (Last 30 Atomic Commits)"
+    echo "### [8] GIT HISTORY"
+    echo "#### Recent Activity (Last 48 Hours)"
+    git log --since="48 hours ago" --pretty=format:"%h - %an (%ar): %s"
+    echo -e "\n"
+    echo "#### Context (Last 30 Commits)"
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     echo -e "\n\n---\n"
 
