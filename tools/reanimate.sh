@@ -114,11 +114,16 @@ generate_manifest() {
     cat "$BRAIN_DIR/implementation_plan.md"
     echo -e "\n---\n"
 
-    echo "### [7] GIT HISTORY (Last 30 Atomic Commits)"
+    echo "### [7] PROJECT STRUCTURE (The Spatial Map)"
+    echo "Files in repository (excluding hidden/git):"
+    git ls-tree -r HEAD --name-only | while read file; do echo "  - $file"; done
+    echo -e "\n---\n"
+
+    echo "### [8] GIT HISTORY (Last 30 Atomic Commits)"
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     echo -e "\n\n---\n"
 
-    echo "### [8] RITUAL OF TRANSITION (Operational Guidance)"
+    echo "### [9] RITUAL OF TRANSITION (Operational Guidance)"
     cat "$DOCS_DIR/RITUAL-OF-TRANSITION.md"
     echo ""
     echo "======================================================================"
