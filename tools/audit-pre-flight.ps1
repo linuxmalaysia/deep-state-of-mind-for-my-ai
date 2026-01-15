@@ -60,7 +60,7 @@ git -C "$RootDir" fetch origin *> $null
 
 try {
     $Local = git -C "$RootDir" rev-parse @
-    $Remote = git -C "$RootDir" rev-parse @{u} 2>$null
+    $Remote = git -C "$RootDir" rev-parse "@{u}" 2>$null
 } catch {
     $Remote = $null
 }
