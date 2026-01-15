@@ -16,8 +16,15 @@
 - [x] **docs/RITUAL-OF-TRANSITION.md**: Integrate CRISP-DM Hierarchy. (Selesai)
 
 ### Phase 2: Operational Specialisation (Level 3)
-- [ ] **docs/OPERATIONAL-GUIDE.md**: Detail the Reanimation sequence. (SEKARANG)
-- [ ] **docs/PERSONALIZATION.md**: Synchronise Haris's Cognitive Persona.
+- [x] **docs/OPERATIONAL-GUIDE.md**: Detail the Reanimation sequence. (SEKARANG)
+- [x] **System Telemetry**: Added environment discovery to reanimation scripts. (NEW)
+- [x] **docs/SOD-RITUAL.md**: Formalize the Start-of-Day protocol for Human & AI. (NEW)
+- [x] **Script Context Deepening**: Enhance reanimate tools to better capture full project history. (NEW)
+- [x] **docs/SOD-RITUAL.md**: Formalize the Start-of-Day protocol for Human & AI. (NEW)
+- [x] **Script Context Deepening**: Enhance reanimate tools to better capture full project history. (NEW)
+- [x] **docs/EOD-RITUAL.md**: Formalize the End-of-Day protocol for Human & AI. (NEW)
+- [x] **Hibernation Tools**: Create scripts (`hibernation.sh/ps1`) for EOD safe-shutdown. (NEW)
+- [x] **docs/PERSONALIZATION.md**: Synchronise Haris's Cognitive Persona. (SELESAI)
 - [ ] **docs/CLAUDE-SETUP.md & COPILOT-SETUP.md**: Multi-Agent context rules.
 
 ### Phase 3: Driver Layer & Tools (Level 4 Implementation)
