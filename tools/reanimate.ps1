@@ -125,11 +125,16 @@ function Generate-Manifest {
     if (Test-Path "$BrainDir\implementation_plan.md") { Get-Content "$BrainDir\implementation_plan.md" -Raw -Encoding UTF8 }
     Write-Output "`n---`n"
 
-    Write-Output "### [7] GIT HISTORY (Last 30 Atomic Commits)"
+    Write-Output "### [7] PROJECT STRUCTURE (The Spatial Map)"
+    Write-Output "Files in repository (rel to root):"
+    git ls-tree -r HEAD --name-only | ForEach-Object { Write-Output "  - $_" }
+    Write-Output "`n---`n"
+
+    Write-Output "### [8] GIT HISTORY (Last 30 Atomic Commits)"
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     Write-Output "`n`n---`n"
 
-    Write-Output "### [8] RITUAL OF TRANSITION (Operational Guidance)"
+    Write-Output "### [9] RITUAL OF TRANSITION (Operational Guidance)"
     if (Test-Path "$DocsDir\RITUAL-OF-TRANSITION.md") { Get-Content "$DocsDir\RITUAL-OF-TRANSITION.md" -Raw -Encoding UTF8 }
     
     Write-Output ""
