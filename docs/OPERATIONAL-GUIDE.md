@@ -1,95 +1,100 @@
-# 📖 DSOM Operational Guide: Comprehensive AI Governance (v5.0)
+# 📖 DSOM Operational Guide (Level 3 - Specialised Tasks)
 
-> **"Protocol defines Practice. Structure ensures Sovereignty."**
+> **"Theory without Practice is Hallucination. Practice without Theory is Chaos."**
 
-This guide provides the technical depth for the **Deep State of Mind (DSOM)** framework. It serves as the **Level 3 (Specialised Tasks)** documentation, depicting exactly how to carry out the mandates defined in the Master Protocol.
+## 1. 🏛️ Purpose of this Document
+This guide bridges the gap between the **Abstract Laws** (`AI-MASTER-PROTOCOL.md`) and the **Concrete Actions** (Bash/PowerShell scripts). It defines the **Specialised Tasks (L3)** required to execute the DSOM protocol.
 
----
-
-## 🏛️ 1. Methodological Specialisation (CRISP²)
-
-Every operational step in this guide is mapped to the **CRISP-DM Hierarchical Process Model** to ensure stability and auditability.
-
-* **L1 (Phases):** High-level Rituals (Reanimation, Flow, Hibernation).
-* **L2 (Generic Tasks):** The CRISP Mandate (Context, Review, Iteration, Single-purpose, Partnership).
-* **L3 (Specialised Tasks):** The procedures in this guide (Environment audits, Layered coding).
-* **L4 (Process Instances):** The output recorded in `.agent/brain/`.
+It answers the question: *"How do I actually perform the rituals defined in the Master Protocol?"*
 
 ---
 
-## 🌅 Section 1: Reanimation (The Start-of-Day Ritual)
+## 2. 🌅 The Reanimation Sequence (Start-of-Day)
 
-*Objective: Re-establish the L1 Phase and L2 Context.*
+The Reanimation Ritual is not just running a script; it is a **Cognitive Handshake** that transfers the project's soul from disk to the AI's active memory.
 
-Reanimation is the process of restoring the AI's "Mental State" from cold storage. It is a **Formal Initialisation Sequence** triggered at the start of every session.
+### Step 1: Physical Reality Check (The Audit)
+Before waking the AI, we must verify that the physical environment matches the expected state.
 
-### 1.1 Chronos-Aware Initialisation
-The session must begin with a **Date & Time Check** to identify the context (e.g., a standard work day vs. the **Sunday Human Refresh**).
-* **Prompt:** *"Greetings, Architect. Today is [Day], [Date] at [Time]. Checking the Sunday Audit Schedule..."*
+**Command:**
+```bash
+# Linux
+./tools/audit-pre-flight.sh
 
-### 1.2 The Environment Audit (Physical Reality Sync)
-Before engaging the AI, the Architect verifies the physical infrastructure:
-* **Infrastructure:** Run `tools/audit-pre-flight.sh`. Verify container status (Podman), service health (Systemd), and Git state.
-* **Log Inspection:** Check the last 50 lines of system logs. If a service failed, this is fed to the AI as immediate context.
+# Windows
+.\tools\audit-pre-flight.ps1
+```
 
-### 1.3 The Directive Injection (Sovereignty Boot)
-Loading `docs/AI-MASTER-PROTOCOL.md` defines the AI's Operating System:
-* **Linguistic Guardrails:** Re-establishes **UK English** and **DBP-standard Malay (Piawai)**.
-* **Architectural Guardrails:** Re-injects the **Zero-Global Pattern** and **HA-Ready** constraints.
-* **Role Assumption:** Forces the AI to operate as the **Cognitive Digital Twin**.
+**Success Criteria:**
+1.  **Brain Check:** `task.md` and `walkthrough.md` must exist.
+2.  **Git Drift:** Local repo must be synced with Remote.
+3.  **Environment:** The tool detects the correct language (PHP/Python/Node).
 
-### 1.4 The Contextual Handshake (Cognitive Alignment)
-The final gate to ensure the **L4 Process Instance** (the Brain) is loaded correctly.
-* **The Anchor Test:** Ask the AI to explain the *logic* (the "Why") behind the last **Mental Anchor** in `walkthrough.md`.
-* **Layer Verification:** Require the AI to identify which **Clean Architecture** layer is the current priority.
+### Step 2: Generating the Manifest (The Injection)
+We aggregrate all context into a single "Truth File."
 
+**Command:**
+```bash
+# Linux
+./tools/reanimate.sh
 
+# Windows
+.\tools\reanimate.ps1
+```
 
----
+**What is Injected?**
+1.  **Identity:** `README.md` (Who we are).
+2.  **Constraints:** `AI-MASTER-PROTOCOL.md` (The Rules).
+3.  **Context:** `task.md` + `walkthrough.md` + `implementation_plan.md`.
+4.  **Topology:** User `git ls-tree` to show the full file structure.
+5.  **History:** The last 48 hours of Git logs + last 30 commits.
 
-## 🛠️ Section 2: Active Flow (The Guardrails)
-
-Maintaining a **Clean DSOM (C-DSOM)** requires constant vigilance through the **CRISP Filter**.
-
-### 2.1 The CRISP Filter in Operation
-
-* **C - Context Awareness:** Consult `.agent/brain/task.md` before every architectural decision. Ensure the AI never "guesses" the project structure.
-* **R - Review & Record:** Update `walkthrough.md` immediately after a logic breakthrough—*before* finishing the code. This records the **Pedagogical Logic**.
-* **I - Iteration (Atomic Git Hygiene):** Commit one file at a time using `type(scope): message`. Avoid monolithic blocks.
-* **S - Single-purpose:** If a task spans multiple layers (e.g., Entity + Driver), break it into **separate prompts**.
-* **P - Partnership:** Challenge the AI. If it suggests a global variable or Indonesian vocabulary (e.g., *standar*), invoke the **Sovereign Laws** and correct to *piawai*.
-
-### 2.2 Enforcing Clean Architecture (Layered Sovereignty)
-
-| Layer | Specialised Task (L3) Guardrail |
-| :--- | :--- |
-| **1. Entities** | Pure logic. Zero external imports. No framework-specific decorators. |
-| **2. Use Cases** | Orchestration only. Interacts via Interfaces. Oblivious to UI/DB. |
-| **3. Adapters** | Data transformation (e.g., JSON to Entity). CLI/API Controllers. |
-| **4. Drivers** | External tools (Podman, RHEL, Redis). Isolate all lock-in here. |
+### Step 3: The Handshake (The Prompt)
+Upload the generated text file to the AI and type:
+> *"Summarize the current Mental Anchor after you have read the file uploaded. What is our immediate strategic focus?"*
 
 ---
 
-## 🌙 Section 3: Hibernation (The Persistence Ritual)
+## 3. 🌙 The Hibernation Sequence (End-of-Day)
 
-*Objective: Secure the L4 Process Instance and prepare for Chronos-Aware SOD.*
+We never "just close the window." We must perform a controlled shutdown to prevent context decay.
 
-### 3.1 Defining the Mental Anchor
-Record the **unresolved tension**. Don't just list what is done; list what is pending and *why* a specific path was chosen.
-* **Anchor Detail:** *"Completed Entity validation; pending Use Case injection of the Repository interface."*
+### Step 1: Context Consolidation
+1.  **Update `task.md`:** Check off completed items.
+2.  **Update `walkthrough.md`:** Create a new "Session Anchor."
 
-### 3.2 Updating Brain Artifacts
-* **`walkthrough.md`:** Update the **Long-term Memory**. Record failures and pivots.
-* **`task.md`:** Update the **Working Memory**. Mark completed items as `[x] Selesai`.
+### Step 2: The Safe Shutdown
+Run the hibernation tool to verify safety.
 
-### 3.3 The Sovereign Save
-Use the commit format: `dsom(sync): hibernation save - [Layer] - [Anchor Summary]`. This ensures the **Cognitive Twin's** evolution is versioned.
+**Command:**
+```bash
+# Linux
+./tools/hibernation.sh
 
-### 3.4 Metacognitive Briefing
-Ask the AI to compress today's session into a **Transfer Packet**. This allows for instant reanimation in the next session, regardless of model (Gemini, Claude, or local).
+# Windows
+.\tools\hibernation.ps1
+```
+
+**The Logic:**
+*   It greps `task.md` for `[x]` to ensure progress was recorded.
+*   It checks `walkthrough.md` for today's date.
+*   It auto-pushes to Git only if these checks pass.
 
 ---
-*Standard: Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel*
 
-**Current Status:** `ACTIVE` | **Last Human Audit:** 2026-01-12
+## 4. 🛠️ Architectural Layers (Clean Architecture)
 
+When writing code, you must place files in the correct "Ring" of the Clean Architecture model.
+
+| Layer | Directory | Allowed Dependencies |
+| :--- | :--- | :--- |
+| **Entities** | `src/Domain/` | None (Pure Logic). |
+| **Use Cases** | `src/Application/` | Entities only. |
+| **Adapters** | `src/Infrastructure/` | Use Cases & Entities. |
+| **Drivers** | `tools/`, `public/` | Everything (The Entry Points). |
+
+**Rule:** Dependencies point INWARD. `tools/` can import `src/`, but `src/Domain/` cannot import `tools/`.
+
+---
+
+*Last Updated: 2026-01-16 (Sunday Audit)*
