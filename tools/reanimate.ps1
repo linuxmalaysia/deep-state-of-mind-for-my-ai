@@ -83,6 +83,16 @@ function Generate-Manifest {
     Write-Output "- **P**artnership: AI acts as a Senior Architect Digital Twin."
     Write-Output ""
 
+    # Sunday Audit Check
+    if ($DateNow.DayOfWeek -eq 'Sunday') {
+        Write-Output "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        Write-Output "🚨 SUNDAY AUDIT PROTOCOL ACTIVE"
+        Write-Output "   Today is Sunday. You MUST perform the Weekly Human Refresh."
+        Write-Output "   Refer to task.md -> 'Sunday Audit Protocol' for the checklist."
+        Write-Output "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        Write-Output ""
+    }
+
     if (-not [string]::IsNullOrWhiteSpace($ManualInput)) {
         Write-Output "### [0] MANUAL STATE INJECTION (Last Session EOD/Master Prompt)"
         Write-Output $ManualInput
@@ -93,27 +103,33 @@ function Generate-Manifest {
     if (Test-Path $ReadmeFile) { Get-Content $ReadmeFile -Raw -Encoding UTF8 } else { Write-Output "README.md not found." }
     Write-Output "`n---`n"
 
-    Write-Output "### [2] MASTER PROTOCOL (The Constitution)"
+    Write-Output "### [2] SYSTEM TELEMETRY (Physical Constraints)"
+    Write-Output "- **OS:** $env:OS"
+    Write-Output "- **Architecture:** $env:PROCESSOR_ARCHITECTURE"
+    Write-Output "- **Date:** $DateNow"
+    Write-Output "`n---`n"
+
+    Write-Output "### [3] MASTER PROTOCOL (The Constitution)"
     if (Test-Path "$DocsDir\AI-MASTER-PROTOCOL.md") { Get-Content "$DocsDir\AI-MASTER-PROTOCOL.md" -Raw -Encoding UTF8 }
     Write-Output "`n---`n"
 
-    Write-Output "### [3] CURRENT TASK (The Cutting Edge)"
+    Write-Output "### [4] CURRENT TASK (The Cutting Edge)"
     if (Test-Path "$BrainDir\task.md") { Get-Content "$BrainDir\task.md" -Raw -Encoding UTF8 }
     Write-Output "`n---`n"
 
-    Write-Output "### [4] FULL WALKTHROUGH (The Complete Narrative History)"
+    Write-Output "### [5] FULL WALKTHROUGH (The Complete Narrative History)"
     if (Test-Path "$BrainDir\walkthrough.md") { Get-Content "$BrainDir\walkthrough.md" -Raw -Encoding UTF8 }
     Write-Output "`n---`n"
 
-    Write-Output "### [5] IMPLEMENTATION PLAN (The Roadmap)"
+    Write-Output "### [6] IMPLEMENTATION PLAN (The Roadmap)"
     if (Test-Path "$BrainDir\implementation_plan.md") { Get-Content "$BrainDir\implementation_plan.md" -Raw -Encoding UTF8 }
     Write-Output "`n---`n"
 
-    Write-Output "### [6] GIT HISTORY (Last 30 Atomic Commits)"
+    Write-Output "### [7] GIT HISTORY (Last 30 Atomic Commits)"
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     Write-Output "`n`n---`n"
 
-    Write-Output "### [7] RITUAL OF TRANSITION (Operational Guidance)"
+    Write-Output "### [8] RITUAL OF TRANSITION (Operational Guidance)"
     if (Test-Path "$DocsDir\RITUAL-OF-TRANSITION.md") { Get-Content "$DocsDir\RITUAL-OF-TRANSITION.md" -Raw -Encoding UTF8 }
     
     Write-Output ""
