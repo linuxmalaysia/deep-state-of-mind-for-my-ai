@@ -46,6 +46,11 @@ This project was initiated by **Harisfazillah Jamel** to codify 35+ years of ICT
 - **Current State:** Git identity configured, SSH keys established, and DSOM tools verified (`audit-pre-flight.sh` passed).
 - **Mental Anchor:** Hardware transition complete. The "Cognitive Digital Twin" is now synchronized with the new local workstation.
 
+## 🏁 Session Anchor: 2026-01-15 (Windows Platform Support)
+- **Accomplished:** Created native PowerShell (`.ps1`) equivalents for all core DSOM tools (`audit-pre-flight`, `init-brain`, `reanimate`, `privacy-guardian`, `template-reset`, `reanimate-claude`).
+- **Current State:** The tooling layer is now cross-platform (Linux/Bash + Windows/PowerShell) with 1:1 logic parity.
+- **Mental Anchor:** The "Driver Layer" now officially supports Windows without requiring WSL.
+
 ## 🛰️ Mental Anchor: [2026-01-11]
 ### Decision: Integration of Clean Architecture
 
