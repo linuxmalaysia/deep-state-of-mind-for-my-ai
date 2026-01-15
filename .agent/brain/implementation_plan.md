@@ -13,6 +13,7 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 - [ ] **Privacy Guardian:** Script to scan `.agent/brain` for sensitive data before commits.
 - [ ] **Context Injection Tool:** A script to automatically concatenate brain artifacts for easy copy-pasting into AI prompts.
 - [ ] **State-Sync Automator:** Enhance `audit-pre-flight.sh` to provide deeper environment telemetry (e.g., dependency versions).
+- [ ] **Windows Platform Support:** Create native PowerShell (`.ps1`) equivalents of all tooling to support Windows developers without WSL.
 
 ## 🚀 Phase 3: Application Integration
 - [ ] **CMSForNerd Integration:** Apply DSOM to the CMSForNerd v3.5 laboratory.
@@ -22,4 +23,3 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 ## 📈 Phase 4: Scaling & Community
 - [ ] **Contributor Guide:** Standardizing how external contributors must interact with the DSOM "Brain."
 - [ ] **Automated Session Summaries:** Use AI to generate the `walkthrough.md` entry automatically at the end of a session.
-
