@@ -71,6 +71,17 @@ generate_manifest() {
     echo "- **P**artnership: AI acts as a Senior Architect Digital Twin."
     echo ""
 
+    # Sunday Audit Check
+    DAY_OF_WEEK=$(date +%u)
+    if [ "$DAY_OF_WEEK" -eq 7 ]; then
+        echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        echo "🚨 SUNDAY AUDIT PROTOCOL ACTIVE"
+        echo "   Today is Sunday. You MUST perform the Weekly Human Refresh."
+        echo "   Refer to task.md -> 'Sunday Audit Protocol' for the checklist."
+        echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        echo ""
+    fi
+
     if [ -n "$MANUAL_INPUT" ]; then
         echo "### [0] MANUAL STATE INJECTION (Last Session EOD/Master Prompt)"
         echo "$MANUAL_INPUT"
@@ -81,27 +92,33 @@ generate_manifest() {
     [ -f "$README_FILE" ] && cat "$README_FILE" || echo "README.md not found."
     echo -e "\n---\n"
 
-    echo "### [2] MASTER PROTOCOL (The Constitution)"
+    echo "### [2] SYSTEM TELEMETRY (Physical Constraints)"
+    echo "- **OS:** $(uname -sr)"
+    echo "- **Shell:** $SHELL"
+    echo "- **Date:** $(date)"
+    echo -e "\n---\n"
+
+    echo "### [3] MASTER PROTOCOL (The Constitution)"
     cat "$DOCS_DIR/AI-MASTER-PROTOCOL.md"
     echo -e "\n---\n"
 
-    echo "### [3] CURRENT TASK (The Cutting Edge)"
+    echo "### [4] CURRENT TASK (The Cutting Edge)"
     cat "$BRAIN_DIR/task.md"
     echo -e "\n---\n"
 
-    echo "### [4] FULL WALKTHROUGH (The Complete Narrative History)"
+    echo "### [5] FULL WALKTHROUGH (The Complete Narrative History)"
     cat "$BRAIN_DIR/walkthrough.md"
     echo -e "\n---\n"
 
-    echo "### [5] IMPLEMENTATION PLAN (The Roadmap)"
+    echo "### [6] IMPLEMENTATION PLAN (The Roadmap)"
     cat "$BRAIN_DIR/implementation_plan.md"
     echo -e "\n---\n"
 
-    echo "### [6] GIT HISTORY (Last 30 Atomic Commits)"
+    echo "### [7] GIT HISTORY (Last 30 Atomic Commits)"
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     echo -e "\n\n---\n"
 
-    echo "### [7] RITUAL OF TRANSITION (Operational Guidance)"
+    echo "### [8] RITUAL OF TRANSITION (Operational Guidance)"
     cat "$DOCS_DIR/RITUAL-OF-TRANSITION.md"
     echo ""
     echo "======================================================================"
