@@ -127,7 +127,11 @@ generate_manifest() {
     git log -n 30 --pretty=format:"%h - %an (%ar): %s"
     echo -e "\n\n---\n"
 
-    echo "### [9] RITUAL OF TRANSITION (Operational Guidance)"
+    echo "### [9] SOD RITUAL (The Cognitive Handshake)"
+    cat "$DOCS_DIR/SOD-RITUAL.md"
+    echo -e "\n\n---\n"
+
+    echo "### [10] RITUAL OF TRANSITION (Operational Guidance)"
     cat "$DOCS_DIR/RITUAL-OF-TRANSITION.md"
     echo ""
     echo "======================================================================"
