@@ -30,6 +30,11 @@
 ### Phase 3: Documentation Infrastructure (Level 4 Implementation)
 - [x] **tools-and-automation/**: Create reference docs for ALL shell scripts (extracting comments). (SELESAI)
 - [x] **Publishing Readiness**: Refactor `SUMMARY.md` for MkDocs/mdBook compatibility. (SELESAI)
+
+### Phase 4: Scaling & Community (Level 5 Integration)
+- [x] **.github/TEMPLATES**: Create Issue & PR templates to enforce governance. (SELESAI)
+- [x] **tools/generate-walkthrough.sh**: Build the "Session Scribe" tool. (SELESAI)
+- [ ] **Social Review**: Verify the end-to-end contributor journey. (SELESAI)
 - [x] **GitBook Sync**: Ensure all new files are reachable via git push. (SELESAI)
 
 ---
