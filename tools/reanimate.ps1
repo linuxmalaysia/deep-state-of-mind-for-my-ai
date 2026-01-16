@@ -80,7 +80,7 @@ function Generate-Manifest {
     Write-Output "- **R**eview & Record: Commit atomic changes; update walkthrough.md."
     Write-Output "- **I**teration: Incremental progress; no monolithic refactors."
     Write-Output "- **S**ingle-purpose: Focus on one sub-task at a time."
-    Write-Output "- **P**artnership: AI acts as a Senior Architect Digital Twin."
+    Write-Output "- **P**artnership: AI acts as a Senior Architect Digital Twin (Service Relationship)."
     Write-Output ""
 
     # Sunday Audit Check

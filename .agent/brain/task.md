@@ -42,6 +42,11 @@
 - [x] **.gitignore**: Block `*.sql`, `*.dump`, and `*.log` (Verify). (SELESAI)
 - [x] **Documentation**: Update `privacy-guardian.md` with new safety capabilities. (SELESAI)
 
+### Phase 6: ITIL 4 Service Management Alignment
+- [ ] **docs/ITIL-ALIGNMENT.md**: Create the SKMS logic reference.
+- [ ] **docs/AI-MASTER-PROTOCOL.md**: Add Section 11 (ITIL Alignment).
+- [ ] **Script Audit**: Verify `tools/` comments reflect Service Value Chain concepts.
+
 ---
 
 ## 🛠️ Specialized Sub-Tasks (Today)
