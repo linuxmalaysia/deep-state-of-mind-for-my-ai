@@ -34,7 +34,7 @@
 ### Phase 4: Scaling & Community (Level 5 Integration)
 - [x] **.github/TEMPLATES**: Create Issue & PR templates to enforce governance. (SELESAI)
 - [x] **tools/generate-walkthrough.sh**: Build the "Session Scribe" tool. (SELESAI)
-- [ ] **Social Review**: Verify the end-to-end contributor journey. (SELESAI)
+- [x] **Social Review**: Verify the end-to-end contributor journey. (SELESAI)
 - [x] **GitBook Sync**: Ensure all new files are reachable via git push. (SELESAI)
 
 ---
@@ -42,7 +42,7 @@
 ## 🛠️ Specialized Sub-Tasks (Today)
 - [x] Define CRISP-DM Hierarchical levels (L1, L2, L3, L4).
 - [x] Synchronise the "Start-of-Day" manifest generator logic.
-- [ ] Map `OPERATIONAL-GUIDE.md` specifically to **L3 Specialised Tasks**.
+- [x] Map `OPERATIONAL-GUIDE.md` specifically to **L3 Specialised Tasks**.
 - [x] Convert `audit-pre-flight.sh` to `audit-pre-flight.ps1`.
 - [x] Convert `init-brain.sh` to `init-brain.ps1`.
 - [x] Convert `reanimate.sh` to `reanimate.ps1`.
@@ -52,9 +52,9 @@
 ---
 
 ## 🌙 End of Day Targets
-- [ ] Finalise the 23-file audit.
-- [ ] Update `walkthrough.md` with the new Mental Anchor.
-- [ ] Generate the EOD Hibernation Manifest.
+- [x] Finalise the 23-file audit.
+- [x] Update `walkthrough.md` with the new Mental Anchor.
+- [x] Generate the EOD Hibernation Manifest.
 
 ---
 
