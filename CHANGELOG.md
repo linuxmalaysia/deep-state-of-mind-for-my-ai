@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [5.2.0] - 2026-01-16
+### Added
+- **Law 11 (ITIL 4 Alignment):** Integrated Service Relationship and Value Co-creation principles into `AI-MASTER-PROTOCOL.md`.
+- **Docs/ITIL-ALIGNMENT.md:** New artifact defining the Service Value Chain (SVC) and SKMS.
+- **Privacy Hardening:** `privacy-guardian` now detects Emails, AWS Keys, and Private Keys.
+- **Gitignore Safety:** Explicitly blocked dangerous data dump formats (`*.sql`, `*.dump`).
+
+### Changed
+- **Reanimation Handshake:** Updated scripts to explicitly state the AI's role as a "Service Relationship" partner.
+- **README.md:** Added formal "ITIL 4 Service Alignment" section.
+
+---
+
 ## [5.1.0] - 2026-01-14
 ### Added
 - **Law 9 (LDP-Compliance):** Integrated the Linux Documentation Project standard into `AI-MASTER-PROTOCOL.md`.
