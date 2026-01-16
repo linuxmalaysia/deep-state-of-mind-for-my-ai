@@ -1,0 +1,16 @@
+[book]
+authors = ["Harisfazillah Jamel (LinuxMalaysia)"]
+language = "en"
+multilingual = false
+src = "."
+title = "Deep State of Mind (DSOM)"
+
+[output.html]
+git-repository-url = "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai"
+site-url = "/deep-state-of-mind-for-my-ai/"
+
+[preprocessor.links]
+
+[output.html.fold]
+enable = true
+level = 1

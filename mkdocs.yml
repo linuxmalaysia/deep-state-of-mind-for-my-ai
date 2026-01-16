@@ -1,0 +1,47 @@
+site_name: Deep State of Mind (DSOM)
+site_description: A metacognitive governance framework for AI.
+site_author: Harisfazillah Jamel (LinuxMalaysia)
+repo_url: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai
+edit_uri: blob/main/docs/
+
+theme:
+  name: material
+  palette: 
+    - scheme: default
+      primary: teal
+      accent: purple
+    - scheme: slate
+      primary: teal
+      accent: purple
+  features:
+    - navigation.expand
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: README.md
+  - Governance:
+    - AI Master Protocol: docs/AI-MASTER-PROTOCOL.md
+    - Operational Guide: docs/OPERATIONAL-GUIDE.md
+    - Ritual of Transition: docs/RITUAL-OF-TRANSITION.md
+    - Personalization: docs/PERSONALIZATION.md
+  - AI Brain:
+    - Task: .agent/brain/task.md
+    - Implementation Plan: .agent/brain/implementation_plan.md
+    - Walkthrough: .agent/brain/walkthrough.md
+  - AI Setup:
+    - Reanimation Template: docs/REANIMATION-PROMPT-TEMPLATE.md
+    - Agent Protocols: docs/MULTI-AGENT-PROTOCOLS.md
+    - Claude: docs/CLAUDE-SETUP.md
+    - Copilot: docs/COPILOT-SETUP.md
+  - Tools:
+    - Pre-Flight: tools-and-automation/audit-pre-flight.md
+    - Init Brain: tools-and-automation/init-brain.md
+    - Reanimation: tools-and-automation/reanimate.md
+    - Hibernation: tools-and-automation/hibernation.md
+    - Privacy: tools-and-automation/privacy-guardian.md
+    - Reset: tools-and-automation/template-reset.md
