@@ -22,6 +22,8 @@
 ## 🤖 3. AI & Agent Protocols
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
 * [⚡ HOWTO: Reanimate Session](docs/HOWTO-REANIMATE-SESSION.md)
+* [📥 HOWTO: Adopt DSOM (Brownfield)](docs/HOWTO-ADOPT-DSOM.md)
+* [🔄 HOWTO: Upgrade DSOM Protocol](docs/HOWTO-UPGRADE-DSOM.md)
 * [🤖 Multi-Agent Protocols](docs/MULTI-AGENT-PROTOCOLS.md)
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)

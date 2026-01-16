@@ -97,4 +97,20 @@ When writing code, you must place files in the correct "Ring" of the Clean Archi
 
 ---
 
-*Last Updated: 2026-01-16 (Sunday Audit)*
+---
+
+## 5. 🚀 Adoption & Upgrade Scenarios
+
+For detailed step-by-step guides on how to apply DSOM to your specific situation, refer to the specialized manuals:
+
+### Scenario 1: Brownfield Adoption
+*   **Situation:** You have an existing project (Standard Code) and want to add DSOM.
+*   **Guide:** [HOWTO: Adopt DSOM in Existing Projects](HOWTO-ADOPT-DSOM.md)
+
+### Scenario 2: Legacy Upgrade
+*   **Situation:** You have an older DSOM version (v3/v4) and want to upgrade to v5.x (ITIL/Privacy).
+*   **Guide:** [HOWTO: Upgrade and Audit DSOM](HOWTO-UPGRADE-DSOM.md)
+
+---
+
+*Last Updated: 2026-01-16 (ITIL 4 Alignment)*
