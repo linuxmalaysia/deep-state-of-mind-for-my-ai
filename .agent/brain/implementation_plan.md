@@ -9,11 +9,11 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 - [x] **The Rituals:** Codifying the Start-of-Day (Reanimation) and End-of-Day (Hibernation) protocols.
 - [x] **AI Master Protocol:** Establishing architectural laws (Zero-Global, Portable, Pedagogical).
 
-## 🛠️ Phase 2: Tooling & Enforcement (Next)
-- [ ] **Privacy Guardian:** Script to scan `.agent/brain` for sensitive data before commits.
-- [ ] **Context Injection Tool:** A script to automatically concatenate brain artifacts for easy copy-pasting into AI prompts.
-- [ ] **State-Sync Automator:** Enhance `audit-pre-flight.sh` to provide deeper environment telemetry (e.g., dependency versions).
-- [ ] **Windows Platform Support:** Create native PowerShell (`.ps1`) equivalents of all tooling to support Windows developers without WSL.
+## 🛠️ Phase 2: Tooling & Enforcement (Current)
+- [x] **Privacy Guardian:** Script to scan `.agent/brain` for sensitive data before commits.
+- [x] **Context Injection Tool:** A script to automatically concatenate brain artifacts for easy copy-pasting into AI prompts.
+- [x] **State-Sync Automator:** Enhance `audit-pre-flight.sh` to provide deeper environment telemetry (e.g., dependency versions).
+- [x] **Windows Platform Support:** Create native PowerShell (`.ps1`) equivalents of all tooling to support Windows developers without WSL.
 
 ## 🚀 Phase 3: Application Integration
 - [ ] **CMSForNerd Integration:** Apply DSOM to the CMSForNerd v3.5 laboratory.
