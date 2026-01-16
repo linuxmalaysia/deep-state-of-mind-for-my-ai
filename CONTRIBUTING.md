@@ -40,6 +40,12 @@ Every interaction with this repository must pass the **CRISP** filter:
 
 ## 🚀 3. The Contribution Workflow
 
+### 🛡️ Governance Gates (Automated)
+To streamline reviews, we use standard templates. Please utilize them:
+*   [🐛 Bug Report](.github/ISSUE_TEMPLATE/bug_report.md)
+*   [🚀 Feature Request](.github/ISSUE_TEMPLATE/feature_request.md)
+*   [📝 Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md)
+
 1.  **Phase 1: Reanimation:** Fork and clone. Run `./tools/audit-pre-flight.sh`.
 2.  **Phase 2: Brain Sync:** Before coding, update `.agent/brain/task.md` to define your objective and `implementation_plan.md` to verify alignment.
 3.  **Phase 3: Logic Record:** Write your architectural intent in `walkthrough.md`.
