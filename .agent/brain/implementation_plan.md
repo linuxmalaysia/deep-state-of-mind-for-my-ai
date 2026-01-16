@@ -22,6 +22,6 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 
 ## 📈 Phase 4: Scaling & Community
 ## 📈 Phase 4: Scaling & Community
-- [ ] **Community Health Files:** Create `.github/ISSUE_TEMPLATE/` and `PULL_REQUEST_TEMPLATE.md` to enforce DSOM compliance (e.g., "Did you run audit-pre-flight?").
-- [ ] **Automated Walkthrough:** Develop `tools/generate-walkthrough.sh` to auto-draft session logs from git history.
-- [ ] **Social Readiness:** Final review of `CONTRIBUTING.md` to ensure it links to the new templates.
+- [x] **Community Health Files:** Create `.github/ISSUE_TEMPLATE/` and `PULL_REQUEST_TEMPLATE.md` to enforce DSOM compliance (e.g., "Did you run audit-pre-flight?").
+- [x] **Automated Walkthrough:** Develop `tools/generate-walkthrough.sh` to auto-draft session logs from git history.
+- [x] **Social Readiness:** Final review of `CONTRIBUTING.md` to ensure it links to the new templates.
