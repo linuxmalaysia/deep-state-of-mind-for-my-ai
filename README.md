@@ -14,6 +14,7 @@ The **Deep State of Mind (DSOM) For My AI Protocol** ensures architectural sover
 1.  **Contextual Persistence:** Using `.agent/brain/` artifacts.
 2.  **Multi-AI Alignment:** Synchronising Gemini, Claude, and Copilot.
 3.  **Linguistic Standards:** UK English and DBP-standard Malay.
+4.  **ITIL 4 Alignment:** Operating as a "Service Relationship" for Value Co-creation.
 
 ## 🏛️ The Sovereign Framework (5W1H)
 
@@ -36,6 +37,15 @@ To maintain **Sovereign Integrity**, the DSOM protocol is structured using a fou
 | **L2** | **Generic Tasks** | **Mandates:** The CRISP Pillars (Context, Review, Iteration, Single-purpose, Partnership). | `AI-MASTER-PROTOCOL.md` |
 | **L3** | **Specialised Tasks** | **Architectural Layers:** Implementation of Entities, Use Cases, and Drivers. | `OPERATIONAL-GUIDE.md` |
 | **L4** | **Process Instances** | **History:** The concrete record of logic breakthroughs and mental anchors. | `.agent/brain/walkthrough.md` |
+
+### 🏥 Section 1.2: ITIL 4 Service Alignment
+
+We adhere to the **ITIL 4 Service Value System (SVS)** to ensure that the code we generate provides actual measurable value, not just "output."
+
+*   **Service Provider:** The AI Agent (Providing Intelligence).
+*   **Service Consumer:** The Lead Architect (Defining Requirements).
+*   **Value Co-creation:** The "Handshake" is the negotiation of value.
+*   **Service Knowledge Management System (SKMS):** The `.agent/brain/` directory acts as the SSoT for all service knowledge.
 
 ### 🧠 The Logic of the Hierarchy (The 'Why')
 
@@ -469,4 +479,12 @@ We have standardized the configuration for:
 ### 👥 Community Governance (`.github/`)
 *   **Gates:** Automated `ISSUE_TEMPLATE` and `PULL_REQUEST_TEMPLATE`.
 *   **Scribe:** Automated Session Logging via `tools/generate-walkthrough.sh`.
+
+### 🛡️ Phase 5: Privacy Hardening (Level 5 Optimization)
+*   **Fail-Closed:** `privacy-guardian` now blocks Emails, AWS Keys, and Private Keys.
+*   **Manifest Safety:** Explicit data dump exclusions in `.gitignore`.
+
+### 🏥 Phase 6: ITIL 4 Service Alignment
+*   **Protocol:** Injected "Law 11" (Service Management) into the Master Protocol.
+*   **Governance:** Defined the Service Value Chain in `docs/ITIL-ALIGNMENT.md`.
 
