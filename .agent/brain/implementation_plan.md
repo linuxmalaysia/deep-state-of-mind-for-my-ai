@@ -32,6 +32,11 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 - [x] **Security Documentation:** Update `docs/SECURITY.md` (if exists) or `privacy-guardian.md` with new patterns.
 
 ## 🏛️ Phase 6: ITIL 4 Service Management Alignment
-- [ ] **Protocol Update:** Inject "ITIL 4 Service Management" into `AI-MASTER-PROTOCOL.md`.
-- [ ] **Knowledge Base:** Create `docs/ITIL-ALIGNMENT.md` defining the Service Value Chain (SVC).
-- [ ] **SKMS Integration:** Refactor `summary` and `brain` definitions to align with Knowledge Management standards.
+- [x] **Protocol Update:** Inject "ITIL 4 Service Management" into `AI-MASTER-PROTOCOL.md`.
+- [x] **Knowledge Base:** Create `docs/ITIL-ALIGNMENT.md` defining the Service Value Chain (SVC).
+- [x] **SKMS Integration:** Refactor `summary` and `brain` definitions to align with Knowledge Management standards.
+
+## 📚 Phase 7: Adoption & Upgrade Guides
+- [x] **Brownfield Guide:** Create `docs/HOWTO-ADOPT-DSOM.md` for existing projects.
+- [x] **Upgrade Guide:** Create `docs/HOWTO-UPGRADE-DSOM.md` for v4 -> v5 migration.
+- [x] **Ops Integration:** Link new guides in `docs/OPERATIONAL-GUIDE.md` and `SUMMARY.md`.
