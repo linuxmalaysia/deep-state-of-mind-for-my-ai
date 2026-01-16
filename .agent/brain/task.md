@@ -37,6 +37,11 @@
 - [x] **Social Review**: Verify the end-to-end contributor journey. (SELESAI)
 - [x] **GitBook Sync**: Ensure all new files are reachable via git push. (SELESAI)
 
+### Phase 5: Privacy & Security Hardening (Level 5 Optimization)
+- [x] **tools/privacy-guardian**: Add Email, AWS, and GitHub Token regex. (SELESAI)
+- [x] **.gitignore**: Block `*.sql`, `*.dump`, and `*.log` (Verify). (SELESAI)
+- [x] **Documentation**: Update `privacy-guardian.md` with new safety capabilities. (SELESAI)
+
 ---
 
 ## 🛠️ Specialized Sub-Tasks (Today)
