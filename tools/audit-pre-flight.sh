@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # ==============================================================================
 # 📜 Universal DSOM Audit Pre-Flight (v4.1 - Root Aware)
 # 
