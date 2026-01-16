@@ -25,10 +25,10 @@
 - [x] **docs/EOD-RITUAL.md**: Formalize the End-of-Day protocol for Human & AI. (NEW)
 - [x] **Hibernation Tools**: Create scripts (`hibernation.sh/ps1`) for EOD safe-shutdown. (NEW)
 - [x] **docs/PERSONALIZATION.md**: Synchronise Haris's Cognitive Persona. (SELESAI)
-- [ ] **docs/CLAUDE-SETUP.md & COPILOT-SETUP.md**: Multi-Agent context rules.
+- [x] **docs/MULTI-AGENT-PROTOCOLS.md**: Standardise config for Autonomous (Devin/CrewAI) & IDE Agents (Cursor/Windsurf). (SELESAI)
 
 ### Phase 3: Driver Layer & Tools (Level 4 Implementation)
-- [ ] **tools/*.sh**: Audit shell logic for Zero-Global compliance.
+- [x] **tools/*.sh**: Audit shell logic for Zero-Global compliance. (SELESAI)
 - [x] **tools/*.ps1**: Create PowerShell equivalents for all bash scripts. (NEW)
 - [ ] **tools-and-automation/*.md**: Verify logic documentation for scripts.
 
