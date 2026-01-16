@@ -105,6 +105,14 @@ This project was initiated by **Harisfazillah Jamel** to codify 35+ years of ICT
     -   **Compliance:** Updated `reanimate` scripts to reference "Service Relationship".
 - **Current State:** The system is now an ITIL-aligned Service Provider.
 - **Mental Anchor:** We don't just write code; we "Co-create Value." The AI is the Service Provider, the Architect is the Consumer.
+
+### 📚 Operational Guides Expansion
+- **Goal:** Enable Brownfield Adoption and Version Audits.
+- **Actions:**
+    -   Created `docs/HOWTO-ADOPT-DSOM.md` (Scenario 1).
+    -   Created `docs/HOWTO-UPGRADE-DSOM.md` (Scenario 2).
+    -   Updated `OPERATIONAL-GUIDE.md` and `SUMMARY.md` to link these new manuals.
+- **Outcome:** The DSOM Protocol is now portable to legacy builds.
 -   **Current State:** The "Operational Documentation" layer is now fully verified against the physical tooling behavior and the Architect's persona.
 -   **Current State:** The "Operational Documentation" layer is now fully verified against the physical tooling behavior and the Architect's persona.
 -   **Mental Anchor:** The "Map" (Docs) matches the "Territory" (Code). We are ready to merge the audit branch back to main.

@@ -43,9 +43,14 @@
 - [x] **Documentation**: Update `privacy-guardian.md` with new safety capabilities. (SELESAI)
 
 ### Phase 6: ITIL 4 Service Management Alignment
-- [ ] **docs/ITIL-ALIGNMENT.md**: Create the SKMS logic reference.
-- [ ] **docs/AI-MASTER-PROTOCOL.md**: Add Section 11 (ITIL Alignment).
-- [ ] **Script Audit**: Verify `tools/` comments reflect Service Value Chain concepts.
+- [x] **docs/ITIL-ALIGNMENT.md**: Create the SKMS logic reference. (SELESAI)
+- [x] **docs/AI-MASTER-PROTOCOL.md**: Add Section 11 (ITIL Alignment). (SELESAI)
+- [x] **Script Audit**: Verify `tools/` comments reflect Service Value Chain concepts. (SELESAI)
+
+### Phase 7: Adoption & Upgrade Guides
+- [x] **docs/HOWTO-ADOPT-DSOM.md**: Create the "Brownfield" integration guide. (SELESAI)
+- [x] **docs/HOWTO-UPGRADE-DSOM.md**: Create the "Upgrade & Audit" guide. (SELESAI)
+- [x] **Linkage**: Update `OPERATIONAL-GUIDE.md` and `SUMMARY.md`. (SELESAI)
 
 ---
 
