@@ -22,9 +22,13 @@
 1.  **Target Verification:** Checks if a `sod_manifest_YYYY-MM-DD.txt` exists.
 2.  **Regex Scanning:** Iterates through an array of dangerous patterns:
     *   IPv4 Addresses
+    *   Emails (Standard Regex)
     *   Google API Keys (`AIza...`)
+    *   AWS Access Keys (`AKIA...`)
+    *   GitHub Tokens (`ghp...`)
     *   OpenAI Keys (`sk-...`)
     *   Slack Tokens (`xoxb...`)
+    *   Private Keys (`-----BEGIN...`)
     *   Local User Paths (`/home/user/`)
 3.  **Reporting:** Exits with `1` if leaks are found, requiring manual remediation.
 

@@ -32,13 +32,17 @@ echo "Target: $TARGET_FILE"
 echo "======================================================================"
 
 # 3. Define Regex Patterns for Leaks
-# Patterns: IPv4, Google API, Generic Secret, Slack Token, Local User Path
+# Patterns: IPv4, Email, Google API, AWS Key, GitHub Token, Slack Token, Private Key, Home Path
 declare -a PATTERNS=(
-    "([0-9]{1,3}\.){3}[0-9]{1,3}"      
-    "AIza[0-9A-Za-z-_]{35}"            
-    "sk-[a-zA-Z0-9]{48}"               
-    "xox[bap]-[a-zA-Z0-9-]+"           
-    "\/home\/[a-z0-9_-]+\/"            
+    "([0-9]{1,3}\.){3}[0-9]{1,3}"                      # IPv4
+    "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"   # Email
+    "AIza[0-9A-Za-z-_]{35}"                            # Google API
+    "AKIA[0-9A-Z]{16}"                                 # AWS Access Key
+    "gh[pousr]_[a-zA-Z0-9]{36}"                        # GitHub Token
+    "sk-[a-zA-Z0-9]{48}"                               # OpenAI Secret
+    "xox[bap]-[a-zA-Z0-9-]+"                           # Slack Token
+    "-----BEGIN [A-Z]+ PRIVATE KEY-----"               # PEM Private Key
+    "\/home\/[a-z0-9_-]+\/"                            # Linux Home Path
 )
 
 LEAK_FOUND=0

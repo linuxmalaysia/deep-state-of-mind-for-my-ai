@@ -25,3 +25,8 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 - [x] **Community Health Files:** Create `.github/ISSUE_TEMPLATE/` and `PULL_REQUEST_TEMPLATE.md` to enforce DSOM compliance (e.g., "Did you run audit-pre-flight?").
 - [x] **Automated Walkthrough:** Develop `tools/generate-walkthrough.sh` to auto-draft session logs from git history.
 - [x] **Social Readiness:** Final review of `CONTRIBUTING.md` to ensure it links to the new templates.
+
+## 🔒 Phase 5: Privacy & Security Hardening
+- [x] **Expanded Heuristics:** Update `privacy-guardian` to detect Emails, AWS Keys, and GitHub Tokens.
+- [x] **Gitignore Auditing:** Add exclusions for common data dump formats (`*.sql`, `*.csv` in root).
+- [x] **Security Documentation:** Update `docs/SECURITY.md` (if exists) or `privacy-guardian.md` with new patterns.

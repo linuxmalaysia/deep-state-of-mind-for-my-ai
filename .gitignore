@@ -47,7 +47,16 @@ vault_pass.txt
 inventory/hosts.ini
 # If you use Proxmox/OpenShift local configs
 *.kubeconfig
+*.kubeconfig
 *.tfstate*
+
+# --- [ Data Safety (No Leaks) ] ---
+*.sql
+*.dump
+*.csv
+*.tsv
+*.xlsx
+*.log
 
 # --- [ System & IDE Noise ] ---
 # OS Generated
