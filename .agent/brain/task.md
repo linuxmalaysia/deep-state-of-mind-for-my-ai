@@ -27,10 +27,10 @@
 - [x] **docs/PERSONALIZATION.md**: Synchronise Haris's Cognitive Persona. (SELESAI)
 - [x] **docs/MULTI-AGENT-PROTOCOLS.md**: Standardise config for Autonomous (Devin/CrewAI) & IDE Agents (Cursor/Windsurf). (SELESAI)
 
-### Phase 3: Driver Layer & Tools (Level 4 Implementation)
-- [x] **tools/*.sh**: Audit shell logic for Zero-Global compliance. (SELESAI)
-- [x] **tools/*.ps1**: Create PowerShell equivalents for all bash scripts. (NEW)
-- [ ] **tools-and-automation/*.md**: Verify logic documentation for scripts.
+### Phase 3: Documentation Infrastructure (Level 4 Implementation)
+- [x] **tools-and-automation/**: Create reference docs for ALL shell scripts (extracting comments). (SELESAI)
+- [x] **Publishing Readiness**: Refactor `SUMMARY.md` for MkDocs/mdBook compatibility. (SELESAI)
+- [x] **GitBook Sync**: Ensure all new files are reachable via git push. (SELESAI)
 
 ---
 

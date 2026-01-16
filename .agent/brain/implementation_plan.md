@@ -15,10 +15,10 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 - [x] **State-Sync Automator:** Enhance `audit-pre-flight.sh` to provide deeper environment telemetry (e.g., dependency versions).
 - [x] **Windows Platform Support:** Create native PowerShell (`.ps1`) equivalents of all tooling to support Windows developers without WSL.
 
-## 🚀 Phase 3: Application Integration
-- [ ] **CMSForNerd Integration:** Apply DSOM to the CMSForNerd v3.5 laboratory.
-- [ ] **Pattern Library:** Create a "Knowledge Graph" of recurring architectural patterns (PHP 8.4 hooks, HA cluster configs).
-- [ ] **Multi-Model Testing:** Verify DSOM persistence by migrating a single project state between Gemini, Claude, and local Llama-3 models.
+## 🚀 Phase 3: Documentation Infrastructure & Publishing
+- [x] **Shell Script Documentation:** Auto-generate markdown docs for all `tools/*.sh` scripts, extracting comments into `tools-and-automation/`.
+- [x] **Multi-Platform Readiness:** Structure the repo for compatibility with Docusaurus, MkDocs, and mdBook (Universal `SUMMARY.md`).
+- [x] **Content Synchronization:** Ensure all new markdown files (including Agent Configs) are linked in `book.json` / `SUMMARY.md`.
 
 ## 📈 Phase 4: Scaling & Community
 - [ ] **Contributor Guide:** Standardizing how external contributors must interact with the DSOM "Brain."
