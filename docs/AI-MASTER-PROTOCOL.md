@@ -105,6 +105,26 @@ Every entry must be grouped under:
 * **Security:** In case of vulnerabilities or access control updates.
 
 ---
+---
+
+## ⚖️ 11. ITIL 4 Service Management Alignment
+
+To ensure that IT services are aligned with architectural goals and deliver measurable value, the DSOM protocol adheres to the **ITIL 4 Framework**.
+
+### i) Value Co-creation (The Partnership)
+The relationship between the Human Architect and the AI is a **Service Relationship**. Both parties must collaborate (Co-create) to ensure the outputs (Code/Docs) provide actual value to the project’s stakeholders.
+
+### ii) The Service Value Chain (SVC) Loop
+Every 'Tugasan' (Task) must follow the DSOM-ITIL loop:
+1. **Engage:** Initialise context from `.agent/brain/` referencing `task.md`.
+2. **Plan & Design:** Document logic in `walkthrough.md`.
+3. **Obtain & Build:** Execute code using **Atomic Git Hygiene**.
+4. **Deliver & Support:** Verify via `audit-pre-flight.sh` and log in `CHANGELOG.md`.
+
+### iii) Knowledge Management (SKMS)
+The `.agent/brain/` directory serves as the project’s **Service Knowledge Management System (SKMS)**. It must be curated to ensure high-fidelity information retrieval (CI/CD of Intelligence).
+
+---
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Licensed under GPLv3*
 **Last Human Audit:** 2026-01-14
 

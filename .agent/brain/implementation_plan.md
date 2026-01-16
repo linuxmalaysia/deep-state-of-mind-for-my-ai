@@ -30,3 +30,8 @@ To create a robust, model-agnostic governance framework that allows AI agents to
 - [x] **Expanded Heuristics:** Update `privacy-guardian` to detect Emails, AWS Keys, and GitHub Tokens.
 - [x] **Gitignore Auditing:** Add exclusions for common data dump formats (`*.sql`, `*.csv` in root).
 - [x] **Security Documentation:** Update `docs/SECURITY.md` (if exists) or `privacy-guardian.md` with new patterns.
+
+## 🏛️ Phase 6: ITIL 4 Service Management Alignment
+- [ ] **Protocol Update:** Inject "ITIL 4 Service Management" into `AI-MASTER-PROTOCOL.md`.
+- [ ] **Knowledge Base:** Create `docs/ITIL-ALIGNMENT.md` defining the Service Value Chain (SVC).
+- [ ] **SKMS Integration:** Refactor `summary` and `brain` definitions to align with Knowledge Management standards.

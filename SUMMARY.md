@@ -8,6 +8,7 @@
 
 ## 1. Sovereign Governance
 * [🏛️ AI Master Protocol](docs/AI-MASTER-PROTOCOL.md)
+* [🏥 ITIL 4 Alignment Strategy](docs/ITIL-ALIGNMENT.md)
 * [🛡️ CRISP² Operational Strategy](docs/CRISP2-OPERATIONAL-STRATEGY.md)
 * [📖 Operational Guide](docs/OPERATIONAL-GUIDE.md)
 * [🕯️ Ritual of Transition](docs/RITUAL-OF-TRANSITION.md)
