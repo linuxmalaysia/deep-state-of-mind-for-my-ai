@@ -111,7 +111,12 @@ The DSOM workflow ensures that the AI's "Mind" is always synced with the "Physic
 3.  **Set Permissions:**
     ```bash
     chmod +x tools/*.sh
+    chmod +x tools/*.sh
     ```
+
+### 2.1 Adoption & Upgrade Scenarios
+*   **Adopting into an existing project?** See [HOWTO: Adopt DSOM (Brownfield)](docs/HOWTO-ADOPT-DSOM.md).
+*   **Upgrading from v4?** See [HOWTO: Upgrade DSOM](docs/HOWTO-UPGRADE-DSOM.md).
 
 ---
 
