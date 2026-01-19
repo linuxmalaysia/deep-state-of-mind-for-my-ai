@@ -1,3 +1,6 @@
+### 📜 docs/REANIMATION-PROMPT-TEMPLATE.md (Refactored v1.8)
+
+```markdown
 # ⚡ DSOM State-Aware Reanimation Template (v1.8)
 
 # ==============================================================================
