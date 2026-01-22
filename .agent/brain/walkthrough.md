@@ -235,3 +235,8 @@ The reason we perform the **Sunday Audit** (The Dry-Run) is to verify that all *
 * *Does a file in `tools/` (Driver Layer) accidentally contain Business Logic?* (Clean Architecture violation).
 * *Was the last update to `walkthrough.md` atomic?* (CRISP violation).
 * *Is the Mental Anchor clear enough to survive a week?* (DSOM violation).
+
+## [2026-01-21] | Strategic Anchor: Ledger vs Consciousness
+- Established HISTORY.md as the Universal Ledger (Archival).
+- Defined Brain files as Active Consciousness (Tactical/Strategic).
+- Mandated Semantic Entries for history tracking.
