@@ -139,6 +139,14 @@ If a task seems to contradict DSOM Laws, stop and refer to these sources:
 
 ---
 
+## 👥 13. Multi-Member Federation (Hub & Spoke)
+To prevent Git merge conflicts and context leakage:
+- **Global Hub:** .agent/brain/global/task-master.md (Lead Architect only).
+- **Member Spokes:** .agent/brain/member/{user}/ (Individual sandboxes).
+- **Rule:** AI Twins must only modify files within their assigned member directory unless instructed by the Lead Architect.
+
+---
+
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Licensed under GPLv3*
 **Last Human Audit:** 2026-01-16
 
