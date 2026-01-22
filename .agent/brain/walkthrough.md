@@ -240,3 +240,4 @@ The reason we perform the **Sunday Audit** (The Dry-Run) is to verify that all *
 - Established HISTORY.md as the Universal Ledger (Archival).
 - Defined Brain files as Active Consciousness (Tactical/Strategic).
 - Mandated Semantic Entries for history tracking.
+- **[2026-01-21]:** Initialised HISTORY.md as the Universal Ledger. Linked archival memory to active SKMS.
