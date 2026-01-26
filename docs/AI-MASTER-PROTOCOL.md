@@ -147,6 +147,20 @@ To prevent Git merge conflicts and context leakage:
 
 ---
 
+## 🏛️ 14. Digital Sovereignty Integration (The Strategic Layer)
+DSOM (Deep State of Mind) serves as the operational engine for the broader **Digital Sovereignty Operational Model (DSOM)**.
+
+### i) The Sovereign Pillars:
+- **Data Sovereignty:** All 'Brain' artifacts remain in local storage (`.agent/brain/`). Unauthorized external access to project logic is prevented by Git-based state management.
+- **Technology Sovereignty:** We prioritize Open Source stacks (Linux, Podman, Ansible). We use AI as a service, but our 'Logic' is provider-agnostic.
+- **Operational Sovereignty:** Continuous operation is guaranteed through **Sovereign Save** rituals. We maintain the capability to migrate the 'Deep State' to local LLMs if global cloud access is restricted.
+
+### ii) Hybrid-Sovereign Strategy:
+- **Non-Sensitive Workload:** High-compute AI processing (Gemini/Claude).
+- **Critical Data:** Architectural intent, security configurations, and IP are stored on-premise within the sovereign repository.
+
+---
+
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Licensed under GPLv3*
 **Last Human Audit:** 2026-01-16
 
