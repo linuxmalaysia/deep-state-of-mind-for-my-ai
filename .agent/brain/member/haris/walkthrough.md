@@ -23,3 +23,8 @@
     Added Section (v) to the Response Template to mandate 'Why' explanations.
 
     Linked technical execution to architectural wisdom transfer.
+## [2026-01-27] | Strategic Anchor: Documentation Syntax
+
+    Standardised on triple-backtick fenced blocks for rituals.
+
+    Enabled bash syntax highlighting for better logical contrast.
