@@ -35,3 +35,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-27]:** Initialised Strategic DSOM document. Aligned local AI rituals with international digital sovereignty standards.
 - **[2026-01-27]:** Refactored SUMMARY.md for GitBook. Integrated Hub-and-Spoke paths and Digital Sovereignty Model.
 - **[2026-01-27]:** Codified Hub-and-Spoke Model in docs/. Established federation rules for multi-member collaboration.
+- **[2026-01-27]:** Codified AI-RESPONSE-TEMPLATE.md to standardise digital twin communication styles.
