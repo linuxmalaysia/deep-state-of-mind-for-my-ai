@@ -10,3 +10,6 @@
 - Confirmed AI limits: Context Decay, Prompt Drifting, and Non-Atomic Thinking.
 - Validated DSOM as the 'External Hippocampus' and 'Operational Brakes'.
 - Reaffirmed Sovereign Portability as the primary defense against Vendor Lock-in.
+## [2026-01-27] | Strategic Anchor: Persona Standardisation
+- Formalised the AI Response Template in docs/.
+- Integrated 4W1H and Pedagogical Logic as mandatory response components.
