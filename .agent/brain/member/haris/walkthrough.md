@@ -28,3 +28,6 @@
     Standardised on triple-backtick fenced blocks for rituals.
 
     Enabled bash syntax highlighting for better logical contrast.
+## [2026-01-27] | Strategic Anchor: Federated Documentation
+- Finalised the Hub-and-Spoke documentation with member-specific paths.
+- Codified the SOD/EOD branching ritual for team members.
