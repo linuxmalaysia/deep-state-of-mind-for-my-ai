@@ -18,3 +18,8 @@
     Codified the exact shell block format for Atomic Git Rituals.
 
     Ensured consistency between Ledger (History) and Narrative (Walkthrough) updates.
+## [2026-01-27] | Strategic Anchor: Pedagogical Enforcement
+
+    Added Section (v) to the Response Template to mandate 'Why' explanations.
+
+    Linked technical execution to architectural wisdom transfer.
