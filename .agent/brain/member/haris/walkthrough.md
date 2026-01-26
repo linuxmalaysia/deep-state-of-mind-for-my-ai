@@ -13,3 +13,8 @@
 ## [2026-01-27] | Strategic Anchor: Persona Standardisation
 - Formalised the AI Response Template in docs/.
 - Integrated 4W1H and Pedagogical Logic as mandatory response components.
+## [2026-01-27] | Strategic Anchor: Git Ritual Standardisation
+
+    Codified the exact shell block format for Atomic Git Rituals.
+
+    Ensured consistency between Ledger (History) and Narrative (Walkthrough) updates.
