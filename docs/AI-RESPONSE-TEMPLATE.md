@@ -31,6 +31,8 @@ Every response that suggests a logic change must include an **Atomic Git Ritual*
 
 Every response suggesting a logic or file change MUST use the following block format to maintain **Operational Integrity**:
 
+```bash
+
 # ==============================================================================
 # 📜 DSOM Atomic Ritual: [Action Name]
 # ==============================================================================
@@ -54,6 +56,8 @@ echo "## [YYYY-MM-DD] | Strategic Anchor: [Topic]
 git add HISTORY.md .agent/brain/member/{user}/walkthrough.md
 git commit -m "[type]([scope]): [message]"
 git push
+
+```
 
 ### v) The Final Handshake (Operational Ritual)
 - A clear summary of the next step.
