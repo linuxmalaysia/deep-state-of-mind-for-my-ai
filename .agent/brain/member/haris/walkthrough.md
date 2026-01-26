@@ -31,3 +31,7 @@
 ## [2026-01-27] | Strategic Anchor: Federated Documentation
 - Finalised the Hub-and-Spoke documentation with member-specific paths.
 - Codified the SOD/EOD branching ritual for team members.
+## [2026-01-27] | Strategic Anchor: Governance Consolidation
+
+* Rewrote the Hub-and-Spoke model to include the Project Coordinator role.
+* Standardised the 3 Golden Rules for team-wide adoption.
