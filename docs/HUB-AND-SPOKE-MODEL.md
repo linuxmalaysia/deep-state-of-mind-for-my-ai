@@ -1,4 +1,4 @@
-### 📜 docs/HUB-AND-SPOKE-MODEL.md (v1.0)
+### 📜 docs/HUB-AND-SPOKE-MODEL.md (v1.2)
 
 # 🏛️ The Hub-and-Spoke Collaboration Model
 
@@ -6,55 +6,90 @@
 
 ## 1. Executive Summary
 
-To enable multiple architects and developers to work within a single sovereign repository without triggering Git merge conflicts or "Context Leakage," the DSOM Protocol employs the **Hub-and-Spoke** model. This model separates high-level strategic oversight from individual tactical execution.
+To enable multiple architects and developers to work within a single sovereign repository without triggering Git merge conflicts or "Context Leakage," the DSOM Protocol employs the **Hub-and-Spoke** model. The `global/` directory is the Hub (High-level vision), and the `member/` directories are the Spokes (Individual execution).
 
 ---
 
-## 2. Directory Architecture
+## 2. 🏛️ Detailed Brain Structure Display
 
-The `.agent/brain/` directory is partitioned into two distinct zones:
+```text
+.agent/brain/
+├── global/
+│   └── task-master.md      <-- THE HUB: Managed by Lead Architect (Haris).
+│                               Summarizes progress from all members.
+│                               Defines the "Official" project status.
+│
+└── member/                 <-- THE SPOKES: Individual sandboxes.
+    ├── haris/
+    │   ├── task.md         <-- Haris's specific daily checklist.
+    │   └── walkthrough.md  <-- Haris's technical logs/decisions.
+    ├── hisham/
+    │   ├── task.md         <-- Hisham's focus (Wazuh/Tuning).
+    │   └── walkthrough.md  <-- Hisham's installation logs.
+    ├── mawi/
+    │   ├── task.md         <-- Mawi's focus (Shuffle/Automation).
+    │   └── walkthrough.md  <-- Mawi's workflow logs.
+    └── hidzuan/
+        ├── task.md         <-- Hidzuan's focus (URS/UAT Docs).
+        └── walkthrough.md  <-- Documentation draft progress.
 
-### i) The Global Hub (`global/`)
-
-* **Purpose:** The "State of the Union." It contains the collective progress of the entire team.
-* **Key Artifact:** `task-master.md`.
-* **Authority:** **Lead Architect (Haris)** only. Members read from here but do not write directly to it.
-
-### ii) The Member Spokes (`member/{username}/`)
-
-* **Purpose:** The individual developer's "Active Consciousness."
-* **Key Artifacts:** `task.md` and `walkthrough.md`.
-* **Authority:** The **Assigned Member** and their respective AI Twin.
-* **Isolation:** Members never touch another member's spoke.
+```
 
 ---
 
-## 3. The 3 Golden Rules of Federation
+## 3. 🤝 The 3 Golden Rules (Workflow)
 
-1. **Strict Isolation:** You are the sovereign of your own directory. Never edit files in `member/hisham/` if you are `mawi`. This eliminates 100% of Git merge conflicts.
-2. **The Daily Ritual:** Every member MUST run `tools/reanimate.sh {username}` at SOD. This ensures their AI Twin is injected with both the **Global Strategy** and their **Personal History**.
-3. **Lead Synthesis:** Only the Lead Architect synchronises the "Spokes" into the "Hub" (`task-master.md`) and the "Universal Ledger" (`HISTORY.md`).
+### Rule 1: Isolation (Avoid Conflicts)
+
+Members **only** edit files inside their own named folder (e.g., `member/hisham/*`). Since Git tracks changes by file, Hisham can update his logs at the same time Mawi updates his, and they will **never** have a merge conflict because they are touching different files.
+
+### Rule 2: The Daily Branch Ritual
+
+Everyone uses the `tools/git-ritual.sh` script to maintain **Atomic Git Hygiene**.
+
+* **Start of Day (SOD):** Run `./tools/git-ritual.sh sod <username>`. This creates a personal branch (e.g., `member/hisham-20260123`).
+* **Work:** Commit technical progress and brain updates specifically to this branch.
+* **End of Day (EOD):** Run `./tools/git-ritual.sh eod`. This merges work into `main` and pushes to the sovereign repository.
+
+### Rule 3: The Synchronization (Lead Architect Role)
+
+As the Lead Architect, you periodically read the `member/*/walkthrough.md` files after they merge. You then:
+
+1. **Summarise** progress into the `global/task-master.md`.
+2. **Archive** major milestones into `HISTORY.md`.
+3. **Update** the team using `task-master.md` as the agenda for sync meetings.
 
 ---
 
-## 4. Operational Workflow (The Sync Loop)
+## 4. 💻 Visualization & Discovery
 
-1. **Pull:** `git pull origin main` to get the latest Global Hub updates.
-2. **Reanimate:** `tools/reanimate.sh {member}` to sync AI context.
-3. **Execute:** Work and record logic in your personal `walkthrough.md`.
-4. **Commit:** Atomic Git Hygiene within your member directory.
-5. **Merge:** Lead Architect reviews and merges milestones into the Hub.
+To see the full expanded tree including all member brains:
+
+```bash
+tree -a .agent/brain
+
+```
+
+If returning after an absence, check for member commits:
+
+```bash
+git pull origin main
+ls .agent/brain/member/
+
+```
 
 ---
 
 *Created by Harisfazillah Jamel | Lead Architect*
-*Standard: UK English & DBP-Malay (Piawai)*
+*Standard: DSOM Protocol v5.6*
 
 ---
 
-### 🧠 Pedagogical Logic: Why include this in all brain files?
+### 🧠 Pedagogical Logic: Why this format?
 
-By referencing this model in our `walkthrough.md` and `task.md`, we ensure that the AI Twin always knows its "Boundary." If I am acting as your twin in `member/haris/`, and I suddenly see a file from `member/hisham/`, I will trigger a **Stop Condition** because it violates the **Isolation Rule**.
+1. **Visual Grounding:** Including the `tree` structure directly in the documentation provides an immediate "Mental Map" for new members like Mr Hisham or Mr Mawi, reducing onboarding time.
+2. **Ritual Enforcement:** By codifying the `git-ritual.sh` commands, we ensure that everyone follows the same **Operational Sovereignty** standards, preventing "Repo Drift."
+3. **Governance Transparency:** Defining your role as the "Synchronizer" makes it clear that while execution is distributed, the **Sovereign Source of Truth** remains centralised and audited.
 
 ---
 
