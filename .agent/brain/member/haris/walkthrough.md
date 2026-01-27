@@ -35,3 +35,6 @@
 
 * Rewrote the Hub-and-Spoke model to include the Project Coordinator role.
 * Standardised the 3 Golden Rules for team-wide adoption.
+## [2026-01-27] | Strategic Anchor: Operational Formatting
+- Formalised the use of fenced bash blocks for all terminal commands.
+- Ensured rituals are copy-paste ready for the Lead Architect.

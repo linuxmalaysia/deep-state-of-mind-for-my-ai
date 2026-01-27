@@ -63,7 +63,36 @@ git push
 - A clear summary of the next step.
 - A **Piawai Check** in DBP-standard Malay to verify linguistic and logical alignment.
 
-### v) Pedagogical Logic: Why this format?
+### vi) Atomic Git Ritual (The Commit)
+Every response suggesting a logic or file change MUST use the following **bash code section**. This facilitates Atomic Git Hygiene and ensures the SKMS remains synchronised across the Hub and Spokes.
+
+```bash
+# ==============================================================================
+# 📜 DSOM Atomic Ritual: [Action Name]
+# ==============================================================================
+# type([type]): [short description]
+# 
+# Logic: [Explanation of the 'Why' behind this specific change/commit].
+# ==============================================================================
+
+# 1. Stage Changes
+git add [file_path]
+
+# 2. Update HISTORY.md (The Ledger)
+echo "- **[YYYY-MM-DD]:** [Brief Summary of Milestone]." >> HISTORY.md
+
+# 3. Update individual walkthrough (The Narrative)
+echo "## [YYYY-MM-DD] | Strategic Anchor: [Topic]
+- [Detail 1]
+- [Detail 2]" >> .agent/brain/member/{user}/walkthrough.md
+
+# 4. Finalise Sync
+git add HISTORY.md .agent/brain/member/{user}/walkthrough.md
+git commit -m "[type]([scope]): [message]"
+git push
+```
+
+### vii) Pedagogical Logic: Why this format?
 Before the Atomic Git Ritual, the AI MUST provide a section titled **"Pedagogical Logic"**. This section explains the underlying principles of the proposed change to prevent "Logic Decay."
 
 **Requirements:**

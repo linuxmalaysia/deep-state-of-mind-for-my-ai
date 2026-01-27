@@ -40,3 +40,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-01-27]: Integrated mandatory Pedagogical Logic section into AI Response Template.
 - **[2026-01-27]:** Merged structural tree and 3 Golden Rules into Hub-and-Spoke model documentation.
 - **[2026-01-27]:** Finalised Hub-and-Spoke Model v2.0 with full team roles and isolation rules.
+- **[2026-01-27]:** Mandated bash code block formatting for all Atomic Git Rituals in the AI Response Template.
