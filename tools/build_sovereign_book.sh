@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v3.8) - THE MASTER PROTOCOL
+# 📜 DSOM Sovereign Book Generator (v3.9) - THE MASTER PROTOCOL
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -30,6 +30,7 @@
 # No hardcoded member paths; dynamically resolves via $(whoami).
 # Logic: Hardened LuaLaTeX dependencies. Includes a comprehensive check for
 # TeX Live font metrics and emoji support.
+#
 # ==============================================================================
 # Logic 1: High-res timestamps & CC BY-SA 4.0 metadata.
 # Logic 2: Fail-safe Traps & strict TEMP_DIR verification.
@@ -104,7 +105,11 @@ mainfont: "DejaVu Serif"
 header-includes:
   - \usepackage{fancyhdr}
   - \pagestyle{empty}
-  - \usepackage{emoji}
+  - \usepackage{fontspec}
+  - \setmainfont{DejaVu Serif}
+  - \setmonofont{DejaVu Sans Mono}
+  - \newfontfamily{\emoji}{Noto Color Emoji}[Renderer=HarfBuzz]
+
 ---
 EOF
 
