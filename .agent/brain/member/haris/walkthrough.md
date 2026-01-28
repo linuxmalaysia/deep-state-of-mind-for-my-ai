@@ -56,3 +56,6 @@
 ## [2026-01-28] | Strategic Anchor: Operational Safety
 - Implemented 'trap' based cleanup for temporary artifacts.
 - Added variable validation to prevent unsafe 'rm -rf' execution.
+## [2026-01-28] | Strategic Anchor: Automated Archival
+- Integrated 'git add' and 'git commit' into the PDF build pipeline.
+- Established 'feat(archive)' as the semantic scope for build artifacts.
