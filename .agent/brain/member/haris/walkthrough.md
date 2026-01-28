@@ -110,3 +110,8 @@
 
 ## [2026-01-29] | Strategic Anchor: Protocol Finalisation
 - Finalised v3.11 of build_sovereign_book.sh with robust header injection.
+
+## [20260129_0057] | Build Ritual: Master Finalisation
+- Executed build_sovereign_book.sh v3.11.
+- Fixed LaTeX syntax via --include-in-header isolation.
+- Artifact archived: DSOM_Sovereign_Brain_20260129_0057.pdf
