@@ -65,3 +65,7 @@
 
 ## [2026-01-28] | Maintenance: Artifact Purge
 - Membuang DSOM_Sovereign_Brain_20260128_2320.pdf untuk menjaga integriti repositori.
+
+## [2026-01-28] | Debugging: SVG Rendering
+- Script v3.0 Discovery Report found 19 untracked files.
+- Build failed due to missing rsvg-convert. Action: Installed librsvg2-bin.
