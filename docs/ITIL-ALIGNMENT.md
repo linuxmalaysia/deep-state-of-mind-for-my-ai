@@ -109,6 +109,7 @@ ITIL phases are mapped directly to DSOM’s CRISP² hierarchy:
 
 ---
 
+```
 ## 10. 📜 Compliance & Standards
 DSOM enforces external standards to ensure portability.
 * **Documentation:** Follows Linux Documentation Project (LDP) structure.
@@ -138,7 +139,7 @@ flowchart TD
     S10 --> S9
     Operation_Layer --> Improvement_Layer
     Improvement_Layer --> Governance_Layer
-
+```
 ---
 *Verified by Harisfazillah Jamel | ITIL 4 Aligned | 2026-01-29*
 
