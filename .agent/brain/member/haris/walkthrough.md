@@ -150,3 +150,6 @@
 ## [2026-01-29] | Persona: Mirror of Knowledge
 - Established the reflective counterpart persona in docs/MIRROR-OF-KNOWLEDGE.md.
 - Enforced Standard UK English and reflective methodology for all future AI agents.
+
+## [2026-01-29] | Governance: ITIL 4 Finalisation
+- Finalised docs/ITIL-ALIGNMENT.md including Multi-Agent Federation and CRISP2 mapping.
