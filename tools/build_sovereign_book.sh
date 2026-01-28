@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v3.10) - THE MASTER PROTOCOL
+# 📜 DSOM Sovereign Book Generator (v3.11) - THE DEFINITIVE MASTER
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -38,32 +38,33 @@
 # Logic 4: YAML Alias Protection & Table Flattening.
 # Logic 5: Artifact Discovery (find/audit against SUMMARY.md).
 # Logic 6: Dynamic User Path Resolution ($(whoami)).
-# Logic 7: FULL ATOMIC RITUAL (Updates PDF, HISTORY.md, and walkthrough.md).
+# Logic 7: Header Isolation Strategy (Fixes LaTeX Syntax Errors).
+# Logic 8: FULL ATOMIC RITUAL (Updates PDF, HISTORY.md, and walkthrough.md).
 # ==============================================================================
 
 TIMESTAMP=$(date +%Y%m%d_%H%M)
 ISO_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 OUTPUT_FILE="DSOM_Sovereign_Brain_${TIMESTAMP}.pdf"
 METADATA_FILE="metadata.yaml"
+HEADER_FILE="header.tex"
 TEMP_DIR="build_tmp_${TIMESTAMP}"
 
-# Dynamic Identity Resolution
+# Dynamic Identity Resolution (No hardcoding)
 CURRENT_USER=$(whoami)
 WALKTHROUGH_PATH=".agent/brain/member/${CURRENT_USER}/walkthrough.md"
 
-# --- [1. Fail-Safe Cleanup] ---
+# --- [1. Fail-Safe Cleanup Function] ---
 cleanup() {
     echo "🧹 Performing Fail-Safe Cleanup..."
     if [ -n "${TEMP_DIR}" ] && [ -d "${TEMP_DIR}" ]; then
         rm -rf "${TEMP_DIR:?}"
     fi
-    if [ -f "${METADATA_FILE}" ]; then
-        rm -f "${METADATA_FILE:?}"
-    fi
+    [ -f "${METADATA_FILE}" ] && rm -f "${METADATA_FILE:?}"
+    [ -f "${HEADER_FILE}" ] && rm -f "${HEADER_FILE:?}"
 }
 trap cleanup EXIT SIGINT SIGTERM
 
-# --- [2. Dependency Check (Ubuntu/RHEL) + Expanded LaTeX Fonts] ---
+# --- [2. Dependency Check (Ubuntu/RHEL) + SVG & Emoji Tools] ---
 check_dependencies() {
     echo "🔍 Verifying environment prerequisites..."
     if ! command -v pandoc &> /dev/null || ! command -v lualatex &> /dev/null; then
@@ -81,6 +82,7 @@ check_dependencies
 # --- [3. Artifact Discovery Audit] ---
 echo "🔍 Auditing Sovereign Artifacts..."
 if [ ! -f "SUMMARY.md" ]; then echo "❌ Error: SUMMARY.md missing."; exit 1; fi
+
 LISTED_FILES=$(sed -n 's/.*(\(.*\))/\1/p' SUMMARY.md | grep -v "http" | grep -E "\.(md|txt)$")
 ACTUAL_FILES=$(find . -type f \( -name "*.md" -o -name "*.txt" \) -not -path "*/.*" -not -path "./$TEMP_DIR/*" | sed 's|./||')
 
@@ -91,10 +93,10 @@ for f in $ACTUAL_FILES; do
     fi
 done
 
-# --- [4. Build Prep & Metadata (RAW EOF FIX) ---
+# --- [4. Build Prep & Metadata (Isolated Header Fix) ---
 mkdir -p "$TEMP_DIR"
 
-# Step A: Tulis metadata yang memerlukan pembolehubah Bash
+# Step A: Clean YAML Metadata (No LaTeX backslashes here)
 cat > "$METADATA_FILE" <<EOF
 ---
 title: "DSOM For My AI: Sovereign Repository Manual"
@@ -103,20 +105,17 @@ date: "${ISO_DATE}"
 copyright: "© 2026 Harisfazillah Jamel. Licensed under CC BY-SA 4.0."
 lang: "en-GB"
 geometry: "a5paper, margin=1.5cm"
-mainfont: "DejaVu Serif"
-monofont: "DejaVu Sans Mono"
+---
 EOF
 
-# Step B: Sambung dengan Header LaTeX (Dilindungi oleh 'EOF' agar \ kekal asli)
-cat >> "$METADATA_FILE" <<'EOF'
-header-includes:
-  - \usepackage{fancyhdr}
-  - \pagestyle{empty}
-  - \usepackage{fontspec}
-  - \setmainfont{DejaVu Serif}
-  - \setmonofont{DejaVu Sans Mono}
-  - \newfontfamily{\emoji}{Noto Color Emoji}[Renderer=HarfBuzz]
----
+# Step B: Pure LaTeX Header (Protected via single-quoted EOF)
+cat > "$HEADER_FILE" <<'EOF'
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\newfontfamily{\emoji}{Noto Color Emoji}[Renderer=HarfBuzz]
 EOF
 
 # --- [5. Process & Flatten Artifacts] ---
@@ -125,37 +124,42 @@ PROCESSED_FILES=""
 for file in $LISTED_FILES; do
     if [ -f "$file" ]; then
         target="$TEMP_DIR/$(basename "$file")"
+        # Flatten tables + strip sub-metadata blocks
         pandoc "$file" --from markdown-yaml_metadata_block -t markdown-grid_tables+pipe_tables -o "$target"
         PROCESSED_FILES="$PROCESSED_FILES $target"
     fi
 done
 
-# --- [6. Build Engine (LuaLaTeX)] ---
+# --- [6. Build Engine (LuaLaTeX + Header Injection)] ---
 echo "🏗️  Building Sovereign Book for ${CURRENT_USER} via LuaLaTeX..."
 if pandoc $PROCESSED_FILES \
     --output="$OUTPUT_FILE" \
     --metadata-file="$METADATA_FILE" \
+    --include-in-header="$HEADER_FILE" \
     --toc \
     --number-sections \
     --pdf-engine=lualatex \
     --columns=1000 \
     -V links-as-notes=true; then
-    
+
     echo "⭐ Success: ${OUTPUT_FILE}"
 
     # --- [7. THE FULL ATOMIC RITUAL] ---
     echo "📡 Executing Atomic Git Ritual..."
     git add "$OUTPUT_FILE"
-    echo "- **[${TIMESTAMP}]:** Automated Build v3.8 (Hardened LuaLaTeX)." >> HISTORY.md
+
+    echo "- **[${TIMESTAMP}]:** Automated Build v3.11 (Isolated Header Fix)." >> HISTORY.md
     git add HISTORY.md
+
     if [ -f "$WALKTHROUGH_PATH" ]; then
-        echo -e "\n## [${TIMESTAMP}] | Build Ritual: Font Metric Fix\n- Upgraded to v3.8 with complete TeX Live font libraries.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
+        echo -e "\n## [${TIMESTAMP}] | Build Ritual: Master Finalisation\n- Executed build_sovereign_book.sh v3.11.\n- Fixed LaTeX syntax via --include-in-header isolation.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
         git add "$WALKTHROUGH_PATH"
     fi
-    git commit -m "feat(archive): auto-build v3.8 with hardened luatex"
+
+    git commit -m "feat(archive): auto-build v3.11 master for user ${CURRENT_USER}"
     echo "✅ All ledgers for ${CURRENT_USER} updated and committed."
 else
-    echo "❌ Build failed. Please verify TeX Live font packages."
+    echo "❌ Build failed. Please verify LaTeX logs and font installations."
     exit 1
 fi
 

@@ -107,3 +107,6 @@
 
 ## [2026-01-29] | Maintenance: Artifact Purge
 - Membuang PDF build pertama untuk mengekalkan kebersihan repositori.
+
+## [2026-01-29] | Strategic Anchor: Protocol Finalisation
+- Finalised v3.11 of build_sovereign_book.sh with robust header injection.
