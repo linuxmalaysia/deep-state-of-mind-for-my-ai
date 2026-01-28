@@ -90,3 +90,6 @@
 
 ## [2026-01-29] | Strategic Anchor: Protocol Re-unification
 - Re-established v3.6 of build_sovereign_book.sh as the Definitive Master.
+
+## [2026-01-29] | Tooling: Engine Migration
+- Migrated build_sovereign_book.sh to LuaLaTeX engine to fix fontspec errors.
