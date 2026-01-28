@@ -129,3 +129,7 @@
 
 ## [2026-01-29] | Final Handshake: Ready for Reanimation
 - Confirmed 100% integration of Manifesto, Build Tool, and Summary Index.
+
+## [2026-01-29] | Git Hygiene: Final Sync
+- Committed OPERATIONAL-SOVEREIGNTY.md.
+- Finalised build_sovereign_book.sh v3.11 for production use.
