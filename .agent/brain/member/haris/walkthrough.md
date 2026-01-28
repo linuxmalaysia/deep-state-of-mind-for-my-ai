@@ -96,3 +96,7 @@
 
 ## [2026-01-29] | Bugfix: Font Metric bad/missing
 - Updated build_sovereign_book.sh to check for texlive-fonts-recommended and plain-generic.
+
+## [20260129_0041] | Build Ritual: Font Metric Fix
+- Upgraded to v3.8 with complete TeX Live font libraries.
+- Artifact archived: DSOM_Sovereign_Brain_20260129_0041.pdf
