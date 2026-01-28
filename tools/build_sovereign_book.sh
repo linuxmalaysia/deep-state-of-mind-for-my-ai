@@ -113,6 +113,7 @@ cat > "$HEADER_FILE" <<'EOF'
 \usepackage{fancyhdr}
 \pagestyle{empty}
 \usepackage{fontspec}
+\usepackage{amsmath}
 \setmainfont{DejaVu Serif}
 \setmonofont{DejaVu Sans Mono}
 \newfontfamily{\emoji}{Noto Color Emoji}[Renderer=HarfBuzz]
