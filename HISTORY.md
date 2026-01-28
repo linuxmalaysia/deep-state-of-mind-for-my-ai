@@ -43,3 +43,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-27]:** Mandated bash code block formatting for all Atomic Git Rituals in the AI Response Template.
 - **[2026-01-28]:** Integrated Metacognitive Re-Sync prompt for human context recovery.
 - **[2026-01-28]:** Initialised build_sovereign_book.sh tool for semantic PDF generation.
+- **[2026-01-28]:** Implemented Table Flattening logic (v2.1) in the PDF generator.

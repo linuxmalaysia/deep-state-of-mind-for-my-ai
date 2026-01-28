@@ -1,62 +1,71 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v2.0)
+# 📜 DSOM Sovereign Book Generator (v2.1)
 #
-# Purpose: Generates an AI-optimised PDF for RAG and Human E-readers.
+# Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
-# Logic:   Strips visual noise (headers/footers) to ensure semantic continuity.
+# Partner: Generated with the help of Google Gemini
+# License: GNU GPL v3.0 or later
+#
+# Logic: Includes Table Flattening logic to ensure AI RAG systems correctly 
+# map headers to values without visual grid confusion.
 # ==============================================================================
 
 OUTPUT_FILE="DSOM_Sovereign_Brain_$(date +%Y%m%d).pdf"
 METADATA_FILE="metadata.yaml"
+TEMP_DIR="build_tmp"
 
-# 1. Generate Enhanced Metadata Block
+mkdir -p "$TEMP_DIR"
+
+# 1. Generate Metadata (as before)
 cat > "$METADATA_FILE" <<EOF
 ---
 title: "DSOM For My AI: Sovereign Repository Manual"
 author: "Harisfazillah Jamel (Lead Architect)"
-subject: "IT Infrastructure, AI Governance, Linux Architecture"
-keywords: [DSOM, Linux, High-Availability, Federated-AI]
 lang: "en-GB"
 geometry: "a5paper, margin=1.5cm"
-fontsize: 10pt
 header-includes:
   - \usepackage{fancyhdr}
   - \pagestyle{empty} 
-  - \fancyhf{} 
 ---
 EOF
 
-# 2. Parse SUMMARY.md ensuring sequence is maintained
-echo "🔍 Scanning SUMMARY.md for Sovereign Artifacts..."
+# 2. Parse SUMMARY.md
+echo "🔍 Scanning SUMMARY.md..."
 FILES=$(sed -n 's/.*(\(.*\))/\1/p' SUMMARY.md | grep -v "http" | grep "\.md")
 
-# 3. Validation and Member Log Injection
-VALID_FILES=""
+# 3. Table Flattening & Pre-processing Loop
+echo "🚜 Flattening tables and preparing artifacts..."
+PROCESSED_FILES=""
 for file in $FILES; do
     if [ -f "$file" ]; then
-        VALID_FILES="$VALID_FILES $file"
-    else
-        echo "⚠️ Warning: Skipped missing artifact: $file"
+        target="$TEMP_DIR/$(basename "$file")"
+        
+        # LOGIC: Use Pandoc to convert tables to a more robust pipe format
+        # This prevents complex multi-line cell issues in the PDF stream.
+        pandoc "$file" -t markdown-grid_tables+pipe_tables -o "$target"
+        
+        PROCESSED_FILES="$PROCESSED_FILES $target"
     fi
 done
 
-# 4. The Build Engine (Pandoc + XeLaTeX)
-echo "🏗️  Building Semantic PDF (AI-Ready)..."
+# 4. The Build Engine
+echo "🏗️  Building AI-Ready Sovereign Book..."
 
-pandoc $VALID_FILES \
+# --columns=1000: Prevents Pandoc from wrapping lines in tables/code, 
+# which is the #1 cause of broken AI context in PDFs.
+pandoc $PROCESSED_FILES \
     --output="$OUTPUT_FILE" \
     --metadata-file="$METADATA_FILE" \
     --toc \
-    --toc-depth=3 \
     --number-sections \
-    --highlight-style=tango \
     --pdf-engine=xelatex \
+    --columns=1000 \
     -V mainfont="DejaVu Serif" \
-    -V monofont="DejaVu Sans Mono" \
-    -V colorlinks=true \
     -V links-as-notes=true
 
 echo "✅ Success. Generated: $OUTPUT_FILE"
-rm "$METADATA_FILE"
+
+# Cleanup
+rm -rf "$TEMP_DIR" "$METADATA_FILE"
 

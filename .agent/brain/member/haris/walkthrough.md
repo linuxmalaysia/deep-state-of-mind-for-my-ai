@@ -44,3 +44,6 @@
 ## [2026-01-28] | Strategic Anchor: Knowledge Portability
 - Codified the semantic PDF export ritual using Pandoc and XeLaTeX.
 - Optimized output for AI RAG ingestion by stripping headers and footers.
+## [2026-01-28] | Strategic Anchor: Data Normalisation
+- Integrated --columns=1000 and grid_table normalization into the PDF build.
+- Fixed table-wrapping issues that cause RAG context decay.
