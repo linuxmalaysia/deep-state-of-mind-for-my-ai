@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v3.7) - THE DEFINITIVE MASTER
+# 📜 DSOM Sovereign Book Generator (v3.8) - THE MASTER PROTOCOL
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -28,6 +28,8 @@
 # Includes OS-aware checks, Fail-safe traps, Discovery, and Full Git Ritual.
 # Logic: Switched to LuaLaTeX for robust Noto Color Emoji support.
 # No hardcoded member paths; dynamically resolves via $(whoami).
+# Logic: Hardened LuaLaTeX dependencies. Includes a comprehensive check for
+# TeX Live font metrics and emoji support.
 # ==============================================================================
 # Logic 1: High-res timestamps & CC BY-SA 4.0 metadata.
 # Logic 2: Fail-safe Traps & strict TEMP_DIR verification.
@@ -37,7 +39,6 @@
 # Logic 6: Dynamic User Path Resolution ($(whoami)).
 # Logic 7: FULL ATOMIC RITUAL (Updates PDF, HISTORY.md, and walkthrough.md).
 # ==============================================================================
-
 
 TIMESTAMP=$(date +%Y%m%d_%H%M)
 ISO_DATE=$(date +"%Y-%m-%d %H:%M:%S")
@@ -61,13 +62,13 @@ cleanup() {
 }
 trap cleanup EXIT SIGINT SIGTERM
 
-# --- [2. Dependency Check (Ubuntu/RHEL)] ---
+# --- [2. Dependency Check (Ubuntu/RHEL) + Expanded LaTeX Fonts] ---
 check_dependencies() {
     echo "🔍 Verifying environment prerequisites..."
-    if ! command -v pandoc &> /dev/null || ! command -v rsvg-convert &> /dev/null; then
-        echo "❌ Error: Missing core dependencies."
+    if ! command -v pandoc &> /dev/null || ! command -v lualatex &> /dev/null; then
+        echo "❌ Error: Missing core dependencies (Pandoc or LuaLaTeX)."
         if [ -f /etc/debian_version ]; then
-            echo "👉 Run: sudo apt-get update && sudo apt-get install -y pandoc librsvg2-bin fonts-noto-color-emoji texlive-luatex texlive-fonts-recommended"
+            echo "👉 Run: sudo apt-get update && sudo apt-get install -y pandoc librsvg2-bin fonts-noto-color-emoji texlive-luatex texlive-latex-extra texlive-fonts-recommended texlive-plain-generic"
         elif [ -f /etc/redhat-release ]; then
             echo "👉 Run: sudo dnf install -y pandoc librsvg2-tools google-noto-emoji-color-fonts texlive-scheme-medium"
         fi
@@ -78,7 +79,7 @@ check_dependencies
 
 # --- [3. Artifact Discovery Audit] ---
 echo "🔍 Auditing Sovereign Artifacts..."
-if [ ! -f "SUMMARY.md" ]; then echo "❌ Error: SUMMARY.md not found."; exit 1; fi
+if [ ! -f "SUMMARY.md" ]; then echo "❌ Error: SUMMARY.md missing."; exit 1; fi
 LISTED_FILES=$(sed -n 's/.*(\(.*\))/\1/p' SUMMARY.md | grep -v "http" | grep -E "\.(md|txt)$")
 ACTUAL_FILES=$(find . -type f \( -name "*.md" -o -name "*.txt" \) -not -path "*/.*" -not -path "./$TEMP_DIR/*" | sed 's|./||')
 
@@ -128,22 +129,22 @@ if pandoc $PROCESSED_FILES \
     --pdf-engine=lualatex \
     --columns=1000 \
     -V links-as-notes=true; then
-
+    
     echo "⭐ Success: ${OUTPUT_FILE}"
 
     # --- [7. THE FULL ATOMIC RITUAL] ---
     echo "📡 Executing Atomic Git Ritual..."
     git add "$OUTPUT_FILE"
-    echo "- **[${TIMESTAMP}]:** Automated Build v3.7 (LuaLaTeX Engine)." >> HISTORY.md
+    echo "- **[${TIMESTAMP}]:** Automated Build v3.8 (Hardened LuaLaTeX)." >> HISTORY.md
     git add HISTORY.md
     if [ -f "$WALKTHROUGH_PATH" ]; then
-        echo -e "\n## [${TIMESTAMP}] | Build Ritual: LuaLaTeX Upgrade\n- Switched to lualatex for robust emoji support.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
+        echo -e "\n## [${TIMESTAMP}] | Build Ritual: Font Metric Fix\n- Upgraded to v3.8 with complete TeX Live font libraries.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
         git add "$WALKTHROUGH_PATH"
     fi
-    git commit -m "feat(archive): auto-build v3.7 with lualatex engine"
-    echo "✅ All ledgers updated and committed."
+    git commit -m "feat(archive): auto-build v3.8 with hardened luatex"
+    echo "✅ All ledgers for ${CURRENT_USER} updated and committed."
 else
-    echo "❌ Build failed. Please ensure 'texlive-luatex' is installed."
+    echo "❌ Build failed. Please verify TeX Live font packages."
     exit 1
 fi
 

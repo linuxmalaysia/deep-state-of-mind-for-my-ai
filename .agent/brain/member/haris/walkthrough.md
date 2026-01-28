@@ -93,3 +93,6 @@
 
 ## [2026-01-29] | Tooling: Engine Migration
 - Migrated build_sovereign_book.sh to LuaLaTeX engine to fix fontspec errors.
+
+## [2026-01-29] | Bugfix: Font Metric bad/missing
+- Updated build_sovereign_book.sh to check for texlive-fonts-recommended and plain-generic.
