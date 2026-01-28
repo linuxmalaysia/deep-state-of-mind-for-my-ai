@@ -115,3 +115,7 @@
 - Executed build_sovereign_book.sh v3.11.
 - Fixed LaTeX syntax via --include-in-header isolation.
 - Artifact archived: DSOM_Sovereign_Brain_20260129_0057.pdf
+
+## [2026-01-29] | Milestone: Sovereign Archival Operational
+- Successfully bypassed LaTeX syntax conflicts using v3.11.
+- PDF artifact 20260129_0057 is the new SSoT for documentation.
