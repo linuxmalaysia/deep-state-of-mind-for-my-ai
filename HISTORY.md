@@ -51,3 +51,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-28]:** Finalised Sovereign Book Generator v2.6 with full safety and Git automation logic.
 - **[2026-01-28]:** Pembersihan (Purge) fail PDF lama untuk penyelarasan v3.0.
 - **[2026-01-28]:** Troubleshooting v3.0 build. Identified missing 'librsvg2-bin' for SVG support.
+- **[2026-01-28]:** Upgraded build tool to v3.1. Added SVG rendering dependencies (librsvg).

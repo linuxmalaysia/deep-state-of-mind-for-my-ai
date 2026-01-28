@@ -69,3 +69,6 @@
 ## [2026-01-28] | Debugging: SVG Rendering
 - Script v3.0 Discovery Report found 19 untracked files.
 - Build failed due to missing rsvg-convert. Action: Installed librsvg2-bin.
+
+## [2026-01-28] | Tooling: SVG Rendering Support
+- Updated build_sovereign_book.sh with OS-aware SVG library checks.
