@@ -1,17 +1,20 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v2.2)
+# 📜 DSOM Sovereign Book Generator (v2.3)
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
 # Partner: Generated with the help of Google Gemini
-# License: GNU GPL v3.0 or later
+# License: GNU GPL v3.0 or later (Script) / CC BY-SA 4.0 (Output Content)
 #
-# Logic: Includes Environment Awareness for Ubuntu/RHEL and Table Flattening 
-# logic to ensure AI RAG systems correctly map headers to values.
+# Logic: Adds high-resolution timestamps and CC BY-SA 4.0 licensing to
+# both the filename and internal metadata for archival integrity.
 # ==============================================================================
 
-OUTPUT_FILE="DSOM_Sovereign_Brain_$(date +%Y%m%d).pdf"
+# High-resolution timestamp for filename and metadata
+TIMESTAMP=$(date +%Y%m%d_%H%M)
+ISO_DATE=$(date +"%Y-%m-%d %H:%M:%S")
+OUTPUT_FILE="DSOM_Sovereign_Brain_${TIMESTAMP}.pdf"
 METADATA_FILE="metadata.yaml"
 TEMP_DIR="build_tmp"
 
@@ -30,11 +33,13 @@ check_dependencies() {
 
 check_dependencies
 
-# --- [2. Generate Metadata] ---
+# --- [2. Generate Metadata with Copyright & Timestamp] ---
 cat > "$METADATA_FILE" <<EOF
 ---
 title: "DSOM For My AI: Sovereign Repository Manual"
 author: "Harisfazillah Jamel (Lead Architect)"
+date: "${ISO_DATE}"
+copyright: "© 2026 Harisfazillah Jamel. Licensed under CC BY-SA 4.0 (GPL v3 equivalent for docs)."
 lang: "en-GB"
 geometry: "a5paper, margin=1.5cm"
 header-includes:
@@ -54,14 +59,13 @@ PROCESSED_FILES=""
 for file in $FILES; do
     if [ -f "$file" ]; then
         target="$TEMP_DIR/$(basename "$file")"
-        # Flattening logic: Normalises tables to grid/pipe standards
         pandoc "$file" -t markdown-grid_tables+pipe_tables -o "$target"
         PROCESSED_FILES="$PROCESSED_FILES $target"
     fi
 done
 
 # --- [5. Build Engine] ---
-echo "🏗️  Building AI-Ready Sovereign Book..."
+echo "🏗️  Building AI-Ready Sovereign Book [${TIMESTAMP}]..."
 pandoc $PROCESSED_FILES \
     --output="$OUTPUT_FILE" \
     --metadata-file="$METADATA_FILE" \

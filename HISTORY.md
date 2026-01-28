@@ -45,3 +45,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-28]:** Initialised build_sovereign_book.sh tool for semantic PDF generation.
 - **[2026-01-28]:** Implemented Table Flattening logic (v2.1) in the PDF generator.
 - **[2026-01-28]:** Upgraded PDF generator with Ubuntu/RHEL dependency checks.
+- **[2026-01-28]:** Added high-res timestamping and CC BY-SA 4.0 license to PDF generator.
