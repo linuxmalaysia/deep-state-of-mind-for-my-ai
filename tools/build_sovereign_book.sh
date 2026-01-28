@@ -99,8 +99,8 @@ mkdir -p "$TEMP_DIR"
 # Step A: Clean YAML Metadata (No LaTeX backslashes here)
 cat > "$METADATA_FILE" <<EOF
 ---
-title: "DSOM For My AI: Sovereign Repository Manual"
-author: "${CURRENT_USER^} (via DSOM Protocol)"
+title: "DSOM Sovereign Brain: Architectural Repository Manual"
+author: "${CURRENT_USER^} (via Sovereign Protocol)"
 date: "${ISO_DATE}"
 copyright: "© 2026 Harisfazillah Jamel. Licensed under CC BY-SA 4.0."
 lang: "en-GB"
