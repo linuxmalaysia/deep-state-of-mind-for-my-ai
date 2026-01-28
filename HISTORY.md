@@ -61,3 +61,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-29]:** Upgraded PDF tool to v3.8. Hardened LuaLaTeX font dependencies.
 - **[20260129_0041]:** Automated Build v3.8 (Hardened LuaLaTeX).
 - **[2026-01-29]:** Kejayaan Pertama! Sovereign Book PDF berjaya dijana menggunakan v3.8.
+- **[2026-01-29]:** Pembersihan fail PDF DSOM_Sovereign_Brain_20260128_0041.pdf selepas pengesahan build.

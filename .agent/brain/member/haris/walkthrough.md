@@ -104,3 +104,6 @@
 ## [2026-01-29] | Achievement: Sovereign Archival Active
 - Berjaya menjana artifact PDF pertama dengan penjejakan audit Discovery aktif.
 - Sistem build v3.8 disahkan stabil pada Ubuntu Noble.
+
+## [2026-01-29] | Maintenance: Artifact Purge
+- Membuang PDF build pertama untuk mengekalkan kebersihan repositori.
