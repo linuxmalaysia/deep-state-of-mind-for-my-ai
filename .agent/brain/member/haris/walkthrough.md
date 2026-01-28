@@ -59,3 +59,6 @@
 ## [2026-01-28] | Strategic Anchor: Automated Archival
 - Integrated 'git add' and 'git commit' into the PDF build pipeline.
 - Established 'feat(archive)' as the semantic scope for build artifacts.
+## [2026-01-28] | Strategic Anchor: Tool Consolidation
+- Merged OS-aware dependency checks with fail-safe trap logic.
+- Finalised automated Git archival for documentation artifacts.
