@@ -60,6 +60,20 @@ State: **'Sovereign State Synchronised. Ready to co-create value.'**"
 
 ---
 
+"What was the soul of our last conversation?"
+
+"DSOM RE-SYNC REQUEST: I have been away for [X] days. Referencing our .agent/brain/ artifacts and our previous dialogue, provide a 'Executive Re-sync' covering:
+
+    The Last Mental Anchor: What was the final major decision we made?
+
+    The Logic Evolution: Why did we choose the current path over alternatives?
+
+    The Pending Friction: What were we stuck on or debating when we last spoke?
+
+    The Immediate Handshake: What is the very next atomic step I need to approve?"
+
+---
+
 ## 🧠 Pedagogical Logic: The 'Why' of v1.8
 
 1. **Substance Enforcement:** By incorporating the "Mirror Law", we prevent the AI from generating "dull" or inaccurate code resulting from vague human instructions. It ensures the output is a high-fidelity reflection of clear architectural thought.
