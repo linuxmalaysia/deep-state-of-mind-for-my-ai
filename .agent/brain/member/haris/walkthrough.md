@@ -137,3 +137,8 @@
 ## [2026-01-29] | Security: AI Filter Bypass
 - Identified 'Deep State' keyword as a safety trigger.
 - Neutralised PDF title to 'DSOM Sovereign Brain' in build tools.
+
+## [20260129_0634] | Build Ritual: Master Finalisation
+- Executed build_sovereign_book.sh v3.11.
+- Fixed LaTeX syntax via --include-in-header isolation.
+- Artifact archived: DSOM_Sovereign_Brain_20260129_0634.pdf
