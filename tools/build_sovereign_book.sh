@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v3.6) - THE DEFINITIVE MASTER
+# 📜 DSOM Sovereign Book Generator (v3.7) - THE DEFINITIVE MASTER
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -26,6 +26,8 @@
 # no sovereign artifacts are left behind.
 # Logic: Unified Build Pipeline with Emoji Support (Noto Color Emoji).
 # Includes OS-aware checks, Fail-safe traps, Discovery, and Full Git Ritual.
+# Logic: Switched to LuaLaTeX for robust Noto Color Emoji support.
+# No hardcoded member paths; dynamically resolves via $(whoami).
 # ==============================================================================
 # Logic 1: High-res timestamps & CC BY-SA 4.0 metadata.
 # Logic 2: Fail-safe Traps & strict TEMP_DIR verification.
@@ -35,6 +37,7 @@
 # Logic 6: Dynamic User Path Resolution ($(whoami)).
 # Logic 7: FULL ATOMIC RITUAL (Updates PDF, HISTORY.md, and walkthrough.md).
 # ==============================================================================
+
 
 TIMESTAMP=$(date +%Y%m%d_%H%M)
 ISO_DATE=$(date +"%Y-%m-%d %H:%M:%S")
@@ -46,7 +49,7 @@ TEMP_DIR="build_tmp_${TIMESTAMP}"
 CURRENT_USER=$(whoami)
 WALKTHROUGH_PATH=".agent/brain/member/${CURRENT_USER}/walkthrough.md"
 
-# --- [1. Fail-Safe Cleanup Function] ---
+# --- [1. Fail-Safe Cleanup] ---
 cleanup() {
     echo "🧹 Performing Fail-Safe Cleanup..."
     if [ -n "${TEMP_DIR}" ] && [ -d "${TEMP_DIR}" ]; then
@@ -58,13 +61,13 @@ cleanup() {
 }
 trap cleanup EXIT SIGINT SIGTERM
 
-# --- [2. Dependency Check (Ubuntu/RHEL) + SVG & Emoji Tools] ---
+# --- [2. Dependency Check (Ubuntu/RHEL)] ---
 check_dependencies() {
     echo "🔍 Verifying environment prerequisites..."
     if ! command -v pandoc &> /dev/null || ! command -v rsvg-convert &> /dev/null; then
         echo "❌ Error: Missing core dependencies."
         if [ -f /etc/debian_version ]; then
-            echo "👉 Run: sudo apt-get update && sudo apt-get install -y pandoc librsvg2-bin fonts-noto-color-emoji texlive-xetex texlive-fonts-recommended texlive-latex-extra"
+            echo "👉 Run: sudo apt-get update && sudo apt-get install -y pandoc librsvg2-bin fonts-noto-color-emoji texlive-luatex texlive-fonts-recommended"
         elif [ -f /etc/redhat-release ]; then
             echo "👉 Run: sudo dnf install -y pandoc librsvg2-tools google-noto-emoji-color-fonts texlive-scheme-medium"
         fi
@@ -76,7 +79,6 @@ check_dependencies
 # --- [3. Artifact Discovery Audit] ---
 echo "🔍 Auditing Sovereign Artifacts..."
 if [ ! -f "SUMMARY.md" ]; then echo "❌ Error: SUMMARY.md not found."; exit 1; fi
-
 LISTED_FILES=$(sed -n 's/.*(\(.*\))/\1/p' SUMMARY.md | grep -v "http" | grep -E "\.(md|txt)$")
 ACTUAL_FILES=$(find . -type f \( -name "*.md" -o -name "*.txt" \) -not -path "*/.*" -not -path "./$TEMP_DIR/*" | sed 's|./||')
 
@@ -87,7 +89,7 @@ for f in $ACTUAL_FILES; do
     fi
 done
 
-# --- [4. Build Preparation & Metadata] ---
+# --- [4. Build Prep & Metadata for LuaLaTeX] ---
 mkdir -p "$TEMP_DIR"
 cat > "$METADATA_FILE" <<EOF
 ---
@@ -101,8 +103,7 @@ mainfont: "DejaVu Serif"
 header-includes:
   - \usepackage{fancyhdr}
   - \pagestyle{empty}
-  - \usepackage{fontspec}
-  - \newfontfamily{\\emojifont}{Noto Color Emoji}[Renderer=HarfBuzz]
+  - \usepackage{emoji}
 ---
 EOF
 
@@ -112,20 +113,19 @@ PROCESSED_FILES=""
 for file in $LISTED_FILES; do
     if [ -f "$file" ]; then
         target="$TEMP_DIR/$(basename "$file")"
-        # Strip YAML to prevent Alias errors + Flatten tables
         pandoc "$file" --from markdown-yaml_metadata_block -t markdown-grid_tables+pipe_tables -o "$target"
         PROCESSED_FILES="$PROCESSED_FILES $target"
     fi
 done
 
-# --- [6. Build Engine] ---
-echo "🏗️  Building Sovereign Book for ${CURRENT_USER}..."
+# --- [6. Build Engine (LuaLaTeX)] ---
+echo "🏗️  Building Sovereign Book for ${CURRENT_USER} via LuaLaTeX..."
 if pandoc $PROCESSED_FILES \
     --output="$OUTPUT_FILE" \
     --metadata-file="$METADATA_FILE" \
     --toc \
     --number-sections \
-    --pdf-engine=xelatex \
+    --pdf-engine=lualatex \
     --columns=1000 \
     -V links-as-notes=true; then
 
@@ -134,19 +134,16 @@ if pandoc $PROCESSED_FILES \
     # --- [7. THE FULL ATOMIC RITUAL] ---
     echo "📡 Executing Atomic Git Ritual..."
     git add "$OUTPUT_FILE"
-
-    echo "- **[${TIMESTAMP}]:** Automated Build v3.6 by ${CURRENT_USER} (Unified Master)." >> HISTORY.md
+    echo "- **[${TIMESTAMP}]:** Automated Build v3.7 (LuaLaTeX Engine)." >> HISTORY.md
     git add HISTORY.md
-
     if [ -f "$WALKTHROUGH_PATH" ]; then
-        echo -e "\n## [${TIMESTAMP}] | Build Ritual: Unified Master\n- Executed build_sovereign_book.sh v3.6.\n- Multi-user dynamic path: ${WALKTHROUGH_PATH}.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
+        echo -e "\n## [${TIMESTAMP}] | Build Ritual: LuaLaTeX Upgrade\n- Switched to lualatex for robust emoji support.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
         git add "$WALKTHROUGH_PATH"
     fi
-
-    git commit -m "feat(archive): auto-build v3.6 master for user ${CURRENT_USER}"
-    echo "✅ All ledgers for ${CURRENT_USER} updated and committed."
+    git commit -m "feat(archive): auto-build v3.7 with lualatex engine"
+    echo "✅ All ledgers updated and committed."
 else
-    echo "❌ Build failed. Please verify Noto Color Emoji and librsvg installations."
+    echo "❌ Build failed. Please ensure 'texlive-luatex' is installed."
     exit 1
 fi
 
