@@ -122,3 +122,7 @@
 
 ## [2026-01-29] | Milestone: Strategic Manifesto Defined
 - Formalised the integration of DSOM, CAPM, and ITIL 4 into docs/OPERATIONAL-SOVEREIGNTY.md.
+
+## [2026-01-29] | Documentation: Index Update
+- Integrated docs/OPERATIONAL-SOVEREIGNTY.md into SUMMARY.md.
+- Updated Human Audit timestamp to 2026-01-29.
