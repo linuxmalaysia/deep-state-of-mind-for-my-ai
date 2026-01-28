@@ -72,3 +72,8 @@
 
 ## [2026-01-28] | Tooling: SVG Rendering Support
 - Updated build_sovereign_book.sh with OS-aware SVG library checks.
+
+## [20260128_2354] | Build Ritual
+- Executed build_sovereign_book.sh v3.1.
+- SVG rendering support verified via librsvg.
+- Artifact archived: DSOM_Sovereign_Brain_20260128_2354.pdf
