@@ -53,3 +53,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-28]:** Troubleshooting v3.0 build. Identified missing 'librsvg2-bin' for SVG support.
 - **[2026-01-28]:** Upgraded build tool to v3.1. Added SVG rendering dependencies (librsvg).
 - **[20260128_2354]:** Automated Build of Sovereign Brain PDF (v3.1) with SVG support.
+- **[2026-01-28]:** Updated SUMMARY.md to include 19 previously untracked artifacts.
