@@ -87,3 +87,6 @@
 
 ## [2026-01-29] | Maintenance: Artifact Purge
 - Membuang fail PDF lama untuk menjaga integriti repositori sebelum sesi v3.2.
+
+## [2026-01-29] | Strategic Anchor: Protocol Re-unification
+- Re-established v3.6 of build_sovereign_book.sh as the Definitive Master.
