@@ -119,3 +119,6 @@
 ## [2026-01-29] | Milestone: Sovereign Archival Operational
 - Successfully bypassed LaTeX syntax conflicts using v3.11.
 - PDF artifact 20260129_0057 is the new SSoT for documentation.
+
+## [2026-01-29] | Milestone: Strategic Manifesto Defined
+- Formalised the integration of DSOM, CAPM, and ITIL 4 into docs/OPERATIONAL-SOVEREIGNTY.md.
