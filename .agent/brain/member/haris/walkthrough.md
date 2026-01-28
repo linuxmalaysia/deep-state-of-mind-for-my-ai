@@ -41,3 +41,6 @@
 ## [2026-01-28] | Strategic Anchor: Human Memory Support
 - Added Re-Sync prompt to help the Lead Architect recover 'The Why' after gaps.
 - Linked re-sync rituals to the SOD process for DSOM.
+## [2026-01-28] | Strategic Anchor: Knowledge Portability
+- Codified the semantic PDF export ritual using Pandoc and XeLaTeX.
+- Optimized output for AI RAG ingestion by stripping headers and footers.
