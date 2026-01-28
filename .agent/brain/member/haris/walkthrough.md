@@ -53,3 +53,6 @@
 ## [2026-01-28] | Strategic Anchor: Archival Standards
 - Integrated $(date +%Y%m%d_%H%M) for filename uniqueness.
 - Codified CC BY-SA 4.0 as the documentation license standard for DSOM.
+## [2026-01-28] | Strategic Anchor: Operational Safety
+- Implemented 'trap' based cleanup for temporary artifacts.
+- Added variable validation to prevent unsafe 'rm -rf' execution.
