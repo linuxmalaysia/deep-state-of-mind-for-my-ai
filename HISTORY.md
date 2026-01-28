@@ -49,3 +49,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-28]:** Hardened PDF generator with fail-safe cleanup and exit traps.
 - **[2026-01-28]:** Enabled automated Git commit for PDF artifacts in generator (v2.5).
 - **[2026-01-28]:** Finalised Sovereign Book Generator v2.6 with full safety and Git automation logic.
+- **[2026-01-28]:** Pembersihan (Purge) fail PDF lama untuk penyelarasan v3.0.
