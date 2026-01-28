@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v2.4)
+# 📜 DSOM Sovereign Book Generator (v2.5)
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -11,45 +11,35 @@
 # both the filename and internal metadata for archival integrity.
 # Logic: Implements Fail-Safe Directory Management. Uses traps for cleanup
 # and strict verification of TEMP_DIR creation/deletion to protect the SSoT.
+# Logic: Includes Automated Git Integration to commit the final PDF artifact
+# into the sovereign repository, ensuring archival persistence.
 # ==============================================================================
 
 TIMESTAMP=$(date +%Y%m%d_%H%M)
 ISO_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 OUTPUT_FILE="DSOM_Sovereign_Brain_${TIMESTAMP}.pdf"
 METADATA_FILE="metadata.yaml"
-TEMP_DIR="build_tmp_${TIMESTAMP}" # Unique temp dir per run
+TEMP_DIR="build_tmp_${TIMESTAMP}"
 
 # --- [1. Fail-Safe Cleanup Function] ---
 cleanup() {
-    echo "🧹 Performing Fail-Safe Cleanup..."
     if [ -d "${TEMP_DIR}" ]; then
         rm -rf "${TEMP_DIR:?}"
-        echo "✅ Removed temporary directory: ${TEMP_DIR}"
     fi
     if [ -f "${METADATA_FILE}" ]; then
         rm -f "${METADATA_FILE:?}"
-        echo "✅ Removed temporary metadata file."
     fi
 }
-
-# Trap signals (Exit, Interrupt, Terminate) to trigger cleanup
 trap cleanup EXIT SIGINT SIGTERM
 
-# --- [2. Dependency Check] ---
-check_dependencies() {
-    if ! command -v pandoc &> /dev/null; then
-        echo "❌ Error: pandoc is not installed."
-        exit 1
-    fi
-}
-check_dependencies
-
-# --- [3. Safe Directory Creation] ---
-echo "📁 Initialising temporary workspace..."
-if ! mkdir -p "$TEMP_DIR"; then
-    echo "❌ CRITICAL: Failed to create temporary directory ${TEMP_DIR}. Aborting."
+# --- [2. Pre-flight Checks] ---
+if ! command -v pandoc &> /dev/null; then
+    echo "❌ Error: pandoc missing. Aborting."
     exit 1
 fi
+
+# --- [3. Safe Initialisation] ---
+mkdir -p "$TEMP_DIR"
 
 # --- [4. Generate Metadata] ---
 cat > "$METADATA_FILE" <<EOF
@@ -62,28 +52,23 @@ lang: "en-GB"
 geometry: "a5paper, margin=1.5cm"
 header-includes:
   - \usepackage{fancyhdr}
-  - \pagestyle{empty} 
+  - \pagestyle{empty}
 ---
 EOF
 
-# --- [5. Parse SUMMARY.md & Flatten Tables] ---
-echo "🔍 Scanning SUMMARY.md..."
+# --- [5. Process Artifacts] ---
 FILES=$(sed -n 's/.*(\(.*\))/\1/p' SUMMARY.md | grep -v "http" | grep "\.md")
-
 PROCESSED_FILES=""
 for file in $FILES; do
     if [ -f "$file" ]; then
         target="$TEMP_DIR/$(basename "$file")"
-        if pandoc "$file" -t markdown-grid_tables+pipe_tables -o "$target"; then
-            PROCESSED_FILES="$PROCESSED_FILES $target"
-        else
-            echo "⚠️ Warning: Failed to process $file. Skipping."
-        fi
+        pandoc "$file" -t markdown-grid_tables+pipe_tables -o "$target"
+        PROCESSED_FILES="$PROCESSED_FILES $target"
     fi
 done
 
 # --- [6. Build Engine] ---
-echo "🏗️  Building AI-Ready Sovereign Book [${TIMESTAMP}]..."
+echo "🏗️  Building Sovereign Book [${TIMESTAMP}]..."
 if pandoc $PROCESSED_FILES \
     --output="$OUTPUT_FILE" \
     --metadata-file="$METADATA_FILE" \
@@ -93,10 +78,17 @@ if pandoc $PROCESSED_FILES \
     --columns=1000 \
     -V mainfont="DejaVu Serif" \
     -V links-as-notes=true; then
+
     echo "⭐ Success! Generated: ${OUTPUT_FILE}"
+
+    # --- [7. Automated Git Ritual] ---
+    echo "📡 Committing artifact to Sovereign Repository..."
+    git add "$OUTPUT_FILE"
+    git commit -m "feat(archive): auto-generate sovereign brain PDF ${TIMESTAMP}"
+    echo "✅ Artifact committed successfully."
+
 else
-    echo "❌ CRITICAL: PDF Build failed."
+    echo "❌ CRITICAL: PDF Build failed. Git commit skipped."
     exit 1
 fi
 
-# Cleanup is handled automatically by the 'trap'
