@@ -38,3 +38,6 @@
 ## [2026-01-27] | Strategic Anchor: Operational Formatting
 - Formalised the use of fenced bash blocks for all terminal commands.
 - Ensured rituals are copy-paste ready for the Lead Architect.
+## [2026-01-28] | Strategic Anchor: Human Memory Support
+- Added Re-Sync prompt to help the Lead Architect recover 'The Why' after gaps.
+- Linked re-sync rituals to the SOD process for DSOM.
