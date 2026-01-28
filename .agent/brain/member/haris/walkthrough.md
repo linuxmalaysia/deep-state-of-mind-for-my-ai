@@ -47,3 +47,6 @@
 ## [2026-01-28] | Strategic Anchor: Data Normalisation
 - Integrated --columns=1000 and grid_table normalization into the PDF build.
 - Fixed table-wrapping issues that cause RAG context decay.
+## [2026-01-28] | Strategic Anchor: Environment Awareness
+- Added pre-flight dependency checks for pandoc and xelatex.
+- Integrated automated OS detection for tailored package installation help.
