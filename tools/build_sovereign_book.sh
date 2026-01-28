@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v3.9) - THE MASTER PROTOCOL
+# 📜 DSOM Sovereign Book Generator (v3.10) - THE MASTER PROTOCOL
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -91,8 +91,10 @@ for f in $ACTUAL_FILES; do
     fi
 done
 
-# --- [4. Build Prep & Metadata for LuaLaTeX] ---
+# --- [4. Build Prep & Metadata (RAW EOF FIX) ---
 mkdir -p "$TEMP_DIR"
+
+# Step A: Tulis metadata yang memerlukan pembolehubah Bash
 cat > "$METADATA_FILE" <<EOF
 ---
 title: "DSOM For My AI: Sovereign Repository Manual"
@@ -102,6 +104,11 @@ copyright: "© 2026 Harisfazillah Jamel. Licensed under CC BY-SA 4.0."
 lang: "en-GB"
 geometry: "a5paper, margin=1.5cm"
 mainfont: "DejaVu Serif"
+monofont: "DejaVu Sans Mono"
+EOF
+
+# Step B: Sambung dengan Header LaTeX (Dilindungi oleh 'EOF' agar \ kekal asli)
+cat >> "$METADATA_FILE" <<'EOF'
 header-includes:
   - \usepackage{fancyhdr}
   - \pagestyle{empty}
@@ -109,7 +116,6 @@ header-includes:
   - \setmainfont{DejaVu Serif}
   - \setmonofont{DejaVu Sans Mono}
   - \newfontfamily{\emoji}{Noto Color Emoji}[Renderer=HarfBuzz]
-
 ---
 EOF
 
