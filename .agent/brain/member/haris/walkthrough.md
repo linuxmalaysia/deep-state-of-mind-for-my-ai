@@ -50,3 +50,6 @@
 ## [2026-01-28] | Strategic Anchor: Environment Awareness
 - Added pre-flight dependency checks for pandoc and xelatex.
 - Integrated automated OS detection for tailored package installation help.
+## [2026-01-28] | Strategic Anchor: Archival Standards
+- Integrated $(date +%Y%m%d_%H%M) for filename uniqueness.
+- Codified CC BY-SA 4.0 as the documentation license standard for DSOM.
