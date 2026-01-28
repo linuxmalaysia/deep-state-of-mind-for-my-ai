@@ -81,3 +81,6 @@
 ## [2026-01-28] | Structure: Full Artifact Integration
 - Performed a full sync of SUMMARY.md based on Discovery Report v3.1.
 - Added Rituals, Agent Configs, and Automation Docs to the Sovereign Book.
+
+## [2026-01-29] | Tooling: Emoji Fidelity
+- Configured build_sovereign_book.sh with Noto Color Emoji fallback logic.
