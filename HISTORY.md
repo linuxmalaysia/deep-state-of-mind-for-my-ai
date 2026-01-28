@@ -60,3 +60,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-29]:** Upgraded PDF tool to v3.7. Switched to LuaLaTeX for emoji stability.
 - **[2026-01-29]:** Upgraded PDF tool to v3.8. Hardened LuaLaTeX font dependencies.
 - **[20260129_0041]:** Automated Build v3.8 (Hardened LuaLaTeX).
+- **[2026-01-29]:** Kejayaan Pertama! Sovereign Book PDF berjaya dijana menggunakan v3.8.
