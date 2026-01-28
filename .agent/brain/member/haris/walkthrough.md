@@ -84,3 +84,6 @@
 
 ## [2026-01-29] | Tooling: Emoji Fidelity
 - Configured build_sovereign_book.sh with Noto Color Emoji fallback logic.
+
+## [2026-01-29] | Maintenance: Artifact Purge
+- Membuang fail PDF lama untuk menjaga integriti repositori sebelum sesi v3.2.
