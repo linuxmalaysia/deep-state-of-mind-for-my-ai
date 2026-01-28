@@ -56,3 +56,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-28]:** Updated SUMMARY.md to include 19 previously untracked artifacts.
 - **[2026-01-29]:** Upgraded build tool to v3.2. Standardised on Noto Color Emoji for PDF rendering.
 - **[2026-01-29]:** Pembersihan (Purge) fail PDF DSOM_Sovereign_Brain_20260128_2354.pdf.
+- **[2026-01-29]:** Re-unified v3.6 Master Protocol. Integrated discovery, fail-safes, and dynamic user paths.

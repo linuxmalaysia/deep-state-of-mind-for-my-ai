@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# 📜 DSOM Sovereign Book Generator (v3.2) - THE MASTER PROTOCOL
+# 📜 DSOM Sovereign Book Generator (v3.6) - THE DEFINITIVE MASTER
 #
 # Date:    2026-01-28
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
@@ -29,10 +29,11 @@
 # ==============================================================================
 # Logic 1: High-res timestamps & CC BY-SA 4.0 metadata.
 # Logic 2: Fail-safe Traps & strict TEMP_DIR verification.
-# Logic 3: OS-aware Dependency Checks (Apt/Dnf).
+# Logic 3: OS-aware Dependency Checks (Apt/Dnf) + SVG & Emoji Tools.
 # Logic 4: YAML Alias Protection & Table Flattening.
 # Logic 5: Artifact Discovery (find/audit against SUMMARY.md).
-# Logic 6: FULL ATOMIC RITUAL (Updates PDF, HISTORY.md, and walkthrough.md).
+# Logic 6: Dynamic User Path Resolution ($(whoami)).
+# Logic 7: FULL ATOMIC RITUAL (Updates PDF, HISTORY.md, and walkthrough.md).
 # ==============================================================================
 
 TIMESTAMP=$(date +%Y%m%d_%H%M)
@@ -40,9 +41,12 @@ ISO_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 OUTPUT_FILE="DSOM_Sovereign_Brain_${TIMESTAMP}.pdf"
 METADATA_FILE="metadata.yaml"
 TEMP_DIR="build_tmp_${TIMESTAMP}"
-WALKTHROUGH_PATH=".agent/brain/member/haris/walkthrough.md"
 
-# --- [1. Fail-Safe Cleanup] ---
+# Dynamic Identity Resolution
+CURRENT_USER=$(whoami)
+WALKTHROUGH_PATH=".agent/brain/member/${CURRENT_USER}/walkthrough.md"
+
+# --- [1. Fail-Safe Cleanup Function] ---
 cleanup() {
     echo "🧹 Performing Fail-Safe Cleanup..."
     if [ -n "${TEMP_DIR}" ] && [ -d "${TEMP_DIR}" ]; then
@@ -54,7 +58,7 @@ cleanup() {
 }
 trap cleanup EXIT SIGINT SIGTERM
 
-# --- [2. Dependency Check (Ubuntu/RHEL) + Emoji & SVG Tools] ---
+# --- [2. Dependency Check (Ubuntu/RHEL) + SVG & Emoji Tools] ---
 check_dependencies() {
     echo "🔍 Verifying environment prerequisites..."
     if ! command -v pandoc &> /dev/null || ! command -v rsvg-convert &> /dev/null; then
@@ -71,6 +75,8 @@ check_dependencies
 
 # --- [3. Artifact Discovery Audit] ---
 echo "🔍 Auditing Sovereign Artifacts..."
+if [ ! -f "SUMMARY.md" ]; then echo "❌ Error: SUMMARY.md not found."; exit 1; fi
+
 LISTED_FILES=$(sed -n 's/.*(\(.*\))/\1/p' SUMMARY.md | grep -v "http" | grep -E "\.(md|txt)$")
 ACTUAL_FILES=$(find . -type f \( -name "*.md" -o -name "*.txt" \) -not -path "*/.*" -not -path "./$TEMP_DIR/*" | sed 's|./||')
 
@@ -81,58 +87,66 @@ for f in $ACTUAL_FILES; do
     fi
 done
 
-# --- [4. Build Preparation & Metadata with Emoji Font Config] ---
+# --- [4. Build Preparation & Metadata] ---
 mkdir -p "$TEMP_DIR"
 cat > "$METADATA_FILE" <<EOF
 ---
 title: "DSOM For My AI: Sovereign Repository Manual"
-author: "Harisfazillah Jamel (Lead Architect)"
+author: "${CURRENT_USER^} (via DSOM Protocol)"
 date: "${ISO_DATE}"
 copyright: "© 2026 Harisfazillah Jamel. Licensed under CC BY-SA 4.0."
 lang: "en-GB"
 geometry: "a5paper, margin=1.5cm"
 mainfont: "DejaVu Serif"
-monofont: "DejaVu Sans Mono"
 header-includes:
   - \usepackage{fancyhdr}
   - \pagestyle{empty}
   - \usepackage{fontspec}
-  - \newfontfamily{\emoji}{Noto Color Emoji}[Renderer=Color,Scale=0.9]
+  - \newfontfamily{\\emojifont}{Noto Color Emoji}[Renderer=HarfBuzz]
 ---
 EOF
 
-# --- [5. Process & Flatten] ---
+# --- [5. Process & Flatten Artifacts] ---
+echo "🚜 Normalising artifacts for AI ingestion..."
 PROCESSED_FILES=""
 for file in $LISTED_FILES; do
     if [ -f "$file" ]; then
         target="$TEMP_DIR/$(basename "$file")"
-        # Pre-processing: Tagging emoji characters to use the Noto font family
-        # (This is a simplified approach, Pandoc with XeLaTeX handles emojis
-        # better if the font is globally available as a fallback).
+        # Strip YAML to prevent Alias errors + Flatten tables
         pandoc "$file" --from markdown-yaml_metadata_block -t markdown-grid_tables+pipe_tables -o "$target"
         PROCESSED_FILES="$PROCESSED_FILES $target"
     fi
 done
 
 # --- [6. Build Engine] ---
-echo "🏗️  Building Sovereign Book with Emoji Support..."
-if pandoc $PROCESSED_FILES --output="$OUTPUT_FILE" --metadata-file="$METADATA_FILE" --toc --number-sections --pdf-engine=xelatex --columns=1000 -V links-as-notes=true; then
+echo "🏗️  Building Sovereign Book for ${CURRENT_USER}..."
+if pandoc $PROCESSED_FILES \
+    --output="$OUTPUT_FILE" \
+    --metadata-file="$METADATA_FILE" \
+    --toc \
+    --number-sections \
+    --pdf-engine=xelatex \
+    --columns=1000 \
+    -V links-as-notes=true; then
 
     echo "⭐ Success: ${OUTPUT_FILE}"
 
     # --- [7. THE FULL ATOMIC RITUAL] ---
     echo "📡 Executing Atomic Git Ritual..."
     git add "$OUTPUT_FILE"
-    echo "- **[${TIMESTAMP}]:** Automated Build v3.2. Emoji support enabled via Noto Color Emoji." >> HISTORY.md
+
+    echo "- **[${TIMESTAMP}]:** Automated Build v3.6 by ${CURRENT_USER} (Unified Master)." >> HISTORY.md
     git add HISTORY.md
+
     if [ -f "$WALKTHROUGH_PATH" ]; then
-        echo -e "\n## [${TIMESTAMP}] | Build Ritual: Emoji Support\n- Executed build_sovereign_book.sh v3.2.\n- Noto Color Emoji font integration verified.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
+        echo -e "\n## [${TIMESTAMP}] | Build Ritual: Unified Master\n- Executed build_sovereign_book.sh v3.6.\n- Multi-user dynamic path: ${WALKTHROUGH_PATH}.\n- Artifact archived: ${OUTPUT_FILE}" >> "$WALKTHROUGH_PATH"
         git add "$WALKTHROUGH_PATH"
     fi
-    git commit -m "feat(archive): auto-build with noto color emoji support ${TIMESTAMP}"
-    echo "✅ All ledgers updated and committed."
+
+    git commit -m "feat(archive): auto-build v3.6 master for user ${CURRENT_USER}"
+    echo "✅ All ledgers for ${CURRENT_USER} updated and committed."
 else
-    echo "❌ Build failed. Check if Noto Color Emoji is installed correctly."
+    echo "❌ Build failed. Please verify Noto Color Emoji and librsvg installations."
     exit 1
 fi
 
