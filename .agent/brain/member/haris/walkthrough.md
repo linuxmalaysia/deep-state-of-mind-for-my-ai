@@ -164,3 +164,7 @@
 ## [2026-01-30] | L3 Specialisation: PHP Hardening Complete
 - Finalised OPERATIONAL-GUIDE-PHP.md v1.2.
 - Integrated mandatory strict_types and Read-Only FS policies.
+
+## [2026-01-30] | Architecture: Integrated PHP Spoke
+- Consolidated all ITIL 4 SVC and CAPM quality gates into v1.3.
+- Established the definitive SSoT for PHP service delivery.
