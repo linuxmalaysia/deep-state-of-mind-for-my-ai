@@ -153,3 +153,6 @@
 
 ## [2026-01-29] | Governance: ITIL 4 Finalisation
 - Finalised docs/ITIL-ALIGNMENT.md including Multi-Agent Federation and CRISP2 mapping.
+
+## [2026-01-29] | L3 Specialisation: Software Spoke Finalised
+- Populated .agent/brain/software/ with implementation_plan, operational_guide, and governance manifests.
