@@ -160,3 +160,7 @@
 ## [2026-01-30] | L3 Specialisation: PHP Guide Expansion
 - Moved PHP guide to .agent/brain/software/.
 - Added PSR-12, Performance Profiling, and Dependency Auditing standards.
+
+## [2026-01-30] | L3 Specialisation: PHP Hardening Complete
+- Finalised OPERATIONAL-GUIDE-PHP.md v1.2.
+- Integrated mandatory strict_types and Read-Only FS policies.
