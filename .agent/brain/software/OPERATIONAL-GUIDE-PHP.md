@@ -1,5 +1,5 @@
-# 🏥 OPERATIONAL-GUIDE-PHP.md (v1.1)
-### 📜 .agent/brain/software/OPERATIONAL-GUIDE-PHP.md
+# 🏥 OPERATIONAL-GUIDE-PHP.md (v1.2)
+### 📜 .agent/brain/software/OPERATIONAL-GUIDE-PHP.md (v1.2)
 
 ## 1. Purpose & Scope
 - **Purpose:** Provide the runbook and operational standards for PHP services.
@@ -24,11 +24,12 @@ vendor/bin/phpstan analyse
 
 ## 4. ⚖️ Standards & PHP Fig (PSR)
 
-All code must adhere to the following PHP-FIG standards:
+All code must adhere to the following standards:
 
+* **Strict Typing:** All new files **MUST** begin with `declare(strict_types=1);`.
 * **PSR-12:** Extended Coding Style Guide (Mandatory).
 * **PSR-4:** Autoloading Standard.
-* **PSR-3/PSR-7/PSR-11:** Logging, HTTP Messages, and Container interfaces.
+* **PSR-3/7/11:** Logging, HTTP Messages, and Container interfaces.
 * **Enforcement:** Use `vendor/bin/phpcs` in pre-flight checks.
 
 ## 5. 🏗️ Environments & Configuration
@@ -56,10 +57,11 @@ All code must adhere to the following PHP-FIG standards:
 * **Profiling:** Use XHProf or Blackfire for Sev2 performance incidents.
 * **Optimization:** OpCache must be enabled in Production Docker images.
 
-## 8. 🛡️ Sovereign Dependency Auditing
+## 8. 🛡️ Sovereign Security & Vulnerability
 
+* **Runtime Integrity:** In Production, the PHP container filesystem should be **Read-Only** except for `/tmp` and specific upload paths.
 * **Zero-Bloat Policy:** Avoid adding heavy dependencies for trivial tasks.
-* **Audit Ritual:** Monthly review of `composer.json`. Remove unused or redundant packages.
+* **Audit Ritual:** Monthly review of `composer.json`.
 * **Dependabot:** Weekly review of PRs is mandatory.
 
 ## 9. 🚨 Incident & Alerting (SRE)
@@ -76,12 +78,11 @@ All code must adhere to the following PHP-FIG standards:
 * `docker compose logs -f php`
 * `php -S localhost:8000 -t public`
 
-
-
 ## 11. 🔄 Backups & Recovery
 
 * **Nightly Backups:** Automated DB snapshots with 30-day retention.
-* **Rollback:** Maintain previous Docker image digests. Rollback is the first action for Sev1 deploy-related incidents.
+* **Rollback:** Maintain previous Docker image digests. Rollback is the first action for Sev1.
+* **Game Day Drill:** Bi-annual ritual to verify "Rollback" and "DB Restore" procedures within the 60-minute MTTR window.
 
 ---
 

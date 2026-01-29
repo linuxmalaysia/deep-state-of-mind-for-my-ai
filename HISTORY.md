@@ -76,3 +76,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-29]:** Consolidated ITIL 4 Alignment Strategy (Sections 1-10).
 - **[2026-01-29]:** Initialised polyglot software brain artifacts (Plan, Guide, Governance).
 - **[2026-01-30]:** Renamed and expanded PHP Operational Guide v1.1.
+- **[2026-01-30]:** Hardened PHP Operational Guide to v1.2 with SRE measures.
