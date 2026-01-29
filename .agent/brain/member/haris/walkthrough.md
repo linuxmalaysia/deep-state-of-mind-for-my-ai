@@ -156,3 +156,7 @@
 
 ## [2026-01-29] | L3 Specialisation: Software Spoke Finalised
 - Populated .agent/brain/software/ with implementation_plan, operational_guide, and governance manifests.
+
+## [2026-01-30] | L3 Specialisation: PHP Guide Expansion
+- Moved PHP guide to .agent/brain/software/.
+- Added PSR-12, Performance Profiling, and Dependency Auditing standards.
