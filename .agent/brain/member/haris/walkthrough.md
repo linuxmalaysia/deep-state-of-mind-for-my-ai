@@ -176,3 +176,7 @@
 ## [2026-01-30] | Architecture: Universal Software Spoke
 - Generalised PHP-SRE standards into a Master Polyglot Operational Guide.
 - Enforced JSON logging and Read-Only FS as universal deployment requirements.
+
+## [2026-01-31] | Governance: Cross-Platform Boundary
+- Defined AI as 'Advisory' to prevent PowerShell-Linux shell mismatches.
+- Enforced Feature-First Git Flow for all cross-environment transitions.
