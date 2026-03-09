@@ -33,6 +33,7 @@
 * [🗺️ Implementation Plan](.agent/brain/implementation_plan.md)
 
 ## 🤖 4. AI & Agent Protocols
+* [🤝 Human Handover Context Template](docs/HUMAN-HANDOVER-CONTEXT.md)
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
 * [📋 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
 * [🧠 Cognitive Twin Protocol Template](docs/AI-COGNITIVE-TWIN-PROTOCOL.md)
