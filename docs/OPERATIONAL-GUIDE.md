@@ -18,7 +18,7 @@ Before waking the AI, we must verify that the physical environment matches the e
 
 **Command:**
 ```bash
-# Linux
+# Linux / WSL2
 ./tools/audit-pre-flight.sh
 
 # Windows
@@ -28,7 +28,8 @@ Before waking the AI, we must verify that the physical environment matches the e
 **Success Criteria:**
 1.  **Brain Check:** `task.md` and `walkthrough.md` must exist.
 2.  **Git Drift:** Local repo must be synced with Remote.
-3.  **Environment:** The tool detects the correct language (PHP/Python/Node).
+3.  **Cognitive Twin Protocol:** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` must exist and be filled in for this project. If missing, this is the first action item.
+4.  **Ansible Baseline:** `inventory/hosts.yml` and `ansible.cfg` must exist if this project uses infrastructure automation. See [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md).
 
 ### Step 2: Generating the Manifest (The Injection)
 We aggregrate all context into a single "Truth File."
@@ -113,4 +114,49 @@ For detailed step-by-step guides on how to apply DSOM to your specific situation
 
 ---
 
-*Last Updated: 2026-01-16 (ITIL 4 Alignment)*
+## 6. ⚙️ Execution Guardrails (The Three-Pillar Laws)
+
+These guardrails apply to **all** DSOM projects using the GitOps + AIOps + Ansible model. They are non-negotiable.
+
+### Guardrail 1: No Silent Execution
+The AI **never** directly runs commands on remote infrastructure. The workflow is always:
+> **AI Proposes** → **Human Reviews** → **Human Approves** → **Ansible Executes**
+
+### Guardrail 2: Ansible Pre-flight Mandate
+Before executing **any** playbook, the following must be verified:
+```bash
+# 1. Run the DSOM pre-flight audit
+./tools/audit-pre-flight.sh
+
+# 2. Verify Ansible connectivity to all target nodes
+ansible all -m ping -i inventory/hosts.yml
+
+# 3. Dry-run the playbook first
+ansible-playbook playbooks/site.yml --check --diff
+```
+If any step fails, execution is **stopped**. The AI diagnoses the failure and proposes a fix.
+
+### Guardrail 3: Log Review Protocol
+After every Ansible execution, the human must provide output to the AI for verification. Two accepted formats:
+- **Direct Terminal Sync:** Full output copied and pasted into the chat.
+- **Persistent Log File:** Output redirected to a log file for deep analysis:
+  ```bash
+  ansible-playbook playbooks/site.yml 2>&1 | tee .logs/deploy-$(date +%Y%m%d-%H%M%S).log
+  ```
+The AI will not proceed to the next phase without reviewing the execution output.
+
+### Guardrail 4: Self-Healing Rule
+- **NEVER** delete data directories (e.g., `[PROD_PATH]/data`). Deletion requires explicit Sovereign authorisation.
+- Recovery is achieved through **idempotent Ansible automation** — re-running the playbook restores the desired state.
+- If data corruption is suspected, stop all actions, preserve logs, and escalate to the Sovereign Architect.
+
+### Guardrail 5: GitOps Loop
+- All playbook or configuration changes are **committed to Git before execution**.
+- No ad-hoc file edits on target nodes via SSH.
+- The Git commit IS the change record. No commit = no change.
+
+For full doctrine, see [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md).
+
+---
+
+*Last Updated: 2026-03-09 (v6.0: GitOps + AIOps + Ansible Guardrails)*
