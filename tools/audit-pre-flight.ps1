@@ -1,10 +1,11 @@
 <#
 .SYNOPSIS
-    Universal DSOM Audit Pre-Flight (V4.1 - Root Aware)
+    Universal DSOM Audit Pre-Flight (V5.0 - GitOps + AIOps + Ansible)
     
 .DESCRIPTION
-    Enforces synchronization between the physical environment, Git state, 
-    and the AI's "External Brain" before starting a development session.
+    Enforces synchronization between the physical environment, Git state,
+    the AI's "External Brain", Cognitive Twin Protocol, and the Ansible
+    baseline before starting a development session.
     
 .AUTHOR
     Harisfazillah Jamel (LinuxMalaysia)
@@ -89,14 +90,43 @@ if (Test-Path (Join-Path $RootDir "composer.json")) {
     Write-Host "[NOTICE] Universal project detected (No standard manifest)." -ForegroundColor $Yellow
 }
 
-# 4. PROTOCOL GOVERNANCE
-Write-Host "`nStep 4: Checking Governance Documents..." -ForegroundColor $Yellow
-if ((Test-Path (Join-Path $RootDir "docs\AI-MASTER-PROTOCOL.md")) -or (Test-Path (Join-Path $RootDir "README.md"))) {
-    Write-Host "[PASS] Project documentation found." -ForegroundColor $Green
+# 4. COGNITIVE TWIN PROTOCOL CHECK
+Write-Host "`nStep 4: Checking Cognitive Twin Protocol..." -ForegroundColor $Yellow
+$TwinProtocol = Join-Path $RootDir "docs\AI-COGNITIVE-TWIN-PROTOCOL.md"
+if (Test-Path $TwinProtocol) {
+    $Content = Get-Content $TwinProtocol -Raw
+    if ($Content -match '\[YOUR_PROJECT_NAME\]') {
+        Write-Host "[WARNING] AI-COGNITIVE-TWIN-PROTOCOL.md has unfilled [PLACEHOLDER] values." -ForegroundColor $Yellow
+        Write-Host "          Fill in all [YOUR_*] fields to configure the Cognitive Twin." -ForegroundColor $Yellow
+    } else {
+        Write-Host "[PASS] AI-COGNITIVE-TWIN-PROTOCOL.md exists and appears configured." -ForegroundColor $Green
+    }
 } else {
-    Write-Host "[WARNING] No Master Protocol or README found." -ForegroundColor $Red
+    Write-Host "[WARNING] docs/AI-COGNITIVE-TWIN-PROTOCOL.md is MISSING." -ForegroundColor $Red
+    Write-Host "          Copy from the DSOM skeleton and fill in your project details." -ForegroundColor $Yellow
+}
+
+# 5. ANSIBLE BASELINE CHECK
+Write-Host "`nStep 5: Checking Ansible Baseline..." -ForegroundColor $Yellow
+$AnsibleCmd = Get-Command ansible -ErrorAction SilentlyContinue
+if (-not $AnsibleCmd) {
+    Write-Host "[SKIP] Ansible not found — skipping Ansible checks (non-infra project or setup pending)." -ForegroundColor $Yellow
+} else {
+    $AnsibleVer = (ansible --version)[0]
+    Write-Host "[OK] $AnsibleVer" -ForegroundColor $Green
+    if (Test-Path (Join-Path $RootDir "inventory\hosts.yml")) {
+        Write-Host "[OK] inventory/hosts.yml exists." -ForegroundColor $Green
+    } else {
+        Write-Host "[WARN] inventory/hosts.yml missing. See HOWTO-SETUP-ANSIBLE-BASELINE.md." -ForegroundColor $Yellow
+    }
+    if (Test-Path (Join-Path $RootDir "ansible.cfg")) {
+        Write-Host "[OK] ansible.cfg exists." -ForegroundColor $Green
+    } else {
+        Write-Host "[WARN] ansible.cfg missing." -ForegroundColor $Yellow
+    }
 }
 
 Write-Host "`n==================================================" -ForegroundColor $Green
 Write-Host "   AUDIT COMPLETE: DSOM SECURED & READY FOR FLOW  " -ForegroundColor $Green
+Write-Host "   Protocol v5.0 | GitOps · AIOps · Ansible        " -ForegroundColor $Green
 Write-Host "==================================================" -ForegroundColor $Green

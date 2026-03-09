@@ -1,16 +1,16 @@
 #!/bin/bash
 set -e
 # ==============================================================================
-# 📜 DSOM Reanimation Manifest Generator (v1.5)
+# 📜 DSOM Reanimation Manifest Generator (v2.0 - GitOps + AIOps + Ansible)
 # 
-# Date:    2026-01-08
+# Date:    2026-03-09
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
 # Partner: Generated with the help of Google Gemini
 # License: GNU GPL v3.0 or later
 # 
 # Description:
-# Aggregates ALL core DSOM artifacts. Features an interactive multi-line 
-# input for EOD summaries using CTRL+D as the sentinel signal.
+# Aggregates ALL core DSOM artifacts including Cognitive Twin Protocol and
+# Ansible inventory. Features an interactive multi-line input for EOD summaries.
 # ==============================================================================
 
 # 1. Setup Variables
@@ -134,6 +134,35 @@ generate_manifest() {
 
     echo "### [10] RITUAL OF TRANSITION (Operational Guidance)"
     cat "$DOCS_DIR/RITUAL-OF-TRANSITION.md"
+    echo -e "\n\n---\n"
+
+    # --- v2.0 NEW SECTIONS ---
+
+    echo "### [11] COGNITIVE TWIN PROTOCOL (Project Identity Card)"
+    if [ -f "$DOCS_DIR/AI-COGNITIVE-TWIN-PROTOCOL.md" ]; then
+        cat "$DOCS_DIR/AI-COGNITIVE-TWIN-PROTOCOL.md"
+    else
+        echo "[MISSING] docs/AI-COGNITIVE-TWIN-PROTOCOL.md not found."
+        echo "Create this file from the DSOM skeleton template for this project."
+    fi
+    echo -e "\n---\n"
+
+    echo "### [12] ANSIBLE INVENTORY (Node Topology)"
+    if [ -f "$REPO_ROOT/inventory/hosts.yml" ]; then
+        echo "⚠️  NOTE: This file may contain hostnames/IPs. Run privacy-guardian.sh before sharing."
+        cat "$REPO_ROOT/inventory/hosts.yml"
+    else
+        echo "[SKIP] inventory/hosts.yml not found (non-infra project or Ansible not yet configured)."
+    fi
+    echo -e "\n---\n"
+
+    echo "### [13] GITOPS STRATEGY (Three-Pillar Doctrine Summary)"
+    if [ -f "$DOCS_DIR/GITOPS-AIOPS-ANSIBLE-STRATEGY.md" ]; then
+        head -n 60 "$DOCS_DIR/GITOPS-AIOPS-ANSIBLE-STRATEGY.md"
+        echo -e "\n... (see full doc for details)"
+    else
+        echo "[SKIP] GITOPS-AIOPS-ANSIBLE-STRATEGY.md not found."
+    fi
     echo ""
     echo "======================================================================"
     echo "🏁 MANIFEST COMPLETE"
