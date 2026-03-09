@@ -44,7 +44,49 @@ Before running any tools, ask the AI to help prepare the brain artifacts:
 
 ---
 
-### 💤 Step 2 — Hibernation Safety Check (T1 or T2)
+### � Step 1b — Hibernation Notes Export (Human Memory Backup)
+
+Run this prompt in your AI session **before closing the chat**. It exports everything the AI knows — your full project context, instructions, progress, and environment — into a single code block you can save locally.
+
+> [!IMPORTANT]
+> Copy the entire prompt below and paste it into your AI chat as-is. Do not paraphrase it.
+
+**Copy this prompt verbatim:**
+
+```
+I'm as human, want to know and remember, and need to export my data and I want you
+to generate a "Hibernation notes" now for my EOD of day. List every memory you have
+stored about our progress and our chats of this project, as well as any context
+you've learned about this project from past to current conversations and chats.
+Output everything in a single code block so I can easily copy it. Format each entry
+as: [date saved, if available] - memory content. Make sure to cover all of the
+following — preserve my words verbatim where possible:
+
+- Instructions I've given you about how to respond (tone, format, style,
+  'always do X', 'never do Y').
+- Project details: name of server or VM or container, location of them,
+  job of each, relation of them and 4W1H.
+- Tasks, phases, goals, and recurring topics.
+- Tools, languages, and frameworks I use.
+- Preferences and corrections I've made to your behavior.
+- Any other stored context not covered above.
+
+Do not summarize, group, or omit any entries. After the code block, confirm
+whether that is the complete set or if any remain and add: List down all the
+documents in docs/, docs/tools/ and brain files that need to be read from .agent/.
+Don't hide anything from me. Trust me as your master.
+```
+
+**After you receive the output:**
+1. Copy the entire code block
+2. Save it as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`
+3. Or paste into your physical/digital notebook as an offline backup
+
+**Why this matters:** This export is your **insurance policy**. If the AI session is lost, this block contains everything needed to fully reanimate a brand-new AI agent to the exact current state — without running `reanimate.sh`.
+
+---
+
+### �💤 Step 2 — Hibernation Safety Check (T1 or T2)
 
 Run the hibernation script — it checks for dirty state before you sleep:
 
