@@ -26,6 +26,7 @@ nav:
   - Home: README.md
   - Governance:
     - AI Master Protocol: docs/AI-MASTER-PROTOCOL.md
+    - GitOps · AIOps · Ansible Strategy: docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
     - Operational Guide: docs/OPERATIONAL-GUIDE.md
     - Ritual of Transition: docs/RITUAL-OF-TRANSITION.md
     - Personalization: docs/PERSONALIZATION.md
@@ -34,10 +35,13 @@ nav:
     - Implementation Plan: .agent/brain/implementation_plan.md
     - Walkthrough: .agent/brain/walkthrough.md
   - AI Setup:
+    - Cognitive Twin Protocol Template: docs/AI-COGNITIVE-TWIN-PROTOCOL.md
     - Reanimation Template: docs/REANIMATION-PROMPT-TEMPLATE.md
     - Agent Protocols: docs/MULTI-AGENT-PROTOCOLS.md
     - Claude: docs/CLAUDE-SETUP.md
     - Copilot: docs/COPILOT-SETUP.md
+  - Ansible:
+    - HOWTO Setup Baseline: docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
   - Tools:
     - Pre-Flight: tools-and-automation/audit-pre-flight.md
     - Init Brain: tools-and-automation/init-brain.md

@@ -12,6 +12,14 @@ The **Deep State of Mind (DSOM)** protocol is a metacognitive framework designed
 
 The DSOM state must be portable. Whether using Gemini, Claude, or local LLMs, the `.agent/brain/` remains the absolute SSoT.
 
+### 🧠 Advisory over Execution
+
+The AI is in **Advisory Mode** at all times. It proposes, generates, and documents. The **Terminal Trigger** — the final approval to execute any script, Ansible playbook, or Git push — resides exclusively with the **Sovereign Architect**.
+
+### 🔄 GitOps-First Principle
+
+Git is the **single source of truth** for all system state. If a change is not committed to the repository, it does not exist. No manual edits to target nodes are permitted. See [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) for the full doctrine.
+
 ---
 
 ## 🆔 2. System Identity & Partnership (The Mirror)
@@ -53,9 +61,14 @@ To ensure **Sovereign Portability**, we enforce the **Inward Dependency Rule**:
 
 * **Agnostic & Portable:** Optimised for Enterprise Linux (RHEL, AlmaLinux, Ubuntu).
 * **High-Availability (HA) Ready:** Designed for clusters and zero-downtime.
-* **IaC First:** Automate via Bash or Ansible. Manual steps are bugs.
+* **IaC Sovereign Law:** Ansible is the **exclusive** OS-level executor. AI generates Ansible playbooks — never raw shell commands for remote execution. Manual SSH changes to production nodes are prohibited.
+* **Idempotency Law:** Every Ansible playbook MUST be safe to re-run multiple times with the same outcome.
 * **Zero-Global Pattern:** Use strict state management. No global variables.
-* **VCS Hygiene:** All commits MUST follow: `type(scope): descriptive message`.
+* **Git Sovereignty Doctrine:**
+  * Every atomic step requires `git add`, `git commit`, and `git push` from the Command Centre (Tier 1).
+  * Commit messages MUST follow: `type(scope): descriptive message [Phase/vXXX]`.
+  * The `main` branch is protected. Tags, releases, and branches are NEVER deleted without explicit Sovereign authorisation.
+  * After push, the Sync Ritual is: `git pull origin main` on all target tiers.
 
 ---
 
@@ -64,9 +77,11 @@ To ensure **Sovereign Portability**, we enforce the **Inward Dependency Rule**:
 Upon the command **"Initialise DSOM Protocol"**, you MUST execute this boot sequence:
 
 1. **Context Sync:** Analyse `task.md`, `walkthrough.md`, and `implementation_plan.md`.
-2. **Audit Verification:** Confirm if `tools/audit-pre-flight.sh` was successful.
-3. **State Alignment:** Summarise the last **Mental Anchor** from the walkthrough.
-4. **Handshake Completion:** State: *"Sovereign State Synchronised. Ready to proceed with [Task Name]."*
+2. **Twin Protocol Check:** Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` exists for this project. If it does not, flag it as the first action item. See [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md).
+3. **Ansible Baseline Check:** Verify `inventory/hosts.yml` exists. If deploying infrastructure, confirm `tools/audit-pre-flight.sh` was run and passed.
+4. **Audit Verification:** Confirm if `tools/audit-pre-flight.sh` was successful.
+5. **State Alignment:** Summarise the last **Mental Anchor** from the walkthrough.
+6. **Handshake Completion:** State: *"Sovereign State Synchronised. Ready to proceed with [Task Name]."*
 
 ---
 
@@ -162,7 +177,7 @@ DSOM (Deep State of Mind) serves as the operational engine for the broader **Dig
 ---
 
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Licensed under GPLv3*
-**Last Human Audit:** 2026-01-16
+**Last Human Audit:** 2026-03-09 | **Protocol Version:** v6.0 (GitOps + AIOps + Ansible Pillars)
 
 ---
 

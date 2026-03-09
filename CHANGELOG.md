@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.0.0] - 2026-03-09
+### Added
+- **`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`** — Generic, fillable Project Identity Card template. Defines the Cognitive Relationship, 4-Tier Environmental Map, Security Doctrine, Production Identity standard, Git Sovereignty Protocol, Execution Guardrails, Brain Sync Mandate, Advisory Mode Anchor, and Session Handover Prompt. Any new project fills in the `[PLACEHOLDER]` fields to adopt the DSOM Cognitive Twin model.
+- **`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`** — Three-Pillar strategic doctrine document. Defines the GitOps, AIOps, and Ansible pillars including the Integration Loop (AI Proposes → Git Records → Ansible Executes → AI Verifies), GitOps Laws, AIOps role boundaries, Ansible Laws (idempotency, no hardcoded secrets, role-based structure), and the Adoption Checklist for new projects.
+- **`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`** — LDP-compliant HOWTO guide for establishing the Ansible baseline in any DSOM project. Covers directory structure, `ansible.cfg`, `inventory/hosts.yml`, group variables, pre-flight playbook, Ansible Vault integration, and `tools/audit-pre-flight.sh` extension.
+
+### Changed
+- **`docs/AI-MASTER-PROTOCOL.md` (v6.0):** Added "Advisory over Execution" and "GitOps-First" sub-principles to §1; expanded §5 Coding Laws with the IaC Sovereign Law (Ansible-exclusive), Idempotency Law, and Git Sovereignty Doctrine; expanded §6 Handshake to include Cognitive Twin Protocol and Ansible Baseline verification steps.
+- **`docs/OPERATIONAL-GUIDE.md` (v6.0):** Updated §2 Reanimation success criteria to include `AI-COGNITIVE-TWIN-PROTOCOL.md` and Ansible baseline checks; added new §6 Execution Guardrails (No Silent Execution, Ansible Pre-flight Mandate, Log Review Protocol, Self-Healing Rule, GitOps Loop).
+- **`docs/REANIMATION-PROMPT-TEMPLATE.md` (v6.0):** Added Prompt Variant 2 — Session Handover (Cognitive Twin Trigger), the Memory Export prompt for transitioning to a new AI session, including pedagogical logic notes.
+- **`SUMMARY.md` (v6.0):** Added GitOps·AIOps·Ansible Strategy link under §1 Sovereign Governance; added Cognitive Twin Protocol Template under §4 AI & Agent Protocols; added new §6 Ansible & Infrastructure Automation section.
+- **`mkdocs.yml` (v6.0):** Added GitOps/AIOps/Ansible Strategy under Governance nav, Cognitive Twin Protocol under AI Setup nav, new Ansible nav group with HOWTO Baseline.
+
+---
+
 ## [5.2.0] - 2026-01-16
 ### Added
 - **Law 11 (ITIL 4 Alignment):** Integrated Service Relationship and Value Co-creation principles into `AI-MASTER-PROTOCOL.md`.

@@ -82,6 +82,57 @@ State: **'Sovereign State Synchronised. Ready to co-create value.'**"
 4. **Linguistic Standardisation:** Enforcing UK English ensures consistency across all documentation and HOWTOs, aligning with the Lead Architect's professional standards.
 
 ---
+
+## 🤝 Prompt Variant 2: Session Handover (Cognitive Twin Trigger)
+
+**Purpose:** Use this when transitioning to a new AI session or model to extract ALL operational context, memories, and project state from the current session. This is the **Memory Export** that enables continuity.
+
+**Instructions:** Copy the text block below and paste it as your first message in the new AI chat window.
+
+---
+
+### 📥 Copy/Paste Block:
+
+```text
+[SOVEREIGN HANDOVER REQUEST]
+
+I'm moving to another AI chat and need to export my data. List every memory
+you have stored about our progress, as well as any context you've learned
+about this project from past conversations.
+
+Output everything in a single code block so I can easily copy it.
+Format each entry as: [date saved, if available] - memory content.
+
+Make sure to cover all of the following — preserve my words verbatim where possible:
+- Instructions I've given you about how to respond (tone, format, style,
+  'always do X', 'never do Y').
+- Project details: name of server or VM or container, location of them,
+  job of each, relation of them, and 4W1H (Who/What/When/Where/Why/How).
+- Tasks, phases, goals, and recurring topics.
+- Tools, languages, and frameworks I use.
+- Preferences and corrections I've made to your behaviour.
+- Any other stored context not covered above.
+
+Do not summarise, group, or omit any entries.
+
+After the code block, confirm whether that is the complete set or if any
+remain, and then: List down all documents in docs/, docs/tools/, and
+brain files that need to be read from .agent/ (specifically check
+tools/audit-pre-flight.sh, tools/reanimate.sh, tools/git-ritual.sh,
+and docs/AI-COGNITIVE-TWIN-PROTOCOL.md).
+```
+
+---
+
+### 🧠 Pedagogical Logic: Why This Prompt Matters
+
+1. **Context Decay Prevention**: When AI sessions end, context is lost. This prompt forces a complete dump before termination, enabling continuity in the new session.
+2. **Verbatim Preservation**: Asking for verbatim responses prevents AI summarisation from dropping critical architectural nuances.
+3. **Document Checklist**: The trailing document list ensures the new AI reads the SSoT artifacts from `.agent/brain/` before acting — enforcing the DSOM Handshake ritual.
+4. **4W1H Framework**: Structuring memories by the 4W1H model ensures environmental and architectural context is captured, not just task history.
+
+---
+
 *Standard: Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel*
-**Current Status:** `ACTIVE` | **Last Human Audit:** 2026-01-16
+**Current Status:** `ACTIVE` | **Last Human Audit:** 2026-03-09 | **Protocol Version:** v6.0
 
