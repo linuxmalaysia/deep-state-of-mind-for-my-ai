@@ -1,15 +1,16 @@
 #!/bin/bash
 set -e
 # ==============================================================================
-# 📜 Universal DSOM Audit Pre-Flight (v4.1 - Root Aware)
+# 📜 Universal DSOM Audit Pre-Flight (v5.0 - GitOps + AIOps + Ansible)
 # 
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
 # Partner: Generated with the help of Google Gemini
 # License: GNU GPL v3.0 or later
 # 
 # Description:
-# Enforces synchronization between the physical environment, Git state, 
-# and the AI's "External Brain" before starting a development session.
+# Enforces synchronization between the physical environment, Git state,
+# the AI's "External Brain", Cognitive Twin Protocol, and the Ansible
+# baseline before starting a development session.
 # ==============================================================================
 
 RED='\033[0;31m'
@@ -75,15 +76,44 @@ else
     echo -e "${YELLOW}[NOTICE] Universal project detected (No standard manifest).${NC}"
 fi
 
-# 4. PROTOCOL GOVERNANCE
-echo -e "\n${YELLOW}Step 4: Checking Governance Documents...${NC}"
-if [ -f "$ROOT_DIR/docs/AI-MASTER-PROTOCOL.md" ] || [ -f "$ROOT_DIR/README.md" ]; then
-    echo -e "${GREEN}[PASS] Project documentation found.${NC}"
+# 4. COGNITIVE TWIN PROTOCOL CHECK
+echo -e "\n${YELLOW}Step 4: Checking Cognitive Twin Protocol...${NC}"
+if [ -f "$ROOT_DIR/docs/AI-COGNITIVE-TWIN-PROTOCOL.md" ]; then
+    # Check if it still has unfilled placeholders
+    if grep -q "\[YOUR_PROJECT_NAME\]" "$ROOT_DIR/docs/AI-COGNITIVE-TWIN-PROTOCOL.md"; then
+        echo -e "${YELLOW}[WARNING] AI-COGNITIVE-TWIN-PROTOCOL.md exists but still has [PLACEHOLDER] values.${NC}"
+        echo -e "${YELLOW}          Fill in all [YOUR_*] fields to configure the Cognitive Twin for this project.${NC}"
+    else
+        echo -e "${GREEN}[PASS] AI-COGNITIVE-TWIN-PROTOCOL.md exists and appears configured.${NC}"
+    fi
 else
-    echo -e "${RED}[WARNING] No Master Protocol or README found.${NC}"
+    echo -e "${RED}[WARNING] docs/AI-COGNITIVE-TWIN-PROTOCOL.md is MISSING.${NC}"
+    echo -e "${YELLOW}          Copy from the DSOM skeleton and fill in your project details.${NC}"
+    echo -e "${YELLOW}          See: docs/HOWTO-SETUP-ANSIBLE-BASELINE.md${NC}"
+fi
+
+# 5. ANSIBLE BASELINE CHECK
+echo -e "\n${YELLOW}Step 5: Checking Ansible Baseline...${NC}"
+ANSIBLE_OK=1
+
+if ! command -v ansible &>/dev/null; then
+    echo -e "${YELLOW}[SKIP] Ansible not installed — skipping Ansible checks (non-infra project or setup pending).${NC}"
+    ANSIBLE_OK=0
+else
+    echo -e "${GREEN}[OK] Ansible: $(ansible --version | head -1)${NC}"
+    if [ -f "$ROOT_DIR/inventory/hosts.yml" ]; then
+        echo -e "${GREEN}[OK] inventory/hosts.yml exists.${NC}"
+    else
+        echo -e "${YELLOW}[WARN] inventory/hosts.yml missing. Run HOWTO-SETUP-ANSIBLE-BASELINE.md to create it.${NC}"
+    fi
+    if [ -f "$ROOT_DIR/ansible.cfg" ]; then
+        echo -e "${GREEN}[OK] ansible.cfg exists.${NC}"
+    else
+        echo -e "${YELLOW}[WARN] ansible.cfg missing.${NC}"
+    fi
 fi
 
 echo -e "\n${GREEN}==================================================${NC}"
 echo -e "${GREEN}   AUDIT COMPLETE: DSOM SECURED & READY FOR FLOW  ${NC}"
+echo -e "${GREEN}   Protocol v5.0 | GitOps · AIOps · Ansible        ${NC}"
 echo -e "${GREEN}==================================================${NC}"
-

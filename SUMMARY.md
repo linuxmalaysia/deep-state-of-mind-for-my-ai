@@ -55,10 +55,11 @@
 
 ## 🛠️ 5. Tools & Automation (Drivers)
 * [🔍 Audit Pre-Flight](tools/audit-pre-flight.sh)
+* [🚀 Git Ritual (SOD/EOD)](tools/git-ritual.sh)
 * [🧠 Brain Initialiser](tools/init-brain.sh)
 * [🚀 Reanimation Engine](tools/reanimate.sh)
 * [🛡️ Privacy Guardian](tools/privacy-guardian.sh)
-* [🌙 Git Ritual (SOD/EOD)](tools/git-ritual.sh)
+* [🌙 Git Ritual PowerShell](tools/git-ritual.ps1)
 
 ### 📜 Automation Documentation
 * [📜 Reanimate Logic](tools-and-automation/reanimate.md)
