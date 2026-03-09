@@ -1,0 +1,126 @@
+---
+# ==============================================================================
+# 🧠 DSOM Ansible Playbook: init-brain.yml (v1.0)
+#
+# Converts: tools/init-brain.sh
+# Author:   Harisfazillah Jamel (LinuxMalaysia)
+# License:  GNU GPL v3.0 or later
+#
+# Description:
+# Initialises the DSOM .agent/brain/ directory and core artifacts.
+# Idempotent: will not overwrite existing files.
+#
+# Run on localhost (own workstation):
+#   ansible-playbook playbooks/dsom/init-brain.yml -i localhost,
+#
+# Run on a remote CI server:
+#   ansible-playbook playbooks/dsom/init-brain.yml -i inventory/hosts.yml --limit ci_servers
+# ==============================================================================
+
+- name: DSOM Brain Initialiser (v1.0)
+  hosts: "{{ target_hosts | default('localhost') }}"
+  connection: "{{ 'local' if (target_hosts is not defined or target_hosts == 'localhost') else 'ssh' }}"
+  gather_facts: true
+  vars:
+    repo_root: "{{ lookup('env', 'PWD') }}"
+    brain_dir: "{{ repo_root }}/.agent/brain"
+
+  tasks:
+    - name: "DSOM Init-Brain | Print header"
+      debug:
+        msg: |
+          ==================================================
+            DSOM BRAIN INITIALISER (Ansible v1.0)
+            Host:      {{ inventory_hostname }}
+            Brain Dir: {{ brain_dir }}
+          ==================================================
+
+    # ── Create Brain Directory ────────────────────────────────────────────────
+    - name: "Init | Create .agent/brain/ directory"
+      file:
+        path: "{{ brain_dir }}"
+        state: directory
+        mode: "0755"
+
+    # ── Create Brain Artifacts (idempotent — will not overwrite) ──────────────
+    - name: "Init | Create task.md (if not exists)"
+      copy:
+        dest: "{{ brain_dir }}/task.md"
+        force: false
+        content: |
+          # 🎯 Current Task: Project Initialization
+
+          - [ ] Define initial architectural goals.
+          - [ ] Fill in docs/AI-COGNITIVE-TWIN-PROTOCOL.md (all [PLACEHOLDER] fields).
+          - [ ] Run tools/audit-pre-flight.sh and confirm all PASS.
+          - [ ] Update implementation_plan.md with the new project vision.
+          - [ ] Run tools/reanimate.sh for the first AI Handshake.
+
+    - name: "Init | Create walkthrough.md (if not exists)"
+      copy:
+        dest: "{{ brain_dir }}/walkthrough.md"
+        force: false
+        content: |
+          # 🏁 DSOM Project Walkthrough & Session Log
+
+          ## 📜 Historical Context
+          This project is derived from the DSOM Template (v6.0).
+
+          ## 🏁 Session Anchor: {{ ansible_date_time.date }} (Initialization)
+          - **Accomplished:** Project initialized using DSOM Protocol v6.0 skeleton.
+          - **Current State:** Brain artifacts created. Awaiting AI Handshake.
+          - **Mental Anchor:** Ready for the first Architectural Handshake via tools/reanimate.sh.
+
+    - name: "Init | Create implementation_plan.md (if not exists)"
+      copy:
+        dest: "{{ brain_dir }}/implementation_plan.md"
+        force: false
+        content: |
+          # 🗺️ Implementation Plan: [PROJECT_NAME]
+
+          ## Phase 1: Foundation
+          - [ ] Fill in AI-COGNITIVE-TWIN-PROTOCOL.md
+          - [ ] Set up Ansible baseline (see HOWTO-SETUP-ANSIBLE-BASELINE.md)
+          - [ ] First AI Handshake and session anchor
+
+          ## Phase 2: Core Logic Development
+          - [ ] Define project-specific architecture
+          - [ ] Build core Ansible roles
+
+    - name: "Init | Create DSOM_TEMPLATE.md (if not exists)"
+      copy:
+        dest: "{{ brain_dir }}/DSOM_TEMPLATE.md"
+        force: false
+        content: |
+          # 🧠 Deep State Walkthrough Template
+
+          ## 🏗️ 1. The Architectural "Why"
+          [Explain the reason this change was needed]
+
+          ## 🛠️ 2. Implementation Logic
+          [Detail what was done and how]
+
+          ## 🏁 3. Mental Anchor
+          [One sentence: state of the system right now, where to resume]
+
+    # ── Final Report ──────────────────────────────────────────────────────────
+    - name: "Init | List created artifacts"
+      find:
+        paths: "{{ brain_dir }}"
+        patterns: "*.md"
+      register: brain_files
+
+    - name: "Init | Print completion summary"
+      debug:
+        msg: |
+          ==================================================
+            DSOM BRAIN IS READY
+          ==================================================
+          Location: {{ brain_dir }}
+          Files:
+          {% for f in brain_files.files %}
+            - {{ f.path | basename }}
+          {% endfor %}
+
+          Next: Fill in docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+          Then: Run tools/reanimate.sh for the AI Handshake

@@ -1,0 +1,101 @@
+---
+# ==============================================================================
+# 🛡️ DSOM Ansible Playbook: privacy-scan.yml (v1.0)
+#
+# Converts: tools/privacy-guardian.sh
+# Author:   Harisfazillah Jamel (LinuxMalaysia)
+# License:  GNU GPL v3.0 or later
+#
+# Description:
+# Scans the DSOM reanimation manifest for sensitive information before upload.
+# Checks for: IPv4, Email, API keys, Tokens, Private Keys, home paths.
+#
+# Usage:
+#   ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
+#   ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost, -e "manifest_date=2026-03-10"
+# ==============================================================================
+
+- name: DSOM Privacy Guardian Scan (v1.0)
+  hosts: "{{ target_hosts | default('localhost') }}"
+  connection: local
+  gather_facts: true
+  vars:
+    repo_root: "{{ lookup('env', 'PWD') }}"
+    manifest_date: "{{ ansible_date_time.date }}"
+    manifest_file: "{{ repo_root }}/sod_manifest_{{ manifest_date }}.txt"
+    sensitive_patterns:
+      - { name: "IPv4 Address", pattern: "([0-9]{1,3}\\.){3}[0-9]{1,3}" }
+      - {
+          name: "Email Address",
+          pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+        }
+      - { name: "Google API Key", pattern: "AIza[0-9A-Za-z\\-_]{35}" }
+      - { name: "AWS Access Key", pattern: "AKIA[0-9A-Z]{16}" }
+      - { name: "GitHub Token", pattern: "gh[pousr]_[a-zA-Z0-9]{36}" }
+      - { name: "OpenAI Secret", pattern: "sk-[a-zA-Z0-9]{48}" }
+      - { name: "Slack Token", pattern: "xox[bap]-[a-zA-Z0-9-]+" }
+      - {
+          name: "PEM Private Key",
+          pattern: "-----BEGIN [A-Z]+ PRIVATE KEY-----",
+        }
+      - { name: "Linux Home Path", pattern: "\\/home\\/[a-z0-9_-]+\\/" }
+
+  tasks:
+    - name: "Privacy Scan | Print header"
+      debug:
+        msg: |
+          ==================================================
+            DSOM PRIVACY GUARDIAN SCAN (Ansible v1.0)
+            Target: {{ manifest_file }}
+          ==================================================
+
+    - name: "Privacy Scan | Check manifest exists"
+      stat:
+        path: "{{ manifest_file }}"
+      register: manifest_stat
+
+    - name: "Privacy Scan | Fail if manifest not found"
+      fail:
+        msg: |
+          [ERROR] Manifest not found: {{ manifest_file }}
+          Run: bash tools/reanimate.sh
+          Then re-run this scan.
+      when: not manifest_stat.stat.exists
+
+    - name: "Privacy Scan | Scan for each sensitive pattern"
+      shell: "grep -Eon '{{ item.pattern }}' '{{ manifest_file }}' | head -5 || true"
+      register: scan_results
+      loop: "{{ sensitive_patterns }}"
+      loop_control:
+        label: "{{ item.name }}"
+      changed_when: false
+
+    - name: "Privacy Scan | Collect all leaks found"
+      set_fact:
+        leaks_found: "{{ leaks_found | default([]) + [{ 'type': item.item.name, 'matches': item.stdout_lines }] }}"
+      loop: "{{ scan_results.results }}"
+      when: item.stdout != ""
+
+    - name: "Privacy Scan | Report leaks if found"
+      debug:
+        msg: |
+          ⚠️  POTENTIAL LEAK: {{ item.type }}
+          {{ item.matches | join('\n') }}
+      loop: "{{ leaks_found | default([]) }}"
+      when: leaks_found is defined and leaks_found | length > 0
+
+    - name: "Privacy Scan | Fail if leaks detected"
+      fail:
+        msg: |
+          [SCAN FAILED] {{ leaks_found | length }} sensitive pattern type(s) detected.
+          ACTION: Edit {{ manifest_file }} to mask these values before sharing.
+      when: leaks_found is defined and leaks_found | length > 0
+
+    - name: "Privacy Scan | Report clean result"
+      debug:
+        msg: |
+          ==================================================
+            ✅ SCAN COMPLETE: No sensitive patterns found.
+            You are clear to upload this manifest.
+          ==================================================
+      when: leaks_found is not defined or leaks_found | length == 0
