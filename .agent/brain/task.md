@@ -30,5 +30,5 @@
 ## 🚀 Tomorrow's Targets (Next SOD)
 - [ ] Read new Hibernation Notes to restore context
 - [ ] Run `git pull` on T2 to ensure environment mirror
-- [ ] Implement remaining Ansible playbooks (Logstash/Kafka persistence deployments) under the v6.1 paradigm
+- [ ] Establish standard Ansible scaffold (e.g., `playbooks/dsom/site.yml`) for downstream projects to adopt
 - [ ] Evaluate cluster health and application of 4-Tier command highway constraints
