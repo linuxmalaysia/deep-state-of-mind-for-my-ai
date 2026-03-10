@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Antigravity Token & Quota Monitor (v8.3)
+    Antigravity Token & Quota Monitor (v8.4)
 .DESCRIPTION
     Real-time monitor for Gemini Pro / Antigravity conversation context files (.pb).
     Shows size, estimated tokens, velocity, age, and status for each session.
@@ -32,10 +32,11 @@
 .NOTES
     Author:  DSOM For My AI Protocol v6.1
     Partner: Harisfazillah Jamel (LinuxMalaysia)
-    Version: v8.3
+    Version: v8.4
     License: GNU GPL v3.0
 #>
 
+[CmdletBinding()]
 param (
     [Switch]$Loop,
     [int]$IntervalSeconds = 60,
@@ -48,7 +49,7 @@ param (
 
 $CONVERSATION_PATH = "$HOME\.gemini\antigravity\conversations\"
 $TOKENS_PER_MB     = 62500
-$VERSION           = "v8.3"
+$VERSION           = "v8.4"
 $PreviousState     = @{}
 
 function Get-AgeLabel {
