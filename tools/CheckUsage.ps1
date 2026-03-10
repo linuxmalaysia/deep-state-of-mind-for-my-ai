@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Antigravity Token & Quota Monitor (v8.5)
+    Antigravity Token & Quota Monitor (v8.6)
 .DESCRIPTION
     Real-time monitor for Gemini Pro / Antigravity conversation context files (.pb).
     Shows size, estimated tokens, velocity, age, and status for each session.
@@ -36,7 +36,6 @@
     License: GNU GPL v3.0
 #>
 
-[CmdletBinding()]
 param (
     [Alias("l")][Switch]$Loop,
     [Alias("i")][int]$IntervalSeconds = 60,
@@ -45,13 +44,33 @@ param (
     [Alias("d")][int]$DormantHours    = 4,
     [Alias("n")][int]$Top             = 0,
     [Switch]$NoPulse,
-    [Alias("h")][Switch]$Help
+    [Alias("h")][Switch]$Help,
+    [Parameter(ValueFromRemainingArguments)][string[]]$UnknownArgs
 )
 
 $CONVERSATION_PATH = "$HOME\.gemini\antigravity\conversations\"
 $TOKENS_PER_MB     = 62500
-$VERSION           = "v8.5"
+$VERSION           = "v8.6"
 $PreviousState     = @{}
+
+# Friendly error for unknown/misspelled parameters
+if ($UnknownArgs) {
+    $bad = $UnknownArgs -join ", "
+    Write-Host ""
+    Write-Host "  [ERROR] Unknown parameter(s): $bad" -ForegroundColor Red
+    Write-Host ""
+    Write-Host "  Did you mean one of these?" -ForegroundColor Yellow
+    Write-Host "    -Loop (-l)            Live monitor mode" -ForegroundColor Yellow
+    Write-Host "    -IntervalSeconds (-i) Refresh interval in seconds" -ForegroundColor Yellow
+    Write-Host "    -ThresholdMB (-w)     MB threshold for WARNING" -ForegroundColor Yellow
+    Write-Host "    -CriticalMB (-c)      MB threshold for LIMIT RISK" -ForegroundColor Yellow
+    Write-Host "    -Top (-n)             Show only top N sessions" -ForegroundColor Yellow
+    Write-Host "    -Help (-h)            Show full help screen" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "  Run: .\CheckUsage.ps1 -Help   for the full options guide." -ForegroundColor Cyan
+    Write-Host ""
+    exit 1
+}
 
 function Show-Help {
     Write-Host ""
