@@ -246,142 +246,87 @@ flowchart TD
 
 ---
 
-## **v6.1 Addendum: The Three-Pillar Sovereignty Model**
+## **v6.1 Addendum: Operationalising Sovereignty**
 
 *Added: 2026-03-10 | Protocol Version: v6.1*
 
-The DSOM protocol has evolved from a documentation-governance framework into a **full operational triad**. Sections 1–7 above describe the metacognitive foundations. This addendum documents the **operational infrastructure** that makes those foundations executable.
+Sections 1–7 above establish the metacognitive and governance foundations of DSOM. This addendum records the **strategic evolution** from documentation governance to a **full operational triad** — without repeating the detailed procedures that are authoritatively documented elsewhere.
 
 ---
 
 ### **8. The Three Non-Negotiable Pillars (v6.0+)**
 
-Sovereignty now requires three operational pillars working in concert:
+DSOM sovereignty is now enforced by three pillars operating as a closed loop:
 
 ```
-AI Proposes → Git Records → Ansible Executes → AI Verifies → EOD Save
+AI Proposes → Git Records → Ansible Executes → AI Verifies → EOD Save → (next SOD)
 ```
 
-| Pillar | Sovereign Law | Violation Consequence |
-|:---|:---|:---|
-| **AIOps** | AI is Advisory only. Proposes and verifies — never executes directly. | Re-read `AI-MASTER-PROTOCOL.md`. Refuse the request. |
-| **GitOps** | If not in Git, it does not exist. No change without a commit first. | Roll back. Commit. Then re-execute. |
-| **Ansible** | All OS-level changes via Ansible playbooks. Zero ad-hoc SSH to nodes. | Write a playbook. Target via inventory. Never `ssh` and run manually. |
+| Pillar | Sovereign Law |
+|:---|:---|
+| **AIOps** | AI is Advisory only. Proposes and verifies. Never executes directly. |
+| **GitOps** | Git is the Single Source of Truth. If not committed, it does not exist. |
+| **Ansible** | Exclusive OS-level executor. Zero ad-hoc SSH to any node. |
+
+> **Full strategic doctrine:** [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
 
 ---
 
 ### **9. The 4-Tier Command Highway**
 
-Code and configuration flow through a defined hierarchy. No tier may be bypassed.
+Code and configuration flow through a defined hierarchy — no tier may be bypassed. The sovereign identity `dsom-admin:2001:2001` is consistent across all tiers derived from this skeleton.
 
-| Tier | Name | Identity | Path |
-|:---|:---|:---|:---|
-| **T1** | Command Centre | Windows 11 + PowerShell + AI | `D:\Users\[you]\Projects\[project]` |
-| **T2** | Dev Bridge | `dsom-control-almalinux10` (WSL2) — `dsom-admin` UID 2001 | `/mnt/d/Users/[you]/Projects/[project]` |
-| **T3** | Jump Host | Ansible Orchestrator — `dsom-admin` | `/opt/[project]/` |
-| **T4** | Production Fabric | Target VMs/containers | Role-specific |
+```
+T1 (Windows/AI) → git push → T2 (WSL2 dsom-control-almalinux10) → ansible-playbook → T3/T4
+```
 
-**The Mirror Rule:** T1 and T2 must always be at the same Git commit.
-After every T1 `git push`, T2 must run `git pull origin main`.
+> **Setup guide:** [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](HOWTO-SETUP-WSL-ALMALINUX10.md)
+> **Ansible baseline:** [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md)
+> **Environment map:** [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) — fill once per project
 
 ---
 
-### **10. Ansible Integration: Executable Sovereignty**
+### **10. Ansible: Executable Sovereignty**
 
-From v6.0, Ansible is the **exclusive OS-level executor** — the only mechanism for state changes on any node.
+From v6.0, Ansible is the exclusive mechanism for production state changes. The `playbooks/dsom/` directory provides programmatic equivalents of all `tools/` scripts — runnable on `localhost` (T2) or any inventory group.
 
-#### Ansible Operational Standards
+The **Sovereign Identity** (`dsom-admin`, UID 2001) is the standard execution context for all Ansible operations. Idempotency, `ansible-vault`-only secrets, and inventory-driven targeting are non-negotiable.
 
-| Standard | Rule |
+> **Playbook reference:** [`playbooks/dsom/site.yml`](../playbooks/dsom/site.yml) — master entry point
+> **Contributor guide:** [`CONTRIBUTING.md`](../CONTRIBUTING.md) — Ansible standards and hybrid workflow
+
+---
+
+### **11. The Cognitive Continuity Loop**
+
+The v6.1 formalisation of day-to-day AI context continuity: the **Hibernation Notes** mechanism bridges the ephemeral AI session with the permanent Git repository.
+
+At EOD, the AI exports its full context (instructions, environment, history, Mental Anchor) as a single code block. At the next SOD, that block is fed back to any AI to restore full context instantly — making DSOM **AI-model-agnostic**.
+
+> **EOD procedure:** [`docs/EOD-RITUAL.md`](EOD-RITUAL.md) — Step 1b (Hibernation Notes Export)
+> **SOD procedure:** [`docs/SOD-RITUAL.md`](SOD-RITUAL.md) — Step 4b (SOD Reanimation Prompt)
+> **AI prompts:** [`docs/REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) — 5 copy-paste prompts
+
+---
+
+### **12. Authoritative Document Index (v6.1)**
+
+The following documents constitute the **Sovereign Document Stack** for any v6.1 DSOM project:
+
+| Role | Document |
 |:---|:---|
-| **Idempotency** | Every playbook runs safely multiple times without side-effects |
-| **No Secrets in Git** | `ansible-vault` only. Never plaintext credentials |
-| **Inventory-Driven** | All targeting via `inventory/hosts.yml` or `hosts.prod.yml` |
-| **Dry-run First** | `--check` always before live run |
-| **Lint Before Commit** | `ansible-lint` must pass before any playbook is committed |
-
-#### DSOM Operational Playbooks (v6.1)
-
-| Playbook | Equivalent Script | Purpose |
-|:---|:---|:---|
-| `playbooks/dsom/site.yml` | (master) | Entry point for all DSOM playbook operations |
-| `playbooks/dsom/audit-preflight.yml` | `audit-pre-flight.sh` | 5-check workspace audit on localhost or inventory |
-| `playbooks/dsom/init-brain.yml` | `init-brain.sh` | Idempotent brain artifact initialisation |
-| `playbooks/dsom/privacy-scan.yml` | `privacy-guardian.sh` | Manifest privacy scanner (fail-closed) |
-
-#### The Sovereign Identity (dsom-admin)
-
-```
-User:      dsom-admin
-UID/GID:   2001:2001
-Sudo:      Passwordless (wheel group, Ansible become tasks)
-SSH Key:   Ed25519 at ~/.ssh/id_ed25519
-WSL2:      dsom-control-almalinux10 (AlmaLinux 10 — Purple Lion)
-```
-
-Consistent across all projects derived from this skeleton — enabling portable Ansible automation without re-configuring trust.
-
----
-
-### **11. The Cognitive Continuity Loop (Hibernation Notes)**
-
-A v6.1 advancement: the formalisation of the **day-to-day cognitive continuity mechanism** — bridging the ephemeral AI session with the permanent Git repository.
-
-```
-DAY N EOD:   AI exports all context → Hibernation Notes (single code block)
-             Human saves → .agent/brain/hibernation-notes-YYYY-MM-DD.txt
-             git commit "chore(brain): EOD sovereign save"
-                          ↓ [sleep — Git is the memory]
-DAY N+1 SOD: Human pastes Hibernation Notes → new AI session
-             AI reads → full context restored in seconds
-             State: "Sovereign State Restored — [PROJECT] is live."
-             Active work begins. Zero cold start. Zero context decay.
-                          ↓ [repeats every day, forever]
-```
-
-**What the Hibernation Notes contain:**
-- All AI instructions (tone, format, `always do X`, `never do Y`)
-- Project identity: 4W1H, server/VM/container names, roles, relations
-- Tasks, phases, goals, recurring topics
-- Tools, languages, frameworks in use
-- Environment maps (T1–T4 tiers, users, paths)
-- Mental Anchor — exact stopping point for next session
-
-This mechanism makes DSOM **AI-model-agnostic**: the same Hibernation Notes block can be fed to Gemini, Claude, Copilot, Antigravity, or any local LLM — that AI immediately becomes a functional Cognitive Digital Twin.
-
----
-
-### **12. Updated Tool Ecosystem (v6.1)**
-
-| Tool | Version | Platform | Purpose |
-|:---|:---|:---|:---|
-| `audit-pre-flight.sh/.ps1` | v5.0 | T1+T2 | 5-check SOD audit (Brain + Git + Env + Twin + Ansible) |
-| `reanimate.sh/.ps1` | v2.0 | T1+T2 | 13-section context manifest generator |
-| `git-ritual.sh/.ps1` | v1.0 ⭐ NEW | T1+T2 | SOD pull + EOD interactive semantic commit |
-| `hibernation.sh/.ps1` | v1.0 | T1+T2 | EOD dirty-state safety checker |
-| `privacy-guardian.sh` | v1.0 | T2 | Manifest privacy scanner (fail-closed) |
-| `init-brain.sh` | v1.0 | T2 | Brain artifact initialiser |
-| `setup-wsl-almalinux10.ps1` | v1.0 ⭐ NEW | T1 | AlmaLinux 10 WSL2 import + bootstrap |
-| `setup-dsom-control-node.sh` | v1.0 ⭐ NEW | T2 (root) | dsom-admin (UID 2001) bootstrap inside AlmaLinux 10 |
-
----
-
-### **13. Current Document Ecosystem (v6.1)**
-
-| Layer | Document | Sovereign Role |
-|:---|:---|:---|
-| Constitution | `AI-MASTER-PROTOCOL.md` | Immutable governance laws |
-| Identity | `AI-COGNITIVE-TWIN-PROTOCOL.md` | Per-project identity — fill once |
-| Handover | `HUMAN-HANDOVER-CONTEXT.md` | SOD session prompt — paste to AI |
-| SOD | `SOD-RITUAL.md` | 5-step start-of-day + Cognitive Handshake |
-| EOD | `EOD-RITUAL.md` | 6-step end-of-day + Hibernation Notes prompt |
-| Prompts | `REANIMATION-PROMPT-TEMPLATE.md` | 5 AI prompts (SOD, EOD, Handover, Re-sync, Export) |
-| Transition | `RITUAL-OF-TRANSITION.md` | Three-pillar loop + AI model switch protocol |
-| Strategy | `GITOPS-AIOPS-ANSIBLE-STRATEGY.md` | Three-pillar strategic doctrine |
-| Operations | `OPERATIONAL-GUIDE.md` | Daily procedures + §6 Guardrails |
-| Ansible | `HOWTO-SETUP-ANSIBLE-BASELINE.md` | Ansible setup from scratch (LDP-standard) |
-| WSL2 | `HOWTO-SETUP-WSL-ALMALINUX10.md` | AlmaLinux 10 Control Node setup |
-| Contributors | `CONTRIBUTING.md` | Hybrid workflow + contributor guide |
+| Constitution | [`AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) |
+| Project Identity | [`AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) |
+| Session Handover | [`HUMAN-HANDOVER-CONTEXT.md`](HUMAN-HANDOVER-CONTEXT.md) |
+| Start of Day | [`SOD-RITUAL.md`](SOD-RITUAL.md) |
+| End of Day | [`EOD-RITUAL.md`](EOD-RITUAL.md) |
+| AI Prompts | [`REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) |
+| Transition | [`RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) |
+| Strategy | [`GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) |
+| Operations | [`OPERATIONAL-GUIDE.md`](OPERATIONAL-GUIDE.md) |
+| Ansible Setup | [`HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md) |
+| WSL2 Setup | [`HOWTO-SETUP-WSL-ALMALINUX10.md`](HOWTO-SETUP-WSL-ALMALINUX10.md) |
+| Contributors | [`CONTRIBUTING.md`](../CONTRIBUTING.md) |
 
 ---
 
@@ -389,3 +334,4 @@ This mechanism makes DSOM **AI-model-agnostic**: the same Hibernation Notes bloc
 *Primary Repository: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai*
 *Official Documentation: https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai*
 *Original Manifesto: v5.x (retained intact) | v6.1 Addendum: 2026-03-10*
+
