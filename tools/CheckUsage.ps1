@@ -1,14 +1,13 @@
 <#
 .SYNOPSIS
-    Antigravity Token & Quota Monitor (v8.0 — DSOM Sovereign Edition)
+    Antigravity Token & Quota Monitor (v8.1 ASCII-Safe)
 .DESCRIPTION
     Real-time monitor for Gemini Pro / Antigravity conversation context files (.pb).
     Detects Context Limits, Rate Limits (RPM/TPM), session age, velocity spikes,
-    and highlights the current active session with a 🎯 CURRENT marker.
+    and highlights the current active session with a [>>] CURRENT marker.
 
-    Token estimation: 1 MB ≈ 62,500 tokens (based on ~4 chars/token average,
-    1 MB = ~250,000 chars → 250,000 / 4 = 62,500 tokens). More accurate than
-    the industry convention of 50k/MB.
+    Token estimation: 1 MB ~ 62,500 tokens (4 chars/token average,
+    1 MB = ~250,000 chars -> 250,000 / 4 = 62,500 tokens).
 
 .PARAMETER Loop
     If set, refreshes every N seconds (default 60). Press Ctrl+C to stop.
@@ -41,7 +40,7 @@
 .NOTES
     Author:  DSOM For My AI Protocol v6.1
     Partner: Harisfazillah Jamel (LinuxMalaysia)
-    Version: v8.0
+    Version: v8.1 (ASCII-Safe)
     License: GNU GPL v3.0
 #>
 
@@ -57,12 +56,13 @@ param (
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 $CONVERSATION_PATH = "$HOME\.gemini\antigravity\conversations\"
-$TOKENS_PER_MB     = 62500   # 1 MB ≈ 62,500 tokens (4 chars/token, 1MB = 250k chars)
+$TOKENS_PER_MB     = 62500   # 1 MB ~ 62,500 tokens (4 chars/token, 1MB = 250k chars)
 $VELOCITY_RPM_RISK = 2.0     # MB delta per interval that signals burst risk
-$VERSION           = "v8.0"
+$VERSION           = "v8.1"
+$HR                = "-" * 108
 
 # ── State ─────────────────────────────────────────────────────────────────────
-$PreviousState = @{}   # SessionID → SizeMB at last refresh
+$PreviousState = @{}   # SessionID -> SizeMB at last refresh
 
 # ── Helper: Format age as human-readable string ────────────────────────────────
 function Format-Age {
@@ -78,7 +78,7 @@ function Format-Age {
 # ── Helper: Shorten a UUID-style session ID ────────────────────────────────────
 function Format-ShortID {
     param([string]$ID)
-    if ($ID.Length -ge 8) { return $ID.Substring(0, 8) + "…" }
+    if ($ID.Length -ge 8) { return $ID.Substring(0, 8) + "..." }
     return $ID
 }
 
@@ -89,17 +89,17 @@ function Show-Usage {
 
     # ── Title bar ──────────────────────────────────────────────────────────────
     Write-Host ""
-    Write-Host ("  🧠 DSOM Antigravity Sovereign Monitor [{0}]" -f $VERSION) -ForegroundColor Cyan
+    Write-Host ("  [DSOM] Antigravity Sovereign Monitor [{0}]" -f $VERSION) -ForegroundColor Cyan
     Write-Host ("  Time: {0}  |  Path: {1}" -f $now.ToString("yyyy-MM-dd HH:mm:ss"), $CONVERSATION_PATH) -ForegroundColor DarkGray
     if ($Loop) {
-        Write-Host "  Mode: LIVE PULSE ↺  (Ctrl+C to stop)  |  Thresholds: WARN={0}MB  CRIT={1}MB  DORMANT={2}h" -f $ThresholdMB, $CriticalMB, $DormantHours -ForegroundColor DarkGray
+        Write-Host ("  Mode: LIVE PULSE (loop)  |  Thresholds: WARN={0}MB  CRIT={1}MB  DORMANT={2}h  |  Ctrl+C to stop" -f $ThresholdMB, $CriticalMB, $DormantHours) -ForegroundColor DarkGray
     } else {
         Write-Host ("  Mode: SNAPSHOT  |  Thresholds: WARN={0}MB  CRIT={1}MB  DORMANT={2}h" -f $ThresholdMB, $CriticalMB, $DormantHours) -ForegroundColor DarkGray
     }
     Write-Host ""
 
     if (-not (Test-Path $CONVERSATION_PATH)) {
-        Write-Host "  [ERROR] Directory not found: $CONVERSATION_PATH" -ForegroundColor Red
+        Write-Host ("  [ERROR] Directory not found: {0}" -f $CONVERSATION_PATH) -ForegroundColor Red
         return
     }
 
@@ -141,11 +141,10 @@ function Show-Usage {
     if ($Top -gt 0) { $rows = $rows | Select-Object -First $Top }
 
     # ── Column header ──────────────────────────────────────────────────────────
-    $hr = "─" * 108
-    Write-Host "  $hr" -ForegroundColor DarkGray
-    Write-Host ("  {0,-14} {1,10} {2,13} {3,11} {4,-10} {5,-16} {6}" -f `
+    Write-Host ("  {0}" -f $HR) -ForegroundColor DarkGray
+    Write-Host ("  {0,-15} {1,10} {2,13} {3,11} {4,-10} {5,-16} {6}" -f `
         "Session", "Size (MB)", "Tokens (Est)", "Velocity", "Age", "Last Active", "Status") -ForegroundColor Gray
-    Write-Host "  $hr" -ForegroundColor DarkGray
+    Write-Host ("  {0}" -f $HR) -ForegroundColor DarkGray
 
     # ── Data rows ─────────────────────────────────────────────────────────────
     $totalMB     = 0
@@ -158,71 +157,70 @@ function Show-Usage {
         $totalTokens += $row.EstTokens
 
         # Velocity string
-        $deltaStr = "       -"
+        $deltaStr = "         -"
         if ($row.Delta -gt 0) { $deltaStr = "+{0:N2} MB" -f $row.Delta }
         elseif ($row.Delta -lt 0) { $deltaStr = "{0:N2} MB" -f $row.Delta }
 
-        # Determine status and colour
-        $status = "Nominal"
+        # Default status
+        $status = "[OK ] Nominal"
         $color  = "Green"
-        $marker = "  "
+        $marker = "    "
 
-        if ($row.IsCurrent) { $marker = "🎯" }
+        if ($row.IsCurrent) { $marker = "[>>]" }
 
         if ($row.Delta -gt $VELOCITY_RPM_RISK) {
-            $status = "⚡ RPM RISK (burst)"
+            $status = "[RPM] RISK - High Burst"
             $color  = "Magenta"
             $warnCount++
         } elseif ($row.Delta -gt 0) {
-            $status = "🔵 Active (+{0:N2}MB)" -f $row.Delta
+            $status = "[ACT] Active (+{0:N2}MB)" -f $row.Delta
             $color  = "Cyan"
         } elseif ($row.SizeMB -gt $CriticalMB) {
-            $status = "🔴 LIMIT RISK — pause use"
+            $status = "[CRT] LIMIT RISK - Pause use"
             $color  = "Red"
             $critCount++
         } elseif ($row.SizeMB -gt $ThresholdMB) {
-            $status = "🟡 Warning (>{0}MB)" -f $ThresholdMB
+            $status = "[WRN] Warning (>{0}MB)" -f $ThresholdMB
             $color  = "Yellow"
             $warnCount++
         } elseif ($row.AgeHours -gt $DormantHours -and -not $row.IsCurrent) {
-            $status = "💤 Dormant"
+            $status = "[ZZZ] Dormant"
             $color  = "DarkGray"
         } else {
-            $status = "✅ Nominal"
+            $status = "[OK ] Nominal"
             $color  = "Green"
         }
 
         $displayID = "{0} {1}" -f $marker, $row.ShortID
 
-        Write-Host ("  {0,-14} {1,10:N2} {2,13:N0} {3,11} {4,-10} {5,-16} {6}" -f `
+        Write-Host ("  {0,-15} {1,10:N2} {2,13:N0} {3,11} {4,-10} {5,-16} {6}" -f `
             $displayID, $row.SizeMB, $row.EstTokens, $deltaStr, $row.Age, $row.LastWriteStr, $status) `
             -ForegroundColor $color
     }
 
     # ── Summary footer ─────────────────────────────────────────────────────────
-    Write-Host "  $hr" -ForegroundColor DarkGray
+    Write-Host ("  {0}" -f $HR) -ForegroundColor DarkGray
 
-    $totalSessions = $rows.Count
-    $totalShown    = if ($Top -gt 0 -and $Top -lt $files.Count) { " (top $Top of $($files.Count))" } else { " ($totalSessions total)" }
+    $totalSessions  = $rows.Count
+    $shownLabel     = if ($Top -gt 0 -and $Top -lt $files.Count) { " (top {0} of {1})" -f $Top, $files.Count } else { " ({0} total)" -f $totalSessions }
 
-    Write-Host ("  Sessions{0}  |  Total: {1:N2} MB  |  Est Tokens: {2:N0}  |  ⚠️  Warn: {3}  |  🔴 Crit: {4}" -f `
-        $totalShown, $totalMB, $totalTokens, $warnCount, $critCount) -ForegroundColor DarkGray
+    Write-Host ("  Sessions{0}  |  Total: {1:N2} MB  |  Est Tokens: {2:N0}  |  WARN: {3}  |  CRIT: {4}" -f `
+        $shownLabel, $totalMB, $totalTokens, $warnCount, $critCount) -ForegroundColor DarkGray
 
-    # ── Token estimation reference ─────────────────────────────────────────────
-    Write-Host ("  Token basis: 1 MB ≈ {0:N0} tokens (4 chars/token avg)" -f $TOKENS_PER_MB) -ForegroundColor DarkGray
+    Write-Host ("  Token basis: 1 MB ~ {0:N0} tokens (4 chars/token avg)" -f $TOKENS_PER_MB) -ForegroundColor DarkGray
     Write-Host ""
 
-    # ── Quota Heartbeat countdown (loop mode only) ─────────────────────────────
+    # ── Countdown (loop mode only) ────────────────────────────────────────────
     if ($Loop -and -not $NoPulse) {
-        Write-Host "  ─── Quota Heartbeat (next refresh in {0}s) ───" -f $IntervalSeconds -ForegroundColor DarkGray
+        Write-Host ("  --- Quota Heartbeat (next refresh in {0}s) ---" -f $IntervalSeconds) -ForegroundColor DarkGray
         for ($i = $IntervalSeconds; $i -gt 0; $i--) {
-            $bar     = "█" * [int]($i / $IntervalSeconds * 20)
-            $empty   = "░" * (20 - [int]($i / $IntervalSeconds * 20))
+            $filled  = [int]($i / $IntervalSeconds * 20)
+            $bar     = ("#" * $filled) + ("." * (20 - $filled))
             $pct     = [int]($i / $IntervalSeconds * 100)
-            Write-Host ("`r  [{0}{1}] {2,3}%  {3,3}s remaining  " -f $bar, $empty, $pct, $i) -NoNewline -ForegroundColor DarkCyan
+            Write-Host ("`r  [{0}] {1,3}%  {2,3}s remaining  " -f $bar, $pct, $i) -NoNewline -ForegroundColor DarkCyan
             Start-Sleep -Seconds 1
         }
-        Write-Host "`r" + (" " * 60) -NoNewline   # clear the progress line
+        Write-Host ("`r" + (" " * 55)) -NoNewline   # clear progress line
     }
 }
 
