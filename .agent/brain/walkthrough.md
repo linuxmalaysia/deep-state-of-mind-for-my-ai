@@ -241,3 +241,17 @@ The reason we perform the **Sunday Audit** (The Dry-Run) is to verify that all *
 - Defined Brain files as Active Consciousness (Tactical/Strategic).
 - Mandated Semantic Entries for history tracking.
 - **[2026-01-21]:** Initialised HISTORY.md as the Universal Ledger. Linked archival memory to active SKMS.
+
+## 🏁 Session Anchor: 2026-03-10 (EOD) — DSOM v6.1 Documentation & Tooling Stabilization
+
+### Accomplished
+- **Documentation Overhaul (v6.1 Standard):** Fully rewrote and standardized `CONTRIBUTING.md` (hybrid workflow), `SOD-RITUAL.md` (5 steps), `EOD-RITUAL.md` (6 steps), `REANIMATION-PROMPT-TEMPLATE.md` (5 prompts), `RITUAL-OF-TRANSITION.md` (Three-Pillar transition loop), `OPERATIONAL-SOVEREIGNTY.md` (Command Highway + Continuity Loop), and `MIRROR-OF-KNOWLEDGE.md` (AI Persona logic, Stop Conditions).
+- **Core Tooling Upgrades:** Upgraded `tools/CheckUsage.ps1` to v8.6 with accurate token estimation, an ASCII-safe CLI interface, robust alias/flag parsing via `ValueFromRemainingArguments`, and a live progress indicator. Documented this tool via a newly created `docs/tools/HOWTO-CHECKUSAGE.md`.
+- **Cognitive Loop Implementation:** Enforced the EOD Hibernation Notes export procedure, providing the Human with an exact verbatim backup of the AI context.
+
+### Why
+- The protocol has shifted to a "Three Non-Negotiable Pillars" paradigm (GitOps, AIOps, Ansible). Documentation needed to reflect strict OS-level Ansible execution, clear UI/Agent separation, and the 4-Tier Command Highway to prevent structural contamination between Windows (T1) and WSL2 (T2).
+- Ensuring human-legible, idempotent, clear boundaries between Agent (AIOps advisory) and Infrastructure (Git/Ansible execution) maximizes Operational Sovereignty and project portability.
+
+### Mental Anchor
+> **v6.1 Documentation and Tooling baseline complete and pushed.** T1 and T2 tools are fully updated. Next action for tomorrow: Run `.\tools\git-ritual.ps1 sod` (or `git pull origin main` in T2), confirm environment health via `.\tools\audit-pre-flight.ps1`, then proceed to implement Logstash/Kafka persistence playbooks under the v6.1 paradigm.
