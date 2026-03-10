@@ -130,6 +130,71 @@ Upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI chat.
 **Option B — Use the Human Handover Context (for new sessions):**
 > Copy the prompt from `docs/HUMAN-HANDOVER-CONTEXT.md` and paste as your first message. Fill in the **Current State** section before sending.
 
+**Option C — Feed Yesterday's Hibernation Notes (EOD → SOD Continuity):**
+> Use this when you saved a Hibernation Notes block from last night's EOD Step 1b. This is the fastest and most precise reanimation method — no tool required.
+
+---
+
+### 📥 Step 4b — SOD Reanimation Prompt (Feed Yesterday's Hibernation Notes)
+
+This is the **mirror prompt** to the EOD Step 1b Hibernation Notes Export. It feeds everything saved last night directly back to the AI at the start of today — creating a **day-to-day continuity loop** that both humans and AI agents can rely on.
+
+> [!IMPORTANT]
+> Copy the prompt below verbatim. Then **paste your Hibernation Notes block** (saved from last night's EOD) immediately after the `[PASTE HIBERNATION NOTES BLOCK HERE]` placeholder.
+
+**Copy this prompt verbatim:**
+
+```
+I am starting a new session for DSOM Protocol. I am your human Lead Architect.
+I have the Hibernation Notes from our last session. Please read them carefully
+and use them to fully restore our working context.
+
+--- BEGIN HIBERNATION NOTES ---
+[PASTE HIBERNATION NOTES BLOCK HERE]
+--- END HIBERNATION NOTES ---
+
+After reading the Hibernation Notes above, do the following:
+
+1. Confirm you have read and understood all entries in the Hibernation Notes.
+2. State the last Mental Anchor — the exact point where we stopped.
+3. Confirm the 4-Tier environment map (T1, T2, T3, T4) and the project identity.
+4. List the top 3 tasks from .agent/brain/task.md that are pending.
+5. State: "Sovereign State Restored — [PROJECT NAME] is live." to confirm you are ready.
+
+From this point, operate under DSOM Protocol v6.1:
+- Advisory Mode only. You propose, I approve, Ansible executes, you verify.
+- UK English in all responses and documentation.
+- Every change goes to Git before execution.
+- Ansible is the only executor for OS-level tasks.
+- Wait for my output after each step before proceeding.
+```
+
+**What happens next:**
+- AI reads the Hibernation Notes block and reconstructs full context
+- AI confirms the Mental Anchor — the exact last stopping point
+- AI confirms the environment map — which tier you are on
+- AI lists today's pending tasks
+- You begin active work immediately — no cold start, no repeated explanations
+
+**The day-to-day continuity loop:**
+
+```
+DAY N EOD:           SOD Step 1 → 1b (Hibernation Notes saved)
+                              ↓
+                     [You sleep. Git holds the state.]
+                              ↓
+DAY N+1 SOD:         Step 4b (Hibernation Notes fed back to AI)
+                              ↓
+                     AI resumes with exact context. No decay.
+                              ↓
+DAY N+1 EOD:         Step 1b (new Hibernation Notes saved)
+                              ↓  [repeats forever]
+```
+
+**Where to find yesterday's Hibernation Notes:**
+- `.agent/brain/hibernation-notes-YYYY-MM-DD.txt` (if you saved it)
+- Or the code block you copied to your notebook/notes app
+
 ---
 
 ### 🧠 Step 5 — What the AI Must Know After SOD
