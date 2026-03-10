@@ -148,44 +148,134 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
 
 ## 📅 Daily Operating Rituals
 
-### 🌅 Start of Day (SOD)
+> **Full ritual guides:** [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md)
+
+---
+
+### 🌅 Start of Day (SOD) — 5 Steps
+
+**Step 1 — Git Sync** *(Pull latest state)*
+```powershell
+.\tools\git-ritual.ps1 sod        # Windows (T1)
+```
 ```bash
-# 1. Pull latest from Git
-./tools/git-ritual.sh sod         # Linux
-.\tools\git-ritual.ps1 sod        # Windows
-
-# 2. Run pre-flight audit
-./tools/audit-pre-flight.sh
-
-# 3. Generate manifest and brief your AI
-bash tools/reanimate.sh
-# → Upload manifest → AI reads → Handshake complete
+./tools/git-ritual.sh sod         # WSL2 (T2)
 ```
 
-### 🛠️ During Active Work
-The AI will:
-- Propose code, playbooks, configs
-- Explain the **Why** before the **What**
-- Wait for your approval before any execution step
-- Ask you to paste Ansible output back for verification
-
-You will:
-- Review AI proposals
-- Commit to Git (`./tools/git-ritual.sh`)
-- Run Ansible commands (AI gives you the exact command)
-- Paste output back to AI
-
-### 🌙 End of Day (EOD)
+**Step 2 — Intelligence Audit** *(Verify workspace is healthy)*
+```powershell
+.\tools\audit-pre-flight.ps1      # Windows
+```
 ```bash
-# 1. Run the EOD Git ritual (guided semantic commit + push)
-./tools/git-ritual.sh             # Linux
-.\tools\git-ritual.ps1            # Windows
+./tools/audit-pre-flight.sh       # WSL2
+```
+All steps must show `[PASS]`. Fix any `[FAIL]` before continuing.
 
-# 2. Run hibernation check
-./tools/hibernation.sh
-
-# 3. Scan manifest before sharing (if you generated one)
+**Step 3 — Generate Reanimation Manifest**
+```bash
+bash tools/reanimate.sh           # WSL2
+```
+Optional — scan before sharing:
+```bash
 ./tools/privacy-guardian.sh
+```
+
+**Step 4 — Brief Your AI (The Cognitive Handshake)**
+
+*Option A — Upload manifest to AI chat, then say:*
+> *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the Mental Anchor and confirm the 4-Tier environment map. State: 'Sovereign State Synchronised' when ready."*
+
+*Option B — If you have yesterday's Hibernation Notes, use the SOD Reanimation Prompt (see `docs/SOD-RITUAL.md` Step 4b):*
+```
+I am starting a new session for DSOM Protocol. I am your human Lead Architect.
+I have the Hibernation Notes from our last session. Please read them carefully
+and use them to fully restore our working context.
+
+--- BEGIN HIBERNATION NOTES ---
+[PASTE YESTERDAY'S HIBERNATION NOTES HERE]
+--- END HIBERNATION NOTES ---
+
+After reading: state the last Mental Anchor, confirm the T1-T4 environment map,
+list top 3 pending tasks. State: 'Sovereign State Restored — [PROJECT NAME] is live.'
+Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only execution.
+```
+
+**Step 5 — AI confirms readiness, you begin work.**
+
+---
+
+### 🛠️ During Active Work
+
+| Human | AI Agent |
+|:---|:---|
+| Reviews AI proposals | Proposes code, playbooks, configs |
+| Approves before execution | Explains the **Why** before the **What** |
+| Commits to Git | Waits for output after each step |
+| Runs Ansible (exact command from AI) | Verifies output and confirms next step |
+
+---
+
+### 🌙 End of Day (EOD) — 6 Steps
+
+**Step 1 — Context Consolidation** *(Ask your AI)*
+> *"We are ending the session. Update `.agent/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agent/brain/walkthrough.md` with today's Mental Anchor."*
+
+**Step 1b — Hibernation Notes Export** *(Run this in your AI chat — copy verbatim)*
+```
+I'm as human, want to know and remember, and need to export my data and I want
+you to generate a "Hibernation notes" now for my EOD of day. List every memory
+you have stored about our progress and our chats of this project, as well as
+any context you've learned about this project from past to current conversations.
+Output everything in a single code block so I can easily copy it.
+Format each entry as: [date saved, if available] - memory content.
+Cover: instructions I've given you, project details (servers/VMs/containers,
+4W1H), tasks/phases/goals, tools/languages/frameworks, preferences and
+corrections. Do not summarize, group, or omit any entries.
+After the code block, list all docs in docs/ and brain files in .agent/.
+Don't hide anything from me. Trust me as your master.
+```
+Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt` or to your notebook.
+
+**Step 2 — Hibernation Safety Check**
+```bash
+./tools/hibernation.sh            # WSL2
+.\tools\hibernation.ps1           # Windows
+```
+
+**Step 3 — Privacy Scan** *(if you generated a manifest)*
+```bash
+./tools/privacy-guardian.sh
+```
+
+**Step 4 — Sovereign Save** *(guided semantic commit)*
+```bash
+./tools/git-ritual.sh             # WSL2 — interactive EOD
+.\tools\git-ritual.ps1            # Windows — interactive EOD
+```
+
+**Step 5 — T2 Sync** *(pull on WSL2 after Windows push)*
+```bash
+git pull origin main
+```
+
+**Step 6 — Write tomorrow's Mental Anchor in your notebook.**
+
+```
+✅ EOD DONE when: task.md updated | walkthrough.md anchored |
+                  hibernation.sh GREEN | git pushed | T2 synced
+```
+
+---
+
+### 🔄 The Day-to-Day Continuity Loop
+
+```
+EOD → Step 1b: Save Hibernation Notes
+         ↓  [sleep — Git holds state]
+SOD → Step 4b: Feed Hibernation Notes back to AI
+         ↓  [AI resumes with full context — no decay]
+EOD → Step 1b: Save new Hibernation Notes
+         ↓  [repeats every day, forever]
 ```
 
 ---
@@ -294,10 +384,14 @@ Once Step 6 is complete, the AI knows:
 | Document | Purpose |
 |:---|:---|
 | [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | The Sovereign Constitution — AI governance laws |
-| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | **Fill this in first** — Project Identity Card |
+| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
+| [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide (5 steps + prompts) |
+| [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md) | 🌙 Full End-of-Day ritual guide (6 steps + Hibernation Notes prompt) |
+| [`docs/HUMAN-HANDOVER-CONTEXT.md`](docs/HUMAN-HANDOVER-CONTEXT.md) | 🤝 Session handover prompt — paste as first AI message |
 | [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md) | Three-pillar strategic doctrine |
 | [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](docs/HOWTO-SETUP-ANSIBLE-BASELINE.md) | Step-by-step Ansible baseline setup |
-| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](docs/REANIMATION-PROMPT-TEMPLATE.md) | Copy-paste prompts for AI session start and handover |
+| [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](docs/HOWTO-SETUP-WSL-ALMALINUX10.md) | AlmaLinux 10 WSL2 Ansible Control Node setup |
+| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](docs/REANIMATION-PROMPT-TEMPLATE.md) | AI session prompt templates |
 | [`docs/OPERATIONAL-GUIDE.md`](docs/OPERATIONAL-GUIDE.md) | Daily operational procedures |
 
 ---
