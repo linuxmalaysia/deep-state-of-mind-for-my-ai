@@ -254,4 +254,4 @@ The reason we perform the **Sunday Audit** (The Dry-Run) is to verify that all *
 - Ensuring human-legible, idempotent, clear boundaries between Agent (AIOps advisory) and Infrastructure (Git/Ansible execution) maximizes Operational Sovereignty and project portability.
 
 ### Mental Anchor
-> **v6.1 Documentation and Tooling baseline complete and pushed.** T1 and T2 tools are fully updated. Next action for tomorrow: Run `.\tools\git-ritual.ps1 sod` (or `git pull origin main` in T2), confirm environment health via `.\tools\audit-pre-flight.ps1`, then proceed to implement Logstash/Kafka persistence playbooks under the v6.1 paradigm.
+> **v6.1 Documentation and Tooling baseline complete and pushed.** T1 and T2 tools are fully updated. Next action for tomorrow: Run `.\tools\git-ritual.ps1 sod` (or `git pull origin main` in T2), confirm environment health via `.\tools\audit-pre-flight.ps1`, then proceed to finalize the `playbooks/dsom/` scaffolding for downstream projects to adopt this baseline.
