@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Antigravity Token & Quota Monitor (v8.4)
+    Antigravity Token & Quota Monitor (v8.5)
 .DESCRIPTION
     Real-time monitor for Gemini Pro / Antigravity conversation context files (.pb).
     Shows size, estimated tokens, velocity, age, and status for each session.
@@ -32,25 +32,62 @@
 .NOTES
     Author:  DSOM For My AI Protocol v6.1
     Partner: Harisfazillah Jamel (LinuxMalaysia)
-    Version: v8.4
+    Version: v8.5
     License: GNU GPL v3.0
 #>
 
 [CmdletBinding()]
 param (
-    [Switch]$Loop,
-    [int]$IntervalSeconds = 60,
-    [int]$ThresholdMB     = 20,
-    [int]$CriticalMB      = 50,
-    [int]$DormantHours    = 4,
-    [int]$Top             = 0,
-    [Switch]$NoPulse
+    [Alias("l")][Switch]$Loop,
+    [Alias("i")][int]$IntervalSeconds = 60,
+    [Alias("w")][int]$ThresholdMB     = 20,
+    [Alias("c")][int]$CriticalMB      = 50,
+    [Alias("d")][int]$DormantHours    = 4,
+    [Alias("n")][int]$Top             = 0,
+    [Switch]$NoPulse,
+    [Alias("h")][Switch]$Help
 )
 
 $CONVERSATION_PATH = "$HOME\.gemini\antigravity\conversations\"
 $TOKENS_PER_MB     = 62500
-$VERSION           = "v8.4"
+$VERSION           = "v8.5"
 $PreviousState     = @{}
+
+function Show-Help {
+    Write-Host ""
+    Write-Host "  [DSOM] CheckUsage.ps1 $VERSION  --  Antigravity Session Monitor" -ForegroundColor Cyan
+    Write-Host "  " + ("-" * 70) -ForegroundColor DarkGray
+    Write-Host "  USAGE:" -ForegroundColor White
+    Write-Host "    .\CheckUsage.ps1  [options]" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "  OPTIONS:" -ForegroundColor White
+    Write-Host "    -Loop    (-l)         Live monitor mode (repeats every IntervalSeconds)" -ForegroundColor Gray
+    Write-Host "    -IntervalSeconds (-i) Refresh interval in seconds     [default: 60]" -ForegroundColor Gray
+    Write-Host "    -ThresholdMB     (-w) MB size to trigger WARNING       [default: 20]" -ForegroundColor Gray
+    Write-Host "    -CriticalMB      (-c) MB size to trigger LIMIT RISK    [default: 50]" -ForegroundColor Gray
+    Write-Host "    -DormantHours    (-d) Hours idle before DORMANT status [default: 4]" -ForegroundColor Gray
+    Write-Host "    -Top             (-n) Show only top N sessions         [default: all]" -ForegroundColor Gray
+    Write-Host "    -NoPulse              Suppress countdown bar in loop mode" -ForegroundColor Gray
+    Write-Host "    -Help            (-h) Show this help screen" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "  EXAMPLES:" -ForegroundColor White
+    Write-Host "    .\CheckUsage.ps1                          # snapshot (run once)" -ForegroundColor Green
+    Write-Host "    .\CheckUsage.ps1 -Loop                    # live monitor, refresh every 60s" -ForegroundColor Green
+    Write-Host "    .\CheckUsage.ps1 -Loop -IntervalSeconds 30 # refresh every 30s" -ForegroundColor Green
+    Write-Host "    .\CheckUsage.ps1 -Loop -l -i 10           # aliases work too" -ForegroundColor Green
+    Write-Host "    .\CheckUsage.ps1 -Top 5                   # top 5 sessions only" -ForegroundColor Green
+    Write-Host "    .\CheckUsage.ps1 -ThresholdMB 10 -CriticalMB 25" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "  STATUS LABELS:" -ForegroundColor White
+    Write-Host "    [>>]  Current session (most recently active)" -ForegroundColor Cyan
+    Write-Host "    [OK ] Nominal" -ForegroundColor Green
+    Write-Host "    [ACT] Actively growing this refresh cycle" -ForegroundColor Cyan
+    Write-Host "    [WRN] Warning  -- session exceeds ThresholdMB" -ForegroundColor Yellow
+    Write-Host "    [CRT] LIMIT RISK -- exceeds CriticalMB, consider pausing" -ForegroundColor Red
+    Write-Host "    [RPM] High burst velocity (>2MB per interval)" -ForegroundColor Magenta
+    Write-Host "    [ZZZ] Dormant -- no activity for DormantHours" -ForegroundColor DarkGray
+    Write-Host ""
+}
 
 function Get-AgeLabel {
     param([datetime]$T)
@@ -209,6 +246,10 @@ if ($Loop) {
     } catch {
         Write-Host "`n  Monitor stopped." -ForegroundColor Gray
     }
+} elseif ($Help) {
+    Show-Help
 } else {
     Show-Monitor
+    Write-Host "  Tip: run with -Help (-h) for all options, or -Loop (-l) to monitor live." -ForegroundColor DarkGray
+    Write-Host ""
 }
