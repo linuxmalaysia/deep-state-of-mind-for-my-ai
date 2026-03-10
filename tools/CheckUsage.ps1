@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Antigravity Token & Quota Monitor (v8.2 Stable)
+    Antigravity Token & Quota Monitor (v8.3)
 .DESCRIPTION
     Real-time monitor for Gemini Pro / Antigravity conversation context files (.pb).
     Shows size, estimated tokens, velocity, age, and status for each session.
@@ -32,7 +32,7 @@
 .NOTES
     Author:  DSOM For My AI Protocol v6.1
     Partner: Harisfazillah Jamel (LinuxMalaysia)
-    Version: v8.2 Stable
+    Version: v8.3
     License: GNU GPL v3.0
 #>
 
@@ -48,7 +48,7 @@ param (
 
 $CONVERSATION_PATH = "$HOME\.gemini\antigravity\conversations\"
 $TOKENS_PER_MB     = 62500
-$VERSION           = "v8.2"
+$VERSION           = "v8.3"
 $PreviousState     = @{}
 
 function Get-AgeLabel {
@@ -182,25 +182,29 @@ function Show-Monitor {
         $shownNote, $totalMB, $totalTokens, $warnCount, $critCount) -ForegroundColor DarkGray
     Write-Host ("  Token basis: 1 MB ~ {0:N0} tokens (4 chars/token avg)" -f $TOKENS_PER_MB) -ForegroundColor DarkGray
     Write-Host ""
-
-    if ($Loop -and -not $NoPulse) {
-        Write-Host ("  --- Next refresh in {0}s (Ctrl+C to stop) ---" -f $IntervalSeconds) -ForegroundColor DarkGray
-        for ($i = $IntervalSeconds; $i -gt 0; $i--) {
-            $filled = [int]($i / $IntervalSeconds * 20)
-            $bar    = ("#" * $filled) + ("." * (20 - $filled))
-            $pct    = [int]($i / $IntervalSeconds * 100)
-            $line   = ("  [{0}] {1,3}%  {2,3}s  " -f $bar, $pct, $i)
-            Write-Host ("`r" + $line) -NoNewline -ForegroundColor DarkCyan
-            Start-Sleep -Seconds 1
-        }
-        Write-Host ("`r" + (" " * 50) + "`r") -NoNewline
-    }
 }
 
 # Entry point
 if ($Loop) {
     try {
-        while ($true) { Show-Monitor }
+        while ($true) {
+            Show-Monitor
+
+            # Countdown lives here — $Loop, $NoPulse, $IntervalSeconds are all in script scope
+            if (-not $NoPulse) {
+                Write-Host ("  --- Next refresh in {0}s (Ctrl+C to stop) ---" -f $IntervalSeconds) -ForegroundColor DarkGray
+                for ($i = $IntervalSeconds; $i -gt 0; $i--) {
+                    $filled = [int]($i / $IntervalSeconds * 20)
+                    $bar    = ("#" * $filled) + ("." * (20 - $filled))
+                    $pct    = [int]($i / $IntervalSeconds * 100)
+                    Write-Host ("`r  [{0}] {1,3}%  {2,3}s remaining  " -f $bar, $pct, $i) -NoNewline -ForegroundColor DarkCyan
+                    Start-Sleep -Seconds 1
+                }
+                Write-Host ("`r" + (" " * 55) + "`r") -NoNewline
+            } else {
+                Start-Sleep -Seconds $IntervalSeconds
+            }
+        }
     } catch {
         Write-Host "`n  Monitor stopped." -ForegroundColor Gray
     }
