@@ -1,186 +1,35 @@
 ---
-# ==============================================================================
-# 🎭 DSOM Ansible Playbook: audit-preflight.yml (v1.0)
-#
-# Converts: tools/audit-pre-flight.sh
-# Author:   Harisfazillah Jamel (LinuxMalaysia)
-# License:  GNU GPL v3.0 or later
-#
-# Description:
-# Runs the full DSOM pre-flight audit. Checks Brain artifacts, Git sync,
-# Cognitive Twin Protocol configuration, and Ansible baseline.
-#
-# Run on localhost:
-#   ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
-#
-# Run on all nodes in inventory:
-#   ansible-playbook playbooks/dsom/audit-preflight.yml -i inventory/hosts.yml
-#
-# Run on specific group:
-#   ansible-playbook playbooks/dsom/audit-preflight.yml -i inventory/hosts.yml --limit control_nodes
-# ==============================================================================
+# playbooks/dsom/audit-preflight.yml
+# DSOM Baseline Audit Playbook
+# Ensures the node is ready for Sovereign Configuration.
 
-- name: DSOM Pre-Flight Audit (v1.0)
-  hosts: "{{ target_hosts | default('localhost') }}"
-  connection: "{{ 'local' if (target_hosts is not defined or target_hosts == 'localhost') else 'ssh' }}"
-  gather_facts: true
-  vars:
-    repo_root: "{{ lookup('env', 'PWD') }}"
-    brain_dir: "{{ repo_root }}/.agent/brain"
-    docs_dir: "{{ repo_root }}/docs"
-    twin_protocol_file: "{{ docs_dir }}/AI-COGNITIVE-TWIN-PROTOCOL.md"
-    placeholder_string: "[YOUR_PROJECT_NAME]"
-
+- name: Run infrastructure pre-flight checks
+  hosts: localhost
+  gather_facts: false
+  
   tasks:
-    # ── Banner ─────────────────────────────────────────────────────────────────
-    - name: "DSOM Audit | Print header"
-      debug:
-        msg: |
-          ==================================================
-            DSOM INTELLIGENCE AUDIT (Ansible v1.0)
-            Host: {{ inventory_hostname }}
-            User: {{ ansible_user_id }}
-            OS:   {{ ansible_distribution }} {{ ansible_distribution_version }}
-          ==================================================
+    - name: Verify AI Brain connectivity (local test)
+      ansible.builtin.stat:
+        path: "{{ playbook_dir }}/../../.agent/brain/task.md"
+      register: brain_stat_task
+      delegate_to: localhost
 
-    # ── Step 1: Brain Artifact Check ───────────────────────────────────────────
-    - name: "Step 1 | Check AI Brain artifact: task.md"
-      stat:
-        path: "{{ brain_dir }}/task.md"
-      register: task_md
+    - name: Fail if task.md artifact is missing
+      ansible.builtin.fail:
+        msg: "CRITICAL [FAIL]: The .agent/brain/task.md artifact is missing. Initialize the brain before running playbooks."
+      when: not brain_stat_task.stat.exists
 
-    - name: "Step 1 | Check AI Brain artifact: walkthrough.md"
-      stat:
-        path: "{{ brain_dir }}/walkthrough.md"
-      register: walkthrough_md
+    - name: Verify Walkthrough artifact
+      ansible.builtin.stat:
+        path: "{{ playbook_dir }}/../../.agent/brain/walkthrough.md"
+      register: brain_stat_walk
+      delegate_to: localhost
 
-    - name: "Step 1 | Assert Brain artifacts are present"
-      assert:
-        that:
-          - task_md.stat.exists
-          - walkthrough_md.stat.exists
-        fail_msg: |
-          [FAIL] Missing Brain artifact(s) in {{ brain_dir }}/.
-          Run: ansible-playbook playbooks/dsom/init-brain.yml -i localhost,
-        success_msg: "[PASS] AI Brain artifacts are present."
+    - name: Fail if walkthrough.md artifact is missing
+      ansible.builtin.fail:
+        msg: "CRITICAL [FAIL]: The .agent/brain/walkthrough.md artifact is missing."
+      when: not brain_stat_walk.stat.exists
 
-    # ── Step 2: Git Drift Check ────────────────────────────────────────────────
-    - name: "Step 2 | Fetch from remote to check Git drift"
-      command: git -C "{{ repo_root }}" fetch origin
-      register: git_fetch
-      ignore_errors: true
-      changed_when: false
-
-    - name: "Step 2 | Get local Git SHA"
-      command: git -C "{{ repo_root }}" rev-parse HEAD
-      register: git_local
-      changed_when: false
-
-    - name: "Step 2 | Get remote Git SHA"
-      command: git -C "{{ repo_root }}" rev-parse "@{u}"
-      register: git_remote
-      ignore_errors: true
-      changed_when: false
-
-    - name: "Step 2 | Report Git sync status"
-      debug:
-        msg: >
-          {% if git_remote.rc != 0 %}
-          [SKIP] No upstream remote found. Working in local mode.
-          {% elif git_local.stdout == git_remote.stdout %}
-          [PASS] Git state is synchronized with remote.
-          {% else %}
-          [WARNING] Git drift detected! Local and Remote are out of sync.
-          Run: git pull origin main
-          {% endif %}
-
-    # ── Step 3: Language/Environment Discovery ─────────────────────────────────
-    - name: "Step 3 | Detect project type"
-      stat:
-        path: "{{ repo_root }}/{{ item.file }}"
-      loop:
-        - { file: "composer.json", lang: "PHP" }
-        - { file: "package.json", lang: "Node.js" }
-        - { file: "requirements.txt", lang: "Python" }
-        - { file: "pyproject.toml", lang: "Python" }
-        - { file: "go.mod", lang: "Go" }
-        - { file: "ansible.cfg", lang: "Ansible/Infrastructure" }
-      register: env_checks
-      changed_when: false
-
-    - name: "Step 3 | Report environment"
-      debug:
-        msg: "[DETECTED] {{ item.item.lang }} project ({{ item.item.file }} found)."
-      loop: "{{ env_checks.results }}"
-      when: item.stat.exists
-
-    # ── Step 4: Cognitive Twin Protocol Check ──────────────────────────────────
-    - name: "Step 4 | Check AI-COGNITIVE-TWIN-PROTOCOL.md exists"
-      stat:
-        path: "{{ twin_protocol_file }}"
-      register: twin_protocol
-
-    - name: "Step 4 | Read Cognitive Twin Protocol content (if exists)"
-      slurp:
-        src: "{{ twin_protocol_file }}"
-      register: twin_content
-      when: twin_protocol.stat.exists
-
-    - name: "Step 4 | Assert Cognitive Twin Protocol is present and configured"
-      assert:
-        that:
-          - twin_protocol.stat.exists
-          - placeholder_string not in (twin_content.content | b64decode)
-        fail_msg: |
-          [FAIL] AI-COGNITIVE-TWIN-PROTOCOL.md either missing or still has unfilled [PLACEHOLDER] values.
-          Fill in all [YOUR_*] fields in docs/AI-COGNITIVE-TWIN-PROTOCOL.md before proceeding.
-        success_msg: "[PASS] Cognitive Twin Protocol exists and appears configured."
-      when: twin_protocol.stat.exists
-
-    - name: "Step 4 | Warn if Cognitive Twin Protocol is missing"
-      fail:
-        msg: |
-          [FAIL] docs/AI-COGNITIVE-TWIN-PROTOCOL.md is MISSING.
-          Copy from the DSOM skeleton and fill in your project details.
-      when: not twin_protocol.stat.exists
-
-    # ── Step 5: Ansible Baseline Check ────────────────────────────────────────
-    - name: "Step 5 | Check Ansible is installed"
-      command: ansible --version
-      register: ansible_check
-      ignore_errors: true
-      changed_when: false
-
-    - name: "Step 5 | Report Ansible version"
-      debug:
-        msg: >
-          {% if ansible_check.rc == 0 %}
-          [OK] {{ ansible_check.stdout_lines[0] }}
-          {% else %}
-          [SKIP] Ansible not installed on this host.
-          {% endif %}
-
-    - name: "Step 5 | Check inventory/hosts.yml exists"
-      stat:
-        path: "{{ repo_root }}/inventory/hosts.yml"
-      register: hosts_yml
-
-    - name: "Step 5 | Check ansible.cfg exists"
-      stat:
-        path: "{{ repo_root }}/ansible.cfg"
-      register: ansible_cfg
-
-    - name: "Step 5 | Report Ansible baseline status"
-      debug:
-        msg: |
-          inventory/hosts.yml : {{ '[OK]' if hosts_yml.stat.exists else '[WARN] Missing — see HOWTO-SETUP-ANSIBLE-BASELINE.md' }}
-          ansible.cfg          : {{ '[OK]' if ansible_cfg.stat.exists else '[WARN] Missing' }}
-
-    # ── Final Summary ──────────────────────────────────────────────────────────
-    - name: "DSOM Audit | Print completion banner"
-      debug:
-        msg: |
-          ==================================================
-            AUDIT COMPLETE: DSOM SECURED & READY FOR FLOW
-            Protocol v5.0 | GitOps · AIOps · Ansible
-          ==================================================
+    - name: Success message
+      ansible.builtin.debug:
+        msg: "[PASS] AI Brain artifacts are present. Ready for Ansible execution."

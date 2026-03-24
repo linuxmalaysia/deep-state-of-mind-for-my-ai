@@ -1,27 +1,30 @@
 ---
-# ==============================================================================
-# 🚀 DSOM Ansible Playbook: site.yml (v1.0)
-#
-# Master entry point for all DSOM operational playbooks.
-# Author:   Harisfazillah Jamel (LinuxMalaysia)
-# License:  GNU GPL v3.0 or later
-#
-# Usage:
-#   # Full pre-flight audit on localhost
-#   ansible-playbook playbooks/dsom/site.yml -i localhost,
-#
-#   # Full pre-flight on all inventory nodes
-#   ansible-playbook playbooks/dsom/site.yml -i inventory/hosts.yml
-#
-#   # Only run specific tags
-#   ansible-playbook playbooks/dsom/site.yml -i localhost, --tags audit
-#   ansible-playbook playbooks/dsom/site.yml -i localhost, --tags init
-# ==============================================================================
+# playbooks/dsom/site.yml
+# DSOM Baseline Execution Playbook
+# This is the scaffold for human-approved Sovereign execution.
 
-- name: "DSOM | Full Pre-Flight Audit"
-  import_playbook: audit-preflight.yml
-  tags: ["audit", "preflight"]
+- name: DSOM Pre-flight checks and baseline configuration
+  hosts: all
+  become: yes
+  vars:
+    project_name: "deep-state-of-mind-for-my-ai"
+  
+  pre_tasks:
+    - name: Run audit-preflight checks
+      ansible.builtin.import_playbook: audit-preflight.yml
+      tags: preflight
 
-- name: "DSOM | Brain Initialisation"
-  import_playbook: init-brain.yml
-  tags: ["init", "brain"]
+  roles:
+    # Add project-specific roles here.
+    # Architecture: Advisory over Execution. Logic over Operation.
+    # - role: common
+    # - role: secure-baseline
+
+  tasks:
+    - name: Ensure target application path exists
+      ansible.builtin.file:
+        path: "/opt/{{ project_name }}"
+        state: directory
+        owner: "{{ ansible_user | default('root') }}"
+        group: "{{ ansible_user | default('root') }}"
+        mode: '0750'
