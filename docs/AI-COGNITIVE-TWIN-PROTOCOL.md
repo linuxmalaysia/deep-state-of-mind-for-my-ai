@@ -20,11 +20,11 @@ The AI operates as the **Cognitive Digital Twin** of the **Lead Architect** (Sov
 
 ## 🛡️ 2. The Project Security Doctrine
 
-Define the security and privilege model for **[YOUR_PROJECT_NAME]** (v[YOUR_VERSION]):
+Define the security and privilege model for **deep-state-of-mind-for-my-ai** (v6.1.0):
 
 - **[Orchestration Layer]** (e.g., Ansible, Kubernetes): Runs as `root` / elevated privilege (`become: yes`) on target nodes to manage OS-level tuning, filesystem permissions, and service isolation.
-- **[Application Containers/Processes]** (e.g., app servers, brokers, databases): Explicitly started as **UID [APP_UID]** (e.g., `1000` in Dev, `[PROD_UID]` in Production) for process isolation.
-- **Identity Baseline:** The user `[DEV_USER]` is the **Development Baseline**. Production environments use the designated `[PROD_USER]:[PROD_UID]` identity standard.
+- **[Application Containers/Processes]** (e.g., app servers, brokers, databases): Explicitly started as **UID 1000** (e.g., `1000` in Dev, `1000` in Production) for process isolation.
+- **Identity Baseline:** The user `linuxmalaysia` is the **Development Baseline**. Production environments use the designated `linuxmalaysia:1000` identity standard.
 
 > **[BRAIN] Why?** Separating orchestration privilege from application execution privilege prevents privilege escalation vulnerabilities. The orchestrator has the power; the application has only what it needs.
 
@@ -32,31 +32,31 @@ Define the security and privilege model for **[YOUR_PROJECT_NAME]** (v[YOUR_VERS
 
 ## 🗺️ 3. Environmental Mapping (The 4-Tier Control Plane)
 
-Every project must map its operating environment to the DSOM 4-Tier model. Fill in the details for **[YOUR_PROJECT_NAME]**.
+Every project must map its operating environment to the DSOM 4-Tier model. Fill in the details for **deep-state-of-mind-for-my-ai**.
 
 ### [T1] Tier 1: Command Centre
-- **OS / Tool**: [e.g., Windows 11 / macOS / Linux Workstation]
-- **Primary AI**: [e.g., Google Antigravity, GitHub Copilot]
-- **Shell**: [e.g., PowerShell, Bash, Zsh]
-- **Path**: `[YOUR_LOCAL_REPO_PATH]`
+- **OS / Tool**: Linux Workstation
+- **Primary AI**: Google Antigravity
+- **Shell**: Bash
+- **Path**: `/home/linuxmalaysia/kerja/deep-state-of-mind-for-my-ai`
 - **Role**: Code Editing, Git Management (Commit/Push to GitHub), Brain Artifact Maintenance, Ansible Playbook Authoring.
 
 ### [T2] Tier 2: Dev Bridge / Local Test
-- **OS**: [e.g., Ubuntu 24.04 LTS WSL2, local VM]
-- **User**: `[DEV_USER]` (Local Architect)
-- **Path**: `[YOUR_DEV_PATH]`
+- **OS**: Ubuntu 24.04 LTS
+- **User**: `linuxmalaysia` (Local Architect)
+- **Path**: `/home/linuxmalaysia/kerja/deep-state-of-mind-for-my-ai`
 - **Role**: High-fidelity Testing, Log Analysis, Ansible Execution (dry-run), Hybrid Audit Verification.
 
 ### [T3] Tier 3: Staging / UAT
-- **Host(s)**: `[STAGING_HOSTNAME_OR_IP]`
-- **User**: `[STAGING_USER]:[STAGING_UID]`
-- **Path**: `[STAGING_APP_PATH]`
+- **Host(s)**: `localhost`
+- **User**: `linuxmalaysia:1000`
+- **Path**: `/opt/deep-state-of-mind-for-my-ai`
 - **Role**: Pre-production validation, integration testing, performance benchmarking.
 
 ### [T4] Tier 4: Production
-- **Host(s)**: `[PROD_HOSTNAME_OR_IP]`
-- **User**: `[PROD_USER]:[PROD_UID]`
-- **Path**: `[PROD_APP_PATH]` (e.g., `/opt/[project-name]/`)
+- **Host(s)**: `localhost`
+- **User**: `linuxmalaysia:1000`
+- **Path**: `/opt/deep-state-of-mind-for-my-ai`
 - **Role**: Live system. Zero-tolerance for ad-hoc changes. All changes via Ansible + GitOps only.
 
 ---
@@ -65,11 +65,11 @@ Every project must map its operating environment to the DSOM 4-Tier model. Fill 
 
 In production environments (Tier 3/4), the identity is **non-negotiable**:
 
-1. **Sovereign User**: `[PROD_USER]` (UID:GID `[PROD_UID]:[PROD_GID]`).
+1. **Sovereign User**: `linuxmalaysia` (UID:GID `1000:1000`).
 2. **UID Consistency**: If using containers (e.g., Podman, Docker), enforce UID mapping to ensure the container UID/GID **exactly mirrors** the executing host user.
    > **[BRAIN] Why?** This alignment ensures Storage Sovereignty. When the container and host share the same identity, file permissions remain consistent, preventing "Permission Denied" errors and ensuring the Sovereign Architect has absolute ownership of persistent data.
 3. **Secrets Injection**: The `inventory/hosts.yml` references variables (e.g., `{{ production_credentials }}`) that are **injected at runtime** via `ansible-vault`. The inventory does *not* contain secrets directly.
-4. **Project Isolation Law**: All operations are restricted to `[PROD_APP_PATH]` to ensure zero-interference between projects or nodes.
+4. **Project Isolation Law**: All operations are restricted to `/opt/deep-state-of-mind-for-my-ai` to ensure zero-interference between projects or nodes.
 
 ---
 
@@ -97,7 +97,7 @@ The **Ansible-First Execution Model** applies to all OS-level operations:
 3. **Log Review Protocol**: AI must ask the human how to retrieve logs. Preferred formats:
    - **Direct Terminal Sync**: Full output pasted into chat.
    - **Persistent Logs**: Output redirected to `.log` files for deep analysis (e.g., `ansible-playbook site.yml 2>&1 | tee deploy-$(date +%Y%m%d).log`).
-4. **Self-Healing Rule**: DO NOT delete data directories (`[PROD_APP_PATH]/data`). Use idempotent Ansible automation for recovery. Deletion requires explicit Sovereign authorisation.
+4. **Self-Healing Rule**: DO NOT delete data directories (`/opt/deep-state-of-mind-for-my-ai/data`). Use idempotent Ansible automation for recovery. Deletion requires explicit Sovereign authorisation.
 5. **GitOps Loop**: All playbook changes are committed *before* execution. No ad-hoc edits on target nodes.
 
 ---
