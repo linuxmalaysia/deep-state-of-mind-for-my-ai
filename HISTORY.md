@@ -81,3 +81,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-30]:** Consolidated PHP Operational Guide to Master v1.4 (Zero-Loss Merge).
 - **[2026-01-30]:** Consolidated Universal Software Operational Guide to v1.5 (Polyglot Anchor).
 - **[2026-01-31]:** Finalised AI Cognitive Twin Protocol (v1.0).
+- **[2026-03-24]:** Scaffolding Hardened (v6.1.0). Added Ansible baseline playbooks and normalised Cognitive Twin Protocol placeholders.

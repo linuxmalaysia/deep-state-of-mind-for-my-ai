@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.1.0] - 2026-03-24
+### Added
+- **`playbooks/dsom/site.yml` and `audit-preflight.yml`** — Established standard Ansible execution scaffolding for downstream projects.
+
+### Changed
+- **`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`** — Removed placeholder variables and restored default baseline paths to pass the pre-flight checks.
+- **Brain Artifacts** — Updated `.agent/brain/` session tracking to maintain the GitOps/AIOps continuity loop.
+
+---
+
 ## [6.0.0] - 2026-03-09
 ### Added
 - **`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`** — Generic, fillable Project Identity Card template. Defines the Cognitive Relationship, 4-Tier Environmental Map, Security Doctrine, Production Identity standard, Git Sovereignty Protocol, Execution Guardrails, Brain Sync Mandate, Advisory Mode Anchor, and Session Handover Prompt. Any new project fills in the `[PLACEHOLDER]` fields to adopt the DSOM Cognitive Twin model.
