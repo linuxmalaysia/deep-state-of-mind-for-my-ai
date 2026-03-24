@@ -16,10 +16,10 @@
 ---
 
 ## 🌙 End of Day Targets
-- [ ] Export Hibernation Notes
-- [ ] Update `walkthrough.md` with the new Mental Anchor
-- [ ] Pass hibernation safety check
-- [ ] Commit all changes as the Sovereign Save
+- [x] Export Hibernation Notes
+- [x] Update `walkthrough.md` with the new Mental Anchor
+- [x] Pass hibernation safety check
+- [x] Commit all changes as the Sovereign Save
 
 ---
 
