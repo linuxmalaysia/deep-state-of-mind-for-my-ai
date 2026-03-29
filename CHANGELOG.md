@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.1.2] - 2026-03-29
+### Changed
+- **`docs/COPILOT-SETUP.md`** — Full rewrite to v6.1 standard. Removed duplicate Malay/English sections. Added three-pillar doctrine, SOD/EOD rituals, Stop Conditions, workspace context techniques (`#file:`, `@workspace`), `.github/copilot-instructions.md` and `.github/prompts/dsom-reanimate.prompt.md` setup guides, and cross-AI handover pointer.
+
+---
+
 ## [6.1.1] - 2026-03-29
 ### Changed
 - **`docs/CLAUDE-SETUP.md`** — Full rewrite to v6.1 standard. Added Claude Project Instructions block (copy-paste ready), SOD/EOD ritual steps, Hibernation Notes export prompt, Stop Conditions table, cross-AI handover guidance, and Three-Pillar doctrine alignment.
