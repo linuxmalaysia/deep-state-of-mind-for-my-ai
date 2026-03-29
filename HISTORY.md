@@ -83,3 +83,4 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-31]:** Finalised AI Cognitive Twin Protocol (v1.0).
 - **[2026-03-24]:** Scaffolding Hardened (v6.1.0). Added Ansible baseline playbooks and normalised Cognitive Twin Protocol placeholders.
 - **[2026-03-29]:** Documentation Upgraded (v6.1.1). Rewrote CLAUDE-SETUP.md to v6.1, updated MULTI-AGENT-PROTOCOLS.md with Google Antigravity, clarified PERSONALIZATION.md as Gemini-specific.
+- **[2026-03-29]:** Copilot Integration Upgraded (v6.1.2). Rewrote COPILOT-SETUP.md with SOD/EOD rituals, Stop Conditions, and `.github/` setup guides.
