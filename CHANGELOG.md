@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.1.1] - 2026-03-29
+### Changed
+- **`docs/CLAUDE-SETUP.md`** — Full rewrite to v6.1 standard. Added Claude Project Instructions block (copy-paste ready), SOD/EOD ritual steps, Hibernation Notes export prompt, Stop Conditions table, cross-AI handover guidance, and Three-Pillar doctrine alignment.
+- **`docs/MULTI-AGENT-PROTOCOLS.md`** — Updated to v6.1. Added **Google Antigravity** to the Tier 1 Co-Pilot agent taxonomy.
+- **`docs/PERSONALIZATION.md`** — Relabelled as Gemini Edition (v6.1). Added cross-reference pointers to Claude, Copilot, and Antigravity setup docs.
+
+---
+
 ## [6.1.0] - 2026-03-24
 ### Added
 - **`playbooks/dsom/site.yml` and `audit-preflight.yml`** — Established standard Ansible execution scaffolding for downstream projects.
