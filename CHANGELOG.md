@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.1.4] - 2026-03-29
+### Changed
+- **`tools/reanimate.sh`** — Upgraded from v2.0 to v2.1. Added `set -euo pipefail`, colour header banner, brain artifact validation, Cognitive Twin Protocol as section \[4\], head-60 summaries for SOD-RITUAL and RITUAL-OF-TRANSITION, v6.1 handshake prompt in footer.
+- **`tools/reanimate.ps1`** — Upgraded from v1.5 to v2.0. Achieved full 13-section parity with the bash counterpart. Added sections \[4\] Cognitive Twin Protocol, \[12\] Ansible Inventory, \[13\] GitOps Strategy. Fixed double-output bug from v1.5. Added brain artifact validation and `Get-FileHeadSafe` helper.
+
+---
+
 ## [6.1.3] - 2026-03-29
 ### Changed
 - **`tools/reanimate-claude.sh`** — Upgraded from v1.0 (35 lines) to v2.0. Added 9 labelled sections: Sovereign Constitution, Cognitive Twin Protocol, Current Task, Mental Anchor, Implementation Plan, Git History, Project Structure, Ansible Inventory, and GitOps Strategy. Added colour output, brain artifact validation, and upload instructions.
