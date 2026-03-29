@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.1.5] - 2026-03-29
+### Changed
+- **`tools/hibernation.sh`** — Upgraded from v1.0 (76 lines) to v2.0 (130+ lines). Replaced blind `git add .` with selective staging of brain artifacts + `git add -u`. Added: blocking walkthrough anchor check, Hibernation Notes auto-save, uncommitted file preview, privacy guardian reminder, phase-aware commit message, and improved EOD banner.
+- **`tools/hibernation.ps1`** — Upgraded from v1.0 (81 lines) to v2.0 at full parity with bash. Same improvements: selective staging, blocking walkthrough check, Hibernation Notes auto-save, dirty file preview, privacy guardian reminder.
+
+---
+
 ## [6.1.4] - 2026-03-29
 ### Changed
 - **`tools/reanimate.sh`** — Upgraded from v2.0 to v2.1. Added `set -euo pipefail`, colour header banner, brain artifact validation, Cognitive Twin Protocol as section \[4\], head-60 summaries for SOD-RITUAL and RITUAL-OF-TRANSITION, v6.1 handshake prompt in footer.
