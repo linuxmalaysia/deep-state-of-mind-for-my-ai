@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.2.0] - 2026-04-05
+### Added
+- **`ansible.cfg`** — DSOM-standard Ansible configuration. Fixed deprecated `yaml` callback — now uses `result_format=yaml` with `stdout_callback=default` (ansible-core 2.13+).
+- **`inventory/hosts.yml`** — 4-Tier topology with localhost wired as T1/T2, T3/T4 nodes template-commented for future remote targets.
+- **`inventory/group_vars/all.yml`** — Project-wide variables: `linuxmalaysia:1000`, `/opt/deep-state-of-mind-for-my-ai`.
+- **`playbooks/preflight.yml`** — Mandatory gate check playbook. Verifies connectivity, OS identity, UID, and Git. Must pass before any deployment playbook runs.
+- **`vault/.gitignore`** — Secrets directory protection.
+
+### Verified
+- `ansible-playbook playbooks/preflight.yml`: `ok=8  failed=0` on localhost (Ubuntu 25.04, Python 3.13.3, ansible-core 2.18.1).
+- `tools/audit-pre-flight.sh`: All steps `[PASS]` including Ansible Baseline check.
+
+---
+
 ## [6.1.5] - 2026-03-29
 ### Changed
 - **`tools/hibernation.sh`** — Upgraded from v1.0 (76 lines) to v2.0 (130+ lines). Replaced blind `git add .` with selective staging of brain artifacts + `git add -u`. Added: blocking walkthrough anchor check, Hibernation Notes auto-save, uncommitted file preview, privacy guardian reminder, phase-aware commit message, and improved EOD banner.

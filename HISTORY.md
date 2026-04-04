@@ -84,4 +84,6 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-03-24]:** Scaffolding Hardened (v6.1.0). Added Ansible baseline playbooks and normalised Cognitive Twin Protocol placeholders.
 - **[2026-03-29]:** Documentation Upgraded (v6.1.1). Rewrote CLAUDE-SETUP.md to v6.1, updated MULTI-AGENT-PROTOCOLS.md with Google Antigravity, clarified PERSONALIZATION.md as Gemini-specific.
 - **[2026-03-29]:** Copilot Integration Upgraded (v6.1.2). Rewrote COPILOT-SETUP.md with SOD/EOD rituals, Stop Conditions, and `.github/` setup guides.
+- **[2026-03-29]:** Hibernation Tools Upgraded (v6.1.5). Rewrote hibernation.sh and .ps1 to v2.0 with selective staging, blocking walkthrough check, Hibernation Notes auto-save, and privacy guardian reminder.
 - **[2026-03-29]:** Reanimate Tools Hardened (v6.1.3-6.1.4). Upgraded reanimate-claude.sh/.ps1 to v2.0 and reanimate.sh/.ps1 to v2.1/v2.0. All scripts now have 13-section parity, brain validation, and v6.1 handshake footers.
+- **[2026-04-05]:** Ansible Environment Bootstrap COMPLETE (v6.2.0). Created ansible.cfg, inventory/hosts.yml (4-Tier), group_vars/all.yml, playbooks/preflight.yml. First live pre-flight: ok=8 failed=0 on Ubuntu 25.04 / ansible-core 2.18.1.
