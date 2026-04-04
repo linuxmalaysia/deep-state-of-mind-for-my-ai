@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.2.1] - 2026-04-05
+### Added
+- **`roles/common/`** — First DSOM Ansible role. Structured with `tasks/`, `defaults/`, `handlers/`, `meta/`. Four task files:
+  - `packages.yml` — apt-based essential package installation (15 packages, idempotent).
+  - `timezone.yml` — sets `Asia/Kuala_Lumpur` via `community.general.timezone`.
+  - `directories.yml` — creates `/opt/deep-state-of-mind-for-my-ai` and subdirs (logs, tmp, config) owned by `linuxmalaysia:1000`.
+  - `sysctl.yml` — applies `vm.swappiness=10` and `fs.file-max=100000` to `/etc/sysctl.d/99-dsom.conf`.
+- **`playbooks/common.yml`** — Dedicated playbook to run the common role with Debian platform assertion guard.
+- **`playbooks/dsom/site.yml`** — Updated: `roles/common` now wired in (replaces inline directory task).
+
+---
+
 ## [6.2.0] - 2026-04-05
 ### Added
 - **`ansible.cfg`** — DSOM-standard Ansible configuration. Fixed deprecated `yaml` callback — now uses `result_format=yaml` with `stdout_callback=default` (ansible-core 2.13+).
