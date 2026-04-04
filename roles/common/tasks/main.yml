@@ -1,0 +1,53 @@
+---
+# ==============================================================================
+# roles/common/tasks/main.yml
+# DSOM Common Baseline Role — Task Orchestrator
+#
+# Task order follows the DSOM boot sequence:
+#   1. Package hygiene
+#   2. Timezone
+#   3. Project directory structure
+#   4. Sysctl tuning
+#   5. Final verification report
+#
+# All tasks are IDEMPOTENT — safe to re-run at any time.
+# ==============================================================================
+
+- name: "Common | Import package tasks"
+  ansible.builtin.import_tasks: packages.yml
+  tags:
+    - packages
+    - common
+
+- name: "Common | Import timezone tasks"
+  ansible.builtin.import_tasks: timezone.yml
+  tags:
+    - timezone
+    - common
+
+- name: "Common | Import directory tasks"
+  ansible.builtin.import_tasks: directories.yml
+  tags:
+    - directories
+    - common
+
+- name: "Common | Import sysctl tasks"
+  ansible.builtin.import_tasks: sysctl.yml
+  when: common_sysctl_tuning | bool
+  tags:
+    - sysctl
+    - common
+
+- name: "Common | Final report"
+  ansible.builtin.debug:
+    msg: |
+      ============================================================
+        DSOM COMMON ROLE COMPLETE on {{ inventory_hostname }}
+        Project Path : {{ common_project_path }}
+        Deploy User  : {{ common_deploy_user }} (UID {{ common_deploy_uid }})
+        Timezone     : {{ common_timezone }}
+        Packages     : {{ common_packages | length }} installed/verified
+      ============================================================
+  tags:
+    - always
+    - common

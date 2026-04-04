@@ -1,0 +1,41 @@
+---
+# ==============================================================================
+# roles/common/tasks/directories.yml
+# Create the DSOM project directory structure on the target node.
+# Enforces the Sovereign Portability law: all operations scoped to
+# /opt/{{ project_name }} — zero interference with other projects.
+# ==============================================================================
+
+- name: "Directories | Create project root at {{ common_project_path }}"
+  ansible.builtin.file:
+    path: "{{ common_project_path }}"
+    state: directory
+    owner: "{{ common_deploy_user }}"
+    group: "{{ common_deploy_user }}"
+    mode: "0750"
+  become: true
+  tags: directories
+
+- name: "Directories | Create project sub-directories"
+  ansible.builtin.file:
+    path: "{{ common_project_path }}/{{ item }}"
+    state: directory
+    owner: "{{ common_deploy_user }}"
+    group: "{{ common_deploy_user }}"
+    mode: "0750"
+  become: true
+  loop: "{{ common_project_subdirs }}"
+  tags: directories
+
+- name: "Directories | Verify project root ownership"
+  ansible.builtin.stat:
+    path: "{{ common_project_path }}"
+  register: proj_stat
+  tags: directories
+
+- name: "Directories | Report directory status"
+  ansible.builtin.debug:
+    msg: >
+      {{ common_project_path }} on {{ inventory_hostname }}:
+      owner={{ proj_stat.stat.pw_name }}, mode={{ proj_stat.stat.mode }}
+  tags: directories

@@ -1,0 +1,23 @@
+---
+# ==============================================================================
+# roles/common/tasks/timezone.yml
+# Set system timezone to the DSOM standard (Asia/Kuala_Lumpur).
+# Idempotent — only changes if timezone differs.
+# ==============================================================================
+
+- name: "Timezone | Set system timezone"
+  community.general.timezone:
+    name: "{{ common_timezone }}"
+  become: true
+  tags: timezone
+
+- name: "Timezone | Verify timezone is set"
+  ansible.builtin.command: timedatectl show --property=Timezone --value
+  register: tz_check
+  changed_when: false
+  tags: timezone
+
+- name: "Timezone | Report timezone"
+  ansible.builtin.debug:
+    msg: "Timezone on {{ inventory_hostname }}: {{ tz_check.stdout }}"
+  tags: timezone
