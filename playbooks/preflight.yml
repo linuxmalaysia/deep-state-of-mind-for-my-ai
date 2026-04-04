@@ -1,0 +1,70 @@
+---
+# ==============================================================================
+# DSOM Pre-flight Verification Playbook (v1.0)
+# playbooks/preflight.yml
+#
+# Purpose:  Verify connectivity and baseline state before any deployment.
+# Rule:     This playbook MUST pass (failed=0) before any other playbook runs.
+# Usage:
+#   ansible-playbook playbooks/preflight.yml             # localhost
+#   ansible-playbook playbooks/preflight.yml --check     # dry-run
+# ==============================================================================
+
+- name: "DSOM Pre-flight Verification"
+  hosts: all
+  gather_facts: true
+  become: false
+
+  tasks:
+
+    - name: "Preflight | Verify node connectivity"
+      ansible.builtin.ping:
+
+    - name: "Preflight | Display node identity"
+      ansible.builtin.debug:
+        msg: >
+          Node: {{ inventory_hostname }} |
+          Tier: {{ tier | default('unknown') }} |
+          OS: {{ ansible_distribution }} {{ ansible_distribution_version }} |
+          Kernel: {{ ansible_kernel }} |
+          Python: {{ ansible_python_version }}
+
+    - name: "Preflight | Verify deploy user identity"
+      ansible.builtin.command: "id"
+      register: id_output
+      changed_when: false
+
+    - name: "Preflight | Show deploy user"
+      ansible.builtin.debug:
+        msg: "Identity on {{ inventory_hostname }}: {{ id_output.stdout }}"
+
+    - name: "Preflight | Verify project path exists (T3/T4 only)"
+      ansible.builtin.stat:
+        path: "{{ project_path }}"
+      register: project_dir
+      when: tier is defined and (tier == 'T3' or tier == 'T4')
+
+    - name: "Preflight | Report project path status"
+      ansible.builtin.debug:
+        msg: >
+          Project path '{{ project_path }}' on {{ inventory_hostname }}:
+          {{ 'EXISTS' if project_dir.stat.exists else 'NOT YET CREATED (expected for fresh deploy)' }}
+      when: tier is defined and (tier == 'T3' or tier == 'T4') and project_dir is defined
+
+    - name: "Preflight | Check Git is available"
+      ansible.builtin.command: "git --version"
+      register: git_ver
+      changed_when: false
+
+    - name: "Preflight | Show Git version"
+      ansible.builtin.debug:
+        msg: "{{ git_ver.stdout }} on {{ inventory_hostname }}"
+
+    - name: "Preflight | COMPLETE"
+      ansible.builtin.debug:
+        msg: |
+          ============================================================
+            DSOM PRE-FLIGHT PASSED on {{ inventory_hostname }}
+            All checks: NOMINAL
+            Proceed with: ansible-playbook playbooks/dsom/site.yml
+          ============================================================
