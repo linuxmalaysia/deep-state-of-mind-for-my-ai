@@ -1,0 +1,10 @@
+---
+# ==============================================================================
+# roles/common/handlers/main.yml
+# Handlers are only triggered when a task notifies them.
+# ==============================================================================
+
+- name: Reload sysctl
+  ansible.builtin.command: sysctl --system
+  become: true
+  changed_when: false

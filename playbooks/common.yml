@@ -1,0 +1,33 @@
+---
+# ==============================================================================
+# playbooks/common.yml
+# DSOM Common Baseline — run the common role on target hosts.
+#
+# Usage:
+#   ansible-playbook playbooks/common.yml               # all hosts
+#   ansible-playbook playbooks/common.yml --tags packages
+#   ansible-playbook playbooks/common.yml --tags directories
+#   ansible-playbook playbooks/common.yml --check       # dry-run
+#   ansible-playbook playbooks/common.yml --limit local # localhost only
+#
+# Run pre-flight first:
+#   ansible-playbook playbooks/preflight.yml && ansible-playbook playbooks/common.yml
+# ==============================================================================
+
+- name: "DSOM Common Baseline"
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: "Common | Assert platform is Debian-family"
+      ansible.builtin.assert:
+        that:
+          - ansible_os_family == "Debian"
+        fail_msg: >
+          This role currently supports Debian/Ubuntu only.
+          OS detected: {{ ansible_distribution }} {{ ansible_distribution_version }}.
+        success_msg: "Platform check passed: {{ ansible_distribution }} {{ ansible_distribution_version }}"
+      tags: always
+
+  roles:
+    - role: common

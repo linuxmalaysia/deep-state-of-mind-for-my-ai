@@ -15,16 +15,10 @@
       tags: preflight
 
   roles:
-    # Add project-specific roles here.
-    # Architecture: Advisory over Execution. Logic over Operation.
-    # - role: common
-    # - role: secure-baseline
+    - role: common
+      tags: common
 
   tasks:
-    - name: Ensure target application path exists
-      ansible.builtin.file:
-        path: "/opt/{{ project_name }}"
-        state: directory
-        owner: "{{ ansible_user | default('root') }}"
-        group: "{{ ansible_user | default('root') }}"
-        mode: '0750'
+    - name: "site.yml | Confirm common role applied"
+      ansible.builtin.debug:
+        msg: "DSOM site.yml complete on {{ inventory_hostname }} — common baseline applied."
