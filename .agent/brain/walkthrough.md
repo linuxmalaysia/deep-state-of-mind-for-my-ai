@@ -268,3 +268,28 @@ The reason we perform the **Sunday Audit** (The Dry-Run) is to verify that all *
 
 ### Mental Anchor
 > **Sovereign Execution Scaffolding Initialized.** The Ansible boilerplate is now present to allow downstream project deployment using idempotent `site.yml` triggers. The DSOM Cognitive Protocol identity mapping is verified intact without placeholder warnings. Tomorrow's target: Evaluate cluster health and application of 4-Tier command highway constraints or execute the EOD Hibernation protocol.
+
+---
+
+## 🏁 Session Anchor: 2026-04-05 (EOD) — Ansible Environment Bootstrap + Role Development
+
+### Accomplished
+- **Ansible confirmed installed**: `ansible-core 2.18.1` via `sudo apt install ansible-core`.
+- **Environment Bootstrap (v6.2.0)**: Created `ansible.cfg`, `inventory/hosts.yml` (4-Tier, localhost wired), `inventory/group_vars/all.yml`, `playbooks/preflight.yml`.
+- **First live pre-flight**: `ansible-playbook playbooks/preflight.yml` → `ok=8 failed=0`. Node confirmed as Ubuntu 25.04, `linuxmalaysia:1000`, Python 3.13.3.
+- **Deprecation fixed**: `ansible.cfg` updated to `result_format=yaml` + `deprecation_warnings=False`.
+- **roles/common created (v6.2.1)**: First full Ansible role with 4 task files:
+  - `packages.yml` — 15 essential packages (git, curl, vim, htop, jq, etc.)
+  - `timezone.yml` — Asia/Kuala_Lumpur
+  - `directories.yml` — `/opt/deep-state-of-mind-for-my-ai/{logs,tmp,config}` owned by `linuxmalaysia:1000`
+  - `sysctl.yml` — `vm.swappiness=10`, `fs.file-max=100000` → `/etc/sysctl.d/99-dsom.conf`
+- **playbooks/common.yml created**: Dedicated runner for the common role with Debian platform guard.
+- **site.yml updated**: `roles/common` now wired in (replaces inline directory task).
+- **All changes committed and pushed to `origin/main`**.
+
+### Stopped At
+`roles/common` is written and committed. `playbooks/common.yml --ask-become-pass` was NOT yet executed live (interactive sudo cannot be fed through terminal tool). **Run this on the new machine after SOD.**
+
+### Mental Anchor
+> **Ansible Role Development phase active. `roles/common` baseline role is complete and in Git. The next action is to run `ansible-playbook playbooks/common.yml --ask-become-pass` on the target machine to apply the common baseline for the first time. After that, the next role to build is `roles/secure-baseline` or a project-specific application role (Logstash/Kafka). The Windows machine resumes from `git pull origin main` → `.\tools\reanimate.ps1`.**
+
