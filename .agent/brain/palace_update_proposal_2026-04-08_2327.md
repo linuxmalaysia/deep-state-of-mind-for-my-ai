@@ -2,7 +2,7 @@
 
 > **Generated:** 2026-04-08_2327  
 > **Mode:** EOD  
-> **Scope:** Commits since 2eec1d5118e8a8cc8c7843e9a3046e731b80472d  
+> **Scope:** Commits since a77d7c98941e42e0ae7aea295c137d113c7f16db  
 > **Status:** PENDING AI REVIEW — Do not commit until closets are updated.
 
 ---
@@ -21,12 +21,12 @@ For each entry below:
 ## 🚪 Room: `room_brain_artifacts`
 > **Wing:** `wing_dsom_core` | **Hall:** `hall_events`
 
-### `a77d7c9` — 2026-04-08
+### `c281bc2` — 2026-04-08
 **Subject:** chore(checkpoint: ---------------------------------------------------------------------- ≡ƒîÖ DSOM HIBERNATION NOTES ΓÇö 2026-04-08 23:10 ----------------------------------------------------------------------
-**Files:** `.agent/brain/palace_update_proposal_2026-04-08_2323.md`
+**Files:** `.agent/brain/palace_update_proposal_2026-04-08_2327.md`
 **Target Closet:** `.agent/brain/wings/wing_dsom_core/hall_events/room_brain_artifacts/closet.md`
 
-### `e5cbd22` — 2026-04-08
+### `3906f86` — 2026-04-08
 **Subject:** chore(checkpoint: ---------------------------------------------------------------------- ≡ƒîÖ DSOM HIBERNATION NOTES ΓÇö 2026-04-08 23:10 ----------------------------------------------------------------------
 **Files:** `.agent/brain/.palace-sync-marker`
 **Target Closet:** `.agent/brain/wings/wing_dsom_core/hall_events/room_brain_artifacts/closet.md`
@@ -36,9 +36,9 @@ For each entry below:
 ## 🚪 Room: `room_sovereign_fabric`
 > **Wing:** `wing_dsom_core` | **Hall:** `hall_events`
 
-### `e5cbd22` — 2026-04-08
+### `3906f86` — 2026-04-08
 **Subject:** chore(checkpoint: ---------------------------------------------------------------------- ≡ƒîÖ DSOM HIBERNATION NOTES ΓÇö 2026-04-08 23:10 ----------------------------------------------------------------------
-**Files:** `playbooks/dsom/checkpoint-palace.yml`
+**Files:** `playbooks/dsom/eod-palace.yml`
 **Target Closet:** `.agent/brain/wings/wing_dsom_core/hall_events/room_sovereign_fabric/closet.md`
 
 ---
@@ -46,9 +46,9 @@ For each entry below:
 ## 🚪 Room: `room_tooling`
 > **Wing:** `wing_dsom_core` | **Hall:** `hall_facts`
 
-### `e5cbd22` — 2026-04-08
+### `3906f86` — 2026-04-08
 **Subject:** chore(checkpoint: ---------------------------------------------------------------------- ≡ƒîÖ DSOM HIBERNATION NOTES ΓÇö 2026-04-08 23:10 ----------------------------------------------------------------------
-**Files:** `tools/checkpoint.ps1`
+**Files:** `tools/eod-palace.ps1`
 **Target Closet:** `.agent/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`
 
 ---
