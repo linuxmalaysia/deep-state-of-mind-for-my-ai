@@ -18,6 +18,19 @@ This closet tracks the **deployment and maturation** of the production-grade Ela
 
 ---
 
+## ⚙️ Ansible Infrastructure Evolution
+
+| Date | Version | What Changed |
+|---|---|---|
+| `2026-03-24` | v6.1.0 | First `playbooks/dsom/site.yml` and `audit-preflight.yml`. |
+| `2026-03-10` | v6.1.0 | AlmaLinux10 WSL2 setup. `init-brain.yml`, `privacy-scan.yml` playbooks. |
+| `2026-04-05` | v6.2.0 | `ansible.cfg`, `inventory/hosts.yml`, `group_vars/all.yml`, `preflight.yml`. First live run: ok=8 failed=0. |
+| `2026-04-05` | v6.2.1 | `roles/common` — first DSOM Ansible role with tasks: packages, timezone, directories, sysctl. |
+
+**Inventory Topology:** 4-Tier (T1: localhost dev, T2: WSL2 Linux, T3/T4: remote targets — template-commented).  
+**Owner:** `linuxmalaysia:1000` | **Base Path:** `/opt/deep-state-of-mind-for-my-ai`
+
+
 ## 🔗 Retrieval Reference (The Drawer)
 - **Latest Anchor:** [walkthrough.md:L245-257](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agent/brain/walkthrough.md#L245-L257)
 
