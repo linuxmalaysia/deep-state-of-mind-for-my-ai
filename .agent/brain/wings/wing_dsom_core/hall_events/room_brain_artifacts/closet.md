@@ -36,7 +36,7 @@ This closet tracks the evolution of the `.agent/brain/` directory — the AI's p
 | `2026-04-05` | v6.2.1 EOD save. Ansible common role completeed. Brain fully synced. |
 | `2026-04-08` | **Palace v1.0 launched.** Palace Registry, Wings, Halls, Rooms, Closets — all created and pushed. |
 | `2026-04-08` | **v10.0.0 Encyclopedia.** 18 HOWTO guides released and integrated into the Palace. |
-| `2026-04-08` | **Documentation Refinement.** Purged premature cost data; credited **MemPalace** origination ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace)). |
+| `2026-04-08` | **Documentation Refinement.** Purged premature cost data; credited **MemPalace** origination ([Proposal: 2250](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agent/brain/palace_update_proposal_2026-04-08_2250.md)). |
 
 ## 🔑 Key Design Principles
 
@@ -52,4 +52,4 @@ This closet tracks the evolution of the `.agent/brain/` directory — the AI's p
 - **Primary Drawer:** [walkthrough.md](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agent/brain/walkthrough.md)
 
 ---
-*Last Refined: 2026-04-08 | Backfill: Full History | Hall: hall_events | Wing: wing_dsom_core*
+*Last Refined: 2026-04-08 (Sync-2250) | Hall: hall_facts | Wing: wing_dsom_core*
