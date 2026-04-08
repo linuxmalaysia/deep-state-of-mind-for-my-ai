@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 # ==============================================================================
-# 🌙 DSOM Hibernation Sequence v2.0 (End-of-Day Protocol)
+# 🌙 DSOM Hibernation Sequence v2.1 (End-of-Day Protocol + Palace Sync)
 #
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
 # Partner: Generated with assistance from Google Antigravity
@@ -41,7 +41,7 @@ WALKTHROUGH_FILE="$BRAIN_DIR/walkthrough.md"
 DATE_STAMP=$(date +"%Y-%m-%d")
 TIME_STAMP=$(date +"%Y-%m-%d_%H%M")
 HIBFILE="$BRAIN_DIR/hibernation-notes-${DATE_STAMP}.txt"
-VERSION="v2.0"
+VERSION="v2.1"
 
 echo -e "${CYAN}======================================================================"
 echo -e "  🌙 DSOM HIBERNATION SEQUENCE INITIATED — $VERSION"
@@ -134,13 +134,25 @@ echo -e "${DARKGRAY}------------------------------------------------------------
 grep "\[ \]" "$TASK_FILE" 2>/dev/null | head -n 5 || echo "  (no pending tasks in task.md)"
 echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
 
-# 7. Privacy Guardian Reminder
+# 7. Palace Spatial Reflection
+echo ""
+echo -e "${CYAN}🏛️  [Palace Sync] Running Spatial Reflection before Sovereign Save...${NC}"
+PALACE_SYNC_SCRIPT="$REPO_ROOT/tools/palace-sync.sh"
+if [ -f "$PALACE_SYNC_SCRIPT" ]; then
+    bash "$PALACE_SYNC_SCRIPT"
+else
+    echo -e "${YELLOW}  ⚠️  palace-sync.sh not found. Skipping Spatial Reflection.${NC}"
+    echo -e "${YELLOW}     Run: bash tools/palace-sync.sh to initialise.${NC}"
+fi
+echo ""
+
+# 8. Privacy Guardian Reminder
 echo ""
 echo -e "${YELLOW}🛡️  REMINDER: If you generated a manifest today, run:${NC}"
 echo -e "     bash tools/privacy-guardian.sh"
 echo ""
 
-# 8. Final Confirmation & Sovereign Save
+# 9. Final Confirmation & Sovereign Save
 echo -e "${CYAN}😴 Are you ready to hibernate? (This will commit staged changes and push to GitHub)${NC}"
 read -r -p "Confirm (y/N): " confirm
 
