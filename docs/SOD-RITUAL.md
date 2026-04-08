@@ -2,7 +2,7 @@
 # docs/SOD-RITUAL.md
 
 > **"To lose context is to lose the project. To reanimate is to remember."**
-> **Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible**
+> **Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | GitOps · AIOps · Ansible**
 
 ---
 
@@ -54,6 +54,33 @@ Or on T2 (WSL2):
 
 ---
 
+### 🏛️ Step 1a — [RECOMMENDED] Ansible Palace SOD (T2: Linux/WSL2 Only)
+
+> **If you are on T2, use this instead of Steps 1–3.** It runs git pull, audit, palace check, and reanimate in a single command.
+
+```bash
+# T2 (Linux/WSL2) — Full automated SOD
+ansible-playbook playbooks/dsom/sod-palace.yml
+```
+
+**What it runs automatically:**
+
+| Step | Action |
+|---|---|
+| 1 | `git pull --rebase origin main` |
+| 2 | `tools/audit-pre-flight.sh` |
+| 3 | Verify Palace Registry exists |
+| 4 | `tools/reanimate.sh` (generates manifest with Section [14] Palace Registry) |
+| 5 | Prints manifest path and handshake instructions |
+
+**After it completes — Manual Handshake (Step 4 still applies):**
+1. Upload the printed manifest file path to your AI
+2. Say: *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the manifest. Walk the Palace Registry in Section [14]. State: 'Sovereign State Synchronised' when ready."*
+
+> **T1 (Windows):** Steps 1–3 remain manual. Use `reanimate.ps1` which includes Section [14] Palace Registry natively.
+
+---
+
 ### 🔍 Step 2 — Intelligence Audit (T1 or T2)
 
 Run the pre-flight audit to verify the physical workspace is ready:
@@ -94,7 +121,8 @@ bash tools/reanimate.sh
 .\tools\reanimate.ps1
 ```
 
-**What the manifest contains (v2.0):**
+**What the manifest contains (v2.2 — Palace-aware):**
+
 | Section | Content |
 |:---|:---|
 | `[1]` Identity | `README.md` — who we are |
@@ -110,6 +138,7 @@ bash tools/reanimate.sh
 | `[11]` Cognitive Twin | `AI-COGNITIVE-TWIN-PROTOCOL.md` |
 | `[12]` Ansible | `inventory/hosts.yml` topology |
 | `[13]` GitOps | `GITOPS-AIOPS-ANSIBLE-STRATEGY.md` |
+| **`[14]`** | **`palace_registry.md` — AI spatial map (Palace v1.0)** |
 
 **Run privacy scan before sharing:**
 ```bash
@@ -124,8 +153,8 @@ ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
 
 Upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI chat.
 
-**Option A — Reanimate from manifest file:**
-> *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the current Mental Anchor from `.agent/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
+**Option A — Reanimate from manifest file (Palace-aware):**
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest. Walk the Palace Registry in Section [14] — identify relevant Rooms for today's work. Summarise the current Mental Anchor from `.agent/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
 
 **Option B — Use the Human Handover Context (for new sessions):**
 > Copy the prompt from `docs/HUMAN-HANDOVER-CONTEXT.md` and paste as your first message. Fill in the **Current State** section before sending.
@@ -231,11 +260,13 @@ The SOD is **FAILED** if the AI:
 ## ✅ 5. SOD Completion Checklist
 
 ```
-[ ] git-ritual.sh sod — pulled latest from origin/main
-[ ] audit-pre-flight.sh — all steps PASS
-[ ] reanimate.sh — manifest generated
-[ ] privacy-guardian.sh — manifest scanned as CLEAN
+[ ] (RECOMMENDED T2) ansible-playbook sod-palace.yml — git pull + audit + palace check + reanimate
+[ ]   OR (Manual T1/T2) git-ritual.sh sod — pulled latest from origin/main
+[ ]   OR (Manual T1/T2) audit-pre-flight.sh — all steps PASS
+[ ]   OR (Manual T1/T2) reanimate.sh — manifest generated (includes Section [14] Palace Registry)
+[ ] privacy-guardian.sh — manifest scanned as CLEAN (if manifest will be shared)
 [ ] Manifest uploaded to AI chat
+[ ] AI walked Palace Registry (Section [14]) — relevant Rooms identified
 [ ] AI confirmed Mental Anchor
 [ ] AI confirmed 4-Tier environment map
 [ ] AI stated "Sovereign State Synchronised"
@@ -255,9 +286,11 @@ The SOD is **FAILED** if the AI:
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) | Project Identity Card |
 | [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | The Sovereign Constitution |
 | [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) | AI model switch ritual |
+| [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | Palace structure + AI Walk protocol |
+| [`playbooks/dsom/sod-palace.yml`](../playbooks/dsom/sod-palace.yml) | Ansible SOD automation (T2) |
 
 ---
 
-*Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
+*Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline SOD template** for all projects built on this skeleton.*
-*Last Updated: 2026-03-10 | Version: v6.1*
+*Last Updated: 2026-04-08 | Version: v6.1 + Palace v1.0*
