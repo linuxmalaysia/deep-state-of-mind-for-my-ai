@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **DSOM Mid-Day Checkpoint Automation.** Engineered a lightweight continuous save ritual for syncing state and pushing to GitHub mid-task without triggering strict EOD validations. `tools/checkpoint.ps1` runs natively on Windows, and `tools/checkpoint.sh` proxies `playbooks/dsom/checkpoint-palace.yml` for Linux.
+- **Dual-Phase Smart Commits.** Checkpoint automation natively evaluates tracked vs untracked file statuses, and submits separated commits for each isolated state to ensure robust git history cleanly scaling continuous integrations.
 - **DSOM Onboarding Automation.** Created cross-platform bootstrap scripts using Bash (`dsom-onboard.sh`) and PowerShell (`dsom-onboard.ps1`). Native Ansible fetching backend added to `playbooks/dsom/onboard-dsom.yml`. Handles "Zero-Debt" safe cloning into any external target repository, preventing overrides via Git branch isolation and timestamp file deduplication.
 - **`docs/HOWTO-DSOM-ONBOARDING.md`** documentation to guide users on "DSOM-ifying" their Git repositories fully mechanically.
 - **README.md** updated to formally include the new Onboarding Automation loop standard.
