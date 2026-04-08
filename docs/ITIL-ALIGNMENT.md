@@ -18,8 +18,8 @@ Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:
 
 ### i) Engage (The Handshake)
 * **ITIL Action:** Understand stakeholder needs.
-* **DSOM Implementation:** The `reanimate.sh` process. The AI *engages* with the `task.md` and `walkthrough.md`.
-* **Artifact:** `sod_manifest.txt`
+* **DSOM Implementation:** The `ansible-playbook playbooks/dsom/sod-palace.yml` process. The AI *engages* with the `palace_registry.md`, `task.md` and `walkthrough.md`.
+* **Artifact:** `sod_manifest_YYYY-MM-DD.txt`
 
 ### ii) Plan (The Architectural Design)
 * **ITIL Action:** Ensure shared understanding of the vision.
@@ -38,8 +38,8 @@ Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:
 
 ### v) Deliver & Support (The Verification)
 * **ITIL Action:** Ensuring value co-creation.
-* **DSOM Implementation:** Running `audit-pre-flight.sh` and `privacy-guardian.sh`.
-* **Artifact:** `CHANGELOG.md`
+* **DSOM Implementation:** Running `ansible-playbook playbooks/dsom/eod-palace.yml` to validate artifacts and generate proposals.
+* **Artifact:** `CHANGELOG.md` and `.agent/brain/` updates.
 
 ### vi) Improve (The Sunday Audit)
 * **ITIL Action:** Continual improvement of products and services.
@@ -51,7 +51,7 @@ Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:
 ## 3. 🧠 Service Knowledge Management System (SKMS)
 The `.agent/brain/` directory constitutes the project's **SKMS**. It is the Single Source of Truth for:
 
-* **Service Portfolio:** `implementation_plan.md` (Strategic roadmap).
+* **Service Portfolio:** `implementation_plan.md` (Strategic roadmap) and `palace_registry.md` (Spatial memory).
 * **Service Catalogue:** `OPERATIONAL-GUIDE.md` (Capabilities).
 * **Configuration Management (CMS):** `task.md` and `walkthrough.md` (Current state).
 
@@ -59,7 +59,7 @@ The `.agent/brain/` directory constitutes the project's **SKMS**. It is the Sing
 
 ## 4. 📈 Continual Improvement (The 7 Guiding Principles)
 1.  **Focus on Value:** Does this verify Sovereignty?
-2.  **Start Where You Are:** Use `reanimate.sh` for context.
+2.  **Start Where You Are:** Use `sod-palace.yml` for context.
 3.  **Progress Iteratively with Feedback:** Atomic Commits.
 4.  **Collaborate and Promote Visibility:** Update `walkthrough.md`.
 5.  **Think and Work Holistically:** Respect `Zero-Global`.
@@ -102,10 +102,10 @@ DSOM integrates ITIL incident and request handling into its workflow.
 
 ## 9. 🧩 Integration with CRISP²
 ITIL phases are mapped directly to DSOM’s CRISP² hierarchy:
-* **Engage ↔ L1 Rituals:** Handshake and reanimation.
+* **Engage ↔ L1 Rituals:** Handshake and reanimation (SOD/EOD Ansible loops).
 * **Plan ↔ L2 Mandates:** CRISP pillars define scope.
 * **Design & Transition ↔ L3 Specialised Tasks:** Clean Architecture.
-* **Audit ↔ L4 Process Instances:** Mental anchors and audit trails.
+* **Audit ↔ L4 Process Instances:** Mental anchors, Palace spatial map, and audit trails.
 
 ---
 
@@ -141,5 +141,5 @@ flowchart TD
     Improvement_Layer --> Governance_Layer
 ```
 ---
-*Verified by Harisfazillah Jamel | ITIL 4 Aligned | 2026-01-29*
+*Verified by Harisfazillah Jamel | ITIL 4 Aligned | 2026-04-08*
 

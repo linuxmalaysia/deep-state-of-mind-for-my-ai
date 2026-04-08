@@ -1,8 +1,8 @@
-# 🛡️ GitHub Copilot Integration Protocol (v6.1)
+# 🛡️ GitHub Copilot Integration Protocol (v6.1 + Palace v1.0)
 ## docs/COPILOT-SETUP.md
 
 > **"Advisory over Execution. Context over Command. Sovereign Continuity across every AI."**
-> **Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible**
+> **Standard: DSOM Protocol v6.1 + Palace v1.0 | GitOps · AIOps · Ansible**
 
 ---
 
@@ -32,7 +32,7 @@ AIOps (Copilot proposes) → GitOps (Git records) → Ansible (Human executes)
 Create or update `.github/copilot-instructions.md` in your repository root with the following block. Copilot reads this file automatically for all chats in the workspace.
 
 ```markdown
-# DSOM Sovereign Instructions for GitHub Copilot (v6.1)
+# DSOM Sovereign Instructions for GitHub Copilot (v6.1 + Palace v1.0)
 
 You are a DSOM-Compliant Cognitive Co-Pilot. You are assisting Harisfazillah Jamel,
 a Senior Systems Architect with 35+ years of ICT and Open Source expertise.
@@ -55,6 +55,7 @@ DSOM LAWS (non-negotiable):
 
 BRAIN SYNC:
 Before answering any architecture question, read:
+- .agent/brain/palace_registry.md (Walk the Palace)
 - .agent/brain/task.md
 - .agent/brain/walkthrough.md
 - docs/AI-MASTER-PROTOCOL.md
@@ -77,26 +78,29 @@ description: 'DSOM SOD Reanimation — load current brain and Mental Anchor'
 ---
 
 Read the following brain artifacts and summarise the current status:
-1. `.agent/brain/task.md` — list all incomplete `[ ]` items.
-2. `.agent/brain/walkthrough.md` — state the last Mental Anchor.
-3. `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — confirm the 4-Tier environment map.
+1. `.agent/brain/palace_registry.md` — identify the current spatial mapping.
+2. `.agent/brain/task.md` — list all incomplete `[ ]` items.
+3. `.agent/brain/walkthrough.md` — state the last Mental Anchor.
+4. `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — confirm the 4-Tier environment map.
 
 Then state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
-Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only execution.
+Operate under DSOM v6.1 + Palace v1.0: Advisory Mode, UK English, Git-first, Ansible-only execution.
 ```
 
 ---
 
 ## 🌅 3. Start-of-Day (SOD) Ritual for Copilot
 
-### Step 1 — Git Sync
+### Step 1-2 — Automated Ansible Check
+If using the T2 Dev Bridge (Recommended):
 ```bash
-./tools/git-ritual.sh sod      # WSL2 / Linux
+ansible-playbook playbooks/dsom/sod-palace.yml
 ```
 
-### Step 2 — Intelligence Audit
+### Step 1-2 — Manual Fallback
 ```bash
-./tools/audit-pre-flight.sh
+./tools/git-ritual.sh sod      # WSL2 / Linux
+./tools/audit-pre-flight.sh    # All checks must [PASS]
 ```
 All checks must show `[PASS]`. Fix any `[FAIL]` before proceeding.
 
@@ -111,7 +115,7 @@ All checks must show `[PASS]`. Fix any `[FAIL]` before proceeding.
 
 Paste this prompt into Copilot Chat with explicit file references:
 
-> *"Based on **#file:.agent/brain/task.md** and **#file:.agent/brain/walkthrough.md**, summarise the current Mental Anchor and list today's pending tasks. Confirm the 4-Tier environment from **#file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md**. State: 'Sovereign State Synchronised' when ready."*
+> *"Based on **#file:.agent/brain/palace_registry.md**, **#file:.agent/brain/task.md** and **#file:.agent/brain/walkthrough.md**, summarise the current spatial room, Mental Anchor, and list today's pending tasks. Confirm the 4-Tier environment from **#file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md**. State: 'Sovereign State Synchronised' when ready."*
 
 ### ✅ SOD is Complete When Copilot Can Confirm:
 
@@ -178,6 +182,10 @@ Review the proposed changes, apply them, then commit:
 
 ### Step 2 — Sovereign Save
 ```bash
+# Recommended on T2
+ansible-playbook playbooks/dsom/eod-palace.yml
+
+# Or manual fallback
 ./tools/git-ritual.sh          # guided EOD commit and push
 ```
 
