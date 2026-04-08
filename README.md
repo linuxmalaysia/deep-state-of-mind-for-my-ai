@@ -176,6 +176,30 @@ Each Room has a `closet.md` — a distilled, high-density knowledge summary the 
 | **Reading how the Palace was built** | [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) |
 | **Full Palace specification** | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) |
 
+### 🧩 Known Gap: The Reasoning Problem
+
+> **Research Finding (2026-04-08):** DSOM solves *state persistence* and *cost efficiency* — but there is one gap: **live reasoning capture**.
+
+Six months of daily AI use = ~19.5 million tokens. Every decision, every debugging session, every tradeoff debate. Gone when the session ends.
+
+| Approach | Tokens/Session | Annual Cost |
+|---|---|---|
+| Paste everything | 19.5M — impossible | — |
+| LLM summaries | ~650K | ~$507/yr |
+| MemPalace (external) | ~170 tokens | ~$0.70/yr |
+| **DSOM Palace (ours)** | **~1,500–3,000 tokens** | **~$1–3/yr** |
+
+✅ DSOM matches MemPalace on cost and efficiency.
+⚠️ **The gap:** DSOM does not automatically capture *why* decisions were made — only *what* was decided. The reasoning lives in the chat window, not in Git.
+
+**The fix (Decision Log Protocol):** At key decisions, immediately ask the AI:
+```
+"Log this decision to walkthrough.md:
+ Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
+```
+
+📖 **Full analysis:** [`docs/RESEARCH-REASONING-GAP.md`](docs/RESEARCH-REASONING-GAP.md)
+
 ---
 
 ## 📅 Daily Operating Rituals
