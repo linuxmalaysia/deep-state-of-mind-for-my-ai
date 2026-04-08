@@ -35,15 +35,19 @@ This closet tracks the evolution of the `.agent/brain/` directory — the AI's p
 | `2026-03-24` | v6.1.0 session. `hibernation-notes-2026-03-24.txt` created. Ansible baseline wiring. |
 | `2026-04-05` | v6.2.1 EOD save. Ansible common role completeed. Brain fully synced. |
 | `2026-04-08` | **Palace v1.0 launched.** Palace Registry, Wings, Halls, Rooms, Closets — all created and pushed. |
+| `2026-04-08` | **v10.0.0 Encyclopedia.** 18 HOWTO guides released and integrated into the Palace. |
 
 ## 🔑 Key Design Principles
+
 - **Atomic Updates:** Brain files are updated at every session boundary (SOD/EOD).
 - **Never Blind Add:** `hibernation.sh` selectively stages brain files only.
 - **Date-Anchored:** Every `walkthrough.md` session entry must include today's date as a searchable anchor.
 - **Dual Persistence:** `walkthrough.md` (Drawer) + `wings/` (Palace) operate in tandem.
 
 ---
+
 ## 🔗 Retrieval Reference
+
 - **Primary Drawer:** [walkthrough.md](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agent/brain/walkthrough.md)
 
 ---
