@@ -10,17 +10,10 @@
 
 ## 📊 The Scale of the Problem
 
-Six months of daily AI use produces approximately **19.5 million tokens** of conversation. That includes every decision, every debugging session, every architecture debate. All of it trapped in chat windows.
+Six months of daily AI use produces millions of tokens of conversation. That includes every decision, every debugging session, and every architecture debate. All of it is trapped in chat windows.
 
-| Approach | Tokens Loaded Per Session | Annual Cost Estimate |
-|---|---|---|
-| Paste everything | 19.5M — exceeds all context windows | Impossible |
-| LLM summaries | ~650K | ~$507/yr |
-| MemPalace wake-up | ~170 tokens | ~$0.70/yr |
-| MemPalace + 5 searches | ~13,500 tokens | ~$10/yr |
-| **DSOM Palace (our approach)** | **~1,500–3,000 tokens** | **~$1–3/yr** |
-
-Source: MemPalace research (2025). DSOM cost estimates based on Palace Registry + 2–3 closets.
+> [!NOTE]
+> DSOM with the Sovereign Markdown Palace addresses the **state persistence** problem effectively. This approach originated from and was inspired by the **MemPalace** research ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace)).
 
 ---
 
@@ -34,10 +27,6 @@ DSOM with the Sovereign Markdown Palace addresses the **cost and state persisten
 - `walkthrough.md` — Full session history with Mental Anchors (Past)
 - `implementation_plan.md` — Project roadmap (Future)
 - `palace_registry.md` — Spatial index loaded at every SOD
-
-### Cost Efficiency
-
-Our Palace Registry + relevant closets loads **~1,500–3,000 tokens** per session — in the same cost class as MemPalace, achieved through structured Markdown hierarchy rather than vector embeddings.
 
 ### Fact Retrieval
 
@@ -59,7 +48,6 @@ DSOM does **not** automatically capture the *reasoning* behind decisions. It cap
 - ❌ **What alternatives were considered and rejected**
 - ❌ **The conversation thread** that produced the reasoning
 - ❌ **"We tried X and it failed because Y"** — unless manually committed
-
 ### Why It Matters
 
 Decisions made today become constraints six months from now. If the reasoning is lost:
@@ -76,7 +64,6 @@ Session Day 1:
   AI: "Because Elasticsearch nodes needed their own routable IPs for 
        cluster discovery. Bridge networking caused split-brain under 
        load. We tested this in Phase 42 and it failed with 3 nodes."
-
 Session Day 180 (new AI, same repo):
   Human: "Why are we using Macvlan?"
   AI: "I don't know. The config shows Macvlan but there's no reasoning 
@@ -87,20 +74,6 @@ The outcome (Macvlan config) is in Git. The *reasoning* is gone.
 
 ---
 
-## 🔬 Architectural Comparison
-
-| Dimension | MemPalace | DSOM Palace |
-|---|---|---|
-| **Retrieval mechanism** | Vector embeddings + semantic search | Structured Markdown + walking |
-| **Capture method** | Automated (conversation → embeddings) | Manual curation + Git commit |
-| **Reasoning capture** | Automatic (if conversation is indexed) | Manual (requires intentional `walkthrough.md` entry) |
-| **Ownership** | Depends on the MemPalace service | 100% sovereign — your Git repo |
-| **Cost** | ~$10/yr for search | ~$1–3/yr for Palace walk |
-| **Offline capability** | No (requires embedding API) | Yes (plain Markdown + Git) |
-| **Vendor dependency** | Yes | None |
-| **Fidelity of old reasoning** | High (verbatim if indexed) | Varies (depends on what was written) |
-
-**Conclusion:** DSOM wins on sovereignty, cost, and ownership. MemPalace wins on automated reasoning capture. The gap is real but addressable without sacrificing sovereignty.
 
 ---
 
@@ -127,17 +100,14 @@ Hibernation Notes mitigate the gap — they do not close it.
 
 ### The Command
 
-```
+```text
 "Log this decision to walkthrough.md:
- Decision: [what was decided]
- Alternatives: [what was rejected]
- Reason: [why this and not that]
- Context: [what would make us revisit this]"
+ Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
 ```
 
 ### Example
 
-```
+```text
 "Log this decision to walkthrough.md:
  Decision: Macvlan networking for Elasticsearch nodes
  Alternatives: Bridge networking (tested Phase 42), Host networking (security risk)
@@ -174,7 +144,6 @@ This would close the gap entirely while maintaining full sovereignty and zero ve
 | Gap | Status | Mitigation |
 |---|---|---|
 | State persistence | ✅ Solved | `walkthrough.md` + Git |
-| Cost/token efficiency | ✅ Solved | Palace Registry + closets |
 | Fact retrieval | ✅ Solved | Walk Palace → closet.md |
 | Outcome capture | ✅ Solved | Git commit history + `palace-sync` |
 | **Live reasoning capture** | **⚠️ Partially mitigated** | **Hibernation Notes + Decision Log Protocol** |
@@ -194,5 +163,5 @@ This would close the gap entirely while maintaining full sovereignty and zero ve
 ---
 *Research finding documented: 2026-04-08*
 *Identified by: Harisfazillah Jamel (LinuxMalaysia) in session with Google Antigravity*
-*Inspired by: MemPalace research (andrewyng/mempalace)*
+*Inspired by and originated from: MemPalace research ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace))*
 *Protocol: DSOM v6.1 + Palace v1.0*

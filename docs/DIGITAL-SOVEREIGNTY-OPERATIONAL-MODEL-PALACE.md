@@ -4,7 +4,7 @@
 
 ## 1. 🏛️ Concept: The Memory Archive Evolved
 
-The **Sovereign Markdown Palace** is a spatial governance layer for the **Deep State of Mind (DSOM)** framework. Inspired by the **MemPalace** architecture, it replaces flat, linear session logs with a multidimensional directory hierarchy.
+The **Sovereign Markdown Palace** is a spatial governance layer for the **Deep State of Mind (DSOM)** framework. This architecture **originated from** and was inspired by the **MemPalace** project ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace)). It replaces flat, linear session logs with a multidimensional directory hierarchy.
 
 Instead of an AI agent reading 300+ lines of a single `walkthrough.md` (which leads to **Context Decay** and **Attention Drift**), the Palace allows the agent to "walk" through specific domains of knowledge, loading only the high-fidelity summaries needed for the task at hand.
 
@@ -107,4 +107,5 @@ To keep the Brain in sync with the repository state:
 3. **Git Sovereignty:** Every Palace move (directory creation/closet update) must be versioned and committed.
 
 ---
-*Created by Harisfazillah Jamel | Lead Architect of DSOM | Protocol v6.1*
+---
+*Created by Harisfazillah Jamel | Lead Architect of DSOM | Protocol v6.1 | Inspired by and originated from [milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace)*
