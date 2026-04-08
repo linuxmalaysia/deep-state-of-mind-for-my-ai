@@ -64,9 +64,19 @@ Write-Host "--------------------------------------------------------------------
 Write-Host "  DSOM Manual State Injection"
 Write-Host "----------------------------------------------------------------------"
 
-$Choice = Read-Host "  Do you have a manual EOD Summary or Master Prompt addition? (y/N)"
-$ManualInput = ""
+$Choice = "n"
+# Check if running in an interactive session
+if ([Environment]::UserInteractive) {
+    try {
+        $Choice = Read-Host "  Do you have a manual EOD Summary or Master Prompt addition? (y/N)"
+    } catch {
+        $Choice = "n"
+    }
+} else {
+    Write-Host "  [INFO] Non-interactive session detected. Skipping manual input."
+}
 
+$ManualInput = ""
 if ($Choice -match "^[yY]") {
     Write-Host ""
     Write-Host "  PASTE/TYPE YOUR CONTENT BELOW:"

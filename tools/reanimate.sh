@@ -60,10 +60,17 @@ fi
 echo "----------------------------------------------------------------------"
 echo "🧠 DSOM Manual State Injection"
 echo "----------------------------------------------------------------------"
-read -r -p "❓ Do you have a manual EOD Summary or Master Prompt addition? (y/N): " choice
+
+CHOICE="n"
+# Check if stdin is a terminal (interactive mode)
+if [ -t 0 ]; then
+    read -r -p "❓ Do you have a manual EOD Summary or Master Prompt addition? (y/N): " CHOICE || CHOICE="n"
+else
+    echo "  [INFO] Non-interactive session detected. Skipping manual input."
+fi
 
 MANUAL_INPUT=""
-if [[ "$choice" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if [[ "$CHOICE" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo ""
     echo "📝 PASTE/TYPE YOUR CONTENT BELOW:"
     echo "----------------------------------------------------------------------"
