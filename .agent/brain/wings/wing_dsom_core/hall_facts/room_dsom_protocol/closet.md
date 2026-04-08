@@ -6,7 +6,7 @@ This closet defines the **Metacognitive Governance Framework** that ensures memo
 
 ## 🏗️ The Trinity of Persistence
 1. **The Goal:** Prevent **Context Decay**.
-2. **The Mechanism:** Persistent artifacts (`.agent/brain/`) and dedicated rituals.
+2. **The Mechanism:** Persistent artifacts (`.agent/brain/`) and dedicated rituals. This approach **originated from** the [milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace) project.
 3. **The Relationship:** DSOM is the **container** for Clean Architecture (The Skeleton) and CRISP (The Nervous System).
 
 ---

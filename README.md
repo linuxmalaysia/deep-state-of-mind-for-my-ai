@@ -203,7 +203,6 @@ Six months of daily AI use generates millions of tokens of conversation. Every d
 
 📖 **Full analysis:** [`docs/RESEARCH-REASONING-GAP.md`](docs/RESEARCH-REASONING-GAP.md)
 
-
 ---
 
 ## ⚡ DSOM Onboarding Automation
