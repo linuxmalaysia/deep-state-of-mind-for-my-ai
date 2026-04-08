@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [9.8.0] - 2026-04-08
+### Added
+- **Sovereign Persistence Fabric Finalized:** Hardened 19-node Elasticsearch and Kibana fabric.
+- **Formal Release:** Executed Git tag `v9.8.0` and GitHub release for the hardened fabric.
+- **Documentation Sanitization:** Ensured Master Architect's identity and professional standards are preserved across all core docs.
+
+## [9.6.1] - 2026-04-05
+### Added
+- **WSL2 Migration:** Successfully transitioned Sovereign Persistence Fabric to native Linux WSL2 environment.
+- **POSIX Compliance:** Enforced strict POSIX compliance for Ansible orchestration to resolve Windows drive permission issues.
+- **ML "Memory Inversion":** Finalized ML-ready deployment architecture for 3-node standalone quorum.
+
+## [6.1.0] - 2026-03-10
+### Added
+- **Documentation Hardening:** Full overhaul of `CONTRIBUTING.md`, `SOD-RITUAL.md`, `EOD-RITUAL.md`, and `MIRROR-OF-KNOWLEDGE.md`.
+- **Tooling v8.6:** Upgraded `CheckUsage.ps1` with accurate token estimation and ASCII-safe interface.
+- **New Resource:** Created `docs/tools/HOWTO-CHECKUSAGE.md`.
+
 ## [6.0.0] - 2026-03-09
 ### Added
 - **`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`** — Generic, fillable Project Identity Card template. Defines the Cognitive Relationship, 4-Tier Environmental Map, Security Doctrine, Production Identity standard, Git Sovereignty Protocol, Execution Guardrails, Brain Sync Mandate, Advisory Mode Anchor, and Session Handover Prompt. Any new project fills in the `[PLACEHOLDER]` fields to adopt the DSOM Cognitive Twin model.

@@ -81,3 +81,11 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-01-30]:** Consolidated PHP Operational Guide to Master v1.4 (Zero-Loss Merge).
 - **[2026-01-30]:** Consolidated Universal Software Operational Guide to v1.5 (Polyglot Anchor).
 - **[2026-01-31]:** Finalised AI Cognitive Twin Protocol (v1.0).
+- **[2026-03-03]:** Phase 58: Agent Enrollment. Configured Kibana Fleet, HAProxy VIP, and enforced mTLS for Logstash.
+- **[2026-03-04]:** Edge Load Balancer Deployment. Hardened HAProxy configurations for production fabric.
+- **[2026-03-10]:** DSOM v6.1 Documentation Overhaul. Rewrote core rituals and hardened CheckUsage.ps1 v8.6.
+- **[2026-03-14]:** Pre-PWA Baseline. Tagged v3.5-pre-pwa and created formal GitHub release.
+- **[2026-03-31]:** Podman Network Subnet Planning. Evaluated 10.0.7.x range impact on Ansible architecture.
+- **[2026-04-03]:** Standalone Elasticsearch Deployment. Finalized 3-node cluster with SHIELD verification.
+- **[2026-04-05]:** WSL2 Migration & Hardening. Transitioned Persistence Fabric to native Linux for POSIX compliance.
+- **[2026-04-08]:** Sovereign Persistence Fabric RELEASE. Finalized 19-node fabric (v9.8.0).

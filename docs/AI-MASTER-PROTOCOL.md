@@ -12,6 +12,10 @@ The **Deep State of Mind (DSOM)** protocol is a metacognitive framework designed
 
 The DSOM state must be portable. Whether using Gemini, Claude, or local LLMs, the `.agent/brain/` remains the absolute SSoT.
 
+### 🧠 Law of Spatial Retrieval (The Palace)
+
+To prevent **Context Decay** at scale, DSOM uses a **Spatial Markdown Palace** hierarchy (`.agent/brain/wings/`). The AI MUST "walk" the palace by reading `palace_registry.md` at session start to identify relevant **Wings** and **Rooms** before making architectural decisions. This spatial retrieval provides higher precision than searching a chronological log alone.
+
 ### 🧠 Advisory over Execution
 
 The AI is in **Advisory Mode** at all times. It proposes, generates, and documents. The **Terminal Trigger** — the final approval to execute any script, Ansible playbook, or Git push — resides exclusively with the **Sovereign Architect**.
