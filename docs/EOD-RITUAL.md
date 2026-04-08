@@ -2,7 +2,7 @@
 # docs/EOD-RITUAL.md
 
 > **"Rest is not the end unless the memory is lost. To hibernate is to prepare for rebirth."**
-> **Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible**
+> **Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | GitOps · AIOps · Ansible**
 
 ---
 
@@ -99,14 +99,52 @@ Run the hibernation script — it checks for dirty state before you sleep:
 .\tools\hibernation.ps1
 ```
 
+> **Note (v2.1):** `hibernation.sh` and `hibernation.ps1` now automatically run `palace-sync.sh/.ps1` as **Step 7: Palace Spatial Reflection** — generating the update proposal without a separate command.
+
 **What it checks:**
 1. ✅ `task.md` has been updated today
 2. ✅ `walkthrough.md` has a new Session Anchor
 3. ✅ No uncommitted changes in `docs/` or `src/`
 4. ✅ No dangling Ansible playbook outputs uncommitted
 5. ⚠️ Displays tomorrow's SOD targets clearly
+6. ✅ **Palace Spatial Reflection** — `palace-sync.sh` runs and generates `palace_update_proposal_YYYY-MM-DD.md`
 
 **If any check fails — fix it before sleeping.**
+
+---
+
+### 🏛️ Step 2a — [RECOMMENDED] Ansible Palace EOD (T2: Linux/WSL2 Only)
+
+> **If you are on T2, use this instead of Steps 2–5.** It runs all checks, palace sync, selective staging, commit, and push in a single command.
+
+```bash
+# T2 (Linux/WSL2) — Full automated EOD
+ansible-playbook playbooks/dsom/eod-palace.yml
+```
+
+**What it runs automatically:**
+
+| Step | Action |
+|---|---|
+| 1 | Validate `task.md` has `[x]` completed tasks |
+| 2 | Validate `walkthrough.md` has today's anchor |
+| 3 | Run `tools/palace-sync.sh` (generate update proposal) |
+| 4 | Show dirty/uncommitted files |
+| 5 | Selective `git add` (brain + palace files, no blind `git add .`) |
+| 6 | `git commit` with standard EOD message |
+| 7 | `git push origin main` |
+
+**Skip palace-sync if already run by hibernation.sh:**
+```bash
+ansible-playbook playbooks/dsom/eod-palace.yml --skip-tags palace_sync
+```
+
+**After the playbook — Manual steps (always required):**
+1. Review `palace_update_proposal_YYYY-MM-DD.md` with your AI
+2. Update relevant closets in `.agent/brain/wings/`
+3. Commit closet updates: `git add .agent/brain/ && git commit -m "chore(palace): update closets"`
+
+> **T1 (Windows):** Steps 2–5 remain manual. `hibernation.ps1` v2.1 handles palace-sync automatically.
 
 ---
 
@@ -194,10 +232,13 @@ This is your **offline backup** in case your brain has its own context decay ove
 ```
 [ ] task.md — updated: [x] done, [ ] tomorrow's targets set
 [ ] walkthrough.md — new Session Anchor written with Mental Anchor sentence
-[ ] hibernation.sh — returned GREEN on all checks
-[ ] privacy-guardian.sh — manifest scanned CLEAN (if manifest was generated)
-[ ] git-ritual.sh (EOD) — all changes committed with semantic message
-[ ] git push — state pushed to origin/main
+[ ] (RECOMMENDED T2) ansible-playbook eod-palace.yml — all checks + palace sync + commit + push
+[ ]   OR (Manual T1/T2) hibernation.sh/.ps1 — returned GREEN (includes palace-sync v2.1)
+[ ]   OR (Manual T1/T2) privacy-guardian.sh — manifest scanned CLEAN (if manifest was generated)
+[ ]   OR (Manual T1/T2) git-ritual.sh (EOD) — all changes committed with semantic message
+[ ]   OR (Manual T1/T2) git push — state pushed to origin/main
+[ ] palace_update_proposal_YYYY-MM-DD.md — reviewed with AI
+[ ] Palace closets updated and committed (if proposal had changes)
 [ ] T2 WSL2 — git pull confirms sync with T1
 [ ] Tomorrow's first action noted (physical/digital notebook)
 ```
@@ -216,6 +257,7 @@ This is your **offline backup** in case your brain has its own context decay ove
 | `git push` fails | Fix merge conflict, then push again |
 | T2 not synced with T1 | `git pull origin main` inside WSL2 |
 | Privacy scan finds sensitive data | Edit manifest manually, re-scan |
+| `palace_update_proposal` not reviewed | Share with AI, update closets before next SOD |
 
 **The EOD is INCOMPLETE until all STOP CONDITIONS are resolved.**
 
@@ -266,13 +308,16 @@ Every `walkthrough.md` Session Anchor must follow this format:
 | [`docs/HUMAN-HANDOVER-CONTEXT.md`](HUMAN-HANDOVER-CONTEXT.md) | Session handover prompt template |
 | [`docs/REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) | AI session prompts |
 | [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) | AI model switch ritual |
+| [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | Palace structure + closet update guide |
 | [`tools/git-ritual.sh`](../tools/git-ritual.sh) | SOD pull + EOD semantic commit |
-| [`tools/hibernation.sh`](../tools/hibernation.sh) | EOD safety checker |
+| [`tools/hibernation.sh`](../tools/hibernation.sh) | EOD safety checker (v2.1: includes palace-sync) |
+| [`tools/palace-sync.sh`](../tools/palace-sync.sh) | Palace spatial reflection engine |
 | [`tools/privacy-guardian.sh`](../tools/privacy-guardian.sh) | Manifest scanner |
+| [`playbooks/dsom/eod-palace.yml`](../playbooks/dsom/eod-palace.yml) | Ansible EOD automation (T2) |
 | [`playbooks/dsom/privacy-scan.yml`](../playbooks/dsom/privacy-scan.yml) | Ansible privacy scan |
 
 ---
 
-*Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
+*Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline EOD template** for all projects built on this skeleton.*
-*Last Updated: 2026-03-10 | Version: v6.1*
+*Last Updated: 2026-04-08 | Version: v6.1 + Palace v1.0*
