@@ -69,7 +69,9 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-04-08]:** **Ansible Palace Automation.** Created `playbooks/dsom/sod-palace.yml` and `playbooks/dsom/eod-palace.yml` to automate the mechanical SOD/EOD steps on T2 (Linux). Human steps (AI handshake, closet review) remain intentionally manual.
 - **[2026-04-08]:** **Documentation Fleet Full Sweep.** Master Protocol, Claude/Copilot setup guides, CRISP strategy, ITIL alignment, and AI Response templates systematically upgraded to `v6.1 + Palace v1.0`. The protocol now enforces Spatial Registry awareness and idempotent Ansible execution as mandatory steps in the Handshake and Hibernation loops.
 - **[2026-04-08]:** **DSOM Onboarding Automation.** Engineered cross-platform bootstrap scripts (Bash & PowerShell) and an Ansible backend logic that allows users to rapidly deploy DSOM architectural standards into any git repository with "Zero-Debt" GitOps safety guarantees.
-- **[2026-04-08]:** **Git Tag `v10.0.0-palace`** pushed to GitHub. Both Linux and Windows machines confirmed in sync.
+- **[2026-04-08]:** **Smart Checkpoint Integration.** Upgraded `tools/checkpoint.ps1` and `playbooks/dsom/checkpoint-palace.yml` to support high-fidelity commit messages sourced from AI-generated Hibernation Notes (`checkpoint_summary.txt`).
+- **[2026-04-08]:** **Documentation Sanitization & Crediting.** Purged comparative cost data and formally credited `milla-jovovich/mempalace` in core protocol docs and spatial memory closets.
+- **[2026-04-08]:** **Git Tag `v10.1.0-onboarding`** pushed to GitHub. Continuous Integration loops across Windows (T1) and Linux (T2) fully harmonised.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.0.0-palace | Harisfazillah Jamel*
