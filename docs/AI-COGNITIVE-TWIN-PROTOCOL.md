@@ -102,13 +102,19 @@ The **Ansible-First Execution Model** applies to all OS-level operations:
 
 ---
 
-## 🧠 7. Documentation & Brain Synchronisation
+## 🧠 7. Documentation, Brain Synchronisation & Spatial Palace
 
 For every phase and significant task:
 
 1. **Phase Persistence**: Update daily session summaries (`walkthrough.md`) and project history ledgers.
 2. **Brain Sync**: Ensure `.agent/brain/` artifacts (`task.md`, `implementation_plan.md`, `walkthrough.md`) are the **Absolute Source of Truth (SSoT)**.
 3. **Recovery Base**: Documentation must be sufficient to re-bootstrap the AI context in less than 3 prompts if session limits are reached.
+4. **Palace Sync**: After every EOD, the Sovereign Markdown Palace (`palace_registry.md` + `wings/`) must reflect the current state. Run `palace-sync.sh` (or `palace-sync.ps1`) to generate the update proposal.
+5. **Decision Log Protocol**: At every key decision, immediately log it to `walkthrough.md`:
+   > `"Log this decision: Decision | Alternatives rejected | Reason | Context to revisit"`
+   This closes the **Reasoning Gap** — what was decided AND why must both live in Git.
+
+> **Reference:** [`docs/RESEARCH-REASONING-GAP.md`](RESEARCH-REASONING-GAP.md) — The Reasoning Gap analysis and Decision Log Protocol.
 
 ---
 
@@ -118,6 +124,103 @@ The AI is in **Advisory Mode**. It generates, validates, and documents. The **Te
 
 **Current Mental Anchor:**
 > `[FILL IN: Describe the exact logical stopping point of the last session, e.g., "Phase 8 complete. Kafka broker role deployed. Logstash consumer role pending."]`
+
+---
+
+## 🌅🌙 8a. Daily Rituals: SOD & EOD with Ansible Palace Automation
+
+The daily operating rhythm for **T2 (Linux/WSL2)**. Both playbooks run on `localhost` — no remote host required.
+
+### 🌅 Start-of-Day (SOD) — Ansible Automated
+
+```bash
+# On T2 (Linux/WSL2) — Run this first every morning
+ansible-playbook playbooks/dsom/sod-palace.yml
+```
+
+**What the playbook does automatically:**
+
+| Step | Action | Automated? |
+|---|---|---|
+| 1 | `git pull --rebase origin main` | ✅ Auto |
+| 2 | Run `tools/audit-pre-flight.sh` | ✅ Auto |
+| 3 | Verify Palace Registry exists | ✅ Auto |
+| 4 | Run `tools/reanimate.sh` (generates SOD manifest with Section [14] Palace Registry) | ✅ Auto |
+| 5 | Print manifest file path and handshake instructions | ✅ Auto |
+| **6** | **Upload manifest to AI + say handshake phrase** | **❌ Manual — always** |
+
+**Handshake phrase (paste after uploading manifest):**
+
+```
+Initialise DSOM Protocol v6.1 + Palace v1.0.
+Read the manifest. Walk the Palace Registry in Section [14].
+State: "Sovereign State Synchronised" when ready.
+```
+
+**On T1 (Windows) — manual equivalent:**
+
+```powershell
+git pull --rebase origin main
+.\tools\reanimate.ps1
+# Then upload the manifest and say the handshake phrase
+```
+
+---
+
+### 🌙 End-of-Day (EOD) — Ansible Automated
+
+```bash
+# On T2 (Linux/WSL2) — Run this at end of every working session
+ansible-playbook playbooks/dsom/eod-palace.yml
+```
+
+**What the playbook does automatically:**
+
+| Step | Action | Automated? |
+|---|---|---|
+| 1 | Validate `task.md` has completed tasks `[x]` | ✅ Auto |
+| 2 | Validate `walkthrough.md` has today's anchor | ✅ Auto |
+| 3 | Run `tools/palace-sync.sh` (generate update proposal) | ✅ Auto |
+| 4 | Show dirty/uncommitted files for review | ✅ Auto |
+| 5 | Selective `git add` (brain + palace files only, no blind `git add .`) | ✅ Auto |
+| 6 | Commit with standard EOD message | ✅ Auto |
+| 7 | `git push origin main` | ✅ Auto |
+| **8** | **Review `palace_update_proposal_YYYY-MM-DD.md` with AI** | **❌ Manual — always** |
+| **9** | **Update relevant closets in `.agent/brain/wings/`** | **❌ Manual — always** |
+
+**Skip palace-sync if already run manually:**
+
+```bash
+ansible-playbook playbooks/dsom/eod-palace.yml --skip-tags palace_sync
+```
+
+**On T1 (Windows) — manual equivalent:**
+
+```powershell
+.\tools\hibernation.ps1
+# hibernation.ps1 v2.1 runs palace-sync.ps1 automatically (Step 7)
+```
+
+### 🔄 Full Daily Loop
+
+```
+SOD
+ └── ansible-playbook sod-palace.yml    (T2 auto)
+       └── Upload manifest + handshake       (Human manual)
+             └── AI reads Palace Registry    (AI auto)
+
+Active Work
+ └── Code, commit, push                 (Human)
+ └── Log key decisions immediately      (Human+AI — Decision Log Protocol)
+
+EOD
+ └── ansible-playbook eod-palace.yml    (T2 auto)
+       └── Review palace_update_proposal     (Human+AI)
+             └── Update closets + commit     (Human+AI)
+```
+
+> **Playbooks:** [`playbooks/dsom/sod-palace.yml`](../playbooks/dsom/sod-palace.yml) | [`playbooks/dsom/eod-palace.yml`](../playbooks/dsom/eod-palace.yml)
+> **Full specs:** [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md)
 
 ---
 
@@ -147,6 +250,7 @@ Make sure to cover all of the following — preserve my words verbatim where pos
 - Tasks, phases, goals, and recurring topics.
 - Tools, languages, and frameworks I use.
 - Preferences and corrections I've made to your behaviour.
+- Key decisions made and WHY (reasoning, alternatives rejected, constraints).
 - Any other stored context not covered above.
 
 Do not summarise, group, or omit any entries.
@@ -154,10 +258,12 @@ Do not summarise, group, or omit any entries.
 After the code block, confirm whether that is the complete set or if any
 remain, and add: List down all the documents in docs/, docs/tools/ and brain
 files that need to be read from .agent/ (Specifically check
-tools/audit-pre-flight.sh, tools/reanimate.sh, and tools/git-ritual.sh).
+tools/audit-pre-flight.sh, tools/reanimate.sh, tools/palace-sync.sh,
+.agent/brain/palace_registry.md, and playbooks/dsom/sod-palace.yml +
+eod-palace.yml).
 ```
 
 ---
 
-*Created by the DSOM Engineering Team | Template v2.0 | Aligned with DSOM Master Protocol v6.0*
-*Last Updated: 2026-03-09 | Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
+*Created by the DSOM Engineering Team | Template v3.0 | Aligned with DSOM Master Protocol v6.1 + Palace v1.0*
+*Last Updated: 2026-04-08 | Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
