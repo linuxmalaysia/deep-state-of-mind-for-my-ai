@@ -1,8 +1,8 @@
-# 🎭 Claude.ai Integration Protocol (v6.1)
+# 🎭 Claude.ai Integration Protocol (v6.1 + Palace v1.0)
 ## docs/CLAUDE-SETUP.md
 
 > **"Advisory over Execution. Context over Command. Sovereign Continuity across every AI."**
-> **Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible**
+> **Standard: DSOM Protocol v6.1 + Palace v1.0 | GitOps · AIOps · Ansible**
 
 ---
 
@@ -34,7 +34,7 @@ Claude uses **Projects** to maintain persistent state. The **Project Knowledge B
 Open **Project Settings → Instructions** and paste the following block verbatim. This defines Claude's persona and operating constraints for the lifetime of the project.
 
 ```text
-[DSOM SOVEREIGN INSTRUCTIONS v6.1]
+[DSOM SOVEREIGN INSTRUCTIONS v6.1 + Palace v1.0]
 
 You are the Claude-variant of the DSOM Cognitive Digital Twin. You are a Senior Systems Architect assisting Harisfazillah Jamel (LinuxMalaysia), who has 35+ years of ICT and Open Source expertise.
 
@@ -61,8 +61,9 @@ DSOM LAWS (non-negotiable):
 - T4 (Production): Zero-tolerance for ad-hoc changes. Ansible + GitOps only.
 
 BRAIN SYNC:
-Your Single Source of Truth (SSoT) is the uploaded DSOM-CLAUDE-INIT.md file in Project Knowledge.
-Always refer to it for the current Mental Anchor, task list, and roadmap before proposing any action.
+Your Single Source of Truth (SSoT) is the uploaded manifest file (e.g. sod_manifest_YYYY-MM-DD.txt) in Project Knowledge.
+Before proposing any action, you MUST read Section [14] Palace Registry and walk the relevant spatial Rooms.
+Always refer to it for the current Mental Anchor, task list, and roadmap.
 
 MIRROR LAW:
 Challenge the human if their instructions lack architectural clarity. Ask for the missing 'Why' before acting. Silence is the only failure.
@@ -75,7 +76,10 @@ When ready, state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
 Generate the Claude context manifest from your repo:
 
 ```bash
-# T2 (Linux / WSL2)
+# Recommended on T2 (Linux / WSL2)
+ansible-playbook playbooks/dsom/sod-palace.yml
+
+# Or manual fallback
 bash tools/reanimate.sh
 ```
 
@@ -87,21 +91,20 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to the **Project Knowled
 
 ## 🌅 3. Start-of-Day (SOD) Ritual for Claude
 
-### Step 1 — Git Sync
+### Step 1-3 — The Automated Ansible SOD
+(Skip manual steps if using Ansible)
+```bash
+ansible-playbook playbooks/dsom/sod-palace.yml
+```
+
+Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (replacing any previous manifest).
+
+### Step 1-3 (Manual Alternative)
 ```bash
 ./tools/git-ritual.sh sod      # WSL2
-```
-
-### Step 2 — Intelligence Audit
-```bash
-./tools/audit-pre-flight.sh    # WSL2
-```
-All checks must show `[PASS]`. Fix any `[FAIL]` before proceeding.
-
-### Step 3 — Generate and Upload Manifest
-```bash
-bash tools/reanimate.sh
-./tools/privacy-guardian.sh    # scan before uploading
+./tools/audit-pre-flight.sh    # WSL2 (All checks must [PASS])
+bash tools/reanimate.sh        # Generate manifest
+./tools/privacy-guardian.sh    # Scan before uploading
 ```
 
 Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (replacing any previous manifest).
@@ -110,7 +113,7 @@ Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (rep
 
 After uploading the manifest, start a new conversation and use:
 
-> *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the current Mental Anchor from `.agent/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest. Walk the Palace Registry (Section [14]). Summarise the current Mental Anchor from `.agent/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
 
 **Option B — Feed Yesterday's Hibernation Notes:**
 
@@ -181,6 +184,10 @@ Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`.
 
 ### Step 2 — Sovereign Save
 ```bash
+# Recommended on T2
+ansible-playbook playbooks/dsom/eod-palace.yml
+
+# Or manual fallback
 ./tools/git-ritual.sh          # WSL2 — guided EOD commit and push
 ```
 

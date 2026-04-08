@@ -148,11 +148,8 @@ cd /mnt/d/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai
 # Run DSOM pre-flight audit on localhost
 ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
 
-# Run DSOM pre-flight audit on ALL inventory nodes
-ansible-playbook playbooks/dsom/audit-preflight.yml -i inventory/hosts.yml
-
-# Initialise brain on a remote CI server
-ansible-playbook playbooks/dsom/init-brain.yml -i inventory/hosts.yml --limit ci_servers
+# Run the DSOM Palace SOD Ritual (Start of Day)
+ansible-playbook playbooks/dsom/sod-palace.yml
 ```
 
 ---
@@ -198,6 +195,6 @@ options="metadata,umask=77,fmask=11"
 
 ---
 
-*Standard: DSOM For My AI Protocol | Harisfazillah Jamel*
+*Standard: DSOM Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel*
 **WSL Instance:** `dsom-control-almalinux10` | **Identity:** `dsom-admin` (UID 2001)
-**Last Updated:** 2026-03-10 | **Version:** v1.0
+**Last Updated:** 2026-04-08 | **Version:** v1.1

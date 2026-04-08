@@ -1,7 +1,7 @@
 # 🛡️ CRISP² Operational Strategy: The Five Pillars of Persistence
 
 **Author:** Harisfazillah Jamel  
-**Version:** 1.0.0  
+**Version:** 1.1.0 
 **License:** GPLv3  
 **Status:** Core Framework Documentation
 
@@ -16,14 +16,14 @@ The **CRISP² Matrix** (Context-Record-Iteration-Single-Purpose-Pedagogy) is the
 
 ### 🧩 I. Context Awareness (The Anchor)
 Before any code is written, the AI must "synchronise" with the physical state of the repository.
-* **The Action:** Reading `.agent/brain/` artifacts (`task.md`, `walkthrough.md`).
+* **The Action:** Reading `.agent/brain/` artifacts (`palace_registry.md`, `task.md`, `walkthrough.md`).
 * **The Goal:** Ensure the AI's internal "Mental Anchor" matches the Human Architect's last saved state.
 * **Human Check:** Always ask: *"What is our current Mental Anchor?"*
 
 ### 📝 II. Review & Record (The Audit Trail)
 Logic must be committed to text before it is committed to code.
-* **The Action:** Updating `walkthrough.md` with the reasoning behind a change.
-* **The Goal:** Create a permanent record of *why* a decision was made, which serves as the "memory" for the next AI session.
+* **The Action:** Updating `walkthrough.md` and Palace `closet.md` files with the reasoning behind a change.
+* **The Goal:** Create a permanent spatial record of *why* a decision was made, which serves as the "memory" for the next AI session.
 * **DBP-Standard:** *Rekod dahulu, kod kemudian.*
 
 ### 🔄 III. Iteration (Atomic Git Hygiene)
