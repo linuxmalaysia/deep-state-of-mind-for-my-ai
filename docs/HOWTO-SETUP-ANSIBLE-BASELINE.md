@@ -17,6 +17,7 @@ This guide describes how to establish the **Ansible baseline** for any new proje
 - A configured `ansible.cfg`
 - A template `inventory/hosts.yml`
 - A pre-flight verification playbook
+- Integration with the DSOM Palace rituals (`sod-palace.yml`, `eod-palace.yml`)
 - Ansible Vault integration for secrets management
 - Integration with the DSOM `tools/audit-pre-flight.sh` script
 
@@ -69,7 +70,7 @@ ansible --version
 ```bash
 # From project root (Tier 2 Dev Bridge or WSL2)
 mkdir -p inventory/group_vars inventory/host_vars
-mkdir -p playbooks
+mkdir -p playbooks/dsom
 mkdir -p roles
 mkdir -p vault
 mkdir -p .logs
@@ -383,4 +384,4 @@ EOF
 ---
 
 *Standard: Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel*
-**Current Status:** `ACTIVE` | **Last Human Audit:** 2026-03-09
+**Current Status:** `ACTIVE` | **Last Human Audit:** 2026-04-08 | **Version:** 1.0 + Palace v1.0

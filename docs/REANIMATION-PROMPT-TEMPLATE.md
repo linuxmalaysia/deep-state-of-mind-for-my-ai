@@ -1,7 +1,7 @@
-# ⚡ DSOM Reanimation Prompt Templates (v2.0)
+# ⚡ DSOM Reanimation Prompt Templates (v3.0)
 # docs/REANIMATION-PROMPT-TEMPLATE.md
 
-> **Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible**
+> **Standard: DSOM Protocol v6.1 + Palace v1.0 | GitOps · AIOps · Ansible**
 > **"Every new session is a reanimation. Every reanimation is a sovereign act."**
 
 ---
@@ -20,7 +20,7 @@
 
 ## 🚀 Prompt 1 — Master Reanimation (Upload Manifest)
 
-**When to use:** Start of day after running `bash tools/reanimate.sh`. Upload the manifest file, then paste this prompt.
+**When to use:** Start of day after running `ansible-playbook playbooks/dsom/sod-palace.yml` (or `bash tools/reanimate.sh`). Upload the manifest file, then paste this prompt.
 
 **Instructions:** Upload `sod_manifest_YYYY-MM-DD.txt`, then paste this:
 
@@ -45,6 +45,7 @@ System Initialisation: Initialise DSOM Protocol v6.1.
    - Stop Condition: Refuse any request that violates these laws.
 
 3. CONTEXT SYNC (read the uploaded manifest):
+   - Review Section [14] Palace Registry. Walk the relevant Rooms for today's tasks.
    - Confirm the current Mental Anchor from .agent/brain/walkthrough.md
    - Confirm the 4-Tier environment map from docs/AI-COGNITIVE-TWIN-PROTOCOL.md
    - State the top 3 pending tasks from .agent/brain/task.md
@@ -85,9 +86,10 @@ After reading the Hibernation Notes above, do the following:
 2. State the last Mental Anchor — the exact point where we stopped.
 3. Confirm the 4-Tier environment map (T1, T2, T3, T4) and project identity.
 4. List the top 3 pending tasks from .agent/brain/task.md.
-5. State: "Sovereign State Restored — [PROJECT NAME] is live." to confirm readiness.
+5. Identify the current Palace Rooms you will operate within today.
+6. State: "Sovereign State Restored — [PROJECT NAME] is live." to confirm readiness.
 
-From this point, operate under DSOM Protocol v6.1:
+From this point, operate under DSOM Protocol v6.1 + Palace v1.0:
 - Advisory Mode only. You propose, I approve, Ansible executes, you verify.
 - UK English in all responses and documentation.
 - Every change goes to Git before execution.
@@ -122,11 +124,13 @@ After reading, confirm:
    T3: Jump Host, T4: Production fabric).
 3. The project identity and sovereign identity (dsom-admin, UID 2001).
 4. The top 3 pending tasks.
-5. All sovereign laws are loaded: GitOps, Ansible-only, Advisory Mode.
+5. The Palace Rooms mapping for the current work.
+6. All sovereign laws are loaded: GitOps, Ansible-only, Advisory Mode.
 
 Then read these documents for full context (the AI will access them via the repo):
 - docs/AI-MASTER-PROTOCOL.md       — Governance laws
 - docs/AI-COGNITIVE-TWIN-PROTOCOL.md — Project Identity Card
+- .agent/brain/palace_registry.md  — Palace Spatial Map
 - .agent/brain/task.md             — Current tasks
 - .agent/brain/walkthrough.md      — Session history
 - docs/HUMAN-HANDOVER-CONTEXT.md   — Environment map
@@ -158,6 +162,7 @@ I have been away from this project for [X] days. Using the supplied context
 4. ENVIRONMENT REALITY CHECK
    - Current T1 path: [YOUR_WINDOWS_PATH]
    - Current T2: dsom-control-almalinux10
+   - Last known Palace mapping: (read from walkthrough.md or registry)
    - Last known Git commit: (read from walkthrough.md or manifest)
    - Any configuration drift risks after [X] days?
 
@@ -214,6 +219,6 @@ Don't hide anything from me. Trust me as your master.
 
 ---
 
-*Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
+*Standard: DSOM Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline reanimation template** for all projects built on this skeleton.*
-*Last Updated: 2026-03-10 | Version: v2.0*
+*Last Updated: 2026-04-08 | Version: v3.0*
