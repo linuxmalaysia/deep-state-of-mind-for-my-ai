@@ -35,7 +35,8 @@ try {
 
 Write-Host ""
 Write-Host "  [2/4] Stage / Commit tracked modifications..." -ForegroundColor Yellow
-$TrackedChanges = (git diff --name-only).Trim()
+$TrackedChangesRaw = git diff --name-only 2>&1
+$TrackedChanges = if ($null -ne $TrackedChangesRaw) { ($TrackedChangesRaw -join "`n").Trim() } else { "" }
 if (-not [string]::IsNullOrWhiteSpace($TrackedChanges)) {
     git add -u
     git commit -m "chore(checkpoint): modified tracked files [$DateStamp]"
@@ -46,7 +47,8 @@ if (-not [string]::IsNullOrWhiteSpace($TrackedChanges)) {
 
 Write-Host ""
 Write-Host "  [3/4] Stage / Commit newly added untracked files..." -ForegroundColor Yellow
-$UntrackedFiles = (git ls-files --others --exclude-standard).Trim()
+$UntrackedFilesRaw = git ls-files --others --exclude-standard 2>&1
+$UntrackedFiles = if ($null -ne $UntrackedFilesRaw) { ($UntrackedFilesRaw -join "`n").Trim() } else { "" }
 if (-not [string]::IsNullOrWhiteSpace($UntrackedFiles)) {
     git add .
     git commit -m "chore(checkpoint): untracked new files [$DateStamp]"
