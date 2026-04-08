@@ -12,9 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **Cross-Platform Daily Automation Rituals.** Introduced Windows-native variants of Palace routines (`tools/sod-palace.ps1` and `tools/eod-palace.ps1`) executing directly via PowerShell to bypass WSL Ansible dependencies. Symmetrically added Bash wrapper proxies (`tools/sod-palace.sh` and `tools/eod-palace.sh`) for parity on Linux/WSL2 nodes. All related documentation refactored away from explicit playbook constraints.
-
-- **DSOM Mid-Day Checkpoint Automation.** Engineered a lightweight continuous save ritual for syncing state and pushing to GitHub mid-task without triggering strict EOD validations. `tools/checkpoint.ps1` runs natively on Windows, and `tools/checkpoint.sh` proxies `playbooks/dsom/checkpoint-palace.yml` for Linux.
-- **Dual-Phase Smart Commits.** Checkpoint automation natively evaluates tracked vs untracked file statuses, and submits separated commits for each isolated state to ensure robust git history cleanly scaling continuous integrations.
+- **Smart Checkpoint Integration.** Upgraded `tools/checkpoint.ps1` and `playbooks/dsom/checkpoint-palace.yml` to support AI-generated commit messages via `.agent/brain/checkpoint_summary.txt`. Bridged the context gap between AI task state and human execution terminals.
+- **Automation Hardening.** Fixed non-interactive crash in `reanimate.sh` and `reanimate.ps1` via TTY detection and robustness wrappers.
+- **Documentation Sanitization.** Purged comparative token/cost tables to maintain a neutral stance. Formally credited `milla-jovovich/mempalace` as the originator of the spatial memory architecture.
 - **DSOM Onboarding Automation.** Created cross-platform bootstrap scripts using Bash (`dsom-onboard.sh`) and PowerShell (`dsom-onboard.ps1`). Native Ansible fetching backend added to `playbooks/dsom/onboard-dsom.yml`. Handles "Zero-Debt" safe cloning into any external target repository, preventing overrides via Git branch isolation and timestamp file deduplication.
 - **`docs/HOWTO-DSOM-ONBOARDING.md`** documentation to guide users on "DSOM-ifying" their Git repositories fully mechanically.
 - **README.md** updated to formally include the new Onboarding Automation loop standard.
@@ -71,7 +71,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **Sovereign Persistence Fabric Finalized:** Hardened 19-node Elasticsearch and Kibana fabric.
-- **Formal Release:** Executed Git tag `v9.8.0` and GitHub release for the hardened fabric.
+- **Formal Release:**
+- **[2026-04-08]:** **Smart Checkpoint Integration.** Upgraded `tools/checkpoint.ps1` and `playbooks/dsom/checkpoint-palace.yml` to support high-fidelity commit messages sourced from AI-generated Hibernation Notes (`checkpoint_summary.txt`).
+- **[2026-04-08]:** **Documentation Sanitization & Crediting.** Purged comparative cost data and formally credited `milla-jovovich/mempalace` in core protocol docs and spatial memory closets.
+- **[2026-04-08]:** **Git Tag `v10.1.0-onboarding`** pushed to GitHub. Continuous Integration loops across Windows (T1) and Linux (T2) fully harmonised.
 - **Documentation Sanitization:** Ensured Master Architect's identity and professional standards are preserved across all core docs.
 
 ## [9.6.1] - 2026-04-05
