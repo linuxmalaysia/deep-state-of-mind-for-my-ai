@@ -62,7 +62,7 @@ Or on T2 (WSL2):
 
 ```bash
 # T2 (Linux/WSL2) — Full automated SOD
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 ```
 
 **What it runs automatically:**

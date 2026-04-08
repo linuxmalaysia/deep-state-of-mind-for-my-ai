@@ -141,7 +141,7 @@ The daily operating rhythm for **T2 (Linux/WSL2)**. Both playbooks run on `local
 
 ```bash
 # On T2 (Linux/WSL2) — Run this first every morning
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 ```
 
 **What the playbook does automatically:**
@@ -177,7 +177,7 @@ git pull --rebase origin main
 
 ```bash
 # On T2 (Linux/WSL2) — Run this at end of every working session
-ansible-playbook playbooks/dsom/eod-palace.yml
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 ```
 
 **What the playbook does automatically:**
@@ -197,7 +197,7 @@ ansible-playbook playbooks/dsom/eod-palace.yml
 **Skip palace-sync if already run manually:**
 
 ```bash
-ansible-playbook playbooks/dsom/eod-palace.yml --skip-tags palace_sync
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
 ```
 
 **On T1 (Windows) — manual equivalent:**

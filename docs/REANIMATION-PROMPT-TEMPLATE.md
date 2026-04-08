@@ -21,7 +21,7 @@
 
 ## 🚀 Prompt 1 — Master Reanimation (Upload Manifest)
 
-**When to use:** Start of day after running `ansible-playbook playbooks/dsom/sod-palace.yml` (or `bash tools/reanimate.sh`). Upload the manifest file, then paste this prompt.
+**When to use:** Start of day after running `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` (or `bash tools/reanimate.sh`). Upload the manifest file, then paste this prompt.
 
 **Instructions:** Upload `sod_manifest_YYYY-MM-DD.txt`, then paste this:
 

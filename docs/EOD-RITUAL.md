@@ -126,7 +126,7 @@ Run the hibernation script — it checks for dirty state before you sleep:
 
 ```bash
 # T2 (Linux/WSL2) — Full automated EOD
-ansible-playbook playbooks/dsom/eod-palace.yml
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 ```
 
 **What it runs automatically:**
@@ -144,7 +144,7 @@ ansible-playbook playbooks/dsom/eod-palace.yml
 **Skip palace-sync if already run by hibernation.sh:**
 
 ```bash
-ansible-playbook playbooks/dsom/eod-palace.yml --skip-tags palace_sync
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
 ```
 
 **After the playbook — Manual steps (always required):**

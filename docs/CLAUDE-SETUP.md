@@ -80,7 +80,7 @@ Generate the Claude context manifest from your repo:
 
 ```bash
 # Recommended on T2 (Linux / WSL2)
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 
 # Or manual fallback
 bash tools/reanimate.sh
@@ -99,7 +99,7 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to the **Project Knowled
 (Skip manual steps if using Ansible)
 
 ```bash
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 ```
 
 Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (replacing any previous manifest).
@@ -195,7 +195,7 @@ Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`.
 
 ```bash
 # Recommended on T2
-ansible-playbook playbooks/dsom/eod-palace.yml
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 # Or manual fallback
 ./tools/git-ritual.sh          # WSL2 — guided EOD commit and push

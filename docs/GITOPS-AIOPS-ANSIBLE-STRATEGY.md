@@ -80,7 +80,7 @@ Before any advisory session, the AI **MUST** read:
 - `.agent/brain/palace_registry.md` — **Spatial map (Palace v1.0)** — walk this to locate relevant Rooms
 - `inventory/hosts.yml` — Target node topology
 
-> **SOD shortcut:** `ansible-playbook playbooks/dsom/sod-palace.yml` injects all of the above automatically via the reanimation manifest (Section [14] = Palace Registry).
+> **SOD shortcut:** `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` injects all of the above automatically via the reanimation manifest (Section [14] = Palace Registry).
 
 ---
 
@@ -123,11 +123,11 @@ git commit -m "feat(scope): descriptive message [Phase-XX/vX.X]"
 git push origin main
 
 # Tier 2 (Dev Bridge): Palace SOD — full automated reanimation
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 # Then upload manifest + handshake with AI
 
 # Tier 2 (Dev Bridge): Palace EOD — full automated save
-ansible-playbook playbooks/dsom/eod-palace.yml
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 # Then review palace_update_proposal + update closets
 ```
 
@@ -262,8 +262,8 @@ When starting a new project with DSOM, use this checklist to establish the three
 - [ ] Create `ansible.cfg`, `inventory/hosts.yml`, `playbooks/preflight.yml`
 - [ ] Verify connectivity: `ansible all -m ping -i inventory/hosts.yml`
 - [ ] Run pre-flight: `tools/audit-pre-flight.sh`
-- [ ] **Test SOD playlist:** `ansible-playbook playbooks/dsom/sod-palace.yml`
-- [ ] **Test EOD playlist:** `ansible-playbook playbooks/dsom/eod-palace.yml`
+- [ ] **Test SOD playlist:** `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)`
+- [ ] **Test EOD playlist:** `bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)`
 
 ---
 

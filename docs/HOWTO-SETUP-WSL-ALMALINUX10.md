@@ -152,7 +152,7 @@ cd /mnt/d/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai
 ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
 
 # Run the DSOM Palace SOD Ritual (Start of Day)
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 ```
 
 ---

@@ -64,10 +64,10 @@ Members **only** edit files inside their own named folder (e.g., `member/hisham/
 Every member uses the `tools/git-ritual.sh` script to maintain **Atomic Git Hygiene**.
 
 * **Start of Day (SOD):** Run `./tools/git-ritual.sh sod <username>`. This creates a semantic personal branch (e.g., `member/hisham-20260127`).
-  * **Lead Architect (T2):** Also run `ansible-playbook playbooks/dsom/sod-palace.yml` to pull, audit, and load the Palace Registry before starting.
+  * **Lead Architect (T2):** Also run `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` to pull, audit, and load the Palace Registry before starting.
 * **Active Work:** Commit all technical progress and brain updates specifically to this branch.
 * **End of Day (EOD):** Run `./tools/git-ritual.sh eod`. This merges the day's work into `main` and pushes it to the sovereign repository.
-  * **Lead Architect (T2):** Also run `ansible-playbook playbooks/dsom/eod-palace.yml` to validate, palace-sync, and commit Palace updates atomically.
+  * **Lead Architect (T2):** Also run `bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)` to validate, palace-sync, and commit Palace updates atomically.
 
 ### Rule 3: The Synchronisation (Lead Architect Role)
 
