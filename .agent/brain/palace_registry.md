@@ -11,36 +11,78 @@ This registry serves as the index for the AI to "walk" the **Sovereign Markdown 
 
 | Hall | Content Type | Status |
 | :--- | :--- | :--- |
-| `hall_facts` | Core Laws, Clean Architecture, CRISP Mandate | ACTIVE |
-| `hall_events` | Major Phase Milestones, EOD Manifests | ACTIVE |
-| `hall_preferences` | Architect Persona, Linguistic Rules | ACTIVE |
-| `hall_advice` | Past Architectural Recommendations | STANDBY |
+| `hall_facts` | Core Laws, Clean Architecture, CRISP Mandate, Tooling | ACTIVE |
+| `hall_events` | Major Phase Milestones, EOD Manifests, Ledger, Brain | ACTIVE |
+| `hall_preferences` | Architect Persona, Linguistic Rules | STANDBY |
+| `hall_discoveries` | Breakthroughs, uncategorised commits | ACTIVE |
 
 ---
 
 ## 🚪 Active Rooms
 
-### Wing: `wing_dsom_core`
-- **Room: `room_clean_architecture`**  
-  *Path:* `hall_facts/room_clean_architecture/closet.md`  
-  *Context:* The concentric skeleton of the project.
-- **Room: `room_crisp_strategy`**  
-  *Path:* `hall_facts/room_crisp_strategy/closet.md`  
-  *Context:* The operational filter for interaction.
-- **Room: `room_infrastructure_v1`**  
-  *Path:* `hall_events/room_infrastructure_v1/closet.md`  
-  *Context:* Phase 1 setup and early tools.
-- **Room: `room_sovereign_fabric_v9_8`**  
-  *Path:* `hall_events/room_sovereign_fabric_v9_8/closet.md`  
-  *Context:* Current production-ready persistence layer.
+### Wing: `wing_dsom_core` → `hall_facts`
+
+- **Room: `room_clean_architecture`**
+  *Path:* `hall_facts/room_clean_architecture/closet.md`
+  *Context:* The concentric skeleton of the project (Inward Dependency Rule).
+
+- **Room: `room_crisp_strategy`**
+  *Path:* `hall_facts/room_crisp_strategy/closet.md`
+  *Context:* The operational filter for all AI interaction (Context/Review/Iteration/Single/Partnership).
+
+- **Room: `room_dsom_protocol`**
+  *Path:* `hall_facts/room_dsom_protocol/closet.md`
+  *Context:* Core protocol docs — SOD/EOD rituals, RITUAL-OF-TRANSITION, AI-MASTER-PROTOCOL laws, README/SUMMARY evolution.
+
+- **Room: `room_tooling`** *(NEW — Backfill 2026-04-08)*
+  *Path:* `hall_facts/room_tooling/closet.md`
+  *Context:* Full toolchain evolution from `reanimate.sh` v1.4 (2026-01-08) to `palace-sync` v1.0 (2026-04-08).
+
+---
+
+### Wing: `wing_dsom_core` → `hall_events`
+
+- **Room: `room_sovereign_fabric_v9_8`**
+  *Path:* `hall_events/room_sovereign_fabric_v9_8/closet.md`
+  *Context:* 19-node Elasticsearch/Kibana fabric + Ansible infrastructure (v6.2.x roles/playbooks).
+
+- **Room: `room_brain_artifacts`** *(NEW — Backfill 2026-04-08)*
+  *Path:* `hall_events/room_brain_artifacts/closet.md`
+  *Context:* Evolution of `.agent/brain/` — task.md, walkthrough.md, Palace structure, hibernation notes.
+
+- **Room: `room_ledger`** *(NEW — Backfill 2026-04-08)*
+  *Path:* `hall_events/room_ledger/closet.md`
+  *Context:* CHANGELOG.md + HISTORY.md version milestones from v1.0.0 (2025-09-16) to Palace v1.0 (2026-04-08).
+
+---
+
+### Wing: `wing_dsom_core` → `hall_discoveries`
+
+- **Room: `room_uncategorised`** *(NEW — Backfill 2026-04-08)*
+  *Path:* `hall_discoveries/room_uncategorised/closet.md`
+  *Context:* PDF sovereign books, GitBook/MkDocs infrastructure, .github governance, ansible.cfg fixes.
 
 ---
 
 ## 📜 Retrieval Protocol: "Walking the Palace"
+
 1. **Initialise:** AI reads `palace_registry.md` at session start.
 2. **Scout:** Identify relevant Wings and Rooms for the current task.
 3. **Query:** Load the `closet.md` (summary) for quick context.
 4. **Drill Down:** If precision is needed, follow links to the **Chronological Drawer** (`walkthrough.md`).
 
+### Quick-Reference: Task → Room Mapping
+
+| If working on... | Walk to... |
+| :--- | :--- |
+| Governance & Protocol laws | `hall_facts/room_dsom_protocol` |
+| Shell scripts & tools | `hall_facts/room_tooling` |
+| Architecture decisions | `hall_facts/room_clean_architecture` |
+| AI interaction style | `hall_facts/room_crisp_strategy` |
+| Elasticsearch/Ansible infra | `hall_events/room_sovereign_fabric_v9_8` |
+| Brain files (task/walkthrough) | `hall_events/room_brain_artifacts` |
+| Version history | `hall_events/room_ledger` |
+| PDF/GitBook/misc | `hall_discoveries/room_uncategorised` |
+
 ---
-*Last Human Audit: 2026-04-08 | Protocol Version: Palace v1.0*
+*Last Human Audit: 2026-04-08 | Backfill Complete | Protocol Version: Palace v1.0 | Rooms: 8*
