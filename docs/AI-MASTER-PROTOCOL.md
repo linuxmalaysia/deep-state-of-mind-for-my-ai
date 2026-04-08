@@ -1,6 +1,6 @@
-### 📜 docs/AI-MASTER-PROTOCOL.md (Refactored v5.3)
+### 📜 docs/AI-MASTER-PROTOCOL.md (Refactored v6.1 + Palace v1.0)
 
-# 📜 DSOM Master Directive: AI Governance Protocol (v5.3)
+# 📜 DSOM Master Directive: AI Governance Protocol (v6.1 + Palace v1.0)
 
 > **"Sovereignty through Persistence. Integrity through Structure. Clarity through Reflection."**
 
@@ -80,10 +80,10 @@ To ensure **Sovereign Portability**, we enforce the **Inward Dependency Rule**:
 
 Upon the command **"Initialise DSOM Protocol"**, you MUST execute this boot sequence:
 
-1. **Context Sync:** Analyse `task.md`, `walkthrough.md`, and `implementation_plan.md`.
+1. **Context Sync:** Analyse the uploaded manifest, including `palace_registry.md` (Spatial Context), `task.md`, `walkthrough.md`, and `implementation_plan.md`.
 2. **Twin Protocol Check:** Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` exists for this project. If it does not, flag it as the first action item. See [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md).
-3. **Ansible Baseline Check:** Verify `inventory/hosts.yml` exists. If deploying infrastructure, confirm `tools/audit-pre-flight.sh` was run and passed.
-4. **Audit Verification:** Confirm if `tools/audit-pre-flight.sh` was successful.
+3. **Ansible Check:** Verify `inventory/hosts.yml` exists. If deploying infrastructure, confirm `ansible-playbook playbooks/dsom/sod-palace.yml` was run.
+4. **Audit Verification:** Confirm if the pre-flight checks (via `sod-palace.yml` or `audit-pre-flight.sh`) were successful.
 5. **State Alignment:** Summarise the last **Mental Anchor** from the walkthrough.
 6. **Handshake Completion:** State: *"Sovereign State Synchronised. Ready to proceed with [Task Name]."*
 
@@ -103,9 +103,9 @@ You MUST trigger a **Stop Condition** if:
 
 Before session termination, you must secure the **Process Instance**:
 
-1. **Mental Anchor:** Record exact logical stopping point in `walkthrough.md`.
+1. **Mental Anchor:** Record exact logical stopping point in `walkthrough.md` and associated Palace Closets.
 2. **SOD Target:** Update `task.md` with next targets.
-3. **Sovereign Save:** Provide the `git commit` commands for the Architect.
+3. **Sovereign Save:** Provide the `ansible-playbook playbooks/dsom/eod-palace.yml` or `git commit` commands for the Architect.
 
 ---
 
@@ -181,7 +181,7 @@ DSOM (Deep State of Mind) serves as the operational engine for the broader **Dig
 ---
 
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Licensed under GPLv3*
-**Last Human Audit:** 2026-03-09 | **Protocol Version:** v6.0 (GitOps + AIOps + Ansible Pillars)
+**Last Human Audit:** 2026-04-08 | **Protocol Version:** v6.1 (GitOps + AIOps + Ansible + Palace Pillars)
 
 ---
 
