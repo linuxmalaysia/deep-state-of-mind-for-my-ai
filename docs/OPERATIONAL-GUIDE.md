@@ -54,6 +54,12 @@ We aggregrate all context into a single "Truth File."
 Upload the generated text file to the AI and type:
 > *"Summarize the current Mental Anchor after you have read the file uploaded. What is our immediate strategic focus?"*
 
+### Step 4: Walking the Palace (The Retrieval)
+Before starting logic work, the AI must traverse the **Spatial Markdown Palace** (`.agent/brain/wings/`):
+1.  **Registry Scan:** Read `palace_registry.md` to identify the relevant Wing and Rooms.
+2.  **Room Entry:** Load the `closet.md` for specific technical contexts (e.g., Auth, Persistence).
+3.  **Discovery:** Use the Palace to identify connections between disparate data points that the linear walkthrough might obscure.
+
 ---
 
 ## 3. 🌙 The Hibernation Sequence (End-of-Day)

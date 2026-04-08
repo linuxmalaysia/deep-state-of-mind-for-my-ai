@@ -22,6 +22,7 @@
 * [🌙 EOD Ritual](docs/EOD-RITUAL.md)
 * [🕯️ Ritual of Transition](docs/RITUAL-OF-TRANSITION.md)
 * [🧠 Personalisation Ritual](docs/PERSONALIZATION.md)
+* [🏛️ Sovereign Markdown Palace Protocol](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 
 ## 🧠 3. The AI Brain (Sovereign Core)
 ### 🌐 Global Hub (Strategic)
@@ -31,6 +32,7 @@
 * [🎯 My Daily Tasks](.agent/brain/member/haris/task.md)
 * [🏁 My Walkthrough](.agent/brain/member/haris/walkthrough.md)
 * [🗺️ Implementation Plan](.agent/brain/implementation_plan.md)
+* [🏛️ Palace Registry](.agent/brain/palace_registry.md)
 
 ## 🤖 4. AI & Agent Protocols
 * [🤝 Human Handover Context Template](docs/HUMAN-HANDOVER-CONTEXT.md)
