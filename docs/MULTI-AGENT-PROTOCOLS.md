@@ -1,4 +1,4 @@
-# 🤖 DSOM Multi-Agent Protocols (v1.0)
+# 🤖 DSOM Multi-Agent Protocols (v6.1)
 
 > **"One Mind, Many Hands."** - The DSOM Philosophy for Multi-Agent Collaboration.
 
@@ -7,7 +7,7 @@ To maintain **Sovereign Context**, we categorize external AI agents into two val
 
 ### Tier 1: The Co-Pilots (IDE Embedded)
 These agents live inside the editor and have direct access to the active file buffer.
-*   **Examples:** GitHub Copilot, Cursor, Windsurf, Tabnine, Replit AI.
+*   **Examples:** GitHub Copilot, Google Antigravity, Cursor, Windsurf, Tabnine, Replit AI.
 *   **Access Level:** `Read/Write` (Buffer only).
 *   **Context Source:** `.cursorrules`, `.windsurfrules`, or System Prompt injection.
 
@@ -72,4 +72,4 @@ These are the most DSOM-native compatible due to their "Context Awareness" featu
 ## 4. 🚨 The "Zero-Hallucination" Rule for Agents
 If an agent cannot read `docs/AI-MASTER-PROTOCOL.md`, it is **forbidden** from refactoring Architectural Layers (`src/Domain`, `src/Application`). It may only work on `tools/` or `tests/`.
 
-*Last Updated: 2026-01-16*
+*Last Updated: 2026-03-29 | Standard: DSOM For My AI Protocol v6.1*

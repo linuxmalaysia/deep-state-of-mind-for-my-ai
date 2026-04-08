@@ -1,164 +1,244 @@
 <#
 .SYNOPSIS
-    DSOM Reanimation Manifest Generator (V1.5)
-    
+    DSOM Reanimation Manifest Generator (v2.0 - GitOps + AIOps + Ansible)
+
 .DESCRIPTION
-    Aggregates ALL core DSOM artifacts. Features an interactive multi-line 
-    input for EOD summaries.
-    
-.AUTHOR
-    Harisfazillah Jamel (LinuxMalaysia)
-    
-.LICENSE
-    GNU GPL v3.0 or later
+    Aggregates ALL core DSOM artifacts including Cognitive Twin Protocol and
+    Ansible inventory. Features an interactive multi-line input for EOD summaries.
+    Generates a sod_manifest_YYYY-MM-DD.txt for AI session reanimation.
+
+.EXAMPLE
+    .\tools\reanimate.ps1
+    Upload the resulting sod_manifest_*.txt in your AI session.
+
+.NOTES
+    Author:  Harisfazillah Jamel (LinuxMalaysia)
+    Partner: Generated with assistance from Google Antigravity
+    Version: v2.0
+    License: GNU GPL v3.0 or later
 #>
 
 $ErrorActionPreference = "Stop"
+$VERSION = "v2.0"
 
 # 1. Setup Variables
 try {
-    $RepoRoot = git rev-parse --show-toplevel 2>$null
+    $RepoRoot = (git rev-parse --show-toplevel 2>$null).Trim()
 } catch {
     $RepoRoot = $null
 }
 
 if (-not $RepoRoot) {
-    Write-Error "Error: Not in a Git repository."
+    Write-Error "[ERROR] Not in a Git repository. Run from the project root."
     exit 1
 }
 
-$DateStamp = Get-Date -Format "yyyy-MM-dd"
+$DateStamp  = Get-Date -Format "yyyy-MM-dd"
 $OutputFile = Join-Path $RepoRoot "sod_manifest_$DateStamp.txt"
-$BrainDir = Join-Path $RepoRoot ".agent" "brain"
-$DocsDir = Join-Path $RepoRoot "docs"
+$BrainDir   = Join-Path $RepoRoot ".agent" "brain"
+$DocsDir    = Join-Path $RepoRoot "docs"
 $ReadmeFile = Join-Path $RepoRoot "README.md"
+$InvFile    = Join-Path $RepoRoot "inventory" "hosts.yml"
 
-# 2. Interactive Input
+Write-Host ""
+Write-Host "  [DSOM] Reanimation Manifest Generator $VERSION" -ForegroundColor Cyan
+Write-Host "  Output: sod_manifest_$DateStamp.txt" -ForegroundColor Cyan
+Write-Host ""
+
+# 2. Validate required brain files
+$Missing = $false
+foreach ($f in @("task.md", "walkthrough.md")) {
+    $p = Join-Path $BrainDir $f
+    if (-not (Test-Path $p)) {
+        Write-Host "  [WARNING] Missing brain artifact: $p" -ForegroundColor Yellow
+        $Missing = $true
+    }
+}
+if ($Missing) {
+    Write-Host "  Hint: Run .\tools\init-brain.ps1 to initialise brain artifacts." -ForegroundColor Yellow
+    Write-Host ""
+}
+
+# 3. Interactive Input
 Write-Host "----------------------------------------------------------------------"
-Write-Host "🧠 DSOM Manual State Injection"
+Write-Host "  DSOM Manual State Injection"
 Write-Host "----------------------------------------------------------------------"
 
-$Choice = Read-Host "❓ Do you have a manual EOD Summary or Master Prompt addition? (y/N)"
+$Choice = Read-Host "  Do you have a manual EOD Summary or Master Prompt addition? (y/N)"
 $ManualInput = ""
 
 if ($Choice -match "^[yY]") {
-    Write-Host "`n📝 PASTE/TYPE YOUR CONTENT BELOW:"
+    Write-Host ""
+    Write-Host "  PASTE/TYPE YOUR CONTENT BELOW:"
     Write-Host "----------------------------------------------------------------------"
-    Write-Host "👉 [INSTRUCTION]: Type 'EOF' on a new line and press ENTER to save."
+    Write-Host "  [INSTRUCTION]: Type 'EOF' on a new line and press ENTER to save."
     Write-Host "----------------------------------------------------------------------"
-    
-    $InputLines = @()
+
+    $InputLines = [System.Collections.Generic.List[string]]::new()
     while ($true) {
         $Line = Read-Host
         if ($Line -eq "EOF") { break }
-        $InputLines += $Line
+        $InputLines.Add($Line)
     }
     $ManualInput = $InputLines -join "`n"
-    
     Write-Host "----------------------------------------------------------------------"
-    Write-Host "✅ Input captured successfully."
+    Write-Host "  Input captured successfully." -ForegroundColor Green
 }
 
-# 3. Define the Gathering Logic
-function Generate-Manifest {
+# 4. Helper — safe read file
+function Get-FileSafe {
+    param([string]$Path, [string]$Fallback = "[MISSING] File not found: $Path")
+    if (Test-Path $Path) { return (Get-Content $Path -Raw -Encoding UTF8) }
+    return $Fallback
+}
+
+function Get-FileHeadSafe {
+    param([string]$Path, [int]$Lines = 60, [string]$Fallback = "[MISSING] File not found: $Path")
+    if (Test-Path $Path) {
+        $content = (Get-Content $Path -Encoding UTF8 | Select-Object -First $Lines) -join "`n"
+        return "$content`n`n... (see full doc: $Path)"
+    }
+    return $Fallback
+}
+
+# 5. Define the Gathering Logic
+function New-Manifest {
     $DateNow = Get-Date
-    
-    Write-Output "======================================================================"
-    Write-Output "🚀 DSOM START OF DAY REANIMATION MANIFEST"
-    Write-Output "Generated on: $DateNow"
-    Write-Output "Project Root: $RepoRoot"
-    Write-Output "======================================================================"
-    Write-Output ""
-    
-    Write-Output "------------------------------------------------------------"
-    Write-Output " 🧠 REANIMATING: Deep State of Mind (DSOM) For My AI Protocol"
-    Write-Output " 📍 NODE: $env:COMPUTERNAME | USER: $env:USERNAME"
-    Write-Output "------------------------------------------------------------"
-    Write-Output ""
-    Write-Output "## 🛡️ CRISP STRATEGY MANDATE"
-    Write-Output "- **C**ontext Awareness: Read brain artifacts first."
-    Write-Output "- **R**eview & Record: Commit atomic changes; update walkthrough.md."
-    Write-Output "- **I**teration: Incremental progress; no monolithic refactors."
-    Write-Output "- **S**ingle-purpose: Focus on one sub-task at a time."
-    Write-Output "- **P**artnership: AI acts as a Senior Architect Digital Twin (Service Relationship)."
-    Write-Output ""
+    $Lines   = [System.Collections.Generic.List[string]]::new()
+
+    $Lines.Add("======================================================================")
+    $Lines.Add("DSOM START OF DAY REANIMATION MANIFEST - $VERSION")
+    $Lines.Add("Generated on: $DateNow")
+    $Lines.Add("Project Root: $RepoRoot")
+    $Lines.Add("======================================================================")
+    $Lines.Add("")
+    $Lines.Add("------------------------------------------------------------")
+    $Lines.Add(" REANIMATING: Deep State of Mind (DSOM) For My AI Protocol")
+    $Lines.Add(" NODE: $env:COMPUTERNAME | USER: $env:USERNAME")
+    $Lines.Add("------------------------------------------------------------")
+    $Lines.Add("")
+    $Lines.Add("## CRISP STRATEGY MANDATE")
+    $Lines.Add("- **C**ontext Awareness: Read brain artifacts first.")
+    $Lines.Add("- **R**eview and Record: Commit atomic changes; update walkthrough.md.")
+    $Lines.Add("- **I**teration: Incremental progress; no monolithic refactors.")
+    $Lines.Add("- **S**ingle-purpose: Focus on one sub-task at a time.")
+    $Lines.Add("- **P**artnership: AI acts as a Senior Architect Digital Twin.")
+    $Lines.Add("")
 
     # Sunday Audit Check
     if ($DateNow.DayOfWeek -eq 'Sunday') {
-        Write-Output "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-        Write-Output "🚨 SUNDAY AUDIT PROTOCOL ACTIVE"
-        Write-Output "   Today is Sunday. You MUST perform the Weekly Human Refresh."
-        Write-Output "   Refer to task.md -> 'Sunday Audit Protocol' for the checklist."
-        Write-Output "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-        Write-Output ""
+        $Lines.Add("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        $Lines.Add("SUNDAY AUDIT PROTOCOL ACTIVE")
+        $Lines.Add("   Today is Sunday. You MUST perform the Weekly Human Refresh.")
+        $Lines.Add("   Refer to task.md -> 'Sunday Audit Protocol' for the checklist.")
+        $Lines.Add("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        $Lines.Add("")
     }
 
+    # Manual Injection
     if (-not [string]::IsNullOrWhiteSpace($ManualInput)) {
-        Write-Output "### [0] MANUAL STATE INJECTION (Last Session EOD/Master Prompt)"
-        Write-Output $ManualInput
-        Write-Output "`n---`n"
+        $Lines.Add("### [0] MANUAL STATE INJECTION (Last Session EOD/Master Prompt)")
+        $Lines.Add($ManualInput)
+        $Lines.Add("`n---`n")
     }
 
-    Write-Output "### [1] PROJECT README (Identity & Overview)"
-    if (Test-Path $ReadmeFile) { Get-Content $ReadmeFile -Raw -Encoding UTF8 } else { Write-Output "README.md not found." }
-    Write-Output "`n---`n"
+    $Lines.Add("### [1] PROJECT README (Identity and Overview)")
+    $Lines.Add((Get-FileSafe $ReadmeFile "README.md not found."))
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [2] SYSTEM TELEMETRY (Physical Constraints)"
-    Write-Output "- **OS:** $env:OS"
-    Write-Output "- **Architecture:** $env:PROCESSOR_ARCHITECTURE"
-    Write-Output "- **Date:** $DateNow"
-    Write-Output "`n---`n"
+    $Lines.Add("### [2] SYSTEM TELEMETRY (Physical Constraints)")
+    $Lines.Add("- **OS:** $env:OS")
+    $Lines.Add("- **Architecture:** $env:PROCESSOR_ARCHITECTURE")
+    $Lines.Add("- **Host:** $env:COMPUTERNAME")
+    $Lines.Add("- **User:** $env:USERNAME")
+    $Lines.Add("- **Date:** $DateNow")
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [3] MASTER PROTOCOL (The Constitution)"
-    if (Test-Path "$DocsDir\AI-MASTER-PROTOCOL.md") { Get-Content "$DocsDir\AI-MASTER-PROTOCOL.md" -Raw -Encoding UTF8 }
-    Write-Output "`n---`n"
+    $Lines.Add("### [3] MASTER PROTOCOL (The Constitution)")
+    $Lines.Add((Get-FileSafe "$DocsDir\AI-MASTER-PROTOCOL.md"))
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [4] CURRENT TASK (The Cutting Edge)"
-    if (Test-Path "$BrainDir\task.md") { Get-Content "$BrainDir\task.md" -Raw -Encoding UTF8 }
-    Write-Output "`n---`n"
+    $Lines.Add("### [4] COGNITIVE TWIN PROTOCOL (Project Identity Card)")
+    $Lines.Add((Get-FileSafe "$DocsDir\AI-COGNITIVE-TWIN-PROTOCOL.md" `
+        "[MISSING] docs/AI-COGNITIVE-TWIN-PROTOCOL.md not found. Run HOWTO-ADOPT-DSOM.md."))
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [5] FULL WALKTHROUGH (The Complete Narrative History)"
-    if (Test-Path "$BrainDir\walkthrough.md") { Get-Content "$BrainDir\walkthrough.md" -Raw -Encoding UTF8 }
-    Write-Output "`n---`n"
+    $Lines.Add("### [5] CURRENT TASK (The Cutting Edge)")
+    $Lines.Add((Get-FileSafe "$BrainDir\task.md"))
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [6] IMPLEMENTATION PLAN (The Roadmap)"
-    if (Test-Path "$BrainDir\implementation_plan.md") { Get-Content "$BrainDir\implementation_plan.md" -Raw -Encoding UTF8 }
-    Write-Output "`n---`n"
+    $Lines.Add("### [6] FULL WALKTHROUGH (The Complete Narrative History)")
+    $Lines.Add((Get-FileSafe "$BrainDir\walkthrough.md"))
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [7] PROJECT STRUCTURE (The Spatial Map)"
-    Write-Output "Files in repository (rel to root):"
-    git ls-tree -r HEAD --name-only | ForEach-Object { Write-Output "  - $_" }
-    Write-Output "`n---`n"
+    $Lines.Add("### [7] IMPLEMENTATION PLAN (The Roadmap)")
+    $Lines.Add((Get-FileSafe "$BrainDir\implementation_plan.md"))
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [8] GIT HISTORY"
-    Write-Output "#### Recent Activity (Last 48 Hours)"
-    git log --since="48 hours ago" --pretty=format:"%h - %an (%ar): %s"
-    Write-Output "`n"
-    Write-Output "#### Context (Last 30 Commits)"
-    git log -n 30 --pretty=format:"%h - %an (%ar): %s"
-    Write-Output "`n`n---`n"
+    $Lines.Add("### [8] PROJECT STRUCTURE (The Spatial Map)")
+    $Lines.Add("Files in repository:")
+    try {
+        $tree = git ls-tree -r HEAD --name-only 2>&1
+        foreach ($f in $tree) { $Lines.Add("  - $f") }
+    } catch {
+        $Lines.Add("[SKIP] git ls-tree failed.")
+    }
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [9] SOD RITUAL (The Cognitive Handshake)"
-    if (Test-Path "$DocsDir\SOD-RITUAL.md") { Get-Content "$DocsDir\SOD-RITUAL.md" -Raw -Encoding UTF8 }
-    Write-Output "`n`n---`n"
+    $Lines.Add("### [9] GIT HISTORY")
+    $Lines.Add("#### Recent Activity (Last 48 Hours)")
+    try {
+        $recent = git log --since="48 hours ago" --pretty=format:"%h - %an (%ar): %s" 2>&1
+        $Lines.Add($recent -join "`n")
+    } catch { $Lines.Add("[SKIP] git log failed.") }
+    $Lines.Add("")
+    $Lines.Add("#### Context (Last 30 Commits)")
+    try {
+        $logEntries = git log -n 30 --pretty=format:"%h - %an (%ar): %s" 2>&1
+        $Lines.Add($logEntries -join "`n")
+    } catch { $Lines.Add("[SKIP] git log failed.") }
+    $Lines.Add("`n---`n")
 
-    Write-Output "### [10] RITUAL OF TRANSITION (Operational Guidance)"
-    if (Test-Path "$DocsDir\RITUAL-OF-TRANSITION.md") { Get-Content "$DocsDir\RITUAL-OF-TRANSITION.md" -Raw -Encoding UTF8 }
-    
-    Write-Output ""
-    Write-Output "======================================================================"
-    Write-Output "🏁 MANIFEST COMPLETE"
-    Write-Output "======================================================================"
-    Write-Output ""
-    Write-Output "Handshake: Ask the AI: `"Summarize the current Mental Anchor after you have read the file uploaded`""
-    Write-Output ""
-    Write-Output "⚠️  REMINDER: Upload this manifest file as part of your Start of Day (SOD)."
+    $Lines.Add("### [10] SOD RITUAL (Cognitive Handshake - Summary)")
+    $Lines.Add((Get-FileHeadSafe "$DocsDir\SOD-RITUAL.md"))
+    $Lines.Add("`n---`n")
+
+    $Lines.Add("### [11] RITUAL OF TRANSITION (Cross-AI Handover - Summary)")
+    $Lines.Add((Get-FileHeadSafe "$DocsDir\RITUAL-OF-TRANSITION.md"))
+    $Lines.Add("`n---`n")
+
+    $Lines.Add("### [12] ANSIBLE INVENTORY (Node Topology)")
+    if (Test-Path $InvFile) {
+        $Lines.Add("WARNING: This file may contain hostnames/IPs. Run privacy-guardian.ps1 before sharing.")
+        $Lines.Add((Get-Content $InvFile -Raw -Encoding UTF8))
+    } else {
+        $Lines.Add("[SKIP] inventory/hosts.yml not found (non-infra project or Ansible not yet configured).")
+    }
+    $Lines.Add("`n---`n")
+
+    $Lines.Add("### [13] GITOPS STRATEGY (Three-Pillar Doctrine Summary)")
+    $Lines.Add((Get-FileHeadSafe "$DocsDir\GITOPS-AIOPS-ANSIBLE-STRATEGY.md" 60 "[SKIP] GITOPS-AIOPS-ANSIBLE-STRATEGY.md not found."))
+    $Lines.Add("")
+    $Lines.Add("======================================================================")
+    $Lines.Add("MANIFEST COMPLETE - DSOM For My AI Protocol v6.1")
+    $Lines.Add("======================================================================")
+    $Lines.Add("")
+    $Lines.Add("Handshake: Ask the AI:")
+    $Lines.Add('  "Summarise the current Mental Anchor from .agent/brain/walkthrough.md.')
+    $Lines.Add('   Confirm the 4-Tier environment. State: Sovereign State Synchronised when ready."')
+    $Lines.Add("")
+    $Lines.Add("REMINDER: Upload this manifest file as part of your Start of Day (SOD).")
+
+    # Return all lines as a single string
+    return ($Lines -join "`n")
 }
 
-# 4. Execute and Capture
-$ManifestContent = Generate-Manifest
+# 6. Execute and Capture (fix double-output bug from v1.5)
+$ManifestContent = New-Manifest
 $ManifestContent | Out-File -FilePath $OutputFile -Encoding UTF8
-$ManifestContent # Print to screen as well
+Write-Host $ManifestContent
 
-Write-Host "`n📝 Manifest saved to: $OutputFile" -ForegroundColor Cyan
-Write-Host "🛡️  REMINDER: Run tools/privacy-guardian.ps1 before sharing this manifest." -ForegroundColor Yellow
+Write-Host ""
+Write-Host "  [OK] Manifest saved to: $OutputFile" -ForegroundColor Green
+Write-Host "  [!]  REMINDER: Run .\tools\privacy-guardian.ps1 before sharing." -ForegroundColor Yellow
+Write-Host ""

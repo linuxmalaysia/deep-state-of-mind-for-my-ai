@@ -1,75 +1,176 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 # ==============================================================================
-# 🌙 DSOM Hibernation Sequence (End-of-Day)
+# 🌙 DSOM Hibernation Sequence v2.0 (End-of-Day Protocol)
+#
+# Author:  Harisfazillah Jamel (LinuxMalaysia)
+# Partner: Generated with assistance from Google Antigravity
+# License: GNU GPL v3.0 or later
+#
+# Description:
+#   Safeguards the project state at End-of-Day.
+#   - Validates brain artifacts (task.md, walkthrough.md)
+#   - Saves Hibernation Notes to .agent/brain/
+#   - Shows uncommitted changes for review (no blind git add .)
+#   - Summarises recent commits and tomorrow's tasks
+#   - Performs guided Sovereign Save (selective git add → commit → push)
+#
+# Usage:
+#   bash tools/hibernation.sh
 # ==============================================================================
 
+# Colors
+CYAN='\033[0;36m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+MAGENTA='\033[0;35m'
+DARKGRAY='\033[1;30m'
+NC='\033[0m'
+
 # 1. Setup
-REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null)
-if [ -z "$REPO_ROOT" ]; then
-    echo "❌ Error: Not in a Git repository."
+REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || true)
+if [ -z "${REPO_ROOT}" ]; then
+    echo -e "${RED}[ERROR] Not in a Git repository. Run from the project root.${NC}"
     exit 1
 fi
+
 BRAIN_DIR="$REPO_ROOT/.agent/brain"
 TASK_FILE="$BRAIN_DIR/task.md"
 WALKTHROUGH_FILE="$BRAIN_DIR/walkthrough.md"
+DATE_STAMP=$(date +"%Y-%m-%d")
+TIME_STAMP=$(date +"%Y-%m-%d_%H%M")
+HIBFILE="$BRAIN_DIR/hibernation-notes-${DATE_STAMP}.txt"
+VERSION="v2.0"
+
+echo -e "${CYAN}======================================================================"
+echo -e "  🌙 DSOM HIBERNATION SEQUENCE INITIATED — $VERSION"
+echo -e "  $(date +'%Y-%m-%d %H:%M:%S')"
+echo -e "======================================================================${NC}"
+echo ""
+
+ABORT=0
 
 # 2. Safety Checks
-echo "======================================================================"
-echo "🌙 DSOM HIBERNATION SEQUENCE INITIATED"
-echo "======================================================================"
-echo ""
-
-# Check Task List Status
-echo "🔍 Checking Task List..."
-if grep -q "\[x\]" "$TASK_FILE"; then
-    echo "✅ progress detected in task.md."
+echo -e "${YELLOW}🔍 [1/4] Checking Task List...${NC}"
+if grep -q "\[x\]" "$TASK_FILE" 2>/dev/null; then
+    echo -e "${GREEN}  ✅ Progress detected in task.md.${NC}"
 else
-    echo "⚠️  WARNING: No completed tasks found in task.md today. Did you forget to update it?"
+    echo -e "${YELLOW}  ⚠️  WARNING: No completed tasks found in task.md. Did you forget to update it?${NC}"
 fi
 
-# Check Walkthrough Status
 echo ""
-echo "🔍 Checking Session Anchor..."
-TODAY=$(date +"%Y-%m-%d")
-if grep -q "$TODAY" "$WALKTHROUGH_FILE"; then
-    echo "✅ Session Anchor for today found in walkthrough.md."
+echo -e "${YELLOW}🔍 [2/4] Checking Session Anchor in walkthrough.md...${NC}"
+if grep -q "$DATE_STAMP" "$WALKTHROUGH_FILE" 2>/dev/null; then
+    echo -e "${GREEN}  ✅ Session Anchor for $DATE_STAMP found in walkthrough.md.${NC}"
 else
-    echo "❌ CRITICAL: No Session Anchor for $TODAY found in walkthrough.md!"
-    echo "   You MUST summarize your work before sleeping."
+    echo -e "${RED}  ❌ CRITICAL: No Session Anchor for $DATE_STAMP found in walkthrough.md!${NC}"
+    echo -e "${RED}     You MUST add today's Mental Anchor before hibernating.${NC}"
+    echo -e "${YELLOW}     Add a section like: '## Mental Anchor — $DATE_STAMP' to walkthrough.md.${NC}"
+    ABORT=1
 fi
 
-# 3. Context Summary
-echo ""
-echo "----------------------------------------------------------------------"
-echo "📅 SESSION SUMMARY (What we did)"
-echo "----------------------------------------------------------------------"
-# Show last 5 commits for context
-git log -n 5 --pretty=format:"%C(yellow)%h%Creset - %s %C(green)(%ar)%Creset"
-echo ""
-echo "----------------------------------------------------------------------"
+if [ $ABORT -eq 1 ]; then
+    echo ""
+    echo -e "${RED}🛑 HIBERNATION BLOCKED: Critical checks failed. Fix issues above first.${NC}"
+    exit 1
+fi
 
-# 4. Next Steps Generator
+# 3. Show dirty files (no blind git add .)
 echo ""
-echo "🔮 NEXT STEPS (For Tomorrow)"
-echo "----------------------------------------------------------------------"
-grep "\[ \]" "$TASK_FILE" | head -n 5
-echo "----------------------------------------------------------------------"
+echo -e "${YELLOW}🔍 [3/4] Reviewing Uncommitted Changes...${NC}"
+DIRTY=$(git -C "$REPO_ROOT" status --porcelain)
+if [ -z "$DIRTY" ]; then
+    echo -e "${DARKGRAY}  (nothing to commit — working tree clean)${NC}"
+else
+    echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
+    git -C "$REPO_ROOT" status --short
+    echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
+fi
 
-# 5. Final Confirmation
+# 4. Hibernation Notes auto-save
 echo ""
-echo "😴 Are you ready to hibernate? (This will push all changes to GitHub)"
-read -p "Confirm (y/N): " confirm
+echo -e "${YELLOW}🔍 [4/4] Hibernation Notes...${NC}"
+if [ -f "$HIBFILE" ]; then
+    echo -e "${GREEN}  ✅ Hibernation Notes already exist: hibernation-notes-${DATE_STAMP}.txt${NC}"
+else
+    echo -e "${CYAN}  📝 Generating Hibernation Notes from today's commits...${NC}"
+    {
+        echo "# DSOM Hibernation Notes — $DATE_STAMP"
+        echo "# Generated by hibernation.sh $VERSION"
+        echo ""
+        echo "## Session Summary"
+        echo ""
+        git -C "$REPO_ROOT" log --since="24 hours ago" --pretty=format:"[%as %H:%M] %s" 2>/dev/null || echo "(no commits in last 24 hours)"
+        echo ""
+        echo ""
+        echo "## Pending Tasks (Tomorrow)"
+        echo ""
+        grep "\[ \]" "$TASK_FILE" 2>/dev/null | head -n 10 || echo "(no pending tasks)"
+        echo ""
+        echo "## Documents to Re-read at SOD"
+        echo ""
+        echo "- docs/SOD-RITUAL.md"
+        echo "- docs/AI-COGNITIVE-TWIN-PROTOCOL.md"
+        echo "- .agent/brain/task.md"
+        echo "- .agent/brain/walkthrough.md"
+    } > "$HIBFILE"
+    echo -e "${GREEN}  ✅ Saved: hibernation-notes-${DATE_STAMP}.txt${NC}"
+fi
+
+# 5. Context Summary
+echo ""
+echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
+echo -e "📅 SESSION SUMMARY (Last 5 commits)"
+echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
+git -C "$REPO_ROOT" log -n 5 --pretty=format:"%C(yellow)%h%Creset - %s %C(green)(%ar)%Creset"
+echo ""
+echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
+
+# 6. Next Steps Generator
+echo ""
+echo -e "${MAGENTA}🔮 NEXT STEPS (For Tomorrow)${NC}"
+echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
+grep "\[ \]" "$TASK_FILE" 2>/dev/null | head -n 5 || echo "  (no pending tasks in task.md)"
+echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
+
+# 7. Privacy Guardian Reminder
+echo ""
+echo -e "${YELLOW}🛡️  REMINDER: If you generated a manifest today, run:${NC}"
+echo -e "     bash tools/privacy-guardian.sh"
+echo ""
+
+# 8. Final Confirmation & Sovereign Save
+echo -e "${CYAN}😴 Are you ready to hibernate? (This will commit staged changes and push to GitHub)${NC}"
+read -r -p "Confirm (y/N): " confirm
 
 if [[ "$confirm" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo ""
-    echo "🚀 Committing context..."
-    git add .
-    git commit -m "chore(hibernation): End-of-Day safe shutdown $(date +'%Y-%m-%d')"
-    git push origin main
+
+    # Stage brain artifacts selectively (never blindly stage everything)
+    git -C "$REPO_ROOT" add \
+        "$BRAIN_DIR/task.md" \
+        "$BRAIN_DIR/walkthrough.md" \
+        "$HIBFILE" 2>/dev/null || true
+
+    # Also stage any other modified tracked files (but not untracked)
+    git -C "$REPO_ROOT" add -u
+
+    # Only commit if there is something to commit
+    if git -C "$REPO_ROOT" diff --cached --quiet; then
+        echo -e "${DARKGRAY}  (nothing new to commit — already clean)${NC}"
+    else
+        git -C "$REPO_ROOT" commit -m "chore(hibernation): End-of-Day safe shutdown $DATE_STAMP [Phase: $(grep -m1 'Phase:' "$TASK_FILE" 2>/dev/null | sed 's/.*Phase: //' | tr -d '**>' || echo 'Active')]]"
+    fi
+
+    # Always push
+    git -C "$REPO_ROOT" push origin main
     echo ""
-    echo "✅ SLEEP WELL, ARCHITECT. YOUR STATE IS SAVED."
+    echo -e "${GREEN}======================================================================"
+    echo -e "  ✅ SLEEP WELL, ARCHITECT. YOUR SOVEREIGN STATE IS SAVED."
+    echo -e "  🌙 Resume tomorrow with: bash tools/reanimate.sh"
+    echo -e "======================================================================${NC}"
 else
     echo ""
-    echo "🛑 Hibernation aborted. Stay awake."
+    echo -e "${RED}🛑 Hibernation aborted. Stay awake.${NC}"
 fi

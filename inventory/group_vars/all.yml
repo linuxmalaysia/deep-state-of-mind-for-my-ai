@@ -1,0 +1,15 @@
+---
+# ==============================================================================
+# DSOM Group Variables — All Hosts
+# Project: deep-state-of-mind-for-my-ai
+# Standard: DSOM For My AI Protocol v6.1
+# ==============================================================================
+
+project_name:   "deep-state-of-mind-for-my-ai"
+project_path:   "/opt/deep-state-of-mind-for-my-ai"
+deploy_user:    "linuxmalaysia"
+deploy_uid:     "1000"
+deploy_gid:     "1000"
+
+# Log path on target nodes
+log_path:       "/opt/deep-state-of-mind-for-my-ai/logs"

@@ -1,22 +1,33 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 # ==============================================================================
-# 📜 DSOM Reanimation Manifest Generator (v2.0 - GitOps + AIOps + Ansible)
-# 
-# Date:    2026-03-09
+# 📜 DSOM Reanimation Manifest Generator (v2.1 - GitOps + AIOps + Ansible)
+#
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
-# Partner: Generated with the help of Google Gemini
+# Partner: Generated with assistance from Google Antigravity
 # License: GNU GPL v3.0 or later
-# 
+#
 # Description:
-# Aggregates ALL core DSOM artifacts including Cognitive Twin Protocol and
-# Ansible inventory. Features an interactive multi-line input for EOD summaries.
+#   Aggregates ALL core DSOM artifacts including Cognitive Twin Protocol and
+#   Ansible inventory. Features an interactive multi-line input for EOD summaries.
+#   Generates a sod_manifest_YYYY-MM-DD.txt for AI session reanimation.
+#
+# Usage:
+#   bash tools/reanimate.sh
+#   Upload the resulting sod_manifest_*.txt in your AI session.
 # ==============================================================================
 
+# Colors
+CYAN='\033[0;36m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
+
 # 1. Setup Variables
-REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null)
-if [ -z "$REPO_ROOT" ]; then
-    echo "Error: Not in a Git repository."
+REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || true)
+if [ -z "${REPO_ROOT}" ]; then
+    echo -e "${RED}[ERROR] Not in a Git repository. Run from the project root.${NC}"
     exit 1
 fi
 
@@ -25,12 +36,31 @@ OUTPUT_FILE="${REPO_ROOT}/sod_manifest_${DATE_STAMP}.txt"
 BRAIN_DIR="$REPO_ROOT/.agent/brain"
 DOCS_DIR="$REPO_ROOT/docs"
 README_FILE="$REPO_ROOT/README.md"
+VERSION="v2.1"
 
-# 2. Interactive Input with Clear Instructions
+echo -e "${CYAN}======================================================================"
+echo -e "  🚀 DSOM Reanimation Manifest Generator $VERSION"
+echo -e "  Output: sod_manifest_${DATE_STAMP}.txt"
+echo -e "======================================================================${NC}"
+echo ""
+
+# 2. Validate required brain files
+MISSING=0
+for f in task.md walkthrough.md; do
+    if [ ! -f "$BRAIN_DIR/$f" ]; then
+        echo -e "${YELLOW}[WARNING] Missing brain artifact: $BRAIN_DIR/$f${NC}"
+        MISSING=1
+    fi
+done
+if [ $MISSING -eq 1 ]; then
+    echo -e "${YELLOW}Hint: Run bash tools/init-brain.sh to initialise brain artifacts.${NC}"
+fi
+
+# 3. Interactive Input with Clear Instructions
 echo "----------------------------------------------------------------------"
 echo "🧠 DSOM Manual State Injection"
 echo "----------------------------------------------------------------------"
-read -p "❓ Do you have a manual EOD Summary or Master Prompt addition? (y/N): " choice
+read -r -p "❓ Do you have a manual EOD Summary or Master Prompt addition? (y/N): " choice
 
 MANUAL_INPUT=""
 if [[ "$choice" =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -39,29 +69,36 @@ if [[ "$choice" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo "----------------------------------------------------------------------"
     echo "👉 [INSTRUCTION]: When finished, press [ENTER] then [CTRL+D] to save."
     echo "----------------------------------------------------------------------"
-    
-    # Capture multi-line input
     MANUAL_INPUT=$(cat)
-    
     echo "----------------------------------------------------------------------"
-    echo "✅ Input captured successfully."
+    echo -e "${GREEN}✅ Input captured successfully.${NC}"
 fi
 
-# 3. Define the Gathering Logic
+# 4. Helper — safe cat
+filecat() {
+    local path="$1"
+    local fallback="${2:-[MISSING] File not found: $path}"
+    if [ -f "$path" ]; then
+        cat "$path"
+    else
+        echo "$fallback"
+    fi
+}
+
+# 5. Generate the manifest
 generate_manifest() {
+    local date_now
+    date_now=$(date)
+
     echo "======================================================================"
-    echo "🚀 DSOM START OF DAY REANIMATION MANIFEST"
-    echo "Generated on: $(date)"
+    echo "🚀 DSOM START OF DAY REANIMATION MANIFEST — $VERSION"
+    echo "Generated on: $date_now"
     echo "Project Root: $REPO_ROOT"
     echo "======================================================================"
     echo ""
-# ==============================================================================
-# 📜 DSOM Reanimation Script
-# Protocol: Deep State of Mind (DSOM) For My AI Protocol
-# ==============================================================================
     echo "------------------------------------------------------------"
     echo " 🧠 REANIMATING: Deep State of Mind (DSOM) For My AI Protocol"
-    echo " 📍 NODE: $(hostname) | USER: Harisfazillah Jamel"
+    echo " 📍 NODE: $(hostname) | USER: $(whoami)"
     echo "------------------------------------------------------------"
     echo ""
     echo "## 🛡️ CRISP STRATEGY MANDATE"
@@ -83,6 +120,7 @@ generate_manifest() {
         echo ""
     fi
 
+    # Manual Injection
     if [ -n "$MANUAL_INPUT" ]; then
         echo "### [0] MANUAL STATE INJECTION (Last Session EOD/Master Prompt)"
         echo "$MANUAL_INPUT"
@@ -90,62 +128,71 @@ generate_manifest() {
     fi
 
     echo "### [1] PROJECT README (Identity & Overview)"
-    [ -f "$README_FILE" ] && cat "$README_FILE" || echo "README.md not found."
+    filecat "$README_FILE" "README.md not found."
     echo -e "\n---\n"
 
     echo "### [2] SYSTEM TELEMETRY (Physical Constraints)"
     echo "- **OS:** $(uname -sr)"
+    echo "- **Host:** $(hostname)"
+    echo "- **User:** $(whoami)"
     echo "- **Shell:** $SHELL"
-    echo "- **Date:** $(date)"
+    echo "- **Date:** $date_now"
     echo -e "\n---\n"
 
     echo "### [3] MASTER PROTOCOL (The Constitution)"
-    cat "$DOCS_DIR/AI-MASTER-PROTOCOL.md"
+    filecat "$DOCS_DIR/AI-MASTER-PROTOCOL.md"
     echo -e "\n---\n"
 
-    echo "### [4] CURRENT TASK (The Cutting Edge)"
-    cat "$BRAIN_DIR/task.md"
+    echo "### [4] COGNITIVE TWIN PROTOCOL (Project Identity Card)"
+    filecat "$DOCS_DIR/AI-COGNITIVE-TWIN-PROTOCOL.md" \
+        "[MISSING] docs/AI-COGNITIVE-TWIN-PROTOCOL.md not found. Run HOWTO-ADOPT-DSOM.md."
     echo -e "\n---\n"
 
-    echo "### [5] FULL WALKTHROUGH (The Complete Narrative History)"
-    cat "$BRAIN_DIR/walkthrough.md"
+    echo "### [5] CURRENT TASK (The Cutting Edge)"
+    filecat "$BRAIN_DIR/task.md"
     echo -e "\n---\n"
 
-    echo "### [6] IMPLEMENTATION PLAN (The Roadmap)"
-    cat "$BRAIN_DIR/implementation_plan.md"
+    echo "### [6] FULL WALKTHROUGH (The Complete Narrative History)"
+    filecat "$BRAIN_DIR/walkthrough.md"
     echo -e "\n---\n"
 
-    echo "### [7] PROJECT STRUCTURE (The Spatial Map)"
+    echo "### [7] IMPLEMENTATION PLAN (The Roadmap)"
+    filecat "$BRAIN_DIR/implementation_plan.md"
+    echo -e "\n---\n"
+
+    echo "### [8] PROJECT STRUCTURE (The Spatial Map)"
     echo "Files in repository (excluding hidden/git):"
-    git ls-tree -r HEAD --name-only | while read file; do echo "  - $file"; done
+    git -C "$REPO_ROOT" ls-tree -r HEAD --name-only | while read -r file; do echo "  - $file"; done
     echo -e "\n---\n"
 
-    echo "### [8] GIT HISTORY"
+    echo "### [9] GIT HISTORY"
     echo "#### Recent Activity (Last 48 Hours)"
-    git log --since="48 hours ago" --pretty=format:"%h - %an (%ar): %s"
-    echo -e "\n"
+    git -C "$REPO_ROOT" log --since="48 hours ago" --pretty=format:"%h - %an (%ar): %s"
+    echo ""
+    echo ""
     echo "#### Context (Last 30 Commits)"
-    git log -n 30 --pretty=format:"%h - %an (%ar): %s"
+    git -C "$REPO_ROOT" log -n 30 --pretty=format:"%h - %an (%ar): %s"
     echo -e "\n\n---\n"
 
-    echo "### [9] SOD RITUAL (The Cognitive Handshake)"
-    cat "$DOCS_DIR/SOD-RITUAL.md"
-    echo -e "\n\n---\n"
-
-    echo "### [10] RITUAL OF TRANSITION (Operational Guidance)"
-    cat "$DOCS_DIR/RITUAL-OF-TRANSITION.md"
-    echo -e "\n\n---\n"
-
-    # --- v2.0 NEW SECTIONS ---
-
-    echo "### [11] COGNITIVE TWIN PROTOCOL (Project Identity Card)"
-    if [ -f "$DOCS_DIR/AI-COGNITIVE-TWIN-PROTOCOL.md" ]; then
-        cat "$DOCS_DIR/AI-COGNITIVE-TWIN-PROTOCOL.md"
+    echo "### [10] SOD RITUAL (The Cognitive Handshake — Summary)"
+    if [ -f "$DOCS_DIR/SOD-RITUAL.md" ]; then
+        head -n 60 "$DOCS_DIR/SOD-RITUAL.md"
+        echo ""
+        echo "... (see full doc: docs/SOD-RITUAL.md)"
     else
-        echo "[MISSING] docs/AI-COGNITIVE-TWIN-PROTOCOL.md not found."
-        echo "Create this file from the DSOM skeleton template for this project."
+        echo "[MISSING] docs/SOD-RITUAL.md"
     fi
-    echo -e "\n---\n"
+    echo -e "\n\n---\n"
+
+    echo "### [11] RITUAL OF TRANSITION (Cross-AI Handover — Summary)"
+    if [ -f "$DOCS_DIR/RITUAL-OF-TRANSITION.md" ]; then
+        head -n 60 "$DOCS_DIR/RITUAL-OF-TRANSITION.md"
+        echo ""
+        echo "... (see full doc: docs/RITUAL-OF-TRANSITION.md)"
+    else
+        echo "[MISSING] docs/RITUAL-OF-TRANSITION.md"
+    fi
+    echo -e "\n\n---\n"
 
     echo "### [12] ANSIBLE INVENTORY (Node Topology)"
     if [ -f "$REPO_ROOT/inventory/hosts.yml" ]; then
@@ -159,25 +206,27 @@ generate_manifest() {
     echo "### [13] GITOPS STRATEGY (Three-Pillar Doctrine Summary)"
     if [ -f "$DOCS_DIR/GITOPS-AIOPS-ANSIBLE-STRATEGY.md" ]; then
         head -n 60 "$DOCS_DIR/GITOPS-AIOPS-ANSIBLE-STRATEGY.md"
-        echo -e "\n... (see full doc for details)"
+        echo ""
+        echo "... (see full doc: docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)"
     else
         echo "[SKIP] GITOPS-AIOPS-ANSIBLE-STRATEGY.md not found."
     fi
     echo ""
     echo "======================================================================"
-    echo "🏁 MANIFEST COMPLETE"
+    echo "🏁 MANIFEST COMPLETE — DSOM For My AI Protocol v6.1"
     echo "======================================================================"
     echo ""
-    echo "Handshake: Ask the AI: \"Summarize the current Mental Anchor after you have read the file uploaded\""
+    echo "Handshake: Ask the AI:"
+    echo '  "Summarise the current Mental Anchor from .agent/brain/walkthrough.md.'
+    echo '   Confirm the 4-Tier environment. State: Sovereign State Synchronised when ready."'
     echo ""
     echo "⚠️  REMINDER: Upload this manifest file as part of your Start of Day (SOD)."
-
 }
 
-# 4. Execute and Capture
+# 6. Execute and Capture
 generate_manifest | tee "$OUTPUT_FILE"
 
 echo ""
-echo "📝 Manifest saved to: $OUTPUT_FILE"
-echo "🛡️  REMINDER: Run tools/privacy-guardian.sh before sharing this manifest."
-
+echo -e "${GREEN}📝 Manifest saved to: $OUTPUT_FILE${NC}"
+echo -e "${YELLOW}🛡️  REMINDER: Run tools/privacy-guardian.sh before sharing this manifest.${NC}"
+echo ""

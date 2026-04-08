@@ -18,11 +18,79 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **POSIX Compliance:** Enforced strict POSIX compliance for Ansible orchestration to resolve Windows drive permission issues.
 - **ML "Memory Inversion":** Finalized ML-ready deployment architecture for 3-node standalone quorum.
 
-## [6.1.0] - 2026-03-10
+## [6.2.1] - 2026-04-05
 ### Added
+- **`roles/common/`** — First DSOM Ansible role. Structured with `tasks/`, `defaults/`, `handlers/`, `meta/`. Four task files:
+  - `packages.yml` — apt-based essential package installation (15 packages, idempotent).
+  - `timezone.yml` — sets `Asia/Kuala_Lumpur` via `community.general.timezone`.
+  - `directories.yml` — creates `/opt/deep-state-of-mind-for-my-ai` and subdirs (logs, tmp, config) owned by `linuxmalaysia:1000`.
+  - `sysctl.yml` — applies `vm.swappiness=10` and `fs.file-max=100000` to `/etc/sysctl.d/99-dsom.conf`.
+- **`playbooks/common.yml`** — Dedicated playbook to run the common role with Debian platform assertion guard.
+- **`playbooks/dsom/site.yml`** — Updated: `roles/common` now wired in (replaces inline directory task).
+
+---
+
+## [6.2.0] - 2026-04-05
+### Added
+- **`ansible.cfg`** — DSOM-standard Ansible configuration. Fixed deprecated `yaml` callback — now uses `result_format=yaml` with `stdout_callback=default` (ansible-core 2.13+).
+- **`inventory/hosts.yml`** — 4-Tier topology with localhost wired as T1/T2, T3/T4 nodes template-commented for future remote targets.
+- **`inventory/group_vars/all.yml`** — Project-wide variables: `linuxmalaysia:1000`, `/opt/deep-state-of-mind-for-my-ai`.
+- **`playbooks/preflight.yml`** — Mandatory gate check playbook. Verifies connectivity, OS identity, UID, and Git. Must pass before any deployment playbook runs.
+- **`vault/.gitignore`** — Secrets directory protection.
+
+### Verified
+- `ansible-playbook playbooks/preflight.yml`: `ok=8  failed=0` on localhost (Ubuntu 25.04, Python 3.13.3, ansible-core 2.18.1).
+- `tools/audit-pre-flight.sh`: All steps `[PASS]` including Ansible Baseline check.
+
+---
+
+## [6.1.5] - 2026-03-29
+### Changed
+- **`tools/hibernation.sh`** — Upgraded from v1.0 (76 lines) to v2.0 (130+ lines). Replaced blind `git add .` with selective staging of brain artifacts + `git add -u`. Added: blocking walkthrough anchor check, Hibernation Notes auto-save, uncommitted file preview, privacy guardian reminder, phase-aware commit message, and improved EOD banner.
+- **`tools/hibernation.ps1`** — Upgraded from v1.0 (81 lines) to v2.0 at full parity with bash. Same improvements: selective staging, blocking walkthrough check, Hibernation Notes auto-save, dirty file preview, privacy guardian reminder.
+
+---
+
+## [6.1.4] - 2026-03-29
+### Changed
+- **`tools/reanimate.sh`** — Upgraded from v2.0 to v2.1. Added `set -euo pipefail`, colour header banner, brain artifact validation, Cognitive Twin Protocol as section [4], head-60 summaries for SOD-RITUAL and RITUAL-OF-TRANSITION, v6.1 handshake prompt in footer.
+- **`tools/reanimate.ps1`** — Upgraded from v1.5 to v2.0. Achieved full 13-section parity with the bash counterpart. Added sections [4] Cognitive Twin Protocol, [12] Ansible Inventory, [13] GitOps Strategy. Fixed double-output bug from v1.5. Added brain artifact validation and `Get-FileHeadSafe` helper.
+
+---
+
+## [6.1.3] - 2026-03-29
+### Changed
+- **`tools/reanimate-claude.sh`** — Upgraded from v1.0 (35 lines) to v2.0. Added 9 labelled sections: Sovereign Constitution, Cognitive Twin Protocol, Current Task, Mental Anchor, Implementation Plan, Git History, Project Structure, Ansible Inventory, and GitOps Strategy. Added colour output, brain artifact validation, and upload instructions.
+- **`tools/reanimate-claude.ps1`** — Upgraded from v1.0 (59 lines) to v2.0 at full parity with the bash counterpart. Added structured error handling and all 9 sections.
+
+---
+
+## [6.1.2] - 2026-03-29
+### Changed
+- **`docs/COPILOT-SETUP.md`** — Full rewrite to v6.1 standard. Removed duplicate Malay/English sections. Added three-pillar doctrine, SOD/EOD rituals, Stop Conditions, workspace context techniques (`#file:`, `@workspace`), `.github/copilot-instructions.md` and `.github/prompts/dsom-reanimate.prompt.md` setup guides, and cross-AI handover pointer.
+
+---
+
+## [6.1.1] - 2026-03-29
+### Changed
+- **`docs/CLAUDE-SETUP.md`** — Full rewrite to v6.1 standard. Added Claude Project Instructions block (copy-paste ready), SOD/EOD ritual steps, Hibernation Notes export prompt, Stop Conditions table, cross-AI handover guidance, and Three-Pillar doctrine alignment.
+- **`docs/MULTI-AGENT-PROTOCOLS.md`** — Updated to v6.1. Added **Google Antigravity** to the Tier 1 Co-Pilot agent taxonomy.
+- **`docs/PERSONALIZATION.md`** — Relabelled as Gemini Edition (v6.1). Added cross-reference pointers to Claude, Copilot, and Antigravity setup docs.
+
+---
+
+## [6.1.0] - 2026-03-24
+### Added
+- **`playbooks/dsom/site.yml` and `audit-preflight.yml`** — Established standard Ansible execution scaffolding for downstream projects.
+
+### Changed
 - **Documentation Hardening:** Full overhaul of `CONTRIBUTING.md`, `SOD-RITUAL.md`, `EOD-RITUAL.md`, and `MIRROR-OF-KNOWLEDGE.md`.
 - **Tooling v8.6:** Upgraded `CheckUsage.ps1` with accurate token estimation and ASCII-safe interface.
 - **New Resource:** Created `docs/tools/HOWTO-CHECKUSAGE.md`.
+- **`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`** — Removed placeholder variables and restored default baseline paths to pass the pre-flight checks.
+- **Brain Artifacts** — Updated `.agent/brain/` session tracking to maintain the GitOps/AIOps continuity loop.
+
+---
 
 ## [6.0.0] - 2026-03-09
 ### Added
@@ -85,4 +153,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **Initial Concept:** Foundation of the Deep State of Mind (DSOM) protocol for preventing AI context decay.
 - **Sovereign Laws:** Early draft of Zero-Global Pattern and Linux-agnostic infrastructure.
-
