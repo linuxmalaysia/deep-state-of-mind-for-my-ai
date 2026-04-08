@@ -6,6 +6,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [10.0.0-palace] - 2026-04-08
+
+### Added
+
+- **Sovereign Markdown Palace v1.0** — Spatial memory architecture layered on top of Git.
+  Wing → Hall → Room → Closet hierarchy. Palace Registry as AI navigational index.
+- **`palace-sync.sh` / `palace-sync.ps1` v1.0** — Git history → Palace Room mapping engine.
+  EOD batch mode (incremental) and `--backfill` (full history) modes.
+- **8 Palace Rooms backfilled** from full Git history (2026-01-07 to 2026-04-08):
+  `room_tooling`, `room_brain_artifacts`, `room_ledger`, `room_uncategorised`,
+  `room_clean_architecture`, `room_crisp_strategy`, `room_dsom_protocol`,
+  `room_sovereign_fabric_v9_8`.
+- **`playbooks/dsom/sod-palace.yml`** — Ansible SOD automation. Runs git pull, audit,
+  palace check, and reanimate. Human step (AI upload) documented explicitly.
+- **`playbooks/dsom/eod-palace.yml`** — Ansible EOD automation. Runs palace-sync,
+  brain validation, selective staging, commit, and push. Closet review remains human+AI.
+- **`docs/PALACE-BUILD-STORY.md`** — Narrative of why and how the Palace was built.
+- **`docs/HOWTO-PALACE-ONBOARDING.md`** — First-time guide for users and AI agents.
+  Includes 4-step Palace Walk protocol for AI agents.
+- **`docs/HOWTO-MIGRATE-TO-PALACE.md`** — 9-phase migration checklist for existing DSOM users.
+- **`docs/RESEARCH-REASONING-GAP.md`** — Research finding: what DSOM solves vs the live
+  reasoning capture gap. Introduces the Decision Log Protocol.
+
+### Changed
+
+- **`tools/hibernation.sh`** → v2.1 — Step 7: Palace Spatial Reflection (auto palace-sync).
+- **`tools/hibernation.ps1`** → v2.1 — Windows parity for Palace Spatial Reflection.
+- **`tools/reanimate.sh`** → v2.2 — Section [14]: Palace Registry in SOD manifest.
+- **`tools/reanimate.ps1`** → v2.1 — Windows parity for Section [14] Palace Registry.
+- **`README.md`** — Updated to v10.0.0-palace. Added Palace section, Known Gap callout,
+  updated brain structure tree, updated Key Documents table, updated roadmap.
+- **`SUMMARY.md`** — Added Palace Rooms, Ansible Palace playbooks, research documents.
+- **`HISTORY.md`** — Phase 5: Sovereign Markdown Palace & Ansible Ritual Automation added.
+
+### Tagged
+
+- `v10.0.0-palace` — Git tag pushed to GitHub.
+
+---
+
+
 ## [9.8.0] - 2026-04-08
 ### Added
 - **Sovereign Persistence Fabric Finalized:** Hardened 19-node Elasticsearch and Kibana fabric.
