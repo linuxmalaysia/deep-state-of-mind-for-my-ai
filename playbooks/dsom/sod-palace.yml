@@ -1,0 +1,105 @@
+---
+# playbooks/dsom/sod-palace.yml
+# DSOM Start-of-Day (SOD) — Palace Edition
+# Automates the mechanical SOD ritual on T2 (Linux/WSL2).
+# The AI handshake (manifest upload) remains a manual human step.
+#
+# Usage:
+#   ansible-playbook playbooks/dsom/sod-palace.yml
+#
+# Author: Harisfazillah Jamel (LinuxMalaysia)
+# Version: v1.0 | 2026-04-08
+# Protocol: DSOM v6.1 + Palace v1.0
+
+- name: "DSOM SOD — Palace Edition (v1.0)"
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    project_root: "{{ playbook_dir | dirname | dirname }}"
+    brain_dir: "{{ project_root }}/.agent/brain"
+    tools_dir: "{{ project_root }}/tools"
+    date_stamp: "{{ lookup('pipe', 'date +%Y-%m-%d') }}"
+
+  tasks:
+
+    - name: "SOD [0/5] — Banner"
+      ansible.builtin.debug:
+        msg:
+          - "======================================================================"
+          - "  DSOM SOD RITUAL — PALACE EDITION v1.0"
+          - "  {{ lookup('pipe', 'date +\"%Y-%m-%d %H:%M:%S\"') }}"
+          - "======================================================================"
+
+    # ── Step 1: Git Sync ──────────────────────────────────────────────────────
+    - name: "SOD [1/5] — Git pull (rebase) from origin/main"
+      ansible.builtin.command:
+        cmd: git pull --rebase origin main
+        chdir: "{{ project_root }}"
+      register: git_pull_result
+      changed_when: "'Already up to date' not in git_pull_result.stdout"
+
+    - name: "SOD [1/5] — Git pull result"
+      ansible.builtin.debug:
+        msg: "{{ git_pull_result.stdout_lines }}"
+
+    # ── Step 2: Pre-Flight Audit ──────────────────────────────────────────────
+    - name: "SOD [2/5] — Run Pre-Flight Audit"
+      ansible.builtin.command:
+        cmd: bash tools/audit-pre-flight.sh
+        chdir: "{{ project_root }}"
+      register: preflight_result
+      failed_when: "'[FAIL]' in preflight_result.stdout"
+
+    - name: "SOD [2/5] — Audit result"
+      ansible.builtin.debug:
+        msg: "{{ preflight_result.stdout_lines[-10:] }}"
+
+    # ── Step 3: Palace Registry Check ────────────────────────────────────────
+    - name: "SOD [3/5] — Verify Palace Registry exists"
+      ansible.builtin.stat:
+        path: "{{ brain_dir }}/palace_registry.md"
+      register: palace_registry_stat
+
+    - name: "SOD [3/5] — Palace Registry status"
+      ansible.builtin.debug:
+        msg: >-
+          {% if palace_registry_stat.stat.exists %}
+          [OK] Palace Registry found — AI will receive Section [14] at handshake.
+          {% else %}
+          [WARN] Palace Registry missing — run: bash tools/palace-sync.sh --backfill
+          {% endif %}
+
+    # ── Step 4: Generate SOD Manifest (includes Palace Registry) ─────────────
+    - name: "SOD [4/5] — Generate Reanimation Manifest (Palace-aware)"
+      ansible.builtin.command:
+        cmd: bash tools/reanimate.sh
+        chdir: "{{ project_root }}"
+      register: reanimate_result
+
+    - name: "SOD [4/5] — Find generated manifest"
+      ansible.builtin.find:
+        paths: "{{ project_root }}"
+        patterns: "sod_manifest_{{ date_stamp }}*.txt"
+      register: manifest_files
+
+    # ── Step 5: Human Handshake Reminder ─────────────────────────────────────
+    - name: "SOD [5/5] — Handshake Instructions"
+      ansible.builtin.debug:
+        msg:
+          - "======================================================================"
+          - "  SOD MECHANICAL STEPS COMPLETE"
+          - "======================================================================"
+          - ""
+          - "  NEXT — MANUAL STEP (cannot be automated):"
+          - "  1. Upload this manifest to your AI:"
+          - "     {{ manifest_files.files | map(attribute='path') | list | first | default('sod_manifest_' + date_stamp + '.txt') }}"
+          - ""
+          - "  2. Say to the AI:"
+          - "     'Initialise DSOM Protocol v6.1 + Palace v1.0."
+          - "      Read the manifest. Walk the Palace Registry in Section [14]."
+          - "      State: Sovereign State Synchronised when ready.'"
+          - ""
+          - "  Palace Registry loaded in Section [14] — AI has spatial awareness."
+          - "======================================================================"

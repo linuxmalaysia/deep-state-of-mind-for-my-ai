@@ -51,3 +51,19 @@ This file serves as the project's permanent archival record. It tracks the evolu
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v9.8.0 | Harisfazillah Jamel*
+
+---
+
+## 🏛️ Phase 5: Sovereign Markdown Palace & Ansible Ritual Automation
+
+- **[2026-04-08]:** **Sovereign Markdown Palace v1.0 LAUNCHED.** Transitioned the AI brain from a flat file system to a spatial memory hierarchy. Designed Wing → Hall → Room → Closet architecture with `palace_registry.md` as the navigational index.
+- **[2026-04-08]:** **Palace Backfill Completed.** 8 Palace Rooms populated from full Git history spanning 2026-01-07 to 2026-04-08 using `palace-sync.sh --backfill`.
+- **[2026-04-08]:** **`palace-sync.sh` / `palace-sync.ps1` v1.0 created.** Git history → Palace Room mapping engine. Supports EOD batch and full `--backfill` modes.
+- **[2026-04-08]:** **Hibernation & Reanimate tools upgraded to Palace-aware versions.** `hibernation.sh` → v2.1 (Step 7: Palace Spatial Reflection). `reanimate.sh` → v2.2 (Section [14]: Palace Registry). Windows PS1 parity: `hibernation.ps1` → v2.1, `reanimate.ps1` → v2.1.
+- **[2026-04-08]:** **Research Finding: The Reasoning Gap.** Documented in `docs/RESEARCH-REASONING-GAP.md`. DSOM solves state persistence and token cost (~$1–3/yr vs $507/yr). Open gap: live reasoning capture (mitigated by Decision Log Protocol).
+- **[2026-04-08]:** **Palace Documentation Suite.** Created: `docs/PALACE-BUILD-STORY.md`, `docs/HOWTO-PALACE-ONBOARDING.md`, `docs/HOWTO-MIGRATE-TO-PALACE.md`. Updated README.md to v10.0.0-palace.
+- **[2026-04-08]:** **Ansible Palace Automation.** Created `playbooks/dsom/sod-palace.yml` and `playbooks/dsom/eod-palace.yml` to automate the mechanical SOD/EOD steps on T2 (Linux). Human steps (AI handshake, closet review) remain intentionally manual.
+- **[2026-04-08]:** **Git Tag `v10.0.0-palace`** pushed to GitHub. Both Linux and Windows machines confirmed in sync.
+
+---
+*End of Current Ledger | Standard: DSOM Protocol v10.0.0-palace | Harisfazillah Jamel*

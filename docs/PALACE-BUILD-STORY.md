@@ -104,6 +104,7 @@ Added **Section [14]: Palace Registry** — the SOD manifest now includes the fu
 | 2026-04-08 | Upgraded `hibernation.ps1` → v2.1, `reanimate.ps1` → v2.1 | `d7f6eca` |
 | 2026-04-08 | Committed sync marker and backfill proposal | `5839cdc` |
 | 2026-04-08 | Tagged `v10.0.0-palace` on GitHub | Tag |
+| 2026-04-08 | Created `playbooks/dsom/sod-palace.yml` + `eod-palace.yml` — Ansible ritual automation | `feat(ansible)` |
 
 ---
 

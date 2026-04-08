@@ -1,0 +1,177 @@
+---
+# playbooks/dsom/eod-palace.yml
+# DSOM End-of-Day (EOD) — Palace Edition
+# Automates the EOD ritual on T2 (Linux/WSL2):
+#   - Runs Palace Sync to generate the update proposal
+#   - Validates brain artifacts (walkthrough anchor + task progress)
+#   - Stages and commits brain artifacts + Palace files
+#   - Pushes to origin/main
+#
+# The closet editing step (review & update palace_update_proposal) remains
+# a human+AI step. This playbook commits AFTER that review is done.
+#
+# Usage (normal EOD after AI has reviewed proposal):
+#   ansible-playbook playbooks/dsom/eod-palace.yml
+#
+# Usage (skip palace-sync if already run manually):
+#   ansible-playbook playbooks/dsom/eod-palace.yml --skip-tags palace_sync
+#
+# Author: Harisfazillah Jamel (LinuxMalaysia)
+# Version: v1.0 | 2026-04-08
+# Protocol: DSOM v6.1 + Palace v1.0
+
+- name: "DSOM EOD — Palace Edition (v1.0)"
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    project_root: "{{ playbook_dir | dirname | dirname }}"
+    brain_dir: "{{ project_root }}/.agent/brain"
+    tools_dir: "{{ project_root }}/tools"
+    date_stamp: "{{ lookup('pipe', 'date +%Y-%m-%d') }}"
+    task_file: "{{ brain_dir }}/task.md"
+    walkthrough_file: "{{ brain_dir }}/walkthrough.md"
+
+  tasks:
+
+    - name: "EOD [0/7] — Banner"
+      ansible.builtin.debug:
+        msg:
+          - "======================================================================"
+          - "  DSOM EOD RITUAL — PALACE EDITION v1.0"
+          - "  {{ lookup('pipe', 'date +\"%Y-%m-%d %H:%M:%S\"') }}"
+          - "======================================================================"
+
+    # ── Step 1: Validate Brain Artifacts ─────────────────────────────────────
+    - name: "EOD [1/7] — Check task.md exists"
+      ansible.builtin.stat:
+        path: "{{ task_file }}"
+      register: task_stat
+      failed_when: not task_stat.stat.exists
+
+    - name: "EOD [1/7] — Check task.md has completed tasks"
+      ansible.builtin.command:
+        cmd: grep -c '\[x\]' "{{ task_file }}"
+      register: task_completed
+      failed_when: task_completed.rc != 0
+      changed_when: false
+
+    - name: "EOD [1/7] — Check walkthrough.md has today's anchor"
+      ansible.builtin.command:
+        cmd: grep -c "{{ date_stamp }}" "{{ walkthrough_file }}"
+      register: walkthrough_anchor
+      failed_when: walkthrough_anchor.rc != 0
+      changed_when: false
+
+    - name: "EOD [1/7] — Brain validation passed"
+      ansible.builtin.debug:
+        msg:
+          - "[OK] task.md: {{ task_completed.stdout }} completed tasks found."
+          - "[OK] walkthrough.md: Session anchor for {{ date_stamp }} confirmed."
+
+    # ── Step 2: Palace Sync ───────────────────────────────────────────────────
+    - name: "EOD [2/7] — Run Palace Sync (generate update proposal)"
+      ansible.builtin.command:
+        cmd: bash tools/palace-sync.sh
+        chdir: "{{ project_root }}"
+      register: palace_sync_result
+      tags: palace_sync
+
+    - name: "EOD [2/7] — Palace Sync result"
+      ansible.builtin.debug:
+        msg: "{{ palace_sync_result.stdout_lines }}"
+      tags: palace_sync
+
+    # ── Step 3: Find generated proposal ──────────────────────────────────────
+    - name: "EOD [3/7] — Find Palace update proposal"
+      ansible.builtin.find:
+        paths: "{{ brain_dir }}"
+        patterns: "palace_update_proposal_{{ date_stamp }}*.md"
+      register: proposal_files
+
+    - name: "EOD [3/7] — Proposal file status"
+      ansible.builtin.debug:
+        msg: >-
+          {% if proposal_files.files | length > 0 %}
+          [OK] Proposal generated: {{ proposal_files.files | map(attribute='path') | list | first }}
+          REMINDER: Share this with your AI to update Palace closets before next SOD.
+          {% else %}
+          [INFO] No new proposal today — no new commits since last sync.
+          {% endif %}
+
+    # ── Step 4: Show Dirty Files ──────────────────────────────────────────────
+    - name: "EOD [4/7] — Review uncommitted changes"
+      ansible.builtin.command:
+        cmd: git status --short
+        chdir: "{{ project_root }}"
+      register: git_status
+      changed_when: false
+
+    - name: "EOD [4/7] — Dirty files"
+      ansible.builtin.debug:
+        msg: "{{ git_status.stdout_lines if git_status.stdout_lines else ['(working tree clean)'] }}"
+
+    # ── Step 5: Stage Brain + Palace ─────────────────────────────────────────
+    - name: "EOD [5/7] — Stage brain artifacts (selective)"
+      ansible.builtin.command:
+        cmd: >
+          git add
+          "{{ task_file }}"
+          "{{ walkthrough_file }}"
+          "{{ brain_dir }}/palace_registry.md"
+          "{{ brain_dir }}/wings/"
+        chdir: "{{ project_root }}"
+      changed_when: true
+
+    - name: "EOD [5/7] — Stage all other modified tracked files (no blind add .)"
+      ansible.builtin.command:
+        cmd: git add -u
+        chdir: "{{ project_root }}"
+      changed_when: true
+
+    # ── Step 6: Commit ────────────────────────────────────────────────────────
+    - name: "EOD [6/7] — Check if anything is staged"
+      ansible.builtin.command:
+        cmd: git diff --cached --name-only
+        chdir: "{{ project_root }}"
+      register: staged_files
+      changed_when: false
+
+    - name: "EOD [6/7] — Commit staged changes"
+      ansible.builtin.command:
+        cmd: >
+          git commit -m
+          "chore(eod): Palace sync + sovereign save {{ date_stamp }} [Ansible EOD Palace v1.0]"
+        chdir: "{{ project_root }}"
+      when: staged_files.stdout | length > 0
+      register: git_commit_result
+
+    - name: "EOD [6/7] — Nothing to commit"
+      ansible.builtin.debug:
+        msg: "(nothing new to commit — working tree already clean)"
+      when: staged_files.stdout | length == 0
+
+    # ── Step 7: Push ─────────────────────────────────────────────────────────
+    - name: "EOD [7/7] — Push to origin/main"
+      ansible.builtin.command:
+        cmd: git push origin main
+        chdir: "{{ project_root }}"
+      register: git_push_result
+
+    - name: "EOD [7/7] — EOD Complete Banner"
+      ansible.builtin.debug:
+        msg:
+          - "======================================================================"
+          - "  SLEEP WELL, ARCHITECT. YOUR SOVEREIGN STATE IS SAVED."
+          - ""
+          - "  Palace sync committed. State pushed to origin."
+          - ""
+          - "  REMAINING HUMAN STEPS:"
+          - "  - Review palace_update_proposal_{{ date_stamp }}.md with your AI"
+          - "  - Update relevant closets in .agent/brain/wings/"
+          - "  - Commit closet updates: git add .agent/brain/ && git commit"
+          - ""
+          - "  Resume tomorrow with:"
+          - "    ansible-playbook playbooks/dsom/sod-palace.yml"
+          - "======================================================================"
