@@ -46,8 +46,8 @@ For each entry below:
 
 ## ✅ Post-Review Checklist
 
-- [ ] All closets updated with new knowledge
-- [ ] `palace_registry.md` updated if new Rooms were created
+- [x] All closets updated with new knowledge
+- [x] `palace_registry.md` updated if new Rooms were created (None needed)
 - [ ] This proposal file committed to Git alongside closet updates
 
 ---
