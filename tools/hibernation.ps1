@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    DSOM Hibernation Sequence v2.0 (End-of-Day Protocol)
+    DSOM Hibernation Sequence v2.1 (End-of-Day Protocol + Palace Sync)
 
 .DESCRIPTION
     Safeguards the project state at End-of-Day.
@@ -16,12 +16,12 @@
 .NOTES
     Author:  Harisfazillah Jamel (LinuxMalaysia)
     Partner: Generated with assistance from Google Antigravity
-    Version: v2.0
+    Version: v2.1
     License: GNU GPL v3.0 or later
 #>
 
 $ErrorActionPreference = "Stop"
-$VERSION = "v2.0"
+$VERSION = "v2.1"
 
 # 1. Setup
 try {
@@ -155,13 +155,25 @@ if ($NextSteps) { $NextSteps | ForEach-Object { Write-Host "  $_" } }
 else { Write-Host "  (no pending tasks in task.md)" }
 Write-Host "  ----------------------------------------------------------------------" -ForegroundColor DarkGray
 
-# 7. Privacy Guardian Reminder
+# 7. Palace Spatial Reflection
+Write-Host ""
+Write-Host "  [Palace Sync] Running Spatial Reflection before Sovereign Save..." -ForegroundColor Cyan
+$PalaceSyncScript = Join-Path $RepoRoot "tools" "palace-sync.ps1"
+if (Test-Path $PalaceSyncScript) {
+    & $PalaceSyncScript
+} else {
+    Write-Host "  WARNING: palace-sync.ps1 not found. Skipping Spatial Reflection." -ForegroundColor Yellow
+    Write-Host "           Run: .\tools\palace-sync.ps1 to initialise." -ForegroundColor Yellow
+}
+Write-Host ""
+
+# 8. Privacy Guardian Reminder
 Write-Host ""
 Write-Host "  REMINDER: If you generated a manifest today, run:" -ForegroundColor Yellow
 Write-Host "    .\tools\privacy-guardian.ps1" -ForegroundColor Yellow
 Write-Host ""
 
-# 8. Final Confirmation & Sovereign Save
+# 9. Final Confirmation & Sovereign Save
 Write-Host "  Are you ready to hibernate? (This will commit staged changes and push to GitHub)" -ForegroundColor Cyan
 $Confirm = Read-Host "  Confirm (y/N)"
 
