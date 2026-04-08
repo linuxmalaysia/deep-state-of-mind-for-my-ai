@@ -63,6 +63,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-04-08]:** **Research Finding: The Reasoning Gap.** Documented in `docs/RESEARCH-REASONING-GAP.md`. DSOM solves state persistence and token cost (~$1–3/yr vs $507/yr). Open gap: live reasoning capture (mitigated by Decision Log Protocol).
 - **[2026-04-08]:** **Palace Documentation Suite.** Created: `docs/PALACE-BUILD-STORY.md`, `docs/HOWTO-PALACE-ONBOARDING.md`, `docs/HOWTO-MIGRATE-TO-PALACE.md`. Updated README.md to v10.0.0-palace.
 - **[2026-04-08]:** **Ansible Palace Automation.** Created `playbooks/dsom/sod-palace.yml` and `playbooks/dsom/eod-palace.yml` to automate the mechanical SOD/EOD steps on T2 (Linux). Human steps (AI handshake, closet review) remain intentionally manual.
+- **[2026-04-08]:** **Documentation Fleet Full Sweep.** Master Protocol, Claude/Copilot setup guides, CRISP strategy, ITIL alignment, and AI Response templates systematically upgraded to `v6.1 + Palace v1.0`. The protocol now enforces Spatial Registry awareness and idempotent Ansible execution as mandatory steps in the Handshake and Hibernation loops.
 - **[2026-04-08]:** **Git Tag `v10.0.0-palace`** pushed to GitHub. Both Linux and Windows machines confirmed in sync.
 
 ---
