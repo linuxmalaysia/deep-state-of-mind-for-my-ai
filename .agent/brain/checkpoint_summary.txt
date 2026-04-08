@@ -1,0 +1,45 @@
+----------------------------------------------------------------------
+🌙 DSOM HIBERNATION NOTES — 2026-04-08 23:10
+----------------------------------------------------------------------
+
+### 🧠 MEMORY LEDGER
+- [2026-04-08 22:42] - Sanitised DSOM Documentation: Purged token/cost tables from README.md and RESEARCH-REASONING-GAP.md.
+- [2026-04-08 22:42] - Architectural Attribution: Formally credited milla-jovovich/mempalace as the originator of the spatial memory layer.
+- [2026-04-08 22:50] - Synchronised Palace Closets: Updated room_brain_artifacts and room_dsom_protocol with recent milestones and audit links.
+- [2026-04-08 22:56] - Automation Hardening: Fixed non-interactive crash in reanimate.sh and reanimate.ps1 via TTY detection.
+- [2026-04-08 23:01] - SOD Success: Verified successful Start-of-Day execution on Linux node (WSL2).
+- [2026-04-08 23:05] - Smart Checkpoint Integration: Modified checkpoint scripts to support AI-generated commit messages via checkpoint_summary.txt.
+
+### 🛡️ AGENT PERSONA & STYLE
+- **Tone**: Advisory Mode, UK English, Elite Systems Architect.
+- **Rules**: AI Proposes, Human Approves. No silent execution.
+- **Format**: Atomic Git hygiene, ITIL 4 aligned docs, semantic commit messages.
+
+### 🏗️ PROJECT TOPOLOGY (4-Tier)
+- **Project**: deep-state-of-mind-for-my-ai
+- **T1 (Command Centre)**: Windows (D:\...\deep-state-of-mind-for-my-ai)
+- **T2 (Dev Bridge)**: Ubuntu/WSL2 (~/kerja/deep-state-of-mind-for-my-ai)
+- **T3/T4 (Fabric)**: 19-node Hardened Elasticsearch & Kibana fabric (v9.8.0).
+- **4W1H**: Maintaining operational sovereignty and spatial recall across distributed environments.
+
+### 📅 TASKS & GOALS
+- **Goals**: Zero-Debt persistence, zero-lock-in portability, spatial recall via Sovereign Palace.
+- **Phases**: Palace v1.0 Launch (v10.0.0-palace) -> Persistence Fabric Hardening -> Smart Checkpoint evolution.
+- **Recurring Topics**: Context decay, token-efficiency, GitOps, Ansible idempotency.
+
+### 🛠️ TOOLS & FRAMEWORKS
+- **Languages**: Bash, PowerShell, YAML (Ansible), Markdown.
+- **Frameworks**: DSOM v6.1, ITIL 4, Semantic Versioning, Clean Architecture.
+- **Tools**: Ansible, Git, Podman.
+
+### ⚓ MENTAL ANCHOR
+Current focus: Implementing "Smart Checkpoints" to bridge the context gap between AI task state and human execution terminals. Reanimate script fixed. Documentation cleansed of comparisons. Memory redirected to MemPalace roots.
+
+### 📂 DOCUMENTATION STATUS
+- **Core Protocol**: docs/AI-MASTER-PROTOCOL.md, docs/AI-COGNITIVE-TWIN-PROTOCOL.md, README.md.
+- **Automation Guides**: docs/HOWTO-DSOM-ONBOARDING.md, docs/OPERATIONAL-GUIDE.md, docs/SOD-RITUAL.md.
+- **Spatial Memory**: .agent/brain/palace_registry.md, .agent/brain/wings/wing_dsom_core/.
+
+----------------------------------------------------------------------
+🏁 HIBERNATION NOTES COMPLETE — NO REMAINING MEMORIES PENDING
+----------------------------------------------------------------------
