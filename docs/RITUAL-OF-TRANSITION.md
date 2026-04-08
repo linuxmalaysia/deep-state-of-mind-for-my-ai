@@ -1,4 +1,5 @@
 # 🕯️ DSOM Ritual of Transition (v6.1 + Palace v1.0)
+
 # docs/RITUAL-OF-TRANSITION.md
 
 > **"Intelligence is ephemeral; the Repository is eternal."**
@@ -53,6 +54,7 @@ Step 5: Upload manifest to AI      → Cognitive Handshake
 ```
 
 **Stop Conditions — Reanimation FAILS if:**
+
 - AI cannot state the correct Mental Anchor from `walkthrough.md`
 - AI references wrong environment (wrong T-tier, wrong OS, wrong user)
 - `audit-pre-flight.sh` shows any `[FAIL]` — fix first, reanimate after
@@ -100,6 +102,7 @@ If the AI cannot say this correctly, the SOD is incomplete. Re-run from Step 3.
 ### 3.4 Stop Conditions During Active Flow
 
 Immediately pause and re-read `docs/AI-MASTER-PROTOCOL.md` if:
+
 - AI suggests running commands directly on production nodes
 - AI suggests committing secrets or tokens to any file
 - AI skips explaining the architectural reason for a change
@@ -133,6 +136,7 @@ Step 7:  Write tomorrow's Mental Anchor in your physical/digital notebook
 ```
 
 **The Sovereign Save Commit format:**
+
 ```
 chore(brain): EOD sovereign save — [Short Anchor] [Phase/vX.X]
 
@@ -141,6 +145,7 @@ chore(brain): EOD sovereign save — AlmaLinux 10 WSL setup complete [Phase-1/v6
 ```
 
 **Stop Conditions — EOD INCOMPLETE if:**
+
 - `task.md` has no `[x]` items for today
 - `walkthrough.md` is missing a new Session Anchor
 - `hibernation.sh` returns any non-GREEN status
@@ -158,6 +163,7 @@ chore(brain): EOD sovereign save — AlmaLinux 10 WSL setup complete [Phase-1/v6
 *Objective: Transfer the Cognitive Twin state from one AI model to another without context loss.*
 
 This is triggered when:
+
 - The current AI model is degrading (context decay, repeated errors)
 - Switching between AI providers (Gemini → Claude → Copilot → Antigravity)
 - Starting a fresh conversation in the same session
@@ -198,6 +204,7 @@ cat .agent/brain/walkthrough.md | tail -30
 ```
 
 **The Human Re-Index Checklist:**
+
 ```
 [ ] AI-MASTER-PROTOCOL.md — governance laws still apply
 [ ] AI-COGNITIVE-TWIN-PROTOCOL.md — all [PLACEHOLDER] fields filled

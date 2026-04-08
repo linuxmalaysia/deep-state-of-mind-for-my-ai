@@ -1,4 +1,5 @@
 # 🤝 HUMAN-HANDOVER-CONTEXT.md
+
 # Path: docs/HUMAN-HANDOVER-CONTEXT.md
 
 > **DSOM For My AI — SESSION HANDOVER TEMPLATE**
@@ -9,6 +10,7 @@
 ---
 
 ### ⚡ SESSION HANDOVER PROMPT
+
 *(Copy everything below this line and paste as your first AI message)*
 
 ---
@@ -78,12 +80,14 @@ We strictly follow the **4-Tier Command Highway** (T1→T2→T3→T4):
 Whenever changes are pushed from Windows (T1), perform this ritual to align all tiers:
 
 **Step 1 — Pull on T2 (WSL2: `dsom-control-almalinux10`)**
+
 ```bash
 cd /mnt/[T2_MOUNTED_PATH]
 git pull origin main
 ```
 
 **Step 2 — Promote to T3 Jump Host / Ansible Control (if applicable)**
+
 ```bash
 # Run from T2 WSL2 — promote project to T3 orchestrator
 rsync -avz --checksum --delete \
@@ -92,12 +96,14 @@ rsync -avz --checksum --delete \
 ```
 
 **Step 3 — Verify T3 Ansible Connectivity**
+
 ```bash
 # Run from T2 WSL2
 ansible all -m ping -i inventory/hosts.yml
 ```
 
 **Step 4 — Optional: Remote Audit from T1 via WSL**
+
 ```powershell
 # Run from Windows PowerShell (T1) — bridges through T2 → T3
 wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `

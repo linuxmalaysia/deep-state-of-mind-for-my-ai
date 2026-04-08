@@ -9,17 +9,20 @@
 ---
 
 ## 1. Introduction
+
 This guide explains the safe procedure to upgrade the DSOM Protocol in a live project without losing your "Mental Anchor" or breaking existing context.
 
 **Target Audience:** Digital Stewards, Maintainers.
 
 ## 2. Prerequisites
-*   **Existing DSOM Install:** A project with an `.agent/brain/` directory.
-*   **Clean Git State:** Commit all pending changes before starting.
+
+* **Existing DSOM Install:** A project with an `.agent/brain/` directory.
+* **Clean Git State:** Commit all pending changes before starting.
 
 ## 3. The Procedure
 
 ### Step 1: Backup (Sovereign Safety)
+
 Before overwriting tools, ensure your Brain artifacts are safe.
 
 ```bash
@@ -27,9 +30,11 @@ cp -r .agent/brain .agent/brain_backup_$(date +%F)
 ```
 
 ### Step 2: Update Tooling and Docs
+
 You need to overwrite the `tools/` and `docs/` directories with the latest version from the master DSOM repository.
 
 **If using Submodules:**
+
 ```bash
 git submodule update --remote
 cp -r .dsom-core/tools .
@@ -37,29 +42,36 @@ cp -r .dsom-core/docs .
 ```
 
 **If Manual Copy:**
-1.  Download the latest release zip from GitHub.
-2.  Extract and overwrite the `tools/` and `docs/` folders in your project root.
-3.  **Critical:** Do NOT verify/overwrite `.agent/brain/` yet.
+
+1. Download the latest release zip from GitHub.
+2. Extract and overwrite the `tools/` and `docs/` folders in your project root.
+3. **Critical:** Do NOT verify/overwrite `.agent/brain/` yet.
 
 ### Step 3: Protocol Injection (The Constitution)
+
 The upgrade often involves new "Laws" in `AI-MASTER-PROTOCOL.md` (e.g., ITIL Service Alignment).
 
-1.  **Check `docs/AI-MASTER-PROTOCOL.md`:** Ensure the new file completely replaces the old one.
-2.  **Verify `SUMMARY.md`:** Ensure new documents (like `ITIL-ALIGNMENT.md`) are listed.
+1. **Check `docs/AI-MASTER-PROTOCOL.md`:** Ensure the new file completely replaces the old one.
+2. **Verify `SUMMARY.md`:** Ensure new documents (like `ITIL-ALIGNMENT.md`) are listed.
 
 ### Step 4: The Audit (Re-Calibration)
+
 New versions might require new file structures or configs.
 
-1.  **Run the Initializer again:**
+1. **Run the Initializer again:**
+
     ```bash
     bash tools/init-brain.sh
     ```
+
     *Why?* Newer versions of this script might check for new required files (like `DSOM_TEMPLATE.md`). It will skip existing files, so your `task.md` is safe.
 
-2.  **Run the Privacy Guardian:**
+2. **Run the Privacy Guardian:**
+
     ```bash
     bash tools/privacy-guardian.sh
     ```
+
     *Why?* New patterns (like AWS Keys) might be detected in your old manifests. Clean them up.
 
 ### Step 4b: Migrate to Palace (NEW in v6.1)
@@ -75,6 +87,7 @@ This generates `palace_update_proposal_YYYY-MM-DD.md`. Share it with your AI and
 > **This is a one-time operation.** After this, the daily EOD playbook (`ansible-playbook playbooks/dsom/eod-palace.yml`) handles incremental updates.
 
 ### Step 5: Context Re-Sync
+
 Your AI agent might be confused by the sudden change in Protocol.
 
 1. **Generate a fresh Manifest:**
@@ -109,9 +122,9 @@ A: The context window might be stale. Start a **New Chat Session** and perform t
 
 ## 5. References
 
-- [Changelog](../CHANGELOG.md)
-- [Ritual of Transition](RITUAL-OF-TRANSITION.md)
-- [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
-- [SOD-RITUAL.md](SOD-RITUAL.md) — Step 1a: Ansible Palace SOD
-- [EOD-RITUAL.md](EOD-RITUAL.md) — Step 2a: Ansible Palace EOD
-- [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+* [Changelog](../CHANGELOG.md)
+* [Ritual of Transition](RITUAL-OF-TRANSITION.md)
+* [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
+* [SOD-RITUAL.md](SOD-RITUAL.md) — Step 1a: Ansible Palace SOD
+* [EOD-RITUAL.md](EOD-RITUAL.md) — Step 2a: Ansible Palace EOD
+* [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)

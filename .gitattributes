@@ -1,0 +1,8 @@
+# Enforce LF for all files to maintain Ansible compatibility in WSL2
+* text=auto eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.ps1 text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf

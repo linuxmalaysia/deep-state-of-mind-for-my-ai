@@ -29,18 +29,22 @@ Source: MemPalace research (2025). DSOM cost estimates based on Palace Registry 
 DSOM with the Sovereign Markdown Palace addresses the **cost and state persistence problem** effectively:
 
 ### State Persistence
+
 - `task.md` — What we are working on right now (Present)
 - `walkthrough.md` — Full session history with Mental Anchors (Past)
 - `implementation_plan.md` — Project roadmap (Future)
 - `palace_registry.md` — Spatial index loaded at every SOD
 
 ### Cost Efficiency
+
 Our Palace Registry + relevant closets loads **~1,500–3,000 tokens** per session — in the same cost class as MemPalace, achieved through structured Markdown hierarchy rather than vector embeddings.
 
 ### Fact Retrieval
+
 Each `closet.md` is a distilled, high-density summary. Instead of scanning 300+ lines of session logs, the AI walks to the relevant Room and reads a 40–80 line summary.
 
 ### Git Persistence
+
 Every state change is committed to Git. The project state cannot be lost — it is version-controlled, multi-machine synced, and provider-agnostic.
 
 ---
@@ -59,6 +63,7 @@ DSOM does **not** automatically capture the *reasoning* behind decisions. It cap
 ### Why It Matters
 
 Decisions made today become constraints six months from now. If the reasoning is lost:
+
 - A future session may propose the same failed approach again.
 - The AI has no way to explain *why* the current architecture is the way it is.
 - New team members (human or AI) cannot understand the tradeoff history.
@@ -117,9 +122,11 @@ Hibernation Notes mitigate the gap — they do not close it.
 ## 💡 Recommended Practice: The Decision Log Protocol
 
 ### The Principle
+
 **Capture reasoning in the moment, not at EOD.** At every significant architectural decision, constraint, or failure, immediately ask the AI to log it:
 
 ### The Command
+
 ```
 "Log this decision to walkthrough.md:
  Decision: [what was decided]
@@ -129,6 +136,7 @@ Hibernation Notes mitigate the gap — they do not close it.
 ```
 
 ### Example
+
 ```
 "Log this decision to walkthrough.md:
  Decision: Macvlan networking for Elasticsearch nodes
@@ -141,6 +149,7 @@ Hibernation Notes mitigate the gap — they do not close it.
 This entry lands in Git **during the session**, not hours later in a summary that may lose fidelity.
 
 ### When to Trigger a Decision Log
+
 - Any time you say "we'll use X instead of Y"
 - Any time a test fails and you pivot approach
 - Any time you override an AI recommendation

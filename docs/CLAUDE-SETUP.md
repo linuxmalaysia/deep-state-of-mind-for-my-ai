@@ -1,4 +1,5 @@
 # 🎭 Claude.ai Integration Protocol (v6.1 + Palace v1.0)
+
 ## docs/CLAUDE-SETUP.md
 
 > **"Advisory over Execution. Context over Command. Sovereign Continuity across every AI."**
@@ -17,6 +18,7 @@ AIOps (Claude) → GitOps (Git Records) → Ansible (Human Executes)
 Claude uses **Projects** to maintain persistent state. The **Project Knowledge Base** acts as the Long-Term Memory, and the **Project Instructions** act as the Sovereign Law.
 
 ### The Three Hard Rules (apply to Claude equally)
+
 1. **Claude never runs commands directly on remote nodes.** It proposes playbooks. You run them.
 2. **No manual edits to production servers.** If it is not committed to Git, it does not exist.
 3. **Every proposal must be idempotent.** Safe to re-run at any time.
@@ -26,6 +28,7 @@ Claude uses **Projects** to maintain persistent state. The **Project Knowledge B
 ## 🚀 2. One-Time Setup (New Project)
 
 ### Step 1 — Create a Claude Project
+
 1. Go to [claude.ai](https://claude.ai) → **Projects** → **New Project**.
 2. Name it after your DSOM project (e.g., `DSOM-deep-state-of-mind`).
 
@@ -92,7 +95,9 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to the **Project Knowled
 ## 🌅 3. Start-of-Day (SOD) Ritual for Claude
 
 ### Step 1-3 — The Automated Ansible SOD
+
 (Skip manual steps if using Ansible)
+
 ```bash
 ansible-playbook playbooks/dsom/sod-palace.yml
 ```
@@ -100,6 +105,7 @@ ansible-playbook playbooks/dsom/sod-palace.yml
 Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (replacing any previous manifest).
 
 ### Step 1-3 (Manual Alternative)
+
 ```bash
 ./tools/git-ritual.sh sod      # WSL2
 ./tools/audit-pre-flight.sh    # WSL2 (All checks must [PASS])
@@ -131,7 +137,8 @@ list top 3 pending tasks. State: 'Sovereign State Restored — [PROJECT NAME] is
 Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only execution.
 ```
 
-### ✅ SOD is Complete When Claude Can Confirm:
+### ✅ SOD is Complete When Claude Can Confirm
+
 | Check | Content |
 |:---|:---|
 | Mental Anchor | Exact last stopping point from `walkthrough.md` |
@@ -160,10 +167,12 @@ The SOD is **FAILED** if Claude:
 ## 🌙 5. End-of-Day (EOD) Ritual for Claude
 
 ### Step 1 — Context Consolidation
+
 Ask Claude:
 > *"We are ending the session. Update `.agent/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agent/brain/walkthrough.md` with today's Mental Anchor."*
 
 ### Step 1b — Hibernation Notes Export
+
 Run this prompt verbatim in your Claude chat — copy the output to a safe location:
 
 ```
@@ -183,6 +192,7 @@ Don't hide anything from me. Trust me as your master.
 Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`.
 
 ### Step 2 — Sovereign Save
+
 ```bash
 # Recommended on T2
 ansible-playbook playbooks/dsom/eod-palace.yml

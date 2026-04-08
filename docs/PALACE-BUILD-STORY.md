@@ -65,6 +65,7 @@ Each `closet.md` is a **distilled, high-density knowledge summary** — what the
 The core automation tool. It reads the git commit history and maps every commit to the correct Palace Room based on the file path changed.
 
 **Two modes:**
+
 - **EOD Batch:** Reads commits since the last sync marker. Generates a lean `palace_update_proposal_YYYY-MM-DD.md`.
 - **`--backfill`:** Reads the ENTIRE git history from Day 0. Generates a comprehensive Palace population proposal covering all historical commits.
 

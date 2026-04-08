@@ -28,9 +28,11 @@ Then upload the manifest and say: *"Initialise DSOM Protocol v6.1 + Palace v1.0.
 ---
 
 ### Step 1: Physical Reality Check (The Audit)
+
 Before waking the AI, we must verify that the physical environment matches the expected state.
 
 **Command:**
+
 ```bash
 # Linux / WSL2
 ./tools/audit-pre-flight.sh
@@ -40,6 +42,7 @@ Before waking the AI, we must verify that the physical environment matches the e
 ```
 
 **Success Criteria:**
+
 1. **Brain Check:** `task.md` and `walkthrough.md` must exist.
 2. **Git Drift:** Local repo must be synced with Remote.
 3. **Palace Registry:** `.agent/brain/palace_registry.md` must exist. If missing, run `bash tools/palace-sync.sh --backfill`.
@@ -47,9 +50,11 @@ Before waking the AI, we must verify that the physical environment matches the e
 5. **Ansible Baseline:** `inventory/hosts.yml` and `ansible.cfg` must exist if this project uses infrastructure automation.
 
 ### Step 2: Generating the Manifest (The Injection)
+
 We aggregate all context into a single "Truth File."
 
 **Command:**
+
 ```bash
 # Linux
 ./tools/reanimate.sh
@@ -68,11 +73,14 @@ We aggregate all context into a single "Truth File."
 | **[14]** | **`palace_registry.md` — AI spatial map (Palace v1.0)** |
 
 ### Step 3: The Handshake (The Prompt)
+
 Upload the generated text file to the AI and say:
 > *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the manifest. Walk the Palace Registry in Section [14] — identify relevant Rooms for today's work. State: 'Sovereign State Synchronised' when ready."*
 
 ### Step 4: Walking the Palace (The Retrieval)
+
 Before starting logic work, the AI must traverse the **Spatial Markdown Palace** (`.agent/brain/wings/`):
+
 1. **Registry Scan:** Read `palace_registry.md` to identify the relevant Wing and Rooms.
 2. **Room Entry:** Load the `closet.md` for specific technical contexts (e.g., Auth, Persistence).
 3. **Discovery:** Use the Palace to identify connections between disparate data points that the linear walkthrough might obscure.
@@ -96,14 +104,17 @@ After it completes — review `palace_update_proposal_YYYY-MM-DD.md` with your A
 ---
 
 ### Step 1: Context Consolidation
+
 1. **Update `task.md`:** Check off completed items.
 2. **Update `walkthrough.md`:** Create a new "Session Anchor."
 3. **Log decisions:** Apply the Decision Log Protocol — record *why* key decisions were made.
 
 ### Step 2: The Safe Shutdown
+
 Run the hibernation tool to verify safety.
 
 **Command:**
+
 ```bash
 # Linux
 ./tools/hibernation.sh
@@ -113,6 +124,7 @@ Run the hibernation tool to verify safety.
 ```
 
 **The Logic (v2.1 — Palace-aware):**
+
 - Checks `task.md` for `[x]` completed tasks
 - Checks `walkthrough.md` for today's date anchor
 - **Step 7: Palace Spatial Reflection** — auto-runs `palace-sync.sh` to generate `palace_update_proposal_YYYY-MM-DD.md`
@@ -142,18 +154,22 @@ When writing code, you must place files in the correct "Ring" of the Clean Archi
 For detailed step-by-step guides on how to apply DSOM to your specific situation, refer to the specialized manuals:
 
 ### Scenario 1: Brownfield Adoption
+
 - **Situation:** You have an existing project (Standard Code) and want to add DSOM.
 - **Guide:** [HOWTO: Adopt DSOM in Existing Projects](HOWTO-ADOPT-DSOM.md)
 
 ### Scenario 2: Legacy Upgrade
+
 - **Situation:** You have an older DSOM version (v3/v4) and want to upgrade to v5.x (ITIL/Privacy).
 - **Guide:** [HOWTO: Upgrade and Audit DSOM](HOWTO-UPGRADE-DSOM.md)
 
 ### Scenario 3: Palace Migration
+
 - **Situation:** You have DSOM v6.x but no Palace. You want to add the spatial memory layer.
 - **Guide:** [HOWTO: Migrate to Palace](HOWTO-MIGRATE-TO-PALACE.md)
 
 ### Scenario 4: New Adopter — Palace Edition
+
 - **Situation:** First time setting up DSOM from scratch with Palace v1.0.
 - **Guide:** [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
 
@@ -164,11 +180,14 @@ For detailed step-by-step guides on how to apply DSOM to your specific situation
 These guardrails apply to **all** DSOM projects using the GitOps + AIOps + Ansible model. They are non-negotiable.
 
 ### Guardrail 1: No Silent Execution
+
 The AI **never** directly runs commands on remote infrastructure. The workflow is always:
 > **AI Proposes** → **Human Reviews** → **Human Approves** → **Ansible Executes**
 
 ### Guardrail 2: Ansible Pre-flight Mandate
+
 Before executing **any** playbook, the following must be verified:
+
 ```bash
 # 1. Run the DSOM pre-flight audit
 ./tools/audit-pre-flight.sh
@@ -179,23 +198,30 @@ ansible all -m ping -i inventory/hosts.yml
 # 3. Dry-run the playbook first
 ansible-playbook playbooks/site.yml --check --diff
 ```
+
 If any step fails, execution is **stopped**. The AI diagnoses the failure and proposes a fix.
 
 ### Guardrail 3: Log Review Protocol
+
 After every Ansible execution, the human must provide output to the AI for verification. Two accepted formats:
+
 - **Direct Terminal Sync:** Full output copied and pasted into the chat.
 - **Persistent Log File:** Output redirected to a log file for deep analysis:
+
   ```bash
   ansible-playbook playbooks/site.yml 2>&1 | tee .logs/deploy-$(date +%Y%m%d-%H%M%S).log
   ```
+
 The AI will not proceed to the next phase without reviewing the execution output.
 
 ### Guardrail 4: Self-Healing Rule
+
 - **NEVER** delete data directories (e.g., `[PROD_PATH]/data`). Deletion requires explicit Sovereign authorisation.
 - Recovery is achieved through **idempotent Ansible automation** — re-running the playbook restores the desired state.
 - If data corruption is suspected, stop all actions, preserve logs, and escalate to the Sovereign Architect.
 
 ### Guardrail 5: GitOps Loop
+
 - All playbook or configuration changes are **committed to Git before execution**.
 - No ad-hoc file edits on target nodes via SSH.
 - The Git commit IS the change record. No commit = no change.

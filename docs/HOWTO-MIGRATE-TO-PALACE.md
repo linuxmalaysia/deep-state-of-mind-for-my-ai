@@ -45,6 +45,7 @@ git pull origin main
 ```
 
 Confirm you have at minimum tag `v10.0.0-palace`:
+
 ```bash
 git tag | grep palace
 # Expected: v10.0.0-palace
@@ -104,6 +105,7 @@ cp /path/to/dsom-reference/.agent/brain/palace_registry.md .agent/brain/palace_r
 ```
 
 The registry should list:
+
 - All Wings
 - All Halls within each Wing
 - All Rooms with their paths and purpose
@@ -124,6 +126,7 @@ For each Room listed in the proposal:
 4. Add links to the relevant `walkthrough.md` sections or source files.
 
 **Closet template:**
+
 ```markdown
 # 🚪 Closet: Room [NAME] ([Short Description])
 
@@ -194,6 +197,7 @@ bash tools/reanimate.sh | grep -A 5 "\[14\]"
 ```
 
 Expected output:
+
 ```
 ### [14] PALACE REGISTRY (Spatial Knowledge Map)
 # 🏛️ Palace Registry: Sovereign Retrieval Map
@@ -201,6 +205,7 @@ Expected output:
 ```
 
 Run a test EOD to confirm Palace Sync runs automatically:
+
 ```bash
 # Recommended on T2 (WSL2 / Linux)
 ansible-playbook playbooks/dsom/eod-palace.yml
@@ -221,6 +226,7 @@ grep "^VERSION\|^v2\." tools/hibernation.sh tools/reanimate.sh tools/palace-sync
 ```
 
 Expected:
+
 | Script | Version |
 |---|---|
 | `hibernation.sh` | v2.1 |
@@ -233,6 +239,7 @@ Select-String -Path tools\hibernation.ps1,tools\reanimate.ps1,tools\palace-sync.
 ```
 
 Expected:
+
 | Script | Version |
 |---|---|
 | `hibernation.ps1` | v2.1 |

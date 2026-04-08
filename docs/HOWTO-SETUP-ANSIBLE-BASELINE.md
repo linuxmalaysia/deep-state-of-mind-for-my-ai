@@ -12,7 +12,9 @@
 ## 1. Introduction
 
 ### 1.1 Scope
+
 This guide describes how to establish the **Ansible baseline** for any new project built on the DSOM skeleton. Upon completion, you will have:
+
 - A standard Ansible directory structure
 - A configured `ansible.cfg`
 - A template `inventory/hosts.yml`
@@ -22,10 +24,12 @@ This guide describes how to establish the **Ansible baseline** for any new proje
 - Integration with the DSOM `tools/audit-pre-flight.sh` script
 
 ### 1.2 Target Audience
+
 - Lead Architects and DevOps Engineers adopting the DSOM protocol
 - AI Agents (Cognitive Digital Twins) bootstrapping context for a new project
 
 ### 1.3 Related Documents
+
 - [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) — Strategic doctrine
 - [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) — Project identity template
 - [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) — Governance laws
@@ -45,6 +49,7 @@ Before beginning, verify the following are available on your **Tier 2 Dev Bridge
 | Git | 2.30+ | `git --version` |
 
 ### Install Ansible (if not present)
+
 ```bash
 # Ubuntu / Debian
 sudo apt update && sudo apt install -y python3-pip
@@ -67,6 +72,7 @@ ansible --version
 **Action:** From your project root, create the standard Ansible skeleton.
 
 **Command:**
+
 ```bash
 # From project root (Tier 2 Dev Bridge or WSL2)
 mkdir -p inventory/group_vars inventory/host_vars
@@ -98,6 +104,7 @@ echo "# Vault secrets are NEVER committed to Git" > vault/.gitignore
 **Action:** Create the Ansible configuration file at the project root.
 
 **Command:**
+
 ```bash
 cat > ansible.cfg << 'EOF'
 [defaults]
@@ -131,6 +138,7 @@ EOF
 **Action:** Create the inventory template. Replace all `[PLACEHOLDER]` values with your actual node details.
 
 **Command:**
+
 ```bash
 cat > inventory/hosts.yml << 'EOF'
 ---
@@ -177,6 +185,7 @@ EOF
 **Action:** Create baseline variable files for all hosts and environment groups.
 
 **Command:**
+
 ```bash
 cat > inventory/group_vars/all.yml << 'EOF'
 ---
@@ -206,6 +215,7 @@ EOF
 **Action:** Create a playbook to verify the Ansible baseline is functional before any deployment.
 
 **Command:**
+
 ```bash
 cat > playbooks/preflight.yml << 'EOF'
 ---
@@ -263,6 +273,7 @@ EOF
 **Action:** Test that Ansible can reach all nodes.
 
 **Command:**
+
 ```bash
 # Basic connectivity ping
 ansible all -m ping -i inventory/hosts.yml
@@ -275,6 +286,7 @@ ansible-playbook playbooks/preflight.yml
 ```
 
 **Success Criteria:**
+
 - All nodes return `pong` for the ping.
 - Pre-flight playbook completes with `failed=0` for all hosts.
 - OS details and user identity are printed correctly.
@@ -286,6 +298,7 @@ ansible-playbook playbooks/preflight.yml
 **Action:** Encrypt a secrets file for any credentials required by playbooks.
 
 **Command:**
+
 ```bash
 # Create and encrypt a secrets file
 cat > /tmp/secrets_draft.yml << 'EOF'
@@ -314,6 +327,7 @@ ansible-vault view vault/production_secrets.yml
 **Action:** Add Ansible checks to the DSOM audit pre-flight script so the AI Handshake automatically verifies Ansible readiness.
 
 **Command:**
+
 ```bash
 # Append Ansible checks to the existing audit script
 cat >> tools/audit-pre-flight.sh << 'EOF'
@@ -356,18 +370,22 @@ EOF
 ## 4. Troubleshooting
 
 ### Problem: `UNREACHABLE! Failed to connect`
+
 - **Cause**: SSH key not distributed to target node, or wrong `ansible_host` IP.
 - **Fix**: Run `ssh-copy-id [USER]@[HOST]` from your Tier 2 Dev Bridge, then retry the ping.
 
 ### Problem: `MODULE FAILURE: No Python interpreter found`
+
 - **Cause**: Python 3 not installed on target node.
 - **Fix**: Install Python: `sudo apt install -y python3` (Debian/Ubuntu) or `sudo dnf install -y python3` (RHEL/Rocky).
 
 ### Problem: `ERROR! Decryption failed`
+
 - **Cause**: Wrong vault password, or vault file is corrupted.
 - **Fix**: Verify the vault password. Re-create the vault file if necessary.
 
 ### Problem: Playbook is not idempotent (changes on re-run)
+
 - **Cause**: Task uses `command:` or `shell:` module without `changed_when: false` or `creates:` condition.
 - **Fix**: Replace with idempotent modules (`ansible.builtin.copy`, `ansible.builtin.template`, `ansible.builtin.service`). Use `changed_when: false` for read-only commands.
 

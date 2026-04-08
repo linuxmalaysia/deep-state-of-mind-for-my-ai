@@ -1,4 +1,5 @@
 # 🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)
+
 ## docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
 
 > **"Git is the source of truth. Ansible is the hand. AI is the mind."**
@@ -33,6 +34,7 @@ This document defines the **strategic doctrine** for the three operational pilla
 ```
 
 **The Integration Loop:**
+
 1. **AI Proposes** — AI (Cognitive Twin) analyses logs, generates playbooks, and recommends next action.
 2. **Git Records** — Human commits the proposed playbook/config to the repository.
 3. **Ansible Executes** — Human triggers the Ansible playbook against target nodes.
@@ -44,6 +46,7 @@ This document defines the **strategic doctrine** for the three operational pilla
 ## 🤖 2. AIOps Pillar
 
 ### 2.1 Role Definition
+
 The AI operates exclusively as the **Cognitive Digital Twin** — an advisory intelligence layer. It is **not** an autonomous executor.
 
 | AI CAN | AI CANNOT |
@@ -55,6 +58,7 @@ The AI operates exclusively as the **Cognitive Digital Twin** — an advisory in
 | Trigger Ansible *guidance* (tell Human what to run) | Auto-run any playbook |
 
 ### 2.2 AIOps Workflow
+
 ```
 Log / Event → AI Analysis → Diagnosis + Playbook Proposal
                                       ↓
@@ -66,7 +70,9 @@ Log / Event → AI Analysis → Diagnosis + Playbook Proposal
 ```
 
 ### 2.3 AI Context Requirements
+
 Before any advisory session, the AI **MUST** read:
+
 - `docs/AI-MASTER-PROTOCOL.md` — Governance laws
 - `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — Project-specific environment map
 - `.agent/brain/task.md` — Current state
@@ -81,9 +87,11 @@ Before any advisory session, the AI **MUST** read:
 ## 🔄 3. GitOps Pillar
 
 ### 3.1 Core Principle
+
 **Git is the single source of truth.** All system state, configuration, and desired state is represented in the Git repository. The repository is the only authoritative source.
 
 ### 3.2 GitOps Laws
+
 1. **No Ad-hoc Changes**: No manual SSH edits to production/staging nodes. If a change is not in Git, it does not exist.
 2. **Deploy-by-Merge**: The merge to `main` is the trigger for a deployment (via Ansible). No other trigger is valid.
 3. **Branch Protection**: The `main` branch is protected. All changes require a Pull Request (PR) or explicit Sovereign authorisation.
@@ -91,7 +99,9 @@ Before any advisory session, the AI **MUST** read:
 5. **Audit Trail**: Every change has a Git commit with a semantic message. The Git log is the deployment history.
 
 ### 3.3 Commit Convention
+
 All commits must follow the **Conventional Commits** standard:
+
 ```
 type(scope): descriptive message [Phase-XX/vX.X]
 
@@ -105,6 +115,7 @@ Examples:
 ```
 
 ### 3.4 Sync Ritual (The Push-Pull Cycle)
+
 ```bash
 # Tier 1 (Command Centre): Author & Push
 git add .
@@ -121,6 +132,7 @@ ansible-playbook playbooks/dsom/eod-palace.yml
 ```
 
 > **Manual alternative (T1 Windows):**
+>
 > ```powershell
 > .\tools\reanimate.ps1   # SOD
 > .\tools\hibernation.ps1 # EOD (includes palace-sync v2.1)
@@ -131,9 +143,11 @@ ansible-playbook playbooks/dsom/eod-palace.yml
 ## ⚙️ 4. Ansible Pillar
 
 ### 4.1 Role Definition
+
 Ansible is the **exclusive remote control** for all OS-level operations. No other mechanism (ad-hoc SSH, manual scripts, cloud console) is permitted for infrastructure changes on target nodes.
 
 ### 4.2 Ansible Laws
+
 1. **Idempotency Law**: Every playbook MUST be safe to re-run multiple times with the same result. No playbook may cause data corruption on repeated execution.
 2. **No Hardcoded Secrets**: All credentials are managed via `ansible-vault`. Never commit plaintext passwords or API keys.
 3. **Role-Based Structure**: All automation is organised into `roles/` following the Ansible Galaxy standard.
@@ -141,6 +155,7 @@ Ansible is the **exclusive remote control** for all OS-level operations. No othe
 5. **Pre-flight Prerequisite**: `tools/audit-pre-flight.sh` MUST be run and pass before any playbook is executed.
 
 ### 4.3 Standard Directory Structure
+
 Every DSOM project using Ansible MUST follow this structure:
 
 ```
@@ -170,6 +185,7 @@ Every DSOM project using Ansible MUST follow this structure:
 ```
 
 ### 4.4 Ansible Prerequisites Checklist
+
 Before running any playbook, the AI MUST verify all of the following:
 
 - [ ] `inventory/hosts.yml` exists and is populated
@@ -180,6 +196,7 @@ Before running any playbook, the AI MUST verify all of the following:
 - [ ] Connectivity verified (`ansible all -m ping -i inventory/hosts.yml`)
 
 ### 4.5 Core Ansible Commands Reference
+
 ```bash
 # Verify connectivity to all nodes
 ansible all -m ping -i inventory/hosts.yml
@@ -226,11 +243,13 @@ The three pillars are anchored to the DSOM SKMS (Knowledge Management System):
 When starting a new project with DSOM, use this checklist to establish the three pillar baseline:
 
 ### GitOps Setup
+
 - [ ] Create GitHub repository with branch protection on `main`
 - [ ] Configure `.gitignore` to exclude `vault/`, `*.log`, sensitive files
 - [ ] Define commit convention in `CONTRIBUTING.md`
 
 ### AIOps Setup
+
 - [ ] Create `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` from template (fill all `[PLACEHOLDER]` values)
 - [ ] Initialise `.agent/brain/` with `task.md`, `walkthrough.md`, `implementation_plan.md`
 - [ ] Configure AI agent with `docs/AI-MASTER-PROTOCOL.md` as system context
@@ -238,6 +257,7 @@ When starting a new project with DSOM, use this checklist to establish the three
 - [ ] Review `palace_update_proposal_YYYY-MM-DD.md` with AI and populate closets
 
 ### Ansible Setup
+
 - [ ] Follow `docs/HOWTO-SETUP-ANSIBLE-BASELINE.md` for full setup
 - [ ] Create `ansible.cfg`, `inventory/hosts.yml`, `playbooks/preflight.yml`
 - [ ] Verify connectivity: `ansible all -m ping -i inventory/hosts.yml`

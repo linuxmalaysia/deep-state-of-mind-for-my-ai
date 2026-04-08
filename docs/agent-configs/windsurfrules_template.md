@@ -1,4 +1,5 @@
 # .windsurfrules (DSOM Template)
+
 # Copy this content to your project root as `.windsurfrules`
 
 {

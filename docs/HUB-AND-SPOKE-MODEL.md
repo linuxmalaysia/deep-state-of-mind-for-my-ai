@@ -118,4 +118,3 @@ ls .agent/brain/member/
 3. **LDP Compliance:** The clear structure and command examples follow the **Linux Documentation Project** standards for technical manuals.
 
 ---
-

@@ -1,4 +1,5 @@
 # ⚡ DSOM Reanimation Prompt Templates (v3.0)
+
 # docs/REANIMATION-PROMPT-TEMPLATE.md
 
 > **Standard: DSOM Protocol v6.1 + Palace v1.0 | GitOps · AIOps · Ansible**

@@ -61,6 +61,7 @@ cd D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai
 ```
 
 **What the script does:**
+
 1. Downloads AlmaLinux 10 rootfs from the official [AlmaLinux WSL GitHub releases](https://github.com/AlmaLinux/wsl-images/releases)
 2. Imports it as `dsom-control-almalinux10` to `C:\WSL\dsom-control-almalinux10\`
 3. Runs the bootstrap script inside AlmaLinux to configure the Control Node
@@ -76,6 +77,7 @@ wsl -d dsom-control-almalinux10 -u root -- bash /mnt/d/Users/LinuxMalaysia/Proje
 ```
 
 **What the bootstrap script does:**
+
 - Updates all AlmaLinux 10 packages (`dnf update`)
 - Installs: Ansible, Git, rsync, Python3, openssh-clients
 - Creates `dsom-admin` user with **UID 2001** (DSOM identity standard)
@@ -114,6 +116,7 @@ ansible localhost -m ping
 ```
 
 **Expected output:**
+
 ```
 uid=2001(dsom-admin) gid=2001(dsom-admin) groups=2001(dsom-admin),10(wheel)
 

@@ -159,24 +159,26 @@ If a task seems to contradict DSOM Laws, stop and refer to these sources:
 ---
 
 ## 👥 13. Multi-Member Federation (Hub & Spoke)
+
 To prevent Git merge conflicts and context leakage:
-- **Global Hub:** .agent/brain/global/task-master.md (Lead Architect only).
-- **Member Spokes:** .agent/brain/member/{user}/ (Individual sandboxes).
-- **Rule:** AI Twins must only modify files within their assigned member directory unless instructed by the Lead Architect.
+* **Global Hub:** .agent/brain/global/task-master.md (Lead Architect only).
+* **Member Spokes:** .agent/brain/member/{user}/ (Individual sandboxes).
+* **Rule:** AI Twins must only modify files within their assigned member directory unless instructed by the Lead Architect.
 
 ---
 
 ## 🏛️ 14. Digital Sovereignty Integration (The Strategic Layer)
+
 DSOM (Deep State of Mind) serves as the operational engine for the broader **Digital Sovereignty Operational Model (DSOM)**.
 
-### i) The Sovereign Pillars:
-- **Data Sovereignty:** All 'Brain' artifacts remain in local storage (`.agent/brain/`). Unauthorized external access to project logic is prevented by Git-based state management.
-- **Technology Sovereignty:** We prioritize Open Source stacks (Linux, Podman, Ansible). We use AI as a service, but our 'Logic' is provider-agnostic.
-- **Operational Sovereignty:** Continuous operation is guaranteed through **Sovereign Save** rituals. We maintain the capability to migrate the 'Deep State' to local LLMs if global cloud access is restricted.
+### i) The Sovereign Pillars
+* **Data Sovereignty:** All 'Brain' artifacts remain in local storage (`.agent/brain/`). Unauthorized external access to project logic is prevented by Git-based state management.
+* **Technology Sovereignty:** We prioritize Open Source stacks (Linux, Podman, Ansible). We use AI as a service, but our 'Logic' is provider-agnostic.
+* **Operational Sovereignty:** Continuous operation is guaranteed through **Sovereign Save** rituals. We maintain the capability to migrate the 'Deep State' to local LLMs if global cloud access is restricted.
 
-### ii) Hybrid-Sovereign Strategy:
-- **Non-Sensitive Workload:** High-compute AI processing (Gemini/Claude).
-- **Critical Data:** Architectural intent, security configurations, and IP are stored on-premise within the sovereign repository.
+### ii) Hybrid-Sovereign Strategy
+* **Non-Sensitive Workload:** High-compute AI processing (Gemini/Claude).
+* **Critical Data:** Architectural intent, security configurations, and IP are stored on-premise within the sovereign repository.
 
 ---
 
@@ -184,4 +186,3 @@ DSOM (Deep State of Mind) serves as the operational engine for the broader **Dig
 **Last Human Audit:** 2026-04-08 | **Protocol Version:** v6.1 (GitOps + AIOps + Ansible + Palace Pillars)
 
 ---
-

@@ -1,4 +1,5 @@
 # [AGENT] DSOM Cognitive Digital Twin: Project Operational Protocol (v2.0)
+
 ## docs/AI-COGNITIVE-TWIN-PROTOCOL.md
 
 > **"Advisory over Execution. Logic over Operation. Partnership through Environmental Awareness."**
@@ -12,6 +13,7 @@
 The AI operates as the **Cognitive Digital Twin** of the **Lead Architect** (Sovereign Architect). Its primary function is to provide architectural foresight, code generation, and complex log analysis, adhering to the **DSOM Master Protocol** ([`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md)).
 
 **The Three Laws of the Twin:**
+
 1. **Advisory over Execution** — The AI proposes and documents; the Sovereign Architect approves and triggers.
 2. **Logic over Operation** — Every action must have a documented architectural reason (the "Why").
 3. **Partnership through Environmental Awareness** — The AI must understand the full 4-Tier environment before acting.
@@ -35,6 +37,7 @@ Define the security and privilege model for **deep-state-of-mind-for-my-ai** (v6
 Every project must map its operating environment to the DSOM 4-Tier model. Fill in the details for **deep-state-of-mind-for-my-ai**.
 
 ### [T1] Tier 1: Command Centre
+
 - **OS / Tool**: Linux Workstation
 - **Primary AI**: Google Antigravity
 - **Shell**: Bash
@@ -42,18 +45,21 @@ Every project must map its operating environment to the DSOM 4-Tier model. Fill 
 - **Role**: Code Editing, Git Management (Commit/Push to GitHub), Brain Artifact Maintenance, Ansible Playbook Authoring.
 
 ### [T2] Tier 2: Dev Bridge / Local Test
+
 - **OS**: Ubuntu 24.04 LTS
 - **User**: `linuxmalaysia` (Local Architect)
 - **Path**: `/home/linuxmalaysia/kerja/deep-state-of-mind-for-my-ai`
 - **Role**: High-fidelity Testing, Log Analysis, Ansible Execution (dry-run), Hybrid Audit Verification.
 
 ### [T3] Tier 3: Staging / UAT
+
 - **Host(s)**: `localhost`
 - **User**: `linuxmalaysia:1000`
 - **Path**: `/opt/deep-state-of-mind-for-my-ai`
 - **Role**: Pre-production validation, integration testing, performance benchmarking.
 
 ### [T4] Tier 4: Production
+
 - **Host(s)**: `localhost`
 - **User**: `linuxmalaysia:1000`
 - **Path**: `/opt/deep-state-of-mind-for-my-ai`
