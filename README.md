@@ -29,7 +29,7 @@ It solves three critical AI problems:
 
 Every project built on this skeleton operates under **three non-negotiable pillars**:
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                DSOM OPERATING MODEL                 │
 │                                                     │
@@ -49,6 +49,7 @@ Every project built on this skeleton operates under **three non-negotiable pilla
 > **AI Proposes → Git Records → Ansible Executes → AI Verifies**
 
 ### The Three Hard Rules
+
 1. **AI never runs commands directly on remote nodes.** It writes Ansible playbooks. You run them.
 2. **No manual edits to production servers.** If it's not committed to Git, it doesn't exist.
 3. **Every playbook is idempotent.** Safe to re-run at any time.
@@ -58,6 +59,7 @@ Every project built on this skeleton operates under **three non-negotiable pilla
 ## 🚀 Quick Start: Using This as Your Project Template
 
 ### Prerequisites
+
 | Tool | Purpose | Min Version |
 |:---|:---|:---|
 | `git` | Version control (GitOps backbone) | 2.30+ |
@@ -66,6 +68,7 @@ Every project built on this skeleton operates under **three non-negotiable pilla
 | Any AI | Your Cognitive Twin | Any |
 
 ### Step 1 — Clone and Reset
+
 ```bash
 # Clone the DSOM skeleton
 git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git my-new-project
@@ -76,6 +79,7 @@ bash tools/template-reset.sh
 ```
 
 ### Step 2 — Initialise the Brain
+
 ```bash
 # Linux / WSL2
 bash tools/init-brain.sh
@@ -86,11 +90,13 @@ chmod +x tools/*.sh
 ```
 
 This creates your `.agent/brain/` directory with:
+
 - `task.md` — What to do right now
 - `walkthrough.md` — Session history and Mental Anchors
 - `implementation_plan.md` — Project roadmap
 
 ### Step 3 — Fill in Your Project Identity Card ⚠️ CRITICAL
+
 This is the most important step. Open and fill in every `[PLACEHOLDER]`:
 
 ```bash
@@ -99,6 +105,7 @@ nano docs/AI-COGNITIVE-TWIN-PROTOCOL.md
 ```
 
 Fill in:
+
 - `[YOUR_PROJECT_NAME]` — e.g., `my-kafka-pipeline`
 - `[T1]` Command Centre path on your Windows/Mac
 - `[T2]` Dev Bridge path (WSL2/VM)
@@ -109,6 +116,7 @@ Fill in:
 > ⚠️ **The AI will NOT operate properly until this file is filled in.** `audit-pre-flight.sh` checks for unfilled placeholders and will warn you.
 
 ### Step 4 — Set Up Ansible Baseline (Infrastructure Projects)
+
 ```bash
 # Follow the full LDP guide
 cat docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
@@ -118,6 +126,7 @@ ansible all -m ping -i inventory/hosts.yml
 ```
 
 ### Step 5 — Run the Pre-Flight Audit
+
 ```bash
 # Linux / WSL2
 ./tools/audit-pre-flight.sh
@@ -129,6 +138,7 @@ ansible all -m ping -i inventory/hosts.yml
 **Everything should show `[PASS]` or `[OK]`.** Fix any `[FAIL]` before continuing.
 
 ### Step 6 — Brief Your AI (The Cognitive Handshake)
+
 Generate the context manifest and upload it to your AI:
 
 ```bash
@@ -155,7 +165,7 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
 
 The Palace gives your AI **organised, fast, spatial recall** across months of project history — without reading entire session logs. It works as a second layer alongside the existing `walkthrough.md` (The Drawer).
 
-```
+```text
 .agent/brain/
 ├── palace_registry.md        ← AI reads this at SOD (spatial map)
 ├── walkthrough.md            ← Linear session log (The Drawer)
@@ -193,7 +203,8 @@ Six months of daily AI use = ~19.5 million tokens. Every decision, every debuggi
 ⚠️ **The gap:** DSOM does not automatically capture *why* decisions were made — only *what* was decided. The reasoning lives in the chat window, not in Git.
 
 **The fix (Decision Log Protocol):** At key decisions, immediately ask the AI:
-```
+
+```text
 "Log this decision to walkthrough.md:
  Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
 ```
@@ -211,27 +222,35 @@ Six months of daily AI use = ~19.5 million tokens. Every decision, every debuggi
 ### 🌅 Start of Day (SOD) — 5 Steps
 
 **Step 1 — Git Sync** *(Pull latest state)*
+
 ```powershell
 .\tools\git-ritual.ps1 sod        # Windows (T1)
 ```
+
 ```bash
 ./tools/git-ritual.sh sod         # WSL2 (T2)
 ```
 
 **Step 2 — Intelligence Audit** *(Verify workspace is healthy)*
+
 ```powershell
 .\tools\audit-pre-flight.ps1      # Windows
 ```
+
 ```bash
 ./tools/audit-pre-flight.sh       # WSL2
 ```
+
 All steps must show `[PASS]`. Fix any `[FAIL]` before continuing.
 
 **Step 3 — Generate Reanimation Manifest**
+
 ```bash
 bash tools/reanimate.sh           # WSL2
 ```
+
 Optional — scan before sharing:
+
 ```bash
 ./tools/privacy-guardian.sh
 ```
@@ -242,7 +261,8 @@ Optional — scan before sharing:
 > *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the Mental Anchor and confirm the 4-Tier environment map. State: 'Sovereign State Synchronised' when ready."*
 
 *Option B — If you have yesterday's Hibernation Notes, use the SOD Reanimation Prompt (see `docs/SOD-RITUAL.md` Step 4b):*
-```
+
+```text
 I am starting a new session for DSOM Protocol. I am your human Lead Architect.
 I have the Hibernation Notes from our last session. Please read them carefully
 and use them to fully restore our working context.
@@ -277,7 +297,8 @@ Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only exec
 > *"We are ending the session. Update `.agent/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agent/brain/walkthrough.md` with today's Mental Anchor."*
 
 **Step 1b — Hibernation Notes Export** *(Run this in your AI chat — copy verbatim)*
-```
+
+```text
 I'm as human, want to know and remember, and need to export my data and I want
 you to generate a "Hibernation notes" now for my EOD of day. List every memory
 you have stored about our progress and our chats of this project, as well as
@@ -290,33 +311,38 @@ corrections. Do not summarize, group, or omit any entries.
 After the code block, list all docs in docs/ and brain files in .agent/.
 Don't hide anything from me. Trust me as your master.
 ```
+
 Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt` or to your notebook.
 
 **Step 2 — Hibernation Safety Check**
+
 ```bash
 ./tools/hibernation.sh            # WSL2
 .\tools\hibernation.ps1           # Windows
 ```
 
 **Step 3 — Privacy Scan** *(if you generated a manifest)*
+
 ```bash
 ./tools/privacy-guardian.sh
 ```
 
 **Step 4 — Sovereign Save** *(guided semantic commit)*
+
 ```bash
 ./tools/git-ritual.sh             # WSL2 — interactive EOD
 .\tools\git-ritual.ps1            # Windows — interactive EOD
 ```
 
 **Step 5 — T2 Sync** *(pull on WSL2 after Windows push)*
+
 ```bash
 git pull origin main
 ```
 
 **Step 6 — Write tomorrow's Mental Anchor in your notebook.**
 
-```
+```text
 ✅ EOD DONE when: task.md updated | walkthrough.md anchored |
                   hibernation.sh GREEN | git pushed | T2 synced
 ```
@@ -325,7 +351,7 @@ git pull origin main
 
 ### 🔄 The Day-to-Day Continuity Loop
 
-```
+```text
 EOD → Step 1b: Save Hibernation Notes
          ↓  [sleep — Git holds state]
 SOD → Step 4b: Feed Hibernation Notes back to AI
@@ -338,7 +364,7 @@ EOD → Step 1b: Save new Hibernation Notes
 
 ## 🗂️ Repository Structure
 
-```
+```text
 deep-state-of-mind-for-my-ai/
 │
 ├── docs/                                  # Governance & Protocol Documents
@@ -422,7 +448,7 @@ Paste it into the **old** AI session first to get a full memory dump, then load 
 
 ## 📋 The 6-Step Boot Checklist (New Project)
 
-```
+```text
 [ ] 1. Clone and run template-reset.sh
 [ ] 2. Run init-brain.sh
 [ ] 3. Fill in docs/AI-COGNITIVE-TWIN-PROTOCOL.md (ALL [PLACEHOLDER] fields)
@@ -432,6 +458,7 @@ Paste it into the **old** AI session first to get a full memory dump, then load 
 ```
 
 Once Step 6 is complete, the AI knows:
+
 - ✅ Your 4-Tier environment (T1 → T4)
 - ✅ Your security doctrine (who runs as root, who runs as UID X)
 - ✅ Your Git commit convention
@@ -488,6 +515,7 @@ This framework is provider-agnostic. Tested and configured for:
 ## 🤝 Contributing
 
 All contributions must follow the DSOM standards:
+
 - Atomic commits: `type(scope): description [Phase/vX.X]`
 - All PRs must include a `walkthrough.md` update
 - UK English only in all documentation

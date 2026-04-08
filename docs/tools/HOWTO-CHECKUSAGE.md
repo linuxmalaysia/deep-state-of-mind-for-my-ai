@@ -1,4 +1,5 @@
 # HOWTO: CheckUsage.ps1 — Antigravity Session Monitor
+
 # docs/tools/HOWTO-CHECKUSAGE.md
 
 > **Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible**
@@ -11,6 +12,7 @@
 `CheckUsage.ps1` is the **Sovereign Session Monitor** for the Antigravity AI assistant. It reads the `.pb` conversation context files stored locally by Antigravity and displays real-time health metrics for each session — size, estimated token usage, growth velocity, age, and status.
 
 **Use it to:**
+
 - Know when your current session is approaching the context limit
 - Identify dormant old sessions consuming disk space
 - Detect burst rate spikes that may trigger API rate limits (RPM)
@@ -43,6 +45,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 This allows locally written scripts to run. It only affects your user account. You will not need to run this again.
 
 **Verify:**
+
 ```powershell
 Get-ExecutionPolicy -Scope CurrentUser
 # Expected: RemoteSigned
@@ -175,6 +178,7 @@ CheckUsage.ps1 cannot be loaded because running scripts is disabled on this syst
 ```
 
 **Fix:** Run once in PowerShell:
+
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```

@@ -5,15 +5,17 @@ The Deep State of Mind (DSOM) protocol serves as a **metacognitive governance fr
 ---
 
 ### **1. Theoretical Framework of Operational Sovereignty**
+
 Architectural sovereignty is maintained by authorizing **local brain artifacts** within the `.agent/brain/` directory as the absolute **Single Source of Truth (SSoT)**. This approach prevents vendor lock-in, making project knowledge portable across various AI models such as Google Gemini, Anthropic Claude, or local LLMs.
 
 Sovereignty is operationalised through the **5W1H Framework**:
-*   **Who:** Managed by the Lead Architect and the AI agent acting as a **Cognitive Digital Twin**.
-*   **What:** Integrates **Clean Architecture** with the CRISP Operational Strategy.
-*   **When:** Executed via daily **SOD/EOD Rituals** and a weekly **Sunday Human Audit**.
-*   **Where:** Hosted in the sovereign `.agent/brain/` artifacts within the local repository.
-*   **Why:** To ensure **Sovereign Portability** and eliminate vendor dependence.
-*   **How:** Enforced through **Atomic Git Hygiene**, mandatory Handshake protocols, and the **Ansible Palace SOD/EOD Ritual** (`sod-palace.yml` / `eod-palace.yml`).
+
+* **Who:** Managed by the Lead Architect and the AI agent acting as a **Cognitive Digital Twin**.
+* **What:** Integrates **Clean Architecture** with the CRISP Operational Strategy.
+* **When:** Executed via daily **SOD/EOD Rituals** and a weekly **Sunday Human Audit**.
+* **Where:** Hosted in the sovereign `.agent/brain/` artifacts within the local repository.
+* **Why:** To ensure **Sovereign Portability** and eliminate vendor dependence.
+* **How:** Enforced through **Atomic Git Hygiene**, mandatory Handshake protocols, and the **Ansible Palace SOD/EOD Ritual** (`sod-palace.yml` / `eod-palace.yml`).
 
 ```
 mindmap
@@ -40,6 +42,7 @@ mindmap
 ---
 
 ### **2. The CRISP² Methodological Hierarchy**
+
 To maintain structural integrity, the DSOM protocol utilizes a four-level hierarchical process model derived from **CRISP-DM**. Every action within the Project Management Office (PMO) is mapped to a specific level of abstraction to ensure stability and auditability.
 
 | **Level** | **Category** | **Implementation** | **Primary SSoT Artifact** |
@@ -72,16 +75,18 @@ classDiagram
     L2_GenericTasks <|-- L3_SpecialisedTasks
     L3_SpecialisedTasks <|-- L4_ProcessInstances
 ```
+
 ---
 
 ### **3. Integrating CAPM Knowledge Areas**
+
 DSOM embeds professional project management standards directly into the repository structure.
 
-*   **Integration and Scope Governance:** The `AI-MASTER-PROTOCOL.md` acts as the project constitution, while `implementation_plan.md` serves as a non-negotiable roadmap to prevent **"gold plating"** and scope creep.
-*   **Schedule and Cost Control:** Progress is quantitatively tracked using **Earned Value (EV)** derived from atomic tasks.
-    *   **Cost Performance Index (CPI):** $CPI = \frac{EV}{AC} \geq 1.0$.
-    *   **Schedule Performance Index (SPI):** $SPI = \frac{EV}{PV} \geq 1.0$.
-*   **Quality Management:** Enforced through pre-flight audits and pedagogical standards based on the **Linux Documentation Project (LDP)**.
+* **Integration and Scope Governance:** The `AI-MASTER-PROTOCOL.md` acts as the project constitution, while `implementation_plan.md` serves as a non-negotiable roadmap to prevent **"gold plating"** and scope creep.
+* **Schedule and Cost Control:** Progress is quantitatively tracked using **Earned Value (EV)** derived from atomic tasks.
+  * **Cost Performance Index (CPI):** $CPI = \frac{EV}{AC} \geq 1.0$.
+  * **Schedule Performance Index (SPI):** $SPI = \frac{EV}{PV} \geq 1.0$.
+* **Quality Management:** Enforced through pre-flight audits and pedagogical standards based on the **Linux Documentation Project (LDP)**.
 
 ```
 flowchart TD
@@ -99,6 +104,7 @@ flowchart TD
 ---
 
 ### **4. The Anatomy of the DSOM Brain (SKMS)**
+
 Within an **ITIL 4 framework**, the `.agent/brain/` directory acts as the **Service Knowledge Management System (SKMS)**. It preserves structured intelligence across five core temporal states:
 
 1. **Eternal (`AI-MASTER-PROTOCOL.md`):** Defines governance, identity, and architectural laws.
@@ -116,14 +122,16 @@ pie showData
     "Past (walkthrough.md)" : 20
     "Spatial (palace_registry.md)" : 20
 ```
+
 ---
 
 ### **5. Operational Rituals of the Lifecycle**
+
 Context persistence is managed through three critical rituals:
 
-*   **Start-of-Day (SOD) / Reanimation:** A structured bootloader where the human performs an environment audit and the AI performs a **Cognitive Handshake** to synchronise with the project's last recorded intent.
-*   **Active Flow:** Guided by the **CRISP pillars**, the AI agent acts as a **Senior Architect Twin**, challenging any requests that violate the constitution.
-*   **End-of-Day (EOD) / Hibernation:** The human and AI define a Mental Anchor and perform a **Sovereign Save** to commit the session’s logical flow to the repository.
+* **Start-of-Day (SOD) / Reanimation:** A structured bootloader where the human performs an environment audit and the AI performs a **Cognitive Handshake** to synchronise with the project's last recorded intent.
+* **Active Flow:** Guided by the **CRISP pillars**, the AI agent acts as a **Senior Architect Twin**, challenging any requests that violate the constitution.
+* **End-of-Day (EOD) / Hibernation:** The human and AI define a Mental Anchor and perform a **Sovereign Save** to commit the session’s logical flow to the repository.
 
 ```
 stateDiagram-v2
@@ -135,18 +143,20 @@ stateDiagram-v2
     EOD: End-of-Day (Hibernation)
     EOD --> [*]
 ```
+
 ---
 
 ### **6. Technical Enforcement and Automation**
+
 Automation tools anchor AI logic in physical reality:
 
-- **`init-brain.sh`:** Initialises the directory structure and baseline artifacts.
-- **`audit-pre-flight.sh`:** Verifies the physical environment and Git state before coding begins.
-- **`reanimate.sh`:** Aggregates brain artifacts into a single manifest for AI context injection (Section [14] = Palace Registry).
-- **`privacy-guardian.sh`:** Employs a **"Fail-Closed"** principle to scan for sensitive data leaks.
-- **`palace-sync.sh`:** Analyses Git history against brain artifacts to generate `palace_update_proposal_YYYY-MM-DD.md` for EOD closet updates.
-- **`ansible-playbook sod-palace.yml`:** Automates the full SOD loop (git pull → audit → palace check → reanimate) on T2.
-- **`ansible-playbook eod-palace.yml`:** Automates the full EOD loop (validate → palace-sync → commit → push) on T2.
+* **`init-brain.sh`:** Initialises the directory structure and baseline artifacts.
+* **`audit-pre-flight.sh`:** Verifies the physical environment and Git state before coding begins.
+* **`reanimate.sh`:** Aggregates brain artifacts into a single manifest for AI context injection (Section [14] = Palace Registry).
+* **`privacy-guardian.sh`:** Employs a **"Fail-Closed"** principle to scan for sensitive data leaks.
+* **`palace-sync.sh`:** Analyses Git history against brain artifacts to generate `palace_update_proposal_YYYY-MM-DD.md` for EOD closet updates.
+* **`ansible-playbook sod-palace.yml`:** Automates the full SOD loop (git pull → audit → palace check → reanimate) on T2.
+* **`ansible-playbook eod-palace.yml`:** Automates the full EOD loop (validate → palace-sync → commit → push) on T2.
 
 ```
 flowchart LR
@@ -159,9 +169,11 @@ flowchart LR
     SOD[sod-palace.yml] --> Audit
     EOD[eod-palace.yml] --> Palace
 ```
+
 ---
 
 ### **7. Linguistic Sovereignty**
+
 To ensure professional precision and technical rigour, the protocol strictly enforces naming and documentation standards in **UK English** and **DBP-standard Malay (Piawai)**. Regional colloquialisms and Indonesian loanwords are strictly prohibited to maintain architectural clarity.
 
 ```
@@ -175,29 +187,34 @@ flowchart TD
     D --> F
     E --> F
 ```
+
 ---
 
 To establish the **Sovereign State of Truth (SSoT)** and enable effective knowledge retrieval for your AI, you should integrate the authoritative references defined within the **DSOM For My AI** protocol. According to the sources, these links serve as the primary external memory and governance guide for the AI.
 
 ### **Authoritative References (The SSoT)**
+
 The **AI-MASTER-PROTOCOL.md** mandates that if any task contradicts the core laws or requires deep architectural context, the AI must refer to these specific sources:
 
-*   **Primary Repository:** [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
-*   **Official Documentation (GitBook):** [https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
-*   **Philosophical Foundations:** **The Book of Busas** (Buku Busas - Bukan Sekadar Internet Sahaja), which provides the underlying logic for Open Source sovereignty in Malaysia.
+* **Primary Repository:** [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
+* **Official Documentation (GitBook):** [https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
+* **Philosophical Foundations:** **The Book of Busas** (Buku Busas - Bukan Sekadar Internet Sahaja), which provides the underlying logic for Open Source sovereignty in Malaysia.
 
 ### **Operational Standards and Manuals**
+
 For technical execution and documentation structure, the protocol links to the following standards:
 
-*   **LDP Standards:** All procedures and "HOWTO" guides must follow the **Linux Documentation Project** structure (Prerequisites, Procedures, Troubleshooting) to ensure community portability.
-*   **Semantic Integrity:** All notable changes are documented following the **Keep a Changelog** and **Semantic Versioning 2.0.0** standards.
+* **LDP Standards:** All procedures and "HOWTO" guides must follow the **Linux Documentation Project** structure (Prerequisites, Procedures, Troubleshooting) to ensure community portability.
+* **Semantic Integrity:** All notable changes are documented following the **Keep a Changelog** and **Semantic Versioning 2.0.0** standards.
 
 ### **Configuration for Your AI**
+
 To ensure your AI agent (the **Cognitive Digital Twin**) can retrieve this information at the start of every session, you should include these links in the **Knowledge Retrieval (L3)** block of your AI's custom instructions or personalization settings.
 
 If you are using specific IDE agents, the sources suggest pointing them to the local versions of these documents within your repository using the following configuration files:
-*   **Cursor/Windsurf:** Use `.cursorrules` or `.windsurfrules` to point the agent to `@docs/AI-MASTER-PROTOCOL.md` and `@docs/OPERATIONAL-GUIDE.md`.
-*   **GitHub Copilot:** Utilize `.github/copilot-instructions.md` to enforce these architectural laws and references.
+
+* **Cursor/Windsurf:** Use `.cursorrules` or `.windsurfrules` to point the agent to `@docs/AI-MASTER-PROTOCOL.md` and `@docs/OPERATIONAL-GUIDE.md`.
+* **GitHub Copilot:** Utilize `.github/copilot-instructions.md` to enforce these architectural laws and references.
 
 ```
 flowchart TD
@@ -345,7 +362,6 @@ The following documents constitute the **Sovereign Document Stack** for any v6.1
 ---
 
 *Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
-*Primary Repository: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai*
-*Official Documentation: https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai*
+*Primary Repository: <https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai>*
+*Official Documentation: <https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai>*
 *Original Manifesto: v5.x (retained intact) | v6.1 Addendum: 2026-03-10 | Palace v1.0 Addendum: 2026-04-08*
-

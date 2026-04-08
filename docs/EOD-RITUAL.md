@@ -1,4 +1,5 @@
 # 🌙 EOD-RITUAL.md — End-of-Day Ritual
+
 # docs/EOD-RITUAL.md
 
 > **"Rest is not the end unless the memory is lost. To hibernate is to prepare for rebirth."**
@@ -11,6 +12,7 @@
 The **End-of-Day (EOD)** is the **Sovereign Save** — the critical point where the day's work is crystallised, committed to Git, and preserved so that the next session can begin without loss.
 
 The EOD is where the **GitOps loop closes:**
+
 ```
 AI Proposes → Git Records → Ansible Executes → AI Verifies → EOD (Sovereign Save) → Next SOD
 ```
@@ -31,6 +33,7 @@ Before running any tools, ask the AI to help prepare the brain artifacts:
 > *"We are ending the session. Update `.agent/brain/task.md` — mark all completed items `[x]`, set tomorrow's SOD targets as `[ ]`. Then update `.agent/brain/walkthrough.md` with today's Mental Anchor. What did we accomplish and where exactly do we resume tomorrow?"*
 
 **AI will produce:**
+
 - Updated `task.md` — reflects today's completions and tomorrow's first actions
 - Updated `walkthrough.md` — new Session Anchor entry with:
   - **Accomplished:** What was done today (the What)
@@ -38,6 +41,7 @@ Before running any tools, ask the AI to help prepare the brain artifacts:
   - **Mental Anchor:** One sentence — exact state and where to resume
 
 **Verify before saving:**
+
 - Does the Mental Anchor describe the exact stopping point?
 - Are tomorrow's SOD tasks clear?
 - Is nothing left vague?
@@ -78,6 +82,7 @@ Don't hide anything from me. Trust me as your master.
 ```
 
 **After you receive the output:**
+
 1. Copy the entire code block
 2. Save it as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`
 3. Or paste into your physical/digital notebook as an offline backup
@@ -94,6 +99,7 @@ Run the hibernation script — it checks for dirty state before you sleep:
 # T2 (WSL2 dsom-control-almalinux10)
 ./tools/hibernation.sh
 ```
+
 ```powershell
 # T1 (Windows PowerShell)
 .\tools\hibernation.ps1
@@ -102,6 +108,7 @@ Run the hibernation script — it checks for dirty state before you sleep:
 > **Note (v2.1):** `hibernation.sh` and `hibernation.ps1` now automatically run `palace-sync.sh/.ps1` as **Step 7: Palace Spatial Reflection** — generating the update proposal without a separate command.
 
 **What it checks:**
+
 1. ✅ `task.md` has been updated today
 2. ✅ `walkthrough.md` has a new Session Anchor
 3. ✅ No uncommitted changes in `docs/` or `src/`
@@ -135,11 +142,13 @@ ansible-playbook playbooks/dsom/eod-palace.yml
 | 7 | `git push origin main` |
 
 **Skip palace-sync if already run by hibernation.sh:**
+
 ```bash
 ansible-playbook playbooks/dsom/eod-palace.yml --skip-tags palace_sync
 ```
 
 **After the playbook — Manual steps (always required):**
+
 1. Review `palace_update_proposal_YYYY-MM-DD.md` with your AI
 2. Update relevant closets in `.agent/brain/wings/`
 3. Commit closet updates: `git add .agent/brain/ && git commit -m "chore(palace): update closets"`
@@ -172,12 +181,14 @@ Commit all changes with a **structured, semantic commit message**:
 # T1 — Interactive EOD Sovereign Save (guided semantic commit)
 .\tools\git-ritual.ps1
 ```
+
 ```bash
 # T2 — Interactive EOD Sovereign Save
 ./tools/git-ritual.sh
 ```
 
 **The git-ritual EOD process:**
+
 1. Shows current Git status and last 5 commits
 2. You select commit type: `feat`, `fix`, `docs`, `chore`, `refactor`, `ci`
 3. You provide scope, description, and optional Phase/version tag
@@ -185,6 +196,7 @@ Commit all changes with a **structured, semantic commit message**:
 5. Confirms before committing and pushing
 
 **Direct push (if you know the message):**
+
 ```powershell
 .\tools\git-ritual.ps1 push "chore(brain): EOD sovereign save — [Phase-X/vX.X]"
 ```
@@ -204,6 +216,7 @@ git pull origin main
 ```
 
 Or use the git-ritual SOD pull on T2:
+
 ```bash
 ./tools/git-ritual.sh sod
 ```
@@ -282,6 +295,7 @@ Every `walkthrough.md` Session Anchor must follow this format:
 ```
 
 **Example:**
+
 ```markdown
 ## 🏁 Session Anchor: 2026-03-10 — AlmaLinux 10 WSL2 Setup
 

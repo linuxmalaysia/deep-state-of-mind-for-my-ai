@@ -75,4 +75,3 @@ The **Digital Sovereignty Operational Model (DSOM)** provides the **"Why"** (Str
 *Standard: DSOM Protocol v6.1 + Palace v1.0 | UK English & DBP-Malay (Piawai)*
 
 ---
-

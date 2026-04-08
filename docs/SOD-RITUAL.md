@@ -1,4 +1,5 @@
 # 🌅 SOD-RITUAL.md — Start-of-Day Ritual
+
 # docs/SOD-RITUAL.md
 
 > **"To lose context is to lose the project. To reanimate is to remember."**
@@ -45,6 +46,7 @@ Pull the latest state from the remote before doing anything:
 ```
 
 Or on T2 (WSL2):
+
 ```bash
 # T2 — Git Ritual: SOD Pull
 ./tools/git-ritual.sh sod
@@ -74,6 +76,7 @@ ansible-playbook playbooks/dsom/sod-palace.yml
 | 5 | Prints manifest path and handshake instructions |
 
 **After it completes — Manual Handshake (Step 4 still applies):**
+
 1. Upload the printed manifest file path to your AI
 2. Say: *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the manifest. Walk the Palace Registry in Section [14]. State: 'Sovereign State Synchronised' when ready."*
 
@@ -89,6 +92,7 @@ Run the pre-flight audit to verify the physical workspace is ready:
 # T1 (Windows PowerShell)
 .\tools\audit-pre-flight.ps1
 ```
+
 ```bash
 # T2 (WSL2 AlmaLinux 10)
 ./tools/audit-pre-flight.sh
@@ -98,6 +102,7 @@ ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
 ```
 
 **The audit checks (v5.0):**
+
 1. ✅ Brain artifacts exist (`task.md`, `walkthrough.md`)
 2. ✅ Git is in sync with `origin/main`
 3. ✅ Language/environment detected
@@ -116,6 +121,7 @@ Generate the full context manifest for AI upload:
 # T2 (WSL2)
 bash tools/reanimate.sh
 ```
+
 ```powershell
 # T1 (Windows PowerShell)
 .\tools\reanimate.ps1
@@ -141,6 +147,7 @@ bash tools/reanimate.sh
 | **`[14]`** | **`palace_registry.md` — AI spatial map (Palace v1.0)** |
 
 **Run privacy scan before sharing:**
+
 ```bash
 ./tools/privacy-guardian.sh
 # Or via Ansible:
@@ -199,6 +206,7 @@ From this point, operate under DSOM Protocol v6.1:
 ```
 
 **What happens next:**
+
 - AI reads the Hibernation Notes block and reconstructs full context
 - AI confirms the Mental Anchor — the exact last stopping point
 - AI confirms the environment map — which tier you are on
@@ -221,6 +229,7 @@ DAY N+1 EOD:         Step 1b (new Hibernation Notes saved)
 ```
 
 **Where to find yesterday's Hibernation Notes:**
+
 - `.agent/brain/hibernation-notes-YYYY-MM-DD.txt` (if you saved it)
 - Or the code block you copied to your notebook/notes app
 

@@ -1,4 +1,5 @@
 # 🛡️ GitHub Copilot Integration Protocol (v6.1 + Palace v1.0)
+
 ## docs/COPILOT-SETUP.md
 
 > **"Advisory over Execution. Context over Command. Sovereign Continuity across every AI."**
@@ -14,11 +15,13 @@ GitHub Copilot is integrated into the DSOM framework as a **Tier 1 Co-Pilot** op
 2. **Chat-level File Mentions** — explicit `#file:` references — session-level context injection.
 
 The Three-Pillar loop applies to Copilot equally:
+
 ```
 AIOps (Copilot proposes) → GitOps (Git records) → Ansible (Human executes)
 ```
 
 ### The Three Hard Rules (apply to Copilot equally)
+
 1. **Copilot never runs commands directly on remote nodes.** It proposes code and playbooks. You run them.
 2. **No manual edits to production servers.** If it is not committed to Git, it does not exist.
 3. **Every proposal must be idempotent.** Safe to re-run at any time.
@@ -92,21 +95,26 @@ Operate under DSOM v6.1 + Palace v1.0: Advisory Mode, UK English, Git-first, Ans
 ## 🌅 3. Start-of-Day (SOD) Ritual for Copilot
 
 ### Step 1-2 — Automated Ansible Check
+
 If using the T2 Dev Bridge (Recommended):
+
 ```bash
 ansible-playbook playbooks/dsom/sod-palace.yml
 ```
 
 ### Step 1-2 — Manual Fallback
+
 ```bash
 ./tools/git-ritual.sh sod      # WSL2 / Linux
 ./tools/audit-pre-flight.sh    # All checks must [PASS]
 ```
+
 All checks must show `[PASS]`. Fix any `[FAIL]` before proceeding.
 
 ### Step 3 — The Cognitive Handshake (Two Options)
 
 **Option A — Use the `/dsom-reanimate` Slash Command:**
+
 1. Open **Copilot Chat** in VS Code.
 2. Type `/` → select `dsom-reanimate`.
 3. Copilot reads all brain artifacts and states the current Mental Anchor.
@@ -117,7 +125,7 @@ Paste this prompt into Copilot Chat with explicit file references:
 
 > *"Based on **#file:.agent/brain/palace_registry.md**, **#file:.agent/brain/task.md** and **#file:.agent/brain/walkthrough.md**, summarise the current spatial room, Mental Anchor, and list today's pending tasks. Confirm the 4-Tier environment from **#file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md**. State: 'Sovereign State Synchronised' when ready."*
 
-### ✅ SOD is Complete When Copilot Can Confirm:
+### ✅ SOD is Complete When Copilot Can Confirm
 
 | Check | Content |
 |:---|:---|
@@ -147,21 +155,27 @@ The SOD is **FAILED** if Copilot:
 ## 💬 5. Workspace Context Techniques
 
 ### Using File Mentions (`#file:`)
+
 Explicitly attach brain artifacts for precise context:
+
 ```
 Based on #file:.agent/brain/task.md and #file:.agent/brain/walkthrough.md,
 what is the next logical step for the current implementation phase?
 ```
 
 ### Using Workspace Context (`@workspace`)
+
 Query the entire project structure:
+
 ```
 @workspace verify if the current directory structure adheres to the
 DSOM Sovereign Portability law and Clean Architecture layers.
 ```
 
 ### Referencing Playbooks
+
 When working on Ansible:
+
 ```
 Based on #file:playbooks/dsom/site.yml and #file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md,
 propose an idempotent role for the T4 Production baseline.
@@ -181,6 +195,7 @@ Ask Copilot in Chat:
 Review the proposed changes, apply them, then commit:
 
 ### Step 2 — Sovereign Save
+
 ```bash
 # Recommended on T2
 ansible-playbook playbooks/dsom/eod-palace.yml

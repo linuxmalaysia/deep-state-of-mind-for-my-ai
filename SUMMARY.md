@@ -8,6 +8,7 @@
 * [🤝 Contributing Guidelines](CONTRIBUTING.md)
 
 ## 🏛️ 1. Sovereign Governance
+
 * [👑 Operational Sovereignty Manifesto](docs/OPERATIONAL-SOVEREIGNTY.md)
 * [🏛️ AI Master Protocol](docs/AI-MASTER-PROTOCOL.md)
 * [🔄 GitOps · AIOps · Ansible Strategy](docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
@@ -18,6 +19,7 @@
 * [🕸️ Hub and Spoke Model](docs/HUB-AND-SPOKE-MODEL.md)
 
 ## 🌅 2. Operational Rituals
+
 * [🌅 SOD Ritual](docs/SOD-RITUAL.md)
 * [🌙 EOD Ritual](docs/EOD-RITUAL.md)
 * [🕯️ Ritual of Transition](docs/RITUAL-OF-TRANSITION.md)
@@ -25,16 +27,20 @@
 * [🏛️ Sovereign Markdown Palace Protocol](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 
 ## 🧠 3. The AI Brain (Sovereign Core)
+
 ### 🌐 Global Hub (Strategic)
+
 * [🏁 Task Master (Aggregate)](.agent/brain/global/task-master.md)
 
 ### 👥 Member Spokes (Tactical)
+
 * [🎯 My Daily Tasks](.agent/brain/member/haris/task.md)
 * [🏁 My Walkthrough](.agent/brain/member/haris/walkthrough.md)
 * [🗺️ Implementation Plan](.agent/brain/implementation_plan.md)
 * [🏛️ Palace Registry](.agent/brain/palace_registry.md)
 
 ### 🏛️ Palace Rooms (wing_dsom_core)
+
 * [🔑 room_tooling — Tools Inventory](`.agent/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`)
 * [🏗️ room_clean_architecture — Design Laws](`.agent/brain/wings/wing_dsom_core/hall_facts/room_clean_architecture/closet.md`)
 * [🔬 room_crisp_strategy — AI Interaction](`.agent/brain/wings/wing_dsom_core/hall_facts/room_crisp_strategy/closet.md`)
@@ -45,6 +51,7 @@
 * [🔭 room_uncategorised — Discoveries](`.agent/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised/closet.md`)
 
 ## 🤖 4. AI & Agent Protocols
+
 * [🤝 Human Handover Context Template](docs/HUMAN-HANDOVER-CONTEXT.md)
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
 * [📋 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
@@ -55,24 +62,28 @@
 * [🤖 Multi-Agent Protocols](docs/MULTI-AGENT-PROTOCOLS.md)
 
 ### 🏛️ Palace Documentation
+
 * [🏛️ HOWTO: Palace Onboarding](docs/HOWTO-PALACE-ONBOARDING.md)
 * [🔄 HOWTO: Migrate to Palace](docs/HOWTO-MIGRATE-TO-PALACE.md)
 * [📖 Palace Build Story](docs/PALACE-BUILD-STORY.md)
 * [🧩 Research: Reasoning Gap](docs/RESEARCH-REASONING-GAP.md)
 
 ### ⚙️ Agent Configurations
+
 * [⚙️ Cursor Rules Template](docs/agent-configs/cursorrules_template.md)
 * [⚙️ Copilot Instructions](docs/agent-configs/copilot_instructions_template.md)
 * [⚙️ Windsurf Rules](docs/agent-configs/windsurfrules_template.md)
 * [⚙️ Autonomous Agent Manifest](docs/agent-configs/autonomous_agent_manifest.md)
 
 ### 🧪 Model Specifics
+
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 * [🛡️ GitHub Copilot Setup](docs/COPILOT-SETUP.md)
 * [🧪 DSOM Claude Initialiser](DSOM-CLAUDE-INIT.md)
 
 ## 🛠️ 5. Tools & Automation (Drivers)
+
 * [🔍 Audit Pre-Flight](tools/audit-pre-flight.sh)
 * [🚀 Git Ritual (SOD/EOD)](tools/git-ritual.sh)
 * [🧠 Brain Initialiser](tools/init-brain.sh)
@@ -81,6 +92,7 @@
 * [🌙 Git Ritual PowerShell](tools/git-ritual.ps1)
 
 ### 📜 Automation Documentation
+
 * [📜 Reanimate Logic](tools-and-automation/reanimate.md)
 * [📜 Claude Reanimation](tools-and-automation/reanimate-claude.md)
 * [📜 Brain Initialisation](tools-and-automation/init-brain.md)
@@ -92,18 +104,21 @@
 ---
 
 ## ⚙️ 6. Ansible & Infrastructure Automation
+
 * [🛠️ HOWTO: Setup Ansible Baseline](docs/HOWTO-SETUP-ANSIBLE-BASELINE.md)
 * [🐧 HOWTO: Setup AlmaLinux 10 WSL2 Control Node](docs/HOWTO-SETUP-WSL-ALMALINUX10.md)
 
 ---
 
 ## 🎭 7. Ansible Playbooks (DSOM Operational)
+
 * [🚀 site.yml — Master Entry](playbooks/dsom/site.yml)
 * [✅ audit-preflight.yml — Pre-Flight Audit](playbooks/dsom/audit-preflight.yml)
 * [🧠 init-brain.yml — Brain Initialiser](playbooks/dsom/init-brain.yml)
 * [🛡️ privacy-scan.yml — Privacy Guardian](playbooks/dsom/privacy-scan.yml)
 
 ### 🏛️ Palace Ritual Playbooks (v1.0)
+
 * [🌅 sod-palace.yml — SOD Automation](playbooks/dsom/sod-palace.yml)
 * [🌙 eod-palace.yml — EOD Automation](playbooks/dsom/eod-palace.yml)
 

@@ -28,6 +28,7 @@ DSOM uses a **Hybrid Development Model** — leveraging the strengths of both **
 ## 🏗️ 2. Contributor Environment Setup
 
 ### 2.1 Required Software (T1 — Windows)
+
 - **VS Code** with the DSOM/Antigravity extension
 - **Git for Windows** (or Windows Terminal + Git)
 - **PowerShell** terminal
@@ -42,6 +43,7 @@ Set up the DSOM Ansible Control Node WSL2 instance:
 ```
 
 This creates: `dsom-control-almalinux10` WSL2 instance with:
+
 - `dsom-admin` identity (UID 2001)
 - Ansible, Git, rsync pre-installed
 - `/etc/wsl.conf` configured (systemd, default user, clean PATH)
@@ -57,6 +59,7 @@ Maintain **absolute parity** between T1 and T2 at all times:
 | `D:\Users\[YOU]\Projects\[PROJECT]` | `/mnt/d/Users/[YOU]/Projects/[PROJECT]` |
 
 **After every T1 push, sync T2:**
+
 ```bash
 # Inside dsom-control-almalinux10
 cd /mnt/d/Users/[YOU]/Projects/[PROJECT]
@@ -80,12 +83,14 @@ git pull origin main
 ## 🤖 4. Human-AI Collaboration Protocol
 
 ### 4.1 The Human Architect Role
+
 - **Authority:** Defines the mission, approves implementation plans
 - **Verification:** Runs scripts in T2 WSL2, pastes output back to AI
 - **Approval:** Every AI proposal must be reviewed and approved before execution
 - **Git:** All `git add`, `git commit`, `git push` done from T1 (Windows/PowerShell)
 
 ### 4.2 The AI Agent Role
+
 - **Advisory Only:** Proposes code, playbooks, configs — never executes directly
 - **Explains Why:** Always explains the architectural reason before the technical what
 - **Waits for output:** Does not proceed to next step until human pastes terminal output
@@ -94,6 +99,7 @@ git pull origin main
 ### 4.3 The Permanent Context (Mandatory Reading for AI)
 
 Every AI agent session must begin by reading:
+
 1. `docs/HUMAN-HANDOVER-CONTEXT.md` — Project Identity Card + Session Handover
 2. `.agent/brain/task.md` — Current tasks
 3. `.agent/brain/walkthrough.md` — Project history + Mental Anchor
@@ -104,21 +110,25 @@ Every AI agent session must begin by reading:
 Every contributor — human or AI — must follow the daily ritual:
 
 **Start of Day (SOD):**
+
 ```bash
 ./tools/git-ritual.sh sod         # Pull latest
 ./tools/audit-pre-flight.sh       # Verify workspace
 bash tools/reanimate.sh           # Generate AI context manifest
 # → Upload manifest or paste Hibernation Notes → AI reads → begin
 ```
+
 > Full guide: [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md)
 
 **End of Day (EOD):**
+
 ```bash
 # 1. Ask AI to update task.md + walkthrough.md Mental Anchor
 # 2. Run Hibernation Notes Export prompt (see EOD-RITUAL.md Step 1b)
 ./tools/hibernation.sh            # Safety check
 ./tools/git-ritual.sh             # Interactive EOD commit + push
 ```
+
 > Full guide: [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md)
 
 ---
@@ -126,7 +136,9 @@ bash tools/reanimate.sh           # Generate AI context manifest
 ## 🚀 5. Step-by-Step Contribution Workflow
 
 ### Step 0 — Environment Setup
+
 Follow Section 2 above. Verify:
+
 ```bash
 # Inside dsom-control-almalinux10
 ansible --version
@@ -134,6 +146,7 @@ ansible localhost -m ping
 ```
 
 ### Step 1 — Fork and Clone
+
 ```bash
 # Fork on GitHub first, then:
 git clone https://github.com/[YOUR_FORK]/deep-state-of-mind-for-my-ai.git
@@ -142,6 +155,7 @@ chmod +x tools/*.sh
 ```
 
 ### Step 2 — Initialise the Brain
+
 ```bash
 bash tools/init-brain.sh
 # Or via Ansible:
@@ -149,12 +163,14 @@ ansible-playbook playbooks/dsom/init-brain.yml -i localhost,
 ```
 
 ### Step 3 — Run Pre-Flight Audit
+
 ```bash
 ./tools/audit-pre-flight.sh
 # All steps must show [PASS]
 ```
 
 ### Step 4 — Create a Feature Branch
+
 ```bash
 git checkout -b feat/[your-feature-name]
 # Example: feat/add-template-reset-playbook
@@ -164,16 +180,21 @@ git checkout -b feat/[your-feature-name]
 
 1. **Modify** — Edit files in VS Code (T1) or directly in T2 WSL2
 2. **Ansible-lint** (for playbooks) — Run inside T2:
+
    ```bash
    ansible-lint playbooks/dsom/[your-playbook].yml
    ```
+
 3. **Test** — Run your changes on localhost first:
+
    ```bash
    ansible-playbook playbooks/dsom/[your-playbook].yml -i localhost, --check
    ansible-playbook playbooks/dsom/[your-playbook].yml -i localhost,
    ```
+
 4. **Update Brain** — Update `.agent/brain/task.md` and `walkthrough.md` with what you changed and why
 5. **Commit** — Every sub-task gets its own atomic commit:
+
    ```bash
    git add [specific-file]
    git commit -m "type(scope): description [Phase/vX.X]"
@@ -182,15 +203,19 @@ git checkout -b feat/[your-feature-name]
 ### Step 6 — Atomic Git Mastery
 
 **Critical before pushing** — parity check on T1 AND T2:
+
 ```powershell
 # T1 (Windows PowerShell)
 git status
 ```
+
 ```bash
 # T2 (WSL2)
 git status
 ```
+
 Both must show the same state. Then push:
+
 ```bash
 git push origin feat/[your-feature-name]
 ```
@@ -209,6 +234,7 @@ Use the PR template (`.github/PULL_REQUEST_TEMPLATE.md`). Your PR must include:
 ## ⚖️ 6. Architectural Mandates
 
 ### 6.1 The CRISP² Operational Strategy
+
 | Pillar | Requirement |
 |:---|:---|
 | **Context** | Always sync with `.agent/brain/` before changes |
@@ -218,11 +244,13 @@ Use the PR template (`.github/PULL_REQUEST_TEMPLATE.md`). Your PR must include:
 | **Partnership** | Maintain the Senior Architect persona at all times |
 
 ### 6.2 The Three Pillars (Non-Negotiable)
+
 1. **AIOps** — AI is Advisory only. Proposes, never executes.
 2. **GitOps** — If it is not in Git, it does not exist.
 3. **Ansible** — The exclusive OS-level executor. No ad-hoc SSH changes to nodes.
 
 ### 6.3 Coding Laws
+
 | Law | Rule |
 |:---|:---|
 | **Idempotency** | Every Ansible playbook must be safe to re-run |
@@ -246,6 +274,7 @@ Format: `type(scope): description [Phase/vX.X]`
 | `ci` | CI/CD pipeline changes |
 
 **Good examples:**
+
 ```
 feat(playbooks): add template-reset Ansible playbook [Phase-2/v6.2]
 docs(sod): add Step 4c for Claude-specific reanimation [v6.1]
@@ -254,6 +283,7 @@ chore(brain): EOD sovereign save — AlmaLinux 10 WSL setup complete [v6.1.1]
 ```
 
 **Bad examples:**
+
 ```
 update files
 fix bug

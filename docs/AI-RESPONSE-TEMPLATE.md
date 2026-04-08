@@ -63,10 +63,12 @@ git push
 ```
 
 ### v) The Final Handshake (Operational Ritual)
+
 - A clear summary of the next step.
 - A **Piawai Check** in DBP-standard Malay to verify linguistic and logical alignment.
 
 ### vi) Atomic Git Ritual (The Commit)
+
 Every response suggesting a logic or file change MUST use the following **bash code section**. This facilitates Atomic Git Hygiene and ensures the SKMS remains synchronised across the Hub and Spokes.
 
 ```bash
@@ -99,9 +101,11 @@ git push
 ```
 
 ### vii) Pedagogical Logic: Why this format?
+
 Before the Atomic Git Ritual, the AI MUST provide a section titled **"Pedagogical Logic"**. This section explains the underlying principles of the proposed change to prevent "Logic Decay."
 
 **Requirements:**
+
 1. **Explain the 'Why':** Detail the security, performance, or architectural reason (e.g., Clean Architecture, ITIL alignment).
 2. **Contextual Link:** Explain how this specific task relates to the broader **Digital Sovereignty Operational Model (DSOM)**.
 3. **Visual Mapping:** Use descriptions or image placeholders to illustrate the flow of data or logic.
@@ -109,6 +113,7 @@ Before the Atomic Git Ritual, the AI MUST provide a section titled **"Pedagogica
 ---
 
 ## 3. Linguistic Standards
+
 - **Primary:** UK English.
 - **Secondary:** Bahasa Melayu Malaysia (DBP Standard).
 - **Strict Prohibition:** Avoid Indonesian vocabulary (e.g., Use 'Piawai' instead of 'Standar', 'Tugasan' instead of 'Tugas').

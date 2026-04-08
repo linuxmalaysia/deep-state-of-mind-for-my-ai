@@ -11,23 +11,29 @@
 **Welcome.** This repository uses the **Sovereign Markdown Palace** — a spatial memory system layered on top of standard Git. Before doing anything else, follow this exact reading sequence:
 
 ### Step 1 — Read the Palace Registry (Your Spatial Map)
+
 ```
 .agent/brain/palace_registry.md
 ```
+
 This is your entry point. It lists all Wings, Halls, and Rooms with a Quick-Reference table mapping tasks to the correct Room.
 
 ### Step 2 — Walk to Relevant Rooms
+
 Based on the current task, load the `closet.md` for each relevant Room. Do NOT read the full `walkthrough.md` first — the closets give you 90% of what you need in 10% of the tokens.
 
 **Quick example:**
+
 - Working on a tool script? → `wings/wing_dsom_core/hall_facts/room_tooling/closet.md`
 - Working on infrastructure/Ansible? → `wings/wing_dsom_core/hall_events/room_sovereign_fabric_v9_8/closet.md`
 - Checking version history? → `wings/wing_dsom_core/hall_events/room_ledger/closet.md`
 
 ### Step 3 — Drill Down Only If Needed
+
 If the closet summary is insufficient for precision work, follow its `## 🔗 Retrieval Reference` link to the specific line range in `walkthrough.md`.
 
 ### Step 4 — Confirm with the Human
+
 State: **"Palace orientation complete. Walking [Room Name]. Ready to proceed."**
 
 ---
@@ -35,6 +41,7 @@ State: **"Palace orientation complete. Walking [Room Name]. Ready to proceed."**
 ## 👤 If You Are a New Human User
 
 ### What Is the Palace?
+
 The Palace is the **memory layer** of DSOM. It gives your AI fast, accurate, spatially-organised recall across months and years of project history — without needing to re-read entire session logs.
 
 Think of it as a **library index**: instead of reading every book to find a fact, you walk to the right shelf (Wing → Hall → Room → Closet) and find a distilled summary.
@@ -77,6 +84,7 @@ Follow this order for full context:
 ## 🏗️ Palace Structure Reference
 
 ### Wings (Domains)
+
 Each Wing represents a major project domain.
 
 | Wing | Description |
@@ -84,6 +92,7 @@ Each Wing represents a major project domain.
 | `wing_dsom_core` | The DSOM framework itself — protocol, tools, infrastructure |
 
 ### Halls (Memory Types)
+
 Every Wing has the same hall types for consistency.
 
 | Hall | What It Contains |
@@ -94,6 +103,7 @@ Every Wing has the same hall types for consistency.
 | `hall_discoveries` | Breakthroughs, uncategorised findings |
 
 ### Rooms (Topics)
+
 Specific subjects within a hall. Each room has one `closet.md`.
 
 | Room | Hall | What It Knows |
