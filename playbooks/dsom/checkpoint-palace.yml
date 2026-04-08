@@ -1,0 +1,88 @@
+---
+# playbooks/dsom/checkpoint-palace.yml
+# DSOM Checkpoint — Palace Edition
+# Automates a mid-day continuous integration save:
+#   - Generates the Palace Update Proposal without stopping
+#   - Mechanically splits commits (tracked vs untracked limits risk)
+#   - Pushes immediately to origin
+#
+# Author: Harisfazillah Jamel (LinuxMalaysia)
+# Version: v1.0 
+
+- name: "DSOM Checkpoint — Palace Edition (v1.0)"
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    project_root: "{{ playbook_dir | dirname | dirname }}"
+    timestamp: "{{ lookup('pipe', 'date +\"%Y-%m-%d %H:%M:%S\"') }}"
+
+  tasks:
+
+    - name: "CKPT [0/6] — Banner"
+      ansible.builtin.debug:
+        msg:
+          - "======================================================================"
+          - "  DSOM MID-DAY CHECKPOINT RITUAL — PALACE EDITION"
+          - "  {{ timestamp }}"
+          - "======================================================================"
+
+    - name: "CKPT [1/6] — Generate Palace Update Proposal"
+      ansible.builtin.command:
+        cmd: bash tools/palace-sync.sh
+        chdir: "{{ project_root }}"
+      register: palace_sync_result
+      changed_when: false
+
+    - name: "CKPT [2/6] — Check dirty tracked files"
+      ansible.builtin.command:
+        cmd: git diff --name-only
+        chdir: "{{ project_root }}"
+      register: tracked_dirty
+      changed_when: false
+
+    - name: "CKPT [3/6] — Stage / commit tracked modifications"
+      ansible.builtin.shell: |
+        git add -u
+        git diff --cached --quiet || git commit -m "chore(checkpoint): modified tracked files [{{ timestamp }}]"
+      args:
+        chdir: "{{ project_root }}"
+      when: tracked_dirty.stdout | length > 0
+      register: tracked_commit
+      changed_when: tracked_commit.rc == 0
+
+    - name: "CKPT [4/6] — Check untracked files"
+      ansible.builtin.command:
+        cmd: git ls-files --others --exclude-standard
+        chdir: "{{ project_root }}"
+      register: untracked_files
+      changed_when: false
+
+    - name: "CKPT [5/6] — Stage / commit newly added files"
+      ansible.builtin.shell: |
+        git add .
+        git diff --cached --quiet || git commit -m "chore(checkpoint): untracked new files [{{ timestamp }}]"
+      args:
+        chdir: "{{ project_root }}"
+      when: untracked_files.stdout | length > 0
+      register: untracked_commit
+      changed_when: untracked_commit.rc == 0
+
+    - name: "CKPT [6/6] — Push to origin/main"
+      ansible.builtin.command:
+        cmd: git push origin main
+        chdir: "{{ project_root }}"
+      register: push_result
+      changed_when: true
+      when: (tracked_commit.changed | default(false)) or (untracked_commit.changed | default(false))
+
+    - name: "CKPT — Complete Banner"
+      ansible.builtin.debug:
+        msg:
+          - "======================================================================"
+          - "  ✅ MID-DAY CHECKPOINT SAVED"
+          - ""
+          - "  Tracked and untracked files have been compartmentalised and pushed."
+          - "  Palace update proposal generated (ready for EOD review later today)."
+          - "======================================================================"

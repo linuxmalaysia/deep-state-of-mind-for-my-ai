@@ -229,6 +229,20 @@ If you want to integrate the deep-state-of-mind architecture into an entirely ne
 
 ---
 
+### ⚡ Mid-Day Checkpoint (Continuous Save)
+
+If you are stepping away from the keyboard or want to sync state mid-task, you do not need to perform a full EOD ritual. Run the **Checkpoint Ritual** to systematically auto-commit and push your state cleanly.
+
+```powershell
+.\tools\checkpoint.ps1            # Windows (T1)
+```
+
+```bash
+bash tools/checkpoint.sh          # WSL2 (T2)
+```
+
+---
+
 ### 🌅 Start of Day (SOD) — 5 Steps
 
 **Step 1 — Git Sync** *(Pull latest state)*
