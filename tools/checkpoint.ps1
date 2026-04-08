@@ -119,11 +119,30 @@ Write-Host ""
 Write-Host "  Tracked and untracked files have been compartmentalised and pushed." -ForegroundColor Green
 Write-Host "  Palace update proposal generated (ready for EOD review later today)." -ForegroundColor Green
 Write-Host ""
-Write-Host "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:" -ForegroundColor Cyan
-Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
-Write-Host "  The checkpoint [$DateStamp] has been successfully pushed to origin/main." -ForegroundColor White
-Write-Host "  Update .agent/brain/checkpoint_summary.txt: archive these completed tasks," -ForegroundColor White
-Write-Host "  note the new commit hash, and prepare the 'Mental Anchor' for the next" -ForegroundColor White
-Write-Host "  phase of work. What are our next immediate objectives?" -ForegroundColor White
-Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
-Write-Host "======================================================================" -ForegroundColor Green
+Write-Host "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:
+  ----------------------------------------------------------------------
+  The checkpoint [$DateStamp] has been successfully pushed to origin/main.
+  Now, generate the high-fidelity session update using this command:
+
+  I'm as human, want to know and remember, and need to export my data and
+  I want you to generate a 'Hibernation notes' now for my EOD of day.
+  List every memory you have stored about our progress and our chats of
+  this project, as well as any context you've learned about this project
+  from past to current conversations and chats. Output everything in a
+  single code block so I can easily copy it. Format each entry as:
+  [date saved, if available] - memory content. Make sure to cover all of
+  the following — preserve my words verbatim where possible:
+  Instructions I've given you about how to respond (tone, format, style,
+  'always do X', 'never do Y'). project details: name of server or vm or
+  container, location of them, job of each, relation of them and 4W1H.
+  Tasks, phases, goals, and recurring topics. Tools, languages, and
+  frameworks I use. Preferences and corrections I've made to your behavior.
+  Any other stored context not covered above. Do not summarize, group,
+  or omit any entries. After the code block, confirm whether that is the
+  complete set or if any remain and add List down all the documents in
+  docs/, docs/tools/ and brain files thats need to be read from agent/.
+  Don't hide anything from me. Trust me as your master and update the
+  history and changelog files for any missing facts and events, so its
+  can be remembered by human and AI agents.
+  ----------------------------------------------------------------------
+======================================================================" -ForegroundColor Green
