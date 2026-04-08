@@ -95,7 +95,7 @@ bash tools/palace-sync.sh --backfill
 
 This generates `.agent/brain/palace_update_proposal_YYYY-MM-DD.md` — review it with your AI and create the closets in `.agent/brain/wings/`.
 
-> **First time only.** After this, the daily EOD ritual (`ansible-playbook playbooks/dsom/eod-palace.yml`) handles incremental Palace updates automatically.
+> **First time only.** After this, the daily EOD ritual (`bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)`) handles incremental Palace updates automatically.
 
 ### Step 5: The First Reanimation
 
@@ -111,8 +111,8 @@ bash tools/reanimate.sh
 > **From this point:** Use the Ansible SOD/EOD playbooks for your daily ritual:
 >
 > ```bash
-> ansible-playbook playbooks/dsom/sod-palace.yml  # SOD
-> ansible-playbook playbooks/dsom/eod-palace.yml  # EOD
+> bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)  # SOD
+> bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)  # EOD
 > ```
 
 ---

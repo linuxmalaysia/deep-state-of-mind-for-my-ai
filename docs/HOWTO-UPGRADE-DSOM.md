@@ -84,7 +84,7 @@ bash tools/palace-sync.sh --backfill
 
 This generates `palace_update_proposal_YYYY-MM-DD.md`. Share it with your AI and create the initial closets in `.agent/brain/wings/`.
 
-> **This is a one-time operation.** After this, the daily EOD playbook (`ansible-playbook playbooks/dsom/eod-palace.yml`) handles incremental updates.
+> **This is a one-time operation.** After this, the daily EOD playbook (`bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)`) handles incremental updates.
 
 ### Step 5: Context Re-Sync
 
@@ -105,9 +105,9 @@ Your AI agent might be confused by the sudden change in Protocol.
 
     ```bash
     # Test SOD
-    ansible-playbook playbooks/dsom/sod-palace.yml
+    bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
     # Test EOD
-    ansible-playbook playbooks/dsom/eod-palace.yml
+    bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
     ```
 
 ---

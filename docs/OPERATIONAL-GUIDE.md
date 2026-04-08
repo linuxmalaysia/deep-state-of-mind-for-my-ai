@@ -20,7 +20,7 @@ The Reanimation Ritual is not just running a script; it is a **Cognitive Handsha
 > Run this single command on T2 instead of Steps 1–3 below. It automates git pull, audit, palace check, and reanimate.
 
 ```bash
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 ```
 
 Then upload the manifest and say: *"Initialise DSOM Protocol v6.1 + Palace v1.0. Walk the Palace Registry in Section [14]. State: 'Sovereign State Synchronised' when ready."*
@@ -96,7 +96,7 @@ We never "just close the window." We must perform a controlled shutdown to preve
 > Run this single command on T2 instead of Steps 1–2 below. It validates brain, runs palace-sync, stages, commits, and pushes.
 
 ```bash
-ansible-playbook playbooks/dsom/eod-palace.yml
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 ```
 
 After it completes — review `palace_update_proposal_YYYY-MM-DD.md` with your AI and update relevant closets.

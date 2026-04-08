@@ -99,7 +99,7 @@ Operate under DSOM v6.1 + Palace v1.0: Advisory Mode, UK English, Git-first, Ans
 If using the T2 Dev Bridge (Recommended):
 
 ```bash
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 ```
 
 ### Step 1-2 — Manual Fallback
@@ -198,7 +198,7 @@ Review the proposed changes, apply them, then commit:
 
 ```bash
 # Recommended on T2
-ansible-playbook playbooks/dsom/eod-palace.yml
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 # Or manual fallback
 ./tools/git-ritual.sh          # guided EOD commit and push

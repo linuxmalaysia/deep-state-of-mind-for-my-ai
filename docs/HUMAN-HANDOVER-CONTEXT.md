@@ -27,7 +27,7 @@ I am starting a new AI session. Synchronise your state with the following:
 
 Run **Start of Day (SOD)** as per DSOM For My AI Protocol v6.1 + Palace v1.0.
 
-> **T2 shortcut:** `ansible-playbook playbooks/dsom/sod-palace.yml` automates steps 1–6 + palace check automatically. Upload the manifest and use the handshake phrase below.
+> **T2 shortcut:** `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` automates steps 1–6 + palace check automatically. Upload the manifest and use the handshake phrase below.
 
 ---
 

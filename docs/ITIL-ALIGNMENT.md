@@ -21,7 +21,7 @@ Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:
 ### i) Engage (The Handshake)
 
 * **ITIL Action:** Understand stakeholder needs.
-* **DSOM Implementation:** The `ansible-playbook playbooks/dsom/sod-palace.yml` process. The AI *engages* with the `palace_registry.md`, `task.md` and `walkthrough.md`.
+* **DSOM Implementation:** The `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` process. The AI *engages* with the `palace_registry.md`, `task.md` and `walkthrough.md`.
 * **Artifact:** `sod_manifest_YYYY-MM-DD.txt`
 
 ### ii) Plan (The Architectural Design)
@@ -45,7 +45,7 @@ Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:
 ### v) Deliver & Support (The Verification)
 
 * **ITIL Action:** Ensuring value co-creation.
-* **DSOM Implementation:** Running `ansible-playbook playbooks/dsom/eod-palace.yml` to validate artifacts and generate proposals.
+* **DSOM Implementation:** Running `bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)` to validate artifacts and generate proposals.
 * **Artifact:** `CHANGELOG.md` and `.agent/brain/` updates.
 
 ### vi) Improve (The Sunday Audit)

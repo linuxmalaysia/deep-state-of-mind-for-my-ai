@@ -190,7 +190,7 @@ Run a full SOD sequence and confirm Section [14] appears in your manifest:
 
 ```bash
 # Recommended on T2 (WSL2 / Linux)
-ansible-playbook playbooks/dsom/sod-palace.yml
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 
 # Or manual (Linux/Windows)
 bash tools/reanimate.sh | grep -A 5 "\[14\]"
@@ -208,7 +208,7 @@ Run a test EOD to confirm Palace Sync runs automatically:
 
 ```bash
 # Recommended on T2 (WSL2 / Linux)
-ansible-playbook playbooks/dsom/eod-palace.yml
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 # Or manual (Linux/Windows)
 bash tools/hibernation.sh

@@ -243,34 +243,22 @@ bash tools/checkpoint.sh          # WSL2 (T2)
 
 ---
 
-### 🌅 Start of Day (SOD) — 5 Steps
+### 🌅 Start of Day (SOD)
 
-**Step 1 — Git Sync** *(Pull latest state)*
-
-```powershell
-.\tools\git-ritual.ps1 sod        # Windows (T1)
-```
-
-```bash
-./tools/git-ritual.sh sod         # WSL2 (T2)
-```
-
-**Step 2 — Intelligence Audit** *(Verify workspace is healthy)*
+If using Palace v1.0, you only need to run the automated SOD Palace script. This automatically pulls from Git, runs the audit pre-flight, verifies the Palace registry, and generates your reanimation manifest.
 
 ```powershell
-.\tools\audit-pre-flight.ps1      # Windows
+.\tools\sod-palace.ps1            # Windows Native
 ```
 
 ```bash
-./tools/audit-pre-flight.sh       # WSL2
+bash tools/sod-palace.sh          # Linux / WSL2
 ```
 
-All steps must show `[PASS]`. Fix any `[FAIL]` before continuing.
-
-**Step 3 — Generate Reanimation Manifest**
+Optional — scan before sharing:
 
 ```bash
-bash tools/reanimate.sh           # WSL2
+./tools/privacy-guardian.sh
 ```
 
 Optional — scan before sharing:
@@ -315,7 +303,7 @@ Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only exec
 
 ---
 
-### 🌙 End of Day (EOD) — 6 Steps
+### 🌙 End of Day (EOD)
 
 **Step 1 — Context Consolidation** *(Ask your AI)*
 > *"We are ending the session. Update `.agent/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agent/brain/walkthrough.md` with today's Mental Anchor."*
@@ -338,37 +326,28 @@ Don't hide anything from me. Trust me as your master.
 
 Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt` or to your notebook.
 
-**Step 2 — Hibernation Safety Check**
+**Step 2 — EOD Mechanical Save (Cross-Platform Palace Sync)**
 
-```bash
-./tools/hibernation.sh            # WSL2
-.\tools\hibernation.ps1           # Windows
+```powershell
+.\tools\eod-palace.ps1            # Windows Native
 ```
 
-**Step 3 — Privacy Scan** *(if you generated a manifest)*
+```bash
+bash tools/eod-palace.sh          # Linux / WSL2
+```
+
+*(This automatically verifies brain artifacts, updates Palace rooms mapping, commits modified artifacts safely, and pushes your state. After running, you may be prompted to review your new `palace_update_proposal_YYYY-MM-DD.md`.)*
+
+**Step 3 — Privacy Scan** *(if you generated an anomaly manifest)*
 
 ```bash
 ./tools/privacy-guardian.sh
 ```
 
-**Step 4 — Sovereign Save** *(guided semantic commit)*
-
-```bash
-./tools/git-ritual.sh             # WSL2 — interactive EOD
-.\tools\git-ritual.ps1            # Windows — interactive EOD
-```
-
-**Step 5 — T2 Sync** *(pull on WSL2 after Windows push)*
+**Step 4 — T2 Sync** *(pull on WSL2 if EOD was pushed from Windows)*
 
 ```bash
 git pull origin main
-```
-
-**Step 6 — Write tomorrow's Mental Anchor in your notebook.**
-
-```text
-✅ EOD DONE when: task.md updated | walkthrough.md anchored |
-                  hibernation.sh GREEN | git pushed | T2 synced
 ```
 
 ---

@@ -82,7 +82,7 @@ Upon the command **"Initialise DSOM Protocol"**, you MUST execute this boot sequ
 
 1. **Context Sync:** Analyse the uploaded manifest, including `palace_registry.md` (Spatial Context), `task.md`, `walkthrough.md`, and `implementation_plan.md`.
 2. **Twin Protocol Check:** Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` exists for this project. If it does not, flag it as the first action item. See [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md).
-3. **Ansible Check:** Verify `inventory/hosts.yml` exists. If deploying infrastructure, confirm `ansible-playbook playbooks/dsom/sod-palace.yml` was run.
+3. **Ansible Check:** Verify `inventory/hosts.yml` exists. If deploying infrastructure, confirm `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` was run.
 4. **Audit Verification:** Confirm if the pre-flight checks (via `sod-palace.yml` or `audit-pre-flight.sh`) were successful.
 5. **State Alignment:** Summarise the last **Mental Anchor** from the walkthrough.
 6. **Handshake Completion:** State: *"Sovereign State Synchronised. Ready to proceed with [Task Name]."*
@@ -105,7 +105,7 @@ Before session termination, you must secure the **Process Instance**:
 
 1. **Mental Anchor:** Record exact logical stopping point in `walkthrough.md` and associated Palace Closets.
 2. **SOD Target:** Update `task.md` with next targets.
-3. **Sovereign Save:** Provide the `ansible-playbook playbooks/dsom/eod-palace.yml` or `git commit` commands for the Architect.
+3. **Sovereign Save:** Provide the `bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)` or `git commit` commands for the Architect.
 
 ---
 

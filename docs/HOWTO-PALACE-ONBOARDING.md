@@ -123,7 +123,7 @@ Specific subjects within a hall. Each room has one `closet.md`.
 
 ```
 SOD (Start of Day)
-  └── ansible-playbook playbooks/dsom/sod-palace.yml (or bash tools/reanimate.sh)
+  └── bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1) (or bash tools/reanimate.sh)
         └── Audits environment, validates Git, executes Palace check
               └── Section [14]: Palace Registry loaded into manifest
                     └── AI reads registry → walks relevant rooms → ready in seconds
@@ -134,7 +134,7 @@ Active Work
               └── Identifies target Room per Git Reflection Mandate
 
 EOD (End of Day)
-  └── ansible-playbook playbooks/dsom/eod-palace.yml (or bash tools/hibernation.sh)
+  └── bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) (or bash tools/hibernation.sh)
         └── Validates artifacts, runs palace-sync.sh automatically
               └── Generates palace_update_proposal_YYYY-MM-DD.md
                     └── AI reviews → updates closets → registry stays fresh
