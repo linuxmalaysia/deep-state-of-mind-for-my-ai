@@ -115,7 +115,15 @@ git push origin main
 Write-Host ""
 Write-Host "======================================================================" -ForegroundColor Green
 Write-Host "  ✅ MID-DAY CHECKPOINT SAVED" -ForegroundColor Green
-Write-Host "" -ForegroundColor Green
+Write-Host ""
 Write-Host "  Tracked and untracked files have been compartmentalised and pushed." -ForegroundColor Green
 Write-Host "  Palace update proposal generated (ready for EOD review later today)." -ForegroundColor Green
+Write-Host ""
+Write-Host "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:" -ForegroundColor Cyan
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
+Write-Host "  The checkpoint [$DateStamp] has been successfully pushed to origin/main." -ForegroundColor White
+Write-Host "  Update .agent/brain/checkpoint_summary.txt: archive these completed tasks," -ForegroundColor White
+Write-Host "  note the new commit hash, and prepare the 'Mental Anchor' for the next" -ForegroundColor White
+Write-Host "  phase of work. What are our next immediate objectives?" -ForegroundColor White
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
 Write-Host "======================================================================" -ForegroundColor Green
