@@ -1,17 +1,31 @@
 # 📖 DSOM Operational Guide (Level 3 - Specialised Tasks)
 
 > **"Theory without Practice is Hallucination. Practice without Theory is Chaos."**
+> **Standard: DSOM v6.1 + Palace v1.0**
 
-## 1. 🏛️ Purpose of this Document
+## 1. Purpose of this Document
+
 This guide bridges the gap between the **Abstract Laws** (`AI-MASTER-PROTOCOL.md`) and the **Concrete Actions** (Bash/PowerShell scripts). It defines the **Specialised Tasks (L3)** required to execute the DSOM protocol.
 
 It answers the question: *"How do I actually perform the rituals defined in the Master Protocol?"*
 
 ---
 
-## 2. 🌅 The Reanimation Sequence (Start-of-Day)
+## 2. The Reanimation Sequence (Start-of-Day)
 
 The Reanimation Ritual is not just running a script; it is a **Cognitive Handshake** that transfers the project's soul from disk to the AI's active memory.
+
+### [RECOMMENDED] Ansible Palace SOD (T2: Linux/WSL2)
+
+> Run this single command on T2 instead of Steps 1–3 below. It automates git pull, audit, palace check, and reanimate.
+
+```bash
+ansible-playbook playbooks/dsom/sod-palace.yml
+```
+
+Then upload the manifest and say: *"Initialise DSOM Protocol v6.1 + Palace v1.0. Walk the Palace Registry in Section [14]. State: 'Sovereign State Synchronised' when ready."*
+
+---
 
 ### Step 1: Physical Reality Check (The Audit)
 Before waking the AI, we must verify that the physical environment matches the expected state.
@@ -26,13 +40,14 @@ Before waking the AI, we must verify that the physical environment matches the e
 ```
 
 **Success Criteria:**
-1.  **Brain Check:** `task.md` and `walkthrough.md` must exist.
-2.  **Git Drift:** Local repo must be synced with Remote.
-3.  **Cognitive Twin Protocol:** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` must exist and be filled in for this project. If missing, this is the first action item.
-4.  **Ansible Baseline:** `inventory/hosts.yml` and `ansible.cfg` must exist if this project uses infrastructure automation. See [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md).
+1. **Brain Check:** `task.md` and `walkthrough.md` must exist.
+2. **Git Drift:** Local repo must be synced with Remote.
+3. **Palace Registry:** `.agent/brain/palace_registry.md` must exist. If missing, run `bash tools/palace-sync.sh --backfill`.
+4. **Cognitive Twin Protocol:** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` must exist and be filled in for this project.
+5. **Ansible Baseline:** `inventory/hosts.yml` and `ansible.cfg` must exist if this project uses infrastructure automation.
 
 ### Step 2: Generating the Manifest (The Injection)
-We aggregrate all context into a single "Truth File."
+We aggregate all context into a single "Truth File."
 
 **Command:**
 ```bash
@@ -43,32 +58,47 @@ We aggregrate all context into a single "Truth File."
 .\tools\reanimate.ps1
 ```
 
-**What is Injected?**
-1.  **Identity:** `README.md` (Who we are).
-2.  **Constraints:** `AI-MASTER-PROTOCOL.md` (The Rules).
-3.  **Context:** `task.md` + `walkthrough.md` + `implementation_plan.md`.
-4.  **Topology:** User `git ls-tree` to show the full file structure.
-5.  **History:** The last 48 hours of Git logs + last 30 commits.
+**What is Injected (v2.2 — Palace-aware)?**
+
+| Section | Content |
+|---|---|
+| [1–5] | Identity, Laws, Brain (task/walkthrough/plan) |
+| [6–10] | Git log, file tree, SUMMARY, CHANGELOG, env telemetry |
+| [11–13] | Cognitive Twin, Ansible topology, GitOps strategy |
+| **[14]** | **`palace_registry.md` — AI spatial map (Palace v1.0)** |
 
 ### Step 3: The Handshake (The Prompt)
-Upload the generated text file to the AI and type:
-> *"Summarize the current Mental Anchor after you have read the file uploaded. What is our immediate strategic focus?"*
+Upload the generated text file to the AI and say:
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the manifest. Walk the Palace Registry in Section [14] — identify relevant Rooms for today's work. State: 'Sovereign State Synchronised' when ready."*
 
 ### Step 4: Walking the Palace (The Retrieval)
 Before starting logic work, the AI must traverse the **Spatial Markdown Palace** (`.agent/brain/wings/`):
-1.  **Registry Scan:** Read `palace_registry.md` to identify the relevant Wing and Rooms.
-2.  **Room Entry:** Load the `closet.md` for specific technical contexts (e.g., Auth, Persistence).
-3.  **Discovery:** Use the Palace to identify connections between disparate data points that the linear walkthrough might obscure.
+1. **Registry Scan:** Read `palace_registry.md` to identify the relevant Wing and Rooms.
+2. **Room Entry:** Load the `closet.md` for specific technical contexts (e.g., Auth, Persistence).
+3. **Discovery:** Use the Palace to identify connections between disparate data points that the linear walkthrough might obscure.
 
 ---
 
-## 3. 🌙 The Hibernation Sequence (End-of-Day)
+## 3. The Hibernation Sequence (End-of-Day)
 
 We never "just close the window." We must perform a controlled shutdown to prevent context decay.
 
+### [RECOMMENDED] Ansible Palace EOD (T2: Linux/WSL2)
+
+> Run this single command on T2 instead of Steps 1–2 below. It validates brain, runs palace-sync, stages, commits, and pushes.
+
+```bash
+ansible-playbook playbooks/dsom/eod-palace.yml
+```
+
+After it completes — review `palace_update_proposal_YYYY-MM-DD.md` with your AI and update relevant closets.
+
+---
+
 ### Step 1: Context Consolidation
-1.  **Update `task.md`:** Check off completed items.
-2.  **Update `walkthrough.md`:** Create a new "Session Anchor."
+1. **Update `task.md`:** Check off completed items.
+2. **Update `walkthrough.md`:** Create a new "Session Anchor."
+3. **Log decisions:** Apply the Decision Log Protocol — record *why* key decisions were made.
 
 ### Step 2: The Safe Shutdown
 Run the hibernation tool to verify safety.
@@ -82,10 +112,11 @@ Run the hibernation tool to verify safety.
 .\tools\hibernation.ps1
 ```
 
-**The Logic:**
-*   It greps `task.md` for `[x]` to ensure progress was recorded.
-*   It checks `walkthrough.md` for today's date.
-*   It auto-pushes to Git only if these checks pass.
+**The Logic (v2.1 — Palace-aware):**
+- Checks `task.md` for `[x]` completed tasks
+- Checks `walkthrough.md` for today's date anchor
+- **Step 7: Palace Spatial Reflection** — auto-runs `palace-sync.sh` to generate `palace_update_proposal_YYYY-MM-DD.md`
+- Commits and pushes if all checks pass
 
 ---
 
@@ -106,17 +137,25 @@ When writing code, you must place files in the correct "Ring" of the Clean Archi
 
 ---
 
-## 5. 🚀 Adoption & Upgrade Scenarios
+## 5. Adoption & Upgrade Scenarios
 
 For detailed step-by-step guides on how to apply DSOM to your specific situation, refer to the specialized manuals:
 
 ### Scenario 1: Brownfield Adoption
-*   **Situation:** You have an existing project (Standard Code) and want to add DSOM.
-*   **Guide:** [HOWTO: Adopt DSOM in Existing Projects](HOWTO-ADOPT-DSOM.md)
+- **Situation:** You have an existing project (Standard Code) and want to add DSOM.
+- **Guide:** [HOWTO: Adopt DSOM in Existing Projects](HOWTO-ADOPT-DSOM.md)
 
 ### Scenario 2: Legacy Upgrade
-*   **Situation:** You have an older DSOM version (v3/v4) and want to upgrade to v5.x (ITIL/Privacy).
-*   **Guide:** [HOWTO: Upgrade and Audit DSOM](HOWTO-UPGRADE-DSOM.md)
+- **Situation:** You have an older DSOM version (v3/v4) and want to upgrade to v5.x (ITIL/Privacy).
+- **Guide:** [HOWTO: Upgrade and Audit DSOM](HOWTO-UPGRADE-DSOM.md)
+
+### Scenario 3: Palace Migration
+- **Situation:** You have DSOM v6.x but no Palace. You want to add the spatial memory layer.
+- **Guide:** [HOWTO: Migrate to Palace](HOWTO-MIGRATE-TO-PALACE.md)
+
+### Scenario 4: New Adopter — Palace Edition
+- **Situation:** First time setting up DSOM from scratch with Palace v1.0.
+- **Guide:** [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
 
 ---
 
@@ -165,4 +204,4 @@ For full doctrine, see [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-AN
 
 ---
 
-*Last Updated: 2026-03-09 (v6.0: GitOps + AIOps + Ansible Guardrails)*
+*Last Updated: 2026-04-08 (v6.1 + Palace v1.0: Ansible SOD/EOD playbooks, Section [14] Palace Registry, Palace Migration scenarios)*

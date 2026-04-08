@@ -7,29 +7,37 @@ This document defines the **strategic doctrine** for the three operational pilla
 
 ---
 
-## 🏛️ 1. The Three-Pillar Model
+## 1. The Three-Pillar Model (+ Palace)
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                   DSOM OPERATING MODEL                   │
-│                                                          │
-│   ┌──────────┐    ┌──────────┐    ┌──────────────────┐  │
-│   │  AIOps   │───▶│  GitOps  │───▶│     Ansible      │  │
-│   │  (Mind)  │    │ (Record) │    │  (Executor/Hand) │  │
-│   └──────────┘    └──────────┘    └──────────────────┘  │
-│        │               │                   │             │
-│    AI proposes    Git records          Ansible runs      │
-│    & analyses     all state            on target nodes   │
-│        ▲               │                   │             │
-│        └───────────────┴─── AI verifies ───┘             │
-└──────────────────────────────────────────────────────────┘
++--------------------------------------------------------------+
+|                   DSOM OPERATING MODEL                       |
+|                                                              |
+|  +----------+   +----------+   +------------------+         |
+|  |  AIOps   |-->|  GitOps  |-->|     Ansible      |         |
+|  |  (Mind)  |   | (Record) |   |  (Executor/Hand) |         |
+|  +----------+   +----------+   +------------------+         |
+|       |              |                  |                    |
+|   AI proposes   Git records        Ansible runs             |
+|   & analyses    all state          on target nodes          |
+|       ^              |                  |                    |
+|       +--------------+--- AI verifies --+                    |
+|                                                              |
+|  +----------------------------------------------------------+ |
+|  |  Palace (Memory)  --  Sovereign Markdown Palace v1.0    | |
+|  |  .agent/brain/palace_registry.md + wings/               | |
+|  |  SOD: AI reads Palace Registry (Section [14])           | |
+|  |  EOD: palace-sync.sh writes spatial update proposal     | |
+|  +----------------------------------------------------------+ |
++--------------------------------------------------------------+
 ```
 
 **The Integration Loop:**
-1. **AI Proposes** → AI (Cognitive Twin) analyses logs, generates playbooks, and recommends next action.
-2. **Git Records** → Human commits the proposed playbook/config to the repository.
-3. **Ansible Executes** → Human triggers the Ansible playbook against target nodes.
-4. **AI Verifies** → Human pastes output back to AI; AI analyses results and confirms success or recommends remediation.
+1. **AI Proposes** — AI (Cognitive Twin) analyses logs, generates playbooks, and recommends next action.
+2. **Git Records** — Human commits the proposed playbook/config to the repository.
+3. **Ansible Executes** — Human triggers the Ansible playbook against target nodes.
+4. **AI Verifies** — Human pastes output back to AI; AI analyses results and confirms success or recommends remediation.
+5. **Palace Remembers** — EOD palace-sync captures spatial knowledge; SOD manifest includes Palace Registry so AI walks it on wake-up.
 
 ---
 
@@ -63,7 +71,10 @@ Before any advisory session, the AI **MUST** read:
 - `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — Project-specific environment map
 - `.agent/brain/task.md` — Current state
 - `.agent/brain/walkthrough.md` — History and Mental Anchor
+- `.agent/brain/palace_registry.md` — **Spatial map (Palace v1.0)** — walk this to locate relevant Rooms
 - `inventory/hosts.yml` — Target node topology
+
+> **SOD shortcut:** `ansible-playbook playbooks/dsom/sod-palace.yml` injects all of the above automatically via the reanimation manifest (Section [14] = Palace Registry).
 
 ---
 
@@ -100,10 +111,20 @@ git add .
 git commit -m "feat(scope): descriptive message [Phase-XX/vX.X]"
 git push origin main
 
-# Tier 2/3/4 (Target): Pull & Execute
-git pull origin main
-ansible-playbook playbooks/site.yml -i inventory/hosts.yml
+# Tier 2 (Dev Bridge): Palace SOD — full automated reanimation
+ansible-playbook playbooks/dsom/sod-palace.yml
+# Then upload manifest + handshake with AI
+
+# Tier 2 (Dev Bridge): Palace EOD — full automated save
+ansible-playbook playbooks/dsom/eod-palace.yml
+# Then review palace_update_proposal + update closets
 ```
+
+> **Manual alternative (T1 Windows):**
+> ```powershell
+> .\tools\reanimate.ps1   # SOD
+> .\tools\hibernation.ps1 # EOD (includes palace-sync v2.1)
+> ```
 
 ---
 
@@ -182,7 +203,7 @@ ansible-vault view vault/production_secrets.yml
 
 ---
 
-## 🔗 5. Integration with DSOM Brain
+## 5. Integration with DSOM Brain + Palace
 
 The three pillars are anchored to the DSOM SKMS (Knowledge Management System):
 
@@ -193,6 +214,10 @@ The three pillars are anchored to the DSOM SKMS (Knowledge Management System):
 | `walkthrough.md` | AIOps: History of Ansible runs, log analysis results, Mental Anchors |
 | `inventory/hosts.yml` | Ansible: Node topology — always verified before execution |
 | `playbooks/` | GitOps + Ansible: All automation is version-controlled |
+| **`palace_registry.md`** | **Palace: AI spatial map — loaded at SOD via Section [14] of manifest** |
+| **`wings/`** | **Palace: Room closets — spatial knowledge updated each EOD** |
+| **`playbooks/dsom/sod-palace.yml`** | **Ansible + AIOps: Automates SOD reanimation loop** |
+| **`playbooks/dsom/eod-palace.yml`** | **Ansible + GitOps: Automates EOD save + Palace sync** |
 
 ---
 
@@ -209,14 +234,18 @@ When starting a new project with DSOM, use this checklist to establish the three
 - [ ] Create `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` from template (fill all `[PLACEHOLDER]` values)
 - [ ] Initialise `.agent/brain/` with `task.md`, `walkthrough.md`, `implementation_plan.md`
 - [ ] Configure AI agent with `docs/AI-MASTER-PROTOCOL.md` as system context
+- [ ] **Run `bash tools/palace-sync.sh --backfill`** to initialise Palace Registry
+- [ ] Review `palace_update_proposal_YYYY-MM-DD.md` with AI and populate closets
 
 ### Ansible Setup
 - [ ] Follow `docs/HOWTO-SETUP-ANSIBLE-BASELINE.md` for full setup
 - [ ] Create `ansible.cfg`, `inventory/hosts.yml`, `playbooks/preflight.yml`
 - [ ] Verify connectivity: `ansible all -m ping -i inventory/hosts.yml`
 - [ ] Run pre-flight: `tools/audit-pre-flight.sh`
+- [ ] **Test SOD playlist:** `ansible-playbook playbooks/dsom/sod-palace.yml`
+- [ ] **Test EOD playlist:** `ansible-playbook playbooks/dsom/eod-palace.yml`
 
 ---
 
-*Created by the DSOM Engineering Team | v1.0 | 2026-03-09*
+*Created by the DSOM Engineering Team | v2.0 | 2026-04-08*
 *Standard: UK English | Licensed under GPLv3*

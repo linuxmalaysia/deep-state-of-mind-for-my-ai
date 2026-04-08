@@ -1,8 +1,8 @@
 # HOWTO: Adopt DSOM in Existing Projects (Brownfield)
 
-**Author:** Harisfazillah Jamel  
-**Version:** 1.0 (DSOM v5.2)  
-**License:** GPLv3  
+**Author:** Harisfazillah Jamel
+**Version:** 2.0 (DSOM v6.1 + Palace v1.0)
+**License:** GPLv3
 
 > **Scenario 1:** You have an active development project (PHP, Python, Node, etc.) and you want to install the DSOM Protocol to stop context decay.
 
@@ -74,14 +74,33 @@ Establish the security perimeter immediately.
 !/.agent/brain/*.md
 ```
 
+### Step 4b: Initialize the Palace
+
+Backfill the Sovereign Markdown Palace from your existing Git history:
+
+```bash
+bash tools/palace-sync.sh --backfill
+```
+
+This generates `.agent/brain/palace_update_proposal_YYYY-MM-DD.md` — review it with your AI and create the closets in `.agent/brain/wings/`.
+
+> **First time only.** After this, the daily EOD ritual (`ansible-playbook playbooks/dsom/eod-palace.yml`) handles incremental Palace updates automatically.
+
 ### Step 5: The First Reanimation
-Generate your first "Cognitive Handshake" manifest.
+Generate your first "Cognitive Handshake" manifest:
 
 ```bash
 bash tools/reanimate.sh
 ```
 
-**Action:** Upload the generated `sod_manifest.txt` to your AI (Gemini/Claude) and verify it understands your existing codebase structure.
+**Action:** Upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the manifest. Walk the Palace Registry in Section [14]. Verify you understand this codebase structure. State: 'Sovereign State Synchronised' when ready."*
+
+> **From this point:** Use the Ansible SOD/EOD playbooks for your daily ritual:
+> ```bash
+> ansible-playbook playbooks/dsom/sod-palace.yml  # SOD
+> ansible-playbook playbooks/dsom/eod-palace.yml  # EOD
+> ```
 
 ---
 
@@ -94,5 +113,10 @@ A: Ensure you are running the command from the root of your project. Run `git in
 A: You skipped **Step 3**. The AI only knows what is in the `.agent/brain` files. If you leave them empty, it assumes a blank slate.
 
 ## 5. References
-*   [AI Master Protocol](AI-MASTER-PROTOCOL.md)
-*   [Operational Guide](OPERATIONAL-GUIDE.md)
+
+- [AI Master Protocol](AI-MASTER-PROTOCOL.md)
+- [Operational Guide](OPERATIONAL-GUIDE.md)
+- [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
+- [HOWTO: Migrate to Palace](HOWTO-MIGRATE-TO-PALACE.md)
+- [SOD Ritual](SOD-RITUAL.md)
+- [EOD Ritual](EOD-RITUAL.md)
