@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 # ==============================================================================
-# 📜 DSOM Reanimation Manifest Generator (v2.1 - GitOps + AIOps + Ansible)
+# 📜 DSOM Reanimation Manifest Generator (v2.2 - GitOps + AIOps + Ansible + Palace)
 #
 # Author:  Harisfazillah Jamel (LinuxMalaysia)
 # Partner: Generated with assistance from Google Antigravity
@@ -36,7 +36,7 @@ OUTPUT_FILE="${REPO_ROOT}/sod_manifest_${DATE_STAMP}.txt"
 BRAIN_DIR="$REPO_ROOT/.agent/brain"
 DOCS_DIR="$REPO_ROOT/docs"
 README_FILE="$REPO_ROOT/README.md"
-VERSION="v2.1"
+VERSION="v2.2"
 
 echo -e "${CYAN}======================================================================"
 echo -e "  🚀 DSOM Reanimation Manifest Generator $VERSION"
@@ -211,9 +211,24 @@ generate_manifest() {
     else
         echo "[SKIP] GITOPS-AIOPS-ANSIBLE-STRATEGY.md not found."
     fi
-    echo ""
+    echo -e "\n---\n"
+
+    echo "### [14] PALACE REGISTRY (Spatial Knowledge Map)"
+    PALACE_REGISTRY="$BRAIN_DIR/palace_registry.md"
+    if [ -f "$PALACE_REGISTRY" ]; then
+        cat "$PALACE_REGISTRY"
+        echo ""
+        echo "PALACE WALKING INSTRUCTION:"
+        echo "  1. Identify relevant Wings and Rooms from the registry above."
+        echo "  2. Read the closet.md in each relevant Room for instant context."
+        echo "  3. Only drill into walkthrough.md if the closet is insufficient."
+    else
+        echo "[SKIP] palace_registry.md not found. Run: bash tools/palace-sync.sh --backfill"
+    fi
+    echo -e "\n---\n"
+
     echo "======================================================================"
-    echo "🏁 MANIFEST COMPLETE — DSOM For My AI Protocol v6.1"
+    echo "🏁 MANIFEST COMPLETE — DSOM For My AI Protocol v6.1 + Palace v1.0"
     echo "======================================================================"
     echo ""
     echo "Handshake: Ask the AI:"
