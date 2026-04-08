@@ -25,7 +25,7 @@ It solves three critical AI problems:
 
 ---
 
-## 🏛️ The Three Pillars (v6.0)
+## 🏛️ The Three Pillars (v6.1)
 
 Every project built on this skeleton operates under **three non-negotiable pillars**:
 
@@ -342,7 +342,7 @@ EOD → Step 1b: Save new Hibernation Notes
 deep-state-of-mind-for-my-ai/
 │
 ├── docs/                                  # Governance & Protocol Documents
-│   ├── AI-MASTER-PROTOCOL.md              # The Sovereign Constitution (v6.0)
+│   ├── AI-MASTER-PROTOCOL.md              # The Sovereign Constitution (v6.1 + Palace v1.0)
 │   ├── AI-COGNITIVE-TWIN-PROTOCOL.md      # ⭐ Project Identity Card Template
 │   ├── GITOPS-AIOPS-ANSIBLE-STRATEGY.md   # Three-Pillar Doctrine
 │   ├── HOWTO-SETUP-ANSIBLE-BASELINE.md    # Ansible setup guide (LDP standard)

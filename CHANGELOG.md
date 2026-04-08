@@ -39,6 +39,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   updated brain structure tree, updated Key Documents table, updated roadmap.
 - **`SUMMARY.md`** — Added Palace Rooms, Ansible Palace playbooks, research documents.
 - **`HISTORY.md`** — Phase 5: Sovereign Markdown Palace & Ansible Ritual Automation added.
+- **Documentation Fleet Sweep for Palace v1.0:**
+  - `docs/AI-MASTER-PROTOCOL.md` → v6.1 + Palace v1.0. Hardcoded `sod-palace.yml` / `eod-palace.yml` routines.
+  - `docs/CLAUDE-SETUP.md` & `docs/COPILOT-SETUP.md` → Interwoven `sod-palace.yml` and spatial awareness.
+  - `docs/CRISP2-OPERATIONAL-STRATEGY.md` → Emphasized spatial context and "Zero-Debt" standard.
+  - `docs/ITIL-ALIGNMENT.md` → ITIL workflow mappings upgraded with Ansible Palace loops.
+  - `docs/AI-RESPONSE-TEMPLATE.md` → AI persona commit block updated to enforce Palace Registry checks.
+  - `docs/HOWTO-SETUP-WSL-ALMALINUX10.md` → Example code blocks upgraded to Palace playbooks.
 
 ### Tagged
 
