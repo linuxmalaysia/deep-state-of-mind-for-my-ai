@@ -21,8 +21,11 @@ I am starting a new AI session. Synchronise your state with the following:
 4. **VERIFY** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — confirm all `[PLACEHOLDER]` fields are filled.
 5. **READ** `README.md`, `SUMMARY.md`, `CHANGELOG.md`
 6. **RUN** `git log --oneline -20` to read recent commit history.
+7. **WALK THE PALACE** — read `.agent/brain/palace_registry.md` (Section [14] of the SOD manifest) and identify the relevant Wings and Rooms for today's work.
 
-Run **Start of Day (SOD)** as per DSOM For My AI Protocol v6.1.
+Run **Start of Day (SOD)** as per DSOM For My AI Protocol v6.1 + Palace v1.0.
+
+> **T2 shortcut:** `ansible-playbook playbooks/dsom/sod-palace.yml` automates steps 1–6 + palace check automatically. Upload the manifest and use the handshake phrase below.
 
 ---
 
@@ -32,7 +35,7 @@ Run **Start of Day (SOD)** as per DSOM For My AI Protocol v6.1.
 - **Stack:** `[YOUR_STACK e.g. Logstash + Kafka + Podman / ELK / Ansible roles]`
 - **Purpose:** `[ONE_LINE_PURPOSE]`
 - **Repo:** `[YOUR_GITHUB_REPO_URL]`
-- **Protocol Version:** DSOM v6.1 | GitOps · AIOps · Ansible
+- **Protocol Version:** DSOM v6.1 + Palace v1.0 | GitOps · AIOps · Ansible
 
 ---
 
@@ -107,7 +110,7 @@ wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `
 
 After the AI reads all context, trigger the session with:
 
-> *"Initialise DSOM Protocol v6.1 for [YOUR_PROJECT_NAME]. Read the uploaded manifest or this handover file. Confirm the 4-Tier Command Highway is mapped. Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` is filled in. State the last Mental Anchor from `.agent/brain/walkthrough.md`. Respond in UK English. State: 'Sovereign State Synchronised — [YOUR_PROJECT_NAME] is live.' when ready."*
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0 for [YOUR_PROJECT_NAME]. Read the uploaded manifest or this handover file. Walk the Palace Registry in Section [14] — identify the relevant Rooms for today's work. Confirm the 4-Tier Command Highway is mapped. Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` is filled in. State the last Mental Anchor from `.agent/brain/walkthrough.md`. Respond in UK English. State: 'Sovereign State Synchronised — [YOUR_PROJECT_NAME] is live.' when ready."*
 
 ---
 
@@ -147,9 +150,11 @@ Next Action:   [WHAT THE AI SHOULD DO FIRST IN THE NEW SESSION]
 8. **Wait for human output** before proceeding with the next step.
 9. **Control yourself during long debugging.** Emit one action at a time.
 10. **Both T1 and T2 must be in sync** — always pull on T2 after T1 push.
+11. **Walk the Palace Registry** at the start of every session — read `palace_registry.md` and load the relevant `closet.md` files before advising.
+12. **Propose Palace closet updates** at EOD if new decisions or discoveries were made.
 
 ---
 
-*Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
-*Template source: docs/HUMAN-HANDOVER-CONTEXT.md | Updated: 2026-03-10*
+*Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
+*Template source: docs/HUMAN-HANDOVER-CONTEXT.md | Updated: 2026-04-08*
 *Adapted from: DSOM elasticsearch-kibana-podman project (v9.4 Sovereign Recovery model)*

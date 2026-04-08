@@ -1,10 +1,10 @@
 # HOWTO: Upgrade and Audit DSOM (Scenario 2)
 
-**Author:** Harisfazillah Jamel  
-**Version:** 1.0 (DSOM v5.2)  
-**License:** GPLv3  
+**Author:** Harisfazillah Jamel
+**Version:** 2.0 (DSOM v6.1 + Palace v1.0)
+**License:** GPLv3
 
-> **Scenario 2:** You have a project already running an older version of DSOM (e.g., v4.0). You want to upgrade to the latest v5.x features (ITIL Alignment, Privacy Hardening).
+> **Scenario 2:** You have a project already running an older version of DSOM (e.g., v4.0/v5.x/v6.0). You want to upgrade to the latest v6.1 + Palace v1.0 features (Spatial Memory, Ansible SOD/EOD automation).
 
 ---
 
@@ -62,15 +62,40 @@ New versions might require new file structures or configs.
     ```
     *Why?* New patterns (like AWS Keys) might be detected in your old manifests. Clean them up.
 
+### Step 4b: Migrate to Palace (NEW in v6.1)
+
+The Sovereign Markdown Palace is the key new feature in v6.1. Add it by backfilling from your Git history:
+
+```bash
+bash tools/palace-sync.sh --backfill
+```
+
+This generates `palace_update_proposal_YYYY-MM-DD.md`. Share it with your AI and create the initial closets in `.agent/brain/wings/`.
+
+> **This is a one-time operation.** After this, the daily EOD playbook (`ansible-playbook playbooks/dsom/eod-palace.yml`) handles incremental updates.
+
 ### Step 5: Context Re-Sync
 Your AI agent might be confused by the sudden change in Protocol.
 
-1.  **Generate a fresh Manifest:**
+1. **Generate a fresh Manifest:**
+
     ```bash
     bash tools/reanimate.sh
     ```
-2.  **Upload to AI:**
-    > *"I have upgraded the DSOM Protocol to v5.2. Please analyze the attached manifest. Note the new Section 11 in the Master Protocol regarding ITIL Service Alignment. Confirm you understand our new Service Relationship."*
+
+    The manifest now includes **Section [14] Palace Registry** — the AI will walk it automatically.
+
+2. **Upload to AI:**
+    > *"I have upgraded the DSOM Protocol to v6.1 + Palace v1.0. Please analyse the attached manifest. Walk the Palace Registry in Section [14] and identify the relevant Rooms. Note the new Ansible SOD/EOD playbooks in `playbooks/dsom/`. State 'Sovereign State Synchronised' when ready."*
+
+3. **Verify Ansible Palace automation:**
+
+    ```bash
+    # Test SOD
+    ansible-playbook playbooks/dsom/sod-palace.yml
+    # Test EOD
+    ansible-playbook playbooks/dsom/eod-palace.yml
+    ```
 
 ---
 
@@ -83,5 +108,10 @@ A: `init-brain.sh` checks if files exist before writing. If it was overwritten, 
 A: The context window might be stale. Start a **New Chat Session** and perform the full Reanimation Ritual.
 
 ## 5. References
-*   [Changelog](../CHANGELOG.md)
-*   [Ritual of Transition](RITUAL-OF-TRANSITION.md)
+
+- [Changelog](../CHANGELOG.md)
+- [Ritual of Transition](RITUAL-OF-TRANSITION.md)
+- [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
+- [SOD-RITUAL.md](SOD-RITUAL.md) — Step 1a: Ansible Palace SOD
+- [EOD-RITUAL.md](EOD-RITUAL.md) — Step 2a: Ansible Palace EOD
+- [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
