@@ -1,6 +1,6 @@
 # Deep State of Mind (DSOM) For My AI Protocol
 
-# Table of contents
+## Table of contents
 
 * [🚀 Home](README.md)
 * [📜 Universal Ledger (History)](HISTORY.md)
@@ -91,15 +91,27 @@
 * [🛡️ Privacy Guardian](tools/privacy-guardian.sh)
 * [🌙 Git Ritual PowerShell](tools/git-ritual.ps1)
 
-### 📜 Automation Documentation
+### 🏛️ DSOM Automation Encyclopedia (docs/tools/)
 
-* [📜 Reanimate Logic](tools-and-automation/reanimate.md)
-* [📜 Claude Reanimation](tools-and-automation/reanimate-claude.md)
-* [📜 Brain Initialisation](tools-and-automation/init-brain.md)
-* [📜 Audit Procedures](tools-and-automation/audit-pre-flight.md)
-* [📜 Template Reset](tools-and-automation/template-reset.md)
-* [📜 Privacy Logic](tools-and-automation/privacy-guardian.md)
-* [📜 Hibernation Logic](tools-and-automation/hibernation.md)
+* [🌅 HOWTO: Start-of-Day (SOD) Palace](docs/tools/HOWTO-SOD-PALACE.md)
+* [🌙 HOWTO: End-of-Day (EOD) Palace](docs/tools/HOWTO-EOD-PALACE.md)
+* [📍 HOWTO: Palace Sync Engine](docs/tools/HOWTO-PALACE-SYNC.md)
+* [💾 HOWTO: Mid-Task Checkpoint](docs/tools/HOWTO-CHECKPOINT.md)
+* [📜 HOWTO: Git Ritual Strategy](docs/tools/HOWTO-GIT-RITUAL.md)
+* [🧠 HOWTO: Reanimate Session](docs/tools/HOWTO-REANIMATE.md)
+* [♊ HOWTO: Reanimate Claude](docs/tools/HOWTO-REANIMATE-CLAUDE.md)
+* [🔍 HOWTO: Audit Pre-Flight](docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md)
+* [🛡️ HOWTO: Privacy Guardian](docs/tools/HOWTO-PRIVACY-GUARDIAN.md)
+* [🧠 HOWTO: Initialize Brain](docs/tools/HOWTO-INIT-BRAIN.md)
+* [🌙 HOWTO: Hibernation Safety](docs/tools/HOWTO-HIBERNATION.md)
+* [📈 HOWTO: Check Usage (Windows)](docs/tools/HOWTO-CHECKUSAGE.md)
+* [📉 HOWTO: Check Usage (Linux)](docs/tools/HOWTO-CHECKUSAGE-LINUX.md)
+* [🚀 HOWTO: DSOM Onboarding](docs/tools/HOWTO-DSOM-ONBOARD.md)
+* [🧹 HOWTO: Template Reset](docs/tools/HOWTO-TEMPLATE-RESET.md)
+* [🐧 HOWTO: Setup WSL AlmaLinux 10](docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md)
+* [⚙️ HOWTO: Setup Control Node](docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md)
+* [📖 HOWTO: Build Sovereign Book](docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md)
+* [📝 HOWTO: Generate Walkthrough](docs/tools/HOWTO-GENERATE-WALKTHROUGH.md)
 
 ---
 
