@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    DSOM Reanimation Manifest Generator (v2.0 - GitOps + AIOps + Ansible)
+    DSOM Reanimation Manifest Generator (v2.1 - GitOps + AIOps + Ansible + Palace)
 
 .DESCRIPTION
     Aggregates ALL core DSOM artifacts including Cognitive Twin Protocol and
@@ -14,12 +14,12 @@
 .NOTES
     Author:  Harisfazillah Jamel (LinuxMalaysia)
     Partner: Generated with assistance from Google Antigravity
-    Version: v2.0
+    Version: v2.1
     License: GNU GPL v3.0 or later
 #>
 
 $ErrorActionPreference = "Stop"
-$VERSION = "v2.0"
+$VERSION = "v2.1"
 
 # 1. Setup Variables
 try {
@@ -218,9 +218,24 @@ function New-Manifest {
 
     $Lines.Add("### [13] GITOPS STRATEGY (Three-Pillar Doctrine Summary)")
     $Lines.Add((Get-FileHeadSafe "$DocsDir\GITOPS-AIOPS-ANSIBLE-STRATEGY.md" 60 "[SKIP] GITOPS-AIOPS-ANSIBLE-STRATEGY.md not found."))
-    $Lines.Add("")
+    $Lines.Add("`n---`n")
+
+    $Lines.Add("### [14] PALACE REGISTRY (Spatial Knowledge Map)")
+    $PalaceRegistry = Join-Path $BrainDir "palace_registry.md"
+    if (Test-Path $PalaceRegistry) {
+        $Lines.Add((Get-Content $PalaceRegistry -Raw -Encoding UTF8))
+        $Lines.Add("")
+        $Lines.Add("PALACE WALKING INSTRUCTION:")
+        $Lines.Add("  1. Identify relevant Wings and Rooms from the registry above.")
+        $Lines.Add("  2. Read the closet.md in each relevant Room for instant context.")
+        $Lines.Add("  3. Only drill into walkthrough.md if the closet is insufficient.")
+    } else {
+        $Lines.Add("[SKIP] palace_registry.md not found. Run: .\tools\palace-sync.ps1 -Backfill")
+    }
+    $Lines.Add("`n---`n")
+
     $Lines.Add("======================================================================")
-    $Lines.Add("MANIFEST COMPLETE - DSOM For My AI Protocol v6.1")
+    $Lines.Add("MANIFEST COMPLETE - DSOM For My AI Protocol v6.1 + Palace v1.0")
     $Lines.Add("======================================================================")
     $Lines.Add("")
     $Lines.Add("Handshake: Ask the AI:")
