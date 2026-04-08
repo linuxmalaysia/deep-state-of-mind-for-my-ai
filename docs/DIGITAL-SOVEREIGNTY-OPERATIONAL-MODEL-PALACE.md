@@ -67,7 +67,27 @@ During the EOD ritual, the AI must perform a **Dual-Update**:
 
 ---
 
-## ⚖️ 5. The Sovereign Laws of the Palace
+## 📥 5. The Ingestion Loop (Adding Knowledge)
+
+To ensure the Palace remains a living entity, new knowledge must follow the **Spatial Ingestion Loop**:
+
+1.  **Categorisation:** Determine the **Wing** (Domain) and **Hall** (Type).
+2.  **Closet Update:** Modify the relevant `closet.md`. Use high-density, substance-rich Markdown.
+3.  **Cross-Linking:** Link the new closet entry to the specific line in the **Chronological Drawer** (`walkthrough.md`) where the discovery happened.
+4.  **Registry Sync:** If a new Room was created, update `palace_registry.md`.
+
+## 🔄 6. Git Reflection Mandate
+
+**"No code change is complete without its shadow in the Palace."**
+
+To keep the Brain in sync with the repository state:
+1.  **Post-Commit Reflection:** After every `git commit`, the AI should ask: *"Which Palace Room does this change affect?"*
+2.  **Semantic Mapping:** The AI must update the corresponding `closet.md` to reflect the new technical state (e.g., version upgrades, new dependencies, logic refactors).
+3.  **Ledger Alignment:** Ensure `HISTORY.md` and the Palace `hall_events` are reconciled during the EOD ritual.
+
+---
+
+## ⚖️ 7. The Sovereign Laws of the Palace
 
 1.  **Plain Markdown Mandate:** The Palace MUST remain in plain, human-legible Markdown. No proprietary encoding or lossy compression (AAAK) is permitted unless explicitly authorized.
 2.  **Universal Search:** Every closet must link to the original drawer (verbatim log) to prevent AI hallucination.
