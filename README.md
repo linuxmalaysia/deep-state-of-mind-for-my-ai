@@ -3,7 +3,8 @@
 > **"Make AI work for you — not the other way around. Sovereign Intelligence through GitOps, AIOps, and Ansible."**
 
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
-[![Version](https://img.shields.io/badge/Version-6.0.0-blue.svg)]()
+[![Version](https://img.shields.io/badge/Version-10.0.0--palace-blue.svg)]()
+[![Palace](https://img.shields.io/badge/Palace-v1.0-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 [![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
 [![Standard](https://img.shields.io/badge/AI%20Standard-Cognitive%20Digital%20Twin-purple.svg)]()
@@ -143,6 +144,37 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
 > *"Initialise DSOM Protocol. Read the uploaded manifest. Summarise the current Mental Anchor and confirm the 4-Tier environment map from the AI-COGNITIVE-TWIN-PROTOCOL.md section. State: 'Sovereign State Synchronised' when ready."*
 
 **Your AI is now operational as a Cognitive Digital Twin.**
+
+---
+
+## 🏛️ The Sovereign Markdown Palace (v10.0.0-palace)
+
+> **New in v10.0:** The DSOM brain has evolved from a flat file system to a **spatial memory architecture** — the Sovereign Markdown Palace.
+
+### What Is the Palace?
+
+The Palace gives your AI **organised, fast, spatial recall** across months of project history — without reading entire session logs. It works as a second layer alongside the existing `walkthrough.md` (The Drawer).
+
+```
+.agent/brain/
+├── palace_registry.md        ← AI reads this at SOD (spatial map)
+├── walkthrough.md            ← Linear session log (The Drawer)
+└── wings/                    ← Spatial Palace Rooms
+    └── wing_dsom_core/
+        ├── hall_facts/       ← Immutable laws, tools, architecture
+        └── hall_events/      ← Milestones, versions, history
+```
+
+Each Room has a `closet.md` — a distilled, high-density knowledge summary the AI reads **instead of** scanning hundreds of lines.
+
+### Palace Quick Start
+
+| If you are... | Go to... |
+|---|---|
+| **First-time user or AI agent** | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) |
+| **Existing DSOM user upgrading** | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) |
+| **Reading how the Palace was built** | [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) |
+| **Full Palace specification** | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) |
 
 ---
 
@@ -297,14 +329,20 @@ deep-state-of-mind-for-my-ai/
 ├── .agent/brain/                          # 🧠 The AI's External Memory (SSoT)
 │   ├── task.md                            # Present: What to do NOW
 │   ├── walkthrough.md                     # Past: Session history & Mental Anchors
-│   └── implementation_plan.md             # Future: Project roadmap
+│   ├── implementation_plan.md             # Future: Project roadmap
+│   ├── palace_registry.md                 # 🏛️ Palace spatial index (AI reads at SOD)
+│   └── wings/                             # 🏛️ Sovereign Markdown Palace Rooms
+│       └── wing_dsom_core/
+│           ├── hall_facts/                # Laws, tools, architecture
+│           └── hall_events/              # Milestones, versions, ledger
 │
 ├── tools/                                 # Automation Scripts
 │   ├── audit-pre-flight.sh / .ps1         # ✅ Run first every session
 │   ├── git-ritual.sh / .ps1               # 🔄 SOD pull + EOD commit/push
-│   ├── reanimate.sh / .ps1                # 🚀 Generate AI context manifest
+│   ├── reanimate.sh / .ps1                # 🚀 Generate AI context manifest (v2.2/v2.1)
+│   ├── hibernation.sh / .ps1              # 🌙 EOD safety check + Palace Sync (v2.1)
+│   ├── palace-sync.sh / .ps1             # 🏛️ Map git commits → Palace Rooms (v1.0)
 │   ├── init-brain.sh / .ps1               # 🧠 One-time brain initialisation
-│   ├── hibernation.sh / .ps1              # 🌙 EOD safety check
 │   └── privacy-guardian.sh / .ps1         # 🛡️ Scan manifest before sharing
 │
 ├── inventory/                             # Ansible Node Topology (your project)
@@ -385,14 +423,16 @@ Once Step 6 is complete, the AI knows:
 |:---|:---|
 | [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | The Sovereign Constitution — AI governance laws |
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
-| [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide (5 steps + prompts) |
-| [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md) | 🌙 Full End-of-Day ritual guide (6 steps + Hibernation Notes prompt) |
-| [`docs/HUMAN-HANDOVER-CONTEXT.md`](docs/HUMAN-HANDOVER-CONTEXT.md) | 🤝 Session handover prompt — paste as first AI message |
+| [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
+| [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
+| [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
+| [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) | 📖 How and why the Palace was built |
+| [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide |
+| [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md) | 🌙 Full End-of-Day ritual guide |
+| [`docs/HUMAN-HANDOVER-CONTEXT.md`](docs/HUMAN-HANDOVER-CONTEXT.md) | 🤝 Session handover prompt |
 | [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md) | Three-pillar strategic doctrine |
 | [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](docs/HOWTO-SETUP-ANSIBLE-BASELINE.md) | Step-by-step Ansible baseline setup |
-| [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](docs/HOWTO-SETUP-WSL-ALMALINUX10.md) | AlmaLinux 10 WSL2 Ansible Control Node setup |
 | [`docs/REANIMATION-PROMPT-TEMPLATE.md`](docs/REANIMATION-PROMPT-TEMPLATE.md) | AI session prompt templates |
-| [`docs/OPERATIONAL-GUIDE.md`](docs/OPERATIONAL-GUIDE.md) | Daily operational procedures |
 
 ---
 
@@ -414,7 +454,9 @@ This framework is provider-agnostic. Tested and configured for:
 - [x] **v4.1** — Brain artifacts and Root-Aware scripts
 - [x] **v5.2** — ITIL 4 alignment, Privacy Guardian, Multi-agent protocols
 - [x] **v6.0** — GitOps + AIOps + Ansible three-pillar model, Cognitive Twin Protocol template, Git Ritual tool
-- [ ] **v6.1** — Ansible pre-flight playbook auto-integration with `audit-pre-flight.sh`
+- [x] **v6.1** — Ansible baseline playbooks, human handover, Google Antigravity integration
+- [x] **v6.2** — Ansible `roles/common`, 19-node Elastic fabric hardened (v9.8.0)
+- [x] **v10.0.0-palace** — 🏛️ Sovereign Markdown Palace v1.0: spatial memory, `palace-sync`, 8 Rooms backfilled
 - [ ] **v7.0** — Local LLM support (Ollama) for offline Sovereign AI
 
 ---
@@ -447,5 +489,5 @@ Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for
 
 ---
 
-*Deep State of Mind (DSOM) For My AI Protocol | v6.0.0 | 2026-03-09*
+*Deep State of Mind (DSOM) For My AI Protocol | v10.0.0-palace | 2026-04-08*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
