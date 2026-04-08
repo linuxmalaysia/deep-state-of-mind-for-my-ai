@@ -1,6 +1,6 @@
 # HOWTO: template-reset — Project Purification Tool
 
-# docs/tools/HOWTO-TEMPLATE-RESET.md
+## docs/tools/HOWTO-TEMPLATE-RESET.md
 
 > **Standard: DSOM For My AI Protocol v6.1 | Template Utility**
 > **Tools:** `template-reset.ps1`, `template-reset.sh`
