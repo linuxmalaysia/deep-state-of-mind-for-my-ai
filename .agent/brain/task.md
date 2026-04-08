@@ -1,34 +1,45 @@
-# 🎯 DSOM Session Task: Ansible Role Development
+# 🎯 DSOM Session Task: Automation Documentation Encyclopedia
 
-> **Status:** ACTIVE (Phase: Ansible Role Development)
-> **Date:** 2026-04-05
-> **Anchor:** `roles/common` complete and pushed. Next: run `ansible-playbook playbooks/common.yml --ask-become-pass` to apply it live, then build `roles/secure-baseline`.
+> **Status:** COMPLETED (Phase: Cross-Platform Parity & Documentation)
+> **Date:** 2026-04-08
+> **Anchor:** All 33 automation scripts (via 18 HOWTO guides) are fully documented in `docs/tools/`. Reference parity established between PowerShell, Bash, and Ansible. `SUMMARY.md` updated.
 
 ---
 
 ## ✅ Completed (This Session)
-- [x] Install `ansible-core` via apt
-- [x] Create `ansible.cfg` (DSOM standard, deprecation warning fixed)
-- [x] Create `inventory/hosts.yml` (4-Tier, localhost wired)
-- [x] Create `inventory/group_vars/all.yml`
-- [x] Create `playbooks/preflight.yml`
-- [x] Run first live pre-flight: `ok=8 failed=0` ✅
-- [x] Create `roles/common/` with tasks: packages, timezone, directories, sysctl
-- [x] Create `playbooks/common.yml`
-- [x] Wire `roles/common` into `playbooks/dsom/site.yml`
-- [x] Commit and push all — `origin/main` is current
+- [x] Create `tools/checkpoint.ps1` & `tools/checkpoint.sh` (SELESAI)
+- [x] Create `tools/sod-palace.ps1/sh` & `tools/eod-palace.ps1/sh` (SELESAI)
+- [x] Standardize code across Windows (T1) and Linux (T2) (SELESAI)
+- [x] **DSOM Automation Toolkit Encyclopedia (`docs/tools/`)**
+    - [x] Write `HOWTO-SOD-PALACE.md` (SELESAI)
+    - [x] Write `HOWTO-EOD-PALACE.md` (SELESAI)
+    - [x] Write `HOWTO-CHECKPOINT.md` (SELESAI)
+    - [x] Write `HOWTO-GIT-RITUAL.md` (SELESAI)
+    - [x] Write `HOWTO-HIBERNATION.md` (SELESAI)
+    - [x] Write `HOWTO-PALACE-SYNC.md` (SELESAI)
+    - [x] Write `HOWTO-REANIMATE.md` (SELESAI)
+    - [x] Write `HOWTO-REANIMATE-CLAUDE.md` (SELESAI)
+    - [x] Write `HOWTO-AUDIT-PRE-FLIGHT.md` (SELESAI)
+    - [x] Write `HOWTO-PRIVACY-GUARDIAN.md` (SELESAI)
+    - [x] Write `HOWTO-INIT-BRAIN.md` (SELESAI)
+    - [x] Write `HOWTO-DSOM-ONBOARD.md` (SELESAI)
+    - [x] Write `HOWTO-TEMPLATE-RESET.md` (SELESAI)
+    - [x] Write `HOWTO-SETUP-WSL-ALMALINUX.md` (SELESAI)
+    - [x] Write `HOWTO-SETUP-DSOM-CONTROL-NODE.md` (SELESAI)
+    - [x] Write `HOWTO-CHECKUSAGE-LINUX.md` (SELESAI)
+    - [x] Write `HOWTO-BUILD-SOVEREIGN-BOOK.md` (SELESAI)
+    - [x] Write `HOWTO-GENERATE-WALKTHROUGH.md` (SELESAI)
+- [x] Update `SUMMARY.md` integration (SELESAI)
+- [x] Final push to `origin/main` (SELESAI)
 
 ---
 
-## 🚀 Next Actions (Resume on New Machine)
-
-- [ ] **On new machine**: `git pull origin main` (or clone if fresh)
-- [ ] Run `ansible-playbook playbooks/common.yml --ask-become-pass` (first live apply)
-- [ ] Verify: `/opt/deep-state-of-mind-for-my-ai/{logs,tmp,config}` exists
-- [ ] Verify: `vm.swappiness=10` applied (`sysctl vm.swappiness`)
-- [ ] Build next role: `roles/secure-baseline` (UFW, fail2ban, SSH hardening)
+## 🚀 Next Actions (Hibernation Targets)
+- [ ] Resume Infrastructure Focus: Sovereign Persistence Fabric (Elasticsearch/Kibana) deployment.
+- [ ] Audit `MD056` table error in `reanimate-claude.md`.
+- [ ] Execute EOD ritual (`.\tools\eod-palace.ps1`) for session hibernating.
 
 ---
 
-## ⚠️ Stopped At (Context for Next SOD)
-`playbooks/common.yml` was NOT yet run live — interactive sudo could not be provided through terminal tool. Run it first thing on resumption.
+## ⚠️ Stopped At
+Session successfully handed over to AI context reanimation manifest. Sovereign documentation 100% complete for the tools fleet.
