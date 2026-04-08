@@ -23,8 +23,8 @@
 |---|---|---|
 | Brain structure | `task.md`, `walkthrough.md`, `implementation_plan.md` | + `palace_registry.md` + `wings/` hierarchy |
 | Memory retrieval | Linear scan of `walkthrough.md` | Walk Palace → Room → Closet → Drawer if needed |
-| EOD ritual | Commit + push | + Palace Sync (automatic via `hibernation.sh` v2.1) |
-| SOD manifest | 13 sections | + Section [14]: Palace Registry |
+| EOD ritual | Commit + push | + Palace Sync (via `eod-palace.yml` or `hibernation.sh` v2.1) |
+| SOD manifest | 13 sections | + Section [14]: Palace Registry (via `sod-palace.yml` or `reanimate.sh` v2.2) |
 | `hibernation.sh` | v2.0 | v2.1 (Palace Sync step) |
 | `reanimate.sh` | v2.1 | v2.2 (Section [14]) |
 | `hibernation.ps1` | v2.0 | v2.1 (Palace Sync step) |
@@ -95,7 +95,7 @@ The proposal file is saved to `.agent/brain/palace_update_proposal_YYYY-MM-DD.md
 
 ### Phase 4: Create the Palace Registry
 
-Create `.agent/brain/palace_registry.md`. You can copy the template from the DSOM reference repo or adapt the existing one:
+Create `.agent/brain/palace_registry.md`. You can copy the template from the `docs/agent-configs/` dir if available, or adapt the existing one:
 
 ```bash
 # If you have the reference repo available:
@@ -186,6 +186,10 @@ git pull --rebase origin main
 Run a full SOD sequence and confirm Section [14] appears in your manifest:
 
 ```bash
+# Recommended on T2 (WSL2 / Linux)
+ansible-playbook playbooks/dsom/sod-palace.yml
+
+# Or manual (Linux/Windows)
 bash tools/reanimate.sh | grep -A 5 "\[14\]"
 ```
 
@@ -198,6 +202,10 @@ Expected output:
 
 Run a test EOD to confirm Palace Sync runs automatically:
 ```bash
+# Recommended on T2 (WSL2 / Linux)
+ansible-playbook playbooks/dsom/eod-palace.yml
+
+# Or manual (Linux/Windows)
 bash tools/hibernation.sh
 # Should show: [Palace Sync] Running Spatial Reflection...
 ```

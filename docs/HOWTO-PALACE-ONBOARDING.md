@@ -70,7 +70,7 @@ Follow this order for full context:
 3. **`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`** — Understand the Palace laws and the Ingestion Loop.
 4. **`.agent/brain/palace_registry.md`** — See what Rooms exist and what they contain.
 5. **Pick relevant closets** — Read the 2-3 closets most relevant to your current work.
-6. **`docs/SOD-RITUAL.md`** + **`docs/EOD-RITUAL.md`** — Understand the daily operating rhythm.
+6. **`docs/SOD-RITUAL.md`** + **`docs/EOD-RITUAL.md`** — Understand the daily operating rhythm, including the Ansible SOD/EOD playbooks.
 
 ---
 
@@ -113,9 +113,10 @@ Specific subjects within a hall. Each room has one `closet.md`.
 
 ```
 SOD (Start of Day)
-  └── bash tools/reanimate.sh
-        └── Section [14]: Palace Registry loaded into manifest
-              └── AI reads registry → walks relevant rooms → ready in seconds
+  └── ansible-playbook playbooks/dsom/sod-palace.yml (or bash tools/reanimate.sh)
+        └── Audits environment, validates Git, executes Palace check
+              └── Section [14]: Palace Registry loaded into manifest
+                    └── AI reads registry → walks relevant rooms → ready in seconds
 
 Active Work
   └── git commit (any time)
@@ -123,8 +124,8 @@ Active Work
               └── Identifies target Room per Git Reflection Mandate
 
 EOD (End of Day)
-  └── bash tools/hibernation.sh
-        └── Step 7: palace-sync.sh runs automatically
+  └── ansible-playbook playbooks/dsom/eod-palace.yml (or bash tools/hibernation.sh)
+        └── Validates artifacts, runs palace-sync.sh automatically
               └── Generates palace_update_proposal_YYYY-MM-DD.md
                     └── AI reviews → updates closets → registry stays fresh
 ```
