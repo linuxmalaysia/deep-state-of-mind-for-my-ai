@@ -1,4 +1,4 @@
-### 📜 docs/DIGITAL-SOVEREIGNTY-MODEL.md (v1.0)
+### 📜 docs/DIGITAL-SOVEREIGNTY-MODEL.md (v2.0)
 
 # 🏛️ Digital Sovereignty Operational Model (DSOM)
 
@@ -10,7 +10,7 @@ A Digital Sovereignty Operational Model (DSOM) is a strategic framework enabling
 
 ---
 
-## 2. The Three Sovereign Pillars
+## 2. The Four Sovereign Pillars
 
 ### ⚖️ Data Sovereignty
 
@@ -25,7 +25,12 @@ A Digital Sovereignty Operational Model (DSOM) is a strategic framework enabling
 ### 🛡️ Operational Sovereignty
 
 * **Definition:** The capability to manage, monitor, and maintain critical digital infrastructure internally, ensuring continuity without foreign interference or support dependency.
-* **DSOM Implementation:** The use of **SOD/EOD Rituals** and local shell scripts (`reanimate.sh`, `audit-pre-flight.sh`) so that the project can survive even if external AI APIs are throttled or revoked.
+* **DSOM Implementation:** The use of **Ansible SOD/EOD Rituals** (`sod-palace.yml`, `eod-palace.yml`) and local shell scripts so that the project can survive even if external AI APIs are throttled or revoked.
+
+### 🏛️ Memory Sovereignty (The Palace)
+
+* **Definition:** The capability to persist structured cognitive context, architectural decisions, and historical knowledge independently from ephemeral AI platform memories.
+* **DSOM Implementation:** The **Sovereign Markdown Palace**. Using bounded spatial memory (`palace_registry.md` and standard Markdown `closet.md` files) to ensure project context is instantly restorable to any LLM offline or online.
 
 ---
 
@@ -39,7 +44,7 @@ Utilising dedicated, locally operated infrastructure (e.g., Thales/S3NS in Franc
 
 This is the core of our current protocol. We categorise workloads:
 
-1. **Critical Workload (Sovereign):** Architectural intent, security keys, and business logic stored in the `.agent/brain/`.
+1. **Critical Workload (Sovereign):** Architectural intent, security keys, spatial memory (`palace_registry.md`), and business logic stored in the `.agent/brain/`.
 2. **Commodity Workload (Public):** LLM pattern matching and code generation via global AI providers.
 
 ### 📜 Regulatory Compliance
@@ -62,12 +67,12 @@ Adhering to strict legal frameworks (e.g., GDPR, Malaysia’s PDPA, and data res
 The **Digital Sovereignty Operational Model (DSOM)** provides the **"Why"** (Strategy), while the **Deep State of Mind (DSoM)** provides the **"How"** (Metacognition).
 
 * **Strategy:** We must be sovereign.
-* **Tactic:** We use CRISP² and local artifacts to prevent the AI from becoming the "Master" of our knowledge.
+* **Tactic:** We use CRISP², the Palace spatial memory, and local artifacts to prevent the AI from becoming the "Master" of our knowledge.
 
 ---
 
 *Author: Harisfazillah Jamel | Lead Architect*
-*Standard: UK English & DBP-Malay (Piawai)*
+*Standard: DSOM Protocol v6.1 + Palace v1.0 | UK English & DBP-Malay (Piawai)*
 
 ---
 

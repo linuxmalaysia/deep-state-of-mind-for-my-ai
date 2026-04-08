@@ -1,8 +1,8 @@
-# 🕯️ DSOM Ritual of Transition (v4.0)
+# 🕯️ DSOM Ritual of Transition (v6.1 + Palace v1.0)
 # docs/RITUAL-OF-TRANSITION.md
 
 > **"Intelligence is ephemeral; the Repository is eternal."**
-> **Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible**
+> **Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | GitOps · AIOps · Ansible**
 
 The **Ritual of Transition** governs movement between cognitive states (AI context) and physical states (Git, Ansible, infrastructure). It is the operating membrane of the three-pillar model.
 
@@ -39,12 +39,17 @@ Every state transition in DSOM passes through this loop. There are no shortcuts.
 **Sequence:**
 
 ```
+OPTION A: The Ansible Shortcut (Recommended on T2)
+Step 1: ansible-playbook playbooks/dsom/sod-palace.yml
+        → Pulls Git, audits workspace, generates manifest with Section [14] Palace Registry
+Step 2: Upload manifest to AI      → Cognitive Handshake
+
+OPTION B: Manual / Windows T1
 Step 1: git-ritual.sh sod          → pull latest from origin/main
 Step 2: audit-pre-flight.sh        → verify workspace (5 checks, all must PASS)
-Step 3: reanimate.sh               → generate 13-section context manifest
+Step 3: reanimate.sh               → generate 14-section context manifest
 Step 4: privacy-guardian.sh        → scan manifest before upload
 Step 5: Upload manifest to AI      → Cognitive Handshake
-        OR paste Hibernation Notes → faster reanimation via Prompt 2
 ```
 
 **Stop Conditions — Reanimation FAILS if:**
@@ -113,10 +118,17 @@ Immediately pause and re-read `docs/AI-MASTER-PROTOCOL.md` if:
 Step 1:  AI updates task.md  → mark [x] done, [ ] tomorrow's targets
 Step 1b: AI updates walkthrough.md → new Session Anchor with Mental Anchor sentence
 Step 2:  Run EOD Hibernation Notes prompt → save output to hibernation-notes-YYYY-MM-DD.txt
-Step 3:  hibernation.sh      → safety check (dirty state, uncommitted files)
+
+OPTION A: The Ansible EOD (Recommended on T2)
+Step 3:  ansible-playbook playbooks/dsom/eod-palace.yml
+         → Validates artifacts, runs palace-sync, semantic commit, and git push automatically
+
+OPTION B: Manual / Windows T1
+Step 3:  hibernation.sh      → safety check (dirty state, uncommitted files) + palace-sync.pl
 Step 4:  privacy-guardian.sh → scan if manifest was generated today
 Step 5:  git-ritual.sh       → interactive EOD commit (guided semantic commit + push)
 Step 6:  git pull origin main → T2 WSL2 sync after T1 push
+
 Step 7:  Write tomorrow's Mental Anchor in your physical/digital notebook
 ```
 
@@ -211,6 +223,6 @@ cat .agent/brain/walkthrough.md | tail -30
 
 ---
 
-*Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
+*Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline transition protocol** for all projects built on this skeleton.*
-*Last Updated: 2026-03-10 | Version: v4.0*
+*Last Updated: 2026-04-08 | Version: v6.1*
