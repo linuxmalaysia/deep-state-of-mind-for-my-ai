@@ -1,0 +1,97 @@
+---
+- name: Onboard DSOM Framework into Target Repository
+  hosts: localhost
+  connection: local
+  gather_facts: true
+  vars:
+    dsom_repo_url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git"
+    dsom_branch: "main"
+    # Overridden by extra-vars in the bootstrap script:
+    timestamp: "{{ ansible_date_time.date | default('YYYY-MM-DD') }}"
+
+  tasks:
+    - name: Create temporary workspace
+      ansible.builtin.tempfile:
+        state: directory
+        suffix: dsom-clone
+      register: dsom_tmp_dir
+
+    - name: Clone DSOM Main Repository
+      ansible.builtin.git:
+        repo: "{{ dsom_repo_url }}"
+        dest: "{{ dsom_tmp_dir.path }}"
+        version: "{{ dsom_branch }}"
+        depth: 1
+
+    - name: Copy Files with Conflict Resolution
+      ansible.builtin.shell: |
+        set -e
+        SOURCE="{{ dsom_tmp_dir.path }}"
+        
+        # PWD is the directory where ansible-playbook is executed, representing the target repo root.
+        TARGET="$(pwd)"
+        TIMESTAMP="{{ timestamp }}"
+        
+        echo "Source: $SOURCE"
+        echo "Target: $TARGET"
+        echo "Timestamp used: $TIMESTAMP"
+        
+        # Folders to explicitly synchronize
+        for DIR in "tools" "playbooks/dsom" "docs"; do
+          if [ -d "$SOURCE/$DIR" ]; then
+            cd "$SOURCE"
+            find "$DIR" -type f | while read -r FILE; do
+              DEST_FILE="$TARGET/$FILE"
+              mkdir -p "$(dirname "$DEST_FILE")"
+              
+              if [ -f "$DEST_FILE" ]; then
+                # Conflict logic: Append timestamp to the incoming DSOM file name
+                EXT="${FILE##*.}"
+                BASE="${FILE%.*}"
+                
+                # Check if file has no extension
+                if [ "$EXT" = "$FILE" ]; then
+                  cp "$SOURCE/$FILE" "${DEST_FILE}-${TIMESTAMP}"
+                  echo "Conflict: Saved $FILE as ${DEST_FILE}-${TIMESTAMP}"
+                else
+                  cp "$SOURCE/$FILE" "$TARGET/${BASE}-${TIMESTAMP}.${EXT}"
+                  echo "Conflict: Saved $FILE as $TARGET/${BASE}-${TIMESTAMP}.${EXT}"
+                fi
+              else
+                # No conflict: copy verbatim
+                cp "$SOURCE/$FILE" "$DEST_FILE"
+                echo "Added: $FILE"
+              fi
+            done
+          fi
+        done
+        
+        # Core root files to sync
+        cd "$SOURCE"
+        for FILE in ".gitattributes" ".markdownlint.json" "README.md" "CHANGELOG.md" "HISTORY.md" "SUMMARY.md"; do
+          if [ -f "$FILE" ]; then
+            DEST_FILE="$TARGET/$FILE"
+            if [ -f "$DEST_FILE" ]; then
+              EXT="${FILE##*.}"
+              BASE="${FILE%.*}"
+              # Ensure dots at start like .gitattributes are handled cleanly
+              if [[ "$FILE" == .* ]]; then
+                BASE="$FILE"
+                cp "$SOURCE/$FILE" "$TARGET/${BASE}-${TIMESTAMP}"
+              elif [ "$EXT" = "$FILE" ]; then
+                cp "$SOURCE/$FILE" "${DEST_FILE}-${TIMESTAMP}"
+              else
+                cp "$SOURCE/$FILE" "$TARGET/${BASE}-${TIMESTAMP}.${EXT}"
+              fi
+            else
+              cp "$SOURCE/$FILE" "$DEST_FILE"
+            fi
+          fi
+        done
+      args:
+        executable: /bin/bash
+
+    - name: Cleanup temporary workspace
+      ansible.builtin.file:
+        path: "{{ dsom_tmp_dir.path }}"
+        state: absent
