@@ -29,6 +29,7 @@ This closet tracks the **Universal Ledger** — the `CHANGELOG.md` and `HISTORY.
 | v9.6.1 | 2026-04-05 | WSL2 migration for Sovereign Persistence Fabric. |
 | v9.8.0 | 2026-04-08 | 19-node hardened Elasticsearch/Kibana fabric released. |
 | **Palace v1.0** | 2026-04-08 | Sovereign Markdown Palace integrated. `palace-sync` v1.0 launched. |
+| **v10.0.0** | 2026-04-08 | **DSOM Automation Encyclopedia.** 18 HOWTO guides released. |
 
 ## ⚠️ Ledger Law
 > **"The Ledger is the Single Source of Truth for versioning."**

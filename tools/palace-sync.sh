@@ -123,17 +123,23 @@ map_path_to_room() {
 # --- Determine git log range ---
 if [ "$MODE" = "backfill" ]; then
     echo -e "${YELLOW}📚 Backfill mode: scanning FULL git history...${NC}"
-    GIT_LOG_ARGS="--all"
+    GIT_LOG_ARGS=""
     SINCE_LABEL="the beginning of the project"
 else
     if [ -f "$MARKER_FILE" ]; then
-        LAST_SYNC=$(cat "$MARKER_FILE")
-        echo -e "${YELLOW}🔍 EOD mode: scanning commits since last sync ($LAST_SYNC)...${NC}"
-        GIT_LOG_ARGS="--after=$LAST_SYNC"
-        SINCE_LABEL="$LAST_SYNC"
+        LAST_HASH=$(cat "$MARKER_FILE" | tr -d '[:space:]')
+        if [[ $LAST_HASH =~ ^[0-9a-f]{40}$ ]]; then
+            echo -e "${YELLOW}🔍 EOD mode: scanning commits since last sync (${LAST_HASH:0:7})...${NC}"
+            GIT_LOG_ARGS="${LAST_HASH}..HEAD"
+            SINCE_LABEL="$LAST_HASH"
+        else
+            echo -e "${YELLOW}⚠️  Marker file contains invalid hash. Running full scan...${NC}"
+            GIT_LOG_ARGS=""
+            SINCE_LABEL="re-initialisation"
+        fi
     else
         echo -e "${YELLOW}⚠️  No sync marker found. Running full scan for first-time setup...${NC}"
-        GIT_LOG_ARGS="--all"
+        GIT_LOG_ARGS=""
         SINCE_LABEL="the beginning (first run)"
     fi
 fi
@@ -150,10 +156,10 @@ COMMIT_LOG=$(git -C "$REPO_ROOT" log $GIT_LOG_ARGS \
 if [ -z "$COMMIT_LOG" ]; then
     echo -e "${GREEN}✅ No new commits to process since ${SINCE_LABEL}.${NC}"
     echo -e "   The Palace is already up to date."
-    # Update marker even if no commits
-    date +"%Y-%m-%d" > "$MARKER_FILE"
     exit 0
 fi
+
+CURRENT_HEAD=$(git -C "$REPO_ROOT" rev-parse HEAD)
 
 # --- Parse commits and build proposal ---
 echo -e "${CYAN}📝 Building Palace Update Proposal...${NC}"
@@ -261,7 +267,7 @@ fi
 } >> "$PROPOSAL_FILE"
 
 # --- Update sync marker ---
-date +"%Y-%m-%d" > "$MARKER_FILE"
+echo "$CURRENT_HEAD" > "$MARKER_FILE"
 
 # --- Summary ---
 ROOM_COUNT=${#ROOM_COMMITS[@]}
