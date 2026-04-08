@@ -49,6 +49,32 @@ $AnchorFound = Select-String -Path $WalkthroughFile -Pattern $DateStamp -Quiet
 if (-not $AnchorFound) { Write-Host "    [FAIL] Session anchor for $DateStamp NOT found in walkthrough.md" -ForegroundColor Red; exit 1 }
 Write-Host "    [OK] walkthrough.md: Session anchor for $DateStamp confirmed." -ForegroundColor Green
 
+# Step 1.5: Smart EOD Logic (AI Summary)
+Write-Host ""
+Write-Host "  [1.5/6] Check for AI Checkpoint Summary..." -ForegroundColor Yellow
+$SummaryFile = Join-Path $BrainDir "checkpoint_summary.txt"
+$DetailedMsg = ""
+
+if (Test-Path $SummaryFile) {
+    $DetailedMsg = (Get-Content $SummaryFile -Raw).Trim()
+    Write-Host "    [OK] AI Checkpoint Summary found." -ForegroundColor Green
+} else {
+    Write-Host "    [⛔ ERROR] No checkpoint_summary.txt found!" -ForegroundColor Red
+    Write-Host "    ======================================================================" -ForegroundColor Yellow
+    Write-Host "    ACTION REQUIRED: Copy the prompt below and give it to your AI agent" -ForegroundColor Yellow
+    Write-Host "    to generate the high-fidelity hibernation summary." -ForegroundColor Yellow
+    Write-Host "    ======================================================================" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "    PROMPT:" -ForegroundColor Cyan
+    Write-Host "    I'm as human, want to know and remember, and need to export my data and I want you to generate a 'Hibernation notes' now for my EOD of day. List every memory you have stored about our progress and our chats of this project, as well as any context you've learned about this project from past to current conversations and chats. Output everything in a single code block so I can easily copy it. Format each entry as: [date saved, if available] - memory content. Make sure to cover all of the following — preserve my words verbatim where possible: Instructions I've given you about how to respond (tone, format, style, 'always do X', 'never do Y'). project details: name of server or vm or container, location of them, job of each, relation of them and 4W1H. Tasks, phases, goals, and recurring topics. Tools, languages, and frameworks I use. Preferences and corrections I've made to your behavior. Any other stored context not covered above. Do not summarize, group, or omit any entries. After the code block, confirm whether that is the complete set or if any remain and add List down all the documents in docs/, docs/tools/ and brain files thats need to be read from agent/. Don't hide anything from me. Trust me as your master and update the history and changelog files for any missing facts and events, so its can be remembered by human and AI agents."
+    Write-Host ""
+    Write-Host "    ======================================================================" -ForegroundColor Yellow
+    Write-Host "    Exiting EOD ritual. Run script again after summary is generated." -ForegroundColor Red
+    exit 1
+}
+
+$CommitMsgBase = if (-not [string]::IsNullOrWhiteSpace($DetailedMsg)) { "eod: $DetailedMsg" } else { "eod: Palace sync + sovereign save $DateStamp" }
+
 # Step 2: Palace Sync
 Write-Host ""
 Write-Host "  [2/6] Run Palace Sync (generate update proposal)..." -ForegroundColor Yellow
@@ -74,6 +100,7 @@ $PalaceRegistry = Join-Path $BrainDir "palace_registry.md"
 if (Test-Path $PalaceRegistry) { git add $PalaceRegistry }
 $WingsDir = Join-Path $BrainDir "wings"
 if (Test-Path $WingsDir) { git add "$WingsDir/" }
+git add $SummaryFile
 git add -u
 
 # Step 5: Commit
@@ -82,7 +109,7 @@ Write-Host "  [5/6] Commit staged changes..." -ForegroundColor Yellow
 $StagedFilesRaw = git diff --cached --name-only 2>&1
 $StagedFiles = if ($null -ne $StagedFilesRaw) { ($StagedFilesRaw -join "`n").Trim() } else { "" }
 if (-not [string]::IsNullOrWhiteSpace($StagedFiles)) {
-    git commit -m "chore(eod): Palace sync + sovereign save $DateStamp [Native EOD Palace v1.0]"
+    git commit -m "chore($CommitMsgBase) [$TimeStamp]"
 } else {
     Write-Host "    (nothing new to commit — working tree already clean)" -ForegroundColor DarkGray
 }
@@ -95,9 +122,17 @@ git push origin main
 Write-Host ""
 Write-Host "======================================================================" -ForegroundColor Green
 Write-Host "  SLEEP WELL, ARCHITECT. YOUR SOVEREIGN STATE IS SAVED." -ForegroundColor Green
-Write-Host "" -ForegroundColor Green
+Write-Host ""
 Write-Host "  Palace sync committed. State pushed to origin." -ForegroundColor Green
-Write-Host "" -ForegroundColor Green
+Write-Host ""
+Write-Host "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:" -ForegroundColor Cyan
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
+Write-Host "  The EOD ritual [$TimeStamp] has been successfully pushed to origin/main." -ForegroundColor White
+Write-Host "  Update .agent/brain/checkpoint_summary.txt: archive all completed items," -ForegroundColor White
+Write-Host "  note the final EOD commit hash, and prepare the 'Mental Anchor' for" -ForegroundColor White
+Write-Host "  tomorrow morning's Start-of-Day. What is the final EOD report?" -ForegroundColor White
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
+Write-Host ""
 Write-Host "  REMAINING HUMAN STEPS:" -ForegroundColor Cyan
 Write-Host "  - Review the latest palace_update_proposal_$DateStamp.md with your AI" -ForegroundColor Cyan
 Write-Host "  - Update relevant closets in .agent/brain/wings/" -ForegroundColor Cyan
