@@ -1,0 +1,22 @@
+---
+# ==============================================================================
+# roles/common/meta/main.yml
+# DSOM Role Metadata
+# ==============================================================================
+galaxy_info:
+  role_name: common
+  author: "Harisfazillah Jamel (LinuxMalaysia)"
+  description: "DSOM Common Baseline Role — essential packages, project directory, and OS hygiene."
+  license: "GPL-3.0"
+  min_ansible_version: "2.15"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - "24.04"
+        - "25.04"
+    - name: Debian
+      versions:
+        - bullseye
+        - bookworm
+
+dependencies: []

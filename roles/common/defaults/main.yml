@@ -1,0 +1,53 @@
+---
+# ==============================================================================
+# roles/common/defaults/main.yml
+# Default variables for the common role.
+# These can be overridden in inventory/group_vars/ or at playbook level.
+# ==============================================================================
+
+# --- Project Identity --------------------------------------------------------
+# These match AI-COGNITIVE-TWIN-PROTOCOL.md and inventory/group_vars/all.yml
+common_project_name:  "{{ project_name | default('deep-state-of-mind-for-my-ai') }}"
+common_project_path:  "{{ project_path | default('/opt/deep-state-of-mind-for-my-ai') }}"
+common_deploy_user:   "{{ deploy_user | default('linuxmalaysia') }}"
+common_deploy_uid:    "{{ deploy_uid | default('1000') }}"
+common_deploy_gid:    "{{ deploy_gid | default('1000') }}"
+
+# --- Essential Packages ------------------------------------------------------
+# Minimal set required across all tiers. Add project-specific packages in
+# a dedicated role (e.g., roles/app/) to keep this role generic.
+common_packages:
+  - git
+  - curl
+  - wget
+  - vim
+  - htop
+  - tree
+  - rsync
+  - unzip
+  - jq
+  - python3
+  - python3-pip
+  - ca-certificates
+  - gnupg
+  - lsb-release
+
+# --- Project Directory Structure ---------------------------------------------
+# Sub-directories to create under common_project_path
+common_project_subdirs:
+  - logs
+  - tmp
+  - config
+
+# --- Timezone ----------------------------------------------------------------
+common_timezone: "Asia/Kuala_Lumpur"
+
+# --- Sysctl Tuning -----------------------------------------------------------
+# Conservative tuning only. Reduces swap pressure on workstations/VMs.
+# Set common_sysctl_tuning: false to skip entirely.
+common_sysctl_tuning: true
+common_sysctl_settings:
+  - key: "vm.swappiness"
+    value: "10"
+  - key: "fs.file-max"
+    value: "100000"

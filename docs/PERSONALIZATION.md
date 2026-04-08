@@ -1,8 +1,8 @@
 ### 📜 docs/PERSONALIZATION.md (Refactored v5.6)
 
-# 🧠 DSOM Personalization: The Cognitive Digital Twin (v5.6)
+# 🧠 DSOM Personalization: The Cognitive Digital Twin — Gemini Edition (v6.1)
 
-Storing information in Gemini's **"Saved Info"** is the foundational step of the DSOM protocol. It ensures the AI maintains a "permanent seat" as your Cognitive Digital Twin, bridging the gap between session timeouts and enforcing the **Mirror Law**.
+> **Note:** This document specifically covers **Google Gemini** personalisation via "Saved Info". For Claude, see [`docs/CLAUDE-SETUP.md`](CLAUDE-SETUP.md). For Copilot, see [`docs/COPILOT-SETUP.md`](COPILOT-SETUP.md). For Google Antigravity, no additional personalisation is required — it uses this repository directly as workspace context.
 
 ---
 
@@ -79,7 +79,7 @@ To verify integration, run this prompt in a fresh session:
 ---
 
 *Upholding Open Source Sovereignty | Harisfazillah Jamel (LinuxMalaysia)*
-**Current Status:** `ACTIVE` | **Last Human Audit:** 2026-01-16
+**Current Status:** `ACTIVE` | **Last Human Audit:** 2026-03-29 | **Version:** v6.1
 
 ---
 

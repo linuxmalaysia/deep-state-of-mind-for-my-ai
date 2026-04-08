@@ -1,0 +1,24 @@
+---
+# ==============================================================================
+# roles/common/tasks/packages.yml
+# Ensure essential system packages are installed and up to date.
+# ==============================================================================
+
+- name: "Packages | Update apt cache (max 1h stale)"
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+  become: true
+  tags: packages
+
+- name: "Packages | Install essential packages"
+  ansible.builtin.apt:
+    name: "{{ common_packages }}"
+    state: present
+  become: true
+  tags: packages
+
+- name: "Packages | Show installed package summary"
+  ansible.builtin.debug:
+    msg: "Verified {{ common_packages | length }} essential packages on {{ inventory_hostname }}"
+  tags: packages

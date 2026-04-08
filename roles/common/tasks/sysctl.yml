@@ -1,0 +1,25 @@
+---
+# ==============================================================================
+# roles/common/tasks/sysctl.yml
+# Apply conservative kernel tuning for workstation/VM environments.
+# Only runs when common_sysctl_tuning: true (default).
+# Notifies the 'Reload sysctl' handler on change.
+# ==============================================================================
+
+- name: "Sysctl | Apply kernel tuning parameters"
+  ansible.posix.sysctl:
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+    state: present
+    reload: true
+    sysctl_file: /etc/sysctl.d/99-dsom.conf
+  become: true
+  loop: "{{ common_sysctl_settings }}"
+  notify: Reload sysctl
+  tags: sysctl
+
+- name: "Sysctl | Report applied settings"
+  ansible.builtin.debug:
+    msg: "Applied sysctl setting: {{ item.key }}={{ item.value }}"
+  loop: "{{ common_sysctl_settings }}"
+  tags: sysctl

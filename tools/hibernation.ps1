@@ -1,80 +1,200 @@
 <#
 .SYNOPSIS
-    DSOM Hibernation Sequence (End-of-Day)
-    
+    DSOM Hibernation Sequence v2.0 (End-of-Day Protocol)
+
 .DESCRIPTION
-    Safeguards the project state before the human sleeps. Checks artifacts, 
-    summarizes commits, and pushes to remote.
+    Safeguards the project state at End-of-Day.
+    - Validates brain artifacts (task.md, walkthrough.md)
+    - Saves Hibernation Notes to .agent/brain/
+    - Shows uncommitted changes for review (no blind git add .)
+    - Summarises recent commits and tomorrow's tasks
+    - Performs guided Sovereign Save (selective git add -> commit -> push)
+
+.EXAMPLE
+    .\tools\hibernation.ps1
+
+.NOTES
+    Author:  Harisfazillah Jamel (LinuxMalaysia)
+    Partner: Generated with assistance from Google Antigravity
+    Version: v2.0
+    License: GNU GPL v3.0 or later
 #>
 
 $ErrorActionPreference = "Stop"
+$VERSION = "v2.0"
 
 # 1. Setup
 try {
-    $RepoRoot = git rev-parse --show-toplevel 2>$null
+    $RepoRoot = (git rev-parse --show-toplevel 2>$null).Trim()
 } catch {
     $RepoRoot = $null
 }
 
 if (-not $RepoRoot) {
-    Write-Error "❌ Error: Not in a Git repository."
+    Write-Host "  [ERROR] Not in a Git repository. Run from the project root." -ForegroundColor Red
     exit 1
 }
 
-$BrainDir = Join-Path $RepoRoot ".agent" "brain"
-$TaskFile = Join-Path $BrainDir "task.md"
+$BrainDir        = Join-Path $RepoRoot ".agent" "brain"
+$TaskFile        = Join-Path $BrainDir "task.md"
 $WalkthroughFile = Join-Path $BrainDir "walkthrough.md"
-$DateStamp = Get-Date -Format "yyyy-MM-dd"
+$DateStamp       = Get-Date -Format "yyyy-MM-dd"
+$HibFile         = Join-Path $BrainDir "hibernation-notes-$DateStamp.txt"
 
-# 2. Safety Checks
-Write-Host "======================================================================" -ForegroundColor Cyan
-Write-Host "🌙 DSOM HIBERNATION SEQUENCE INITIATED"
-Write-Host "======================================================================"
+Write-Host ""
+Write-Host "  ======================================================================" -ForegroundColor Cyan
+Write-Host "  DSOM HIBERNATION SEQUENCE INITIATED - $VERSION" -ForegroundColor Cyan
+Write-Host "  $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor Cyan
+Write-Host "  ======================================================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Check Task List Status
-Write-Host "🔍 Checking Task List..." -ForegroundColor Yellow
-$TaskContent = Get-Content $TaskFile -Raw
-if ($TaskContent -match "\[x\]") {
-    Write-Host "✅ Progress detected in task.md." -ForegroundColor Green
+$Abort = $false
+
+# 2. Safety Checks
+
+Write-Host "  [1/4] Checking Task List..." -ForegroundColor Yellow
+if (Test-Path $TaskFile) {
+    $TaskContent = Get-Content $TaskFile -Raw
+    if ($TaskContent -match "\[x\]") {
+        Write-Host "    OK  Progress detected in task.md." -ForegroundColor Green
+    } else {
+        Write-Host "    WRN WARNING: No completed tasks found in task.md today. Did you forget to update it?" -ForegroundColor Yellow
+    }
 } else {
-    Write-Host "⚠️  WARNING: No completed tasks found in task.md today. Did you forget to update it?" -ForegroundColor Red
+    Write-Host "    ERR task.md not found at: $TaskFile" -ForegroundColor Red
+    $Abort = $true
 }
 
-# Check Walkthrough Status
-Write-Host "`n🔍 Checking Session Anchor..." -ForegroundColor Yellow
-$WalkthroughContent = Get-Content $WalkthroughFile -Raw
-if ($WalkthroughContent -match $DateStamp) {
-    Write-Host "✅ Session Anchor for today found in walkthrough.md." -ForegroundColor Green
+Write-Host ""
+Write-Host "  [2/4] Checking Session Anchor in walkthrough.md..." -ForegroundColor Yellow
+if (Test-Path $WalkthroughFile) {
+    $WalkthroughContent = Get-Content $WalkthroughFile -Raw
+    if ($WalkthroughContent -match $DateStamp) {
+        Write-Host "    OK  Session Anchor for $DateStamp found in walkthrough.md." -ForegroundColor Green
+    } else {
+        Write-Host "    ERR CRITICAL: No Session Anchor for $DateStamp found in walkthrough.md!" -ForegroundColor Red
+        Write-Host "        You MUST add today's Mental Anchor before hibernating." -ForegroundColor Red
+        Write-Host "        Add a section like: '## Mental Anchor -- $DateStamp' to walkthrough.md." -ForegroundColor Yellow
+        $Abort = $true
+    }
 } else {
-    Write-Host "❌ CRITICAL: No Session Anchor for $DateStamp found in walkthrough.md!" -ForegroundColor Red
-    Write-Host "   You MUST summarize your work before sleeping." -ForegroundColor Red
+    Write-Host "    ERR walkthrough.md not found at: $WalkthroughFile" -ForegroundColor Red
+    $Abort = $true
 }
 
-# 3. Context Summary
-Write-Host "`n----------------------------------------------------------------------"
-Write-Host "📅 SESSION SUMMARY (What we did)"
-Write-Host "----------------------------------------------------------------------"
-# Show last 5 commits for context
+if ($Abort) {
+    Write-Host ""
+    Write-Host "  HIBERNATION BLOCKED: Critical checks failed. Fix issues above first." -ForegroundColor Red
+    exit 1
+}
+
+# 3. Show dirty files (no blind git add .)
+Write-Host ""
+Write-Host "  [3/4] Reviewing Uncommitted Changes..." -ForegroundColor Yellow
+$DirtyFiles = git status --porcelain 2>&1
+if ([string]::IsNullOrWhiteSpace($DirtyFiles)) {
+    Write-Host "    (nothing to commit -- working tree clean)" -ForegroundColor DarkGray
+} else {
+    Write-Host "    ----------------------------------------------------------------------" -ForegroundColor DarkGray
+    git status --short
+    Write-Host "    ----------------------------------------------------------------------" -ForegroundColor DarkGray
+}
+
+# 4. Hibernation Notes auto-save
+Write-Host ""
+Write-Host "  [4/4] Hibernation Notes..." -ForegroundColor Yellow
+if (Test-Path $HibFile) {
+    Write-Host "    OK  Hibernation Notes already exist: hibernation-notes-$DateStamp.txt" -ForegroundColor Green
+} else {
+    Write-Host "    Generating Hibernation Notes from today's commits..." -ForegroundColor Cyan
+    $HibLines = [System.Collections.Generic.List[string]]::new()
+    $HibLines.Add("# DSOM Hibernation Notes - $DateStamp")
+    $HibLines.Add("# Generated by hibernation.ps1 $VERSION")
+    $HibLines.Add("")
+    $HibLines.Add("## Session Summary")
+    $HibLines.Add("")
+    try {
+        $commits = git log --since="24 hours ago" --pretty=format:"[%as] %s" 2>&1
+        if ($commits) { $HibLines.Add($commits -join "`n") }
+        else { $HibLines.Add("(no commits in last 24 hours)") }
+    } catch { $HibLines.Add("(git log failed)") }
+    $HibLines.Add("")
+    $HibLines.Add("")
+    $HibLines.Add("## Pending Tasks (Tomorrow)")
+    $HibLines.Add("")
+    $pendingTasks = Select-String -Path $TaskFile -Pattern "\[ \]" | Select-Object -First 10 -ExpandProperty Line
+    if ($pendingTasks) { $HibLines.Add($pendingTasks -join "`n") }
+    else { $HibLines.Add("(no pending tasks)") }
+    $HibLines.Add("")
+    $HibLines.Add("## Documents to Re-read at SOD")
+    $HibLines.Add("")
+    $HibLines.Add("- docs/SOD-RITUAL.md")
+    $HibLines.Add("- docs/AI-COGNITIVE-TWIN-PROTOCOL.md")
+    $HibLines.Add("- .agent/brain/task.md")
+    $HibLines.Add("- .agent/brain/walkthrough.md")
+
+    ($HibLines -join "`n") | Out-File -FilePath $HibFile -Encoding UTF8
+    Write-Host "    OK  Saved: hibernation-notes-$DateStamp.txt" -ForegroundColor Green
+}
+
+# 5. Context Summary
+Write-Host ""
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor DarkGray
+Write-Host "  SESSION SUMMARY (Last 5 commits)"
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor DarkGray
 git log -n 5 --pretty=format:"%h - %s (%ar)"
-Write-Host "`n----------------------------------------------------------------------"
+Write-Host ""
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor DarkGray
 
-# 4. Next Steps Generator
-Write-Host "`n🔮 NEXT STEPS (For Tomorrow)" -ForegroundColor Magenta
-Write-Host "----------------------------------------------------------------------"
-Select-String -Path $TaskFile -Pattern "\[ \]" | Select-Object -First 5 -ExpandProperty Line
-Write-Host "----------------------------------------------------------------------"
+# 6. Next Steps Generator
+Write-Host ""
+Write-Host "  NEXT STEPS (For Tomorrow)" -ForegroundColor Magenta
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor DarkGray
+$NextSteps = Select-String -Path $TaskFile -Pattern "\[ \]" | Select-Object -First 5 -ExpandProperty Line
+if ($NextSteps) { $NextSteps | ForEach-Object { Write-Host "  $_" } }
+else { Write-Host "  (no pending tasks in task.md)" }
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor DarkGray
 
-# 5. Final Confirmation
-Write-Host "`n😴 Are you ready to hibernate? (This will push all changes to GitHub)" -ForegroundColor Cyan
-$Confirm = Read-Host "Confirm (y/N)"
+# 7. Privacy Guardian Reminder
+Write-Host ""
+Write-Host "  REMINDER: If you generated a manifest today, run:" -ForegroundColor Yellow
+Write-Host "    .\tools\privacy-guardian.ps1" -ForegroundColor Yellow
+Write-Host ""
+
+# 8. Final Confirmation & Sovereign Save
+Write-Host "  Are you ready to hibernate? (This will commit staged changes and push to GitHub)" -ForegroundColor Cyan
+$Confirm = Read-Host "  Confirm (y/N)"
 
 if ($Confirm -match "^[yY]") {
-    Write-Host "`n🚀 Committing context..." -ForegroundColor Green
-    git add .
-    git commit -m "chore(hibernation): End-of-Day safe shutdown $DateStamp"
+    Write-Host ""
+
+    # Stage brain artifacts selectively
+    git add "$TaskFile" "$WalkthroughFile" "$HibFile" 2>$null | Out-Null
+
+    # Stage all other modified tracked files (not untracked)
+    git add -u 2>$null | Out-Null
+
+    # Detect active phase from task.md
+    $PhaseMatch = Select-String -Path $TaskFile -Pattern "Phase:" | Select-Object -First 1
+    $Phase = if ($PhaseMatch) { ($PhaseMatch.Line -replace ".*Phase:\s*", "").Trim().TrimEnd("*>") } else { "Active" }
+
+    # Only commit if something is staged
+    $staged = git diff --cached --name-only 2>&1
+    if (-not $staged) {
+        Write-Host "  (nothing new to commit -- already clean)" -ForegroundColor DarkGray
+    } else {
+        git commit -m "chore(hibernation): End-of-Day safe shutdown $DateStamp [Phase: $Phase]"
+    }
+
+    # Always push
     git push origin main
-    Write-Host "`n✅ SLEEP WELL, ARCHITECT. YOUR STATE IS SAVED." -ForegroundColor Green
+
+    Write-Host ""
+    Write-Host "  ======================================================================" -ForegroundColor Green
+    Write-Host "  SLEEP WELL, ARCHITECT. YOUR SOVEREIGN STATE IS SAVED." -ForegroundColor Green
+    Write-Host "  Resume tomorrow with: .\tools\reanimate.ps1" -ForegroundColor Green
+    Write-Host "  ======================================================================" -ForegroundColor Green
 } else {
-    Write-Host "`n🛑 Hibernation aborted. Stay awake." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "  Hibernation aborted. Stay awake." -ForegroundColor Red
 }
