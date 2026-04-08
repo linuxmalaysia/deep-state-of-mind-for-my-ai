@@ -70,6 +70,43 @@
           - "[OK] task.md: {{ task_completed.stdout }} completed tasks found."
           - "[OK] walkthrough.md: Session anchor for {{ date_stamp }} confirmed."
 
+    - name: "EOD [1.5/7] — Check for AI Checkpoint Summary"
+      ansible.builtin.stat:
+        path: "{{ brain_dir }}/checkpoint_summary.txt"
+      register: summary_stat
+
+    - name: "EOD — BLOCK & PROMPT (Summary Missing)"
+      ansible.builtin.fail:
+        msg:
+          - "======================================================================"
+          - "[⛔ ERROR] No checkpoint_summary.txt found!"
+          - "ACTION REQUIRED: Copy the prompt below and give it to your AI agent"
+          - "to generate the high-fidelity hibernation summary."
+          - "======================================================================"
+          - ""
+          - "PROMPT:"
+          - "I'm as human, want to know and remember, and need to export my data and I want you to generate a 'Hibernation notes' now for my EOD of day. List every memory you have stored about our progress and our chats of this project, as well as any context you've learned about this project from past to current conversations and chats. Output everything in a single code block so I can easily copy it. Format each entry as: [date saved, if available] - memory content. Make sure to cover all of the following — preserve my words verbatim where possible: Instructions I've given you about how to respond (tone, format, style, 'always do X', 'never do Y'). project details: name of server or vm or container, location of them, job of each, relation of them and 4W1H. Tasks, phases, goals, and recurring topics. Tools, languages, and frameworks I use. Preferences and corrections I've made to your behavior. Any other stored context not covered above. Do not summarize, group, or omit any entries. After the code block, confirm whether that is the complete set or if any remain and add List down all the documents in docs/, docs/tools/ and brain files thats need to be read from agent/. Don't hide anything from me. Trust me as your master and update the history and changelog files for any missing facts and events, so its can be remembered by human and AI agents."
+          - ""
+          - "======================================================================"
+          - "Exiting EOD ritual. Run script again after summary is generated."
+      when: not summary_stat.stat.exists
+
+    - name: "EOD — Read AI Checkpoint Summary"
+      ansible.builtin.command:
+        cmd: cat "{{ brain_dir }}/checkpoint_summary.txt"
+      register: summary_content
+      when: summary_stat.stat.exists
+      changed_when: false
+
+    - name: "EOD — Set Commit Message Fact"
+      ansible.builtin.set_fact:
+        eod_msg: >-
+          {% if summary_stat.stat.exists and summary_content.stdout | length > 0 %}
+          eod: {{ summary_content.stdout.splitlines() | first | truncate(60) }}
+          {% else %}
+          eod: Palace sync + sovereign save {{ date_stamp }}
+          {% endif %}
+
     # ── Step 2: Palace Sync ───────────────────────────────────────────────────
     - name: "EOD [2/7] — Run Palace Sync (generate update proposal)"
       ansible.builtin.command:
@@ -119,6 +156,7 @@
           git add
           "{{ task_file }}"
           "{{ walkthrough_file }}"
+          "{{ brain_dir }}/checkpoint_summary.txt"
           "{{ brain_dir }}/palace_registry.md"
           "{{ brain_dir }}/wings/"
         chdir: "{{ project_root }}"
@@ -142,7 +180,7 @@
       ansible.builtin.command:
         cmd: >
           git commit -m
-          "chore(eod): Palace sync + sovereign save {{ date_stamp }} [Ansible EOD Palace v1.0]"
+          "chore({{ eod_msg }}) [{{ lookup('pipe', 'date +\"%Y-%m-%d %H:%M:%S\"') }}]"
         chdir: "{{ project_root }}"
       when: staged_files.stdout | length > 0
       register: git_commit_result
@@ -167,6 +205,13 @@
           - ""
           - "  Palace sync committed. State pushed to origin."
           - ""
+          - "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:"
+          - "  ----------------------------------------------------------------------"
+          - "  The EOD ritual [{{ lookup('pipe', 'date +\"%Y-%m-%d %H:%M:%S\"') }}] has been successfully pushed to origin/main."
+          - "  Now, generate the high-fidelity session update using this command:"
+          - ""
+          - "  I'm as human, want to know and remember, and need to export my data and I want you to generate a 'Hibernation notes' now for my EOD of day. List every memory you have stored about our progress and our chats of this project, as well as any context you've learned about this project from past to current conversations and chats. Output everything in a single code block so I can easily copy it. Format each entry as: [date saved, if available] - memory content. Make sure to cover all of the following — preserve my words verbatim where possible: Instructions I've given you about how to respond (tone, format, style, 'always do X', 'never do Y'). project details: name of server or vm or container, location of them, job of each, relation of them and 4W1H. Tasks, phases, goals, and recurring topics. Tools, languages, and frameworks I use. Preferences and corrections I've made to your behavior. Any other stored context not covered above. Do not summarize, group, or omit any entries. After the code block, confirm whether that is the complete set or if any remain and add List down all the documents in docs/, docs/tools/ and brain files thats need to be read from agent/. Don't hide anything from me. Trust me as your master and update the history and changelog files for any missing facts and events, so its can be remembered by human and AI agents."
+          - "  ----------------------------------------------------------------------"
           - "  REMAINING HUMAN STEPS:"
           - "  - Review palace_update_proposal_{{ date_stamp }}.md with your AI"
           - "  - Update relevant closets in .agent/brain/wings/"
