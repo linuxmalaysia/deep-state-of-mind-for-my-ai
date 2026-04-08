@@ -213,6 +213,16 @@ Six months of daily AI use = ~19.5 million tokens. Every decision, every debuggi
 
 ---
 
+## ⚡ DSOM Onboarding Automation
+
+If you want to integrate the deep-state-of-mind architecture into an entirely new or existing repository, you no longer have to manually copy files. We have engineered a robust, cross-platform onboarding framework that handles the integration cleanly via a temporary git branch and Ansible file merging.
+
+| Use Case | Guide |
+|---|---|
+| **Automated Repository Onboarding** | [`docs/HOWTO-DSOM-ONBOARDING.md`](docs/HOWTO-DSOM-ONBOARDING.md) |
+
+---
+
 ## 📅 Daily Operating Rituals
 
 > **Full ritual guides:** [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md)
