@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [10.1.0-onboarding] - 2026-04-08
+
+### Added
+
+- **DSOM Onboarding Automation.** Created cross-platform bootstrap scripts using Bash (`dsom-onboard.sh`) and PowerShell (`dsom-onboard.ps1`). Native Ansible fetching backend added to `playbooks/dsom/onboard-dsom.yml`. Handles "Zero-Debt" safe cloning into any external target repository, preventing overrides via Git branch isolation and timestamp file deduplication.
+- **`docs/HOWTO-DSOM-ONBOARDING.md`** documentation to guide users on "DSOM-ifying" their Git repositories fully mechanically.
+- **README.md** updated to formally include the new Onboarding Automation loop standard.
+
 ## [10.0.0-palace] - 2026-04-08
 
 ### Added
