@@ -48,7 +48,7 @@ cp -r ../dsom-temp/docs .
 
 ### Step 2: Initialize the Brain
 
-Run the initializer to create the `.agent/brain/` structure. This script is **non-destructive**—it will not overwrite existing work, but since you are adopting, these files likely don't exist yet.
+Run the initializer to create the `.agents/brain/` structure. This script is **non-destructive**—it will not overwrite existing work, but since you are adopting, these files likely don't exist yet.
 
 ```bash
 bash tools/init-brain.sh
@@ -60,12 +60,12 @@ bash tools/init-brain.sh
 
 You must now manually populate the "Brain" with your project's current state.
 
-1. **Edit `.agent/brain/implementation_plan.md`:**
+1. **Edit `.agents/brain/implementation_plan.md`:**
     * Delete the boilerplate.
     * Write a high-level summary of your *current* project roadmap (Phases).
-2. **Edit `.agent/brain/task.md`:**
+2. **Edit `.agents/brain/task.md`:**
     * List the immediate bugs or features you are working on *today*.
-3. **Edit `.agent/brain/walkthrough.md`:**
+3. **Edit `.agents/brain/walkthrough.md`:**
     * Add a "Session Anchor" summarizing the recent history of the project so the AI knows "where we came from."
 
 ### Step 4: Security Hardening
@@ -79,10 +79,10 @@ Establish the security perimeter immediately.
     ```
 
 2. **Update .gitignore:**
-    Ensure `.agent/brain/*.md` is **NOT IGNORED** (so you can sync context), but `.env` and `*.sql` **ARE IGNORED**.
+    Ensure `.agents/brain/*.md` is **NOT IGNORED** (so you can sync context), but `.env` and `*.sql` **ARE IGNORED**.
 
 ```gitignore
-!/.agent/brain/*.md
+!/.agents/brain/*.md
 ```
 
 ### Step 4b: Initialize the Palace
@@ -93,7 +93,7 @@ Backfill the Sovereign Markdown Palace from your existing Git history:
 bash tools/palace-sync.sh --backfill
 ```
 
-This generates `.agent/brain/palace_update_proposal_YYYY-MM-DD.md` — review it with your AI and create the closets in `.agent/brain/wings/`.
+This generates `.agents/brain/palace_update_proposal_YYYY-MM-DD.md` — review it with your AI and create the closets in `.agents/brain/wings/`.
 
 > **First time only.** After this, the daily EOD ritual (`bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)`) handles incremental Palace updates automatically.
 
@@ -123,7 +123,7 @@ bash tools/reanimate.sh
 A: Ensure you are running the command from the root of your project. Run `git init` if it's not versioned yet.
 
 **Q: The AI thinks it's a new project.**  
-A: You skipped **Step 3**. The AI only knows what is in the `.agent/brain` files. If you leave them empty, it assumes a blank slate.
+A: You skipped **Step 3**. The AI only knows what is in the `.agents/brain` files. If you leave them empty, it assumes a blank slate.
 
 ## 5. References
 

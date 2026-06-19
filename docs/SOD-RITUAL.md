@@ -11,7 +11,7 @@
 
 The **Start-of-Day (SOD)** is not just a technical boot sequence — it is a **Cognitive Handshake** between the Lead Architect (Human) and the Cognitive Digital Twin (AI).
 
-Since AI has amnesia between sessions, the SOD Ritual transfers the **Deep State of Mind** — the full context, history, architectural intent, environment map, and security doctrine — from the repository's permanent storage (`.agent/brain/`) back into the AI's active working memory.
+Since AI has amnesia between sessions, the SOD Ritual transfers the **Deep State of Mind** — the full context, history, architectural intent, environment map, and security doctrine — from the repository's permanent storage (`.agents/brain/`) back into the AI's active working memory.
 
 **The Three-Pillar Loop always starts with SOD:**
 
@@ -133,9 +133,9 @@ bash tools/reanimate.sh
 |:---|:---|
 | `[1]` Identity | `README.md` — who we are |
 | `[2]` Law | `AI-MASTER-PROTOCOL.md` — governance rules |
-| `[3]` Present | `.agent/brain/task.md` — today's work |
-| `[4]` Past | `.agent/brain/walkthrough.md` — full history |
-| `[5]` Future | `.agent/brain/implementation_plan.md` — roadmap |
+| `[3]` Present | `.agents/brain/task.md` — today's work |
+| `[4]` Past | `.agents/brain/walkthrough.md` — full history |
+| `[5]` Future | `.agents/brain/implementation_plan.md` — roadmap |
 | `[6]` Git Log | Last 30 commits |
 | `[7]` Tree | Project structure |
 | `[8]` SUMMARY | Navigation index |
@@ -161,7 +161,7 @@ ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
 Upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI chat.
 
 **Option A — Reanimate from manifest file (Palace-aware):**
-> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest. Walk the Palace Registry in Section [14] — identify relevant Rooms for today's work. Summarise the current Mental Anchor from `.agent/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest. Walk the Palace Registry in Section [14] — identify relevant Rooms for today's work. Summarise the current Mental Anchor from `.agents/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
 
 **Option B — Use the Human Handover Context (for new sessions):**
 > Copy the prompt from `docs/HUMAN-HANDOVER-CONTEXT.md` and paste as your first message. Fill in the **Current State** section before sending.
@@ -194,7 +194,7 @@ After reading the Hibernation Notes above, do the following:
 1. Confirm you have read and understood all entries in the Hibernation Notes.
 2. State the last Mental Anchor — the exact point where we stopped.
 3. Confirm the 4-Tier environment map (T1, T2, T3, T4) and the project identity.
-4. List the top 3 tasks from .agent/brain/task.md that are pending.
+4. List the top 3 tasks from .agents/brain/task.md that are pending.
 5. State: "Sovereign State Restored — [PROJECT NAME] is live." to confirm you are ready.
 
 From this point, operate under DSOM Protocol v6.1:
@@ -230,7 +230,7 @@ DAY N+1 EOD:         Step 1b (new Hibernation Notes saved)
 
 **Where to find yesterday's Hibernation Notes:**
 
-- `.agent/brain/hibernation-notes-YYYY-MM-DD.txt` (if you saved it)
+- `.agents/brain/hibernation-notes-YYYY-MM-DD.txt` (if you saved it)
 - Or the code block you copied to your notebook/notes app
 
 ---

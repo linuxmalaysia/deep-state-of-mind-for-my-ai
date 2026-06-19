@@ -31,9 +31,9 @@ nav:
       - Ritual of Transition: docs/RITUAL-OF-TRANSITION.md
       - Personalization: docs/PERSONALIZATION.md
   - AI Brain:
-      - Task: .agent/brain/task.md
-      - Implementation Plan: .agent/brain/implementation_plan.md
-      - Walkthrough: .agent/brain/walkthrough.md
+      - Task: .agents/brain/task.md
+      - Implementation Plan: .agents/brain/implementation_plan.md
+      - Walkthrough: .agents/brain/walkthrough.md
   - AI Setup:
       - Cognitive Twin Protocol Template: docs/AI-COGNITIVE-TWIN-PROTOCOL.md
       - Reanimation Template: docs/REANIMATION-PROMPT-TEMPLATE.md

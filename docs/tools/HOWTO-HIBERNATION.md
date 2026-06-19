@@ -10,7 +10,7 @@
 
 ## 1. Purpose
 
-The `hibernation` scripts function as safety gates that strictly prohibit the termination of a computing cycle until certain cognitive markers are recorded in the AI’s memory bank. If an AI or human fails to populate `.agent/brain/task.md` or anchor the session properly in `.agent/brain/walkthrough.md`, the repository refuses to enter a valid shutdown state.
+The `hibernation` scripts function as safety gates that strictly prohibit the termination of a computing cycle until certain cognitive markers are recorded in the AI’s memory bank. If an AI or human fails to populate `.agents/brain/task.md` or anchor the session properly in `.agents/brain/walkthrough.md`, the repository refuses to enter a valid shutdown state.
 
 **Location:** 
 * `tools/hibernation.ps1`

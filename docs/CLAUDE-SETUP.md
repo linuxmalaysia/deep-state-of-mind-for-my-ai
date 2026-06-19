@@ -119,7 +119,7 @@ Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (rep
 
 After uploading the manifest, start a new conversation and use:
 
-> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest. Walk the Palace Registry (Section [14]). Summarise the current Mental Anchor from `.agent/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest. Walk the Palace Registry (Section [14]). Summarise the current Mental Anchor from `.agents/brain/walkthrough.md`. Confirm the 4-Tier environment map from `AI-COGNITIVE-TWIN-PROTOCOL.md`. State: 'Sovereign State Synchronised' when ready."*
 
 **Option B — Feed Yesterday's Hibernation Notes:**
 
@@ -169,7 +169,7 @@ The SOD is **FAILED** if Claude:
 ### Step 1 — Context Consolidation
 
 Ask Claude:
-> *"We are ending the session. Update `.agent/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agent/brain/walkthrough.md` with today's Mental Anchor."*
+> *"We are ending the session. Update `.agents/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agents/brain/walkthrough.md` with today's Mental Anchor."*
 
 ### Step 1b — Hibernation Notes Export
 
@@ -185,11 +185,11 @@ Format each entry as: [date saved, if available] - memory content.
 Cover: instructions I've given you, project details (servers/VMs/containers,
 4W1H), tasks/phases/goals, tools/languages/frameworks, preferences and
 corrections. Do not summarize, group, or omit any entries.
-After the code block, list all docs in docs/ and brain files in .agent/.
+After the code block, list all docs in docs/ and brain files in .agents/.
 Don't hide anything from me. Trust me as your master.
 ```
 
-Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`.
+Save the output as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`.
 
 ### Step 2 — Sovereign Save
 
@@ -206,7 +206,7 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 ## 🔄 6. The Day-to-Day Continuity Loop (Claude Edition)
 
 ```
-EOD → Step 1b: Save Hibernation Notes to .agent/brain/hibernation-notes-YYYY-MM-DD.txt
+EOD → Step 1b: Save Hibernation Notes to .agents/brain/hibernation-notes-YYYY-MM-DD.txt
          ↓  [Git holds state. Claude holds nothing.]
 SOD → Step 4b: Feed Hibernation Notes back to Claude
          ↓  [Claude resumes with exact context — no decay.]
@@ -218,7 +218,7 @@ EOD → Step 1b: Save new Hibernation Notes
 
 ## 🔀 7. Cross-AI Handover (Switching from Claude to Another AI)
 
-When switching from Claude to Gemini, Antigravity, or Copilot, the `.agent/brain/` remains the **Single Source of Truth**. Use the **Sovereign Handover Prompt** from the old session:
+When switching from Claude to Gemini, Antigravity, or Copilot, the `.agents/brain/` remains the **Single Source of Truth**. Use the **Sovereign Handover Prompt** from the old session:
 
 > Copy the prompt from [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) → **Prompt Variant: Session Handover**.
 

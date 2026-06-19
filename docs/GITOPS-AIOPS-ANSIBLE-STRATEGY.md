@@ -26,7 +26,7 @@ This document defines the **strategic doctrine** for the three operational pilla
 |                                                              |
 |  +----------------------------------------------------------+ |
 |  |  Palace (Memory)  --  Sovereign Markdown Palace v1.0    | |
-|  |  .agent/brain/palace_registry.md + wings/               | |
+|  |  .agents/brain/palace_registry.md + wings/               | |
 |  |  SOD: AI reads Palace Registry (Section [14])           | |
 |  |  EOD: palace-sync.sh writes spatial update proposal     | |
 |  +----------------------------------------------------------+ |
@@ -75,9 +75,9 @@ Before any advisory session, the AI **MUST** read:
 
 - `docs/AI-MASTER-PROTOCOL.md` — Governance laws
 - `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — Project-specific environment map
-- `.agent/brain/task.md` — Current state
-- `.agent/brain/walkthrough.md` — History and Mental Anchor
-- `.agent/brain/palace_registry.md` — **Spatial map (Palace v1.0)** — walk this to locate relevant Rooms
+- `.agents/brain/task.md` — Current state
+- `.agents/brain/walkthrough.md` — History and Mental Anchor
+- `.agents/brain/palace_registry.md` — **Spatial map (Palace v1.0)** — walk this to locate relevant Rooms
 - `inventory/hosts.yml` — Target node topology
 
 > **SOD shortcut:** `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` injects all of the above automatically via the reanimation manifest (Section [14] = Palace Registry).
@@ -251,7 +251,7 @@ When starting a new project with DSOM, use this checklist to establish the three
 ### AIOps Setup
 
 - [ ] Create `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` from template (fill all `[PLACEHOLDER]` values)
-- [ ] Initialise `.agent/brain/` with `task.md`, `walkthrough.md`, `implementation_plan.md`
+- [ ] Initialise `.agents/brain/` with `task.md`, `walkthrough.md`, `implementation_plan.md`
 - [ ] Configure AI agent with `docs/AI-MASTER-PROTOCOL.md` as system context
 - [ ] **Run `bash tools/palace-sync.sh --backfill`** to initialise Palace Registry
 - [ ] Review `palace_update_proposal_YYYY-MM-DD.md` with AI and populate closets

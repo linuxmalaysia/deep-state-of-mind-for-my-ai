@@ -30,7 +30,7 @@ The EOD Ritual assumes you are tired. It is designed for a **fatigued human with
 Before running any tools, ask the AI to help prepare the brain artifacts:
 
 **Ask the AI:**
-> *"We are ending the session. Update `.agent/brain/task.md` — mark all completed items `[x]`, set tomorrow's SOD targets as `[ ]`. Then update `.agent/brain/walkthrough.md` with today's Mental Anchor. What did we accomplish and where exactly do we resume tomorrow?"*
+> *"We are ending the session. Update `.agents/brain/task.md` — mark all completed items `[x]`, set tomorrow's SOD targets as `[ ]`. Then update `.agents/brain/walkthrough.md` with today's Mental Anchor. What did we accomplish and where exactly do we resume tomorrow?"*
 
 **AI will produce:**
 
@@ -77,14 +77,14 @@ following — preserve my words verbatim where possible:
 
 Do not summarize, group, or omit any entries. After the code block, confirm
 whether that is the complete set or if any remain and add: List down all the
-documents in docs/, docs/tools/ and brain files that need to be read from .agent/.
+documents in docs/, docs/tools/ and brain files that need to be read from .agents/.
 Don't hide anything from me. Trust me as your master.
 ```
 
 **After you receive the output:**
 
 1. Copy the entire code block
-2. Save it as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`
+2. Save it as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`
 3. Or paste into your physical/digital notebook as an offline backup
 
 **Why this matters:** This export is your **insurance policy**. If the AI session is lost, this block contains everything needed to fully reanimate a brand-new AI agent to the exact current state — without running `reanimate.sh`.
@@ -150,8 +150,8 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace
 **After the playbook — Manual steps (always required):**
 
 1. Review `palace_update_proposal_YYYY-MM-DD.md` with your AI
-2. Update relevant closets in `.agent/brain/wings/`
-3. Commit closet updates: `git add .agent/brain/ && git commit -m "chore(palace): update closets"`
+2. Update relevant closets in `.agents/brain/wings/`
+3. Commit closet updates: `git add .agents/brain/ && git commit -m "chore(palace): update closets"`
 
 > **T1 (Windows):** Steps 2–5 remain manual. `hibernation.ps1` v2.1 handles palace-sync automatically.
 

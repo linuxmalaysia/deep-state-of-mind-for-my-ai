@@ -54,7 +54,7 @@ if [ -z "${REPO_ROOT}" ]; then
     exit 1
 fi
 
-BRAIN_DIR="$REPO_ROOT/.agent/brain"
+BRAIN_DIR="$REPO_ROOT/.agents/brain"
 PALACE_DIR="$BRAIN_DIR/wings"
 REGISTRY="$BRAIN_DIR/palace_registry.md"
 MARKER_FILE="$BRAIN_DIR/.palace-sync-marker"
@@ -81,7 +81,7 @@ map_path_to_room() {
     fi
 
     # Brain artifacts
-    if echo "$filepath" | grep -qE "^\.agent/brain/"; then
+    if echo "$filepath" | grep -qE "^\.agents/brain/"; then
         echo "wing_dsom_core|hall_events|room_brain_artifacts"
         return
     fi
@@ -218,7 +218,7 @@ process_commit() {
     for ROOM_KEY in "${!ROOMS_SEEN[@]}"; do
         IFS='/' read -r wing hall room <<< "$ROOM_KEY"
         CLOSET_PATH="wings/$wing/$hall/$room/closet.md"
-        ROOM_COMMITS["$ROOM_KEY"]+="\n**Target Closet:** \`.agent/brain/$CLOSET_PATH\`\n\n"
+        ROOM_COMMITS["$ROOM_KEY"]+="\n**Target Closet:** \`.agents/brain/$CLOSET_PATH\`\n\n"
     done
 }
 
@@ -280,6 +280,6 @@ echo -e "  🚪 Rooms: $ROOM_COUNT Rooms affected"
 echo -e "  📍 Path:  $PROPOSAL_FILE"
 echo -e ""
 echo -e "  NEXT STEP: Ask your AI to review this proposal and update"
-echo -e "  the corresponding closet.md files in .agent/brain/wings/"
+echo -e "  the corresponding closet.md files in .agents/brain/wings/"
 echo -e "======================================================================${NC}"
 echo ""

@@ -36,10 +36,10 @@ Neither replaces the other. They work in tandem — **Dual-Mode Persistence**.
 
 ## 3. 🏗️ The Architecture We Designed
 
-The Palace is a 5-layer directory hierarchy inside `.agent/brain/`:
+The Palace is a 5-layer directory hierarchy inside `.agents/brain/`:
 
 ```
-.agent/brain/wings/
+.agents/brain/wings/
 └── wing_dsom_core/               # Wing (Domain)
     ├── hall_facts/               # Hall (Memory Type: Immutable Laws)
     │   ├── room_clean_architecture/closet.md
@@ -76,7 +76,7 @@ The core automation tool. It reads the git commit history and maps every commit 
 | `docs/` | `hall_facts/room_dsom_protocol` |
 | `tools/` | `hall_facts/room_tooling` |
 | `playbooks/`, `roles/`, `inventory/` | `hall_events/room_sovereign_fabric` |
-| `.agent/brain/` | `hall_events/room_brain_artifacts` |
+| `.agents/brain/` | `hall_events/room_brain_artifacts` |
 | `CHANGELOG.md`, `HISTORY.md` | `hall_events/room_ledger` |
 | `README.md`, `SUMMARY.md` | `hall_facts/room_dsom_protocol` |
 
@@ -126,7 +126,7 @@ The Sovereign Markdown Palace v1.0 is a **living, sovereign, version-controlled,
 | Document | Purpose |
 |---|---|
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace Protocol specification |
-| [`.agent/brain/palace_registry.md`](../.agent/brain/palace_registry.md) | Live Room index with Quick-Reference table |
+| [`.agents/brain/palace_registry.md`](../.agents/brain/palace_registry.md) | Live Room index with Quick-Reference table |
 | [`tools/palace-sync.sh`](../tools/palace-sync.sh) | Primary sync tool (Bash) |
 | [`tools/palace-sync.ps1`](../tools/palace-sync.ps1) | Sync tool (PowerShell parity) |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | First-time setup guide |

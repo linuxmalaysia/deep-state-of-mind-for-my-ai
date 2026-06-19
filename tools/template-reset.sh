@@ -35,7 +35,7 @@ rm -rf "$REPO_ROOT/.git"
 git -C "$REPO_ROOT" init
 
 # 2. Reset Brain Artifacts to Template State
-BRAIN_DIR="$REPO_ROOT/.agent/brain"
+BRAIN_DIR="$REPO_ROOT/.agents/brain"
 
 echo "🧠 Resetting Brain Artifacts..."
 

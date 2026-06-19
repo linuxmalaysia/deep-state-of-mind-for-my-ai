@@ -2,7 +2,7 @@
 
 > **Who this document is for:** Any new human user adopting DSOM, or any AI agent reading this repo for the first time.
 
-**Palace Version:** v1.0 | **Protocol:** DSOM v6.1
+**Workspace Version:** v2.0 (OKF Palace) | **Protocol:** DSOM v6.1
 
 ---
 
@@ -13,7 +13,7 @@
 ### Step 1 — Read the Palace Registry (Your Spatial Map)
 
 ```
-.agent/brain/palace_registry.md
+.agents/brain/palace_registry.md
 ```
 
 This is your entry point. It lists all Wings, Halls, and Rooms with a Quick-Reference table mapping tasks to the correct Room.
@@ -58,14 +58,17 @@ YOUR PROJECT REPOSITORY
 │   ├── DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md  ← Full Palace spec
 │   └── HOWTO-PALACE-ONBOARDING.md     ← You are here
 │
-└── .agent/brain/
-    ├── palace_registry.md        ← AI's spatial index (read at every SOD)
-    ├── task.md                   ← What the AI is working on NOW
-    ├── walkthrough.md            ← Full session history (The Drawer)
-    └── wings/                    ← The Palace Rooms
-        └── wing_dsom_core/
-            ├── hall_facts/       ← Laws, architecture, tools
-            └── hall_events/      ← Milestones, versions, brain history
+└── .agents/
+    ├── AGENTS.md                 ← The core rulebook for AI operations
+    ├── skills/                   ← Self-healing OKF skills (eod-sync, gitops)
+    └── brain/
+        ├── palace_registry.md    ← AI's spatial index (read at every SOD)
+        ├── task.md               ← What the AI is working on NOW
+        ├── walkthrough.md        ← Full session history (The Drawer)
+        └── wings/                ← The Palace Rooms
+            └── wing_dsom_core/
+                ├── hall_facts/   ← Laws, architecture, tools
+                └── hall_events/  ← Milestones, versions, brain history
 ```
 
 ### The Document Reading Chain (First Time)
@@ -75,7 +78,7 @@ Follow this order for full context:
 1. **`README.md`** — What DSOM is, the 6-step boot checklist, daily rituals.
 2. **`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`** — Fill in every `[PLACEHOLDER]` for your project.
 3. **`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`** — Understand the Palace laws and the Ingestion Loop.
-4. **`.agent/brain/palace_registry.md`** — See what Rooms exist and what they contain.
+4. **`.agents/brain/palace_registry.md`** — See what Rooms exist and what they contain.
 5. **Pick relevant closets** — Read the 2-3 closets most relevant to your current work.
 6. **`docs/SOD-RITUAL.md`** + **`docs/EOD-RITUAL.md`** — Understand the daily operating rhythm, including the Ansible SOD/EOD playbooks.
 
@@ -147,10 +150,10 @@ EOD (End of Day)
 When you start a new project on this DSOM instance, create a new Wing:
 
 ```bash
-mkdir -p .agent/brain/wings/wing_YOUR_PROJECT/{hall_facts,hall_events,hall_discoveries}
+mkdir -p .agents/brain/wings/wing_YOUR_PROJECT/{hall_facts,hall_events,hall_discoveries}
 # Create at minimum one Room
-mkdir -p .agent/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview
-touch .agent/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview/closet.md
+mkdir -p .agents/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview
+touch .agents/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview/closet.md
 ```
 
 Then register it in `palace_registry.md`.

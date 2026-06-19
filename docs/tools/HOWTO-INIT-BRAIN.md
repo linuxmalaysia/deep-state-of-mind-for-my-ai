@@ -13,7 +13,7 @@
 `init-brain` is the **Day Zero Initializer** for any DSOM-compliant repository. It creates the physical directory structure and the foundational Markdown artifacts required for an AI to store and retrieve persistent project state.
 
 **Use it to:**
-- Initialize the `.agent/brain/` directory at the repository root.
+- Initialize the `.agents/brain/` directory at the repository root.
 - Create the 4 core artifacts: `task.md`, `walkthrough.md`, `implementation_plan.md`, and the `DSOM_TEMPLATE.md`.
 - Restore missing brain state files if they were accidentally deleted.
 - Bootstrapping a fresh "External Memory" for your Cognitive Twin.
@@ -62,7 +62,7 @@ The tool deploys the following structures safely (**it will not overwrite** exis
 
 | Artifact | Purpose |
 |:---|:---|
-| `.agent/brain/` | The hidden AI context directory. |
+| `.agents/brain/` | The hidden AI context directory. |
 | `task.md` | The AI's TODO list. |
 | `walkthrough.md` | The session history and Mental Anchor log. |
 | `implementation_plan.md` | The roadmap and design goals. |

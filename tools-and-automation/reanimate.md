@@ -28,7 +28,7 @@
 2. **Context Aggregation:** Concatenates:
     * `README.md`
     * `docs/AI-MASTER-PROTOCOL.md`
-    * `.agent/brain/*` (Task, Walkthrough, Plan)
+    * `.agents/brain/*` (Task, Walkthrough, Plan)
     * `git ls-tree` (Project Structure)
     * `git log` (Recent History)
 3. **Governance Warning:** Checks Day-of-Week. Triggers Sunday Audit alert if applicable.

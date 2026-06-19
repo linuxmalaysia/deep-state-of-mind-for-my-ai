@@ -58,9 +58,9 @@ DSOM LAWS (non-negotiable):
 
 BRAIN SYNC:
 Before answering any architecture question, read:
-- .agent/brain/palace_registry.md (Walk the Palace)
-- .agent/brain/task.md
-- .agent/brain/walkthrough.md
+- .agents/brain/palace_registry.md (Walk the Palace)
+- .agents/brain/task.md
+- .agents/brain/walkthrough.md
 - docs/AI-MASTER-PROTOCOL.md
 
 MIRROR LAW:
@@ -81,9 +81,9 @@ description: 'DSOM SOD Reanimation — load current brain and Mental Anchor'
 ---
 
 Read the following brain artifacts and summarise the current status:
-1. `.agent/brain/palace_registry.md` — identify the current spatial mapping.
-2. `.agent/brain/task.md` — list all incomplete `[ ]` items.
-3. `.agent/brain/walkthrough.md` — state the last Mental Anchor.
+1. `.agents/brain/palace_registry.md` — identify the current spatial mapping.
+2. `.agents/brain/task.md` — list all incomplete `[ ]` items.
+3. `.agents/brain/walkthrough.md` — state the last Mental Anchor.
 4. `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — confirm the 4-Tier environment map.
 
 Then state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
@@ -123,7 +123,7 @@ All checks must show `[PASS]`. Fix any `[FAIL]` before proceeding.
 
 Paste this prompt into Copilot Chat with explicit file references:
 
-> *"Based on **#file:.agent/brain/palace_registry.md**, **#file:.agent/brain/task.md** and **#file:.agent/brain/walkthrough.md**, summarise the current spatial room, Mental Anchor, and list today's pending tasks. Confirm the 4-Tier environment from **#file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md**. State: 'Sovereign State Synchronised' when ready."*
+> *"Based on **#file:.agents/brain/palace_registry.md**, **#file:.agents/brain/task.md** and **#file:.agents/brain/walkthrough.md**, summarise the current spatial room, Mental Anchor, and list today's pending tasks. Confirm the 4-Tier environment from **#file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md**. State: 'Sovereign State Synchronised' when ready."*
 
 ### ✅ SOD is Complete When Copilot Can Confirm
 
@@ -159,7 +159,7 @@ The SOD is **FAILED** if Copilot:
 Explicitly attach brain artifacts for precise context:
 
 ```
-Based on #file:.agent/brain/task.md and #file:.agent/brain/walkthrough.md,
+Based on #file:.agents/brain/task.md and #file:.agents/brain/walkthrough.md,
 what is the next logical step for the current implementation phase?
 ```
 
@@ -190,7 +190,7 @@ Because Copilot has no persistent memory, the EOD ritual focuses on ensuring the
 ### Step 1 — Context Consolidation
 
 Ask Copilot in Chat:
-> *"Based on **#file:.agent/brain/task.md**, mark all completed tasks `[x]` and set tomorrow's targets `[ ]`. Update **#file:.agent/brain/walkthrough.md** with a new Mental Anchor summarising today's session."*
+> *"Based on **#file:.agents/brain/task.md**, mark all completed tasks `[x]` and set tomorrow's targets `[ ]`. Update **#file:.agents/brain/walkthrough.md** with a new Mental Anchor summarising today's session."*
 
 Review the proposed changes, apply them, then commit:
 
@@ -208,7 +208,7 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 ## 🔀 7. Cross-AI Handover (Switching from Copilot to Another AI)
 
-The `.agent/brain/` directory is the **Single Source of Truth** regardless of which AI you are using. When switching to Claude or Gemini:
+The `.agents/brain/` directory is the **Single Source of Truth** regardless of which AI you are using. When switching to Claude or Gemini:
 
 1. Ensure brain artifacts are committed and pushed.
 2. Run `bash tools/reanimate.sh` to generate the context manifest.

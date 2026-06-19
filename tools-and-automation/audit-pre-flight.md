@@ -23,7 +23,7 @@
 
 ## 4. 🧠 Logic Flow (The Algorithm)
 
-1. **Brain Check:** Verifies existence of `task.md` and `walkthrough.md` in `.agent/brain/`.
+1. **Brain Check:** Verifies existence of `task.md` and `walkthrough.md` in `.agents/brain/`.
 2. **Git Drift Check:** Compares local `HEAD` vs remote `@{u}`. Warns if out of sync.
 3. **Environment Discovery:** Detects project type (PHP/Node/Python) based on manifest files (`composer.json`, etc.).
 4. **Governance Check:** Ensures `AI-MASTER-PROTOCOL.md` and `README.md` are present.

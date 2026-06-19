@@ -16,7 +16,7 @@ This guide explains the safe procedure to upgrade the DSOM Protocol in a live pr
 
 ## 2. Prerequisites
 
-* **Existing DSOM Install:** A project with an `.agent/brain/` directory.
+* **Existing DSOM Install:** A project with an `.agents/brain/` directory.
 * **Clean Git State:** Commit all pending changes before starting.
 
 ## 3. The Procedure
@@ -26,7 +26,7 @@ This guide explains the safe procedure to upgrade the DSOM Protocol in a live pr
 Before overwriting tools, ensure your Brain artifacts are safe.
 
 ```bash
-cp -r .agent/brain .agent/brain_backup_$(date +%F)
+cp -r .agents/brain .agents/brain_backup_$(date +%F)
 ```
 
 ### Step 2: Update Tooling and Docs
@@ -45,7 +45,7 @@ cp -r .dsom-core/docs .
 
 1. Download the latest release zip from GitHub.
 2. Extract and overwrite the `tools/` and `docs/` folders in your project root.
-3. **Critical:** Do NOT verify/overwrite `.agent/brain/` yet.
+3. **Critical:** Do NOT verify/overwrite `.agents/brain/` yet.
 
 ### Step 3: Protocol Injection (The Constitution)
 
@@ -82,7 +82,7 @@ The Sovereign Markdown Palace is the key new feature in v6.1. Add it by backfill
 bash tools/palace-sync.sh --backfill
 ```
 
-This generates `palace_update_proposal_YYYY-MM-DD.md`. Share it with your AI and create the initial closets in `.agent/brain/wings/`.
+This generates `palace_update_proposal_YYYY-MM-DD.md`. Share it with your AI and create the initial closets in `.agents/brain/wings/`.
 
 > **This is a one-time operation.** After this, the daily EOD playbook (`bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)`) handles incremental updates.
 

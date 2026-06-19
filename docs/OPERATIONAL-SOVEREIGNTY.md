@@ -6,14 +6,14 @@ The Deep State of Mind (DSOM) protocol serves as a **metacognitive governance fr
 
 ### **1. Theoretical Framework of Operational Sovereignty**
 
-Architectural sovereignty is maintained by authorizing **local brain artifacts** within the `.agent/brain/` directory as the absolute **Single Source of Truth (SSoT)**. This approach prevents vendor lock-in, making project knowledge portable across various AI models such as Google Gemini, Anthropic Claude, or local LLMs.
+Architectural sovereignty is maintained by authorizing **local brain artifacts** within the `.agents/brain/` directory as the absolute **Single Source of Truth (SSoT)**. This approach prevents vendor lock-in, making project knowledge portable across various AI models such as Google Gemini, Anthropic Claude, or local LLMs.
 
 Sovereignty is operationalised through the **5W1H Framework**:
 
 * **Who:** Managed by the Lead Architect and the AI agent acting as a **Cognitive Digital Twin**.
 * **What:** Integrates **Clean Architecture** with the CRISP Operational Strategy.
 * **When:** Executed via daily **SOD/EOD Rituals** and a weekly **Sunday Human Audit**.
-* **Where:** Hosted in the sovereign `.agent/brain/` artifacts within the local repository.
+* **Where:** Hosted in the sovereign `.agents/brain/` artifacts within the local repository.
 * **Why:** To ensure **Sovereign Portability** and eliminate vendor dependence.
 * **How:** Enforced through **Atomic Git Hygiene**, mandatory Handshake protocols, and the **Ansible Palace SOD/EOD Ritual** (`sod-palace.yml` / `eod-palace.yml`).
 
@@ -30,7 +30,7 @@ mindmap
       - Daily SOD/EOD Rituals
       - Weekly Human Audit
     Where
-      - .agent/brain/ artifacts
+      - .agents/brain/ artifacts
     Why
       - Sovereign Portability
       - Eliminate Vendor Dependence
@@ -105,7 +105,7 @@ flowchart TD
 
 ### **4. The Anatomy of the DSOM Brain (SKMS)**
 
-Within an **ITIL 4 framework**, the `.agent/brain/` directory acts as the **Service Knowledge Management System (SKMS)**. It preserves structured intelligence across five core temporal states:
+Within an **ITIL 4 framework**, the `.agents/brain/` directory acts as the **Service Knowledge Management System (SKMS)**. It preserves structured intelligence across five core temporal states:
 
 1. **Eternal (`AI-MASTER-PROTOCOL.md`):** Defines governance, identity, and architectural laws.
 2. **Future (`implementation_plan.md`):** Strategic roadmap categorized by individual.
@@ -226,7 +226,7 @@ flowchart TD
     Sovereignty --> Who[Who: Lead Architect + AI Twin]
     Sovereignty --> What[What: Clean Architecture + CRISP Strategy]
     Sovereignty --> When[When: SOD/EOD + Sunday Audit]
-    Sovereignty --> Where[Where: .agent/brain/ artifacts]
+    Sovereignty --> Where[Where: .agents/brain/ artifacts]
     Sovereignty --> Why[Why: Sovereign Portability]
     Sovereignty --> How[How: Git Hygiene + Handshake]
 

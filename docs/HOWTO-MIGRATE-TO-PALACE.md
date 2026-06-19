@@ -65,15 +65,15 @@ bash tools/palace-sync.sh --init-only
 .\tools\palace-sync.ps1 -InitOnly
 ```
 
-This creates the directory structure under `.agent/brain/wings/` without touching any existing files.
+This creates the directory structure under `.agents/brain/wings/` without touching any existing files.
 
 **If the script is not available yet in your clone**, create manually:
 
 ```bash
-mkdir -p .agent/brain/wings/wing_dsom_core/{hall_facts,hall_events,hall_preferences,hall_discoveries}
-mkdir -p .agent/brain/wings/wing_dsom_core/hall_facts/{room_clean_architecture,room_crisp_strategy,room_dsom_protocol,room_tooling}
-mkdir -p .agent/brain/wings/wing_dsom_core/hall_events/{room_sovereign_fabric_v9_8,room_brain_artifacts,room_ledger}
-mkdir -p .agent/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised
+mkdir -p .agents/brain/wings/wing_dsom_core/{hall_facts,hall_events,hall_preferences,hall_discoveries}
+mkdir -p .agents/brain/wings/wing_dsom_core/hall_facts/{room_clean_architecture,room_crisp_strategy,room_dsom_protocol,room_tooling}
+mkdir -p .agents/brain/wings/wing_dsom_core/hall_events/{room_sovereign_fabric_v9_8,room_brain_artifacts,room_ledger}
+mkdir -p .agents/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised
 ```
 
 ---
@@ -90,17 +90,17 @@ bash tools/palace-sync.sh --backfill
 .\tools\palace-sync.ps1 -Backfill
 ```
 
-The proposal file is saved to `.agent/brain/palace_update_proposal_YYYY-MM-DD.md`.
+The proposal file is saved to `.agents/brain/palace_update_proposal_YYYY-MM-DD.md`.
 
 ---
 
 ### Phase 4: Create the Palace Registry
 
-Create `.agent/brain/palace_registry.md`. You can copy the template from the `docs/agent-configs/` dir if available, or adapt the existing one:
+Create `.agents/brain/palace_registry.md`. You can copy the template from the `docs/agent-configs/` dir if available, or adapt the existing one:
 
 ```bash
 # If you have the reference repo available:
-cp /path/to/dsom-reference/.agent/brain/palace_registry.md .agent/brain/palace_registry.md
+cp /path/to/dsom-reference/.agents/brain/palace_registry.md .agents/brain/palace_registry.md
 # Then edit to match YOUR project's Wing/Hall structure
 ```
 
@@ -110,7 +110,7 @@ The registry should list:
 - All Halls within each Wing
 - All Rooms with their paths and purpose
 
-See [`.agent/brain/palace_registry.md`](../.agent/brain/palace_registry.md) in this reference repo for the full format.
+See [`.agents/brain/palace_registry.md`](../.agents/brain/palace_registry.md) in this reference repo for the full format.
 
 ---
 
@@ -157,7 +157,7 @@ Your distilled knowledge here.
 ### Phase 6: Commit the Palace
 
 ```bash
-git add .agent/brain/
+git add .agents/brain/
 git commit -m "feat(palace): initialise Sovereign Markdown Palace v1.0 — [N] Rooms backfilled"
 git push origin main
 ```
@@ -274,7 +274,7 @@ No. Only create Rooms relevant to your project. For a pure software dev project,
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | First-time guide — what the Palace is |
 | [`docs/PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md) | How and why the Palace was built |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace Protocol specification |
-| [`.agent/brain/palace_registry.md`](../.agent/brain/palace_registry.md) | Live Room index |
+| [`.agents/brain/palace_registry.md`](../.agents/brain/palace_registry.md) | Live Room index |
 
 ---
 *Document created: 2026-04-08 | Palace v1.0 | DSOM Protocol v6.1*

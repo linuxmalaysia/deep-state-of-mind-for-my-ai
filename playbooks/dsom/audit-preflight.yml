@@ -10,24 +10,24 @@
   tasks:
     - name: Verify AI Brain connectivity (local test)
       ansible.builtin.stat:
-        path: "{{ playbook_dir }}/../../.agent/brain/task.md"
+        path: "{{ playbook_dir }}/../../.agents/brain/task.md"
       register: brain_stat_task
       delegate_to: localhost
 
     - name: Fail if task.md artifact is missing
       ansible.builtin.fail:
-        msg: "CRITICAL [FAIL]: The .agent/brain/task.md artifact is missing. Initialize the brain before running playbooks."
+        msg: "CRITICAL [FAIL]: The .agents/brain/task.md artifact is missing. Initialize the brain before running playbooks."
       when: not brain_stat_task.stat.exists
 
     - name: Verify Walkthrough artifact
       ansible.builtin.stat:
-        path: "{{ playbook_dir }}/../../.agent/brain/walkthrough.md"
+        path: "{{ playbook_dir }}/../../.agents/brain/walkthrough.md"
       register: brain_stat_walk
       delegate_to: localhost
 
     - name: Fail if walkthrough.md artifact is missing
       ansible.builtin.fail:
-        msg: "CRITICAL [FAIL]: The .agent/brain/walkthrough.md artifact is missing."
+        msg: "CRITICAL [FAIL]: The .agents/brain/walkthrough.md artifact is missing."
       when: not brain_stat_walk.stat.exists
 
     - name: Success message

@@ -53,7 +53,7 @@ git init
 Write-Host "Git initialized."
 
 # 3. Reset Brain Artifacts
-$BrainDir = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir = Join-Path $RepoRoot ".agents" "brain"
 if (-not (Test-Path $BrainDir)) {
     New-Item -ItemType Directory -Path $BrainDir -Force | Out-Null
 }

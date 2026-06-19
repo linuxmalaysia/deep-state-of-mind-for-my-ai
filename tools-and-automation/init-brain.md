@@ -5,7 +5,7 @@
 ## 1. 🏛️ Purpose
 
 **Version:** v4.1 (Root Aware)
-**Description:** Safely initializes the `.agent/brain` directory and default artifacts (`task.md`, `walkthrough.md`) to ensure cognitive continuity for AI agents.
+**Description:** Safely initializes the `.agents/brain` directory and default artifacts (`task.md`, `walkthrough.md`) to ensure cognitive continuity for AI agents.
 
 ## 2. 🛡️ Safety Mechanisms
 
@@ -24,7 +24,7 @@
 ## 4. 🧠 Logic Flow
 
 1. **Repo Check:** Confirms execution within a valid Git repository.
-2. **Directory Creation:** Creates `.agent/brain/` if missing.
+2. **Directory Creation:** Creates `.agents/brain/` if missing.
 3. **Artifact Generation:** Populates `task.md`, `walkthrough.md`, `implementation_plan.md`, and `DSOM_TEMPLATE.md` with default boilerplate content *only if they don't exist*.
 
 ## 5. 📝 Extracted Comments

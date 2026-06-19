@@ -30,25 +30,25 @@
 
 ### 🌐 Global Hub (Strategic)
 
-* [🏁 Task Master (Aggregate)](.agent/brain/global/task-master.md)
+* [🏁 Task Master (Aggregate)](.agents/brain/global/task-master.md)
 
 ### 👥 Member Spokes (Tactical)
 
-* [🎯 My Daily Tasks](.agent/brain/member/haris/task.md)
-* [🏁 My Walkthrough](.agent/brain/member/haris/walkthrough.md)
-* [🗺️ Implementation Plan](.agent/brain/implementation_plan.md)
-* [🏛️ Palace Registry](.agent/brain/palace_registry.md)
+* [🎯 My Daily Tasks](.agents/brain/member/haris/task.md)
+* [🏁 My Walkthrough](.agents/brain/member/haris/walkthrough.md)
+* [🗺️ Implementation Plan](.agents/brain/implementation_plan.md)
+* [🏛️ Palace Registry](.agents/brain/palace_registry.md)
 
 ### 🏛️ Palace Rooms (wing_dsom_core)
 
-* [🔑 room_tooling — Tools Inventory](`.agent/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`)
-* [🏗️ room_clean_architecture — Design Laws](`.agent/brain/wings/wing_dsom_core/hall_facts/room_clean_architecture/closet.md`)
-* [🔬 room_crisp_strategy — AI Interaction](`.agent/brain/wings/wing_dsom_core/hall_facts/room_crisp_strategy/closet.md`)
-* [📜 room_dsom_protocol — Protocol Docs](`.agent/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md`)
-* [🛰️ room_sovereign_fabric_v9_8 — Infra](`.agent/brain/wings/wing_dsom_core/hall_events/room_sovereign_fabric_v9_8/closet.md`)
-* [🧠 room_brain_artifacts — Brain Files](`.agent/brain/wings/wing_dsom_core/hall_events/room_brain_artifacts/closet.md`)
-* [📊 room_ledger — Version History](`.agent/brain/wings/wing_dsom_core/hall_events/room_ledger/closet.md`)
-* [🔭 room_uncategorised — Discoveries](`.agent/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised/closet.md`)
+* [🔑 room_tooling — Tools Inventory](`.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`)
+* [🏗️ room_clean_architecture — Design Laws](`.agents/brain/wings/wing_dsom_core/hall_facts/room_clean_architecture/closet.md`)
+* [🔬 room_crisp_strategy — AI Interaction](`.agents/brain/wings/wing_dsom_core/hall_facts/room_crisp_strategy/closet.md`)
+* [📜 room_dsom_protocol — Protocol Docs](`.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md`)
+* [🛰️ room_sovereign_fabric_v9_8 — Infra](`.agents/brain/wings/wing_dsom_core/hall_events/room_sovereign_fabric_v9_8/closet.md`)
+* [🧠 room_brain_artifacts — Brain Files](`.agents/brain/wings/wing_dsom_core/hall_events/room_brain_artifacts/closet.md`)
+* [📊 room_ledger — Version History](`.agents/brain/wings/wing_dsom_core/hall_events/room_ledger/closet.md`)
+* [🔭 room_uncategorised — Discoveries](`.agents/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised/closet.md`)
 
 ## 🤖 4. AI & Agent Protocols
 

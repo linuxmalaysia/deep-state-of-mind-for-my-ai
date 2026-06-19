@@ -15,7 +15,7 @@ A Digital Sovereignty Operational Model (DSOM) is a strategic framework enabling
 ### ⚖️ Data Sovereignty
 
 * **Definition:** Full control over the lifecycle of data—where it is stored, how it is processed, and who accesses it.
-* **DSOM Implementation:** Using the `.agent/brain/` directory as a local, non-volatile data store. We use global AI for processing but keep the "Golden Record" of our logic on sovereign soil.
+* **DSOM Implementation:** Using the `.agents/brain/` directory as a local, non-volatile data store. We use global AI for processing but keep the "Golden Record" of our logic on sovereign soil.
 
 ### ⚙️ Technology Sovereignty
 
@@ -44,7 +44,7 @@ Utilising dedicated, locally operated infrastructure (e.g., Thales/S3NS in Franc
 
 This is the core of our current protocol. We categorise workloads:
 
-1. **Critical Workload (Sovereign):** Architectural intent, security keys, spatial memory (`palace_registry.md`), and business logic stored in the `.agent/brain/`.
+1. **Critical Workload (Sovereign):** Architectural intent, security keys, spatial memory (`palace_registry.md`), and business logic stored in the `.agents/brain/`.
 2. **Commodity Workload (Public):** LLM pattern matching and code generation via global AI providers.
 
 ### 📜 Regulatory Compliance

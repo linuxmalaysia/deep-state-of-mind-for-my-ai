@@ -16,7 +16,7 @@
 
   vars:
     project_root: "{{ playbook_dir | dirname | dirname }}"
-    brain_dir: "{{ project_root }}/.agent/brain"
+    brain_dir: "{{ project_root }}/.agents/brain"
     timestamp: "{{ lookup('pipe', 'date +\"%Y-%m-%d %H:%M:%S\"') }}"
 
   tasks:

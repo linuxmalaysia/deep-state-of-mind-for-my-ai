@@ -12,7 +12,7 @@ Write-Host "🔍 Harvesting Session Data for $Today..."
 $Commits = git log --since="today" --pretty=format:"    - %s" --reverse | Select-String -Pattern "chore(hibernation)" -NotMatch
 
 # 2. Harvest Task Data
-$TaskFile = "$RepoRoot\.agent\brain\task.md"
+$TaskFile = "$RepoRoot\.agents\brain\task.md"
 if (Test-Path $TaskFile) {
     $Tasks = Select-String -Path $TaskFile -Pattern "\[x\].*\(SELESAI\)"
 } else {

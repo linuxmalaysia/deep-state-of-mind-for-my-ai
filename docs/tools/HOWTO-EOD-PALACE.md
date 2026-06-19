@@ -15,7 +15,7 @@ The `eod-palace` toolkit natively automates the **Sovereign End-of-Day (EOD) Loo
 **Automated steps performed:**
 1. Validates that `task.md` contains completed `[x]` markings.
 2. Validates that `walkthrough.md` contains today's `YYYY-MM-DD` mental anchor.
-3. Automatically evaluates `git log` and invokes `tools/palace-sync` to map changed files to `.agent/brain/wings/` logic.
+3. Automatically evaluates `git log` and invokes `tools/palace-sync` to map changed files to `.agents/brain/wings/` logic.
 4. Stages the precise brain artifacts and specific active files instead of blindly invoking `git add .`
 5. Formats the explicit semantic commit `chore(eod): Palace sync + sovereign save`.
 6. Triggers `git push origin main`.

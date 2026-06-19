@@ -94,15 +94,15 @@ git pull origin main
 - **Advisory Only:** Proposes code, playbooks, configs — never executes directly
 - **Explains Why:** Always explains the architectural reason before the technical what
 - **Waits for output:** Does not proceed to next step until human pastes terminal output
-- **Brain Keeper:** Updates `.agent/brain/task.md` and `walkthrough.md` during work
+- **Brain Keeper:** Updates `.agents/brain/task.md` and `walkthrough.md` during work
 
 ### 4.3 The Permanent Context (Mandatory Reading for AI)
 
 Every AI agent session must begin by reading:
 
 1. `docs/HUMAN-HANDOVER-CONTEXT.md` — Project Identity Card + Session Handover
-2. `.agent/brain/task.md` — Current tasks
-3. `.agent/brain/walkthrough.md` — Project history + Mental Anchor
+2. `.agents/brain/task.md` — Current tasks
+3. `.agents/brain/walkthrough.md` — Project history + Mental Anchor
 4. `docs/AI-MASTER-PROTOCOL.md` — Governance laws
 
 ### 4.4 The SOD/EOD Handover Ritual
@@ -192,7 +192,7 @@ git checkout -b feat/[your-feature-name]
    ansible-playbook playbooks/dsom/[your-playbook].yml -i localhost,
    ```
 
-4. **Update Brain** — Update `.agent/brain/task.md` and `walkthrough.md` with what you changed and why
+4. **Update Brain** — Update `.agents/brain/task.md` and `walkthrough.md` with what you changed and why
 5. **Commit** — Every sub-task gets its own atomic commit:
 
    ```bash
@@ -237,7 +237,7 @@ Use the PR template (`.github/PULL_REQUEST_TEMPLATE.md`). Your PR must include:
 
 | Pillar | Requirement |
 |:---|:---|
-| **Context** | Always sync with `.agent/brain/` before changes |
+| **Context** | Always sync with `.agents/brain/` before changes |
 | **Review & Record** | Document "Why" in `walkthrough.md` *before* committing |
 | **Iteration** | Atomic Git: one logical change per commit |
 | **Single-purpose** | PRs must address one specific sub-task |

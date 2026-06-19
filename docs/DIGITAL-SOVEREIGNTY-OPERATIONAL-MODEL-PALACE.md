@@ -109,3 +109,13 @@ To keep the Brain in sync with the repository state:
 ---
 ---
 *Created by Harisfazillah Jamel | Lead Architect of DSOM | Protocol v6.1 | Inspired by and originated from [milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace)*
+
+
+---
+
+## 🚀 8. Evolution to Sovereign Workspace v2 (OKF & Agent Skills)
+
+In DSOM Protocol v6.2+, the Palace evolved from a static markdown tree (`.agent`) to the dynamic **Sovereign Workspace v2** (`.agents`). This upgrade introduced two critical capabilities:
+
+1. **Open Knowledge Format (OKF) v0.1**: All `closet.md` files now require strict YAML frontmatter. This transforms the Palace from human-readable text into a machine-indexable database, allowing AI to instantly parse `type`, `title`, and `description` without reading the body text.
+2. **Self-Healing Agent Skills**: Automation scripts (`.sh`, `.ps1`) are fragile. Workspace v2 introduced `.agents/skills/`. Each skill is an OKF-compliant `SKILL.md` file that embeds its own operational logic. If a script is deleted, the AI reads the `SKILL.md` to rebuild it from scratch, achieving true self-recovery.

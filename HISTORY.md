@@ -25,7 +25,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 
 ## 🏛️ Phase 3: ITIL 4 Alignment & The Mirror Law
 
-- **[2026-01-16]:** **Value Co-creation (v5.3).** Integrated Law 11 (ITIL 4 Alignment). Refined `.agent/brain/` as the Service Knowledge Management System (SKMS).
+- **[2026-01-16]:** **Value Co-creation (v5.3).** Integrated Law 11 (ITIL 4 Alignment). Refined `.agents/brain/` as the Service Knowledge Management System (SKMS).
 - **[2026-01-17]:** **The Mirror Law.** Codified the "Substance Mandate"—empowering the AI to challenge low-quality human input.
 - **[2026-01-18]:** **External Publication.** Prepared the "Bridging Human Intent" presentation for the developer community speaking slot.
 - **[2026-01-21]:** **Ledger Synchronisation.** Formalised the relationship between `HISTORY.md` and active consciousness brain files.

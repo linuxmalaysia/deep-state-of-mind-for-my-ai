@@ -64,7 +64,7 @@ The script generates a file named **`DSOM-CLAUDE-INIT.md`** in the project root.
 
 After uploading the manifest, use this prompt in your first Claude interaction:
 
-> *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the current Mental Anchor from .agent/brain/walkthrough.md. Confirm the 4-Tier environment map from AI-COGNITIVE-TWIN-PROTOCOL.md. State: 'Sovereign State Synchronised' when ready."*
+> *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the current Mental Anchor from .agents/brain/walkthrough.md. Confirm the 4-Tier environment map from AI-COGNITIVE-TWIN-PROTOCOL.md. State: 'Sovereign State Synchronised' when ready."*
 
 ---
 

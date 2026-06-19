@@ -23,7 +23,7 @@ try {
 
 $DateStamp = Get-Date -Format "yyyy-MM-dd"
 $TimeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$BrainDir = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir = Join-Path $RepoRoot ".agents" "brain"
 
 Write-Host "======================================================================" -ForegroundColor Cyan
 Write-Host "  DSOM SOD RITUAL — PALACE EDITION v1.0" -ForegroundColor Cyan

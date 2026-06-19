@@ -44,7 +44,7 @@ if (-not $RepoRoot) {
     exit 1
 }
 
-$BrainDir      = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir      = Join-Path $RepoRoot ".agents" "brain"
 $PalaceDir     = Join-Path $BrainDir "wings"
 $Registry      = Join-Path $BrainDir "palace_registry.md"
 $MarkerFile    = Join-Path $BrainDir ".palace-sync-marker"
@@ -67,7 +67,7 @@ function Get-PalaceRoom {
     if ($FilePath -match "^(playbooks|inventory|roles|vault)/") {
         return @{ Wing="wing_dsom_core"; Hall="hall_events"; Room="room_sovereign_fabric" }
     }
-    if ($FilePath -match "^\.agent/brain/") {
+    if ($FilePath -match "^\.agents/brain/") {
         return @{ Wing="wing_dsom_core"; Hall="hall_events"; Room="room_brain_artifacts" }
     }
     if ($FilePath -match "^tools/") {
@@ -185,7 +185,7 @@ function Process-Commit {
             $script:RoomGroups[$RoomKey].Add("### ``$($script:CurrentHash.Substring(0,7))`` — $($script:CurrentDate)")
             $script:RoomGroups[$RoomKey].Add("**Subject:** $($script:CurrentMsg)")
             $script:RoomGroups[$RoomKey].Add("**Files:** ``$f``")
-            $script:RoomGroups[$RoomKey].Add("**Target Closet:** ``.agent/brain/$ClosetPath``")
+            $script:RoomGroups[$RoomKey].Add("**Target Closet:** ``.agents/brain/$ClosetPath``")
             $script:RoomGroups[$RoomKey].Add("")
         } else {
             # Append file to existing entry
@@ -258,6 +258,6 @@ Write-Host "  🚪 Rooms: $($RoomGroups.Count) Rooms affected" -ForegroundColor 
 Write-Host "  📍 Path:  $ProposalFile" -ForegroundColor Green
 Write-Host ""
 Write-Host "  NEXT STEP: Ask your AI to review this proposal and update" -ForegroundColor Cyan
-Write-Host "  the corresponding closet.md files in .agent/brain/wings/" -ForegroundColor Cyan
+Write-Host "  the corresponding closet.md files in .agents/brain/wings/" -ForegroundColor Cyan
 Write-Host "  ======================================================================" -ForegroundColor Green
 Write-Host ""

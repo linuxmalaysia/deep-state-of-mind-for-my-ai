@@ -8,7 +8,7 @@ In the DSOM Framework, the relationship between the **Lead Architect (Harisfazil
 
 * **Service Provider:** The AI Agent (Providing Intelligence, Code Generation, and Analysis).
 * **Service Consumer:** The Lead Architect (Defining Requirements, Constraints, and Value).
-* **Asset:** The Codebase and Documentation (`.agent/brain`).
+* **Asset:** The Codebase and Documentation (`.agents/brain`).
 
 The goal is not just "Output" (Code), but **"Outcome"** (Sovereign, Maintainable, and Scalable Infrastructure).
 
@@ -46,7 +46,7 @@ Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:
 
 * **ITIL Action:** Ensuring value co-creation.
 * **DSOM Implementation:** Running `bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)` to validate artifacts and generate proposals.
-* **Artifact:** `CHANGELOG.md` and `.agent/brain/` updates.
+* **Artifact:** `CHANGELOG.md` and `.agents/brain/` updates.
 
 ### vi) Improve (The Sunday Audit)
 
@@ -58,7 +58,7 @@ Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:
 
 ## 3. 🧠 Service Knowledge Management System (SKMS)
 
-The `.agent/brain/` directory constitutes the project's **SKMS**. It is the Single Source of Truth for:
+The `.agents/brain/` directory constitutes the project's **SKMS**. It is the Single Source of Truth for:
 
 * **Service Portfolio:** `implementation_plan.md` (Strategic roadmap) and `palace_registry.md` (Spatial memory).
 * **Service Catalogue:** `OPERATIONAL-GUIDE.md` (Capabilities).
@@ -148,7 +148,7 @@ flowchart TD
     end
 
     subgraph Operation_Layer [L3-L4 Tactical]
-        S2[2. Service Value Chain] --> S3[3. SKMS .agent/brain]
+        S2[2. Service Value Chain] --> S3[3. SKMS .agents/brain]
         S3 --> S8[8. Incident & Request]
         S6[6. Multi-Agent Federation] --> S2
     end

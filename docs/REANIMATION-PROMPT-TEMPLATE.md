@@ -47,10 +47,10 @@ System Initialisation: Initialise DSOM Protocol v6.1.
 
 3. CONTEXT SYNC (read the uploaded manifest):
    - Review Section [14] Palace Registry. Walk the relevant Rooms for today's tasks.
-   - Confirm the current Mental Anchor from .agent/brain/walkthrough.md
+   - Confirm the current Mental Anchor from .agents/brain/walkthrough.md
    - Confirm the 4-Tier environment map from docs/AI-COGNITIVE-TWIN-PROTOCOL.md
-   - State the top 3 pending tasks from .agent/brain/task.md
-   - Confirm the active phase from .agent/brain/implementation_plan.md
+   - State the top 3 pending tasks from .agents/brain/task.md
+   - Confirm the active phase from .agents/brain/implementation_plan.md
 
 4. RESPONSE FORMAT (LDP-Standard):
    Every response must follow:
@@ -86,7 +86,7 @@ After reading the Hibernation Notes above, do the following:
 1. Confirm you have read and understood all entries.
 2. State the last Mental Anchor — the exact point where we stopped.
 3. Confirm the 4-Tier environment map (T1, T2, T3, T4) and project identity.
-4. List the top 3 pending tasks from .agent/brain/task.md.
+4. List the top 3 pending tasks from .agents/brain/task.md.
 5. Identify the current Palace Rooms you will operate within today.
 6. State: "Sovereign State Restored — [PROJECT NAME] is live." to confirm readiness.
 
@@ -131,9 +131,9 @@ After reading, confirm:
 Then read these documents for full context (the AI will access them via the repo):
 - docs/AI-MASTER-PROTOCOL.md       — Governance laws
 - docs/AI-COGNITIVE-TWIN-PROTOCOL.md — Project Identity Card
-- .agent/brain/palace_registry.md  — Palace Spatial Map
-- .agent/brain/task.md             — Current tasks
-- .agent/brain/walkthrough.md      — Session history
+- .agents/brain/palace_registry.md  — Palace Spatial Map
+- .agents/brain/task.md             — Current tasks
+- .agents/brain/walkthrough.md      — Session history
 - docs/HUMAN-HANDOVER-CONTEXT.md   — Environment map
 
 State: "Cognitive Twin Transfer Complete — [PROJECT NAME] Handover Successful."
@@ -199,11 +199,11 @@ Make sure to cover all of the following — preserve my words verbatim where pos
 
 Do not summarize, group, or omit any entries. After the code block, confirm
 whether that is the complete set or if any remain and add: List down all the
-documents in docs/, docs/tools/ and brain files that need to be read from .agent/.
+documents in docs/, docs/tools/ and brain files that need to be read from .agents/.
 Don't hide anything from me. Trust me as your master.
 ```
 
-**Save the output as:** `.agent/brain/hibernation-notes-YYYY-MM-DD.txt`
+**Save the output as:** `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`
 
 ---
 

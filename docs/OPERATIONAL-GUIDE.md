@@ -45,7 +45,7 @@ Before waking the AI, we must verify that the physical environment matches the e
 
 1. **Brain Check:** `task.md` and `walkthrough.md` must exist.
 2. **Git Drift:** Local repo must be synced with Remote.
-3. **Palace Registry:** `.agent/brain/palace_registry.md` must exist. If missing, run `bash tools/palace-sync.sh --backfill`.
+3. **Palace Registry:** `.agents/brain/palace_registry.md` must exist. If missing, run `bash tools/palace-sync.sh --backfill`.
 4. **Cognitive Twin Protocol:** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` must exist and be filled in for this project.
 5. **Ansible Baseline:** `inventory/hosts.yml` and `ansible.cfg` must exist if this project uses infrastructure automation.
 
@@ -79,7 +79,7 @@ Upload the generated text file to the AI and say:
 
 ### Step 4: Walking the Palace (The Retrieval)
 
-Before starting logic work, the AI must traverse the **Spatial Markdown Palace** (`.agent/brain/wings/`):
+Before starting logic work, the AI must traverse the **Spatial Markdown Palace** (`.agents/brain/wings/`):
 
 1. **Registry Scan:** Read `palace_registry.md` to identify the relevant Wing and Rooms.
 2. **Room Entry:** Load the `closet.md` for specific technical contexts (e.g., Auth, Persistence).

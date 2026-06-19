@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **Cross-Platform Daily Automation Rituals.** Introduced Windows-native variants of Palace routines (`tools/sod-palace.ps1` and `tools/eod-palace.ps1`) executing directly via PowerShell to bypass WSL Ansible dependencies. Symmetrically added Bash wrapper proxies (`tools/sod-palace.sh` and `tools/eod-palace.sh`) for parity on Linux/WSL2 nodes. All related documentation refactored away from explicit playbook constraints.
-- **Smart Checkpoint Integration.** Upgraded `tools/checkpoint.ps1` and `playbooks/dsom/checkpoint-palace.yml` to support AI-generated commit messages via `.agent/brain/checkpoint_summary.txt`. Bridged the context gap between AI task state and human execution terminals.
+- **Smart Checkpoint Integration.** Upgraded `tools/checkpoint.ps1` and `playbooks/dsom/checkpoint-palace.yml` to support AI-generated commit messages via `.agents/brain/checkpoint_summary.txt`. Bridged the context gap between AI task state and human execution terminals.
 - **Automation Hardening.** Fixed non-interactive crash in `reanimate.sh` and `reanimate.ps1` via TTY detection and robustness wrappers.
 - **Documentation Sanitization.** Purged comparative token/cost tables to maintain a neutral stance. Formally credited `milla-jovovich/mempalace` as the originator of the spatial memory architecture.
 - **DSOM Onboarding Automation.** Created cross-platform bootstrap scripts using Bash (`dsom-onboard.sh`) and PowerShell (`dsom-onboard.ps1`). Native Ansible fetching backend added to `playbooks/dsom/onboard-dsom.yml`. Handles "Zero-Debt" safe cloning into any external target repository, preventing overrides via Git branch isolation and timestamp file deduplication.
@@ -173,7 +173,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Tooling v8.6:** Upgraded `CheckUsage.ps1` with accurate token estimation and ASCII-safe interface.
 - **New Resource:** Created `docs/tools/HOWTO-CHECKUSAGE.md`.
 - **`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`** — Removed placeholder variables and restored default baseline paths to pass the pre-flight checks.
-- **Brain Artifacts** — Updated `.agent/brain/` session tracking to maintain the GitOps/AIOps continuity loop.
+- **Brain Artifacts** — Updated `.agents/brain/` session tracking to maintain the GitOps/AIOps continuity loop.
 
 ---
 
@@ -243,7 +243,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **The Brain Artifacts:** Initialised `.agent/brain/` with `task.md`, `walkthrough.md`, and `implementation_plan.md`.
+- **The Brain Artifacts:** Initialised `.agents/brain/` with `task.md`, `walkthrough.md`, and `implementation_plan.md`.
 - **DSOM Persistence Protocol:** Established the Handshake ritual for session reanimation.
 
 ---
