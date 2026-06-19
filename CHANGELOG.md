@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [10.2.0-okf] - 2026-06-19
+
+### Added
+
+- **Open Knowledge Format (OKF) v0.1.** Fully integrated Google Cloud's OKF specification into the DSOM framework to prevent AI context decay. 
+- **`docs/OKF-ADOPTION-GUIDE.md`** & **`references/OKF-ADOPTION-GUIDE.md`** — Official guidelines for adopting OKF in DSOM.
+- **GitBook `SUMMARY.md` Update.** Added brand new sections for AI Agent Skills & Workflows and Genesis References.
+
+### Changed
+
+- **Knowledge Bundles Schema Migration:** Programmatically updated 13 `.agents/brain` and `.agents/skills` artifacts to enforce strict OKF v0.1 YAML frontmatter (`title` and `timestamp`).
+- **Bootstrap Blueprint Portability:** Converted all hardcoded absolute paths in `references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md` to relative paths for zero-lock-in portability.
+- **GitBook Structure:** Exposed the 5 Core AI Skills (including EOD/SOD Palace Sync) directly in the generated Sovereign Book.
+
 ## [10.1.0-onboarding] - 2026-04-08
 
 ### Added
