@@ -3,6 +3,7 @@ okf_version: 0.1
 type: tooling_registry
 title: Tooling Registry
 description: Distilled knowledge for Tooling Registry
+timestamp: 2026-06-19T14:00:00Z
 ---
 # 🚪 Closet: Room Tooling (The Workshop)
 

@@ -45,7 +45,7 @@ To prevent the AI from suffering the "Lost in the Middle" attention degradation,
 
 > [!IMPORTANT]
 > **Open Knowledge Format (OKF) v0.1 Compliance:**
-> Every single `closet.md` and `SKILL.md` file you create MUST contain a strict YAML frontmatter block at the very top (e.g., `--- \n okf_version: 0.1 \n type: ... \n ---`). This ensures the Memory Palace is fully machine-readable and compliant with modern AI indexing standards.
+> Every single `closet.md` and `SKILL.md` file you create MUST contain a strict YAML frontmatter block at the very top (e.g., `--- \n okf_version: 0.1 \n type: ... \n title: ... \n timestamp: ... \n ---`). This ensures the Memory Palace is fully machine-readable and compliant with modern AI indexing standards.
 
 ## 2. The GitOps Imperative (Why Git is Mandatory)
 The Memory Palace relies **entirely** on Git version control. Without Git, there is no EOD Palace Sync, no Hibernation, and no Immutable Ledger. 
