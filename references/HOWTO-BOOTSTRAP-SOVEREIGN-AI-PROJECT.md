@@ -81,25 +81,25 @@ Instead of constantly reinventing bash scripts or workflows, if you perform a co
 To adopt this methodology perfectly, **use your file reading tools** to analyze how the previous, highly-successful AI built these files in the legacy project.
 
 ### Reference Files (Read these using their absolute paths):
-1.  **The Core Rules:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\.agents\AGENTS.md`
+1.  **The Core Rules:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\AGENTS.md`
     *   *(Read this to understand the overarching system rules you must abide by.)*
-2.  **The Mental Anchor Format:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\.agents\brain\checkpoint_summary.txt`
+2.  **The Mental Anchor Format:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\brain\checkpoint_summary.txt`
     *   *(Read this to see how the previous AI structured its long-term memory handovers.)*
-3.  **The Task Ledger:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\.agents\brain\task.md`
+3.  **The Task Ledger:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\brain\task.md`
     *   *(Read this to see how complex tasks are broken down using `[ ]`, `[/]`, and `[x]`.)*
-4.  **The Walkthrough Diary:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\.agents\brain\walkthrough.md`
+4.  **The Walkthrough Diary:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\brain\walkthrough.md`
     *   *(Read this to see how daily architectural accomplishments are recorded.)*
-5.  **An AI Skill Example:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\.agents\skills\audit-ingestion-health\SKILL.md`
+5.  **An AI Skill Example:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\skills\audit-ingestion-health\SKILL.md`
     *   *(Read this to see how you should package your own scripts into autonomous skills.)*
 
 ### Deep Dive AI Context Documentation:
 If you need to deeply understand the mechanics of the Palace and the DSOM baseline, you should immediately `view_file` the following theoretical documents from the original project:
-0. **The Genesis Essay:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\references\The Sovereign AI Agent Workspace_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260612.md` (The founding architectural paper you must read to understand Context Decay, the Spatial Palace, and Git Sovereignty).
-1. **The Logging Protocol:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\docs\AI-COGNITIVE-LOGGING-PROTOCOL.md` (Explains how your raw JSONL transcripts form the Immutable Ledger).
-2. **Skill Architecture:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\docs\AI-AGENT-SKILLS-GUIDE.md` (Explains how to structure complex skills with embedded scripts).
-3. **Open Knowledge Format (OKF):** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\docs\OKF-ADOPTION-GUIDE.md` (Explains the mandatory YAML metadata compliance for memory indexing).
-4. **Portability Mechanics:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\docs\HOWTO-PORT-AI-PALACE.md` (Explains how to migrate this memory structure across completely different physical environments).
-5. **DSOM Onboarding:** `D:\Users\LinuxMalaysia\Projects\um-elastic-soc\docs\HOWTO-DSOM-ONBOARDING.md` and `HOWTO-ADOPT-DSOM.md` (Explains the overarching principles of Sovereign Operations and AI integration).
+0. **The Genesis Essay:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\references\The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md` (The founding architectural paper you must read to understand Context Decay, the Spatial Palace, and Git Sovereignty).
+1. **The Logging Protocol:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\docs\AI-COGNITIVE-LOGGING-PROTOCOL.md` (Explains how your raw JSONL transcripts form the Immutable Ledger).
+2. **Skill Architecture:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\docs\AI-AGENT-SKILLS-GUIDE.md` (Explains how to structure complex skills with embedded scripts).
+3. **Open Knowledge Format (OKF):** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\docs\OKF-ADOPTION-GUIDE.md` (Explains the mandatory YAML metadata compliance for memory indexing).
+4. **Portability Mechanics:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\docs\HOWTO-PORT-AI-PALACE.md` (Explains how to migrate this memory structure across completely different physical environments).
+5. **DSOM Onboarding:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\docs\HOWTO-DSOM-ONBOARDING.md` and `HOWTO-ADOPT-DSOM.md` (Explains the overarching principles of Sovereign Operations and AI integration).
 
 ### Universal Cross-Project Skills to Adopt:
 The following AI Agent Skills were built in the previous project but are entirely agnostic to the technology stack. You should copy their `.agents/skills/<name>/SKILL.md` files directly into your new project because they apply to *any* operational environment:
