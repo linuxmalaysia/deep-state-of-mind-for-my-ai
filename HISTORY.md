@@ -72,6 +72,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-04-08]:** **Smart Checkpoint Integration.** Upgraded `tools/checkpoint.ps1` and `playbooks/dsom/checkpoint-palace.yml` to support high-fidelity commit messages sourced from AI-generated Hibernation Notes (`checkpoint_summary.txt`).
 - **[2026-04-08]:** **Documentation Sanitization & Crediting.** Purged comparative cost data and formally credited `milla-jovovich/mempalace` in core protocol docs and spatial memory closets.
 - **[2026-04-08]:** **Git Tag `v10.1.0-onboarding`** pushed to GitHub. Continuous Integration loops across Windows (T1) and Linux (T2) fully harmonised.
+- **[2026-06-19]:** **OKF v0.1 Standardization.** Adopted Google Cloud's Open Knowledge Format across all Palace artifacts and Knowledge Bundles to solve AI context decay. Updated GitBook and bootstrap blueprints for relative-path portability.
 
 ---
-*End of Current Ledger | Standard: DSOM Protocol v10.0.0-palace | Harisfazillah Jamel*
+*End of Current Ledger | Standard: DSOM Protocol v10.2.0-okf | Harisfazillah Jamel*
