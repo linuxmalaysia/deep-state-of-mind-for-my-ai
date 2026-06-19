@@ -89,8 +89,8 @@ To adopt this methodology perfectly, **use your file reading tools** to analyze 
     *   *(Read this to see how complex tasks are broken down using `[ ]`, `[/]`, and `[x]`.)*
 4.  **The Walkthrough Diary:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\brain\walkthrough.md`
     *   *(Read this to see how daily architectural accomplishments are recorded.)*
-5.  **An AI Skill Example:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\skills\audit-ingestion-health\SKILL.md`
-    *   *(Read this to see how you should package your own scripts into autonomous skills.)*
+5.  **An AI Skill Example:** `D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai\.agents\skills\sod-palace-sync\SKILL.md`
+    *   *(Read this to see how you should package your own scripts into autonomous self-healing skills.)*
 
 ### Deep Dive AI Context Documentation:
 If you need to deeply understand the mechanics of the Palace and the DSOM baseline, you should immediately `view_file` the following theoretical documents from the original project:
