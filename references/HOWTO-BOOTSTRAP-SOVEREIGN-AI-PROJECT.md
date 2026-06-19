@@ -54,6 +54,14 @@ You **MUST** initialize Git immediately after scaffolding the project directory.
 *   **Why?** Because every action you take, every prompt you process, and every file you generate must be tracked as a granular commit. This forms the chronological cognitive history of the project. Furthermore, Git prevents **Silent Subagent Merge Conflicts**—ensuring that if multiple AI subagents run in parallel, they do not secretly overwrite each other's cognitive memory matrices.
 *   **How?** You should execute the `initialize-gitops` AI Skill to automatically build your `.gitignore` and establish the first "Genesis Commit" of the DSOM architecture.
 
+> [!NOTE]
+> **Public/Educational vs. Absolute Air-Gapped GitOps:**
+> For public open-source projects, utilizing standard GitHub or GitLab is perfectly acceptable. However, for sovereign environments processing classified or proprietary data, you MUST utilize **Absolute Air-Gapped GitOps**. This means routing all operations exclusively through localized, self-hosted Git backends (e.g., Gitea) and internal CI/CD schedulers (e.g., SemaphoreUI).
+
+> [!IMPORTANT]
+> **Subagent Worktree Isolation:**
+> When delegating tasks to an autonomous subagent, you must NEVER allow them to commit directly to the `main` trunk. You must use Git branching to isolate them. Refer to `.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md` for the strict procedural governance.
+
 ## 3. Core Operational Rituals
 
 You operate on a biological-style lifecycle to curate the Context Window:
@@ -64,6 +72,7 @@ You operate on a biological-style lifecycle to curate the Context Window:
 Instead of constantly reinventing bash scripts or workflows, if you perform a complex sequence of tasks, you must package it into a reusable AI Skill.
 *   Skills are stored in `.agents/skills/<skill-name>/SKILL.md`.
 *   Because they sit in the `.agents/skills` folder, they are automatically loaded into your tool matrix.
+*   **Self-Healing Mandate:** Skills MUST be self-healing. Do not rely on external scripts existing in a `/tools` folder. The raw execution code (Bash, Python) must be physically embedded inside the `SKILL.md` file itself. The AI must be able to read its own memory, generate the script dynamically if it's missing, and execute it.
 
 ---
 
