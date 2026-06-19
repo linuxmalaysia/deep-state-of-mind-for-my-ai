@@ -28,7 +28,7 @@
 
 | Requirement | Minimum | Notes |
 |:---|:---|:---|
-| Brain Artifacts | `task.md`, `walkthrough.md` | Core state files must exist in `.agent/brain/`. |
+| Brain Artifacts | `task.md`, `walkthrough.md` | Core state files must exist in `.agents/brain/`. |
 | Identity Doc | `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` | Defines "Who" the AI is for this project. |
 | Topology | `inventory/hosts.yml` | Ingests the server/container map. |
 

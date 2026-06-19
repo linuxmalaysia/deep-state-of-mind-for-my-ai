@@ -5,7 +5,7 @@
 .DESCRIPTION
     Safeguards the project state at End-of-Day.
     - Validates brain artifacts (task.md, walkthrough.md)
-    - Saves Hibernation Notes to .agent/brain/
+    - Saves Hibernation Notes to .agents/brain/
     - Shows uncommitted changes for review (no blind git add .)
     - Summarises recent commits and tomorrow's tasks
     - Performs guided Sovereign Save (selective git add -> commit -> push)
@@ -35,7 +35,7 @@ if (-not $RepoRoot) {
     exit 1
 }
 
-$BrainDir        = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir        = Join-Path $RepoRoot ".agents" "brain"
 $TaskFile        = Join-Path $BrainDir "task.md"
 $WalkthroughFile = Join-Path $BrainDir "walkthrough.md"
 $DateStamp       = Get-Date -Format "yyyy-MM-dd"
@@ -130,8 +130,8 @@ if (Test-Path $HibFile) {
     $HibLines.Add("")
     $HibLines.Add("- docs/SOD-RITUAL.md")
     $HibLines.Add("- docs/AI-COGNITIVE-TWIN-PROTOCOL.md")
-    $HibLines.Add("- .agent/brain/task.md")
-    $HibLines.Add("- .agent/brain/walkthrough.md")
+    $HibLines.Add("- .agents/brain/task.md")
+    $HibLines.Add("- .agents/brain/walkthrough.md")
 
     ($HibLines -join "`n") | Out-File -FilePath $HibFile -Encoding UTF8
     Write-Host "    OK  Saved: hibernation-notes-$DateStamp.txt" -ForegroundColor Green

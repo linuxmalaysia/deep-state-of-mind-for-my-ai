@@ -10,7 +10,7 @@ structure:
 
 # Inclusion of Brain Artifacts as tracked content
 content:
-  - .agent/brain/*.md
+  - .agents/brain/*.md
   - docs/*.md
   - SUMMARY.md
   - README.md

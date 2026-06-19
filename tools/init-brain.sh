@@ -26,7 +26,7 @@ if [ -z "$ROOT_DIR" ]; then
     exit 1
 fi
 
-BRAIN_DIR="$ROOT_DIR/.agent/brain"
+BRAIN_DIR="$ROOT_DIR/.agents/brain"
 echo -e "${CYAN}Targeting DSOM Root: $ROOT_DIR${NC}"
 
 # 1. Create Directory Structure

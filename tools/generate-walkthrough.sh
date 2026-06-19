@@ -16,7 +16,7 @@ echo "🔍 Harvesting Session Data for $TODAY..."
 COMMITS=$(git log --since="today" --pretty=format:"    - %s" --reverse | grep -v "chore(hibernation)")
 
 # 2. Harvest Task Data
-TASKS=$(grep "\[x\]" "$REPO_ROOT/.agent/brain/task.md" | grep "(SELESAI)" || echo "    - No tasks marked as SELESAI found.")
+TASKS=$(grep "\[x\]" "$REPO_ROOT/.agents/brain/task.md" | grep "(SELESAI)" || echo "    - No tasks marked as SELESAI found.")
 
 # 3. Generate Markdown Block
 echo ""

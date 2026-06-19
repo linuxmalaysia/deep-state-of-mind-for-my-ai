@@ -51,7 +51,7 @@ TEMP_DIR="build_tmp_${TIMESTAMP}"
 
 # Dynamic Identity Resolution (No hardcoding)
 CURRENT_USER=$(whoami)
-WALKTHROUGH_PATH=".agent/brain/member/${CURRENT_USER}/walkthrough.md"
+WALKTHROUGH_PATH=".agents/brain/member/${CURRENT_USER}/walkthrough.md"
 
 # --- [1. Fail-Safe Cleanup Function] ---
 cleanup() {

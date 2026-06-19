@@ -10,7 +10,7 @@
 
 ## 1. Purpose
 
-`dsom-onboard` is the **Architectural Grafting Tool**. It allows you to take any existing Git repository and "Onboard" it into the Deep State of Mind framework. It automates the complex process of injecting the `.agent/brain/`, `playbooks/dsom/`, and `tools/` ecosystems into a foreign project without causing file collisions or git history corruption.
+`dsom-onboard` is the **Architectural Grafting Tool**. It allows you to take any existing Git repository and "Onboard" it into the Deep State of Mind framework. It automates the complex process of injecting the `.agents/brain/`, `playbooks/dsom/`, and `tools/` ecosystems into a foreign project without causing file collisions or git history corruption.
 
 **Use it to:**
 - Convert a normal project into a DSOM-compliant repository.

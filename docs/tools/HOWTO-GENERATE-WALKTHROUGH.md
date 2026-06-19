@@ -30,7 +30,7 @@
 |:---|:---|:---|
 | Protocol | DSOM 5.0+ | Expects `[x]` and `(SELESAI)` markers in tasks. |
 | Git | Yes | Used to harvest today's commit logs. |
-| Brain Dir | `.agent/brain/` | Must contain the `task.md` file. |
+| Brain Dir | `.agents/brain/` | Must contain the `task.md` file. |
 
 ---
 
@@ -71,7 +71,7 @@ The tool prints a block like this:
 - **Mental Anchor:** [UPDATE ME]
 ```
 
-**Instruction:** Copy this entire block and paste it at the TOP of your **`.agent/brain/walkthrough.md`** file during your End-of-Day ritual. Fill in the `[UPDATE ME]` fields manually to provide the AI with logical context for the next session.
+**Instruction:** Copy this entire block and paste it at the TOP of your **`.agents/brain/walkthrough.md`** file during your End-of-Day ritual. Fill in the `[UPDATE ME]` fields manually to provide the AI with logical context for the next session.
 
 ---
 
@@ -79,7 +79,7 @@ The tool prints a block like this:
 
 | Document | Purpose |
 |:---|:---|
-| [`.agent/brain/walkthrough.md`](../../.agent/brain/walkthrough.md) | The target file for the generated output. |
+| [`.agents/brain/walkthrough.md`](../../.agents/brain/walkthrough.md) | The target file for the generated output. |
 | [`docs/EOD-RITUAL.md`](../docs/EOD-RITUAL.md) | Where this tool fits in the session close-out. |
 
 ---

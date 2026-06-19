@@ -7,7 +7,7 @@
 # License:  GNU GPL v3.0 or later
 #
 # Description:
-# Initialises the DSOM .agent/brain/ directory and core artifacts.
+# Initialises the DSOM .agents/brain/ directory and core artifacts.
 # Idempotent: will not overwrite existing files.
 #
 # Run on localhost (own workstation):
@@ -23,7 +23,7 @@
   gather_facts: true
   vars:
     repo_root: "{{ lookup('env', 'PWD') }}"
-    brain_dir: "{{ repo_root }}/.agent/brain"
+    brain_dir: "{{ repo_root }}/.agents/brain"
 
   tasks:
     - name: "DSOM Init-Brain | Print header"
@@ -36,7 +36,7 @@
           ==================================================
 
     # ── Create Brain Directory ────────────────────────────────────────────────
-    - name: "Init | Create .agent/brain/ directory"
+    - name: "Init | Create .agents/brain/ directory"
       file:
         path: "{{ brain_dir }}"
         state: directory

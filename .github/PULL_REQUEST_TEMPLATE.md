@@ -8,7 +8,7 @@
 - [ ] I have run `./tools/audit-pre-flight.sh` (or `.ps1`) locally.
 
 ### 🧠 Cognitive Alignment
-- [ ] **Context:** I have updated `.agent/brain/task.md` (if applicable).
+- [ ] **Context:** I have updated `.agents/brain/task.md` (if applicable).
 - [ ] **Record:** I have explained my "Why" in a `walkthrough.md` entry (or will do so).
 - [ ] **Atomic:** This PR addresses a single, focused sub-task.
 

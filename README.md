@@ -4,7 +4,7 @@
 
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 [![Version](https://img.shields.io/badge/Version-10.0.0--palace-blue.svg)]()
-[![Palace](https://img.shields.io/badge/Palace-v1.0-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
+[![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 [![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
 [![Standard](https://img.shields.io/badge/AI%20Standard-Cognitive%20Digital%20Twin-purple.svg)]()
@@ -19,7 +19,7 @@ It solves three critical AI problems:
 
 | Problem | DSOM Solution |
 |:---|:---|
-| **Context Decay** — AI forgets everything after each session | `.agent/brain/` artifacts persist the project state permanently |
+| **Context Decay** — AI forgets everything after each session | `.agents/brain/` artifacts persist the project state permanently |
 | **Vendor Lock-in** — Moving between AI tools loses all context | All knowledge lives in your Git repo, not inside the AI |
 | **Uncontrolled Execution** — AI runs commands you didn't approve | Advisory Mode + GitOps + Ansible enforce human-approval-first |
 
@@ -89,7 +89,7 @@ chmod +x tools/*.sh
 .\tools\init-brain.ps1
 ```
 
-This creates your `.agent/brain/` directory with:
+This creates your `.agents/brain/` directory with:
 
 - `task.md` — What to do right now
 - `walkthrough.md` — Session history and Mental Anchors
@@ -157,7 +157,7 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
 
 ---
 
-## 🏛️ The Sovereign Markdown Palace (v10.0.0-palace)
+## 🏛️ The Sovereign Workspace v2 (OKF + Palace + Skills)
 
 > **New in v10.0:** The DSOM brain has evolved to a **spatial memory architecture** — the Sovereign Markdown Palace. This approach is pioneered by and originated from the **MemPalace** project ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace)).
 
@@ -166,7 +166,7 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
 The Palace gives your AI **organised, fast, spatial recall** across months of project history — without reading entire session logs. It works as a second layer alongside the existing `walkthrough.md` (The Drawer).
 
 ```text
-.agent/brain/
+.agents/brain/
 ├── palace_registry.md        ← AI reads this at SOD (spatial map)
 ├── walkthrough.md            ← Linear session log (The Drawer)
 └── wings/                    ← Spatial Palace Rooms
@@ -298,7 +298,7 @@ Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only exec
 ### 🌙 End of Day (EOD)
 
 **Step 1 — Context Consolidation** *(Ask your AI)*
-> *"We are ending the session. Update `.agent/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agent/brain/walkthrough.md` with today's Mental Anchor."*
+> *"We are ending the session. Update `.agents/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agents/brain/walkthrough.md` with today's Mental Anchor."*
 
 **Step 1b — Hibernation Notes Export** *(Run this in your AI chat — copy verbatim)*
 
@@ -312,11 +312,11 @@ Format each entry as: [date saved, if available] - memory content.
 Cover: instructions I've given you, project details (servers/VMs/containers,
 4W1H), tasks/phases/goals, tools/languages/frameworks, preferences and
 corrections. Do not summarize, group, or omit any entries.
-After the code block, list all docs in docs/ and brain files in .agent/.
+After the code block, list all docs in docs/ and brain files in .agents/.
 Don't hide anything from me. Trust me as your master.
 ```
 
-Save the output as `.agent/brain/hibernation-notes-YYYY-MM-DD.txt` or to your notebook.
+Save the output as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt` or to your notebook.
 
 **Step 2 — EOD Mechanical Save (Cross-Platform Palace Sync)**
 
@@ -371,15 +371,22 @@ deep-state-of-mind-for-my-ai/
 │   ├── REANIMATION-PROMPT-TEMPLATE.md     # AI session prompt templates
 │   └── ...
 │
-├── .agent/brain/                          # 🧠 The AI's External Memory (SSoT)
-│   ├── task.md                            # Present: What to do NOW
-│   ├── walkthrough.md                     # Past: Session history & Mental Anchors
-│   ├── implementation_plan.md             # Future: Project roadmap
-│   ├── palace_registry.md                 # 🏛️ Palace spatial index (AI reads at SOD)
-│   └── wings/                             # 🏛️ Sovereign Markdown Palace Rooms
-│       └── wing_dsom_core/
-│           ├── hall_facts/                # Laws, tools, architecture
-│           └── hall_events/              # Milestones, versions, ledger
+├── .agents/                               # 🤖 Sovereign AI Workspace (v2)
+│   ├── AGENTS.md                          # 📜 Core Rulebook mapping AI rules to memory
+│   ├── skills/                            # 🛠️ Self-Healing Agent Skills (OKF)
+│   │   ├── eod-palace-sync/
+│   │   ├── sod-palace-sync/
+│   │   └── ...
+│   ├── workflows/                         # 🔄 Procedural Workflow chains
+│   └── brain/                             # 🧠 The AI's External Memory (SSoT)
+│       ├── task.md                        # Present: What to do NOW
+│       ├── walkthrough.md                 # Past: Session history & Mental Anchors
+│       ├── implementation_plan.md         # Future: Project roadmap
+│       ├── palace_registry.md             # 🏛️ Palace spatial index (OKF Compliant)
+│       └── wings/                         # 🏛️ Sovereign Markdown Palace Rooms
+│           └── wing_dsom_core/
+│               ├── hall_facts/            # Laws, tools, architecture
+│               └── hall_events/           # Milestones, versions, ledger
 │
 ├── tools/                                 # Automation Scripts
 │   ├── audit-pre-flight.sh / .ps1         # ✅ Run first every session

@@ -34,7 +34,7 @@ if (-not $RootDir) {
     exit 1
 }
 
-$BrainDir = Join-Path $RootDir ".agent" "brain"
+$BrainDir = Join-Path $RootDir ".agents" "brain"
 
 Write-Host "==================================================" -ForegroundColor $Cyan
 Write-Host "   DEEP STATE OF MIND (DSOM) INTELLIGENCE AUDIT   " -ForegroundColor $Cyan

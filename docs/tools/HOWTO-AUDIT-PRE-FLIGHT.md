@@ -32,7 +32,7 @@
 |:---|:---|:---|
 | Protocol | DSOM v5.0+ | Compatible with current v6.1 framework. |
 | Git | Yes | Repository must be initialized. |
-| Brain | Init'd | `.agent/brain/` must exist. |
+| Brain | Init'd | `.agents/brain/` must exist. |
 
 ---
 

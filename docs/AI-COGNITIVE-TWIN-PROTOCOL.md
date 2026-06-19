@@ -113,7 +113,7 @@ The **Ansible-First Execution Model** applies to all OS-level operations:
 For every phase and significant task:
 
 1. **Phase Persistence**: Update daily session summaries (`walkthrough.md`) and project history ledgers.
-2. **Brain Sync**: Ensure `.agent/brain/` artifacts (`task.md`, `implementation_plan.md`, `walkthrough.md`) are the **Absolute Source of Truth (SSoT)**.
+2. **Brain Sync**: Ensure `.agents/brain/` artifacts (`task.md`, `implementation_plan.md`, `walkthrough.md`) are the **Absolute Source of Truth (SSoT)**.
 3. **Recovery Base**: Documentation must be sufficient to re-bootstrap the AI context in less than 3 prompts if session limits are reached.
 4. **Palace Sync**: After every EOD, the Sovereign Markdown Palace (`palace_registry.md` + `wings/`) must reflect the current state. Run `palace-sync.sh` (or `palace-sync.ps1`) to generate the update proposal.
 5. **Decision Log Protocol**: At every key decision, immediately log it to `walkthrough.md`:
@@ -192,7 +192,7 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 | 6 | Commit with standard EOD message | ✅ Auto |
 | 7 | `git push origin main` | ✅ Auto |
 | **8** | **Review `palace_update_proposal_YYYY-MM-DD.md` with AI** | **❌ Manual — always** |
-| **9** | **Update relevant closets in `.agent/brain/wings/`** | **❌ Manual — always** |
+| **9** | **Update relevant closets in `.agents/brain/wings/`** | **❌ Manual — always** |
 
 **Skip palace-sync if already run manually:**
 
@@ -263,9 +263,9 @@ Do not summarise, group, or omit any entries.
 
 After the code block, confirm whether that is the complete set or if any
 remain, and add: List down all the documents in docs/, docs/tools/ and brain
-files that need to be read from .agent/ (Specifically check
+files that need to be read from .agents/ (Specifically check
 tools/audit-pre-flight.sh, tools/reanimate.sh, tools/palace-sync.sh,
-.agent/brain/palace_registry.md, and playbooks/dsom/sod-palace.yml +
+.agents/brain/palace_registry.md, and playbooks/dsom/sod-palace.yml +
 eod-palace.yml).
 ```
 

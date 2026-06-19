@@ -19,7 +19,7 @@ The **CRISP² Matrix** (Context-Record-Iteration-Single-Purpose-Pedagogy) is the
 
 Before any code is written, the AI must "synchronise" with the physical state of the repository.
 
-* **The Action:** Reading `.agent/brain/` artifacts (`palace_registry.md`, `task.md`, `walkthrough.md`).
+* **The Action:** Reading `.agents/brain/` artifacts (`palace_registry.md`, `task.md`, `walkthrough.md`).
 * **The Goal:** Ensure the AI's internal "Mental Anchor" matches the Human Architect's last saved state.
 * **Human Check:** Always ask: *"What is our current Mental Anchor?"*
 

@@ -71,7 +71,7 @@ These are the most DSOM-native compatible due to their "Context Awareness" featu
 ### C. CrewAI & AutoGen
 
 * **Config File:** `config/agents.yaml` or `scenarios.json`.
-* **Strategy:** The "Role" definition must include: *"You are a DSOM-Compliant engineer. Your memory is persisted in .agent/brain/."*
+* **Strategy:** The "Role" definition must include: *"You are a DSOM-Compliant engineer. Your memory is persisted in .agents/brain/."*
 * **Template:** [Autonomous Manifest](agent-configs/autonomous_agent_manifest.md)
 
 ### D. Devin / Replit Agent

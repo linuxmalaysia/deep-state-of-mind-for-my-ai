@@ -8,10 +8,10 @@
 # ==============================================================================
 # 🧠 DSOM Brain Preservation
 # ==============================================================================
-# Explicitly unignore the .agent directory and its brain artifacts
-!.agent/
-!.agent/brain/
-!.agent/brain/*.md
+# Explicitly unignore the .agents directory and its brain artifacts
+!.agents/
+!.agents/brain/
+!.agents/brain/*.md
 
 # Ensure docs are also tracked
 !docs/*.md
@@ -78,6 +78,6 @@ dump.rdb
 
 # --- [ DSOM Brain Protection ] ---
 # We explicitly allow the brain artifacts even if a global rule might catch them
-!.agent/brain/*.md
+!.agents/brain/*.md
 !docs/*.md
 

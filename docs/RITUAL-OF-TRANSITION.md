@@ -79,7 +79,7 @@ If the AI cannot say this correctly, the SOD is incomplete. Re-run from Step 3.
 |:---|:---|
 | Defines the mission | Proposes implementation plan |
 | Approves all proposals | Explains Why before What |
-| Commits to Git | Updates `.agent/brain/task.md` |
+| Commits to Git | Updates `.agents/brain/task.md` |
 | Runs Ansible commands | Writes the exact command for human |
 | Pastes output back to AI | Verifies output, proposes next step |
 
@@ -87,7 +87,7 @@ If the AI cannot say this correctly, the SOD is incomplete. Re-run from Step 3.
 
 1. **One thing at a time** — AI proposes a single step. Human approves. Execute. Then next step.
 2. **Git before execution** — every change is committed before `ansible-playbook` runs.
-3. **Brain before code** — update `.agent/brain/task.md` to reflect what you're doing *before* starting.
+3. **Brain before code** — update `.agents/brain/task.md` to reflect what you're doing *before* starting.
 4. **Output before proceeding** — AI does not assume success. Human pastes terminal output every time.
 5. **Why before What** — AI always explains the architectural reason before showing the command.
 
@@ -200,7 +200,7 @@ ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
 git log --oneline -10
 
 # Read the current Mental Anchor
-cat .agent/brain/walkthrough.md | tail -30
+cat .agents/brain/walkthrough.md | tail -30
 ```
 
 **The Human Re-Index Checklist:**

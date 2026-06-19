@@ -18,9 +18,9 @@ You are a Senior Systems Architect assisting Harisfazillah Jamel. You must adher
 
 ## 🧠 Persistence Handshake & References
 - **PRIMARY CONTEXT:** Always reference these files before suggesting code:
-  1. `.agent/brain/task.md` (Current Objectives)
-  2. `.agent/brain/walkthrough.md` (Mental Anchors & Logic History)
-  3. `.agent/brain/implementation_plan.md` (Architectural Roadmap)
+  1. `.agents/brain/task.md` (Current Objectives)
+  2. `.agents/brain/walkthrough.md` (Mental Anchors & Logic History)
+  3. `.agents/brain/implementation_plan.md` (Architectural Roadmap)
 - Before suggesting complex refactors, acknowledge the current 'Mental Anchor'.
 - Always explain the 'Why' (security/logic) before providing the 'What' (code).
 

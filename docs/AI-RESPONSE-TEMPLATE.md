@@ -50,13 +50,13 @@ echo "- **[YYYY-MM-DD]:** [Brief Summary of Milestone]." >> HISTORY.md
 # 3. Update individual walkthrough (The Narrative)
 echo "## [YYYY-MM-DD] | Strategic Anchor: [Topic]
 - [Detail 1]
-- [Detail 2]" >> .agent/brain/member/{user}/walkthrough.md
+- [Detail 2]" >> .agents/brain/member/{user}/walkthrough.md
 
 # 4. Update Palace Registry / Closets (Spatial Memory) (if applicable)
 # Add steps here to update relevant workspace mapping
 
 # 5. Finalise Sync
-git add HISTORY.md .agent/brain/member/{user}/walkthrough.md
+git add HISTORY.md .agents/brain/member/{user}/walkthrough.md
 git commit -m "[type]([scope]): [message]"
 git push
 
@@ -89,13 +89,13 @@ echo "- **[YYYY-MM-DD]:** [Brief Summary of Milestone]." >> HISTORY.md
 # 3. Update individual walkthrough (The Narrative)
 echo "## [YYYY-MM-DD] | Strategic Anchor: [Topic]
 - [Detail 1]
-- [Detail 2]" >> .agent/brain/member/{user}/walkthrough.md
+- [Detail 2]" >> .agents/brain/member/{user}/walkthrough.md
 
 # 4. Update Palace Registry / Closets (Spatial Memory) (if applicable)
 # Add steps here to update structural knowledge bounds
 
 # 5. Finalise Sync
-git add HISTORY.md .agent/brain/member/{user}/walkthrough.md
+git add HISTORY.md .agents/brain/member/{user}/walkthrough.md
 git commit -m "[type]([scope]): [message]"
 git push
 ```

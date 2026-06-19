@@ -35,7 +35,7 @@ if (-not $RepoRoot) {
 
 $DateStamp  = Get-Date -Format "yyyy-MM-dd"
 $OutputFile = Join-Path $RepoRoot "sod_manifest_$DateStamp.txt"
-$BrainDir   = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir   = Join-Path $RepoRoot ".agents" "brain"
 $DocsDir    = Join-Path $RepoRoot "docs"
 $ReadmeFile = Join-Path $RepoRoot "README.md"
 $InvFile    = Join-Path $RepoRoot "inventory" "hosts.yml"
@@ -249,7 +249,7 @@ function New-Manifest {
     $Lines.Add("======================================================================")
     $Lines.Add("")
     $Lines.Add("Handshake: Ask the AI:")
-    $Lines.Add('  "Summarise the current Mental Anchor from .agent/brain/walkthrough.md.')
+    $Lines.Add('  "Summarise the current Mental Anchor from .agents/brain/walkthrough.md.')
     $Lines.Add('   Confirm the 4-Tier environment. State: Sovereign State Synchronised when ready."')
     $Lines.Add("")
     $Lines.Add("REMINDER: Upload this manifest file as part of your Start of Day (SOD).")

@@ -26,7 +26,7 @@ try {
 
 $DateStamp = Get-Date -Format "yyyy-MM-dd"
 $TimeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$BrainDir = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir = Join-Path $RepoRoot ".agents" "brain"
 $TaskFile = Join-Path $BrainDir "task.md"
 $WalkthroughFile = Join-Path $BrainDir "walkthrough.md"
 
@@ -128,15 +128,15 @@ Write-Host ""
 Write-Host "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:" -ForegroundColor Cyan
 Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
 Write-Host "  The EOD ritual [$TimeStamp] has been successfully pushed to origin/main." -ForegroundColor White
-Write-Host "  Update .agent/brain/checkpoint_summary.txt: archive all completed items," -ForegroundColor White
+Write-Host "  Update .agents/brain/checkpoint_summary.txt: archive all completed items," -ForegroundColor White
 Write-Host "  note the final EOD commit hash, and prepare the 'Mental Anchor' for" -ForegroundColor White
 Write-Host "  tomorrow morning's Start-of-Day. What is the final EOD report?" -ForegroundColor White
 Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Gray
 Write-Host ""
 Write-Host "  REMAINING HUMAN STEPS:" -ForegroundColor Cyan
 Write-Host "  - Review the latest palace_update_proposal_$DateStamp.md with your AI" -ForegroundColor Cyan
-Write-Host "  - Update relevant closets in .agent/brain/wings/" -ForegroundColor Cyan
-Write-Host "  - Commit closet updates: git add .agent/brain/ && git commit" -ForegroundColor Cyan
+Write-Host "  - Update relevant closets in .agents/brain/wings/" -ForegroundColor Cyan
+Write-Host "  - Commit closet updates: git add .agents/brain/ && git commit" -ForegroundColor Cyan
 Write-Host "" -ForegroundColor Cyan
 Write-Host "  Resume tomorrow with:" -ForegroundColor Cyan
 Write-Host "    .\tools\sod-palace.ps1" -ForegroundColor Cyan

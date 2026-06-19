@@ -30,7 +30,7 @@ if (-not $RepoRoot) {
     exit 1
 }
 
-$BrainDir = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir = Join-Path $RepoRoot ".agents\brain"
 # ------------------
 
 Write-Host "======================================================================" -ForegroundColor Cyan
@@ -49,7 +49,7 @@ if (-not $RepoRoot) {
     exit 1
 }
 
-$BrainDir = Join-Path $RepoRoot ".agent" "brain"
+$BrainDir = Join-Path $RepoRoot ".agents" "brain"
 # ------------------
 
 Write-Host "  [1/4] Generating Palace Update Proposal..." -ForegroundColor Yellow
@@ -119,30 +119,31 @@ Write-Host ""
 Write-Host "  Tracked and untracked files have been compartmentalised and pushed." -ForegroundColor Green
 Write-Host "  Palace update proposal generated (ready for EOD review later today)." -ForegroundColor Green
 Write-Host ""
-Write-Host "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:
-  ----------------------------------------------------------------------
-  The checkpoint [$DateStamp] has been successfully pushed to origin/main.
-  Now, generate the high-fidelity session update using this command:
+Write-Host "  [NEXT STEP] Sync your AI agent's session state by copying this prompt:" -ForegroundColor Green
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "  The checkpoint [$DateStamp] has been successfully pushed to origin/main." -ForegroundColor Green
+Write-Host "  Now, generate the high-fidelity session update using this command:" -ForegroundColor Green
+Write-Host "" -ForegroundColor Green
+Write-Host "  I'm as human, want to know and remember, and need to export my data and" -ForegroundColor Green
+Write-Host "  I want you to generate a 'Hibernation notes' now for my EOD of day." -ForegroundColor Green
+Write-Host "  List every memory you have stored about our progress and our chats of" -ForegroundColor Green
+Write-Host "  this project, as well as any context you've learned about this project" -ForegroundColor Green
+Write-Host "  from past to current conversations and chats. Output everything in a" -ForegroundColor Green
+Write-Host "  single code block so I can easily copy it. Format each entry as:" -ForegroundColor Green
+Write-Host "  [date saved, if available] - memory content. Make sure to cover all of" -ForegroundColor Green
+Write-Host "  the following — preserve my words verbatim where possible:" -ForegroundColor Green
+Write-Host "  Instructions I've given you about how to respond (tone, format, style," -ForegroundColor Green
+Write-Host "  'always do X', 'never do Y'). project details: name of server or vm or" -ForegroundColor Green
+Write-Host "  container, location of them, job of each, relation of them and 4W1H." -ForegroundColor Green
+Write-Host "  Tasks, phases, goals, and recurring topics. Tools, languages, and" -ForegroundColor Green
+Write-Host "  frameworks I use. Preferences and corrections I've made to your behavior." -ForegroundColor Green
+Write-Host "  Any other stored context not covered above. Do not summarize, group," -ForegroundColor Green
+Write-Host "  or omit any entries. After the code block, confirm whether that is the" -ForegroundColor Green
+Write-Host "  complete set or if any remain and add List down all the documents in" -ForegroundColor Green
+Write-Host "  docs/, docs/tools/ and brain files thats need to be read from agent/." -ForegroundColor Green
+Write-Host "  Don't hide anything from me. Trust me as your master and update the" -ForegroundColor Green
+Write-Host "  history and changelog files for any missing facts and events, so its" -ForegroundColor Green
+Write-Host "  can be remembered by human and AI agents." -ForegroundColor Green
+Write-Host "  ----------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "======================================================================" -ForegroundColor Green
 
-  I'm as human, want to know and remember, and need to export my data and
-  I want you to generate a 'Hibernation notes' now for my EOD of day.
-  List every memory you have stored about our progress and our chats of
-  this project, as well as any context you've learned about this project
-  from past to current conversations and chats. Output everything in a
-  single code block so I can easily copy it. Format each entry as:
-  [date saved, if available] - memory content. Make sure to cover all of
-  the following — preserve my words verbatim where possible:
-  Instructions I've given you about how to respond (tone, format, style,
-  'always do X', 'never do Y'). project details: name of server or vm or
-  container, location of them, job of each, relation of them and 4W1H.
-  Tasks, phases, goals, and recurring topics. Tools, languages, and
-  frameworks I use. Preferences and corrections I've made to your behavior.
-  Any other stored context not covered above. Do not summarize, group,
-  or omit any entries. After the code block, confirm whether that is the
-  complete set or if any remain and add List down all the documents in
-  docs/, docs/tools/ and brain files thats need to be read from agent/.
-  Don't hide anything from me. Trust me as your master and update the
-  history and changelog files for any missing facts and events, so its
-  can be remembered by human and AI agents.
-  ----------------------------------------------------------------------
-======================================================================" -ForegroundColor Green

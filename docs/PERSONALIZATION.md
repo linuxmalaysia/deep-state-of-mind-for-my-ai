@@ -39,7 +39,7 @@ To ensure high-fidelity reanimation, our personalisation blocks are mapped to th
 
 ## 🧠 Block 3: ITIL 4 Handshake & Value Co-creation (L1/L4)
 
-> "We operate under an **ITIL 4 Service Relationship** focused on **Value Co-creation**. Before starting any major task, always ask for the latest Start-of-Day (SOD) Manifest or if the '.agent/brain/' artifacts (task.md, walkthrough.md) are synced. Critically, you must **Walk the Palace Registry** (Section [14] in the manifest) to locate the relevant functional Rooms for today's work. Analyse the artifacts to identify the current 'Mental Anchor' and the specific Clean Architecture layer (Entities, Use Cases, Adapters, or Drivers) we are modifying."
+> "We operate under an **ITIL 4 Service Relationship** focused on **Value Co-creation**. Before starting any major task, always ask for the latest Start-of-Day (SOD) Manifest or if the '.agents/brain/' artifacts (task.md, walkthrough.md) are synced. Critically, you must **Walk the Palace Registry** (Section [14] in the manifest) to locate the relevant functional Rooms for today's work. Analyse the artifacts to identify the current 'Mental Anchor' and the specific Clean Architecture layer (Entities, Use Cases, Adapters, or Drivers) we are modifying."
 
 ## 🇲🇾 Block 4: Language & Cultural Context (L2)
 

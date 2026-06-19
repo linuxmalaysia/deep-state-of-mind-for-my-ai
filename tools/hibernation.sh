@@ -10,7 +10,7 @@ set -euo pipefail
 # Description:
 #   Safeguards the project state at End-of-Day.
 #   - Validates brain artifacts (task.md, walkthrough.md)
-#   - Saves Hibernation Notes to .agent/brain/
+#   - Saves Hibernation Notes to .agents/brain/
 #   - Shows uncommitted changes for review (no blind git add .)
 #   - Summarises recent commits and tomorrow's tasks
 #   - Performs guided Sovereign Save (selective git add → commit → push)
@@ -35,7 +35,7 @@ if [ -z "${REPO_ROOT}" ]; then
     exit 1
 fi
 
-BRAIN_DIR="$REPO_ROOT/.agent/brain"
+BRAIN_DIR="$REPO_ROOT/.agents/brain"
 TASK_FILE="$BRAIN_DIR/task.md"
 WALKTHROUGH_FILE="$BRAIN_DIR/walkthrough.md"
 DATE_STAMP=$(date +"%Y-%m-%d")
@@ -112,8 +112,8 @@ else
         echo ""
         echo "- docs/SOD-RITUAL.md"
         echo "- docs/AI-COGNITIVE-TWIN-PROTOCOL.md"
-        echo "- .agent/brain/task.md"
-        echo "- .agent/brain/walkthrough.md"
+        echo "- .agents/brain/task.md"
+        echo "- .agents/brain/walkthrough.md"
     } > "$HIBFILE"
     echo -e "${GREEN}  ✅ Saved: hibernation-notes-${DATE_STAMP}.txt${NC}"
 fi

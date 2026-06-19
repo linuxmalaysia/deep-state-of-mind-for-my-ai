@@ -69,7 +69,7 @@ if ($Mode -eq "sod") {
         Write-Host "[DONE] Pulled latest changes from origin/main." -ForegroundColor Green
     }
     Show-Status
-    Write-Host "SOD Sync Complete. Read .agent/brain/ artifacts and begin." -ForegroundColor Green
+    Write-Host "SOD Sync Complete. Read .agents/brain/ artifacts and begin." -ForegroundColor Green
     exit 0
 }
 

@@ -66,7 +66,7 @@ if [ "$MODE" = "sod" ]; then
         echo -e "${GREEN}[DONE] Pulled latest changes from origin/main.${NC}"
     fi
     show_status
-    echo -e "${GREEN}SOD Sync Complete. Read .agent/brain/ artifacts and begin.${NC}"
+    echo -e "${GREEN}SOD Sync Complete. Read .agents/brain/ artifacts and begin.${NC}"
     exit 0
 fi
 

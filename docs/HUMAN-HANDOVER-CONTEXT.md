@@ -18,12 +18,12 @@
 I am starting a new AI session. Synchronise your state with the following:
 
 1. **READ** the project brief: `docs/` directory and the DSOM brain files.
-2. **SYNC** with the task tracker: `.agent/brain/task.md`
-3. **READ** brain artifacts: `.agent/brain/walkthrough.md` and `.agent/brain/implementation_plan.md`
+2. **SYNC** with the task tracker: `.agents/brain/task.md`
+3. **READ** brain artifacts: `.agents/brain/walkthrough.md` and `.agents/brain/implementation_plan.md`
 4. **VERIFY** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — confirm all `[PLACEHOLDER]` fields are filled.
 5. **READ** `README.md`, `SUMMARY.md`, `CHANGELOG.md`
 6. **RUN** `git log --oneline -20` to read recent commit history.
-7. **WALK THE PALACE** — read `.agent/brain/palace_registry.md` (Section [14] of the SOD manifest) and identify the relevant Wings and Rooms for today's work.
+7. **WALK THE PALACE** — read `.agents/brain/palace_registry.md` (Section [14] of the SOD manifest) and identify the relevant Wings and Rooms for today's work.
 
 Run **Start of Day (SOD)** as per DSOM For My AI Protocol v6.1 + Palace v1.0.
 
@@ -91,7 +91,7 @@ git pull origin main
 ```bash
 # Run from T2 WSL2 — promote project to T3 orchestrator
 rsync -avz --checksum --delete \
-    --exclude '.git' --exclude '.gemini' --exclude '.agent' \
+    --exclude '.git' --exclude '.gemini' --exclude '.agents' \
     ./ dsom-admin@[T3_IP]:/opt/[YOUR_PROJECT_NAME]/
 ```
 
@@ -116,7 +116,7 @@ wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `
 
 After the AI reads all context, trigger the session with:
 
-> *"Initialise DSOM Protocol v6.1 + Palace v1.0 for [YOUR_PROJECT_NAME]. Read the uploaded manifest or this handover file. Walk the Palace Registry in Section [14] — identify the relevant Rooms for today's work. Confirm the 4-Tier Command Highway is mapped. Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` is filled in. State the last Mental Anchor from `.agent/brain/walkthrough.md`. Respond in UK English. State: 'Sovereign State Synchronised — [YOUR_PROJECT_NAME] is live.' when ready."*
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0 for [YOUR_PROJECT_NAME]. Read the uploaded manifest or this handover file. Walk the Palace Registry in Section [14] — identify the relevant Rooms for today's work. Confirm the 4-Tier Command Highway is mapped. Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` is filled in. State the last Mental Anchor from `.agents/brain/walkthrough.md`. Respond in UK English. State: 'Sovereign State Synchronised — [YOUR_PROJECT_NAME] is live.' when ready."*
 
 ---
 

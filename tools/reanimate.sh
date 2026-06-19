@@ -33,7 +33,7 @@ fi
 
 DATE_STAMP=$(date +"%Y-%m-%d")
 OUTPUT_FILE="${REPO_ROOT}/sod_manifest_${DATE_STAMP}.txt"
-BRAIN_DIR="$REPO_ROOT/.agent/brain"
+BRAIN_DIR="$REPO_ROOT/.agents/brain"
 DOCS_DIR="$REPO_ROOT/docs"
 README_FILE="$REPO_ROOT/README.md"
 VERSION="v2.2"
@@ -239,7 +239,7 @@ generate_manifest() {
     echo "======================================================================"
     echo ""
     echo "Handshake: Ask the AI:"
-    echo '  "Summarise the current Mental Anchor from .agent/brain/walkthrough.md.'
+    echo '  "Summarise the current Mental Anchor from .agents/brain/walkthrough.md.'
     echo '   Confirm the 4-Tier environment. State: Sovereign State Synchronised when ready."'
     echo ""
     echo "⚠️  REMINDER: Upload this manifest file as part of your Start of Day (SOD)."

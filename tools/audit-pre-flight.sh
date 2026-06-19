@@ -26,7 +26,7 @@ if [ -z "$ROOT_DIR" ]; then
     exit 1
 fi
 
-BRAIN_DIR="$ROOT_DIR/.agent/brain"
+BRAIN_DIR="$ROOT_DIR/.agents/brain"
 
 echo -e "${CYAN}==================================================${NC}"
 echo -e "${CYAN}   DEEP STATE OF MIND (DSOM) INTELLIGENCE AUDIT   ${NC}"

@@ -22,7 +22,7 @@
 $ErrorActionPreference = "Stop"
 $Output      = "DSOM-CLAUDE-INIT.md"
 $DocsDir     = "docs"
-$BrainDir    = ".agent\brain"
+$BrainDir    = ".agents\brain"
 $InventoryDir = "inventory"
 $VERSION     = "v2.0"
 
@@ -173,7 +173,7 @@ $Lines.Add("1. Upload this file (DSOM-CLAUDE-INIT.md) to your Claude Project Kno
 $Lines.Add("2. Start a new Claude conversation and use the SOD Handshake prompt:")
 $Lines.Add("")
 $Lines.Add('   > "Initialise DSOM Protocol v6.1. Read the uploaded manifest.')
-$Lines.Add('   > Summarise the current Mental Anchor from .agent/brain/walkthrough.md.')
+$Lines.Add('   > Summarise the current Mental Anchor from .agents/brain/walkthrough.md.')
 $Lines.Add('   > Confirm the 4-Tier environment map from AI-COGNITIVE-TWIN-PROTOCOL.md.')
 $Lines.Add('   > State: Sovereign State Synchronised when ready."')
 $Lines.Add("")

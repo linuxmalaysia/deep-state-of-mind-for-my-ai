@@ -79,7 +79,7 @@ The tool uses regex patterns to map files to Rooms:
 | Path | Wing | Hall | Room |
 |:---|:---|:---|:---|
 | `playbooks/`, `roles/` | `wing_dsom_core` | `hall_events` | `room_sovereign_fabric` |
-| `.agent/brain/` | `wing_dsom_core` | `hall_events` | `room_brain_artifacts` |
+| `.agents/brain/` | `wing_dsom_core` | `hall_events` | `room_brain_artifacts` |
 | `tools/` | `wing_dsom_core` | `hall_facts` | `room_tooling` |
 | `docs/` | `wing_dsom_core` | `hall_facts` | `room_dsom_protocol` |
 | `CHANGELOG.md` | `wing_dsom_core` | `hall_events` | `room_ledger` |

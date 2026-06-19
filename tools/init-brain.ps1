@@ -34,7 +34,7 @@ if (-not $RootDir) {
     exit 1
 }
 
-$BrainDir = Join-Path $RootDir ".agent" "brain"
+$BrainDir = Join-Path $RootDir ".agents" "brain"
 Write-Host "Targeting DSOM Root: $RootDir" -ForegroundColor $Cyan
 
 # 1. Create Directory Structure

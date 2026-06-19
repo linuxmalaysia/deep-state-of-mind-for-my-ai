@@ -12,10 +12,10 @@ To enable multiple architects and developers to work within a single sovereign r
 
 ## 2. 🏛️ Detailed Brain Structure Display
 
-The `.agent/brain/` directory is partitioned to ensure absolute isolation between technical roles and project management.
+The `.agents/brain/` directory is partitioned to ensure absolute isolation between technical roles and project management.
 
 ```text
-.agent/brain/
+.agents/brain/
 ├── global/
 │   └── task-master.md      <- THE HUB: Managed by Lead Architect (Haris).
 │                           Summarises progress from all members.
@@ -87,7 +87,7 @@ As the Lead Architect, Haris periodically audits the `member/*/walkthrough.md` f
 To see the expanded tree including all member brains:
 
 ```bash
-tree -a .agent/brain
+tree -a .agents/brain
 
 ```
 
@@ -97,7 +97,7 @@ If returning after time away, check for team updates before starting work:
 
 ```bash
 git pull origin main
-ls .agent/brain/member/
+ls .agents/brain/member/
 
 ```
 

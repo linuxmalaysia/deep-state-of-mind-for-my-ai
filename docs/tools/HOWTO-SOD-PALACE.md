@@ -15,7 +15,7 @@ The `sod-palace` toolkit natively automates the **Sovereign Start-of-Day (SOD) M
 **Automated steps performed:**
 1. Triggers `git pull --rebase` to ensure tracking parity.
 2. Invokes the `audit-pre-flight` checks to scan structural/config deviations.
-3. Detects if `.agent/brain/palace_registry.md` is initialized.
+3. Detects if `.agents/brain/palace_registry.md` is initialized.
 4. Binds the entire output into the dense `sod_manifest_YYYY-MM-DD.txt` artifact using the `reanimate` payload.
 
 **Location:** 

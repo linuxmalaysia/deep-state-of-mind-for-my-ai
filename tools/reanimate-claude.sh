@@ -27,7 +27,7 @@ fi
 
 DATE_STAMP=$(date +"%Y-%m-%d_%H%M")
 OUTPUT_FILE="${REPO_ROOT}/DSOM-CLAUDE-INIT.md"
-BRAIN_DIR="$REPO_ROOT/.agent/brain"
+BRAIN_DIR="$REPO_ROOT/.agents/brain"
 DOCS_DIR="$REPO_ROOT/docs"
 
 # Colors
@@ -107,7 +107,7 @@ fi
     if [ -f "$BRAIN_DIR/task.md" ]; then
         cat "$BRAIN_DIR/task.md"
     else
-        echo "[MISSING] .agent/brain/task.md"
+        echo "[MISSING] .agents/brain/task.md"
     fi
     echo ""
     echo "---"
@@ -119,7 +119,7 @@ fi
     if [ -f "$BRAIN_DIR/walkthrough.md" ]; then
         cat "$BRAIN_DIR/walkthrough.md"
     else
-        echo "[MISSING] .agent/brain/walkthrough.md"
+        echo "[MISSING] .agents/brain/walkthrough.md"
     fi
     echo ""
     echo "---"
@@ -131,7 +131,7 @@ fi
     if [ -f "$BRAIN_DIR/implementation_plan.md" ]; then
         cat "$BRAIN_DIR/implementation_plan.md"
     else
-        echo "[MISSING] .agent/brain/implementation_plan.md"
+        echo "[MISSING] .agents/brain/implementation_plan.md"
     fi
     echo ""
     echo "---"
@@ -191,7 +191,7 @@ fi
     echo "2. Start a new Claude conversation and use the SOD Handshake prompt:"
     echo ""
     echo '   > "Initialise DSOM Protocol v6.1. Read the uploaded manifest.'
-    echo '   > Summarise the current Mental Anchor from .agent/brain/walkthrough.md.'
+    echo '   > Summarise the current Mental Anchor from .agents/brain/walkthrough.md.'
     echo '   > Confirm the 4-Tier environment map from AI-COGNITIVE-TWIN-PROTOCOL.md.'
     echo '   > State: Sovereign State Synchronised when ready."'
     echo ""
