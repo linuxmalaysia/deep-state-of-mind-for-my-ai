@@ -78,6 +78,7 @@ To ensure **Sovereign Portability**, we enforce the **Inward Dependency Rule**:
   * Every atomic step requires `git add`, `git commit`, and `git push` from the Command Centre (Tier 1).
   * Commit messages MUST follow: `type(scope): descriptive message [Phase/vXXX]`.
   * The `main` branch is protected. Tags, releases, and branches are NEVER deleted without explicit Sovereign authorisation.
+  * **Worktree Isolation (Multi-Agent Rule):** Autonomous subagents MUST be instantiated within their own isolated Git branches to prevent Silent Subagent Merge Conflicts. They merge back to `main` only via consensus.
   * After push, the Sync Ritual is: `git pull origin main` on all target tiers.
 
 ---
@@ -182,9 +183,10 @@ DSOM (Deep State of Mind) serves as the operational engine for the broader **Dig
 * **Technology Sovereignty:** We prioritize Open Source stacks (Linux, Podman, Ansible). We use AI as a service, but our 'Logic' is provider-agnostic.
 * **Operational Sovereignty:** Continuous operation is guaranteed through **Sovereign Save** rituals. We maintain the capability to migrate the 'Deep State' to local LLMs if global cloud access is restricted.
 
-### ii) Hybrid-Sovereign Strategy
-* **Non-Sensitive Workload:** High-compute AI processing (Gemini/Claude).
-* **Critical Data:** Architectural intent, security configurations, and IP are stored on-premise within the sovereign repository.
+### ii) Hybrid-Sovereign Strategy & Air-Gapped GitOps
+* **Public/Educational Workloads:** For projects designed for public adoption, learning, and open-source contribution (like the core DSOM repository), standard public infrastructure (like GitHub/GitLab) is completely acceptable and recommended.
+* **Non-Sensitive Workload:** High-compute AI processing (Gemini/Claude) using standard APIs.
+* **Critical Data & Absolute Air-Gapped GitOps:** For projects that process proprietary code, classified intelligence, or sensitive internal IP, the architecture mandates **Absolute Air-Gapped GitOps**. In these environments, all infrastructure must be localized. The AI interacts exclusively with self-hosted Git backends (e.g., Gitea) and local CI/CD schedulers (e.g., SemaphoreUI) over internal SSH bridges, ensuring zero external exposure of the Sovereign Workspace.
 
 ---
 

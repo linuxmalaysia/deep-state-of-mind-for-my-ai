@@ -12,6 +12,9 @@ To permanently cure this, the DSOM Protocol utilizes the **Spatial Memory Palace
 
 Instead of relying on the AI's ephemeral chat history, we externalise the AI's memory into a strictly structured physical folder system (`.agents/brain/`). The AI writes down what it learns into highly distilled `closet.md` files. When you start a new session, the AI reads these tiny files to instantly reload months of context without hallucinating or exceeding token limits.
 
+> [!NOTE]
+> **Public vs. Air-Gapped Repositories:** The core DSOM framework (like this repository) is designed for public adoption, learning, and open-source contribution using standard public Git providers (e.g., GitHub, GitLab). However, if you are porting this Palace to a project that handles classified intelligence, proprietary code, or sensitive data, you should enforce **Absolute Air-Gapped GitOps** by utilizing self-hosted, localized Git backends (like Gitea) and internal CI/CD schedulers.
+
 ---
 
 ## 📦 2. The "Brain Transplant" Checklist
