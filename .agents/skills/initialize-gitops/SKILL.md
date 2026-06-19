@@ -1,8 +1,9 @@
 ---
 okf_version: 0.1
 type: agent_skill
-name: initialize-gitops
+title: initialize-gitops
 description: Establishes the foundational GitOps repository, configures the .gitignore, and commits the Genesis DSOM architecture for a new project.
+timestamp: 2026-06-19T14:00:00Z
 ---
 
 # 🐙 Initialize GitOps Skill

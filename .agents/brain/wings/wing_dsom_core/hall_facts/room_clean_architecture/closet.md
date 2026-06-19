@@ -3,6 +3,7 @@ okf_version: 0.1
 type: architecture_concept
 title: Clean Architecture
 description: Distilled knowledge for Clean Architecture
+timestamp: 2026-06-19T14:00:00Z
 ---
 # 🚪 Closet: Room Clean Architecture (The Skeleton)
 

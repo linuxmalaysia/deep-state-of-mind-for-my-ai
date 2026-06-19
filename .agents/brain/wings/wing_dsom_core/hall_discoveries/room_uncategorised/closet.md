@@ -3,6 +3,7 @@ okf_version: 0.1
 type: discovery_log
 title: Uncategorised Discoveries
 description: Distilled knowledge for Uncategorised Discoveries
+timestamp: 2026-06-19T14:00:00Z
 ---
 # 🚪 Closet: Room Uncategorised (The Discovery Hall)
 

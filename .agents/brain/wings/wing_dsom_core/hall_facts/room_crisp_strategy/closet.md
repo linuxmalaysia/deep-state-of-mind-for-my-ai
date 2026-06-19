@@ -3,6 +3,7 @@ okf_version: 0.1
 type: strategy_guide
 title: CRISP Strategy
 description: Distilled knowledge for CRISP Strategy
+timestamp: 2026-06-19T14:00:00Z
 ---
 # 🚪 Closet: Room CRISP Strategy (The Nervous System)
 

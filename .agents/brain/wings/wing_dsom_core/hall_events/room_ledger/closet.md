@@ -3,6 +3,7 @@ okf_version: 0.1
 type: history_log
 title: Project Ledger
 description: Distilled knowledge for Project Ledger
+timestamp: 2026-06-19T14:00:00Z
 ---
 # 🚪 Closet: Room Ledger (The Universal Record)
 
