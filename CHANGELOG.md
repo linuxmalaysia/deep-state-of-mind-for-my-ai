@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [10.3.0-bootstrap] - 2026-07-04
+
+### Added
+
+- **DSOM Bootstrapping Skill:** Adopted the `dsom-bootstrap` AI skill (`.agents/skills/dsom-bootstrap`) to enable the agent to natively deploy this framework's standards into external repositories.
+- **Bootstrapping Blueprint:** Added `docs/HOWTO-DSOM-BASELINE.md` as the definitive origin documentation for bootstrapping.
+- **Diagnostic Tooling:** Created standardized `tools/diagnostic.ps1` and `tools/diagnostic.sh` for post-bootstrap verification.
+
+### Changed
+
+- **Governance Restructuring:** Relocated 13 core protocol documents (including AI-MASTER-PROTOCOL and DIGITAL-SOVEREIGNTY-MODEL) from `docs/` to `docs/governance/` to align with the bootstrapping framework.
+- **Toolchain Standardization:** Fixed legacy syntax bugs in pre-flight scripts (e.g., PS 5.1 `Join-Path` positional errors, unclosed quote issues) and updated paths to reflect the new `docs/governance/` directory.
+- **Registry Updates:** Updated `SUMMARY.md` and `mkdocs.yml` to point to the relocated governance documents.
+
 ## [10.2.0-okf] - 2026-06-19
 
 ### Added
