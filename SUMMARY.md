@@ -27,10 +27,10 @@
 * [🏛️ Sovereign Markdown Palace Protocol](docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 
 ## 👥 Member Spokes (Tactical)
+
 * [🏁 My Walkthrough](.agents/brain/member/haris/walkthrough.md)
 * [🗺️ Implementation Plan](.agents/brain/implementation_plan.md)
 * [🏛️ Palace Registry](.agents/brain/palace_registry.md)
-
 
 ## 🤖 4. AI & Agent Protocols
 
@@ -105,7 +105,6 @@
 * [🏛️ Inventory Explained](docs/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED.md)
 * [🛠️ HOWTO: Setup Baseline (Example Elastic SOC)](docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md)
 
-
 ## 🤖 8. AI Agent Skills & Workflows
 
 * [🤖 Subagent Orchestration Workflow](.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md)
@@ -117,6 +116,6 @@
 
 ## 📚 9. References & Genesis Papers
 
-* [🏛️ The Sovereign AI Agent Workspace v2 (Genesis)](references/The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)
+* [\[🏛️ The Sovereign AI Agent Workspace v2 (Genesis)\](references/The Sovereign AI Agent Workspace v2\_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)](9.-references-and-genesis-papers/the-sovereign-ai-agent-workspace-v2-genesis-references-the-sovereign-ai-agent-workspace-v2_-architec.md)
 * [🚀 HOWTO: Bootstrap Sovereign AI Project](references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md)
 * [🌐 OKF Adoption Guide (Reference)](references/OKF-ADOPTION-GUIDE.md)
