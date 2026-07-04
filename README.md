@@ -227,13 +227,25 @@ When you define your Persona Profile, the AI will automatically adopt your tone,
 
 ---
 
-## ⚡ DSOM Onboarding Automation
+## 🛠️ AI Agent Skills & Automation
 
-If you want to integrate the deep-state-of-mind architecture into an entirely new or existing repository, you no longer have to manually copy files. We have engineered a robust, cross-platform onboarding framework that handles the integration cleanly via a temporary git branch and Ansible file merging.
+DSOM enables your Cognitive Twin to autonomously self-heal, scaffold, and execute complex workflows through OKF-compliant **AI Agent Skills**. We currently host a suite of 17 specialized skills (including `dsom-project-cloner`, `dsom-bootstrap`, `okf-frontmatter-injector`, and `persona-injector`).
+
+| Use Case | Guide |
+|---|---|
+| **View or Create AI Skills** | [`docs/AI-AGENT-SKILLS-GUIDE.md`](docs/AI-AGENT-SKILLS-GUIDE.md) |
+
+---
+
+## ⚡ DSOM Onboarding & Cloning Automation
+
+If you want to integrate the deep-state-of-mind architecture into an entirely new or existing repository, you no longer have to manually copy files. We have engineered robust AI skills (`dsom-bootstrap` and `dsom-project-cloner`) and cross-platform onboarding scripts that handle the integration cleanly.
 
 | Use Case | Guide |
 |---|---|
 | **Automated Repository Onboarding** | [`docs/HOWTO-DSOM-ONBOARDING.md`](docs/HOWTO-DSOM-ONBOARDING.md) |
+| **Clone / Scaffold New Project** | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) |
+| **DSOM Bootstrapping Baseline** | [`docs/HOWTO-DSOM-BASELINE.md`](docs/HOWTO-DSOM-BASELINE.md) |
 
 ---
 
@@ -528,8 +540,9 @@ This framework is provider-agnostic. Tested and configured for:
 - [x] **v6.1** — Ansible baseline playbooks, human handover, Google Antigravity integration
 - [x] **v6.2** — Ansible `roles/common`, 19-node Elastic fabric hardened (v9.8.0)
 - [x] **v10.0.0-palace** — 🏛️ Sovereign Markdown Palace v1.0: spatial memory, `palace-sync`, 8 Rooms backfilled
-- [x] **v10.3.0-bootstrap** — 🚀 DSOM Bootstrapping baseline adoption and governance restructuring
-- [ ] **v7.0** — Local LLM support (Ollama) for offline Sovereign AI
+- [x] **v10.3.0-bootstrap** — 🚀 DSOM Bootstrapping baseline adoption, governance restructuring, and OKF v0.1 compliance
+- [x] **v10.3.1-skills** — 🛠️ AI Skills Automation: Added 17 Sovereign AI skills including `dsom-project-cloner` and `dsom-bootstrap`
+- [ ] **v11.0** — Local LLM support (Ollama) for offline Sovereign AI
 
 ---
 
@@ -541,6 +554,7 @@ All contributions must follow the DSOM standards:
 - All PRs must include a `walkthrough.md` update
 - UK English only in all documentation
 - No secrets in any committed file
+- **Triple-Ledger Mandate**: Major updates must sync `README.md`, `CHANGELOG.md`, and `HISTORY.md`
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for full guidelines.
 
