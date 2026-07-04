@@ -1,0 +1,90 @@
+---
+okf_version: 0.1
+type: documentation
+title: "HOWTO: Clone a DSOM Project"
+description: "OKF-compliant documentation for scaffolding a new project from an existing DSOM repository."
+resource: "file:///docs/HOWTO-CLONE-DSOM-PROJECT.md"
+timestamp: 2026-07-04T11:00:00Z
+---
+
+# HOWTO: Clone a DSOM Project (Scaffolding Blueprint)
+
+**ATTENTION:** This document is the master blueprint for replicating the Deep State of Mind (DSOM) architecture, including highly customised AI Agent Skills and Sovereign Personas, into a completely new repository. 
+
+If you are building a *new* project based on this repository, you **MUST** follow this guide to ensure the AI's cognitive capabilities, tools, and constraints are correctly ported.
+
+---
+
+## 1. The Core Requirement: What Needs to be Copied?
+
+When scaffolding a new repository based on this template, you do not just copy the code. You must copy the **Sovereign Engine**.
+
+You must meticulously copy the following four structural pillars from the baseline repository into the root of your new project:
+
+### Pillar A: The Sovereign Engine (`.agents/`)
+This folder contains the AI's core rules and its working memory.
+- **Copy:** `.agents/AGENTS.md` (This is the Core Rulebook and contains the Persona Matrix).
+- **Create Structure:** Recreate the `.agents/brain/` directory, but do **not** copy the old session data (`palace_registry.md`, `task.md`, etc.). Start with an empty brain.
+
+### Pillar B: The Intelligence Payload (`.agents/skills/`)
+This is the most critical step. This repository contains custom AI skills (e.g., document compilation, OKF injection, automated onboarding) that the AI needs to function effectively.
+- **Copy:** Recursively copy all folders inside `.agents/skills/` to your new project's `.agents/skills/` directory.
+- *Verify:* Ensure each skill contains a `SKILL.md` file that is OKF v0.1 compliant.
+
+### Pillar C: Governance & Configuration (`docs/`)
+The AI needs its theoretical blueprints to self-heal and understand the protocol.
+- **Copy:** `docs/agent-configs/` (Contains the `SOVEREIGN-PERSONA-TEMPLATE.md` for identity setup).
+- **Copy:** `docs/governance/` (Contains OKF specifications and structural protocols).
+- **Copy:** `docs/AI-AGENT-SKILLS-GUIDE.md` (The ledger of all active skills).
+- **Copy:** `docs/HOWTO-*.md` (All instructional manuals, including this one).
+
+### Pillar D: The Ritual Scripts (`tools/`)
+These are the physical automation scripts the AI and the user execute to reanimate and hibernate the workspace.
+- **Copy:** Recursively copy the entire `tools/` directory.
+
+---
+
+## 2. Step-by-Step Cloning Execution
+
+If you are a human or an AI agent performing this scaffolding, execute the following commands in the root of your **NEW** project, pointing to the **OLD** baseline path.
+
+```bash
+# 1. Establish Directories
+mkdir -p .agents/brain/wings
+mkdir -p .agents/skills
+mkdir -p docs/agent-configs
+mkdir -p docs/governance
+mkdir -p tools
+
+# 2. Copy the Engine and Skills
+cp [OLD_PATH]/.agents/AGENTS.md .agents/
+cp -r [OLD_PATH]/.agents/skills/* .agents/skills/
+
+# 3. Copy Governance and Documentation
+cp -r [OLD_PATH]/docs/agent-configs/* docs/agent-configs/
+cp -r [OLD_PATH]/docs/governance/* docs/governance/
+cp [OLD_PATH]/docs/AI-AGENT-SKILLS-GUIDE.md docs/
+cp [OLD_PATH]/docs/HOWTO-*.md docs/
+
+# 4. Copy Ritual Toolchain
+cp -r [OLD_PATH]/tools/* tools/
+```
+
+---
+
+## 3. Post-Clone Initialization
+
+Once the files are copied into the new repository, you must initialize the AI's identity and memory.
+
+1. **Persona Injection:** Run or ask the AI to execute the `persona-injector` skill to establish the new project owner's identity. (Alternatively, manually fill out `docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md` and append it to `.agents/AGENTS.md`).
+2. **First Reanimation:** Run the Reanimate ritual to generate the first `sod_manifest.txt` and wake up the AI in its new home.
+   ```bash
+   bash tools/reanimate.sh  # or .\tools\reanimate.ps1
+   ```
+3. **Commit the Genesis State:** 
+   ```bash
+   git add .
+   git commit -m "chore(dsom): scaffold genesis dsom architecture and AI skills"
+   ```
+
+Your new project is now fully sentient and equipped with the exact same capabilities as the baseline DSOM repository.

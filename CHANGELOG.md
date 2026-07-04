@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **DSOM Bootstrapping Skill:** Adopted the `dsom-bootstrap` AI skill (`.agents/skills/dsom-bootstrap`) to enable the agent to natively deploy this framework's standards into external repositories.
 - **Bootstrapping Blueprint:** Added `docs/HOWTO-DSOM-BASELINE.md` as the definitive origin documentation for bootstrapping.
+- **Project Cloning Guide:** Added `docs/HOWTO-CLONE-DSOM-PROJECT.md` as the master blueprint for scaffolding a new project from this highly customized Sovereign Engine.
 - **Diagnostic Tooling:** Created standardized `tools/diagnostic.ps1` and `tools/diagnostic.sh` for post-bootstrap verification.
 
 ### Changed

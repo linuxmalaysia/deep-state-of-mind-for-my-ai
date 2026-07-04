@@ -77,6 +77,8 @@ Every project built on this skeleton operates under **three non-negotiable pilla
 
 ### Step 1 — Clone and Reset
 
+> **🏗️ Scaffolding a New Project?** If you are migrating the highly customized AI skills and Sovereign Engine from this repo to a brand new one, you MUST follow the [**DSOM Project Cloning Guide**](docs/HOWTO-CLONE-DSOM-PROJECT.md) first to ensure no cognitive capabilities are lost.
+
 ```bash
 # Clone the DSOM skeleton
 git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git my-new-project
@@ -493,6 +495,7 @@ Once Step 6 is complete, the AI knows:
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
+| [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
 | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
 | [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) | 📖 How and why the Palace was built |
 | [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide |
