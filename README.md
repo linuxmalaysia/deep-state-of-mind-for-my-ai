@@ -3,7 +3,7 @@
 > **"Make AI work for you — not the other way around. Sovereign Intelligence through GitOps, AIOps, and Ansible."**
 
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
-[![Version](https://img.shields.io/badge/Version-10.0.0--palace-blue.svg)]()
+[![Version](https://img.shields.io/badge/Version-10.3.0--bootstrap-blue.svg)]()
 [![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 [![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
@@ -510,6 +510,7 @@ This framework is provider-agnostic. Tested and configured for:
 - [x] **v6.1** — Ansible baseline playbooks, human handover, Google Antigravity integration
 - [x] **v6.2** — Ansible `roles/common`, 19-node Elastic fabric hardened (v9.8.0)
 - [x] **v10.0.0-palace** — 🏛️ Sovereign Markdown Palace v1.0: spatial memory, `palace-sync`, 8 Rooms backfilled
+- [x] **v10.3.0-bootstrap** — 🚀 DSOM Bootstrapping baseline adoption and governance restructuring
 - [ ] **v7.0** — Local LLM support (Ollama) for offline Sovereign AI
 
 ---
@@ -543,5 +544,5 @@ Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for
 
 ---
 
-*Deep State of Mind (DSOM) For My AI Protocol | v10.0.0-palace | 2026-04-08*
+*Deep State of Mind (DSOM) For My AI Protocol | v10.3.0-bootstrap | 2026-07-04*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
