@@ -117,6 +117,6 @@
 
 ## 📚 9. References & Genesis Papers
 
-* [\[🏛️ The Sovereign AI Agent Workspace v2 (Genesis)\](references/The Sovereign AI Agent Workspace v2\_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)](9.-references-and-genesis-papers/the-sovereign-ai-agent-workspace-v2-genesis-references-the-sovereign-ai-agent-workspace-v2_-architec.md)
+* [🏛️ The Sovereign AI Agent Workspace v2 (Genesis)](references/The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)
 * [🚀 HOWTO: Bootstrap Sovereign AI Project](references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md)
 * [🌐 OKF Adoption Guide (Reference)](references/OKF-ADOPTION-GUIDE.md)
