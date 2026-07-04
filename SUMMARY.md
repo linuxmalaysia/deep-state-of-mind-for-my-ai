@@ -34,27 +34,11 @@ timestamp: 2026-07-04T09:40:04Z
 * [🧠 Personalisation Ritual](docs/PERSONALIZATION.md)
 * [🏛️ Sovereign Markdown Palace Protocol](docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 
-## 🌐 Global Hub (Strategic)
-
-* [🏁 Task Master (Aggregate)](global-hub-strategic/task-master-aggregate.md)
-
 ## 👥 Member Spokes (Tactical)
-
-* [🎯 My Daily Tasks](member-spokes-tactical/my-daily-tasks.md)
 * [🏁 My Walkthrough](.agents/brain/member/haris/walkthrough.md)
 * [🗺️ Implementation Plan](.agents/brain/implementation_plan.md)
 * [🏛️ Palace Registry](.agents/brain/palace_registry.md)
 
-## 🏛️ Palace Rooms (wing\_dsom\_core)
-
-* [🔑 room\_tooling — Tools Inventory](palace-rooms-wing_dsom_core/room_tooling-tools-inventory.md)
-* [🏗️ room\_clean\_architecture — Design Laws](palace-rooms-wing_dsom_core/room_clean_architecture-design-laws.md)
-* [🔬 room\_crisp\_strategy — AI Interaction](palace-rooms-wing_dsom_core/room_crisp_strategy-ai-interaction.md)
-* [📜 room\_dsom\_protocol — Protocol Docs](palace-rooms-wing_dsom_core/room_dsom_protocol-protocol-docs.md)
-* [🛰️ room\_sovereign\_fabric\_v9\_8 — Infra](palace-rooms-wing_dsom_core/room_sovereign_fabric_v9_8-infra.md)
-* [🧠 room\_brain\_artifacts — Brain Files](palace-rooms-wing_dsom_core/room_brain_artifacts-brain-files.md)
-* [📊 room\_ledger — Version History](palace-rooms-wing_dsom_core/room_ledger-version-history.md)
-* [🔭 room\_uncategorised — Discoveries](palace-rooms-wing_dsom_core/room_uncategorised-discoveries.md)
 
 ## 🤖 4. AI & Agent Protocols
 
@@ -128,10 +112,6 @@ timestamp: 2026-07-04T09:40:04Z
 * [🏛️ Inventory Explained](docs/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED.md)
 * [🛠️ HOWTO: Setup Baseline (Example Elastic SOC)](docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md)
 
-## 🏛️ Palace Ritual Playbooks (v1.0)
-
-* [🌅 sod-palace.yml — SOD Automation](palace-ritual-playbooks-v1.0/sod-palace.yml-sod-automation.md)
-* [🌙 eod-palace.yml — EOD Automation](palace-ritual-playbooks-v1.0/eod-palace.yml-eod-automation.md)
 
 ## 🤖 8. AI Agent Skills & Workflows
 
