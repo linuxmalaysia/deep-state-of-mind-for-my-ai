@@ -1,11 +1,3 @@
----
-okf_version: 0.1
-type: documentation
-title: "Table of contents"
-description: "OKF-compliant documentation for SUMMARY.md."
-resource: "file:///SUMMARY.md"
-timestamp: 2026-07-04T09:40:04Z
----
 # Table of contents
 
 ## Table of contents
@@ -18,20 +10,20 @@ timestamp: 2026-07-04T09:40:04Z
 ## 🏛️ 1. Sovereign Governance
 
 * [👑 Operational Sovereignty Manifesto](docs/governance/OPERATIONAL-SOVEREIGNTY.md)
-* [🏛️ AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md)
+* [📜 AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md)
 * [🔄 GitOps · AIOps · Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
 * [🏛️ Digital Sovereignty Model](docs/governance/DIGITAL-SOVEREIGNTY-MODEL.md)
 * [🏥 ITIL 4 Alignment Strategy](docs/governance/ITIL-ALIGNMENT.md)
 * [🛡️ CRISP² Operational Strategy](docs/governance/CRISP2-OPERATIONAL-STRATEGY.md)
 * [📖 Operational Guide](docs/governance/OPERATIONAL-GUIDE.md)
-* [🕸️ Hub and Spoke Model](docs/governance/HUB-AND-SPOKE-MODEL.md)
+* [🏛️ Hub and Spoke Model](docs/governance/HUB-AND-SPOKE-MODEL.md)
 
 ## 🌅 2. Operational Rituals
 
 * [🌅 SOD Ritual](docs/SOD-RITUAL.md)
 * [🌙 EOD Ritual](docs/EOD-RITUAL.md)
 * [🕯️ Ritual of Transition](docs/RITUAL-OF-TRANSITION.md)
-* [🧠 Personalisation Ritual](docs/PERSONALIZATION.md)
+* [📜 Personalisation Ritual](docs/PERSONALIZATION.md)
 * [🏛️ Sovereign Markdown Palace Protocol](docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 
 ## 👥 Member Spokes (Tactical)
@@ -44,24 +36,24 @@ timestamp: 2026-07-04T09:40:04Z
 
 * [🤝 Human Handover Context Template](docs/HUMAN-HANDOVER-CONTEXT.md)
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
-* [📋 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
+* [🎭 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
 * [🧠 Cognitive Twin Protocol Template](docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md)
 * [📥 HOWTO: Adopt DSOM (Brownfield)](docs/HOWTO-ADOPT-DSOM.md)
 * [📥 HOWTO: DSOM Bootstrap Blueprint](docs/HOWTO-DSOM-BASELINE.md)
 * [🔄 HOWTO: Upgrade DSOM Protocol](docs/HOWTO-UPGRADE-DSOM.md)
 * [🤖 Multi-Agent Protocols](docs/governance/MULTI-AGENT-PROTOCOLS.md)
-* [📜 AI Agent Skills Guide](docs/AI-AGENT-SKILLS-GUIDE.md)
-* [📝 Cognitive Logging Protocol](docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md)
+* [🤖 AI Agent Skills Guide](docs/AI-AGENT-SKILLS-GUIDE.md)
+* [📜 Cognitive Logging Protocol](docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md)
 * [🏛️ Mirror of Knowledge](docs/MIRROR-OF-KNOWLEDGE.md)
 
 ## 🏛️ Palace Documentation
 
 * [🏛️ HOWTO: Palace Onboarding](docs/HOWTO-PALACE-ONBOARDING.md)
 * [🔄 HOWTO: Migrate to Palace](docs/HOWTO-MIGRATE-TO-PALACE.md)
-* [📖 Palace Build Story](docs/PALACE-BUILD-STORY.md)
+* [🏛️ Palace Build Story](docs/PALACE-BUILD-STORY.md)
 * [🧩 Research: Reasoning Gap](docs/governance/RESEARCH-REASONING-GAP.md)
 * [🌐 Open Knowledge Format (OKF) Guide](docs/OKF-ADOPTION-GUIDE.md)
-* [📦 HOWTO: Port AI Palace](docs/HOWTO-PORT-AI-PALACE.md)
+* [🚀 HOWTO: Port AI Palace](docs/HOWTO-PORT-AI-PALACE.md)
 
 ## ⚙️ Agent Configurations
 
@@ -124,6 +116,6 @@ timestamp: 2026-07-04T09:40:04Z
 
 ## 📚 9. References & Genesis Papers
 
-* [🏛️ The Sovereign AI Agent Workspace v2 (Genesis)](references/The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)
+* [\[🏛️ The Sovereign AI Agent Workspace v2 (Genesis)\](references/The Sovereign AI Agent Workspace v2\_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)](9.-references-and-genesis-papers/the-sovereign-ai-agent-workspace-v2-genesis-references-the-sovereign-ai-agent-workspace-v2_-architec.md)
 * [🚀 HOWTO: Bootstrap Sovereign AI Project](references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md)
 * [🌐 OKF Adoption Guide (Reference)](references/OKF-ADOPTION-GUIDE.md)
