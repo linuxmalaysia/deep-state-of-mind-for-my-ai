@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "📜 Changelog: Deep State of Mind (DSOM) For My AI"
+description: "OKF-compliant documentation for CHANGELOG.md."
+resource: "file:///CHANGELOG.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 📜 Changelog: Deep State of Mind (DSOM) For My AI
 
 All notable changes to this project will be documented in this file.

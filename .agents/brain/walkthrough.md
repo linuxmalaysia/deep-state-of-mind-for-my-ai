@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🏁 Walkthrough: DSOM Automation Toolkit Encyclopedia"
+description: "OKF-compliant documentation for walkthrough.md."
+resource: "file:///.agents/brain/walkthrough.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🏁 Walkthrough: DSOM Automation Toolkit Encyclopedia
 
 ## 📜 Historical Context

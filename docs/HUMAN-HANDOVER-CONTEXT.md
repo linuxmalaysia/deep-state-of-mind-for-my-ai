@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🤝 HUMAN-HANDOVER-CONTEXT.md"
+description: "OKF-compliant documentation for HUMAN-HANDOVER-CONTEXT.md."
+resource: "file:///docs/HUMAN-HANDOVER-CONTEXT.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🤝 HUMAN-HANDOVER-CONTEXT.md
 
 # Path: docs/HUMAN-HANDOVER-CONTEXT.md

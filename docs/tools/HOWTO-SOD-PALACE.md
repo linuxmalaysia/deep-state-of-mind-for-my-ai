@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: sod-palace — Start-of-Day Ritual"
+description: "OKF-compliant documentation for HOWTO-SOD-PALACE.md."
+resource: "file:///docs/tools/HOWTO-SOD-PALACE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: sod-palace — Start-of-Day Ritual
 
 # docs/tools/HOWTO-SOD-PALACE.md

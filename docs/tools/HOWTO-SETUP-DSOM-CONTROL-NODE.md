@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: setup-dsom-control-node — Linux Environment Hardening"
+description: "OKF-compliant documentation for HOWTO-SETUP-DSOM-CONTROL-NODE.md."
+resource: "file:///docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: setup-dsom-control-node — Linux Environment Hardening
 
 # docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md

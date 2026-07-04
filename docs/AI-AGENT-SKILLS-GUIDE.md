@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🤖 AI Agent Skills Development Guide"
+description: "OKF-compliant documentation for AI-AGENT-SKILLS-GUIDE.md."
+resource: "file:///docs/AI-AGENT-SKILLS-GUIDE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🤖 AI Agent Skills Development Guide
 
 This document serves as the central registry and learning guide for creating **AI Agent Skills** within our project infrastructure.

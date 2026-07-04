@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: template-reset — Project Purification Tool"
+description: "OKF-compliant documentation for HOWTO-TEMPLATE-RESET.md."
+resource: "file:///docs/tools/HOWTO-TEMPLATE-RESET.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: template-reset — Project Purification Tool
 
 ## docs/tools/HOWTO-TEMPLATE-RESET.md

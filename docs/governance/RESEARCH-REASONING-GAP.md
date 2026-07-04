@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "🧩 The Reasoning Gap: What DSOM Solves and What It Doesn't"
+description: "OKF-compliant documentation for RESEARCH-REASONING-GAP.md."
+resource: "file:///docs/governance/RESEARCH-REASONING-GAP.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🧩 The Reasoning Gap: What DSOM Solves and What It Doesn't
 
 > *"The reasoning, the tradeoffs, the 'we tried X and it failed because Y' — all trapped in chat windows that evaporate when the session ends."*

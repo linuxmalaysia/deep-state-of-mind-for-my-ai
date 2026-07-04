@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "🛡️ CRISP² Operational Strategy: The Five Pillars of Persistence"
+description: "OKF-compliant documentation for CRISP2-OPERATIONAL-STRATEGY.md."
+resource: "file:///docs/governance/CRISP2-OPERATIONAL-STRATEGY.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🛡️ CRISP² Operational Strategy: The Five Pillars of Persistence
 
 **Author:** Harisfazillah Jamel  

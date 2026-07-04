@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🏛️ Palace Registry: Sovereign Retrieval Map"
+description: "OKF-compliant documentation for palace_registry.md."
+resource: "file:///.agents/brain/palace_registry.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🏛️ Palace Registry: Sovereign Retrieval Map
 
 This registry serves as the index (Open Knowledge Format (OKF) v0.1 compliant) for the AI to "walk" the **Sovereign Markdown Palace**. It defines the wings, halls, and rooms that provide specialized context retrieval beyond the chronological walkthrough. For full documentation on the architecture and rituals, see the [Sovereign Markdown Palace Protocol](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md).

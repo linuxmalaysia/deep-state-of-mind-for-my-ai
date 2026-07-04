@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: generate-walkthrough — Session Scribe"
+description: "OKF-compliant documentation for HOWTO-GENERATE-WALKTHROUGH.md."
+resource: "file:///docs/tools/HOWTO-GENERATE-WALKTHROUGH.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: generate-walkthrough — Session Scribe
 
 # docs/tools/HOWTO-GENERATE-WALKTHROUGH.md

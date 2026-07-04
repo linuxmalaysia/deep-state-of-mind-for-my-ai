@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🧠 Deep State of Mind (DSOM) For My AI Protocol"
+description: "OKF-compliant documentation for README.md."
+resource: "file:///README.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🧠 Deep State of Mind (DSOM) For My AI Protocol
 
 > **"Make AI work for you — not the other way around. Sovereign Intelligence through GitOps, AIOps, and Ansible."**

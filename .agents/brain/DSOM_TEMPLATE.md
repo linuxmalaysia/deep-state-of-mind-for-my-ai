@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🧠 DSOM Session Log: [Insert Date/Task Name]"
+description: "OKF-compliant documentation for DSOM_TEMPLATE.md."
+resource: "file:///.agents/brain/DSOM_TEMPLATE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🧠 DSOM Session Log: [Insert Date/Task Name]
 
 ## 🏗️ 1. The Architectural "Why"

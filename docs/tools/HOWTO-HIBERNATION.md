@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: hibernation — Legacy Safety Verifier"
+description: "OKF-compliant documentation for HOWTO-HIBERNATION.md."
+resource: "file:///docs/tools/HOWTO-HIBERNATION.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: hibernation — Legacy Safety Verifier
 
 # docs/tools/HOWTO-HIBERNATION.md

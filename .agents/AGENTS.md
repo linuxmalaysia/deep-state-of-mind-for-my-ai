@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "The Core AI Rulebook (DSOM)"
+description: "OKF-compliant documentation for AGENTS.md."
+resource: "file:///.agents/AGENTS.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # The Core AI Rulebook (DSOM)
 
 Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin operating on the Deep State of Mind (DSOM) framework.

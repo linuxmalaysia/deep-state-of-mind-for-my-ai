@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: palace-sync — Kingdom Spatial Mapping"
+description: "OKF-compliant documentation for HOWTO-PALACE-SYNC.md."
+resource: "file:///docs/tools/HOWTO-PALACE-SYNC.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: palace-sync — Kingdom Spatial Mapping
 
 # docs/tools/HOWTO-PALACE-SYNC.md

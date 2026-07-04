@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🚀 HOWTO: Port the AI Spatial Memory Palace to Other Projects"
+description: "OKF-compliant documentation for HOWTO-PORT-AI-PALACE.md."
+resource: "file:///docs/HOWTO-PORT-AI-PALACE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🚀 HOWTO: Port the AI Spatial Memory Palace to Other Projects
 
 **Target Audience:** Development Teams, AI Engineers, and Lead Architects looking to solve "AI Context Decay" (Amnesia) in their own repositories.

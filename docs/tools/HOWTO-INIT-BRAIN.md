@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: init-brain — Cognitive Infrastructure Bootstrap"
+description: "OKF-compliant documentation for HOWTO-INIT-BRAIN.md."
+resource: "file:///docs/tools/HOWTO-INIT-BRAIN.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: init-brain — Cognitive Infrastructure Bootstrap
 
 # docs/tools/HOWTO-INIT-BRAIN.md

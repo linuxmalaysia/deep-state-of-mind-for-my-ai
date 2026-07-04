@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "[AGENT] DSOM Cognitive Digital Twin: Project Operational Protocol (v2.0)"
+description: "OKF-compliant documentation for AI-COGNITIVE-TWIN-PROTOCOL.md."
+resource: "file:///docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # [AGENT] DSOM Cognitive Digital Twin: Project Operational Protocol (v2.0)
 
 ## docs/AI-COGNITIVE-TWIN-PROTOCOL.md

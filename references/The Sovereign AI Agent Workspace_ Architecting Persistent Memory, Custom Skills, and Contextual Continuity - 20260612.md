@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "**The Sovereign AI Agent Workspace: Architecting Persistent Memory, Custom Skills, and Contextual Continuity**"
+description: "OKF-compliant documentation for The Sovereign AI Agent Workspace_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260612.md."
+resource: "file:///references/The Sovereign AI Agent Workspace_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260612.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # **The Sovereign AI Agent Workspace: Architecting Persistent Memory, Custom Skills, and Contextual Continuity**
 
 ## **Introduction: The Epistemological Crisis of AI Amnesia**

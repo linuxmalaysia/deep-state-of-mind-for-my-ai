@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "Table of contents"
+description: "OKF-compliant documentation for SUMMARY.md."
+resource: "file:///SUMMARY.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # Table of contents
 
 ## Table of contents

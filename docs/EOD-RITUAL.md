@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🌙 EOD-RITUAL.md — End-of-Day Ritual"
+description: "OKF-compliant documentation for EOD-RITUAL.md."
+resource: "file:///docs/EOD-RITUAL.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🌙 EOD-RITUAL.md — End-of-Day Ritual
 
 # docs/EOD-RITUAL.md

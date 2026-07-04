@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: setup-wsl-almalinux10 — T2 Control Node Provisioner"
+description: "OKF-compliant documentation for HOWTO-SETUP-WSL-ALMALINUX.md."
+resource: "file:///docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: setup-wsl-almalinux10 — T2 Control Node Provisioner
 
 # docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md

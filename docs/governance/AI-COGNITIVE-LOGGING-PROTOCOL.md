@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "📜 AI Cognitive Logging Protocol (Cross-AI Standard)"
+description: "OKF-compliant documentation for AI-COGNITIVE-LOGGING-PROTOCOL.md."
+resource: "file:///docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 📜 AI Cognitive Logging Protocol (Cross-AI Standard)
 # docs/AI-COGNITIVE-LOGGING-PROTOCOL.md
 

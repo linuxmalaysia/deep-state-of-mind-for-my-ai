@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "Open Knowledge Format (OKF) Adoption Guide"
+description: "OKF-compliant documentation for OKF-ADOPTION-GUIDE.md."
+resource: "file:///docs/OKF-ADOPTION-GUIDE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # Open Knowledge Format (OKF) Adoption Guide
 
 ## What is the Open Knowledge Format (OKF)?

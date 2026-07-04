@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🗺️ DSOM Implementation Plan"
+description: "OKF-compliant documentation for implementation_plan.md."
+resource: "file:///.agents/brain/implementation_plan.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🗺️ DSOM Implementation Plan
 
 ## 🎯 Project Vision

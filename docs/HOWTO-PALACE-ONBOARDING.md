@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents"
+description: "OKF-compliant documentation for HOWTO-PALACE-ONBOARDING.md."
+resource: "file:///docs/HOWTO-PALACE-ONBOARDING.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents
 
 > **Who this document is for:** Any new human user adopting DSOM, or any AI agent reading this repo for the first time.

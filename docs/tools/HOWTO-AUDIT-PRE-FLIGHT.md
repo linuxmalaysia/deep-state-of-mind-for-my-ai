@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: audit-pre-flight — Intelligence Integrity Sync"
+description: "OKF-compliant documentation for HOWTO-AUDIT-PRE-FLIGHT.md."
+resource: "file:///docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: audit-pre-flight — Intelligence Integrity Sync
 
 # docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md

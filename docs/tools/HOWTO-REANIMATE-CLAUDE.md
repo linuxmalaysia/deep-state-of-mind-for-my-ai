@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: reanimate-claude — Anthropic Context Injection"
+description: "OKF-compliant documentation for HOWTO-REANIMATE-CLAUDE.md."
+resource: "file:///docs/tools/HOWTO-REANIMATE-CLAUDE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: reanimate-claude — Anthropic Context Injection
 
 # docs/tools/HOWTO-REANIMATE-CLAUDE.md

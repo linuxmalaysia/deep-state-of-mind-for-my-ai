@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: git-ritual — Sovereign GitOps Hygene"
+description: "OKF-compliant documentation for HOWTO-GIT-RITUAL.md."
+resource: "file:///docs/tools/HOWTO-GIT-RITUAL.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: git-ritual — Sovereign GitOps Hygene
 
 # docs/tools/HOWTO-GIT-RITUAL.md

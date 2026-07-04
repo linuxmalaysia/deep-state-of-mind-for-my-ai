@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "PULL_REQUEST_TEMPLATE"
+description: "OKF-compliant documentation for PULL_REQUEST_TEMPLATE.md."
+resource: "file:///.github/PULL_REQUEST_TEMPLATE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 ## 🏛️ DSOM Contribution Checklist
 
 > **"One Mind, Many Hands."** - Ensure your contribution aligns with the Sovereign Laws.

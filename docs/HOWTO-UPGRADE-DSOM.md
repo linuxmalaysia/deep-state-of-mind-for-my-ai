@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "HOWTO: Upgrade and Audit DSOM (Scenario 2)"
+description: "OKF-compliant documentation for HOWTO-UPGRADE-DSOM.md."
+resource: "file:///docs/HOWTO-UPGRADE-DSOM.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: Upgrade and Audit DSOM (Scenario 2)
 
 **Author:** Harisfazillah Jamel

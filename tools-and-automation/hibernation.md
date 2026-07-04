@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "🌙 Hibernation Sequence (hibernation.sh)"
+description: "OKF-compliant documentation for hibernation.md."
+resource: "file:///tools-and-automation/hibernation.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🌙 Hibernation Sequence (hibernation.sh)
 
 > **"Sleep is the best meditation."** - Dalai Lama (and DSOM Protocol).

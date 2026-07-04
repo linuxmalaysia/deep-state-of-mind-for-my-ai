@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "♻️ Template Reset (template-reset.sh)"
+description: "OKF-compliant documentation for template-reset.md."
+resource: "file:///tools-and-automation/template-reset.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # ♻️ Template Reset (template-reset.sh)
 
 > **"Tabula Rasa."** - Returning to the beginning.

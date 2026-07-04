@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "**Operational Sovereignty through Metacognitive Governance: Integrating the Deep State of Mind Protocol with CAPM and Git-Native PMO Frameworks**"
+description: "OKF-compliant documentation for OPERATIONAL-SOVEREIGNTY.md."
+resource: "file:///docs/governance/OPERATIONAL-SOVEREIGNTY.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # **Operational Sovereignty through Metacognitive Governance: Integrating the Deep State of Mind Protocol with CAPM and Git-Native PMO Frameworks**
 
 The Deep State of Mind (DSOM) protocol serves as a **metacognitive governance framework** designed to establish an active, persistent bridge between human architectural intent and machine execution. By transforming documentation from a passive record into a **sovereign ecosystem**, the protocol ensures high-fidelity continuity across diverse AI agents and distributed teams.

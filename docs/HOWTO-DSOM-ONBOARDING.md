@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🚀 HOWTO: Adopt DSOM Using Automated Onboarding"
+description: "OKF-compliant documentation for HOWTO-DSOM-ONBOARDING.md."
+resource: "file:///docs/HOWTO-DSOM-ONBOARDING.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🚀 HOWTO: Adopt DSOM Using Automated Onboarding
 
 Incorporating the Deep State of Mind (DSOM) framework into an existing project used to involve a manual process of cloning, copying, and aligning files. This is now fully automated via the **DSOM Onboarding Automation**.

@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: checkpoint — Quick Sync"
+description: "OKF-compliant documentation for HOWTO-CHECKPOINT.md."
+resource: "file:///docs/tools/HOWTO-CHECKPOINT.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: checkpoint — Quick Sync
 
 # docs/tools/HOWTO-CHECKPOINT.md

@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🐧 HOWTO: Setup AlmaLinux 10 WSL2 as DSOM Ansible Control Node"
+description: "OKF-compliant documentation for HOWTO-SETUP-WSL-ALMALINUX10.md."
+resource: "file:///docs/HOWTO-SETUP-WSL-ALMALINUX10.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🐧 HOWTO: Setup AlmaLinux 10 WSL2 as DSOM Ansible Control Node
 
 > **Tier 2 (Dev Bridge): AlmaLinux 10 → `dsom-control-almalinux10`**

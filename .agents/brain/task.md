@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🎯 DSOM Session Task: Automation Documentation Encyclopedia"
+description: "OKF-compliant documentation for task.md."
+resource: "file:///.agents/brain/task.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🎯 DSOM Session Task: Automation Documentation Encyclopedia
 
 > **Status:** COMPLETED (Phase: Cross-Platform Parity & Documentation)

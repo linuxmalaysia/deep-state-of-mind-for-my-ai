@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: ".windsurfrules (DSOM Template)"
+description: "OKF-compliant documentation for windsurfrules_template.md."
+resource: "file:///docs/agent-configs/windsurfrules_template.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # .windsurfrules (DSOM Template)
 
 # Copy this content to your project root as `.windsurfrules`

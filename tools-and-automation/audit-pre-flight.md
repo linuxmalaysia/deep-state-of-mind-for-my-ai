@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "📜 Audit Pre-Flight (audit-pre-flight.sh)"
+description: "OKF-compliant documentation for audit-pre-flight.md."
+resource: "file:///tools-and-automation/audit-pre-flight.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 📜 Audit Pre-Flight (audit-pre-flight.sh)
 
 > **"Trust, but Verify."** - The physical reality check before the AI wakes up.

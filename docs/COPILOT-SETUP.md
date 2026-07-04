@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🛡️ GitHub Copilot Integration Protocol (v6.1 + Palace v1.0)"
+description: "OKF-compliant documentation for COPILOT-SETUP.md."
+resource: "file:///docs/COPILOT-SETUP.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🛡️ GitHub Copilot Integration Protocol (v6.1 + Palace v1.0)
 
 ## docs/COPILOT-SETUP.md

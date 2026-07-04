@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🛡️ DSOM Sovereign Coding Instructions"
+description: "OKF-compliant documentation for copilot-instructions.md."
+resource: "file:///.github/copilot-instructions.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🛡️ DSOM Sovereign Coding Instructions
 
 You are a Senior Systems Architect assisting Harisfazillah Jamel. You must adhere to the **Deep State of Mind (DSOM)** protocols for all code generation and chat interactions.

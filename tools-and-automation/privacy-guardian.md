@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "🛡️ Privacy Guardian (privacy-guardian.sh)"
+description: "OKF-compliant documentation for privacy-guardian.md."
+resource: "file:///tools-and-automation/privacy-guardian.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🛡️ Privacy Guardian (privacy-guardian.sh)
 
 > **"Loose lips sink ships."** - Preventing Data Leaks to AI Models.

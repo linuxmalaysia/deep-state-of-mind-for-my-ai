@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🤝 Contributing to Deep State of Mind (DSOM)"
+description: "OKF-compliant documentation for CONTRIBUTING.md."
+resource: "file:///CONTRIBUTING.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🤝 Contributing to Deep State of Mind (DSOM)
 
 > **"Every contribution is a Git commit with intent. Every commit is a sovereign act."**

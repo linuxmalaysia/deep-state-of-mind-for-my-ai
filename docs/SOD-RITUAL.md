@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "🌅 SOD-RITUAL.md — Start-of-Day Ritual"
+description: "OKF-compliant documentation for SOD-RITUAL.md."
+resource: "file:///docs/SOD-RITUAL.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🌅 SOD-RITUAL.md — Start-of-Day Ritual
 
 # docs/SOD-RITUAL.md

@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "🧠 Brain Initializer (init-brain.sh)"
+description: "OKF-compliant documentation for init-brain.md."
+resource: "file:///tools-and-automation/init-brain.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🧠 Brain Initializer (init-brain.sh)
 
 > **"A clean home for a clear mind."** - Initializing the Cognitive State.

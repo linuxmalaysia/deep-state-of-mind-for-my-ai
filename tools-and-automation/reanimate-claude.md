@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "🤖 Claude Reanimation (reanimate-claude.sh)"
+description: "OKF-compliant documentation for reanimate-claude.md."
+resource: "file:///tools-and-automation/reanimate-claude.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🤖 Claude Reanimation (reanimate-claude.sh)
 
 > **"Hello, Claude."** - Provider-Specific Context Injection.

@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "📖 DSOM Operational Guide (Level 3 - Specialised Tasks)"
+description: "OKF-compliant documentation for OPERATIONAL-GUIDE.md."
+resource: "file:///docs/governance/OPERATIONAL-GUIDE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 📖 DSOM Operational Guide (Level 3 - Specialised Tasks)
 
 > **"Theory without Practice is Hallucination. Practice without Theory is Chaos."**

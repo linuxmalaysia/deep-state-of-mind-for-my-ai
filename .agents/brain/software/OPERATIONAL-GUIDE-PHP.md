@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🏥 OPERATIONAL-GUIDE-PHP.md (Master v1.4)"
+description: "OKF-compliant documentation for OPERATIONAL-GUIDE-PHP.md."
+resource: "file:///.agents/brain/software/OPERATIONAL-GUIDE-PHP.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🏥 OPERATIONAL-GUIDE-PHP.md (Master v1.4)
 ### 📜 .agents/brain/software/OPERATIONAL-GUIDE-PHP.md (Master v1.4)
 

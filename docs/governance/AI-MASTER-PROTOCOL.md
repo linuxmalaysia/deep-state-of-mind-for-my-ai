@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "📜 DSOM Master Directive: AI Governance Protocol (v6.1 + Palace v1.0)"
+description: "OKF-compliant documentation for AI-MASTER-PROTOCOL.md."
+resource: "file:///docs/governance/AI-MASTER-PROTOCOL.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 ### 📜 docs/AI-MASTER-PROTOCOL.md (Refactored v6.1 + Palace v1.0)
 
 # 📜 DSOM Master Directive: AI Governance Protocol (v6.1 + Palace v1.0)

@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "HOWTO: Adopt DSOM in Existing Projects (Brownfield)"
+description: "OKF-compliant documentation for HOWTO-ADOPT-DSOM.md."
+resource: "file:///docs/HOWTO-ADOPT-DSOM.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: Adopt DSOM in Existing Projects (Brownfield)
 
 **Author:** Harisfazillah Jamel

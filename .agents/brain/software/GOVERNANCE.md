@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🛡️ Software Governance & Risk Manifest"
+description: "OKF-compliant documentation for GOVERNANCE.md."
+resource: "file:///.agents/brain/software/GOVERNANCE.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🛡️ Software Governance & Risk Manifest
 
 ## ⚖️ Architectural Laws

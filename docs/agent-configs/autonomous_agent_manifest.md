@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "DSOM Autonomous Agent Manifest (v1.0)"
+description: "OKF-compliant documentation for autonomous_agent_manifest.md."
+resource: "file:///docs/agent-configs/autonomous_agent_manifest.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # DSOM Autonomous Agent Manifest (v1.0)
 
 # Use this as the "System Prompt" or "Role Definition" for Autonomous Agents (Devin, AutoGen, CrewAI)

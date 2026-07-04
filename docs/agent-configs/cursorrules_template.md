@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: ".cursorrules (DSOM Template)"
+description: "OKF-compliant documentation for cursorrules_template.md."
+resource: "file:///docs/agent-configs/cursorrules_template.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # .cursorrules (DSOM Template)
 
 # Copy this content to your project root as `.cursorrules`

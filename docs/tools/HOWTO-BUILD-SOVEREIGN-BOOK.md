@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: automation_tool
+title: "HOWTO: build_sovereign_book — PDF Internal Repository Archiver"
+description: "OKF-compliant documentation for HOWTO-BUILD-SOVEREIGN-BOOK.md."
+resource: "file:///docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # HOWTO: build_sovereign_book — PDF Internal Repository Archiver
 
 # docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md

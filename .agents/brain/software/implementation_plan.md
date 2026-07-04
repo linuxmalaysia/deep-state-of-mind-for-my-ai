@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🗺️ Software Implementation Plan (Language-Agnostic)"
+description: "OKF-compliant documentation for implementation_plan.md."
+resource: "file:///.agents/brain/software/implementation_plan.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🗺️ Software Implementation Plan (Language-Agnostic)
 
 ## 🎯 Strategic Objective

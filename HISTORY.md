@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "📜 Universal Ledger: Deep State of Mind (DSOM)"
+description: "OKF-compliant documentation for HISTORY.md."
+resource: "file:///HISTORY.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 📜 Universal Ledger: Deep State of Mind (DSOM)
 
 This file serves as the project's permanent archival record. It tracks the evolution of the DSOM Protocol from its philosophical inception to its current state as a professional ITIL-aligned framework.

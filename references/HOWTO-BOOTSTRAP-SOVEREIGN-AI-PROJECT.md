@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: documentation
+title: "Sovereign AI Project Bootstrap Blueprint"
+description: "OKF-compliant documentation for HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md."
+resource: "file:///references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # Sovereign AI Project Bootstrap Blueprint
 
 **Purpose:** This document is a foundational blueprint designed to be read by an autonomous AI Agent at the absolute beginning of a new project. 

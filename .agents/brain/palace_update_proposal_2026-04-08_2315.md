@@ -1,3 +1,11 @@
+---
+okf_version: 0.1
+type: architecture_concept
+title: "🏛️ Palace Update Proposal"
+description: "OKF-compliant documentation for palace_update_proposal_2026-04-08_2315.md."
+resource: "file:///.agents/brain/palace_update_proposal_2026-04-08_2315.md"
+timestamp: 2026-07-04T09:40:04Z
+---
 # 🏛️ Palace Update Proposal
 
 > **Generated:** 2026-04-08_2315  
