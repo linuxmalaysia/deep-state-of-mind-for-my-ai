@@ -82,7 +82,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - **[2026-04-08]:** **Git Tag `v10.1.0-onboarding`** pushed to GitHub. Continuous Integration loops across Windows (T1) and Linux (T2) fully harmonised.
 - **[2026-06-19]:** **OKF v0.1 Standardization.** Adopted Google Cloud's Open Knowledge Format across all Palace artifacts and Knowledge Bundles to solve AI context decay. Updated GitBook and bootstrap blueprints for relative-path portability.
 - **[2026-07-04]:** **DSOM Bootstrapping Baseline Refactor.** Adopted the `dsom-bootstrap` AI skill, established `HOWTO-DSOM-BASELINE.md` as the definitive origin, migrated governance documents to `docs/governance/`, and standardized the pre-flight `diagnostic` tools, finalizing the repository as the permanent DSOM framework baseline.
-- **[2026-07-04]:** **Project Cloning Blueprint.** Created `HOWTO-CLONE-DSOM-PROJECT.md` to explicitly map out how to scaffold a new project with the customized Sovereign Engine and AI skills.
+- **[2026-07-04]:** **Project Cloning Blueprint & Skill.** Created `HOWTO-CLONE-DSOM-PROJECT.md` to explicitly map out how to scaffold a new project, and engineered the `dsom-project-cloner` AI skill to fully automate the replication of the Sovereign Engine to any target path.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.3.0-bootstrap | Harisfazillah Jamel*

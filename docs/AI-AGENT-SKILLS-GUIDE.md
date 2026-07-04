@@ -68,6 +68,7 @@ This is the active ledger of all AI Agent Skills currently deployed in this repo
 | :--- | :--- | :--- |
 | **Cross-Platform Translator** | `.agents/skills/cross-platform-translator/SKILL.md` | Translates Shell/PowerShell scripts cross-platform. |
 | **DSOM Bootstrap** | `.agents/skills/dsom-bootstrap/SKILL.md` | Bootstraps DSOM architecture for new projects. |
+| **DSOM Project Cloner** | `.agents/skills/dsom-project-cloner/SKILL.md` | Scaffolds a new DSOM project by copying baseline assets to a new target path. |
 | **EOD Palace Sync** | `.agents/skills/eod-palace-sync/SKILL.md` | The Hibernation ritual to externalize memory into the Palace and push to Git. |
 | **Forensic Log Audit** | `.agents/skills/forensic-log-audit/SKILL.md` | Parses raw AI conversation transcripts to extract exact historical terminal commands. |
 | **Initialize GitOps** | `.agents/skills/initialize-gitops/SKILL.md` | Establishes the foundational GitOps repository and Genesis DSOM architecture. |
