@@ -5,8 +5,9 @@
 [2026-07-04] - Created `dsom-project-cloner` AI skill to automate the new project scaffolding process.
 [2026-07-04] - Adopted Rule 8 (The Triple-Ledger Synchronization Mandate) dictating updates to README.md, CHANGELOG.md, and HISTORY.md on major architectural shifts.
 [2026-07-04] - Fully synced `README.md`, `CHANGELOG.md`, and `HISTORY.md` to reflect v10.3.1-skills state.
-[2026-07-04] - EOD Execution confirmed locally. Commit hash: 8c0c0c3. Palace Update Proposal generated affecting 3 rooms.
-[2026-07-04] - [MENTAL ANCHOR]: The DSOM architecture is fully bootstrapped with 17 active OKF-compliant AI skills and the Triple-Ledger Synchronization Mandate enabled. The workspace is stable, fully documented in the Universal Ledger, and ready for cloning or Local LLM roadmap evaluation. (Final EOD Commit: 8c0c0c3)
+[2026-07-04] - Adopted GitHub & GitLab CLI authentication rule in `.agents/AGENTS.md`.
+[2026-07-04] - Created formal `v10.3.1-skills` tag and `RELEASE.md`, and successfully pushed to both GitHub and GitLab.
+[2026-07-04] - [MENTAL ANCHOR]: The DSOM architecture is fully bootstrapped with 17 active OKF-compliant AI skills and the Triple-Ledger Synchronization Mandate enabled. The `v10.3.1-skills` release is live on GitHub/GitLab. The workspace is pristine, ledgers are up to date, and ready for Local LLM roadmap evaluation.
 
 ---
 Docs in docs/: AI-MASTER-PROTOCOL.md, AI-COGNITIVE-TWIN-PROTOCOL.md, DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md, HOWTO-PALACE-ONBOARDING.md, HOWTO-CLONE-DSOM-PROJECT.md, HOWTO-MIGRATE-TO-PALACE.md, PALACE-BUILD-STORY.md, SOD-RITUAL.md, EOD-RITUAL.md, HUMAN-HANDOVER-CONTEXT.md, GITOPS-AIOPS-ANSIBLE-STRATEGY.md, HOWTO-SETUP-ANSIBLE-BASELINE.md, REANIMATION-PROMPT-TEMPLATE.md, HOWTO-DSOM-ONBOARDING.md, HOWTO-DSOM-BASELINE.md, AI-AGENT-SKILLS-GUIDE.md, agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md.

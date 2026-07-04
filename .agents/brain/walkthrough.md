@@ -1,62 +1,17 @@
----
-okf_version: 0.1
-type: architecture_concept
-title: "🏁 Walkthrough: DSOM Automation Toolkit Encyclopedia"
-description: "OKF-compliant documentation for walkthrough.md."
-resource: "file:///.agents/brain/walkthrough.md"
-timestamp: 2026-07-04T09:40:04Z
----
-# 🏁 Walkthrough: DSOM Automation Toolkit Encyclopedia
+# 🚶 Session Walkthrough
 
-## 📜 Historical Context
-This session addressed the "Documentation Debt" of the DSOM automation fleet. While the tools were operational across platforms, they lacked standardized, searchable HOWTO documents.
+## 2026-07-04 Session Summary
 
-## 🏁 Session Anchor: 2026-04-08 (Master Documentation Sprint)
-- **Accomplished:**
-    - [x] **Cross-Platform Parity:** Developed and tested PowerShell and Bash equivalents for Palace rituals (SOD, EOD, Checkpoint).
-    - [x] **Encyclopedia Deployment:** Generated 18 comprehensive `HOWTO-*.md` documents in `docs/tools/`.
-    - [x] **Governance Integration:** Successfully mapped all tools in `SUMMARY.md` for AI discoverability.
-    - [x] **Zero-Debt Compliance:** Cleaned up linting errors and standardized header hierarchy.
-- **Current State:** Repository is fully documented and synchronized.
-- **Mental Anchor:** The "Sovereign Brain" now has a high-resolution map of its own automation capabilities. Next session should focus on the **Persistence Fabric** deployment using these tools.
+### Accomplishments
+1. **Persona Injection**: Successfully injected the `LinuxMalaysia` (Senior ICT Consultant) Sovereign Persona Profile into `.agents/AGENTS.md`.
+2. **Skill Porting**: Ported 8 operational document-generation skills from `postgresql-to-oracle` into this project.
+3. **OKF Compliance**: Enforced Google Cloud's OKF v0.1 format across all skills and generated the `okf-frontmatter-injector` to automate compliance.
+4. **Master Scaffolding Blueprint**: Architected `HOWTO-CLONE-DSOM-PROJECT.md` detailing the copying of the 4 Pillars (Sovereign Engine, Intelligence Payload, Governance, Ritual Scripts).
+5. **Triple-Ledger Mandate**: Adopted a new Governance rule demanding synchronous updates across `README.md`, `CHANGELOG.md`, and `HISTORY.md` for major architectural changes.
+6. **AI Skills Automation**: Built the `dsom-project-cloner` AI skill to flawlessly automate project scaffolding.
+7. **Documentation Refresh**: Fully aligned the `README.md` and repository ledgers with the v10.3.1-skills state.
+8. **Releases & Auth Guardrails**: Enforced CLI authentication rules in `AGENTS.md` following failed API attempts, and successfully published the `v10.3.1-skills` formal release on both GitHub and GitLab.
 
----
-
-### 🏛️ Artifacts Generated
-
-````carousel
-```markdown
-# HOWTO: sod-palace
-Standardised SOD ritual guide for Windows and Linux.
-```
-<!-- slide -->
-```markdown
-# HOWTO: eod-palace
-Safety-critical EOD ritual guide.
-```
-<!-- slide -->
-```markdown
-# HOWTO: checkpoint
-Rapid state-saving automation.
-```
-````
-
-### 🔍 Verification Results
-- All scripts verified for cross-platform execution logic.
-- `SUMMARY.md` links verified.
-- Git history current with `chore: automation documentation` commit.
-
-**Sovereign State Synchronised.**
-
----
-
-## 🏁 Session Anchor: 2026-06-19 (OKF v0.1 Adoption Sprint)
-- **Accomplished:**
-    - [x] **Official Spec Alignment:** Analysed Google Cloud's official OKF v0.1 draft and synchronized `docs/OKF-ADOPTION-GUIDE.md` to adopt standard terminology (Knowledge Bundles, Concepts) and correct YAML frontmatter schema (`title`, `resource`, `timestamp`).
-    - [x] **Reference Synchronization:** Mirrored the updated guide to `references/OKF-ADOPTION-GUIDE.md` and modernized `HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md` to use soft relative paths instead of hardcoded absolute paths.
-    - [x] **Mass Schema Migration:** Developed and executed an automated Python migration script to perfectly enforce the OKF v0.1 schema across all 13 existing Knowledge Bundles (`.agents/skills/` and `.agents/brain/wings/`).
-    - [x] **Git Governance:** Safely committed all structural schema changes to the `main` branch.
-- **Current State:** The entire Sovereign AI Workspace (DSOM) is now 100% compliant with the official open-source OKF v0.1 standard.
-- **Mental Anchor:** We have officially solved Context Decay using an enterprise-grade Knowledge Graph architecture. Future agents can effortlessly traverse the `.agents/` directory by querying structured YAML.
-
-**Sovereign State Synchronised.**
+### [MENTAL ANCHOR]
+**Date:** 2026-07-04
+**State:** The DSOM architecture is fully bootstrapped with 17 active OKF-compliant AI skills and the Triple-Ledger Synchronization Mandate enabled. The `v10.3.1-skills` release is live on GitHub/GitLab. The workspace is pristine, ledgers are up to date, and ready for Local LLM roadmap evaluation.
