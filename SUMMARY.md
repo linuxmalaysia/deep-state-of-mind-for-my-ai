@@ -1,4 +1,4 @@
-# Deep State of Mind (DSOM) For My AI Protocol
+# Table of contents
 
 ## Table of contents
 
@@ -26,29 +26,27 @@
 * [🧠 Personalisation Ritual](docs/PERSONALIZATION.md)
 * [🏛️ Sovereign Markdown Palace Protocol](docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 
-## 🧠 3. The AI Brain (Sovereign Core)
+## 🌐 Global Hub (Strategic)
 
-### 🌐 Global Hub (Strategic)
+* [🏁 Task Master (Aggregate)](global-hub-strategic/task-master-aggregate.md)
 
-* [🏁 Task Master (Aggregate)](.agents/brain/global/task-master.md)
+## 👥 Member Spokes (Tactical)
 
-### 👥 Member Spokes (Tactical)
-
-* [🎯 My Daily Tasks](.agents/brain/member/haris/task.md)
+* [🎯 My Daily Tasks](member-spokes-tactical/my-daily-tasks.md)
 * [🏁 My Walkthrough](.agents/brain/member/haris/walkthrough.md)
 * [🗺️ Implementation Plan](.agents/brain/implementation_plan.md)
 * [🏛️ Palace Registry](.agents/brain/palace_registry.md)
 
-### 🏛️ Palace Rooms (wing_dsom_core)
+## 🏛️ Palace Rooms (wing\_dsom\_core)
 
-* [🔑 room_tooling — Tools Inventory](`.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`)
-* [🏗️ room_clean_architecture — Design Laws](`.agents/brain/wings/wing_dsom_core/hall_facts/room_clean_architecture/closet.md`)
-* [🔬 room_crisp_strategy — AI Interaction](`.agents/brain/wings/wing_dsom_core/hall_facts/room_crisp_strategy/closet.md`)
-* [📜 room_dsom_protocol — Protocol Docs](`.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md`)
-* [🛰️ room_sovereign_fabric_v9_8 — Infra](`.agents/brain/wings/wing_dsom_core/hall_events/room_sovereign_fabric_v9_8/closet.md`)
-* [🧠 room_brain_artifacts — Brain Files](`.agents/brain/wings/wing_dsom_core/hall_events/room_brain_artifacts/closet.md`)
-* [📊 room_ledger — Version History](`.agents/brain/wings/wing_dsom_core/hall_events/room_ledger/closet.md`)
-* [🔭 room_uncategorised — Discoveries](`.agents/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised/closet.md`)
+* [🔑 room\_tooling — Tools Inventory](palace-rooms-wing_dsom_core/room_tooling-tools-inventory.md)
+* [🏗️ room\_clean\_architecture — Design Laws](palace-rooms-wing_dsom_core/room_clean_architecture-design-laws.md)
+* [🔬 room\_crisp\_strategy — AI Interaction](palace-rooms-wing_dsom_core/room_crisp_strategy-ai-interaction.md)
+* [📜 room\_dsom\_protocol — Protocol Docs](palace-rooms-wing_dsom_core/room_dsom_protocol-protocol-docs.md)
+* [🛰️ room\_sovereign\_fabric\_v9\_8 — Infra](palace-rooms-wing_dsom_core/room_sovereign_fabric_v9_8-infra.md)
+* [🧠 room\_brain\_artifacts — Brain Files](palace-rooms-wing_dsom_core/room_brain_artifacts-brain-files.md)
+* [📊 room\_ledger — Version History](palace-rooms-wing_dsom_core/room_ledger-version-history.md)
+* [🔭 room\_uncategorised — Discoveries](palace-rooms-wing_dsom_core/room_uncategorised-discoveries.md)
 
 ## 🤖 4. AI & Agent Protocols
 
@@ -56,7 +54,7 @@
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
 * [📋 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
 * [🧠 Cognitive Twin Protocol Template](docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md)
-* [⚡ HOWTO: Reanimate Session](docs/HOWTO-REANIMATE-SESSION.md)
+* [⚡ HOWTO: Reanimate Session](4.-ai-and-agent-protocols/howto-reanimate-session.md)
 * [📥 HOWTO: Adopt DSOM (Brownfield)](docs/HOWTO-ADOPT-DSOM.md)
 * [📥 HOWTO: DSOM Bootstrap Blueprint](docs/HOWTO-DSOM-BASELINE.md)
 * [🔄 HOWTO: Upgrade DSOM Protocol](docs/HOWTO-UPGRADE-DSOM.md)
@@ -65,7 +63,7 @@
 * [📝 Cognitive Logging Protocol](docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md)
 * [🏛️ Mirror of Knowledge](docs/MIRROR-OF-KNOWLEDGE.md)
 
-### 🏛️ Palace Documentation
+## 🏛️ Palace Documentation
 
 * [🏛️ HOWTO: Palace Onboarding](docs/HOWTO-PALACE-ONBOARDING.md)
 * [🔄 HOWTO: Migrate to Palace](docs/HOWTO-MIGRATE-TO-PALACE.md)
@@ -74,30 +72,30 @@
 * [🌐 Open Knowledge Format (OKF) Guide](docs/OKF-ADOPTION-GUIDE.md)
 * [📦 HOWTO: Port AI Palace](docs/HOWTO-PORT-AI-PALACE.md)
 
-### ⚙️ Agent Configurations
+## ⚙️ Agent Configurations
 
 * [⚙️ Cursor Rules Template](docs/agent-configs/cursorrules_template.md)
 * [⚙️ Copilot Instructions](docs/agent-configs/copilot_instructions_template.md)
 * [⚙️ Windsurf Rules](docs/agent-configs/windsurfrules_template.md)
 * [⚙️ Autonomous Agent Manifest](docs/agent-configs/autonomous_agent_manifest.md)
 
-### 🧪 Model Specifics
+## 🧪 Model Specifics
 
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 * [🛡️ GitHub Copilot Setup](docs/COPILOT-SETUP.md)
-* [🧪 DSOM Claude Initialiser](DSOM-CLAUDE-INIT.md)
+* [🧪 DSOM Claude Initialiser](model-specifics/dsom-claude-initialiser.md)
 
 ## 🛠️ 5. Tools & Automation (Drivers)
 
-* [🔍 Audit Pre-Flight](tools/audit-pre-flight.sh)
-* [🚀 Git Ritual (SOD/EOD)](tools/git-ritual.sh)
-* [🧠 Brain Initialiser](tools/init-brain.sh)
-* [🚀 Reanimation Engine](tools/reanimate.sh)
-* [🛡️ Privacy Guardian](tools/privacy-guardian.sh)
-* [🌙 Git Ritual PowerShell](tools/git-ritual.ps1)
+* [🔍 Audit Pre-Flight](5.-tools-and-automation-drivers/audit-pre-flight.md)
+* [🚀 Git Ritual (SOD/EOD)](5.-tools-and-automation-drivers/git-ritual-sod-eod.md)
+* [🧠 Brain Initialiser](5.-tools-and-automation-drivers/brain-initialiser.md)
+* [🚀 Reanimation Engine](5.-tools-and-automation-drivers/reanimation-engine.md)
+* [🛡️ Privacy Guardian](5.-tools-and-automation-drivers/privacy-guardian.md)
+* [🌙 Git Ritual PowerShell](5.-tools-and-automation-drivers/git-ritual-powershell.md)
 
-### 🏛️ DSOM Automation Encyclopedia (docs/tools/)
+## 🏛️ DSOM Automation Encyclopedia (docs/tools/)
 
 * [🌅 HOWTO: Start-of-Day (SOD) Palace](docs/tools/HOWTO-SOD-PALACE.md)
 * [🌙 HOWTO: End-of-Day (EOD) Palace](docs/tools/HOWTO-EOD-PALACE.md)
@@ -119,28 +117,22 @@
 * [📖 HOWTO: Build Sovereign Book](docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md)
 * [📝 HOWTO: Generate Walkthrough](docs/tools/HOWTO-GENERATE-WALKTHROUGH.md)
 
----
-
 ## ⚙️ 6. Ansible & Infrastructure Automation
 
 * [🛠️ HOWTO: Setup Ansible Baseline](docs/HOWTO-SETUP-ANSIBLE-BASELINE.md)
 * [🐧 HOWTO: Setup AlmaLinux 10 WSL2 Control Node](docs/HOWTO-SETUP-WSL-ALMALINUX10.md)
 
----
-
 ## 🎭 7. Ansible Playbooks (DSOM Operational)
 
-* [🚀 site.yml — Master Entry](playbooks/dsom/site.yml)
-* [✅ audit-preflight.yml — Pre-Flight Audit](playbooks/dsom/audit-preflight.yml)
-* [🧠 init-brain.yml — Brain Initialiser](playbooks/dsom/init-brain.yml)
-* [🛡️ privacy-scan.yml — Privacy Guardian](playbooks/dsom/privacy-scan.yml)
+* [🚀 site.yml — Master Entry](7.-ansible-playbooks-dsom-operational/site.yml-master-entry.md)
+* [✅ audit-preflight.yml — Pre-Flight Audit](7.-ansible-playbooks-dsom-operational/audit-preflight.yml-pre-flight-audit.md)
+* [🧠 init-brain.yml — Brain Initialiser](7.-ansible-playbooks-dsom-operational/init-brain.yml-brain-initialiser.md)
+* [🛡️ privacy-scan.yml — Privacy Guardian](7.-ansible-playbooks-dsom-operational/privacy-scan.yml-privacy-guardian.md)
 
-### 🏛️ Palace Ritual Playbooks (v1.0)
+## 🏛️ Palace Ritual Playbooks (v1.0)
 
-* [🌅 sod-palace.yml — SOD Automation](playbooks/dsom/sod-palace.yml)
-* [🌙 eod-palace.yml — EOD Automation](playbooks/dsom/eod-palace.yml)
-
----
+* [🌅 sod-palace.yml — SOD Automation](palace-ritual-playbooks-v1.0/sod-palace.yml-sod-automation.md)
+* [🌙 eod-palace.yml — EOD Automation](palace-ritual-playbooks-v1.0/eod-palace.yml-eod-automation.md)
 
 ## 🤖 8. AI Agent Skills & Workflows
 
@@ -151,14 +143,8 @@
 * [🔍 Forensic Log Audit Skill](.agents/skills/forensic-log-audit/SKILL.md)
 * [🔑 SSH Passwordless Setup Skill](.agents/skills/ssh-passwordless-setup/SKILL.md)
 
----
-
 ## 📚 9. References & Genesis Papers
 
-* [🏛️ The Sovereign AI Agent Workspace v2 (Genesis)](references/The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)
+* [\[🏛️ The Sovereign AI Agent Workspace v2 (Genesis)\](references/The Sovereign AI Agent Workspace v2\_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)](9.-references-and-genesis-papers/the-sovereign-ai-agent-workspace-v2-genesis-references-the-sovereign-ai-agent-workspace-v2_-architec.md)
 * [🚀 HOWTO: Bootstrap Sovereign AI Project](references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md)
 * [🌐 OKF Adoption Guide (Reference)](references/OKF-ADOPTION-GUIDE.md)
-
----
-*Generated by the DSOM Protocol | Harisfazillah Jamel*
-**Last Human Audit:** 2026-04-08 | **Version:** v10.0.0-palace

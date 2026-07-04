@@ -1,0 +1,2 @@
+# 🚀 Git Ritual (SOD/EOD)
+
