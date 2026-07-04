@@ -371,6 +371,8 @@ EOD → Step 1b: Save new Hibernation Notes
 deep-state-of-mind-for-my-ai/
 │
 ├── docs/                                  # Governance & Protocol Documents
+│   ├── tools-and-automation/              # 🛠️ Detailed script documentation (OKF Compliant)
+│   ├── reference-architectures/           # 🏗️ Ansible architecture blueprints
 │   ├── AI-MASTER-PROTOCOL.md              # The Sovereign Constitution (v6.1 + Palace v1.0)
 │   ├── AI-COGNITIVE-TWIN-PROTOCOL.md      # ⭐ Project Identity Card Template
 │   ├── GITOPS-AIOPS-ANSIBLE-STRATEGY.md   # Three-Pillar Doctrine
@@ -382,9 +384,6 @@ deep-state-of-mind-for-my-ai/
 ├── .agents/                               # 🤖 Sovereign AI Workspace (v2)
 │   ├── AGENTS.md                          # 📜 Core Rulebook mapping AI rules to memory
 │   ├── skills/                            # 🛠️ Self-Healing Agent Skills (OKF)
-│   │   ├── eod-palace-sync/
-│   │   ├── sod-palace-sync/
-│   │   └── ...
 │   ├── workflows/                         # 🔄 Procedural Workflow chains
 │   └── brain/                             # 🧠 The AI's External Memory (SSoT)
 │       ├── task.md                        # Present: What to do NOW
@@ -392,23 +391,19 @@ deep-state-of-mind-for-my-ai/
 │       ├── implementation_plan.md         # Future: Project roadmap
 │       ├── palace_registry.md             # 🏛️ Palace spatial index (OKF Compliant)
 │       └── wings/                         # 🏛️ Sovereign Markdown Palace Rooms
-│           └── wing_dsom_core/
-│               ├── hall_facts/            # Laws, tools, architecture
-│               └── hall_events/           # Milestones, versions, ledger
+│
+├── references/                            # 📚 External PDFs, Genesis papers, and benchmarks
 │
 ├── tools/                                 # Automation Scripts
 │   ├── audit-pre-flight.sh / .ps1         # ✅ Run first every session
 │   ├── git-ritual.sh / .ps1               # 🔄 SOD pull + EOD commit/push
 │   ├── reanimate.sh / .ps1                # 🚀 Generate AI context manifest (v2.2/v2.1)
 │   ├── hibernation.sh / .ps1              # 🌙 EOD safety check + Palace Sync (v2.1)
-│   ├── palace-sync.sh / .ps1             # 🏛️ Map git commits → Palace Rooms (v1.0)
+│   ├── palace-sync.sh / .ps1              # 🏛️ Map git commits → Palace Rooms (v1.0)
 │   ├── init-brain.sh / .ps1               # 🧠 One-time brain initialisation
 │   └── privacy-guardian.sh / .ps1         # 🛡️ Scan manifest before sharing
 │
 ├── inventory/                             # Ansible Node Topology (your project)
-│   ├── hosts.yml                          # Target nodes (fill in after adoption)
-│   └── group_vars/
-│
 ├── playbooks/                             # Ansible Playbooks (your project)
 └── roles/                                 # Ansible Roles (your project)
 ```
