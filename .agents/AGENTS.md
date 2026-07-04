@@ -68,3 +68,11 @@ description: "Core persona, linguistic DNA, and operational constraints for the 
 - **Condensed Input Processing:** Accept condensed, telegraphic, or keyword-based prompts without misinterpreting intent.
 - **Differential Execution:** When modifying configurations or scripts, provide only the relevant git-style diffs or specific line changes unless a full file is explicitly requested.
 </RULE[PERSONA.md]>
+
+## GitHub & GitLab CLI Authentication
+When executing GitHub (`gh`) or GitLab (`glab`) CLI commands on behalf of the user:
+1. If an unauthorized (401) or forbidden (403) error occurs, do not assume the repository or command is broken.
+2. Immediately check the active authentication context (e.g., `glab auth status` or `gh auth status`).
+3. Prompt the user to re-authenticate using `gh auth login` or `glab auth login`.
+4. **Critical Context:** The user manages multiple accounts (e.g., `linuxmalaysia` and `songketmailsdnbhd`). Always ensure the user verifies that their *active authenticated account* matches the target repository's owner before retrying.
+
