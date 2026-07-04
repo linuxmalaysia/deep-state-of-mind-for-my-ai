@@ -9,14 +9,14 @@
 
 ## 🏛️ 1. Sovereign Governance
 
-* [👑 Operational Sovereignty Manifesto](docs/OPERATIONAL-SOVEREIGNTY.md)
-* [🏛️ AI Master Protocol](docs/AI-MASTER-PROTOCOL.md)
-* [🔄 GitOps · AIOps · Ansible Strategy](docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
-* [🏛️ Digital Sovereignty Model](docs/DIGITAL-SOVEREIGNTY-MODEL.md)
-* [🏥 ITIL 4 Alignment Strategy](docs/ITIL-ALIGNMENT.md)
-* [🛡️ CRISP² Operational Strategy](docs/CRISP2-OPERATIONAL-STRATEGY.md)
-* [📖 Operational Guide](docs/OPERATIONAL-GUIDE.md)
-* [🕸️ Hub and Spoke Model](docs/HUB-AND-SPOKE-MODEL.md)
+* [👑 Operational Sovereignty Manifesto](docs/governance/OPERATIONAL-SOVEREIGNTY.md)
+* [🏛️ AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md)
+* [🔄 GitOps · AIOps · Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+* [🏛️ Digital Sovereignty Model](docs/governance/DIGITAL-SOVEREIGNTY-MODEL.md)
+* [🏥 ITIL 4 Alignment Strategy](docs/governance/ITIL-ALIGNMENT.md)
+* [🛡️ CRISP² Operational Strategy](docs/governance/CRISP2-OPERATIONAL-STRATEGY.md)
+* [📖 Operational Guide](docs/governance/OPERATIONAL-GUIDE.md)
+* [🕸️ Hub and Spoke Model](docs/governance/HUB-AND-SPOKE-MODEL.md)
 
 ## 🌅 2. Operational Rituals
 
@@ -24,7 +24,7 @@
 * [🌙 EOD Ritual](docs/EOD-RITUAL.md)
 * [🕯️ Ritual of Transition](docs/RITUAL-OF-TRANSITION.md)
 * [🧠 Personalisation Ritual](docs/PERSONALIZATION.md)
-* [🏛️ Sovereign Markdown Palace Protocol](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
+* [🏛️ Sovereign Markdown Palace Protocol](docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 
 ## 🧠 3. The AI Brain (Sovereign Core)
 
@@ -55,13 +55,14 @@
 * [🤝 Human Handover Context Template](docs/HUMAN-HANDOVER-CONTEXT.md)
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
 * [📋 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
-* [🧠 Cognitive Twin Protocol Template](docs/AI-COGNITIVE-TWIN-PROTOCOL.md)
+* [🧠 Cognitive Twin Protocol Template](docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md)
 * [⚡ HOWTO: Reanimate Session](docs/HOWTO-REANIMATE-SESSION.md)
 * [📥 HOWTO: Adopt DSOM (Brownfield)](docs/HOWTO-ADOPT-DSOM.md)
+* [📥 HOWTO: DSOM Bootstrap Blueprint](docs/HOWTO-DSOM-BASELINE.md)
 * [🔄 HOWTO: Upgrade DSOM Protocol](docs/HOWTO-UPGRADE-DSOM.md)
-* [🤖 Multi-Agent Protocols](docs/MULTI-AGENT-PROTOCOLS.md)
+* [🤖 Multi-Agent Protocols](docs/governance/MULTI-AGENT-PROTOCOLS.md)
 * [📜 AI Agent Skills Guide](docs/AI-AGENT-SKILLS-GUIDE.md)
-* [📝 Cognitive Logging Protocol](docs/AI-COGNITIVE-LOGGING-PROTOCOL.md)
+* [📝 Cognitive Logging Protocol](docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md)
 * [🏛️ Mirror of Knowledge](docs/MIRROR-OF-KNOWLEDGE.md)
 
 ### 🏛️ Palace Documentation
@@ -69,7 +70,7 @@
 * [🏛️ HOWTO: Palace Onboarding](docs/HOWTO-PALACE-ONBOARDING.md)
 * [🔄 HOWTO: Migrate to Palace](docs/HOWTO-MIGRATE-TO-PALACE.md)
 * [📖 Palace Build Story](docs/PALACE-BUILD-STORY.md)
-* [🧩 Research: Reasoning Gap](docs/RESEARCH-REASONING-GAP.md)
+* [🧩 Research: Reasoning Gap](docs/governance/RESEARCH-REASONING-GAP.md)
 * [🌐 Open Knowledge Format (OKF) Guide](docs/OKF-ADOPTION-GUIDE.md)
 * [📦 HOWTO: Port AI Palace](docs/HOWTO-PORT-AI-PALACE.md)
 

@@ -39,3 +39,16 @@ Rapid state-saving automation.
 - Git history current with `chore: automation documentation` commit.
 
 **Sovereign State Synchronised.**
+
+---
+
+## 🏁 Session Anchor: 2026-06-19 (OKF v0.1 Adoption Sprint)
+- **Accomplished:**
+    - [x] **Official Spec Alignment:** Analysed Google Cloud's official OKF v0.1 draft and synchronized `docs/OKF-ADOPTION-GUIDE.md` to adopt standard terminology (Knowledge Bundles, Concepts) and correct YAML frontmatter schema (`title`, `resource`, `timestamp`).
+    - [x] **Reference Synchronization:** Mirrored the updated guide to `references/OKF-ADOPTION-GUIDE.md` and modernized `HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md` to use soft relative paths instead of hardcoded absolute paths.
+    - [x] **Mass Schema Migration:** Developed and executed an automated Python migration script to perfectly enforce the OKF v0.1 schema across all 13 existing Knowledge Bundles (`.agents/skills/` and `.agents/brain/wings/`).
+    - [x] **Git Governance:** Safely committed all structural schema changes to the `main` branch.
+- **Current State:** The entire Sovereign AI Workspace (DSOM) is now 100% compliant with the official open-source OKF v0.1 standard.
+- **Mental Anchor:** We have officially solved Context Decay using an enterprise-grade Knowledge Graph architecture. Future agents can effortlessly traverse the `.agents/` directory by querying structured YAML.
+
+**Sovereign State Synchronised.**
