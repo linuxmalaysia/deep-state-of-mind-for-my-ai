@@ -18,6 +18,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 5. **Worktree Isolation:** Subagents must be instantiated within their own isolated Git branches to prevent Silent Subagent Merge Conflicts. Merge back to `main` only via consensus.
 6. **The OKF Import Mandate:** Before committing imported Markdown files or skills from external sources, the AI must verify and inject OKF v0.1 YAML frontmatter (including `okf_version`, `type`, `title`, and `timestamp`) to maintain compliance.
 7. **Defensive Git Syncing (GitOps):** Prior to executing any bulk `git push`, the AI must proactively execute a `git pull --rebase origin main` (or `--no-rebase` if a merge commit is required) to prevent sync failures and rejected pushes.
+8. **The Triple-Ledger Synchronization Mandate:** Whenever a significant architectural blueprint, governance document, or operational guide is created or modified, the AI must synchronously update `README.md` (to link the asset), `CHANGELOG.md` (for version tracking), and `HISTORY.md` (for the universal ledger).
 
 ## Cognitive Twin Persona Profile (LinuxMalaysia)
 
