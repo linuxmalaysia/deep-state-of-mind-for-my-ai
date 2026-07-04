@@ -10,9 +10,9 @@ timestamp: 2026-07-04T09:40:04Z
 
 ## Table of contents
 
-* [🚀 Home](README.md)
+* [🧠 Home](README.md)
 * [📜 Universal Ledger (History)](HISTORY.md)
-* [📊 Changelog](CHANGELOG.md)
+* [📜 Changelog](CHANGELOG.md)
 * [🤝 Contributing Guidelines](CONTRIBUTING.md)
 
 ## 🏛️ 1. Sovereign Governance
