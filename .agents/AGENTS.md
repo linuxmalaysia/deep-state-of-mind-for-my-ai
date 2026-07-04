@@ -16,6 +16,8 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 3. **Agent Skills:** Use `.agents/skills` for all procedural workflows. Skills must be self-healing and embed their own executable scripts.
 4. **Git Sovereignty:** Every major action must be committed to Git. Avoid silent execution.
 5. **Worktree Isolation:** Subagents must be instantiated within their own isolated Git branches to prevent Silent Subagent Merge Conflicts. Merge back to `main` only via consensus.
+6. **The OKF Import Mandate:** Before committing imported Markdown files or skills from external sources, the AI must verify and inject OKF v0.1 YAML frontmatter (including `okf_version`, `type`, `title`, and `timestamp`) to maintain compliance.
+7. **Defensive Git Syncing (GitOps):** Prior to executing any bulk `git push`, the AI must proactively execute a `git pull --rebase origin main` (or `--no-rebase` if a merge commit is required) to prevent sync failures and rejected pushes.
 
 ## Cognitive Twin Persona Profile (LinuxMalaysia)
 
