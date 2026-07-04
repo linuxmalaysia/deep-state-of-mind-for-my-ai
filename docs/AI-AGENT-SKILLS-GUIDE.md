@@ -66,8 +66,17 @@ This is the active ledger of all AI Agent Skills currently deployed in this repo
 
 | Skill Name | Path | Purpose |
 | :--- | :--- | :--- |
+| **Cross-Platform Translator** | `.agents/skills/cross-platform-translator/SKILL.md` | Translates Shell/PowerShell scripts cross-platform. |
+| **DSOM Bootstrap** | `.agents/skills/dsom-bootstrap/SKILL.md` | Bootstraps DSOM architecture for new projects. |
 | **EOD Palace Sync** | `.agents/skills/eod-palace-sync/SKILL.md` | The Hibernation ritual to externalize memory into the Palace and push to Git. |
 | **Forensic Log Audit** | `.agents/skills/forensic-log-audit/SKILL.md` | Parses raw AI conversation transcripts to extract exact historical terminal commands. |
 | **Initialize GitOps** | `.agents/skills/initialize-gitops/SKILL.md` | Establishes the foundational GitOps repository and Genesis DSOM architecture. |
+| **LaTeX Proposal Compiler** | `.agents/skills/latex-proposal-compiler/SKILL.md` | Compiles a markdown proposal document into a PDF using Pandoc and XeLaTeX. |
+| **Node Proposal Formatter** | `.agents/skills/node-proposal-formatter/SKILL.md` | Formats markdown proposals using Node wrappers. |
+| **Node Slide Generator** | `.agents/skills/node-slide-generator/SKILL.md` | Generates HTML/PDF slide decks from Markdown via Node/Marp. |
+| **ODP Slide Generator** | `.agents/skills/odp-slide-generator/SKILL.md` | Generates LibreOffice Impress (ODP) presentations from Markdown. |
+| **Palace Auditor** | `.agents/skills/palace-auditor/SKILL.md` | Crawls the workspace to verify links and maintain the Sovereign Memory Palace. |
+| **PDF Text Extractor** | `.agents/skills/pdf-text-extractor/SKILL.md` | Extracts raw text from PDF files for agent analysis. |
+| **Proposal DOCX Formatter** | `.agents/skills/proposal-docx-formatter/SKILL.md` | Formats markdown proposals into Microsoft Word (DOCX) files. |
 | **SOD Palace Sync** | `.agents/skills/sod-palace-sync/SKILL.md` | The Reanimation ritual to load the workspace context and establish the day's tasks. |
 | **SSH Passwordless Setup** | `.agents/skills/ssh-passwordless-setup/SKILL.md` | Configures passwordless, multi-hop SSH routing using `~/.ssh/config` to bypass agent limits. |
