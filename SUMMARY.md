@@ -62,7 +62,6 @@ timestamp: 2026-07-04T09:40:04Z
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
 * [📋 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
 * [🧠 Cognitive Twin Protocol Template](docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md)
-* [⚡ HOWTO: Reanimate Session](4.-ai-and-agent-protocols/howto-reanimate-session.md)
 * [📥 HOWTO: Adopt DSOM (Brownfield)](docs/HOWTO-ADOPT-DSOM.md)
 * [📥 HOWTO: DSOM Bootstrap Blueprint](docs/HOWTO-DSOM-BASELINE.md)
 * [🔄 HOWTO: Upgrade DSOM Protocol](docs/HOWTO-UPGRADE-DSOM.md)
@@ -93,15 +92,6 @@ timestamp: 2026-07-04T09:40:04Z
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 * [🛡️ GitHub Copilot Setup](docs/COPILOT-SETUP.md)
 * [🧪 DSOM Claude Initialiser](model-specifics/dsom-claude-initialiser.md)
-
-## 🛠️ 5. Tools & Automation (Drivers)
-
-* [🔍 Audit Pre-Flight](5.-tools-and-automation-drivers/audit-pre-flight.md)
-* [🚀 Git Ritual (SOD/EOD)](5.-tools-and-automation-drivers/git-ritual-sod-eod.md)
-* [🧠 Brain Initialiser](5.-tools-and-automation-drivers/brain-initialiser.md)
-* [🚀 Reanimation Engine](5.-tools-and-automation-drivers/reanimation-engine.md)
-* [🛡️ Privacy Guardian](5.-tools-and-automation-drivers/privacy-guardian.md)
-* [🌙 Git Ritual PowerShell](5.-tools-and-automation-drivers/git-ritual-powershell.md)
 
 ## 🏛️ DSOM Automation Encyclopedia (docs/tools/)
 
@@ -138,13 +128,6 @@ timestamp: 2026-07-04T09:40:04Z
 * [🏛️ Inventory Explained](docs/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED.md)
 * [🛠️ HOWTO: Setup Baseline (Example Elastic SOC)](docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md)
 
-## 🎭 7. Ansible Playbooks (DSOM Operational)
-
-* [🚀 site.yml — Master Entry](7.-ansible-playbooks-dsom-operational/site.yml-master-entry.md)
-* [✅ audit-preflight.yml — Pre-Flight Audit](7.-ansible-playbooks-dsom-operational/audit-preflight.yml-pre-flight-audit.md)
-* [🧠 init-brain.yml — Brain Initialiser](7.-ansible-playbooks-dsom-operational/init-brain.yml-brain-initialiser.md)
-* [🛡️ privacy-scan.yml — Privacy Guardian](7.-ansible-playbooks-dsom-operational/privacy-scan.yml-privacy-guardian.md)
-
 ## 🏛️ Palace Ritual Playbooks (v1.0)
 
 * [🌅 sod-palace.yml — SOD Automation](palace-ritual-playbooks-v1.0/sod-palace.yml-sod-automation.md)
@@ -161,6 +144,6 @@ timestamp: 2026-07-04T09:40:04Z
 
 ## 📚 9. References & Genesis Papers
 
-* [\[🏛️ The Sovereign AI Agent Workspace v2 (Genesis)\](references/The Sovereign AI Agent Workspace v2\_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)](9.-references-and-genesis-papers/the-sovereign-ai-agent-workspace-v2-genesis-references-the-sovereign-ai-agent-workspace-v2_-architec.md)
+* [🏛️ The Sovereign AI Agent Workspace v2 (Genesis)](references/The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)
 * [🚀 HOWTO: Bootstrap Sovereign AI Project](references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md)
 * [🌐 OKF Adoption Guide (Reference)](references/OKF-ADOPTION-GUIDE.md)
