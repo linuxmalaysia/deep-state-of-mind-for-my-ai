@@ -57,6 +57,7 @@
 
 ## ⚙️ Agent Configurations
 
+* [🎭 Sovereign Persona Template](docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md)
 * [⚙️ Cursor Rules Template](docs/agent-configs/cursorrules_template.md)
 * [⚙️ Copilot Instructions](docs/agent-configs/copilot_instructions_template.md)
 * [⚙️ Windsurf Rules](docs/agent-configs/windsurfrules_template.md)

@@ -213,6 +213,18 @@ Six months of daily AI use generates millions of tokens of conversation. Every d
 
 ---
 
+## 🎭 Sovereign Persona Injection
+
+A core feature of the DSOM protocol is the ability to make the AI inherently act as your true **Cognitive Digital Twin**. You can inject your own identity, linguistic DNA, and operational constraints into the AI's core engine.
+
+When you define your Persona Profile, the AI will automatically adopt your tone, your constraints (e.g. "FOSS only", "Ansible-first"), and your exact architectural philosophies across every chat session.
+
+| Use Case | Guide |
+|---|---|
+| **Define your AI's Persona** | [`docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md`](docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md) |
+
+---
+
 ## ⚡ DSOM Onboarding Automation
 
 If you want to integrate the deep-state-of-mind architecture into an entirely new or existing repository, you no longer have to manually copy files. We have engineered a robust, cross-platform onboarding framework that handles the integration cleanly via a temporary git branch and Ansible file merging.
