@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Added
+
+- **Governance Rule Update:** Added the GitHub & GitLab CLI Authentication rule to `.agents/AGENTS.md` to formally guardrail multi-account API interactions and prevent context-blind CLI failures (e.g., `linuxmalaysia` vs `songketmailsdnbhd`).
+
 ## [10.3.0-bootstrap] - 2026-07-04
 
 ### Added
