@@ -130,6 +130,14 @@ timestamp: 2026-07-04T09:40:04Z
 * [🛠️ HOWTO: Setup Ansible Baseline](docs/HOWTO-SETUP-ANSIBLE-BASELINE.md)
 * [🐧 HOWTO: Setup AlmaLinux 10 WSL2 Control Node](docs/HOWTO-SETUP-WSL-ALMALINUX10.md)
 
+## 🏗️ Reference Architectures (Ansible Blueprint)
+
+* [🎯 Deployment Architecture (16-Node Fabric)](docs/reference-architectures/ANSIBLE-DEPLOYMENT-ARCHITECTURE.md)
+* [🛠️ Configuration Guide](docs/reference-architectures/ANSIBLE-CONFIG-GUIDE.md)
+* [🎮 Control Node Protocol](docs/reference-architectures/ANSIBLE-CONTROL-NODE-PROTOCOL.md)
+* [🏛️ Inventory Explained](docs/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED.md)
+* [🛠️ HOWTO: Setup Baseline (Example Elastic SOC)](docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md)
+
 ## 🎭 7. Ansible Playbooks (DSOM Operational)
 
 * [🚀 site.yml — Master Entry](7.-ansible-playbooks-dsom-operational/site.yml-master-entry.md)
