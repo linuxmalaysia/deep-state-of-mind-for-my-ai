@@ -74,17 +74,31 @@ cp -r [OLD_PATH]/tools/* tools/
 
 ## 3. Post-Clone Initialization
 
-Once the files are copied into the new repository, you must initialize the AI's identity and memory.
+Once the files are copied into the new repository, you must initialize the AI's identity, memory, and version control.
 
-1. **Persona Injection:** Run or ask the AI to execute the `persona-injector` skill to establish the new project owner's identity. (Alternatively, manually fill out `docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md` and append it to `.agents/AGENTS.md`).
-2. **First Reanimation:** Run the Reanimate ritual to generate the first `sod_manifest.txt` and wake up the AI in its new home.
+1. **Initialize Git Repository:** The ritual scripts rely on Git to determine branch and commit state. You must initialize Git first.
+   ```bash
+   git init
+   git branch -M main
+   ```
+2. **Initialize Brain Artifacts (Optional but Recommended):** To prevent startup warnings, create empty brain artifacts.
+   ```bash
+   mkdir -p .agents/brain
+   echo "# 📝 Task List" > .agents/brain/task.md
+   echo "# 🚶 Session Walkthrough" > .agents/brain/walkthrough.md
+   ```
+3. **Persona Injection:** Run or ask the AI to execute the `persona-injector` skill to establish the new project owner's identity. (Alternatively, manually fill out `docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md` and append it to `.agents/AGENTS.md`).
+4. **First Reanimation:** Run the Reanimate ritual to generate the first `sod_manifest.txt` and wake up the AI in its new home.
    ```bash
    bash tools/reanimate.sh  # or .\tools\reanimate.ps1
    ```
-3. **Commit the Genesis State:** 
+5. **Commit the Genesis State:** 
    ```bash
    git add .
    git commit -m "chore(dsom): scaffold genesis dsom architecture and AI skills"
    ```
+
+> [!TIP]
+> **Automated Scaffolding:** Instead of running these steps manually, you can instruct your AI Agent to invoke the `dsom-project-cloner` skill. Simply provide the agent with the absolute path to your new, empty target directory (e.g., `D:\Projects\my-new-app`), and the AI will automatically copy the pillars, inject your persona, and execute the Genesis commit for you!
 
 Your new project is now fully sentient and equipped with the exact same capabilities as the baseline DSOM repository.

@@ -84,6 +84,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-04]: **DSOM Bootstrapping Baseline Refactor.** Adopted the `dsom-bootstrap` AI skill, established `HOWTO-DSOM-BASELINE.md` as the definitive origin, migrated governance documents to `docs/governance/`, and standardized the pre-flight `diagnostic` tools, finalizing the repository as the permanent DSOM framework baseline.
 - [2026-07-04]: **Project Cloning Blueprint & Skill.** Created `HOWTO-CLONE-DSOM-PROJECT.md` to explicitly map out how to scaffold a new project, and engineered the `dsom-project-cloner` AI skill to fully automate the replication of the Sovereign Engine to any target path.
 - [2026-07-04]: **Governance Rule Update.** Appended the GitHub & GitLab CLI Authentication rule to `.agents/AGENTS.md` to formally guardrail multi-account API interactions and prevent context-blind CLI failures (e.g., `linuxmalaysia` vs `songketmailsdnbhd`).
+- [2026-07-09]: **Automated Scaffolding Validation & Patches.** Validated the `dsom-project-cloner` skill across multiple example environments (e.g., `/path/to/project-alpha`). Discovered and resolved `Join-Path` syntax incompatibilities in `tools/reanimate.ps1` for environments utilizing legacy Windows PowerShell 5.1. Updated `HOWTO-CLONE-DSOM-PROJECT.md` to strictly enforce Git and Brain artifact initialization prior to the first reanimation cycle.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.3.1-skills | Harisfazillah Jamel*

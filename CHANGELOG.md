@@ -20,6 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **Governance Rule Update:** Added the GitHub & GitLab CLI Authentication rule to `.agents/AGENTS.md` to formally guardrail multi-account API interactions and prevent context-blind CLI failures (e.g., `linuxmalaysia` vs `songketmailsdnbhd`).
+- **Initialization Guide Update:** Enhanced `HOWTO-CLONE-DSOM-PROJECT.md` to clarify the mandatory pre-requisite of `git init` and brain artifact creation (`task.md`, `walkthrough.md`) before running reanimation rituals.
+
+### Fixed
+
+- **PowerShell 5.1 Compatibility:** Fixed syntax errors in `Join-Path` invocations inside `tools/reanimate.ps1`. The legacy PS 5.1 engine does not support more than two arguments natively for `Join-Path`. This patch allows seamless scaffolding into environments running native Windows PowerShell 5.1.
 
 ## [10.3.0-bootstrap] - 2026-07-04
 

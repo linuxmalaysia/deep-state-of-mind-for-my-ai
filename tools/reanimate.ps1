@@ -35,10 +35,10 @@ if (-not $RepoRoot) {
 
 $DateStamp  = Get-Date -Format "yyyy-MM-dd"
 $OutputFile = Join-Path $RepoRoot "sod_manifest_$DateStamp.txt"
-$BrainDir   = Join-Path $RepoRoot ".agents" "brain"
+$BrainDir   = Join-Path $RepoRoot ".agents\brain"
 $DocsDir    = Join-Path $RepoRoot "docs"
 $ReadmeFile = Join-Path $RepoRoot "README.md"
-$InvFile    = Join-Path $RepoRoot "inventory" "hosts.yml"
+$InvFile    = Join-Path $RepoRoot "inventory\hosts.yml"
 
 Write-Host ""
 Write-Host "  [DSOM] Reanimation Manifest Generator $VERSION" -ForegroundColor Cyan
