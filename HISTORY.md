@@ -91,6 +91,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-12]: **Framework Deconstruction.** Authored `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`, a definitive breakdown of the system's structural mapping, detailing the isolation namespaces (`.agents/brain`), procedural loops (SOD/EOD), and automation layers (`playbooks/`).
 - [2026-07-12]: **Universal Sovereign Signature.** Engineered the `dsom-signature-injector` skill and executed a repository-wide blind-append. All `.md` files now carry an italicized ownership/GPLv3 footer, and all automation scripts (`.sh`, `.ps1`, `.yml`) carry a commented header. Added Rule 13 to `.agents/AGENTS.md`.
 - [2026-07-12]: **Signature Shebang Hotfix.** Patched `dsom-signature-injector` to intelligently detect and preserve `#!` shebangs on Line 1 of executable scripts to prevent execution failures on Linux hosts. Ran a mass-cleanup script to restore the shebangs on 18 affected scripts.
+- [2026-07-12]: **Automation Audit Ledger.** Generated `docs/governance/AUTOMATION-AUDIT-LIST.md`, a definitive ledger cataloging all 50+ executable scripts (`.sh`, `.ps1`) and configuration playbooks (`.yml`) to support centralized human security audits.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.3.1-skills | Harisfazillah Jamel*
