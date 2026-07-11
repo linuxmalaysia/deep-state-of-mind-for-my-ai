@@ -1,0 +1,13 @@
+﻿# Deep State of Mind (DSOM) For My AI
+
+> The Deep State of Mind (DSOM) is a metacognitive governance framework that transforms any AI (Gemini, Claude, Copilot, ChatGPT) into a disciplined Cognitive Digital Twin. It solves context decay through spatial memory (the Sovereign Palace), vendor lock-in via GitOps, and uncontrolled execution via human-in-the-loop Ansible playbooks.
+
+Important non-obvious constraints: AI agents must never run commands directly on remote nodes; they must write idempotent Ansible playbooks for human execution. Memory is externally persisted in .agents/brain preventing stateless session wipeouts.
+
+## Docs
+- [AI-MASTER-PROTOCOL.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/AI-MASTER-PROTOCOL.md): The Sovereign Constitution outlining the core GitOps, AIOps, and Ansible execution rules.
+- [AI-COGNITIVE-TWIN-PROTOCOL.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/AI-COGNITIVE-TWIN-PROTOCOL.md): The Project Identity Card defining the target infrastructure (T1-T4) and security doctrines.
+- [DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md): The spatial memory architecture (Markdown Palace) specification for context retention.
+- [OKF-MIND-OPTIMIZATION.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/OKF-MIND-OPTIMIZATION.md): Guidelines on Progressive Disclosure, Semantic Routing, and Procedural Memory Constraints.
+- [GENERATIVE-ENGINE-OPTIMIZATION.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md): Architectural policy for ensuring documentation is machine-readable and highly cited by AI Answer Engines.
+- [HOWTO-CLONE-DSOM-PROJECT.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/HOWTO-CLONE-DSOM-PROJECT.md): The master blueprint for scaffolding a new project with the DSOM engine.

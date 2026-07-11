@@ -507,6 +507,8 @@ Once Step 6 is complete, the AI knows:
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
 | [`docs/governance/OKF-MIND-OPTIMIZATION.md`](docs/governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimization — Artifact Pyramid & Procedural Memory |
+| [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimization (GEO) — AI-ready documentation policies |
+| [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
 | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
