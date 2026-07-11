@@ -31,6 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- **Signature Injector Shebang Conflict:** Upgraded `dsom-signature-injector` to intelligently detect and preserve `#!` shebangs on Line 1 of executable scripts, injecting the signature on Line 2. Executed a mass-cleanup script to repair 18 affected Linux/Bash scripts (`.sh`).
+
 - **PowerShell 5.1 Compatibility:** Fixed syntax errors in `Join-Path` invocations inside `tools/reanimate.ps1`. The legacy PS 5.1 engine does not support more than two arguments natively for `Join-Path`. This patch allows seamless scaffolding into environments running native Windows PowerShell 5.1.
 
 ## [10.3.0-bootstrap] - 2026-07-04

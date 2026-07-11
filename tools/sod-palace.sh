@@ -1,7 +1,7 @@
+#!/usr/bin/env bash
 # Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-04-08
 # Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0
 
-#!/usr/bin/env bash
 # DSOM Start-of-Day (SOD) Ritual — Palace Edition (Linux/WSL2)
 # Automates the Start-of-Day mechanical steps.
 

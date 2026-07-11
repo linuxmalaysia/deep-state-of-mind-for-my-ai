@@ -27,8 +27,9 @@ def inject_signature(target_path):
         code_header = f"# Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | {date_str}\n# Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0\n\n"
         
         with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-            content = f.read()
+            lines = f.readlines()
             
+        content = "".join(lines)
         if "Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel" in content:
             print(f"Skipping {filepath} (Signature already exists)")
             continue
@@ -39,8 +40,16 @@ def inject_signature(target_path):
                     f.write(md_footer)
                 print(f"Appended Markdown footer to {filepath}")
             elif filepath.endswith(('.sh', '.ps1', '.yml', '.yaml')):
+                if len(lines) > 0 and lines[0].startswith("#!"):
+                    # Shebang present, insert after it
+                    shebang = lines[0]
+                    rest = "".join(lines[1:])
+                    new_content = shebang + "\n" + code_header + rest
+                else:
+                    new_content = code_header + content
+                    
                 with open(filepath, 'w', encoding='utf-8') as f:
-                    f.write(code_header + content)
+                    f.write(new_content)
                 print(f"Prepended code header to {filepath}")
         except Exception as e:
             print(f"Error processing {filepath}: {e}")
