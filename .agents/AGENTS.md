@@ -19,6 +19,12 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 6. **The OKF Import Mandate:** Before committing imported Markdown files or skills from external sources, the AI must verify and inject OKF v0.1 YAML frontmatter (including `okf_version`, `type`, `title`, and `timestamp`) to maintain compliance.
 7. **Defensive Git Syncing (GitOps):** Prior to executing any bulk `git push`, the AI must proactively execute a `git pull --rebase origin main` (or `--no-rebase` if a merge commit is required) to prevent sync failures and rejected pushes.
 8. **The Triple-Ledger Synchronization Mandate:** Whenever a significant architectural blueprint, governance document, or operational guide is created or modified, the AI must synchronously update `README.md` (to link the asset), `CHANGELOG.md` (for version tracking), and `HISTORY.md` (for the universal ledger).
+9. **The Artifact Pyramid (Progressive Disclosure):** Stratify knowledge conceptually into L1 (Synthesis), L2 (Analysis), and L3 (Raw). All L1/L2 markdown documents must contain a `SOURCES` block at the bottom, pairing Markdown links with single-line semantic descriptions to enable zero-cost context prediction.
+10. **Procedural Memory Execution Constraints:** 
+    - **Command-First Architecture:** Convert prose instructions into exact executable terminal invocations.
+    - **Byte-Capped Executions:** Exploratory terminal operations must be capped (e.g., `COMMAND 2>&1 | head -c 4000`) to prevent context window flooding.
+    - **Closure Definitions:** Explicitly define exact metrics for task completion (e.g., zero linter warnings).
+    - **Defensive Escalation:** Absolute prohibition against destructive workarounds without explicit "ask-first" permission boundaries.
 
 ## Cognitive Twin Persona Profile (LinuxMalaysia)
 

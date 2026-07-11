@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Governance Rule Update:** Added the GitHub & GitLab CLI Authentication rule to `.agents/AGENTS.md` to formally guardrail multi-account API interactions and prevent context-blind CLI failures (e.g., `linuxmalaysia` vs `songketmailsdnbhd`).
 - **Initialization Guide Update:** Enhanced `HOWTO-CLONE-DSOM-PROJECT.md` to clarify the mandatory pre-requisite of `git init` and brain artifact creation (`task.md`, `walkthrough.md`) before running reanimation rituals.
+- **Cognitive Architecture Update:** Adopted the OKF Mind Optimization protocol (Progressive Disclosure, Artifact Pyramid, and Semantic Routing) and codified its procedural execution constraints into the Core Rulebook (`.agents/AGENTS.md`).
+- **Governance Policy:** Published `docs/governance/OKF-MIND-OPTIMIZATION.md` to formally define the theoretical mechanics of the new cognitive architecture.
 
 ### Fixed
 

@@ -506,6 +506,7 @@ Once Step 6 is complete, the AI knows:
 | [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | The Sovereign Constitution — AI governance laws |
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
+| [`docs/governance/OKF-MIND-OPTIMIZATION.md`](docs/governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimization — Artifact Pyramid & Procedural Memory |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
 | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
