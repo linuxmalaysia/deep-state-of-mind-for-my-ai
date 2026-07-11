@@ -30,6 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Signature Mandate:** Added Rule 13 to `.agents/AGENTS.md` enforcing that all readable files generated or modified by an AI must be processed by the `dsom-signature-injector`.
 - **Automation Audit Ledger:** Created `docs/governance/AUTOMATION-AUDIT-LIST.md` to catalog, index, and describe all 50+ `.sh`, `.ps1`, and `.yml` files in the repository for human security audits.
 
+### Changed
+
+- **Standard Developer Metadata:** Upgraded the `dsom-signature-injector` skill to utilize industry-standard metadata headers for executable scripts and configuration files. Replaced flat comments with structured blocks for Bash/YAML (`# =====`) and native Comment-Based Help blocks for PowerShell (`<# .SYNOPSIS #>`), improving human readability and compatibility with native CLI tools like `Get-Help`.
+
 ### Fixed
 
 - **Signature Injector Shebang Conflict:** Upgraded `dsom-signature-injector` to intelligently detect and preserve `#!` shebangs on Line 1 of executable scripts, injecting the signature on Line 2. Executed a mass-cleanup script to repair 18 affected Linux/Bash scripts (`.sh`).

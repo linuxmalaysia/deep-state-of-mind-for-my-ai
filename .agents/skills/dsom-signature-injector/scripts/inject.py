@@ -1,4 +1,4 @@
-﻿import os
+import os
 import sys
 import glob
 from datetime import datetime
@@ -6,6 +6,28 @@ from datetime import datetime
 def get_last_modified_date(filepath):
     timestamp = os.path.getmtime(filepath)
     return datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
+
+def get_sh_yml_header(date_str):
+    return f"""# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : {date_str}
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
+"""
+
+def get_ps1_header(date_str):
+    return f"""<#
+.SYNOPSIS
+    Deep State of Mind (DSOM) For My AI Protocol
+.NOTES
+    Author    : Harisfazillah Jamel (LinuxMalaysia)
+    Timestamp : {date_str}
+    License   : GNU General Public License v3.0
+    Standard  : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+#>
+"""
 
 def inject_signature(target_path):
     files_to_process = []
@@ -24,13 +46,12 @@ def inject_signature(target_path):
         date_str = get_last_modified_date(filepath)
         
         md_footer = f"\n\n---\n*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | {date_str}*\n*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*\n"
-        code_header = f"# Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | {date_str}\n# Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0\n\n"
         
         with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
             lines = f.readlines()
             
         content = "".join(lines)
-        if "Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel" in content:
+        if "Deep State of Mind (DSOM) For My AI Protocol" in content:
             print(f"Skipping {filepath} (Signature already exists)")
             continue
             
@@ -39,18 +60,25 @@ def inject_signature(target_path):
                 with open(filepath, 'a', encoding='utf-8') as f:
                     f.write(md_footer)
                 print(f"Appended Markdown footer to {filepath}")
-            elif filepath.endswith(('.sh', '.ps1', '.yml', '.yaml')):
-                if len(lines) > 0 and lines[0].startswith("#!"):
-                    # Shebang present, insert after it
-                    shebang = lines[0]
+            elif filepath.endswith(('.sh', '.yml', '.yaml')):
+                header = get_sh_yml_header(date_str)
+                if len(lines) > 0 and (lines[0].startswith("#!") or lines[0].startswith("---")):
+                    # Shebang or YAML doc start present, insert after it
+                    first_line = lines[0]
                     rest = "".join(lines[1:])
-                    new_content = shebang + "\n" + code_header + rest
+                    new_content = first_line + "\n" + header + rest
                 else:
-                    new_content = code_header + content
+                    new_content = header + content
                     
                 with open(filepath, 'w', encoding='utf-8') as f:
                     f.write(new_content)
-                print(f"Prepended code header to {filepath}")
+                print(f"Prepended SH/YML header to {filepath}")
+            elif filepath.endswith('.ps1'):
+                header = get_ps1_header(date_str)
+                new_content = header + content
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write(new_content)
+                print(f"Prepended PS1 header to {filepath}")
         except Exception as e:
             print(f"Error processing {filepath}: {e}")
 

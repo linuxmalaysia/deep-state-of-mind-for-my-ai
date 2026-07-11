@@ -1,6 +1,10 @@
-# Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-06-19
-# Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0
-
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-07-12
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
 # You can override the included template(s) by including variable overrides
 # SAST customization: https://docs.gitlab.com/user/application_security/sast/#available-cicd-variables
 # Secret Detection customization: https://docs.gitlab.com/user/application_security/secret_detection/pipeline/configure/
