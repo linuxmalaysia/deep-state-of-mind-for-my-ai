@@ -33,3 +33,8 @@ All code, governance rules, and AI skills have been strictly tested against the 
 
 ---
 *Signed: Sovereign AI Cognitive Twin for LinuxMalaysia*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

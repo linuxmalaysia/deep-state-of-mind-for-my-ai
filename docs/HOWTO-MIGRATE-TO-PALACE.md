@@ -287,3 +287,8 @@ No. Only create Rooms relevant to your project. For a pure software dev project,
 ---
 *Document created: 2026-04-08 | Palace v1.0 | DSOM Protocol v6.1*
 *Author: Harisfazillah Jamel | Partner: Google Antigravity*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Governance Policy:** Published `docs/governance/OKF-MIND-OPTIMIZATION.md` to formally define the theoretical mechanics of the new cognitive architecture.
 - **Skill Architecture Formalization:** Created `docs/governance/AI-SKILL-ARCHITECTURE.md` to define semantic routing, progressive disclosure, and the project's active skills. Added Rule 12 to `.agents/AGENTS.md` enforcing skill usage as NOSS Level 3 SOPs.
 - **Architecture Deconstruction:** Published `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md` outlining the repository's structural mapping, isolation namespaces, and operational loops.
+- **Universal Sovereign Signature:** Engineered the `dsom-signature-injector` skill to dynamically inject ownership and GPL v3.0 license signatures into all `.md`, `.sh`, `.ps1`, and `.yml` files based on their last modified timestamps.
+- **Signature Mandate:** Added Rule 13 to `.agents/AGENTS.md` enforcing that all readable files generated or modified by an AI must be processed by the `dsom-signature-injector`.
 
 ### Fixed
 
@@ -308,3 +310,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Initial Concept:** Foundation of the Deep State of Mind (DSOM) protocol for preventing AI context decay.
 - **Sovereign Laws:** Early draft of Zero-Global Pattern and Linux-agnostic infrastructure.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

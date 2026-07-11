@@ -85,3 +85,8 @@ git merge dsom-onboarding-YYYY-MM-DD-HHMMSS
 ### 4. Continue Normal Setup
 
 Proceed to adapt the `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` file as outlined in the core README. Your repository is now a fully sovereign DSOM environment!
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

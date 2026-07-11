@@ -174,3 +174,8 @@ flowchart TD
 
 ---
 *Verified by Harisfazillah Jamel | ITIL 4 Aligned | 2026-04-08*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

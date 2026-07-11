@@ -17,3 +17,8 @@ Use this skill when a user says "I want to inject my persona", "make the AI act 
 3. **Format Matrix:** Once the user has provided their details, format the data exactly as defined in the `<RULE[PERSONA.md]>` OKF block from the template.
 4. **Inject Rule:** Use your file editing tools to append this formatted block to the bottom of `.agents/AGENTS.md`.
 5. **Verify:** Confirm to the user that the AI operating in this workspace has now permanently inherited their identity, constraints, and linguistic DNA.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

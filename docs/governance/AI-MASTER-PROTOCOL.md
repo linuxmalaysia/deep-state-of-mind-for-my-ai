@@ -202,3 +202,8 @@ DSOM (Deep State of Mind) serves as the operational engine for the broader **Dig
 **Last Human Audit:** 2026-04-08 | **Protocol Version:** v6.1 (GitOps + AIOps + Ansible + Palace Pillars)
 
 ---
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

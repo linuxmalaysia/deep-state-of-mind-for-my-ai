@@ -314,3 +314,7 @@ Self-Healing CI: Using GitHub Agentic Workflows to Automatically Fix CI Failures
 What is Open Knowledge Format(OKF)? | by Tahir | Jun, 2026 - Medium, https://medium.com/@tahirbalarabe2/what-is-open-knowledge-format-okf-270b20791802
 
 Rellify vs. Cursor: Which One Is Best for Your Business?, https://rellify.com/blog/rellify-vs-cursor
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

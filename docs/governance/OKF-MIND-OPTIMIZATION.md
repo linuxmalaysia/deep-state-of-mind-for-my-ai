@@ -38,3 +38,8 @@ Procedural memory dictates *how* an agent should behave. Within the DSOM framewo
 - **Byte-Capped Executions:** To maintain strict context discipline, exploratory operations must be capped (e.g., executing COMMAND 2>&1 | head -c 4000) to prevent log floods.
 - **Closure Definitions:** Explicitly define the exact parameters of task completion (e.g., zero linter warnings, successful test suites).
 - **Escalation and Defensive Constraints:** Explicit "ask-first" permission boundaries and absolute prohibitions against destructive actions must be defined to prevent dangerous AI improvisations.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-11*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

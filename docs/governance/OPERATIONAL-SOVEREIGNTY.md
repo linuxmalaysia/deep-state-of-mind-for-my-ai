@@ -373,3 +373,8 @@ The following documents constitute the **Sovereign Document Stack** for any v6.1
 *Primary Repository: <https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai>*
 *Official Documentation: <https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai>*
 *Original Manifesto: v5.x (retained intact) | v6.1 Addendum: 2026-03-10 | Palace v1.0 Addendum: 2026-04-08*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

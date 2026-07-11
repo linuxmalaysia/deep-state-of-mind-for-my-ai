@@ -136,3 +136,8 @@ A: The context window might be stale. Start a **New Chat Session** and perform t
 * [SOD-RITUAL.md](SOD-RITUAL.md) — Step 1a: Ansible Palace SOD
 * [EOD-RITUAL.md](EOD-RITUAL.md) — Step 2a: Ansible Palace EOD
 * [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

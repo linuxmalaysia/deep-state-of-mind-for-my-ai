@@ -83,3 +83,8 @@ This is the active ledger of all AI Agent Skills currently deployed in this repo
 | **Proposal DOCX Formatter** | `.agents/skills/proposal-docx-formatter/SKILL.md` | Formats markdown proposals into Microsoft Word (DOCX) files. |
 | **SOD Palace Sync** | `.agents/skills/sod-palace-sync/SKILL.md` | The Reanimation ritual to load the workspace context and establish the day's tasks. |
 | **SSH Passwordless Setup** | `.agents/skills/ssh-passwordless-setup/SKILL.md` | Configures passwordless, multi-hop SSH routing using `~/.ssh/config` to bypass agent limits. |
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

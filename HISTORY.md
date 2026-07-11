@@ -89,6 +89,12 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-11]: **Generative Engine Optimization (GEO).** Adopted the GEO research blueprint to shift from search to synthesis. Implemented the `llms.txt` specification at the repository root and injected strict machine-readability writing standards (authoritative tone, statistical density, atomic chunking) into the Core Rulebook.
 - [2026-07-11]: **AI Skill Architecture Formalized.** Created `docs/governance/AI-SKILL-ARCHITECTURE.md` detailing how AI skills function as NOSS Level 3 SOPs, utilizing semantic routing and progressive disclosure. Updated `AGENTS.md` with Rule 12 and indexed the 18 active local skills in the repository.
 - [2026-07-12]: **Framework Deconstruction.** Authored `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`, a definitive breakdown of the system's structural mapping, detailing the isolation namespaces (`.agents/brain`), procedural loops (SOD/EOD), and automation layers (`playbooks/`).
+- [2026-07-12]: **Universal Sovereign Signature.** Engineered the `dsom-signature-injector` skill and executed a repository-wide blind-append. All `.md` files now carry an italicized ownership/GPLv3 footer, and all automation scripts (`.sh`, `.ps1`, `.yml`) carry a commented header. Added Rule 13 to `.agents/AGENTS.md`.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.3.1-skills | Harisfazillah Jamel*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

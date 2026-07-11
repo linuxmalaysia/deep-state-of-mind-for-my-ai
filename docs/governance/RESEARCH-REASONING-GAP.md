@@ -173,3 +173,8 @@ This would close the gap entirely while maintaining full sovereignty and zero ve
 *Identified by: Harisfazillah Jamel (LinuxMalaysia) in session with Google Antigravity*
 *Inspired by and originated from: MemPalace research ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace))*
 *Protocol: DSOM v6.1 + Palace v1.0*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

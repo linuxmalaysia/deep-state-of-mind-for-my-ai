@@ -34,3 +34,8 @@ If `tools/sod-palace.ps1` or `tools/sod-palace.sh` are missing, agents must reco
 4. **Reanimation Manifest:** Execute `.\tools\reanimate.ps1` to bundle the workspace context into a timestamped `sod_manifest_<date>.txt` file.
 5. **Prompt User:** Instruct the human to upload the newly generated manifest and initialize the AI via the DSOM protocol.
 *(Note: On Linux/macOS, `sod-palace.sh` simply wraps `ansible-playbook playbooks/dsom/sod-palace.yml` with `ANSIBLE_NOCOWS=1`)*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-06-19*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -19,3 +19,8 @@ Use this skill when a new automation script is created in one shell language, an
    - **Dependencies:** If the script calls another script, ensure it calls the correct extension for its platform (e.g., a `.ps1` script should call `reanimate.ps1`, not `reanimate.sh`).
 4. **Output Generation:** Write the translated script to the target file.
 5. **Update Documentation:** If the script is documented in `docs/tools/`, ensure the documentation accurately lists both the `.ps1` and `.sh` file names.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -241,3 +241,8 @@ See [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) for the full hando
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Last Updated: 2026-03-29 | Version: v6.1*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

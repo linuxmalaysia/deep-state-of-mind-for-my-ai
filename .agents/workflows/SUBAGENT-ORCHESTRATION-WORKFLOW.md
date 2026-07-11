@@ -51,3 +51,8 @@ git push origin main
 
 ## 3. Handling Conflicts
 If the Lead Architect and the subagent both modified the same `closet.md` file while operating asynchronously, the Git merge will throw a conflict. The Lead Architect MUST manually resolve this conflict before committing, ensuring the unified cognitive memory remains logically sound.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-06-19*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

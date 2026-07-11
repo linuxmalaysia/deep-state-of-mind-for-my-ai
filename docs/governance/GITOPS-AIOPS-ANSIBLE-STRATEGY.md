@@ -277,3 +277,8 @@ When starting a new project with DSOM, use this checklist to establish the three
 
 *Created by the DSOM Engineering Team | v2.0 | 2026-04-08*
 *Standard: UK English | Licensed under GPLv3*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

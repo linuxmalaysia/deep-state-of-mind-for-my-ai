@@ -88,3 +88,8 @@ At the end of your coding session, before you close the window, instruct the AI:
 > *"We are done for the day. Please summarise our work and update the relevant `closet.md` files in the Palace. Record your Conversation ID in the closet header as per the Cognitive Logging Protocol."*
 
 Commit the updated `.agents` folder to Git. Your AI's memory is now permanently saved, version-controlled, and completely immune to Context Decay!
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

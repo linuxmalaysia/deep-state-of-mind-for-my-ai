@@ -47,3 +47,8 @@ timestamp: 2026-07-04T09:40:04Z
 ## 5. 📝 Extracted Comments
 >
 > "Scans the generated DSOM reanimation manifest for sensitive information before it is uploaded to an external AI model."
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

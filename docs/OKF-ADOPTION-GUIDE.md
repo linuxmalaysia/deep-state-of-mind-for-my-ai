@@ -73,3 +73,8 @@ With OKF frontmatter added to all closets and skills, the `palace_registry.md` c
 
 ## Conclusion
 The introduction of the Open Knowledge Format by Google Cloud validates the core thesis of the Sovereign AI Workspace. By enforcing YAML frontmatter across all our Markdown-based memory assets, we transition from an ad-hoc AI memory structure into an enterprise-grade, OKF-compliant knowledge graph.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

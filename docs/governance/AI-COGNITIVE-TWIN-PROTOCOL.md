@@ -281,3 +281,8 @@ eod-palace.yml).
 
 *Created by the DSOM Engineering Team | Template v3.0 | Aligned with DSOM Master Protocol v6.1 + Palace v1.0*
 *Last Updated: 2026-04-08 | Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

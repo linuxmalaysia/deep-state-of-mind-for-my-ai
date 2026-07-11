@@ -39,3 +39,8 @@ timestamp: 2026-07-04T09:40:04Z
 ## 5. 📝 Extracted Comments
 >
 > "We never 'just close the window.' We must perform a controlled shutdown to prevent context decay."
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

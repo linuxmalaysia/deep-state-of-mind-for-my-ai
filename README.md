@@ -583,3 +583,8 @@ Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for
 
 *Deep State of Mind (DSOM) For My AI Protocol | v10.3.0-bootstrap | 2026-07-04*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

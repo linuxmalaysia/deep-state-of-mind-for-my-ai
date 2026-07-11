@@ -38,3 +38,8 @@ Use this skill when the user asks to create, clone, scaffold, or bootstrap a **n
    - `bash tools/reanimate.sh` or `.\tools\reanimate.ps1`
    - `git add .`
    - `git commit -m "chore(dsom): scaffold genesis dsom architecture and AI skills"`
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

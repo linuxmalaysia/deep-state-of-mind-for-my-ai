@@ -61,3 +61,8 @@ If this is an existing project, you must adopt and merge gracefully to avoid des
 After executing the relevant path (New or Existing):
 - Run `.\tools\diagnostic.ps1` (or `.sh`) to verify the workspace health.
 - Inform the user that the DSOM framework has been successfully bootstrapped.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -42,3 +42,8 @@ except Exception as e:
 1. Read the standard output from the command to get the extracted text.
 2. If the text is extremely long, parse it or summarize it as requested by the user.
 3. Clean up the downloaded file by running `Remove-Item temp_document.pdf`.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

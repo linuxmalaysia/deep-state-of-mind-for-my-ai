@@ -16,3 +16,8 @@ Use this skill when the user asks to compile or generate a DOCX proposal using t
    Command: `node tools/compile_node_proposal.js <input.md> <output.docx>`
    Example: `node tools/compile_node_proposal.js docs/proposal.md docs/Node_Proposal.docx`
 3. Verify the output was created successfully.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

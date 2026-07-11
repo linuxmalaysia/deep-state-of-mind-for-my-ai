@@ -112,3 +112,8 @@ uv run --with python-docx python tools/compile_proposal.py docs/proposal.md docs
 - Python 3.10+
 - `python-docx` (installed via `uv run --with python-docx`)
 - `pyyaml` (installed via `uv run --with pyyaml`)
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

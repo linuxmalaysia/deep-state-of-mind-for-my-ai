@@ -94,3 +94,8 @@ To verify integration, run this prompt in a fresh session:
 **Current Status:** `ACTIVE` | **Last Human Audit:** 2026-04-08 | **Version:** v6.1 + Palace v1.0
 
 ---
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

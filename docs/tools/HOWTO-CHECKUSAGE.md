@@ -251,3 +251,8 @@ If the current session exceeds `CriticalMB`, begin a new Antigravity conversatio
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Tool Version: v8.6 | Document Version: v1.0 | Created: 2026-03-10*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

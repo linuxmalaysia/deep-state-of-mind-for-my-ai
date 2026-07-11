@@ -141,3 +141,8 @@ A: You skipped **Step 3**. The AI only knows what is in the `.agents/brain` file
 * [HOWTO: Migrate to Palace](HOWTO-MIGRATE-TO-PALACE.md)
 * [SOD Ritual](SOD-RITUAL.md)
 * [EOD Ritual](EOD-RITUAL.md)
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

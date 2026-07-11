@@ -109,3 +109,8 @@ bash tools/palace-sync.sh --backfill
 ```
 
 *Last Updated: 2026-04-08 | Standard: DSOM For My AI Protocol v6.1 + Palace v1.0*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

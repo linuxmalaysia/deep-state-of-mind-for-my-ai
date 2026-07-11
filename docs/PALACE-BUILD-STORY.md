@@ -144,3 +144,8 @@ The Sovereign Markdown Palace v1.0 is a **living, sovereign, version-controlled,
 *Build Story recorded by: Cognitive Digital Twin (Google Antigravity)*
 *Lead Architect: Harisfazillah Jamel (LinuxMalaysia)*
 *Protocol: DSOM v6.1 + Palace v1.0 | Tag: v10.0.0-palace*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -123,3 +123,8 @@ The following AI Agent Skills were built in the previous project but are entirel
 3. Ask the user for the overarching "Project Identity" and goals.
 4. Establish your very first `.agents/brain/checkpoint_summary.txt`.
 5. Await further operational instructions.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

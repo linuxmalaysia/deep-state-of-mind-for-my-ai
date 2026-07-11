@@ -351,3 +351,8 @@ By submitting a PR, you agree that your contribution is licensed under GPL v3.0.
 *Open Source Sovereignty | Harisfazillah Jamel (LinuxMalaysia)*
 *DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible*
 *Last Updated: 2026-03-10*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

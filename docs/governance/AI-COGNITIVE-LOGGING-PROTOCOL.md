@@ -53,3 +53,8 @@ When updating a `closet.md` during the EOD Hibernation Ritual, the active AI mus
 
 ---
 *Maintained by the DSOM Engineering Team | Cross-AI Logging Standard v1.0*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

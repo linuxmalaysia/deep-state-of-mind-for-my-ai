@@ -241,3 +241,8 @@ cat .agents/brain/walkthrough.md | tail -30
 *Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline transition protocol** for all projects built on this skeleton.*
 *Last Updated: 2026-04-08 | Version: v6.1*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

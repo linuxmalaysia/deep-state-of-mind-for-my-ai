@@ -32,3 +32,8 @@ All human contributors and AI agents must actively employ the following content 
 ## 4. Machine Readability & The llms.txt Standard
 LLMs consume raw text. Parsing HTML and complex DOM structures wastes computational resources. DSOM strictly enforces **Markdown** as the native language of knowledge representation.
 To guide AI crawlers, the repository must maintain an llms.txt specification at the root directory. This plain-text file acts as an XML sitemap for machine intelligence, providing a curated, high-signal map of our content.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-11*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

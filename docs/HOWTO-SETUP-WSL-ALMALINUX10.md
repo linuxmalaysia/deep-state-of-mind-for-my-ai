@@ -209,3 +209,8 @@ options="metadata,umask=77,fmask=11"
 *Standard: DSOM Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel*
 **WSL Instance:** `dsom-control-almalinux10` | **Identity:** `dsom-admin` (UID 2001)
 **Last Updated:** 2026-04-08 | **Version:** v1.1
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -239,3 +239,8 @@ For full doctrine, see [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-AN
 ---
 
 *Last Updated: 2026-04-08 (v6.1 + Palace v1.0: Ansible SOD/EOD playbooks, Section [14] Palace Registry, Palace Migration scenarios)*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

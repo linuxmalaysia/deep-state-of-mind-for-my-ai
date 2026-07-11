@@ -47,3 +47,8 @@ The following 18 skills are currently registered in this project's local workspa
 16. **proposal-docx-formatter**
 17. **sod-palace-sync**
 18. **ssh-passwordless-setup**
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-11*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

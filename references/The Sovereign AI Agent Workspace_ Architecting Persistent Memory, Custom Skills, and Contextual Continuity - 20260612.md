@@ -238,3 +238,7 @@ Prepare by Harisfazillah Jamel (LinuxMalaysia)
 [https://docs.google.com/document/d/e/2PACX-1vSrkShRwPOx3aUW9sufzu5f9Vtepc\_yPfyb6n1gcNpn19IozdefqBxvPb0BulzNZQyUDWX\_zVgjHa0x/pub](https://docs.google.com/document/d/e/2PACX-1vSrkShRwPOx3aUW9sufzu5f9Vtepc_yPfyb6n1gcNpn19IozdefqBxvPb0BulzNZQyUDWX_zVgjHa0x/pub)
 
 12 June 2026
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

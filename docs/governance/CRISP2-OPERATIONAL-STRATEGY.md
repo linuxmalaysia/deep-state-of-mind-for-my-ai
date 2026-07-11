@@ -85,3 +85,8 @@ If the AI begins to repeat errors or ignore the CRISP Strategy:
 
 ---
 *Generated for the DSOM Sovereign Environment. UK English & DBP-standard Malay Enforced.*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

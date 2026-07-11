@@ -83,3 +83,8 @@ The **Digital Sovereignty Operational Model (DSOM)** provides the **"Why"** (Str
 *Standard: DSOM Protocol v6.1 + Palace v1.0 | UK English & DBP-Malay (Piawai)*
 
 ---
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

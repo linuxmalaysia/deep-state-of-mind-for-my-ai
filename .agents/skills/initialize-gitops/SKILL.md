@@ -41,3 +41,8 @@ venv/
 
 ## Architectural Note
 *   **Why is this a skill?** Because Git is not just version control for code; it is the physical "hippocampus" for the AI. Every action, artifact, and thought process is stored as a commit. Initializing it perfectly ensures the AI never suffers from amnesia.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-06-19*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

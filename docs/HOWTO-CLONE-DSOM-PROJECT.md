@@ -102,3 +102,8 @@ Once the files are copied into the new repository, you must initialize the AI's 
 > **Automated Scaffolding:** Instead of running these steps manually, you can instruct your AI Agent to invoke the `dsom-project-cloner` skill. Simply provide the agent with the absolute path to your new, empty target directory (e.g., `D:\Projects\my-new-app`), and the AI will automatically copy the pillars, inject your persona, and execute the Genesis commit for you!
 
 Your new project is now fully sentient and equipped with the exact same capabilities as the baseline DSOM repository.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-09*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

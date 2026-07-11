@@ -20,3 +20,8 @@ Use this skill when you are operating in a new or existing workspace that lacks 
 5. **Sanitize (If New):** Ensure the `checkpoint_summary.txt`, `task.md`, and `walkthrough.md` in `.agents/brain/` are emptied of baseline history.
 6. **Verify:** Run the `tools/diagnostic.ps1` or `tools/diagnostic.sh` script to confirm the port was successful.
 7. **Report:** Output a success message to the user, confirming that the AI now possesses full DSOM capabilities, tools, and documentation.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

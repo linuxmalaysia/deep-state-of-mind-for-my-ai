@@ -31,3 +31,8 @@ When the user requests to compile a proposal to PDF using LaTeX/Pandoc, follow t
 ## 4. Double Section Numbering
 - If section headers display double numbers (e.g., 1 1. Executive Summary), it means Pandoc's converted \section{...} tags are clashing with the manual numbers in the Markdown.
 - **Fix**: Ensure \setcounter{secnumdepth}{-1} is present in docs/templates/proposal_preamble.tex to disable LaTeX auto-numbering, while keeping \setcounter{tocdepth}{4} so the sections still correctly populate the TOC.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -64,3 +64,8 @@ Whether a service is deployed natively via `apt` or isolated via `podman`, the *
 
 ---
 *Maintained by the DSOM Engineering Team | Example Elastic SOC v1.0*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

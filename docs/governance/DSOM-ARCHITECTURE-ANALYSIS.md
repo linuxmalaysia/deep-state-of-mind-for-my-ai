@@ -88,3 +88,8 @@ By binding an advanced AI to a strict, Git-backed spatial memory repository, the
 1. **Context Leak Prevention:** Isolating spatial memory to the `.agents/brain` directory blocks unverified global memory persistence.
 2. **Flawless Orchestration:** Enforcing ASCII-only formatting guarantees clean log rendering and reliable execution across orchestration platforms.
 3. **Fully Auditable Architecture:** Requiring every context shift and administrative task to execute via a dedicated Git commit creates a pristine, transparent audit trail for all AIOps adjustments.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

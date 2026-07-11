@@ -231,3 +231,8 @@ Don't hide anything from me. Trust me as your master.
 *Standard: DSOM Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline reanimation template** for all projects built on this skeleton.*
 *Last Updated: 2026-04-08 | Version: v3.0*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

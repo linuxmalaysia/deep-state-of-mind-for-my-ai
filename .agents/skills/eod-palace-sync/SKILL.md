@@ -37,3 +37,8 @@ If `tools/eod-palace.ps1` or `tools/eod-palace.sh` are missing, agents must reco
 4. **Staging:** `git add` the core artifacts: `task.md`, `walkthrough.md`, `palace_registry.md`, `checkpoint_summary.txt`, and `implementation_plan.md`.
 5. **Commit & Push:** Execute `git commit -m "eod: <contents of checkpoint_summary>"` and `git push origin main`.
 *(Note: On Linux/macOS, `eod-palace.sh` simply wraps `ansible-playbook playbooks/dsom/eod-palace.yml` with `ANSIBLE_NOCOWS=1`)*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-06-19*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

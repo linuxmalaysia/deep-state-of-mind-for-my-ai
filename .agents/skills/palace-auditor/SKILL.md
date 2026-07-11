@@ -23,3 +23,8 @@ Use this skill when the user requests a workspace audit, health check, or when p
    - Undocumented scripts.
    - Scripts violating the Cross-Platform Mandate.
 5. **Propose Actions:** Suggest specific actions to resolve the findings.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

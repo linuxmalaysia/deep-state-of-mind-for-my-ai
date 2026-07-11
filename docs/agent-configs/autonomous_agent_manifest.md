@@ -32,3 +32,8 @@ You are a **DSOM-Verified Engineer**. You are NOT a junior coder. You are an exp
 ## 🚨 EMERGENCY STOP
 
 If you are unsure if a change breaks the "Clean Architecture" layers, STOP and ask the Human Architect.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
