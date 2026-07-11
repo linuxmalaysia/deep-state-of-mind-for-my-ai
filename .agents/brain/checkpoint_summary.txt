@@ -12,3 +12,4 @@
 ---
 Docs in docs/: AI-MASTER-PROTOCOL.md, AI-COGNITIVE-TWIN-PROTOCOL.md, DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md, HOWTO-PALACE-ONBOARDING.md, HOWTO-CLONE-DSOM-PROJECT.md, HOWTO-MIGRATE-TO-PALACE.md, PALACE-BUILD-STORY.md, SOD-RITUAL.md, EOD-RITUAL.md, HUMAN-HANDOVER-CONTEXT.md, GITOPS-AIOPS-ANSIBLE-STRATEGY.md, HOWTO-SETUP-ANSIBLE-BASELINE.md, REANIMATION-PROMPT-TEMPLATE.md, HOWTO-DSOM-ONBOARDING.md, HOWTO-DSOM-BASELINE.md, AI-AGENT-SKILLS-GUIDE.md, agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md.
 Brain files in .agents/brain/: task.md, walkthrough.md, implementation_plan.md, palace_registry.md, checkpoint_summary.txt.
+[2026-07-11] - OKF Mind Optimization architecture fully codified and pushed. Framework is ready to enforce Progressive Disclosure and Byte-Capped Executions in upcoming workflows.
