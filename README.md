@@ -511,6 +511,7 @@ Once Step 6 is complete, the AI knows:
 | [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) | ⚙️ AI Skill Architecture — Progressive Disclosure & Semantic Routing mechanics |
 | [`docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`](docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md) | 🏗️ Architecture Analysis — Codebase and Structural breakdown of the framework |
 | [`docs/governance/AUTOMATION-AUDIT-LIST.md`](docs/governance/AUTOMATION-AUDIT-LIST.md) | 📋 Automation Audit Ledger — Comprehensive index of all execution scripts |
+| [`docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
 | [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
