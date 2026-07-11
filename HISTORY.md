@@ -88,6 +88,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-11]: **OKF Mind Optimization Integration.** Formally adopted the progressive disclosure, artifact pyramid, and semantic routing mechanics detailed in the OKF-Based AI Agent Mind Optimization paper. Codified strict procedural memory execution constraints (Command-First, Byte-Capped, Closure Definitions) into `.agents/AGENTS.md` and established `docs/governance/OKF-MIND-OPTIMIZATION.md`.
 - [2026-07-11]: **Generative Engine Optimization (GEO).** Adopted the GEO research blueprint to shift from search to synthesis. Implemented the `llms.txt` specification at the repository root and injected strict machine-readability writing standards (authoritative tone, statistical density, atomic chunking) into the Core Rulebook.
 - [2026-07-11]: **AI Skill Architecture Formalized.** Created `docs/governance/AI-SKILL-ARCHITECTURE.md` detailing how AI skills function as NOSS Level 3 SOPs, utilizing semantic routing and progressive disclosure. Updated `AGENTS.md` with Rule 12 and indexed the 18 active local skills in the repository.
+- [2026-07-12]: **Framework Deconstruction.** Authored `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`, a definitive breakdown of the system's structural mapping, detailing the isolation namespaces (`.agents/brain`), procedural loops (SOD/EOD), and automation layers (`playbooks/`).
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.3.1-skills | Harisfazillah Jamel*

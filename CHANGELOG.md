@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Generative Engine Optimization (GEO):** Published `docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md` and mandated GEO formatting requirements (authoritative tone, statistical density, H2 queries) in `.agents/AGENTS.md`. Established the root `llms.txt` file as the standard AI ingestion sitemap.
 - **Governance Policy:** Published `docs/governance/OKF-MIND-OPTIMIZATION.md` to formally define the theoretical mechanics of the new cognitive architecture.
 - **Skill Architecture Formalization:** Created `docs/governance/AI-SKILL-ARCHITECTURE.md` to define semantic routing, progressive disclosure, and the project's active skills. Added Rule 12 to `.agents/AGENTS.md` enforcing skill usage as NOSS Level 3 SOPs.
+- **Architecture Deconstruction:** Published `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md` outlining the repository's structural mapping, isolation namespaces, and operational loops.
 
 ### Fixed
 
