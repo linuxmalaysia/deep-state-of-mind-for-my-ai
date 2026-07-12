@@ -38,7 +38,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Daily Workflow for Developers & AI Agents
 
-Once `uv` is installed, **do not utilise standard `pip` or `python` commands**. Exclusively use `uv` for all operations to ensure strict environmental isolation and NOSS Level 3 compliance.
+Once `uv` is installed, **do not utilise standard `pip` or `python` commands**. Exclusively use `uv` for all operations to ensure strict environmental isolation and operational compliance.
 
 ### 1. Running a Script (Zero-Setup)
 If an agent or operator must run a script (`verify.py`) flawlessly without installing Python manually:

@@ -1,8 +1,8 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
 title: "AI Skill Architecture: Progressive Disclosure & Semantic Routing"
-description: "Governance policy defining how AI agents discover, trigger, and execute modular skills as NOSS Level 3 operational manuals, utilizing token optimization."
+description: "Governance policy defining how AI agents discover, trigger, and execute modular skills as operational manuals, utilizing token optimization."
 resource: "file:///docs/governance/AI-SKILL-ARCHITECTURE.md"
 timestamp: 2026-07-11T23:28:03Z
 ---
@@ -12,7 +12,7 @@ This document governs the operational paradigm for AI Agent Skills within the De
 
 ## How Do I Use These Skills?
 
-They act as **executable operational manuals (SOPs)**. If the AI is asked to configure a server or audit a document, it does not guess what to do. Instead, the AI looks up the specific SKILL.md file for that task and strictly follows the execution steps and quality gates defined inside it. This explicit procedural memory guarantees that all executions meet **NOSS Level 3 standards**.
+They act as **executable operational manuals (SOPs)**. If the AI is asked to configure a server or audit a document, it does not guess what to do. Instead, the AI looks up the specific SKILL.md file for that task and strictly follows the execution steps and quality gates defined inside it. This explicit procedural memory guarantees that all executions meet our enterprise standards.
 
 ## How Are Skills Triggered?
 

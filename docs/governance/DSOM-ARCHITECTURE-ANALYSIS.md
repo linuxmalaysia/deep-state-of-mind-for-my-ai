@@ -46,7 +46,7 @@ deep-state-of-mind-for-my-ai/
 │   │   ├── palace_registry.md      # Deterministic Thread State Ledger
 │   │   ├── software/               # Software Architecture Baselines
 │   │   └── wings/                  # Subdomain Logic Segmentation Layer
-│   ├── skills/                     # Procedural Execution Scripts (NOSS Level 3 SOPs)
+│   ├── skills/                     # Procedural Execution Scripts (Standard SOPs)
 │   └── workflows/                  # Cross-Agent Orchestration Playbooks
 ├── docs/                           # Governance & Architecture Documentation
 ├── playbooks/                      # Ansible Infrastructure Automation Layer
@@ -69,7 +69,7 @@ The framework drives system operations through three distinct, deterministic run
           |
           ▼
 [ PRODUCTION RUNTIME ] ────────► • Execute self-healing scripts
-          |                      • Audit system logs via Wazuh
+          |                      • Audit system logs (Wazuh, Elastic, AIOps)
           ▼                      • Sync infrastructure states
 [  END OF DAY (EOD)  ]
           |
@@ -80,7 +80,7 @@ The framework drives system operations through three distinct, deterministic run
 ```
 
 1. **Start of Day (SOD) Ritual:** The agent reads `palace_registry.md` to establish its baseline context, sets its path environment to the isolated workspace directory, and checks for upstream changes across open project branches.
-2. **Production Runtime Loop:** Operations run via isolated subagent worktrees. The system uses self-healing scripts inside `.agents/skills/` to continuously monitor infrastructure state, manage data transformation pipelines, and log audit entries without human intervention.
+2. **Production Runtime Loop:** Operations run via isolated subagent worktrees. The system uses self-healing scripts inside `.agents/skills/` to continuously monitor infrastructure state, manage data transformation pipelines, and log audit entries without human intervention. Log auditing is actively performed via Wazuh (SIEM/XDR), the Elastic Stack (Elasticsearch, Kibana, Beats), or other integrated AIOps observability platforms to detect degradation.
 3. **End of Day (EOD) Ritual:** The agent concludes its runtime by executing privacy scans to sanitize memory, committing all verified code modifications, and securely rebasing and syncing the state back to upstream remotes.
 
 ---
@@ -90,7 +90,7 @@ The framework drives system operations through three distinct, deterministic run
 The DSOM framework transforms large language models into disciplined Senior ICT Consultants. The AI does not operate with unchecked autonomy; its behavior is rigorously controlled by the **Command-First Architecture**.
 
 - **Ansible Playbook Generation:** Rather than logging directly into remote production nodes to execute ad-hoc bash commands, the AI acts as a configuration engineer. It drafts idempotent `playbooks/` that humans review and execute.
-- **NOSS Level 3 SOP Execution:** When tasked with operations, the AI leverages `.agents/skills/`. Through **Semantic Routing** and **Progressive Disclosure**, the AI identifies the exact standard operating procedure (e.g., `forensic-log-audit`) and strictly follows the embedded quality gates.
+- **Procedural SOP Execution:** When tasked with operations, the AI leverages `.agents/skills/`. Through **Semantic Routing** and **Progressive Disclosure**, the AI identifies the exact standard operating procedure (e.g., `forensic-log-audit`) and strictly follows the embedded quality gates.
 - **Defensive Escalation Boundaries:** The AI operates under absolute prohibition against destructive workarounds. If a critical failure occurs, the AI stops and establishes explicit "ask-first" permission boundaries, preventing catastrophic cascading failures.
 
 ---

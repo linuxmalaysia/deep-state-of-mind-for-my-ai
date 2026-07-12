@@ -5,7 +5,7 @@ title: proposal-docx-formatter
 name: proposal-docx-formatter
 description: >
   Compiles a markdown proposal document into a professionally formatted DOCX file
-  using NOSS-aligned document standards (Times New Roman, A4 page, grey-header tables,
+  using standard corporate document templates (Times New Roman, A4 page, grey-header tables,
   0.5pt borders, proper heading hierarchy). Use when the user asks to compile, generate,
   or format the migration proposal document.
 noss_section: "Enterprise Database Migration"
@@ -17,7 +17,7 @@ target_format: docx
 ## Purpose
 
 Generates a professionally formatted Microsoft Word (.docx) document from a structured
-markdown source file. The formatting standards are adopted from the NOSS (National
+markdown source file. The formatting standards are adopted from the national
 Occupational Skills Standard) document generation system.
 
 ## Formatting Standards
