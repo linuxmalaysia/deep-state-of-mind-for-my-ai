@@ -49,6 +49,7 @@ deep-state-of-mind-for-my-ai/
 │   ├── skills/                     # Procedural Execution Scripts (Standard SOPs)
 │   └── workflows/                  # Cross-Agent Orchestration Playbooks
 ├── docs/                           # Governance & Architecture Documentation
+│   └── governance/NOSS-INTEGRATION-GUIDE.md # External Compliance Adoption Protocol
 ├── playbooks/                      # Ansible Infrastructure Automation Layer
 └── tools/                          # Termux & POSIX-Compliant Utility Layer
 ```

@@ -25,6 +25,10 @@ Yes, absolutely! This architecture utilizes a core OKF principle called **Progre
 If the AI were to load the full text of all available skills into its context window at once, it would cost hundreds of thousands of tokens, run very slowly, and cause severe context bloat (the lost-in-the-middle phenomenon). 
 Instead, the system only loads the lightweight index metadata initially. The AI only fetches the heavy, full markdown file of a specific skill at the exact moment it is triggered to execute it. This technique **compresses token overhead by up to 91%**, keeping the Sovereign Engine fast, cheap, and hyper-focused!
 
+## NOSS and Compliance Integration
+
+While this document governs the overarching architecture of DSOM skills, instructions on how to translate specific external compliance standards (such as the National Occupational Skills Standard) into these executable skills can be found in the [NOSS Integration Guide](file:///docs/governance/NOSS-INTEGRATION-GUIDE.md).
+
 ## DSOM Project Skills Registry
 
 The following 18 skills are currently registered in this project's local workspace (.agents/skills/):
