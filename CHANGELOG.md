@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Signature Mandate:** Added Rule 13 to `.agents/AGENTS.md` enforcing that all readable files generated or modified by an AI must be processed by the `dsom-signature-injector`.
 - **Automation Audit Ledger:** Created `docs/governance/AUTOMATION-AUDIT-LIST.md` to catalog, index, and describe all 50+ `.sh`, `.ps1`, and `.yml` files in the repository for human security audits.
 - **Python UV Environment Guide:** Adopted and published `docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md` to mandate the use of `uv` for managing isolated Python environments across the DSOM framework, avoiding global PATH conflicts.
+- **NOSS Integration Guide:** Published `docs/governance/NOSS-INTEGRATION-GUIDE.md` detailing the protocol for adopting National Occupational Skills Standards (NOSS) as compliance payloads within the DSOM architectural baseline. Includes token optimization strategies for handling original PDFs.
 
 ### Changed
 
