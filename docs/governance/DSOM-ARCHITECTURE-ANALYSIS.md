@@ -55,7 +55,37 @@ deep-state-of-mind-for-my-ai/
 
 ---
 
-## 3. The Cognitive IT Consultant (AIOps Role)
+## 3. Core Operational Cycles
+
+The framework drives system operations through three distinct, deterministic runtime cycles:
+
+```text
+[ START OF DAY (SOD) ]
+          |
+          ▼
+  • Read palace_registry.md
+  • Initialize Git worktrees
+  • Set isolated memory paths
+          |
+          ▼
+[ PRODUCTION RUNTIME ] ────────► • Execute self-healing scripts
+          |                      • Audit system logs via Wazuh
+          ▼                      • Sync infrastructure states
+[  END OF DAY (EOD)  ]
+          |
+          ▼
+  • Run privacy scans
+  • Commit code modifications
+  • Rebase and sync upstream
+```
+
+1. **Start of Day (SOD) Ritual:** The agent reads `palace_registry.md` to establish its baseline context, sets its path environment to the isolated workspace directory, and checks for upstream changes across open project branches.
+2. **Production Runtime Loop:** Operations run via isolated subagent worktrees. The system uses self-healing scripts inside `.agents/skills/` to continuously monitor infrastructure state, manage data transformation pipelines, and log audit entries without human intervention.
+3. **End of Day (EOD) Ritual:** The agent concludes its runtime by executing privacy scans to sanitize memory, committing all verified code modifications, and securely rebasing and syncing the state back to upstream remotes.
+
+---
+
+## 4. The Cognitive IT Consultant (AIOps Role)
 
 The DSOM framework transforms large language models into disciplined Senior ICT Consultants. The AI does not operate with unchecked autonomy; its behavior is rigorously controlled by the **Command-First Architecture**.
 
@@ -65,7 +95,7 @@ The DSOM framework transforms large language models into disciplined Senior ICT 
 
 ---
 
-## 4. Cognitive Security & Context Boundaries
+## 5. Cognitive Security & Context Boundaries
 
 To maintain defense-in-depth, the AI's own "mind" is secured and compartmentalized.
 
