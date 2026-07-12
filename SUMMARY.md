@@ -3,6 +3,7 @@
 ## Table of contents
 
 * [🧠 Home](README.md)
+* [🚀 START HERE: Entry Points](START-HERE.md)
 * [📜 Universal Ledger (History)](HISTORY.md)
 * [📜 Changelog](CHANGELOG.md)
 * [🤝 Contributing Guidelines](CONTRIBUTING.md)
@@ -17,6 +18,9 @@
 * [🛡️ CRISP² Operational Strategy](docs/governance/CRISP2-OPERATIONAL-STRATEGY.md)
 * [📖 Operational Guide](docs/governance/OPERATIONAL-GUIDE.md)
 * [🏛️ Hub and Spoke Model](docs/governance/HUB-AND-SPOKE-MODEL.md)
+* [🔄 NOSS Integration Guide](docs/governance/NOSS-INTEGRATION-GUIDE.md)
+* [🐍 Python UV Environment Guide](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md)
+* [🔍 Automation Audit Ledger](docs/governance/AUTOMATION-AUDIT-LIST.md)
 
 ## 🌅 2. Operational Rituals
 
