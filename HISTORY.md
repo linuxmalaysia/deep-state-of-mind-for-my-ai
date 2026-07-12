@@ -95,6 +95,8 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-12]: **Standard Developer Metadata.** Upgraded the `dsom-signature-injector` skill to use professional, language-specific block headers for all automation scripts instead of flat comments, leveraging native PowerShell Comment-Based Help. Migrated 50+ files to the new standard.
 - [2026-07-12]: **Python UV Governance.** Adopted `docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md` from external resources, adapting it into the DSOM framework to mandate the use of `uv` for strict, isolated Python environment management across all nodes and agent workflows.
 - [2026-07-12]: **Architecture Operational Cycles.** Enhanced `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md` with a detailed ASCII logic diagram mapping the three core deterministic runtime cycles of the agent: Start of Day (SOD), Production Runtime Loop, and End of Day (EOD) rituals.
+- [2026-07-12]: **Documentation Sync Mandate.** Added Rule 14 to `.agents/AGENTS.md` explicitly requiring dual mapping of new documents to both `SUMMARY.md` and `mkdocs.yml` to prevent GitBook/MkDocs desynchronization.
+- [2026-07-12]: **Release Automation Protocol.** Formally codified the GitOps tagging, CHANGELOG promotion, Ledger sync, and cross-platform release (`gh` / `glab`) workflows into a new master skill: `.agents/skills/dsom-release-manager`.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.4.0-governance | Harisfazillah Jamel*
