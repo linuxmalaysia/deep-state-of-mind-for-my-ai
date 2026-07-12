@@ -97,7 +97,7 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-12]: **Architecture Operational Cycles.** Enhanced `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md` with a detailed ASCII logic diagram mapping the three core deterministic runtime cycles of the agent: Start of Day (SOD), Production Runtime Loop, and End of Day (EOD) rituals.
 
 ---
-*End of Current Ledger | Standard: DSOM Protocol v10.3.1-skills | Harisfazillah Jamel*
+*End of Current Ledger | Standard: DSOM Protocol v10.4.0-governance | Harisfazillah Jamel*
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

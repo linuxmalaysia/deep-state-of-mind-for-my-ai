@@ -18,6 +18,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- *(No unreleased changes yet)*
+
+## [10.4.0-governance] - 2026-07-12
+
+### Added
 
 - **Governance Rule Update:** Added the GitHub & GitLab CLI Authentication rule to `.agents/AGENTS.md` to formally guardrail multi-account API interactions and prevent context-blind CLI failures (e.g., `linuxmalaysia` vs `songketmailsdnbhd`).
 - **Initialization Guide Update:** Enhanced `HOWTO-CLONE-DSOM-PROJECT.md` to clarify the mandatory pre-requisite of `git init` and brain artifact creation (`task.md`, `walkthrough.md`) before running reanimation rituals.
