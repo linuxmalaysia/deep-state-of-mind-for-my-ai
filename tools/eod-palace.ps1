@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Deep State of Mind (DSOM) For My AI Protocol
 .NOTES
@@ -68,7 +68,7 @@ if (Test-Path $SummaryFile) {
     $DetailedMsg = (Get-Content $SummaryFile -Raw).Trim()
     Write-Host "    [OK] AI Checkpoint Summary found." -ForegroundColor Green
 } else {
-    Write-Host "    [⛔ ERROR] No checkpoint_summary.txt found!" -ForegroundColor Red
+    Write-Host "    [ERROR] No checkpoint_summary.txt found!" -ForegroundColor Red
     Write-Host "    ======================================================================" -ForegroundColor Yellow
     Write-Host "    ACTION REQUIRED: Copy the prompt below and give it to your AI agent" -ForegroundColor Yellow
     Write-Host "    to generate the high-fidelity hibernation summary." -ForegroundColor Yellow
@@ -82,7 +82,7 @@ if (Test-Path $SummaryFile) {
     exit 1
 }
 
-$CommitMsgBase = if (-not [string]::IsNullOrWhiteSpace($DetailedMsg)) { "eod: $DetailedMsg" } else { "eod: Palace sync + sovereign save $DateStamp" }
+$CommitMsgBase = "eod: Palace sync + sovereign save $DateStamp"
 
 # Step 2: Palace Sync
 Write-Host ""

@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **9-Point System Synchronization:** Expanded and formalized the project entry architecture from 4 to 9 entry points in `START-HERE.md`. Automatically cross-referenced all 9 entry point documents upstream and downstream.
+- **Legacy Upgrade Formalization:** Extracted legacy DSOM upgrade protocols into a dedicated OKF-compliant document (`docs/HOWTO-UPGRADE-LEGACY-DSOM.md`).
 - **Dual Documentation Sync:** Added Rule 14 to `.agents/AGENTS.md` explicitly requiring that new governance and architecture documents must be symmetrically mapped into both `SUMMARY.md` (GitBook) and `mkdocs.yml` (MkDocs) to prevent orphaned resources.
 - **Release Automation:** Encapsulated the DSOM release architecture into a new AI skill (`.agents/skills/dsom-release-manager`). This procedural SOP governs GitOps tagging, Changelog promotion, Ledger footer sync, and programmatic release deployment via the GitHub (`gh`) and GitLab (`glab`) CLI tools.
 

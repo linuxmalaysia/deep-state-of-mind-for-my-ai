@@ -96,7 +96,8 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-12]: **Python UV Governance.** Adopted `docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md` from external resources, adapting it into the DSOM framework to mandate the use of `uv` for strict, isolated Python environment management across all nodes and agent workflows.
 - [2026-07-12]: **Architecture Operational Cycles.** Enhanced `docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md` with a detailed ASCII logic diagram mapping the three core deterministic runtime cycles of the agent: Start of Day (SOD), Production Runtime Loop, and End of Day (EOD) rituals.
 - [2026-07-12]: **Documentation Sync Mandate.** Added Rule 14 to `.agents/AGENTS.md` explicitly requiring dual mapping of new documents to both `SUMMARY.md` and `mkdocs.yml` to prevent GitBook/MkDocs desynchronization.
-- [2026-07-12]: **Release Automation Protocol.** Formally codified the GitOps tagging, CHANGELOG promotion, Ledger sync, and cross-platform release (`gh` / `glab`) workflows into a new master skill: `.agents/skills/dsom-release-manager`.
+- [2026-07-16]: **Release Automation Protocol.** Formally codified the GitOps tagging, CHANGELOG promotion, Ledger sync, and cross-platform release (`gh` / `glab`) workflows into a new master skill: `.agents/skills/dsom-release-manager`.
+- [2026-07-17]: **Core Entry Point Synchronization.** Explicitly interlinked the 9 primary entry points via `START-HERE.md` to establish an upstream/downstream knowledge graph. Formally extracted Legacy Upgrade instructions into a dedicated OKF-compliant document (`docs/HOWTO-UPGRADE-LEGACY-DSOM.md`).
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.4.0-governance | Harisfazillah Jamel*

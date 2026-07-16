@@ -1,1 +1,17 @@
-Repository Git history permanently scrubbed of sensitive IPs, UM Elastic SOC, and all specific node[x] references. The git-history-scrubber and git-commit-resolver skills are active. All GitHub/GitLab remotes successfully force-pushed.
+`	ext
+[2026-07-16] - Instructed to adhere strictly to Standard UK English or DBP-standard Bahasa Melayu Malaysia (Piawai) when answering in Malay.
+[2026-07-16] - Instructed to skip conversational filler ("Sure", "Here is your script") and jump straight to headings, blocks, and configurations.
+[2026-07-16] - Enforce Git Sovereignty: all major actions must be committed to Git. Avoid silent execution.
+[2026-07-16] - All knowledge documents (closet.md and SKILL.md) must be OKF v0.1 compliant.
+[2026-07-16] - Must actively use .agents/skills as operational SOPs.
+[2026-07-16] - Use uv exclusively for Python script execution and dependency installations. Never use raw pip or python.
+[2026-07-16] - Run dsom-signature-injector on all scripts and markdown files.
+[2026-07-16] - Must dual-document all new architectural/governance files into both GitBook (SUMMARY.md) and MkDocs (mkdocs.yml).
+[2026-07-17] - Completed synchronization of 9 primary entry points via START-HERE.md.
+[2026-07-17] - Created docs/HOWTO-UPGRADE-LEGACY-DSOM.md as Entry Point 5 for migrating legacy repositories.
+[2026-07-17] - Appended MULTI-AGENT-PROTOCOLS.md, AI-SKILL-ARCHITECTURE.md, AI-SLASH-COMMANDS-GUIDE.md, LLM-WIKI-ADOPTION.md, and GITOPS-AIOPS-ANSIBLE-STRATEGY.md into llms.txt.
+[2026-07-17] - Pushed all 9-point entry sync documentation to both GitHub and GitLab remotes (commit 4b3ae5c).
+[2026-07-17] - Confirmed architecture: The workspace is a DSOM Sovereign Palace with 8 populated rooms. We utilize AIOps, GitOps, and Ansible as our three deterministic pillars. 
+[2026-07-17] - EOD ritual automation initiated via user command /goal.
+`
+All documents in docs/ and .agents/brain/ are actively tracked and updated. History and changelog files have been accurately updated with today's facts and events.
