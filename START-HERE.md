@@ -53,14 +53,9 @@ DSOM is a modular Sovereign Engine. To use it effectively, do not read every fil
 ## 5. The Legacy Upgrade Entry Point (Existing DSOM Projects)
 *If you are operating a legacy DSOM project and need to modernize it to the current master architectural baseline.*
 
-**What you need to add to your existing project:**
-If your project is running an older iteration of DSOM, you must systematically inject the following modern protocols to achieve compliance with the current master baseline:
+**Read This First:** [`docs/HOWTO-UPGRADE-LEGACY-DSOM.md`](docs/HOWTO-UPGRADE-LEGACY-DSOM.md)
 
-1. **Adopt `llms.txt`:** Create an `llms.txt` file at the root of your project to map your critical governance documents for external AI crawlers.
-2. **Inject OKF YAML Frontmatter:** All existing `.md` files in your `brain/` and `docs/` directories must be retroactively updated to include OKF v0.1 YAML frontmatter (metadata routing).
-3. **Mandate the Sovereign Signature:** Pull the `dsom-signature-injector` skill from the master baseline and execute it across your legacy repository to ensure all scripts (`.sh`, `.ps1`) and playbooks (`.yml`) carry standard developer metadata headers and GPL v3.0 licenses.
-4. **Transition to `uv`:** Audit your existing Python automation scripts. Adopt the `PYTHON-UV-ENVIRONMENT-GUIDE.md` and migrate away from global `pip` installations to isolated `uv` environments to prevent dependency conflicts.
-5. **Establish the Audit Ledger:** Generate an `AUTOMATION-AUDIT-LIST.md` in your `docs/governance/` directory to catalog all legacy `.sh` and `.ps1` scripts for centralized human security auditing.
+**Why it matters:** It explains how to systematically inject modern protocols (OKF frontmatter, LLM WIKI, dsom-signature-injector, uv Python environments) into your older repositories to achieve compliance with the current master baseline.
 
 ---
 

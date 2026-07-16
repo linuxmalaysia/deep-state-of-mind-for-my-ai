@@ -9,6 +9,8 @@ timestamp: 2026-07-04T11:00:00Z
 
 # HOWTO: Clone a DSOM Project (Scaffolding Blueprint)
 
+> **Entry Point 1:** This document serves as the Engineering Entry Point for the DSOM framework. See [START-HERE.md](../START-HERE.md) for the master onboarding roadmap.
+
 **ATTENTION:** This document is the master blueprint for replicating the Deep State of Mind (DSOM) architecture, including highly customised AI Agent Skills and Sovereign Personas, into a completely new repository. 
 
 If you are building a *new* project based on this repository, you **MUST** follow this guide to ensure the AI's cognitive capabilities, tools, and constraints are correctly ported.

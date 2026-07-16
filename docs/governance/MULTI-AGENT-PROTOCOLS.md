@@ -8,6 +8,8 @@ timestamp: 2026-07-04T09:40:04Z
 ---
 # 🤖 DSOM Multi-Agent Protocols (v6.1)
 
+> **Entry Point 6:** This document serves as the Subagent Swarm Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
+
 > **"One Mind, Many Hands."** - The DSOM Philosophy for Multi-Agent Collaboration.
 
 ## 1. 🏛️ The Agent Taxonomy

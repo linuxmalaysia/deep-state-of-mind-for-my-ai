@@ -8,6 +8,8 @@ timestamp: 2026-07-11T23:28:03Z
 ---
 # AI Skill Architecture
 
+> **Entry Point 7:** This document is part of the Procedural Skill Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
+
 This document governs the operational paradigm for AI Agent Skills within the Deep State of Mind (DSOM) framework. Skills are not merely arbitrary scripts; they are formalized components of the AI's cognitive architecture, designed to optimize context windows and guarantee execution precision.
 
 ## How Do I Use These Skills?

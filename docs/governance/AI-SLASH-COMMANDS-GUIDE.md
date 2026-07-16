@@ -7,6 +7,8 @@ timestamp: 2026-07-17T07:18:00Z
 ---
 # AI Slash Commands Guide (DSOM)
 
+> **Entry Point 7:** This document is part of the Procedural Skill Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
+
 This document serves as the authoritative reference for invoking Antigravity slash commands to orchestrate the Deep State of Mind (DSOM) Cognitive Twin. These directives are specifically mapped to the workflows of managing the Sovereign AI Agent Workspace, cognitive architecture, and Git-native PMO operations.
 
 ## Core Operational Directives

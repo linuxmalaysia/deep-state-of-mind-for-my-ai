@@ -8,6 +8,8 @@ timestamp: 2026-07-04T09:40:04Z
 ---
 # 🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)
 
+> **Entry Point 9:** This document serves as the Security & Defense Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
+
 ## docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
 
 > **"Git is the source of truth. Ansible is the hand. AI is the mind."**

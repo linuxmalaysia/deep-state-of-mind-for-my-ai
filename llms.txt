@@ -1,5 +1,7 @@
 # Deep State of Mind (DSOM) For My AI
 
+> **Entry Point 3:** This document serves as the External System Entry Point (AI Crawlers). See [START-HERE.md](START-HERE.md) for the human onboarding roadmap.
+
 > The Deep State of Mind (DSOM) is a metacognitive governance framework that transforms any AI (Gemini, Claude, Copilot, ChatGPT) into a disciplined Cognitive Digital Twin. It solves context decay through spatial memory (the Sovereign Palace), vendor lock-in via GitOps, and uncontrolled execution via human-in-the-loop Ansible playbooks.
 
 Important non-obvious constraints: AI agents must never run commands directly on remote nodes; they must write idempotent Ansible playbooks for human execution. Memory is externally persisted in .agents/brain preventing stateless session wipeouts.
@@ -12,3 +14,8 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [GENERATIVE-ENGINE-OPTIMIZATION.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md): Architectural policy for ensuring documentation is machine-readable and highly cited by AI Answer Engines.
 - [NOSS-INTEGRATION-GUIDE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/NOSS-INTEGRATION-GUIDE.md): Governance protocol for translating National Occupational Skills Standards (NOSS) into modular AI skills.
 - [HOWTO-CLONE-DSOM-PROJECT.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/HOWTO-CLONE-DSOM-PROJECT.md): The master blueprint for scaffolding a new project with the DSOM engine.
+- [MULTI-AGENT-PROTOCOLS.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/MULTI-AGENT-PROTOCOLS.md): Governs the safe deployment of Subagent Swarms via Git Worktree Isolation.
+- [AI-SKILL-ARCHITECTURE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/AI-SKILL-ARCHITECTURE.md): The structural design for OKF-compliant semantic AI skills.
+- [AI-SLASH-COMMANDS-GUIDE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/AI-SLASH-COMMANDS-GUIDE.md): The unified guide to standard Antigravity slash commands.
+- [LLM-WIKI-ADOPTION.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/LLM-WIKI-ADOPTION.md): Defines the Sovereign Knowledge framework and artifact pyramid.
+- [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Strategic doctrine for integrating AI planning with Defensive GitOps and Ansible.

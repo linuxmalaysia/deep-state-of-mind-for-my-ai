@@ -8,6 +8,8 @@ timestamp: 2026-07-04T09:40:04Z
 ---
 # 🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents
 
+> **Entry Point 4:** This document serves as the Daily Operations Entry Point. See [START-HERE.md](../START-HERE.md) for the master onboarding roadmap.
+
 > **Who this document is for:** Any new human user adopting DSOM, or any AI agent reading this repo for the first time.
 
 **Workspace Version:** v2.0 (OKF Palace) | **Protocol:** DSOM v6.1
