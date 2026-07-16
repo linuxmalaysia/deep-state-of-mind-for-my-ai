@@ -6,6 +6,8 @@ description: "A comprehensive breakdown of how DSOM achieves perfect memory rete
 ---
 # 🧠 DSOM: The Engine of Persistent Memory & Efficiency
 
+> **Published Article:** [DSOM: Engine of Persistent Memory](https://www.linuxmalaysia.com/2026/07/dsom-engine-of-persistent-memory.html)
+
 The Deep State of Mind (DSOM) framework is fundamentally designed to solve the two biggest constraints of working with AI: **Context Window Amnesia** (forgetting past decisions) and **Token Bloat** (wasting API costs and processing time on irrelevant data). 
 
 Here is a comprehensive list of all the protocols, rules, and architectural patterns we have implemented to ensure the AI acts as a Cognitive Twin—retaining a perfect "RAG-style" memory while remaining incredibly token-efficient.
