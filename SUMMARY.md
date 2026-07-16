@@ -22,6 +22,7 @@
 * [🐍 Python UV Environment Guide](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md)
 * [🔍 Automation Audit Ledger](docs/governance/AUTOMATION-AUDIT-LIST.md)
 * [🧠 LLM WIKI Adoption Strategy](docs/governance/LLM-WIKI-ADOPTION.md)
+* [⚡ DSOM Efficiency Protocols](docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md)
 
 ## 🌅 2. Operational Rituals
 
