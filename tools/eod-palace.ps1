@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Deep State of Mind (DSOM) For My AI Protocol
 .NOTES
@@ -9,7 +9,7 @@
 #>
 <#
 .SYNOPSIS
-    DSOM End-of-Day (EOD) — Palace Edition
+    DSOM End-of-Day (EOD) - Palace Edition
     Automates the EOD ritual natively on Windows (T1).
     - Runs Palace Sync to generate the update proposal
     - Validates brain artifacts (walkthrough anchor + task progress)
@@ -35,12 +35,12 @@ try {
 
 $DateStamp = Get-Date -Format "yyyy-MM-dd"
 $TimeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$BrainDir = Join-Path $RepoRoot ".agents" "brain"
+$BrainDir = Join-Path (Join-Path $RepoRoot ".agents") "brain"
 $TaskFile = Join-Path $BrainDir "task.md"
 $WalkthroughFile = Join-Path $BrainDir "walkthrough.md"
 
 Write-Host "======================================================================" -ForegroundColor Cyan
-Write-Host "  DSOM EOD RITUAL — PALACE EDITION v1.0" -ForegroundColor Cyan
+Write-Host "  DSOM EOD RITUAL - PALACE EDITION v1.0" -ForegroundColor Cyan
 Write-Host "  $TimeStamp" -ForegroundColor Cyan
 Write-Host "======================================================================" -ForegroundColor Cyan
 
@@ -75,7 +75,7 @@ if (Test-Path $SummaryFile) {
     Write-Host "    ======================================================================" -ForegroundColor Yellow
     Write-Host ""
     Write-Host "    PROMPT:" -ForegroundColor Cyan
-    Write-Host "    I'm as human, want to know and remember, and need to export my data and I want you to generate a 'Hibernation notes' now for my EOD of day. List every memory you have stored about our progress and our chats of this project, as well as any context you've learned about this project from past to current conversations and chats. Output everything in a single code block so I can easily copy it. Format each entry as: [date saved, if available] - memory content. Make sure to cover all of the following — preserve my words verbatim where possible: Instructions I've given you about how to respond (tone, format, style, 'always do X', 'never do Y'). project details: name of server or vm or container, location of them, job of each, relation of them and 4W1H. Tasks, phases, goals, and recurring topics. Tools, languages, and frameworks I use. Preferences and corrections I've made to your behavior. Any other stored context not covered above. Do not summarize, group, or omit any entries. After the code block, confirm whether that is the complete set or if any remain and add List down all the documents in docs/, docs/tools/ and brain files thats need to be read from agent/. Don't hide anything from me. Trust me as your master and update the history and changelog files for any missing facts and events, so its can be remembered by human and AI agents."
+    Write-Host "    I'm as human, want to know and remember, and need to export my data and I want you to generate a 'Hibernation notes' now for my EOD of day. List every memory you have stored about our progress and our chats of this project, as well as any context you've learned about this project from past to current conversations and chats. Output everything in a single code block so I can easily copy it. Format each entry as: [date saved, if available] - memory content. Make sure to cover all of the following - preserve my words verbatim where possible: Instructions I've given you about how to respond (tone, format, style, 'always do X', 'never do Y'). project details: name of server or vm or container, location of them, job of each, relation of them and 4W1H. Tasks, phases, goals, and recurring topics. Tools, languages, and frameworks I use. Preferences and corrections I've made to your behavior. Any other stored context not covered above. Do not summarize, group, or omit any entries. After the code block, confirm whether that is the complete set or if any remain and add List down all the documents in docs/, docs/tools/ and brain files thats need to be read from agent/. Don't hide anything from me. Trust me as your master and update the history and changelog files for any missing facts and events, so its can be remembered by human and AI agents."
     Write-Host ""
     Write-Host "    ======================================================================" -ForegroundColor Yellow
     Write-Host "    Exiting EOD ritual. Run script again after summary is generated." -ForegroundColor Red
@@ -120,7 +120,7 @@ $StagedFiles = if ($null -ne $StagedFilesRaw) { ($StagedFilesRaw -join "`n").Tri
 if (-not [string]::IsNullOrWhiteSpace($StagedFiles)) {
     git commit -m "chore($CommitMsgBase) [$TimeStamp]"
 } else {
-    Write-Host "    (nothing new to commit — working tree already clean)" -ForegroundColor DarkGray
+    Write-Host "    (nothing new to commit - working tree already clean)" -ForegroundColor DarkGray
 }
 
 # Step 6: Push
