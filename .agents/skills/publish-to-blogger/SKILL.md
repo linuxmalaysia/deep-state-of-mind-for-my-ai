@@ -11,7 +11,7 @@ Trigger this skill whenever the user asks to "prepare a blog post", "publish to 
 
 ## Instructions
 1. **Locate Target Document:** Identify the `.md` document or analysis the user wants to publish.
-2. **Update Source Document (If Applicable):** Ensure the source `.md` document natively contains the "Open Source Repositories" section with GitHub and GitLab links just above the DSOM signature. If it does not, add it before proceeding to HTML conversion.
+2. **Update Source Document (If Applicable):** Ensure the source `.md` document natively contains the "Open Source Repositories & Documentation" section with GitHub, GitLab, and GitBook links just above the DSOM signature. If it does not, add it before proceeding to HTML conversion.
 3. **Convert to HTML:** Convert the markdown into standard, clean, semantic HTML (`<h2>`, `<p>`, `<ul>`, etc.). Do not apply heavy inline CSS, as the Blogger theme will handle presentation. Wrap the entire post in `<div class="dsom-post">`.
 4. **Inject the Collaboration Note (TOP):** At the very beginning of the post, insert the following blockquote exactly:
    ```html
@@ -22,11 +22,12 @@ Trigger this skill whenever the user asks to "prepare a blog post", "publish to 
 5. **Inject Repository Links (BOTTOM):** At the end of the post, immediately before the signature, insert the open-source repository links (if they aren't already cleanly parsed from the markdown):
    ```html
    <div style="background-color: #f1f8ff; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #c8e1ff;">
-       <h4 style="margin-top: 0;">🔗 Open Source Repositories</h4>
+       <h4 style="margin-top: 0;">🔗 Open Source Repositories & Documentation</h4>
        <p style="margin-bottom: 0;">Explore the full Deep State of Mind (DSOM) framework and Sovereign Palace architecture at:</p>
        <ul style="margin-bottom: 0;">
            <li><strong>GitHub:</strong> <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" target="_blank">linuxmalaysia/deep-state-of-mind-for-my-ai</a></li>
            <li><strong>GitLab:</strong> <a href="https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai" target="_blank">linuxmalaysia/deep-state-of-mind-for-my-ai</a></li>
+           <li><strong>GitBook:</strong> <a href="https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai" target="_blank">DSOM Protocol Documentation</a></li>
        </ul>
    </div>
    ```

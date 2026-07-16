@@ -53,10 +53,11 @@ By combining **Progressive Disclosure**, **External File-System Memory (The Pala
 
 ---
 
-### 🔗 Open Source Repositories
+### 🔗 Open Source Repositories & Documentation
 Explore the full Deep State of Mind (DSOM) framework and Sovereign Palace architecture at:
 - **GitHub:** [linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
 - **GitLab:** [linuxmalaysia/deep-state-of-mind-for-my-ai](https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
+- **GitBook:** [DSOM Protocol Documentation](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-16*
