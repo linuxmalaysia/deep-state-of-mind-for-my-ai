@@ -39,6 +39,7 @@ nav:
       - NOSS Integration Guide: docs/governance/NOSS-INTEGRATION-GUIDE.md
       - Python UV Environment Guide: docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
       - Automation Audit Ledger: docs/governance/AUTOMATION-AUDIT-LIST.md
+      - LLM WIKI Adoption Strategy: docs/governance/LLM-WIKI-ADOPTION.md
       - Ritual of Transition: docs/RITUAL-OF-TRANSITION.md
       - Personalization: docs/PERSONALIZATION.md
   - AI Brain:
@@ -50,6 +51,7 @@ nav:
       - Reanimation Template: docs/REANIMATION-PROMPT-TEMPLATE.md
       - Agent Protocols: docs/governance/MULTI-AGENT-PROTOCOLS.md
       - Claude: docs/CLAUDE-SETUP.md
+      - DSOM Claude Initialiser: docs/model-specifics/dsom-claude-initialiser.md
       - Copilot: docs/COPILOT-SETUP.md
   - Ansible:
       - HOWTO Setup Baseline: docs/HOWTO-SETUP-ANSIBLE-BASELINE.md

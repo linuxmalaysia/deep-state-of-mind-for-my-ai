@@ -21,6 +21,7 @@
 * [🔄 NOSS Integration Guide](docs/governance/NOSS-INTEGRATION-GUIDE.md)
 * [🐍 Python UV Environment Guide](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md)
 * [🔍 Automation Audit Ledger](docs/governance/AUTOMATION-AUDIT-LIST.md)
+* [🧠 LLM WIKI Adoption Strategy](docs/governance/LLM-WIKI-ADOPTION.md)
 
 ## 🌅 2. Operational Rituals
 
@@ -72,7 +73,7 @@
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 * [🛡️ GitHub Copilot Setup](docs/COPILOT-SETUP.md)
-* [🧪 DSOM Claude Initialiser](model-specifics/dsom-claude-initialiser.md)
+* [🧪 DSOM Claude Initialiser](docs/model-specifics/dsom-claude-initialiser.md)
 
 ## 🏛️ DSOM Automation Encyclopedia (docs/tools/)
 
@@ -114,13 +115,14 @@
 * [🤖 Subagent Orchestration Workflow](.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md)
 * [🌙 EOD Palace Sync Skill](.agents/skills/eod-palace-sync/SKILL.md)
 * [🌅 SOD Palace Sync Skill](.agents/skills/sod-palace-sync/SKILL.md)
+* [📥 DSOM Knowledge Ingester](.agents/skills/dsom-knowledge-ingester/SKILL.md)
 * [🚀 Initialize GitOps Skill](.agents/skills/initialize-gitops/SKILL.md)
 * [🔍 Forensic Log Audit Skill](.agents/skills/forensic-log-audit/SKILL.md)
 * [🔑 SSH Passwordless Setup Skill](.agents/skills/ssh-passwordless-setup/SKILL.md)
 
 ## 📚 9. References & Genesis Papers
 
-* [\[🏛️ The Sovereign AI Agent Workspace v2 (Genesis)\](references/The Sovereign AI Agent Workspace v2\_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md)](9.-references-and-genesis-papers/the-sovereign-ai-agent-workspace-v2-genesis-references-the-sovereign-ai-agent-workspace-v2_-architec.md)
+* [🏛️ The Sovereign AI Agent Workspace v2 (Genesis)](references/The%20Sovereign%20AI%20Agent%20Workspace%20v2_%20Architecting%20Persistent%20Memory,%20Custom%20Skills,%20and%20Contextual%20Continuity%20-%2020260619.md)
 * [🚀 HOWTO: Bootstrap Sovereign AI Project](references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md)
 * [🌐 OKF Adoption Guide (Reference)](references/OKF-ADOPTION-GUIDE.md)
 
