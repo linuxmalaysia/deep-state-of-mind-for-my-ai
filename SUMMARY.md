@@ -118,6 +118,7 @@
 * [🌅 SOD Palace Sync Skill](.agents/skills/sod-palace-sync/SKILL.md)
 * [📥 DSOM Knowledge Ingester](.agents/skills/dsom-knowledge-ingester/SKILL.md)
 * [✍️ Publish to Blogger Skill](.agents/skills/publish-to-blogger/SKILL.md)
+* [🔍 Git Commit Resolver Skill](.agents/skills/git-commit-resolver/SKILL.md)
 * [🚀 Initialize GitOps Skill](.agents/skills/initialize-gitops/SKILL.md)
 * [🔍 Forensic Log Audit Skill](.agents/skills/forensic-log-audit/SKILL.md)
 * [🔑 SSH Passwordless Setup Skill](.agents/skills/ssh-passwordless-setup/SKILL.md)
