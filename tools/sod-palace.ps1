@@ -9,7 +9,7 @@
 #>
 <#
 .SYNOPSIS
-    DSOM Start-of-Day (SOD) — Palace Edition
+    DSOM Start-of-Day (SOD) - Palace Edition
     Automates the mechanical SOD ritual natively on Windows (T1).
     The AI handshake (manifest upload) remains a manual human step.
 
@@ -32,10 +32,10 @@ try {
 
 $DateStamp = Get-Date -Format "yyyy-MM-dd"
 $TimeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$BrainDir = Join-Path $RepoRoot ".agents" "brain"
+$BrainDir = Join-Path $RepoRoot ".agents\brain"
 
 Write-Host "======================================================================" -ForegroundColor Cyan
-Write-Host "  DSOM SOD RITUAL — PALACE EDITION v1.0" -ForegroundColor Cyan
+Write-Host "  DSOM SOD RITUAL - PALACE EDITION v1.0" -ForegroundColor Cyan
 Write-Host "  $TimeStamp" -ForegroundColor Cyan
 Write-Host "======================================================================" -ForegroundColor Cyan
 
@@ -53,9 +53,9 @@ Write-Host ""
 Write-Host "  [3/4] Verify Palace Registry exists..." -ForegroundColor Yellow
 $PalaceRegistry = Join-Path $BrainDir "palace_registry.md"
 if (Test-Path $PalaceRegistry) {
-    Write-Host "  [OK] Palace Registry found — AI will receive Section [14] at handshake." -ForegroundColor Green
+    Write-Host "  [OK] Palace Registry found - AI will receive Section [14] at handshake." -ForegroundColor Green
 } else {
-    Write-Host "  [WARN] Palace Registry missing — run: .\tools\palace-sync.ps1 -Backfill" -ForegroundColor Magenta
+    Write-Host "  [WARN] Palace Registry missing - run: .\tools\palace-sync.ps1 -Backfill" -ForegroundColor Magenta
 }
 
 Write-Host ""
@@ -67,12 +67,12 @@ Write-Host "====================================================================
 Write-Host "  SOD MECHANICAL STEPS COMPLETE" -ForegroundColor Green
 Write-Host "======================================================================" -ForegroundColor Green
 Write-Host ""
-Write-Host "  NEXT — MANUAL STEP (cannot be automated):" -ForegroundColor Cyan
+Write-Host "  NEXT - MANUAL STEP (cannot be automated):" -ForegroundColor Cyan
 Write-Host "  1. Upload the highest numbered sod_manifest_$DateStamp*.txt to your AI" -ForegroundColor Cyan
 Write-Host "  2. Say to the AI:" -ForegroundColor Cyan
 Write-Host "     'Initialise DSOM Protocol v6.1 + Palace v1.0." -ForegroundColor Cyan
 Write-Host "      Read the manifest. Walk the Palace Registry in Section [14]." -ForegroundColor Cyan
 Write-Host "      State: Sovereign State Synchronised when ready.'" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "  Palace Registry loaded in Section [14] — AI has spatial awareness." -ForegroundColor Cyan
+Write-Host "  Palace Registry loaded in Section [14] - AI has spatial awareness." -ForegroundColor Cyan
 Write-Host "======================================================================" -ForegroundColor Green
