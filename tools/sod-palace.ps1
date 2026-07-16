@@ -41,7 +41,10 @@ Write-Host "====================================================================
 
 Write-Host ""
 Write-Host "  [1/4] Git pull (rebase) from origin/main..." -ForegroundColor Yellow
+$OldEAP = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
 $gitPull = git pull --rebase origin main 2>&1
+$ErrorActionPreference = $OldEAP
 Write-Host ($gitPull -join "`n")
 
 Write-Host ""
