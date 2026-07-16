@@ -503,7 +503,7 @@ Once Step 6 is complete, the AI knows:
 
 | File | Description |
 | :--- | :--- |
-| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 4 primary onboarding entry points. Read this first! |
+| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 9 primary onboarding entry points. Read this first! |
 | [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |

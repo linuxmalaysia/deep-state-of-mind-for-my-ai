@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Automation Audit Ledger:** Created `docs/governance/AUTOMATION-AUDIT-LIST.md` to catalog, index, and describe all 50+ `.sh`, `.ps1`, and `.yml` files in the repository for human security audits.
 - **Python UV Environment Guide:** Adopted and published `docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md` to mandate the use of `uv` for managing isolated Python environments across the DSOM framework, avoiding global PATH conflicts.
 - **NOSS Integration Guide:** Published `docs/governance/NOSS-INTEGRATION-GUIDE.md` detailing the protocol for adopting National Occupational Skills Standards (NOSS) as compliance payloads within the DSOM architectural baseline. Includes token optimization strategies for handling original PDFs.
-- **Project Entry Points:** Authored `START-HERE.md` at the repository root to establish the 4 primary onboarding entry points (Engineering, Cognitive, Crawlers, Operations) for humans and AI adopting the DSOM framework.
+- **Project Entry Points:** Authored and subsequently expanded `START-HERE.md` at the repository root to establish the 9 primary onboarding entry points (Engineering, Cognitive, Crawlers, Operations, Legacy Upgrades, Subagent Swarms, Procedural Skills, LLM WIKI, Defensive GitOps) for humans and AI adopting the DSOM framework.
 
 ### Changed
 
