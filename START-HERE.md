@@ -10,7 +10,7 @@ timestamp: 2026-07-12T09:10:00Z
 
 Welcome to the **Deep State of Mind (DSOM) For My AI** framework. If you are adopting this repository to bootstrap a new infrastructure project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
 
-DSOM is a modular Sovereign Engine. To use it effectively, do not read every file at random. Start with the following four (4) defined Entry Points depending on your role.
+DSOM is a modular Sovereign Engine. To use it effectively, do not read every file at random. Start with the following nine (9) defined Entry Points depending on your role.
 
 ---
 
@@ -61,6 +61,42 @@ If your project is running an older iteration of DSOM, you must systematically i
 3. **Mandate the Sovereign Signature:** Pull the `dsom-signature-injector` skill from the master baseline and execute it across your legacy repository to ensure all scripts (`.sh`, `.ps1`) and playbooks (`.yml`) carry standard developer metadata headers and GPL v3.0 licenses.
 4. **Transition to `uv`:** Audit your existing Python automation scripts. Adopt the `PYTHON-UV-ENVIRONMENT-GUIDE.md` and migrate away from global `pip` installations to isolated `uv` environments to prevent dependency conflicts.
 5. **Establish the Audit Ledger:** Generate an `AUTOMATION-AUDIT-LIST.md` in your `docs/governance/` directory to catalog all legacy `.sh` and `.ps1` scripts for centralized human security auditing.
+
+---
+
+## 6. The Subagent Swarm Entry Point (Multi-Agent Orchestration)
+*If you are scaling complex engineering tasks using autonomous AI subagents.*
+
+**Read This First:** [`docs/governance/MULTI-AGENT-PROTOCOLS.md`](docs/governance/MULTI-AGENT-PROTOCOLS.md)
+
+**Why it matters:** Instructs the project on how to deploy concurrent subagents safely. It enforces **Git Worktree Isolation** to prevent Silent Subagent Merge Conflicts when multiple agents edit the same repository simultaneously.
+
+---
+
+## 7. The Procedural Skill Entry Point (AI Automation)
+*If you need to teach your AI how to perform repetitive operational workflows.*
+
+**Read This First:** [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) and [`docs/governance/AI-SLASH-COMMANDS-GUIDE.md`](docs/governance/AI-SLASH-COMMANDS-GUIDE.md)
+
+**Why it matters:** Explains how to structure the `.agents/skills/` directory. It ensures that all operational manuals (SOPs) are OKF-compliant and executable by the AI via semantic routing, eliminating the need to write custom Python bots.
+
+---
+
+## 8. The Sovereign Knowledge Entry Point (LLM WIKI Adoption)
+*If you are migrating legacy documentation into an AI-native memory palace.*
+
+**Read This First:** [`docs/governance/LLM-WIKI-ADOPTION.md`](docs/governance/LLM-WIKI-ADOPTION.md)
+
+**Why it matters:** Dictates how to transform a standard `docs/` folder into an LLM WIKI. Explains the necessity of the OKF YAML Frontmatter and the **Artifact Pyramid (Progressive Disclosure)** to prevent context window bloat during long conversational sessions.
+
+---
+
+## 9. The Security & Defense Entry Point (Defensive GitOps)
+*If you are adopting DSOM for secure infrastructure or production environments.*
+
+**Read This First:** [`docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+
+**Why it matters:** Enforces the "Zero-Global Memory" rule and dictates how to use `git-filter-repo` (Privacy Guardian) to sanitize histories of IPs, secrets, and proprietary node names before syncing to public or shared remotes.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
