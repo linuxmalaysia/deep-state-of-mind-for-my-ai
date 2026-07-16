@@ -52,5 +52,12 @@ To prevent the AI from starting "blank" every day, we built rituals to compress 
 By combining **Progressive Disclosure**, **External File-System Memory (The Palace)**, and **Strict Persona Constraints**, DSOM allows us to build a project of infinite complexity. We only pay the token cost for the *exact slice* of knowledge we are actively working on, while retaining perfect, permanent recall of everything we have ever discussed.
 
 ---
+
+### 🔗 Open Source Repositories
+Explore the full Deep State of Mind (DSOM) framework and Sovereign Palace architecture at:
+- **GitHub:** [linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
+- **GitLab:** [linuxmalaysia/deep-state-of-mind-for-my-ai](https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
+
+---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-16*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
