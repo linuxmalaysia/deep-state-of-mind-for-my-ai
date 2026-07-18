@@ -16,7 +16,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 1. **Zero-Global / Spatial Memory:** Your memory lives in `.agents/brain`. Never forget to synchronize context using `palace_registry.md`.
 2. **Open Knowledge Format (OKF):** All knowledge documents (`closet.md` and `SKILL.md`) must be OKF v0.1 compliant (contain YAML frontmatter).
 3. **Agent Skills:** Use `.agents/skills` for all procedural workflows. Skills must be self-healing and embed their own executable scripts.
-4. **Git Sovereignty:** Every major action must be committed to Git. Avoid silent execution.
+4. **Git Sovereignty & Atomic Commits:** Every major action must be committed to Git. Avoid silent execution. **Crucially, the AI is strictly forbidden from executing monolithic blanket commits (e.g., `git commit -am` or dumping all unrelated files into one commit). The AI must stage and commit files granularly, grouping them by logical task boundaries and using discrete semantic commit messages for each logical unit.**
 5. **Worktree Isolation:** Subagents must be instantiated within their own isolated Git branches to prevent Silent Subagent Merge Conflicts. Merge back to `main` only via consensus.
 6. **The OKF Import Mandate:** Before committing imported Markdown files or skills from external sources, the AI must verify and inject OKF v0.1 YAML frontmatter (including `okf_version`, `type`, `title`, and `timestamp`) to maintain compliance.
 7. **Defensive Git Syncing (GitOps):** Prior to executing any bulk `git push`, the AI must proactively execute a `git pull --rebase origin main` (or `--no-rebase` if a merge commit is required) to prevent sync failures and rejected pushes.
