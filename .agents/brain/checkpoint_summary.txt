@@ -1,17 +1,43 @@
-`	ext
-[2026-07-16] - Instructed to adhere strictly to Standard UK English or DBP-standard Bahasa Melayu Malaysia (Piawai) when answering in Malay.
-[2026-07-16] - Instructed to skip conversational filler ("Sure", "Here is your script") and jump straight to headings, blocks, and configurations.
-[2026-07-16] - Enforce Git Sovereignty: all major actions must be committed to Git. Avoid silent execution.
-[2026-07-16] - All knowledge documents (closet.md and SKILL.md) must be OKF v0.1 compliant.
-[2026-07-16] - Must actively use .agents/skills as operational SOPs.
-[2026-07-16] - Use uv exclusively for Python script execution and dependency installations. Never use raw pip or python.
-[2026-07-16] - Run dsom-signature-injector on all scripts and markdown files.
-[2026-07-16] - Must dual-document all new architectural/governance files into both GitBook (SUMMARY.md) and MkDocs (mkdocs.yml).
-[2026-07-17] - Completed synchronization of 9 primary entry points via START-HERE.md.
-[2026-07-17] - Created docs/HOWTO-UPGRADE-LEGACY-DSOM.md as Entry Point 5 for migrating legacy repositories.
-[2026-07-17] - Appended MULTI-AGENT-PROTOCOLS.md, AI-SKILL-ARCHITECTURE.md, AI-SLASH-COMMANDS-GUIDE.md, LLM-WIKI-ADOPTION.md, and GITOPS-AIOPS-ANSIBLE-STRATEGY.md into llms.txt.
-[2026-07-17] - Pushed all 9-point entry sync documentation to both GitHub and GitLab remotes (commit 4b3ae5c).
-[2026-07-17] - Confirmed architecture: The workspace is a DSOM Sovereign Palace with 8 populated rooms. We utilize AIOps, GitOps, and Ansible as our three deterministic pillars. 
-[2026-07-17] - EOD ritual automation initiated via user command /goal.
-`
-All documents in docs/ and .agents/brain/ are actively tracked and updated. History and changelog files have been accurately updated with today's facts and events.
+[2026-07-18] - INSTRUCTIONS GIVEN: 
+- Strict adherence to Standard UK English and DBP-standard Bahasa Melayu Malaysia only. 
+- Omit conversational filler. 
+- Output technical configurations as clean, Git-native Markdown. 
+- Abide by the "Zero-Global / Spatial Memory" mandate (Rule 1).
+- Apply OKF-compliant frontmatter to all knowledge files (Rule 2).
+- Execute strictly via `uv` instead of raw `pip` or `python` (Rule 16).
+- Symmetrically update all ledgers (README, HISTORY, CHANGELOG) when modifying architecture (Rule 8).
+- Output the `[DSOM EPISODIC RECORD]` anchor block at the end of every workflow (Rule 18).
+- The AI is strictly forbidden from executing monolithic blanket commits (`git commit -am`). The AI must stage and commit files granularly, grouping them by logical task boundaries. (Rule 4 updated).
+
+[2026-07-18] - PROJECT CONTEXT & 4W1H:
+- Project: Deep State of Mind (DSOM) For My AI.
+- Owner: Harisfazillah Jamel (LinuxMalaysia).
+- Goal: Sovereign framework to deploy and govern LLMs safely via GitOps, Ansible, and isolated agents. 
+- Infrastructure: T1 (Windows Operator) passing configurations down to T2 (WSL2/AlmaLinux 10 Control Node) and T3/T4 targets.
+
+[2026-07-18] - TASKS, PHASES, AND MILESTONES ACHIEVED:
+- Drafted `HOWTO-CREATE-DSOM-GEMINI-GEM.md` to permanently port this cognitive twin into Gemini.
+- Formalized Rule 18 and created `DSOM-EPISODIC-RECORD-TEMPLATE.md`.
+- Updated `START-HERE.md` to catalog all mandatory skills.
+- Developed the Python script `tools/dsom_token_auditor.py` locally and audited it with `uv`. Result: DSOM saves 96.23% of token context bloat.
+- Packaged the findings into `docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md`.
+- Engineered the `dsom-token-calculator` AI Skill based on `tiktoken` to prevent context inflation. 
+- Documented the exact execution pipelines in `docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`.
+- All ledgers (`CHANGELOG.md`, `HISTORY.md`, `SUMMARY.md`, `mkdocs.yml`, `llms.txt`) successfully synchronized.
+- Re-architected Git history into atomic, semantic commits.
+
+[2026-07-18] - TOOLS, LANGUAGES, AND FRAMEWORKS:
+- Python (`uv`), `tiktoken`, Markdown, Open Knowledge Format (OKF) YAML frontmatter, Git, Ansible.
+
+[2026-07-18] - PREFERENCES & BEHAVIOR CORRECTIONS:
+- Re-enforced that the AI must *never* blindly cat gigantic codebases without programmatic checking first (Byte-Capped Executions).
+- Forced the AI to provide full source code representations for offline blog publishing (`publish-to-blogger` skill invoked successfully).
+- Re-enforced the mandate for atomic, semantic Git commits instead of monolithic batch saves.
+
+This represents the complete and total set of contextual memory for this operation.
+
+REQUIRED READING FOR NEXT SESSION REANIMATION:
+- docs/governance/AI-MASTER-PROTOCOL.md
+- .agents/AGENTS.md
+- docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
+- docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md
