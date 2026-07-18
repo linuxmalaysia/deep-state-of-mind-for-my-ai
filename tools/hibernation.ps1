@@ -44,7 +44,7 @@ if (-not $RepoRoot) {
     exit 1
 }
 
-$BrainDir        = Join-Path $RepoRoot ".agents" "brain"
+$BrainDir        = Join-Path $RepoRoot ".agents\brain"
 $TaskFile        = Join-Path $BrainDir "task.md"
 $WalkthroughFile = Join-Path $BrainDir "walkthrough.md"
 $DateStamp       = Get-Date -Format "yyyy-MM-dd"
@@ -167,7 +167,7 @@ Write-Host "  ------------------------------------------------------------------
 # 7. Palace Spatial Reflection
 Write-Host ""
 Write-Host "  [Palace Sync] Running Spatial Reflection before Sovereign Save..." -ForegroundColor Cyan
-$PalaceSyncScript = Join-Path $RepoRoot "tools" "palace-sync.ps1"
+$PalaceSyncScript = Join-Path $RepoRoot "tools\palace-sync.ps1"
 if (Test-Path $PalaceSyncScript) {
     & $PalaceSyncScript
 } else {
