@@ -23,6 +23,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Legacy Upgrade Formalization:** Extracted legacy DSOM upgrade protocols into a dedicated OKF-compliant document (`docs/HOWTO-UPGRADE-LEGACY-DSOM.md`).
 - **Dual Documentation Sync:** Added Rule 14 to `.agents/AGENTS.md` explicitly requiring that new governance and architecture documents must be symmetrically mapped into both `SUMMARY.md` (GitBook) and `mkdocs.yml` (MkDocs) to prevent orphaned resources.
 - **Release Automation:** Encapsulated the DSOM release architecture into a new AI skill (`.agents/skills/dsom-release-manager`). This procedural SOP governs GitOps tagging, Changelog promotion, Ledger footer sync, and programmatic release deployment via the GitHub (`gh`) and GitLab (`glab`) CLI tools.
+- **LLMs.txt Standard Adoption:** Adopted the `llmstxt.org` specification by generating an `llms.txt` file at the repository root. This provides external LLMs and AI crawlers with a structured, machine-readable index of the Sovereign Engine's core entry points, governance ledgers, protocols, and multi-agent skills.
+- **Gemini Gem Integration Guide:** Authored `docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md` providing step-by-step instructions on permanently anchoring the DSOM protocol within the Google Gemini interface via custom Gems.
+- **Episodic Record Template:** Established `docs/DSOM-EPISODIC-RECORD-TEMPLATE.md` to standardize the saving and restoring of AI Cognitive States between ephemeral chat sessions.
+- **Episodic Resume Protocol:** Added Rule 18 to `.agents/AGENTS.md` explicitly requiring the AI to generate a `[DSOM EPISODIC RECORD]` summary block at the end of complex workflows or before session termination to ensure strict context continuity.
+- **START-HERE.md Enhancement:** Added a comprehensive index of all mandatory DSOM operational skills under the Procedural Skill Entry Point to ensure complete porting when scaffolding new projects.
+- **DSOM Token Efficiency Report:** Executed a local token audit using `uv` and `tiktoken`, proving a 96% reduction in context window bloat. The results were permanently documented in `docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md`.
+- **Token Calculator Skill:** Created `.agents/skills/dsom-token-calculator` to allow the AI to programmatically verify the token footprint of files or directories prior to ingestion, enforcing Rule 10 (Byte-Capped Executions).
+- **Byte-Capped Execution Framework:** Documented the technical layout and deployment model of the DSOM Token Calculator Skill in `docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`.
 
 ## [10.4.0-governance] - 2026-07-12
 

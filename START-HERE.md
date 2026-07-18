@@ -75,6 +75,34 @@ DSOM is a modular Sovereign Engine. To use it effectively, do not read every fil
 
 **Why it matters:** Explains how to structure the `.agents/skills/` directory. It ensures that all operational manuals (SOPs) are OKF-compliant and executable by the AI via semantic routing, eliminating the need to write custom Python bots.
 
+**Mandatory Project Skills:**
+The following operational skills have been standardized under the DSOM framework and must be copied into any new project adopting the DSOM architecture:
+* `cross-platform-translator`
+* `dsom-bootstrap`
+* `dsom-knowledge-ingester`
+* `dsom-policy-adopter`
+* `dsom-project-cloner`
+* `dsom-release-manager`
+* `dsom-signature-injector`
+* `dsom-token-calculator`
+* `eod-palace-sync`
+* `forensic-log-audit`
+* `git-commit-resolver`
+* `git-history-scrubber`
+* `initialize-gitops`
+* `latex-proposal-compiler`
+* `node-proposal-formatter`
+* `node-slide-generator`
+* `odp-slide-generator`
+* `okf-frontmatter-injector`
+* `palace-auditor`
+* `pdf-text-extractor`
+* `persona-injector`
+* `proposal-docx-formatter`
+* `publish-to-blogger`
+* `sod-palace-sync`
+* `ssh-passwordless-setup`
+
 ---
 
 ## 8. The Sovereign Knowledge Entry Point (LLM WIKI Adoption)

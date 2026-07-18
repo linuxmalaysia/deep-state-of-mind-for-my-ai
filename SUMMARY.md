@@ -21,6 +21,8 @@
 * [🔄 NOSS Integration Guide](docs/governance/NOSS-INTEGRATION-GUIDE.md)
 * [🐍 Python UV Environment Guide](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md)
 * [🔍 Automation Audit Ledger](docs/governance/AUTOMATION-AUDIT-LIST.md)
+* [📈 DSOM Token Efficiency Report](docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md)
+* [⚙️ Byte-Capped Execution Framework](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md)
 * [🧠 LLM WIKI Adoption Strategy](docs/governance/LLM-WIKI-ADOPTION.md)
 * [⚡ DSOM Efficiency Protocols](docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md)
 
@@ -42,6 +44,7 @@
 
 * [🤝 Human Handover Context Template](docs/HUMAN-HANDOVER-CONTEXT.md)
 * [⚡ Reanimation Prompt Template](docs/REANIMATION-PROMPT-TEMPLATE.md)
+* [📜 Episodic Record Template](docs/DSOM-EPISODIC-RECORD-TEMPLATE.md)
 * [🎭 AI Response Template](docs/AI-RESPONSE-TEMPLATE.md)
 * [🧠 Cognitive Twin Protocol Template](docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md)
 * [📥 HOWTO: Adopt DSOM (Brownfield)](docs/HOWTO-ADOPT-DSOM.md)
@@ -72,6 +75,7 @@
 ## 🧪 Model Specifics
 
 * [♊ Google Gemini Setup](docs/PERSONALIZATION.md)
+* [♊ HOWTO: Create DSOM Gemini Gem](docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md)
 * [🎭 Anthropic Claude Setup](docs/CLAUDE-SETUP.md)
 * [🛡️ GitHub Copilot Setup](docs/COPILOT-SETUP.md)
 * [🧪 DSOM Claude Initialiser](docs/model-specifics/dsom-claude-initialiser.md)

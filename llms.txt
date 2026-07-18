@@ -2,20 +2,42 @@
 
 > **Entry Point 3:** This document serves as the External System Entry Point (AI Crawlers). See [START-HERE.md](START-HERE.md) for the human onboarding roadmap.
 
-> The Deep State of Mind (DSOM) is a metacognitive governance framework that transforms any AI (Gemini, Claude, Copilot, ChatGPT) into a disciplined Cognitive Digital Twin. It solves context decay through spatial memory (the Sovereign Palace), vendor lock-in via GitOps, and uncontrolled execution via human-in-the-loop Ansible playbooks.
+> DSOM is a Sovereign Metacognitive Framework and Digital Twin architecture for Infrastructure Engineering. It enforces strict GitOps, AIOps, and Ansible automation with zero-global memory. The AI's state and memory are explicitly tracked via Git version control in a "Sovereign Markdown Palace."
 
-Important non-obvious constraints: AI agents must never run commands directly on remote nodes; they must write idempotent Ansible playbooks for human execution. Memory is externally persisted in .agents/brain preventing stateless session wipeouts.
+Important non-obvious constraints: AI agents must never run commands directly on remote nodes; they must write idempotent Ansible playbooks for human execution. Memory is externally persisted in `.agents/brain` preventing stateless session wipeouts.
 
-## Docs
-- [AI-MASTER-PROTOCOL.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/AI-MASTER-PROTOCOL.md): The Sovereign Constitution outlining the core GitOps, AIOps, and Ansible execution rules.
-- [AI-COGNITIVE-TWIN-PROTOCOL.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/AI-COGNITIVE-TWIN-PROTOCOL.md): The Project Identity Card defining the target infrastructure (T1-T4) and security doctrines.
-- [DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md): The spatial memory architecture (Markdown Palace) specification for context retention.
-- [OKF-MIND-OPTIMIZATION.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/OKF-MIND-OPTIMIZATION.md): Guidelines on Progressive Disclosure, Semantic Routing, and Procedural Memory Constraints.
-- [GENERATIVE-ENGINE-OPTIMIZATION.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md): Architectural policy for ensuring documentation is machine-readable and highly cited by AI Answer Engines.
-- [NOSS-INTEGRATION-GUIDE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/NOSS-INTEGRATION-GUIDE.md): Governance protocol for translating National Occupational Skills Standards (NOSS) into modular AI skills.
-- [HOWTO-CLONE-DSOM-PROJECT.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/HOWTO-CLONE-DSOM-PROJECT.md): The master blueprint for scaffolding a new project with the DSOM engine.
-- [MULTI-AGENT-PROTOCOLS.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/MULTI-AGENT-PROTOCOLS.md): Governs the safe deployment of Subagent Swarms via Git Worktree Isolation.
-- [AI-SKILL-ARCHITECTURE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/AI-SKILL-ARCHITECTURE.md): The structural design for OKF-compliant semantic AI skills.
-- [AI-SLASH-COMMANDS-GUIDE.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/AI-SLASH-COMMANDS-GUIDE.md): The unified guide to standard Antigravity slash commands.
-- [LLM-WIKI-ADOPTION.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/LLM-WIKI-ADOPTION.md): Defines the Sovereign Knowledge framework and artifact pyramid.
-- [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Strategic doctrine for integrating AI planning with Defensive GitOps and Ansible.
+## Core Entry Points
+- [Start Here](START-HERE.md): The absolute master roadmap for onboarding to DSOM.
+- [Project Readme](README.md): High-level overview and philosophy.
+- [GitBook Summary](SUMMARY.md): Navigation index for GitBook integration.
+
+## Governance & Ledgers
+- [Agents Configuration](.agents/AGENTS.md): Core AI Rulebook and Persona profile.
+- [Changelog](CHANGELOG.md): Unreleased and recent framework changes.
+- [History](HISTORY.md): Universal chronological ledger of project milestones.
+
+## Architecture & Protocols
+- [AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md): The Sovereign Constitution outlining core GitOps, AIOps, and Ansible execution rules.
+- [Cognitive Twin Protocol](docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md): The Project Identity Card defining target infrastructure (T1-T4) and security doctrines.
+- [Palace Onboarding](docs/HOWTO-PALACE-ONBOARDING.md): Guide to the 8-room Sovereign Markdown Palace spatial memory architecture.
+- [Start-Of-Day Ritual](docs/SOD-RITUAL.md): Procedure for AI reanimation.
+- [End-Of-Day Ritual](docs/EOD-RITUAL.md): Procedure for AI state serialization and Git push.
+- [Ritual of Transition](docs/RITUAL-OF-TRANSITION.md): Context-handover strategies.
+- [GitOps Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Defense-in-depth, history sanitization, and infrastructure as code.
+- [Python & UV Environment Guide](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md): Mandatory use of `uv` to ensure isolated execution environments.
+- [DSOM Token Efficiency Report](docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md): Mathematical audit proving a 96% token reduction via Progressive Disclosure.
+- [Byte-Capped Execution Framework](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md): Procedural automation deploying `tiktoken` to programmatically intercept massive text payloads and block runaway context inflation.
+
+## Agent Skills & Multi-Agent
+- [Multi-Agent Protocols](docs/governance/MULTI-AGENT-PROTOCOLS.md): Governs safe deployment of Subagent Swarms via Git Worktree Isolation.
+- [Agent Skills Guide](docs/AI-AGENT-SKILLS-GUIDE.md): How AI subagents utilize OKF-compliant execution manuals.
+- [Skill Architecture](docs/governance/AI-SKILL-ARCHITECTURE.md): The structural design for OKF-compliant semantic AI skills.
+- [OKF Adoption Guide](docs/OKF-ADOPTION-GUIDE.md): Standards for Open Knowledge Format (OKF v0.1) frontmatter.
+
+## Strategy & Optimization
+- [GitOps/AIOps/Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Doctrine for integrating AI planning with Defensive GitOps.
+- [Generative Engine Optimization](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md): Policy for ensuring documentation is machine-readable.
+- [LLM Wiki Adoption](docs/governance/LLM-WIKI-ADOPTION.md): Defines the Sovereign Knowledge framework.
+
+## Model Specifics
+- [HOWTO: Create DSOM Gemini Gem](docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md): Step-by-step guide to configuring a permanent DSOM Cognitive Twin inside the Google Gemini interface.
