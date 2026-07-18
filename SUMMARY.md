@@ -120,6 +120,7 @@
 * [🤖 Subagent Orchestration Workflow](.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md)
 * [🌙 EOD Palace Sync Skill](.agents/skills/eod-palace-sync/SKILL.md)
 * [🌅 SOD Palace Sync Skill](.agents/skills/sod-palace-sync/SKILL.md)
+* [⚙️ DSOM Token Calculator Skill](.agents/skills/dsom-token-calculator/SKILL.md)
 * [📥 DSOM Knowledge Ingester](.agents/skills/dsom-knowledge-ingester/SKILL.md)
 * [✍️ Publish to Blogger Skill](.agents/skills/publish-to-blogger/SKILL.md)
 * [🔍 Git Commit Resolver Skill](.agents/skills/git-commit-resolver/SKILL.md)
