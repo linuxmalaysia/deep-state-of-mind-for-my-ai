@@ -3,8 +3,9 @@ okf_version: 0.1
 type: documentation
 title: "START HERE: DSOM Project Entry Points"
 description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new projects."
+topics: [onboarding, entry-points, dsom, sovereign, baseline]
 resource: "file:///START-HERE.md"
-timestamp: 2026-07-12T09:10:00Z
+timestamp: 2026-07-19T11:27:00+08:00
 ---
 # START HERE: DSOM Project Entry Points
 
@@ -122,5 +123,21 @@ The following operational skills have been standardized under the DSOM framework
 **Why it matters:** Enforces the "Zero-Global Memory" rule and dictates how to use `git-filter-repo` (Privacy Guardian) to sanitize histories of IPs, secrets, and proprietary node names before syncing to public or shared remotes.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+
+## 10. The Token Performance Entry Point (Context Efficiency)
+*If you are onboarding a new AI agent or bootstrapping a new project and want to ensure token-efficient LLM operation from day one.*
+
+**Read This First:** [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
+
+**Why it matters:** This is the master playbook for context window efficiency. It proves a **96.23% reduction in token consumption** versus monolithic document loading, and provides the exact procedures — benchmark commands, OKF frontmatter standards, active context manifest setup, and skill quality gates — that every new DSOM project must inherit to remain sustainable at scale.
+
+**Supporting governance documents:**
+* [`docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md`](docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md) — Empirical proof of token savings
+* [`docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md) — Circuit breaker enforcement
+* [`docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md`](docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md) — Local vs. remote RAG latency analysis
+* [`.agents/skills/dsom-token-calculator/SKILL.md`](.agents/skills/dsom-token-calculator/SKILL.md) — Executable token gate skill
+* [`.agents/brain/active_context_manifest.md`](.agents/brain/active_context_manifest.md) — Active session file manifest
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-19*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
