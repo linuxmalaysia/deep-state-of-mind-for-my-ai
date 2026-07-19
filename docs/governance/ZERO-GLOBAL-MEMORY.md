@@ -121,6 +121,29 @@ At the end of every significant workflow, the AI generates a `[DSOM EPISODIC REC
 
 Without this record, the next session begins from zero. With it, reanimation takes seconds.
 
+### 3.4 The Cognitive Flow Map
+
+To fully visualize how the AI navigates this Zero-Global Memory structure during a session, the following relational matrix dictates the strict path of context ingestion:
+
+```mermaid
+graph TD
+    A[AGENTS.md <br/> Core Persona & Rules] -->|Governs| B(active_context_manifest.md)
+    B -->|Instructs to Load| C[task.md <br/> Next Actions]
+    B -->|Instructs to Load| D[walkthrough.md <br/> Recent Memories]
+    B -->|Instructs to Load| E[palace_registry.md <br/> Spatial Map]
+    
+    E -->|Indexes| F[closet.md <br/> Tooling Registry]
+    F -->|Maps to| G[tools/ scripts & <br/> docs/tools/ guides]
+    
+    C -.->|Updated by| D
+```
+
+**Relational Matrix:**
+- **`AGENTS.md`**: The absolute cognitive entry point. Governs the format and behavioral constraints for every subsequent file.
+- **`active_context_manifest.md`**: The Session Bootloader. Directs the AI to selectively load task, walkthrough, and spatial memory indices without flooding tokens.
+- **`palace_registry.md`**: The Spatial Map. Indexes all knowledge rooms (closets), preventing the need for the AI to "search" the filesystem blindly.
+- **`task.md` & `walkthrough.md`**: The short-term action queue and episodic memory anchor, functioning together to serialize the precise state of execution.
+
 ---
 
 ## 4. Operational Procedures
