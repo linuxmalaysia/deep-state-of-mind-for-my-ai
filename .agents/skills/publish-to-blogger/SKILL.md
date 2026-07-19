@@ -1,6 +1,7 @@
 ---
 name: publish-to-blogger
 description: Converts a markdown artifact into a clean HTML format suitable for publishing on Blogger.com, injecting the mandatory Human-AI Synergy Statement and Repository Links.
+topics: [blogger, html, publish, markdown, blog]
 okf_version: 0.1
 ---
 
