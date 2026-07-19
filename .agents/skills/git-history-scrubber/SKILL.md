@@ -1,6 +1,7 @@
 ---
 name: git-history-scrubber
 description: Safely purges sensitive data (IPs, credentials) from Git history using git-filter-repo, deletes old releases, and handles force-push protocols.
+topics: [git, security, history, scrub, credentials]
 okf_version: 0.1
 ---
 
