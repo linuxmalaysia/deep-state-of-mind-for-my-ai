@@ -4,6 +4,7 @@ type: agent_skill
 title: latex-proposal-compiler
 name: latex-proposal-compiler
 description: Compiles a markdown proposal document into a professionally formatted PDF using Pandoc and XeLaTeX. Contains crucial fixes for TOC generation, double-numbering, and table layout bugs.
+topics: [latex, pandoc, pdf, proposal, document]
 ---
 
 # latex-proposal-compiler
