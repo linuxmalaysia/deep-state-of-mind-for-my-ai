@@ -4,6 +4,7 @@ type: skill
 title: "DSOM Policy Adopter"
 name: "dsom-policy-adopter"
 description: "Automatically ingests an external research paper or policy document (PDF/Markdown) and formally integrates it into the DSOM framework governance and core rules."
+topics: [policy, governance, pdf, ingestion, compliance]
 timestamp: 2026-07-11T23:19:45Z
 ---
 # DSOM Policy Adopter Skill
