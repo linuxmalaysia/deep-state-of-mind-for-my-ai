@@ -3,6 +3,7 @@ okf_version: 0.1
 type: agent_skill
 title: ssh-passwordless-setup
 description: Orchestrates SSH jump configurations for Linux servers.
+topics: [ssh, passwordless, ansible, keys, setup]
 tags: [ssh, auth, linux]
 timestamp: 2026-06-19T14:00:00Z
 ---
