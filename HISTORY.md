@@ -105,6 +105,8 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-18]: **DSOM Token Efficiency Verification.** Executed a local token audit (`uv` + `tiktoken`), mathematically proving a 96% context token reduction via Progressive Disclosure and the Episodic Record. Consolidated findings into `docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md` and linked across the core ledgers.
 - [2026-07-18]: **Token Calculator Skill.** Created `.agents/skills/dsom-token-calculator` utilizing `tiktoken` to allow the AI to programmatically verify token payloads of files and directories prior to ingestion, enforcing Rule 10 (Byte-Capped Executions).
 - [2026-07-18]: **Byte-Capped Execution Framework.** Engineered and integrated the final procedural specifications for `dsom-token-calculator` into `docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`. All ledgers synchronized.
+- [2026-07-19]: **Zero-Global Memory Architecture.** Published `docs/governance/ZERO-GLOBAL-MEMORY.md` as an L2 architectural analysis. Injected a visual Mermaid mapping to formally diagram the Sovereign AI memory retrieval architecture.
+- [2026-07-19]: **Android Termux Extrapolation.** Created `tools/bench_brain.py` and empirically benchmarked Android FUSE latency overhead, formally integrating the ~3.5x multiplier into the architecture ledgers (`DSOM-INGESTION-LATENCY-ARCHITECTURE.md` and `DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`).
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.4.0-governance | Harisfazillah Jamel*

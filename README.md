@@ -11,7 +11,7 @@ timestamp: 2026-07-04T09:40:04Z
 > **"Make AI work for you — not the other way around. Sovereign Intelligence through GitOps, AIOps, and Ansible."**
 
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
-[![Version](https://img.shields.io/badge/Version-10.3.0--bootstrap-blue.svg)]()
+[![Version](https://img.shields.io/badge/Version-10.4.0--governance-blue.svg)]()
 [![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
 [![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
@@ -511,6 +511,9 @@ Once Step 6 is complete, the AI knows:
 | [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimization (GEO) — AI-ready documentation policies |
 | [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) | ⚙️ AI Skill Architecture — Progressive Disclosure & Semantic Routing mechanics |
 | [`docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`](docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md) | 🏗️ Architecture Analysis — Codebase and Structural breakdown of the framework |
+| [`docs/governance/ZERO-GLOBAL-MEMORY.md`](docs/governance/ZERO-GLOBAL-MEMORY.md) | 🧠 Zero-Global Memory — The Sovereign AI Memory Architecture & Cognitive Flow |
+| [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md) | ⚡ Token Efficiency Playbook — Benchmarks proving 96.23% context reduction |
+| [`docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | 🛡️ Byte-Capped Execution — Circuit breaker preventing context flooding |
 | [`docs/governance/AUTOMATION-AUDIT-LIST.md`](docs/governance/AUTOMATION-AUDIT-LIST.md) | 📋 Automation Audit Ledger — Comprehensive index of all execution scripts |
 | [`docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
 | [`docs/governance/NOSS-INTEGRATION-GUIDE.md`](docs/governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
@@ -551,6 +554,7 @@ This framework is provider-agnostic. Tested and configured for:
 - [x] **v10.0.0-palace** — 🏛️ Sovereign Markdown Palace v1.0: spatial memory, `palace-sync`, 8 Rooms backfilled
 - [x] **v10.3.0-bootstrap** — 🚀 DSOM Bootstrapping baseline adoption, governance restructuring, and OKF v0.1 compliance
 - [x] **v10.3.1-skills** — 🛠️ AI Skills Automation: Added 17 Sovereign AI skills including `dsom-project-cloner` and `dsom-bootstrap`
+- [x] **v10.4.0-governance** — 🛡️ Token Efficiency Framework: Byte-capped execution, zero-global memory maps, and Android Termux FUSE benchmarking
 - [ ] **v11.0** — Local LLM support (Ollama) for offline Sovereign AI
 
 ---
@@ -585,7 +589,7 @@ Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for
 
 ---
 
-*Deep State of Mind (DSOM) For My AI Protocol | v10.3.0-bootstrap | 2026-07-04*
+*Deep State of Mind (DSOM) For My AI Protocol | v10.4.0-governance | 2026-07-19*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
 
 
