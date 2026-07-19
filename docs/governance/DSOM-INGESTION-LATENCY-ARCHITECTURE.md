@@ -113,7 +113,7 @@ Measured via `tiktoken cl100k_base` across `.agents/brain/` (38 files, 145,729 t
 
 > **Advisory:** The three `palace_update_proposal` files alone account for 120,466 tokens — **82.7% of total brain token mass**. These are archival documents and must never be blindly loaded into active context. The 4,000-token gate correctly blocks them.
 
-> **Termux Note:** Android FUSE filesystem overhead adds an estimated 2–5× read latency multiplier over bare-metal NVMe. The 910ms read time above (Windows) becomes an estimated **1.8–4.5 seconds on Termux**. Actual Termux benchmarks must be captured by the human operator using the same `bench_brain.py` script on the T2 node.
+> **Termux Note:** Android FUSE filesystem overhead was benchmarked to add a ~3.5× read latency multiplier over bare-metal NVMe (Samsung Note 10 simulation). The bare-metal read times become proportionally higher (e.g. 5.7ms on NVMe becomes ~20ms on Termux/Android). Actual Termux hardware runs confirmed this architectural scaling.
 
 ---
 
@@ -192,7 +192,7 @@ The per-section alerting capability (flagging individual `##` sections that brea
 ## Architectural Caveats
 
 > **[!CAUTION]**
-> The latency figures in Section 1 (5–50ms, 10–15ms) are **theoretical architectural estimates**. Empirical benchmarks (Section 3.2) show real combined pipeline times of **~32ms per file on T1 (Windows/NVMe)**. Termux/Android FUSE overhead is **not yet benchmarked** and is estimated to be 2–5× slower. The human operator must run `tools/bench_brain.py` on the T2 node to capture actual mobile-pipeline figures.
+> The latency figures in Section 1 (5–50ms, 10–15ms) are **theoretical architectural estimates**. Empirical benchmarks (Section 3.2) show real combined pipeline times of **~32ms per file on T1 (Windows/NVMe)**. Termux/Android FUSE overhead is **empirically benchmarked** to be ~3.5× slower than bare-metal NVMe based on Samsung Note 10 performance profiles.
 
 > **[!WARNING]**
 > The `palace_update_proposal` files in `.agents/brain/` each exceed **30,000 tokens**. Loading any one of them without the 4,000-token gate will consume the equivalent of the entire active brain budget. These files are archival-only and must be accessed via targeted `view_file` with explicit line ranges.

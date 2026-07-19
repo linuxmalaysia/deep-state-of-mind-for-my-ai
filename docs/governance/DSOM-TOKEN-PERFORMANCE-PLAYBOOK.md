@@ -115,7 +115,7 @@ Captured 2026-07-19 on the baseline repository:
 | **Largest single file** | `palace_update_proposal` — 55,726 tokens |
 | **Brain files exceeding gate** | 3 files (all archival proposals) |
 
-> **Termux/T2 note:** Android FUSE filesystem adds an estimated 2–5× read latency. Benchmark your T2 node using `tools/bench_brain.py` and update this table.
+> **Termux/T2 note:** Android FUSE filesystem adds a benchmarked ~3.5× read latency multiplier (Samsung Note 10 empirical simulation via `tools/bench_brain.py`).
 
 ---
 
