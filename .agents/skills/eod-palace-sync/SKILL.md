@@ -3,6 +3,7 @@ okf_version: 0.1
 type: agent_skill
 title: eod-palace-sync
 description: The Hibernation (End of Day) ritual to externalize memory into the Palace and push to Git.
+topics: [eod, palace, sync, git, ritual]
 timestamp: 2026-06-19T14:00:00Z
 ---
 
