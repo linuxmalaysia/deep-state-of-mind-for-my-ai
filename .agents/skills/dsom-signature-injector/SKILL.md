@@ -4,6 +4,7 @@ type: skill
 title: "Universal Sovereign Signature Injector"
 name: "dsom-signature-injector"
 description: "Automatically injects the standard DSOM ownership, timestamp, and GPL v3.0 license signature into Markdown files and executable scripts based on the file's last modified date."
+topics: [signature, license, gpl, okf, markdown]
 timestamp: 2026-07-12T07:08:35Z
 ---
 # DSOM Signature Injector
