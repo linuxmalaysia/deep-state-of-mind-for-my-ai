@@ -25,8 +25,10 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Ritual of Transition](docs/RITUAL-OF-TRANSITION.md): Context-handover strategies.
 - [GitOps Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Defense-in-depth, history sanitization, and infrastructure as code.
 - [Python & UV Environment Guide](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md): Mandatory use of `uv` to ensure isolated execution environments.
+- [DSOM Token Performance Playbook](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md): L1 master playbook — embed into all new DSOM projects for 96.23% token reduction. Covers tools, rules, benchmarks, and bootstrap procedures.
 - [DSOM Token Efficiency Report](docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md): Mathematical audit proving a 96% token reduction via Progressive Disclosure.
 - [Byte-Capped Execution Framework](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md): Procedural automation deploying `tiktoken` to programmatically intercept massive text payloads and block runaway context inflation.
+- [DSOM Ingestion Latency Architecture](docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md): L2 analysis with empirical benchmarks comparing local OKF reads vs. remote RAG/vector latency. Covers active context manifest pattern and anti-patterns.
 
 ## Agent Skills & Multi-Agent
 - [Multi-Agent Protocols](docs/governance/MULTI-AGENT-PROTOCOLS.md): Governs safe deployment of Subagent Swarms via Git Worktree Isolation.
@@ -38,6 +40,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [GitOps/AIOps/Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Doctrine for integrating AI planning with Defensive GitOps.
 - [Generative Engine Optimization](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md): Policy for ensuring documentation is machine-readable.
 - [LLM Wiki Adoption](docs/governance/LLM-WIKI-ADOPTION.md): Defines the Sovereign Knowledge framework.
+- [Active Context Manifest](.agents/brain/active_context_manifest.md): OKF manifest declaring active session files — replaces symlink pattern for cross-platform portability.
 
 ## Model Specifics
 - [HOWTO: Create DSOM Gemini Gem](docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md): Step-by-step guide to configuring a permanent DSOM Cognitive Twin inside the Google Gemini interface.

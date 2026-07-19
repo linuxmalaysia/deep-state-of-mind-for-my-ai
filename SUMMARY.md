@@ -24,6 +24,7 @@
 * [📈 DSOM Token Efficiency Report](docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md)
 * [⚙️ Byte-Capped Execution Framework](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md)
 * [⚡ DSOM Ingestion Latency Architecture](docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md)
+* [🎯 DSOM Token Performance Playbook](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
 * [🧠 LLM WIKI Adoption Strategy](docs/governance/LLM-WIKI-ADOPTION.md)
 * [⚡ DSOM Efficiency Protocols](docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md)
 
