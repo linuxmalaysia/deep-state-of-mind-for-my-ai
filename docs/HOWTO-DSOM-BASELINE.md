@@ -4,6 +4,7 @@ type: document
 category: blueprint
 title: "DSOM Bootstrapping Guide"
 description: "Agent-readable instructions for porting the DSOM architecture from the baseline repository to a new or existing workspace."
+topics: [bootstrap, onboarding, baseline, dsom, setup]
 ---
 
 # DSOM Bootstrapping Guide (Agent-Readable)
@@ -61,6 +62,35 @@ If this is an existing project, you must adopt and merge gracefully to avoid des
 After executing the relevant path (New or Existing):
 - Run `.\tools\diagnostic.ps1` (or `.sh`) to verify the workspace health.
 - Inform the user that the DSOM framework has been successfully bootstrapped.
+
+## 7. Token Performance Verification (Mandatory)
+
+After bootstrapping, every new DSOM project must verify its token health baseline. This prevents context window collapse as the project grows.
+
+**Step 7a — Skill token audit:**
+```bash
+uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
+```
+Expected: all files `[OK]`, zero `[BLOCKED]`.
+
+**Step 7b — Verify all skills have `topics:` tags:**
+```powershell
+Get-ChildItem -Recurse -Path ".agents/skills" -Filter "SKILL.md" | ForEach-Object {
+    $content = Get-Content $_.FullName -Raw
+    $hasTopics = $content -match "(?m)^topics:"
+    [PSCustomObject]@{ Skill = $_.Directory.Name; Topics = if($hasTopics){"YES"}else{"MISSING"} }
+} | Format-Table -AutoSize
+```
+All must return `YES`. If any return `MISSING`, the OKF Import Mandate (Rule 6) has been violated.
+
+**Step 7c — Initialise active context manifest:**
+Edit `.agents/brain/active_context_manifest.md` to declare your project's active session files and explicitly exclude any archival brain files exceeding 4,000 tokens.
+
+**Reference:** [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-19*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
 
 
 ---
