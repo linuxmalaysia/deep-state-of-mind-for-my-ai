@@ -4,6 +4,7 @@ type: agent_skill
 title: proposal-docx-formatter
 name: proposal-docx-formatter
 description: >
+topics: [docx, proposal, word, document, formatter]
   Compiles a markdown proposal document into a professionally formatted DOCX file
   using standard corporate document templates (Times New Roman, A4 page, grey-header tables,
   0.5pt borders, proper heading hierarchy). Use when the user asks to compile, generate,
