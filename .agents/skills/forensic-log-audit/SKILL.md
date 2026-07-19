@@ -3,6 +3,7 @@ okf_version: 0.1
 type: agent_skill
 title: forensic-log-audit
 description: Scrapes raw JSONL transcripts to recover exact commands from historical conversations.
+topics: [audit, logs, forensic, security, analysis]
 tags: [audit, logs, jsonl]
 timestamp: 2026-06-19T14:00:00Z
 ---
