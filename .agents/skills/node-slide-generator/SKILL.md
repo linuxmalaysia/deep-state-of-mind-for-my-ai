@@ -4,6 +4,7 @@ type: agent_skill
 title: node-slide-generator
 name: node-slide-generator
 description: Generates a PowerPoint presentation from a markdown outline using Node.js and pptxgenjs.
+topics: [node, pptx, slides, presentation, generator]
 ---
 
 # node-slide-generator
