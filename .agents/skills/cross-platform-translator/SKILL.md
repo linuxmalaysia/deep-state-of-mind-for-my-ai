@@ -1,6 +1,7 @@
 ---
 name: cross-platform-translator
 description: Analyzes a Windows PowerShell (.ps1) or Linux Bash (.sh) script and automatically generates its functional equivalent in the other shell language, enforcing the Cross-Platform Mandate.
+topics: [bash, powershell, cross-platform, translation, scripting]
 okf_version: 0.1
 ---
 
