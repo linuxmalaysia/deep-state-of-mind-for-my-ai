@@ -1,6 +1,7 @@
 ---
 name: palace-auditor
 description: A diagnostic skill that crawls the workspace to verify index.md links, identify undocumented scripts in tools/, and propose structural cleanups to maintain the Sovereign Memory Palace.
+topics: [palace, audit, brain, index, cleanup]
 okf_version: 0.1
 ---
 
