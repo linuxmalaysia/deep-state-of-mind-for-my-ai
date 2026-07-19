@@ -4,6 +4,7 @@ type: agent_skill
 title: node-proposal-formatter
 name: node-proposal-formatter
 description: Compiles a markdown proposal document into a professionally formatted DOCX file using Node.js and the docx npm package.
+topics: [node, docx, proposal, document, formatter]
 ---
 
 # node-proposal-formatter
