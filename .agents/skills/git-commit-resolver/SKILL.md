@@ -1,6 +1,7 @@
 ---
 name: git-commit-resolver
 description: Automatically resolves invalid or orphaned Git commit IDs referenced in the Agent Brain by searching the Git history for the matching commit message.
+topics: [git, commit, history, brain, resolver]
 okf_version: 0.1
 ---
 
