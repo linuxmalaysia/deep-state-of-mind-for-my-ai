@@ -4,6 +4,7 @@ type: agent_skill
 title: odp-slide-generator
 name: odp-slide-generator
 description: Generates highly styled 3-column Corporate Presentation slides (PPTX/ODP format) based on a specific HTML/CSS theme using python-pptx.
+topics: [presentation, pptx, odp, python-pptx, slides]
 ---
 
 # odp-slide-generator
