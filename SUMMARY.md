@@ -10,6 +10,7 @@
 
 ## 🏛️ 1. Sovereign Governance
 
+* [🤖 AI Initialization Sequence](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
 * [👑 Operational Sovereignty Manifesto](docs/governance/OPERATIONAL-SOVEREIGNTY.md)
 * [📜 AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md)
 * [🔄 GitOps · AIOps · Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
