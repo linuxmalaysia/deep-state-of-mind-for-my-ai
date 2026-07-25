@@ -26,6 +26,10 @@ To prevent **Context Decay** at scale, DSOM uses a **Spatial Markdown Palace** h
 
 **OKF Compliance Mandate:** All architectural `closet.md` files must be **Open Knowledge Format (OKF) v0.1 compliant**, containing strict YAML frontmatter (type, title, description) to allow programmatic AI indexing.
 
+### 🔍 Law of Knowledge-First Discovery
+
+Before taking physical action, the AI must unconditionally query local `.agents/brain/` and `docs/` artifacts using OKF metadata (Rule 20 & 21). Attempting remote terminal execution or probing APIs before verifying the local knowledge base is strictly prohibited. Context is always preserved locally first.
+
 ### 🛠️ Law of Self-Healing Skills
 
 Automated scripts can break or go missing. To ensure absolute operational sovereignty, the AI MUST rely on `.agents/skills/`. Each skill (e.g., `sod-palace-sync`) is an OKF-compliant markdown file (`SKILL.md`) that embeds its own recovery logic and scripts. The AI must be able to self-heal its environment using these embedded instructions.

@@ -1,4 +1,4 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
 title: "OKF-Based AI Agent Mind Optimization"
@@ -29,7 +29,9 @@ To prevent context crowding during complex multi-agent workflows, all OKF bundle
 To achieve zero-cost context prediction, every L1 and L2 concept file **MUST** append a highly structured SOURCES block to the bottom of its Markdown body. Each entry must pair a standard Markdown link with a mandatory, single-line description of the target file's contents (e.g., [market-position.md](file:///path) -> Competitor mapping supporting Section 2). This allows agents to evaluate relevance without executing a filesystem read.
 
 ## 4. YAML Metadata Semantic Routing
-The YAML frontmatter serves as the exact metadata anchor required for high-dimensional vector semantic routing. Autonomous control planes use the description and 	ype fields to calculate cosine similarity against a user's prompt, dynamically routing tasks to specific files, tools, or specialized agents. 
+The YAML frontmatter serves as the exact metadata anchor required for high-dimensional vector semantic routing. Autonomous control planes use the description and `type` fields to calculate cosine similarity against a user's prompt, dynamically routing tasks to specific files, tools, or specialized agents. 
+
+Furthermore, this frontmatter is the absolute prerequisite for the **Knowledge-First Discovery Protocol**. By mandating that agents `grep_search` the `topics:` and verify the `timestamp:` metadata, the AI achieves localized contextual awareness without executing expensive and potentially destructive remote terminal commands.
 
 ## 5. The Codification of Procedural Memory
 Procedural memory dictates *how* an agent should behave. Within the DSOM framework, this is codified in the AGENTS.md and SKILL.md specifications using the following strict constraints:

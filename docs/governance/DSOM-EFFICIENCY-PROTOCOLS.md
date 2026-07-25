@@ -26,6 +26,7 @@ We implemented mechanisms to ensure that the AI only loads the exact bytes of da
 
 * **Semantic Skill Routing (Rule 12):** AI Agent skills (`SKILL.md`) are discovered *exclusively* via their OKF YAML Frontmatter (`name` and `description`). The AI initially loads only this lightweight metadata. It fetches the full 300-line `SKILL.md` payload *only* at the exact moment of execution. This prevents massive token bloat.
 * **The Artifact Pyramid (Rule 9):** Knowledge is stratified conceptually into L1 (Synthesis), L2 (Analysis), and L3 (Raw). L1/L2 documents contain a `SOURCES` block pairing Markdown links with single-line semantic descriptions. The AI can predict if a file is relevant just by reading a single line, saving thousands of tokens of unnecessary reading.
+* **Local Knowledge-First Discovery (Rule 20 & 21):** Before issuing exploratory terminal commands (which risk context-flooding via huge output logs), the AI must leverage `grep_search` on local OKF frontmatter (`topics:`). This mechanism prevents wasting thousands of tokens on blind terminal probes when the answer is already documented in the Palace.
 
 ## 3. Operational Token Efficiency Limits
 We codified strict constraints on how the AI interacts with the terminal and generates code to prevent accidental context flooding.
