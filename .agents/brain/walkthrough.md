@@ -24,6 +24,8 @@
 - **AI Initialization Sequence:** Published `AI-INITIALIZATION-SEQUENCE.md` to map the mechanical boot process and linked it in `README.md` and GitBook.
 - **Executor Modularity & WSL2 Bridge:** Redefined the Third Pillar in `GITOPS-AIOPS-ANSIBLE-STRATEGY.md` and `README.md` to be execution-modular (`ansible-playbook`, `uv run`, `npm run`, `pandoc`). Enshrined the "Ansible Legacy" philosophy and mandated WSL2 as the local Control Node for Windows setups. Rule 22 was permanently codified via `/learn`.
 - **Triple-Ledger Sync Complete:** Synchronized all recent additions in `README.md`, `CHANGELOG.md`, and `HISTORY.md` and committed atomically.
+- **Structurally Embedded Boot & Discovery Protocols:** Performed a secondary `/learn` to inject the exact 5-step Mechanical Boot Sequence and the 5-step Knowledge-First Discovery Flow directly into `AGENTS.md` under the new **Cognitive Engine Protocols** section. The AI is now mechanically forced to execute these procedural loops. (Commit `578a511`).
+- **Omni-Documentation Sync Mandate:** Upgraded **Rule 14** via `/learn` to close the navigation blindspot. The AI is now mandated to sync all new documents across four layers: `SUMMARY.md`, `mkdocs.yml`, `START-HERE.md`, and `llms.txt`. (Commit `81122f0` and `d79bbc6`).
 
 ### Why
 - To prevent unnecessary terminal probing when answers reside in local memory, optimizing token and temporal constraints.
