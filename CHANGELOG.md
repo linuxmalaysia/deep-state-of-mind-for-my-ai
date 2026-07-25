@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Knowledge-First Protocol Embedded as Entry Point:** Elevated the Knowledge-First Discovery Protocol to the 11th Entry Point in `START-HERE.md` and explicitly mandated its inclusion in `docs/HOWTO-CLONE-DSOM-PROJECT.md` to ensure it operates as the baseline cognitive engine for all new DSOM clones.
 - **Temporal Knowledge Verification (Rule 21):** Established a mandate requiring AI agents to check OKF document timestamps. If deemed stale, the AI must cross-reference external sources, compare findings, and await human verification before executing or modifying knowledge.
 - **Local Knowledge-First Protocol (Rule 20):** Mandated that the AI must perform OKF frontmatter search via `grep_search` on `.agents/brain/` and `docs/` before issuing exploratory terminal commands, formalizing context preservation prior to node execution.
 - **Token Efficiency & Byte-Capped Execution:** Engineered the `dsom-token-calculator` AI skill and documented proofs showing DSOM Progressive Disclosure saves 96% of context tokens.

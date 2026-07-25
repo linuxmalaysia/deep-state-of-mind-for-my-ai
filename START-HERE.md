@@ -139,5 +139,14 @@ The following operational skills have been standardized under the DSOM framework
 * [`.agents/brain/active_context_manifest.md`](.agents/brain/active_context_manifest.md) — Active session file manifest
 
 ---
+
+## 11. The Discovery Entry Point (Knowledge-First Protocol)
+*If you are an AI agent or human operator attempting to execute an exploratory terminal command or probe external nodes.*
+
+**Read This First:** [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
+
+**Why it matters:** This protocol powers the "real engine" of DSOM's cognitive awareness. It mandates that every AI agent must execute a local OKF metadata search (`grep_search` on `topics:` and `description:`) in `.agents/brain/` and `docs/`, and verify timestamps before issuing remote terminal commands. This preserves context, saves tokens, and prevents destructive overwrites.
+
+---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-19*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

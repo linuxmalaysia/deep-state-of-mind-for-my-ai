@@ -37,6 +37,7 @@ This is the most critical step. This repository contains custom AI skills (e.g.,
 The AI needs its theoretical blueprints to self-heal and understand the protocol.
 - **Copy:** `docs/agent-configs/` (Contains the `SOVEREIGN-PERSONA-TEMPLATE.md` for identity setup).
 - **Copy:** `docs/governance/` (Contains OKF specifications and structural protocols).
+  - *Critical Inclusion:* Ensure `docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md` is preserved. This protocol acts as the foundational cognitive engine for how the AI interacts with the system.
 - **Copy:** `docs/AI-AGENT-SKILLS-GUIDE.md` (The ledger of all active skills).
 - **Copy:** `docs/HOWTO-*.md` (All instructional manuals, including this one).
 
