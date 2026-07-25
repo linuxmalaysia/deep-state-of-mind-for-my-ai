@@ -69,6 +69,8 @@ While **Ansible** is the default Executor for infrastructure projects, the Third
 - **Web Development:** `npm run` / `node`
 - **Documentation:** `pandoc` / `latex`
 
+> **The Ansible Legacy:** While the Executor is modular, DSOM is fundamentally rooted in IT Operations. *Ansible is woven into the DNA of this framework.* The governance ledgers (such as `GITOPS-AIOPS-ANSIBLE-STRATEGY.md`) intentionally retain Ansible as their namesake because it represents the ultimate standard of idempotency, declarative state, and absolute control. Even when executing `uv` or `node`, the Third Pillar operates entirely on the philosophical foundation of Ansible.
+
 **The Windows WSL2 Bridge:** For projects running purely on Windows 11 without a dedicated Linux jumphost, **WSL2 (Ubuntu/AlmaLinux)** must be configured as your local Control Node. This "Execution Bridge" ensures humans and AI agents can seamlessly leverage standard Linux tooling (Ansible, Make, Bash) natively within the Windows environment without architectural friction.
 
 ---
