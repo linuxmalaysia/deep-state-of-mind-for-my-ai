@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Temporal Knowledge Verification (Rule 21):** Established a mandate requiring AI agents to check OKF document timestamps. If deemed stale, the AI must cross-reference external sources, compare findings, and await human verification before executing or modifying knowledge.
 - **Local Knowledge-First Protocol (Rule 20):** Mandated that the AI must perform OKF frontmatter search via `grep_search` on `.agents/brain/` and `docs/` before issuing exploratory terminal commands, formalizing context preservation prior to node execution.
 - **Token Efficiency & Byte-Capped Execution:** Engineered the `dsom-token-calculator` AI skill and documented proofs showing DSOM Progressive Disclosure saves 96% of context tokens.
 - **Android Termux Extrapolation:** Benchmarked Android FUSE latency directly (`tools/bench_brain.py`) to map expected mobile pipelines.

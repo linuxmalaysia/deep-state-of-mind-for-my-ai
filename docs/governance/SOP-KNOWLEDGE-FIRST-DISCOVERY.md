@@ -14,7 +14,7 @@ To prevent unnecessary exploratory terminal commands, token window exhaustion, a
 
 ---
 
-## 2. Standard Operating Procedure (4-Step Discovery Flow)
+## 2. Standard Operating Procedure (5-Step Discovery Flow)
 
 ```
 [ Step 1: User Request ]
@@ -26,7 +26,10 @@ To prevent unnecessary exploratory terminal commands, token window exhaustion, a
 [ Step 3: Local Context Inspection ] ──▶ view_file line ranges on targeted .md files
          │
          ▼
-[ Step 4: Terminal Execution ] (ONLY if live runtime state or deployment change is needed)
+[ Step 4: Temporal Verification Gate ] ──▶ Check OKF timestamp. If old, research & prompt human for decision.
+         │
+         ▼
+[ Step 5: Terminal Execution ] (ONLY if live runtime state or deployment change is needed)
 ```
 
 ### Step 1: Local Frontmatter & Metadata Search (`grep_search`)
@@ -41,7 +44,17 @@ Before issuing any exploratory terminal command (e.g. `uv run`, `powershell`, `b
 Once the relevant document is located via OKF frontmatter:
 - Read specific line ranges using `view_file` to preserve token efficiency (Rule 10).
 
-### Step 3: Terminal Execution Gate
+### Step 3: Temporal Verification Gate
+The AI must check the OKF `timestamp` of the referenced document.
+- If the timestamp indicates the information may be contextually outdated:
+  1. The AI will optionally search external sources to find the latest standards/practices.
+  2. The AI will present a comparison of the local knowledge vs. the new findings to the human operator.
+  3. The human must explicitly verify whether to update the local document, create a new one, or ignore the findings before the AI proceeds.
+
+### Step 4: Human Verification & Knowledge Update
+- Based on the human's decision in Step 3, the AI will perform the necessary OKF-compliant document updates before executing any infrastructure changes.
+
+### Step 5: Terminal Execution Gate
 Terminal commands against the T1 Operator Node or T2 Control Node are authorized **ONLY** when:
 - Applying code/configuration updates to production.
 - Fetching live runtime data or logs that cannot be answered by local documentation.
@@ -52,6 +65,7 @@ Terminal commands against the T1 Operator Node or T2 Control Node are authorized
 - **Rule 6 (OKF Topics)**: All `.md` files must open on line 1 with `---` and contain `topics: [3-5 keywords]`.
 - **Rule 12 (Metadata-First Discovery)**: Always query `topics:` and `description:` metadata before reading full file bodies.
 - **Rule 20 (Local Knowledge-First Mandate)**: Search `.agents/brain/` and `docs/` locally before terminal execution.
+- **Rule 21 (Temporal Knowledge Verification Mandate)**: Verify OKF timestamps and consult the human operator if the local knowledge is contextually outdated.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-26*
