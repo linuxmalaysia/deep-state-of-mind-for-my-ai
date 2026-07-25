@@ -42,25 +42,34 @@ Every project built on this skeleton operates under **three non-negotiable pilla
 │                DSOM OPERATING MODEL                 │
 │                                                     │
 │  ┌──────────┐   ┌──────────┐   ┌─────────────────┐ │
-│  │  AIOps   │──▶│  GitOps  │──▶│    Ansible      │ │
-│  │  (Mind)  │   │ (Record) │   │ (Hand/Executor) │ │
+│  │  AIOps   │──▶│  GitOps  │──▶│  The Executor   │ │
+│  │  (Mind)  │   │ (Record) │   │     (Hand)      │ │
 │  └──────────┘   └──────────┘   └─────────────────┘ │
 │       │               │                 │           │
-│  AI proposes    Git records       Ansible runs      │
-│  & analyses     all state         on target nodes   │
+│  AI proposes    Git records     Executor runs       │
+│  & analyses     all state       on target nodes     │
 │       ▲               │                 │           │
 │       └───────────────┴─── AI verifies ─┘           │
 └─────────────────────────────────────────────────────┘
 ```
 
 **The core loop:**
-> **AI Proposes → Git Records → Ansible Executes → AI Verifies**
+> **AI Proposes → Git Records → Executor Runs → AI Verifies**
 
 ### The Three Hard Rules
 
-1. **AI never runs commands directly on remote nodes.** It writes Ansible playbooks. You run them.
+1. **AI never runs commands directly on remote nodes.** It writes execution scripts/playbooks. You run them.
 2. **No manual edits to production servers.** If it's not committed to Git, it doesn't exist.
-3. **Every playbook is idempotent.** Safe to re-run at any time.
+3. **Every execution is idempotent.** Safe to re-run at any time.
+
+### 🔌 Execution Modularity & The Windows WSL2 Bridge
+While **Ansible** is the default Executor for infrastructure projects, the Third Pillar is fully modular based on your project domain:
+- **Infrastructure:** `ansible-playbook`
+- **Data Science / Python:** `uv run`
+- **Web Development:** `npm run` / `node`
+- **Documentation:** `pandoc` / `latex`
+
+**The Windows WSL2 Bridge:** For projects running purely on Windows 11 without a dedicated Linux jumphost, **WSL2 (Ubuntu/AlmaLinux)** must be configured as your local Control Node. This "Execution Bridge" ensures humans and AI agents can seamlessly leverage standard Linux tooling (Ansible, Make, Bash) natively within the Windows environment without architectural friction.
 
 ---
 

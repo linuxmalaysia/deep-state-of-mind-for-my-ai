@@ -25,12 +25,12 @@ This document defines the **strategic doctrine** for the three operational pilla
 |                   DSOM OPERATING MODEL                       |
 |                                                              |
 |  +----------+   +----------+   +------------------+         |
-|  |  AIOps   |-->|  GitOps  |-->|     Ansible      |         |
-|  |  (Mind)  |   | (Record) |   |  (Executor/Hand) |         |
+|  |  AIOps   |-->|  GitOps  |-->|   The Executor   |         |
+|  |  (Mind)  |   | (Record) |   |      (Hand)      |         |
 |  +----------+   +----------+   +------------------+         |
 |       |              |                  |                    |
-|   AI proposes   Git records        Ansible runs             |
-|   & analyses    all state          on target nodes          |
+|   AI proposes   Git records       Executor runs             |
+|   & analyses    all state         on target nodes          |
 |       ^              |                  |                    |
 |       +--------------+--- AI verifies --+                    |
 |                                                              |
@@ -45,9 +45,9 @@ This document defines the **strategic doctrine** for the three operational pilla
 
 **The Integration Loop:**
 
-1. **AI Proposes** — AI (Cognitive Twin) analyses logs, generates playbooks, and recommends next action.
-2. **Git Records** — Human commits the proposed playbook/config to the repository.
-3. **Ansible Executes** — Human triggers the Ansible playbook against target nodes.
+1. **AI Proposes** — AI (Cognitive Twin) analyses logs, generates playbooks/scripts, and recommends next action.
+2. **Git Records** — Human commits the proposed script/config to the repository.
+3. **Executor Runs** — Human triggers the execution (e.g. Ansible, `uv`, `node`) against target nodes.
 4. **AI Verifies** — Human pastes output back to AI; AI analyses results and confirms success or recommends remediation.
 5. **Palace Remembers** — EOD palace-sync captures spatial knowledge; SOD manifest includes Palace Registry so AI walks it on wake-up.
 
@@ -150,13 +150,25 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 ---
 
-## ⚙️ 4. Ansible Pillar
+## ⚙️ 4. The Executor Pillar (Ansible / uv / Node)
 
-### 4.1 Role Definition
+### 4.1 Execution Modularity
+While DSOM was originally forged for heavy infrastructure automation using **Ansible**, the actual mechanics of the Third Pillar (The Hand) apply to *any* project type. The Executor is fully modular:
+- **Infrastructure:** `ansible-playbook` (OS-level operations)
+- **Data Science / Python:** `uv run` (Isolated Python execution)
+- **Web Development:** `npm run` / `node` (JS execution)
+- **Documentation:** `pandoc` / `latex` (Compilation)
 
-Ansible is the **exclusive remote control** for all OS-level operations. No other mechanism (ad-hoc SSH, manual scripts, cloud console) is permitted for infrastructure changes on target nodes.
+Regardless of the tool, the Executor acts as the **exclusive mechanism** for altering state. No manual edits or ad-hoc tinkering are permitted outside the execution scripts.
 
-### 4.2 Ansible Laws
+### 4.2 The Windows WSL2 Bridge (Control Node)
+For projects operating on Windows 11 without a dedicated Linux jumphost, **WSL2 (Ubuntu or AlmaLinux)** must be configured as the local Control Node.
+- This "Execution Bridge" ensures that humans and AI agents can seamlessly leverage standard Linux tooling (Ansible, Make, Bash) natively within the Windows environment.
+- It removes architectural friction, allowing DSOM to be applied universally across OS environments without requiring external VMs.
+
+### 4.3 Ansible Laws (If Applicable)
+
+If your project is utilizing Ansible as the Executor, the following laws apply:
 
 1. **Idempotency Law**: Every playbook MUST be safe to re-run multiple times with the same result. No playbook may cause data corruption on repeated execution.
 2. **No Hardcoded Secrets**: All credentials are managed via `ansible-vault`. Never commit plaintext passwords or API keys.
