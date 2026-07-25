@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-
+- **Local Knowledge-First Protocol (Rule 20):** Mandated that the AI must perform OKF frontmatter search via `grep_search` on `.agents/brain/` and `docs/` before issuing exploratory terminal commands, formalizing context preservation prior to node execution.
 - **Token Efficiency & Byte-Capped Execution:** Engineered the `dsom-token-calculator` AI skill and documented proofs showing DSOM Progressive Disclosure saves 96% of context tokens.
 - **Android Termux Extrapolation:** Benchmarked Android FUSE latency directly (`tools/bench_brain.py`) to map expected mobile pipelines.
 - **Cognitive Flow Map:** Injected a visual Mermaid mapping into `ZERO-GLOBAL-MEMORY.md` to diagram Sovereign AI memory retrieval.

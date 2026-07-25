@@ -28,6 +28,7 @@
 * [🧠 Zero-Global Memory Architecture](docs/governance/ZERO-GLOBAL-MEMORY.md)
 * [🧠 LLM WIKI Adoption Strategy](docs/governance/LLM-WIKI-ADOPTION.md)
 * [⚡ DSOM Efficiency Protocols](docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md)
+* [📚 SOP: Knowledge-First Discovery](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 
 ## 🌅 2. Operational Rituals
 
