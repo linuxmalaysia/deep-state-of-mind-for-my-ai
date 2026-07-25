@@ -145,8 +145,17 @@ The following operational skills have been standardized under the DSOM framework
 
 **Read This First:** [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 
-**Why it matters:** This protocol powers the "real engine" of DSOM's cognitive awareness. It mandates that every AI agent must execute a local OKF metadata search (`grep_search` on `topics:` and `description:`) in `.agents/brain/` and `docs/`, and verify timestamps before issuing remote terminal commands. This preserves context, saves tokens, and prevents destructive overwrites.
+**Why it matters:** This protocol powers the "real engine" of DSOM's cognitive awareness. It mandates that every AI agent must execute a strict **5-step Local Knowledge-First Discovery Flow** (Search OKF -> Target Read -> Verify Timestamp -> Consult Human -> Execute). This ensures any project adopting DSOM natively executes this loop to preserve context and save tokens without having to be reminded.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-19*
+
+## 12. The Initialization Entry Point (Mechanical Boot Sequence)
+*If you need to understand how the AI's cognitive engine boots up, reanimates, and establishes its laws before the first prompt is processed.*
+
+**Read This First:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
+
+**Why it matters:** It defines the exact **5-step Mechanical Boot Sequence** that forces the AI to natively ingest its persona, core rules (including the discovery loops), spatial memory, and onboarding map in a strict order. This guarantees that when a new project adopts DSOM, the AI automatically inherits and executes its governance loops upon initialization.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-26*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
