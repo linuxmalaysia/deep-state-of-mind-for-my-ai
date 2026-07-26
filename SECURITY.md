@@ -1,21 +1,77 @@
+---
+okf_version: 0.1
+type: documentation
+title: "Security Policy — Deep State of Mind (DSOM)"
+description: "Security policy for the DSOM framework, covering supported versions and vulnerability reporting procedures."
+resource: "file:///SECURITY.md"
+timestamp: 2026-07-27T04:03:00Z
+topics: [security, policy, vulnerability, governance]
+---
 # Security Policy
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+The **Deep State of Mind (DSOM) For My AI** framework follows a governance-tagged versioning scheme. Only the current active release branch receives security and governance updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version Series | Supported |
+|:---|:---:|
+| `v10.x.x-governance` (current) | ✅ |
+| `v9.x.x-governance` | ❌ |
+| `v8.x.x` and earlier | ❌ |
+
+> **Note:** DSOM is a governance and metacognitive framework, not a compiled application. "Security" in this context covers:
+> - Sensitive data (credentials, IPs, tokens) accidentally committed to Git history.
+> - Rogue or untrusted scripts introduced into `.agents/skills/` or `tools/`.
+> - Insecure Ansible playbook patterns exposing remote node credentials.
+> - Violations of the Zero-Trust and Privacy Guardian protocols.
+
+---
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security issue — including sensitive data in the repository, a vulnerable workflow, or a broken privacy control — please report it responsibly by following this procedure:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+### 1. Private Disclosure (Preferred)
+Do **not** open a public GitHub Issue for security vulnerabilities. Instead:
+- Use **[GitHub Private Security Advisories](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/security/advisories/new)** to report the issue privately.
+- Alternatively, contact the maintainer directly via the email listed on the [GitHub profile](https://github.com/linuxmalaysia).
+
+### 2. What to Include
+Provide as much detail as possible:
+- A clear description of the vulnerability and its potential impact.
+- Steps to reproduce or a proof-of-concept.
+- Relevant file paths, commit hashes, or line numbers.
+- Your suggested remediation (if any).
+
+### 3. Response Timeline
+| Stage | Target Timeframe |
+|:---|:---|
+| Acknowledgement of report | Within **72 hours** |
+| Initial assessment & triage | Within **7 days** |
+| Remediation (patch/scrub) | Within **14 days** (severity-dependent) |
+| Public disclosure (if applicable) | After remediation is merged and pushed |
+
+### 4. DSOM-Specific Remediation Tools
+The following built-in DSOM tools are available for security remediation:
+
+| Tool | Purpose |
+|:---|:---|
+| `tools/privacy-guardian.ps1` / `.sh` | Scans active context manifests for credentials, IPs, and tokens before any external sync. |
+| `tools/audit-pre-flight.ps1` / `.sh` | Validates repository state and OKF compliance before bulk operations. |
+| `.agents/skills/git-history-scrubber/` | Purges sensitive data from Git history using `git-filter-repo`; handles force-push protocols. |
+| `.agents/skills/forensic-log-audit/` | Audits system and application logs for anomalies and failed authentications. |
+
+---
+
+## Scope
+
+This security policy applies to:
+- All files in this repository under the DSOM framework.
+- All scripts in `tools/` and skills in `.agents/skills/`.
+- All brain files in `.agents/brain/` (which may contain session context and node references).
+- All GitHub Actions workflows in `.github/workflows/`.
+
+---
+
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
