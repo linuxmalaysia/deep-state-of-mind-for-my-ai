@@ -100,8 +100,8 @@ jobs:
         id: crda-scan
         uses: redhat-actions/crda@v1
         with:
-          crda_key: ${{ secrets.CRDA_KEY }}
-          # snyk_token: ${{ secrets.SNYK_TOKEN }}   # Alternative to CRDA_KEY
+          # crda_key: ${{ secrets.CRDA_KEY }}       # Alternative to SNYK_TOKEN
+          snyk_token: ${{ secrets.SNYK_TOKEN }}
           manifest_file: requirements.txt
           upload_artifact: ${{ github.event.inputs.upload_artifact || 'true' }}
           fail_on: "warning"                         # Fail on warning or higher severity
