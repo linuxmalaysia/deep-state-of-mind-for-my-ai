@@ -1,35 +1,35 @@
 # ==============================================================================
 # Protocol    : Deep State of Mind (DSOM) For My AI
-# Workflow    : CRDA Dependency Security Scan
+# Workflow    : Snyk Python Dependency Security Scan
 # Author      : Harisfazillah Jamel (LinuxMalaysia)
 # Timestamp   : 2026-07-27
 # License     : GNU General Public License v3.0
 # ==============================================================================
 #
-# Red Hat CodeReady Dependency Analytics (CRDA) — Security Scan
+# Snyk — Open Source Dependency Vulnerability Scan (Python)
+#
+# Replaces the deprecated Red Hat CRDA workflow (gw.api.openshift.io is offline).
 #
 # Scans are triggered:
-#   1. On every push to the main branch
+#   1. On every push to the main branch (when requirements.txt changes)
 #   2. On every Pull Request targeting main
 #   3. On a weekly schedule (every Monday at 00:00 UTC)
 #   4. Manually, on demand, via workflow_dispatch
 #
 # This workflow:
 #   - Checks out the repository
-#   - Sets up Python 3.12 (for tools/dsom_token_auditor.py dependency scanning)
-#   - Installs CRDA CLI
-#   - Scans requirements.txt against the Red Hat Vulnerability Database
-#   - Uploads the SARIF result to GitHub Code Scanning (Security tab)
-#   - Uploads the SARIF file as a downloadable workflow artifact
+#   - Sets up Python 3.12
+#   - Installs Snyk CLI
+#   - Scans requirements.txt for known vulnerabilities
+#   - Uploads SARIF results to GitHub Code Scanning (Security tab)
 #
 # Prerequisites:
-#   - Add CRDA_KEY or SNYK_TOKEN to repository Secrets:
-#     Settings → Secrets and variables → Actions → New repository secret
-#   - CRDA_KEY: Obtain from https://app.crda.redhat.com/
-#   - SNYK_TOKEN: Obtain from https://app.snyk.io/account
+#   - SNYK_TOKEN must be added to repository Secrets:
+#     GitHub → Settings → Secrets and variables → Actions → New repository secret
+#   - Obtain your token from: https://app.snyk.io/account → Auth Token
 # ==============================================================================
 
-name: CRDA Security Scan
+name: Snyk Security Scan
 
 on:
   push:
@@ -49,32 +49,20 @@ on:
     - cron: "0 0 * * 1"
 
   workflow_dispatch:
-    inputs:
-      upload_artifact:
-        description: "Upload SARIF file as workflow artifact"
-        required: false
-        default: "true"
-        type: choice
-        options:
-          - "true"
-          - "false"
 
 concurrency:
-  group: crda-scan-${{ github.ref }}
+  group: snyk-scan-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: read
+  security-events: write
 
 jobs:
-  crda-scan:
-    name: CRDA — Dependency Vulnerability Scan
+  snyk-scan:
+    name: Snyk — Python Dependency Vulnerability Scan
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
-    permissions:
-      contents: read           # for actions/checkout to fetch code
-      security-events: write   # for redhat-actions/crda to upload SARIF results
 
     steps:
       - name: Checkout repository
@@ -89,26 +77,16 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Install CRDA CLI
-        uses: redhat-actions/openshift-tools-installer@v1
+      - name: Run Snyk vulnerability scan
+        uses: snyk/actions/python@master
+        continue-on-error: true          # Allow SARIF upload even if vulnerabilities found
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          source: github
-          github_pat: ${{ github.token }}
-          crda: "latest"
-
-      - name: Run CRDA Dependency Scan
-        id: crda-scan
-        uses: redhat-actions/crda@v1
-        with:
-          # crda_key: ${{ secrets.CRDA_KEY }}       # Alternative to SNYK_TOKEN
-          snyk_token: ${{ secrets.SNYK_TOKEN }}
-          manifest_file: requirements.txt
-          upload_artifact: ${{ github.event.inputs.upload_artifact || 'true' }}
-          fail_on: "warning"                         # Fail on warning or higher severity
+          args: --sarif-file-output=snyk.sarif --severity-threshold=low
 
       - name: Upload SARIF to GitHub Code Scanning
-        if: always()
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: ${{ steps.crda-scan.outputs.crda_report_sarif }}
-          category: crda-dependency-scan
+          sarif_file: snyk.sarif
+          category: snyk-python-scan
