@@ -36,3 +36,22 @@
 
 ### Mental Anchor -- 2026-07-26
 > **DSOM Cognitive Rulebook now has 23 core rules. Knowledge-First Discovery Protocol is mechanically enforced. Dual Agent Registry pattern is formally mandated. Root AGENTS.md is live on GitHub. All four navigation layers (SUMMARY.md, mkdocs.yml, START-HERE.md, llms.txt) are synchronised.**
+
+---
+
+## 🏁 Session Anchor: 2026-07-27 — Snyk Security Scanner Skill & Governance Adoption
+
+### Accomplished
+- **Replaced Deprecated CRDA Workflow:** Upgraded `.github/workflows/crda.yml` to native `snyk/actions/python` with `codeql-action/upload-sarif@v4` after Red Hat shut down the CRDA backend service (`gw.api.openshift.io`). Pushed to `main` and verified 100% green run.
+- **Created `github-actions-snyk-scanner` Skill:** Published `.agents/skills/github-actions-snyk-scanner/SKILL.md` as an executable SOP for setting up Snyk vulnerability scanning in DSOM repos.
+- **Published Security Governance Document:** Authored `docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md` capturing the CRDA deprecation root cause, Snyk concept distinctions (Token vs Project ID), and validated YAML template.
+- **Rule 14 Omni-Documentation Sync:** Synced new skill and governance doc across `SUMMARY.md`, `mkdocs.yml`, `llms.txt`, and `AGENTS.md`.
+- **Rule 19 Token Audit Gate Passed:** Verified using `uv run --with tiktoken python .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/` — zero skills breached the 4,000-token limit (Snyk SKILL.md is 1,695 tokens).
+
+### Why
+- To prevent future DSOM projects from failing silently on dead Red Hat CRDA endpoints.
+- To enforce clean CI/CD security practices across all DSOM repositories with zero-cost token overhead.
+
+### Mental Anchor -- 2026-07-27
+> **Snyk Security Scanner Skill is operational and verified via Rule 19 Token Audit Gate. All four navigation layers synced per Rule 14. Deprecated CRDA workflow completely replaced and verified green in GitHub Actions.**
+
