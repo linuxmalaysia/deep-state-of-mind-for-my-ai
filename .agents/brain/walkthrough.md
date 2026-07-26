@@ -26,10 +26,13 @@
 - **Triple-Ledger Sync Complete:** Synchronized all recent additions in `README.md`, `CHANGELOG.md`, and `HISTORY.md` and committed atomically.
 - **Structurally Embedded Boot & Discovery Protocols:** Performed a secondary `/learn` to inject the exact 5-step Mechanical Boot Sequence and the 5-step Knowledge-First Discovery Flow directly into `AGENTS.md` under the new **Cognitive Engine Protocols** section. The AI is now mechanically forced to execute these procedural loops. (Commit `578a511`).
 - **Omni-Documentation Sync Mandate:** Upgraded **Rule 14** via `/learn` to close the navigation blindspot. The AI is now mandated to sync all new documents across four layers: `SUMMARY.md`, `mkdocs.yml`, `START-HERE.md`, and `llms.txt`. (Commit `81122f0` and `d79bbc6`).
+- **Root AGENTS.md Gateway (Dual Agent Registry):** Created root-level `AGENTS.md` gateway file for Google Jules, Cursor, and GitHub Copilot. Updated `README.md`, `START-HERE.md`, and `llms.txt` via Omni-Documentation Sync. (Commit `8ce5120`).
+- **Rule 23 Codified via `/learn`:** Permanently injected the Dual Agent Registry Root Gateway Mandate as **Rule 23** into `.agents/AGENTS.md`. Synchronised both `AGENTS.md` timestamps. (Commit `861f388`).
 
 ### Why
-- To prevent unnecessary terminal probing when answers reside in local memory, optimizing token and temporal constraints.
+- To prevent unnecessary terminal probing when answers reside in local memory, optimising token and temporal constraints.
 - To eliminate architectural friction for Windows-only users and scale the DSOM framework to govern non-infrastructure projects universally.
+- To ensure platform agents (Jules, Copilot, Cursor) that scan repo roots are immediately redirected to the DSOM Sovereign Rulebook.
 
 ### Mental Anchor -- 2026-07-26
-> **Knowledge-First Discovery Protocol is now mechanically enforced. The Third Pillar is fully modularized to scale beyond Ansible, while permanently mandating WSL2 for Windows environments. Governance ledgers are perfectly aligned and Rule 22 is codified.**
+> **DSOM Cognitive Rulebook now has 23 core rules. Knowledge-First Discovery Protocol is mechanically enforced. Dual Agent Registry pattern is formally mandated. Root AGENTS.md is live on GitHub. All four navigation layers (SUMMARY.md, mkdocs.yml, START-HERE.md, llms.txt) are synchronised.**
