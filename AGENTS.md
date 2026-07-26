@@ -97,6 +97,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 |:---|:---|:---|:---|
 | `git-commit-resolver` | Resolves invalid or orphaned Git commit IDs in brain files by searching Git history for matching commit messages. | Orphaned commit hash or message. | Verified commit hash. |
 | `git-history-scrubber` | Purges sensitive data (IPs, credentials, secrets) from Git history using `git-filter-repo`. | Pattern list (regex/strings). | Scrubbed Git history; requires force-push. |
+| `github-actions-snyk-scanner` | Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories, replacing the deprecated Red Hat CRDA action. | No input required (reads `requirements.txt`). | Deployed `.github/workflows/crda.yml` and SARIF results. |
 | `forensic-log-audit` | Audits system and application logs for anomalies, failed authentications, or suspicious patterns. | Log file path or directory. | Forensic audit report. |
 | `ssh-passwordless-setup` | Configures passwordless SSH key-based authentication between a control node and target hosts. | Source and target host details. | Configured `~/.ssh/authorized_keys` on target. |
 

@@ -31,6 +31,7 @@
 * [🧠 LLM WIKI Adoption Strategy](docs/governance/LLM-WIKI-ADOPTION.md)
 * [⚡ DSOM Efficiency Protocols](docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md)
 * [📚 SOP: Knowledge-First Discovery](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
+* [🛡️ GitHub Actions Security Scanning](docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md)
 
 ## 🌅 2. Operational Rituals
 
@@ -134,6 +135,7 @@
 * [🚀 Initialize GitOps Skill](.agents/skills/initialize-gitops/SKILL.md)
 * [🔍 Forensic Log Audit Skill](.agents/skills/forensic-log-audit/SKILL.md)
 * [🔑 SSH Passwordless Setup Skill](.agents/skills/ssh-passwordless-setup/SKILL.md)
+* [🛡️ GitHub Actions Snyk Scanner Skill](.agents/skills/github-actions-snyk-scanner/SKILL.md)
 
 ## 📚 9. References & Genesis Papers
 

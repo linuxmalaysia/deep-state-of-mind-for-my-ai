@@ -49,6 +49,7 @@ nav:
       - LLM WIKI Adoption Strategy: docs/governance/LLM-WIKI-ADOPTION.md
       - DSOM Efficiency Protocols: docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md
       - Knowledge-First Discovery: docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md
+      - GitHub Actions Security Scanning: docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md
       - Ritual of Transition: docs/RITUAL-OF-TRANSITION.md
       - Personalization: docs/PERSONALIZATION.md
   - AI Brain:
@@ -76,6 +77,7 @@ nav:
       - Initialize GitOps Skill: .agents/skills/initialize-gitops/SKILL.md
       - Forensic Log Audit Skill: .agents/skills/forensic-log-audit/SKILL.md
       - SSH Passwordless Setup Skill: .agents/skills/ssh-passwordless-setup/SKILL.md
+      - GitHub Actions Snyk Scanner Skill: .agents/skills/github-actions-snyk-scanner/SKILL.md
   - Ansible:
       - HOWTO Setup Baseline: docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
       - HOWTO Setup AlmaLinux 10 WSL2: docs/HOWTO-SETUP-WSL-ALMALINUX10.md
