@@ -159,6 +159,14 @@ The following operational skills have been standardized under the DSOM framework
 **Why it matters:** It defines the exact **5-step Mechanical Boot Sequence** that forces the AI to natively ingest its persona, core rules (including the discovery loops), spatial memory, and onboarding map in a strict order. This guarantees that when a new project adopts DSOM, the AI automatically inherits and executes its governance loops upon initialization.
 
 ---
+
+## 13. The Automated State Sync Entry Point (Semantic Compaction)
+*If you need to understand how DSOM manages token bloat automatically across Pull Requests.*
+
+**Read This First:** [`docs/governance/DSOM-AUTOMATED-STATE-SYNC.md`](docs/governance/DSOM-AUTOMATED-STATE-SYNC.md)
+
+**Why it matters:** It explains how GitHub Actions and an LLM script automatically distill Pull Request diffs into a condensed `.dsom` state file to enforce Vectorized Memory Tiering.
+
+---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-26*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
-

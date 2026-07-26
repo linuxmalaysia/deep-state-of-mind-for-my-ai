@@ -21,6 +21,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 ## Architecture & Protocols
 - [AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md): The Sovereign Constitution outlining core GitOps, AIOps, and Ansible execution rules.
 - [AI Initialization Sequence](docs/governance/AI-INITIALIZATION-SEQUENCE.md): The 5-step Mechanical Boot Sequence that establishes persona, memory, and governance before the first prompt.
+- [DSOM Automated State Sync](docs/governance/DSOM-AUTOMATED-STATE-SYNC.md): Semantic Compaction via GitHub Actions and LLM.
 - [SOP: Knowledge-First Discovery](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md): The 5-step protocol mandating local OKF search and temporal verification before terminal execution.
 - [GitHub Actions Security Scanning](docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md): CRDA deprecation notice and Snyk migration pattern for dependency scanning.
 - [Cognitive Twin Protocol](docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md): The Project Identity Card defining target infrastructure (T1-T4) and security doctrines.

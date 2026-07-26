@@ -1,0 +1,23 @@
+---
+okf_version: 0.1
+type: dsom_state
+title: "DSOM Current State"
+description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
+timestamp: 2026-07-27T00:00:00Z
+topics: [state, memory, compaction]
+---
+# DSOM Current State
+
+This file maintains a condensed, token-efficient representation of the project's current state. It is updated automatically by Semantic Compaction via the `.github/workflows/dsom-pr-sync.yml` workflow whenever a PR is closed.
+
+## Active State
+- DSOM framework initialized.
+- Sovereign Engine and Security Policies defined.
+
+## Condensed History
+- Initial boilerplate replaced with DSOM-specific policies.
+- Automated DSOM State Sync deployed.
+
+## Archival Pointers
+- See `docs/governance/` for foundational rules.
+- See `CHANGELOG.md` for full version history.

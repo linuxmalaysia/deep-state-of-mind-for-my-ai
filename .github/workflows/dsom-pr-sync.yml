@@ -1,0 +1,56 @@
+name: DSOM State Sync
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  update-dsom-state:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Needed to get the diff
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch PR diff
+        id: pr_diff
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr diff ${{ github.event.pull_request.number }} > pr.diff
+
+      - name: Run DSOM Semantic Compaction
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          uv run --with openai --with requests .github/scripts/action_update_dsom.py pr.diff .agents/brain/current_state.dsom
+
+      - name: Commit and push updated DSOM state
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .agents/brain/current_state.dsom
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "docs(dsom): auto-update current_state.dsom via Semantic Compaction"
+            git push
+          fi
