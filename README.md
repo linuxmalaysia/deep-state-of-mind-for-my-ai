@@ -75,6 +75,19 @@ While **Ansible** is the default Executor for infrastructure projects, the Third
 
 ---
 
+## 🤖 Agent Registry & The Dual AGENTS.md Architecture
+
+DSOM maintains **two synchronised `AGENTS.md` files** to serve both project-aware AI agents and external platform agents (e.g., Google Jules, Cursor, GitHub Copilot) that scan repository roots by default.
+
+| File | Role |
+|:---|:---|
+| [`AGENTS.md`](AGENTS.md) | **Root Gateway** — discovered by Jules, Copilot, and other agents that scan the repo root. Summarises DSOM and redirects to the full rulebook. |
+| [`.agents/AGENTS.md`](.agents/AGENTS.md) | **Full Sovereign Rulebook** — the Cognitive Entry Point containing all 22+ laws, persona profile, boot sequence, and discovery protocols. |
+
+> **Tip:** Keep both `AGENTS.md` files synchronised. The root gateway is the **first read**; the `.agents/AGENTS.md` is the **complete read**. This dual-file pattern ensures DSOM governance is immediately discoverable by any AI tool without requiring custom configuration.
+
+---
+
 ## 🚀 Quick Start: Using This as Your Project Template
 
 ### Prerequisites
@@ -406,6 +419,8 @@ EOD → Step 1b: Save new Hibernation Notes
 
 ```text
 deep-state-of-mind-for-my-ai/
+│
+├── AGENTS.md                              # 🤖 Root Agent Gateway (Jules/Copilot/Cursor entry point)
 │
 ├── docs/                                  # Governance & Protocol Documents
 │   ├── tools-and-automation/              # 🛠️ Detailed script documentation (OKF Compliant)

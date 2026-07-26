@@ -11,7 +11,7 @@ timestamp: 2026-07-19T11:27:00+08:00
 
 Welcome to the **Deep State of Mind (DSOM) For My AI** framework. If you are adopting this repository to bootstrap a new infrastructure project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
 
-DSOM is a modular Sovereign Engine. To use it effectively, do not read every file at random. Start with the following nine (9) defined Entry Points depending on your role.
+DSOM is a modular Sovereign Engine. To use it effectively, do not read every file at random. Start with the following defined Entry Points depending on your role.
 
 ---
 
@@ -27,9 +27,11 @@ DSOM is a modular Sovereign Engine. To use it effectively, do not read every fil
 ## 2. The Cognitive Entry Point (AI Persona & Rules)
 *If you are an AI agent, or a human programming an AI agent, and need to know the operational rules of this environment.*
 
-**Read This First:** [`.agents/AGENTS.md`](.agents/AGENTS.md)
+**Read This First (Root Gateway):** [`AGENTS.md`](AGENTS.md)
 
-**Why it matters:** This is the Sovereign Constitution. It injects the Senior ICT Consultant persona (LinuxMalaysia), enforces the Defensive GitOps rules, mandates the OKF structure, and dictates the strict standard UK English / Bahasa Melayu writing style. Any new project inherits this cognitive baseline automatically.
+**Then Read the Full Rulebook:** [`.agents/AGENTS.md`](.agents/AGENTS.md)
+
+**Why it matters:** The root `AGENTS.md` is the **Gateway File** for AI agents such as Google Jules, Cursor, and Copilot that scan the repository root. It summarises the DSOM protocol and immediately redirects agents to [`.agents/AGENTS.md`](.agents/AGENTS.md) — the **Sovereign Constitution** containing all 22+ operational laws, the LinuxMalaysia persona, the Defensive GitOps rules, the OKF mandate, and the UK English writing standard. Keep both files synchronised at all times.
 
 ---
 
@@ -159,3 +161,4 @@ The following operational skills have been standardized under the DSOM framework
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-26*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
+

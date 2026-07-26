@@ -12,7 +12,8 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [GitBook Summary](SUMMARY.md): Navigation index for GitBook integration.
 
 ## Governance & Ledgers
-- [Agents Configuration](.agents/AGENTS.md): Core AI Rulebook and Persona profile.
+- [Root Agent Registry](AGENTS.md): Root-level gateway file for AI agents (Jules, Cursor, Copilot) — summarises DSOM and redirects to the full rulebook.
+- [Agents Configuration](.agents/AGENTS.md): Core AI Rulebook and Persona profile — the full Sovereign Constitution with all 22+ rules.
 - [Changelog](CHANGELOG.md): Unreleased and recent framework changes.
 - [History](HISTORY.md): Universal chronological ledger of project milestones.
 
