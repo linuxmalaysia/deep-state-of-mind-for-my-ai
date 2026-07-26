@@ -4,7 +4,7 @@ type: documentation
 title: "The Agent Registry & DSOM Gateway"
 description: "Sovereign entry point instructing AI Agents to look up rules and memory under .agents/."
 resource: "file:///AGENTS.md"
-timestamp: 2026-07-26T22:08:00Z
+timestamp: 2026-07-27T03:39:00Z
 ---
 # AI Agent Registry & Sovereign Gateway
 
@@ -16,7 +16,7 @@ Welcome to the **Deep State of Mind (DSOM)** Sovereign AI Agent Workspace. If yo
 
 ## Critical Instructions for AI Agents
 
-1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 22+ detailed rules governing this project. The file you are reading now is a summary gateway only.
+1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 23 detailed rules governing this project. The file you are reading now is a summary gateway only.
 
 2. **Access Spatial Memory:** Extend your search to all brain files located in `.agents/brain/`. Read the following files to restore full operational context:
    - `task.md` — Active and completed task list (present state).
@@ -56,25 +56,129 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 
 ---
 
+## Agent Skills (`/.agents/skills/`)
+
+Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how the AI performs complex, repeatable workflows. Each skill lives in its own subdirectory with a `SKILL.md` instruction file. AI agents must discover skills via OKF `topics:` metadata (`grep_search`) and load the full `SKILL.md` only at the moment of execution.
+
+### Project Lifecycle Skills
+
+| Skill | Purpose | Input | Output |
+|:---|:---|:---|:---|
+| `dsom-bootstrap` | Bootstraps a new or existing project with the DSOM baseline structure. | Target project path. | Initialised `.agents/`, `docs/`, and `tools/` structure. |
+| `dsom-project-cloner` | Scaffolds a brand new DSOM project by copying the sovereign engine from the baseline repo. | Target path, project name. | New DSOM-compliant project directory. |
+| `initialize-gitops` | Initialises Git, creates the initial commit structure, and sets up remote tracking. | Repository URL, branch name. | Configured Git repo with DSOM GitOps conventions. |
+| `dsom-release-manager` | Cuts a formal release, updates ledgers (`CHANGELOG.md`, `HISTORY.md`), tags the repo, and pushes to GitHub/GitLab. | Version number, release notes. | Git tag, updated ledgers, pushed release. |
+
+### Knowledge & Documentation Skills
+
+| Skill | Purpose | Input | Output |
+|:---|:---|:---|:---|
+| `dsom-knowledge-ingester` | Processes external raw documents and synthesises them into the Sovereign Markdown Palace (LLM WIKI pattern). | Raw document (URL, file, or text). | OKF-compliant `.md` document in `docs/`. |
+| `dsom-policy-adopter` | Ingests an external research paper or policy PDF and formally integrates it into DSOM governance. | PDF URL or local file path. | OKF-compliant governance document in `docs/governance/`. |
+| `okf-frontmatter-injector` | Injects OKF v0.1 YAML frontmatter (`okf_version`, `type`, `title`, `timestamp`, `topics`) into any `.md` file missing it. | File path or directory. | Updated `.md` files with valid OKF frontmatter. |
+| `dsom-signature-injector` | Appends the DSOM ownership, timestamp, and GPL v3.0 signature to `.md` files; prepends comment headers to scripts. | File path(s). | Signed files with standard DSOM footer. |
+| `palace-auditor` | Audits the Sovereign Markdown Palace — verifies index links, finds undocumented scripts, and proposes structural cleanups. | No input required. | Audit report with orphaned files and broken links. |
+
+### Document Output Skills
+
+| Skill | Purpose | Input | Output |
+|:---|:---|:---|:---|
+| `latex-proposal-compiler` | Compiles a markdown proposal into a professionally formatted PDF via Pandoc and XeLaTeX. | Markdown `.md` file. | PDF document. |
+| `node-proposal-formatter` | Compiles a markdown proposal into a formatted DOCX file using Node.js and the `docx` package. | Markdown `.md` file. | DOCX document. |
+| `proposal-docx-formatter` | Alternative DOCX formatter for proposal documents. | Markdown `.md` file. | DOCX document. |
+| `node-slide-generator` | Generates a PowerPoint presentation from a markdown outline using Node.js and `pptxgenjs`. | Markdown outline. | PPTX file. |
+| `odp-slide-generator` | Generates styled 3-column corporate presentation slides (PPTX/ODP) using `python-pptx`. | Markdown outline or structured text. | PPTX/ODP file. |
+| `publish-to-blogger` | Converts a markdown artifact into clean HTML for publishing on Blogger.com. | Markdown `.md` file. | HTML snippet with DSOM Human-AI Synergy Statement. |
+| `pdf-text-extractor` | Downloads an external PDF and extracts its text content using `curl` and an isolated `uv` Python environment. | PDF URL. | Extracted plain text. |
+
+### Git & Security Skills
+
+| Skill | Purpose | Input | Output |
+|:---|:---|:---|:---|
+| `git-commit-resolver` | Resolves invalid or orphaned Git commit IDs in brain files by searching Git history for matching commit messages. | Orphaned commit hash or message. | Verified commit hash. |
+| `git-history-scrubber` | Purges sensitive data (IPs, credentials, secrets) from Git history using `git-filter-repo`. | Pattern list (regex/strings). | Scrubbed Git history; requires force-push. |
+| `forensic-log-audit` | Audits system and application logs for anomalies, failed authentications, or suspicious patterns. | Log file path or directory. | Forensic audit report. |
+| `ssh-passwordless-setup` | Configures passwordless SSH key-based authentication between a control node and target hosts. | Source and target host details. | Configured `~/.ssh/authorized_keys` on target. |
+
+### System & Environment Skills
+
+| Skill | Purpose | Input | Output |
+|:---|:---|:---|:---|
+| `cross-platform-translator` | Analyses a `.ps1` or `.sh` script and generates its functional equivalent in the other shell language. | Shell script (`.ps1` or `.sh`). | Translated script in the target language. |
+| `persona-injector` | Injects the DSOM Cognitive Twin persona profile into a new AI configuration. | Target AI platform config. | Updated persona profile. |
+| `dsom-token-calculator` | Runs `tiktoken` against `.agents/skills/` to audit token counts and flag any `SKILL.md` exceeding the 4,000-token gate. | No input required. | Token audit report; flags `[BLOCKED]` files. |
+
+### Session Ritual Skills
+
+| Skill | Purpose | Input | Output |
+|:---|:---|:---|:---|
+| `sod-palace-sync` | Start-of-Day ritual: reads `palace_registry.md`, syncs the active context manifest, and generates the SOD manifest. | No input required. | Updated `sod_manifest.txt` and context manifest. |
+| `eod-palace-sync` | End-of-Day ritual: maps Git commits to Palace Rooms, generates a `palace_update_proposal_*.md`, and prepares for hibernation. | No input required. | Palace update proposal for the AI to review. |
+
+---
+
+## Workflows (`/.agents/workflows/`)
+
+Workflows are markdown-based governance guides providing step-by-step procedural instructions for multi-agent or complex human+AI tasks.
+
+| Workflow | Purpose |
+|:---|:---|
+| `SUBAGENT-ORCHESTRATION-WORKFLOW.md` | Governs delegating tasks to autonomous subagents using Git Worktree Isolation to prevent Silent Subagent Merge Conflicts. |
+
+---
+
+## Automation Tools (`/tools/`)
+
+The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.sh`) scripts for the daily DSOM operational rituals. All tools are idempotent and safe to re-run.
+
+| Tool | Purpose | When to Run |
+|:---|:---|:---|
+| `reanimate.ps1` / `.sh` | Reanimates the AI session — generates the active context manifest from brain files and latest Git state. | **Start of every session.** |
+| `hibernation.ps1` / `.sh` | EOD safety check: validates session anchor and task progress, runs palace-sync, commits, and pushes to remote. | **End of every session.** |
+| `sod-palace.ps1` / `.sh` | Start-of-Day palace sync: reads palace registry and prepares daily context. | After `reanimate`. |
+| `eod-palace.ps1` / `.sh` | End-of-Day palace sync: maps commits to Palace Rooms and generates update proposals. | Before `hibernation`. |
+| `palace-sync.ps1` / `.sh` | Spatial reflection tool: scans Git commits and maps them to Sovereign Markdown Palace rooms. | SOD and EOD rituals. |
+| `git-ritual.ps1` / `.sh` | Combines SOD `git pull --rebase` and EOD commit/push in a single safe invocation. | Daily Git hygiene. |
+| `audit-pre-flight.ps1` / `.sh` | Validates the repository state before any major operation (checks OKF compliance, uncommitted changes). | Before bulk changes. |
+| `diagnostic.ps1` / `.sh` | Full system diagnostic: checks brain files, tool availability, Git status, and OKF frontmatter coverage. | Debugging sessions. |
+| `init-brain.ps1` / `.sh` | One-time initialisation of the `.agents/brain/` directory with blank OKF-compliant template files. | New project setup. |
+| `checkpoint.ps1` / `.sh` | Creates a checkpoint snapshot of the current brain state without triggering full hibernation. | Mid-session saves. |
+| `privacy-guardian.ps1` / `.sh` | Scans the active context manifest and session files for sensitive data (IPs, credentials) before sharing. | Before any external sync. |
+| `template-reset.ps1` / `.sh` | Resets brain files to blank OKF-compliant templates for a clean session start. | Session reset. |
+| `dsom-onboard.ps1` / `.sh` | One-shot onboarding script for new DSOM project contributors. | First-time setup. |
+| `setup-wsl-almalinux10.ps1` | Installs and configures WSL2 with AlmaLinux 10 as the local DSOM Control Node / Execution Bridge on Windows 11. | Windows-only environment setup. |
+| `setup-dsom-control-node.sh` | Configures a Linux node (physical, VM, or WSL2) as the DSOM Ansible Control Node with required tooling. | Linux control node setup. |
+| `palace-sync.ps1` / `.sh` | Generates `palace_update_proposal_*.md` by correlating Git commits with Palace room definitions. | EOD ritual. |
+| `build_sovereign_book.sh` | Builds the full GitBook/MkDocs documentation site from the Sovereign Markdown Palace. | Documentation deployment. |
+| `check-usage.sh` / `CheckUsage.ps1` | Audits token and context window usage across brain files and skills. | Periodic maintenance. |
+| `bench_brain.py` | Benchmarks brain file read latency (FUSE/disk) to calibrate token and context performance multipliers. | Performance tuning. |
+| `generate-walkthrough.ps1` / `.sh` | Generates a formatted session walkthrough summary from brain state. | Session documentation. |
+
+---
+
 ## Key Files & Directories for AI Agents
 
 | Path | Purpose |
 |:---|:---|
-| `.agents/AGENTS.md` | **Full Rulebook** — Core laws, persona, and all operational rules. |
+| `AGENTS.md` | **Root Gateway** — this file. First read for all platform AI agents. |
+| `.agents/AGENTS.md` | **Full Rulebook** — Core laws (23 rules), persona, boot sequence, and discovery protocols. |
 | `.agents/brain/task.md` | Active task list for the current session. |
 | `.agents/brain/walkthrough.md` | Session history and Mental Anchors (resume context). |
 | `.agents/brain/palace_registry.md` | Spatial index of the Sovereign Markdown Palace. |
-| `.agents/skills/` | OKF-compliant executable skill SOPs (e.g., `dsom-bootstrap`, `dsom-release-manager`). |
+| `.agents/brain/active_context_manifest.md` | Live list of files currently in scope. |
+| `.agents/skills/` | OKF-compliant executable skill SOPs (25 skills). |
+| `.agents/workflows/` | Multi-agent orchestration governance workflows. |
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |
 | `docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md` | The 5-step Knowledge-First Discovery Protocol. |
 | `START-HERE.md` | Master onboarding map with 12 defined entry points. |
 | `llms.txt` | AI Sitemap for external crawlers (NotebookLM, ChatGPT, etc.). |
+| `tools/` | Cross-platform automation scripts for all daily DSOM rituals. |
 
 ---
 
 > **Tip:** Keep both `AGENTS.md` files up to date — the root gateway and `.agents/AGENTS.md`. This helps Google Jules, Cursor, GitHub Copilot, other AI agents, and your human teammates work with this repository more effectively and in full alignment with the DSOM protocol.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-26*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
