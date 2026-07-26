@@ -45,3 +45,7 @@ This closet captures commits that did not map to a core Palace Room — primaril
 
 ---
 *Last Refined: 2026-04-08 | Backfill: Full History | Hall: hall_discoveries | Wing: wing_dsom_core*
+
+- [2026-07-27] Added dsom-state-sync skill.
+- [2026-07-27] Added Rule 24 Defensive Credential Handling Mandate.
+- [2026-07-27] Implemented automated PR state sync via Semantic Compaction (action_update_dsom.py).

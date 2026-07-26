@@ -60,3 +60,6 @@ This closet tracks the evolution of the `.agents/brain/` directory — the AI's 
 
 ---
 *Last Refined: 2026-04-08 (Sync-2250) | Hall: hall_facts | Wing: wing_dsom_core*
+
+- [2026-07-27] Created current_state.dsom for token compaction.
+- [2026-07-27] EOD safe shutdown notes (hibernation-notes-2026-07-27.txt).
