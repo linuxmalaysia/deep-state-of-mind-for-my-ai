@@ -7,6 +7,7 @@
 * [📜 Universal Ledger (History)](HISTORY.md)
 * [📜 Changelog](CHANGELOG.md)
 * [🤝 Contributing Guidelines](CONTRIBUTING.md)
+* [🛡️ Security Policy](SECURITY.md)
 
 ## 🏛️ 1. Sovereign Governance
 

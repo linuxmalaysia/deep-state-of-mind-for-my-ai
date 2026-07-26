@@ -16,6 +16,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Agents Configuration](.agents/AGENTS.md): Core AI Rulebook and Persona profile — the full Sovereign Constitution with all 22+ rules.
 - [Changelog](CHANGELOG.md): Unreleased and recent framework changes.
 - [History](HISTORY.md): Universal chronological ledger of project milestones.
+- [Security Policy](SECURITY.md): Supported versions, private vulnerability disclosure process, and DSOM-specific remediation tools.
 
 ## Architecture & Protocols
 - [AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md): The Sovereign Constitution outlining core GitOps, AIOps, and Ansible execution rules.

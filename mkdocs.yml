@@ -32,6 +32,7 @@ markdown_extensions:
 nav:
   - Home: README.md
   - START HERE: START-HERE.md
+  - Security Policy: SECURITY.md
   - Governance:
       - AI Initialization Sequence: docs/governance/AI-INITIALIZATION-SEQUENCE.md
       - AI Master Protocol: docs/governance/AI-MASTER-PROTOCOL.md
