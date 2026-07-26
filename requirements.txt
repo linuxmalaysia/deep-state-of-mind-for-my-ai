@@ -1,0 +1,4 @@
+# DSOM Python Tool Dependencies
+# Used by tools/dsom_token_auditor.py (token efficiency auditor)
+# Managed via uv in local environments; pinned here for CI dependency scanning.
+tiktoken>=0.7.0
