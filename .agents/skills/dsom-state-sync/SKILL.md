@@ -1,0 +1,30 @@
+---
+okf_version: 0.1
+type: skill
+title: "DSOM State Sync Skill"
+description: "Executes Semantic Compaction locally by analyzing a Git diff and updating current_state.dsom using OpenAI."
+topics: [compaction, state, sync, openai, dsom]
+timestamp: 2026-07-27T00:00:00Z
+---
+# DSOM State Sync Skill
+
+## Purpose
+This skill allows AI agents to manually execute the **Semantic Compaction** process outside of the standard GitHub Actions PR workflow. It analyzes a provided diff file and uses an LLM to condense and append significant architectural changes into the project's compressed memory tier (`.agents/brain/current_state.dsom`).
+
+## Prerequisites
+1. **Python & `uv`**: The `uv` package manager must be available on the system.
+2. **OpenAI API Key**: The environment variable `OPENAI_API_KEY` must be set in the executing terminal. (Follow Rule 24 for defensive credential handling).
+3. **Diff File**: A valid Git diff file or text file containing changes must be prepared.
+
+## Execution Flow
+
+When tasked with running the state sync locally, execute the following terminal command (ensure you replace `<diff_file>` with the actual path to your diff):
+
+```bash
+uv run --with openai --with requests .github/scripts/action_update_dsom.py <diff_file> .agents/brain/current_state.dsom
+```
+
+### Execution Rules
+1. **Never write the API key to disk**: If the API key is not present in the environment, instruct the human operator to export it manually in their terminal session before proceeding.
+2. **Review before execution**: Generate the diff file locally first (e.g., `git diff > local.diff`) and verify its contents to prevent bloating the compaction prompt with irrelevant artifact changes.
+3. **Verify Timestamp**: After successful execution, check `.agents/brain/current_state.dsom` to ensure the `timestamp` in the OKF frontmatter was correctly updated.

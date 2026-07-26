@@ -87,6 +87,7 @@ The following operational skills have been standardized under the DSOM framework
 * `dsom-project-cloner`
 * `dsom-release-manager`
 * `dsom-signature-injector`
+* `dsom-state-sync`
 * `dsom-token-calculator`
 * `eod-palace-sync`
 * `forensic-log-audit`
