@@ -10,6 +10,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Start Here](START-HERE.md): The absolute master roadmap for onboarding to DSOM.
 - [Project Readme](README.md): High-level overview and philosophy.
 - [GitBook Summary](SUMMARY.md): Navigation index for GitBook integration.
+- [Context7 Live RAG Payload (10k Tokens)](https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=10000): Pre-indexed, token-budgeted operational code snippets and rules compiled by Context7.
 
 ## Governance & Ledgers
 - [Root Agent Registry](AGENTS.md): Root-level gateway file for AI agents (Jules, Cursor, Copilot) — summarises DSOM and redirects to the full rulebook.
