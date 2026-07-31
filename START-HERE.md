@@ -80,6 +80,7 @@ DSOM is a modular Sovereign Engine. To use it effectively, do not read every fil
 
 **Mandatory Project Skills:**
 The following operational skills have been standardized under the DSOM framework and must be copied into any new project adopting the DSOM architecture:
+* `context7-indexer`
 * `cross-platform-translator`
 * `dsom-bootstrap`
 * `dsom-knowledge-ingester`
