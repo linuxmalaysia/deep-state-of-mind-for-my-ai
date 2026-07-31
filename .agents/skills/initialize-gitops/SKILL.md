@@ -40,6 +40,16 @@ venv/
 .agents/brain/.system_generated/
 ```
 
+## Multi-Remote GitOps Configuration (Optional)
+If the project requires pushing to multiple remotes (e.g., GitHub and GitLab) simultaneously:
+1. Create a combined remote named `all`:
+   `git remote add all <Primary_URL>`
+2. Add all target URLs as push endpoints:
+   `git remote set-url --add --push all <Primary_URL>`
+   `git remote set-url --add --push all <Secondary_URL>`
+3. **CRITICAL:** Fix the default pull tracking so `git pull` doesn't break:
+   `git branch --set-upstream-to=origin/main main`
+
 ## Architectural Note
 *   **Why is this a skill?** Because Git is not just version control for code; it is the physical "hippocampus" for the AI. Every action, artifact, and thought process is stored as a commit. Initializing it perfectly ensures the AI never suffers from amnesia.
 
