@@ -189,10 +189,10 @@ if ($true) {
     Write-Host ""
 
     # Stage brain artifacts selectively
-    git add "$TaskFile" "$WalkthroughFile" "$HibFile" 2>&1 | Out-Null
+    git -c core.safecrlf=false add "$TaskFile" "$WalkthroughFile" "$HibFile" 2>$null
 
     # Stage all other modified tracked files (not untracked)
-    git add -u 2>&1 | Out-Null
+    git -c core.safecrlf=false add -u 2>$null
 
     # Detect active phase from task.md
     $PhaseMatch = Select-String -Path $TaskFile -Pattern "Phase:" | Select-Object -First 1
@@ -206,8 +206,13 @@ if ($true) {
         git commit -m "chore(hibernation): End-of-Day safe shutdown $DateStamp [Phase: $Phase]"
     }
 
-    # Always push
-    git push origin main
+    # Always push to all remotes if configured, otherwise fallback to origin
+    $remotes = git remote
+    if ($remotes -contains "all") {
+        git push all main
+    } else {
+        git push origin main
+    }
 
     Write-Host ""
     Write-Host "  ======================================================================" -ForegroundColor Green
