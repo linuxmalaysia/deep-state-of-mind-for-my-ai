@@ -161,10 +161,9 @@ echo -e "     bash tools/privacy-guardian.sh"
 echo ""
 
 # 9. Final Confirmation & Sovereign Save
-echo -e "${CYAN}😴 Are you ready to hibernate? (This will commit staged changes and push to GitHub)${NC}"
-read -r -p "Confirm (y/N): " confirm
+echo -e "${CYAN}😴 Committing staged changes and pushing to remotes...${NC}"
 
-if [[ "$confirm" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if true; then
     echo ""
 
     # Stage brain artifacts selectively (never blindly stage everything)

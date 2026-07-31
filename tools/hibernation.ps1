@@ -183,17 +183,16 @@ Write-Host "    .\tools\privacy-guardian.ps1" -ForegroundColor Yellow
 Write-Host ""
 
 # 9. Final Confirmation & Sovereign Save
-Write-Host "  Are you ready to hibernate? (This will commit staged changes and push to GitHub)" -ForegroundColor Cyan
-$Confirm = Read-Host "  Confirm (y/N)"
+Write-Host "  Committing staged changes and pushing to remotes..." -ForegroundColor Cyan
 
-if ($Confirm -match "^[yY]") {
+if ($true) {
     Write-Host ""
 
     # Stage brain artifacts selectively
-    git add "$TaskFile" "$WalkthroughFile" "$HibFile" 2>$null | Out-Null
+    git add "$TaskFile" "$WalkthroughFile" "$HibFile" 2>&1 | Out-Null
 
     # Stage all other modified tracked files (not untracked)
-    git add -u 2>$null | Out-Null
+    git add -u 2>&1 | Out-Null
 
     # Detect active phase from task.md
     $PhaseMatch = Select-String -Path $TaskFile -Pattern "Phase:" | Select-Object -First 1
