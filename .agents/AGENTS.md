@@ -4,7 +4,7 @@ type: documentation
 title: "The Core AI Rulebook (DSOM)"
 description: "OKF-compliant documentation for AGENTS.md."
 resource: "file:///.agents/AGENTS.md"
-timestamp: 2026-07-31T02:00:00Z
+timestamp: 2026-07-31T04:20:00Z
 ---
 # The Core AI Rulebook (DSOM)
 
@@ -19,7 +19,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 4. **Git Sovereignty & Atomic Commits:** Every major action must be committed to Git. Avoid silent execution. **Crucially, the AI is strictly forbidden from executing monolithic blanket commits (e.g., `git commit -am` or dumping all unrelated files into one commit). The AI must stage and commit files granularly, grouping them by logical task boundaries and using discrete semantic commit messages for each logical unit.**
 5. **Worktree Isolation:** Subagents must be instantiated within their own isolated Git branches to prevent Silent Subagent Merge Conflicts. Merge back to `main` only via consensus.
 6. **The OKF Import Mandate:** Before committing imported Markdown files or skills from external sources, the AI must verify and inject OKF v0.1 YAML frontmatter (including `okf_version`, `type`, `title`, `timestamp`, and **`topics`**) to maintain compliance. For `SKILL.md` files specifically, `topics` is a mandatory array of 3–5 lowercase keyword strings (e.g., `topics: [git, sovereign, setup]`) placed immediately after the `description:` line. This enables near-instant semantic grep routing without loading full file bodies.
-7. **Defensive Git Syncing (GitOps):** Prior to executing any bulk `git push`, the AI must proactively execute a `git pull --rebase origin main` (or `--no-rebase` if a merge commit is required) to prevent sync failures and rejected pushes.
+7. **Defensive Git Syncing (GitOps):** Prior to executing any bulk `git push`, the AI must proactively execute a `git pull --rebase` to prevent sync failures. Ritual scripts (`tools/`) must run non-interactively without user prompt blocks, handle PowerShell native `stderr` warnings cleanly (e.g., disabling `core.safecrlf`), and automatically detect multi-remote configurations (`all`) to push to all remotes simultaneously.
 8. **The Triple-Ledger Synchronization Mandate:** Whenever a significant architectural blueprint, governance document, or operational guide is created or modified, the AI must synchronously update `README.md` (to link the asset), `CHANGELOG.md` (for version tracking), and `HISTORY.md` (for the universal ledger).
 9. **The Artifact Pyramid (Progressive Disclosure):** Stratify knowledge conceptually into L1 (Synthesis), L2 (Analysis), and L3 (Raw). All L1/L2 markdown documents must contain a `SOURCES` block at the bottom, pairing Markdown links with single-line semantic descriptions to enable zero-cost context prediction.
 10. **Procedural Memory Execution Constraints:** 
