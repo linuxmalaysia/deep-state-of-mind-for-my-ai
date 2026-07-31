@@ -63,6 +63,23 @@ DSOM is a modular Sovereign Engine. To use it effectively, do not read every fil
 ---
 
 ## 6. The Subagent Swarm Entry Point (Multi-Agent Orchestration)
+
+### Entry Point 3: The Native MCP Server Integration
+DSOM acts as its own Model Context Protocol (MCP) server, allowing AI editors (Claude Desktop, Cursor) to read the Sovereign Markdown Palace locally without pasting context.
+
+To configure your AI client, point it to our `uv`-managed server script:
+```json
+{
+  "mcpServers": {
+    "dsom-palace": {
+      "command": "uv",
+      "args": ["run", "--with", "mcp", "tools/mcp/server.py"]
+    }
+  }
+}
+```
+
+### Entry Point 4: Subagent Orchestration Workflow
 *If you are scaling complex engineering tasks using autonomous AI subagents.*
 
 **Read This First:** [`docs/governance/MULTI-AGENT-PROTOCOLS.md`](docs/governance/MULTI-AGENT-PROTOCOLS.md)

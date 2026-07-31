@@ -15,6 +15,7 @@
 * [👑 Operational Sovereignty Manifesto](docs/governance/OPERATIONAL-SOVEREIGNTY.md)
 * [📜 AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md)
 * [🔄 DSOM Automated State Sync](docs/governance/DSOM-AUTOMATED-STATE-SYNC.md)
+* [⚙️ Native MCP Architecture](docs/governance/DSOM-MCP-ARCHITECTURE.md)
 * [🔄 GitOps · AIOps · Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
 * [🏛️ Digital Sovereignty Model](docs/governance/DIGITAL-SOVEREIGNTY-MODEL.md)
 * [🏥 ITIL 4 Alignment Strategy](docs/governance/ITIL-ALIGNMENT.md)
