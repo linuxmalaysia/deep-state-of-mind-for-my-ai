@@ -49,6 +49,11 @@ SYMLINK_SPECS = [
     ("START-HERE.md", "../START-HERE.md", "START-HERE.md"),
 ]
 
+DIR_SYMLINK_SPECS = [
+    (".agents", "../.agents", ".agents"),
+    ("playbooks", "../playbooks", "playbooks"),
+]
+
 
 class DocsSymlinkExistenceTests(unittest.TestCase):
     """Basic existence / symlink-type checks."""
@@ -59,6 +64,14 @@ class DocsSymlinkExistenceTests(unittest.TestCase):
 
     def test_start_here_symlink_path_exists(self):
         path = DOCS_DIR / "START-HERE.md"
+        self.assertTrue(path.exists(), f"Expected {path} to exist")
+
+    def test_agents_symlink_path_exists(self):
+        path = DOCS_DIR / ".agents"
+        self.assertTrue(path.exists(), f"Expected {path} to exist")
+
+    def test_playbooks_symlink_path_exists(self):
+        path = DOCS_DIR / "playbooks"
         self.assertTrue(path.exists(), f"Expected {path} to exist")
 
     def test_security_is_a_symlink(self):
@@ -77,12 +90,28 @@ class DocsSymlinkExistenceTests(unittest.TestCase):
             "file containing the target path",
         )
 
+    def test_agents_is_a_symlink(self):
+        path = DOCS_DIR / ".agents"
+        self.assertTrue(
+            path.is_symlink(),
+            "docs/.agents must be a real symlink, not a plain-text "
+            "file containing the target path",
+        )
+
+    def test_playbooks_is_a_symlink(self):
+        path = DOCS_DIR / "playbooks"
+        self.assertTrue(
+            path.is_symlink(),
+            "docs/playbooks must be a real symlink, not a plain-text "
+            "file containing the target path",
+        )
+
 
 class DocsSymlinkTargetTests(unittest.TestCase):
     """Verify the symlinks point at the expected relative targets."""
 
     def test_symlink_targets_are_expected_relative_paths(self):
-        for doc_relative, expected_target, _ in SYMLINK_SPECS:
+        for doc_relative, expected_target, _ in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
                 self.assertEqual(
@@ -93,7 +122,7 @@ class DocsSymlinkTargetTests(unittest.TestCase):
     def test_symlink_targets_are_relative_not_absolute(self):
         # Relative symlinks keep the repo portable across clone locations
         # (e.g. CI runners, contributor machines).
-        for doc_relative, _, _ in SYMLINK_SPECS:
+        for doc_relative, _, _ in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
                 target = pathlib.os.readlink(path)
@@ -104,7 +133,7 @@ class DocsSymlinkTargetTests(unittest.TestCase):
 
 
 class DocsSymlinkResolutionTests(unittest.TestCase):
-    """Verify the symlinks resolve to, and mirror, the root-level files."""
+    """Verify the symlinks resolve to, and mirror, the root-level files/dirs."""
 
     def test_symlinks_resolve_to_root_level_files(self):
         for doc_relative, _, root_filename in SYMLINK_SPECS:
@@ -122,6 +151,24 @@ class DocsSymlinkResolutionTests(unittest.TestCase):
                 self.assertTrue(
                     path.resolve().is_file(),
                     f"{path} resolves to a path that is not a regular file",
+                )
+
+    def test_dir_symlinks_resolve_to_root_level_dirs(self):
+        for doc_relative, _, root_dirname in DIR_SYMLINK_SPECS:
+            with self.subTest(doc=doc_relative):
+                path = DOCS_DIR / doc_relative
+                self.assertEqual(
+                    path.resolve(),
+                    (REPO_ROOT / root_dirname).resolve(),
+                )
+
+    def test_dir_symlinks_do_not_dangle(self):
+        for doc_relative, _, _ in DIR_SYMLINK_SPECS:
+            with self.subTest(doc=doc_relative):
+                path = DOCS_DIR / doc_relative
+                self.assertTrue(
+                    path.resolve().is_dir(),
+                    f"{path} resolves to a path that is not a directory",
                 )
 
     def test_symlink_content_matches_root_file_content(self):
@@ -147,7 +194,7 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         result = subprocess.run(
-            ["git", "ls-files", "-s", "docs/SECURITY.md", "docs/START-HERE.md"],
+            ["git", "ls-files", "-s", "docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks"],
             cwd=REPO_ROOT,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -167,10 +214,16 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
     def test_start_here_tracked_with_symlink_mode(self):
         self.assertEqual(self.entries.get("docs/START-HERE.md"), "120000")
 
-    def test_both_new_symlinks_present_in_index(self):
+    def test_agents_tracked_with_symlink_mode(self):
+        self.assertEqual(self.entries.get("docs/.agents"), "120000")
+
+    def test_playbooks_tracked_with_symlink_mode(self):
+        self.assertEqual(self.entries.get("docs/playbooks"), "120000")
+
+    def test_all_new_symlinks_present_in_index(self):
         self.assertEqual(
             set(self.entries.keys()),
-            {"docs/SECURITY.md", "docs/START-HERE.md"},
+            {"docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks"},
         )
 
 

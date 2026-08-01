@@ -55,39 +55,39 @@ nav:
   - START HERE: START-HERE.md
   - Security Policy: SECURITY.md
   - Governance:
-      - AI Initialization Sequence: docs/governance/AI-INITIALIZATION-SEQUENCE.md
-      - AI Master Protocol: docs/governance/AI-MASTER-PROTOCOL.md
-      - DSOM Automated State Sync: docs/governance/DSOM-AUTOMATED-STATE-SYNC.md
-      - Native MCP Architecture: docs/governance/DSOM-MCP-ARCHITECTURE.md
-      - GitOps · AIOps · Ansible Strategy: docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
-      - Operational Guide: docs/governance/OPERATIONAL-GUIDE.md
-      - NOSS Integration Guide: docs/governance/NOSS-INTEGRATION-GUIDE.md
-      - Python UV Environment Guide: docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
-      - Automation Audit Ledger: docs/governance/AUTOMATION-AUDIT-LIST.md
-      - Token Efficiency Report: docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md
-      - Byte-Capped Execution Framework: docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md
-      - Ingestion Latency Architecture: docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md
-      - Token Performance Playbook: docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md
-      - Zero-Global Memory Architecture: docs/governance/ZERO-GLOBAL-MEMORY.md
-      - LLM WIKI Adoption Strategy: docs/governance/LLM-WIKI-ADOPTION.md
-      - DSOM Efficiency Protocols: docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md
-      - Knowledge-First Discovery: docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md
-      - GitHub Actions Security Scanning: docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md
-      - Ritual of Transition: docs/RITUAL-OF-TRANSITION.md
-      - Personalization: docs/PERSONALIZATION.md
+      - AI Initialization Sequence: governance/AI-INITIALIZATION-SEQUENCE.md
+      - AI Master Protocol: governance/AI-MASTER-PROTOCOL.md
+      - DSOM Automated State Sync: governance/DSOM-AUTOMATED-STATE-SYNC.md
+      - Native MCP Architecture: governance/DSOM-MCP-ARCHITECTURE.md
+      - GitOps · AIOps · Ansible Strategy: governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
+      - Operational Guide: governance/OPERATIONAL-GUIDE.md
+      - NOSS Integration Guide: governance/NOSS-INTEGRATION-GUIDE.md
+      - Python UV Environment Guide: governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
+      - Automation Audit Ledger: governance/AUTOMATION-AUDIT-LIST.md
+      - Token Efficiency Report: governance/DSOM-TOKEN-EFFICIENCY-REPORT.md
+      - Byte-Capped Execution Framework: governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md
+      - Ingestion Latency Architecture: governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md
+      - Token Performance Playbook: governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md
+      - Zero-Global Memory Architecture: governance/ZERO-GLOBAL-MEMORY.md
+      - LLM WIKI Adoption Strategy: governance/LLM-WIKI-ADOPTION.md
+      - DSOM Efficiency Protocols: governance/DSOM-EFFICIENCY-PROTOCOLS.md
+      - Knowledge-First Discovery: governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md
+      - GitHub Actions Security Scanning: governance/GITHUB-ACTIONS-SECURITY-SCANNING.md
+      - Ritual of Transition: RITUAL-OF-TRANSITION.md
+      - Personalization: PERSONALIZATION.md
   - AI Brain:
       - Task: .agents/brain/task.md
       - Implementation Plan: .agents/brain/implementation_plan.md
       - Walkthrough: .agents/brain/walkthrough.md
   - AI Setup:
-      - Cognitive Twin Protocol Template: docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
-      - Reanimation Template: docs/REANIMATION-PROMPT-TEMPLATE.md
-      - Episodic Record Template: docs/DSOM-EPISODIC-RECORD-TEMPLATE.md
-      - Agent Protocols: docs/governance/MULTI-AGENT-PROTOCOLS.md
-      - Gemini DSOM Gem: docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md
-      - Claude: docs/CLAUDE-SETUP.md
-      - DSOM Claude Initialiser: docs/model-specifics/dsom-claude-initialiser.md
-      - Copilot: docs/COPILOT-SETUP.md
+      - Cognitive Twin Protocol Template: governance/AI-COGNITIVE-TWIN-PROTOCOL.md
+      - Reanimation Template: REANIMATION-PROMPT-TEMPLATE.md
+      - Episodic Record Template: DSOM-EPISODIC-RECORD-TEMPLATE.md
+      - Agent Protocols: governance/MULTI-AGENT-PROTOCOLS.md
+      - Gemini DSOM Gem: HOWTO-CREATE-DSOM-GEMINI-GEM.md
+      - Claude: CLAUDE-SETUP.md
+      - DSOM Claude Initialiser: model-specifics/dsom-claude-initialiser.md
+      - Copilot: COPILOT-SETUP.md
   - AI Agent Skills & Workflows:
       - Subagent Orchestration Workflow: .agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md
       - EOD Palace Sync Skill: .agents/skills/eod-palace-sync/SKILL.md
@@ -102,8 +102,8 @@ nav:
       - SSH Passwordless Setup Skill: .agents/skills/ssh-passwordless-setup/SKILL.md
       - GitHub Actions Snyk Scanner Skill: .agents/skills/github-actions-snyk-scanner/SKILL.md
   - Ansible:
-      - HOWTO Setup Baseline: docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
-      - HOWTO Setup AlmaLinux 10 WSL2: docs/HOWTO-SETUP-WSL-ALMALINUX10.md
+      - HOWTO Setup Baseline: HOWTO-SETUP-ANSIBLE-BASELINE.md
+      - HOWTO Setup AlmaLinux 10 WSL2: HOWTO-SETUP-WSL-ALMALINUX10.md
   - Playbooks:
       - DSOM site.yml: playbooks/dsom/site.yml
       - audit-preflight: playbooks/dsom/audit-preflight.yml
