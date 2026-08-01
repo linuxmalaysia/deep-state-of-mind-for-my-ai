@@ -1,0 +1,2938 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OKF-compliant documentation for GITOPS-AIOPS-ANSIBLE-STRATEGY.md.">
+      
+      
+        <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0) - Deep State of Mind (DSOM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dsom-three-pillar-strategy-gitops-aiops-ansible-v10" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deep State of Mind (DSOM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Deep State of Mind (DSOM)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../START-HERE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START HERE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SECURITY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-INITIALIZATION-SEQUENCE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Initialization Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-MASTER-PROTOCOL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Master Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-AUTOMATED-STATE-SYNC.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Automated State Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-MCP-ARCHITECTURE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native MCP Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitOps · AIOps · Ansible Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/OPERATIONAL-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/NOSS-INTEGRATION-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOSS Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python UV Environment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AUTOMATION-AUDIT-LIST.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Audit Ledger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Efficiency Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Byte-Capped Execution Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingestion Latency Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Performance Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/ZERO-GLOBAL-MEMORY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero-Global Memory Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/LLM-WIKI-ADOPTION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM WIKI Adoption Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Efficiency Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge-First Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Security Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/RITUAL-OF-TRANSITION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ritual of Transition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/PERSONALIZATION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Brain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Brain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/task.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/implementation_plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/walkthrough.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognitive Twin Protocol Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/REANIMATION-PROMPT-TEMPLATE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/DSOM-EPISODIC-RECORD-TEMPLATE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Episodic Record Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/MULTI-AGENT-PROTOCOLS.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini DSOM Gem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/CLAUDE-SETUP.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/model-specifics/dsom-claude-initialiser.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Claude Initialiser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/COPILOT-SETUP.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copilot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent Skills & Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Agent Skills & Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subagent Orchestration Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/eod-palace-sync/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/sod-palace-sync/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-token-calculator/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Token Calculator Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Knowledge Ingester
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/publish-to-blogger/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish to Blogger Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-commit-resolver/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git Commit Resolver Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-history-scrubber/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git History Scrubber Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/initialize-gitops/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initialize GitOps Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/forensic-log-audit/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forensic Log Audit Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Passwordless Setup Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Snyk Scanner Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-SETUP-ANSIBLE-BASELINE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup Baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-SETUP-WSL-ALMALINUX10.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup AlmaLinux 10 WSL2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Playbooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/site.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM site.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    audit-preflight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/init-brain.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    init-brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    privacy-scan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pre-Flight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/init-brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Init Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/reanimate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/hibernation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hibernation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/privacy-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/template-reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docsgitops-aiops-ansible-strategymd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-three-pillar-model-palace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Three-Pillar Model (+ Palace)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aiops-pillar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤖 2. AIOps Pillar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤖 2. AIOps Pillar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-role-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Role Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-aiops-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 AIOps Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-ai-context-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 AI Context Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gitops-pillar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 3. GitOps Pillar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 3. GitOps Pillar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-core-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Core Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-gitops-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 GitOps Laws
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-commit-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Commit Convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-sync-ritual-the-push-pull-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Sync Ritual (The Push-Pull Cycle)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-executor-pillar-ansible-uv-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ 4. The Executor Pillar (Ansible / uv / Node)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 4. The Executor Pillar (Ansible / uv / Node)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-execution-modularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Execution Modularity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-the-windows-wsl2-bridge-control-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 The Windows WSL2 Bridge (Control Node)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ansible-laws-if-applicable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Ansible Laws (If Applicable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-standard-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Standard Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-ansible-prerequisites-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Ansible Prerequisites Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-core-ansible-commands-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Core Ansible Commands Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integration-with-dsom-brain-palace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Integration with DSOM Brain + Palace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-adoption-checklist-for-new-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 6. Adoption Checklist for New Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 6. Adoption Checklist for New Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitops-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitOps Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aiops-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AIOps Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ansible Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dsom-three-pillar-strategy-gitops-aiops-ansible-v10">🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)</h1>
+<blockquote>
+<p><strong>Entry Point 9:</strong> This document serves as the Security &amp; Defense Entry Point. See <a href="../../START-HERE.md">START-HERE.md</a> for the master onboarding roadmap.</p>
+</blockquote>
+<h2 id="docsgitops-aiops-ansible-strategymd">docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md</h2>
+<blockquote>
+<p><strong>"Git is the source of truth. Ansible is the hand. AI is the mind."</strong></p>
+</blockquote>
+<p>This document defines the <strong>strategic doctrine</strong> for the three operational pillars of any DSOM-based project. These pillars are non-negotiable and apply universally, regardless of the technology stack.</p>
+<hr />
+<h2 id="1-the-three-pillar-model-palace">1. The Three-Pillar Model (+ Palace)</h2>
+<div class="highlight"><pre><span></span><code>+--------------------------------------------------------------+
+|                   DSOM OPERATING MODEL                       |
+|                                                              |
+|  +----------+   +----------+   +------------------+         |
+|  |  AIOps   |--&gt;|  GitOps  |--&gt;|   The Executor   |         |
+|  |  (Mind)  |   | (Record) |   |      (Hand)      |         |
+|  +----------+   +----------+   +------------------+         |
+|       |              |                  |                    |
+|   AI proposes   Git records       Executor runs             |
+|   &amp; analyses    all state         on target nodes          |
+|       ^              |                  |                    |
+|       +--------------+--- AI verifies --+                    |
+|                                                              |
+|  +----------------------------------------------------------+ |
+|  |  Palace (Memory)  --  Sovereign Markdown Palace v1.0    | |
+|  |  .agents/brain/palace_registry.md + wings/               | |
+|  |  SOD: AI reads Palace Registry (Section [14])           | |
+|  |  EOD: palace-sync.sh writes spatial update proposal     | |
+|  +----------------------------------------------------------+ |
++--------------------------------------------------------------+
+</code></pre></div>
+<p><strong>The Integration Loop:</strong></p>
+<ol>
+<li><strong>AI Proposes</strong> — AI (Cognitive Twin) analyses logs, generates playbooks/scripts, and recommends next action.</li>
+<li><strong>Git Records</strong> — Human commits the proposed script/config to the repository.</li>
+<li><strong>Executor Runs</strong> — Human triggers the execution (e.g. Ansible, <code>uv</code>, <code>node</code>) against target nodes.</li>
+<li><strong>AI Verifies</strong> — Human pastes output back to AI; AI analyses results and confirms success or recommends remediation.</li>
+<li><strong>Palace Remembers</strong> — EOD palace-sync captures spatial knowledge; SOD manifest includes Palace Registry so AI walks it on wake-up.</li>
+</ol>
+<hr />
+<h2 id="2-aiops-pillar">🤖 2. AIOps Pillar</h2>
+<h3 id="21-role-definition">2.1 Role Definition</h3>
+<p>The AI operates exclusively as the <strong>Cognitive Digital Twin</strong> — an advisory intelligence layer. It is <strong>not</strong> an autonomous executor.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">AI CAN</th>
+<th style="text-align: left;">AI CANNOT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Generate Ansible playbooks</td>
+<td style="text-align: left;">Directly SSH into any node</td>
+</tr>
+<tr>
+<td style="text-align: left;">Analyse log output</td>
+<td style="text-align: left;">Execute shell commands on remote hosts</td>
+</tr>
+<tr>
+<td style="text-align: left;">Recommend architectural changes</td>
+<td style="text-align: left;">Store or handle secrets/credentials</td>
+</tr>
+<tr>
+<td style="text-align: left;">Propose Git commits and messages</td>
+<td style="text-align: left;">Push to <code>main</code> without Human approval</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trigger Ansible <em>guidance</em> (tell Human what to run)</td>
+<td style="text-align: left;">Auto-run any playbook</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-aiops-workflow">2.2 AIOps Workflow</h3>
+<div class="highlight"><pre><span></span><code>Log / Event → AI Analysis → Diagnosis + Playbook Proposal
+                                      ↓
+                          Human Review &amp; Approval
+                                      ↓
+                          Git Commit → Ansible Execute
+                                      ↓
+                          Output → AI Verification Loop
+</code></pre></div>
+<h3 id="23-ai-context-requirements">2.3 AI Context Requirements</h3>
+<p>Before any advisory session, the AI <strong>MUST</strong> read:</p>
+<ul>
+<li><code>docs/AI-MASTER-PROTOCOL.md</code> — Governance laws</li>
+<li><code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code> — Project-specific environment map</li>
+<li><code>.agents/brain/task.md</code> — Current state</li>
+<li><code>.agents/brain/walkthrough.md</code> — History and Mental Anchor</li>
+<li><code>.agents/brain/palace_registry.md</code> — <strong>Spatial map (Palace v1.0)</strong> — walk this to locate relevant Rooms</li>
+<li><code>inventory/hosts.yml</code> — Target node topology</li>
+</ul>
+<blockquote>
+<p><strong>SOD shortcut:</strong> <code>bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)</code> injects all of the above automatically via the reanimation manifest (Section [14] = Palace Registry).</p>
+</blockquote>
+<hr />
+<h2 id="3-gitops-pillar">🔄 3. GitOps Pillar</h2>
+<h3 id="31-core-principle">3.1 Core Principle</h3>
+<p><strong>Git is the single source of truth.</strong> All system state, configuration, and desired state is represented in the Git repository. The repository is the only authoritative source.</p>
+<h3 id="32-gitops-laws">3.2 GitOps Laws</h3>
+<ol>
+<li><strong>No Ad-hoc Changes</strong>: No manual SSH edits to production/staging nodes. If a change is not in Git, it does not exist.</li>
+<li><strong>Deploy-by-Merge</strong>: The merge to <code>main</code> is the trigger for a deployment (via Ansible). No other trigger is valid.</li>
+<li><strong>Branch Protection</strong>: The <code>main</code> branch is protected. All changes require a Pull Request (PR) or explicit Sovereign authorisation.</li>
+<li><strong>Declarative State</strong>: All configuration files are declarative (Ansible playbooks, <code>hosts.yml</code>, <code>group_vars/</code>). The desired state is always readable.</li>
+<li><strong>Audit Trail</strong>: Every change has a Git commit with a semantic message. The Git log is the deployment history.</li>
+</ol>
+<h3 id="33-commit-convention">3.3 Commit Convention</h3>
+<p>All commits must follow the <strong>Conventional Commits</strong> standard:</p>
+<div class="highlight"><pre><span></span><code>type(scope): descriptive message [Phase-XX/vX.X]
+
+Types: feat | fix | docs | chore | refactor | test | ci
+Scope: the component or role affected (e.g., kafka, logstash, haproxy)
+
+Examples:
+  feat(ansible): add kafka broker idempotency role [Phase-12/v2.3]
+  fix(inventory): correct &#39;dsom_suffix&#39; variable for node-02 [Phase-14/v2.4]
+  docs(brain): update walkthrough mental anchor for Phase 15
+</code></pre></div>
+<h3 id="34-sync-ritual-the-push-pull-cycle">3.4 Sync Ritual (The Push-Pull Cycle)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tier 1 (Command Centre): Author &amp; Push</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(scope): descriptive message [Phase-XX/vX.X]&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Tier 2 (Dev Bridge): Palace SOD — full automated reanimation</span>
+bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\sod-palace.ps1)</span>
+<span class="c1"># Then upload manifest + handshake with AI</span>
+
+<span class="c1"># Tier 2 (Dev Bridge): Palace EOD — full automated save</span>
+bash<span class="w"> </span>tools/eod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\eod-palace.ps1)</span>
+<span class="c1"># Then review palace_update_proposal + update closets</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Manual alternative (T1 Windows):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">reanimate</span><span class="p">.</span><span class="n">ps1</span>   <span class="c"># SOD</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">hibernation</span><span class="p">.</span><span class="n">ps1</span> <span class="c"># EOD (includes palace-sync v2.1)</span>
+</code></pre></div>
+</blockquote>
+<hr />
+<h2 id="4-the-executor-pillar-ansible-uv-node">⚙️ 4. The Executor Pillar (Ansible / uv / Node)</h2>
+<h3 id="41-execution-modularity">4.1 Execution Modularity</h3>
+<p>While DSOM was originally forged for heavy infrastructure automation using <strong>Ansible</strong>, the actual mechanics of the Third Pillar (The Hand) apply to <em>any</em> project type. The Executor is fully modular:
+- <strong>Infrastructure:</strong> <code>ansible-playbook</code> (OS-level operations)
+- <strong>Data Science / Python:</strong> <code>uv run</code> (Isolated Python execution)
+- <strong>Web Development:</strong> <code>npm run</code> / <code>node</code> (JS execution)
+- <strong>Documentation:</strong> <code>pandoc</code> / <code>latex</code> (Compilation)</p>
+<p>Regardless of the tool, the Executor acts as the <strong>exclusive mechanism</strong> for altering state. No manual edits or ad-hoc tinkering are permitted outside the execution scripts.</p>
+<h3 id="42-the-windows-wsl2-bridge-control-node">4.2 The Windows WSL2 Bridge (Control Node)</h3>
+<p>For projects operating on Windows 11 without a dedicated Linux jumphost, <strong>WSL2 (Ubuntu or AlmaLinux)</strong> must be configured as the local Control Node.
+- This "Execution Bridge" ensures that humans and AI agents can seamlessly leverage standard Linux tooling (Ansible, Make, Bash) natively within the Windows environment.
+- It removes architectural friction, allowing DSOM to be applied universally across OS environments without requiring external VMs.</p>
+<h3 id="43-ansible-laws-if-applicable">4.3 Ansible Laws (If Applicable)</h3>
+<p>If your project is utilizing Ansible as the Executor, the following laws apply:</p>
+<ol>
+<li><strong>Idempotency Law</strong>: Every playbook MUST be safe to re-run multiple times with the same result. No playbook may cause data corruption on repeated execution.</li>
+<li><strong>No Hardcoded Secrets</strong>: All credentials are managed via <code>ansible-vault</code>. Never commit plaintext passwords or API keys.</li>
+<li><strong>Role-Based Structure</strong>: All automation is organised into <code>roles/</code> following the Ansible Galaxy standard.</li>
+<li><strong>SSH Key Authentication</strong>: All Ansible connections use SSH key-based auth. Password authentication is prohibited.</li>
+<li><strong>Pre-flight Prerequisite</strong>: <code>tools/audit-pre-flight.sh</code> MUST be run and pass before any playbook is executed.</li>
+</ol>
+<h3 id="43-standard-directory-structure">4.3 Standard Directory Structure</h3>
+<p>Every DSOM project using Ansible MUST follow this structure:</p>
+<div class="highlight"><pre><span></span><code>[project-root]/
+├── ansible.cfg                    # Ansible configuration
+├── inventory/
+│   ├── hosts.yml                  # Node inventory (Git-tracked, no secrets)
+│   ├── group_vars/
+│   │   ├── all.yml                # Variables for all hosts
+│   │   └── [group_name].yml       # Group-specific variables
+│   └── host_vars/
+│       └── [hostname].yml         # Host-specific variables
+├── playbooks/
+│   ├── site.yml                   # Master playbook (entry point)
+│   ├── deploy-[component].yml     # Component-specific playbooks
+│   └── preflight.yml              # Pre-flight verification playbook
+├── roles/
+│   └── [role_name]/
+│       ├── tasks/main.yml
+│       ├── handlers/main.yml
+│       ├── templates/
+│       ├── files/
+│       ├── vars/main.yml
+│       └── defaults/main.yml
+└── vault/
+    └── .gitignore                 # Vault files NEVER committed to Git
+</code></pre></div>
+<h3 id="44-ansible-prerequisites-checklist">4.4 Ansible Prerequisites Checklist</h3>
+<p>Before running any playbook, the AI MUST verify all of the following:</p>
+<ul>
+<li>[ ] <code>inventory/hosts.yml</code> exists and is populated</li>
+<li>[ ] SSH keys are distributed to all target nodes</li>
+<li>[ ] <code>ansible-vault</code> is configured if secrets are required</li>
+<li>[ ] <code>tools/audit-pre-flight.sh</code> has been run and passed</li>
+<li>[ ] The correct Ansible version is installed (<code>ansible --version</code>)</li>
+<li>[ ] Connectivity verified (<code>ansible all -m ping -i inventory/hosts.yml</code>)</li>
+</ul>
+<h3 id="45-core-ansible-commands-reference">4.5 Core Ansible Commands Reference</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verify connectivity to all nodes</span>
+ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml
+
+<span class="c1"># Dry-run (check mode) — always run before live execution</span>
+ansible-playbook<span class="w"> </span>playbooks/site.yml<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>--check<span class="w"> </span>--diff
+
+<span class="c1"># Full execution with logging</span>
+ansible-playbook<span class="w"> </span>playbooks/site.yml<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>.logs/deploy-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d-%H%M%S<span class="k">)</span>.log
+
+<span class="c1"># Run a specific role/tag only</span>
+ansible-playbook<span class="w"> </span>playbooks/site.yml<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>--tags<span class="w"> </span><span class="s2">&quot;[tag_name]&quot;</span>
+
+<span class="c1"># Encrypt a secrets file with vault</span>
+ansible-vault<span class="w"> </span>encrypt<span class="w"> </span>vault/production_secrets.yml
+
+<span class="c1"># View encrypted vault file</span>
+ansible-vault<span class="w"> </span>view<span class="w"> </span>vault/production_secrets.yml
+</code></pre></div>
+<hr />
+<h2 id="5-integration-with-dsom-brain-palace">5. Integration with DSOM Brain + Palace</h2>
+<p>The three pillars are anchored to the DSOM SKMS (Knowledge Management System):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Brain Artifact</th>
+<th style="text-align: left;">Pillar Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>task.md</code></td>
+<td style="text-align: left;">AIOps: Current session targets and Ansible pre-flight checklist</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>implementation_plan.md</code></td>
+<td style="text-align: left;">GitOps: The desired state roadmap; what to commit next</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>walkthrough.md</code></td>
+<td style="text-align: left;">AIOps: History of Ansible runs, log analysis results, Mental Anchors</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inventory/hosts.yml</code></td>
+<td style="text-align: left;">Ansible: Node topology — always verified before execution</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>playbooks/</code></td>
+<td style="text-align: left;">GitOps + Ansible: All automation is version-controlled</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>palace_registry.md</code></strong></td>
+<td style="text-align: left;"><strong>Palace: AI spatial map — loaded at SOD via Section [14] of manifest</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>wings/</code></strong></td>
+<td style="text-align: left;"><strong>Palace: Room closets — spatial knowledge updated each EOD</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>playbooks/dsom/sod-palace.yml</code></strong></td>
+<td style="text-align: left;"><strong>Ansible + AIOps: Automates SOD reanimation loop</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>playbooks/dsom/eod-palace.yml</code></strong></td>
+<td style="text-align: left;"><strong>Ansible + GitOps: Automates EOD save + Palace sync</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-adoption-checklist-for-new-projects">📋 6. Adoption Checklist for New Projects</h2>
+<p>When starting a new project with DSOM, use this checklist to establish the three pillar baseline:</p>
+<h3 id="gitops-setup">GitOps Setup</h3>
+<ul>
+<li>[ ] Create GitHub repository with branch protection on <code>main</code></li>
+<li>[ ] Configure <code>.gitignore</code> to exclude <code>vault/</code>, <code>*.log</code>, sensitive files</li>
+<li>[ ] Define commit convention in <code>CONTRIBUTING.md</code></li>
+</ul>
+<h3 id="aiops-setup">AIOps Setup</h3>
+<ul>
+<li>[ ] Create <code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code> from template (fill all <code>[PLACEHOLDER]</code> values)</li>
+<li>[ ] Initialise <code>.agents/brain/</code> with <code>task.md</code>, <code>walkthrough.md</code>, <code>implementation_plan.md</code></li>
+<li>[ ] Configure AI agent with <code>docs/AI-MASTER-PROTOCOL.md</code> as system context</li>
+<li>[ ] <strong>Run <code>bash tools/palace-sync.sh --backfill</code></strong> to initialise Palace Registry</li>
+<li>[ ] Review <code>palace_update_proposal_YYYY-MM-DD.md</code> with AI and populate closets</li>
+</ul>
+<h3 id="ansible-setup">Ansible Setup</h3>
+<ul>
+<li>[ ] Follow <code>docs/HOWTO-SETUP-ANSIBLE-BASELINE.md</code> for full setup</li>
+<li>[ ] Create <code>ansible.cfg</code>, <code>inventory/hosts.yml</code>, <code>playbooks/preflight.yml</code></li>
+<li>[ ] Verify connectivity: <code>ansible all -m ping -i inventory/hosts.yml</code></li>
+<li>[ ] Run pre-flight: <code>tools/audit-pre-flight.sh</code></li>
+<li>[ ] <strong>Test SOD playlist:</strong> <code>bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)</code></li>
+<li>[ ] <strong>Test EOD playlist:</strong> <code>bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)</code></li>
+</ul>
+<hr />
+<p><em>Created by the DSOM Engineering Team | v2.0 | 2026-04-08</em>
+<em>Standard: UK English | Licensed under GPLv3</em></p>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

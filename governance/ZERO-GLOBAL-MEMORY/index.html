@@ -1,0 +1,2906 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive architectural analysis of the Zero-Global Memory mandate in DSOM. Covers the problem, the solution, the mechanics, and the operational procedures that make AI memory persistent, auditable, and vendor-independent.">
+      
+      
+        <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Zero-Global Memory: The Sovereign AI Memory Architecture - Deep State of Mind (DSOM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#zero-global-memory-the-sovereign-ai-memory-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deep State of Mind (DSOM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Zero-Global Memory: The Sovereign AI Memory Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Deep State of Mind (DSOM)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../START-HERE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START HERE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SECURITY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-INITIALIZATION-SEQUENCE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Initialization Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-MASTER-PROTOCOL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Master Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-AUTOMATED-STATE-SYNC.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Automated State Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-MCP-ARCHITECTURE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native MCP Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitOps · AIOps · Ansible Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/OPERATIONAL-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/NOSS-INTEGRATION-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOSS Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python UV Environment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AUTOMATION-AUDIT-LIST.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Audit Ledger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Efficiency Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Byte-Capped Execution Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingestion Latency Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Performance Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/ZERO-GLOBAL-MEMORY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero-Global Memory Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/LLM-WIKI-ADOPTION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM WIKI Adoption Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Efficiency Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge-First Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Security Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/RITUAL-OF-TRANSITION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ritual of Transition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/PERSONALIZATION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Brain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Brain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/task.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/implementation_plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/walkthrough.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognitive Twin Protocol Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/REANIMATION-PROMPT-TEMPLATE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/DSOM-EPISODIC-RECORD-TEMPLATE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Episodic Record Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/MULTI-AGENT-PROTOCOLS.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini DSOM Gem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/CLAUDE-SETUP.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/model-specifics/dsom-claude-initialiser.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Claude Initialiser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/COPILOT-SETUP.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copilot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent Skills & Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Agent Skills & Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subagent Orchestration Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/eod-palace-sync/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/sod-palace-sync/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-token-calculator/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Token Calculator Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Knowledge Ingester
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/publish-to-blogger/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish to Blogger Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-commit-resolver/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git Commit Resolver Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-history-scrubber/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git History Scrubber Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/initialize-gitops/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initialize GitOps Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/forensic-log-audit/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forensic Log Audit Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Passwordless Setup Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Snyk Scanner Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-SETUP-ANSIBLE-BASELINE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup Baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-SETUP-WSL-ALMALINUX10.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup AlmaLinux 10 WSL2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Playbooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/site.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM site.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    audit-preflight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/init-brain.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    init-brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    privacy-scan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pre-Flight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/init-brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Init Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/reanimate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/hibernation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hibernation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/privacy-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/template-reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-core-problem-ephemeral-ai-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Core Problem: Ephemeral AI Memory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Core Problem: Ephemeral AI Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-session-wipeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Session Wipeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-vendor-lock-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Vendor Lock-in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-no-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 No Audit Trail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-dsom-solution-git-as-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The DSOM Solution: Git as the Brain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-mechanics-how-memory-is-structured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Mechanics: How Memory Is Structured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Mechanics: How Memory Is Structured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-sovereign-markdown-palace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The Sovereign Markdown Palace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-active-context-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Active Context Manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-the-episodic-resume-protocol-rule-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 The Episodic Resume Protocol (Rule 18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-the-cognitive-flow-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 The Cognitive Flow Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-operational-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Operational Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Operational Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-start-of-day-sod-memory-reanimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Start-of-Day (SOD) — Memory Reanimation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-during-session-memory-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 During Session — Memory Writes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-end-of-day-eod-memory-serialisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 End-of-Day (EOD) — Memory Serialisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-this-architecture-survives-ai-model-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Why This Architecture Survives AI Model Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-token-efficiency-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The Token Efficiency Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-governance-rules-agentsmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Governance Rules (AGENTS.md)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-anti-patterns-that-violate-zero-global-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Anti-Patterns That Violate Zero-Global Memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOURCES
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="zero-global-memory-the-sovereign-ai-memory-architecture">Zero-Global Memory: The Sovereign AI Memory Architecture</h1>
+<blockquote>
+<p><strong>Artifact Level:</strong> L2 (Analysis)
+<strong>Rule Reference:</strong> Rule 1, Rule 8, Rule 18 — <code>.agents/AGENTS.md</code>
+<strong>Status:</strong> Active Baseline — foundational doctrine for all DSOM projects.</p>
+</blockquote>
+<h2 id="abstract">Abstract</h2>
+<p>By enforcing Zero-Global Memory, the DSOM framework resolves the most critical structural failure in standard LLM deployments: the AI's memory is ephemeral, vendor-locked, and unauditable. With this architectural mandate, all project knowledge, operational state, and session context live exclusively in a Git repository — never inside the AI agent itself. The AI becomes a stateless, replaceable reasoning engine. The repository becomes the brain.</p>
+<hr />
+<h2 id="1-the-core-problem-ephemeral-ai-memory">1. The Core Problem: Ephemeral AI Memory</h2>
+<p>Standard LLM deployments suffer from three compounding memory failures:</p>
+<h3 id="11-session-wipeout">1.1 Session Wipeout</h3>
+<p>Every chat session is isolated. When a session closes, the AI loses all accumulated context: server names, IP schemes, design decisions, in-progress task states, and personal preferences. The next session starts from zero.</p>
+<h3 id="12-vendor-lock-in">1.2 Vendor Lock-in</h3>
+<p>When project memory accumulates inside a proprietary AI tool (e.g., saved chats, project instructions stored in the vendor's cloud), migrating to a different model or provider requires re-teaching everything from scratch. The institutional knowledge is trapped.</p>
+<h3 id="13-no-audit-trail">1.3 No Audit Trail</h3>
+<p>There is no way to ask: <em>"What did the AI know on 14 July, and who told it that?"</em> Memory changes are invisible and unversioned. This is catastrophic for regulated or security-sensitive operational environments.</p>
+<hr />
+<h2 id="2-the-dsom-solution-git-as-the-brain">2. The DSOM Solution: Git as the Brain</h2>
+<p>Zero-Global Memory resolves all three failures by a single architectural constraint:</p>
+<blockquote>
+<p><strong>The AI is forbidden from acting as the source of truth. The Git repository is.</strong></p>
+</blockquote>
+<p>Every piece of operational knowledge the AI needs must exist as a committed file in the repository before the AI can act on it. If it is not in Git, it does not exist.</p>
+<div class="highlight"><pre><span></span><code>╔══════════════════════════════════════════════════════════╗
+║            ZERO-GLOBAL MEMORY ARCHITECTURE               ║
+╠══════════════════════════════════════════════════════════╣
+║                                                          ║
+║  ❌  AI Agent (stateless — memory wiped on close)        ║
+║                                                          ║
+║  ✅  .agents/brain/           (Git-committed state)      ║
+║       ├── task.md             current task queue         ║
+║       ├── walkthrough.md      session anchor             ║
+║       ├── palace_registry.md  spatial memory index       ║
+║       ├── active_context_manifest.md  session scope      ║
+║       └── wings/              knowledge rooms (closets)  ║
+║                                                          ║
+║  ✅  .agents/AGENTS.md        persona + 19 core rules    ║
+║  ✅  docs/governance/         architecture + protocols   ║
+║  ✅  tools/                   operational ritual scripts  ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+</code></pre></div>
+<hr />
+<h2 id="3-the-mechanics-how-memory-is-structured">3. The Mechanics: How Memory Is Structured</h2>
+<h3 id="31-the-sovereign-markdown-palace">3.1 The Sovereign Markdown Palace</h3>
+<p>Memory is not stored as a flat list of notes. It is structured into a spatial architecture — the <strong>Sovereign Markdown Palace</strong> — organised into hierarchical rooms:</p>
+<div class="highlight"><pre><span></span><code>.agents/brain/
+├── palace_registry.md         ← master spatial index
+├── active_context_manifest.md ← active session file list
+├── task.md                    ← current sprint tasks
+├── walkthrough.md             ← session mental anchor
+├── checkpoint_summary.txt     ← hibernation state dump
+└── wings/
+    ├── wing_dsom_core/
+    │   └── hall_facts/
+    │       └── room_tooling/
+    │           └── closet.md  ← specific knowledge unit
+    └── wing_infrastructure/
+        └── ...
+</code></pre></div>
+<p>Each <code>closet.md</code> contains a bounded, single-topic knowledge unit (OKF-compliant). The AI navigates this structure deterministically — it does not search, it reads from a declared address.</p>
+<h3 id="32-active-context-manifest">3.2 Active Context Manifest</h3>
+<p>The AI never loads the entire <code>.agents/brain/</code> directory. Instead, it reads only the files declared in <code>active_context_manifest.md</code> at the start of each session:</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Active Files</span>
+<span class="k">-</span><span class="w"> </span>.agents/brain/task.md
+<span class="k">-</span><span class="w"> </span>.agents/brain/walkthrough.md
+<span class="k">-</span><span class="w"> </span>.agents/brain/palace_registry.md
+<span class="k">-</span><span class="w"> </span>.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md
+
+<span class="gu">## Excluded (Archival — load via view_file with line ranges only)</span>
+<span class="gh"># palace_update_proposal files: 30,000–55,000 tokens each</span>
+</code></pre></div>
+<p>This is the <strong>Progressive Disclosure</strong> principle applied to memory: load only what is needed for the current session. The three archival <code>palace_update_proposal</code> files in the baseline repository alone contain 120,466 tokens — loading them wholesale would consume the entire context window before any work begins.</p>
+<h3 id="33-the-episodic-resume-protocol-rule-18">3.3 The Episodic Resume Protocol (Rule 18)</h3>
+<p>At the end of every significant workflow, the AI generates a <code>[DSOM EPISODIC RECORD]</code> block — a compact serialisation of the session's cognitive state. This record is saved by the human operator and used to reanimate the next session precisely where the last one ended:</p>
+<div class="highlight"><pre><span></span><code>[DSOM EPISODIC RECORD]
+1. IDENTITY &amp; CONTEXT MATRIX   → who, what project, which gem
+2. THE DELTA (COGNITIVE LOCK)  → last milestone, blocking issues
+3. MEMORY CORE &amp; PARAMETERS    → rules asserted, file dependencies
+4. NEXT ACTION QUEUE           → exact next steps
+</code></pre></div>
+<p>Without this record, the next session begins from zero. With it, reanimation takes seconds.</p>
+<h3 id="34-the-cognitive-flow-map">3.4 The Cognitive Flow Map</h3>
+<p>To fully visualize how the AI navigates this Zero-Global Memory structure during a session, the following relational matrix dictates the strict path of context ingestion:</p>
+<div class="highlight"><pre><span></span><code>graph TD
+    A[AGENTS.md &lt;br/&gt; Core Persona &amp; Rules] --&gt;|Governs| B(active_context_manifest.md)
+    B --&gt;|Instructs to Load| C[task.md &lt;br/&gt; Next Actions]
+    B --&gt;|Instructs to Load| D[walkthrough.md &lt;br/&gt; Recent Memories]
+    B --&gt;|Instructs to Load| E[palace_registry.md &lt;br/&gt; Spatial Map]
+
+    E --&gt;|Indexes| F[closet.md &lt;br/&gt; Tooling Registry]
+    F --&gt;|Maps to| G[tools/ scripts &amp; &lt;br/&gt; docs/tools/ guides]
+
+    C -.-&gt;|Updated by| D
+</code></pre></div>
+<p><strong>Relational Matrix:</strong>
+- <strong><code>AGENTS.md</code></strong>: The absolute cognitive entry point. Governs the format and behavioral constraints for every subsequent file.
+- <strong><code>active_context_manifest.md</code></strong>: The Session Bootloader. Directs the AI to selectively load task, walkthrough, and spatial memory indices without flooding tokens.
+- <strong><code>palace_registry.md</code></strong>: The Spatial Map. Indexes all knowledge rooms (closets), preventing the need for the AI to "search" the filesystem blindly.
+- <strong><code>task.md</code> &amp; <code>walkthrough.md</code></strong>: The short-term action queue and episodic memory anchor, functioning together to serialize the precise state of execution.</p>
+<hr />
+<h2 id="4-operational-procedures">4. Operational Procedures</h2>
+<h3 id="41-start-of-day-sod-memory-reanimation">4.1 Start-of-Day (SOD) — Memory Reanimation</h3>
+<div class="highlight"><pre><span></span><code>1. Read active_context_manifest.md  → determine which files to load
+2. Read task.md                     → restore current task state
+3. Read walkthrough.md              → read session anchor
+4. Read palace_registry.md          → orient spatial memory index
+5. Load only declared wing closets  → domain-specific context
+</code></pre></div>
+<p>Total token cost for a typical SOD load: <strong>~2,500–4,000 tokens</strong> — well within the 4,000-token quality gate for individual files, and far below the ~145,000 tokens that would be consumed by loading the entire brain.</p>
+<h3 id="42-during-session-memory-writes">4.2 During Session — Memory Writes</h3>
+<p>Every decision, discovery, or architectural change made during a session must be committed to the appropriate location before the session ends:</p>
+<table>
+<thead>
+<tr>
+<th>Type of Knowledge</th>
+<th>Destination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current tasks and progress</td>
+<td><code>task.md</code></td>
+</tr>
+<tr>
+<td>Session-level context</td>
+<td><code>walkthrough.md</code></td>
+</tr>
+<tr>
+<td>Reusable technical facts</td>
+<td>Wing closet (<code>closet.md</code>)</td>
+</tr>
+<tr>
+<td>Governance/architecture</td>
+<td><code>docs/governance/</code></td>
+</tr>
+<tr>
+<td>Operational procedures</td>
+<td><code>.agents/skills/</code> SKILL.md</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-end-of-day-eod-memory-serialisation">4.3 End-of-Day (EOD) — Memory Serialisation</h3>
+<div class="highlight"><pre><span></span><code>1. Update task.md with completed/pending items
+2. Write session anchor to walkthrough.md
+3. Generate [DSOM EPISODIC RECORD] block
+4. Commit checkpoint_summary.txt to brain
+5. Run palace-sync to generate palace_update_proposal
+6. Atomic git commits per logical task boundary
+7. Push to origin/main (the external memory backup)
+</code></pre></div>
+<hr />
+<h2 id="5-why-this-architecture-survives-ai-model-changes">5. Why This Architecture Survives AI Model Changes</h2>
+<p>Because all memory is in Git, not in the AI:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Traditional AI</th>
+<th>DSOM Zero-Global Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Switch from Gemini to Claude</td>
+<td>Lose all project context</td>
+<td>Read <code>.agents/AGENTS.md</code> + brain → full context restored</td>
+</tr>
+<tr>
+<td>AI vendor outage</td>
+<td>Work stops</td>
+<td>Switch to any other model, same context</td>
+</tr>
+<tr>
+<td>New team member (human or AI)</td>
+<td>Re-explain everything</td>
+<td>Clone repo, run SOD ritual → ready in minutes</td>
+</tr>
+<tr>
+<td>Audit: "What did the AI decide on Day 14?"</td>
+<td>Impossible</td>
+<td><code>git log --since="2026-07-14" .agents/brain/</code></td>
+</tr>
+<tr>
+<td>Rollback a wrong AI decision</td>
+<td>Impossible</td>
+<td><code>git revert &lt;commit&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-the-token-efficiency-connection">6. The Token Efficiency Connection</h2>
+<p>Zero-Global Memory directly enables the DSOM token efficiency gains (96.23% reduction) because:</p>
+<ol>
+<li><strong>Bounded loads</strong> — only declared files are ever loaded; no speculative reads.</li>
+<li><strong>OKF frontmatter routing</strong> — the <code>topics:</code> tag on every <code>SKILL.md</code> means skill discovery costs ~375 tokens instead of ~14,400 tokens (full bodies).</li>
+<li><strong>4,000-token gate</strong> — the <code>dsom-token-calculator</code> skill enforces a circuit breaker, preventing any single file from flooding the context window.</li>
+<li><strong>Archival isolation</strong> — massive palace proposal files (30,000–55,000 tokens each) are permanently excluded from active context via <code>active_context_manifest.md</code>.</li>
+</ol>
+<p>Without Zero-Global Memory, there is no mechanism to enforce any of this discipline. An AI that "remembers" things internally has no deterministic boundary on what it loads.</p>
+<hr />
+<h2 id="7-governance-rules-agentsmd">7. Governance Rules (AGENTS.md)</h2>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Mandate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule 1</strong></td>
+<td>Memory lives in <code>.agents/brain</code>. Synchronise via <code>palace_registry.md</code>.</td>
+</tr>
+<tr>
+<td><strong>Rule 8</strong></td>
+<td>Triple-Ledger Sync — update <code>README.md</code>, <code>CHANGELOG.md</code>, <code>HISTORY.md</code> on every architectural change.</td>
+</tr>
+<tr>
+<td><strong>Rule 10</strong></td>
+<td>Byte-Capped Executions — all exploratory reads are output-capped to prevent context flooding.</td>
+</tr>
+<tr>
+<td><strong>Rule 18</strong></td>
+<td>Episodic Resume Protocol — generate <code>[DSOM EPISODIC RECORD]</code> at EOD.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-anti-patterns-that-violate-zero-global-memory">8. Anti-Patterns That Violate Zero-Global Memory</h2>
+<table>
+<thead>
+<tr>
+<th>Anti-Pattern</th>
+<th>Violation</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"I remember from last session that..."</td>
+<td>AI acting as source of truth</td>
+<td>Unverifiable, unauditable, lost on model switch</td>
+</tr>
+<tr>
+<td>Storing decisions only in chat history</td>
+<td>No Git commit</td>
+<td>Lost permanently on session close</td>
+</tr>
+<tr>
+<td>Loading <code>.agents/brain/</code> wholesale</td>
+<td>No active context scoping</td>
+<td>145,000+ token context flood</td>
+</tr>
+<tr>
+<td>Keeping server credentials in AI instructions</td>
+<td>Vendor-cloud stored secrets</td>
+<td>Security breach risk</td>
+</tr>
+<tr>
+<td>Skipping EOD ritual</td>
+<td>No episodic record</td>
+<td>Next session starts from zero</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sources">SOURCES</h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../.agents/AGENTS.md">AGENTS.md</a></td>
+<td>Core rulebook: Rules 1, 8, 10, 18 governing memory architecture.</td>
+</tr>
+<tr>
+<td><a href="../DSOM-TOKEN-PERFORMANCE-PLAYBOOK/">DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md</a></td>
+<td>Token efficiency playbook showing how Zero-Global Memory enables 96.23% context reduction.</td>
+</tr>
+<tr>
+<td><a href="../BYTE-CAPPED-EXECUTION-FRAMEWORK/">BYTE-CAPPED-EXECUTION-FRAMEWORK.md</a></td>
+<td>Circuit breaker enforcement preventing context flooding.</td>
+</tr>
+<tr>
+<td><a href="../DSOM-INGESTION-LATENCY-ARCHITECTURE/">DSOM-INGESTION-LATENCY-ARCHITECTURE.md</a></td>
+<td>Empirical benchmarks: local OKF reads vs. remote RAG latency.</td>
+</tr>
+<tr>
+<td><a href="../../DSOM-EPISODIC-RECORD-TEMPLATE/">DSOM-EPISODIC-RECORD-TEMPLATE.md</a></td>
+<td>Canonical template for the session anchor serialisation format.</td>
+</tr>
+<tr>
+<td><a href="../../.agents/brain/active_context_manifest.md">active_context_manifest.md</a></td>
+<td>OKF manifest bounding active session file scope.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-19</em>
+<em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

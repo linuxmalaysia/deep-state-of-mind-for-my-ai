@@ -1,0 +1,2645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OKF-compliant documentation for HOWTO-CHECKUSAGE.md.">
+      
+      
+        <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>HOWTO: CheckUsage.ps1 — Antigravity Session Monitor - Deep State of Mind (DSOM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#howto-checkusageps1-antigravity-session-monitor" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deep State of Mind (DSOM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HOWTO: CheckUsage.ps1 — Antigravity Session Monitor
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Deep State of Mind (DSOM)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../START-HERE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START HERE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SECURITY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-INITIALIZATION-SEQUENCE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Initialization Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-MASTER-PROTOCOL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Master Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-AUTOMATED-STATE-SYNC.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Automated State Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-MCP-ARCHITECTURE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native MCP Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitOps · AIOps · Ansible Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/OPERATIONAL-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/NOSS-INTEGRATION-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOSS Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python UV Environment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AUTOMATION-AUDIT-LIST.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Audit Ledger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Efficiency Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Byte-Capped Execution Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingestion Latency Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Performance Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/ZERO-GLOBAL-MEMORY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero-Global Memory Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/LLM-WIKI-ADOPTION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM WIKI Adoption Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Efficiency Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge-First Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Security Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/RITUAL-OF-TRANSITION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ritual of Transition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/PERSONALIZATION.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Brain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Brain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/task.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/implementation_plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/walkthrough.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognitive Twin Protocol Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/REANIMATION-PROMPT-TEMPLATE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/DSOM-EPISODIC-RECORD-TEMPLATE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Episodic Record Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/governance/MULTI-AGENT-PROTOCOLS.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini DSOM Gem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/CLAUDE-SETUP.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/model-specifics/dsom-claude-initialiser.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Claude Initialiser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/COPILOT-SETUP.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copilot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent Skills & Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Agent Skills & Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subagent Orchestration Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/eod-palace-sync/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/sod-palace-sync/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-token-calculator/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Token Calculator Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Knowledge Ingester
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/publish-to-blogger/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish to Blogger Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-commit-resolver/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git Commit Resolver Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-history-scrubber/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git History Scrubber Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/initialize-gitops/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initialize GitOps Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/forensic-log-audit/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forensic Log Audit Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Passwordless Setup Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Snyk Scanner Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-SETUP-ANSIBLE-BASELINE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup Baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/HOWTO-SETUP-WSL-ALMALINUX10.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup AlmaLinux 10 WSL2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Playbooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/site.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM site.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    audit-preflight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/init-brain.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    init-brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    privacy-scan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pre-Flight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/init-brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Init Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/reanimate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/hibernation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hibernation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/privacy-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/template-reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="howto-checkusageps1-antigravity-session-monitor">HOWTO: CheckUsage.ps1 — Antigravity Session Monitor</h1>
+<h1 id="docstoolshowto-checkusagemd">docs/tools/HOWTO-CHECKUSAGE.md</h1>
+<blockquote>
+<p><strong>Standard: DSOM For My AI Protocol v6.1 | GitOps · AIOps · Ansible</strong>
+<strong>Tool:</strong> <code>tools/CheckUsage.ps1</code> | <strong>Version:</strong> v8.6 | <strong>Platform:</strong> Windows PowerShell (T1)</p>
+</blockquote>
+<hr />
+<h2 id="1-purpose">1. Purpose</h2>
+<p><code>CheckUsage.ps1</code> is the <strong>Sovereign Session Monitor</strong> for the Antigravity AI assistant. It reads the <code>.pb</code> conversation context files stored locally by Antigravity and displays real-time health metrics for each session — size, estimated token usage, growth velocity, age, and status.</p>
+<p><strong>Use it to:</strong></p>
+<ul>
+<li>Know when your current session is approaching the context limit</li>
+<li>Identify dormant old sessions consuming disk space</li>
+<li>Detect burst rate spikes that may trigger API rate limits (RPM)</li>
+<li>Keep a live health dashboard open in a side terminal during active work</li>
+</ul>
+<p><strong>Location:</strong> <code>tools/CheckUsage.ps1</code>
+<strong>Monitors:</strong> <code>C:\Users\[you]\.gemini\antigravity\conversations\*.pb</code></p>
+<hr />
+<h2 id="2-prerequisites">2. Prerequisites</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Requirement</th>
+<th style="text-align: left;">Minimum</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Operating System</td>
+<td style="text-align: left;">Windows 10/11</td>
+<td style="text-align: left;">T1 environment</td>
+</tr>
+<tr>
+<td style="text-align: left;">PowerShell</td>
+<td style="text-align: left;">5.1+</td>
+<td style="text-align: left;">Built into Windows</td>
+</tr>
+<tr>
+<td style="text-align: left;">Execution Policy</td>
+<td style="text-align: left;"><code>RemoteSigned</code> (CurrentUser)</td>
+<td style="text-align: left;">Set once — see §3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Antigravity</td>
+<td style="text-align: left;">Any version</td>
+<td style="text-align: left;"><code>.pb</code> files must exist</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-first-time-setup-run-once">3. First-Time Setup (Run Once)</h2>
+<p>Open PowerShell and run:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<p>This allows locally written scripts to run. It only affects your user account. You will not need to run this again.</p>
+<p><strong>Verify:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<span class="c"># Expected: RemoteSigned</span>
+</code></pre></div>
+<hr />
+<h2 id="4-usage">4. Usage</h2>
+<h3 id="41-run-once-snapshot">4.1 Run Once (Snapshot)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>Displays the current state of all sessions and exits. A usage tip is shown at the bottom.</p>
+<h3 id="42-live-monitor-loop-mode">4.2 Live Monitor (Loop Mode)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Loop</span>
+</code></pre></div>
+<p>Refreshes every 60 seconds. Shows a countdown bar between refreshes. Press <strong>Ctrl+C</strong> to stop.</p>
+<h3 id="43-full-syntax">4.3 Full Syntax</h3>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="no">[options]</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="n">-Loop</span>    <span class="p">(</span><span class="n">-l</span><span class="p">)</span>           <span class="n">Live</span> <span class="n">monitor</span> <span class="n">mode</span> <span class="p">(</span><span class="n">repeats</span> <span class="n">every</span> <span class="n">IntervalSeconds</span><span class="p">)</span>
+  <span class="n">-IntervalSeconds</span> <span class="p">(</span><span class="n">-i</span><span class="p">)</span>   <span class="n">Refresh</span> <span class="n">interval</span> <span class="k">in</span> <span class="n">seconds</span>         <span class="p">[</span><span class="k">default</span><span class="p">:</span> <span class="n">60</span><span class="p">]</span>
+  <span class="n">-ThresholdMB</span>     <span class="p">(</span><span class="n">-w</span><span class="p">)</span>   <span class="n">MB</span> <span class="n">size</span> <span class="n">to</span> <span class="n">trigger</span> <span class="n">WARNING</span> <span class="n">status</span>   <span class="p">[</span><span class="k">default</span><span class="p">:</span> <span class="n">20</span><span class="p">]</span>
+  <span class="n">-CriticalMB</span>      <span class="p">(</span><span class="n">-c</span><span class="p">)</span>   <span class="n">MB</span> <span class="n">size</span> <span class="n">to</span> <span class="n">trigger</span> <span class="n">LIMIT</span> <span class="n">RISK</span>       <span class="p">[</span><span class="k">default</span><span class="p">:</span> <span class="n">50</span><span class="p">]</span>
+  <span class="n">-DormantHours</span>    <span class="p">(</span><span class="n">-d</span><span class="p">)</span>   <span class="n">Hours</span> <span class="n">idle</span> <span class="n">before</span> <span class="n">DORMANT</span> <span class="n">status</span>    <span class="p">[</span><span class="k">default</span><span class="p">:</span> <span class="n">4</span><span class="p">]</span>
+  <span class="n">-Top</span>             <span class="p">(</span><span class="n">-n</span><span class="p">)</span>   <span class="n">Show</span> <span class="n">only</span> <span class="n">top</span> <span class="n">N</span> <span class="n">sessions</span>            <span class="p">[</span><span class="k">default</span><span class="p">:</span> <span class="n">all</span><span class="p">]</span>
+  <span class="n">-NoPulse</span>                <span class="n">Suppress</span> <span class="n">countdown</span> <span class="n">bar</span> <span class="k">in</span> <span class="n">loop</span> <span class="n">mode</span>
+  <span class="n">-Help</span>            <span class="p">(</span><span class="n">-h</span><span class="p">)</span>   <span class="n">Show</span> <span class="n">the</span> <span class="n">full</span> <span class="n">help</span> <span class="n">screen</span>
+</code></pre></div>
+<h3 id="44-examples">4.4 Examples</h3>
+<div class="highlight"><pre><span></span><code><span class="c"># Snapshot — run once and exit</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span>
+
+<span class="c"># Live monitor with default 60s refresh</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Loop</span>
+
+<span class="c"># Live monitor with 30s refresh (short alias)</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-l</span> <span class="n">-i</span> <span class="n">30</span>
+
+<span class="c"># Top 5 largest sessions only</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Top</span> <span class="n">5</span>
+
+<span class="c"># Tighter thresholds — warn at 10MB, critical at 25MB</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-ThresholdMB</span> <span class="n">10</span> <span class="n">-CriticalMB</span> <span class="n">25</span>
+
+<span class="c"># Live monitor for large projects, suppress countdown bar</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Loop</span> <span class="n">-NoPulse</span> <span class="n">-CriticalMB</span> <span class="n">80</span>
+
+<span class="c"># Show full help screen</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Help</span>
+</code></pre></div>
+<hr />
+<h2 id="5-reading-the-output">5. Reading the Output</h2>
+<h3 id="51-column-reference">5.1 Column Reference</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Session</strong></td>
+<td style="text-align: left;">Shortened session UUID (first 8 chars + <code>...</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Size(MB)</strong></td>
+<td style="text-align: left;">Raw file size of the <code>.pb</code> context file</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tokens(Est)</strong></td>
+<td style="text-align: left;">Estimated token count (<code>Size × 62,500 tokens/MB</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Velocity</strong></td>
+<td style="text-align: left;">Size change since last refresh in loop mode (<code>+X.XX MB</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Age</strong></td>
+<td style="text-align: left;">Time since last activity (<code>just now</code>, <code>Xm</code>, <code>Xh</code>, <code>Xd</code>, <code>Xw</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Last Active</strong></td>
+<td style="text-align: left;">Timestamp of last write (<code>MM-DD HH:mm</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Status</strong></td>
+<td style="text-align: left;">Health label — see §5.2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-status-labels">5.2 Status Labels</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Colour</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[&gt;&gt;]</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>Current session</strong> (most recently modified)</td>
+<td style="text-align: left;">Your active chat</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[OK ]</code></td>
+<td style="text-align: left;">Green</td>
+<td style="text-align: left;">Nominal — healthy size and recent activity</td>
+<td style="text-align: left;">None needed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[ACT]</code></td>
+<td style="text-align: left;">Cyan</td>
+<td style="text-align: left;"><strong>Actively growing</strong> this refresh cycle</td>
+<td style="text-align: left;">Normal during use</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[WRN]</code></td>
+<td style="text-align: left;">Yellow</td>
+<td style="text-align: left;">Exceeds <code>ThresholdMB</code> (default 20 MB)</td>
+<td style="text-align: left;">Monitor closely</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[CRT]</code></td>
+<td style="text-align: left;">Red</td>
+<td style="text-align: left;"><strong>LIMIT RISK</strong> — exceeds <code>CriticalMB</code> (default 50 MB)</td>
+<td style="text-align: left;">Consider starting a new session</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[RPM]</code></td>
+<td style="text-align: left;">Magenta</td>
+<td style="text-align: left;">High burst velocity (&gt;2 MB/interval)</td>
+<td style="text-align: left;">Possible rate limit approaching</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[ZZZ]</code></td>
+<td style="text-align: left;">Dark Grey</td>
+<td style="text-align: left;"><strong>Dormant</strong> — no activity for <code>DormantHours</code> (default 4h)</td>
+<td style="text-align: left;">Safe to ignore</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-summary-footer">5.3 Summary Footer</h3>
+<div class="highlight"><pre><span></span><code>Sessions (26 total)  |  Total: 354.97 MB  |  Est Tokens: 22,185,625  |  WARN: 9  |  CRIT: 0
+Token basis: 1 MB ~ 62,500 tokens (4 chars/token avg)
+</code></pre></div>
+<ul>
+<li><strong>Total MB</strong> — total disk used by all <code>.pb</code> files</li>
+<li><strong>Est Tokens</strong> — aggregate estimated token count across all sessions</li>
+<li><strong>WARN / CRIT</strong> — count of sessions in warning or critical state</li>
+</ul>
+<hr />
+<h2 id="6-token-estimation-methodology">6. Token Estimation Methodology</h2>
+<p>The tool estimates tokens using:</p>
+<div class="highlight"><pre><span></span><code>1 MB  =  ~250,000 characters  (binary file, predominantly text)
+1 token ≈ 4 characters         (Gemini / GPT average)
+∴ 1 MB ≈ 62,500 tokens
+</code></pre></div>
+<p>This is more accurate than the commonly cited 50,000 tokens/MB. Actual token count varies by content type (code is denser than prose).</p>
+<p><strong>Interpret estimates as a guide, not an exact count.</strong> Use the <code>[WRN]</code> and <code>[CRT]</code> thresholds relative to your observed model behaviour.</p>
+<hr />
+<h2 id="7-troubleshooting">7. Troubleshooting</h2>
+<h3 id="script-will-not-run-execution-policy-error">Script will not run — Execution Policy error</h3>
+<div class="highlight"><pre><span></span><code>CheckUsage.ps1 cannot be loaded because running scripts is disabled on this system.
+</code></pre></div>
+<p><strong>Fix:</strong> Run once in PowerShell:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<hr />
+<h3 id="unknown-parameter-error">Unknown parameter error</h3>
+<div class="highlight"><pre><span></span><code>[ERROR] Unknown parameter(s): -Loops
+</code></pre></div>
+<p><strong>Cause:</strong> Typo in the parameter name.
+<strong>Fix:</strong> Run <code>.\tools\CheckUsage.ps1 -Help</code> to see all valid options.</p>
+<hr />
+<h3 id="no-pb-files-found">No .pb files found</h3>
+<div class="highlight"><pre><span></span><code>No .pb conversation files found.
+</code></pre></div>
+<p><strong>Cause:</strong> Antigravity has not yet created any conversation context files, or the path is wrong.
+<strong>Check:</strong> Verify the path exists: <code>C:\Users\[you]\.gemini\antigravity\conversations\</code></p>
+<hr />
+<h3 id="loop-mode-exits-immediately">Loop mode exits immediately</h3>
+<p>Ensure you are using <code>-Loop</code> (not <code>-Loops</code> or <code>-loop</code>). The <code>-l</code> short alias also works.</p>
+<hr />
+<h2 id="8-integration-with-dsom-sod-ritual">8. Integration with DSOM SOD Ritual</h2>
+<p>As part of the <strong>Start-of-Day Ritual</strong> (<code>docs/SOD-RITUAL.md</code> Step 1), run the snapshot to verify the current session health before starting work:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># SOD check — confirm current session is Nominal</span>
+<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span>
+
+<span class="c"># If current session is [CRT], start a new Antigravity chat and reanimate</span>
+<span class="c"># See: docs/REANIMATION-PROMPT-TEMPLATE.md → Prompt 2</span>
+</code></pre></div>
+<p>If the current session exceeds <code>CriticalMB</code>, begin a new Antigravity conversation and use the <strong>SOD Reanimation Prompt</strong> to restore context.</p>
+<hr />
+<h2 id="9-related-documents">9. Related Documents</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Document</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="../../SOD-RITUAL/"><code>docs/SOD-RITUAL.md</code></a></td>
+<td style="text-align: left;">Start-of-Day Ritual — includes session health check</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../../EOD-RITUAL/"><code>docs/EOD-RITUAL.md</code></a></td>
+<td style="text-align: left;">End-of-Day Ritual — Hibernation Notes export</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../../REANIMATION-PROMPT-TEMPLATE/"><code>docs/REANIMATION-PROMPT-TEMPLATE.md</code></a></td>
+<td style="text-align: left;">AI prompts for new session reanimation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../../tools/audit-pre-flight.sh"><code>tools/audit-pre-flight.sh</code></a></td>
+<td style="text-align: left;">Full 5-check workspace audit (Linux/WSL2)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../../tools/audit-pre-flight.ps1"><code>tools/audit-pre-flight.ps1</code></a></td>
+<td style="text-align: left;">Full 5-check workspace audit (Windows)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia</em>
+<em>Tool Version: v8.6 | Document Version: v1.0 | Created: 2026-03-10</em></p>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
