@@ -13,16 +13,37 @@ edit_uri: blob/main/docs/
 
 theme:
   name: material
+  font:
+    text: Inter
+    code: Roboto Mono
   palette:
-    - scheme: default
-      primary: teal
-      accent: purple
-    - scheme: slate
-      primary: teal
-      accent: purple
+    # Palette toggle for automatic mode based on system preference
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
   features:
     - navigation.expand
     - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - admonition
