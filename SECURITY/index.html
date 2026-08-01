@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OKF-compliant documentation for HUMAN-HANDOVER-CONTEXT.md.">
+        <meta name="description" content="Security policy for the DSOM framework, covering supported versions and vulnerability reporting procedures.">
       
       
         <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
       
       
       
+        <link rel="prev" href="../START-HERE/">
+      
+      
+        <link rel="next" href="../tools-and-automation/audit-pre-flight/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>🤝 HUMAN-HANDOVER-CONTEXT.md - Deep State of Mind (DSOM)</title>
+        <title>Security Policy — Deep State of Mind (DSOM) - Deep State of Mind (DSOM)</title>
       
     
     
@@ -76,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#human-handover-contextmd" class="md-skip">
+        <a href="#security-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🤝 HUMAN-HANDOVER-CONTEXT.md
+              Security Policy — Deep State of Mind (DSOM)
             
           </span>
         </div>
@@ -319,10 +323,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../SECURITY/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Policy
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -338,6 +369,109 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-a-vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting a Vulnerability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reporting a Vulnerability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-private-disclosure-preferred" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Private Disclosure (Preferred)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-what-to-include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What to Include
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-response-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Response Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dsom-specific-remediation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. DSOM-Specific Remediation Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2294,6 +2428,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-a-vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting a Vulnerability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reporting a Vulnerability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-private-disclosure-preferred" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Private Disclosure (Preferred)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-what-to-include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What to Include
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-response-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Response Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dsom-specific-remediation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. DSOM-Specific Remediation Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2312,181 +2537,115 @@
   
 
 
-<h1 id="human-handover-contextmd">🤝 HUMAN-HANDOVER-CONTEXT.md</h1>
-<h1 id="path-docshuman-handover-contextmd">Path: docs/HUMAN-HANDOVER-CONTEXT.md</h1>
-<blockquote>
-<p><strong>DSOM For My AI — SESSION HANDOVER TEMPLATE</strong>
-Adapt this file for every new project cloned from the DSOM skeleton.
-Fill in every <code>[PLACEHOLDER]</code> with your project-specific values.
-This file is the <strong>first document</strong> you paste into a new AI session.</p>
-</blockquote>
-<hr />
-<h3 id="session-handover-prompt">⚡ SESSION HANDOVER PROMPT</h3>
-<p><em>(Copy everything below this line and paste as your first AI message)</em></p>
-<hr />
-<p>I am starting a new AI session. Synchronise your state with the following:</p>
-<ol>
-<li><strong>READ</strong> the project brief: <code>docs/</code> directory and the DSOM brain files.</li>
-<li><strong>SYNC</strong> with the task tracker: <code>.agents/brain/task.md</code></li>
-<li><strong>READ</strong> brain artifacts: <code>.agents/brain/walkthrough.md</code> and <code>.agents/brain/implementation_plan.md</code></li>
-<li><strong>VERIFY</strong> <code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code> — confirm all <code>[PLACEHOLDER]</code> fields are filled.</li>
-<li><strong>READ</strong> <code>README.md</code>, <code>SUMMARY.md</code>, <code>CHANGELOG.md</code></li>
-<li><strong>RUN</strong> <code>git log --oneline -20</code> to read recent commit history.</li>
-<li><strong>WALK THE PALACE</strong> — read <code>.agents/brain/palace_registry.md</code> (Section [14] of the SOD manifest) and identify the relevant Wings and Rooms for today's work.</li>
-</ol>
-<p>Run <strong>Start of Day (SOD)</strong> as per DSOM For My AI Protocol v6.1 + Palace v1.0.</p>
-<blockquote>
-<p><strong>T2 shortcut:</strong> <code>bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)</code> automates steps 1–6 + palace check automatically. Upload the manifest and use the handshake phrase below.</p>
-</blockquote>
-<hr />
-<h4 id="project-identity">🏗️ Project Identity</h4>
-<ul>
-<li><strong>Project Name:</strong> <code>[YOUR_PROJECT_NAME]</code></li>
-<li><strong>Stack:</strong> <code>[YOUR_STACK e.g. Logstash + Kafka + Podman / ELK / Ansible roles]</code></li>
-<li><strong>Purpose:</strong> <code>[ONE_LINE_PURPOSE]</code></li>
-<li><strong>Repo:</strong> <code>[YOUR_GITHUB_REPO_URL]</code></li>
-<li><strong>Protocol Version:</strong> DSOM v6.1 + Palace v1.0 | GitOps · AIOps · Ansible</li>
-</ul>
-<hr />
-<h4 id="4-tier-command-highway">🗺️ 4-Tier Command Highway</h4>
-<p>We strictly follow the <strong>4-Tier Command Highway</strong> (T1→T2→T3→T4):</p>
+<h1 id="security-policy">Security Policy</h1>
+<h2 id="supported-versions">Supported Versions</h2>
+<p>The <strong>Deep State of Mind (DSOM) For My AI</strong> framework follows a governance-tagged versioning scheme. Only the current active release branch receives security and governance updates.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Tier</th>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Environment</th>
-<th style="text-align: left;">Path</th>
+<th style="text-align: left;">Version Series</th>
+<th style="text-align: center;">Supported</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>T1</strong></td>
-<td style="text-align: left;">Command Centre</td>
-<td style="text-align: left;">Windows 11 + PowerShell + Google Antigravity</td>
-<td style="text-align: left;"><code>[T1_WINDOWS_PATH]</code></td>
+<td style="text-align: left;"><code>v10.x.x-governance</code> (current)</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>T2</strong></td>
-<td style="text-align: left;">Dev Bridge</td>
-<td style="text-align: left;">WSL2: <code>dsom-control-almalinux10</code></td>
-<td style="text-align: left;"><code>/mnt/[T2_MOUNTED_PATH]</code></td>
+<td style="text-align: left;"><code>v9.x.x-governance</code></td>
+<td style="text-align: center;">❌</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>T3</strong></td>
-<td style="text-align: left;">Jump Host / Ansible Control</td>
-<td style="text-align: left;"><code>[T3_HOST_IP_OR_NAME]</code></td>
-<td style="text-align: left;"><code>/opt/[YOUR_PROJECT_NAME]/</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>T4</strong></td>
-<td style="text-align: left;">Production Fabric</td>
-<td style="text-align: left;"><code>[T4_NODE_IPS_OR_NAMES]</code></td>
-<td style="text-align: left;"><code>[T4_TARGET_PATH]</code></td>
+<td style="text-align: left;"><code>v8.x.x</code> and earlier</td>
+<td style="text-align: center;">❌</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Code is promoted:</strong> T1 → Git → T2 → T3 → T4. No shortcuts.</p>
-<hr />
-<h4 id="security-doctrine-rootful-control-rootless-application">🛡️ Security Doctrine: "Rootful Control, Rootless Application"</h4>
-<ul>
-<li><strong>Rootful Control:</strong> Ansible/sudo manages OS-level tasks — systemd, networking, filesystem.</li>
-<li><strong>Rootless Application:</strong> All containers/services run as <code>[APP_USER]</code> (UID <code>[APP_UID]</code> GID <code>[APP_GID]</code>).</li>
-<li><strong>Sovereign Identity:</strong> <code>dsom-admin:2001:2001</code> on target nodes.</li>
-<li><strong>Dev Identity:</strong> <code>[DEV_USERNAME]:[DEV_UID]:[DEV_GID]</code> on WSL2.</li>
-</ul>
-<hr />
-<h4 id="environment-rules">⚙️ Environment Rules</h4>
-<ul>
-<li><strong>AI Partner:</strong> Google Antigravity on Windows 11 (PowerShell).</li>
-<li><strong>Ansible:</strong> Runs from <strong>T2 WSL2</strong> (<code>dsom-control-almalinux10</code>). NOT from Windows directly.</li>
-<li><strong>Git operations:</strong> All <code>git add</code>, <code>git commit</code>, <code>git push</code> done on <strong>T1 Windows/PowerShell</strong>.</li>
-<li><strong>Dev testing:</strong> Human runs scripts inside <strong>T2 WSL2</strong> (<code>dsom-control-almalinux10</code>). AI guides and waits for output.</li>
-<li><strong>Production:</strong><code>hosts.prod.yml</code> is in <code>.gitignore</code>. Human must supply it for any production Ansible run.</li>
-</ul>
-<hr />
-<h4 id="the-safe-sync-ritual-run-after-every-t1-push">🔄 The Safe Sync Ritual (Run After Every T1 Push)</h4>
-<p>Whenever changes are pushed from Windows (T1), perform this ritual to align all tiers:</p>
-<p><strong>Step 1 — Pull on T2 (WSL2: <code>dsom-control-almalinux10</code>)</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/mnt/<span class="o">[</span>T2_MOUNTED_PATH<span class="o">]</span>
-git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
-</code></pre></div>
-<p><strong>Step 2 — Promote to T3 Jump Host / Ansible Control (if applicable)</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Run from T2 WSL2 — promote project to T3 orchestrator</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span>--checksum<span class="w"> </span>--delete<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--exclude<span class="w"> </span><span class="s1">&#39;.git&#39;</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s1">&#39;.gemini&#39;</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s1">&#39;.agents&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>./<span class="w"> </span>dsom-admin@<span class="o">[</span>T3_IP<span class="o">]</span>:/opt/<span class="o">[</span>YOUR_PROJECT_NAME<span class="o">]</span>/
-</code></pre></div>
-<p><strong>Step 3 — Verify T3 Ansible Connectivity</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Run from T2 WSL2</span>
-ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml
-</code></pre></div>
-<p><strong>Step 4 — Optional: Remote Audit from T1 via WSL</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c"># Run from Windows PowerShell (T1) — bridges through T2 → T3</span>
-<span class="n">wsl</span> <span class="n">-d</span> <span class="n">dsom-control-almalinux10</span> <span class="n">-u</span> <span class="n">dsom-admin</span> <span class="n">-e</span> <span class="n">bash</span> <span class="n">-c</span> <span class="p">`</span>
-    <span class="s2">&quot;ssh -t dsom-admin@[T3_IP] &#39;cd /opt/[YOUR_PROJECT_NAME] &amp;&amp; bash tools/audit-pre-flight.sh&#39;&quot;</span>
-</code></pre></div>
-<hr />
-<h4 id="sovereign-directive-the-handshake-trigger">🏁 Sovereign Directive (The Handshake Trigger)</h4>
-<p>After the AI reads all context, trigger the session with:</p>
 <blockquote>
-<p><em>"Initialise DSOM Protocol v6.1 + Palace v1.0 for [YOUR_PROJECT_NAME]. Read the uploaded manifest or this handover file. Walk the Palace Registry in Section [14] — identify the relevant Rooms for today's work. Confirm the 4-Tier Command Highway is mapped. Verify <code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code> is filled in. State the last Mental Anchor from <code>.agents/brain/walkthrough.md</code>. Respond in UK English. State: 'Sovereign State Synchronised — [YOUR_PROJECT_NAME] is live.' when ready."</em></p>
+<p><strong>Note:</strong> DSOM is a governance and metacognitive framework, not a compiled application. "Security" in this context covers:
+- Sensitive data (credentials, IPs, tokens) accidentally committed to Git history.
+- Rogue or untrusted scripts introduced into <code>.agents/skills/</code> or <code>tools/</code>.
+- Insecure Ansible playbook patterns exposing remote node credentials.
+- Violations of the Zero-Trust and Privacy Guardian protocols.</p>
 </blockquote>
 <hr />
-<h4 id="how-to-provide-output-for-ai-review">📋 How to Provide Output for AI Review</h4>
+<h2 id="reporting-a-vulnerability">Reporting a Vulnerability</h2>
+<p>If you discover a security issue — including sensitive data in the repository, a vulnerable workflow, or a broken privacy control — please report it responsibly by following this procedure:</p>
+<h3 id="1-private-disclosure-preferred">1. Private Disclosure (Preferred)</h3>
+<p>Do <strong>not</strong> open a public GitHub Issue for security vulnerabilities. Instead:
+- Use <strong><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/security/advisories/new">GitHub Private Security Advisories</a></strong> to report the issue privately.
+- Alternatively, contact the maintainer directly via the email listed on the <a href="https://github.com/linuxmalaysia">GitHub profile</a>.</p>
+<h3 id="2-what-to-include">2. What to Include</h3>
+<p>Provide as much detail as possible:
+- A clear description of the vulnerability and its potential impact.
+- Steps to reproduce or a proof-of-concept.
+- Relevant file paths, commit hashes, or line numbers.
+- Your suggested remediation (if any).</p>
+<h3 id="3-response-timeline">3. Response Timeline</h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Method</th>
-<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Target Timeframe</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Direct Paste</strong></td>
-<td style="text-align: left;">Copy full terminal output into AI chat</td>
+<td style="text-align: left;">Acknowledgement of report</td>
+<td style="text-align: left;">Within <strong>72 hours</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Log File</strong></td>
-<td style="text-align: left;"><code>bash tools/audit-pre-flight.sh \| tee audit_result.log</code> — share log content</td>
+<td style="text-align: left;">Initial assessment &amp; triage</td>
+<td style="text-align: left;">Within <strong>7 days</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Ansible Output</strong></td>
-<td style="text-align: left;"><code>ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost, \| tee audit_ansible.log</code></td>
+<td style="text-align: left;">Remediation (patch/scrub)</td>
+<td style="text-align: left;">Within <strong>14 days</strong> (severity-dependent)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Public disclosure (if applicable)</td>
+<td style="text-align: left;">After remediation is merged and pushed</td>
 </tr>
 </tbody>
 </table>
-<p>AI will <strong>wait for your results</strong> before proceeding. Never assume success.</p>
+<h3 id="4-dsom-specific-remediation-tools">4. DSOM-Specific Remediation Tools</h3>
+<p>The following built-in DSOM tools are available for security remediation:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>tools/privacy-guardian.ps1</code> / <code>.sh</code></td>
+<td style="text-align: left;">Scans active context manifests for credentials, IPs, and tokens before any external sync.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tools/audit-pre-flight.ps1</code> / <code>.sh</code></td>
+<td style="text-align: left;">Validates repository state and OKF compliance before bulk operations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.agents/skills/git-history-scrubber/</code></td>
+<td style="text-align: left;">Purges sensitive data from Git history using <code>git-filter-repo</code>; handles force-push protocols.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.agents/skills/forensic-log-audit/</code></td>
+<td style="text-align: left;">Audits system and application logs for anomalies and failed authentications.</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h4 id="current-state-fill-in-at-each-session-end">📌 Current State (Fill in at each session end)</h4>
-<div class="highlight"><pre><span></span><code>CURRENT STATE: [DESCRIBE_CURRENT_STATE e.g. v1.0 — Ansible baseline deployed, Kafka brokers up]
-Environment:   [e.g. 3-node test cluster]
-Last Commit:   [PASTE LAST COMMIT HASH AND MESSAGE]
-Mental Anchor: [ONE SENTENCE — exact state and where to resume]
-Next Action:   [WHAT THE AI SHOULD DO FIRST IN THE NEW SESSION]
-</code></pre></div>
+<h2 id="scope">Scope</h2>
+<p>This security policy applies to:
+- All files in this repository under the DSOM framework.
+- All scripts in <code>tools/</code> and skills in <code>.agents/skills/</code>.
+- All brain files in <code>.agents/brain/</code> (which may contain session context and node references).
+- All GitHub Actions workflows in <code>.github/workflows/</code>.</p>
 <hr />
-<h4 id="key-reminders-to-ai-agent">🔑 Key Reminders to AI Agent</h4>
-<ol>
-<li><strong>Advisory Mode only.</strong> Propose → Human approves → Ansible executes → AI verifies.</li>
-<li><strong>Never run commands on production nodes.</strong> Write Ansible playbooks. Human runs them.</li>
-<li><strong>Every step is committed to Git</strong> before execution. No Git = no change.</li>
-<li><strong>Idempotency is mandatory.</strong> Every playbook must be safe to re-run.</li>
-<li><strong>All secrets via <code>ansible-vault</code>.</strong> Never commit plaintext secrets.</li>
-<li><strong>Detailed Git commit messages.</strong> Format: <code>type(scope): description [Phase/vXXX]</code></li>
-<li><strong>UK English only</strong> in all documentation and responses.</li>
-<li><strong>Wait for human output</strong> before proceeding with the next step.</li>
-<li><strong>Control yourself during long debugging.</strong> Emit one action at a time.</li>
-<li><strong>Both T1 and T2 must be in sync</strong> — always pull on T2 after T1 push.</li>
-<li><strong>Walk the Palace Registry</strong> at the start of every session — read <code>palace_registry.md</code> and load the relevant <code>closet.md</code> files before advising.</li>
-<li><strong>Propose Palace closet updates</strong> at EOD if new decisions or discoveries were made.</li>
-</ol>
-<hr />
-<p><em>Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia</em>
-<em>Template source: docs/HUMAN-HANDOVER-CONTEXT.md | Updated: 2026-04-08</em>
-<em>Adapted from: DSOM elasticsearch-kibana-podman project (v9.4 Sovereign Recovery model)</em></p>
-<hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
