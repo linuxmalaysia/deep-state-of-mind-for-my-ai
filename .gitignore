@@ -21,6 +21,7 @@
 
 # --- [ AI & DSOM Artifacts ] ---
 # Exclude temporary session manifests but KEEP the core brain templates
+site/
 sod_manifest_*.txt
 eod_summary_*.txt
 DSOM-CLAUDE-INIT.md
