@@ -1,0 +1,168 @@
+/* ==============================================================================
+ * Protocol    : Deep State of Mind (DSOM) For My AI
+ * Stylesheet  : Custom Design System (Extra CSS)
+ * Theme Source: Follows cmsfornerd2.onrender.com Colors, Fonts & Glassmorphism
+ * Author      : Harisfazillah Jamel (LinuxMalaysia)
+ * Co-Author   : Jules (AI Assistant)
+ * Timestamp   : 2026-08-01
+ * ==============================================================================
+ */
+
+:root {
+  /* Fonts - Follows --f-sans and --f-mono from cmsfornerd2 */
+  --md-text-font: "Inter", system-ui, -apple-system, sans-serif !important;
+  --md-code-font: "SF Mono", "Cascadia Code", "Fira Code", monospace !important;
+
+  /* --- LIGHT THEME TOKENS (cmsfornerd2.onrender.com theme-light) --- */
+  --lab-bg: #f8f9fa;
+  --lab-surface: #ffffff;
+  --lab-text: #1e293b;
+  --lab-muted: #64748b;
+  --lab-border: #e2e8f0;
+  --lab-primary: #0f172a;
+  --lab-purple: #8e44ad;
+
+  /* Material Design Overrides for Light Mode */
+  --md-primary-fg-color: #0f172a !important;
+  --md-primary-fg-color--light: #334155 !important;
+  --md-primary-fg-color--dark: #020617 !important;
+
+  --md-accent-fg-color: #8e44ad !important;
+  --md-accent-fg-color--transparent: rgba(142, 68, 173, 0.1) !important;
+  --md-accent-bg-color: #8e44ad !important;
+  --md-accent-bg-color--transparent: rgba(142, 68, 173, 0.1) !important;
+
+  --md-default-bg-color: #f8f9fa !important;
+  --md-default-bg-color--light: #ffffff !important;
+  --md-default-fg-color: #1e293b !important;
+  --md-default-fg-color--light: #64748b !important;
+  --md-default-fg-color--lighter: #e2e8f0 !important;
+  --md-default-fg-color--lightest: #f1f5f9 !important;
+
+  /* Custom Glassmorphism variables */
+  --lab-glass-bg: rgba(255, 255, 255, 0.4);
+  --lab-glass-border: rgba(255, 255, 255, 0.2);
+  --lab-blur: 12px;
+  --radius: 12px;
+}
+
+[data-md-color-scheme="slate"] {
+  /* --- DARK THEME TOKENS (cmsfornerd2.onrender.com theme-dark) --- */
+  --lab-bg: #0f172a;
+  --lab-surface: #1e293b;
+  --lab-text: #f8fafc;
+  --lab-muted: #94a3b8;
+  --lab-border: #334155;
+  --lab-primary: #020617;
+  --lab-purple: #a855f7;
+
+  /* Material Design Overrides for Dark Mode */
+  --md-primary-fg-color: #020617 !important;
+  --md-primary-fg-color--light: #0f172a !important;
+  --md-primary-fg-color--dark: #000000 !important;
+
+  --md-accent-fg-color: #a855f7 !important;
+  --md-accent-fg-color--transparent: rgba(168, 85, 247, 0.1) !important;
+  --md-accent-bg-color: #a855f7 !important;
+  --md-accent-bg-color--transparent: rgba(168, 85, 247, 0.1) !important;
+
+  --md-default-bg-color: #0f172a !important;
+  --md-default-bg-color--light: #1e293b !important;
+  --md-default-fg-color: #f8fafc !important;
+  --md-default-fg-color--light: #94a3b8 !important;
+  --md-default-fg-color--lighter: #334155 !important;
+  --md-default-fg-color--lightest: #1e293b !important;
+
+  /* Custom Glassmorphism variables for Dark Mode */
+  --lab-glass-bg: rgba(15, 23, 42, 0.4);
+  --lab-glass-border: rgba(255, 255, 255, 0.05);
+}
+
+/* Glassmorphism Header Implementation */
+.md-header {
+  background-color: var(--lab-glass-bg) !important;
+  backdrop-filter: blur(var(--lab-blur));
+  -webkit-backdrop-filter: blur(var(--lab-blur));
+  border-bottom: 1px solid var(--lab-glass-border) !important;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+/* Make sure header text/icons are properly readable */
+.md-header__title, .md-header__button {
+  color: var(--md-default-fg-color) !important;
+}
+
+.md-header__button.md-logo img {
+  filter: drop-shadow(0 0 4px rgba(142, 68, 173, 0.3));
+}
+
+/* Interactive accent color on search and links */
+.md-search__input:focus {
+  background-color: var(--lab-surface) !important;
+}
+
+/* Hover link effects to match cmsfornerd's hover behavior */
+a.md-nav__link:hover, .md-nav__link--active {
+  color: var(--lab-purple) !important;
+}
+
+/* Rounded Cards & Glass effects for elements */
+.md-content__inner {
+  font-family: var(--md-text-font);
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  font-family: var(--md-text-font);
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+}
+
+.md-typeset h1 {
+  border-bottom: 3px solid var(--lab-purple);
+  padding-bottom: 8px;
+  margin-top: 1.5em;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid var(--lab-border);
+  padding-bottom: 6px;
+  margin-top: 1.2em;
+}
+
+/* Code block adjustments for cmsfornerd2-style dark syntax background */
+.md-typeset pre, .md-typeset code {
+  font-family: var(--md-code-font) !important;
+}
+
+/* Customize hover styles for table rows to increase clarity */
+.md-typeset table:not([class]) th {
+  background-color: var(--lab-primary);
+  color: #ffffff;
+  font-family: var(--md-code-font);
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+/* Standardizing focus rings & selection to follow theme purple */
+::selection {
+  background-color: var(--md-accent-fg-color--transparent);
+  color: var(--lab-purple);
+}
+
+/* Scrollbars customized to purple accent */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lab-purple);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lab-bg);
+}
