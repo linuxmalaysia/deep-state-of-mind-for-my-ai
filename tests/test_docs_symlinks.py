@@ -198,7 +198,7 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
             raise RuntimeError("git executable not found in PATH")  # noqa: TRY003
         git_executable = str(pathlib.Path(git_path).resolve())
         result = subprocess.run(
-            [git_exe, "ls-files", "-s", "docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks"],
+            [git_executable, "ls-files", "-s", "docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks"],
             cwd=REPO_ROOT,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -346,6 +346,53 @@ class MkdocsNavReferencesTests(unittest.TestCase):
                     (DOCS_DIR / nav_value).exists(),
                     f"mkdocs nav entry {nav_value!r} does not resolve under {DOCS_DIR}",
                 )
+
+
+class GitIndexSetupSourceRegressionTests(unittest.TestCase):
+    """Regression guard for the `git_exe` -> `git_executable` typo fix.
+
+    `DocsSymlinkGitIndexTests.setUpClass` previously invoked
+    `subprocess.run([git_exe, ...])`, but the local variable holding the
+    resolved git path was actually named `git_executable`. This meant the
+    class would raise `NameError: name 'git_exe' is not defined` the
+    moment `setUpClass` ran (whenever `git` was available on PATH), rather
+    than exercising the intended symlink-mode assertions at all.
+
+    These tests statically inspect this module's own source to guard
+    against the typo being reintroduced, and confirm that setUpClass runs
+    (and the dependent tests execute) without raising `NameError`.
+    """
+
+    @staticmethod
+    def _get_git_index_setup_class_source():
+        # Scope the check to DocsSymlinkGitIndexTests' own body (up to the
+        # next top-level "class " declaration) so this regression test does
+        # not trip over its own docstring, which necessarily mentions the
+        # retired name while describing the bug it guards against.
+        source = pathlib.Path(__file__).read_text(encoding="utf-8")
+        start = source.index("class DocsSymlinkGitIndexTests")
+        end = source.index("\nclass ", start + 1)
+        return source[start:end]
+
+    def test_no_undefined_git_exe_reference_in_source(self):
+        class_source = self._get_git_index_setup_class_source()
+        self.assertNotRegex(
+            class_source,
+            r"\bgit_exe\b",
+            "Found a reference to the undefined name; the resolved git "
+            "executable must be stored in 'git_executable'",
+        )
+
+    def test_git_executable_used_in_subprocess_call(self):
+        class_source = self._get_git_index_setup_class_source()
+        self.assertIn("[git_executable,", class_source)
+
+    @unittest.skipUnless(GIT_AVAILABLE, "git executable not available")
+    def test_git_index_setup_class_does_not_raise(self):
+        # Directly re-runs the fixed setUpClass logic to confirm it
+        # completes without NameError and produces the expected mapping.
+        DocsSymlinkGitIndexTests.setUpClass()
+        self.assertIn("docs/SECURITY.md", DocsSymlinkGitIndexTests.entries)
 
 
 if __name__ == "__main__":
