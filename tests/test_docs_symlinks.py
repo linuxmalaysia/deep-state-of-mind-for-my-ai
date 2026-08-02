@@ -231,6 +231,72 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
         )
 
 
+# Files/directories that live under the two new directory symlinks and are
+# referenced from mkdocs.yml (see the "AI Brain", "AI Agent Skills &
+# Workflows" and "Playbooks" nav sections). Prior to this PR, docs/.agents
+# and docs/playbooks did not exist, so MkDocs would 404 on every one of
+# these nav entries. They are listed here (relative to docs/) to confirm
+# the new directory symlinks actually make nested content reachable, not
+# just the top-level directory itself.
+NESTED_PATHS_VIA_DIR_SYMLINKS = [
+    ".agents/brain/task.md",
+    ".agents/brain/implementation_plan.md",
+    ".agents/brain/walkthrough.md",
+    ".agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md",
+    ".agents/skills/eod-palace-sync/SKILL.md",
+    ".agents/skills/sod-palace-sync/SKILL.md",
+    ".agents/skills/dsom-token-calculator/SKILL.md",
+    ".agents/skills/dsom-knowledge-ingester/SKILL.md",
+    ".agents/skills/publish-to-blogger/SKILL.md",
+    ".agents/skills/git-commit-resolver/SKILL.md",
+    ".agents/skills/git-history-scrubber/SKILL.md",
+    ".agents/skills/initialize-gitops/SKILL.md",
+    ".agents/skills/forensic-log-audit/SKILL.md",
+    ".agents/skills/ssh-passwordless-setup/SKILL.md",
+    ".agents/skills/github-actions-snyk-scanner/SKILL.md",
+    "playbooks/dsom/site.yml",
+    "playbooks/dsom/audit-preflight.yml",
+    "playbooks/dsom/init-brain.yml",
+    "playbooks/dsom/privacy-scan.yml",
+]
+
+
+class DocsDirSymlinkNestedAccessTests(unittest.TestCase):
+    """Verify nested content *under* the new directory symlinks is reachable.
+
+    Directory symlinks behave differently from the pre-existing file
+    symlinks: a single symlink to a directory transparently exposes every
+    file nested underneath it. These tests confirm that behaviour actually
+    holds for the specific nested paths that mkdocs.yml's nav depends on.
+    """
+
+    def test_nested_files_exist_through_dir_symlinks(self):
+        for relative in NESTED_PATHS_VIA_DIR_SYMLINKS:
+            with self.subTest(path=relative):
+                path = DOCS_DIR / relative
+                self.assertTrue(path.is_file(), f"Expected {path} to exist")
+
+    def test_nested_file_content_matches_root_source(self):
+        for relative_dir, _, root_dirname in DIR_SYMLINK_SPECS:
+            nested_candidates = [
+                p for p in NESTED_PATHS_VIA_DIR_SYMLINKS if p.startswith(relative_dir)
+            ]
+            for relative in nested_candidates:
+                with self.subTest(path=relative):
+                    via_symlink = (DOCS_DIR / relative).read_bytes()
+                    # Strip the docs-relative directory prefix (e.g. ".agents/")
+                    # and resolve against the real root-level directory name.
+                    remainder = relative[len(relative_dir):].lstrip("/")
+                    via_root = (REPO_ROOT / root_dirname / remainder).read_bytes()
+                    self.assertEqual(via_symlink, via_root)
+
+    def test_nonexistent_nested_path_does_not_exist(self):
+        # Negative case: the directory symlink should not make arbitrary,
+        # never-created paths spring into existence.
+        path = DOCS_DIR / ".agents" / "this-file-does-not-exist.md"
+        self.assertFalse(path.exists())
+
+
 class MkdocsNavReferencesTests(unittest.TestCase):
     """Verify mkdocs.yml still declares the nav entries these symlinks fix."""
 
@@ -251,6 +317,35 @@ class MkdocsNavReferencesTests(unittest.TestCase):
         for nav_value in ("SECURITY.md", "START-HERE.md"):
             with self.subTest(nav_value=nav_value):
                 self.assertTrue((DOCS_DIR / nav_value).exists())
+
+    def test_nav_declares_ai_brain_entries_under_agents_dir(self):
+        # These entries would 404 without the new docs/.agents symlink.
+        self.assertRegex(self.content, r"Task:\s*\.agents/brain/task\.md")
+        self.assertRegex(
+            self.content,
+            r"Implementation Plan:\s*\.agents/brain/implementation_plan\.md",
+        )
+        self.assertRegex(
+            self.content, r"Walkthrough:\s*\.agents/brain/walkthrough\.md"
+        )
+
+    def test_nav_declares_playbooks_entries_under_playbooks_dir(self):
+        # These entries would 404 without the new docs/playbooks symlink.
+        self.assertRegex(
+            self.content, r"DSOM site\.yml:\s*playbooks/dsom/site\.yml"
+        )
+        self.assertRegex(
+            self.content,
+            r"audit-preflight:\s*playbooks/dsom/audit-preflight\.yml",
+        )
+
+    def test_agents_and_playbooks_nav_entries_resolve_within_docs_dir(self):
+        for nav_value in NESTED_PATHS_VIA_DIR_SYMLINKS:
+            with self.subTest(nav_value=nav_value):
+                self.assertTrue(
+                    (DOCS_DIR / nav_value).exists(),
+                    f"mkdocs nav entry {nav_value!r} does not resolve under {DOCS_DIR}",
+                )
 
 
 if __name__ == "__main__":
