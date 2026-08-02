@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../GITOPS-AIOPS-ANSIBLE-STRATEGY/">
+      
+      
+        <link rel="next" href="../NOSS-INTEGRATION-GUIDE/">
       
       
         
@@ -346,20 +350,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -380,7 +384,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -398,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/AI-INITIALIZATION-SEQUENCE.md" class="md-nav__link">
+      <a href="../AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
         
   
   
@@ -426,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/AI-MASTER-PROTOCOL.md" class="md-nav__link">
+      <a href="../AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -454,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/DSOM-AUTOMATED-STATE-SYNC.md" class="md-nav__link">
+      <a href="../DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
         
   
   
@@ -482,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/DSOM-MCP-ARCHITECTURE.md" class="md-nav__link">
+      <a href="../DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -510,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md" class="md-nav__link">
+      <a href="../GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
         
   
   
@@ -535,10 +539,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docs/governance/OPERATIONAL-GUIDE.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -554,6 +585,303 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose-of-this-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose of this Document
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-reanimation-sequence-start-of-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Reanimation Sequence (Start-of-Day)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Reanimation Sequence (Start-of-Day)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-ansible-palace-sod-t2-linuxwsl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [RECOMMENDED] Ansible Palace SOD (T2: Linux/WSL2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-physical-reality-check-the-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Physical Reality Check (The Audit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generating-the-manifest-the-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Generating the Manifest (The Injection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-the-handshake-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: The Handshake (The Prompt)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-walking-the-palace-the-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Walking the Palace (The Retrieval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-hibernation-sequence-end-of-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Hibernation Sequence (End-of-Day)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Hibernation Sequence (End-of-Day)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-ansible-palace-eod-t2-linuxwsl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [RECOMMENDED] Ansible Palace EOD (T2: Linux/WSL2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-context-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Context Consolidation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-the-safe-shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: The Safe Shutdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-architectural-layers-clean-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🛠️ Architectural Layers (Clean Architecture)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-adoption-upgrade-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Adoption &amp; Upgrade Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Adoption &amp; Upgrade Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-brownfield-adoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Brownfield Adoption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-legacy-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Legacy Upgrade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-palace-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: Palace Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-4-new-adopter-palace-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 4: New Adopter — Palace Edition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-execution-guardrails-the-three-pillar-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ⚙️ Execution Guardrails (The Three-Pillar Laws)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. ⚙️ Execution Guardrails (The Three-Pillar Laws)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guardrail-1-no-silent-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardrail 1: No Silent Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrail-2-ansible-pre-flight-mandate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardrail 2: Ansible Pre-flight Mandate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrail-3-log-review-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardrail 3: Log Review Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrail-4-self-healing-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardrail 4: Self-Healing Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrail-5-gitops-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardrail 5: GitOps Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -566,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/NOSS-INTEGRATION-GUIDE.md" class="md-nav__link">
+      <a href="../NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
         
   
   
@@ -594,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md" class="md-nav__link">
+      <a href="../PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
         
   
   
@@ -622,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/AUTOMATION-AUDIT-LIST.md" class="md-nav__link">
+      <a href="../AUTOMATION-AUDIT-LIST/" class="md-nav__link">
         
   
   
@@ -650,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md" class="md-nav__link">
+      <a href="../DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
         
   
   
@@ -678,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md" class="md-nav__link">
+      <a href="../BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
         
   
   
@@ -706,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md" class="md-nav__link">
+      <a href="../DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -734,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md" class="md-nav__link">
+      <a href="../DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
         
   
   
@@ -762,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/ZERO-GLOBAL-MEMORY.md" class="md-nav__link">
+      <a href="../ZERO-GLOBAL-MEMORY/" class="md-nav__link">
         
   
   
@@ -790,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/LLM-WIKI-ADOPTION.md" class="md-nav__link">
+      <a href="../LLM-WIKI-ADOPTION/" class="md-nav__link">
         
   
   
@@ -818,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md" class="md-nav__link">
+      <a href="../DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -846,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md" class="md-nav__link">
+      <a href="../SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
         
   
   
@@ -874,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md" class="md-nav__link">
+      <a href="../GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
         
   
   
@@ -902,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/RITUAL-OF-TRANSITION.md" class="md-nav__link">
+      <a href="../../RITUAL-OF-TRANSITION/" class="md-nav__link">
         
   
   
@@ -930,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/PERSONALIZATION.md" class="md-nav__link">
+      <a href="../../PERSONALIZATION/" class="md-nav__link">
         
   
   
@@ -1014,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/brain/task.md" class="md-nav__link">
+      <a href="../../.agents/brain/task/" class="md-nav__link">
         
   
   
@@ -1042,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/brain/implementation_plan.md" class="md-nav__link">
+      <a href="../../.agents/brain/implementation_plan/" class="md-nav__link">
         
   
   
@@ -1070,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/brain/walkthrough.md" class="md-nav__link">
+      <a href="../../.agents/brain/walkthrough/" class="md-nav__link">
         
   
   
@@ -1154,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md" class="md-nav__link">
+      <a href="../AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -1182,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/REANIMATION-PROMPT-TEMPLATE.md" class="md-nav__link">
+      <a href="../../REANIMATION-PROMPT-TEMPLATE/" class="md-nav__link">
         
   
   
@@ -1210,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/DSOM-EPISODIC-RECORD-TEMPLATE.md" class="md-nav__link">
+      <a href="../../DSOM-EPISODIC-RECORD-TEMPLATE/" class="md-nav__link">
         
   
   
@@ -1238,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/governance/MULTI-AGENT-PROTOCOLS.md" class="md-nav__link">
+      <a href="../MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -1266,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md" class="md-nav__link">
+      <a href="../../HOWTO-CREATE-DSOM-GEMINI-GEM/" class="md-nav__link">
         
   
   
@@ -1294,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/CLAUDE-SETUP.md" class="md-nav__link">
+      <a href="../../CLAUDE-SETUP/" class="md-nav__link">
         
   
   
@@ -1322,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/model-specifics/dsom-claude-initialiser.md" class="md-nav__link">
+      <a href="../../model-specifics/dsom-claude-initialiser/" class="md-nav__link">
         
   
   
@@ -1350,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/COPILOT-SETUP.md" class="md-nav__link">
+      <a href="../../COPILOT-SETUP/" class="md-nav__link">
         
   
   
@@ -1434,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md" class="md-nav__link">
+      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/" class="md-nav__link">
         
   
   
@@ -1462,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/eod-palace-sync/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/eod-palace-sync/SKILL/" class="md-nav__link">
         
   
   
@@ -1490,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/sod-palace-sync/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/sod-palace-sync/SKILL/" class="md-nav__link">
         
   
   
@@ -1518,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/dsom-token-calculator/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/dsom-token-calculator/SKILL/" class="md-nav__link">
         
   
   
@@ -1546,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL/" class="md-nav__link">
         
   
   
@@ -1574,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/publish-to-blogger/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/publish-to-blogger/SKILL/" class="md-nav__link">
         
   
   
@@ -1602,7 +1930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/git-commit-resolver/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/git-commit-resolver/SKILL/" class="md-nav__link">
         
   
   
@@ -1630,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/git-history-scrubber/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/git-history-scrubber/SKILL/" class="md-nav__link">
         
   
   
@@ -1658,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/initialize-gitops/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/initialize-gitops/SKILL/" class="md-nav__link">
         
   
   
@@ -1686,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/forensic-log-audit/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/forensic-log-audit/SKILL/" class="md-nav__link">
         
   
   
@@ -1714,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL/" class="md-nav__link">
         
   
   
@@ -1742,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL.md" class="md-nav__link">
+      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL/" class="md-nav__link">
         
   
   
@@ -1826,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/HOWTO-SETUP-ANSIBLE-BASELINE.md" class="md-nav__link">
+      <a href="../../HOWTO-SETUP-ANSIBLE-BASELINE/" class="md-nav__link">
         
   
   
@@ -1854,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/HOWTO-SETUP-WSL-ALMALINUX10.md" class="md-nav__link">
+      <a href="../../HOWTO-SETUP-WSL-ALMALINUX10/" class="md-nav__link">
         
   
   

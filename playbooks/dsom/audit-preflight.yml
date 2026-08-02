@@ -1,0 +1,43 @@
+---
+
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-07-12
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
+# playbooks/dsom/audit-preflight.yml
+# DSOM Baseline Audit Playbook
+# Ensures the node is ready for Sovereign Configuration.
+
+- name: Run infrastructure pre-flight checks
+  hosts: localhost
+  gather_facts: false
+  
+  tasks:
+    - name: Verify AI Brain connectivity (local test)
+      ansible.builtin.stat:
+        path: "{{ playbook_dir }}/../../.agents/brain/task.md"
+      register: brain_stat_task
+      delegate_to: localhost
+
+    - name: Fail if task.md artifact is missing
+      ansible.builtin.fail:
+        msg: "CRITICAL [FAIL]: The .agents/brain/task.md artifact is missing. Initialize the brain before running playbooks."
+      when: not brain_stat_task.stat.exists
+
+    - name: Verify Walkthrough artifact
+      ansible.builtin.stat:
+        path: "{{ playbook_dir }}/../../.agents/brain/walkthrough.md"
+      register: brain_stat_walk
+      delegate_to: localhost
+
+    - name: Fail if walkthrough.md artifact is missing
+      ansible.builtin.fail:
+        msg: "CRITICAL [FAIL]: The .agents/brain/walkthrough.md artifact is missing."
+      when: not brain_stat_walk.stat.exists
+
+    - name: Success message
+      ansible.builtin.debug:
+        msg: "[PASS] AI Brain artifacts are present. Ready for Ansible execution."

@@ -1,0 +1,32 @@
+---
+
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-07-12
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
+# playbooks/dsom/site.yml
+# DSOM Baseline Execution Playbook
+# This is the scaffold for human-approved Sovereign execution.
+
+- name: DSOM Pre-flight checks and baseline configuration
+  hosts: all
+  become: yes
+  vars:
+    project_name: "deep-state-of-mind-for-my-ai"
+  
+  pre_tasks:
+    - name: Run audit-preflight checks
+      ansible.builtin.import_playbook: audit-preflight.yml
+      tags: preflight
+
+  roles:
+    - role: common
+      tags: common
+
+  tasks:
+    - name: "site.yml | Confirm common role applied"
+      ansible.builtin.debug:
+        msg: "DSOM site.yml complete on {{ inventory_hostname }} — common baseline applied."
