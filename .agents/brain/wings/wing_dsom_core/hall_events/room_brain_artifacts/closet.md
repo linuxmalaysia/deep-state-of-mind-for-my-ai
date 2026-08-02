@@ -63,3 +63,4 @@ This closet tracks the evolution of the `.agents/brain/` directory — the AI's 
 
 - [2026-07-27] Created current_state.dsom for token compaction.
 - [2026-07-27] EOD safe shutdown notes (hibernation-notes-2026-07-27.txt).
+- [2026-08-02] GitHub Pages Alignment: Brain artifacts updated (walkthrough.md, task.md). Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).

@@ -32,3 +32,4 @@ This closet defines the **Metacognitive Governance Framework** that ensures memo
 *Last Refined: 2026-04-08 | Hall: hall_facts | Wing: wing_dsom_core*
 
 - [2026-07-27] DSOM-AUTOMATED-STATE-SYNC.md created and registered in SUMMARY.md and mkdocs.yml.
+- [2026-08-02] GitHub Pages Alignment: Documentation files updated (mkdocs.yml, SUMMARY.md, docs/*). Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).

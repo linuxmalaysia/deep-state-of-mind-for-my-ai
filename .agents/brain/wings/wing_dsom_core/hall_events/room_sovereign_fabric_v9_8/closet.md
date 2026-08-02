@@ -43,3 +43,5 @@ This closet tracks the **deployment and maturation** of the production-grade Ela
 
 ---
 *Last Refined: 2026-04-08 | Hall: hall_events | Wing: wing_dsom_core*
+
+- [2026-08-02] GitHub Pages Alignment: Ansible playbooks and roles updated. Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).
