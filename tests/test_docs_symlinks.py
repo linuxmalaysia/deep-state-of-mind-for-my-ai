@@ -195,7 +195,7 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
     def setUpClass(cls):
         git_path = shutil.which("git")
         if git_path is None:
-            raise RuntimeError("git executable not found in PATH")
+            raise RuntimeError("git executable not found in PATH")  # noqa: TRY003
         git_executable = str(pathlib.Path(git_path).resolve())
         result = subprocess.run(
             [git_executable, "ls-files", "-s", "docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks"],
