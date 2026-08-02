@@ -37,18 +37,6 @@ except ImportError:  # pragma: no cover - environment dependent
 
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
-    """
-    Locate the repository root from a starting path.
-    
-    Parameters:
-    	start (pathlib.Path): Path from which to search upward for the repository metadata directory.
-    
-    Returns:
-    	pathlib.Path: The nearest ancestor containing a `.git` directory.
-    
-    Raises:
-    	RuntimeError: If no ancestor contains a `.git` directory.
-    """
     current = start.resolve()
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
@@ -92,9 +80,6 @@ class MkdocsSiteUrlTests(unittest.TestCase):
         self.assertTrue(MKDOCS_PATH.is_file())
 
     def test_site_url_declared_with_expected_value(self):
-        """
-        Verify that the MkDocs configuration declares the expected GitHub Pages URL.
-        """
         self.assertRegex(
             self.content,
             re.compile(rf"^site_url:\s*{re.escape(GITHUB_PAGES_URL)}\s*$", re.MULTILINE),
@@ -165,7 +150,6 @@ class LlmsTxtDualDeploymentTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """Load the llms.txt content for the test class."""
         cls.content = LLMS_TXT_PATH.read_text(encoding="utf-8")
 
     def test_llms_txt_exists(self):
