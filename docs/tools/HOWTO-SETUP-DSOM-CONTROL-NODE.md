@@ -100,7 +100,7 @@ The tool performs several persistent system modifications:
 | Document | Purpose |
 |:---|:---|
 | [`HOWTO-SETUP-WSL-ALMALINUX.md`](HOWTO-SETUP-WSL-ALMALINUX.md) | The Windows orchestrator that calls this script. |
-| [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](../docs/HOWTO-SETUP-ANSIBLE-BASELINE.md) | Next steps for inventory management. |
+| [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](../HOWTO-SETUP-ANSIBLE-BASELINE.md) | Next steps for inventory management. |
 
 ---
 

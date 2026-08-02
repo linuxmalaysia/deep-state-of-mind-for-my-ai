@@ -86,7 +86,7 @@ This is a **Pre-Lifecycle** tool. It is run exactly once after cloning a templat
 | Document | Purpose |
 |:---|:---|
 | [`HOWTO-INIT-BRAIN.md`](HOWTO-INIT-BRAIN.md) | A non-destructive alternative that only adds missing files. |
-| [`docs/HOWTO-ADOPT-DSOM.md`](../docs/HOWTO-ADOPT-DSOM.md) | Strategy for long-term project adoption. |
+| [`docs/HOWTO-ADOPT-DSOM.md`](../HOWTO-ADOPT-DSOM.md) | Strategy for long-term project adoption. |
 
 ---
 

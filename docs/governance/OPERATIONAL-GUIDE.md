@@ -164,22 +164,22 @@ For detailed step-by-step guides on how to apply DSOM to your specific situation
 ### Scenario 1: Brownfield Adoption
 
 - **Situation:** You have an existing project (Standard Code) and want to add DSOM.
-- **Guide:** [HOWTO: Adopt DSOM in Existing Projects](HOWTO-ADOPT-DSOM.md)
+- **Guide:** [HOWTO: Adopt DSOM in Existing Projects](../HOWTO-ADOPT-DSOM.md)
 
 ### Scenario 2: Legacy Upgrade
 
 - **Situation:** You have an older DSOM version (v3/v4) and want to upgrade to v5.x (ITIL/Privacy).
-- **Guide:** [HOWTO: Upgrade and Audit DSOM](HOWTO-UPGRADE-DSOM.md)
+- **Guide:** [HOWTO: Upgrade and Audit DSOM](../HOWTO-UPGRADE-DSOM.md)
 
 ### Scenario 3: Palace Migration
 
 - **Situation:** You have DSOM v6.x but no Palace. You want to add the spatial memory layer.
-- **Guide:** [HOWTO: Migrate to Palace](HOWTO-MIGRATE-TO-PALACE.md)
+- **Guide:** [HOWTO: Migrate to Palace](../HOWTO-MIGRATE-TO-PALACE.md)
 
 ### Scenario 4: New Adopter — Palace Edition
 
 - **Situation:** First time setting up DSOM from scratch with Palace v1.0.
-- **Guide:** [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
+- **Guide:** [HOWTO: Palace Onboarding](../HOWTO-PALACE-ONBOARDING.md)
 
 ---
 

@@ -94,7 +94,7 @@ After the script finishes, you must perform the following Git manual steps:
 
 | Document | Purpose |
 |:---|:---|
-| [`docs/HOWTO-DSOM-ONBOARDING.md`](../docs/HOWTO-DSOM-ONBOARDING.md) | High-level procedural guide for humans. |
+| [`docs/HOWTO-DSOM-ONBOARDING.md`](../HOWTO-DSOM-ONBOARDING.md) | High-level procedural guide for humans. |
 | [`HOWTO-INIT-BRAIN.md`](HOWTO-INIT-BRAIN.md) | The next tool to run after a successful onboard. |
 
 ---

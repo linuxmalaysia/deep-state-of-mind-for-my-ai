@@ -317,8 +317,8 @@ Code and configuration flow through a defined hierarchy — no tier may be bypas
 T1 (Windows/AI) → git push → T2 (WSL2 dsom-control-almalinux10) → ansible-playbook → T3/T4
 ```
 
-> **Setup guide:** [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](HOWTO-SETUP-WSL-ALMALINUX10.md)
-> **Ansible baseline:** [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md)
+> **Setup guide:** [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10.md)
+> **Ansible baseline:** [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](../HOWTO-SETUP-ANSIBLE-BASELINE.md)
 > **Environment map:** [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) — fill once per project
 
 ---
@@ -340,10 +340,10 @@ The v6.1 + Palace v1.0 formalisation of day-to-day AI context continuity: the **
 
 At EOD, the AI exports its full context (instructions, environment, history, Mental Anchor) as a single code block. `palace-sync.sh` (or `eod-palace.yml`) generates `palace_update_proposal_YYYY-MM-DD.md`. At the next SOD, the manifest (including Section [14] Palace Registry) is fed back to any AI to restore full context — making DSOM **AI-model-agnostic** and **spatially aware**.
 
-> **EOD procedure:** [`docs/EOD-RITUAL.md`](EOD-RITUAL.md) — Step 2a (Ansible Palace EOD)
-> **SOD procedure:** [`docs/SOD-RITUAL.md`](SOD-RITUAL.md) — Step 1a (Ansible Palace SOD)
-> **AI prompts:** [`docs/REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) — 5 copy-paste prompts
-> **Palace guide:** [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) — closet structure and update guide
+> **EOD procedure:** [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) — Step 2a (Ansible Palace EOD)
+> **SOD procedure:** [`docs/SOD-RITUAL.md`](../SOD-RITUAL.md) — Step 1a (Ansible Palace SOD)
+> **AI prompts:** [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE.md) — 5 copy-paste prompts
+> **Palace guide:** [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md) — closet structure and update guide
 
 ---
 
@@ -355,17 +355,17 @@ The following documents constitute the **Sovereign Document Stack** for any v6.1
 |:---|:---|
 | Constitution | [`AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) |
 | Project Identity | [`AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) |
-| Session Handover | [`HUMAN-HANDOVER-CONTEXT.md`](HUMAN-HANDOVER-CONTEXT.md) |
-| Start of Day | [`SOD-RITUAL.md`](SOD-RITUAL.md) |
-| End of Day | [`EOD-RITUAL.md`](EOD-RITUAL.md) |
-| AI Prompts | [`REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) |
-| Transition | [`RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) |
+| Session Handover | [`HUMAN-HANDOVER-CONTEXT.md`](../HUMAN-HANDOVER-CONTEXT.md) |
+| Start of Day | [`SOD-RITUAL.md`](../SOD-RITUAL.md) |
+| End of Day | [`EOD-RITUAL.md`](../EOD-RITUAL.md) |
+| AI Prompts | [`REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE.md) |
+| Transition | [`RITUAL-OF-TRANSITION.md`](../RITUAL-OF-TRANSITION.md) |
 | Strategy | [`GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) |
 | Operations | [`OPERATIONAL-GUIDE.md`](OPERATIONAL-GUIDE.md) |
-| **Palace Memory** | **[`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md)** |
-| **Palace Build Story** | **[`PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md)** |
-| Ansible Setup | [`HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md) |
-| WSL2 Setup | [`HOWTO-SETUP-WSL-ALMALINUX10.md`](HOWTO-SETUP-WSL-ALMALINUX10.md) |
+| **Palace Memory** | **[`HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md)** |
+| **Palace Build Story** | **[`PALACE-BUILD-STORY.md`](../PALACE-BUILD-STORY.md)** |
+| Ansible Setup | [`HOWTO-SETUP-ANSIBLE-BASELINE.md`](../HOWTO-SETUP-ANSIBLE-BASELINE.md) |
+| WSL2 Setup | [`HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10.md) |
 | Contributors | [`CONTRIBUTING.md`](../CONTRIBUTING.md) |
 
 ---

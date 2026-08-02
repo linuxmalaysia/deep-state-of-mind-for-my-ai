@@ -104,7 +104,7 @@ The tool utilizes a library of high-fidelity regex patterns:
 | Document | Purpose |
 |:---|:---|
 | [`HOWTO-REANIMATE.md`](HOWTO-REANIMATE.md) | Generator of the file this tool scans. |
-| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../docs/REANIMATION-PROMPT-TEMPLATE.md) | Where the manifest is ultimately used. |
+| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE.md) | Where the manifest is ultimately used. |
 
 ---
 
