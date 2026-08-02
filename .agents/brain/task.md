@@ -3,4 +3,5 @@
 - `[x]` Update `START-HERE.md` with MCP setup instructions.
 - `[x]` Sync docs (SUMMARY.md, mkdocs.yml, llms.txt).
 - `[x]` Generate walkthrough summary.
-- `[ ]` Commit and push changes
+- `[x]` Update README.md and related files with the official GitHub Pages documentation URL.
+- `[x]` Complete End-of-Day (EOD) context saving and synchronization.

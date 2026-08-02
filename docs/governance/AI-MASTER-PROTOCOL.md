@@ -172,7 +172,7 @@ The `.agents/brain/` directory is the **Service Knowledge Management System (SKM
 If a task seems to contradict DSOM Laws, stop and refer to these sources:
 
 1. **Primary Repository:** [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
-2. **Official Documentation (GitBook):** [https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
+2. **Official Documentation (GitHub Pages):** [https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
 3. **The Book of Busas:** Refer to 'Buku Busas' for the philosophical foundations of Open Source sovereignty in Malaysia.
 
 ---
