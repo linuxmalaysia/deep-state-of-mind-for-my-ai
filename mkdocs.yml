@@ -12,6 +12,9 @@ repo_url: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai
 site_url: https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/
 edit_uri: blob/main/docs/
 
+hooks:
+  - tools/mkdocs_hooks.py
+
 theme:
   name: material
   font:

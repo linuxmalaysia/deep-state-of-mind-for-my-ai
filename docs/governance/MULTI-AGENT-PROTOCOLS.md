@@ -69,26 +69,26 @@ These are the most DSOM-native compatible due to their "Context Awareness" featu
 * **Config File:** `.cursorrules` / `.windsurfrules`
 * **Strategy:** Point them to `@docs/AI-MASTER-PROTOCOL.md` and `@docs/OPERATIONAL-GUIDE.md`.
 * **Templates:**
-  * [Cursor Template](agent-configs/cursorrules_template.md)
-  * [Windsurf Template](agent-configs/windsurfrules_template.md)
+  * [Cursor Template](../agent-configs/cursorrules_template.md)
+  * [Windsurf Template](../agent-configs/windsurfrules_template.md)
 
 ### B. GitHub Copilot
 
 * **Config File:** `.github/copilot-instructions.md` (If supported) or top-of-file comments.
 * **Strategy:** Use the `// DSOM: [Instruction]` comment syntax.
-* **Template:** [Copilot Instructions](agent-configs/copilot_instructions_template.md)
+* **Template:** [Copilot Instructions](../agent-configs/copilot_instructions_template.md)
 
 ### C. CrewAI & AutoGen
 
 * **Config File:** `config/agents.yaml` or `scenarios.json`.
 * **Strategy:** The "Role" definition must include: *"You are a DSOM-Compliant engineer. Your memory is persisted in .agents/brain/."*
-* **Template:** [Autonomous Manifest](agent-configs/autonomous_agent_manifest.md)
+* **Template:** [Autonomous Manifest](../agent-configs/autonomous_agent_manifest.md)
 
 ### D. Devin / Replit Agent
 
 * **Config File:** Project Custom instructions / `.replit`.
 * **Strategy:** Add the "Architectural Mantra" (from Personalization Block 6) to the environment's system prompt.
-* **Template:** [Autonomous Manifest](agent-configs/autonomous_agent_manifest.md)
+* **Template:** [Autonomous Manifest](../agent-configs/autonomous_agent_manifest.md)
 
 ---
 

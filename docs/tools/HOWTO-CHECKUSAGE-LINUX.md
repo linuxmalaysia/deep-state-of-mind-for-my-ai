@@ -104,7 +104,7 @@ Run this tool on your WSL2 node during the **Start-of-Day Ritual** to ensure tha
 | Document | Purpose |
 |:---|:---|
 | [`HOWTO-CHECKUSAGE.md`](HOWTO-CHECKUSAGE.md) | The native Windows PowerShell version of this tool. |
-| [`docs/SOD-RITUAL.md`](../docs/SOD-RITUAL.md) | Where monitoring fits in the daily lifecycle. |
+| [`docs/SOD-RITUAL.md`](../SOD-RITUAL.md) | Where monitoring fits in the daily lifecycle. |
 
 ---
 

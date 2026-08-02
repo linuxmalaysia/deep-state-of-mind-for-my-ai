@@ -80,7 +80,7 @@ After uploading the manifest, use this prompt in your first Claude interaction:
 
 | Document | Purpose |
 |:---|:---|
-| [`docs/CLAUDE-SETUP.md`](../docs/CLAUDE-SETUP.md) | Full Anthropic Claude setup guide. |
+| [`docs/CLAUDE-SETUP.md`](../CLAUDE-SETUP.md) | Full Anthropic Claude setup guide. |
 | [`HOWTO-REANIMATE.md`](HOWTO-REANIMATE.md) | Standard reanimation for other models (Gemini, GPT). |
 | [`HOWTO-PRIVACY-GUARDIAN.md`](HOWTO-PRIVACY-GUARDIAN.md) | Mandatory security scan before upload. |
 

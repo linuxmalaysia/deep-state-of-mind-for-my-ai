@@ -86,7 +86,7 @@ Run this once from an elevated (Administrator) PowerShell terminal:
 
 | Document | Purpose |
 |:---|:---|
-| [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](../docs/HOWTO-SETUP-WSL-ALMALINUX10.md) | Full manual setup alternative and troubleshooting. |
+| [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10.md) | Full manual setup alternative and troubleshooting. |
 | [`HOWTO-SETUP-DSOM-CONTROL-NODE.md`](HOWTO-SETUP-DSOM-CONTROL-NODE.md) | Detailed view of the internal Linux setup phase. |
 
 ---
