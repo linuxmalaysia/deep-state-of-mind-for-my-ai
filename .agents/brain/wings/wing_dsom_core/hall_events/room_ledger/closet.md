@@ -52,4 +52,4 @@ This closet tracks the **Universal Ledger** — the `CHANGELOG.md` and `HISTORY.
 ---
 *Last Refined: 2026-04-08 | Backfill: Full History | Hall: hall_events | Wing: wing_dsom_core*
 
-- [2026-08-02] CHANGELOG.md and HISTORY.md updated via PR #8 (CodeRabbit autofix compliance). See palace_update_proposal_2026-08-02_0048.md.
+- [2026-08-02] GitHub Pages Alignment: CHANGELOG.md and HISTORY.md updated. Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).

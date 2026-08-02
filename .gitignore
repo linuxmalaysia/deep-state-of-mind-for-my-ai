@@ -90,3 +90,9 @@ dump.rdb
 # --- [ Security Tools ] ---
 replacements.txt
 *_callback.py
+
+# --- [ Python Artifacts ] ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

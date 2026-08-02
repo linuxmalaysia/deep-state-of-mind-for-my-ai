@@ -75,4 +75,4 @@ The following high-fidelity guides are stored in `docs/tools/`:
 ---
 *Last Refined: 2026-04-08 | Backfill: Full History | Hall: hall_facts | Wing: wing_dsom_core*
 
-- [2026-08-02] Updated all tools (Bash/PowerShell) and MCP server via PR #8 (CodeRabbit autofix compliance). See palace_update_proposal_2026-08-02_0048.md.
+- [2026-08-02] GitHub Pages Alignment: Tool scripts updated (hibernation.sh and others). Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).

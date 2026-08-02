@@ -3,7 +3,7 @@
 > **Generated:** 2026-08-02_0048
 > **Mode:** EOD
 > **Scope:** Commits since re-initialisation
-> **Status:** REVIEWED — Closets updated.
+> **Status:** REVIEWED / COMPLETE — Closets synchronized.
 
 ---
 
