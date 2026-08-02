@@ -2,14 +2,27 @@ import re
 
 def on_page_markdown(markdown, page, config, files):
     """
-    MkDocs hook to dynamically translate GitHub-relative links to work with MkDocs.
-
-    1. Removes 'docs/' prefix from links in root-level files compiled at the site root
-       (e.g., [Cloning Guide](docs/HOWTO-CLONE-DSOM-PROJECT.md) -> [Cloning Guide](HOWTO-CLONE-DSOM-PROJECT.md)).
-    2. Translates '../../' repository-root relative links in 2-level-deep docs to '../'
-       (e.g., [START-HERE.md](../../START-HERE.md) -> [START-HERE.md](../START-HERE.md)).
+    Rewrite relative Markdown links for MkDocs-compatible paths.
+    
+    Parameters:
+        markdown (str): Markdown content whose links should be rewritten.
+        page: MkDocs page associated with the content.
+        config: MkDocs configuration.
+        files: MkDocs file collection.
+    
+    Returns:
+        str: Markdown content with applicable relative links rewritten.
     """
     def replace_link(match):
+        """
+        Rewrite a Markdown link URL for MkDocs compilation.
+        
+        Parameters:
+        	match: A regular expression match containing link text and URL groups.
+        
+        Returns:
+        	str: The link with its relative URL adjusted, or the original link for external and anchor-only URLs.
+        """
         text = match.group(1)
         url = match.group(2)
 
