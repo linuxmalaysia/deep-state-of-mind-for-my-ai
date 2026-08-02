@@ -88,7 +88,7 @@ This is a **one-time setup** tool. Once the brain is initialized, you should swi
 
 | Document | Purpose |
 |:---|:---|
-| [`docs/OPERATIONAL-GUIDE.md`](../governance/OPERATIONAL-GUIDE.md) | How the brain files are used in practice. |
+| [`governance/OPERATIONAL-GUIDE.md`](../governance/OPERATIONAL-GUIDE.md) | How the brain files are used in practice. |
 | [`HOWTO-AUDIT-PRE-FLIGHT.md`](HOWTO-AUDIT-PRE-FLIGHT.md) | Verification tool for these artifacts. |
 
 ---
