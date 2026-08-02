@@ -12,7 +12,11 @@ Trigger this skill whenever the user asks to "prepare a blog post", "publish to 
 
 ## Instructions
 1. **Locate Target Document:** Identify the `.md` document or analysis the user wants to publish.
-2. **Update Source Document (If Applicable):** Ensure the source `.md` document natively contains the "Open Source Repositories & Documentation" section with GitHub, GitLab, GitHub Pages, and GitBook links just above the DSOM signature. If it does not, add it before proceeding to HTML conversion.
+2. **Update Source Document (If Applicable):** Ensure the source `.md` document natively contains the "Open Source Repositories & Documentation" section with GitHub, GitLab, GitHub Pages, and GitBook links just above the DSOM signature. If it does not, add it. After modifying the markdown source, run the signature injector to verify/inject the DSOM signature:
+   ```bash
+   python .agents/skills/dsom-signature-injector/scripts/inject.py <target_path>
+   ```
+   Only then proceed to HTML conversion.
 3. **Convert to HTML:** Convert the markdown into standard, clean, semantic HTML (`<h2>`, `<p>`, `<ul>`, etc.). Do not apply heavy inline CSS, as the Blogger theme will handle presentation. Wrap the entire post in `<div class="dsom-post">`.
 4. **Inject the Collaboration Note (TOP):** At the very beginning of the post, insert the following blockquote exactly:
    ```html
