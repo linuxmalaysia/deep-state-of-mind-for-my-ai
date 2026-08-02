@@ -2,3 +2,7 @@
 # Used by tools/dsom_token_auditor.py (token efficiency auditor)
 # Managed via uv in local environments; pinned here for CI dependency scanning.
 tiktoken>=0.7.0
+
+# Test Dependencies
+# Used by tests/test_documentation_deployment.py for YAML structural validation
+PyYAML>=6.0
