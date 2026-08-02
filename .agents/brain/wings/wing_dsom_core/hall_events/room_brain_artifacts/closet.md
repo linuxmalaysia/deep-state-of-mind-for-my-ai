@@ -63,3 +63,4 @@ This closet tracks the evolution of the `.agents/brain/` directory — the AI's 
 
 - [2026-07-27] Created current_state.dsom for token compaction.
 - [2026-07-27] EOD safe shutdown notes (hibernation-notes-2026-07-27.txt).
+- [2026-08-02] Synchronized brain artifacts and palace proposals via PR #8; updated hibernation notes, walkthrough, task.md, palace_registry, and all closet.md files. See palace_update_proposal_2026-08-02_0048.md.

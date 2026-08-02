@@ -64,6 +64,12 @@ inventory/hosts.ini
 Thumbs.db
 desktop.ini
 
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
 # IDEs (VS Code, Cursor, IDX)
 .vscode/
 .idea/

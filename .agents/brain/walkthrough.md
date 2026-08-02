@@ -22,13 +22,16 @@ Today's session completed the Context7 & MCP architectural integration.
 ## 🏁 Session Anchor: 2026-08-02 — GitHub Pages Alignment
 
 ### Accomplished
+
 - Configured canonical `site_url` in `mkdocs.yml` as `https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/`.
 - Updated `README.md` to prominently highlight and link the official live GitHub Pages documentation.
 - Standardised and updated related documentation files (`AI-MASTER-PROTOCOL.md`, `OPERATIONAL-SOVEREIGNTY.md`, `DSOM-TOKEN-EFFICIENCY-REPORT.md`, `DSOM-EFFICIENCY-PROTOCOLS.md`, `PERSONALIZATION.md`, `.agents/skills/publish-to-blogger/SKILL.md`, and `llms.txt`), replacing outdated GitBook references with the new GitHub Pages site.
 - Completed End-of-Day (EOD) ritual of context consolidation, walkthrough logs, and synchronization.
 
 ### Why
+
 - Align the framework's internal links with the new live-compiled documentation host on GitHub Pages to guarantee seamless navigation for human readers and AI crawlers.
 
 ### Mental Anchor
-> All references successfully pointed to the official GitHub Pages site. The repository is in a clean, fully-synchronized state with all EOD checklist items satisfied.
+
+> All internal documentation references successfully pointed to the official GitHub Pages site. The repository is in a clean, fully-synchronized state with all EOD checklist items satisfied.

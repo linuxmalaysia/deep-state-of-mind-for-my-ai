@@ -49,3 +49,4 @@ This closet captures commits that did not map to a core Palace Room — primaril
 - [2026-07-27] Added dsom-state-sync skill.
 - [2026-07-27] Added Rule 24 Defensive Credential Handling Mandate.
 - [2026-07-27] Implemented automated PR state sync via Semantic Compaction (action_update_dsom.py).
+- [2026-08-02] Merged PR #8 (CodeRabbit autofix): comprehensive OKF compliance cleanup across core config files, skills, workflows, references, and tests. See palace_update_proposal_2026-08-02_0048.md.
