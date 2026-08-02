@@ -28,12 +28,7 @@ import pathlib
 import re
 import unittest
 
-try:
-    import yaml  # type: ignore
-
-    HAS_YAML = True
-except ImportError:  # pragma: no cover - environment dependent
-    HAS_YAML = False
+import yaml  # type: ignore
 
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
@@ -102,7 +97,6 @@ class MkdocsSiteUrlTests(unittest.TestCase):
         )
 
 
-@unittest.skipUnless(HAS_YAML, "PyYAML not installed")
 class MkdocsSiteUrlYamlStructureTests(unittest.TestCase):
     """Structural validation of site_url via a parsed YAML document."""
 
