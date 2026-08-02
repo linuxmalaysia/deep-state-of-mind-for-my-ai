@@ -206,6 +206,7 @@ The **AI-MASTER-PROTOCOL.md** mandates that if any task contradicts the core law
 
 * **Primary Repository:** [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
 * **Official Documentation (GitHub Pages):** [https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
+* **Official Documentation (GitBook):** [https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
 * **Philosophical Foundations:** **The Book of Busas** (Buku Busas - Bukan Sekadar Internet Sahaja), which provides the underlying logic for Open Source sovereignty in Malaysia.
 
 ### **Operational Standards and Manuals**
@@ -371,7 +372,7 @@ The following documents constitute the **Sovereign Document Stack** for any v6.1
 
 *Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *Primary Repository: <https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai>*
-*Official Documentation: <https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/>*
+*Official Documentation: <https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/> and <https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai>*
 *Original Manifesto: v5.x (retained intact) | v6.1 Addendum: 2026-03-10 | Palace v1.0 Addendum: 2026-04-08*
 
 

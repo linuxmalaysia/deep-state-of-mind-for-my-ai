@@ -49,7 +49,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Zero-Global / Spatial Memory** | No global state. Operational memory lives in `.agents/brain/`. |
 | **Open Knowledge Format (OKF)** | All `.md` documents use OKF v0.1 YAML frontmatter (`okf_version`, `type`, `title`, `timestamp`, `topics`). |
 | **Atomic Git Commits** | Every logical action results in a discrete, semantically named Git commit. No monolithic blanket commits. |
-| **Omni-Documentation Sync** | New governance documents must be registered in `SUMMARY.md`, `mkdocs.yml`, `START-HERE.md`, and `llms.txt`. |
+| **Omni-Documentation Sync** | New governance documents must be registered in `SUMMARY.md` (for GitBook navigation), `mkdocs.yml` (for MkDocs/GitHub Pages navigation), `START-HERE.md`, and `llms.txt`. |
 | **Sovereign Signatures** | Every markdown or readable script modified by an AI must be processed via `dsom-signature-injector`. |
 | **Ansible Legacy (The Executor)** | The Third Pillar is modular: `ansible-playbook`, `uv run`, `npm run`, or `pandoc` — governed by idempotency. |
 | **Command-First Architecture** | Prose instructions are converted into exact, executable, byte-capped terminal invocations. |

@@ -17,8 +17,11 @@ timestamp: 2026-07-04T09:40:04Z
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
 [![Standard](https://img.shields.io/badge/AI%20Standard-Cognitive%20Digital%20Twin-purple.svg)]()
 [![Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-blue.svg)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
+[![GitBook](https://img.shields.io/badge/Docs-GitBook-blue.svg)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
 
-📖 **Official Live Documentation:** [https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
+📖 **Official Live Documentation:**
+- **GitHub Pages:** [https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
+- **GitBook:** [https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
 
 ---
 
@@ -532,7 +535,8 @@ Once Step 6 is complete, the AI knows:
 
 | File | Description |
 | :--- | :--- |
-| [Official Live Documentation](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |
+| [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |
+| [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
 | [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 9 primary onboarding entry points. Read this first! |
 | [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialization Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
 | [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
