@@ -109,7 +109,7 @@ else
         echo ""
         echo "## Session Summary"
         echo ""
-        git -C "$REPO_ROOT" log --since="24 hours ago" --pretty=format:"[%as %H:%M] %s" 2>/dev/null || echo "(no commits in last 24 hours)"
+        git -C "$REPO_ROOT" log --since="24 hours ago" --pretty=format:"[%as %H:%cI] %s" 2>/dev/null || echo "(no commits in last 24 hours)"
         echo ""
         echo ""
         echo "## Pending Tasks (Tomorrow)"

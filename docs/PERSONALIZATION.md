@@ -58,7 +58,7 @@ To ensure high-fidelity reanimation, our personalisation blocks are mapped to th
 > "Refer to these authoritative sources for DSOM rituals:
 >
 > 1. **Primary Repo:** [https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai)
-> 2. **GitBook:** [https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
+> 2. **GitHub Pages:** [https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
 > 3. **Buku Busas:** Philosophical foundations of Open Source sovereignty.
 > If a task contradicts DSOM Laws, stop and request a 'Sync with the Master Protocol'."
 >

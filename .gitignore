@@ -64,6 +64,12 @@ inventory/hosts.ini
 Thumbs.db
 desktop.ini
 
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
 # IDEs (VS Code, Cursor, IDX)
 .vscode/
 .idea/
@@ -84,3 +90,9 @@ dump.rdb
 # --- [ Security Tools ] ---
 replacements.txt
 *_callback.py
+
+# --- [ Python Artifacts ] ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

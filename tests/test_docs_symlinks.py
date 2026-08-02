@@ -193,6 +193,13 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """
+        Collect Git index modes for the documentation symlink paths used by the tests.
+        
+        Raises:
+            RuntimeError: If the Git executable is unavailable.
+            subprocess.CalledProcessError: If the Git index query fails.
+        """
         git_path = shutil.which("git")
         if git_path is None:
             raise RuntimeError("git executable not found in PATH")  # noqa: TRY003

@@ -49,3 +49,4 @@ This closet captures commits that did not map to a core Palace Room — primaril
 - [2026-07-27] Added dsom-state-sync skill.
 - [2026-07-27] Added Rule 24 Defensive Credential Handling Mandate.
 - [2026-07-27] Implemented automated PR state sync via Semantic Compaction (action_update_dsom.py).
+- [2026-08-02] GitHub Pages Alignment: Updated documentation references from GitBook to GitHub Pages. Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).
