@@ -13,6 +13,14 @@ from datetime import datetime, timezone
 FRONTMATTER_RE = re.compile(r'\A---\s*\n(.*?)\n---\s*\n', re.DOTALL)
 
 def get_okf_type(filepath):
+    """Determine the OKF document type from path segments.
+    
+    Parameters:
+        filepath (str): Path whose segments identify the document category.
+    
+    Returns:
+        str: The matching OKF document type, or ``"documentation"`` when no specialized category applies.
+    """
     path_parts = filepath.replace('\\', '/').split('/')
     if 'docs' in path_parts and 'governance' in path_parts:
         return 'governance_protocol'
@@ -27,6 +35,16 @@ def get_okf_type(filepath):
     return 'documentation'
 
 def extract_title(content, filename):
+    """
+    Extract a document title from its first level-one heading or filename.
+    
+    Parameters:
+        content (str): Markdown document content.
+        filename (str): Filename used to derive the title when no level-one heading exists.
+    
+    Returns:
+        str: The trimmed level-one heading text, or a title-cased filename without its extension.
+    """
     match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
     if match:
         return match.group(1).strip()
@@ -35,6 +53,14 @@ def extract_title(content, filename):
     return name_without_ext.replace('_', ' ').replace('-', ' ').title()
 
 def get_default_topics(okf_type):
+    """Return the default topic list for a document type.
+    
+    Parameters:
+        okf_type (str): The document type used to select the default topics.
+    
+    Returns:
+        list[str]: The default topics associated with the document type, or generic documentation topics when no mapping exists.
+    """
     mapping = {
         'governance_protocol': ['dsom', 'governance', 'protocol'],
         'agent_skill': ['dsom', 'skill', 'agent'],
@@ -46,6 +72,14 @@ def get_default_topics(okf_type):
     return mapping.get(okf_type, ['dsom', 'documentation'])
 
 def serialize_val(val, key):
+    """Serialize a metadata value into the YAML-like representation used for frontmatter.
+    
+    Parameters:
+        val: The metadata value to serialize.
+        key: The metadata key, used to determine when string values require quoting.
+    
+    Returns:
+        str: The serialized value."""
     if isinstance(val, list):
         items = []
         for x in val:
@@ -69,6 +103,16 @@ def serialize_val(val, key):
     return str(val)
 
 def process_file(filepath, root_dir):
+    """
+    Standardize a Markdown file's YAML frontmatter to the OKF v0.1 format.
+    
+    Parameters:
+        filepath (str): Path to the Markdown file to process.
+        root_dir (str): Root directory used to derive the file's relative path.
+    
+    Returns:
+        bool: `True` if the file was updated, `False` if it was empty or already standardized.
+    """
     rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
     filename = os.path.basename(filepath)
 
@@ -157,6 +201,10 @@ def process_file(filepath, root_dir):
     return False
 
 def main():
+    """Scan a directory recursively and standardize its Markdown files to OKF v0.1 frontmatter.
+    
+    The optional command-line directory argument specifies the scan root and defaults to the current directory. Excludes `.git`, `node_modules`, and `.pytest_cache` directories, then reports the number of Markdown files checked and modified.
+    """
     parser = argparse.ArgumentParser(description="Ensure OKF v0.1 compliance on all Markdown files.")
     parser.add_argument("directory", nargs="?", default=".", help="Root directory to scan (default: '.')")
     args = parser.parse_args()

@@ -24,6 +24,13 @@ def extract_title(content, filename):
     return os.path.splitext(filename)[0]
 
 def apply_okf(root_dir):
+    """
+    Apply OKF frontmatter to Markdown files in a directory tree.
+    
+    Parameters:
+    	root_dir (str): Root directory to scan recursively. Directories named `.git`, `node_modules`, and `scratch` are excluded.
+    
+    """
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     modified_count = 0
     
