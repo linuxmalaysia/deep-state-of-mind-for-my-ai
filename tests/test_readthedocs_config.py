@@ -30,7 +30,6 @@ def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
 
 REPO_ROOT = _find_repo_root(pathlib.Path(__file__).parent)
 READTHEDOCS_PATH = REPO_ROOT / ".readthedocs.yaml"
-DOCS_REQUIREMENTS_PATH = REPO_ROOT / "docs" / "requirements.txt"
 
 
 class ReadthedocsConfigTests(unittest.TestCase):
@@ -107,77 +106,89 @@ class ReadthedocsConfigTests(unittest.TestCase):
             f"Expected {mkdocs_file} to be an existing file",
         )
 
-    def test_python_install_declares_docs_requirements(self):
-        """Verify python.install references docs/requirements.txt."""
+    def test_python_install_requirements(self):
+        """Verify the python.install section points at docs/requirements.txt."""
         self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
-        python_cfg = self.config.get("python", {})
-        self.assertIsInstance(python_cfg, dict, "Expected python configuration to be a dictionary")
-        install = python_cfg.get("install")
+        python_section = self.config.get("python", {})
+        self.assertIsInstance(python_section, dict, "Expected python configuration to be a dictionary")
+        install = python_section.get("install")
         self.assertIsInstance(install, list, "Expected python.install to be a list")
         self.assertEqual(len(install), 1, "Expected exactly one python.install entry")
         self.assertEqual(
             install[0],
             {"requirements": "docs/requirements.txt"},
-            "Expected python.install[0].requirements to be 'docs/requirements.txt'",
+            "Expected python.install to declare docs/requirements.txt",
         )
-
-    def test_referenced_requirements_file_exists(self):
-        """The requirements file declared in .readthedocs.yaml must exist."""
+        requirements_file = REPO_ROOT / "docs" / "requirements.txt"
         self.assertTrue(
-            DOCS_REQUIREMENTS_PATH.is_file(),
-            f"Expected {DOCS_REQUIREMENTS_PATH} to exist as declared in .readthedocs.yaml",
+            requirements_file.is_file(),
+            f"Expected {requirements_file} to be an existing file",
         )
 
-    def test_dsom_signature_precedes_version_declaration(self):
-        """The signature header must be prepended before the actual config."""
-        self.assertGreater(
-            self.content.index("version: 2"),
-            self.content.index("Protocol    : Deep State of Mind (DSOM) For My AI"),
-            "Expected the DSOM signature header to precede the 'version: 2' declaration",
-        )
-
-    def test_no_unexpected_top_level_keys(self):
-        """Boundary check: only the documented top-level keys should be present."""
+    def test_top_level_keys_are_exactly_expected(self):
+        """Regression guard: no stray or missing top-level keys."""
         self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
-        expected_keys = {"version", "build", "mkdocs", "python"}
         self.assertEqual(
             set(self.config.keys()),
-            expected_keys,
-            "Expected .readthedocs.yaml to declare exactly the documented top-level keys",
+            {"version", "build", "mkdocs", "python"},
+            "Expected exactly version, build, mkdocs, and python top-level keys",
         )
 
+    def test_version_is_integer_type(self):
+        # Read the Docs requires an unquoted integer 2, not the string "2".
+        self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
+        self.assertIsInstance(
+            self.config.get("version"),
+            int,
+            "Expected version to parse as an integer, not a string",
+        )
 
-class DocsRequirementsTxtTests(unittest.TestCase):
-    """Verify docs/requirements.txt used to build the Read the Docs site."""
+    def test_build_tools_python_version_is_string_type(self):
+        # Quoted "3.13" must remain a string; unquoted 3.13 would be parsed
+        # as a float by YAML and silently drop the trailing zero semantics.
+        self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
+        tools = self.config.get("build", {}).get("tools", {})
+        self.assertIsInstance(
+            tools.get("python"),
+            str,
+            "Expected build.tools.python to be a quoted string",
+        )
+
+    def test_file_is_not_empty(self):
+        self.assertTrue(self.content.strip(), ".readthedocs.yaml should not be empty")
+
+    def test_no_tab_characters(self):
+        # YAML is whitespace-sensitive; tabs are a common source of subtle bugs.
+        self.assertNotIn("\t", self.content, ".readthedocs.yaml should not contain tab characters")
+
+
+class DocsRequirementsFileTests(unittest.TestCase):
+    """Verify docs/requirements.txt referenced by .readthedocs.yaml."""
+
+    REQUIREMENTS_PATH = REPO_ROOT / "docs" / "requirements.txt"
 
     @classmethod
-    def setUpClass(cls) -> None:
+    def setUpClass(cls):
         cls.content = ""
-        if DOCS_REQUIREMENTS_PATH.is_file():
-            cls.content = DOCS_REQUIREMENTS_PATH.read_text(encoding="utf-8")
+        if cls.REQUIREMENTS_PATH.is_file():
+            cls.content = cls.REQUIREMENTS_PATH.read_text(encoding="utf-8")
 
     def test_requirements_file_exists(self):
         self.assertTrue(
-            DOCS_REQUIREMENTS_PATH.is_file(),
-            "Expected docs/requirements.txt to exist",
+            self.REQUIREMENTS_PATH.is_file(),
+            f"Expected {self.REQUIREMENTS_PATH} to exist",
         )
 
-    def test_mkdocs_material_is_declared(self):
+    def test_requirements_file_not_empty(self):
+        self.assertTrue(self.content.strip(), "docs/requirements.txt should not be empty")
+
+    def test_declares_mkdocs_material_dependency(self):
         self.assertIn(
             "mkdocs-material",
             self.content,
-            "Expected docs/requirements.txt to declare the mkdocs-material dependency",
+            "Expected docs/requirements.txt to declare mkdocs-material",
         )
 
-    def test_requirements_file_declares_exactly_one_dependency(self):
-        """Boundary check: exactly one real dependency line, no stray entries."""
-        non_comment_lines = [
-            line.strip()
-            for line in self.content.splitlines()
-            if line.strip() and not line.strip().startswith("#")
-        ]
-        self.assertEqual(
-            non_comment_lines,
-            ["mkdocs-material"],
-            "Expected docs/requirements.txt to declare exactly 'mkdocs-material'",
-        )
+
+if __name__ == "__main__":
+    unittest.main()

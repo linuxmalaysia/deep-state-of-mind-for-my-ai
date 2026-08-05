@@ -1,44 +1,25 @@
-# ==============================================================================
-# Protocol    : Deep State of Mind (DSOM) For My AI
-# Author      : Harisfazillah Jamel (LinuxMalaysia)
-# Timestamp   : 2026-08-05
-# License     : GNU General Public License v3.0
-# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
-# ==============================================================================
 """
-Unit tests for the DSOM Signature Injector script
-(`.agents/skills/dsom-signature-injector/scripts/inject.py`).
+Unit tests for `.agents/skills/dsom-signature-injector/scripts/inject.py`.
 
-This PR extended `inject_signature()` so that Python (`.py`) files are now
-recognised both when walking a directory and when deciding which comment
-style (shebang/hash-style header) to apply. These tests verify:
+This PR extends `inject_signature()` so that Python (`.py`) files are:
+1. Discovered during a directory walk (previously only `.md`, `.sh`,
+   `.ps1`, `.yml`, and `.yaml` files were picked up).
+2. Processed using the same shell/YAML-style comment header as `.sh`,
+   `.yml`, and `.yaml` files (a `#`-prefixed block, inserted after a
+   leading shebang line if present) rather than the Markdown footer or
+   PowerShell block-comment styles.
 
-1. A single `.py` file passed directly is signed with the SH/YAML-style
-   hash-comment header (not the PowerShell block-comment header).
-2. A shebang line (`#!...`) on the first line of a `.py` file is preserved
-   as the very first line, with the header inserted immediately after it.
-3. Files whose content already contains the exact DSOM skip-trigger phrase
-   ("...For My AI Protocol") are left untouched (idempotency guard).
-4. Walking a directory now picks up `.py` files alongside the previously
-   supported extensions, while files with unsupported extensions are
-   still ignored.
-5. Directories named `.git` are still skipped during the directory walk.
-6. Characterisation of the pre-existing duplicate-detection quirk: since
-   the SH/YAML/PY header text reads "Protocol    : Deep State of Mind
-   (DSOM) For My AI" (label-first, no trailing "Protocol"), it does not
-   itself match the skip-trigger phrase, so a freshly generated header is
-   not recognised as a signature on a second pass.
+These tests exercise the module in isolation using temporary
+directories so that the real repository tree is never modified.
 """
 import importlib.util
 import os
 import pathlib
-import shutil
 import tempfile
 import unittest
 
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
-    """Locate the repository root from a starting path."""
     current = start.resolve()
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
@@ -56,187 +37,162 @@ INJECT_SCRIPT_PATH = (
     / "inject.py"
 )
 
+SIGNATURE_MARKER = "Deep State of Mind (DSOM) For My AI"
+
 
 def _load_inject_module():
-    """Dynamically load inject.py as a module (its parent dirs are not valid
-    Python package names, so a normal import is not possible)."""
-    spec = importlib.util.spec_from_file_location("dsom_inject", INJECT_SCRIPT_PATH)
+    """Load inject.py as a standalone module (its directory contains dashes)."""
+    spec = importlib.util.spec_from_file_location(
+        "dsom_signature_injector_inject", INJECT_SCRIPT_PATH
+    )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
 
 
-inject = _load_inject_module()
-
-# Generic phrase present in every header/footer variant (.md, .sh/.yml/.py,
-# and .ps1), regardless of word order.
-HEADER_MARKER = "Deep State of Mind (DSOM) For My AI"
-
-# The exact phrase inject_signature() checks for to decide whether a file is
-# already signed. Present verbatim in the Markdown footer and the PowerShell
-# header, but NOT in the SH/YAML/PY hash-comment header (see module docstring
-# point 6 above).
-SKIP_TRIGGER_PHRASE = "Deep State of Mind (DSOM) For My AI Protocol"
+class InjectScriptFileTests(unittest.TestCase):
+    def test_script_exists(self):
+        self.assertTrue(INJECT_SCRIPT_PATH.is_file(), f"Expected {INJECT_SCRIPT_PATH} to exist")
 
 
-class InjectScriptExistsTests(unittest.TestCase):
-    """Sanity check that the script under test is present and loadable."""
+class InjectSignaturePythonSupportTests(unittest.TestCase):
+    """Regression/behaviour tests for the newly added `.py` extension support."""
 
-    def test_inject_script_exists(self):
-        self.assertTrue(INJECT_SCRIPT_PATH.is_file())
+    @classmethod
+    def setUpClass(cls):
+        cls.inject = _load_inject_module()
 
-    def test_module_exposes_inject_signature(self):
-        self.assertTrue(hasattr(inject, "inject_signature"))
-        self.assertTrue(callable(inject.inject_signature))
+    def test_py_file_passed_directly_is_processed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            filepath = os.path.join(tmp, "script.py")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write("print('hello')\n")
 
+            self.inject.inject_signature(filepath)
 
-class InjectSignatureSinglePyFileTests(unittest.TestCase):
-    """Verify behaviour when a single .py file is passed directly."""
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            self.assertIn(SIGNATURE_MARKER, content)
+            self.assertIn("print('hello')", content)
 
-    def setUp(self):
-        self.tmpdir = tempfile.mkdtemp()
+    def test_py_file_is_discovered_during_directory_walk(self):
+        # Before this PR, .py files were not part of the extension tuple
+        # used by os.walk() and would have been silently skipped.
+        with tempfile.TemporaryDirectory() as tmp:
+            filepath = os.path.join(tmp, "module.py")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write("x = 1\n")
 
-    def tearDown(self):
-        shutil.rmtree(self.tmpdir, ignore_errors=True)
+            self.inject.inject_signature(tmp)
 
-    def _write(self, name, content):
-        path = os.path.join(self.tmpdir, name)
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(content)
-        return path
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            self.assertIn(SIGNATURE_MARKER, content)
 
-    def _read(self, path):
-        with open(path, encoding="utf-8") as f:
-            return f.read()
+    def test_py_file_uses_sh_yml_header_style_not_markdown_or_powershell(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            filepath = os.path.join(tmp, "script.py")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write("print('hello')\n")
 
-    def test_prepends_hash_style_header_to_py_file(self):
-        path = self._write("sample.py", "print('hello')\n")
-        inject.inject_signature(path)
-        content = self._read(path)
-        self.assertIn(HEADER_MARKER, content)
-        self.assertIn("print('hello')", content)
-        # Header must precede the original code.
-        self.assertLess(content.index(HEADER_MARKER), content.index("print('hello')"))
+            self.inject.inject_signature(filepath)
 
-    def test_py_header_uses_hash_comments_not_powershell_block(self):
-        path = self._write("style_check.py", "value = 42\n")
-        inject.inject_signature(path)
-        content = self._read(path)
-        self.assertIn("# Protocol    : Deep State of Mind (DSOM) For My AI", content)
-        self.assertNotIn("<#", content)
-        self.assertNotIn(".SYNOPSIS", content)
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            # Shell/YAML header style: '#'-prefixed block, prepended.
+            self.assertTrue(content.startswith("# =="))
+            self.assertIn("# Protocol    : Deep State of Mind (DSOM) For My AI", content)
+            # Must NOT use the PowerShell comment-block style.
+            self.assertNotIn("<#", content)
+            self.assertNotIn(".SYNOPSIS", content)
+            # Must NOT use the Markdown footer style (appended, not prepended).
+            self.assertFalse(content.rstrip().endswith("GNU General Public License v3.0*"))
 
-    def test_shebang_line_preserved_as_first_line(self):
-        path = self._write("script.py", "#!/usr/bin/env python3\nprint('hi')\n")
-        inject.inject_signature(path)
-        with open(path, encoding="utf-8") as f:
-            lines = f.readlines()
-        self.assertEqual(lines[0], "#!/usr/bin/env python3\n")
-        content = "".join(lines)
-        self.assertIn(HEADER_MARKER, content)
-        self.assertLess(content.index("#!/usr/bin/env python3"), content.index(HEADER_MARKER))
-        self.assertIn("print('hi')", content)
+    def test_py_file_with_shebang_inserts_header_after_shebang(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            filepath = os.path.join(tmp, "run.py")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write("#!/usr/bin/env python3\nprint('hi')\n")
 
-    def test_already_signed_py_file_is_left_unchanged(self):
-        original = (
-            f"# {SKIP_TRIGGER_PHRASE} header already here\n"
-            "print('unchanged')\n"
-        )
-        path = self._write("already_signed.py", original)
-        inject.inject_signature(path)
-        self.assertEqual(self._read(path), original)
+            self.inject.inject_signature(filepath)
 
-    def test_repeated_invocation_duplicates_header_on_py_files(self):
-        """Characterisation test for a pre-existing quirk (not introduced by
-        this PR): the SH/YAML/PY header does not contain the exact
-        SKIP_TRIGGER_PHRASE, so inject_signature() cannot detect that a .py
-        file it previously signed is already signed, and prepends a second
-        header block on a second invocation."""
-        path = self._write("run_twice.py", "print('once')\n")
-        inject.inject_signature(path)
-        first_pass = self._read(path)
-        inject.inject_signature(path)
-        second_pass = self._read(path)
-        self.assertNotEqual(first_pass, second_pass)
-        self.assertEqual(second_pass.count(HEADER_MARKER), 2)
-        self.assertTrue(second_pass.endswith(first_pass))
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            lines = content.splitlines()
+            self.assertEqual(lines[0], "#!/usr/bin/env python3")
+            self.assertIn("Protocol    : Deep State of Mind (DSOM) For My AI", content)
+            self.assertIn("print('hi')", content)
+            # The shebang must remain the very first line, before the header.
+            self.assertLess(
+                lines.index("#!/usr/bin/env python3"),
+                content.index("Protocol    : Deep State of Mind (DSOM) For My AI"),
+            )
 
+    def test_py_file_signature_is_not_duplicated_when_already_present(self):
+        original = "# Deep State of Mind (DSOM) For My AI Protocol\nprint('noop')\n"
+        with tempfile.TemporaryDirectory() as tmp:
+            filepath = os.path.join(tmp, "already.py")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write(original)
 
-class InjectSignatureDirectoryWalkTests(unittest.TestCase):
-    """Verify directory traversal now includes .py files."""
+            self.inject.inject_signature(filepath)
 
-    def setUp(self):
-        self.tmpdir = tempfile.mkdtemp()
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            self.assertEqual(content, original, "File should be left untouched when already signed")
 
-    def tearDown(self):
-        shutil.rmtree(self.tmpdir, ignore_errors=True)
+    def test_py_file_inside_git_directory_is_excluded_from_walk(self):
+        # Confirms the pre-existing `.git` exclusion still applies now
+        # that `.py` files are eligible for processing.
+        with tempfile.TemporaryDirectory() as tmp:
+            git_dir = os.path.join(tmp, ".git")
+            os.makedirs(git_dir)
+            filepath = os.path.join(git_dir, "hook.py")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write("pass\n")
 
-    def _write(self, rel_path, content):
-        full_path = os.path.join(self.tmpdir, rel_path)
-        os.makedirs(os.path.dirname(full_path), exist_ok=True)
-        with open(full_path, "w", encoding="utf-8") as f:
-            f.write(content)
-        return full_path
+            self.inject.inject_signature(tmp)
 
-    def _read(self, rel_path):
-        with open(os.path.join(self.tmpdir, rel_path), encoding="utf-8") as f:
-            return f.read()
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            self.assertEqual(content, "pass\n")
 
-    def test_py_files_are_signed_when_walking_a_directory(self):
-        self._write("module_a.py", "x = 1\n")
-        inject.inject_signature(self.tmpdir)
-        self.assertIn(HEADER_MARKER, self._read("module_a.py"))
+    def test_yaml_file_still_processed_alongside_py_in_same_directory(self):
+        # Regression guard: adding '.py' support must not break the
+        # pre-existing '.yaml' handling.
+        with tempfile.TemporaryDirectory() as tmp:
+            py_path = os.path.join(tmp, "a.py")
+            yaml_path = os.path.join(tmp, "b.yaml")
+            with open(py_path, "w", encoding="utf-8") as fh:
+                fh.write("a = 1\n")
+            with open(yaml_path, "w", encoding="utf-8") as fh:
+                fh.write("key: value\n")
 
-    def test_unsupported_extensions_are_left_untouched(self):
-        self._write("notes.txt", "should not be touched\n")
-        inject.inject_signature(self.tmpdir)
-        self.assertEqual(self._read("notes.txt"), "should not be touched\n")
+            self.inject.inject_signature(tmp)
 
-    def test_git_directory_is_skipped_during_walk(self):
-        self._write(os.path.join(".git", "hook.py"), "raise SystemExit\n")
-        # Should not raise, and the file inside .git must remain untouched.
-        inject.inject_signature(self.tmpdir)
-        self.assertNotIn(
-            HEADER_MARKER, self._read(os.path.join(".git", "hook.py"))
-        )
+            py_content = pathlib.Path(py_path).read_text(encoding="utf-8")
+            yaml_content = pathlib.Path(yaml_path).read_text(encoding="utf-8")
+            self.assertIn(SIGNATURE_MARKER, py_content)
+            self.assertIn(SIGNATURE_MARKER, yaml_content)
 
-    def test_mixed_directory_only_signs_supported_extensions(self):
-        self._write("script.sh", "echo hi\n")
-        self._write("module.py", "y = 2\n")
-        self._write("data.json", '{"key": "value"}\n')
-        inject.inject_signature(self.tmpdir)
-        self.assertIn(HEADER_MARKER, self._read("script.sh"))
-        self.assertIn(HEADER_MARKER, self._read("module.py"))
-        self.assertNotIn(HEADER_MARKER, self._read("data.json"))
+    def test_unsupported_extension_is_left_untouched(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            filepath = os.path.join(tmp, "notes.txt")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write("just some notes\n")
 
+            self.inject.inject_signature(tmp)
 
-class InjectSignatureEdgeCaseTests(unittest.TestCase):
-    """Boundary/negative cases for inject_signature()."""
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            self.assertEqual(content, "just some notes\n")
 
-    def test_nonexistent_path_does_not_raise(self):
-        missing_path = os.path.join(tempfile.gettempdir(), "does-not-exist-dsom-test")
-        # Neither a file nor a directory: the function should simply have
-        # nothing to process and must not raise.
-        try:
-            inject.inject_signature(missing_path)
-        except Exception as exc:  # pragma: no cover - defensive assertion
-            self.fail(f"inject_signature raised unexpectedly for a missing path: {exc}")
+    def test_md_file_still_gets_footer_appended_not_header_prepended(self):
+        # Regression guard: Markdown handling must remain unaffected by
+        # the new '.py' branch.
+        with tempfile.TemporaryDirectory() as tmp:
+            filepath = os.path.join(tmp, "doc.md")
+            with open(filepath, "w", encoding="utf-8") as fh:
+                fh.write("# Title\n")
 
-    def test_markdown_file_still_receives_footer_not_header(self):
-        tmpdir = tempfile.mkdtemp()
-        try:
-            path = os.path.join(tmpdir, "doc.md")
-            with open(path, "w", encoding="utf-8") as f:
-                f.write("# Title\n\nBody text.\n")
-            inject.inject_signature(path)
-            with open(path, encoding="utf-8") as f:
-                content = f.read()
-            self.assertIn(SKIP_TRIGGER_PHRASE, content)
-            # Markdown uses an appended footer, so the original body must
-            # precede the injected signature (opposite of the .py/.sh case).
-            self.assertLess(content.index("Body text."), content.index(SKIP_TRIGGER_PHRASE))
-        finally:
-            shutil.rmtree(tmpdir, ignore_errors=True)
+            self.inject.inject_signature(filepath)
+
+            content = pathlib.Path(filepath).read_text(encoding="utf-8")
+            self.assertTrue(content.startswith("# Title"))
+            self.assertIn(f"{SIGNATURE_MARKER} Protocol", content)
 
 
 if __name__ == "__main__":

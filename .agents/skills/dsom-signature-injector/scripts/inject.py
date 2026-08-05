@@ -30,13 +30,6 @@ def get_ps1_header(date_str):
 """
 
 def inject_signature(target_path):
-    """
-    Add the DSOM protocol signature to a file or supported files within a directory.
-    
-    Parameters:
-        target_path (str): Path to a file or directory. Supported files include Markdown,
-            shell, PowerShell, YAML, and Python files.
-    """
     files_to_process = []
     
     if os.path.isfile(target_path):
