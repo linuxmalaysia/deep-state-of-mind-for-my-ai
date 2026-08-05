@@ -1,0 +1,45 @@
+[2026-07-19] - INSTRUCTIONS GIVEN: 
+- Strict adherence to Standard UK English and DBP-standard Bahasa Melayu Malaysia only. 
+- Omit conversational filler. 
+- Output technical configurations as clean, Git-native Markdown. 
+- Abide by the "Zero-Global / Spatial Memory" mandate (Rule 1).
+- Apply OKF-compliant frontmatter to all knowledge files (Rule 2).
+- Execute strictly via `uv` instead of raw `pip` or `python` (Rule 16).
+- Symmetrically update all ledgers (README, HISTORY, CHANGELOG) when modifying architecture (Rule 8).
+- Output the `[DSOM EPISODIC RECORD]` anchor block at the end of every workflow (Rule 18).
+- The AI is strictly forbidden from executing monolithic blanket commits (`git commit -am`). The AI must stage and commit files granularly, grouping them by logical task boundaries. (Rule 4 updated).
+
+[2026-07-19] - PROJECT CONTEXT & 4W1H:
+- Project: Deep State of Mind (DSOM) For My AI.
+- Owner: Harisfazillah Jamel (LinuxMalaysia).
+- Goal: Sovereign framework to deploy and govern LLMs safely via GitOps, Ansible, and isolated agents. 
+- Infrastructure: T1 (Windows Operator) passing configurations down to T2 (WSL2/AlmaLinux 10 Control Node) and T3/T4 targets.
+
+[2026-07-19] - TASKS, PHASES, AND MILESTONES ACHIEVED:
+- Run Android Termux node empirical latency benchmarks (`bench_brain.py`).
+- Update latency multipliers in `DSOM-INGESTION-LATENCY-ARCHITECTURE.md` and `DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`.
+- Generate Cognitive Flow Mermaid Diagram in `ZERO-GLOBAL-MEMORY.md`.
+- Execute Triple-Ledger Synchronization for `v10.4.0-governance` phase.
+- Final EOD Palace Sync Commit Hash: 7be5d03
+- Generated palace_update_proposal_2026-07-19_1349.md for future integration into closet.md rooms.
+
+[2026-07-19] - TOOLS, LANGUAGES, AND FRAMEWORKS:
+- Python (`uv`), `tiktoken`, Markdown, Open Knowledge Format (OKF) YAML frontmatter, Git, Ansible.
+- PowerShell (`.\tools\eod-palace.ps1`) for cross-platform Palace sync.
+
+[2026-07-19] - PREFERENCES & BEHAVIOR CORRECTIONS:
+- Re-enforced that the AI must *never* blindly cat gigantic codebases without programmatic checking first (Byte-Capped Executions).
+- Forced the AI to provide full source code representations for offline blog publishing (`publish-to-blogger` skill invoked successfully).
+- Re-enforced the mandate for atomic, semantic Git commits instead of monolithic batch saves.
+
+This represents the complete and total set of contextual memory for this operation.
+
+REQUIRED READING FOR NEXT SESSION REANIMATION:
+- docs/governance/AI-MASTER-PROTOCOL.md
+- .agents/AGENTS.md
+- docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
+- docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md
+- docs/governance/ZERO-GLOBAL-MEMORY.md
+
+MENTAL ANCHOR FOR TOMORROW (SOD):
+> **Android Termux latency formally benchmarked via `bench_brain.py` (~3.5x FUSE multiplier) and Cognitive Flow Map secured in `ZERO-GLOBAL-MEMORY.md`. The v10.4.0-governance release is mechanically locked. Final EOD commit: 7be5d03. Next: Review `palace_update_proposal_2026-07-19_1349.md` and update closet.md files.**
