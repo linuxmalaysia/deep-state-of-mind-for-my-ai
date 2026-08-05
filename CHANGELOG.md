@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Read the Docs Integration:** Configured `.readthedocs.yaml` at the repository root using Ubuntu 24.04, Python 3.13, and MkDocs integration to automatically build the project's documentation on Read the Docs. Added comprehensive unit tests in `tests/test_readthedocs_config.py` to verify configuration integrity.
 - **Executor Modularity & Windows WSL2 Bridge:** Redefined the Third Pillar in `GITOPS-AIOPS-ANSIBLE-STRATEGY.md` and `README.md` from strictly "Ansible" to the modular "Executor". Formalized `uv` (Python), `npm` (Web), and `pandoc` (Docs) as valid executors. Formally established WSL2 as the mandatory local Control Node (Execution Bridge) for Windows-only projects to allow seamless execution of Linux tooling without a dedicated remote jumphost.
 - **AI Initialization Sequence Document:** Published `docs/governance/AI-INITIALIZATION-SEQUENCE.md` to explicitly document the mechanical boot process (AGENTS.md -> Brain -> START-HERE -> Governance -> Skills). Linked directly in `README.md` and GitBook as mandatory reading for both humans and AI.
 - **Knowledge-First Protocol Injected into Core Governance:** Embedded the protocol directly into `docs/governance/AI-MASTER-PROTOCOL.md`, `DSOM-EFFICIENCY-PROTOCOLS.md`, and `OKF-MIND-OPTIMIZATION.md` to ensure it operates as a fundamental foundational mechanic, not just an isolated SOP.
