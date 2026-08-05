@@ -297,7 +297,7 @@ class LlmsTxtDualDeploymentTests(unittest.TestCase):
     def test_gitbook_summary_label_present(self):
         self.assertIn("GitBook Summary / Documentation Index", self.content)
 
-    def test_both_live_documentations_present(self):
+    def test_all_live_documentations_present(self):
         self.assertIn(
             f"- [Official Live Documentation (GitHub Pages)]({GITHUB_PAGES_URL}): Web-based compiled, searchable documentation.",
             self.content,
