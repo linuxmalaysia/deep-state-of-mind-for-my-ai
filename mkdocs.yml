@@ -15,6 +15,9 @@ edit_uri: blob/main/docs/
 hooks:
   - tools/mkdocs_hooks.py
 
+exclude_docs: |
+  !.agents
+
 theme:
   name: material
   font:

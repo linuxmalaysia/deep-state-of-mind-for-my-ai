@@ -65,6 +65,7 @@ GITBOOK_URL = (
     "https://malaysia-open-source-community.gitbook.io/"
     "deep-state-of-mind-dsom-protocol-for-my-ai"
 )
+READTHEDOCS_URL = "https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/"
 
 # Governance/personalisation docs referencing both hosts
 GOVERNANCE_DOCS_WITH_BOTH_LINKS = [
@@ -113,7 +114,7 @@ class MkdocsSiteUrlYamlStructureTests(unittest.TestCase):
 
 
 class ReadmeDualDeploymentTests(unittest.TestCase):
-    """Verify README.md surfaces both GitHub Pages and GitBook documentation."""
+    """Verify README.md surfaces GitHub Pages, GitBook, and Read the Docs documentation."""
 
     @classmethod
     def setUpClass(cls):
@@ -132,6 +133,11 @@ class ReadmeDualDeploymentTests(unittest.TestCase):
             f"[![GitBook](https://img.shields.io/badge/Docs-GitBook-blue.svg)]({GITBOOK_URL})",
             self.content,
         )
+        self.assertIn(
+            f"[![Read the Docs](https://img.shields.io/badge/Docs-Read%20the%20Docs-blue.svg)]"
+            f"({READTHEDOCS_URL})",
+            self.content,
+        )
 
     def test_official_live_documentation_callouts_present(self):
         self.assertIn(
@@ -142,8 +148,12 @@ class ReadmeDualDeploymentTests(unittest.TestCase):
             f"- **GitBook:** [{GITBOOK_URL}]({GITBOOK_URL})",
             self.content,
         )
+        self.assertIn(
+            f"- **Read the Docs:** [{READTHEDOCS_URL}]({READTHEDOCS_URL})",
+            self.content,
+        )
 
-    def test_key_documents_table_lists_both_official_documentations(self):
+    def test_key_documents_table_lists_official_documentations(self):
         self.assertIn(
             f"| [Official Live Documentation (GitHub Pages)]({GITHUB_PAGES_URL}) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |",
             self.content,
@@ -152,10 +162,14 @@ class ReadmeDualDeploymentTests(unittest.TestCase):
             f"| [Official Live Documentation (GitBook)]({GITBOOK_URL}) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |",
             self.content,
         )
+        self.assertIn(
+            f"| [Official Live Documentation (Read the Docs)]({READTHEDOCS_URL}) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |",
+            self.content,
+        )
 
 
 class LlmsTxtDualDeploymentTests(unittest.TestCase):
-    """Verify llms.txt references both GitHub Pages and GitBook."""
+    """Verify llms.txt references GitHub Pages, GitBook, and Read the Docs."""
 
     @classmethod
     def setUpClass(cls):
@@ -175,6 +189,10 @@ class LlmsTxtDualDeploymentTests(unittest.TestCase):
         )
         self.assertIn(
             f"- [Official Live Documentation (GitBook)]({GITBOOK_URL}): Cloud-hosted compiled, searchable documentation.",
+            self.content,
+        )
+        self.assertIn(
+            f"- [Official Live Documentation (Read the Docs)]({READTHEDOCS_URL}): Cloud-hosted compiled, searchable documentation on Read the Docs.",
             self.content,
         )
 
@@ -484,7 +502,16 @@ class LlmsTxtOrderingTests(unittest.TestCase):
         )
         self.assertLess(github_pages_index, gitbook_index)
 
-    def test_gitbook_summary_entry_precedes_both_live_doc_entries(self):
+    def test_gitbook_entry_precedes_readthedocs_entry(self):
+        gitbook_index = self.content.index(
+            "[Official Live Documentation (GitBook)]"
+        )
+        readthedocs_index = self.content.index(
+            "[Official Live Documentation (Read the Docs)]"
+        )
+        self.assertLess(gitbook_index, readthedocs_index)
+
+    def test_gitbook_summary_entry_precedes_all_live_doc_entries(self):
         summary_index = self.content.index(
             "[GitBook Summary / Documentation Index]"
         )
@@ -495,12 +522,12 @@ class LlmsTxtOrderingTests(unittest.TestCase):
 
     def test_context7_entry_still_present_after_new_entries(self):
         # Regression guard: the pre-existing Context7 entry point must
-        # remain intact and appear after the two newly inserted lines.
-        gitbook_index = self.content.index(
-            "[Official Live Documentation (GitBook)]"
+        # remain intact and appear after the newly inserted lines.
+        readthedocs_index = self.content.index(
+            "[Official Live Documentation (Read the Docs)]"
         )
         context7_index = self.content.index("[Context7 Live RAG Payload")
-        self.assertLess(gitbook_index, context7_index)
+        self.assertLess(readthedocs_index, context7_index)
 
 
 class ReadmeOrderingTests(unittest.TestCase):
@@ -515,15 +542,25 @@ class ReadmeOrderingTests(unittest.TestCase):
         gitbook_badge_index = self.content.index("Docs-GitBook")
         self.assertLess(github_pages_badge_index, gitbook_badge_index)
 
+    def test_gitbook_badge_precedes_readthedocs_badge(self):
+        gitbook_badge_index = self.content.index("Docs-GitBook")
+        readthedocs_badge_index = self.content.index("Docs-Read%20the%20Docs")
+        self.assertLess(gitbook_badge_index, readthedocs_badge_index)
+
     def test_github_pages_callout_precedes_gitbook_callout(self):
         github_pages_callout_index = self.content.index("- **GitHub Pages:**")
         gitbook_callout_index = self.content.index("- **GitBook:**")
         self.assertLess(github_pages_callout_index, gitbook_callout_index)
 
+    def test_gitbook_callout_precedes_readthedocs_callout(self):
+        gitbook_callout_index = self.content.index("- **GitBook:**")
+        readthedocs_callout_index = self.content.index("- **Read the Docs:**")
+        self.assertLess(gitbook_callout_index, readthedocs_callout_index)
+
     def test_badges_and_callouts_appear_in_header_area(self):
         what_is_dsom_index = self.content.index("## 🎯 What is DSOM?")
-        badge_index = self.content.index("Docs-GitBook")
-        callout_index = self.content.index("**GitBook:**")
+        badge_index = self.content.index("Docs-Read%20the%20Docs")
+        callout_index = self.content.index("**Read the Docs:**")
         self.assertLess(badge_index, what_is_dsom_index)
         self.assertLess(callout_index, what_is_dsom_index)
 
@@ -539,6 +576,15 @@ class ReadmeOrderingTests(unittest.TestCase):
         )
         self.assertLess(github_pages_row_index, gitbook_row_index)
         self.assertLess(gitbook_row_index, start_here_row_index)
+
+    def test_key_documents_table_gitbook_row_precedes_readthedocs_row(self):
+        gitbook_row_index = self.content.index(
+            "[Official Live Documentation (GitBook)]"
+        )
+        readthedocs_row_index = self.content.index(
+            "[Official Live Documentation (Read the Docs)]"
+        )
+        self.assertLess(gitbook_row_index, readthedocs_row_index)
 
 
 class RootAgentsOmniDocumentationSyncFullLineTests(unittest.TestCase):
