@@ -37,6 +37,9 @@ class ReadthedocsConfigTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
+        """
+        Load the Read the Docs configuration file and store its text and parsed YAML content for the test class.
+        """
         cls.content = ""
         cls.config = None
         if READTHEDOCS_PATH.is_file():
