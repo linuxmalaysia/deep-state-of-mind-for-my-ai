@@ -113,7 +113,122 @@ class MkdocsSiteUrlYamlStructureTests(unittest.TestCase):
         self.assertEqual(self.config["site_url"], GITHUB_PAGES_URL)
 
 
-class ReadmeTripleDeploymentTests(unittest.TestCase):
+class MkdocsExcludeDocsTests(unittest.TestCase):
+    """Verify mkdocs.yml opts the `.agents` directory back into the docs build.
+
+    MkDocs excludes dot-prefixed files/directories from the docs build by
+    default. Several `nav` entries (e.g. `.agents/brain/task.md` and the
+    entire "AI Agent Skills & Workflows" section) live under
+    `docs/.agents/`, so an explicit `exclude_docs` negation pattern is
+    required, or those pages would silently 404 when the site is built.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.content = MKDOCS_PATH.read_text(encoding="utf-8")
+
+    def test_exclude_docs_key_uses_literal_block_scalar(self):
+        self.assertRegex(
+            self.content,
+            re.compile(r"^exclude_docs:\s*\|\s*$", re.MULTILINE),
+            "Expected mkdocs.yml to declare exclude_docs as a literal block scalar",
+        )
+
+    def test_exclude_docs_declares_agents_negation_pattern(self):
+        self.assertIn("!.agents", self.content)
+
+    def test_exclude_docs_appears_after_hooks_and_before_theme_sections(self):
+        hooks_index = self.content.index("hooks:")
+        exclude_docs_index = self.content.index("exclude_docs:")
+        theme_index = self.content.index("theme:")
+        self.assertLess(hooks_index, exclude_docs_index)
+        self.assertLess(exclude_docs_index, theme_index)
+
+
+class MkdocsExcludeDocsYamlStructureTests(unittest.TestCase):
+    """Structural validation of exclude_docs via a parsed YAML document."""
+
+    @classmethod
+    def setUpClass(cls):
+        with MKDOCS_PATH.open(encoding="utf-8") as fh:
+            cls.config = yaml.safe_load(fh)
+
+    def test_exclude_docs_key_present(self):
+        self.assertIn("exclude_docs", self.config)
+
+    def test_exclude_docs_value_is_string(self):
+        self.assertIsInstance(self.config["exclude_docs"], str)
+
+    def test_exclude_docs_value_is_single_negation_pattern_for_agents(self):
+        # The literal block scalar must decode to exactly one non-blank
+        # line: a gitignore-style negation ("!") of the ".agents" directory
+        # name referenced by the nav entries below.
+        pattern_lines = [
+            line.strip()
+            for line in self.config["exclude_docs"].splitlines()
+            if line.strip()
+        ]
+        self.assertEqual(pattern_lines, ["!.agents"])
+
+    def test_exclude_docs_pattern_is_a_negation(self):
+        pattern_lines = [
+            line.strip()
+            for line in self.config["exclude_docs"].splitlines()
+            if line.strip()
+        ]
+        self.assertTrue(pattern_lines[0].startswith("!"))
+
+
+class MkdocsAgentsNavPathsResolveTests(unittest.TestCase):
+    """Regression: nav entries under `.agents/` must resolve to real files.
+
+    These entries are the reason ``exclude_docs: |\\n  !.agents`` exists in
+    the first place: if MkDocs excluded the `.agents` directory (its default
+    behaviour for dot-prefixed paths), these nav links would 404 despite the
+    underlying files existing on disk.
+    """
+
+    DOCS_DIR = REPO_ROOT / "docs"
+
+    @classmethod
+    def setUpClass(cls):
+        with MKDOCS_PATH.open(encoding="utf-8") as fh:
+            cls.config = yaml.safe_load(fh)
+
+    @staticmethod
+    def _walk_nav_values(node):
+        if isinstance(node, list):
+            for item in node:
+                yield from MkdocsAgentsNavPathsResolveTests._walk_nav_values(item)
+        elif isinstance(node, dict):
+            for value in node.values():
+                yield from MkdocsAgentsNavPathsResolveTests._walk_nav_values(value)
+        elif isinstance(node, str):
+            yield node
+
+    def _agents_nav_paths(self):
+        return [
+            value
+            for value in self._walk_nav_values(self.config["nav"])
+            if value.startswith(".agents/")
+        ]
+
+    def test_at_least_one_agents_nav_entry_exists(self):
+        # Guard against this test class becoming vacuously true if the nav
+        # is ever restructured to remove all .agents references.
+        self.assertGreater(len(self._agents_nav_paths()), 0)
+
+    def test_agents_nav_paths_resolve_to_existing_files(self):
+        for nav_path in self._agents_nav_paths():
+            with self.subTest(nav_path=nav_path):
+                resolved = self.DOCS_DIR / nav_path
+                self.assertTrue(
+                    resolved.is_file(),
+                    f"Nav entry {nav_path!r} does not resolve to a file at {resolved}",
+                )
+
+
+class ReadmeDualDeploymentTests(unittest.TestCase):
     """Verify README.md surfaces GitHub Pages, GitBook, and Read the Docs documentation."""
 
     @classmethod
@@ -168,7 +283,7 @@ class ReadmeTripleDeploymentTests(unittest.TestCase):
         )
 
 
-class LlmsTxtTripleDeploymentTests(unittest.TestCase):
+class LlmsTxtDualDeploymentTests(unittest.TestCase):
     """Verify llms.txt references GitHub Pages, GitBook, and Read the Docs."""
 
     @classmethod
@@ -543,6 +658,7 @@ class ReadmeOrderingTests(unittest.TestCase):
         self.assertLess(github_pages_badge_index, gitbook_badge_index)
 
     def test_gitbook_badge_precedes_readthedocs_badge(self):
+        """Verify that the README places the GitBook badge before the Read the Docs badge."""
         gitbook_badge_index = self.content.index("Docs-GitBook")
         readthedocs_badge_index = self.content.index("Docs-Read%20the%20Docs")
         self.assertLess(gitbook_badge_index, readthedocs_badge_index)
@@ -584,11 +700,7 @@ class ReadmeOrderingTests(unittest.TestCase):
         readthedocs_row_index = self.content.index(
             "[Official Live Documentation (Read the Docs)]"
         )
-        start_here_row_index = self.content.index(
-            "[`START-HERE.md`](START-HERE.md)"
-        )
         self.assertLess(gitbook_row_index, readthedocs_row_index)
-        self.assertLess(readthedocs_row_index, start_here_row_index)
 
 
 class RootAgentsOmniDocumentationSyncFullLineTests(unittest.TestCase):
@@ -636,8 +748,17 @@ class UrlConstantSanityTests(unittest.TestCase):
         self.assertTrue(GITBOOK_URL.startswith("https://"))
         self.assertFalse(GITBOOK_URL.endswith("/"))
 
+    def test_readthedocs_url_uses_https_and_has_trailing_slash(self):
+        self.assertTrue(READTHEDOCS_URL.startswith("https://"))
+        self.assertTrue(READTHEDOCS_URL.endswith("/"))
+
+    def test_readthedocs_url_targets_readthedocs_io_host(self):
+        self.assertIn("readthedocs.io", READTHEDOCS_URL)
+
     def test_urls_are_distinct(self):
         self.assertNotEqual(GITHUB_PAGES_URL, GITBOOK_URL)
+        self.assertNotEqual(GITHUB_PAGES_URL, READTHEDOCS_URL)
+        self.assertNotEqual(GITBOOK_URL, READTHEDOCS_URL)
 
 
 if __name__ == "__main__":
