@@ -39,7 +39,7 @@ def inject_signature(target_path):
             if '.git' in root or '.agents\\brain' in root:
                 continue
             for file in files:
-                if file.endswith(('.md', '.sh', '.ps1', '.yml', '.yaml')):
+                if file.endswith(('.md', '.sh', '.ps1', '.yml', '.yaml', '.py')):
                     files_to_process.append(os.path.join(root, file))
     
     for filepath in files_to_process:
@@ -60,7 +60,7 @@ def inject_signature(target_path):
                 with open(filepath, 'a', encoding='utf-8') as f:
                     f.write(md_footer)
                 print(f"Appended Markdown footer to {filepath}")
-            elif filepath.endswith(('.sh', '.yml', '.yaml')):
+            elif filepath.endswith(('.sh', '.yml', '.yaml', '.py')):
                 header = get_sh_yml_header(date_str)
                 if len(lines) > 0 and (lines[0].startswith("#!") or lines[0].startswith("---")):
                     # Shebang or YAML doc start present, insert after it

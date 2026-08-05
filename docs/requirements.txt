@@ -1,0 +1,2 @@
+# Requirements for compiling the DSOM documentation on Read the Docs
+mkdocs-material
