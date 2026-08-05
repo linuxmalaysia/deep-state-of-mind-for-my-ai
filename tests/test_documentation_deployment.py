@@ -113,7 +113,7 @@ class MkdocsSiteUrlYamlStructureTests(unittest.TestCase):
         self.assertEqual(self.config["site_url"], GITHUB_PAGES_URL)
 
 
-class ReadmeDualDeploymentTests(unittest.TestCase):
+class ReadmeTripleDeploymentTests(unittest.TestCase):
     """Verify README.md surfaces GitHub Pages, GitBook, and Read the Docs documentation."""
 
     @classmethod
@@ -168,7 +168,7 @@ class ReadmeDualDeploymentTests(unittest.TestCase):
         )
 
 
-class LlmsTxtDualDeploymentTests(unittest.TestCase):
+class LlmsTxtTripleDeploymentTests(unittest.TestCase):
     """Verify llms.txt references GitHub Pages, GitBook, and Read the Docs."""
 
     @classmethod
@@ -182,7 +182,7 @@ class LlmsTxtDualDeploymentTests(unittest.TestCase):
     def test_gitbook_summary_label_present(self):
         self.assertIn("GitBook Summary / Documentation Index", self.content)
 
-    def test_both_live_documentations_present(self):
+    def test_all_live_documentations_present(self):
         self.assertIn(
             f"- [Official Live Documentation (GitHub Pages)]({GITHUB_PAGES_URL}): Web-based compiled, searchable documentation.",
             self.content,
@@ -543,7 +543,6 @@ class ReadmeOrderingTests(unittest.TestCase):
         self.assertLess(github_pages_badge_index, gitbook_badge_index)
 
     def test_gitbook_badge_precedes_readthedocs_badge(self):
-        """Verify that the README places the GitBook badge before the Read the Docs badge."""
         gitbook_badge_index = self.content.index("Docs-GitBook")
         readthedocs_badge_index = self.content.index("Docs-Read%20the%20Docs")
         self.assertLess(gitbook_badge_index, readthedocs_badge_index)
@@ -585,7 +584,11 @@ class ReadmeOrderingTests(unittest.TestCase):
         readthedocs_row_index = self.content.index(
             "[Official Live Documentation (Read the Docs)]"
         )
+        start_here_row_index = self.content.index(
+            "[`START-HERE.md`](START-HERE.md)"
+        )
         self.assertLess(gitbook_row_index, readthedocs_row_index)
+        self.assertLess(readthedocs_row_index, start_here_row_index)
 
 
 class RootAgentsOmniDocumentationSyncFullLineTests(unittest.TestCase):
