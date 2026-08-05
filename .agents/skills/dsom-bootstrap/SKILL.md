@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: agent_skill
 title: "🚀 DSOM Bootstrap Skill"
-timestamp: "2026-08-05T16:39:41Z"
+timestamp: "2026-08-05T18:59:24Z"
 topics: [bootstrap, setup, onboarding, "project-init", dsom]
 name: dsom-bootstrap
 description: "Executes the DSOM bootstrapping process for a new or existing project by reading the HOWTO-DSOM-BASELINE.md guide and pulling files from the permanent baseline repository."

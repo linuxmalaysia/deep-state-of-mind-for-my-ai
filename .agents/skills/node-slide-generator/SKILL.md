@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: agent_skill
 title: "node-slide-generator"
-timestamp: "2026-08-05T16:39:41Z"
+timestamp: "2026-08-05T18:59:24Z"
 topics: [node, pptx, slides, presentation, generator]
 name: node-slide-generator
 description: "Generates a PowerPoint presentation from a markdown outline using Node.js and pptxgenjs."

@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: agent_skill
 title: "🔍 Git Commit Resolver Skill"
-timestamp: "2026-08-05T16:39:41Z"
+timestamp: "2026-08-05T18:59:24Z"
 topics: [git, commit, history, brain, resolver]
 name: git-commit-resolver
 description: "Automatically resolves invalid or orphaned Git commit IDs referenced in the Agent Brain by searching the Git history for the matching commit message."

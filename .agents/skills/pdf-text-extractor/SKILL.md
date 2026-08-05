@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: agent_skill
 title: "pdf-text-extractor"
-timestamp: "2026-08-05T16:39:41Z"
+timestamp: "2026-08-05T18:59:24Z"
 topics: [pdf, text, extraction, curl, uv]
 name: pdf-text-extractor
 description: "Safely download external PDF files and extract their text content using curl and an isolated uv Python environment."

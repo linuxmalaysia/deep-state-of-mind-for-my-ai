@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: agent_skill
 title: "latex-proposal-compiler"
-timestamp: "2026-08-05T16:39:41Z"
+timestamp: "2026-08-05T18:59:24Z"
 topics: [latex, pandoc, pdf, proposal, document]
 name: latex-proposal-compiler
 description: "Compiles a markdown proposal document into a professionally formatted PDF using Pandoc and XeLaTeX. Contains crucial fixes for TOC generation, double-numbering, and table layout bugs."

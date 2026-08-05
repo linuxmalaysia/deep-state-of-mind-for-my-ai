@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: agent_skill
 title: "Proposal DOCX Formatter"
-timestamp: "2026-08-05T16:39:41Z"
+timestamp: "2026-08-05T18:59:24Z"
 topics: [dsom, skill, agent]
 ---
 # Proposal DOCX Formatter
