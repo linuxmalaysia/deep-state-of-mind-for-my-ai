@@ -1,13 +1,12 @@
----
+﻿---
 okf_version: 0.1
 type: l2_analysis
 title: "Zero-Global Memory: The Sovereign AI Memory Architecture"
+timestamp: "2026-07-19T11:34:00Z"
+topics: [memory, sovereignty, "zero-global", palace, "git-native"]
 description: "Comprehensive architectural analysis of the Zero-Global Memory mandate in DSOM. Covers the problem, the solution, the mechanics, and the operational procedures that make AI memory persistent, auditable, and vendor-independent."
-topics: [memory, sovereignty, zero-global, palace, git-native]
 resource: "file:///docs/governance/ZERO-GLOBAL-MEMORY.md"
-timestamp: 2026-07-19T11:34:00+08:00
 ---
-
 # Zero-Global Memory: The Sovereign AI Memory Architecture
 
 > **Artifact Level:** L2 (Analysis)

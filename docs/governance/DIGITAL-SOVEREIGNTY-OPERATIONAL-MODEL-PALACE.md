@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: governance_protocol
 title: "🏛️ Sovereign Markdown Palace Protocol (v1.0)"
+timestamp: "2026-07-04T09:40:04Z"
+topics: [dsom, governance, protocol]
 description: "OKF-compliant documentation for DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md."
 resource: "file:///docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md"
-timestamp: 2026-07-04T09:40:04Z
 ---
 # 🏛️ Sovereign Markdown Palace Protocol (v1.0)
 

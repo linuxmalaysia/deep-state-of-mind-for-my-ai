@@ -1,12 +1,12 @@
----
+﻿---
 okf_version: 0.1
 type: agent_skill
-title: odp-slide-generator
+title: "odp-slide-generator"
+timestamp: "2026-08-05T16:39:41Z"
+topics: [presentation, pptx, odp, "python-pptx", slides]
 name: odp-slide-generator
-description: Generates highly styled 3-column Corporate Presentation slides (PPTX/ODP format) based on a specific HTML/CSS theme using python-pptx.
-topics: [presentation, pptx, odp, python-pptx, slides]
+description: "Generates highly styled 3-column Corporate Presentation slides (PPTX/ODP format) based on a specific HTML/CSS theme using python-pptx."
 ---
-
 # odp-slide-generator
 
 ## When to use this skill

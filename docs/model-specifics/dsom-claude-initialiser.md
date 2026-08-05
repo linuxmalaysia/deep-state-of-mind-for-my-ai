@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
 title: "🧪 DSOM Claude Initialiser"
+timestamp: "2026-07-16T23:24:17Z"
+topics: [dsom, documentation]
 description: "OKF-compliant documentation for dsom-claude-initialiser.md."
 resource: "file:///docs/model-specifics/dsom-claude-initialiser.md"
-timestamp: 2026-07-16T23:24:17Z
 ---
 ---
 description: OKF-compliant documentation for dsom-claude-initialiser.md.

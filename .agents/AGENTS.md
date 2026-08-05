@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
 title: "The Core AI Rulebook (DSOM)"
+timestamp: "2026-08-05T21:59:00Z"
+topics: [dsom, documentation]
 description: "OKF-compliant documentation for AGENTS.md."
 resource: "file:///.agents/AGENTS.md"
-timestamp: 2026-08-05T21:59:00Z
 ---
 # The Core AI Rulebook (DSOM)
 

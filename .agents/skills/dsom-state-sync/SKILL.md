@@ -1,10 +1,10 @@
----
+﻿---
 okf_version: 0.1
 type: skill
 title: "DSOM State Sync Skill"
-description: "Executes Semantic Compaction locally by analyzing a Git diff and updating current_state.dsom using OpenAI."
+timestamp: "2026-07-27T00:00:00Z"
 topics: [compaction, state, sync, openai, dsom]
-timestamp: 2026-07-27T00:00:00Z
+description: "Executes Semantic Compaction locally by analyzing a Git diff and updating current_state.dsom using OpenAI."
 ---
 # DSOM State Sync Skill
 

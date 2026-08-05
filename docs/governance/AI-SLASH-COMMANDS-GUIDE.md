@@ -1,9 +1,10 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
 title: "AI Slash Commands Guide (DSOM)"
+timestamp: "2026-07-17T07:18:00Z"
+topics: [dsom, documentation]
 description: "Reference guide for Antigravity slash commands mapped to the Deep State of Mind (DSOM) Cognitive Twin workflows."
-timestamp: 2026-07-17T07:18:00Z
 ---
 # AI Slash Commands Guide (DSOM)
 

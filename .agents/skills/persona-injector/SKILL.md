@@ -1,12 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: agent_skill
-title: persona-injector
-description: Guides a user to define their Sovereign Persona and safely injects it into the agent's core AGENTS.md rulebook.
+title: "persona-injector"
+timestamp: "2026-07-04T10:00:00Z"
 topics: [persona, profile, identity, dsom, agent]
-timestamp: 2026-07-04T10:00:00Z
+description: "Guides a user to define their Sovereign Persona and safely injects it into the agent's core AGENTS.md rulebook."
 ---
-
 # 🎭 Persona Injector
 
 ## When to use this skill

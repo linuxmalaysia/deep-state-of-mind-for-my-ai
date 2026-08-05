@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: architecture_concept
 title: "🛡️ Software Governance & Risk Manifest"
+timestamp: "2026-07-04T09:40:04Z"
+topics: [dsom, brain, concept]
 description: "OKF-compliant documentation for GOVERNANCE.md."
 resource: "file:///.agents/brain/software/GOVERNANCE.md"
-timestamp: 2026-07-04T09:40:04Z
 ---
 # 🛡️ Software Governance & Risk Manifest
 

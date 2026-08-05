@@ -167,22 +167,22 @@ def main():
 
     # Exclude list for directories we should not modify/add frontmatter to
     exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
-    
+
     for dirpath, dirnames, filenames in os.walk(root_dir):
         # Prune excluded directories in place
         dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
-        
+
         for filename in filenames:
             if not filename.endswith('.md'):
                 continue
-            
+
             filepath = os.path.join(dirpath, filename)
             total_count += 1
             if process_file(filepath, root_dir):
                 rel = os.path.relpath(filepath, root_dir).replace('\\', '/')
                 print(f"Standardised/Injected OKF: {rel}")
                 modified_count += 1
-                
+
     print(f"\nScan complete. Total markdown files checked: {total_count}")
     print(f"Total files modified to be OKF-compliant: {modified_count}")
 

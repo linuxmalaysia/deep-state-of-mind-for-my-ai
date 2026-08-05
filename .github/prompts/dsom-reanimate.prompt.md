@@ -1,8 +1,12 @@
----
+﻿---
+okf_version: 0.1
+type: documentation
+title: "DSOM Reanimation Handshake"
+timestamp: "2026-08-05T16:39:41Z"
+topics: [dsom, documentation]
 name: DSOM Reanimate
-description: Syncs Copilot with the current DSOM project state
+description: "Syncs Copilot with the current DSOM project state"
 ---
-
 # DSOM Reanimation Handshake
 
 Please read the following files to synchronise your context with the current project state:

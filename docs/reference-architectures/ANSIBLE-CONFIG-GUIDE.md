@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
 title: "[DOC] DSOM Ansible Configuration Guide (Example Elastic SOC v1.0)"
+timestamp: "2026-07-04T10:17:05Z"
+topics: [dsom, documentation]
 description: "OKF-compliant documentation for ANSIBLE-CONFIG-GUIDE.md."
 resource: "file:///docs/reference-architectures/ANSIBLE-CONFIG-GUIDE.md"
-timestamp: 2026-07-04T10:17:05Z
 ---
 # [DOC] DSOM Ansible Configuration Guide (Example Elastic SOC v1.0)
 # docs/ANSIBLE-CONFIG-GUIDE.md

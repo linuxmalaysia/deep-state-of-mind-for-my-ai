@@ -1,12 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: agent_skill
-title: okf-frontmatter-injector
-description: Scans a target directory and automatically injects OKF v0.1 YAML frontmatter into any Markdown files missing it.
+title: "okf-frontmatter-injector"
+timestamp: "2026-07-04T10:00:00Z"
 topics: [okf, frontmatter, yaml, compliance, markdown]
-timestamp: 2026-07-04T10:00:00Z
+description: "Scans a target directory and automatically injects OKF v0.1 YAML frontmatter into any Markdown files missing it."
 ---
-
 # 💉 OKF Frontmatter Injector
 
 ## When to use this skill

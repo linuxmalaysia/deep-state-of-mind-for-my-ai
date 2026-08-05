@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
 title: "Sovereign AI Project Bootstrap Blueprint"
+timestamp: "2026-07-04T09:40:04Z"
+topics: [dsom, documentation]
 description: "OKF-compliant documentation for HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md."
 resource: "file:///references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md"
-timestamp: 2026-07-04T09:40:04Z
 ---
 # Sovereign AI Project Bootstrap Blueprint
 

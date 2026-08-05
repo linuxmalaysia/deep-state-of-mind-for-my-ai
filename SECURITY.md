@@ -1,11 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
 title: "Security Policy — Deep State of Mind (DSOM)"
+timestamp: "2026-07-27T04:03:00Z"
+topics: [security, policy, vulnerability, governance]
 description: "Security policy for the DSOM framework, covering supported versions and vulnerability reporting procedures."
 resource: "file:///SECURITY.md"
-timestamp: 2026-07-27T04:03:00Z
-topics: [security, policy, vulnerability, governance]
 ---
 # Security Policy
 

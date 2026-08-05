@@ -1,12 +1,14 @@
----
+﻿---
+okf_version: 0.1
+type: documentation
+title: "[FEAT] "
+timestamp: "2026-08-05T16:39:41Z"
+topics: [dsom, documentation]
 name: 🚀 Feature Request
 about: Suggest an idea to enhance the Cognitive Digital Twin.
-title: "[FEAT] "
 labels: enhancement
-assignees: ''
-
+assignees:
 ---
-
 ## 🏛️ DSOM Governance Check
 - [ ] I have read `docs/AI-MASTER-PROTOCOL.md`.
 - [ ] This feature respects **Clean Architecture** (No framework logic in Entities).
