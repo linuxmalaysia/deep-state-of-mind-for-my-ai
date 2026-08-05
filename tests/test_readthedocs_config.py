@@ -105,3 +105,41 @@ class ReadthedocsConfigTests(unittest.TestCase):
             mkdocs_file.is_file(),
             f"Expected {mkdocs_file} to be an existing file",
         )
+
+    def test_python_install_requirements(self):
+        """Verify the documentation build requirements file is declared and exists."""
+        self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
+        python_section = self.config.get("python", {})
+        self.assertIsInstance(python_section, dict, "Expected python configuration to be a dictionary")
+        install = python_section.get("install")
+        self.assertIsInstance(install, list, "Expected python.install to be a list")
+        self.assertEqual(len(install), 1, "Expected exactly one python.install entry")
+        self.assertEqual(
+            install[0].get("requirements"),
+            "docs/requirements.txt",
+            "Expected python.install[0].requirements to point to docs/requirements.txt",
+        )
+        requirements_file = REPO_ROOT / "docs" / "requirements.txt"
+        self.assertTrue(
+            requirements_file.is_file(),
+            f"Expected {requirements_file} to be an existing file",
+        )
+
+    def test_no_sphinx_configuration_declared(self):
+        """Read the Docs forbids declaring both `mkdocs` and `sphinx` configuration keys."""
+        self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
+        self.assertNotIn(
+            "sphinx",
+            self.config,
+            "Did not expect a 'sphinx' key alongside 'mkdocs' configuration",
+        )
+
+    def test_docs_requirements_declares_mkdocs_material(self):
+        """The documentation build requirements file should list mkdocs-material."""
+        requirements_file = REPO_ROOT / "docs" / "requirements.txt"
+        content = requirements_file.read_text(encoding="utf-8")
+        self.assertIn(
+            "mkdocs-material",
+            content,
+            "Expected docs/requirements.txt to declare the mkdocs-material dependency",
+        )
