@@ -543,6 +543,7 @@ class ReadmeOrderingTests(unittest.TestCase):
         self.assertLess(github_pages_badge_index, gitbook_badge_index)
 
     def test_gitbook_badge_precedes_readthedocs_badge(self):
+        """Verify that the README places the GitBook badge before the Read the Docs badge."""
         gitbook_badge_index = self.content.index("Docs-GitBook")
         readthedocs_badge_index = self.content.index("Docs-Read%20the%20Docs")
         self.assertLess(gitbook_badge_index, readthedocs_badge_index)
