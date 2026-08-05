@@ -5,3 +5,7 @@
 - `[x]` Generate walkthrough summary.
 - `[x]` Update README.md and related files with the official GitHub Pages documentation URL.
 - `[x]` Complete End-of-Day (EOD) context saving and synchronization.
+- `[x]` Create and configure `.readthedocs.yaml` at the root for Read the Docs integration.
+- `[x]` Run `dsom-signature-injector` to sign `.readthedocs.yaml`.
+- `[x]` Add unit tests for Read the Docs configuration and verify them.
+- `[x]` Update brain artifacts (`task.md`, `walkthrough.md`) and ledgers (`CHANGELOG.md`, `HISTORY.md`).

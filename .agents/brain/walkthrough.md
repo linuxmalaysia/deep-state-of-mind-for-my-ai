@@ -34,3 +34,20 @@ Today's session completed the Context7 & MCP architectural integration.
 
 ### Mental Anchor
 > All internal documentation references successfully updated to point to the official GitHub Pages site. The repository is in a clean, fully-synchronized state with all EOD checklist items satisfied.
+
+## 🏁 Session Anchor: 2026-08-05 — Read the Docs Integration
+
+### Accomplished
+
+- Created `.readthedocs.yaml` configuration file at the repository root to enable build integration on Read the Docs.
+- Processed `.readthedocs.yaml` using the `dsom-signature-injector` skill to prepend the standard DSOM license and ownership signature.
+- Added comprehensive unit tests in `tests/test_readthedocs_config.py` to assert the file's presence, valid structure, and specific parameters (such as version, build tools, and MkDocs config).
+- Ran all project unit tests (142 tests total) with full coverage, ensuring zero regressions.
+- Updated project ledgers (`CHANGELOG.md`, `HISTORY.md`) and brain artifacts (`task.md`, `walkthrough.md`) to maintain perfect alignment.
+
+### Why
+
+- To expand the project's documentation accessibility, allowing Read the Docs to dynamically and seamlessly build the project's MkDocs-based documentation.
+
+### Mental Anchor
+> Added official Read the Docs configuration and ensured full compliance with DSOM's signature and testing standards. All 142 unit tests passed, confirming absolute structural and functional integrity.
