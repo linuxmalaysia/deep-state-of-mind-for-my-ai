@@ -6,25 +6,33 @@
 # Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
 # ==============================================================================
 """
-Unit tests for the dsom-signature-injector skill's `inject_signature` function.
+Unit tests for the DSOM Signature Injector script
+(`.agents/skills/dsom-signature-injector/scripts/inject.py`).
 
-This PR extended `inject_signature()` in
-`.agents/skills/dsom-signature-injector/scripts/inject.py` so that it also
-recognises Python (`.py`) files:
+This PR extended `inject_signature()` so that Python (`.py`) files are now
+recognised both when walking a directory and when deciding which comment
+style (shebang/hash-style header) to apply. These tests verify:
 
-1. When walking a directory, `.py` files are now included in the set of
-   files that get processed (previously only `.md`, `.sh`, `.ps1`, `.yml`,
-   and `.yaml` were considered).
-2. When injecting the signature, `.py` files are now handled by the same
-   branch as `.sh`/`.yml`/`.yaml` files: a "#"-style comment header is
-   prepended (after a leading shebang line, if present), rather than being
-   left untouched or mishandled by the Markdown/PowerShell branches.
-
-These tests exercise `inject_signature` directly against temporary files
-and directories so that the real repository tree is never modified.
+1. A single `.py` file passed directly is signed with the SH/YAML-style
+   hash-comment header (not the PowerShell block-comment header).
+2. A shebang line (`#!...`) on the first line of a `.py` file is preserved
+   as the very first line, with the header inserted immediately after it.
+3. Files whose content already contains the exact DSOM skip-trigger phrase
+   ("...For My AI Protocol") are left untouched (idempotency guard).
+4. Walking a directory now picks up `.py` files alongside the previously
+   supported extensions, while files with unsupported extensions are
+   still ignored.
+5. Directories named `.git` are still skipped during the directory walk.
+6. Characterisation of the pre-existing duplicate-detection quirk: since
+   the SH/YAML/PY header text reads "Protocol    : Deep State of Mind
+   (DSOM) For My AI" (label-first, no trailing "Protocol"), it does not
+   itself match the skip-trigger phrase, so a freshly generated header is
+   not recognised as a signature on a second pass.
 """
 import importlib.util
+import os
 import pathlib
+import shutil
 import tempfile
 import unittest
 
@@ -50,180 +58,185 @@ INJECT_SCRIPT_PATH = (
 
 
 def _load_inject_module():
-    """Load the inject.py module directly from its file path.
-
-    The containing directory name (`dsom-signature-injector`) contains
-    hyphens and is therefore not importable as a regular Python package, so
-    the module is loaded dynamically via importlib.
-    """
-    spec = importlib.util.spec_from_file_location(
-        "dsom_signature_inject", INJECT_SCRIPT_PATH
-    )
+    """Dynamically load inject.py as a module (its parent dirs are not valid
+    Python package names, so a normal import is not possible)."""
+    spec = importlib.util.spec_from_file_location("dsom_inject", INJECT_SCRIPT_PATH)
     module = importlib.util.module_from_spec(spec)
-    assert spec.loader is not None
     spec.loader.exec_module(module)
     return module
 
 
-inject_module = _load_inject_module()
-inject_signature = inject_module.inject_signature
+inject = _load_inject_module()
 
-SIGNATURE_MARKER = "Deep State of Mind (DSOM) For My AI Protocol"
-# The "#"-style header used for .sh/.yml/.py files (see get_sh_yml_header)
-# renders the protocol name without a trailing "Protocol" suffix, unlike
-# the Markdown footer, so a distinct marker is needed to check for it.
-HEADER_PROTOCOL_LINE = "Protocol    : Deep State of Mind (DSOM) For My AI"
-SH_YML_HEADER_START = "# =============================================================================="
+# Generic phrase present in every header/footer variant (.md, .sh/.yml/.py,
+# and .ps1), regardless of word order.
+HEADER_MARKER = "Deep State of Mind (DSOM) For My AI"
+
+# The exact phrase inject_signature() checks for to decide whether a file is
+# already signed. Present verbatim in the Markdown footer and the PowerShell
+# header, but NOT in the SH/YAML/PY hash-comment header (see module docstring
+# point 6 above).
+SKIP_TRIGGER_PHRASE = "Deep State of Mind (DSOM) For My AI Protocol"
 
 
-class InjectSignatureScriptTests(unittest.TestCase):
-    """Sanity checks that the script file itself exists and is loadable."""
+class InjectScriptExistsTests(unittest.TestCase):
+    """Sanity check that the script under test is present and loadable."""
 
     def test_inject_script_exists(self):
-        self.assertTrue(
-            INJECT_SCRIPT_PATH.is_file(),
-            f"Expected {INJECT_SCRIPT_PATH} to exist",
-        )
+        self.assertTrue(INJECT_SCRIPT_PATH.is_file())
 
-    def test_supported_extensions_include_py_for_directory_walk(self):
-        source = INJECT_SCRIPT_PATH.read_text(encoding="utf-8")
-        self.assertIn(
-            "('.md', '.sh', '.ps1', '.yml', '.yaml', '.py')",
-            source,
-            "Expected directory walk file filter to include '.py'",
-        )
-
-    def test_supported_extensions_include_py_for_header_injection(self):
-        source = INJECT_SCRIPT_PATH.read_text(encoding="utf-8")
-        self.assertIn(
-            "('.sh', '.yml', '.yaml', '.py')",
-            source,
-            "Expected header-injection branch to include '.py'",
-        )
+    def test_module_exposes_inject_signature(self):
+        self.assertTrue(hasattr(inject, "inject_signature"))
+        self.assertTrue(callable(inject.inject_signature))
 
 
 class InjectSignatureSinglePyFileTests(unittest.TestCase):
-    """Behaviour of inject_signature() when called directly on a .py file."""
+    """Verify behaviour when a single .py file is passed directly."""
 
     def setUp(self):
-        self._tmpdir = tempfile.TemporaryDirectory()
-        self.addCleanup(self._tmpdir.cleanup)
-        self.tmp_path = pathlib.Path(self._tmpdir.name)
+        self.tmpdir = tempfile.mkdtemp()
 
-    def _write(self, name: str, content: str) -> pathlib.Path:
-        target = self.tmp_path / name
-        target.write_text(content, encoding="utf-8")
-        return target
+    def tearDown(self):
+        shutil.rmtree(self.tmpdir, ignore_errors=True)
 
-    def test_prepends_comment_header_to_py_file_without_shebang(self):
-        target = self._write("sample.py", "import os\n\nprint('hello')\n")
+    def _write(self, name, content):
+        path = os.path.join(self.tmpdir, name)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(content)
+        return path
 
-        inject_signature(str(target))
+    def _read(self, path):
+        with open(path, encoding="utf-8") as f:
+            return f.read()
 
-        result = target.read_text(encoding="utf-8")
-        self.assertTrue(
-            result.startswith("# "),
-            "Expected the DSOM header to be prepended as '#' comments",
+    def test_prepends_hash_style_header_to_py_file(self):
+        path = self._write("sample.py", "print('hello')\n")
+        inject.inject_signature(path)
+        content = self._read(path)
+        self.assertIn(HEADER_MARKER, content)
+        self.assertIn("print('hello')", content)
+        # Header must precede the original code.
+        self.assertLess(content.index(HEADER_MARKER), content.index("print('hello')"))
+
+    def test_py_header_uses_hash_comments_not_powershell_block(self):
+        path = self._write("style_check.py", "value = 42\n")
+        inject.inject_signature(path)
+        content = self._read(path)
+        self.assertIn("# Protocol    : Deep State of Mind (DSOM) For My AI", content)
+        self.assertNotIn("<#", content)
+        self.assertNotIn(".SYNOPSIS", content)
+
+    def test_shebang_line_preserved_as_first_line(self):
+        path = self._write("script.py", "#!/usr/bin/env python3\nprint('hi')\n")
+        inject.inject_signature(path)
+        with open(path, encoding="utf-8") as f:
+            lines = f.readlines()
+        self.assertEqual(lines[0], "#!/usr/bin/env python3\n")
+        content = "".join(lines)
+        self.assertIn(HEADER_MARKER, content)
+        self.assertLess(content.index("#!/usr/bin/env python3"), content.index(HEADER_MARKER))
+        self.assertIn("print('hi')", content)
+
+    def test_already_signed_py_file_is_left_unchanged(self):
+        original = (
+            f"# {SKIP_TRIGGER_PHRASE} header already here\n"
+            "print('unchanged')\n"
         )
-        self.assertIn(HEADER_PROTOCOL_LINE, result)
-        self.assertIn(SH_YML_HEADER_START, result)
-        # Original content must be fully preserved after the header.
-        self.assertIn("import os\n\nprint('hello')\n", result)
+        path = self._write("already_signed.py", original)
+        inject.inject_signature(path)
+        self.assertEqual(self._read(path), original)
 
-    def test_inserts_header_after_shebang_line(self):
-        original = "#!/usr/bin/env python3\nimport sys\nprint(sys.argv)\n"
-        target = self._write("with_shebang.py", original)
-
-        inject_signature(str(target))
-
-        result = target.read_text(encoding="utf-8")
-        lines = result.splitlines()
-        self.assertEqual(
-            lines[0],
-            "#!/usr/bin/env python3",
-            "Expected the shebang to remain the first line",
-        )
-        self.assertIn(HEADER_PROTOCOL_LINE, result)
-        # The rest of the original file content must still be present.
-        self.assertIn("import sys\nprint(sys.argv)\n", result)
-
-    def test_skips_py_file_if_signature_already_present(self):
-        original = f"# {SIGNATURE_MARKER}\nprint('already signed')\n"
-        target = self._write("already_signed.py", original)
-
-        inject_signature(str(target))
-
-        result = target.read_text(encoding="utf-8")
-        self.assertEqual(
-            result, original, "Expected file to be left untouched when already signed"
-        )
-
-    def test_header_uses_hash_comment_style_not_powershell_style(self):
-        target = self._write("style_check.py", "x = 1\n")
-
-        inject_signature(str(target))
-
-        result = target.read_text(encoding="utf-8")
-        self.assertNotIn(
-            "<#", result, "Python files must not receive the PowerShell-style header"
-        )
-        self.assertIn("# Author      : Harisfazillah Jamel (LinuxMalaysia)", result)
+    def test_repeated_invocation_duplicates_header_on_py_files(self):
+        """Characterisation test for a pre-existing quirk (not introduced by
+        this PR): the SH/YAML/PY header does not contain the exact
+        SKIP_TRIGGER_PHRASE, so inject_signature() cannot detect that a .py
+        file it previously signed is already signed, and prepends a second
+        header block on a second invocation."""
+        path = self._write("run_twice.py", "print('once')\n")
+        inject.inject_signature(path)
+        first_pass = self._read(path)
+        inject.inject_signature(path)
+        second_pass = self._read(path)
+        self.assertNotEqual(first_pass, second_pass)
+        self.assertEqual(second_pass.count(HEADER_MARKER), 2)
+        self.assertTrue(second_pass.endswith(first_pass))
 
 
 class InjectSignatureDirectoryWalkTests(unittest.TestCase):
-    """Behaviour of inject_signature() when called on a directory tree."""
+    """Verify directory traversal now includes .py files."""
 
     def setUp(self):
-        self._tmpdir = tempfile.TemporaryDirectory()
-        self.addCleanup(self._tmpdir.cleanup)
-        self.tmp_path = pathlib.Path(self._tmpdir.name)
+        self.tmpdir = tempfile.mkdtemp()
 
-    def test_py_files_are_discovered_and_signed_in_directory_walk(self):
-        py_file = self.tmp_path / "module.py"
-        py_file.write_text("def foo():\n    return 1\n", encoding="utf-8")
+    def tearDown(self):
+        shutil.rmtree(self.tmpdir, ignore_errors=True)
 
-        inject_signature(str(self.tmp_path))
+    def _write(self, rel_path, content):
+        full_path = os.path.join(self.tmpdir, rel_path)
+        os.makedirs(os.path.dirname(full_path), exist_ok=True)
+        with open(full_path, "w", encoding="utf-8") as f:
+            f.write(content)
+        return full_path
 
-        result = py_file.read_text(encoding="utf-8")
-        self.assertIn(HEADER_PROTOCOL_LINE, result)
-        self.assertIn("def foo():\n    return 1\n", result)
+    def _read(self, rel_path):
+        with open(os.path.join(self.tmpdir, rel_path), encoding="utf-8") as f:
+            return f.read()
 
-    def test_unsupported_extension_is_not_modified(self):
-        # Negative/regression case: files with extensions outside the
-        # supported set (still, after adding '.py') must be left untouched.
-        txt_file = self.tmp_path / "notes.txt"
-        original = "just some plain notes\n"
-        txt_file.write_text(original, encoding="utf-8")
+    def test_py_files_are_signed_when_walking_a_directory(self):
+        self._write("module_a.py", "x = 1\n")
+        inject.inject_signature(self.tmpdir)
+        self.assertIn(HEADER_MARKER, self._read("module_a.py"))
 
-        inject_signature(str(self.tmp_path))
+    def test_unsupported_extensions_are_left_untouched(self):
+        self._write("notes.txt", "should not be touched\n")
+        inject.inject_signature(self.tmpdir)
+        self.assertEqual(self._read("notes.txt"), "should not be touched\n")
 
-        self.assertEqual(txt_file.read_text(encoding="utf-8"), original)
-
-    def test_py_files_inside_git_directory_are_skipped(self):
-        git_dir = self.tmp_path / ".git"
-        git_dir.mkdir()
-        py_in_git = git_dir / "hook.py"
-        original = "print('a git hook')\n"
-        py_in_git.write_text(original, encoding="utf-8")
-
-        inject_signature(str(self.tmp_path))
-
-        self.assertEqual(
-            py_in_git.read_text(encoding="utf-8"),
-            original,
-            "Expected .py files under a .git directory to remain untouched",
+    def test_git_directory_is_skipped_during_walk(self):
+        self._write(os.path.join(".git", "hook.py"), "raise SystemExit\n")
+        # Should not raise, and the file inside .git must remain untouched.
+        inject.inject_signature(self.tmpdir)
+        self.assertNotIn(
+            HEADER_MARKER, self._read(os.path.join(".git", "hook.py"))
         )
 
-    def test_mixed_supported_files_all_signed(self):
-        py_file = self.tmp_path / "script.py"
-        py_file.write_text("x = 1\n", encoding="utf-8")
-        md_file = self.tmp_path / "doc.md"
-        md_file.write_text("# Title\n\nBody text.\n", encoding="utf-8")
+    def test_mixed_directory_only_signs_supported_extensions(self):
+        self._write("script.sh", "echo hi\n")
+        self._write("module.py", "y = 2\n")
+        self._write("data.json", '{"key": "value"}\n')
+        inject.inject_signature(self.tmpdir)
+        self.assertIn(HEADER_MARKER, self._read("script.sh"))
+        self.assertIn(HEADER_MARKER, self._read("module.py"))
+        self.assertNotIn(HEADER_MARKER, self._read("data.json"))
 
-        inject_signature(str(self.tmp_path))
 
-        self.assertIn(HEADER_PROTOCOL_LINE, py_file.read_text(encoding="utf-8"))
-        self.assertIn(SIGNATURE_MARKER, md_file.read_text(encoding="utf-8"))
+class InjectSignatureEdgeCaseTests(unittest.TestCase):
+    """Boundary/negative cases for inject_signature()."""
+
+    def test_nonexistent_path_does_not_raise(self):
+        missing_path = os.path.join(tempfile.gettempdir(), "does-not-exist-dsom-test")
+        # Neither a file nor a directory: the function should simply have
+        # nothing to process and must not raise.
+        try:
+            inject.inject_signature(missing_path)
+        except Exception as exc:  # pragma: no cover - defensive assertion
+            self.fail(f"inject_signature raised unexpectedly for a missing path: {exc}")
+
+    def test_markdown_file_still_receives_footer_not_header(self):
+        tmpdir = tempfile.mkdtemp()
+        try:
+            path = os.path.join(tmpdir, "doc.md")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write("# Title\n\nBody text.\n")
+            inject.inject_signature(path)
+            with open(path, encoding="utf-8") as f:
+                content = f.read()
+            self.assertIn(SKIP_TRIGGER_PHRASE, content)
+            # Markdown uses an appended footer, so the original body must
+            # precede the injected signature (opposite of the .py/.sh case).
+            self.assertLess(content.index("Body text."), content.index(SKIP_TRIGGER_PHRASE))
+        finally:
+            shutil.rmtree(tmpdir, ignore_errors=True)
 
 
 if __name__ == "__main__":

@@ -30,6 +30,7 @@ def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
 
 REPO_ROOT = _find_repo_root(pathlib.Path(__file__).parent)
 READTHEDOCS_PATH = REPO_ROOT / ".readthedocs.yaml"
+DOCS_REQUIREMENTS_PATH = REPO_ROOT / "docs" / "requirements.txt"
 
 
 class ReadthedocsConfigTests(unittest.TestCase):
@@ -106,40 +107,77 @@ class ReadthedocsConfigTests(unittest.TestCase):
             f"Expected {mkdocs_file} to be an existing file",
         )
 
-    def test_python_install_requirements(self):
-        """Verify the documentation build requirements file is declared and exists."""
+    def test_python_install_declares_docs_requirements(self):
+        """Verify python.install references docs/requirements.txt."""
         self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
-        python_section = self.config.get("python", {})
-        self.assertIsInstance(python_section, dict, "Expected python configuration to be a dictionary")
-        install = python_section.get("install")
+        python_cfg = self.config.get("python", {})
+        self.assertIsInstance(python_cfg, dict, "Expected python configuration to be a dictionary")
+        install = python_cfg.get("install")
         self.assertIsInstance(install, list, "Expected python.install to be a list")
         self.assertEqual(len(install), 1, "Expected exactly one python.install entry")
         self.assertEqual(
-            install[0].get("requirements"),
-            "docs/requirements.txt",
-            "Expected python.install[0].requirements to point to docs/requirements.txt",
+            install[0],
+            {"requirements": "docs/requirements.txt"},
+            "Expected python.install[0].requirements to be 'docs/requirements.txt'",
         )
-        requirements_file = REPO_ROOT / "docs" / "requirements.txt"
+
+    def test_referenced_requirements_file_exists(self):
+        """The requirements file declared in .readthedocs.yaml must exist."""
         self.assertTrue(
-            requirements_file.is_file(),
-            f"Expected {requirements_file} to be an existing file",
+            DOCS_REQUIREMENTS_PATH.is_file(),
+            f"Expected {DOCS_REQUIREMENTS_PATH} to exist as declared in .readthedocs.yaml",
         )
 
-    def test_no_sphinx_configuration_declared(self):
-        """Read the Docs forbids declaring both `mkdocs` and `sphinx` configuration keys."""
+    def test_dsom_signature_precedes_version_declaration(self):
+        """The signature header must be prepended before the actual config."""
+        self.assertGreater(
+            self.content.index("version: 2"),
+            self.content.index("Protocol    : Deep State of Mind (DSOM) For My AI"),
+            "Expected the DSOM signature header to precede the 'version: 2' declaration",
+        )
+
+    def test_no_unexpected_top_level_keys(self):
+        """Boundary check: only the documented top-level keys should be present."""
         self.assertIsInstance(self.config, dict, "Expected configuration to be a dictionary")
-        self.assertNotIn(
-            "sphinx",
-            self.config,
-            "Did not expect a 'sphinx' key alongside 'mkdocs' configuration",
+        expected_keys = {"version", "build", "mkdocs", "python"}
+        self.assertEqual(
+            set(self.config.keys()),
+            expected_keys,
+            "Expected .readthedocs.yaml to declare exactly the documented top-level keys",
         )
 
-    def test_docs_requirements_declares_mkdocs_material(self):
-        """The documentation build requirements file should list mkdocs-material."""
-        requirements_file = REPO_ROOT / "docs" / "requirements.txt"
-        content = requirements_file.read_text(encoding="utf-8")
+
+class DocsRequirementsTxtTests(unittest.TestCase):
+    """Verify docs/requirements.txt used to build the Read the Docs site."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.content = ""
+        if DOCS_REQUIREMENTS_PATH.is_file():
+            cls.content = DOCS_REQUIREMENTS_PATH.read_text(encoding="utf-8")
+
+    def test_requirements_file_exists(self):
+        self.assertTrue(
+            DOCS_REQUIREMENTS_PATH.is_file(),
+            "Expected docs/requirements.txt to exist",
+        )
+
+    def test_mkdocs_material_is_declared(self):
         self.assertIn(
             "mkdocs-material",
-            content,
+            self.content,
             "Expected docs/requirements.txt to declare the mkdocs-material dependency",
+        )
+
+    def test_requirements_file_declares_exactly_one_dependency(self):
+        """Boundary check: exactly one real dependency line, no stray entries."""
+        non_comment_lines = [
+            line.strip()
+            for line in self.content.splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        ]
+        self.assertEqual(
+            non_comment_lines,
+            ["mkdocs-material"],
+            "Expected docs/requirements.txt to declare exactly 'mkdocs-material'",
         )
