@@ -50,7 +50,7 @@ class TaskMdFrontmatterTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.content = TASK_MD_PATH.read_text(encoding="utf-8")
+        cls.content = TASK_MD_PATH.read_text(encoding="utf-8-sig")
         cls.frontmatter = _extract_frontmatter(cls.content)
 
     def test_file_exists(self):
@@ -114,7 +114,7 @@ class WalkthroughMdFrontmatterTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.content = WALKTHROUGH_MD_PATH.read_text(encoding="utf-8")
+        cls.content = WALKTHROUGH_MD_PATH.read_text(encoding="utf-8-sig")
         cls.frontmatter = _extract_frontmatter(cls.content)
 
     def test_file_exists(self):
