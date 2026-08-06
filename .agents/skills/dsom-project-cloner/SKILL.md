@@ -1,13 +1,14 @@
----
-name: dsom-project-cloner
-description: Scaffolds a new DSOM project by copying the Sovereign Engine, Intelligence Payload, Governance, and Ritual Scripts from the baseline repository to a user-specified target path.
-topics: [project, scaffold, clone, dsom, setup]
+﻿---
 okf_version: 0.1
 type: skill
-title: "DSOM Project Cloner Skill"
-timestamp: 2026-07-04T11:15:00Z
+title: DSOM Project Cloner Skill
+timestamp: '2026-07-04T11:15:00Z'
+topics: [project, scaffold, clone, dsom, setup]
+name: dsom-project-cloner
+description: Scaffolds a new DSOM project by copying the Sovereign Engine, Intelligence Payload,
+  Governance, and Ritual Scripts from the baseline repository to a user-specified
+  target path.
 ---
-
 # 🏗️ DSOM Project Cloner Skill
 
 ## When to use this skill

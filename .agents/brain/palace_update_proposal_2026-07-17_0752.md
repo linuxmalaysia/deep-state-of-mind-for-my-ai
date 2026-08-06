@@ -1,4 +1,11 @@
-﻿# 🏛️ Palace Update Proposal
+﻿---
+okf_version: 0.1
+type: architecture_concept
+title: 🏛️ Palace Update Proposal
+timestamp: '2026-08-05T22:23:51Z'
+topics: [dsom, brain, concept]
+---
+# 🏛️ Palace Update Proposal
 
 > **Generated:** 2026-07-17_0752  
 > **Mode:** EOD  

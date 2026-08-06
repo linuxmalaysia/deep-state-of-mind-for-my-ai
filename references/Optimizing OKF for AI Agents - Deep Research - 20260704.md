@@ -1,12 +1,12 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
-title: "Optimizing OKF for AI Agents - Deep Research"
-description: "OKF-compliant documentation for Optimizing OKF for AI Agents - Deep Research - 20260704.md."
-resource: "file:///references/Optimizing OKF for AI Agents - Deep Research - 20260704.md"
-timestamp: 2026-07-04T09:40:29Z
+title: Optimizing OKF for AI Agents - Deep Research
+timestamp: '2026-07-04T09:40:29Z'
+topics: [dsom, documentation]
+description: OKF-compliant documentation for Optimizing OKF for AI Agents - Deep Research - 20260704.md.
+resource: file:///references/Optimizing OKF for AI Agents - Deep Research - 20260704.md
 ---
-
 Paradigm Shifts in Context Engineering: Implementing the Open Knowledge Format in Autonomous Agent Architectures
 
 The evolution of generative artificial intelligence has entered an infrastructure-centric phase where raw model intelligence is no longer the primary determinant of system capability1. Instead, the operational ceiling of autonomous agent systems is defined by context engineering—the methods through which structured, highly relevant organizational knowledge is selected, formatted, and delivered to large language models at the precise moment of execution1. Historically, organizations have relied on Retrieval-Augmented Generation to inject unstructured documents into model prompts4. However, this approach is stateless, computationally expensive, and prone to attention dilution within massive context windows4.

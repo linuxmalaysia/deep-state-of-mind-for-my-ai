@@ -1,3 +1,10 @@
+﻿---
+okf_version: 0.1
+type: documentation
+title: Table of contents
+timestamp: '2026-08-05T22:23:51Z'
+topics: [dsom, documentation]
+---
 # Table of contents
 
 ## Table of contents

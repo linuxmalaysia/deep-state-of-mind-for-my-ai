@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
-title: "[CONSTRUCT] Ansible Deployment Architecture: Example Elastic SOC (v1.0)"
-description: "OKF-compliant documentation for ANSIBLE-DEPLOYMENT-ARCHITECTURE.md."
-resource: "file:///docs/reference-architectures/ANSIBLE-DEPLOYMENT-ARCHITECTURE.md"
-timestamp: 2026-07-04T10:17:05Z
+title: '[CONSTRUCT] Ansible Deployment Architecture: Example Elastic SOC (v1.0)'
+timestamp: '2026-07-04T10:17:05Z'
+topics: [dsom, documentation]
+description: OKF-compliant documentation for ANSIBLE-DEPLOYMENT-ARCHITECTURE.md.
+resource: file:///docs/reference-architectures/ANSIBLE-DEPLOYMENT-ARCHITECTURE.md
 ---
 # [CONSTRUCT] Ansible Deployment Architecture: Example Elastic SOC (v1.0)
 # docs/ANSIBLE-DEPLOYMENT-ARCHITECTURE.md

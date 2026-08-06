@@ -1,11 +1,12 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
-title: "DSOM Token Efficiency & Integration Report"
-description: "Comprehensive audit report detailing the 96% token reduction achieved by the DSOM Protocol and recent integration milestones."
-timestamp: 2026-07-18T17:15:00+08:00
+title: DSOM Token Efficiency & Integration Report
+timestamp: '2026-07-18T09:15:00Z'
+topics: [dsom, documentation]
+description: Comprehensive audit report detailing the 96% token reduction achieved by the DSOM
+  Protocol and recent integration milestones.
 ---
-
 # DSOM Token Efficiency & Integration Report
 
 ## 1. Executive Summary

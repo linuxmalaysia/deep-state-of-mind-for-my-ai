@@ -1,12 +1,13 @@
----
+﻿---
 okf_version: 0.1
 type: skill
-name: github-actions-snyk-scanner
-title: "GitHub Actions Snyk Security Scanner"
-description: "Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories, replacing the deprecated Red Hat CRDA action."
+title: GitHub Actions Snyk Security Scanner
+timestamp: '2026-07-27T04:49:00Z'
 topics: [snyk, github-actions, security, ci-cd, sarif]
-resource: "file:///.agents/skills/github-actions-snyk-scanner/SKILL.md"
-timestamp: 2026-07-27T04:49:00Z
+name: github-actions-snyk-scanner
+description: Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories,
+  replacing the deprecated Red Hat CRDA action.
+resource: file:///.agents/skills/github-actions-snyk-scanner/SKILL.md
 ---
 # Skill: GitHub Actions Snyk Security Scanner
 

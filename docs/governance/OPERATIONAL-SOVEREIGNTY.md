@@ -1,10 +1,12 @@
----
+﻿---
 okf_version: 0.1
 type: governance_protocol
-title: "**Operational Sovereignty through Metacognitive Governance: Integrating the Deep State of Mind Protocol with CAPM and Git-Native PMO Frameworks**"
-description: "OKF-compliant documentation for OPERATIONAL-SOVEREIGNTY.md."
-resource: "file:///docs/governance/OPERATIONAL-SOVEREIGNTY.md"
-timestamp: 2026-07-04T09:40:04Z
+title: '**Operational Sovereignty through Metacognitive Governance: Integrating the Deep
+  State of Mind Protocol with CAPM and Git-Native PMO Frameworks**'
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, governance, protocol]
+description: OKF-compliant documentation for OPERATIONAL-SOVEREIGNTY.md.
+resource: file:///docs/governance/OPERATIONAL-SOVEREIGNTY.md
 ---
 # **Operational Sovereignty through Metacognitive Governance: Integrating the Deep State of Mind Protocol with CAPM and Git-Native PMO Frameworks**
 

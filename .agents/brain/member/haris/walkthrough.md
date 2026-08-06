@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: architecture_concept
-title: "walkthrough"
-description: "OKF-compliant documentation for walkthrough.md."
-resource: "file:///.agents/brain/member/haris/walkthrough.md"
-timestamp: 2026-07-04T09:40:04Z
+title: walkthrough
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, brain, concept]
+description: OKF-compliant documentation for walkthrough.md.
+resource: file:///.agents/brain/member/haris/walkthrough.md
 ---
 ## [2026-01-27] | Engine Telemetry
 - Model: Gemini 1.5 Flash (Free Tier).

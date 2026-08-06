@@ -1,12 +1,12 @@
----
+﻿---
 okf_version: 0.1
 type: agent_skill
 title: node-slide-generator
+timestamp: '2026-08-05T22:23:51Z'
+topics: [node, pptx, slides, presentation, generator]
 name: node-slide-generator
 description: Generates a PowerPoint presentation from a markdown outline using Node.js and pptxgenjs.
-topics: [node, pptx, slides, presentation, generator]
 ---
-
 # node-slide-generator
 
 Use this skill when the user asks to compile, generate, or format PowerPoint presentation slides using Node.js.

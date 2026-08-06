@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: automation_tool
-title: "HOWTO: dsom-onboard — Repository Adoption Engine"
-description: "OKF-compliant documentation for HOWTO-DSOM-ONBOARD.md."
-resource: "file:///docs/tools/HOWTO-DSOM-ONBOARD.md"
-timestamp: 2026-07-04T09:40:04Z
+title: 'HOWTO: dsom-onboard — Repository Adoption Engine'
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, automation, tool]
+description: OKF-compliant documentation for HOWTO-DSOM-ONBOARD.md.
+resource: file:///docs/tools/HOWTO-DSOM-ONBOARD.md
 ---
 # HOWTO: dsom-onboard — Repository Adoption Engine
 

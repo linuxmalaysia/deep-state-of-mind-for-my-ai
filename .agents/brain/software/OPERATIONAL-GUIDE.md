@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: architecture_concept
-title: "📖 Software Operational Guide (Master v1.5)"
-description: "OKF-compliant documentation for OPERATIONAL-GUIDE.md."
-resource: "file:///.agents/brain/software/OPERATIONAL-GUIDE.md"
-timestamp: 2026-07-04T09:40:04Z
+title: 📖 Software Operational Guide (Master v1.5)
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, brain, concept]
+description: OKF-compliant documentation for OPERATIONAL-GUIDE.md.
+resource: file:///.agents/brain/software/OPERATIONAL-GUIDE.md
 ---
 # 📖 Software Operational Guide (Master v1.5)
 

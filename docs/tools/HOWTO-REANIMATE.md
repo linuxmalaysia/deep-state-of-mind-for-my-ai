@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: automation_tool
-title: "HOWTO: reanimate — AI Context Handshake"
-description: "OKF-compliant documentation for HOWTO-REANIMATE.md."
-resource: "file:///docs/tools/HOWTO-REANIMATE.md"
-timestamp: 2026-07-04T09:40:04Z
+title: 'HOWTO: reanimate — AI Context Handshake'
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, automation, tool]
+description: OKF-compliant documentation for HOWTO-REANIMATE.md.
+resource: file:///docs/tools/HOWTO-REANIMATE.md
 ---
 # HOWTO: reanimate — AI Context Handshake
 

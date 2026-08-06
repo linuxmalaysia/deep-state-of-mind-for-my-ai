@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
-title: "📜 Universal Ledger: Deep State of Mind (DSOM)"
-description: "OKF-compliant documentation for HISTORY.md."
-resource: "file:///HISTORY.md"
-timestamp: 2026-07-04T09:40:04Z
+title: '📜 Universal Ledger: Deep State of Mind (DSOM)'
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, documentation]
+description: OKF-compliant documentation for HISTORY.md.
+resource: file:///HISTORY.md
 ---
 # 📜 Universal Ledger: Deep State of Mind (DSOM)
 

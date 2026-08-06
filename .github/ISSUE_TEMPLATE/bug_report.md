@@ -1,12 +1,14 @@
----
+﻿---
+okf_version: 0.1
+type: documentation
+title: '[BUG] '
+timestamp: '2026-08-05T22:23:51Z'
+topics: [dsom, documentation]
 name: 🐛 Bug Report
 about: Create a report to help us improve the DSOM Protocol.
-title: "[BUG] "
 labels: bug
 assignees: ''
-
 ---
-
 ## 🏛️ DSOM Governance Check
 - [ ] I have read `docs/AI-MASTER-PROTOCOL.md`.
 - [ ] I have run `./tools/audit-pre-flight.sh` and can reproduce this in a clean environment.

@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: automation_tool
-title: "🌙 Hibernation Sequence (hibernation.sh)"
-description: "OKF-compliant documentation for hibernation.md."
-resource: "file:///tools-and-automation/hibernation.md"
-timestamp: 2026-07-04T09:40:04Z
+title: 🌙 Hibernation Sequence (hibernation.sh)
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, automation, tool]
+description: OKF-compliant documentation for hibernation.md.
+resource: file:///tools-and-automation/hibernation.md
 ---
 # 🌙 Hibernation Sequence (hibernation.sh)
 

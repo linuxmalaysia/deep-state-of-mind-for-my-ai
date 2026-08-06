@@ -1,11 +1,12 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
-title: "Blank Episodic Ledger Markdown File"
-description: "A standardized template for capturing, saving, and restoring Gemini DSOM cognitive states between sessions."
-timestamp: 2026-07-18T09:05:00Z
+title: Blank Episodic Ledger Markdown File
+timestamp: '2026-07-18T09:05:00Z'
+topics: [dsom, documentation]
+description: A standardized template for capturing, saving, and restoring Gemini DSOM cognitive
+  states between sessions.
 ---
-
 # `[DSOM EPISODIC RECORD]` Template
 
 Save this template as a markdown file (e.g., `dsom-ledger.md`) on your local machine or Google Drive. Use it to log your active session data before closing a chat window, and paste it back into your Gemini Gem to resume work.

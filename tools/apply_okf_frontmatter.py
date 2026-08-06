@@ -176,11 +176,11 @@ def main():
 
     # Exclude list for directories we should not modify/add frontmatter to
     exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
-    
+
     for dirpath, dirnames, filenames in os.walk(root_dir):
         # Prune excluded directories in place
         dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
-        
+
         for filename in filenames:
             if not filename.endswith('.md'):
                 continue
@@ -190,7 +190,7 @@ def main():
             # Reject symlinks
             if os.path.islink(filepath):
                 continue
-                
+
             # Verify resolved path remains within the resolved root_dir
             try:
                 real_root = os.path.realpath(root_dir)

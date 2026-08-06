@@ -1,10 +1,11 @@
----
+﻿---
 okf_version: 0.1
 type: documentation
-title: "🚀 HOWTO: Adopt DSOM Using Automated Onboarding"
-description: "OKF-compliant documentation for HOWTO-DSOM-ONBOARDING.md."
-resource: "file:///docs/HOWTO-DSOM-ONBOARDING.md"
-timestamp: 2026-07-04T09:40:04Z
+title: '🚀 HOWTO: Adopt DSOM Using Automated Onboarding'
+timestamp: '2026-07-04T09:40:04Z'
+topics: [dsom, documentation]
+description: OKF-compliant documentation for HOWTO-DSOM-ONBOARDING.md.
+resource: file:///docs/HOWTO-DSOM-ONBOARDING.md
 ---
 # 🚀 HOWTO: Adopt DSOM Using Automated Onboarding
 
