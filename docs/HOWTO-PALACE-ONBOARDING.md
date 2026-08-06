@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents"
-timestamp: "2026-07-04T09:40:04Z"
+title: '🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, documentation]
-description: "OKF-compliant documentation for HOWTO-PALACE-ONBOARDING.md."
-resource: "file:///docs/HOWTO-PALACE-ONBOARDING.md"
+description: OKF-compliant documentation for HOWTO-PALACE-ONBOARDING.md.
+resource: file:///docs/HOWTO-PALACE-ONBOARDING.md
 ---
 # 🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents
 

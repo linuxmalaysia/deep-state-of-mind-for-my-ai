@@ -1,10 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "DSOM-MCP-ARCHITECTURE.md — Model Context Protocol Native Server"
-timestamp: "2026-07-31T00:00:00Z"
+title: DSOM-MCP-ARCHITECTURE.md — Model Context Protocol Native Server
+timestamp: '2026-07-31T00:00:00Z'
 topics: [mcp, architecture, rag, context7, server]
-description: "Research and architectural blueprint for converting the DSOM Palace into a native MCP server for AI clients."
+description: Research and architectural blueprint for converting the DSOM Palace into a native
+  MCP server for AI clients.
 ---
 # DSOM-MCP-ARCHITECTURE.md
 

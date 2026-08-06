@@ -1,9 +1,16 @@
 ﻿---
 okf_version: 0.1
 type: agent_skill
-title: "Proposal DOCX Formatter"
-timestamp: "2026-08-05T18:59:24Z"
-topics: [dsom, skill, agent]
+title: proposal-docx-formatter
+timestamp: '2026-08-05T22:23:51Z'
+topics: [docx, proposal, document, formatter]
+name: proposal-docx-formatter
+description: Compiles a markdown proposal document into a professionally formatted DOCX file using
+  standard corporate document templates (Times New Roman, A4 page, grey-header tables,
+  0.5pt borders, proper heading hierarchy). Use when the user asks to compile, generate,
+  or format the migration proposal document.
+noss_section: Enterprise Database Migration
+target_format: docx
 ---
 # Proposal DOCX Formatter
 

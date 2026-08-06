@@ -1,11 +1,12 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "AI Initialization Sequence: Establishing Governance"
-timestamp: "2026-07-26T07:33:00Z"
+title: 'AI Initialization Sequence: Establishing Governance'
+timestamp: '2026-07-26T07:33:00Z'
 topics: [initialization, governance, memory, onboarding]
-description: "Details the exact sequence of files an AI agent reads to establish its governance, persona, and memory upon initialization within the DSOM framework."
-resource: "file:///docs/governance/AI-INITIALIZATION-SEQUENCE.md"
+description: Details the exact sequence of files an AI agent reads to establish its governance,
+  persona, and memory upon initialization within the DSOM framework.
+resource: file:///docs/governance/AI-INITIALIZATION-SEQUENCE.md
 ---
 # AI Initialization Sequence: Establishing Governance
 

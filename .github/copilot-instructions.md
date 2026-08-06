@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "🛡️ DSOM Sovereign Coding Instructions"
-timestamp: "2026-07-04T09:40:04Z"
+title: 🛡️ DSOM Sovereign Coding Instructions
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, documentation]
-description: "OKF-compliant documentation for copilot-instructions.md."
-resource: "file:///.github/copilot-instructions.md"
+description: OKF-compliant documentation for copilot-instructions.md.
+resource: file:///.github/copilot-instructions.md
 ---
 # 🛡️ DSOM Sovereign Coding Instructions
 

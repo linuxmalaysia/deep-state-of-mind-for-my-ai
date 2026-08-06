@@ -1,10 +1,10 @@
 ﻿---
 okf_version: 0.1
 type: discovery_log
-title: "Uncategorised Discoveries"
-timestamp: "2026-06-19T14:00:00Z"
+title: Uncategorised Discoveries
+timestamp: '2026-06-19T14:00:00Z'
 topics: [dsom, documentation]
-description: "Distilled knowledge for Uncategorised Discoveries"
+description: Distilled knowledge for Uncategorised Discoveries
 ---
 # 🚪 Closet: Room Uncategorised (The Discovery Hall)
 

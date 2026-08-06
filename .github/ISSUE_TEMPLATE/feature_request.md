@@ -1,13 +1,13 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "[FEAT] "
-timestamp: "2026-08-05T18:59:24Z"
+title: '[FEAT] '
+timestamp: '2026-08-05T22:23:51Z'
 topics: [dsom, documentation]
 name: 🚀 Feature Request
 about: Suggest an idea to enhance the Cognitive Digital Twin.
 labels: enhancement
-assignees:
+assignees: ''
 ---
 ## 🏛️ DSOM Governance Check
 - [ ] I have read `docs/AI-MASTER-PROTOCOL.md`.

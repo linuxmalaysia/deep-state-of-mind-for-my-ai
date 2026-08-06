@@ -1,11 +1,12 @@
 ﻿---
 okf_version: 0.1
 type: engineering_matrix
-title: "Ingestion Latency and Contextual Mapping Velocities in DSOM"
-timestamp: "2026-07-19T11:12:00Z"
+title: Ingestion Latency and Contextual Mapping Velocities in DSOM
+timestamp: '2026-07-19T03:12:00Z'
 topics: [dsom, documentation]
-description: "Architectural analysis of DSOM local knowledge ingestion vs. remote RAG/vector pipelines, with empirical benchmarks and implementation guidance."
-resource: "file:///docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md"
+description: Architectural analysis of DSOM local knowledge ingestion vs. remote RAG/vector pipelines,
+  with empirical benchmarks and implementation guidance.
+resource: file:///docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md
 ---
 # Ingestion Latency and Contextual Mapping Velocities in DSOM
 

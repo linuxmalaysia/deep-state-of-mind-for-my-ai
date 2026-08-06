@@ -1,11 +1,12 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "NOSS Integration Guide: Adopting National Standards into DSOM"
-timestamp: "2026-07-12T08:45:00Z"
+title: 'NOSS Integration Guide: Adopting National Standards into DSOM'
+timestamp: '2026-07-12T08:45:00Z'
 topics: [dsom, documentation]
-description: "Governance protocol explaining how National Occupational Skills Standards (NOSS) are translated and adopted as modular AI skills under the master DSOM framework."
-resource: "file:///docs/governance/NOSS-INTEGRATION-GUIDE.md"
+description: Governance protocol explaining how National Occupational Skills Standards (NOSS) are
+  translated and adopted as modular AI skills under the master DSOM framework.
+resource: file:///docs/governance/NOSS-INTEGRATION-GUIDE.md
 ---
 # Integrating National Standards (NOSS) into the DSOM Baseline
 

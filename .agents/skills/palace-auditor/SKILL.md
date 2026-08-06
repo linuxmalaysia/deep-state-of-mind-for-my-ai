@@ -1,11 +1,13 @@
 ﻿---
 okf_version: 0.1
 type: agent_skill
-title: "🕵️ Palace Auditor Skill"
-timestamp: "2026-08-05T18:59:24Z"
+title: 🕵️ Palace Auditor Skill
+timestamp: '2026-08-05T22:23:51Z'
 topics: [palace, audit, brain, index, cleanup]
 name: palace-auditor
-description: "A diagnostic skill that crawls the workspace to verify index.md links, identify undocumented scripts in tools/, and propose structural cleanups to maintain the Sovereign Memory Palace."
+description: A diagnostic skill that crawls the workspace to verify index.md links, identify undocumented
+  scripts in tools/, and propose structural cleanups to maintain the Sovereign Memory
+  Palace.
 ---
 # 🕵️ Palace Auditor Skill
 

@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "📜 Changelog: Deep State of Mind (DSOM) For My AI"
-timestamp: "2026-07-04T09:40:04Z"
+title: '📜 Changelog: Deep State of Mind (DSOM) For My AI'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, documentation]
-description: "OKF-compliant documentation for CHANGELOG.md."
-resource: "file:///CHANGELOG.md"
+description: OKF-compliant documentation for CHANGELOG.md.
+resource: file:///CHANGELOG.md
 ---
 # 📜 Changelog: Deep State of Mind (DSOM) For My AI
 

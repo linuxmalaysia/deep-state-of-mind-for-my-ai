@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-08-05
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
 """
 OKF Frontmatter Compliance Script.
 Scans a target directory and ensures all .md files use OKF v0.1 YAML frontmatter
@@ -10,17 +18,9 @@ import argparse
 import yaml
 from datetime import datetime, timezone
 
-FRONTMATTER_RE = re.compile(r'\A---\s*\n(.*?)\n---\s*\n', re.DOTALL)
+FRONTMATTER_RE = re.compile(r'\A---\s*\n(.*?)\n---\s*(?:\r?\n|\Z)', re.DOTALL)
 
 def get_okf_type(filepath):
-    """Determine the OKF document type from path segments.
-    
-    Parameters:
-        filepath (str): Path whose segments identify the document category.
-    
-    Returns:
-        str: The matching OKF document type, or ``"documentation"`` when no specialized category applies.
-    """
     path_parts = filepath.replace('\\', '/').split('/')
     if 'docs' in path_parts and 'governance' in path_parts:
         return 'governance_protocol'
@@ -35,16 +35,6 @@ def get_okf_type(filepath):
     return 'documentation'
 
 def extract_title(content, filename):
-    """
-    Extract a document title from its first level-one heading or filename.
-    
-    Parameters:
-        content (str): Markdown document content.
-        filename (str): Filename used to derive the title when no level-one heading exists.
-    
-    Returns:
-        str: The trimmed level-one heading text, or a title-cased filename without its extension.
-    """
     match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
     if match:
         return match.group(1).strip()
@@ -53,14 +43,6 @@ def extract_title(content, filename):
     return name_without_ext.replace('_', ' ').replace('-', ' ').title()
 
 def get_default_topics(okf_type):
-    """Return the default topic list for a document type.
-    
-    Parameters:
-        okf_type (str): The document type used to select the default topics.
-    
-    Returns:
-        list[str]: The default topics associated with the document type, or generic documentation topics when no mapping exists.
-    """
     mapping = {
         'governance_protocol': ['dsom', 'governance', 'protocol'],
         'agent_skill': ['dsom', 'skill', 'agent'],
@@ -72,47 +54,16 @@ def get_default_topics(okf_type):
     return mapping.get(okf_type, ['dsom', 'documentation'])
 
 def serialize_val(val, key):
-    """Serialize a metadata value into the YAML-like representation used for frontmatter.
-    
-    Parameters:
-        val: The metadata value to serialize.
-        key: The metadata key, used to determine when string values require quoting.
-    
-    Returns:
-        str: The serialized value."""
-    if isinstance(val, list):
-        items = []
-        for x in val:
-            x_str = str(x)
-            # Quote if there is a space, dash, or colon
-            if ' ' in x_str or '-' in x_str or ':' in x_str:
-                items.append(f'"{x_str}"')
-            else:
-                items.append(x_str)
-        return f"[{', '.join(items)}]"
-    elif isinstance(val, str):
-        # Quote string if it contains special characters
-        if key in ['title', 'description', 'resource'] or any(c in val for c in ':"#\'\\'):
-            escaped = val.replace('\\', '\\\\').replace('"', '\\"')
-            return f'"{escaped}"'
-        return val
-    elif isinstance(val, (float, int)):
-        return str(val)
-    elif val is None:
-        return 'null'
-    return str(val)
+    # PyYAML safe_dump formats lists as inline arrays with default_flow_style=True
+    # and serializes strings, dates, and other scalars natively and safely.
+    dumped = yaml.safe_dump(val, default_flow_style=True, allow_unicode=True).strip()
+    if dumped.endswith('\n...'):
+        dumped = dumped[:-4]
+    elif dumped.endswith('...'):
+        dumped = dumped[:-3]
+    return dumped.strip()
 
 def process_file(filepath, root_dir):
-    """
-    Standardize a Markdown file's YAML frontmatter to the OKF v0.1 format.
-    
-    Parameters:
-        filepath (str): Path to the Markdown file to process.
-        root_dir (str): Root directory used to derive the file's relative path.
-    
-    Returns:
-        bool: `True` if the file was updated, `False` if it was empty or already standardized.
-    """
     rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
     filename = os.path.basename(filepath)
 
@@ -125,16 +76,19 @@ def process_file(filepath, root_dir):
     existing_frontmatter = {}
     rest_of_content = content
 
-    match = FRONTMATTER_RE.match(content)
-    if match:
+    # Consume every consecutive leading frontmatter block
+    while True:
+        match = FRONTMATTER_RE.match(rest_of_content)
+        if not match:
+            break
         yaml_block = match.group(1)
-        rest_of_content = content[match.end():]
+        rest_of_content = rest_of_content[match.end():]
         try:
             parsed = yaml.safe_load(yaml_block)
             if isinstance(parsed, dict):
-                existing_frontmatter = parsed
+                existing_frontmatter.update(parsed)
         except Exception as e:
-            print(f"Warning: Failed to parse existing frontmatter in {rel_path}: {e}")
+            print(f"Warning: Failed to parse existing frontmatter block in {rel_path}: {e}")
 
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
@@ -155,10 +109,19 @@ def process_file(filepath, root_dir):
     timestamp = existing_frontmatter.get('timestamp')
     if not timestamp:
         timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    elif isinstance(timestamp, datetime):
-        timestamp = timestamp.strftime('%Y-%m-%dT%H:%M:%SZ')
     else:
-        timestamp = str(timestamp)
+        # Convert parsed timestamp (string or datetime) to UTC
+        if isinstance(timestamp, str):
+            try:
+                timestamp = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+            except Exception:
+                pass
+        if isinstance(timestamp, datetime):
+            if timestamp.tzinfo is None:
+                timestamp = timestamp.replace(tzinfo=timezone.utc)
+            timestamp = timestamp.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+        else:
+            timestamp = str(timestamp)
 
     # 5. topics
     topics = existing_frontmatter.get('topics')
@@ -178,7 +141,9 @@ def process_file(filepath, root_dir):
     for k, v in existing_frontmatter.items():
         if k not in updated_frontmatter:
             if isinstance(v, datetime):
-                v = v.strftime('%Y-%m-%dT%H:%M:%SZ')
+                if v.tzinfo is None:
+                    v = v.replace(tzinfo=timezone.utc)
+                v = v.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
             updated_frontmatter[k] = v
 
     # Serialize cleanly keeping specific key order
@@ -192,7 +157,7 @@ def process_file(filepath, root_dir):
             yaml_lines.append(f"{k}: {serialize_val(val, k)}")
 
     new_frontmatter_block = "---\n" + "\n".join(yaml_lines) + "\n---\n"
-    new_content = new_frontmatter_block + rest_of_content.lstrip()
+    new_content = new_frontmatter_block + rest_of_content
 
     if new_content != content:
         with open(filepath, 'w', encoding='utf-8-sig') as f:
@@ -201,10 +166,6 @@ def process_file(filepath, root_dir):
     return False
 
 def main():
-    """Scan a directory recursively and standardize its Markdown files to OKF v0.1 frontmatter.
-    
-    The optional command-line directory argument specifies the scan root and defaults to the current directory. Excludes `.git`, `node_modules`, and `.pytest_cache` directories, then reports the number of Markdown files checked and modified.
-    """
     parser = argparse.ArgumentParser(description="Ensure OKF v0.1 compliance on all Markdown files.")
     parser.add_argument("directory", nargs="?", default=".", help="Root directory to scan (default: '.')")
     args = parser.parse_args()
@@ -225,6 +186,20 @@ def main():
                 continue
 
             filepath = os.path.join(dirpath, filename)
+
+            # Reject symlinks
+            if os.path.islink(filepath):
+                continue
+
+            # Verify resolved path remains within the resolved root_dir
+            try:
+                real_root = os.path.realpath(root_dir)
+                real_filepath = os.path.realpath(filepath)
+                if os.path.commonpath([real_root, real_filepath]) != real_root:
+                    continue
+            except Exception:
+                continue
+
             total_count += 1
             if process_file(filepath, root_dir):
                 rel = os.path.relpath(filepath, root_dir).replace('\\', '/')

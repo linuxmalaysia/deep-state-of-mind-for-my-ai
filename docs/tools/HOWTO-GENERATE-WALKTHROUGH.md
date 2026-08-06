@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: automation_tool
-title: "HOWTO: generate-walkthrough — Session Scribe"
-timestamp: "2026-07-04T09:40:04Z"
+title: 'HOWTO: generate-walkthrough — Session Scribe'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, automation, tool]
-description: "OKF-compliant documentation for HOWTO-GENERATE-WALKTHROUGH.md."
-resource: "file:///docs/tools/HOWTO-GENERATE-WALKTHROUGH.md"
+description: OKF-compliant documentation for HOWTO-GENERATE-WALKTHROUGH.md.
+resource: file:///docs/tools/HOWTO-GENERATE-WALKTHROUGH.md
 ---
 # HOWTO: generate-walkthrough — Session Scribe
 

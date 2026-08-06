@@ -1,10 +1,10 @@
 ﻿---
 okf_version: 0.1
 type: strategy_guide
-title: "CRISP Strategy"
-timestamp: "2026-06-19T14:00:00Z"
+title: CRISP Strategy
+timestamp: '2026-06-19T14:00:00Z'
 topics: [dsom, documentation]
-description: "Distilled knowledge for CRISP Strategy"
+description: Distilled knowledge for CRISP Strategy
 ---
 # 🚪 Closet: Room CRISP Strategy (The Nervous System)
 

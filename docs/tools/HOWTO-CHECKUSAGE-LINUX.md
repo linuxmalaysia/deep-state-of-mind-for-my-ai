@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: automation_tool
-title: "HOWTO: check-usage.sh — Antigravity Session Monitor (Linux)"
-timestamp: "2026-07-04T09:40:04Z"
+title: 'HOWTO: check-usage.sh — Antigravity Session Monitor (Linux)'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, automation, tool]
-description: "OKF-compliant documentation for HOWTO-CHECKUSAGE-LINUX.md."
-resource: "file:///docs/tools/HOWTO-CHECKUSAGE-LINUX.md"
+description: OKF-compliant documentation for HOWTO-CHECKUSAGE-LINUX.md.
+resource: file:///docs/tools/HOWTO-CHECKUSAGE-LINUX.md
 ---
 # HOWTO: check-usage.sh — Antigravity Session Monitor (Linux)
 

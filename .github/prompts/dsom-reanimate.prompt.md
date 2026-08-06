@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "DSOM Reanimation Handshake"
-timestamp: "2026-08-05T18:59:24Z"
+title: DSOM Reanimation Handshake
+timestamp: '2026-08-05T22:23:51Z'
 topics: [dsom, documentation]
 name: DSOM Reanimate
-description: "Syncs Copilot with the current DSOM project state"
+description: Syncs Copilot with the current DSOM project state
 ---
 # DSOM Reanimation Handshake
 

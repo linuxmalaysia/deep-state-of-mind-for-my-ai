@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: architecture_concept
-title: "🏛️ Palace Registry: Sovereign Retrieval Map"
-timestamp: "2026-07-04T09:40:04Z"
+title: '🏛️ Palace Registry: Sovereign Retrieval Map'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, brain, concept]
-description: "OKF-compliant documentation for palace_registry.md."
-resource: "file:///.agents/brain/palace_registry.md"
+description: OKF-compliant documentation for palace_registry.md.
+resource: file:///.agents/brain/palace_registry.md
 ---
 # 🏛️ Palace Registry: Sovereign Retrieval Map
 

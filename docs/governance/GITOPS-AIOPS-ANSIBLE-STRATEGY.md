@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: governance_protocol
-title: "🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)"
-timestamp: "2026-07-04T09:40:04Z"
+title: '🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, governance, protocol]
-description: "OKF-compliant documentation for GITOPS-AIOPS-ANSIBLE-STRATEGY.md."
-resource: "file:///docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md"
+description: OKF-compliant documentation for GITOPS-AIOPS-ANSIBLE-STRATEGY.md.
+resource: file:///docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
 ---
 # 🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)
 

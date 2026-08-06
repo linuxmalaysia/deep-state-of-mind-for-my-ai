@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "Open Knowledge Format (OKF) Adoption Guide"
-timestamp: "2026-07-04T09:40:04Z"
+title: Open Knowledge Format (OKF) Adoption Guide
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, documentation]
-description: "OKF-compliant documentation for OKF-ADOPTION-GUIDE.md."
-resource: "file:///docs/OKF-ADOPTION-GUIDE.md"
+description: OKF-compliant documentation for OKF-ADOPTION-GUIDE.md.
+resource: file:///docs/OKF-ADOPTION-GUIDE.md
 ---
 # Open Knowledge Format (OKF) Adoption Guide
 

@@ -1,13 +1,13 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "[BUG] "
-timestamp: "2026-08-05T18:59:24Z"
+title: '[BUG] '
+timestamp: '2026-08-05T22:23:51Z'
 topics: [dsom, documentation]
 name: 🐛 Bug Report
 about: Create a report to help us improve the DSOM Protocol.
 labels: bug
-assignees:
+assignees: ''
 ---
 ## 🏛️ DSOM Governance Check
 - [ ] I have read `docs/AI-MASTER-PROTOCOL.md`.

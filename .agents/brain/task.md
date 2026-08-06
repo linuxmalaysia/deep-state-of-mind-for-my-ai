@@ -1,8 +1,8 @@
 ﻿---
 okf_version: 0.1
 type: task_ledger
-title: "🗺️ DSOM Task List"
-timestamp: "2026-08-05T18:59:24Z"
+title: 🗺️ DSOM Task List
+timestamp: '2026-08-05T22:23:51Z'
 topics: [readthedocs, configuration, testing]
 ---
 - `[x]` Create deep research document: `docs/governance/DSOM-MCP-ARCHITECTURE.md`.

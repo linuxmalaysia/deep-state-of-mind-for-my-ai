@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: architecture_concept
-title: "🧠 DSOM Session Log: [Insert Date/Task Name]"
-timestamp: "2026-07-04T09:40:04Z"
+title: '🧠 DSOM Session Log: [Insert Date/Task Name]'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, brain, concept]
-description: "OKF-compliant documentation for DSOM_TEMPLATE.md."
-resource: "file:///.agents/brain/DSOM_TEMPLATE.md"
+description: OKF-compliant documentation for DSOM_TEMPLATE.md.
+resource: file:///.agents/brain/DSOM_TEMPLATE.md
 ---
 # 🧠 DSOM Session Log: [Insert Date/Task Name]
 

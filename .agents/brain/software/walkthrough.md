@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: architecture_concept
-title: "🏁 Software Logic Walkthrough (Mental Anchors)"
-timestamp: "2026-07-04T09:40:04Z"
+title: 🏁 Software Logic Walkthrough (Mental Anchors)
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, brain, concept]
-description: "OKF-compliant documentation for walkthrough.md."
-resource: "file:///.agents/brain/software/walkthrough.md"
+description: OKF-compliant documentation for walkthrough.md.
+resource: file:///.agents/brain/software/walkthrough.md
 ---
 # 🏁 Software Logic Walkthrough (Mental Anchors)
 

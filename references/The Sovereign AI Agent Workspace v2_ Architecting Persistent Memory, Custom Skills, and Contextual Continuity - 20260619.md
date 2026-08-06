@@ -1,11 +1,14 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "**The Sovereign AI Agent Workspace (Version 2): Architecting Persistent Memory, Custom Skills, and Contextual Continuity**"
-timestamp: "2026-07-04T09:40:04Z"
+title: '**The Sovereign AI Agent Workspace (Version 2): Architecting Persistent Memory, Custom
+  Skills, and Contextual Continuity**'
+timestamp: '2026-07-04T09:40:04Z'
 topics: [dsom, documentation]
-description: "OKF-compliant documentation for The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md."
-resource: "file:///references/The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md"
+description: OKF-compliant documentation for The Sovereign AI Agent Workspace v2_ Architecting
+  Persistent Memory, Custom Skills, and Contextual Continuity - 20260619.md.
+resource: file:///references/The Sovereign AI Agent Workspace v2_ Architecting Persistent Memory,
+  Custom Skills, and Contextual Continuity - 20260619.md
 ---
 # **The Sovereign AI Agent Workspace (Version 2): Architecting Persistent Memory, Custom Skills, and Contextual Continuity**
 

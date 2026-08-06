@@ -1,11 +1,12 @@
 ﻿---
 okf_version: 0.1
 type: l1_synthesis
-title: "DSOM Token Performance Playbook"
-timestamp: "2026-07-19T11:27:00Z"
-topics: [tokens, performance, tiktoken, "byte-cap", "context-optimisation"]
-description: "Master playbook for token-efficient DSOM operation. Covers tools, rules, benchmarks, and procedures for minimising LLM context window consumption across all DSOM projects."
-resource: "file:///docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md"
+title: DSOM Token Performance Playbook
+timestamp: '2026-07-19T03:27:00Z'
+topics: [tokens, performance, tiktoken, byte-cap, context-optimisation]
+description: Master playbook for token-efficient DSOM operation. Covers tools, rules, benchmarks,
+  and procedures for minimising LLM context window consumption across all DSOM projects.
+resource: file:///docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md
 ---
 # DSOM Token Performance Playbook
 

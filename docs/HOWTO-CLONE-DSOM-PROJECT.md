@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "HOWTO: Clone a DSOM Project"
-timestamp: "2026-07-04T11:00:00Z"
+title: 'HOWTO: Clone a DSOM Project'
+timestamp: '2026-07-04T11:00:00Z'
 topics: [dsom, documentation]
-description: "OKF-compliant documentation for scaffolding a new project from an existing DSOM repository."
-resource: "file:///docs/HOWTO-CLONE-DSOM-PROJECT.md"
+description: OKF-compliant documentation for scaffolding a new project from an existing DSOM repository.
+resource: file:///docs/HOWTO-CLONE-DSOM-PROJECT.md
 ---
 # HOWTO: Clone a DSOM Project (Scaffolding Blueprint)
 

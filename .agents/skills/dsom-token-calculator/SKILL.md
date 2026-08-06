@@ -1,11 +1,11 @@
 ﻿---
 okf_version: 0.1
 type: procedural_skill
-title: "Procedural Specification: DSOM Token Calculator"
-timestamp: "2026-07-18T14:52:39Z"
-topics: [tokens, tiktoken, performance, "byte-cap", context]
-description: "Calculates token counts via tiktoken in isolated uv Python runspaces."
-resource: "file:///.agents/skills/dsom-token-calculator/SKILL.md"
+title: 'Procedural Specification: DSOM Token Calculator'
+timestamp: '2026-07-18T14:52:39Z'
+topics: [tokens, tiktoken, performance, byte-cap, context]
+description: Calculates token counts via tiktoken in isolated uv Python runspaces.
+resource: file:///.agents/skills/dsom-token-calculator/SKILL.md
 ---
 # Operational Enforcements:
 - Trigger this skill dynamically before any output loop that handles extensive datasets or raw configurations.

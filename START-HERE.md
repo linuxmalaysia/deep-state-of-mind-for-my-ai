@@ -1,11 +1,12 @@
 ﻿---
 okf_version: 0.1
 type: documentation
-title: "START HERE: DSOM Project Entry Points"
-timestamp: "2026-07-19T11:27:00Z"
-topics: [onboarding, "entry-points", dsom, sovereign, baseline]
-description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new projects."
-resource: "file:///START-HERE.md"
+title: 'START HERE: DSOM Project Entry Points'
+timestamp: '2026-07-19T03:27:00Z'
+topics: [onboarding, entry-points, dsom, sovereign, baseline]
+description: The primary onboarding document for human operators and AI agents adopting the DSOM
+  framework into new projects.
+resource: file:///START-HERE.md
 ---
 # START HERE: DSOM Project Entry Points
 
