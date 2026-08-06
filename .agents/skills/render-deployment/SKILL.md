@@ -1,0 +1,41 @@
+---
+okf_version: 0.1
+type: agent_skill
+title: "🚀 Render Deployment Skill"
+name: render-deployment
+description: "Configures and manages Render.com deployments via native Free Static Site pathways for the compiled DSOM MkDocs site."
+timestamp: "2026-08-06T12:00:00Z"
+topics: [render, deployment, static-site, blueprint, mkdocs]
+---
+
+# 🚀 Render Deployment Skill
+
+This skill governs the blueprint specifications, build triggers, and configurations required to deploy the Deep State of Mind (DSOM) documentation static site reliably on Render.com.
+
+## When to use this skill
+
+- When editing the Render deployment blueprint configuration (`render.yaml`).
+- When configuring deployment commands on the Render dashboard.
+- When diagnosing or documenting deployment pipelines for Render.com.
+- When ensuring that any adding, changing, or deleting of markdown files correctly triggers a static site rebuild.
+
+## Operational Standards & Procedures
+
+### 1. Render Blueprint Pathway
+The repository is configured for deployment to Render.com via a root-level `render.yaml` Blueprint Specification supporting:
+- **Native Free Static Site**: A native free Static Site service (`deep-state-of-mind-static`) configured to run `pip install -r docs/requirements.txt && mkdocs build` and publish the `site` directory.
+
+### 2. Manual Dashboard Deployment Constraints
+To prevent build failures during manual dashboard deployments on Render, or when setting up the service manually:
+- Set the **Build Command** to `pip install -r docs/requirements.txt && mkdocs build`.
+- Set the **Publish Directory** to `site`.
+- These settings prevent "Publish directory site/ does not exist!" failures.
+
+### 3. Automatic Trigger on Markdown File Changes
+- Render.com is natively integrated with the GitHub/GitLab repository.
+- Any addition, update, or deletion of `.md` files committed and pushed to the `main` branch automatically triggers a webhook that starts a new static site deployment on Render.
+- No manual action is required; the Git-triggered pipeline handles the compilation of markdown files to static HTML seamlessly.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-06*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

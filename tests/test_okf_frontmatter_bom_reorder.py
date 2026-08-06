@@ -103,7 +103,7 @@ REORDERED_FRONTMATTER_FILES = [
         ".agents/brain/active_context_manifest.md",
         "active_context_manifest",
         "Active Context Manifest — Template",
-        "2026-07-19T11:12:00Z",
+        "2026-07-19T03:12:00Z",
         ["dsom", "documentation"],
         True,
         False,
@@ -172,13 +172,13 @@ for _suffix in _PALACE_0408_SUFFIXES:
 # (relative path, timestamp)
 # ---------------------------------------------------------------------------
 NEW_MINIMAL_FRONTMATTER_FILES = [
-    (".agents/brain/palace_update_proposal_2026-07-17_0713.md", "2026-08-05T18:59:23Z"),
-    (".agents/brain/palace_update_proposal_2026-07-17_0747.md", "2026-08-05T18:59:23Z"),
-    (".agents/brain/palace_update_proposal_2026-07-17_0752.md", "2026-08-05T18:59:24Z"),
-    (".agents/brain/palace_update_proposal_2026-07-18_2259.md", "2026-08-05T18:59:24Z"),
-    (".agents/brain/palace_update_proposal_2026-07-19_1349.md", "2026-08-05T18:59:24Z"),
-    (".agents/brain/palace_update_proposal_2026-07-26_0745.md", "2026-08-05T18:59:24Z"),
-    (".agents/brain/palace_update_proposal_2026-07-26_0755.md", "2026-08-05T18:59:24Z"),
+    (".agents/brain/palace_update_proposal_2026-07-17_0713.md", "2026-08-05T22:23:51Z"),
+    (".agents/brain/palace_update_proposal_2026-07-17_0747.md", "2026-08-05T22:23:51Z"),
+    (".agents/brain/palace_update_proposal_2026-07-17_0752.md", "2026-08-05T22:23:51Z"),
+    (".agents/brain/palace_update_proposal_2026-07-18_2259.md", "2026-08-05T22:23:51Z"),
+    (".agents/brain/palace_update_proposal_2026-07-19_1349.md", "2026-08-05T22:23:51Z"),
+    (".agents/brain/palace_update_proposal_2026-07-26_0745.md", "2026-08-05T22:23:51Z"),
+    (".agents/brain/palace_update_proposal_2026-07-26_0755.md", "2026-08-05T22:23:51Z"),
 ]
 
 ALL_FILES_RELATIVE = [entry[0] for entry in REORDERED_FRONTMATTER_FILES] + [
@@ -475,7 +475,7 @@ class ActiveContextManifestRegressionTests(unittest.TestCase):
         # it to a bare "Z"-suffixed UTC timestamp string.
         content = _read_text_stripping_bom(self.PATH)
         _, parsed = _extract_frontmatter_block(content)
-        self.assertEqual(parsed.get("timestamp"), "2026-07-19T11:12:00Z")
+        self.assertEqual(parsed.get("timestamp"), "2026-07-19T03:12:00Z")
         self.assertNotIn("+08:00", content)
 
 

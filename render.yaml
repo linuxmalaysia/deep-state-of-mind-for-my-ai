@@ -1,0 +1,17 @@
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI Protocol
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-08-06
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
+# =============================================================================
+# DSOM - Render Blueprint Specification (render.yaml)
+# Standards: https://render.com/docs/blueprint-spec
+# =============================================================================
+
+services:
+  - type: static
+    name: deep-state-of-mind-static
+    buildCommand: pip install -r docs/requirements.txt && mkdocs build
+    publishPath: site
