@@ -3,8 +3,8 @@ okf_version: 0.1
 type: agent_skill
 title: dsom-release-manager
 timestamp: "2026-07-12T09:50:00Z"
-topics: ["release", "git", "tagging", "changelog", "deployment"]
 description: "Cuts a formal DSOM release, updates ledgers, tags the repository, and deploys to GitHub/GitLab."
+topics: ["release", "git", "tagging", "changelog", "deployment"]
 ---
 # 🚀 DSOM Release Manager
 

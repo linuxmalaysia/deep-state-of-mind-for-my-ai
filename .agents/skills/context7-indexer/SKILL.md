@@ -3,8 +3,8 @@ okf_version: 0.1
 type: skill
 title: Context7 Semantic Indexer
 timestamp: "2026-07-31T00:00:00Z"
-topics: ["context7", "semantic", "index", "mcp", "rag"]
 description: "Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context via MCP."
+topics: ["context7", "semantic", "index", "mcp", "rag"]
 ---
 # Context7 Semantic Indexer
 

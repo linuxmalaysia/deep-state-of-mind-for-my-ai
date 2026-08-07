@@ -551,5 +551,27 @@ class CrlfLineEndingsTests(unittest.TestCase):
         self.assertEqual(raw_yaml, "")
 
 
+class UnlistedSkillReorderingTests(unittest.TestCase):
+    """Sanity checks for unlisted skill files to verify description precedes topics."""
+
+    def test_unlisted_skill_frontmatter_ordering(self):
+        # Read an unlisted skill file, e.g., .agents/skills/dsom-bootstrap/SKILL.md
+        skill_path = REPO_ROOT / ".agents" / "skills" / "dsom-bootstrap" / "SKILL.md"
+        self.assertTrue(skill_path.is_file(), "Expected dsom-bootstrap/SKILL.md to exist")
+
+        content = _read_text_stripping_bom(skill_path)
+        raw, _ = _extract_frontmatter_block(content)
+        self.assertIsNotNone(raw)
+
+        # Verify that description precedes topics
+        description_index = raw.index("description:")
+        topics_index = raw.index("topics:")
+        self.assertLess(
+            description_index,
+            topics_index,
+            "Expected 'description:' to precede 'topics:' in dsom-bootstrap/SKILL.md",
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

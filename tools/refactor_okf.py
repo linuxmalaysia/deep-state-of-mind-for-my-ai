@@ -206,13 +206,7 @@ def process_file(filepath, root_dir):
             updated_frontmatter[k] = v
 
     # Serialise cleanly keeping specific key order
-    special_reorder = rel_path in [
-        ".agents/skills/initialize-gitops/SKILL.md",
-        ".agents/skills/latex-proposal-compiler/SKILL.md",
-        ".agents/skills/node-proposal-formatter/SKILL.md",
-        ".agents/skills/node-slide-generator/SKILL.md",
-        ".agents/skills/odp-slide-generator/SKILL.md"
-    ]
+    special_reorder = filename == "SKILL.md"
     if special_reorder:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
     else:
