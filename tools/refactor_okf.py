@@ -19,7 +19,7 @@ import json
 import yaml
 from datetime import datetime, timezone
 
-FRONTMATTER_RE = re.compile(r'\A---\s*\n(.*?)\n---\s*(?:\r?\n|\Z)', re.DOTALL)
+FRONTMATTER_RE = re.compile(r'\A---\s*\r?\n(.*?)\r?\n---\s*(?:\r?\n|\Z)', re.DOTALL)
 
 def get_okf_type(filepath):
     path_parts = filepath.replace('\\', '/').split('/')
@@ -56,6 +56,12 @@ def get_default_topics(okf_type):
 def needs_double_quotes(s):
     if not isinstance(s, str):
         return False
+    # Check empty strings
+    if s == "":
+        return True
+    # Check leading/trailing whitespace
+    if s != s.strip():
+        return True
     # Check for newline, carriage return, or tab characters
     if '\n' in s or '\r' in s or '\t' in s:
         return True
@@ -65,27 +71,34 @@ def needs_double_quotes(s):
     # Check for colons, brackets, parentheses, or other special characters
     if re.search(r'[^a-zA-Z0-9_\-\s]', s):
         return True
+    # YAML-aware round-trip check to detect values parsed as non-strings
+    try:
+        parsed = yaml.safe_load(s)
+        if not isinstance(parsed, str) or parsed != s:
+            return True
+    except Exception:
+        return True
     return False
 
-def serialize_val(val, key):
-    # Format lists as inline arrays with double-quoted strings
+def serialise_val(val, key):
+    # Format lists as inline arrays with double-quoted strings and recursive non-string serialisation
     if isinstance(val, list):
         formatted_elements = []
         for item in val:
             if isinstance(item, str):
                 formatted_elements.append(json.dumps(item, ensure_ascii=False))
             else:
-                formatted_elements.append(str(item))
+                formatted_elements.append(serialise_val(item, key))
         return "[" + ", ".join(formatted_elements) + "]"
 
-    # Format strings, quoting if they contain emojis/special characters
+    # Format strings, quoting if they contain emojis/special characters or are YAML-sensitive
     if isinstance(val, str):
         if needs_double_quotes(val):
             return json.dumps(val, ensure_ascii=False)
         else:
             return val
 
-    # Fallback to safe_dump for other types (e.g. ints, floats)
+    # Fallback to safe_dump for other types (e.g. ints, floats, booleans)
     dumped = yaml.safe_dump(val, default_flow_style=True, allow_unicode=True).strip()
     if dumped.endswith('\n...'):
         dumped = dumped[:-4]
@@ -97,11 +110,17 @@ def process_file(filepath, root_dir):
     rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
     filename = os.path.basename(filepath)
 
+    # Check if the file raw bytes started with BOM
+    had_bom = False
+    try:
+        if os.path.exists(filepath):
+            with open(filepath, 'rb') as bf:
+                had_bom = bf.read(3) == b'\xef\xbb\xbf'
+    except OSError as e:
+        print(f"Error: Failed to read binary prefix for {rel_path}: {e}")
+
     with open(filepath, 'r', encoding='utf-8-sig') as f:
         content = f.read()
-
-    if not content.strip():
-        return False
 
     existing_frontmatter = {}
     rest_of_content = content
@@ -112,13 +131,16 @@ def process_file(filepath, root_dir):
         if not match:
             break
         yaml_block = match.group(1)
-        rest_of_content = rest_of_content[match.end():]
         try:
             parsed = yaml.safe_load(yaml_block)
             if isinstance(parsed, dict):
                 existing_frontmatter.update(parsed)
+                rest_of_content = rest_of_content[match.end():]
+            else:
+                return False
         except Exception as e:
             print(f"Warning: Failed to parse existing frontmatter block in {rel_path}: {e}")
+            return False
 
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
@@ -140,13 +162,10 @@ def process_file(filepath, root_dir):
     if not timestamp:
         timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     else:
-        # Convert parsed timestamp (string or datetime) to UTC
+        # Convert parsed timestamp (string or datetime) to UTC only if not a string
         if isinstance(timestamp, str):
-            try:
-                timestamp = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
-            except Exception:
-                pass
-        if isinstance(timestamp, datetime):
+            pass
+        elif isinstance(timestamp, datetime):
             if timestamp.tzinfo is None:
                 timestamp = timestamp.replace(tzinfo=timezone.utc)
             timestamp = timestamp.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -176,14 +195,14 @@ def process_file(filepath, root_dir):
                 v = v.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
             updated_frontmatter[k] = v
 
-    # Serialize cleanly keeping specific key order
-    special_reorder = any(s in rel_path for s in [
-        "skills/initialize-gitops/SKILL.md",
-        "skills/latex-proposal-compiler/SKILL.md",
-        "skills/node-proposal-formatter/SKILL.md",
-        "skills/node-slide-generator/SKILL.md",
-        "skills/odp-slide-generator/SKILL.md"
-    ])
+    # Serialise cleanly keeping specific key order
+    special_reorder = rel_path in [
+        ".agents/skills/initialize-gitops/SKILL.md",
+        ".agents/skills/latex-proposal-compiler/SKILL.md",
+        ".agents/skills/node-proposal-formatter/SKILL.md",
+        ".agents/skills/node-slide-generator/SKILL.md",
+        ".agents/skills/odp-slide-generator/SKILL.md"
+    ]
     if special_reorder:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
     else:
@@ -192,28 +211,30 @@ def process_file(filepath, root_dir):
     yaml_lines = []
     for k in ordered_keys:
         if k in updated_frontmatter:
-            yaml_lines.append(f"{k}: {serialize_val(updated_frontmatter[k], k)}")
+            yaml_lines.append(f"{k}: {serialise_val(updated_frontmatter[k], k)}")
 
     for k, val in updated_frontmatter.items():
         if k not in ordered_keys:
-            yaml_lines.append(f"{k}: {serialize_val(val, k)}")
+            yaml_lines.append(f"{k}: {serialise_val(val, k)}")
 
     new_frontmatter_block = "---\n" + "\n".join(yaml_lines) + "\n---\n"
     new_content = new_frontmatter_block + rest_of_content
 
-    # Overwrite if changed, or if it had a BOM (which open with encoding utf-8-sig and writing with utf-8 strips)
-    # Check if the file raw bytes started with BOM
-    had_bom = False
-    try:
-        with open(filepath, 'rb') as bf:
-            had_bom = bf.read(3) == b'\xef\xbb\xbf'
-    except Exception:
-        pass
-
     if new_content != content or had_bom:
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(new_content)
-        return True
+        file_dir = os.path.dirname(filepath)
+        temp_filepath = os.path.join(file_dir, f".temp_{filename}")
+        try:
+            with open(temp_filepath, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            os.replace(temp_filepath, filepath)
+            return True
+        except Exception as e:
+            if os.path.exists(temp_filepath):
+                try:
+                    os.remove(temp_filepath)
+                except Exception:
+                    pass
+            raise e
     return False
 
 def main():

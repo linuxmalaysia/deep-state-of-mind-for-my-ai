@@ -58,7 +58,7 @@ def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
 REPO_ROOT = _find_repo_root(pathlib.Path(__file__).parent)
 
 BOM = "\ufeff"
-FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
+FRONTMATTER_RE = re.compile(r"\A---\s*\r?\n(.*?)\r?\n---\s*(?:\r?\n|\Z)", re.DOTALL)
 
 
 def _read_text_stripping_bom(path: pathlib.Path) -> str:
@@ -517,6 +517,24 @@ class TopicsFieldShapeTests(unittest.TestCase):
                 content = _read_text_stripping_bom(REPO_ROOT / relative)
                 _, parsed = _extract_frontmatter_block(content)
                 self.assertIn("dsom", parsed.get("topics", []))
+
+
+class CrlfLineEndingsTests(unittest.TestCase):
+    """Sanity checks for LF and CRLF line ending frontmatter match behavior."""
+
+    def test_crlf_frontmatter_extraction(self):
+        crlf_content = "---\r\nokf_version: 0.1\r\ntype: test_doc\r\ntitle: \"Test Title\"\r\ntimestamp: \"2026-08-07T00:00:00Z\"\r\ntopics: [\"test\"]\r\n---\r\nSome body text here"
+        match = FRONTMATTER_RE.match(crlf_content)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match CRLF content")
+        raw_yaml = match.group(1)
+        self.assertIn("type: test_doc", raw_yaml)
+
+    def test_lf_frontmatter_extraction(self):
+        lf_content = "---\nokf_version: 0.1\ntype: test_doc\ntitle: \"Test Title\"\ntimestamp: \"2026-08-07T00:00:00Z\"\ntopics: [\"test\"]\n---\nSome body text here"
+        match = FRONTMATTER_RE.match(lf_content)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match LF content")
+        raw_yaml = match.group(1)
+        self.assertIn("type: test_doc", raw_yaml)
 
 
 if __name__ == "__main__":
