@@ -5,7 +5,7 @@ title: "♻️ Template Reset (template-reset.sh)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for template-reset.md."
-resource: "file:///tools-and-automation/template-reset.md"
+resource: "file:///docs/tools-and-automation/template-reset.md"
 ---
 # ♻️ Template Reset (template-reset.sh)
 

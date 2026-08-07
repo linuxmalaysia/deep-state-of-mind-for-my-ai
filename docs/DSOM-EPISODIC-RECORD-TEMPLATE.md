@@ -4,7 +4,7 @@ type: documentation
 title: Blank Episodic Ledger Markdown File
 timestamp: "2026-07-18T09:05:00Z"
 topics: ["dsom", "documentation"]
-description: "A standardized template for capturing, saving, and restoring Gemini DSOM cognitive states between sessions."
+description: "A standardised template for capturing, saving, and restoring Gemini DSOM cognitive states between sessions."
 ---
 # `[DSOM EPISODIC RECORD]` Template
 

@@ -28,3 +28,7 @@ uv run --with openai --with requests .github/scripts/action_update_dsom.py <diff
 1. **Never write the API key to disk**: If the API key is not present in the environment, instruct the human operator to export it manually in their terminal session before proceeding.
 2. **Review before execution**: Generate the diff file locally first (e.g., `git diff > local.diff`) and verify its contents to prevent bloating the compaction prompt with irrelevant artifact changes.
 3. **Verify Timestamp**: After successful execution, check `.agents/brain/current_state.dsom` to ensure the `timestamp` in the OKF frontmatter was correctly updated.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -4,7 +4,7 @@ type: documentation
 title: "AI Skill Architecture: Progressive Disclosure & Semantic Routing"
 timestamp: "2026-07-11T23:28:03Z"
 topics: ["dsom", "documentation"]
-description: "Governance policy defining how AI agents discover, trigger, and execute modular skills as operational manuals, utilizing token optimization."
+description: "Governance policy defining how AI agents discover, trigger, and execute modular skills as operational manuals, utilising token optimisation."
 resource: "file:///docs/governance/AI-SKILL-ARCHITECTURE.md"
 ---
 # AI Skill Architecture

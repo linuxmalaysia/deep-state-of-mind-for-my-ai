@@ -57,6 +57,9 @@ def get_default_topics(okf_type):
 def needs_double_quotes(s):
     if not isinstance(s, str):
         return False
+    # Check for newline, carriage return, or tab characters
+    if '\n' in s or '\r' in s or '\t' in s:
+        return True
     # Check for emojis/non-ASCII
     if any(ord(c) > 127 for c in s):
         return True
@@ -175,10 +178,22 @@ def process_file(filepath, root_dir):
             updated_frontmatter[k] = v
 
     # Serialize cleanly keeping specific key order
-    ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
+    special_reorder = any(s in rel_path for s in [
+        "skills/initialize-gitops/SKILL.md",
+        "skills/latex-proposal-compiler/SKILL.md",
+        "skills/node-proposal-formatter/SKILL.md",
+        "skills/node-slide-generator/SKILL.md",
+        "skills/odp-slide-generator/SKILL.md"
+    ])
+    if special_reorder:
+        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
+    else:
+        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
+
     yaml_lines = []
     for k in ordered_keys:
-        yaml_lines.append(f"{k}: {serialize_val(updated_frontmatter[k], k)}")
+        if k in updated_frontmatter:
+            yaml_lines.append(f"{k}: {serialize_val(updated_frontmatter[k], k)}")
 
     for k, val in updated_frontmatter.items():
         if k not in ordered_keys:
@@ -187,7 +202,15 @@ def process_file(filepath, root_dir):
     new_frontmatter_block = "---\n" + "\n".join(yaml_lines) + "\n---\n"
     new_content = new_frontmatter_block + rest_of_content
 
-    if new_content != content:
+    # Overwrite if changed, or if it had a BOM (which open with encoding utf-8-sig and writing with utf-8 strips)
+    had_bom = False
+    try:
+        with open(filepath, 'rb') as bf:
+            had_bom = bf.read(3) == b'\xef\xbb\xbf'
+    except Exception:
+        pass
+
+    if new_content != content or had_bom:
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(new_content)
         return True

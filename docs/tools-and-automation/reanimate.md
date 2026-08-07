@@ -5,7 +5,7 @@ title: "🌅 Reanimation Engine (reanimate.sh)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for reanimate.md."
-resource: "file:///tools-and-automation/reanimate.md"
+resource: "file:///docs/tools-and-automation/reanimate.md"
 ---
 # 🌅 Reanimation Engine (reanimate.sh)
 

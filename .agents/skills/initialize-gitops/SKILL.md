@@ -3,8 +3,8 @@ okf_version: 0.1
 type: agent_skill
 title: initialize-gitops
 timestamp: "2026-06-19T14:00:00Z"
-topics: ["gitops", "init", "git", "sovereign", "setup"]
 description: "Establishes the foundational GitOps repository, configures the .gitignore, and commits the Genesis DSOM architecture for a new project."
+topics: ["gitops", "init", "git", "sovereign", "setup"]
 ---
 # 🐙 Initialize GitOps Skill
 

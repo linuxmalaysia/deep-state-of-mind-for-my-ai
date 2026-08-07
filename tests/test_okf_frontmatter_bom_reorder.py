@@ -25,11 +25,25 @@ These tests validate, for every file:
       followed by their original `# ... Palace Update Proposal` heading and
       unchanged body content (e.g. the `**Generated:**` line).
 """
+import os
 import pathlib
 import re
 import unittest
 
 import yaml  # type: ignore
+
+def _discover_all_md_files() -> list[pathlib.Path]:
+    root_dir = REPO_ROOT
+    exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
+    md_files = []
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
+        for filename in filenames:
+            if filename.endswith('.md'):
+                filepath = pathlib.Path(dirpath) / filename
+                if not filepath.is_symlink():
+                    md_files.append(filepath)
+    return md_files
 
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
@@ -206,30 +220,36 @@ class FrontmatterFileExistenceTests(unittest.TestCase):
 
 
 class LeadingBomTests(unittest.TestCase):
-    """Every touched file must NOT begin with a UTF-8 BOM and must start exactly with ---."""
+    """Every markdown file must NOT begin with a UTF-8 BOM and must start exactly with ---."""
 
     def test_files_do_not_start_with_utf8_bom_bytes(self):
-        for relative in ALL_FILES_RELATIVE:
+        all_files = _discover_all_md_files()
+        for filepath in all_files:
+            relative = filepath.relative_to(REPO_ROOT).as_posix()
             with self.subTest(path=relative):
-                raw_bytes = (REPO_ROOT / relative).read_bytes()
+                raw_bytes = filepath.read_bytes()
                 self.assertFalse(
                     raw_bytes.startswith(b"\xef\xbb\xbf"),
                     f"Expected {relative} to NOT start with a UTF-8 BOM",
                 )
 
     def test_files_start_with_frontmatter_fence(self):
-        for relative in ALL_FILES_RELATIVE:
+        all_files = _discover_all_md_files()
+        for filepath in all_files:
+            relative = filepath.relative_to(REPO_ROOT).as_posix()
             with self.subTest(path=relative):
-                raw_text = _read_raw_text(REPO_ROOT / relative)
+                raw_text = filepath.read_text(encoding="utf-8")
                 self.assertTrue(
                     raw_text.startswith("---\n") or raw_text.startswith("---\r\n"),
-                    f"Expected {relative} to start exactly with '---\\n'",
+                    f"Expected {relative} to start exactly with '---\\n' (or '---\\r\\n')",
                 )
 
     def test_bom_does_not_appear_in_file(self):
-        for relative in ALL_FILES_RELATIVE:
+        all_files = _discover_all_md_files()
+        for filepath in all_files:
+            relative = filepath.relative_to(REPO_ROOT).as_posix()
             with self.subTest(path=relative):
-                raw_text = _read_raw_text(REPO_ROOT / relative)
+                raw_text = filepath.read_text(encoding="utf-8")
                 self.assertEqual(raw_text.count(BOM), 0, f"Expected {relative} to contain NO BOM")
 
 
