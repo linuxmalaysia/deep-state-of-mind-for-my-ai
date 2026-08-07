@@ -58,7 +58,7 @@ def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
 REPO_ROOT = _find_repo_root(pathlib.Path(__file__).parent)
 
 BOM = "\ufeff"
-FRONTMATTER_RE = re.compile(r"\A---\s*\r?\n(.*?)\r?\n---\s*(?:\r?\n|\Z)", re.DOTALL)
+FRONTMATTER_RE = re.compile(r"\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)", re.DOTALL)
 
 
 def _read_text_stripping_bom(path: pathlib.Path) -> str:
@@ -535,6 +535,20 @@ class CrlfLineEndingsTests(unittest.TestCase):
         self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match LF content")
         raw_yaml = match.group(1)
         self.assertIn("type: test_doc", raw_yaml)
+
+    def test_crlf_empty_frontmatter(self):
+        crlf_empty = "---\r\n---\r\nSome body text here"
+        match = FRONTMATTER_RE.match(crlf_empty)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match CRLF empty frontmatter")
+        raw_yaml = match.group(1)
+        self.assertEqual(raw_yaml, "")
+
+    def test_lf_empty_frontmatter(self):
+        lf_empty = "---\n---\nSome body text here"
+        match = FRONTMATTER_RE.match(lf_empty)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match LF empty frontmatter")
+        raw_yaml = match.group(1)
+        self.assertEqual(raw_yaml, "")
 
 
 if __name__ == "__main__":

@@ -19,7 +19,15 @@ import json
 import yaml
 from datetime import datetime, timezone
 
-FRONTMATTER_RE = re.compile(r'\A---\s*\r?\n(.*?)\r?\n---\s*(?:\r?\n|\Z)', re.DOTALL)
+FRONTMATTER_RE = re.compile(r'\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)', re.DOTALL)
+
+class CustomLoader(yaml.SafeLoader):
+    pass
+
+CustomLoader.yaml_implicit_resolvers = {
+    key: [r for r in resolvers if r[0] != 'tag:yaml.org,2002:timestamp']
+    for key, resolvers in yaml.SafeLoader.yaml_implicit_resolvers.items()
+}
 
 def get_okf_type(filepath):
     path_parts = filepath.replace('\\', '/').split('/')
@@ -132,7 +140,9 @@ def process_file(filepath, root_dir):
             break
         yaml_block = match.group(1)
         try:
-            parsed = yaml.safe_load(yaml_block)
+            parsed = yaml.load(yaml_block, Loader=CustomLoader)
+            if parsed is None:
+                parsed = {}
             if isinstance(parsed, dict):
                 existing_frontmatter.update(parsed)
                 rest_of_content = rest_of_content[match.end():]
@@ -221,15 +231,24 @@ def process_file(filepath, root_dir):
     new_content = new_frontmatter_block + rest_of_content
 
     if new_content != content or had_bom:
+        import tempfile
         file_dir = os.path.dirname(filepath)
-        temp_filepath = os.path.join(file_dir, f".temp_{filename}")
+        temp_file = None
+        temp_filepath = None
         try:
-            with open(temp_filepath, 'w', encoding='utf-8') as f:
-                f.write(new_content)
+            temp_file = tempfile.NamedTemporaryFile(dir=file_dir, prefix=".temp_", suffix=f"_{filename}", mode='w', encoding='utf-8', delete=False)
+            temp_filepath = temp_file.name
+            temp_file.write(new_content)
+            temp_file.close()
             os.replace(temp_filepath, filepath)
             return True
         except Exception as e:
-            if os.path.exists(temp_filepath):
+            if temp_file is not None:
+                try:
+                    temp_file.close()
+                except Exception:
+                    pass
+            if temp_filepath is not None and os.path.exists(temp_filepath):
                 try:
                     os.remove(temp_filepath)
                 except Exception:
