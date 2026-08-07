@@ -6,33 +6,37 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OKF-compliant documentation for HOWTO-DSOM-ONBOARD.md.">
+        <meta name="description" content="Configures and manages Render.com deployments via native Free Static Site pathways for the compiled DSOM MkDocs site.">
       
       
         <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
       
       
-        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-DSOM-ONBOARD/">
+        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/render-deployment/SKILL/">
       
       
+        <link rel="prev" href="../../github-actions-snyk-scanner/SKILL/">
+      
+      
+        <link rel="next" href="../../../../HOWTO-SETUP-ANSIBLE-BASELINE/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>HOWTO: dsom-onboard — Repository Adoption Engine - Deep State of Mind (DSOM)</title>
+        <title>🚀 Render Deployment Skill - Deep State of Mind (DSOM)</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#howto-dsom-onboard-repository-adoption-engine" class="md-skip">
+        <a href="#render-deployment-skill" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +98,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+    <a href="../../../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HOWTO: dsom-onboard — Repository Adoption Engine
+              🚀 Render Deployment Skill
             
           </span>
         </div>
@@ -240,7 +244,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+    <a href="../../../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -270,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -297,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../START-HERE/" class="md-nav__link">
+      <a href="../../../../START-HERE/" class="md-nav__link">
         
   
   
@@ -324,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SECURITY/" class="md-nav__link">
+      <a href="../../../../SECURITY/" class="md-nav__link">
         
   
   
@@ -400,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
+      <a href="../../../../governance/AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
         
   
   
@@ -428,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
+      <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -456,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
+      <a href="../../../../governance/DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
         
   
   
@@ -484,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../../../governance/DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -512,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
+      <a href="../../../../governance/GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
         
   
   
@@ -540,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/OPERATIONAL-GUIDE/" class="md-nav__link">
+      <a href="../../../../governance/OPERATIONAL-GUIDE/" class="md-nav__link">
         
   
   
@@ -568,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
+      <a href="../../../../governance/NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
         
   
   
@@ -596,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
+      <a href="../../../../governance/PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
         
   
   
@@ -624,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/AUTOMATION-AUDIT-LIST/" class="md-nav__link">
+      <a href="../../../../governance/AUTOMATION-AUDIT-LIST/" class="md-nav__link">
         
   
   
@@ -652,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
+      <a href="../../../../governance/DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
         
   
   
@@ -680,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
+      <a href="../../../../governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
         
   
   
@@ -708,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../../../governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -736,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
+      <a href="../../../../governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
         
   
   
@@ -764,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/ZERO-GLOBAL-MEMORY/" class="md-nav__link">
+      <a href="../../../../governance/ZERO-GLOBAL-MEMORY/" class="md-nav__link">
         
   
   
@@ -792,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/LLM-WIKI-ADOPTION/" class="md-nav__link">
+      <a href="../../../../governance/LLM-WIKI-ADOPTION/" class="md-nav__link">
         
   
   
@@ -820,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
+      <a href="../../../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -848,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
+      <a href="../../../../governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
         
   
   
@@ -876,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
+      <a href="../../../../governance/GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
         
   
   
@@ -904,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../RITUAL-OF-TRANSITION/" class="md-nav__link">
+      <a href="../../../../RITUAL-OF-TRANSITION/" class="md-nav__link">
         
   
   
@@ -932,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PERSONALIZATION/" class="md-nav__link">
+      <a href="../../../../PERSONALIZATION/" class="md-nav__link">
         
   
   
@@ -1016,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/brain/task/" class="md-nav__link">
+      <a href="../../../brain/task/" class="md-nav__link">
         
   
   
@@ -1044,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/brain/implementation_plan/" class="md-nav__link">
+      <a href="../../../brain/implementation_plan/" class="md-nav__link">
         
   
   
@@ -1072,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/brain/walkthrough/" class="md-nav__link">
+      <a href="../../../brain/walkthrough/" class="md-nav__link">
         
   
   
@@ -1156,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
+      <a href="../../../../governance/AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -1184,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../REANIMATION-PROMPT-TEMPLATE/" class="md-nav__link">
+      <a href="../../../../REANIMATION-PROMPT-TEMPLATE/" class="md-nav__link">
         
   
   
@@ -1212,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DSOM-EPISODIC-RECORD-TEMPLATE/" class="md-nav__link">
+      <a href="../../../../DSOM-EPISODIC-RECORD-TEMPLATE/" class="md-nav__link">
         
   
   
@@ -1240,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
+      <a href="../../../../governance/MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -1268,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../HOWTO-CREATE-DSOM-GEMINI-GEM/" class="md-nav__link">
+      <a href="../../../../HOWTO-CREATE-DSOM-GEMINI-GEM/" class="md-nav__link">
         
   
   
@@ -1296,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CLAUDE-SETUP/" class="md-nav__link">
+      <a href="../../../../CLAUDE-SETUP/" class="md-nav__link">
         
   
   
@@ -1324,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../model-specifics/dsom-claude-initialiser/" class="md-nav__link">
+      <a href="../../../../model-specifics/dsom-claude-initialiser/" class="md-nav__link">
         
   
   
@@ -1352,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../COPILOT-SETUP/" class="md-nav__link">
+      <a href="../../../../COPILOT-SETUP/" class="md-nav__link">
         
   
   
@@ -1384,20 +1388,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1418,7 +1422,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1436,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/" class="md-nav__link">
+      <a href="../../../workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/" class="md-nav__link">
         
   
   
@@ -1464,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/eod-palace-sync/SKILL/" class="md-nav__link">
+      <a href="../../eod-palace-sync/SKILL/" class="md-nav__link">
         
   
   
@@ -1492,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/sod-palace-sync/SKILL/" class="md-nav__link">
+      <a href="../../sod-palace-sync/SKILL/" class="md-nav__link">
         
   
   
@@ -1520,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/dsom-token-calculator/SKILL/" class="md-nav__link">
+      <a href="../../dsom-token-calculator/SKILL/" class="md-nav__link">
         
   
   
@@ -1548,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL/" class="md-nav__link">
+      <a href="../../dsom-knowledge-ingester/SKILL/" class="md-nav__link">
         
   
   
@@ -1576,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/publish-to-blogger/SKILL/" class="md-nav__link">
+      <a href="../../publish-to-blogger/SKILL/" class="md-nav__link">
         
   
   
@@ -1604,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/git-commit-resolver/SKILL/" class="md-nav__link">
+      <a href="../../git-commit-resolver/SKILL/" class="md-nav__link">
         
   
   
@@ -1632,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/git-history-scrubber/SKILL/" class="md-nav__link">
+      <a href="../../git-history-scrubber/SKILL/" class="md-nav__link">
         
   
   
@@ -1660,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/initialize-gitops/SKILL/" class="md-nav__link">
+      <a href="../../initialize-gitops/SKILL/" class="md-nav__link">
         
   
   
@@ -1688,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/forensic-log-audit/SKILL/" class="md-nav__link">
+      <a href="../../forensic-log-audit/SKILL/" class="md-nav__link">
         
   
   
@@ -1716,7 +1720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL/" class="md-nav__link">
+      <a href="../../ssh-passwordless-setup/SKILL/" class="md-nav__link">
         
   
   
@@ -1744,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL/" class="md-nav__link">
+      <a href="../../github-actions-snyk-scanner/SKILL/" class="md-nav__link">
         
   
   
@@ -1769,10 +1773,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../.agents/skills/render-deployment/SKILL/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Render Deployment Skill
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1788,6 +1819,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-this-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use this skill
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational-standards-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Standards &amp; Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operational Standards &amp; Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-render-blueprint-pathway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Render Blueprint Pathway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-manual-dashboard-deployment-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manual Dashboard Deployment Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automatic-trigger-on-markdown-file-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automatic Trigger on Markdown File Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1856,7 +1968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../HOWTO-SETUP-ANSIBLE-BASELINE/" class="md-nav__link">
+      <a href="../../../../HOWTO-SETUP-ANSIBLE-BASELINE/" class="md-nav__link">
         
   
   
@@ -1884,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../HOWTO-SETUP-WSL-ALMALINUX10/" class="md-nav__link">
+      <a href="../../../../HOWTO-SETUP-WSL-ALMALINUX10/" class="md-nav__link">
         
   
   
@@ -1968,7 +2080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbooks/dsom/site.yml" class="md-nav__link">
+      <a href="../../../../playbooks/dsom/site.yml" class="md-nav__link">
         
   
   
@@ -1996,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
+      <a href="../../../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
         
   
   
@@ -2024,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbooks/dsom/init-brain.yml" class="md-nav__link">
+      <a href="../../../../playbooks/dsom/init-brain.yml" class="md-nav__link">
         
   
   
@@ -2052,7 +2164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
+      <a href="../../../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
         
   
   
@@ -2136,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
+      <a href="../../../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
         
   
   
@@ -2164,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-automation/init-brain/" class="md-nav__link">
+      <a href="../../../../tools-and-automation/init-brain/" class="md-nav__link">
         
   
   
@@ -2192,7 +2304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-automation/reanimate/" class="md-nav__link">
+      <a href="../../../../tools-and-automation/reanimate/" class="md-nav__link">
         
   
   
@@ -2220,7 +2332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-automation/hibernation/" class="md-nav__link">
+      <a href="../../../../tools-and-automation/hibernation/" class="md-nav__link">
         
   
   
@@ -2248,7 +2360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-automation/privacy-guardian/" class="md-nav__link">
+      <a href="../../../../tools-and-automation/privacy-guardian/" class="md-nav__link">
         
   
   
@@ -2276,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-automation/template-reset/" class="md-nav__link">
+      <a href="../../../../tools-and-automation/template-reset/" class="md-nav__link">
         
   
   
@@ -2324,6 +2436,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-this-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use this skill
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational-standards-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Standards &amp; Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operational Standards &amp; Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-render-blueprint-pathway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Render Blueprint Pathway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-manual-dashboard-deployment-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manual Dashboard Deployment Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automatic-trigger-on-markdown-file-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automatic Trigger on Markdown File Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2342,112 +2523,32 @@
   
 
 
-<h1 id="howto-dsom-onboard-repository-adoption-engine">HOWTO: dsom-onboard — Repository Adoption Engine</h1>
-<h1 id="docstoolshowto-dsom-onboardmd">docs/tools/HOWTO-DSOM-ONBOARD.md</h1>
-<blockquote>
-<p><strong>Standard: DSOM For My AI Protocol v6.1 | External Adoption</strong>
-<strong>Tools:</strong> <code>dsom-onboard.ps1</code>, <code>dsom-onboard.sh</code>, <code>onboard-dsom.yml</code>
-<strong>Platforms:</strong> Windows Native (T1), Linux/WSL2 (T2)</p>
-</blockquote>
+<h1 id="render-deployment-skill">🚀 Render Deployment Skill</h1>
+<p>This skill governs the blueprint specifications, build triggers, and configurations required to deploy the Deep State of Mind (DSOM) documentation static site reliably on Render.com.</p>
+<h2 id="when-to-use-this-skill">When to use this skill</h2>
+<ul>
+<li>When editing the Render deployment blueprint configuration (<code>render.yaml</code>).</li>
+<li>When configuring deployment commands on the Render dashboard.</li>
+<li>When diagnosing or documenting deployment pipelines for Render.com.</li>
+<li>When ensuring that any adding, changing, or deleting of markdown files correctly triggers a static site rebuild.</li>
+</ul>
+<h2 id="operational-standards-procedures">Operational Standards &amp; Procedures</h2>
+<h3 id="1-render-blueprint-pathway">1. Render Blueprint Pathway</h3>
+<p>The repository is configured for deployment to Render.com via a root-level <code>render.yaml</code> Blueprint Specification supporting:
+- <strong>Native Free Static Site</strong>: A native free Static Site service (<code>deep-state-of-mind-static</code>) configured to run <code>pip install -r docs/requirements.txt &amp;&amp; mkdocs build</code> and publish the <code>site</code> directory.</p>
+<h3 id="2-manual-dashboard-deployment-constraints">2. Manual Dashboard Deployment Constraints</h3>
+<p>To prevent build failures during manual dashboard deployments on Render, or when setting up the service manually:
+- Set the <strong>Build Command</strong> to <code>pip install -r docs/requirements.txt &amp;&amp; mkdocs build</code>.
+- Set the <strong>Publish Directory</strong> to <code>site</code>.
+- These settings prevent "Publish directory site/ does not exist!" failures.</p>
+<h3 id="3-automatic-trigger-on-markdown-file-changes">3. Automatic Trigger on Markdown File Changes</h3>
+<ul>
+<li>Render.com is natively integrated with the GitHub/GitLab repository.</li>
+<li>Any addition, update, or deletion of <code>.md</code> files committed and pushed to the <code>main</code> branch automatically triggers a webhook that starts a new static site deployment on Render.</li>
+<li>No manual action is required; the Git-triggered pipeline handles the compilation of markdown files to static HTML seamlessly.</li>
+</ul>
 <hr />
-<h2 id="1-purpose">1. Purpose</h2>
-<p><code>dsom-onboard</code> is the <strong>Architectural Grafting Tool</strong>. It allows you to take any existing Git repository and "Onboard" it into the Deep State of Mind framework. It automates the complex process of injecting the <code>.agents/brain/</code>, <code>playbooks/dsom/</code>, and <code>tools/</code> ecosystems into a foreign project without causing file collisions or git history corruption.</p>
-<p><strong>Use it to:</strong>
-- Convert a normal project into a DSOM-compliant repository.
-- Safe-import the DSOM orchestration fleet into a brand new project.
-- Ensure "Zero-Debt" adoption by utilizing temporary Git branch isolation.
-- Automatically merge core governance docs (Identity, Master Protocol, etc.) into the target.</p>
-<p><strong>Location:</strong> 
-- <code>tools/dsom-onboard.ps1</code> (Windows)
-- <code>tools/dsom-onboard.sh</code> (Linux/WSL2)
-- <code>playbooks/dsom/onboard-dsom.yml</code> (Ansible)</p>
-<hr />
-<h2 id="2-prerequisites">2. Prerequisites</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Requirement</th>
-<th style="text-align: left;">Minimum</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Git</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">Repository must be initialized.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Ansible</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">Required for the file-matching and merging backend.</td>
-</tr>
-<tr>
-<td style="text-align: left;">WSL2</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">Required for Windows execution (proxies via <code>wsl</code>).</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="3-usage">3. Usage</h2>
-<h3 id="31-bootstrap-execution">3.1 Bootstrap Execution</h3>
-<p>You do NOT need to manually download the DSOM repository to use this. You only need the bootstrap script:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Windows (T1)</span>
-<span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">dsom-onboard</span><span class="p">.</span><span class="n">ps1</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># WSL2 / Linux (T2)</span>
-bash<span class="w"> </span>tools/dsom-onboard.sh
-</code></pre></div>
-<hr />
-<h2 id="4-operation-workflow-the-4-steps">4. Operation Workflow (The 4 Steps)</h2>
-<p>The tool performs a non-destructive multi-phase integration:</p>
-<ol>
-<li><strong>Dependency Check:</strong> Verifies Git, WSL, and Ansible are present.</li>
-<li><strong>Branch Isolation:</strong> Creates a new branch (e.g., <code>dsom-onboarding-YYYY-MM-DD</code>). </li>
-<li><strong>Payload Download:</strong> Fetches the latest <code>onboard-dsom.yml</code> directly from the main DSOM GitHub.</li>
-<li><strong>Ansible Fusion:</strong> Executes the playbook to physically copy and rename files into your target repo.</li>
-</ol>
-<hr />
-<h2 id="5-collision-handling">5. Collision Handling</h2>
-<blockquote>
-<p>[!NOTE]<br />
-If your target repository already has a file with the same name as a DSOM file (e.g., <code>README.md</code>), the tool <strong>will not overwrite it</strong>. Instead, it renames the incoming DSOM file to include the today's timestamp so you can manually reconcile the contents.</p>
-</blockquote>
-<hr />
-<h2 id="6-finalizing-the-adoption">6. Finalizing the Adoption</h2>
-<p>After the script finishes, you must perform the following Git manual steps:</p>
-<ol>
-<li>Review the changes using <code>git status</code>.</li>
-<li>Commit the incoming framework: <code>git add . &amp;&amp; git commit -m 'chore(dsom): onboard framework architecture'</code>.</li>
-<li>Merge the onboarding branch into your <code>main</code> branch.</li>
-<li>Run <code>init-brain</code> to finalize the cognitive infrastructure.</li>
-</ol>
-<hr />
-<h2 id="7-related-documents">7. Related Documents</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Document</th>
-<th style="text-align: left;">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a href="../../HOWTO-DSOM-ONBOARDING/"><code>docs/HOWTO-DSOM-ONBOARDING.md</code></a></td>
-<td style="text-align: left;">High-level procedural guide for humans.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="../HOWTO-INIT-BRAIN/"><code>HOWTO-INIT-BRAIN.md</code></a></td>
-<td style="text-align: left;">The next tool to run after a successful onboard.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><em>Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia</em>
-<em>Document Version: v1.0 | Created: 2026-04-08</em></p>
-<hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-06</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
@@ -2501,10 +2602,10 @@ If your target repository already has a file with the same name as a DSOM file (
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
