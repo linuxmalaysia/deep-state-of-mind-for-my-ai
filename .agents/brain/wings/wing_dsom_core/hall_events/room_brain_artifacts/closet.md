@@ -1,9 +1,9 @@
-﻿---
+---
 okf_version: 0.1
 type: history_log
 title: Brain Artifacts History
-timestamp: '2026-06-19T14:00:00Z'
-topics: [dsom, documentation]
+timestamp: "2026-06-19T14:00:00Z"
+topics: ["dsom", "documentation"]
 description: Distilled knowledge for Brain Artifacts History
 ---
 # 🚪 Closet: Room Brain Artifacts (The Living Memory)

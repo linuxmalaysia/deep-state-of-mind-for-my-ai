@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
-title: The Core AI Rulebook (DSOM)
-timestamp: '2026-08-05T21:59:00Z'
-topics: [dsom, documentation]
-description: OKF-compliant documentation for AGENTS.md.
-resource: file:///.agents/AGENTS.md
+title: "The Core AI Rulebook (DSOM)"
+timestamp: "2026-08-05T21:59:00Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for AGENTS.md."
+resource: "file:///.agents/AGENTS.md"
 ---
 # The Core AI Rulebook (DSOM)
 
@@ -15,7 +15,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 
 ## Core Rules:
 1. **Zero-Global / Spatial Memory:** Your memory lives in `.agents/brain`. Never forget to synchronize context using `palace_registry.md`.
-2. **Open Knowledge Format (OKF):** All knowledge documents (`closet.md` and `SKILL.md`) must be OKF v0.1 compliant (contain YAML frontmatter).
+2. **Open Knowledge Format (OKF) & GitHub Compatibility:** All knowledge documents (`closet.md` and `SKILL.md`) must be OKF v0.1 compliant (containing YAML frontmatter). The frontmatter block MUST start on line 1, column 1 with `---` and end with `---` without a leading Byte Order Mark (BOM) to ensure clean parsing in GitHub web view. All string values containing emojis, colons, brackets, or other special characters MUST be wrapped in double quotes (e.g., title: "🧠 Deep State of Mind (DSOM)"). Array formats (topics: ["dsom", "documentation"]) and timestamps MUST be preserved intact.
 3. **Agent Skills:** Use `.agents/skills` for all procedural workflows. Skills must be self-healing and embed their own executable scripts.
 4. **Git Sovereignty & Atomic Commits:** Every major action must be committed to Git. Avoid silent execution. **Crucially, the AI is strictly forbidden from executing monolithic blanket commits (e.g., `git commit -am` or dumping all unrelated files into one commit). The AI must stage and commit files granularly, grouping them by logical task boundaries and using discrete semantic commit messages for each logical unit.**
 5. **Worktree Isolation:** Subagents must be instantiated within their own isolated Git branches to prevent Silent Subagent Merge Conflicts. Merge back to `main` only via consensus.

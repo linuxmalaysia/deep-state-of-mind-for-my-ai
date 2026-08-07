@@ -1,9 +1,9 @@
-﻿---
+---
 okf_version: 0.1
 type: tooling_registry
 title: Tooling Registry
-timestamp: '2026-06-19T14:00:00Z'
-topics: [dsom, documentation]
+timestamp: "2026-06-19T14:00:00Z"
+topics: ["dsom", "documentation"]
 description: Distilled knowledge for Tooling Registry
 ---
 # 🚪 Closet: Room Tooling (The Workshop)

@@ -5,25 +5,16 @@ of `.agents/` brain documents by this PR.
 This PR makes two related changes across a large batch of Markdown files
 under `.agents/`:
 
-1. **UTF-8 BOM prefix.** Every listed file's leading `---` frontmatter
-   fence now begins with a UTF-8 byte-order-mark (``\\xef\\xbb\\xbf`` /
-   ``\\ufeff``), e.g. ``---`` becomes ``\ufeff---``. Some
-   `palace_update_proposal_*.md` files already carried a leading BOM before
-   a bare `# ...` heading (no frontmatter at all); for those files the BOM
-   now instead prefixes a newly-added frontmatter block.
+1. **No UTF-8 BOM.** Every listed file has had any leading UTF-8 BOM removed so that
+   the frontmatter starts exactly on line 1, column 1 with `---`. This fixes broken front
+   matter parsing in GitHub web view.
 2. **Field reordering / addition.** For files that already had OKF
-   frontmatter, the `timestamp` and `topics` fields were moved so that they
-   appear immediately after `title` and *before* `description`/`resource`
-   (previously `timestamp` was the last field, after `description` and
-   `resource`). For files that had no frontmatter at all
-   (`palace_update_proposal_2026-07-17_0713.md` and six siblings), a new,
-   minimal frontmatter block (`okf_version`, `type`, `title`, `timestamp`,
-   `topics`) was prepended, with no `description`/`resource` fields.
+   frontmatter, the `timestamp` and `topics` fields appear immediately after `title`
+   and *before* `description`/`resource`.
 
-These tests validate, for every file this PR touched:
+These tests validate, for every file:
     * the file exists and is non-empty;
-    * it begins with a UTF-8 BOM immediately followed by the frontmatter
-      fence;
+    * it begins exactly with `---` (no BOM);
     * the frontmatter block parses as valid YAML and is a mapping;
     * the mandatory OKF fields (`okf_version`, `type`, `title`, `timestamp`,
       `topics`) are present with the expected values;
@@ -215,40 +206,31 @@ class FrontmatterFileExistenceTests(unittest.TestCase):
 
 
 class LeadingBomTests(unittest.TestCase):
-    """Every touched file must begin with a UTF-8 BOM immediately before ---."""
+    """Every touched file must NOT begin with a UTF-8 BOM and must start exactly with ---."""
 
-    def test_files_start_with_utf8_bom_bytes(self):
+    def test_files_do_not_start_with_utf8_bom_bytes(self):
         for relative in ALL_FILES_RELATIVE:
             with self.subTest(path=relative):
                 raw_bytes = (REPO_ROOT / relative).read_bytes()
-                self.assertTrue(
+                self.assertFalse(
                     raw_bytes.startswith(b"\xef\xbb\xbf"),
-                    f"Expected {relative} to start with a UTF-8 BOM",
+                    f"Expected {relative} to NOT start with a UTF-8 BOM",
                 )
 
-    def test_files_start_with_bom_then_frontmatter_fence(self):
+    def test_files_start_with_frontmatter_fence(self):
         for relative in ALL_FILES_RELATIVE:
             with self.subTest(path=relative):
                 raw_text = _read_raw_text(REPO_ROOT / relative)
                 self.assertTrue(
-                    raw_text.startswith(BOM + "---\n"),
-                    f"Expected {relative} to start with BOM + '---\\n'",
+                    raw_text.startswith("---\n") or raw_text.startswith("---\r\n"),
+                    f"Expected {relative} to start exactly with '---\\n'",
                 )
 
-    def test_bom_stripping_yields_bare_frontmatter_fence(self):
-        for relative in ALL_FILES_RELATIVE:
-            with self.subTest(path=relative):
-                content = _read_text_stripping_bom(REPO_ROOT / relative)
-                self.assertTrue(content.startswith("---\n"))
-                self.assertFalse(content.startswith(BOM))
-
-    def test_bom_appears_exactly_once_per_file(self):
-        # Regression guard: the BOM must only be the encoding marker at the
-        # very start of the file, not duplicated or reintroduced mid-file.
+    def test_bom_does_not_appear_in_file(self):
         for relative in ALL_FILES_RELATIVE:
             with self.subTest(path=relative):
                 raw_text = _read_raw_text(REPO_ROOT / relative)
-                self.assertEqual(raw_text.count(BOM), 1)
+                self.assertEqual(raw_text.count(BOM), 0, f"Expected {relative} to contain NO BOM")
 
 
 class FrontmatterParsesAsValidYamlTests(unittest.TestCase):

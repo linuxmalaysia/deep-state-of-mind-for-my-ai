@@ -15,6 +15,7 @@ with the required fields (okf_version, type, title, timestamp, topics).
 import os
 import re
 import argparse
+import json
 import yaml
 from datetime import datetime, timezone
 
@@ -53,9 +54,36 @@ def get_default_topics(okf_type):
     }
     return mapping.get(okf_type, ['dsom', 'documentation'])
 
+def needs_double_quotes(s):
+    if not isinstance(s, str):
+        return False
+    # Check for emojis/non-ASCII
+    if any(ord(c) > 127 for c in s):
+        return True
+    # Check for colons, brackets, parentheses, or other special characters
+    if re.search(r'[^a-zA-Z0-9_\-\s]', s):
+        return True
+    return False
+
 def serialize_val(val, key):
-    # PyYAML safe_dump formats lists as inline arrays with default_flow_style=True
-    # and serializes strings, dates, and other scalars natively and safely.
+    # Format lists as inline arrays with double-quoted strings
+    if isinstance(val, list):
+        formatted_elements = []
+        for item in val:
+            if isinstance(item, str):
+                formatted_elements.append(json.dumps(item, ensure_ascii=False))
+            else:
+                formatted_elements.append(str(item))
+        return "[" + ", ".join(formatted_elements) + "]"
+
+    # Format strings, quoting if they contain emojis/special characters
+    if isinstance(val, str):
+        if needs_double_quotes(val):
+            return json.dumps(val, ensure_ascii=False)
+        else:
+            return val
+
+    # Fallback to safe_dump for other types (e.g. ints, floats)
     dumped = yaml.safe_dump(val, default_flow_style=True, allow_unicode=True).strip()
     if dumped.endswith('\n...'):
         dumped = dumped[:-4]
@@ -160,7 +188,7 @@ def process_file(filepath, root_dir):
     new_content = new_frontmatter_block + rest_of_content
 
     if new_content != content:
-        with open(filepath, 'w', encoding='utf-8-sig') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(new_content)
         return True
     return False

@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
-title: GitHub Copilot Instructions (DSOM Template)
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, documentation]
-description: OKF-compliant documentation for copilot_instructions_template.md.
-resource: file:///docs/agent-configs/copilot_instructions_template.md
+title: "GitHub Copilot Instructions (DSOM Template)"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for copilot_instructions_template.md."
+resource: "file:///docs/agent-configs/copilot_instructions_template.md"
 ---
 # GitHub Copilot Instructions (DSOM Template)
 

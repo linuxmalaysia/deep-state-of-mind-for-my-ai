@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: automation_tool
-title: 'HOWTO: privacy-guardian — Data Masking Defense'
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, automation, tool]
-description: OKF-compliant documentation for HOWTO-PRIVACY-GUARDIAN.md.
-resource: file:///docs/tools/HOWTO-PRIVACY-GUARDIAN.md
+title: "HOWTO: privacy-guardian — Data Masking Defense"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "automation", "tool"]
+description: "OKF-compliant documentation for HOWTO-PRIVACY-GUARDIAN.md."
+resource: "file:///docs/tools/HOWTO-PRIVACY-GUARDIAN.md"
 ---
 # HOWTO: privacy-guardian — Data Masking Defense
 

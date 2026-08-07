@@ -3,18 +3,18 @@
 # ==============================================================================
 # Protocol    : Deep State of Mind (DSOM) For My AI
 # Author      : Harisfazillah Jamel (LinuxMalaysia)
-# Timestamp   : 2026-08-05
+# Timestamp   : 2026-08-07
 # License     : GNU General Public License v3.0
 # Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
 # ==============================================================================
 """
-OKF Frontmatter Compliance Script.
-Scans a target directory and ensures all .md files use OKF v0.1 YAML frontmatter
-with the required fields (okf_version, type, title, timestamp, topics).
+OKF Frontmatter Refactoring Script.
+Scans the entire repository and rewrites all .md files with OKF compliant
+frontmatter written in UTF-8 without a BOM, ensuring strings with emojis,
+colons, brackets, or other special characters are double-quoted.
 """
 import os
 import re
-import argparse
 import json
 import yaml
 from datetime import datetime, timezone
@@ -39,7 +39,6 @@ def extract_title(content, filename):
     match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
     if match:
         return match.group(1).strip()
-    # Format filename cleanly if H1 isn't found
     name_without_ext = os.path.splitext(filename)[0]
     return name_without_ext.replace('_', ' ').replace('-', ' ').title()
 
@@ -187,39 +186,40 @@ def process_file(filepath, root_dir):
     new_frontmatter_block = "---\n" + "\n".join(yaml_lines) + "\n---\n"
     new_content = new_frontmatter_block + rest_of_content
 
-    if new_content != content:
+    # Overwrite if changed, or if it had a BOM (which open with encoding utf-8-sig and writing with utf-8 strips)
+    # Check if the file raw bytes started with BOM
+    had_bom = False
+    try:
+        with open(filepath, 'rb') as bf:
+            had_bom = bf.read(3) == b'\xef\xbb\xbf'
+    except Exception:
+        pass
+
+    if new_content != content or had_bom:
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(new_content)
         return True
     return False
 
 def main():
-    parser = argparse.ArgumentParser(description="Ensure OKF v0.1 compliance on all Markdown files.")
-    parser.add_argument("directory", nargs="?", default=".", help="Root directory to scan (default: '.')")
-    args = parser.parse_args()
-
-    root_dir = os.path.abspath(args.directory)
+    root_dir = os.path.abspath(".")
     modified_count = 0
     total_count = 0
 
-    # Exclude list for directories we should not modify/add frontmatter to
     exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
-    
+
     for dirpath, dirnames, filenames in os.walk(root_dir):
-        # Prune excluded directories in place
         dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
-        
+
         for filename in filenames:
             if not filename.endswith('.md'):
                 continue
 
             filepath = os.path.join(dirpath, filename)
 
-            # Reject symlinks
             if os.path.islink(filepath):
                 continue
-                
-            # Verify resolved path remains within the resolved root_dir
+
             try:
                 real_root = os.path.realpath(root_dir)
                 real_filepath = os.path.realpath(filepath)
@@ -231,11 +231,11 @@ def main():
             total_count += 1
             if process_file(filepath, root_dir):
                 rel = os.path.relpath(filepath, root_dir).replace('\\', '/')
-                print(f"Standardised/Injected OKF: {rel}")
+                print(f"Refactored OKF: {rel}")
                 modified_count += 1
 
-    print(f"\nScan complete. Total markdown files checked: {total_count}")
-    print(f"Total files modified to be OKF-compliant: {modified_count}")
+    print(f"\nRefactor complete. Total markdown files checked: {total_count}")
+    print(f"Total files modified/rewritten: {modified_count}")
 
 if __name__ == "__main__":
     main()

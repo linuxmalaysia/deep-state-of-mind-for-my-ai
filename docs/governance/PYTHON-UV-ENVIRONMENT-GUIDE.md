@@ -1,12 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
 title: Python uv Environment Guide
-timestamp: '2026-07-12T07:50:00Z'
-topics: [dsom, documentation]
-description: Governance policy and operational standard for managing isolated Python environments
-  using the uv package manager within the DSOM framework.
-resource: file:///docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
+timestamp: "2026-07-12T07:50:00Z"
+topics: ["dsom", "documentation"]
+description: "Governance policy and operational standard for managing isolated Python environments using the uv package manager within the DSOM framework."
+resource: "file:///docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md"
 ---
 # Python `uv` Environment Setup Guide
 

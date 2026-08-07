@@ -2,12 +2,11 @@
 okf_version: 0.1
 type: agent_skill
 title: "🚀 Render Deployment Skill"
+timestamp: "2026-08-06T12:00:00Z"
+topics: ["render", "deployment", "static-site", "blueprint", "mkdocs"]
 name: render-deployment
 description: "Configures and manages Render.com deployments via native Free Static Site pathways for the compiled DSOM MkDocs site."
-timestamp: "2026-08-06T12:00:00Z"
-topics: [render, deployment, static-site, blueprint, mkdocs]
 ---
-
 # 🚀 Render Deployment Skill
 
 This skill governs the blueprint specifications, build triggers, and configurations required to deploy the Deep State of Mind (DSOM) documentation static site reliably on Render.com.
