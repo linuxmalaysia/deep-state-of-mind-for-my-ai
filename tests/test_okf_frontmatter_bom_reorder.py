@@ -35,7 +35,6 @@ import yaml  # type: ignore
 def _discover_all_md_files() -> list[pathlib.Path]:
     root_dir = REPO_ROOT
     exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv'}
-    exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
     md_files = []
     for dirpath, dirnames, filenames in os.walk(root_dir):
         dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
@@ -242,9 +241,6 @@ class LeadingBomTests(unittest.TestCase):
                 raw_text = filepath.read_text(encoding="utf-8", errors="replace")
                 self.assertTrue(
                     raw_text.startswith(("---\n", "---\r\n")),
-                raw_text = filepath.read_text(encoding="utf-8")
-                self.assertTrue(
-                    raw_text.startswith("---\n") or raw_text.startswith("---\r\n"),
                     f"Expected {relative} to start exactly with '---\\n' (or '---\\r\\n')",
                 )
 

@@ -5,7 +5,6 @@ title: "🧠 Brain Initializer (init-brain.sh)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for init-brain.md."
-resource: "file:///docs/tools-and-automation/init-brain.md"
 resource: "file:///tools-and-automation/init-brain.md"
 ---
 # 🧠 Brain Initializer (init-brain.sh)

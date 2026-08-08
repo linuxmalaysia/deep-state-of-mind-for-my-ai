@@ -1,3 +1,2 @@
 # Requirements for compiling the DSOM documentation on Read the Docs
-mkdocs==1.6.0
-mkdocs-material==9.5.34
+mkdocs-material

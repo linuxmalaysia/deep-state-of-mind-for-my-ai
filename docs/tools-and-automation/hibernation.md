@@ -5,7 +5,6 @@ title: "🌙 Hibernation Sequence (hibernation.sh)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for hibernation.md."
-resource: "file:///docs/tools-and-automation/hibernation.md"
 resource: "file:///tools-and-automation/hibernation.md"
 ---
 # 🌙 Hibernation Sequence (hibernation.sh)

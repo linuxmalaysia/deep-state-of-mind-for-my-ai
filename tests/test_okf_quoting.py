@@ -8,7 +8,6 @@ This PR updates `tools/apply_okf_frontmatter.py` (and its mirror in
    (e.g. emoji) or "special" characters (colons, brackets, parentheses, etc.)
    as requiring double-quoting in the emitted YAML frontmatter.
 2. `serialise_val()` renders list values as inline JSON-style arrays with
-2. `serialize_val()` renders list values as inline JSON-style arrays with
    every string element double-quoted (e.g. `["dsom", "documentation"]`),
    and renders scalar string values either bare or double-quoted depending
    on `needs_double_quotes()`.
@@ -43,8 +42,6 @@ class NeedsDoubleQuotesTests(unittest.TestCase):
 
     def test_empty_string_needs_quotes(self):
         self.assertTrue(needs_double_quotes(""))
-    def test_empty_string_does_not_need_quotes(self):
-        self.assertFalse(needs_double_quotes(""))
 
     def test_string_with_emoji_needs_quotes(self):
         self.assertTrue(needs_double_quotes("🧠 Deep State of Mind (DSOM)"))
@@ -91,8 +88,8 @@ class SerializeValListTests(unittest.TestCase):
         self.assertEqual(result, '["dsom"]')
 
     def test_list_with_special_characters_is_still_double_quoted(self):
-        result = serialise_val(["git", "commit", "history"], "topics")
-        self.assertEqual(result, '["git", "commit", "history"]')
+        result = serialise_val(["git", "commit", "his:tory"], "topics")
+        self.assertEqual(result, '["git", "commit", "his:tory"]')
 
     def test_list_result_is_valid_yaml_flow_sequence(self):
         result = serialise_val(["render", "deployment", "static-site"], "topics")
@@ -105,32 +102,6 @@ class SerializeValListTests(unittest.TestCase):
 
     def test_list_string_element_containing_double_quote_is_escaped(self):
         result = serialise_val(['say "hi"'], "topics")
-        result = serialize_val(["dsom", "documentation"], "topics")
-        self.assertEqual(result, '["dsom", "documentation"]')
-
-    def test_empty_list_renders_as_empty_brackets(self):
-        result = serialize_val([], "topics")
-        self.assertEqual(result, "[]")
-
-    def test_single_element_list(self):
-        result = serialize_val(["dsom"], "topics")
-        self.assertEqual(result, '["dsom"]')
-
-    def test_list_with_special_characters_is_still_double_quoted(self):
-        result = serialize_val(["git", "commit", "history"], "topics")
-        self.assertEqual(result, '["git", "commit", "history"]')
-
-    def test_list_result_is_valid_yaml_flow_sequence(self):
-        result = serialize_val(["render", "deployment", "static-site"], "topics")
-        parsed = yaml.safe_load(result)
-        self.assertEqual(parsed, ["render", "deployment", "static-site"])
-
-    def test_list_with_non_string_items_uses_str_conversion(self):
-        result = serialize_val([1, 2, 3], "some_numeric_list")
-        self.assertEqual(result, "[1, 2, 3]")
-
-    def test_list_string_element_containing_double_quote_is_escaped(self):
-        result = serialize_val(['say "hi"'], "topics")
         # json.dumps must escape the embedded double quote so the overall
         # YAML flow sequence remains parseable.
         parsed = yaml.safe_load(result)
@@ -144,11 +115,6 @@ class SerializeValStringTests(unittest.TestCase):
 
     def test_string_with_emoji_is_double_quoted(self):
         result = serialise_val("🧠 DSOM Session Log: [Insert Date/Task Name]", "title")
-        result = serialize_val("documentation", "type")
-        self.assertEqual(result, "documentation")
-
-    def test_string_with_emoji_is_double_quoted(self):
-        result = serialize_val("🧠 DSOM Session Log: [Insert Date/Task Name]", "title")
         self.assertEqual(result, json.dumps("🧠 DSOM Session Log: [Insert Date/Task Name]", ensure_ascii=False))
         self.assertTrue(result.startswith('"') and result.endswith('"'))
 
@@ -156,7 +122,6 @@ class SerializeValStringTests(unittest.TestCase):
         # Timestamps contain colons, so they always require quoting to avoid
         # ambiguity with YAML's own colon-based key/value syntax.
         result = serialise_val("2026-08-05T21:59:00Z", "timestamp")
-        result = serialize_val("2026-08-05T21:59:00Z", "timestamp")
         self.assertEqual(result, '"2026-08-05T21:59:00Z"')
 
     def test_quoted_string_round_trips_through_yaml(self):
@@ -367,7 +332,36 @@ class ProcessFileQuotingIntegrationTests(unittest.TestCase):
             parsed["description"], "OKF-compliant documentation for copilot-instructions.md."
         )
 
+    def test_atomic_replace_preserves_permission_mode(self):
+        import stat
+        input_content = (
+            "---\n"
+            "okf_version: 0.1\n"
+            "type: documentation\n"
+            "title: Perm Test\n"
+            "timestamp: '2026-07-04T09:40:04Z'\n"
+            "topics: [dsom, documentation]\n"
+            "---\n"
+            "# Perm Test\n"
+        )
+        self._write(input_content)
+
+        # Set a distinct permission mode (e.g., read/write/execute)
+        original_mode = os.stat(self.path).st_mode
+        target_mode = original_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+        os.chmod(self.path, target_mode)
+
+        # Force a rewrite by writing initial content with a BOM
+        self._write(input_content, encoding="utf-8-sig")
+
+        temp_dir = os.path.dirname(self.path)
+        modified = process_file(self.path, temp_dir)
+        self.assertTrue(modified)
+
+        # Verify the resulting file retains the exact same permission mode
+        resulting_mode = os.stat(self.path).st_mode
+        self.assertEqual(stat.S_IMODE(resulting_mode), stat.S_IMODE(target_mode))
+
 
 if __name__ == "__main__":
-    unittest.main()
     unittest.main()
