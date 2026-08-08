@@ -39,6 +39,7 @@ topics: ["dsom", "documentation"]
 * [🎯 DSOM Token Performance Playbook](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
 * [🧠 Zero-Global Memory Architecture](docs/governance/ZERO-GLOBAL-MEMORY.md)
 * [🧠 LLM WIKI Adoption Strategy](docs/governance/LLM-WIKI-ADOPTION.md)
+* [🌐 OpenWiki Integration Blueprint](docs/governance/OPENWIKI-INTEGRATION-GUIDE.md)
 * [⚡ DSOM Efficiency Protocols](docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md)
 * [📚 SOP: Knowledge-First Discovery](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 * [🛡️ GitHub Actions Security Scanning](docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md)

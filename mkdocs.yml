@@ -83,6 +83,7 @@ nav:
       - Token Performance Playbook: governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md
       - Zero-Global Memory Architecture: governance/ZERO-GLOBAL-MEMORY.md
       - LLM WIKI Adoption Strategy: governance/LLM-WIKI-ADOPTION.md
+      - OpenWiki Integration Blueprint: governance/OPENWIKI-INTEGRATION-GUIDE.md
       - DSOM Efficiency Protocols: governance/DSOM-EFFICIENCY-PROTOCOLS.md
       - Knowledge-First Discovery: governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md
       - GitHub Actions Security Scanning: governance/GITHUB-ACTIONS-SECURITY-SCANNING.md
