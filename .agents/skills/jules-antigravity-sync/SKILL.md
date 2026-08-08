@@ -35,6 +35,9 @@ The following is the permanent ledger of PRs and code modifications executed by 
 ### 5. Compliance Verification Suite Expansion
 - **Accomplishment**: Extended `tests/test_okf_frontmatter_bom_reorder.py` and quoting validation suites to dynamically discover and verify all markdown files in the repository, guaranteeing a strict BOM-less frontmatter beginning at line 1, column 1.
 
+### 6. Windows Git-Symlink & CRLF Test Guardrails
+- **Accomplishment**: Enhanced test discovery suites (`tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_okf_quoting.py`, `tests/test_docs_symlinks.py`) to detect Git text-pointer symlinks (`content.startswith("../")`) on Windows native checkouts, handle CRLF byte fences (`b"---\r\n"`), and conditionally scope POSIX `chmod` bit assertions (`if os.name != "nt":`).
+
 ---
 
 ## Procedural Sync Protocol (SOP)
