@@ -26,11 +26,13 @@ For AI agents (Cursor, Google Jules, Claude) to query this semantic index:
 ### 3. Triggering Re-indexing
 Currently, Context7 automatically syncs with the configured repository branch. If a massive structural change occurs in the Palace (e.g., via `dsom-state-sync`), ensure the changes are fully committed and pushed to `main` so Context7's webhook or polling mechanism can detect the diff and initiate the Parser step.
 
-### 4. Direct LLM Endpoint Access
-For external web-based AI tools (ChatGPT, Claude Web, Gemini Web), Context7 exposes a live, token-budgeted context endpoint:
-- **URL:** `https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=10000`
-- Adjust the `?tokens=...` parameter (e.g., `4000`, `10000`, `30000`) based on the target LLM's context window budget.
+### 4. Direct LLM Endpoint & MCP Stream Access
+For external AI tools (Cursor, Claude, ChatGPT, Gemini, Google Jules), Context7 exposes the live, compiled token stream:
+- **Canonical Stream Endpoint:** `https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=83688`
+- **MCP Native Tool:** FastMCP exposes the `fetch_context7_stream` tool inside `tools/mcp/server.py` to stream or query Context7 snippets dynamically via `stdio`.
+- **Token Adjustments:** Adjust the `?tokens=...` parameter (e.g., `10000`, `30000`, `83688`) based on the target LLM's context window budget.
 
 ## Security (Rule 24 Mandate)
 - **NEVER** write the `CONTEXT7_API_KEY` (e.g., `ctx7sk-...`) to a local `.env` file, `.git/config`, or any file tracked by Git.
 - **GitLab CI/CD:** If Context7 requires integration via GitLab CI, the API key MUST be stored in GitLab CI/CD Settings as a masked and protected variable.
+

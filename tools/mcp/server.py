@@ -88,6 +88,16 @@ def search_palace(query: str) -> str:
         return output[:8000] + "\n...[TRUNCATED]"
     return output
 
+@mcp.tool()
+def fetch_context7_stream(tokens: int = 83688) -> str:
+    """Fetches the compiled Context7 LLM RAG context stream endpoint URL and usage metadata."""
+    url = f"https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens={tokens}"
+    return (
+        f"Context7 Live RAG Stream Endpoint: {url}\n"
+        f"Target Token Budget: {tokens}\n"
+        "Use this endpoint to provide full project context to external AI agents or RAG pipelines."
+    )
+
 if __name__ == "__main__":
     # Start the FastMCP stdio server
     mcp.run()
