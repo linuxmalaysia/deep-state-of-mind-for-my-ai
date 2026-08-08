@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/sitemap.xml
+Sitemap: https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/sitemap.xml
