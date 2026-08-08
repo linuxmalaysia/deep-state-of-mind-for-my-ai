@@ -3,7 +3,7 @@ okf_version: 0.1
 type: agent_skill
 title: "🔄 Cross-Platform Translator Skill"
 timestamp: "2026-08-05T22:23:51Z"
-description: "Analyzes a Windows PowerShell (.ps1) or Linux Bash (.sh) script and automatically generates its functional equivalent in the other shell language, enforcing the Cross-Platform Mandate."
+description: "Analyses a Windows PowerShell (.ps1) or Linux Bash (.sh) script and automatically generates its functional equivalent in the other shell language, enforcing the Cross-Platform Mandate."
 topics: ["bash", "powershell", "cross-platform", "translation", "scripting"]
 name: cross-platform-translator
 ---

@@ -552,25 +552,31 @@ class CrlfLineEndingsTests(unittest.TestCase):
 
 
 class UnlistedSkillReorderingTests(unittest.TestCase):
-    """Sanity checks for unlisted skill files to verify description precedes topics."""
+    """Sanity checks for all skill files to verify description precedes topics."""
 
     def test_unlisted_skill_frontmatter_ordering(self):
-        # Read an unlisted skill file, e.g., .agents/skills/dsom-bootstrap/SKILL.md
-        skill_path = REPO_ROOT / ".agents" / "skills" / "dsom-bootstrap" / "SKILL.md"
-        self.assertTrue(skill_path.is_file(), "Expected dsom-bootstrap/SKILL.md to exist")
+        all_files = _discover_all_md_files()
+        skill_files = [f for f in all_files if f.name == "SKILL.md"]
+        self.assertTrue(skill_files, "Expected to find at least one SKILL.md file")
 
-        content = _read_text_stripping_bom(skill_path)
-        raw, _ = _extract_frontmatter_block(content)
-        self.assertIsNotNone(raw)
+        for skill_path in skill_files:
+            relative = skill_path.relative_to(REPO_ROOT).as_posix()
+            with self.subTest(path=relative):
+                content = _read_text_stripping_bom(skill_path)
+                raw, _ = _extract_frontmatter_block(content)
+                self.assertIsNotNone(raw, f"Expected parseable frontmatter in {relative}")
 
-        # Verify that description precedes topics
-        description_index = raw.index("description:")
-        topics_index = raw.index("topics:")
-        self.assertLess(
-            description_index,
-            topics_index,
-            "Expected 'description:' to precede 'topics:' in dsom-bootstrap/SKILL.md",
-        )
+                # Verify that description precedes topics
+                self.assertIn("description:", raw, f"Expected 'description:' field in {relative}")
+                self.assertIn("topics:", raw, f"Expected 'topics:' field in {relative}")
+
+                description_index = raw.index("description:")
+                topics_index = raw.index("topics:")
+                self.assertLess(
+                    description_index,
+                    topics_index,
+                    f"Expected 'description:' to precede 'topics:' in {relative}",
+                )
 
 
 if __name__ == "__main__":
