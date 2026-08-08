@@ -456,6 +456,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Tri-Phasic Mind Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../governance/DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
         
   
@@ -2496,6 +2524,13 @@
 <li><strong>Custom Hooks:</strong> The custom MkDocs hook (<code>tools/mkdocs_hooks.py</code>) dynamically strips the root-level <code>docs/</code> prefix and maps nested repository-root links to work seamlessly on both GitHub and GitHub Pages.</li>
 <li><strong>Multi-platform deployment &amp; tests:</strong> Deployment configurations (Render blueprint <code>render.yaml</code>, Read the Docs <code>.readthedocs.yaml</code>, and GitHub Pages workflow <code>.github/workflows/gh-pages.yml</code>) and their automated test coverage (<code>tests/test_documentation_deployment.py</code>, <code>tests/test_readthedocs_config.py</code>) must be strictly aligned and validated.</li>
 <li><strong>Hibernation Session Anchors:</strong> Automated EOD/Hibernation script (<code>tools/hibernation.sh</code>) requires a matching dated Session Anchor in <code>.agents/brain/walkthrough.md</code> to pass validation.</li>
+</ul>
+</li>
+<li><strong>The Tri-Phasic Cognitive Architecture and Functional Subsystems Mandate:</strong> To guarantee cognitive continuity and eliminate context decay across session boundaries, the AI operates under the <strong>Tri-Phasic Mind</strong> model. The AI must understand, respect, and align its processing with the three cognitive states:<ul>
+<li><strong>Active State (The Conscious Mind):</strong> Direct human-AI interactions and FastMCP server operations (<code>tools/mcp/server.py</code>).</li>
+<li><strong>Twilight State (The Subconscious Mind):</strong> Near-real-time linters, token gates (<code>dsom-token-calculator</code>), and automated Pull Request sync validations (<code>dsom-pr-sync.yml</code>).</li>
+<li><strong>Deep State (The Unconscious/Dream Mind):</strong> Scheduled background optimization, memory pruning, concept linking, and EOD/SOD palace sync rituals (<code>eod-palace.sh</code>).
+Furthermore, the AI must align its cognitive execution with the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" &amp; Consolidation, and Metacognition &amp; Guardrails) as codified in <code>docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md</code>.</li>
 </ul>
 </li>
 </ol>
