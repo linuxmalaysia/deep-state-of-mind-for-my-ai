@@ -2,6 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = [
 #     "mcp[cli]>=1.1.2",
+#     "fastmcp>=0.1.0",
 # ]
 # ///
 
@@ -15,7 +16,11 @@ uv run tools/mcp/server.py
 
 import os
 from pathlib import Path
-from mcp.server.fastmcp import FastMCP
+
+try:
+    from fastmcp import FastMCP
+except ImportError:
+    from mcp.server.fastmcp import FastMCP
 
 # Initialize the FastMCP server
 mcp = FastMCP("DSOM-Palace-Server")
