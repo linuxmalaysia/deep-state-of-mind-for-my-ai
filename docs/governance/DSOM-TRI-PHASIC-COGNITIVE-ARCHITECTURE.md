@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: governance_protocol
 title: "🧠 The Tri-Phasic Mind: DSOM Cognitive Architecture and Functional Subsystems"
-timestamp: "2026-08-08T12:00:00Z"
+timestamp: "2026-08-09T01:15:00Z"
 topics: ["dsom", "governance", "protocol", "cognitive", "architecture"]
 description: "Production-ready blueprint detailing the Tri-Phasic Mind model and functional subsystems integrated within the DSOM framework."
 resource: "file:///docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"
@@ -74,11 +74,11 @@ Memory in DSOM is completely stratified and decoupled to prevent context polluti
 The Cognitive Twin continually refines and optimizes its stored memory using three mechanisms:
 * **Memory Pruning:** The EOD `palace-sync` runs semantic pruning to merge repetitive, verbose chat histories into a single, compact, metadata-rich Palace update proposal (`palace_update_proposal_*.md`).
 * **Synthetic Data Generation:** When a playbook or custom script fails during staging/testing, the AI leverages the failure logs to generate edge-case regression test suites inside `tests/` and templates under `.agents/brain/DSOM_TEMPLATE.md`, ensuring future subagents inherit this defensive logic.
-* **Concept Linking:** Disconnected workspace chats are analyzed during EOD, identifying hidden relationships between files and automatically updating references in global indexes like `SUMMARY.md`, `mkdocs.yml`, and `llms.txt`.
+* **Concept Linking:** Disconnected workspace chats are analyzed during EOD, identifying hidden relationships between files and automatically updating references in global indexes like `SUMMARY.md`, `mkdocs.yml`, `llms.txt`, and automated sitemap generators (`tools/generate_sitemaps.py`).
 
 ### iv) Metacognition & Guardrails (Self-Audit & Control)
 The framework enforces cognitive safety and sovereignty through three unbreakable guardrails:
-* **Self-Evaluation:** Handled programmatically via `palace-auditor` and our python-based pytest test suite (`tests/`), which rate compliance against the strict Open Knowledge Format (OKF) v0.1 and file structure.
+* **Self-Evaluation:** Handled programmatically via `palace-auditor` and our python-based pytest test suite (`tests/`), which rate compliance against the strict Open Knowledge Format (OKF) v0.1, cross-platform Windows symlink guardrails, and file structure rules.
 * **Alignment Drifts:** Programmatic verification of Byte-Capped Executions prevents the model from adopting hallucinated or toxic biases injected by unvetted user prompts.
 * **Existential Anchors:** Hard-coded, immutable ethical and operational rules defined in the full Sovereign Constitution (`.agents/AGENTS.md`)—such as the **Law of Advisory over Execution**, the **Sovereign Signature Mandate**, and the **Python UV Mandate**—which background automated tasks are physically blocked from modifying or rewriting.
 
@@ -97,7 +97,9 @@ To adopt these principles into daily operations, the following table maps the Tr
 | **Episodic Memory** | Session Walkthrough | `.agents/brain/walkthrough.md` | Verification of Session Anchors |
 | **Semantic Memory** | Sovereign Palace | `.agents/brain/wings/wing_dsom_core/` | OKF YAML frontmatter parser |
 | **Memory Pruning** | EOD Reflection | `.agents/brain/palace_registry.md` | `tools/palace-sync.sh` engine |
+| **Concept Linking** | Deep State / SEO Engine| `tools/generate_sitemaps.py` | Verification of `sitemap.xml` & `robots.txt` |
 | **Self-Evaluation** | Compliance Suite | `tests/test_okf_frontmatter_bom_reorder.py` | Pytest validation check |
+| **Cross-Platform Guardrails** | Twilight / Test Suite | `tests/test_docs_symlinks.py` | Native Windows Git-symlink & CRLF validation |
 | **Existential Anchors**| Sovereign Laws | `.agents/AGENTS.md` | Rule verification gates |
 
 ---
