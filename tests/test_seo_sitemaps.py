@@ -17,6 +17,18 @@ import xml.etree.ElementTree as ET
 import unittest
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
+    """
+    Locate the repository root containing the `.git` entry.
+    
+    Parameters:
+    	start (pathlib.Path): Path from which to begin searching.
+    
+    Returns:
+    	pathlib.Path: The repository root directory.
+    
+    Raises:
+    	RuntimeError: If no ancestor contains a `.git` entry.
+    """
     current = start.resolve()
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
@@ -33,6 +45,7 @@ class SeoFileExistenceTests(unittest.TestCase):
     """Verify sitemaps and robots.txt exist in required locations."""
 
     def test_sitemap_txt_exists_in_root_and_docs(self):
+        """Verify that sitemap.txt exists in both the repository root and the docs directory."""
         self.assertTrue((REPO_ROOT / "sitemap.txt").is_file())
         self.assertTrue((REPO_ROOT / "docs" / "sitemap.txt").is_file())
 
@@ -50,6 +63,10 @@ class SitemapTxtFormatTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """Load and prepare the root sitemap text for class-level tests.
+        
+        Sets `content` to the file contents and `lines` to its non-empty, stripped lines.
+        """
         cls.content = (REPO_ROOT / "sitemap.txt").read_text(encoding="utf-8")
         cls.lines = [line.strip() for line in cls.content.splitlines() if line.strip()]
 
@@ -139,6 +156,7 @@ class RobotsTxtContentTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """Load the repository's robots.txt content for the test class."""
         cls.content = (REPO_ROOT / "robots.txt").read_text(encoding="utf-8")
 
     def test_robots_allows_indexing(self):
@@ -146,6 +164,7 @@ class RobotsTxtContentTests(unittest.TestCase):
         self.assertIn("Allow: /", self.content)
 
     def test_robots_lists_sitemaps(self):
+        """Verify that robots.txt lists the GitHub Pages and Read the Docs sitemaps."""
         self.assertIn(f"Sitemap: {GITHUB_PAGES_BASE}sitemap.xml", self.content)
         self.assertIn(f"Sitemap: {READTHEDOCS_BASE}sitemap.xml", self.content)
 
