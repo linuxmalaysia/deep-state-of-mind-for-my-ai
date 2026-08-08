@@ -46,6 +46,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Agent Skills Guide](docs/AI-AGENT-SKILLS-GUIDE.md): How AI subagents utilize OKF-compliant execution manuals.
 - [Skill Architecture](docs/governance/AI-SKILL-ARCHITECTURE.md): The structural design for OKF-compliant semantic AI skills.
 - [OKF Adoption Guide](docs/OKF-ADOPTION-GUIDE.md): Standards for Open Knowledge Format (OKF v0.1) frontmatter.
+- [Jules & Antigravity Collaborative Sync Skill](.agents/skills/jules-antigravity-sync/SKILL.md): SOP for synchronising cognitive context and historic merges between Jules and Google Antigravity.
 
 ## Strategy & Optimization
 - [GitOps/AIOps/Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Doctrine for integrating AI planning with Defensive GitOps.

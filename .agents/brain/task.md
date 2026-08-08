@@ -14,6 +14,7 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Create and configure `.readthedocs.yaml` at the root for Read the Docs integration.
 - `[x]` Run `dsom-signature-injector` to sign `.readthedocs.yaml`.
 - `[x]` Add unit tests for Read the Docs configuration and verify them.
+- `[x]` Document Jules' historic merges/PRs and establish the Jules & Antigravity joint skill.
 - `[x]` Update brain artefacts (`task.md`, `walkthrough.md`) and ledgers (`CHANGELOG.md`, `HISTORY.md`).
 - `[ ]` Commit and push changes
 

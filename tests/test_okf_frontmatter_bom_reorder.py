@@ -90,7 +90,7 @@ REORDERED_FRONTMATTER_FILES = [
         ".agents/AGENTS.md",
         "documentation",
         "The Core AI Rulebook (DSOM)",
-        "2026-08-05T21:59:00Z",
+        "2026-08-08T12:00:00Z",
         ["dsom", "documentation"],
         True,
         True,

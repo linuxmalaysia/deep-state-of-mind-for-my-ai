@@ -42,3 +42,17 @@ To ensure continuous integration and automatic deployment of documentation on Re
 ### Integration Mental Anchor
 
 > Added official Read the Docs configuration and ensured full compliance with DSOM's signature and testing standards.
+
+## 🏁 Session Anchor: 2026-08-08 — Google Jules & Google Antigravity Collaborative Sync
+
+- Formally documented all Jules historic PRs, code merges, and architectural knowledge.
+- Designed and scaffolded the new joint AI skill `jules-antigravity-sync` to allow both agents to instantly align on past code modifications, PR history, and shared rules.
+- Upgraded the constitution (`AGENTS.md` and `.agents/AGENTS.md`) with Rule 25 to establish the unified collaborative sync standard.
+
+### Underlying Rationale
+
+To prevent any cognitive context gaps when switching between Jules and Antigravity, and to empower both assistants with absolute awareness of each other's contributions and compliance standards.
+
+### Integration Mental Anchor
+
+> Established Jules & Antigravity Collaborative Sync protocol to synchronize shared cognitive context and historic code modifications.
