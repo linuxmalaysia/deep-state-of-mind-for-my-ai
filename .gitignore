@@ -96,3 +96,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# --- [ OpenWiki Local Build Artifacts ] ---
+tools/openwiki_win/
+openwiki/
