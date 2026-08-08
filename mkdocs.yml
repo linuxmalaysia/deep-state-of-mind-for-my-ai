@@ -18,6 +18,11 @@ hooks:
 exclude_docs: |
   !.agents
 
+validation:
+  links:
+    absolute_links: warn
+    unrecognized_links: ignore
+
 theme:
   name: material
   font:

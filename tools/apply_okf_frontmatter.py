@@ -13,9 +13,12 @@ Scans a target directory and ensures all .md files use OKF v0.1 YAML frontmatter
 with the required fields (okf_version, type, title, timestamp, topics).
 """
 import os
+import sys
 import re
 import argparse
 import json
+import tempfile
+import stat
 import yaml
 from datetime import datetime, timezone
 
@@ -115,26 +118,42 @@ def serialise_val(val, key):
         dumped = dumped[:-3]
     return dumped.strip()
 
-def process_file(filepath, root_dir):
-    rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
-    filename = os.path.basename(filepath)
 
-    # Check if the file raw bytes started with BOM
+# ==============================================================================
+# Refactored focused helpers for process_file()
+# ==============================================================================
+
+def read_file_and_strip_bom(filepath):
+    """
+    Reads the file as raw bytes to detect if it starts with the UTF-8 BOM.
+    Then reads/decodes and removes *all* occurrences of the \ufeff character.
+    Returns (clean_content, had_bom).
+    """
     had_bom = False
-    try:
-        if os.path.exists(filepath):
+    if os.path.exists(filepath):
+        try:
             with open(filepath, 'rb') as bf:
                 had_bom = bf.read(3) == b'\xef\xbb\xbf'
-    except OSError as e:
-        print(f"Error: Failed to read binary prefix for {rel_path}: {e}")
+        except OSError as e:
+            raise OSError(f"Failed to read binary prefix for {filepath}: {e}") from e
 
     with open(filepath, 'r', encoding='utf-8-sig') as f:
-        content = f.read()
+        raw_text = f.read()
 
+    # Strip ALL occurrences of the \ufeff character
+    clean_content = raw_text.replace('\ufeff', '')
+    return clean_content, had_bom
+
+
+def parse_frontmatter(content, rel_path):
+    """
+    Parses consecutive leading frontmatter blocks.
+    Raises ValueError on non-mapping blocks or parse failures.
+    Returns (existing_frontmatter, rest_of_content).
+    """
     existing_frontmatter = {}
     rest_of_content = content
 
-    # Consume every consecutive leading frontmatter block
     while True:
         match = FRONTMATTER_RE.match(rest_of_content)
         if not match:
@@ -148,11 +167,19 @@ def process_file(filepath, root_dir):
                 existing_frontmatter.update(parsed)
                 rest_of_content = rest_of_content[match.end():]
             else:
-                return False
+                raise ValueError(f"Existing frontmatter block in {rel_path} is not a mapping dict.")
         except Exception as e:
-            print(f"Warning: Failed to parse existing frontmatter block in {rel_path}: {e}")
-            return False
+            if isinstance(e, ValueError):
+                raise e
+            raise ValueError(f"Failed to parse existing frontmatter block in {rel_path}: {e}") from e
 
+    return existing_frontmatter, rest_of_content
+
+
+def normalise_metadata(existing_frontmatter, rest_of_content, rel_path, filename):
+    """
+    Normalises the mandatory OKF metadata fields and returns updated_frontmatter.
+    """
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
     if okf_version is None or str(okf_version) != '0.1':
@@ -173,7 +200,6 @@ def process_file(filepath, root_dir):
     if not timestamp:
         timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     else:
-        # Convert parsed timestamp (string or datetime) to UTC only if not a string
         if isinstance(timestamp, str):
             pass
         elif isinstance(timestamp, datetime):
@@ -188,7 +214,6 @@ def process_file(filepath, root_dir):
     if not topics or not isinstance(topics, list):
         topics = get_default_topics(okf_type)
 
-    # Build updated frontmatter dict
     updated_frontmatter = {
         'okf_version': okf_version,
         'type': okf_type,
@@ -197,7 +222,7 @@ def process_file(filepath, root_dir):
         'topics': topics
     }
 
-    # Preserve other metadata fields if present
+    # Preserve other fields
     for k, v in existing_frontmatter.items():
         if k not in updated_frontmatter:
             if isinstance(v, datetime):
@@ -206,8 +231,14 @@ def process_file(filepath, root_dir):
                 v = v.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
             updated_frontmatter[k] = v
 
-    # Serialise cleanly keeping specific key order
-    special_reorder = rel_path.endswith("SKILL.md") or filename == "SKILL.md"
+    return updated_frontmatter
+
+
+def serialise_frontmatter(updated_frontmatter, rel_path, filename):
+    """
+    Serialises the frontmatter keeping the specific order of keys.
+    """
+    special_reorder = filename == "SKILL.md"
     if special_reorder:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
     else:
@@ -222,34 +253,76 @@ def process_file(filepath, root_dir):
         if k not in ordered_keys:
             yaml_lines.append(f"{k}: {serialise_val(val, k)}")
 
-    new_frontmatter_block = "---\n" + "\n".join(yaml_lines) + "\n---\n"
+    return "---\n" + "\n".join(yaml_lines) + "\n---\n"
+
+
+def atomic_replace_file(filepath, new_content, filename):
+    """
+    Atomically writes new_content to a temporary file, preserves original
+    permission mode, and replaces filepath.
+    """
+    file_dir = os.path.dirname(filepath)
+    temp_file = None
+    temp_filepath = None
+    try:
+        temp_file = tempfile.NamedTemporaryFile(
+            dir=file_dir, prefix=".temp_", suffix=f"_{filename}",
+            mode='w', encoding='utf-8', delete=False
+        )
+        temp_filepath = temp_file.name
+        temp_file.write(new_content)
+        temp_file.close()
+
+        # Copy original file permission mode onto temp file
+        if os.path.exists(filepath):
+            os.chmod(temp_filepath, stat.S_IMODE(os.stat(filepath).st_mode))
+
+        os.replace(temp_filepath, filepath)
+    except Exception as e:
+        if temp_file is not None:
+            try:
+                temp_file.close()
+            except Exception:
+                pass
+        if temp_filepath is not None and os.path.exists(temp_filepath):
+            try:
+                os.remove(temp_filepath)
+            except Exception:
+                pass
+        raise e
+
+
+# Main process_file implementation
+def process_file(filepath, root_dir, *, dry_run=False):
+    """
+    Orchestrates the compliance flow for a single Markdown file.
+    Note: dry_run is keyword-only.
+    """
+    rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
+    filename = os.path.basename(filepath)
+
+    # 1. Read file and handle/strip BOM
+    clean_content, had_bom = read_file_and_strip_bom(filepath)
+
+    # 2. Parse existing frontmatter blocks
+    existing_frontmatter, rest_of_content = parse_frontmatter(clean_content, rel_path)
+
+    # 3. Normalise OKF metadata fields
+    updated_frontmatter = normalise_metadata(existing_frontmatter, rest_of_content, rel_path, filename)
+
+    # 4. Serialise frontmatter
+    new_frontmatter_block = serialise_frontmatter(updated_frontmatter, rel_path, filename)
     new_content = new_frontmatter_block + rest_of_content
 
-    if new_content != content or had_bom:
-        import tempfile
-        file_dir = os.path.dirname(filepath)
-        temp_file = None
-        temp_filepath = None
-        try:
-            temp_file = tempfile.NamedTemporaryFile(dir=file_dir, prefix=".temp_", suffix=f"_{filename}", mode='w', encoding='utf-8', delete=False)
-            temp_filepath = temp_file.name
-            temp_file.write(new_content)
-            temp_file.close()
-            os.replace(temp_filepath, filepath)
+    # 5. Atomic replacement if changed or had BOM
+    if new_content != clean_content or had_bom:
+        if dry_run:
             return True
-        except Exception as e:
-            if temp_file is not None:
-                try:
-                    temp_file.close()
-                except Exception:
-                    pass
-            if temp_filepath is not None and os.path.exists(temp_filepath):
-                try:
-                    os.remove(temp_filepath)
-                except Exception:
-                    pass
-            raise e
+        atomic_replace_file(filepath, new_content, filename)
+        return True
+
     return False
+
 
 def main():
     parser = argparse.ArgumentParser(description="Ensure OKF v0.1 compliance on all Markdown files.")
@@ -261,7 +334,7 @@ def main():
     total_count = 0
 
     # Exclude list for directories we should not modify/add frontmatter to
-    exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
+    exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv'}
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
         # Prune excluded directories in place
@@ -287,10 +360,14 @@ def main():
                 continue
 
             total_count += 1
-            if process_file(filepath, root_dir):
-                rel = os.path.relpath(filepath, root_dir).replace('\\', '/')
-                print(f"Standardised/Injected OKF: {rel}")
-                modified_count += 1
+            try:
+                if process_file(filepath, root_dir):
+                    rel = os.path.relpath(filepath, root_dir).replace('\\', '/')
+                    print(f"Standardised/Injected OKF: {rel}")
+                    modified_count += 1
+            except Exception as e:
+                print(f"Error processing {filepath}: {e}", file=sys.stderr)
+                sys.exit(1)
 
     print(f"\nScan complete. Total markdown files checked: {total_count}")
     print(f"Total files modified to be OKF-compliant: {modified_count}")

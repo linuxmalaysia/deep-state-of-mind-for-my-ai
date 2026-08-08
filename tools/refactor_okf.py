@@ -12,250 +12,37 @@ OKF Frontmatter Refactoring Script.
 Scans the entire repository and rewrites all .md files with OKF compliant
 frontmatter written in UTF-8 without a BOM, ensuring strings with emojis,
 colons, brackets, or other special characters are double-quoted.
+This script imports the canonical implementations from tools/apply_okf_frontmatter.py.
 """
 import os
-import re
-import json
-import yaml
-from datetime import datetime, timezone
+import sys
+import argparse
 
-FRONTMATTER_RE = re.compile(r'\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)', re.DOTALL)
+# Insert repository root to sys.path to allow importing from tools
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-class CustomLoader(yaml.SafeLoader):
-    pass
-
-CustomLoader.yaml_implicit_resolvers = {
-    key: [r for r in resolvers if r[0] != 'tag:yaml.org,2002:timestamp']
-    for key, resolvers in yaml.SafeLoader.yaml_implicit_resolvers.items()
-}
-
-def get_okf_type(filepath):
-    path_parts = filepath.replace('\\', '/').split('/')
-    if 'docs' in path_parts and 'governance' in path_parts:
-        return 'governance_protocol'
-    elif '.agents' in path_parts and 'skills' in path_parts:
-        return 'agent_skill'
-    elif '.agents' in path_parts and 'brain' in path_parts:
-        return 'architecture_concept'
-    elif 'tools-and-automation' in path_parts or 'tools' in path_parts:
-        return 'automation_tool'
-    elif 'playbooks' in path_parts or 'roles' in path_parts:
-        return 'infrastructure_playbook'
-    return 'documentation'
-
-def extract_title(content, filename):
-    match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
-    if match:
-        return match.group(1).strip()
-    name_without_ext = os.path.splitext(filename)[0]
-    return name_without_ext.replace('_', ' ').replace('-', ' ').title()
-
-def get_default_topics(okf_type):
-    mapping = {
-        'governance_protocol': ['dsom', 'governance', 'protocol'],
-        'agent_skill': ['dsom', 'skill', 'agent'],
-        'architecture_concept': ['dsom', 'brain', 'concept'],
-        'automation_tool': ['dsom', 'automation', 'tool'],
-        'infrastructure_playbook': ['dsom', 'infrastructure', 'playbook'],
-        'documentation': ['dsom', 'documentation']
-    }
-    return mapping.get(okf_type, ['dsom', 'documentation'])
-
-def needs_double_quotes(s):
-    if not isinstance(s, str):
-        return False
-    # Check empty strings
-    if s == "":
-        return True
-    # Check leading/trailing whitespace
-    if s != s.strip():
-        return True
-    # Check for newline, carriage return, or tab characters
-    if '\n' in s or '\r' in s or '\t' in s:
-        return True
-    # Check for emojis/non-ASCII
-    if any(ord(c) > 127 for c in s):
-        return True
-    # Check for colons, brackets, parentheses, or other special characters
-    if re.search(r'[^a-zA-Z0-9_\-\s]', s):
-        return True
-    # YAML-aware round-trip check to detect values parsed as non-strings
-    try:
-        parsed = yaml.safe_load(s)
-        if not isinstance(parsed, str) or parsed != s:
-            return True
-    except Exception:
-        return True
-    return False
-
-def serialise_val(val, key):
-    # Format lists as inline arrays with double-quoted strings and recursive non-string serialisation
-    if isinstance(val, list):
-        formatted_elements = []
-        for item in val:
-            if isinstance(item, str):
-                formatted_elements.append(json.dumps(item, ensure_ascii=False))
-            else:
-                formatted_elements.append(serialise_val(item, key))
-        return "[" + ", ".join(formatted_elements) + "]"
-
-    # Format strings, quoting if they contain emojis/special characters or are YAML-sensitive
-    if isinstance(val, str):
-        if needs_double_quotes(val):
-            return json.dumps(val, ensure_ascii=False)
-        else:
-            return val
-
-    # Fallback to safe_dump for other types (e.g. ints, floats, booleans)
-    dumped = yaml.safe_dump(val, default_flow_style=True, allow_unicode=True).strip()
-    if dumped.endswith('\n...'):
-        dumped = dumped[:-4]
-    elif dumped.endswith('...'):
-        dumped = dumped[:-3]
-    return dumped.strip()
-
-def process_file(filepath, root_dir):
-    rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
-    filename = os.path.basename(filepath)
-
-    # Check if the file raw bytes started with BOM
-    had_bom = False
-    try:
-        if os.path.exists(filepath):
-            with open(filepath, 'rb') as bf:
-                had_bom = bf.read(3) == b'\xef\xbb\xbf'
-    except OSError as e:
-        print(f"Error: Failed to read binary prefix for {rel_path}: {e}")
-
-    with open(filepath, 'r', encoding='utf-8-sig') as f:
-        content = f.read()
-
-    existing_frontmatter = {}
-    rest_of_content = content
-
-    # Consume every consecutive leading frontmatter block
-    while True:
-        match = FRONTMATTER_RE.match(rest_of_content)
-        if not match:
-            break
-        yaml_block = match.group(1)
-        try:
-            parsed = yaml.load(yaml_block, Loader=CustomLoader)
-            if parsed is None:
-                parsed = {}
-            if isinstance(parsed, dict):
-                existing_frontmatter.update(parsed)
-                rest_of_content = rest_of_content[match.end():]
-            else:
-                return False
-        except Exception as e:
-            print(f"Warning: Failed to parse existing frontmatter block in {rel_path}: {e}")
-            return False
-
-    # 1. okf_version
-    okf_version = existing_frontmatter.get('okf_version')
-    if okf_version is None or str(okf_version) != '0.1':
-        okf_version = 0.1
-
-    # 2. type
-    okf_type = existing_frontmatter.get('type')
-    if not okf_type:
-        okf_type = get_okf_type(rel_path)
-
-    # 3. title
-    title = existing_frontmatter.get('title')
-    if not title:
-        title = extract_title(rest_of_content, filename)
-
-    # 4. timestamp
-    timestamp = existing_frontmatter.get('timestamp')
-    if not timestamp:
-        timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    else:
-        # Convert parsed timestamp (string or datetime) to UTC only if not a string
-        if isinstance(timestamp, str):
-            pass
-        elif isinstance(timestamp, datetime):
-            if timestamp.tzinfo is None:
-                timestamp = timestamp.replace(tzinfo=timezone.utc)
-            timestamp = timestamp.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-        else:
-            timestamp = str(timestamp)
-
-    # 5. topics
-    topics = existing_frontmatter.get('topics')
-    if not topics or not isinstance(topics, list):
-        topics = get_default_topics(okf_type)
-
-    # Build updated frontmatter dict
-    updated_frontmatter = {
-        'okf_version': okf_version,
-        'type': okf_type,
-        'title': title,
-        'timestamp': timestamp,
-        'topics': topics
-    }
-
-    # Preserve other metadata fields if present
-    for k, v in existing_frontmatter.items():
-        if k not in updated_frontmatter:
-            if isinstance(v, datetime):
-                if v.tzinfo is None:
-                    v = v.replace(tzinfo=timezone.utc)
-                v = v.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-            updated_frontmatter[k] = v
-
-    # Serialise cleanly keeping specific key order
-    special_reorder = filename == "SKILL.md"
-    if special_reorder:
-        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
-    else:
-        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
-
-    yaml_lines = []
-    for k in ordered_keys:
-        if k in updated_frontmatter:
-            yaml_lines.append(f"{k}: {serialise_val(updated_frontmatter[k], k)}")
-
-    for k, val in updated_frontmatter.items():
-        if k not in ordered_keys:
-            yaml_lines.append(f"{k}: {serialise_val(val, k)}")
-
-    new_frontmatter_block = "---\n" + "\n".join(yaml_lines) + "\n---\n"
-    new_content = new_frontmatter_block + rest_of_content
-
-    if new_content != content or had_bom:
-        import tempfile
-        file_dir = os.path.dirname(filepath)
-        temp_file = None
-        temp_filepath = None
-        try:
-            temp_file = tempfile.NamedTemporaryFile(dir=file_dir, prefix=".temp_", suffix=f"_{filename}", mode='w', encoding='utf-8', delete=False)
-            temp_filepath = temp_file.name
-            temp_file.write(new_content)
-            temp_file.close()
-            os.replace(temp_filepath, filepath)
-            return True
-        except Exception as e:
-            if temp_file is not None:
-                try:
-                    temp_file.close()
-                except Exception:
-                    pass
-            if temp_filepath is not None and os.path.exists(temp_filepath):
-                try:
-                    os.remove(temp_filepath)
-                except Exception:
-                    pass
-            raise e
-    return False
+from tools.apply_okf_frontmatter import (
+    FRONTMATTER_RE,
+    CustomLoader,
+    get_okf_type,
+    extract_title,
+    get_default_topics,
+    needs_double_quotes,
+    serialise_val,
+    process_file
+)
 
 def main():
-    root_dir = os.path.abspath(".")
+    parser = argparse.ArgumentParser(description="Ensure OKF v0.1 compliance on all Markdown files with refactoring.")
+    parser.add_argument("directory", nargs="?", default=".", help="Root directory to scan (default: '.')")
+    parser.add_argument("--dry-run", action="store_true", help="Print planned rewrites without modifying files")
+    args = parser.parse_args()
+
+    root_dir = os.path.abspath(args.directory)
     modified_count = 0
     total_count = 0
 
-    exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
+    exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv'}
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
         dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
@@ -278,13 +65,24 @@ def main():
                 continue
 
             total_count += 1
-            if process_file(filepath, root_dir):
-                rel = os.path.relpath(filepath, root_dir).replace('\\', '/')
-                print(f"Refactored OKF: {rel}")
-                modified_count += 1
+            try:
+                if process_file(filepath, root_dir, dry_run=args.dry_run):
+                    rel = os.path.relpath(filepath, root_dir).replace('\\', '/')
+                    if args.dry_run:
+                        print(f"[DRY RUN] Would refactor OKF: {rel}")
+                    else:
+                        print(f"Refactored OKF: {rel}")
+                    modified_count += 1
+            except Exception as e:
+                print(f"Error processing {filepath}: {e}", file=sys.stderr)
+                sys.exit(1)
 
-    print(f"\nRefactor complete. Total markdown files checked: {total_count}")
-    print(f"Total files modified/rewritten: {modified_count}")
+    if args.dry_run:
+        print(f"\n[DRY RUN] Refactor scan complete. Total markdown files checked: {total_count}")
+        print(f"[DRY RUN] Total files that would be modified/rewritten: {modified_count}")
+    else:
+        print(f"\nRefactor complete. Total markdown files checked: {total_count}")
+        print(f"Total files modified/rewritten: {modified_count}")
 
 if __name__ == "__main__":
     main()
