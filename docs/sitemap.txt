@@ -91,6 +91,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-GENERA
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-GIT-RITUAL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-HIBERNATION/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-INIT-BRAIN/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-OPENWIKI/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-PALACE-SYNC/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-PRIVACY-GUARDIAN/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-REANIMATE-CLAUDE/
@@ -192,6 +193,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-GENERAT
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-GIT-RITUAL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-HIBERNATION/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-INIT-BRAIN/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-PALACE-SYNC/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-PRIVACY-GUARDIAN/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-REANIMATE-CLAUDE/
@@ -213,6 +215,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/github-actions-snyk-scanner/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/initialize-gitops/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/jules-antigravity-sync/skill
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/openwiki-compiler/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/publish-to-blogger/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/render-deployment/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/sod-palace-sync/skill
@@ -295,6 +298,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-git-ritual
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-hibernation
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-init-brain
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-openwiki
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-palace-sync
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-privacy-guardian
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-reanimate
