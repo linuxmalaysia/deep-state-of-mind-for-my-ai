@@ -70,3 +70,17 @@ To prevent any cognitive context gaps when switching between Jules and Antigravi
 ### Integration Mental Anchor
 
 > Established Jules & Antigravity Collaborative Sync protocol to synchronize shared cognitive context and historic code modifications.
+
+## 🏁 Session Anchor: 2026-08-09 — Cross-Platform Windows Git-Symlink & CRLF Test Guardrails
+
+- Enhanced `tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_okf_quoting.py`, and `tests/test_docs_symlinks.py` to detect Git text-pointer symlinks on native Windows checkouts, handle CRLF byte fences (`b"---\r\n"`), and conditionally scope POSIX `chmod` bit assertions.
+- Updated Rule 25 in `.agents/AGENTS.md` and `AGENTS.md` and added Section 6 to `jules-antigravity-sync` skill.
+- Achieved 100% test suite pass rate (112/112 unit tests passing cleanly).
+
+### Underlying Rationale
+
+To ensure complete cross-platform test reliability across native Windows checkouts, WSL2 Linux nodes, and CI/CD pipelines without false positive failures on text-pointer symlinks or CRLF line endings.
+
+### Integration Mental Anchor
+
+> Adopted Windows Git-Symlink & CRLF Test Guardrails into DSOM Constitution (Rule 25) and test suite.
