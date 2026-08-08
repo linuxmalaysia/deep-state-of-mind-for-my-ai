@@ -1,12 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: agent_skill
-title: 🧹 Git History Scrubber Skill
-timestamp: '2026-08-05T22:23:51Z'
-topics: [git, security, history, scrub, credentials]
+title: "🧹 Git History Scrubber Skill"
+timestamp: "2026-08-05T22:23:51Z"
+description: "Safely purges sensitive data (IPs, credentials) from Git history using git-filter-repo, deletes old releases, and handles force-push protocols."
+topics: ["git", "security", "history", "scrub", "credentials"]
 name: git-history-scrubber
-description: Safely purges sensitive data (IPs, credentials) from Git history using git-filter-repo,
-  deletes old releases, and handles force-push protocols.
 ---
 # 🧹 Git History Scrubber Skill
 

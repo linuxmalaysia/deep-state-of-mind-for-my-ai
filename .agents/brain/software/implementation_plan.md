@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: architecture_concept
-title: 🗺️ Software Implementation Plan (Language-Agnostic)
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, brain, concept]
-description: OKF-compliant documentation for implementation_plan.md.
-resource: file:///.agents/brain/software/implementation_plan.md
+title: "🗺️ Software Implementation Plan (Language-Agnostic)"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "brain", "concept"]
+description: "OKF-compliant documentation for implementation_plan.md."
+resource: "file:///.agents/brain/software/implementation_plan.md"
 ---
 # 🗺️ Software Implementation Plan (Language-Agnostic)
 

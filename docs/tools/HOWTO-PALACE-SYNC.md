@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: automation_tool
-title: 'HOWTO: palace-sync — Kingdom Spatial Mapping'
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, automation, tool]
-description: OKF-compliant documentation for HOWTO-PALACE-SYNC.md.
-resource: file:///docs/tools/HOWTO-PALACE-SYNC.md
+title: "HOWTO: palace-sync — Kingdom Spatial Mapping"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "automation", "tool"]
+description: "OKF-compliant documentation for HOWTO-PALACE-SYNC.md."
+resource: "file:///docs/tools/HOWTO-PALACE-SYNC.md"
 ---
 # HOWTO: palace-sync — Kingdom Spatial Mapping
 

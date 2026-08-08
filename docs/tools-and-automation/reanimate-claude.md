@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: automation_tool
-title: 🤖 Claude Reanimation (reanimate-claude.sh)
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, automation, tool]
-description: OKF-compliant documentation for reanimate-claude.md.
-resource: file:///tools-and-automation/reanimate-claude.md
+title: "🤖 Claude Reanimation (reanimate-claude.sh)"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "automation", "tool"]
+description: "OKF-compliant documentation for reanimate-claude.md."
+resource: "file:///docs/tools-and-automation/reanimate-claude.md"
 ---
 # 🤖 Claude Reanimation (reanimate-claude.sh)
 

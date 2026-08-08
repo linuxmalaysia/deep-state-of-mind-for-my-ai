@@ -1,12 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: template
 title: Sovereign Persona Profile Template
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, documentation]
-description: Template to define a core persona, linguistic DNA, and operational constraints for
-  the AI Cognitive Twin.
-resource: file:///docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "documentation"]
+description: "Template to define a core persona, linguistic DNA, and operational constraints for the AI Cognitive Twin."
+resource: "file:///docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md"
 ---
 # Sovereign Persona Profile Template
 

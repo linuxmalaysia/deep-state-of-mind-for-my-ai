@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: governance_protocol
-title: 📖 DSOM Operational Guide (Level 3 - Specialised Tasks)
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, governance, protocol]
-description: OKF-compliant documentation for OPERATIONAL-GUIDE.md.
-resource: file:///docs/governance/OPERATIONAL-GUIDE.md
+title: "📖 DSOM Operational Guide (Level 3 - Specialised Tasks)"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "governance", "protocol"]
+description: "OKF-compliant documentation for OPERATIONAL-GUIDE.md."
+resource: "file:///docs/governance/OPERATIONAL-GUIDE.md"
 ---
 # 📖 DSOM Operational Guide (Level 3 - Specialised Tasks)
 

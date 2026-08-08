@@ -1,12 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: workflow
-title: Subagent Orchestration (Worktree Isolation)
-timestamp: '2026-08-05T22:23:51Z'
-topics: [dsom, documentation]
-description: Procedural governance for delegating tasks to autonomous subagents using Git Worktree
-  Isolation.
-tags: [workflows, subagents, gitops, isolation]
+title: "Subagent Orchestration (Worktree Isolation)"
+timestamp: "2026-08-05T22:23:51Z"
+topics: ["dsom", "documentation"]
+description: "Procedural governance for delegating tasks to autonomous subagents using Git Worktree Isolation."
+tags: ["workflows", "subagents", "gitops", "isolation"]
 owner: Lead Architect
 ---
 # 🤖 Workflow: Subagent Orchestration

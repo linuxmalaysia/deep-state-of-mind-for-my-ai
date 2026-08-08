@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: automation_tool
-title: 'HOWTO: checkpoint — Quick Sync'
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, automation, tool]
-description: OKF-compliant documentation for HOWTO-CHECKPOINT.md.
-resource: file:///docs/tools/HOWTO-CHECKPOINT.md
+title: "HOWTO: checkpoint — Quick Sync"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "automation", "tool"]
+description: "OKF-compliant documentation for HOWTO-CHECKPOINT.md."
+resource: "file:///docs/tools/HOWTO-CHECKPOINT.md"
 ---
 # HOWTO: checkpoint — Quick Sync
 
