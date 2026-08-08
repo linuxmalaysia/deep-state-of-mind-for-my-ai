@@ -29,6 +29,11 @@ READTHEDOCS_BASE = "https://deep-state-of-mind-for-my-ai.readthedocs.io/en/lates
 GITBOOK_BASE = "https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/"
 
 def find_repo_root() -> pathlib.Path:
+    """Locate and return the repository root containing the `.git` directory.
+    
+    Raises:
+    	RuntimeError: If no repository root is found.
+    """
     current = pathlib.Path(__file__).resolve().parent
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
@@ -38,6 +43,9 @@ def find_repo_root() -> pathlib.Path:
 REPO_ROOT = find_repo_root()
 
 def build_mkdocs():
+    """
+    Build the MkDocs site from the repository root.
+    """
     print("Building MkDocs site to compile fresh sitemap source...")
     result = subprocess.run(
         ["uv", "run", "--with", "mkdocs-material", "mkdocs", "build"],
@@ -49,6 +57,14 @@ def build_mkdocs():
     print("MkDocs build complete.")
 
 def parse_github_pages_urls() -> list[str]:
+    """Extracts unique page URLs from the generated GitHub Pages sitemap.
+    
+    Returns:
+    	list[str]: Sorted, deduplicated URLs found in the sitemap.
+    
+    Raises:
+    	FileNotFoundError: If the generated sitemap does not exist.
+    """
     sitemap_path = REPO_ROOT / "site" / "sitemap.xml"
     if not sitemap_path.exists():
         raise FileNotFoundError(f"MkDocs sitemap not found at {sitemap_path}. Build might have failed.")
@@ -68,6 +84,15 @@ def parse_github_pages_urls() -> list[str]:
     return sorted(list(set(urls)))
 
 def generate_readthedocs_urls(gh_urls: list[str]) -> list[str]:
+    """
+    Convert GitHub Pages URLs to their corresponding Read the Docs URLs.
+    
+    Parameters:
+        gh_urls (list[str]): GitHub Pages URLs to convert.
+    
+    Returns:
+        list[str]: Sorted, deduplicated Read the Docs URLs.
+    """
     print("Generating Read the Docs URLs...")
     rtd_urls = []
     for url in gh_urls:
@@ -80,6 +105,15 @@ def generate_readthedocs_urls(gh_urls: list[str]) -> list[str]:
     return sorted(list(set(rtd_urls)))
 
 def to_gitbook_slug(path_str: str) -> str:
+    """
+    Convert a repository Markdown path into a normalized GitBook slug.
+    
+    Parameters:
+        path_str (str): Repository-relative Markdown path.
+    
+    Returns:
+        str: GitBook slug, or an empty string for the README file.
+    """
     if path_str.lower() == "readme.md":
         return ""
 
@@ -101,6 +135,15 @@ def to_gitbook_slug(path_str: str) -> str:
     return '/'.join(slug_parts)
 
 def parse_gitbook_urls() -> list[str]:
+    """
+    Extract valid Markdown references from SUMMARY.md and convert them to GitBook URLs.
+    
+    Returns:
+    	list[str]: Sorted, deduplicated GitBook URLs for existing referenced files.
+    
+    Raises:
+    	FileNotFoundError: If SUMMARY.md does not exist.
+    """
     summary_path = REPO_ROOT / "SUMMARY.md"
     if not summary_path.exists():
         raise FileNotFoundError(f"SUMMARY.md not found at {summary_path}")
@@ -136,6 +179,12 @@ def parse_gitbook_urls() -> list[str]:
 
 def main():
     # 1. Build MkDocs
+    """
+    Generate unified sitemap and robots files for all discovered site URLs.
+    
+    The generated files are written to the repository root and `docs/`, and to
+    `site/` when that directory exists.
+    """
     build_mkdocs()
 
     # 2. Get GitHub Pages URLs
