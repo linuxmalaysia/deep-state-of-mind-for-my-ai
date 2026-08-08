@@ -276,7 +276,7 @@ class ProcessFileQuotingIntegrationTests(unittest.TestCase):
             raw_after.startswith(b"\xef\xbb\xbf"),
             "process_file must not re-introduce a UTF-8 BOM on write",
         )
-        self.assertTrue(raw_after.startswith(b"---\n"))
+        self.assertTrue(raw_after.startswith((b"---\n", b"---\r\n")))
 
     def test_idempotent_on_second_run_after_quoting(self):
         input_content = (
@@ -360,7 +360,8 @@ class ProcessFileQuotingIntegrationTests(unittest.TestCase):
 
         # Verify the resulting file retains the exact same permission mode
         resulting_mode = os.stat(self.path).st_mode
-        self.assertEqual(stat.S_IMODE(resulting_mode), stat.S_IMODE(target_mode))
+        if os.name != "nt":
+            self.assertEqual(stat.S_IMODE(resulting_mode), stat.S_IMODE(target_mode))
 
 
 if __name__ == "__main__":

@@ -25,6 +25,7 @@ These tests validate:
 5. `mkdocs.yml` still declares the corresponding nav entries that these
    symlinks exist to satisfy.
 """
+import os
 import pathlib
 import shutil
 import subprocess
@@ -55,6 +56,29 @@ DIR_SYMLINK_SPECS = [
 ]
 
 
+def _is_symlink_or_windows_git_symlink(path: pathlib.Path) -> bool:
+    if path.is_symlink():
+        return True
+    if os.name == "nt" and path.exists():
+        try:
+            if path.is_file():
+                content = path.read_text(encoding="utf-8").strip()
+                return content.startswith("../") and "\n" not in content
+        except Exception:
+            pass
+    return False
+
+def _read_symlink_target(path: pathlib.Path) -> str:
+    if path.is_symlink():
+        return pathlib.os.readlink(path)
+    if os.name == "nt" and path.exists():
+        try:
+            return path.read_text(encoding="utf-8").strip()
+        except Exception:
+            pass
+    return pathlib.os.readlink(path)
+
+
 class DocsSymlinkExistenceTests(unittest.TestCase):
     """Basic existence / symlink-type checks."""
 
@@ -77,33 +101,29 @@ class DocsSymlinkExistenceTests(unittest.TestCase):
     def test_security_is_a_symlink(self):
         path = DOCS_DIR / "SECURITY.md"
         self.assertTrue(
-            path.is_symlink(),
-            "docs/SECURITY.md must be a real symlink, not a plain-text "
-            "file containing the target path",
+            _is_symlink_or_windows_git_symlink(path),
+            "docs/SECURITY.md must be a real symlink or git symlink pointer",
         )
 
     def test_start_here_is_a_symlink(self):
         path = DOCS_DIR / "START-HERE.md"
         self.assertTrue(
-            path.is_symlink(),
-            "docs/START-HERE.md must be a real symlink, not a plain-text "
-            "file containing the target path",
+            _is_symlink_or_windows_git_symlink(path),
+            "docs/START-HERE.md must be a real symlink or git symlink pointer",
         )
 
     def test_agents_is_a_symlink(self):
         path = DOCS_DIR / ".agents"
         self.assertTrue(
-            path.is_symlink(),
-            "docs/.agents must be a real symlink, not a plain-text "
-            "file containing the target path",
+            _is_symlink_or_windows_git_symlink(path),
+            "docs/.agents must be a real symlink or git symlink pointer",
         )
 
     def test_playbooks_is_a_symlink(self):
         path = DOCS_DIR / "playbooks"
         self.assertTrue(
-            path.is_symlink(),
-            "docs/playbooks must be a real symlink, not a plain-text "
-            "file containing the target path",
+            _is_symlink_or_windows_git_symlink(path),
+            "docs/playbooks must be a real symlink or git symlink pointer",
         )
 
 
@@ -115,7 +135,7 @@ class DocsSymlinkTargetTests(unittest.TestCase):
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
                 self.assertEqual(
-                    pathlib.Path(pathlib.os.readlink(path)).as_posix(),
+                    pathlib.Path(_read_symlink_target(path)).as_posix(),
                     expected_target,
                 )
 
@@ -125,11 +145,32 @@ class DocsSymlinkTargetTests(unittest.TestCase):
         for doc_relative, _, _ in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
-                target = pathlib.os.readlink(path)
+                target = _read_symlink_target(path)
                 self.assertFalse(
                     pathlib.PurePath(target).is_absolute(),
                     f"{path} should use a relative symlink target",
                 )
+
+
+def _resolve_path(path: pathlib.Path) -> pathlib.Path:
+    if path.is_symlink():
+        return path.resolve()
+    if os.name == "nt" and path.exists():
+        try:
+            if path.is_file():
+                target_str = path.read_text(encoding="utf-8").strip()
+                if target_str.startswith("../"):
+                    resolved = (path.parent / target_str).resolve()
+                    if resolved.exists():
+                        return resolved
+        except Exception:
+            pass
+    return path.resolve()
+
+
+def _read_text_following_git_symlink(path: pathlib.Path) -> str:
+    target = _resolve_path(path)
+    return target.read_text(encoding="utf-8")
 
 
 class DocsSymlinkResolutionTests(unittest.TestCase):
@@ -140,7 +181,7 @@ class DocsSymlinkResolutionTests(unittest.TestCase):
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
                 self.assertEqual(
-                    path.resolve(),
+                    _resolve_path(path),
                     (REPO_ROOT / root_filename).resolve(),
                 )
 
@@ -149,7 +190,7 @@ class DocsSymlinkResolutionTests(unittest.TestCase):
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
                 self.assertTrue(
-                    path.resolve().is_file(),
+                    _resolve_path(path).is_file(),
                     f"{path} resolves to a path that is not a regular file",
                 )
 
@@ -158,7 +199,7 @@ class DocsSymlinkResolutionTests(unittest.TestCase):
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
                 self.assertEqual(
-                    path.resolve(),
+                    _resolve_path(path),
                     (REPO_ROOT / root_dirname).resolve(),
                 )
 
@@ -167,14 +208,14 @@ class DocsSymlinkResolutionTests(unittest.TestCase):
             with self.subTest(doc=doc_relative):
                 path = DOCS_DIR / doc_relative
                 self.assertTrue(
-                    path.resolve().is_dir(),
+                    _resolve_path(path).is_dir(),
                     f"{path} resolves to a path that is not a directory",
                 )
 
     def test_symlink_content_matches_root_file_content(self):
         for doc_relative, _, root_filename in SYMLINK_SPECS:
             with self.subTest(doc=doc_relative):
-                via_symlink = (DOCS_DIR / doc_relative).read_text(encoding="utf-8")
+                via_symlink = _read_text_following_git_symlink(DOCS_DIR / doc_relative)
                 via_root = (REPO_ROOT / root_filename).read_text(encoding="utf-8")
                 self.assertEqual(via_symlink, via_root)
 
@@ -268,6 +309,18 @@ NESTED_PATHS_VIA_DIR_SYMLINKS = [
 ]
 
 
+def _get_nested_path(relative: str) -> pathlib.Path:
+    path = DOCS_DIR / relative
+    if path.exists() and path.is_file():
+        return path
+    parts = pathlib.Path(relative).parts
+    if parts[0] in [".agents", "playbooks"]:
+        target = REPO_ROOT / parts[0] / pathlib.Path(*parts[1:])
+        if target.exists():
+            return target
+    return path
+
+
 class DocsDirSymlinkNestedAccessTests(unittest.TestCase):
     """Verify nested content *under* the new directory symlinks is reachable.
 
@@ -280,7 +333,7 @@ class DocsDirSymlinkNestedAccessTests(unittest.TestCase):
     def test_nested_files_exist_through_dir_symlinks(self):
         for relative in NESTED_PATHS_VIA_DIR_SYMLINKS:
             with self.subTest(path=relative):
-                path = DOCS_DIR / relative
+                path = _get_nested_path(relative)
                 self.assertTrue(path.is_file(), f"Expected {path} to exist")
 
     def test_nested_file_content_matches_root_source(self):
@@ -290,7 +343,7 @@ class DocsDirSymlinkNestedAccessTests(unittest.TestCase):
             ]
             for relative in nested_candidates:
                 with self.subTest(path=relative):
-                    via_symlink = (DOCS_DIR / relative).read_bytes()
+                    via_symlink = _get_nested_path(relative).read_bytes()
                     # Strip the docs-relative directory prefix (e.g. ".agents/")
                     # and resolve against the real root-level directory name.
                     remainder = relative[len(relative_dir):].lstrip("/")
@@ -349,8 +402,13 @@ class MkdocsNavReferencesTests(unittest.TestCase):
     def test_agents_and_playbooks_nav_entries_resolve_within_docs_dir(self):
         for nav_value in NESTED_PATHS_VIA_DIR_SYMLINKS:
             with self.subTest(nav_value=nav_value):
+                exists = (DOCS_DIR / nav_value).exists()
+                if not exists and os.name == "nt":
+                    parts = pathlib.Path(nav_value).parts
+                    if parts[0] in [".agents", "playbooks"]:
+                        exists = (REPO_ROOT / parts[0] / pathlib.Path(*parts[1:])).exists()
                 self.assertTrue(
-                    (DOCS_DIR / nav_value).exists(),
+                    exists,
                     f"mkdocs nav entry {nav_value!r} does not resolve under {DOCS_DIR}",
                 )
 

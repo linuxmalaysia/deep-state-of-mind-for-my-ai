@@ -42,6 +42,13 @@ def _discover_all_md_files() -> list[pathlib.Path]:
             if filename.endswith('.md'):
                 filepath = pathlib.Path(dirpath) / filename
                 if not filepath.is_symlink():
+                    # On Windows without OS symlinks enabled, git checks out symlinks as text files with target paths (e.g. "../README.md")
+                    try:
+                        content = filepath.read_text(encoding="utf-8").strip()
+                        if content.startswith("../") and "\n" not in content and len(content) < 250:
+                            continue
+                    except Exception:
+                        pass
                     md_files.append(filepath)
     return md_files
 
