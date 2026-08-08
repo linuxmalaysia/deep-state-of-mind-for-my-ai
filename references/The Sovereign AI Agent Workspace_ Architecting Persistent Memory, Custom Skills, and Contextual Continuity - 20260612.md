@@ -5,7 +5,7 @@ title: "**The Sovereign AI Agent Workspace: Architecting Persistent Memory, Cust
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for The Sovereign AI Agent Workspace_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260612.md."
-resource: "file:///references/The Sovereign AI Agent Workspace_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260612.md"
+resource: "file:///references/The%20Sovereign%20AI%20Agent%20Workspace_%20Architecting%20Persistent%20Memory,%20Custom%20Skills,%20and%20Contextual%20Continuity%20-%2020260612.md"
 ---
 # **The Sovereign AI Agent Workspace: Architecting Persistent Memory, Custom Skills, and Contextual Continuity**
 

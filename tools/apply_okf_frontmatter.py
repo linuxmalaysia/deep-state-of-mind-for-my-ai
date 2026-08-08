@@ -13,9 +13,11 @@ Scans a target directory and ensures all .md files use OKF v0.1 YAML frontmatter
 with the required fields (okf_version, type, title, timestamp, topics).
 """
 import os
+import sys
 import re
 import argparse
 import json
+import tempfile
 import yaml
 from datetime import datetime, timezone
 
@@ -115,7 +117,7 @@ def serialise_val(val, key):
         dumped = dumped[:-3]
     return dumped.strip()
 
-def process_file(filepath, root_dir):
+def process_file(filepath, root_dir, dry_run=False):
     rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
     filename = os.path.basename(filepath)
 
@@ -148,6 +150,7 @@ def process_file(filepath, root_dir):
                 existing_frontmatter.update(parsed)
                 rest_of_content = rest_of_content[match.end():]
             else:
+                print(f"Warning: Existing frontmatter in {rel_path} is not a mapping.")
                 return False
         except Exception as e:
             print(f"Warning: Failed to parse existing frontmatter block in {rel_path}: {e}")
@@ -207,7 +210,7 @@ def process_file(filepath, root_dir):
             updated_frontmatter[k] = v
 
     # Serialise cleanly keeping specific key order
-    special_reorder = rel_path.endswith("SKILL.md") or filename == "SKILL.md"
+    special_reorder = filename == "SKILL.md"
     if special_reorder:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
     else:
@@ -226,7 +229,8 @@ def process_file(filepath, root_dir):
     new_content = new_frontmatter_block + rest_of_content
 
     if new_content != content or had_bom:
-        import tempfile
+        if dry_run:
+            return True
         file_dir = os.path.dirname(filepath)
         temp_file = None
         temp_filepath = None
@@ -235,6 +239,9 @@ def process_file(filepath, root_dir):
             temp_filepath = temp_file.name
             temp_file.write(new_content)
             temp_file.close()
+            # Copy original file permission mode onto temp file
+            if os.path.exists(filepath):
+                os.chmod(temp_filepath, os.stat(filepath).st_mode)
             os.replace(temp_filepath, filepath)
             return True
         except Exception as e:
@@ -261,7 +268,7 @@ def main():
     total_count = 0
 
     # Exclude list for directories we should not modify/add frontmatter to
-    exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
+    exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv'}
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
         # Prune excluded directories in place

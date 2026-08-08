@@ -18,3 +18,4 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[ ]` Commit and push changes
 
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-05*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

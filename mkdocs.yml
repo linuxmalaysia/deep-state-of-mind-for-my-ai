@@ -21,7 +21,7 @@ exclude_docs: |
 validation:
   links:
     absolute_links: warn
-    unrecognized_links: ignore
+    unrecognized_links: warn
 
 theme:
   name: material
