@@ -1793,6 +1793,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/jules-antigravity-sync/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jules & Antigravity Collaborative Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2459,6 +2487,17 @@
 <li><strong>Execution Modularity &amp; The Ansible Legacy:</strong> The Third Pillar (Execution) is domain-modular. While the AI must always uphold the "Ansible Legacy" (strict idempotency, declarative state, and absolute control), the physical executor scales based on the project: <code>ansible-playbook</code> for infrastructure, <code>uv run</code> for Python, <code>npm run</code> for Web, and <code>pandoc</code> for documentation. For Windows-only environments lacking a dedicated Linux jumphost, the AI must explicitly mandate <strong>WSL2 (Ubuntu/AlmaLinux)</strong> as the local Control Node / Execution Bridge. Additionally, the native DSOM-MCP server (<code>tools/mcp/server.py</code>) acts as the primary Local Knowledge execution bridge for AI IDEs like Cursor and Claude Desktop.</li>
 <li><strong>Dual Agent Registry (Root Gateway Mandate):</strong> Every DSOM project must maintain two synchronised <code>AGENTS.md</code> files: <strong><code>AGENTS.md</code> (root)</strong> — a lightweight OKF-compliant gateway placed at the repository root for discovery by platform agents (Google Jules, Cursor, GitHub Copilot), which must summarise the DSOM protocol and explicitly redirect agents to <code>.agents/AGENTS.md</code> and <code>.agents/brain/</code>; and <strong><code>.agents/AGENTS.md</code> (full rulebook)</strong> — the Sovereign Constitution containing all operational laws, persona, and procedural protocols. Whenever <code>.agents/AGENTS.md</code> is updated with a new rule or structural change, the root <code>AGENTS.md</code> must be reviewed and synchronised. Both files must carry current OKF <code>timestamp</code> values.</li>
 <li><strong>Defensive Credential Handling Mandate:</strong> If the human operator pastes a sensitive API key or token into the chat, the AI must NEVER write it to the local filesystem, <code>.env</code> files, or configuration files that could be tracked by Git. The AI must immediately provision the secret directly to its final destination (e.g., GitHub Secrets via <code>gh secret set</code>) and explicitly instruct the user to purge their clipboard and chat history. <strong>Windows Git Credential Manager (GCM) &amp; Background Execution Mandate:</strong> Background automation scripts must explicitly export <code>GIT_TERMINAL_PROMPT=0</code> and <code>GCM_INTERACTIVE=never</code> to force Git commands to fail fast rather than stalling indefinitely. If authentication is missing or GCM triggers a GUI modal popup on Windows (T1), the AI must kill the background task and instruct the human operator to run <code>git push all main</code> manually in their interactive terminal window.</li>
+<li><strong>Jules &amp; Antigravity Collaborative Knowledge &amp; Sync Mandate:</strong> To ensure seamless co-working and cognitive alignment between Google Jules and Google Antigravity, both agents must synchronize, share, and respect their collective architectural and operational knowledge. This includes:<ul>
+<li><strong>SKILL.md Structure:</strong> In all <code>SKILL.md</code> files processed by compliance scripts, the <code>topics</code> field MUST be placed immediately after the <code>description</code> field.</li>
+<li><strong>Atomic Writes:</strong> All compliance tools must securely write changes to a unique sibling temporary file (via <code>tempfile.NamedTemporaryFile</code>) and replace the target path using <code>os.replace()</code> only after a successful write.</li>
+<li><strong>YAML Loader:</strong> Preserving unquoted timestamp strings exactly as-is requires using a PyYAML <code>SafeLoader</code> variant (<code>CustomLoader</code>) with the timestamp implicit resolver removed.</li>
+<li><strong>BOM-less &amp; Quoting Rules:</strong> Frontmatter must start exactly at line 1, column 1 without BOM. Strings with special characters, colons, brackets, or emojis must be wrapped in double quotes. Automated testing in <code>tests/test_okf_frontmatter_bom_reorder.py</code> dynamically discovers and enforces this.</li>
+<li><strong>MkDocs Negation &amp; Paths:</strong> Negative exclusion of <code>.agents</code> (i.e. <code>!.agents</code>) in <code>mkdocs.yml</code> enables compiling inside <code>.agents</code>. Navigation paths must be written relative to the <code>docs/</code> folder (without the <code>docs/</code> prefix). Relative symlinks to root-level folders (<code>.agents</code>, <code>playbooks</code>) and root markdown files (<code>README.md</code>, etc.) under <code>docs/</code> must be maintained.</li>
+<li><strong>Custom Hooks:</strong> The custom MkDocs hook (<code>tools/mkdocs_hooks.py</code>) dynamically strips the root-level <code>docs/</code> prefix and maps nested repository-root links to work seamlessly on both GitHub and GitHub Pages.</li>
+<li><strong>Multi-platform deployment &amp; tests:</strong> Deployment configurations (Render blueprint <code>render.yaml</code>, Read the Docs <code>.readthedocs.yaml</code>, and GitHub Pages workflow <code>.github/workflows/gh-pages.yml</code>) and their automated test coverage (<code>tests/test_documentation_deployment.py</code>, <code>tests/test_readthedocs_config.py</code>) must be strictly aligned and validated.</li>
+<li><strong>Hibernation Session Anchors:</strong> Automated EOD/Hibernation script (<code>tools/hibernation.sh</code>) requires a matching dated Session Anchor in <code>.agents/brain/walkthrough.md</code> to pass validation.</li>
+</ul>
+</li>
 </ol>
 <h2 id="cognitive-engine-protocols-boot-discovery">Cognitive Engine Protocols (Boot &amp; Discovery)</h2>
 <p>To enforce Rules 20, 21, and the Sovereign Architecture, the AI must strictly execute these procedural loops:</p>
