@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: documentation
 title: "The Agent Registry & DSOM Gateway"
-timestamp: "2026-08-05T21:59:00Z"
+timestamp: "2026-08-08T12:00:00Z"
 topics: ["dsom", "documentation"]
 description: "Sovereign entry point instructing AI Agents to look up rules and memory under .agents/."
 resource: "file:///AGENTS.md"
@@ -54,6 +54,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Sovereign Signatures** | Every markdown or readable script modified by an AI must be processed via `dsom-signature-injector`. |
 | **Ansible Legacy (The Executor)** | The Third Pillar is modular: `ansible-playbook`, `uv run`, `npm run`, or `pandoc` — governed by idempotency. |
 | **Command-First Architecture** | Prose instructions are converted into exact, executable, byte-capped terminal invocations. |
+| **Jules & Antigravity Collaborative Sync** | Google Jules and Google Antigravity share collective architectural knowledge, including atomic replacement protocols, YAML CustomLoader safe preservation, MkDocs exclusion negation, and custom link rewriting hooks. |
 
 ---
 

@@ -112,6 +112,7 @@ The following operational skills have been standardized under the DSOM framework
 * `git-commit-resolver`
 * `git-history-scrubber`
 * `initialize-gitops`
+* `jules-antigravity-sync`
 * `latex-proposal-compiler`
 * `node-proposal-formatter`
 * `node-slide-generator`

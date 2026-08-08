@@ -146,6 +146,7 @@ topics: ["dsom", "documentation"]
 * [🔑 SSH Passwordless Setup Skill](.agents/skills/ssh-passwordless-setup/SKILL.md)
 * [🛡️ GitHub Actions Snyk Scanner Skill](.agents/skills/github-actions-snyk-scanner/SKILL.md)
 * [🚀 Render Deployment Skill](.agents/skills/render-deployment/SKILL.md)
+* [🤝 Jules & Antigravity Collaborative Sync Skill](.agents/skills/jules-antigravity-sync/SKILL.md)
 
 ## 📚 9. References & Genesis Papers
 
