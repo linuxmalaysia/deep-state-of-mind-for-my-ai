@@ -21,6 +21,7 @@ topics: ["dsom", "documentation"]
 * [🤖 AI Initialization Sequence](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
 * [👑 Operational Sovereignty Manifesto](docs/governance/OPERATIONAL-SOVEREIGNTY.md)
 * [📜 AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md)
+* [🧠 The Tri-Phasic Mind Architecture](docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
 * [🔄 DSOM Automated State Sync](docs/governance/DSOM-AUTOMATED-STATE-SYNC.md)
 * [⚙️ Native MCP Architecture](docs/governance/DSOM-MCP-ARCHITECTURE.md)
 * [🔄 GitOps · AIOps · Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)

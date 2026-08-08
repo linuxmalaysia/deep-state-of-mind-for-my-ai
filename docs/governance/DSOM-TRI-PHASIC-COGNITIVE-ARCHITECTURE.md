@@ -1,0 +1,114 @@
+---
+okf_version: 0.1
+type: governance_protocol
+title: "🧠 The Tri-Phasic Mind: DSOM Cognitive Architecture and Functional Subsystems"
+timestamp: "2026-08-08T12:00:00Z"
+topics: ["dsom", "governance", "protocol", "cognitive", "architecture"]
+description: "Production-ready blueprint detailing the Tri-Phasic Mind model and functional subsystems integrated within the DSOM framework."
+resource: "file:///docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"
+---
+# 🧠 The Tri-Phasic Mind: DSOM Cognitive Architecture and Functional Subsystems
+
+## 🏛️ 1. Architectural Foundation & Overview
+
+In scaling enterprise AI orchestration for critical IT infrastructure operations, a purely reactive "input-output" model is fundamentally inadequate. Such stateless interaction leads directly to **Context Decay**, reasoning drifts, and the accumulation of cognitive debt.
+
+To resolve these constraints, the **Deep State of Mind (DSOM)** framework adopts the **Tri-Phasic Mind** model—a tri-layered cognitive execution pipeline paired with four specialized functional subsystems. This blueprint formalises how these theoretical cognitive states map directly onto concrete, Git-native filesystem artifacts and executable AIOps automations.
+
+---
+
+## 🌗 2. The Tri-Phasic Mind Model
+
+DSOM partitions AI cognition into three distinct temporal execution layers, mirroring human cognitive processing states to achieve deterministic behavior.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        THE TRI-PHASIC MIND                             │
+├────────────────────────────────────────────────────────────────────────┤
+│ 🌤️ Active State     │ Low-latency interaction, FastMCP resources       │
+│                      │ managed by local IDE (Cursor/Claude Desktop).    │
+├────────────────────────────────────────────────────────────────────────┤
+│ 🌗 Twilight State   │ Near-real-time verification, token gates,       │
+│                      │ linter checks, and automated state compilation. │
+├────────────────────────────────────────────────────────────────────────┤
+│ 🌙 Deep State       │ End-of-Day consolidation, palace-sync reviews,   │
+│                      │ semantic compaction, and git-ops push.          │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+### i) The Active State (The Conscious Mind)
+* **Purpose:** Real-time human-AI interaction and task execution.
+* **Execution Boundary:** Fast, low-latency sessions using direct developer-facing interfaces (e.g. Cursor, Claude Desktop, Copilot).
+* **Technical Mapping:** Backed by the native Model Context Protocol (MCP) server running via `tools/mcp/server.py`. The Active State leverages localized, byte-capped CLI tools to fetch file states and execute targeted tasks without human intervention. It serves as the immediate "sensorimotor" interface of the Cognitive Twin.
+
+### ii) The Twilight State (The Subconscious Mind)
+* **Purpose:** Near-real-time reflection, inline guardrails, and compliance enforcement.
+* **Execution Boundary:** Continuous checks running alongside or immediately following Active State loops.
+* **Technical Mapping:** Enforced via our pre-flight diagnostics (`tools/audit-pre-flight.sh`), token performance limits (`tools/check-usage.sh`), and the automated PR state sync workflow (`dsom-pr-sync.yml`). The Twilight State constantly monitors the Active State to detect logic loops, prevent token inflation (via `dsom-token-calculator`), and block non-compliant writes before they are formally integrated into the master repository.
+
+### iii) The Deep State (The Unconscious / Dream Mind)
+* **Purpose:** Background optimization, semantic consolidation, and knowledge evolution.
+* **Execution Boundary:** Scheduled, out-of-band execution loops triggered at low-traffic times or session completion.
+* **Technical Mapping:** Driven by our Start-of-Day (SOD) and End-of-Day (EOD) automated rituals (`playbooks/dsom/eod-palace.yml` and `tools/hibernation.sh`). During the Deep State phase, the system executes semantic reflection via the `palace-sync` engine, compiling raw chronological git commits and chaotic chat histories into highly structured, OKF-compliant Palace closets. This is the stage where the repository's semantic index (`palace_registry.md`) is regenerated and pushed to multi-remote endpoints to achieve synchronization.
+
+---
+
+## 🧠 3. Core Functional Subsystems
+
+The cognitive operations of the DSOM Cognitive Twin are driven by four core subsystems that govern information flow, retention, and execution.
+
+### i) Cognitive Architecture (Reasoning & Alignment)
+The Cognitive Twin acts as an expert advisor, executing logic via two distinct processing modes:
+* **System 1 (Reactive Operations):** For routine tasks (e.g. standard file writes or syntax checking), the AI executes lightweight, pre-defined automated skills from `.agents/skills/` directly to minimize latency and token expenditure.
+* **System 2 (Reflective Operations):** Complex architectural prompts trigger our strict **Local Knowledge-First Discovery Flow** (Rules 20 and 21) and the **CRISP² Strategy**. The AI initiates a "scratchpad" internal monologue, decomposing the instruction into separate design stages before writing a single line of code.
+* **Emotional Resonance (Tone Mapping):** An abstraction layer that aligns response register and vocabulary to match the Sovereign Architect’s expert-level systems engineering persona (e.g. UK English syntax, pragmatic phrasing, zero corporate fluff). The system continuously evaluates the "Substance" metric, challenging the user if instructions lack structural or architectural logic.
+
+### ii) Memory Stratification (The Sovereign Storage Plane)
+Memory in DSOM is completely stratified and decoupled to prevent context pollution:
+* **Sensory Memory (Token Buffer):** The ephemeral attention window of the underlying LLM session, containing only the immediate active tokens in the chat prompt.
+* **Working Memory (Active Scope):** Managed explicitly via `.agents/brain/active_context_manifest.md`. It declares the precise subset of files currently in scope, replacing bloated global folder references with laser-focused targets.
+* **Episodic Memory (Chronological Ledger):** Stored in `.agents/brain/walkthrough.md`. This is the universal chronological walkthrough ledger of session milestones, tracking decision logs and mental anchors across historical sessions.
+* **Semantic Memory (Sovereign Palace):** Implemented via the **Sovereign Markdown Palace** under `.agents/brain/wings/`. Absolute facts, standardized infrastructure definitions, and governance rules are permanently stored in specific Palace rooms, indexed by `palace_registry.md`.
+
+### iii) "Dreaming" & Consolidation (Semantic Compaction)
+The Cognitive Twin continually refines and optimizes its stored memory using three mechanisms:
+* **Memory Pruning:** The EOD `palace-sync` runs semantic pruning to merge repetitive, verbose chat histories into a single, compact, metadata-rich Palace update proposal (`palace_update_proposal_*.md`).
+* **Synthetic Data Generation:** When a playbook or custom script fails during staging/testing, the AI leverages the failure logs to generate edge-case regression test suites inside `tests/` and templates under `.agents/brain/DSOM_TEMPLATE.md`, ensuring future subagents inherit this defensive logic.
+* **Concept Linking:** Disconnected workspace chats are analyzed during EOD, identifying hidden relationships between files and automatically updating references in global indexes like `SUMMARY.md`, `mkdocs.yml`, and `llms.txt`.
+
+### iv) Metacognition & Guardrails (Self-Audit & Control)
+The framework enforces cognitive safety and sovereignty through three unbreakable guardrails:
+* **Self-Evaluation:** Handled programmatically via `palace-auditor` and our python-based pytest test suite (`tests/`), which rate compliance against the strict Open Knowledge Format (OKF) v0.1 and file structure.
+* **Alignment Drifts:** Programmatic verification of Byte-Capped Executions prevents the model from adopting hallucinated or toxic biases injected by unvetted user prompts.
+* **Existential Anchors:** Hard-coded, immutable ethical and operational rules defined in the full Sovereign Constitution (`.agents/AGENTS.md`)—such as the **Law of Advisory over Execution**, the **Sovereign Signature Mandate**, and the **Python UV Mandate**—which background automated tasks are physically blocked from modifying or rewriting.
+
+---
+
+## 🛠️ 4. Technical Mapping: From Theory to Artifacts
+
+To adopt these principles into daily operations, the following table maps the Tri-Phasic states and cognitive modules directly to filesystem targets and execution scripts:
+
+| Cognitive Concept | DSOM Execution Layer | Concrete Filesystem Target | Verification Mechanism |
+| :--- | :--- | :--- | :--- |
+| **Active State** | T1 Command Centre | `tools/mcp/server.py` | Native MCP stdio connection test |
+| **Twilight State** | T2/T3 Verification | `tools/audit-pre-flight.sh` | Local linters / `uv run pytest` |
+| **Deep State** | EOD Hibernation | `tools/hibernation.sh` | Execution of `git push all main` |
+| **Working Memory** | Active Context | `.agents/brain/active_context_manifest.md` | `tools/reanimate.sh` generation |
+| **Episodic Memory** | Session Walkthrough | `.agents/brain/walkthrough.md` | Verification of Session Anchors |
+| **Semantic Memory** | Sovereign Palace | `.agents/brain/wings/wing_dsom_core/` | OKF YAML frontmatter parser |
+| **Memory Pruning** | EOD Reflection | `.agents/brain/palace_registry.md` | `tools/palace-sync.sh` engine |
+| **Self-Evaluation** | Compliance Suite | `tests/test_okf_frontmatter_bom_reorder.py` | Pytest validation check |
+| **Existential Anchors**| Sovereign Laws | `.agents/AGENTS.md` | Rule verification gates |
+
+---
+
+## 🔗 5. References
+
+* **Sovereign Markdown Palace Protocol:** [`docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
+* **SOP: Knowledge-First Discovery:** [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
+* **AI Initialization Sequence:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](AI-INITIALIZATION-SEQUENCE.md)
+* **DSOM Token Performance Playbook:** [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-08*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

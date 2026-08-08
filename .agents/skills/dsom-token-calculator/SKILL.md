@@ -7,7 +7,6 @@ description: "Calculates token counts via tiktoken in isolated uv Python runspac
 topics: ["tokens", "tiktoken", "performance", "byte-cap", "context"]
 resource: "file:///.agents/skills/dsom-token-calculator/SKILL.md"
 ---
-
 # Operational Enforcements:
 
 - Trigger this skill dynamically before any output loop that handles extensive datasets or raw configurations.

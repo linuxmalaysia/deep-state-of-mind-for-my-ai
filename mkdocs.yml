@@ -69,6 +69,7 @@ nav:
   - Governance:
       - AI Initialization Sequence: governance/AI-INITIALIZATION-SEQUENCE.md
       - AI Master Protocol: governance/AI-MASTER-PROTOCOL.md
+      - The Tri-Phasic Mind Architecture: governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md
       - DSOM Automated State Sync: governance/DSOM-AUTOMATED-STATE-SYNC.md
       - Native MCP Architecture: governance/DSOM-MCP-ARCHITECTURE.md
       - GitOps · AIOps · Ansible Strategy: governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md

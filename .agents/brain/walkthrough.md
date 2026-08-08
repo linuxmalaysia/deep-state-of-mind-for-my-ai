@@ -43,6 +43,20 @@ To ensure continuous integration and automatic deployment of documentation on Re
 
 > Added official Read the Docs configuration and ensured full compliance with DSOM's signature and testing standards.
 
+## 🏁 Session Anchor: 2026-08-08 — Tri-Phasic Cognitive Mind Integration
+
+- Integrated and merged the Tri-Phasic Mind model (Active State, Twilight State, and Deep State) and the four functional modules (Cognitive Architecture, Memory Stratification, Dreaming & Consolidation, Metacognition & Guardrails) into the DSOM framework.
+- Authored the comprehensive governance document `docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md` as our production-ready blueprint.
+- Synchronized all rules across root `AGENTS.md` and `.agents/AGENTS.md` with Rule 26.
+
+### Underlying Rationale
+
+To adopt and formalise the Tri-Phasic Mind and cognitive subsystems as core, actionable DSOM ways of working, ensuring complete cognitive continuity and structural safety.
+
+### Integration Mental Anchor
+
+> Formalised and adopted the Tri-Phasic Mind cognitive model and functional subsystems under DSOM Rule 26.
+
 ## 🏁 Session Anchor: 2026-08-08 — Google Jules & Google Antigravity Collaborative Sync
 
 - Formally documented all Jules historic PRs, code merges, and architectural knowledge.

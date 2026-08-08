@@ -25,6 +25,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 ## Architecture & Protocols
 - [AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md): The Sovereign Constitution outlining core GitOps, AIOps, and Ansible execution rules.
 - [AI Initialization Sequence](docs/governance/AI-INITIALIZATION-SEQUENCE.md): The 5-step Mechanical Boot Sequence that establishes persona, memory, and governance before the first prompt.
+- [The Tri-Phasic Mind Cognitive Architecture](docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md): Production-ready blueprint detailing the Tri-Phasic Mind model and functional subsystems integrated within the DSOM framework.
 - [DSOM Automated State Sync](docs/governance/DSOM-AUTOMATED-STATE-SYNC.md): Semantic Compaction via GitHub Actions and LLM.
 - [DSOM-MCP-ARCHITECTURE.md](docs/governance/DSOM-MCP-ARCHITECTURE.md): Exposing the Palace via Model Context Protocol.
 - [SOP: Knowledge-First Discovery](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md): The 5-step protocol mandating local OKF search and temporal verification before terminal execution.
