@@ -2,6 +2,7 @@
 okf_version: 0.1
 type: documentation
 title: "🧠 DSOM Personalisation: The Cognitive Digital Twin — Gemini Edition (v6.1 + Palace v1.0)"
+title: "🧠 DSOM Personalization: The Cognitive Digital Twin — Gemini Edition (v6.1 + Palace v1.0)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for PERSONALIZATION.md."

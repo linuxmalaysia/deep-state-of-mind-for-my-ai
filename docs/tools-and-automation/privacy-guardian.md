@@ -6,6 +6,7 @@ timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for privacy-guardian.md."
 resource: "file:///docs/tools-and-automation/privacy-guardian.md"
+resource: "file:///tools-and-automation/privacy-guardian.md"
 ---
 # 🛡️ Privacy Guardian (privacy-guardian.sh)
 

@@ -211,6 +211,7 @@ def process_file(filepath, root_dir, dry_run=False):
 
     # Serialise cleanly keeping specific key order
     special_reorder = filename == "SKILL.md"
+    special_reorder = rel_path.endswith("SKILL.md") or filename == "SKILL.md"
     if special_reorder:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
     else:
@@ -231,6 +232,7 @@ def process_file(filepath, root_dir, dry_run=False):
     if new_content != content or had_bom:
         if dry_run:
             return True
+        import tempfile
         file_dir = os.path.dirname(filepath)
         temp_file = None
         temp_filepath = None

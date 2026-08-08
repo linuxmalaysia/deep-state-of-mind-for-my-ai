@@ -6,6 +6,11 @@ timestamp: "2026-07-04T09:40:29Z"
 topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for Optimizing OKF for AI Agents - Deep Research - 20260704.md."
 resource: "file:///references/Optimizing%20OKF%20for%20AI%20Agents%20-%20Deep%20Research%20-%2020260704.md"
+title: Optimizing OKF for AI Agents - Deep Research
+timestamp: "2026-07-04T09:40:29Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for Optimizing OKF for AI Agents - Deep Research - 20260704.md."
+resource: "file:///references/Optimizing OKF for AI Agents - Deep Research - 20260704.md"
 ---
 Paradigm Shifts in Context Engineering: Implementing the Open Knowledge Format in Autonomous Agent Architectures
 

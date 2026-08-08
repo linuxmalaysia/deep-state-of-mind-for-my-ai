@@ -6,6 +6,7 @@ timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for audit-pre-flight.md."
 resource: "file:///docs/tools-and-automation/audit-pre-flight.md"
+resource: "file:///tools-and-automation/audit-pre-flight.md"
 ---
 # 📜 Audit Pre-Flight (audit-pre-flight.sh)
 
