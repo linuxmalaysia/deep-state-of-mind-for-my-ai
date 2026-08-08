@@ -55,6 +55,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Ansible Legacy (The Executor)** | The Third Pillar is modular: `ansible-playbook`, `uv run`, `npm run`, or `pandoc` — governed by idempotency. |
 | **Command-First Architecture** | Prose instructions are converted into exact, executable, byte-capped terminal invocations. |
 | **Jules & Antigravity Collaborative Sync** | Google Jules and Google Antigravity share collective architectural knowledge, including atomic replacement protocols, YAML CustomLoader safe preservation, MkDocs exclusion negation, and custom link rewriting hooks. |
+| **Tri-Phasic Mind & Subsystems** | Cognitive pipeline partitioned into Active (low-latency MCP), Twilight (linters, token gates), and Deep (EOD palace-sync consolidation) states. Enforces the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, Metacognition & Guardrails). |
 
 ---
 
@@ -183,5 +184,5 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 > **Tip:** Keep both `AGENTS.md` files up to date — the root gateway and `.agents/AGENTS.md`. This helps Google Jules, Cursor, GitHub Copilot, other AI agents, and your human teammates work with this repository more effectively and in full alignment with the DSOM protocol.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-08*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

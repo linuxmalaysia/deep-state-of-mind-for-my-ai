@@ -188,5 +188,14 @@ The following operational skills have been standardized under the DSOM framework
 **Why it matters:** It explains how GitHub Actions and an LLM script automatically distill Pull Request diffs into a condensed `.dsom` state file to enforce Vectorized Memory Tiering.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-26*
+
+## 14. The Cognitive Architecture Entry Point (The Tri-Phasic Mind)
+*If you need to understand how the AI's cognitive pipeline is split into Active, Twilight, and Deep states, and how its functional subsystems operate.*
+
+**Read This First:** [`docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`](docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
+
+**Why it matters:** It defines the Tri-Phasic Mind model (Active, Twilight, and Deep states) and the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, and Metacognition & Guardrails) that govern the daily operational workflow and state synchronization of the DSOM framework.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-08*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
