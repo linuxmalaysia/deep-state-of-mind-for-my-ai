@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
-title: 🎭 Claude.ai Integration Protocol (v6.1 + Palace v1.0)
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, documentation]
-description: OKF-compliant documentation for CLAUDE-SETUP.md.
-resource: file:///docs/CLAUDE-SETUP.md
+title: "🎭 Claude.ai Integration Protocol (v6.1 + Palace v1.0)"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for CLAUDE-SETUP.md."
+resource: "file:///docs/CLAUDE-SETUP.md"
 ---
 # 🎭 Claude.ai Integration Protocol (v6.1 + Palace v1.0)
 

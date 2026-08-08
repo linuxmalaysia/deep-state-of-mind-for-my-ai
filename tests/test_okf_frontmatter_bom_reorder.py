@@ -5,25 +5,16 @@ of `.agents/` brain documents by this PR.
 This PR makes two related changes across a large batch of Markdown files
 under `.agents/`:
 
-1. **UTF-8 BOM prefix.** Every listed file's leading `---` frontmatter
-   fence now begins with a UTF-8 byte-order-mark (``\\xef\\xbb\\xbf`` /
-   ``\\ufeff``), e.g. ``---`` becomes ``\ufeff---``. Some
-   `palace_update_proposal_*.md` files already carried a leading BOM before
-   a bare `# ...` heading (no frontmatter at all); for those files the BOM
-   now instead prefixes a newly-added frontmatter block.
+1. **No UTF-8 BOM.** Every listed file has had any leading UTF-8 BOM removed so that
+   the frontmatter starts exactly on line 1, column 1 with `---`. This fixes broken front
+   matter parsing in GitHub web view.
 2. **Field reordering / addition.** For files that already had OKF
-   frontmatter, the `timestamp` and `topics` fields were moved so that they
-   appear immediately after `title` and *before* `description`/`resource`
-   (previously `timestamp` was the last field, after `description` and
-   `resource`). For files that had no frontmatter at all
-   (`palace_update_proposal_2026-07-17_0713.md` and six siblings), a new,
-   minimal frontmatter block (`okf_version`, `type`, `title`, `timestamp`,
-   `topics`) was prepended, with no `description`/`resource` fields.
+   frontmatter, the `timestamp` and `topics` fields appear immediately after `title`
+   and *before* `description`/`resource`.
 
-These tests validate, for every file this PR touched:
+These tests validate, for every file:
     * the file exists and is non-empty;
-    * it begins with a UTF-8 BOM immediately followed by the frontmatter
-      fence;
+    * it begins exactly with `---` (no BOM);
     * the frontmatter block parses as valid YAML and is a mapping;
     * the mandatory OKF fields (`okf_version`, `type`, `title`, `timestamp`,
       `topics`) are present with the expected values;
@@ -34,11 +25,25 @@ These tests validate, for every file this PR touched:
       followed by their original `# ... Palace Update Proposal` heading and
       unchanged body content (e.g. the `**Generated:**` line).
 """
+import os
 import pathlib
 import re
 import unittest
 
 import yaml  # type: ignore
+
+def _discover_all_md_files() -> list[pathlib.Path]:
+    root_dir = REPO_ROOT
+    exclude_dirs = {'.git', 'node_modules', '.pytest_cache'}
+    md_files = []
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
+        for filename in filenames:
+            if filename.endswith('.md'):
+                filepath = pathlib.Path(dirpath) / filename
+                if not filepath.is_symlink():
+                    md_files.append(filepath)
+    return md_files
 
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
@@ -53,7 +58,7 @@ def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
 REPO_ROOT = _find_repo_root(pathlib.Path(__file__).parent)
 
 BOM = "\ufeff"
-FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
+FRONTMATTER_RE = re.compile(r"\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)", re.DOTALL)
 
 
 def _read_text_stripping_bom(path: pathlib.Path) -> str:
@@ -215,40 +220,37 @@ class FrontmatterFileExistenceTests(unittest.TestCase):
 
 
 class LeadingBomTests(unittest.TestCase):
-    """Every touched file must begin with a UTF-8 BOM immediately before ---."""
+    """Every markdown file must NOT begin with a UTF-8 BOM and must start exactly with ---."""
 
-    def test_files_start_with_utf8_bom_bytes(self):
-        for relative in ALL_FILES_RELATIVE:
+    def test_files_do_not_start_with_utf8_bom_bytes(self):
+        all_files = _discover_all_md_files()
+        for filepath in all_files:
+            relative = filepath.relative_to(REPO_ROOT).as_posix()
             with self.subTest(path=relative):
-                raw_bytes = (REPO_ROOT / relative).read_bytes()
-                self.assertTrue(
+                raw_bytes = filepath.read_bytes()
+                self.assertFalse(
                     raw_bytes.startswith(b"\xef\xbb\xbf"),
-                    f"Expected {relative} to start with a UTF-8 BOM",
+                    f"Expected {relative} to NOT start with a UTF-8 BOM",
                 )
 
-    def test_files_start_with_bom_then_frontmatter_fence(self):
-        for relative in ALL_FILES_RELATIVE:
+    def test_files_start_with_frontmatter_fence(self):
+        all_files = _discover_all_md_files()
+        for filepath in all_files:
+            relative = filepath.relative_to(REPO_ROOT).as_posix()
             with self.subTest(path=relative):
-                raw_text = _read_raw_text(REPO_ROOT / relative)
+                raw_text = filepath.read_text(encoding="utf-8")
                 self.assertTrue(
-                    raw_text.startswith(BOM + "---\n"),
-                    f"Expected {relative} to start with BOM + '---\\n'",
+                    raw_text.startswith("---\n") or raw_text.startswith("---\r\n"),
+                    f"Expected {relative} to start exactly with '---\\n' (or '---\\r\\n')",
                 )
 
-    def test_bom_stripping_yields_bare_frontmatter_fence(self):
-        for relative in ALL_FILES_RELATIVE:
+    def test_bom_does_not_appear_in_file(self):
+        all_files = _discover_all_md_files()
+        for filepath in all_files:
+            relative = filepath.relative_to(REPO_ROOT).as_posix()
             with self.subTest(path=relative):
-                content = _read_text_stripping_bom(REPO_ROOT / relative)
-                self.assertTrue(content.startswith("---\n"))
-                self.assertFalse(content.startswith(BOM))
-
-    def test_bom_appears_exactly_once_per_file(self):
-        # Regression guard: the BOM must only be the encoding marker at the
-        # very start of the file, not duplicated or reintroduced mid-file.
-        for relative in ALL_FILES_RELATIVE:
-            with self.subTest(path=relative):
-                raw_text = _read_raw_text(REPO_ROOT / relative)
-                self.assertEqual(raw_text.count(BOM), 1)
+                raw_text = filepath.read_text(encoding="utf-8")
+                self.assertEqual(raw_text.count(BOM), 0, f"Expected {relative} to contain NO BOM")
 
 
 class FrontmatterParsesAsValidYamlTests(unittest.TestCase):
@@ -515,6 +517,66 @@ class TopicsFieldShapeTests(unittest.TestCase):
                 content = _read_text_stripping_bom(REPO_ROOT / relative)
                 _, parsed = _extract_frontmatter_block(content)
                 self.assertIn("dsom", parsed.get("topics", []))
+
+
+class CrlfLineEndingsTests(unittest.TestCase):
+    """Sanity checks for LF and CRLF line ending frontmatter match behavior."""
+
+    def test_crlf_frontmatter_extraction(self):
+        crlf_content = "---\r\nokf_version: 0.1\r\ntype: test_doc\r\ntitle: \"Test Title\"\r\ntimestamp: \"2026-08-07T00:00:00Z\"\r\ntopics: [\"test\"]\r\n---\r\nSome body text here"
+        match = FRONTMATTER_RE.match(crlf_content)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match CRLF content")
+        raw_yaml = match.group(1)
+        self.assertIn("type: test_doc", raw_yaml)
+
+    def test_lf_frontmatter_extraction(self):
+        lf_content = "---\nokf_version: 0.1\ntype: test_doc\ntitle: \"Test Title\"\ntimestamp: \"2026-08-07T00:00:00Z\"\ntopics: [\"test\"]\n---\nSome body text here"
+        match = FRONTMATTER_RE.match(lf_content)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match LF content")
+        raw_yaml = match.group(1)
+        self.assertIn("type: test_doc", raw_yaml)
+
+    def test_crlf_empty_frontmatter(self):
+        crlf_empty = "---\r\n---\r\nSome body text here"
+        match = FRONTMATTER_RE.match(crlf_empty)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match CRLF empty frontmatter")
+        raw_yaml = match.group(1)
+        self.assertEqual(raw_yaml, "")
+
+    def test_lf_empty_frontmatter(self):
+        lf_empty = "---\n---\nSome body text here"
+        match = FRONTMATTER_RE.match(lf_empty)
+        self.assertIsNotNone(match, "Expected FRONTMATTER_RE to match LF empty frontmatter")
+        raw_yaml = match.group(1)
+        self.assertEqual(raw_yaml, "")
+
+
+class UnlistedSkillReorderingTests(unittest.TestCase):
+    """Sanity checks for all skill files to verify description precedes topics."""
+
+    def test_unlisted_skill_frontmatter_ordering(self):
+        all_files = _discover_all_md_files()
+        skill_files = [f for f in all_files if f.name == "SKILL.md"]
+        self.assertTrue(skill_files, "Expected to find at least one SKILL.md file")
+
+        for skill_path in skill_files:
+            relative = skill_path.relative_to(REPO_ROOT).as_posix()
+            with self.subTest(path=relative):
+                content = _read_text_stripping_bom(skill_path)
+                raw, _ = _extract_frontmatter_block(content)
+                self.assertIsNotNone(raw, f"Expected parseable frontmatter in {relative}")
+
+                # Verify that description precedes topics
+                self.assertIn("description:", raw, f"Expected 'description:' field in {relative}")
+                self.assertIn("topics:", raw, f"Expected 'topics:' field in {relative}")
+
+                description_index = raw.index("description:")
+                topics_index = raw.index("topics:")
+                self.assertLess(
+                    description_index,
+                    topics_index,
+                    f"Expected 'description:' to precede 'topics:' in {relative}",
+                )
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
-title: 🤖 AI Agent Skills Development Guide
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, documentation]
-description: OKF-compliant documentation for AI-AGENT-SKILLS-GUIDE.md.
-resource: file:///docs/AI-AGENT-SKILLS-GUIDE.md
+title: "🤖 AI Agent Skills Development Guide"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for AI-AGENT-SKILLS-GUIDE.md."
+resource: "file:///docs/AI-AGENT-SKILLS-GUIDE.md"
 ---
 # 🤖 AI Agent Skills Development Guide
 

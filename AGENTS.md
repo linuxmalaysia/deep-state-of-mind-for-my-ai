@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: documentation
-title: The Agent Registry & DSOM Gateway
-timestamp: '2026-08-05T21:59:00Z'
-topics: [dsom, documentation]
-description: Sovereign entry point instructing AI Agents to look up rules and memory under .agents/.
-resource: file:///AGENTS.md
+title: "The Agent Registry & DSOM Gateway"
+timestamp: "2026-08-05T21:59:00Z"
+topics: ["dsom", "documentation"]
+description: "Sovereign entry point instructing AI Agents to look up rules and memory under .agents/."
+resource: "file:///AGENTS.md"
 ---
 # AI Agent Registry & Sovereign Gateway
 
@@ -48,7 +48,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | Principle | Description |
 |:---|:---|
 | **Zero-Global / Spatial Memory** | No global state. Operational memory lives in `.agents/brain/`. |
-| **Open Knowledge Format (OKF)** | All `.md` documents use OKF v0.1 YAML frontmatter (`okf_version`, `type`, `title`, `timestamp`, `topics`). |
+| **Open Knowledge Format (OKF)** | All `.md` documents use OKF v0.1 YAML frontmatter (`okf_version`, `type`, `title`, `timestamp`, `topics`). Must start on line 1, column 1 without BOM, with all strings containing emojis, colons, brackets, or special characters wrapped in double quotes for clean GitHub parsing. |
 | **Atomic Git Commits** | Every logical action results in a discrete, semantically named Git commit. No monolithic blanket commits. |
 | **Omni-Documentation Sync** | New governance documents must be registered in `SUMMARY.md` (for GitBook navigation), `mkdocs.yml` (for MkDocs/GitHub Pages navigation), `START-HERE.md`, and `llms.txt`. |
 | **Sovereign Signatures** | Every markdown or readable script modified by an AI must be processed via `dsom-signature-injector`. |

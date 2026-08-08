@@ -1,11 +1,11 @@
-﻿---
+---
 okf_version: 0.1
 type: automation_tool
-title: 'HOWTO: eod-palace — End-of-Day Saves'
-timestamp: '2026-07-04T09:40:04Z'
-topics: [dsom, automation, tool]
-description: OKF-compliant documentation for HOWTO-EOD-PALACE.md.
-resource: file:///docs/tools/HOWTO-EOD-PALACE.md
+title: "HOWTO: eod-palace — End-of-Day Saves"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "automation", "tool"]
+description: "OKF-compliant documentation for HOWTO-EOD-PALACE.md."
+resource: "file:///docs/tools/HOWTO-EOD-PALACE.md"
 ---
 # HOWTO: eod-palace — End-of-Day Saves
 
