@@ -117,6 +117,7 @@ topics: ["dsom", "documentation"]
 * [🧹 HOWTO: Template Reset](docs/tools/HOWTO-TEMPLATE-RESET.md)
 * [🐧 HOWTO: Setup WSL AlmaLinux 10](docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md)
 * [⚙️ HOWTO: Setup Control Node](docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md)
+* [🌐 OpenWiki CLI & Knowledge Compiler](docs/tools/HOWTO-OPENWIKI.md)
 * [📖 HOWTO: Build Sovereign Book](docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md)
 * [📝 HOWTO: Generate Walkthrough](docs/tools/HOWTO-GENERATE-WALKTHROUGH.md)
 
@@ -149,6 +150,7 @@ topics: ["dsom", "documentation"]
 * [🛡️ GitHub Actions Snyk Scanner Skill](.agents/skills/github-actions-snyk-scanner/SKILL.md)
 * [🚀 Render Deployment Skill](.agents/skills/render-deployment/SKILL.md)
 * [🤝 Jules & Antigravity Collaborative Sync Skill](.agents/skills/jules-antigravity-sync/SKILL.md)
+* [🌐 OpenWiki Knowledge Graph Compiler Skill](.agents/skills/openwiki-compiler/SKILL.md)
 
 ## 📚 9. References & Genesis Papers
 
