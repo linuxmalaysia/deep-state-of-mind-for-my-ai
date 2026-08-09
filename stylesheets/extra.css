@@ -82,24 +82,39 @@
   --lab-glass-border: rgba(255, 255, 255, 0.05);
 }
 
-/* Hyperlinks High Contrast Rules */
-.md-typeset a {
-  color: var(--md-typeset-a-color) !important;
+/* Hyperlinks High Contrast Rules for Light and Dark Modes */
+.md-typeset a,
+.md-content a {
+  color: #38bdf8 !important;
   font-weight: 500;
   text-decoration: underline;
-  text-decoration-color: rgba(56, 189, 248, 0.3);
+  text-decoration-color: rgba(56, 189, 248, 0.4);
 }
 
-.md-typeset a:hover {
-  opacity: 0.85;
+/* Dark Mode Links (slate) */
+[data-md-color-scheme="slate"] .md-typeset a,
+[data-md-color-scheme="slate"] .md-content a,
+body[data-md-color-scheme="slate"] a {
+  color: #38bdf8 !important; /* Sky Blue - Ultra High Contrast on Dark Slate */
+  text-decoration-color: rgba(56, 189, 248, 0.6) !important;
 }
 
-[data-md-color-scheme="slate"] .md-typeset a {
-  color: #38bdf8 !important;
+[data-md-color-scheme="slate"] .md-typeset a:hover,
+body[data-md-color-scheme="slate"] a:hover {
+  color: #7dd3fc !important;
 }
 
-:root:not([data-md-color-scheme="slate"]) .md-typeset a {
-  color: #6d28d9 !important;
+/* Light Mode Links (default) */
+[data-md-color-scheme="default"] .md-typeset a,
+[data-md-color-scheme="default"] .md-content a,
+body[data-md-color-scheme="default"] a {
+  color: #6d28d9 !important; /* Deep Purple - High Contrast on Light Background */
+  text-decoration-color: rgba(109, 40, 217, 0.4) !important;
+}
+
+[data-md-color-scheme="default"] .md-typeset a:hover,
+body[data-md-color-scheme="default"] a:hover {
+  color: #8b5cf6 !important;
 }
 
 /* Glassmorphism Header Implementation */
