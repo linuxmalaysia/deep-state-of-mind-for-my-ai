@@ -1,0 +1,5 @@
+Contact: mailto:harisfazillah@gmail.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, ms
+Canonical: https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.well-known/security.txt
+Policy: https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/SECURITY/
