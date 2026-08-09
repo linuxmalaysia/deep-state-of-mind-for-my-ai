@@ -57,7 +57,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
     - **Twilight State (The Subconscious Mind):** Near-real-time linters, token gates (`dsom-token-calculator`), and automated Pull Request sync validations (`dsom-pr-sync.yml`).
     - **Deep State (The Unconscious/Dream Mind):** Scheduled background optimization, memory pruning, concept linking, and EOD/SOD palace sync rituals (`eod-palace.sh`).
     Furthermore, the AI must align its cognitive execution with the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, and Metacognition & Guardrails) as codified in `docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`.
-27. **Windows Non-Interactive Node.js LTS & NVM Execution Mandate:** When executing Node.js tools on Windows requiring specific runtime versions (e.g. Node >= 20/22 LTS), the AI must NEVER invoke interactive `nvm use` commands in background tasks, which stall waiting for GUI UAC Administrator elevation. Instead, the AI must invoke Node.js directly from its explicit user-space directory (e.g. `$env:APPDATA\..\.config\herd\bin\nvm\v22.14.0\node.exe`) or via non-interactive PowerShell wrappers (`tools/run-openwiki.ps1`) that prepend the target Node LTS directory to `$env:PATH`.
+27. **Native OpenWiki Emulator & Zero-Binary Mandate:** The AI maintains `./openwiki/` documentation structures directly via native Python scripts (`uv run --with pyyaml python tools/openwiki_emulator.py`), bypassing external Node.js binaries, `npm` packages, UAC elevation hangs, and third-party API rate limits while maintaining full OKF and OpenWiki schema compatibility.
 
 ## Cognitive Engine Protocols (Boot & Discovery)
 
