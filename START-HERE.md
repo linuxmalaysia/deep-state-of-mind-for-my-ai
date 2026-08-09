@@ -2,9 +2,9 @@
 okf_version: 0.1
 type: documentation
 title: "START HERE: DSOM Project Benefits & Entry Points"
-timestamp: "2026-08-09T11:22:00Z"
-topics: ["onboarding", "entry-points", "dsom", "sovereign", "baseline", "benefits", "openwiki"]
-description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new or existing projects."
+timestamp: "2026-08-09T11:33:00Z"
+topics: ["onboarding", "entry-points", "dsom", "sovereign", "baseline", "benefits", "github-pages", "openwiki"]
+description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new or existing projects via Git or direct GitHub Pages URLs."
 resource: "file:///START-HERE.md"
 ---
 # START HERE: DSOM Project Benefits & Entry Points
@@ -12,6 +12,24 @@ resource: "file:///START-HERE.md"
 Welcome to the **Deep State of Mind (DSOM) For My AI** framework. If you are adopting this repository to bootstrap a new infrastructure/software project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
 
 DSOM is a modular Sovereign AI Engine. To use it effectively, do not read every file at random. Start with the defined Entry Points depending on your role.
+
+---
+
+## 🌐 Zero-Clone / Zero-Pull Direct Reading via GitHub Pages URLs
+
+If you or your AI agent do **not** want to `git clone` or `git pull` this repository, you can ingest the framework directly via live, HTTPS-hosted GitHub Pages URLs:
+
+| Document / Asset | Direct GitHub Pages Live URL | Purpose / Audience |
+| :--- | :--- | :--- |
+| **Master Documentation Site** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | Main searchable MkDocs site |
+| **Master Entry Map** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/) | Topology map & benefits |
+| **AI Root Gateway** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/) | First-read summary for AI agents |
+| **Full AI Constitution** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/) | 27 Core Constitutional AI Laws |
+| **AI Sitemap (LLMs.txt)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt) | Plain-text AI crawler sitemap |
+| **OpenWiki Integration Guide** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/) | Python OpenWiki code & prompts |
+| **OpenWiki Operational HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/) | Python emulator CLI commands |
+| **FastMCP Server HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/) | Cursor & Claude Desktop setups |
+| **Project Cloning Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/) | Scaffolding new DSOM clones |
 
 ---
 
@@ -31,7 +49,7 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 ## 1. The Engineering Entry Point (Project Scaffolding)
 *If you are setting up a brand new DSOM project repository for the first time.*
 
-**Read This First:** [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md)
+**Read This First:** [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))
 
 **Why it matters:** This is the master blueprint. It explicitly instructs the human or the AI on how to execute the `dsom-project-cloner` and `dsom-bootstrap` skills. It establishes the initial Git Worktree isolation and ensures the spatial memory (`.agents/brain/`) is properly initialized before any real work begins.
 
@@ -40,9 +58,9 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 ## 2. The Cognitive Entry Point (AI Persona & Rules)
 *If you are an AI agent, or a human programming an AI agent, and need to know the operational rules of this environment.*
 
-**Read This First (Root Gateway):** [`AGENTS.md`](AGENTS.md)
+**Read This First (Root Gateway):** [`AGENTS.md`](AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/))
 
-**Then Read the Full Rulebook:** [`.agents/AGENTS.md`](.agents/AGENTS.md)
+**Then Read the Full Rulebook:** [`.agents/AGENTS.md`](.agents/AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/))
 
 **Why it matters:** The root `AGENTS.md` is the **Gateway File** for AI agents such as Google Jules, Cursor, and Copilot that scan the repository root. It summarises the DSOM protocol and immediately redirects agents to [`.agents/AGENTS.md`](.agents/AGENTS.md) — the **Sovereign Constitution** containing all 27 operational laws, the LinuxMalaysia persona, the Defensive GitOps rules, the OKF mandate, and the UK English writing standard. Keep both files synchronised at all times.
 
@@ -51,7 +69,7 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 ## 3. The External System Entry Point (AI Crawlers)
 *If you are using an external tool (e.g., Google NotebookLM, ChatGPT) to ingest this repository.*
 
-**Read This First:** [`llms.txt`](llms.txt)
+**Read This First:** [`llms.txt`](llms.txt) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt))
 
 **Why it matters:** Placed at the root of the repository, this file acts as the official AI Sitemap. It explicitly links to all the critical governance documents (including the `NOSS-INTEGRATION-GUIDE.md`) so that external systems immediately understand the architectural constraints and compliance payloads of the project without getting lost in code files.
 
@@ -70,8 +88,6 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 *If you are operating a legacy DSOM project and need to modernize it to the current master architectural baseline.*
 
 **Read This First:** [`docs/HOWTO-UPGRADE-LEGACY-DSOM.md`](docs/HOWTO-UPGRADE-LEGACY-DSOM.md)
-
-**Why it matters:** It explains how to systematically inject modern protocols (OKF frontmatter, LLM WIKI, dsom-signature-injector, uv Python environments) into your older repositories to achieve compliance with the current master baseline.
 
 ---
 
@@ -97,16 +113,12 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 **Read This First:** [`docs/governance/MULTI-AGENT-PROTOCOLS.md`](docs/governance/MULTI-AGENT-PROTOCOLS.md)
 
-**Why it matters:** Instructs the project on how to deploy concurrent subagents safely. It enforces **Git Worktree Isolation** to prevent Silent Subagent Merge Conflicts when multiple agents edit the same repository simultaneously.
-
 ---
 
 ## 7. The Procedural Skill Entry Point (AI Automation)
 *If you need to teach your AI how to perform repetitive operational workflows.*
 
 **Read This First:** [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) and [`docs/governance/AI-SLASH-COMMANDS-GUIDE.md`](docs/governance/AI-SLASH-COMMANDS-GUIDE.md)
-
-**Why it matters:** Explains how to structure the `.agents/skills/` directory. It ensures that all operational manuals (SOPs) are OKF-compliant and executable by the AI via semantic routing, eliminating the need to write custom Python bots.
 
 ---
 
@@ -115,16 +127,12 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 **Read This First:** [`docs/governance/LLM-WIKI-ADOPTION.md`](docs/governance/LLM-WIKI-ADOPTION.md)
 
-**Why it matters:** Dictates how to transform a standard `docs/` folder into an LLM WIKI. Explains the necessity of the OKF YAML Frontmatter and the **Artifact Pyramid (Progressive Disclosure)** to prevent context window bloat during long conversational sessions.
-
 ---
 
 ## 9. The Security & Defense Entry Point (Defensive GitOps)
 *If you are adopting DSOM for secure infrastructure or production environments.*
 
 **Read This First:** [`docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
-
-**Why it matters:** Enforces the "Zero-Global Memory" rule and dictates how to use `git-filter-repo` (Privacy Guardian) to sanitize histories of IPs, secrets, and proprietary node names before syncing to public or shared remotes.
 
 ---
 
@@ -133,8 +141,6 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 **Read This First:** [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
 
-**Why it matters:** This is the master playbook for context window efficiency. It proves a **96.23% reduction in token consumption** versus monolithic document loading, and provides the exact procedures — benchmark commands, OKF frontmatter standards, active context manifest setup, and skill quality gates — that every new DSOM project must inherit to remain sustainable at scale.
-
 ---
 
 ## 11. The Discovery Entry Point (Knowledge-First Protocol)
@@ -142,16 +148,12 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 **Read This First:** [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 
-**Why it matters:** This protocol powers the "real engine" of DSOM's cognitive awareness. It mandates that every AI agent must execute a strict **5-step Local Knowledge-First Discovery Flow** (Search OKF -> Target Read -> Verify Timestamp -> Consult Human -> Execute).
-
 ---
 
 ## 12. The Initialization Entry Point (Mechanical Boot Sequence)
 *If you need to understand how the AI's cognitive engine boots up, reanimates, and establishes its laws before the first prompt is processed.*
 
 **Read This First:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
-
-**Why it matters:** It defines the exact **5-step Mechanical Boot Sequence** that forces the AI to natively ingest its persona, core rules (including the discovery loops), spatial memory, and onboarding map in a strict order.
 
 ---
 
@@ -172,9 +174,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 ## 15. The Native OpenWiki Knowledge Graph Entry Point (Zero-Binary Architecture)
 *If you want to maintain a high-density, zero-binary knowledge graph across your repository.*
 
-**Read This First:** [`docs/tools/HOWTO-OPENWIKI.md`](docs/tools/HOWTO-OPENWIKI.md) and [`docs/governance/OPENWIKI-INTEGRATION-GUIDE.md`](docs/governance/OPENWIKI-INTEGRATION-GUIDE.md)
-
-**Why it matters:** Details how to maintain `./openwiki/` using the native Python script (`uv run python tools/openwiki_emulator.py`) with `--init`, `--update`, `--search`, and `--export-graph` CLI modes. Includes complete code samples and reusable AI prompt templates so any project can adopt OpenWiki emulation natively.
+**Read This First:** [`docs/tools/HOWTO-OPENWIKI.md`](docs/tools/HOWTO-OPENWIKI.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/)) and [`docs/governance/OPENWIKI-INTEGRATION-GUIDE.md`](docs/governance/OPENWIKI-INTEGRATION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/))
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-09*
