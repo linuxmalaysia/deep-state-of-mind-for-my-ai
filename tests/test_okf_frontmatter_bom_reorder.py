@@ -34,12 +34,13 @@ import yaml  # type: ignore
 
 def _discover_all_md_files() -> list[pathlib.Path]:
     root_dir = REPO_ROOT
-    exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv'}
+    exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv', 'openwiki', 'openwiki_win'}
+    exclude_files = {'CLAUDE.md'}
     md_files = []
     for dirpath, dirnames, filenames in os.walk(root_dir):
         dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
         for filename in filenames:
-            if filename.endswith('.md'):
+            if filename.endswith('.md') and filename not in exclude_files:
                 filepath = pathlib.Path(dirpath) / filename
                 if not filepath.is_symlink():
                     # On Windows without OS symlinks enabled, git checks out symlinks as text files with target paths (e.g. "../README.md")
