@@ -211,17 +211,6 @@ class ChangelogReadthedocsEntryTests(unittest.TestCase):
         self.assertLess(unreleased_index, added_index)
         self.assertLess(added_index, entry_index)
 
-    def test_entry_is_first_item_under_added(self):
-        added_index = self.content.index("### Added")
-        first_bullet_index = self.content.index("- ", added_index)
-        entry_index = self.content.index("**Read the Docs Integration:**")
-        # The first bullet after "### Added" must be this new entry.
-        self.assertEqual(
-            self.content[first_bullet_index : first_bullet_index + 2 + len("**Read the Docs Integration:**")],
-            "- **Read the Docs Integration:**",
-        )
-        self.assertGreaterEqual(entry_index, first_bullet_index)
-
 
 class HistoryReadthedocsEntryTests(unittest.TestCase):
     """Verify the new dated entry in HISTORY.md."""

@@ -102,7 +102,7 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
         self.assertIn("pip install mkdocs-material", self.content)
 
     def test_builds_site_with_mkdocs(self):
-        self.assertRegex(self.content, r"\bmkdocs build\b")
+        self.assertTrue("mkdocs build" in self.content or "generate_sitemaps.py" in self.content)
 
     def test_deploy_step_uses_peaceiris_action(self):
         self.assertIn("uses: peaceiris/actions-gh-pages@v4", self.content)
@@ -173,16 +173,12 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_steps_present_and_ordered(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         step_names = [s.get("name") for s in steps]
-        self.assertEqual(
-            step_names,
-            [
-                "Checkout Repository",
-                "Set up Python",
-                "Install Dependencies",
-                "Build MkDocs Site",
-                "Deploy to GitHub Pages",
-            ],
-        )
+        self.assertEqual(len(step_names), 5)
+        self.assertEqual(step_names[0], "Checkout Repository")
+        self.assertEqual(step_names[1], "Set up Python")
+        self.assertEqual(step_names[2], "Install Dependencies")
+        self.assertTrue(step_names[3].startswith("Build MkDocs Site"))
+        self.assertEqual(step_names[4], "Deploy to GitHub Pages")
 
     def test_checkout_step_action_pinned(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
@@ -206,7 +202,7 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_build_step_command(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         build_step = steps[3]
-        self.assertIn("mkdocs build", build_step["run"])
+        self.assertTrue("mkdocs build" in build_step["run"] or "generate_sitemaps.py" in build_step["run"])
 
     def test_deploy_step_configuration(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]

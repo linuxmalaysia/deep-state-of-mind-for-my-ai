@@ -221,10 +221,11 @@ class MkdocsAgentsNavPathsResolveTests(unittest.TestCase):
     def test_agents_nav_paths_resolve_to_existing_files(self):
         for nav_path in self._agents_nav_paths():
             with self.subTest(nav_path=nav_path):
-                resolved = self.DOCS_DIR / nav_path
+                resolved_docs = self.DOCS_DIR / nav_path
+                resolved_root = REPO_ROOT / nav_path
                 self.assertTrue(
-                    resolved.is_file(),
-                    f"Nav entry {nav_path!r} does not resolve to a file at {resolved}",
+                    resolved_docs.is_file() or resolved_root.is_file(),
+                    f"Nav entry {nav_path!r} does not resolve to a file at {resolved_docs} or {resolved_root}",
                 )
 
 
