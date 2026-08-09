@@ -1,3 +1,9 @@
+"""
+MkDocs Custom Hook for Link Rewriting.
+
+Dynamically strips 'docs/' prefixes and adjusts relative link paths during MkDocs page
+compilation to ensure smooth navigation across both GitHub web view and MkDocs HTML builds.
+"""
 import re
 
 def on_page_markdown(markdown, page, config, files):

@@ -1,8 +1,25 @@
+"""
+DSOM Spatial Brain Benchmark Tool.
+
+Measures read latency and byte throughput across .agents/brain and .agents/skills
+files to calibrate token and context performance multipliers for native OS and simulated
+mobile (Android Termux) environments.
+"""
 import os
 import time
 import sys
 
 def get_files(directories, extension=".md"):
+    """
+    Recursively discover all files with a given extension across target directories.
+
+    Parameters:
+        directories (list[str]): Directory paths to scan.
+        extension (str): File extension filter (defaults to '.md').
+
+    Returns:
+        list[str]: Absolute or relative file paths matching the extension.
+    """
     files = []
     for d in directories:
         if not os.path.exists(d):
@@ -14,6 +31,15 @@ def get_files(directories, extension=".md"):
     return files
 
 def bench_read(files):
+    """
+    Measure aggregate byte read volume and wall-clock execution time.
+
+    Parameters:
+        files (list[str]): List of file paths to read.
+
+    Returns:
+        tuple[int, float]: Total bytes read and elapsed time in seconds.
+    """
     start = time.perf_counter()
     total_bytes = 0
     for f in files:
