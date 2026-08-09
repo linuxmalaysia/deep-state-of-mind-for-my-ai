@@ -72,6 +72,17 @@ pwsh -File tools/run-openwiki.ps1 visualize openwiki --port 4321 --no-open
 
 ---
 
+### 3. AI Fallback Synthesis Protocol (API Rate Limit Resilience)
+
+If `openwiki code --init` generates `./openwiki/_skeleton.md` but halts page drafting due to third-party API rate limits (Error 429):
+
+1. **Skeleton Analysis:** Read `./openwiki/_skeleton.md` to inspect the planned page tree, subsystem rankings, and evidence links.
+2. **Autonomous Page Drafting:** The AI agent (Gemini / Antigravity) directly drafts all planned `.md` pages under `./openwiki/` using project context and OKF YAML frontmatter.
+3. **Regression Verification:** Run unit test assertions (`uv run --with pyyaml python -m unittest ...`).
+4. **Serve Graph:** Launch the visualizer server (`pwsh -File tools/run-openwiki.ps1 visualize`).
+
+---
+
 ## Quality Gates & Security Rules
 
 1. **Rule 16 (`uv` Mandate & Node.js Isolation):** On Python environments, use `uv` for python dependencies and standard `npm` / `npx` or `tools/run-openwiki.ps1` for Node dependencies.
