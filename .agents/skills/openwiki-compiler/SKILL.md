@@ -15,15 +15,19 @@ name: openwiki-compiler
 
 ## Operational Workflow for AI Agents
 
-### 1. Environment Verification Gate
-Before running OpenWiki commands, verify Node.js version (Node >= 20.0.0 required):
+### 1. Environment Verification & Execution Options
+
+AI agents can maintain `./openwiki/` using either the CLI wrapper or the **Native Python Emulator** (zero Node.js dependencies):
 
 ```bash
-# On Linux / WSL2
-node -v && openwiki --help
+# Option A: Native Python OpenWiki Emulator (Recommended for Zero-Node environments)
+uv run --with pyyaml python tools/openwiki_emulator.py
 
-# On Windows PowerShell (Non-Interactive Node v22.14.0 LTS Wrapper)
+# Option B: Windows PowerShell Non-Interactive Wrapper (Node v22 LTS)
 pwsh -File tools/run-openwiki.ps1 --help
+
+# Option C: Linux / WSL2 CLI
+openwiki --help
 ```
 
 ---
