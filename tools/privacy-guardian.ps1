@@ -59,6 +59,7 @@ $Patterns = @(
     "AIza[0-9A-Za-z-_]{35}",                           # Google API
     "AKIA[0-9A-Z]{16}",                                # AWS Access Key
     "gh[pousr]_[a-zA-Z0-9]{36}",                       # GitHub Token
+    "github_pat_[a-zA-Z0-9_]{82}",                     # GitHub Fine-Grained Token
     "sk-[a-zA-Z0-9]{48}",                              # OpenAI Secret
     "xox[bap]-[a-zA-Z0-9-]+",                          # Slack Token
     "-----BEGIN [A-Z]+ PRIVATE KEY-----",              # PEM Private Key

@@ -59,5 +59,18 @@ class MkdocsHooksLinkRewritingTests(unittest.TestCase):
         self.assertEqual(output_markdown, input_markdown)
 
 
+class PrivacyGuardianSecurityTests(unittest.TestCase):
+    """Test tools/privacy-guardian.sh and privacy-guardian.ps1 regex patterns."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.sh_content = (REPO_ROOT / "tools" / "privacy-guardian.sh").read_text(encoding="utf-8")
+        cls.ps1_content = (REPO_ROOT / "tools" / "privacy-guardian.ps1").read_text(encoding="utf-8")
+
+    def test_fine_grained_github_pat_pattern_present(self):
+        self.assertIn("github_pat_", self.sh_content)
+        self.assertIn("github_pat_", self.ps1_content)
+
+
 if __name__ == "__main__":
     unittest.main()
