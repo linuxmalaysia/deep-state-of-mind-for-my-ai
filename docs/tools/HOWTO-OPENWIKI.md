@@ -46,14 +46,36 @@ npx --yes openwiki --help
 
 ## ⚡ 2. Core CLI Commands & Ingestion
 
-| Operational Intent | CLI Invocations | Expected Result / Output |
-| :--- | :--- | :--- |
-| **Initialize Repo Wiki** | `openwiki --init` | Generates initial wiki structure under `./openwiki/` |
-| **Update Existing Wiki** | `openwiki --update` | Incremental update over changed codebase files |
-| **Personal Knowledge Brain**| `openwiki personal --init` | Initializes local brain under `~/.openwiki/wiki` |
-| **Non-Interactive Print** | `openwiki -p "Summarize project"` | Runs once and outputs response to stdout |
-| **Serve Interactive Graph** | `openwiki visualize` | Launches local web graph server on `http://localhost:4321` |
-| **Connector Ingestion** | `openwiki ingest all` | Ingests from configured connectors (Notion, Slack, Gmail) |
+> [!IMPORTANT]
+> **Prerequisite for Visualization (`openwiki visualize`):**
+> If `http://localhost:4321` shows **"0 pages"**, it means `openwiki code --init` has NOT been run yet! You must run the initialization command first to scan your repository and populate the `./openwiki/` documentation directory before serving the graph visualizer.
+
+| Operational Intent | Linux / WSL Invocations | Windows PowerShell Invocations | Expected Result / Output |
+| :--- | :--- | :--- | :--- |
+| **Initialize Repo Wiki** | `openwiki code --init` | `pwsh -File tools/run-openwiki.ps1 code --init` | Generates initial wiki structure under `./openwiki/` |
+| **Update Existing Wiki** | `openwiki --update` | `pwsh -File tools/run-openwiki.ps1 --update` | Incremental update over changed codebase files |
+| **Personal Knowledge Brain**| `openwiki personal --init` | `pwsh -File tools/run-openwiki.ps1 personal --init` | Initializes local brain under `~/.openwiki/wiki` |
+| **Non-Interactive Print** | `openwiki -p "Summarize"` | `pwsh -File tools/run-openwiki.ps1 -p "Summarize"` | Runs once and outputs response to stdout |
+| **Serve Interactive Graph** | `openwiki visualize` | `pwsh -File tools/run-openwiki.ps1 visualize` | Launches local web graph server on `http://localhost:4321` |
+| **Connector Ingestion** | `openwiki ingest all` | `pwsh -File tools/run-openwiki.ps1 ingest all` | Ingests from configured connectors (Notion, Slack, Gmail) |
+
+---
+
+### ❓ Why Is `openwiki visualize` Showing "0 Pages"?
+
+If you open `http://localhost:4321` and see **0 pages**:
+
+1. **Root Cause:** The visualizer reads documentation files from the local `./openwiki/` directory. If `--init` has not been executed, `./openwiki/` is missing or empty.
+2. **Resolution Protocol:**
+   * Run the initialization command:
+     ```powershell
+     # Windows PowerShell
+     pwsh -File tools/run-openwiki.ps1 code --init
+
+     # Linux / WSL
+     openwiki code --init
+     ```
+   * Once `./openwiki/` contains generated `.md` pages, re-run `openwiki visualize` to explore the populated interactive graph.
 
 ---
 

@@ -94,7 +94,16 @@ OpenWiki integrates directly into the DSOM Tri-Phasic Mind architecture:
 
 ---
 
-## 🔗 6. References
+## 🛠️ 6. Troubleshooting: Visualization Shows 0 Pages
+
+> [!IMPORTANT]
+> If `openwiki visualize` launches at `http://localhost:4321` showing **0 pages**, the repository wiki has not been initialized yet.
+> * **Action Required:** Execute `pwsh -File tools/run-openwiki.ps1 code --init` (or `openwiki code --init` on Linux/WSL).
+> * **Result:** OpenWiki will scan the codebase, build the `./openwiki/` directory, and populate the visual graph nodes.
+
+---
+
+## 🔗 7. References
 
 * **LangChain OpenWiki Repository:** [`github.com/langchain-ai/openwiki`](https://github.com/langchain-ai/openwiki)
 * **DSOM Tri-Phasic Architecture:** [`docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
