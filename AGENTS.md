@@ -56,6 +56,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Command-First Architecture** | Prose instructions are converted into exact, executable, byte-capped terminal invocations. |
 | **Jules & Antigravity Collaborative Sync** | Google Jules and Google Antigravity share collective architectural knowledge, including atomic replacement protocols, YAML CustomLoader safe preservation, MkDocs exclusion negation, custom link rewriting hooks, and Windows Git-symlink/CRLF test guardrails. |
 | **Tri-Phasic Mind & Subsystems** | Cognitive pipeline partitioned into Active (low-latency MCP), Twilight (linters, token gates), and Deep (EOD palace-sync consolidation) states. Enforces the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, Metacognition & Guardrails). |
+| **Windows Non-Interactive Node.js LTS Mandate** | AI must execute Node.js tools directly from explicit user-space LTS paths (e.g. `v22.14.0`) or via non-interactive PowerShell wrappers (`tools/run-openwiki.ps1`) to avoid `nvm use` UAC elevation hangs in background tasks. |
 
 ---
 
