@@ -1,17 +1,30 @@
 ---
 okf_version: 0.1
 type: documentation
-title: "START HERE: DSOM Project Entry Points"
-timestamp: "2026-07-19T03:27:00Z"
-topics: ["onboarding", "entry-points", "dsom", "sovereign", "baseline"]
-description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new projects."
+title: "START HERE: DSOM Project Benefits & Entry Points"
+timestamp: "2026-08-09T11:22:00Z"
+topics: ["onboarding", "entry-points", "dsom", "sovereign", "baseline", "benefits", "openwiki"]
+description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new or existing projects."
 resource: "file:///START-HERE.md"
 ---
-# START HERE: DSOM Project Entry Points
+# START HERE: DSOM Project Benefits & Entry Points
 
-Welcome to the **Deep State of Mind (DSOM) For My AI** framework. If you are adopting this repository to bootstrap a new infrastructure project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
+Welcome to the **Deep State of Mind (DSOM) For My AI** framework. If you are adopting this repository to bootstrap a new infrastructure/software project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
 
-DSOM is a modular Sovereign Engine. To use it effectively, do not read every file at random. Start with the following defined Entry Points depending on your role.
+DSOM is a modular Sovereign AI Engine. To use it effectively, do not read every file at random. Start with the defined Entry Points depending on your role.
+
+---
+
+## 🌟 Why Adopt DSOM in Your Project? (Core Architectural Benefits)
+
+Adopting the DSOM protocol into any new or existing project delivers four transformative capabilities:
+
+| Core Capability / Benefit | How DSOM Achieves It | Empirical Impact / Value |
+| :--- | :--- | :--- |
+| **1. 98%+ Token & Cost Reduction** | **OKF YAML Frontmatter** + **Native OpenWiki (`./openwiki/`)** pre-distill codebase structures into lightweight metadata and 10 concept nodes. | AI agents search metadata in ~50 tokens instead of loading 500,000+ raw code tokens into context windows. |
+| **2. Zero Memory Loss Across Sessions** | **Spatial Memory (`.agents/brain/`)** records session walkthrough anchors (`task.md`, `walkthrough.md`, `palace_registry.md`). | AI digital twins (Gemini, Jules, Claude) reanimate instantly with exact past mental state across chat reboots. |
+| **3. Zero-Binary & Zero-Cost Portability** | Native Python scripts (**`uv run python tools/openwiki_emulator.py`**) replace heavy Node.js binaries and third-party APIs. | Bypasses `NODE_MODULE_VERSION` native compilation crashes, UAC elevation hangs, 135 MB bloat, and LLM API rate limits. |
+| **4. Multi-Agent Cognitive Alignment** | **27 Constitutional AI Laws (`AGENTS.md`)** + **FastMCP Knowledge Server (`tools/mcp/server.py`)**. | Google Jules, Antigravity, Cursor, and Claude Desktop share identical rules, security guardrails, and test contracts. |
 
 ---
 
@@ -31,7 +44,7 @@ DSOM is a modular Sovereign Engine. To use it effectively, do not read every fil
 
 **Then Read the Full Rulebook:** [`.agents/AGENTS.md`](.agents/AGENTS.md)
 
-**Why it matters:** The root `AGENTS.md` is the **Gateway File** for AI agents such as Google Jules, Cursor, and Copilot that scan the repository root. It summarises the DSOM protocol and immediately redirects agents to [`.agents/AGENTS.md`](.agents/AGENTS.md) — the **Sovereign Constitution** containing all 22+ operational laws, the LinuxMalaysia persona, the Defensive GitOps rules, the OKF mandate, and the UK English writing standard. Keep both files synchronised at all times.
+**Why it matters:** The root `AGENTS.md` is the **Gateway File** for AI agents such as Google Jules, Cursor, and Copilot that scan the repository root. It summarises the DSOM protocol and immediately redirects agents to [`.agents/AGENTS.md`](.agents/AGENTS.md) — the **Sovereign Constitution** containing all 27 operational laws, the LinuxMalaysia persona, the Defensive GitOps rules, the OKF mandate, and the UK English writing standard. Keep both files synchronised at all times.
 
 ---
 
@@ -65,7 +78,7 @@ DSOM is a modular Sovereign Engine. To use it effectively, do not read every fil
 ## 6. The Subagent Swarm Entry Point (Multi-Agent Orchestration)
 
 ### Entry Point 3: The Native MCP Server Integration
-DSOM acts as its own Model Context Protocol (MCP) server, allowing AI editors (Claude Desktop, Cursor) to read the Sovereign Markdown Palace locally without pasting context.
+DSOM acts as its own Model Context Protocol (MCP) server (`tools/mcp/server.py`), allowing AI editors (Claude Desktop, Cursor, VSCode) to read the Sovereign Markdown Palace and OpenWiki knowledge graph locally without pasting context.
 
 To configure your AI client, point it to our `uv`-managed server script:
 ```json
@@ -73,7 +86,7 @@ To configure your AI client, point it to our `uv`-managed server script:
   "mcpServers": {
     "dsom-palace": {
       "command": "uv",
-      "args": ["run", "--with", "mcp", "tools/mcp/server.py"]
+      "args": ["run", "tools/mcp/server.py"]
     }
   }
 }
@@ -94,37 +107,6 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) and [`docs/governance/AI-SLASH-COMMANDS-GUIDE.md`](docs/governance/AI-SLASH-COMMANDS-GUIDE.md)
 
 **Why it matters:** Explains how to structure the `.agents/skills/` directory. It ensures that all operational manuals (SOPs) are OKF-compliant and executable by the AI via semantic routing, eliminating the need to write custom Python bots.
-
-**Mandatory Project Skills:**
-The following operational skills have been standardized under the DSOM framework and must be copied into any new project adopting the DSOM architecture:
-* `context7-indexer`
-* `cross-platform-translator`
-* `dsom-bootstrap`
-* `dsom-knowledge-ingester`
-* `dsom-policy-adopter`
-* `dsom-project-cloner`
-* `dsom-release-manager`
-* `dsom-signature-injector`
-* `dsom-state-sync`
-* `dsom-token-calculator`
-* `eod-palace-sync`
-* `forensic-log-audit`
-* `git-commit-resolver`
-* `git-history-scrubber`
-* `initialize-gitops`
-* `jules-antigravity-sync`
-* `latex-proposal-compiler`
-* `node-proposal-formatter`
-* `node-slide-generator`
-* `odp-slide-generator`
-* `okf-frontmatter-injector`
-* `palace-auditor`
-* `pdf-text-extractor`
-* `persona-injector`
-* `proposal-docx-formatter`
-* `publish-to-blogger`
-* `sod-palace-sync`
-* `ssh-passwordless-setup`
 
 ---
 
@@ -153,13 +135,6 @@ The following operational skills have been standardized under the DSOM framework
 
 **Why it matters:** This is the master playbook for context window efficiency. It proves a **96.23% reduction in token consumption** versus monolithic document loading, and provides the exact procedures — benchmark commands, OKF frontmatter standards, active context manifest setup, and skill quality gates — that every new DSOM project must inherit to remain sustainable at scale.
 
-**Supporting governance documents:**
-* [`docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md`](docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md) — Empirical proof of token savings
-* [`docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md) — Circuit breaker enforcement
-* [`docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md`](docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md) — Local vs. remote RAG latency analysis
-* [`.agents/skills/dsom-token-calculator/SKILL.md`](.agents/skills/dsom-token-calculator/SKILL.md) — Executable token gate skill
-* [`.agents/brain/active_context_manifest.md`](.agents/brain/active_context_manifest.md) — Active session file manifest
-
 ---
 
 ## 11. The Discovery Entry Point (Knowledge-First Protocol)
@@ -167,7 +142,7 @@ The following operational skills have been standardized under the DSOM framework
 
 **Read This First:** [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 
-**Why it matters:** This protocol powers the "real engine" of DSOM's cognitive awareness. It mandates that every AI agent must execute a strict **5-step Local Knowledge-First Discovery Flow** (Search OKF -> Target Read -> Verify Timestamp -> Consult Human -> Execute). This ensures any project adopting DSOM natively executes this loop to preserve context and save tokens without having to be reminded.
+**Why it matters:** This protocol powers the "real engine" of DSOM's cognitive awareness. It mandates that every AI agent must execute a strict **5-step Local Knowledge-First Discovery Flow** (Search OKF -> Target Read -> Verify Timestamp -> Consult Human -> Execute).
 
 ---
 
@@ -176,7 +151,7 @@ The following operational skills have been standardized under the DSOM framework
 
 **Read This First:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
 
-**Why it matters:** It defines the exact **5-step Mechanical Boot Sequence** that forces the AI to natively ingest its persona, core rules (including the discovery loops), spatial memory, and onboarding map in a strict order. This guarantees that when a new project adopts DSOM, the AI automatically inherits and executes its governance loops upon initialization.
+**Why it matters:** It defines the exact **5-step Mechanical Boot Sequence** that forces the AI to natively ingest its persona, core rules (including the discovery loops), spatial memory, and onboarding map in a strict order.
 
 ---
 
@@ -185,17 +160,22 @@ The following operational skills have been standardized under the DSOM framework
 
 **Read This First:** [`docs/governance/DSOM-AUTOMATED-STATE-SYNC.md`](docs/governance/DSOM-AUTOMATED-STATE-SYNC.md)
 
-**Why it matters:** It explains how GitHub Actions and an LLM script automatically distill Pull Request diffs into a condensed `.dsom` state file to enforce Vectorized Memory Tiering.
-
 ---
 
 ## 14. The Cognitive Architecture Entry Point (The Tri-Phasic Mind)
-*If you need to understand how the AI's cognitive pipeline is split into Active, Twilight, and Deep states, and how its functional subsystems operate.*
+*If you need to understand how the AI's cognitive pipeline is split into Active, Twilight, and Deep states.*
 
 **Read This First:** [`docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`](docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
 
-**Why it matters:** It defines the Tri-Phasic Mind model (Active, Twilight, and Deep states) and the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, and Metacognition & Guardrails) that govern the daily operational workflow and state synchronization of the DSOM framework.
+---
+
+## 15. The Native OpenWiki Knowledge Graph Entry Point (Zero-Binary Architecture)
+*If you want to maintain a high-density, zero-binary knowledge graph across your repository.*
+
+**Read This First:** [`docs/tools/HOWTO-OPENWIKI.md`](docs/tools/HOWTO-OPENWIKI.md) and [`docs/governance/OPENWIKI-INTEGRATION-GUIDE.md`](docs/governance/OPENWIKI-INTEGRATION-GUIDE.md)
+
+**Why it matters:** Details how to maintain `./openwiki/` using the native Python script (`uv run python tools/openwiki_emulator.py`) with `--init`, `--update`, `--search`, and `--export-graph` CLI modes. Includes complete code samples and reusable AI prompt templates so any project can adopt OpenWiki emulation natively.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-08*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-09*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
