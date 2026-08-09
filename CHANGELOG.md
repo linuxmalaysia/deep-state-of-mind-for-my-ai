@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Native Python OpenWiki Emulator (Rule 27):** Built `tools/openwiki_emulator.py` with `--init`, `--update`, `--search`, and `--export-graph` CLI modes, eliminating Node.js runtime friction (version mismatches, native C++ compilation, UAC elevation hangs, and API rate limits). Reclaimed 135.3 MB of local disk space.
+- **FastMCP OpenWiki Knowledge Bridge:** Integrated OpenWiki resources (`dsom://openwiki/skeleton`, `dsom://openwiki/quickstart`), governance rulebook (`dsom://governance/agents`), and the `search_openwiki(query)` RAG search tool into `tools/mcp/server.py`.
+- **OpenWiki Code Samples & Prompt Templates:** Authored comprehensive code samples and reusable AI prompt templates in `HOWTO-OPENWIKI.md`, `OPENWIKI-INTEGRATION-GUIDE.md`, and `HOWTO-MCP-SERVER.md`.
 - **Read the Docs Integration:** Configured `.readthedocs.yaml` at the repository root using Ubuntu 24.04, Python 3.13, and MkDocs integration to automatically build the project's documentation on Read the Docs. Added comprehensive unit tests in `tests/test_readthedocs_config.py` to verify configuration integrity.
 - **Executor Modularity & Windows WSL2 Bridge:** Redefined the Third Pillar in `GITOPS-AIOPS-ANSIBLE-STRATEGY.md` and `README.md` from strictly "Ansible" to the modular "Executor". Formalized `uv` (Python), `npm` (Web), and `pandoc` (Docs) as valid executors. Formally established WSL2 as the mandatory local Control Node (Execution Bridge) for Windows-only projects to allow seamless execution of Linux tooling without a dedicated remote jumphost.
 - **AI Initialization Sequence Document:** Published `docs/governance/AI-INITIALIZATION-SEQUENCE.md` to explicitly document the mechanical boot process (AGENTS.md -> Brain -> START-HERE -> Governance -> Skills). Linked directly in `README.md` and GitBook as mandatory reading for both humans and AI.

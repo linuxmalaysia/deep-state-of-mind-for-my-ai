@@ -84,3 +84,20 @@ To ensure complete cross-platform test reliability across native Windows checkou
 ### Integration Mental Anchor
 
 > Adopted Windows Git-Symlink & CRLF Test Guardrails into DSOM Constitution (Rule 25) and test suite.
+
+## 🏁 Session Anchor: 2026-08-09 — Native OpenWiki Emulator & FastMCP Knowledge Bridge
+
+- Purged external Node.js binaries (`openwiki_win`, 135 MB bloat) and built the **Native Python OpenWiki Emulator (`tools/openwiki_emulator.py`)** with `--init`, `--update`, `--search`, and `--export-graph` CLI modes.
+- Codified Rule 27 (**Native OpenWiki Emulator & Zero-Binary Mandate**) across root `AGENTS.md` and `.agents/AGENTS.md`.
+- Updated `openwiki-compiler` skill and authored operational guides `HOWTO-OPENWIKI.md`, `OPENWIKI-INTEGRATION-GUIDE.md` (with code samples and AI prompt templates), and `HOWTO-MCP-SERVER.md`.
+- Enhanced FastMCP server (`tools/mcp/server.py`) with OpenWiki resources (`dsom://openwiki/skeleton`, `dsom://openwiki/quickstart`), governance rules (`dsom://governance/agents`), and the `search_openwiki(query)` RAG search tool.
+- Reclaimed 135.3 MB of local disk space (total repository size: 30.84 MB, Git object database: 18.36 MB).
+- Achieved 100% test suite pass rate (112/112 unit tests passing cleanly).
+
+### Underlying Rationale
+
+To eliminate Node.js runtime friction (version mismatches, native C++ compilation, UAC elevation hangs, and API rate limits) while maintaining a zero-binary, ultra-fast Python OpenWiki knowledge graph integrated into FastMCP for Google Jules, Gemini, and Cursor.
+
+### Integration Mental Anchor
+
+> Adopted Native OpenWiki Emulator & Zero-Binary Mandate (Rule 27) and FastMCP OpenWiki Knowledge Bridge into DSOM framework.
