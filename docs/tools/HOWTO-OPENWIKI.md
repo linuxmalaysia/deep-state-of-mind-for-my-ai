@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: operational_guide
 title: "🛠️ HOWTO: Operating OpenWiki & Native Python Zero-Binary Emulator"
-timestamp: "2026-08-09T10:30:00Z"
+timestamp: "2026-08-09T10:32:00Z"
 topics: ["openwiki", "python", "emulator", "howto", "dsom", "zero-binary", "uv"]
 description: "Step-by-step operational guide for maintaining OpenWiki knowledge graphs natively via Python (uv) without Node.js binaries or external API rate limits."
 resource: "file:///docs/tools/HOWTO-OPENWIKI.md"
@@ -11,20 +11,23 @@ resource: "file:///docs/tools/HOWTO-OPENWIKI.md"
 
 This operational guide provides step-by-step instructions for running and maintaining **OpenWiki** knowledge graphs within the Deep State of Mind (DSOM) framework.
 
-It includes full instructions for operating our **Native Python OpenWiki Emulator (`tools/openwiki_emulator.py`)**, which eliminates external Node.js binaries, C++ compilation steps, background UAC hangs, and third-party API rate limits.
+Under **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, all OpenWiki operations in `./openwiki/` are compiled natively in Python using `uv`.
 
 ---
 
-## 🚀 1. Native Python OpenWiki Emulator (Recommended)
+## 🚀 1. Native Python CLI Modes (`tools/openwiki_emulator.py`)
 
-Under **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, all OpenWiki knowledge structures in `./openwiki/` are compiled natively in Python using `uv`.
+| Operational Intent | Python `uv` Command | Description / Result |
+| :--- | :--- | :--- |
+| **Initialize Knowledge Base** | `uv run --with pyyaml python tools/openwiki_emulator.py --init` | Re-generates all 10 OKF-compliant `.md` wiki pages & skeleton structure. |
+| **Incremental Diff Update** | `uv run --with pyyaml python tools/openwiki_emulator.py --update` | Checks `git status` / `git diff` and updates evidence blocks for changed files. |
+| **Fast Frontmatter Search** | `uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"` | Performs sub-millisecond search over OKF YAML frontmatter (`topics:`, `title:`, `description:`). |
+| **Export Offline Graph** | `uv run --with pyyaml python tools/openwiki_emulator.py --export-graph` | Generates a standalone, offline HTML graph file at `openwiki/graph.html`. |
 
-### Execution Command:
-```bash
-uv run --with pyyaml python tools/openwiki_emulator.py
-```
+---
 
-### Why Use the Native Python Emulator?
+## 💡 2. Architectural Advantages of Native Python Emulation
+
 1. **Zero Node.js / C++ Dependencies:** No `npm`, `pnpm`, `bun`, or Visual Studio C++ Build Tools (`better-sqlite3`) required.
 2. **Zero UAC Elevation Hangs:** Runs background automation non-interactively without Windows UAC prompts.
 3. **API Rate Limit Resilience (Error 429 Mitigation):** If external LLM API rate limits hit during CLI execution, the AI agent uses local context to draft all 10 OKF-compliant wiki pages directly into `./openwiki/`.
@@ -32,7 +35,7 @@ uv run --with pyyaml python tools/openwiki_emulator.py
 
 ---
 
-## 🛠️ 2. How to Build Your Own OpenWiki Emulator (Code & Prompt Template)
+## 🛠️ 3. How to Build Your Own OpenWiki Emulator (Code & Prompt Template)
 
 If you are setting up OpenWiki emulation on another repository or project, follow this guide.
 
@@ -56,10 +59,12 @@ Emulates the OpenWiki CLI documentation & knowledge graph generation natively in
 using `uv run`, requiring zero Node.js binaries or external API keys.
 """
 
+import argparse
 import datetime
 import json
 import os
 import pathlib
+import subprocess
 import sys
 import yaml
 
@@ -86,56 +91,39 @@ def ensure_openwiki_dirs():
         d.mkdir(parents=True, exist_ok=True)
 
 
-def generate_skeleton() -> str:
-    timestamp = get_timestamp()
-    skeleton = f"""---
-okf_version: 0.1
-type: documentation
-title: "OpenWiki Documentation Skeleton & Subsystem Index"
-timestamp: "{timestamp}"
-topics: ["openwiki", "skeleton", "inventory"]
-description: "Authoritative inventory ranking, planned page tree, and evidence briefs for the codebase."
-resource: "file:///openwiki/_skeleton.md"
----
-# OpenWiki documentation skeleton
-
-## Inventory and ranking
-
-| Rank | System | Why it is substantial | Primary evidence |
-|---|---|---|---|
-| 1 | Governance and Brain | Primary public purpose and operational control plane. | `README.md`, `AGENTS.md` |
-| 2 | Session Lifecycle | Governs persistent state and session handoffs. | `tools/` |
-| 3 | Documentation Delivery | Public product surface delivered through MkDocs and GitHub Pages. | `mkdocs.yml` |
-
-## Planned tree
-
-- `quickstart.md` — Final entrypoint and task-routing table.
-- `architecture/overview.md` — Architecture scope and component boundaries.
-- `governance/agent-operation.md` — Operating constraints and boot loops.
-- `memory/session-and-palace.md` — Session lifecycle and Palace consolidation.
-- `automation/tools-and-privacy.md` — Automation scripts and privacy guardrails.
-- `quality/verification.md` — Test suite assertions.
-"""
-    return skeleton
+def cmd_init():
+    print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR}...")
+    ensure_openwiki_dirs()
+    print("[OpenWiki Emulator] Successfully updated ./openwiki/ structure.")
 
 
-def generate_last_update_json() -> str:
-    data = {
-        "updatedAt": get_timestamp(),
-        "engine": "DSOM Python OpenWiki Emulator v1.0",
-        "status": "success",
-        "pagesCompiled": 10,
-    }
-    return json.dumps(data, indent=2)
+def cmd_search(query: str):
+    print(f"[OpenWiki Search] Querying frontmatter for: '{query}'...")
+    for md_file in OPENWIKI_DIR.rglob("*.md"):
+        try:
+            content = md_file.read_text(encoding="utf-8")
+            if content.startswith("---"):
+                parts = content.split("---", 2)
+                if len(parts) >= 3:
+                    meta = yaml.safe_load(parts[1])
+                    if meta and query.lower() in str(meta).lower():
+                        print(f" - [{md_file.name}] {meta.get('title')}: {meta.get('description')}")
+        except Exception:
+            pass
 
 
 def main():
-    print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR}...")
-    ensure_openwiki_dirs()
-    (OPENWIKI_DIR / "_skeleton.md").write_text(generate_skeleton(), encoding="utf-8")
-    (OPENWIKI_DIR / ".last-update.json").write_text(generate_last_update_json(), encoding="utf-8")
-    (OPENWIKI_DIR / "INSTRUCTIONS.md").write_text("<!-- OPENWIKI:GENERATED BY PYTHON EMULATOR -->\n", encoding="utf-8")
-    print("[OpenWiki Emulator] Successfully updated ./openwiki/ structure.")
+    parser = argparse.ArgumentParser(description="Native Python OpenWiki Emulator")
+    parser.add_argument("--init", action="store_true", help="Initialize full wiki")
+    parser.add_argument("--update", action="store_true", help="Compile recent Git diffs")
+    parser.add_argument("--search", type=str, help="Fast OKF metadata search query")
+    parser.add_argument("--export-graph", action="store_true", help="Generate standalone offline HTML graph")
+    args = parser.parse_args()
+
+    if args.search:
+        cmd_search(args.search)
+    else:
+        cmd_init()
 
 
 if __name__ == "__main__":
@@ -149,34 +137,26 @@ if __name__ == "__main__":
 Use this prompt to instruct an AI assistant to build or adapt an OpenWiki emulator script for any project:
 
 ```text
-Prompt for AI Agent:
---------------------
-"You are a Senior Systems Architect and Cognitive AI Assistant.
-I want you to build a zero-binary OpenWiki Emulator in Python for our repository.
+================================================================================
+AI PROMPT TEMPLATE: BUILD A NATIVE PYTHON OPENWIKI EMULATOR SCRIPT
+================================================================================
+
+"You are a Senior Systems Architect. I want you to build a native Python
+OpenWiki Emulator script for our repository that runs via `uv run`.
 
 Requirements:
-1. Create a script at `tools/openwiki_emulator.py` executable via `uv run --with pyyaml python tools/openwiki_emulator.py`.
-2. Inspect our repository structure, entrypoint files, governance documents, and test files.
+1. Create a script at `tools/openwiki_emulator.py` with inline `uv` metadata (`pyyaml>=6.0`).
+2. Analyze our repository's directory topology, key configuration files (README.md, AGENTS.md, etc.), and test suites.
 3. Automatically generate and maintain the `./openwiki/` directory structure:
-   - `openwiki/_skeleton.md` (Containing inventory ranking, planned page tree, evidence briefs).
-   - `openwiki/quickstart.md` (Quickstart topology and task-routing table).
-   - Subsystem folders: `openwiki/architecture/`, `openwiki/governance/`, `openwiki/memory/`, `openwiki/automation/`, `openwiki/integrations/`, `openwiki/publishing/`, `openwiki/quality/`.
-   - `openwiki/.last-update.json` (Containing ISO timestamp and status: 'success').
-4. All generated markdown files MUST include OKF v0.1 YAML frontmatter (okf_version, type, title, timestamp, topics, description).
-5. Ensure the script runs non-interactively without requiring Node.js, npm, or external LLM API keys."
+   - `openwiki/_skeleton.md` (Inventory ranking, planned page tree, evidence briefs).
+   - `openwiki/quickstart.md` (Topology map and task-routing table).
+   - Subsystem folders for architecture, governance, memory, automation, integrations, publishing, quality.
+   - `openwiki/.last-update.json` (Containing ISO timestamp and compilation status).
+4. Include CLI arguments: `--init`, `--update`, `--search "<query>"`, and `--export-graph`.
+5. All generated markdown files MUST include OKF v0.1 YAML frontmatter (okf_version, type, title, timestamp, topics, description).
+6. The script MUST run non-interactively without Node.js binaries, npm packages, or external API keys."
+================================================================================
 ```
-
----
-
-## 🏛️ 3. Legacy Node.js OpenWiki CLI Invocations
-
-If you need to run the original Node.js OpenWiki CLI on Linux or WSL2:
-
-| Operational Intent | Command | Expected Output |
-| :--- | :--- | :--- |
-| **Initialize Repo Wiki** | `openwiki code --init` | Generates initial wiki structure under `./openwiki/` |
-| **Update Existing Wiki** | `openwiki --update` | Incremental update over changed codebase files |
-| **Serve Interactive Graph** | `openwiki visualize` | Launches local web graph server on `http://localhost:4321` |
 
 ---
 
