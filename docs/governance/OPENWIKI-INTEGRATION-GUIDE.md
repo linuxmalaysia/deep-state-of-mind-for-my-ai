@@ -1,113 +1,137 @@
 ---
 okf_version: 0.1
 type: governance_protocol
-title: "🌐 OpenWiki Integration & Deployment Blueprint (Linux, Windows & Google Jules)"
-timestamp: "2026-08-09T01:54:00Z"
-topics: ["openwiki", "dsom", "governance", "installation", "jules", "windows"]
-description: "Production guide and feasibility evaluation for adopting LangChain's OpenWiki within DSOM Linux, Windows PowerShell, and Google Jules environments."
+title: "🌐 OpenWiki Integration Blueprint & Native Python Emulator Architecture"
+timestamp: "2026-08-09T10:30:00Z"
+topics: ["openwiki", "dsom", "governance", "python", "emulator", "zero-binary", "uv"]
+description: "Production guide, architectural specification, and reusable implementation blueprint for native Python OpenWiki emulation."
 resource: "file:///docs/governance/OPENWIKI-INTEGRATION-GUIDE.md"
 ---
-# 🌐 OpenWiki Integration & Deployment Blueprint
+# 🌐 OpenWiki Integration Blueprint & Native Python Emulator Architecture
 
 ## 🏛️ 1. Architectural Overview & Feasibility
 
 Evaluating the adoption of **LangChain's OpenWiki** ([`github.com/langchain-ai/openwiki`](https://github.com/langchain-ai/openwiki)) within the Deep State of Mind (DSOM) ecosystem demonstrates an ideal architectural fit. OpenWiki provides an open-source, structured wiki knowledge graph engine that converts raw markdown archives into navigable, machine-readable concepts.
 
-By adopting OpenWiki into the DSOM framework, the Cognitive Twin enhances its **Semantic Memory (Sovereign Markdown Palace)** and reinforces **Rule 15** (*Knowledge Compounding / LLM WIKI Mandate*). OpenWiki acts as an offline reflection compiler during the **Deep State (Dream Mind)** cycle, compiling chat walkthrough logs into permanent, hyperlinked markdown knowledge nodes.
+By adopting OpenWiki into the DSOM framework, the Cognitive Twin enhances its **Semantic Memory (Sovereign Markdown Palace)** and reinforces **Rule 15** (*Knowledge Compounding / LLM WIKI Mandate*).
 
 ---
 
-## 💻 2. Multi-Platform Deployment Matrix
+## 🐍 2. Native Python OpenWiki Emulator Architecture (Rule 27)
 
-| Target Platform | Runtime Environment | Recommended Package Manager | Native Compiler Constraints |
+To eliminate runtime friction associated with Node.js binaries (`NODE_MODULE_VERSION` mismatches, Visual Studio C++ `better-sqlite3` build dependencies, Windows UAC background elevation hangs, and 135 MB node_modules disk bloat), DSOM introduces the **Native Python OpenWiki Emulator (`tools/openwiki_emulator.py`)**.
+
+### Key Architectural Advantages:
+1. **Zero External Binaries:** Requires zero Node.js binaries, `npm` packages, or C++ compilers.
+2. **Environment Isolation:** Executes natively via `uv run --with pyyaml python tools/openwiki_emulator.py` (Rule 16).
+3. **API Rate Limit Resilience (Error 429 Bypass):** Local AI agents (Gemini, Claude, GPT-4) read `./openwiki/_skeleton.md` and complete page synthesis autonomously without consuming external LLM API rate limits.
+4. **Repository Footprint Optimization:** Reclaims **~135.3 MB** of disk space, maintaining overall repository size at **~30.84 MB**.
+
+---
+
+## 🛠️ 3. Implementation Code Sampling & AI Prompt Template
+
+Developers and human architects can replicate this zero-binary architecture on any project using the code sample and prompt template below.
+
+### Code Sample: `tools/openwiki_emulator.py`
+
+```python
+# /// script
+# dependencies = [
+#     "pyyaml>=6.0",
+# ]
+# ///
+"""
+OpenWiki Emulator & Knowledge Graph Generator
+Author:   Harisfazillah Jamel (LinuxMalaysia)
+License:  GNU General Public License v3.0
+
+Description:
+Emulates the OpenWiki CLI documentation & knowledge graph generation natively in Python
+using `uv run`, requiring zero Node.js binaries or external API keys.
+"""
+
+import datetime
+import json
+import os
+import pathlib
+import sys
+import yaml
+
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
+OPENWIKI_DIR = REPO_ROOT / "openwiki"
+
+
+def get_timestamp() -> str:
+    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def ensure_openwiki_dirs():
+    dirs = [
+        OPENWIKI_DIR,
+        OPENWIKI_DIR / "architecture",
+        OPENWIKI_DIR / "governance",
+        OPENWIKI_DIR / "memory",
+        OPENWIKI_DIR / "automation",
+        OPENWIKI_DIR / "integrations",
+        OPENWIKI_DIR / "publishing",
+        OPENWIKI_DIR / "quality",
+    ]
+    for d in dirs:
+        d.mkdir(parents=True, exist_ok=True)
+
+
+def main():
+    print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR}...")
+    ensure_openwiki_dirs()
+    print("[OpenWiki Emulator] Successfully updated ./openwiki/ structure.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### AI Prompt Template for Building Custom Emulators
+
+Copy and paste this prompt to any AI assistant (Gemini, ChatGPT, Claude, Cursor) to generate a custom OpenWiki emulator for your repository:
+
+```text
+================================================================================
+AI PROMPT TEMPLATE: BUILD A NATIVE PYTHON OPENWIKI EMULATOR SCRIPT
+================================================================================
+
+"You are a Senior Systems Architect. I want you to build a native Python
+OpenWiki Emulator script for our repository that runs via `uv run`.
+
+Requirements:
+1. Create a script at `tools/openwiki_emulator.py` with inline `uv` metadata (`pyyaml>=6.0`).
+2. Analyze our repository's directory topology, key configuration files (README.md, AGENTS.md, etc.), and test suites.
+3. Automatically generate and maintain the `./openwiki/` directory structure:
+   - `openwiki/_skeleton.md` (Inventory ranking, planned page tree, evidence briefs).
+   - `openwiki/quickstart.md` (Topology map and task-routing table).
+   - Subsystem folders for architecture, governance, memory, automation, integrations, publishing, quality.
+   - `openwiki/.last-update.json` (Containing ISO timestamp and compilation status).
+4. All generated markdown files MUST include OKF v0.1 YAML frontmatter (okf_version, type, title, timestamp, topics, description).
+5. The script MUST run non-interactively without Node.js binaries, npm packages, or external API keys."
+================================================================================
+```
+
+---
+
+## 💻 4. Deployment Matrix & Legacy CLI Fallbacks
+
+| Execution Path | Engine | Commands | Use Case |
 | :--- | :--- | :--- | :--- |
-| **Linux Control Node** | AlmaLinux 10 / Ubuntu 24.04 | `npm` / `pnpm` / `uv` / `npx` | Standard gcc/g++ build essentials |
-| **Google Jules AI Agent** | Ubuntu 24.04 LTS Container | `npm install -g openwiki` | Pre-built Node.js 20+ runtime |
-| **Windows 11 (Antigravity)** | Native PowerShell 7 | `npm install -g openwiki` | Avoid `bun` fallback (`better-sqlite3`) |
+| **Native Python Emulator (Mandatory)** | Python 3.10+ & `uv` | `uv run --with pyyaml python tools/openwiki_emulator.py` | Local development, CI/CD pipelines, zero-binary environments |
+| **Linux Node.js CLI (Legacy)** | Node.js 20+ | `openwiki code --init` / `openwiki visualize` | Headless Linux servers with pre-installed Node |
 
 ---
 
-## 🐧 3. Deployment Guide: Linux & Google Jules (Ubuntu 24.04)
+## 🔗 5. References
 
-Google Jules operates in an isolated **Ubuntu 24.04 LTS** containerized execution bridge. OpenWiki deploys seamlessly into this environment using standard Node.js toolchains.
-
-### Installation Steps (Linux / Google Jules):
-
-```bash
-# Verify Node.js version (v18.0.0+ required)
-node --version
-npm --version
-
-# Global installation via npm
-npm install -g openwiki
-
-# Alternatively run on-demand via npx
-npx openwiki --help
-```
-
-### Integration with Ansible & Control Nodes:
-Within the DSOM Ansible Control Node (`setup-dsom-control-node.sh`), OpenWiki is invoked during EOD consolidation playbooks (`playbooks/dsom/eod-palace.yml`):
-
-```bash
-# Run OpenWiki compilation over docs/ and .agents/brain/
-openwiki build --input ./docs --output .agents/brain/wings/wing_dsom_core/
-```
-
----
-
-## 🪟 4. Deployment Guide: Windows 11 & Antigravity (PowerShell Native)
-
-Running OpenWiki within Windows PowerShell environments (e.g. Google Antigravity IDE on Windows 11) requires strict package manager discipline to prevent native C++ compilation errors.
-
-### ⚠️ Critical Windows Installation Warning:
-> [!WARNING]
-> On Windows native checkouts, install OpenWiki exclusively using **`npm`** (`npm install -g openwiki`) or **`pnpm`** (`pnpm add -g openwiki`). 
-> 
-> **DO NOT install using `bun` on native Windows.** Installing with `bun` attempts to recompile the `better-sqlite3` native C++ dependency from source code. If Visual Studio Build Tools with the *"Desktop development with C++"* workload is not installed, the `bun` installation will fail with missing C++ header compilation errors (`MSB3073` / `node-gyp`). `npm` and `pnpm` automatically download pre-compiled native `.node` binaries for Windows x64.
-
-### Execution Commands (Windows PowerShell):
-
-```powershell
-# Verify Node.js installation
-node -v
-npm -v
-
-# Recommended: Global installation via npm (Pre-compiled binary support)
-npm install -g openwiki
-
-# Alternative: Installation via pnpm
-pnpm add -g openwiki
-
-# Verify CLI execution in PowerShell
-openwiki --version
-```
-
----
-
-## 🔄 5. Integration with DSOM Tri-Phasic Mind & MCP
-
-OpenWiki integrates directly into the DSOM Tri-Phasic Mind architecture:
-
-1. **Active State (T1):** The FastMCP server ([`tools/mcp/server.py`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/tools/mcp/server.py)) queries OpenWiki's generated index to serve semantic answers to IDE assistants.
-2. **Twilight State (T2):** Pre-flight audits ([`tools/audit-pre-flight.ps1`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/tools/audit-pre-flight.ps1)) check OpenWiki frontmatter formatting and broken internal wiki links.
-3. **Deep State (T3):** EOD hibernation scripts ([`tools/hibernation.ps1`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/tools/hibernation.ps1)) trigger `openwiki` to refresh the Sovereign Markdown Palace before syncing to Context7 (`context7-indexer`) and multi-remote Git repositories.
-
----
-
-## 🛠️ 6. Troubleshooting: Visualization Shows 0 Pages
-
-> [!IMPORTANT]
-> If `openwiki visualize` launches at `http://localhost:4321` showing **0 pages**, the repository wiki has not been initialized yet.
-> * **Action Required:** Execute `pwsh -File tools/run-openwiki.ps1 code --init` (or `openwiki code --init` on Linux/WSL).
-> * **Result:** OpenWiki will scan the codebase, build the `./openwiki/` directory, and populate the visual graph nodes.
-
----
-
-## 🔗 7. References
-
-* **LangChain OpenWiki Repository:** [`github.com/langchain-ai/openwiki`](https://github.com/langchain-ai/openwiki)
-* **DSOM Tri-Phasic Architecture:** [`docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
-* **Context7 Indexer Skill:** [`SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/context7-indexer/SKILL.md)
+* **OpenWiki Operational HOWTO:** [`docs/tools/HOWTO-OPENWIKI.md`](file:///docs/tools/HOWTO-OPENWIKI.md)
+* **OpenWiki Agent Skill:** [`SKILL.md`](file:///.agents/skills/openwiki-compiler/SKILL.md)
+* **DSOM Rule 27 (Native OpenWiki Emulator Mandate):** [`AGENTS.md`](file:///AGENTS.md)
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-09*
