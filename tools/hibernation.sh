@@ -8,6 +8,8 @@
 # Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
 # ==============================================================================
 set -euo pipefail
+export GIT_TERMINAL_PROMPT=0
+export GCM_INTERACTIVE=never
 # ==============================================================================
 # 🌙 DSOM Hibernation Sequence v2.1 (End-of-Day Protocol + Palace Sync)
 #

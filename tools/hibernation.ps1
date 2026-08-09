@@ -29,6 +29,9 @@
     License: GNU GPL v3.0 or later
 #>
 
+$env:GIT_CONFIG_PARAMETERS = "'core.safecrlf=false'"
+$env:GIT_TERMINAL_PROMPT = "0"
+$env:GCM_INTERACTIVE = "never"
 $ErrorActionPreference = "Stop"
 $VERSION = "v2.1"
 
