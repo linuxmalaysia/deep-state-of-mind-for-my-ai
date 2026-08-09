@@ -166,3 +166,63 @@ a.md-nav__link:hover, .md-nav__link--active {
 ::-webkit-scrollbar-track {
   background: var(--lab-bg);
 }
+
+/* ==============================================================================
+ * Custom 3-Button Theme Mode Controller (MODE : LIGHT | DARK | AUTO)
+ * ============================================================================== */
+.theme-mode-toggle-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--md-text-font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-left: auto;
+  margin-right: 12px;
+  z-index: 10;
+}
+
+.theme-mode-label {
+  color: var(--lab-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.theme-mode-segmented-control {
+  display: inline-flex;
+  background: var(--lab-surface);
+  border: 1px solid var(--lab-border);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.theme-mode-btn {
+  background: transparent;
+  border: none;
+  color: var(--lab-muted);
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-mode-btn:hover {
+  color: var(--lab-text);
+  background: rgba(142, 68, 173, 0.05);
+}
+
+.theme-mode-btn.active {
+  background: var(--lab-bg);
+  color: var(--lab-purple);
+  box-shadow: 0 1px 4px rgba(142, 68, 173, 0.2);
+  border: 1px solid var(--lab-border);
+}
+
