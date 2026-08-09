@@ -32,6 +32,8 @@
   --md-accent-bg-color: #8e44ad !important;
   --md-accent-bg-color--transparent: rgba(142, 68, 173, 0.1) !important;
 
+  --md-typeset-a-color: #6d28d9 !important;
+
   --md-default-bg-color: #f8f9fa !important;
   --md-default-bg-color--light: #ffffff !important;
   --md-default-fg-color: #1e293b !important;
@@ -66,6 +68,8 @@
   --md-accent-bg-color: #a855f7 !important;
   --md-accent-bg-color--transparent: rgba(168, 85, 247, 0.1) !important;
 
+  --md-typeset-a-color: #38bdf8 !important;
+
   --md-default-bg-color: #0f172a !important;
   --md-default-bg-color--light: #1e293b !important;
   --md-default-fg-color: #f8fafc !important;
@@ -76,6 +80,26 @@
   /* Custom Glassmorphism variables for Dark Mode */
   --lab-glass-bg: rgba(15, 23, 42, 0.4);
   --lab-glass-border: rgba(255, 255, 255, 0.05);
+}
+
+/* Hyperlinks High Contrast Rules */
+.md-typeset a {
+  color: var(--md-typeset-a-color) !important;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(56, 189, 248, 0.3);
+}
+
+.md-typeset a:hover {
+  opacity: 0.85;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #38bdf8 !important;
+}
+
+:root:not([data-md-color-scheme="slate"]) .md-typeset a {
+  color: #6d28d9 !important;
 }
 
 /* Glassmorphism Header Implementation */
