@@ -134,3 +134,4 @@ nav:
       - Privacy: tools-and-automation/privacy-guardian.md
       - Reset: tools-and-automation/template-reset.md
       - OpenWiki CLI: tools/HOWTO-OPENWIKI.md
+      - FastMCP Server: tools/HOWTO-MCP-SERVER.md

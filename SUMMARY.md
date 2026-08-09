@@ -118,6 +118,7 @@ topics: ["dsom", "documentation"]
 * [🐧 HOWTO: Setup WSL AlmaLinux 10](docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md)
 * [⚙️ HOWTO: Setup Control Node](docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md)
 * [🌐 OpenWiki CLI & Knowledge Compiler](docs/tools/HOWTO-OPENWIKI.md)
+* [🔌 HOWTO: Operate FastMCP Server](docs/tools/HOWTO-MCP-SERVER.md)
 * [📖 HOWTO: Build Sovereign Book](docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md)
 * [📝 HOWTO: Generate Walkthrough](docs/tools/HOWTO-GENERATE-WALKTHROUGH.md)
 
