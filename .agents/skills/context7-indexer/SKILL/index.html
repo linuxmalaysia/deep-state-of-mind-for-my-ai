@@ -848,6 +848,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../governance/OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Integration Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
         
   
@@ -1849,6 +1877,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openwiki-compiler/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Knowledge Graph Compiler Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2353,6 +2409,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastMCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2443,10 +2555,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-direct-llm-endpoint-access" class="md-nav__link">
+  <a href="#4-direct-llm-endpoint-mcp-stream-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Direct LLM Endpoint Access
+        4. Direct LLM Endpoint &amp; MCP Stream Access
       
     </span>
   </a>
@@ -2503,10 +2615,11 @@
 2. The agent must inject the <code>CONTEXT7_API_KEY</code> directly into the MCP client configuration via environment variables.</p>
 <h3 id="3-triggering-re-indexing">3. Triggering Re-indexing</h3>
 <p>Currently, Context7 automatically syncs with the configured repository branch. If a massive structural change occurs in the Palace (e.g., via <code>dsom-state-sync</code>), ensure the changes are fully committed and pushed to <code>main</code> so Context7's webhook or polling mechanism can detect the diff and initiate the Parser step.</p>
-<h3 id="4-direct-llm-endpoint-access">4. Direct LLM Endpoint Access</h3>
-<p>For external web-based AI tools (ChatGPT, Claude Web, Gemini Web), Context7 exposes a live, token-budgeted context endpoint:
-- <strong>URL:</strong> <code>https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=10000</code>
-- Adjust the <code>?tokens=...</code> parameter (e.g., <code>4000</code>, <code>10000</code>, <code>30000</code>) based on the target LLM's context window budget.</p>
+<h3 id="4-direct-llm-endpoint-mcp-stream-access">4. Direct LLM Endpoint &amp; MCP Stream Access</h3>
+<p>For external AI tools (Cursor, Claude, ChatGPT, Gemini, Google Jules), Context7 exposes the live, compiled token stream:
+- <strong>Canonical Stream Endpoint:</strong> <code>https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=83688</code>
+- <strong>MCP Native Tool:</strong> FastMCP exposes the <code>fetch_context7_stream</code> tool inside <code>tools/mcp/server.py</code> to stream or query Context7 snippets dynamically via <code>stdio</code>.
+- <strong>Token Adjustments:</strong> Adjust the <code>?tokens=...</code> parameter (e.g., <code>10000</code>, <code>30000</code>, <code>83688</code>) based on the target LLM's context window budget.</p>
 <h2 id="security-rule-24-mandate">Security (Rule 24 Mandate)</h2>
 <ul>
 <li><strong>NEVER</strong> write the <code>CONTEXT7_API_KEY</code> (e.g., <code>ctx7sk-...</code>) to a local <code>.env</code> file, <code>.git/config</code>, or any file tracked by Git.</li>

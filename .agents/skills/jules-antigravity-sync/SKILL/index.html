@@ -18,7 +18,7 @@
         <link rel="prev" href="../../render-deployment/SKILL/">
       
       
-        <link rel="next" href="../../../../HOWTO-SETUP-ANSIBLE-BASELINE/">
+        <link rel="next" href="../../openwiki-compiler/SKILL/">
       
       
         
@@ -832,6 +832,34 @@
     
   
     LLM WIKI Adoption Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../governance/OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Integration Blueprint
   
 
     
@@ -1969,6 +1997,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6-windows-git-symlink-crlf-test-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Windows Git-Symlink &amp; CRLF Test Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1989,6 +2028,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openwiki-compiler/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Knowledge Graph Compiler Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2498,6 +2565,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastMCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2609,6 +2732,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6-windows-git-symlink-crlf-test-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Windows Git-Symlink &amp; CRLF Test Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2672,6 +2806,10 @@
 <h3 id="5-compliance-verification-suite-expansion">5. Compliance Verification Suite Expansion</h3>
 <ul>
 <li><strong>Accomplishment</strong>: Extended <code>tests/test_okf_frontmatter_bom_reorder.py</code> and quoting validation suites to dynamically discover and verify all markdown files in the repository, guaranteeing a strict BOM-less frontmatter beginning at line 1, column 1.</li>
+</ul>
+<h3 id="6-windows-git-symlink-crlf-test-guardrails">6. Windows Git-Symlink &amp; CRLF Test Guardrails</h3>
+<ul>
+<li><strong>Accomplishment</strong>: Enhanced test discovery suites (<code>tests/test_okf_frontmatter_bom_reorder.py</code>, <code>tests/test_okf_quoting.py</code>, <code>tests/test_docs_symlinks.py</code>) to detect Git text-pointer symlinks (<code>content.startswith("../")</code>) on Windows native checkouts, handle CRLF byte fences (<code>b"---\r\n"</code>), and conditionally scope POSIX <code>chmod</code> bit assertions (<code>if os.name != "nt":</code>).</li>
 </ul>
 <hr />
 <h2 id="procedural-sync-protocol-sop">Procedural Sync Protocol (SOP)</h2>

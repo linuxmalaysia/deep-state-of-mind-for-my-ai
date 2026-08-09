@@ -848,6 +848,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Integration Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
         
   
@@ -1849,6 +1877,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/openwiki-compiler/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Knowledge Graph Compiler Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2353,6 +2409,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastMCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2524,6 +2636,7 @@
 <li><strong>Custom Hooks:</strong> The custom MkDocs hook (<code>tools/mkdocs_hooks.py</code>) dynamically strips the root-level <code>docs/</code> prefix and maps nested repository-root links to work seamlessly on both GitHub and GitHub Pages.</li>
 <li><strong>Multi-platform deployment &amp; tests:</strong> Deployment configurations (Render blueprint <code>render.yaml</code>, Read the Docs <code>.readthedocs.yaml</code>, and GitHub Pages workflow <code>.github/workflows/gh-pages.yml</code>) and their automated test coverage (<code>tests/test_documentation_deployment.py</code>, <code>tests/test_readthedocs_config.py</code>) must be strictly aligned and validated.</li>
 <li><strong>Hibernation Session Anchors:</strong> Automated EOD/Hibernation script (<code>tools/hibernation.sh</code>) requires a matching dated Session Anchor in <code>.agents/brain/walkthrough.md</code> to pass validation.</li>
+<li><strong>Windows Git-Symlink &amp; CRLF Test Guardrails:</strong> Test discovery suites traversing <code>.md</code> files must detect Git text-pointer symlinks (<code>content.startswith("../")</code>) on Windows native checkouts. Raw byte fence checks must handle CRLF line endings (<code>b"---\r\n"</code>), and POSIX <code>chmod</code> bit assertions must be conditionally executed (<code>if os.name != "nt":</code>).</li>
 </ul>
 </li>
 <li><strong>The Tri-Phasic Cognitive Architecture and Functional Subsystems Mandate:</strong> To guarantee cognitive continuity and eliminate context decay across session boundaries, the AI operates under the <strong>Tri-Phasic Mind</strong> model. The AI must understand, respect, and align its processing with the three cognitive states:<ul>
@@ -2533,6 +2646,7 @@
 Furthermore, the AI must align its cognitive execution with the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" &amp; Consolidation, and Metacognition &amp; Guardrails) as codified in <code>docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md</code>.</li>
 </ul>
 </li>
+<li><strong>Native OpenWiki Emulator &amp; Zero-Binary Mandate:</strong> The AI maintains <code>./openwiki/</code> documentation structures directly via native Python scripts (<code>uv run --with pyyaml python tools/openwiki_emulator.py</code>), bypassing external Node.js binaries, <code>npm</code> packages, UAC elevation hangs, and third-party API rate limits while maintaining full OKF and OpenWiki schema compatibility.</li>
 </ol>
 <h2 id="cognitive-engine-protocols-boot-discovery">Cognitive Engine Protocols (Boot &amp; Discovery)</h2>
 <p>To enforce Rules 20, 21, and the Sovereign Architecture, the AI must strictly execute these procedural loops:</p>

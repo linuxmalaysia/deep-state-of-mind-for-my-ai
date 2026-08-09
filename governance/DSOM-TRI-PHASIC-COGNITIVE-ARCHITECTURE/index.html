@@ -1043,6 +1043,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Integration Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
         
   
@@ -2044,6 +2072,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/openwiki-compiler/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Knowledge Graph Compiler Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2548,6 +2604,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastMCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2801,10 +2913,10 @@
 <p>The Cognitive Twin continually refines and optimizes its stored memory using three mechanisms:
 * <strong>Memory Pruning:</strong> The EOD <code>palace-sync</code> runs semantic pruning to merge repetitive, verbose chat histories into a single, compact, metadata-rich Palace update proposal (<code>palace_update_proposal_*.md</code>).
 * <strong>Synthetic Data Generation:</strong> When a playbook or custom script fails during staging/testing, the AI leverages the failure logs to generate edge-case regression test suites inside <code>tests/</code> and templates under <code>.agents/brain/DSOM_TEMPLATE.md</code>, ensuring future subagents inherit this defensive logic.
-* <strong>Concept Linking:</strong> Disconnected workspace chats are analyzed during EOD, identifying hidden relationships between files and automatically updating references in global indexes like <code>SUMMARY.md</code>, <code>mkdocs.yml</code>, and <code>llms.txt</code>.</p>
+* <strong>Concept Linking:</strong> Disconnected workspace chats are analyzed during EOD, identifying hidden relationships between files and automatically updating references in global indexes like <code>SUMMARY.md</code>, <code>mkdocs.yml</code>, <code>llms.txt</code>, and automated sitemap generators (<code>tools/generate_sitemaps.py</code>).</p>
 <h3 id="iv-metacognition-guardrails-self-audit-control">iv) Metacognition &amp; Guardrails (Self-Audit &amp; Control)</h3>
 <p>The framework enforces cognitive safety and sovereignty through three unbreakable guardrails:
-* <strong>Self-Evaluation:</strong> Handled programmatically via <code>palace-auditor</code> and our python-based pytest test suite (<code>tests/</code>), which rate compliance against the strict Open Knowledge Format (OKF) v0.1 and file structure.
+* <strong>Self-Evaluation:</strong> Handled programmatically via <code>palace-auditor</code> and our python-based pytest test suite (<code>tests/</code>), which rate compliance against the strict Open Knowledge Format (OKF) v0.1, cross-platform Windows symlink guardrails, and file structure rules.
 * <strong>Alignment Drifts:</strong> Programmatic verification of Byte-Capped Executions prevents the model from adopting hallucinated or toxic biases injected by unvetted user prompts.
 * <strong>Existential Anchors:</strong> Hard-coded, immutable ethical and operational rules defined in the full Sovereign Constitution (<code>.agents/AGENTS.md</code>)—such as the <strong>Law of Advisory over Execution</strong>, the <strong>Sovereign Signature Mandate</strong>, and the <strong>Python UV Mandate</strong>—which background automated tasks are physically blocked from modifying or rewriting.</p>
 <hr />
@@ -2863,10 +2975,22 @@
 <td style="text-align: left;"><code>tools/palace-sync.sh</code> engine</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>Concept Linking</strong></td>
+<td style="text-align: left;">Deep State / SEO Engine</td>
+<td style="text-align: left;"><code>tools/generate_sitemaps.py</code></td>
+<td style="text-align: left;">Verification of <code>sitemap.xml</code> &amp; <code>robots.txt</code></td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Self-Evaluation</strong></td>
 <td style="text-align: left;">Compliance Suite</td>
 <td style="text-align: left;"><code>tests/test_okf_frontmatter_bom_reorder.py</code></td>
 <td style="text-align: left;">Pytest validation check</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cross-Platform Guardrails</strong></td>
+<td style="text-align: left;">Twilight / Test Suite</td>
+<td style="text-align: left;"><code>tests/test_docs_symlinks.py</code></td>
+<td style="text-align: left;">Native Windows Git-symlink &amp; CRLF validation</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Existential Anchors</strong></td>
