@@ -151,6 +151,13 @@ class OpenWikiState:
         self.timestamp = timestamp or get_timestamp()
 
     def get_planned_pages(self) -> dict:
+        """
+        Build the planned OpenWiki documentation pages and their metadata.
+        
+        Returns:
+            dict: A mapping of documentation paths to their titles, topics,
+                descriptions, and Markdown content.
+        """
         return {
             "quickstart.md": {
                 "title": "OpenWiki Quickstart & Repository Navigation Map",
@@ -514,6 +521,9 @@ PLANNED_PAGES = OpenWikiState().get_planned_pages()
 
 
 def cmd_init():
+    """
+    Generate the OpenWiki documentation structure, metadata, instructions, diagrams, and HTML graph.
+    """
     state = OpenWikiState()
     print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR} with timestamp {state.timestamp}...")
     ensure_openwiki_dirs()
@@ -584,6 +594,12 @@ def cmd_search(query: str):
 
 
 def cmd_export_graph(timestamp: str = None):
+    """
+    Generate an offline standalone HTML knowledge graph for the planned documentation areas.
+    
+    Parameters:
+    	timestamp (str): Timestamp embedded in the generated page. The current timestamp is used when omitted.
+    """
     if timestamp is None:
         timestamp = get_timestamp()
     graph_path = OPENWIKI_DIR / "graph.html"
@@ -677,8 +693,10 @@ def cmd_export_graph(timestamp: str = None):
 
 def process_markdown_file(filepath: pathlib.Path):
     """
-    Reads a markdown file, parses both plain text error/commented blocks
-    and active mermaid blocks, validates/repairs, and saves changes.
+    Validate Mermaid blocks in a Markdown file and restore or annotate invalid diagrams.
+    
+    Parameters:
+        filepath (pathlib.Path): Path to the Markdown file to process.
     """
     content = filepath.read_text(encoding="utf-8")
     lines = content.splitlines()
@@ -756,8 +774,13 @@ def process_markdown_file(filepath: pathlib.Path):
 
 def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
     """
-    Validates a Mermaid diagram block code.
-    Returns (True, "") if valid, or (False, reason_message) if invalid.
+    Validate Mermaid diagram source and return a status flag with an error description.
+    
+    Parameters:
+    	code (str): Mermaid diagram source code.
+    
+    Returns:
+    	tuple[bool, str]: `(True, "")` for valid diagrams, or `(False, reason)` for invalid diagrams.
     """
     lines = [line.strip() for line in code.splitlines() if line.strip()]
     if not lines:
@@ -850,6 +873,7 @@ def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
 
 
 def main():
+    """Run the OpenWiki emulator operation selected from the command-line arguments."""
     parser = argparse.ArgumentParser(description="DSOM Native Python OpenWiki Emulator")
     parser.add_argument("--init", action="store_true", help="Initialize full wiki")
     parser.add_argument("--update", action="store_true", help="Compile recent Git diffs")
