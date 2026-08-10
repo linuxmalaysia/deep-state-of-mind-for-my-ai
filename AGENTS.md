@@ -17,7 +17,7 @@ Welcome to the **Deep State of Mind (DSOM)** Sovereign AI Agent Workspace. If yo
 
 ## Critical Instructions for AI Agents
 
-1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 23 detailed rules governing this project. The file you are reading now is a summary gateway only.
+1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 27 detailed rules governing this project. The file you are reading now is a summary gateway only.
 
 2. **Access Spatial Memory:** Extend your search to all brain files located in `.agents/brain/`. Read the following files to restore full operational context:
    - `task.md` — Active and completed task list (present state).
@@ -120,6 +120,12 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `sod-palace-sync` | Start-of-Day ritual: reads `palace_registry.md`, syncs the active context manifest, and generates the SOD manifest. | No input required. | Updated `sod_manifest.txt` and context manifest. |
 | `eod-palace-sync` | End-of-Day ritual: maps Git commits to Palace Rooms, generates a `palace_update_proposal_*.md`, and prepares for hibernation. | No input required. | Palace update proposal for the AI to review. |
 
+### Collaborative & Multi-Agent Skills
+
+| Skill | Purpose | Input | Output |
+|:---|:---|:---|:---|
+| `jules-antigravity-sync` | Peer agent collaborative skill for sharing operational ledgers, Rule 25 state synchronization, and cognitive continuity between Jules and Antigravity. | None (automatic). | Shared operational ledgers and aligned rules. |
+
 ---
 
 ## Workflows (`/.agents/workflows/`)
@@ -166,12 +172,12 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | Path | Purpose |
 |:---|:---|
 | `AGENTS.md` | **Root Gateway** — this file. First read for all platform AI agents. |
-| `.agents/AGENTS.md` | **Full Rulebook** — Core laws (23 rules), persona, boot sequence, and discovery protocols. |
+| `.agents/AGENTS.md` | **Full Rulebook** — Core laws (27 rules), persona, boot sequence, and discovery protocols. |
 | `.agents/brain/task.md` | Active task list for the current session. |
 | `.agents/brain/walkthrough.md` | Session history and Mental Anchors (resume context). |
 | `.agents/brain/palace_registry.md` | Spatial index of the Sovereign Markdown Palace. |
 | `.agents/brain/active_context_manifest.md` | Live list of files currently in scope. |
-| `.agents/skills/` | OKF-compliant executable skill SOPs (25 skills). |
+| `.agents/skills/` | OKF-compliant executable skill SOPs (31 skills). |
 | `.agents/workflows/` | Multi-agent orchestration governance workflows. |
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |
