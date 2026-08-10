@@ -265,3 +265,91 @@ a.md-nav__link:hover, .md-nav__link--active {
   border: 1px solid var(--lab-border);
 }
 
+/* ==============================================================================
+ * Automated Dynamic Table of Contents (TOC) Card Design System
+ * ============================================================================== */
+.custom-toc-card {
+  background: var(--lab-surface);
+  border: 1px solid var(--lab-border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  font-family: var(--md-text-font);
+  margin-bottom: 24px;
+}
+
+/* Scrollbar customizations for TOC card */
+.custom-toc-card::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-toc-card::-webkit-scrollbar-thumb {
+  background: var(--lab-border);
+  border-radius: 2px;
+}
+
+.custom-toc-header {
+  color: var(--lab-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--lab-border);
+}
+
+.custom-toc-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.custom-toc-sublist {
+  list-style: none !important;
+  padding-left: 14px !important;
+  margin-top: 4px !important;
+  margin-bottom: 6px !important;
+  border-left: 1px solid var(--lab-border);
+}
+
+.custom-toc-item {
+  margin-bottom: 8px !important;
+  line-height: 1.4;
+  font-size: 0.85rem;
+}
+
+.custom-toc-item--h3 {
+  font-size: 0.8rem;
+  margin-bottom: 6px !important;
+}
+
+.custom-toc-link {
+  color: var(--lab-muted) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  cursor: pointer;
+}
+
+.custom-toc-link:hover {
+  color: var(--lab-purple) !important;
+  padding-left: 4px;
+}
+
+.custom-toc-link.active {
+  color: var(--lab-purple) !important;
+  font-weight: 700 !important;
+  border-left: 2px solid var(--lab-purple);
+  padding-left: 6px;
+  margin-left: -2px;
+}
+
+/* Hide MkDocs default TOC titles / navigation when using the custom card */
+.md-sidebar--secondary .md-nav--secondary {
+  display: none !important;
+}
