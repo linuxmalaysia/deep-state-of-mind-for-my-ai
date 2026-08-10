@@ -1,8 +1,8 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
 title: "FastMCP Server Integration & Continuous Integration Workflows"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "integrations", "mcp", "ci-cd", "workflows"]
 description: "FastMCP server contract, Context7 RAG endpoints, GitHub Actions workflows."
 ---
@@ -17,7 +17,7 @@ The native DSOM Model Context Protocol (MCP) server resides in `tools/mcp/server
 - **Sovereign Markdown Palace Exposure:** Exposes the entire compiled documentation structure directly to AI editors (Cursor, Claude Desktop).
 - **Zero-Binary Search Tool:** Integrates sub-millisecond, local OKF-compliant search across all Palace rooms and brain manifests.
 
-## 🤖 Continuous Integration Workflow Catalog
+## 🤖 Continuous Integration Workflow Catalogue
 
 All workspace modifications are compiled, linted, and verified via automated pipelines:
 

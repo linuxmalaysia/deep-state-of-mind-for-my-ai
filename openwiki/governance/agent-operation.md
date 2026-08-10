@@ -1,14 +1,14 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
 title: "Dual Agent Registry & Sovereign Operational Laws"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "governance", "agents", "protocols", "rules"]
-description: "Dual AGENTS.md registry, 27-rule operating constraints, mechanical boot and discovery loops."
+description: "Dual AGENTS.md registry, 27-rule operating constraints, mechanical boot and behaviour/discovery ordering."
 ---
 # Dual Agent Registry & Sovereign Operational Laws
 
-To ensure immediate discovery by various platform LLM interfaces, DSOM enforces a dual-layered constitutional registry that anchors the agent's behavior.
+To ensure immediate discovery by various platform LLM interfaces, DSOM enforces a dual-layered constitutional registry that anchors the agent's behaviour.
 
 ## 📜 The Dual AGENTS.md Registry
 
@@ -22,9 +22,9 @@ To ensure immediate discovery by various platform LLM interfaces, DSOM enforces 
 
 ## ⚙️ The Mechanical Boot Sequence
 
-Upon initialization or reanimation, the AI agent must strictly follow this sequence before making any workspace changes:
+Upon initialisation or reanimation, the AI agent must strictly follow this sequence before making any workspace changes:
 
-1. **Genesis Read:** Parse `.agents/AGENTS.md` to establish behavioral identity and operational laws.
+1. **Genesis Read:** Parse `.agents/AGENTS.md` to establish behavioural identity and operational laws.
 2. **Memory Restoration:** Parse `.agents/brain/` (including `task.md` and `walkthrough.md`) to restore the exact state of active tasks.
 3. **Master Onboarding Map:** Read `START-HERE.md` to understand repository topology and active entry points.
 

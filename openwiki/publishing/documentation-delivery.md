@@ -1,8 +1,8 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
 title: "Multi-Channel Documentation Delivery & SEO Engine"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "publishing", "delivery", "seo", "mkdocs"]
 description: "MkDocs nav, GitHub Pages, RTD, Render, GitBook, SEO sitemaps."
 ---
@@ -23,8 +23,7 @@ DSOM compiles and delivers documentation to multiple channels simultaneously, ca
 ## 🛠️ MkDocs Custom Hooks & Exclusions
 
 Because MkDocs treats `docs/` as the build root, paths must be handled dynamically:
-- **Exclusion Negation:** Dot-prefixed folders are ignored by default. MkDocs is instructed to negation-negate `.agents` via `exclude_docs: |
- !.agents`.
+- **Exclusion Negation:** Dot-prefixed folders are ignored by default. MkDocs is instructed to negation-negate `.agents` via `exclude_docs: | \\n !.agents`.
 - **Custom Link Hook (`tools/mkdocs_hooks.py`):** Rewrites raw markdown links during compilation (removing `docs/` prefixes and mapping repository-root links) to ensure seamless rendering on both GitHub.com and the static site.
 
 ## 🌐 Automated Sitemaps & Robots.txt

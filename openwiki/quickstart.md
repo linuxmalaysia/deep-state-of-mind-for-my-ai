@@ -1,8 +1,8 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
 title: "OpenWiki Quickstart & Repository Navigation Map"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "quickstart", "navigation", "dsom"]
 description: "Master entrypoint containing repository map, task-routing table, canonical links, and focused validation commands."
 ---
@@ -12,7 +12,7 @@ Welcome to the **Sovereign OpenWiki Quickstart**. This document serves as the ma
 
 ## 🏛️ Repository Navigation Map
 
-The workspace is organized into three distinct operational planes:
+The workspace is organised into three distinct operational planes:
 
 1. **Governance & Persona (The Constitution):**
    - `AGENTS.md` (Root) — High-level sovereign entrypoint.
@@ -35,7 +35,7 @@ When executing operational workflows, use the following routing table to locate 
 
 | Task Class | Instruction Location | Primary Executor |
 | :--- | :--- | :--- |
-| **Session Initialization** | `docs/tools/HOWTO-REANIMATE.md` | `tools/reanimate.sh` |
+| **Session Initialisation** | `docs/tools/HOWTO-REANIMATE.md` | `tools/reanimate.sh` |
 | **Daily State Sync** | `docs/tools/HOWTO-SOD-PALACE.md` | `tools/sod-palace.sh` |
 | **Security Scanning** | `docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md` | Snyk GitHub Action |
 | **Session Hibernation** | `docs/tools/HOWTO-HIBERNATION.md` | `tools/hibernation.sh` |
@@ -48,7 +48,7 @@ Validate workspace integrity and compliance at any time using these zero-binary 
 # Execute local test suite
 uv run --with pyyaml --with pytest --with mcp==1.2.1 --with fastmcp --with pydantic-settings pytest
 
-# Initialize/Update the OpenWiki Knowledge Graph
+# Initialise/Update the OpenWiki Knowledge Graph
 uv run --with pyyaml python tools/openwiki_emulator.py --init
 ```
 

@@ -1,8 +1,8 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
 title: "DSOM Scope & Three-Pillar Operational Model"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "architecture", "overview", "pillars"]
 description: "DSOM scope, three-pillar operating model, component boundaries, and authoritative sources."
 ---
@@ -14,7 +14,7 @@ The **Deep State of Mind (DSOM)** protocol is a metacognitive governance framewo
 
 The architecture of DSOM is structured around three foundational pillars:
 
-```
+```text
                   ┌─────────────────────────────────┐
                   │      METACOGNITIVE GOVERNANCE   │
                   │   Constitutional AGENTS.md Laws │
@@ -30,7 +30,7 @@ The architecture of DSOM is structured around three foundational pillars:
 
 1. **Pillar 1: Metacognitive Governance (The Mind):**
    - Established by the master constitution under `.agents/AGENTS.md`.
-   - Governs AI self-reflection, behavior guidelines, token budgeting, and the 27 operational rules.
+   - Governs AI self-reflection, behaviour guidelines, token budgeting, and the 27 operational rules.
 
 2. **Pillar 2: Spatial Memory (The Palace):**
    - Co-located in `.agents/brain/` and compiled inside the `docs/` Palace.

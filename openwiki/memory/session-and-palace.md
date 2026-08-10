@@ -1,12 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
-title: "Session Memory Stratification & Palace Synchronization"
-timestamp: "2026-08-10T12:30:20Z"
+title: "Session Memory Stratification & Palace Synchronisation"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "memory", "session", "palace", "stratification"]
 description: "Brain artifact ownership, active-context, SOD/reanimation, EOD/hibernation, Palace Sync."
 ---
-# Session Memory Stratification & Palace Synchronization
+# Session Memory Stratification & Palace Synchronisation
 
 Context decay is the single largest point of failure in Human-AI collaborative engineering. DSOM eliminates this through spatial memory stratification and strict session rituals.
 
@@ -25,7 +25,7 @@ Active state tracking resides within the `.agents/brain/` directory:
 2. The active context manifest is loaded, instructing the AI to retrieve and populate its working context.
 3. The AI reads the dated Mental Anchor in `walkthrough.md` to resume exactly where the previous session left off.
 
-## 🌌 End-of-Day (EOD) Hibernation & Palace Sync
+## 🌌 End-of-Day (EOD) Hibernation & Palace Synchronisation
 
 1. The AI maps the session's Git commits to physical Palace rooms.
 2. A `palace_update_proposal_*.md` file is generated, outlining recommended knowledge updates.

@@ -1,11 +1,11 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: documentation
 title: "OpenWiki Documentation Skeleton & Subsystem Index"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "skeleton", "dsom", "inventory"]
 description: "Authoritative inventory ranking, planned page tree, and evidence briefs for the DSOM codebase."
-resource: "file:///openwiki/_skeleton.md"
+resource: "file:///app/openwiki/_skeleton.md"
 ---
 # OpenWiki documentation skeleton
 
@@ -18,7 +18,7 @@ resource: "file:///openwiki/_skeleton.md"
 | 3 | Documentation publication and delivery | Public-facing product surface delivered through MkDocs, GitHub Pages, Read the Docs, Render, GitBook, and SEO files. | `mkdocs.yml`, `.github/workflows/gh-pages.yml`, `.readthedocs.yaml`, `render.yaml`, `SUMMARY.md`, tests |
 | 4 | Ansible baseline and control-node operations | Concrete executor implementation, inventory topology, common role, and preflight. | `ansible.cfg`, `inventory/`, `roles/common/`, `playbooks/` |
 | 5 | CI automation and integrations | Changes brain state and generated docs; owns security scan and scheduled OpenWiki update. | `.github/workflows/`, `.github/scripts/`, `.gitlab-ci.yml` |
-| 6 | Local MCP and skill/workflow extension model | External-agent access surface and reusable procedure catalog. | `tools/mcp/server.py`, `.agents/skills/`, `.agents/workflows/` |
+| 6 | Local MCP and skill/workflow extension model | External-agent access surface and reusable procedure catalogue. | `tools/mcp/server.py`, `.agents/skills/`, `.agents/workflows/` |
 | 7 | Tests and cross-platform guardrails | Regression suite codifies documentation, OKF, signature, symlink and deployment constraints. | `tests/`, `requirements.txt` |
 
 ## Planned tree

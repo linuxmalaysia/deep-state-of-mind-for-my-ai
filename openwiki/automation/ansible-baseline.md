@@ -1,18 +1,18 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
 title: "Ansible Baseline & Automation Fabric Specification"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "automation", "ansible", "fabric", "wsl2"]
 description: "Inventory tiers, ansible.cfg, preflight/common playbooks, WSL2 control node."
 ---
 # Ansible Baseline & Automation Fabric Specification
 
-The Execution Pillar of DSOM relies on a declarative and idempotent automation fabric driven by **Ansible**, ensuring all operations are repeatable and zero-dependency.
+The Execution Pillar of DSOM relies on a declarative and idempotent automation fabric driven by **Ansible**, ensuring all operations are repeatable and zero-binary.
 
 ## 🎛️ Inventory Architecture & Tiers
 
-The workspace organizes hardware and systems into tiered logical inventories:
+The workspace organises hardware and systems into tiered logical inventories:
 
 - **Tier 1 (Core Nodes):** Domain gateways, central authentication, and DNS/reverse proxies.
 - **Tier 2 (Application Fabric):** Microservices, web hosts, database HA clusters, and GIS nodes.

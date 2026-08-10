@@ -1,8 +1,8 @@
 ---
-okf_version: 0.1
+okf_version: "0.1"
 type: "documentation"
 title: "Sovereign Automation Tools & Privacy Guardian Boundaries"
-timestamp: "2026-08-10T12:30:20Z"
+timestamp: "2026-08-10T12:54:57Z"
 topics: ["openwiki", "automation", "tools", "privacy", "guardian"]
 description: "Native Bash/PowerShell ritual tools, Privacy Guardian, onboarding/reset boundaries."
 ---
@@ -25,4 +25,4 @@ The **Privacy Guardian (`tools/privacy-guardian.sh`)** acts as an inline data-le
 - Exposed credentials, tokens, or private API keys.
 - Production IP addresses or sensitive database passwords.
 
-Any flagged files are immediately quarantined, and Git actions are blocked until the sensitive data is successfully scrubbed or externalized.
+Any flagged files are immediately quarantined, and Git actions are blocked until the sensitive data is successfully externalised.
