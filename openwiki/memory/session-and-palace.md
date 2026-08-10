@@ -2,13 +2,25 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Session Memory Stratification & Palace Synchronisation"
-timestamp: "2026-08-10T12:54:57Z"
+timestamp: "2026-08-10T20:47:26Z"
 topics: ["openwiki", "memory", "session", "palace", "stratification"]
 description: "Brain artifact ownership, active-context, SOD/reanimation, EOD/hibernation, Palace Sync."
 ---
 # Session Memory Stratification & Palace Synchronisation
 
 Context decay is the single largest point of failure in Human-AI collaborative engineering. DSOM eliminates this through spatial memory stratification and strict session rituals.
+
+## 🧠 Session State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Initialised : Start of Day (SOD)
+    Initialised --> Active : Reanimation (reanimate.sh)
+    Active --> Processing : Working Context Loaded
+    Processing --> Reflecting : Palace Sync (palace-sync.sh)
+    Reflecting --> Hibernated : End of Day (EOD) (hibernation.sh)
+    Hibernated --> [*] : Session Closed
+```
 
 ## 🧠 Spatial Memory & Brain Artifacts
 

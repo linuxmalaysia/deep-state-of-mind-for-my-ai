@@ -21,6 +21,7 @@ import os
 import pathlib
 import subprocess
 import sys
+import tempfile
 import yaml
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -223,18 +224,11 @@ The **Deep State of Mind (DSOM)** protocol is a metacognitive governance framewo
 
 The architecture of DSOM is structured around three foundational pillars:
 
-```text
-                  ┌─────────────────────────────────┐
-                  │      METACOGNITIVE GOVERNANCE   │
-                  │   Constitutional AGENTS.md Laws │
-                  └────────────────┬────────────────┘
-                                   │
-                  ┌────────────────┼────────────────┐
-                  │                │                │
-         ┌────────▼────────┐       │       ┌────────▼────────┐
-         │ SPATIAL MEMORY  │◄──────┴──────►│    EXECUTION    │
-         │ Brain & Palace  │               │ Ansible & Tools │
-         └─────────────────┘               └─────────────────┘
+```mermaid
+flowchart TD
+    GOV["Pillar 1: Metacognitive Governance<br/>Constitutional AGENTS.md Laws"] --> MEM["Pillar 2: Spatial Memory<br/>Brain & Palace"]
+    GOV --> EXEC["Pillar 3: Absolute Execution<br/>Ansible & Tools"]
+    MEM <--> EXEC
 ```
 
 1. **Pillar 1: Metacognitive Governance (The Mind):**
@@ -277,6 +271,25 @@ To ensure immediate discovery by various platform LLM interfaces, DSOM enforces 
 
 ## ⚙️ The Mechanical Boot Sequence
 
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Human Operator
+    participant Agent as AI Agent
+    participant Constitution as .agents/AGENTS.md
+    participant Brain as .agents/brain/
+    participant Onboarding as START-HERE.md
+
+    User->>Agent: Initialise Session
+    Agent->>Constitution: Genesis Read (Establish identity & rules)
+    Constitution-->>Agent: Operational laws & 27 constraints loaded
+    Agent->>Brain: Memory Restoration (Read task.md & walkthrough.md)
+    Brain-->>Agent: Active state & Mental Anchor restored
+    Agent->>Onboarding: Discover Topology (Read START-HERE.md)
+    Onboarding-->>Agent: Onboarding map & entry points
+    Agent-->>User: Ready for Task Execution
+```
+
 Upon initialisation or reanimation, the AI agent must strictly follow this sequence before making any workspace changes:
 
 1. **Genesis Read:** Parse `.agents/AGENTS.md` to establish behavioural identity and operational laws.
@@ -302,6 +315,18 @@ Before running terminal commands or proposing external changes:
 # Session Memory Stratification & Palace Synchronisation
 
 Context decay is the single largest point of failure in Human-AI collaborative engineering. DSOM eliminates this through spatial memory stratification and strict session rituals.
+
+## 🧠 Session State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Initialised : Start of Day (SOD)
+    Initialised --> Active : Reanimation (reanimate.sh)
+    Active --> Processing : Working Context Loaded
+    Processing --> Reflecting : Palace Sync (palace-sync.sh)
+    Reflecting --> Hibernated : End of Day (EOD) (hibernation.sh)
+    Hibernated --> [*] : Session Closed
+```
 
 ## 🧠 Spatial Memory & Brain Artifacts
 
@@ -336,6 +361,24 @@ Active state tracking resides within the `.agents/brain/` directory:
 The Execution Pillar of DSOM relies on a declarative and idempotent automation fabric driven by **Ansible**, ensuring all operations are repeatable and zero-binary.
 
 ## 🎛️ Inventory Architecture & Tiers
+
+```mermaid
+erDiagram
+    TIER-1-CORE-NODES ||--o{ TIER-2-APPLICATION-FABRIC : manages
+    TIER-2-APPLICATION-FABRIC ||--o{ TIER-3-EDGE-NODES : coordinates
+    TIER-1-CORE-NODES {
+        string role "Domain Gateway"
+        string auth "Central Auth"
+    }
+    TIER-2-APPLICATION-FABRIC {
+        string type "Microservice Host"
+        string database "HA Cluster"
+    }
+    TIER-3-EDGE-NODES {
+        string platform "Termux"
+        string connection "SSH Key"
+    }
+```
 
 The workspace organises hardware and systems into tiered logical inventories:
 
@@ -463,6 +506,11 @@ To support cross-platform co-working across Linux, macOS, and Windows environmen
         }
 
 
+def get_planned_pages() -> dict:
+    """Returns a fresh mapping of planned pages from a new OpenWikiState instance."""
+    return OpenWikiState().get_planned_pages()
+
+
 def cmd_init():
     state = OpenWikiState()
     print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR} with timestamp {state.timestamp}...")
@@ -483,6 +531,14 @@ def cmd_init():
         dest_file.parent.mkdir(parents=True, exist_ok=True)
         dest_file.write_text(page_content, encoding="utf-8")
         print(f"[OpenWiki Emulator] Generated: {dest_file}")
+
+    # After each run, validate/repair every markdown file's mermaid fences
+    print("[OpenWiki Emulator] Validating and self-healing Mermaid diagrams...")
+    for md_file in OPENWIKI_DIR.rglob("*.md"):
+        try:
+            process_markdown_file(md_file)
+        except Exception as e:
+            print(f"[OpenWiki Emulator Warning] Could not process {md_file}: {e}")
 
     cmd_export_graph(state.timestamp)
     print("[OpenWiki Emulator] Successfully updated ./openwiki/ structure.")
@@ -615,6 +671,225 @@ def cmd_export_graph(timestamp: str = None):
 </html>"""
     graph_path.write_text(html_content, encoding="utf-8")
     print(f"[OpenWiki Emulator] Offline standalone visualizer generated: {graph_path}")
+
+
+def process_markdown_file(filepath: pathlib.Path):
+    """
+    Reads a markdown file, parses both plain text error/commented blocks
+    and active mermaid blocks, validates/repairs, and saves changes.
+    """
+    content = filepath.read_text(encoding="utf-8")
+    lines = content.splitlines()
+    output_lines = []
+    i = 0
+    modified = False
+
+    while i < len(lines):
+        # 1. Look for repaired/commented block to recover
+        # Format can be:
+        # ```
+        # %% openwiki-error: <reason>
+        # <diagram-code>
+        # ```
+        if lines[i].strip() == "```" and (i + 1 < len(lines)) and lines[i+1].strip().startswith("%% openwiki-error:"):
+            # Recover block!
+            modified = True
+            # Read block until closing fence
+            j = i + 2
+            block_lines = []
+            while j < len(lines) and lines[j].strip() != "```":
+                block_lines.append(lines[j])
+                j += 1
+
+            if j >= len(lines):
+                raise ValueError(f"Unterminated plain text fence starting at line {i+1}")
+
+            code_block = "\n".join(block_lines)
+            is_valid, reason = validate_mermaid_diagram(code_block)
+            if is_valid:
+                # Recovered successfully back to a mermaid block
+                output_lines.append("```mermaid")
+                output_lines.extend(block_lines)
+                output_lines.append("```")
+            else:
+                # Remain degraded with comment explaining why
+                output_lines.append("```")
+                output_lines.append(f"%% openwiki-error: {reason}")
+                output_lines.extend(block_lines)
+                output_lines.append("```")
+
+            i = j + 1 if j < len(lines) else j
+            continue
+
+        # 2. Look for existing active mermaid block to validate/degrade
+        elif lines[i].strip() == "```mermaid":
+            # Read active mermaid block
+            j = i + 1
+            block_lines = []
+            while j < len(lines) and lines[j].strip() != "```":
+                block_lines.append(lines[j])
+                j += 1
+
+            if j >= len(lines):
+                raise ValueError(f"Unterminated Mermaid fence starting at line {i+1}")
+
+            code_block = "\n".join(block_lines)
+            is_valid, reason = validate_mermaid_diagram(code_block)
+            if is_valid:
+                output_lines.append("```mermaid")
+                output_lines.extend(block_lines)
+                output_lines.append("```")
+            else:
+                # Degrade in place!
+                modified = True
+                output_lines.append("```")
+                output_lines.append(f"%% openwiki-error: {reason}")
+                output_lines.extend(block_lines)
+                output_lines.append("```")
+
+            i = j + 1 if j < len(lines) else j
+            continue
+
+        else:
+            output_lines.append(lines[i])
+            i += 1
+
+    if modified:
+        temp_fd, temp_path = tempfile.mkstemp(dir=str(filepath.parent), suffix=".tmp", text=True)
+        try:
+            with os.fdopen(temp_fd, 'w', encoding='utf-8') as f:
+                f.write("\n".join(output_lines) + "\n")
+                f.flush()
+                try:
+                    os.fsync(temp_fd)
+                except OSError:
+                    pass
+
+            lock_fd = None
+            try:
+                import fcntl
+                lock_fd = os.open(str(filepath), os.O_RDWR | os.O_CREAT)
+                fcntl.flock(lock_fd, fcntl.LOCK_EX)
+            except (ImportError, AttributeError, OSError):
+                pass
+
+            try:
+                os.replace(temp_path, str(filepath))
+            finally:
+                if lock_fd is not None:
+                    try:
+                        import fcntl
+                        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+                    except (ImportError, AttributeError, OSError):
+                        pass
+                    os.close(lock_fd)
+        except Exception:
+            if os.path.exists(temp_path):
+                try:
+                    os.unlink(temp_path)
+                except OSError:
+                    pass
+            raise
+
+
+def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
+    """
+    Validates a Mermaid diagram block code.
+    Returns (True, "") if valid, or (False, reason_message) if invalid.
+    """
+    lines = [line.strip() for line in code.splitlines() if line.strip()]
+    if not lines:
+        return False, "Empty diagram block"
+
+    first_line = lines[0]
+    valid_types = ["flowchart", "graph", "sequenceDiagram", "stateDiagram", "stateDiagram-v2", "erDiagram", "gantt", "classDiagram", "gitGraph", "pie", "journey", "mindmap", "timeline"]
+    matched_type = None
+
+    tokens = first_line.split()
+    if tokens:
+        first_token = tokens[0]
+        if first_token in valid_types:
+            matched_type = first_token
+
+    if not matched_type:
+        return False, f"Unknown diagram type/header keyword: '{first_line}'"
+
+    # Unescaped double-quote state check across lines
+    inside_string = False
+    for idx, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("%%"):
+            continue
+
+        escaped = False
+        for char in line:
+            if char == '\\':
+                escaped = not escaped
+            elif char == '"':
+                if not escaped:
+                    inside_string = not inside_string
+                escaped = False
+            else:
+                escaped = False
+    if inside_string:
+        return False, "Unmatched unescaped double quotes across the diagram block"
+
+    # Balanced bracket/parenthesis/braces checks (except sequenceDiagram text lines or comments)
+    stack = []
+    for idx, line in enumerate(lines):
+        if line.startswith("%%"):
+            continue
+
+        # In erDiagram, skip braces/brackets checks on relationship lines to avoid connector false positives
+        if matched_type == "erDiagram" and ("||" in line or "o{" in line or "}o" in line or "}|" in line or "|{" in line):
+            continue
+
+        # Match braces/brackets/parentheses
+        for char in line:
+            if char in "([{":
+                stack.append((char, idx + 1))
+            elif char in ")]}":
+                if not stack:
+                    return False, f"Line {idx+1} has unmatched closing character '{char}': '{line}'"
+                top, top_idx = stack.pop()
+                if (char == ')' and top != '(') or (char == ']' and top != '[') or (char == '}' and top != '{'):
+                    return False, f"Line {idx+1} has mismatched grouping characters: '{line}'"
+    if stack:
+        # Report the first unclosed character
+        top, top_idx = stack[0]
+        return False, f"Line {top_idx} has unclosed grouping character '{top}'"
+
+    # Sequence diagrams validation
+    if matched_type == "sequenceDiagram":
+        for idx, line in enumerate(lines):
+            if line.startswith("%%") or line == "sequenceDiagram" or line.startswith("autonumber"):
+                continue
+            # Arrows and participants
+            if "->" in line or "-->" in line or "-)" in line or "--)" in line:
+                pass
+            elif line.startswith("participant ") or line.startswith("actor ") or line.startswith("Note "):
+                pass
+            elif line.startswith("alt ") or line.startswith("else") or line.startswith("opt ") or line.startswith("loop ") or line.startswith("rect ") or line.startswith("end"):
+                pass
+            else:
+                # Basic warning for unrecognized sequence line format
+                if len(line.split()) < 2:
+                    return False, f"Line {idx+1} in sequence diagram has invalid syntax: '{line}'"
+
+    # ER Diagrams validation (must have relationship or block brackets)
+    if matched_type == "erDiagram":
+        has_rel_or_block = False
+        for line in lines:
+            if line == "erDiagram" or line.startswith("%%"):
+                continue
+            if "||" in line or "o{" in line or "}o" in line or "}|" in line or "|{" in line:
+                has_rel_or_block = True
+            if "{" in line or "}" in line:
+                has_rel_or_block = True
+        if not has_rel_or_block and len(lines) > 1:
+            return False, "ER Diagram must specify relationships or entity attribute blocks"
+
+    return True, ""
 
 
 def main():

@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Dual Agent Registry & Sovereign Operational Laws"
-timestamp: "2026-08-10T12:54:57Z"
+timestamp: "2026-08-10T20:47:26Z"
 topics: ["openwiki", "governance", "agents", "protocols", "rules"]
 description: "Dual AGENTS.md registry, 27-rule operating constraints, mechanical boot and behaviour/discovery ordering."
 ---
@@ -21,6 +21,25 @@ To ensure immediate discovery by various platform LLM interfaces, DSOM enforces 
    - Houses the complete 27 operational rules, the Cognitive Twin persona profile (`LinuxMalaysia`), and strict execution constraints.
 
 ## ⚙️ The Mechanical Boot Sequence
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Human Operator
+    participant Agent as AI Agent
+    participant Constitution as .agents/AGENTS.md
+    participant Brain as .agents/brain/
+    participant Onboarding as START-HERE.md
+
+    User->>Agent: Initialise Session
+    Agent->>Constitution: Genesis Read (Establish identity & rules)
+    Constitution-->>Agent: Operational laws & 27 constraints loaded
+    Agent->>Brain: Memory Restoration (Read task.md & walkthrough.md)
+    Brain-->>Agent: Active state & Mental Anchor restored
+    Agent->>Onboarding: Discover Topology (Read START-HERE.md)
+    Onboarding-->>Agent: Onboarding map & entry points
+    Agent-->>User: Ready for Task Execution
+```
 
 Upon initialisation or reanimation, the AI agent must strictly follow this sequence before making any workspace changes:
 
