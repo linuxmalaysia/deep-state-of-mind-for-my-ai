@@ -21,6 +21,7 @@ import os
 import pathlib
 import subprocess
 import sys
+import tempfile
 import yaml
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -151,13 +152,6 @@ class OpenWikiState:
         self.timestamp = timestamp or get_timestamp()
 
     def get_planned_pages(self) -> dict:
-        """
-        Build the planned OpenWiki documentation pages and their metadata.
-        
-        Returns:
-            dict: A mapping of documentation paths to their titles, topics,
-                descriptions, and Markdown content.
-        """
         return {
             "quickstart.md": {
                 "title": "OpenWiki Quickstart & Repository Navigation Map",
@@ -232,8 +226,8 @@ The architecture of DSOM is structured around three foundational pillars:
 
 ```mermaid
 flowchart TD
-    GOV[Pillar 1: Metacognitive Governance\\nConstitutional AGENTS.md Laws] --> MEM[Pillar 2: Spatial Memory\\nBrain & Palace]
-    GOV --> EXEC[Pillar 3: Absolute Execution\\nAnsible & Tools]
+    GOV["Pillar 1: Metacognitive Governance<br/>Constitutional AGENTS.md Laws"] --> MEM["Pillar 2: Spatial Memory<br/>Brain & Palace"]
+    GOV --> EXEC["Pillar 3: Absolute Execution<br/>Ansible & Tools"]
     MEM <--> EXEC
 ```
 
@@ -277,8 +271,6 @@ To ensure immediate discovery by various platform LLM interfaces, DSOM enforces 
 
 ## ⚙️ The Mechanical Boot Sequence
 
-Upon initialisation or reanimation, the AI agent must strictly follow this sequence before making any workspace changes:
-
 ```mermaid
 sequenceDiagram
     autonumber
@@ -288,7 +280,7 @@ sequenceDiagram
     participant Brain as .agents/brain/
     participant Onboarding as START-HERE.md
 
-    User->>Agent: Initialize Session
+    User->>Agent: Initialise Session
     Agent->>Constitution: Genesis Read (Establish identity & rules)
     Constitution-->>Agent: Operational laws & 27 constraints loaded
     Agent->>Brain: Memory Restoration (Read task.md & walkthrough.md)
@@ -328,8 +320,8 @@ Context decay is the single largest point of failure in Human-AI collaborative e
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Initialized : Start of Day (SOD)
-    Initialized --> Active : Reanimation (reanimate.sh)
+    [*] --> Initialised : Start of Day (SOD)
+    Initialised --> Active : Reanimation (reanimate.sh)
     Active --> Processing : Working Context Loaded
     Processing --> Reflecting : Palace Sync (palace-sync.sh)
     Reflecting --> Hibernated : End of Day (EOD) (hibernation.sh)
@@ -369,8 +361,6 @@ Active state tracking resides within the `.agents/brain/` directory:
 The Execution Pillar of DSOM relies on a declarative and idempotent automation fabric driven by **Ansible**, ensuring all operations are repeatable and zero-binary.
 
 ## 🎛️ Inventory Architecture & Tiers
-
-The workspace organises hardware and systems into tiered logical inventories:
 
 ```mermaid
 erDiagram
@@ -516,14 +506,12 @@ To support cross-platform co-working across Linux, macOS, and Windows environmen
         }
 
 
-# For backward compatibility with existing tests
-PLANNED_PAGES = OpenWikiState().get_planned_pages()
+def get_planned_pages() -> dict:
+    """Returns a fresh mapping of planned pages from a new OpenWikiState instance."""
+    return OpenWikiState().get_planned_pages()
 
 
 def cmd_init():
-    """
-    Generate the OpenWiki documentation structure, metadata, instructions, diagrams, and HTML graph.
-    """
     state = OpenWikiState()
     print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR} with timestamp {state.timestamp}...")
     ensure_openwiki_dirs()
@@ -594,12 +582,6 @@ def cmd_search(query: str):
 
 
 def cmd_export_graph(timestamp: str = None):
-    """
-    Generate an offline standalone HTML knowledge graph for the planned documentation areas.
-    
-    Parameters:
-    	timestamp (str): Timestamp embedded in the generated page. The current timestamp is used when omitted.
-    """
     if timestamp is None:
         timestamp = get_timestamp()
     graph_path = OPENWIKI_DIR / "graph.html"
@@ -693,10 +675,8 @@ def cmd_export_graph(timestamp: str = None):
 
 def process_markdown_file(filepath: pathlib.Path):
     """
-    Validate Mermaid blocks in a Markdown file and restore or annotate invalid diagrams.
-    
-    Parameters:
-        filepath (pathlib.Path): Path to the Markdown file to process.
+    Reads a markdown file, parses both plain text error/commented blocks
+    and active mermaid blocks, validates/repairs, and saves changes.
     """
     content = filepath.read_text(encoding="utf-8")
     lines = content.splitlines()
@@ -720,6 +700,9 @@ def process_markdown_file(filepath: pathlib.Path):
             while j < len(lines) and lines[j].strip() != "```":
                 block_lines.append(lines[j])
                 j += 1
+
+            if j >= len(lines):
+                raise ValueError(f"Unterminated plain text fence starting at line {i+1}")
 
             code_block = "\n".join(block_lines)
             is_valid, reason = validate_mermaid_diagram(code_block)
@@ -747,6 +730,9 @@ def process_markdown_file(filepath: pathlib.Path):
                 block_lines.append(lines[j])
                 j += 1
 
+            if j >= len(lines):
+                raise ValueError(f"Unterminated Mermaid fence starting at line {i+1}")
+
             code_block = "\n".join(block_lines)
             is_valid, reason = validate_mermaid_diagram(code_block)
             if is_valid:
@@ -769,18 +755,47 @@ def process_markdown_file(filepath: pathlib.Path):
             i += 1
 
     if modified:
-        filepath.write_text("\n".join(output_lines) + "\n", encoding="utf-8")
+        temp_fd, temp_path = tempfile.mkstemp(dir=str(filepath.parent), suffix=".tmp", text=True)
+        try:
+            with os.fdopen(temp_fd, 'w', encoding='utf-8') as f:
+                f.write("\n".join(output_lines) + "\n")
+                f.flush()
+                try:
+                    os.fsync(temp_fd)
+                except OSError:
+                    pass
+
+            lock_fd = None
+            try:
+                import fcntl
+                lock_fd = os.open(str(filepath), os.O_RDWR | os.O_CREAT)
+                fcntl.flock(lock_fd, fcntl.LOCK_EX)
+            except (ImportError, AttributeError, OSError):
+                pass
+
+            try:
+                os.replace(temp_path, str(filepath))
+            finally:
+                if lock_fd is not None:
+                    try:
+                        import fcntl
+                        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+                    except (ImportError, AttributeError, OSError):
+                        pass
+                    os.close(lock_fd)
+        except Exception:
+            if os.path.exists(temp_path):
+                try:
+                    os.unlink(temp_path)
+                except OSError:
+                    pass
+            raise
 
 
 def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
     """
-    Validate Mermaid diagram source and return a status flag with an error description.
-    
-    Parameters:
-    	code (str): Mermaid diagram source code.
-    
-    Returns:
-    	tuple[bool, str]: `(True, "")` for valid diagrams, or `(False, reason)` for invalid diagrams.
+    Validates a Mermaid diagram block code.
+    Returns (True, "") if valid, or (False, reason_message) if invalid.
     """
     lines = [line.strip() for line in code.splitlines() if line.strip()]
     if not lines:
@@ -789,30 +804,35 @@ def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
     first_line = lines[0]
     valid_types = ["flowchart", "graph", "sequenceDiagram", "stateDiagram", "stateDiagram-v2", "erDiagram", "gantt", "classDiagram", "gitGraph", "pie", "journey", "mindmap", "timeline"]
     matched_type = None
-    for vt in valid_types:
-        if first_line.startswith(vt):
-            matched_type = vt
-            break
+
+    tokens = first_line.split()
+    if tokens:
+        first_token = tokens[0]
+        if first_token in valid_types:
+            matched_type = first_token
 
     if not matched_type:
         return False, f"Unknown diagram type/header keyword: '{first_line}'"
 
-    # Even unescaped double quotes check
+    # Unescaped double-quote state check across lines
+    inside_string = False
     for idx, line in enumerate(lines):
-        # Count only unescaped double quotes
-        unescaped_quotes_count = 0
+        stripped = line.strip()
+        if stripped.startswith("%%"):
+            continue
+
         escaped = False
         for char in line:
             if char == '\\':
                 escaped = not escaped
             elif char == '"':
                 if not escaped:
-                    unescaped_quotes_count += 1
+                    inside_string = not inside_string
                 escaped = False
             else:
                 escaped = False
-        if unescaped_quotes_count % 2 != 0:
-            return False, f"Line {idx+1} has unmatched unescaped double quotes: '{line}'"
+    if inside_string:
+        return False, "Unmatched unescaped double quotes across the diagram block"
 
     # Balanced bracket/parenthesis/braces checks (except sequenceDiagram text lines or comments)
     stack = []
@@ -873,7 +893,6 @@ def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
 
 
 def main():
-    """Run the OpenWiki emulator operation selected from the command-line arguments."""
     parser = argparse.ArgumentParser(description="DSOM Native Python OpenWiki Emulator")
     parser.add_argument("--init", action="store_true", help="Initialize full wiki")
     parser.add_argument("--update", action="store_true", help="Compile recent Git diffs")

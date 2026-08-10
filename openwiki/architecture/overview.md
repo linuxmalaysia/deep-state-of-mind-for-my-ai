@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "DSOM Scope & Three-Pillar Operational Model"
-timestamp: "2026-08-10T20:17:25Z"
+timestamp: "2026-08-10T20:47:26Z"
 topics: ["openwiki", "architecture", "overview", "pillars"]
 description: "DSOM scope, three-pillar operating model, component boundaries, and authoritative sources."
 ---
@@ -16,8 +16,8 @@ The architecture of DSOM is structured around three foundational pillars:
 
 ```mermaid
 flowchart TD
-    GOV[Pillar 1: Metacognitive Governance\nConstitutional AGENTS.md Laws] --> MEM[Pillar 2: Spatial Memory\nBrain & Palace]
-    GOV --> EXEC[Pillar 3: Absolute Execution\nAnsible & Tools]
+    GOV["Pillar 1: Metacognitive Governance<br/>Constitutional AGENTS.md Laws"] --> MEM["Pillar 2: Spatial Memory<br/>Brain & Palace"]
+    GOV --> EXEC["Pillar 3: Absolute Execution<br/>Ansible & Tools"]
     MEM <--> EXEC
 ```
 

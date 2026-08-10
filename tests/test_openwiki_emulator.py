@@ -93,7 +93,7 @@ class GeneratePageTests(unittest.TestCase):
             description="Test description",
             content_markdown="# Heading\n\nBody text.",
         )
-        self.assertTrue("okf_version: 0.1" in page or 'okf_version: "0.1"' in page)
+        self.assertIn('okf_version: "0.1"', page)
         self.assertIn('type: "documentation"', page)
         self.assertIn('title: "Test Title"', page)
         self.assertIn('timestamp: "2026-08-10T12:30:20Z"', page)
@@ -122,7 +122,7 @@ class GeneratePageTests(unittest.TestCase):
         parts = page.split("---", 2)
         self.assertEqual(len(parts), 3)
         meta = yaml.safe_load(parts[1])
-        self.assertIn(str(meta["okf_version"]), ["0.1", "0.10000000000000001"])
+        self.assertEqual(meta["okf_version"], "0.1")
         self.assertEqual(meta["type"], "documentation")
         self.assertEqual(meta["title"], "Test Title")
         self.assertEqual(meta["timestamp"], "2026-08-10T12:30:20Z")
@@ -170,16 +170,16 @@ class GeneratePageTests(unittest.TestCase):
 
 
 class PlannedPagesTests(unittest.TestCase):
-    """Test the `PLANNED_PAGES` registry that drives `cmd_init()`."""
+    """Test the planned pages mapping that drives `cmd_init()`."""
 
     def test_planned_pages_keys_match_expected_paths(self):
-        self.assertEqual(set(openwiki_emulator.PLANNED_PAGES.keys()), EXPECTED_PLANNED_PAGE_PATHS)
+        self.assertEqual(set(openwiki_emulator.get_planned_pages().keys()), EXPECTED_PLANNED_PAGE_PATHS)
 
     def test_planned_pages_count(self):
-        self.assertEqual(len(openwiki_emulator.PLANNED_PAGES), 9)
+        self.assertEqual(len(openwiki_emulator.get_planned_pages()), 9)
 
     def test_planned_pages_entries_have_required_fields(self):
-        for relative_path, info in openwiki_emulator.PLANNED_PAGES.items():
+        for relative_path, info in openwiki_emulator.get_planned_pages().items():
             with self.subTest(page=relative_path):
                 self.assertIsInstance(info["title"], str)
                 self.assertTrue(info["title"].strip())
@@ -192,13 +192,13 @@ class PlannedPagesTests(unittest.TestCase):
                 self.assertTrue(info["content"].strip().startswith("#"))
 
     def test_planned_pages_topics_all_include_openwiki(self):
-        for relative_path, info in openwiki_emulator.PLANNED_PAGES.items():
+        for relative_path, info in openwiki_emulator.get_planned_pages().items():
             with self.subTest(page=relative_path):
                 self.assertEqual(info["topics"][0], "openwiki")
 
     def test_planned_pages_render_to_valid_okf_documents(self):
         timestamp = "2026-08-10T12:30:20Z"
-        for relative_path, info in openwiki_emulator.PLANNED_PAGES.items():
+        for relative_path, info in openwiki_emulator.get_planned_pages().items():
             with self.subTest(page=relative_path):
                 page = openwiki_emulator.generate_page(
                     title=info["title"],
@@ -239,7 +239,7 @@ class CmdInitTests(unittest.TestCase):
 
     def test_cmd_init_creates_every_planned_page(self):
         fake_dir = self._run_cmd_init_in_tmp_dir()
-        for relative_path in openwiki_emulator.PLANNED_PAGES:
+        for relative_path in openwiki_emulator.get_planned_pages():
             with self.subTest(page=relative_path):
                 self.assertTrue((fake_dir / relative_path).is_file())
 
@@ -247,14 +247,14 @@ class CmdInitTests(unittest.TestCase):
         # The per-page loop calls dest_file.parent.mkdir(parents=True, exist_ok=True)
         # independently of ensure_openwiki_dirs(); confirm nested dirs land correctly.
         fake_dir = self._run_cmd_init_in_tmp_dir()
-        for relative_path in openwiki_emulator.PLANNED_PAGES:
+        for relative_path in openwiki_emulator.get_planned_pages():
             nested_dir = (fake_dir / relative_path).parent
             with self.subTest(page=relative_path):
                 self.assertTrue(nested_dir.is_dir())
 
     def test_cmd_init_generated_page_matches_planned_metadata(self):
         fake_dir = self._run_cmd_init_in_tmp_dir()
-        info = openwiki_emulator.PLANNED_PAGES["quickstart.md"]
+        info = openwiki_emulator.get_planned_pages()["quickstart.md"]
         content = (fake_dir / "quickstart.md").read_text(encoding="utf-8")
         self.assertIn(f'title: "{info["title"]}"', content)
         self.assertIn(f'description: "{info["description"]}"', content)
@@ -284,7 +284,7 @@ class CmdInitTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()):
                 openwiki_emulator.cmd_init()
                 openwiki_emulator.cmd_init()
-            for relative_path in openwiki_emulator.PLANNED_PAGES:
+            for relative_path in openwiki_emulator.get_planned_pages():
                 self.assertTrue((fake_openwiki_dir / relative_path).is_file())
 
 
@@ -315,7 +315,7 @@ class MermaidValidationAndSelfHealingTests(unittest.TestCase):
 """
         is_valid, reason = openwiki_emulator.validate_mermaid_diagram(code)
         self.assertFalse(is_valid)
-        self.assertIn("unmatched unescaped double quotes", reason)
+        self.assertIn("unmatched unescaped double quotes", reason.lower())
 
     def test_validate_unmatched_closing_bracket(self):
         code = """flowchart TD
@@ -373,6 +373,41 @@ Footer text.
             new_content = file_path.read_text(encoding="utf-8")
             self.assertNotIn("%% openwiki-error:", new_content)
             self.assertIn("```mermaid\nflowchart TD\n    A[Start]\n```", new_content)
+
+    def test_process_markdown_file_unclosed_mermaid_fence(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            file_path = pathlib.Path(tmpdir) / "test_unclosed.md"
+            content = """# Header
+
+```mermaid
+flowchart TD
+    A[Start] --> B[End]
+
+Some trailing markdown prose here that shouldn't be consumed.
+"""
+            file_path.write_text(content, encoding="utf-8")
+            with self.assertRaises(ValueError) as context:
+                openwiki_emulator.process_markdown_file(file_path)
+            self.assertIn("Unterminated Mermaid fence starting at line 3", str(context.exception))
+
+    def test_multiline_strings_validation(self):
+        code = """flowchart TD
+    A["This is a valid
+    multiline string with
+    even unescaped quotes"] --> B
+"""
+        is_valid, reason = openwiki_emulator.validate_mermaid_diagram(code)
+        self.assertTrue(is_valid)
+        self.assertEqual(reason, "")
+
+    def test_quoted_comments_validation(self):
+        code = """flowchart TD
+    %% Comment with a single " unmatched double quote should be skipped
+    A --> B
+"""
+        is_valid, reason = openwiki_emulator.validate_mermaid_diagram(code)
+        self.assertTrue(is_valid)
+        self.assertEqual(reason, "")
 
 
 if __name__ == "__main__":

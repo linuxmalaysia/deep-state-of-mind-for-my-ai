@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Session Memory Stratification & Palace Synchronisation"
-timestamp: "2026-08-10T20:17:25Z"
+timestamp: "2026-08-10T20:47:26Z"
 topics: ["openwiki", "memory", "session", "palace", "stratification"]
 description: "Brain artifact ownership, active-context, SOD/reanimation, EOD/hibernation, Palace Sync."
 ---
@@ -14,8 +14,8 @@ Context decay is the single largest point of failure in Human-AI collaborative e
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Initialized : Start of Day (SOD)
-    Initialized --> Active : Reanimation (reanimate.sh)
+    [*] --> Initialised : Start of Day (SOD)
+    Initialised --> Active : Reanimation (reanimate.sh)
     Active --> Processing : Working Context Loaded
     Processing --> Reflecting : Palace Sync (palace-sync.sh)
     Reflecting --> Hibernated : End of Day (EOD) (hibernation.sh)
