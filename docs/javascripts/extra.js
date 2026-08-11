@@ -85,21 +85,38 @@
   function initTOC() {
     // Identify the central content panel
     const contentPanel = document.querySelector('article.md-content__inner.md-typeset');
-    if (!contentPanel) return;
+    if (!contentPanel) {
+      document.body.classList.remove('custom-toc-active');
+      return;
+    }
 
     // Identify the secondary sidebar inner container
     const secondarySidebarInner = document.querySelector('.md-sidebar--secondary .md-sidebar__inner');
-    if (!secondarySidebarInner) return;
+    if (!secondarySidebarInner) {
+      document.body.classList.remove('custom-toc-active');
+      return;
+    }
 
     // Extract h2 and h3 headings
     const headings = Array.from(contentPanel.querySelectorAll('h2, h3'));
     if (headings.length === 0) {
       secondarySidebarInner.innerHTML = '';
+      document.body.classList.remove('custom-toc-active');
       return;
     }
 
-    // Generate clean, unique, deduplicated ID attributes for stable anchors
+    // Seed usedIds with existing element IDs on the document
     const usedIds = new Set();
+    document.querySelectorAll('[id]').forEach((elem) => {
+      if (elem.id) {
+        usedIds.add(elem.id);
+      }
+    });
+
+    // Reserve custom-toc-header ID for accessibility association
+    usedIds.add('custom-toc-header');
+
+    // Generate clean, unique, deduplicated ID attributes for stable anchors
     const headingData = headings.map((heading) => {
       let id = heading.id || '';
 
@@ -111,10 +128,12 @@
           .replace(/^-+|-+$/g, '');
       }
 
-      let uniqueId = id || 'heading';
+      // Use fallback base ('heading') for deduplication candidate so empty slugs produce 'heading-1'
+      const baseId = id || 'heading';
+      let uniqueId = baseId;
       let counter = 1;
       while (usedIds.has(uniqueId)) {
-        uniqueId = `${id}-${counter}`;
+        uniqueId = `${baseId}-${counter}`;
         counter++;
       }
       usedIds.add(uniqueId);
@@ -128,12 +147,14 @@
       };
     });
 
-    // Build hierarchical Table of Contents card
-    const tocCard = document.createElement('div');
+    // Build hierarchical Table of Contents card (using a semantic nav element)
+    const tocCard = document.createElement('nav');
     tocCard.className = 'custom-toc-card';
+    tocCard.setAttribute('aria-labelledby', 'custom-toc-header');
 
     const tocHeader = document.createElement('div');
     tocHeader.className = 'custom-toc-header';
+    tocHeader.id = 'custom-toc-header';
     tocHeader.textContent = 'TABLE OF CONTENTS';
     tocCard.appendChild(tocHeader);
 
@@ -175,24 +196,52 @@
     secondarySidebarInner.innerHTML = '';
     secondarySidebarInner.appendChild(tocCard);
 
+    // Add active body class only on successful insertion
+    document.body.classList.add('custom-toc-active');
+
+    // Retrieve named custom properties for scroll/sticky offsets
+    const rootStyles = getComputedStyle(document.documentElement);
+    const scrollOffsetVal = rootStyles.getPropertyValue('--toc-scroll-offset').trim();
+    const scrollOffset = parseInt(scrollOffsetVal, 10) || 120;
+
+    // Cache heading offsets (document-relative top computed from bounding rect + scroll position)
+    let cachedOffsets = [];
+    function recomputeOffsets() {
+      cachedOffsets = headingData.map((item) => {
+        const rect = item.element.getBoundingClientRect();
+        return {
+          id: item.id,
+          top: rect.top + window.scrollY
+        };
+      });
+    }
+
+    // Initial computation
+    recomputeOffsets();
+
+    // Recompute cache on resize and font loading
+    window.addEventListener('resize', recomputeOffsets);
+    if (document.fonts) {
+      document.fonts.ready.then(recomputeOffsets);
+    }
+
     // Intersection scroll highlighting logic
     const tocLinks = tocCard.querySelectorAll('.custom-toc-link');
 
     function highlightActiveSection() {
-      const scrollPosition = window.scrollY + 120; // safe offset for sticky header
+      const scrollPosition = window.scrollY + scrollOffset;
       let activeItem = null;
 
-      for (let i = 0; i < headingData.length; i++) {
-        const top = headingData[i].element.offsetTop;
-        if (scrollPosition >= top) {
-          activeItem = headingData[i];
+      for (let i = 0; i < cachedOffsets.length; i++) {
+        if (scrollPosition >= cachedOffsets[i].top) {
+          activeItem = cachedOffsets[i];
         } else {
           break;
         }
       }
 
-      if (window.scrollY < 50 && headingData.length > 0) {
-        activeItem = headingData[0];
+      if (window.scrollY < 50 && cachedOffsets.length > 0) {
+        activeItem = cachedOffsets[0];
       }
 
       tocLinks.forEach((link) => {
