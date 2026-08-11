@@ -1,0 +1,19 @@
+{
+  "name": "dsom-docs-assets-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Test-only Node/Jest setup for validating docs/javascripts and docs/stylesheets front-end assets.",
+  "scripts": {
+    "test:js": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
+  }
+}
