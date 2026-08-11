@@ -99,7 +99,7 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
         self.assertRegex(self.content, r'cache:\s*"pip"')
 
     def test_installs_mkdocs_material(self):
-        self.assertIn("pip install mkdocs-material", self.content)
+        self.assertIn("uv pip install --system mkdocs-material", self.content)
 
     def test_builds_site_with_mkdocs(self):
         self.assertTrue("mkdocs build" in self.content or "generate_sitemaps.py" in self.content)
@@ -173,12 +173,14 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_steps_present_and_ordered(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         step_names = [s.get("name") for s in steps]
-        self.assertEqual(len(step_names), 5)
+        self.assertEqual(len(step_names), 7)
         self.assertEqual(step_names[0], "Checkout Repository")
-        self.assertEqual(step_names[1], "Set up Python")
-        self.assertEqual(step_names[2], "Install Dependencies")
-        self.assertTrue(step_names[3].startswith("Build MkDocs Site"))
-        self.assertEqual(step_names[4], "Deploy to GitHub Pages")
+        self.assertEqual(step_names[1], "Set up Node.js 24")
+        self.assertEqual(step_names[2], "Install uv")
+        self.assertEqual(step_names[3], "Set up Python")
+        self.assertEqual(step_names[4], "Install Dependencies")
+        self.assertTrue(step_names[5].startswith("Build MkDocs Site"))
+        self.assertEqual(step_names[6], "Deploy to GitHub Pages")
 
     def test_checkout_step_action_pinned(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
@@ -187,26 +189,25 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
 
     def test_setup_python_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
-        setup_python_step = steps[1]
+        setup_python_step = steps[3]
         self.assertEqual(setup_python_step["uses"], "actions/setup-python@v7")
         self.assertEqual(setup_python_step["with"]["python-version"], "3.12")
         self.assertEqual(setup_python_step["with"]["cache"], "pip")
 
     def test_install_dependencies_step_commands(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
-        install_step = steps[2]
+        install_step = steps[4]
         run_lines = install_step["run"]
-        self.assertIn("pip install --upgrade pip", run_lines)
-        self.assertIn("pip install mkdocs-material", run_lines)
+        self.assertIn("uv pip install --system mkdocs-material", run_lines)
 
     def test_build_step_command(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
-        build_step = steps[3]
+        build_step = steps[5]
         self.assertTrue("mkdocs build" in build_step["run"] or "generate_sitemaps.py" in build_step["run"])
 
     def test_deploy_step_configuration(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
-        deploy_step = steps[4]
+        deploy_step = steps[6]
         self.assertEqual(deploy_step["uses"], "peaceiris/actions-gh-pages@v4")
         deploy_with = deploy_step["with"]
         self.assertEqual(deploy_with["github_token"], "${{ secrets.GITHUB_TOKEN }}")
