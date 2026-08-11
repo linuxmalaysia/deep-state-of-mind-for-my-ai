@@ -91,7 +91,7 @@ class RunDsomSemanticCompactionStepTextTests(unittest.TestCase):
     def test_uv_run_still_targets_action_update_dsom_script_with_same_args(self):
         self.assertRegex(
             self.step_block,
-            r"uv run --with requests --with pyyaml \.github/scripts/action_update_dsom\.py pr\.diff \.agents/brain/current_state\.dsom",
+            r"uv run --with requests==2\.34\.2 --with pyyaml==6\.0\.3 \.github/scripts/action_update_dsom\.py pr\.diff \.agents/brain/current_state\.dsom",
         )
 
     def test_no_tab_characters(self):
@@ -131,7 +131,7 @@ class RunDsomSemanticCompactionStepStructureTests(unittest.TestCase):
         run_cmd = self.step["run"].strip()
         self.assertEqual(
             run_cmd,
-            "uv run --with requests --with pyyaml .github/scripts/action_update_dsom.py pr.diff .agents/brain/current_state.dsom",
+            "uv run --with requests==2.34.2 --with pyyaml==6.0.3 .github/scripts/action_update_dsom.py pr.diff .agents/brain/current_state.dsom",
         )
 
     def test_run_dsom_semantic_compaction_step_precedes_commit_step(self):

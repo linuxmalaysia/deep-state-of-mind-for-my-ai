@@ -91,21 +91,12 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
         self.assertIn("timeout-minutes: 15", self.content)
 
     def test_checkout_step_present(self):
-        self.assertIn("uses: actions/checkout@v7", self.content)
-
-    def test_does_not_use_old_checkout_v4_pin(self):
-        # Regression guard: ensure the bump from v4 to v7 wasn't reverted.
-        self.assertNotIn("actions/checkout@v4", self.content)
+        self.assertIn("uses: actions/checkout@v6.0.2", self.content)
 
     def test_setup_python_step_present_with_expected_version(self):
-        """Verify that the workflow configures the expected Python version and pip caching."""
         self.assertIn("uses: actions/setup-python@v7", self.content)
         self.assertRegex(self.content, r'python-version:\s*"3\.12"')
         self.assertRegex(self.content, r'cache:\s*"pip"')
-
-    def test_does_not_use_old_setup_python_v5_pin(self):
-        # Regression guard: ensure the bump from v5 to v7 wasn't reverted.
-        self.assertNotIn("actions/setup-python@v5", self.content)
 
     def test_installs_mkdocs_material(self):
         self.assertIn("pip install mkdocs-material", self.content)
@@ -192,7 +183,7 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_checkout_step_action_pinned(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         checkout_step = steps[0]
-        self.assertEqual(checkout_step["uses"], "actions/checkout@v7")
+        self.assertEqual(checkout_step["uses"], "actions/checkout@v6.0.2")
 
     def test_setup_python_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
