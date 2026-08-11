@@ -39,9 +39,11 @@ jobs:
 
       - name: Run DSOM Semantic Compaction
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          ACTIVE_AGENT: "Jules"
         run: |
-          uv run --with openai --with requests .github/scripts/action_update_dsom.py pr.diff .agents/brain/current_state.dsom
+          uv run --with requests --with pyyaml .github/scripts/action_update_dsom.py pr.diff .agents/brain/current_state.dsom
 
       - name: Commit and push updated DSOM state
         run: |
