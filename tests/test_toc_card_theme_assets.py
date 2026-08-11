@@ -90,10 +90,18 @@ class TocCardRuleBodyTests(unittest.TestCase):
         self.assertIn("border: 1px solid var(--lab-border);", body)
         self.assertIn("border-radius: var(--radius);", body)
         self.assertIn("position: sticky;", body)
-        self.assertIn("top: 90px;", body)
-        self.assertIn("max-height: calc(100vh - 120px);", body)
+        self.assertIn("top: var(--toc-sticky-top);", body)
+        self.assertIn("max-height: calc(100vh - var(--toc-scroll-offset));", body)
         self.assertIn("overflow-y: auto;", body)
         self.assertIn("margin-bottom: 24px;", body)
+
+    def test_toc_card_no_longer_hardcodes_sticky_offset_pixel_values(self):
+        # Regression guard for the switch from hardcoded pixel values to the
+        # centralised --toc-sticky-top / --toc-scroll-offset custom
+        # properties: the raw magic numbers must not reappear in the rule.
+        body = self._rule_body(r"\.custom-toc-card")
+        self.assertNotIn("top: 90px;", body)
+        self.assertNotIn("max-height: calc(100vh - 120px);", body)
 
     def test_toc_card_scrollbar_customizations(self):
         self.assertRegex(
@@ -155,6 +163,73 @@ class TocCardRuleBodyTests(unittest.TestCase):
             r"\.md-sidebar--secondary\s+\.md-nav--secondary\s*\{\s*"
             r"display:\s*none\s*!important;\s*\}",
         )
+
+
+class TocCardStickyOffsetVariableTests(unittest.TestCase):
+    """Tests for the centralised `--toc-sticky-top` / `--toc-scroll-offset`
+    custom properties that the `.custom-toc-card` rule now references
+    instead of hardcoded pixel values."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.css_text = CSS_PATH.read_text(encoding="utf-8")
+
+    def _root_block(self):
+        match = re.search(r":root\s*\{([^}]*)\}", self.css_text, re.DOTALL)
+        self.assertIsNotNone(match, "Could not find the `:root { ... }` block")
+        return match.group(1)
+
+    def test_toc_sticky_top_defined_in_root_with_expected_default(self):
+        root_body = self._root_block()
+        self.assertRegex(root_body, r"--toc-sticky-top:\s*90px;")
+
+    def test_toc_scroll_offset_defined_in_root_with_expected_default(self):
+        root_body = self._root_block()
+        self.assertRegex(root_body, r"--toc-scroll-offset:\s*120px;")
+
+    def test_toc_sticky_top_defined_exactly_once(self):
+        matches = re.findall(r"--toc-sticky-top\s*:", self.css_text)
+        self.assertEqual(
+            len(matches),
+            1,
+            "--toc-sticky-top should be defined exactly once (in :root)",
+        )
+
+    def test_toc_scroll_offset_defined_exactly_once(self):
+        matches = re.findall(r"--toc-scroll-offset\s*:", self.css_text)
+        self.assertEqual(
+            len(matches),
+            1,
+            "--toc-scroll-offset should be defined exactly once (in :root)",
+        )
+
+    def test_toc_sticky_top_referenced_by_custom_toc_card_rule(self):
+        match = re.search(
+            r"\.custom-toc-card\s*\{([^}]*)\}", self.css_text, re.DOTALL
+        )
+        self.assertIsNotNone(match)
+        self.assertIn("var(--toc-sticky-top)", match.group(1))
+
+    def test_toc_scroll_offset_referenced_by_custom_toc_card_rule(self):
+        match = re.search(
+            r"\.custom-toc-card\s*\{([^}]*)\}", self.css_text, re.DOTALL
+        )
+        self.assertIsNotNone(match)
+        self.assertIn("var(--toc-scroll-offset)", match.group(1))
+
+    def test_sticky_offset_variables_not_overridden_in_dark_theme_block(self):
+        # These are documented as "centralised" offsets, so the dark-theme
+        # ([data-md-color-scheme="slate"]) override block should not
+        # redefine them with different values.
+        dark_match = re.search(
+            r'\[data-md-color-scheme="slate"\]\s*\{([^}]*)\}',
+            self.css_text,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(dark_match, "Could not find the dark theme override block")
+        dark_body = dark_match.group(1)
+        self.assertNotIn("--toc-sticky-top", dark_body)
+        self.assertNotIn("--toc-scroll-offset", dark_body)
 
 
 class TocCardStylesheetRegressionTests(unittest.TestCase):
