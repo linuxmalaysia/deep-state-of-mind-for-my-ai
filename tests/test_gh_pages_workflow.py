@@ -94,7 +94,6 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
         self.assertIn("uses: actions/checkout@v7", self.content)
 
     def test_setup_python_step_present_with_expected_version(self):
-        """Verify that the workflow configures the expected Python version and pip caching."""
         self.assertIn("uses: actions/setup-python@v7", self.content)
         self.assertRegex(self.content, r'python-version:\s*"3\.12"')
         self.assertRegex(self.content, r'cache:\s*"pip"')
