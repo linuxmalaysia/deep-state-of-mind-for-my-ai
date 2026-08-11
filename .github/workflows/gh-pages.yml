@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@vIV
+        uses: actions/checkout@v7
 
       - name: Set up Python
         uses: actions/setup-python@v7

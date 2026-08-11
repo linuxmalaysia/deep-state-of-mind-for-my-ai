@@ -91,7 +91,7 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
         self.assertIn("timeout-minutes: 15", self.content)
 
     def test_checkout_step_present(self):
-        self.assertIn("uses: actions/checkout@vIV", self.content)
+        self.assertIn("uses: actions/checkout@v7", self.content)
 
     def test_setup_python_step_present_with_expected_version(self):
         self.assertIn("uses: actions/setup-python@v7", self.content)
@@ -183,7 +183,7 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_checkout_step_action_pinned(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         checkout_step = steps[0]
-        self.assertEqual(checkout_step["uses"], "actions/checkout@vIV")
+        self.assertEqual(checkout_step["uses"], "actions/checkout@v7")
 
     def test_setup_python_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
