@@ -90,8 +90,8 @@ class TocCardRuleBodyTests(unittest.TestCase):
         self.assertIn("border: 1px solid var(--lab-border);", body)
         self.assertIn("border-radius: var(--radius);", body)
         self.assertIn("position: sticky;", body)
-        self.assertIn("top: 90px;", body)
-        self.assertIn("max-height: calc(100vh - 120px);", body)
+        self.assertIn("top: var(--toc-sticky-top);", body)
+        self.assertIn("max-height: calc(100vh - var(--toc-scroll-offset));", body)
         self.assertIn("overflow-y: auto;", body)
         self.assertIn("margin-bottom: 24px;", body)
 
