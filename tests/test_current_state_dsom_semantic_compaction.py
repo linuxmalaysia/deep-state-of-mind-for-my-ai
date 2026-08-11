@@ -147,6 +147,23 @@ class BodyContentRegressionTests(unittest.TestCase):
         older_entry_idx = self.body.index("Initial boilerplate replaced")
         self.assertLess(auto_sync_idx, older_entry_idx)
 
+    def test_latest_auto_sync_entry_references_gh_pages_test_change(self):
+        # This PR added a new, most-recent Auto-Sync entry documenting the
+        # single-line addition to tests/test_gh_pages_workflow.py.
+        self.assertIn(
+            "[Auto-Sync] Modified files: tests/test_gh_pages_workflow.py (+1, -0).",
+            self.body,
+        )
+
+    def test_latest_auto_sync_entry_precedes_previous_auto_sync_entry(self):
+        entry_positions = [
+            m.start() for m in re.finditer(r"\[Auto-Sync\] Modified files:", self.body)
+        ]
+        self.assertGreaterEqual(
+            len(entry_positions), 2, "Expected at least two Auto-Sync history entries"
+        )
+        self.assertLess(entry_positions[0], entry_positions[1])
+
     def test_pre_existing_sections_still_present(self):
         self.assertIn("## Active State", self.body)
         self.assertIn("## Condensed History", self.body)
