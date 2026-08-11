@@ -13,7 +13,7 @@ This skill allows AI agents to manually execute the **Semantic Compaction** proc
 
 ## Prerequisites
 1. **Python & `uv`**: The `uv` package manager must be available on the system.
-2. **OpenAI API Key**: The environment variable `OPENAI_API_KEY` must be set in the executing terminal. (Follow Rule 24 for defensive credential handling).
+2. **Gemini API Key (Optional)**: The environment variable `GEMINI_API_KEY` or `GOOGLE_API_KEY` can be set in the executing terminal to leverage the Gemini AI API for compaction. If neither credential is set, the system automatically falls back to a zero-API local Semantic Compaction engine.
 3. **Diff File**: A valid Git diff file or text file containing changes must be prepared.
 
 ## Execution Flow
@@ -21,7 +21,7 @@ This skill allows AI agents to manually execute the **Semantic Compaction** proc
 When tasked with running the state sync locally, execute the following terminal command (ensure you replace `<diff_file>` with the actual path to your diff):
 
 ```bash
-uv run --with openai --with requests .github/scripts/action_update_dsom.py <diff_file> .agents/brain/current_state.dsom
+uv run --with requests==2.34.2 --with pyyaml==6.0.3 .github/scripts/action_update_dsom.py <diff_file> .agents/brain/current_state.dsom
 ```
 
 ### Execution Rules

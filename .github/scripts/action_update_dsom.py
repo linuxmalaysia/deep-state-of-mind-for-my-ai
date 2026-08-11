@@ -34,15 +34,6 @@ CustomLoader.yaml_implicit_resolvers = {
 }
 
 def needs_double_quotes(s):
-    """
-    Determine whether a string requires double-quoted YAML serialization.
-    
-    Parameters:
-    	s (str): The value to evaluate.
-    
-    Returns:
-    		bool: `True` if the value requires double quotes, `False` otherwise.
-    """
     if not isinstance(s, str):
         return False
     if s == "":
@@ -64,16 +55,6 @@ def needs_double_quotes(s):
     return False
 
 def serialise_val(val, key):
-    """
-    Serialize a metadata value into its YAML frontmatter representation.
-    
-    Parameters:
-        val: The value to serialize.
-        key: The metadata key associated with the value.
-    
-    Returns:
-        str: The serialized value.
-    """
     if isinstance(val, list):
         formatted_elements = []
         for item in val:
@@ -97,15 +78,6 @@ def serialise_val(val, key):
     return dumped.strip()
 
 def read_file_and_strip_bom(filepath):
-    """
-    Read a UTF-8 text file and remove any byte-order marks from its content.
-    
-    Returns:
-    	tuple[str, bool]: The cleaned file content and whether a leading UTF-8 BOM was detected.
-    
-    Raises:
-    	OSError: If the file cannot be read.
-    """
     had_bom = False
     if os.path.exists(filepath):
         try:
@@ -121,26 +93,11 @@ def read_file_and_strip_bom(filepath):
     return clean_content, had_bom
 
 def parse_frontmatter(content, rel_path):
-    """
-    Parse leading YAML frontmatter blocks and return their merged fields with the remaining content.
-    
-    Parameters:
-        content: File content that may begin with one or more YAML frontmatter blocks.
-        rel_path: Relative file path used in parsing error messages.
-    
-    Returns:
-        A tuple containing the merged frontmatter mapping and the content following the frontmatter blocks.
-    
-    Raises:
-        ValueError: If a frontmatter block cannot be parsed or does not contain a mapping.
-    """
     existing_frontmatter = {}
     rest_of_content = content
 
-    while True:
-        match = FRONTMATTER_RE.match(rest_of_content)
-        if not match:
-            break
+    match = FRONTMATTER_RE.match(rest_of_content)
+    if match:
         yaml_block = match.group(1)
         try:
             parsed = yaml.load(yaml_block, Loader=CustomLoader)
@@ -159,15 +116,6 @@ def parse_frontmatter(content, rel_path):
     return existing_frontmatter, rest_of_content
 
 def normalise_metadata(existing_frontmatter, rel_path, filename):
-    """
-    Normalize DSOM metadata while preserving existing values and additional fields.
-    
-    Parameters:
-        existing_frontmatter (dict): Existing frontmatter values to normalize.
-    
-    Returns:
-        dict: Metadata with defaults applied and a refreshed UTC timestamp.
-    """
     okf_version = existing_frontmatter.get('okf_version', 0.1)
     okf_type = existing_frontmatter.get('type', 'dsom_state')
     title = existing_frontmatter.get('title', "DSOM Current State")
@@ -190,16 +138,6 @@ def normalise_metadata(existing_frontmatter, rel_path, filename):
     return updated_frontmatter
 
 def serialise_frontmatter(updated_frontmatter, filename):
-    """
-    Serialize metadata as a YAML frontmatter block with standard fields first.
-    
-    Parameters:
-        updated_frontmatter (dict): Metadata fields and values to serialize.
-        filename (str): Associated filename retained for interface compatibility.
-    
-    Returns:
-        str: YAML frontmatter enclosed by delimiter lines.
-    """
     ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
     yaml_lines = []
     for k in ordered_keys:
@@ -212,31 +150,38 @@ def serialise_frontmatter(updated_frontmatter, filename):
 
     return "---\n" + "\n".join(yaml_lines) + "\n---\n"
 
-def atomic_replace_file(filepath, new_content, filename):
-    """
-    Atomically replace a file with new UTF-8 text while preserving existing permissions.
-    
-    Parameters:
-        filepath (str): Path to the file to replace.
-        new_content (str): Text to write to the file.
-        filename (str): Filename component used for the temporary file name.
-    """
-    file_dir = os.path.dirname(filepath)
+def atomic_replace_file(filepath, new_content, filename, had_bom=False):
+    file_dir = os.path.dirname(filepath) or "."
     temp_file = None
     temp_filepath = None
     try:
         temp_file = tempfile.NamedTemporaryFile(
             dir=file_dir, prefix=".temp_", suffix=f"_{filename}",
-            mode='w', encoding='utf-8', delete=False
+            mode='w', encoding='utf-8-sig' if had_bom else 'utf-8', delete=False
         )
         temp_filepath = temp_file.name
         temp_file.write(new_content)
+
+        # Flush buffer and fsync to disk
+        temp_file.flush()
+        os.fsync(temp_file.fileno())
         temp_file.close()
 
         if os.path.exists(filepath):
             os.chmod(temp_filepath, stat.S_IMODE(os.stat(filepath).st_mode))
 
         os.replace(temp_filepath, filepath)
+
+        # Fsync the containing directory
+        dir_fd = None
+        try:
+            dir_fd = os.open(file_dir, os.O_RDONLY)
+            os.fsync(dir_fd)
+        except Exception:
+            pass
+        finally:
+            if dir_fd is not None:
+                os.close(dir_fd)
     except Exception as e:
         if temp_file is not None:
             try:
@@ -252,14 +197,8 @@ def atomic_replace_file(filepath, new_content, filename):
 
 def local_compaction(diff_content, rest_of_content):
     """
-    Adds a local diff summary to the document's Condensed History section.
-    
-    Parameters:
-    	diff_content (str): Git diff content to summarize.
-    	rest_of_content (str): Markdown body to update.
-    
-    Returns:
-    	str: The updated Markdown body containing the diff summary.
+    Parses the git diff content and updates rest_of_content (markdown body)
+    locally, adding the summary to the Condensed History section.
     """
     file_changes = {}
     current_file = None
@@ -290,14 +229,41 @@ def local_compaction(diff_content, rest_of_content):
         lines = parts[1].splitlines()
 
         insert_idx = 0
+        found_bullet = False
         for idx, l in enumerate(lines):
-            if l.strip().startswith("-") or l.strip() == "":
+            stripped = l.strip()
+            if stripped.startswith("##"):
                 insert_idx = idx
-                if l.strip().startswith("-"):
-                    break
+                break
+            if stripped.startswith("-"):
+                insert_idx = idx
+                found_bullet = True
+                break
+            if stripped == "":
+                if not found_bullet:
+                    insert_idx = idx + 1
 
         new_bullet = f"- [Auto-Sync] {summary_text}"
         lines.insert(insert_idx, new_bullet)
+
+        # Determine the index of the next heading in the updated list
+        next_heading_idx = len(lines)
+        for idx, l in enumerate(lines):
+            if l.strip().startswith("##"):
+                next_heading_idx = idx
+                break
+
+        # Filter and cap [Auto-Sync] entries in this section to 3
+        auto_sync_indices = []
+        for idx in range(next_heading_idx):
+            if lines[idx].strip().startswith("- [Auto-Sync]"):
+                auto_sync_indices.append(idx)
+
+        MAX_RETAINED_AUTO_SYNC = 3
+        if len(auto_sync_indices) > MAX_RETAINED_AUTO_SYNC:
+            to_remove = auto_sync_indices[MAX_RETAINED_AUTO_SYNC:]
+            for r_idx in sorted(to_remove, reverse=True):
+                lines.pop(r_idx)
 
         updated_body = parts[0] + target_heading + "\n" + "\n".join(lines)
     else:
@@ -307,11 +273,6 @@ def local_compaction(diff_content, rest_of_content):
     return updated_body
 
 def main():
-    """
-    Updates the DSOM state file using AI-assisted or local semantic compaction of a pull request diff.
-    
-    The function reads the diff and existing state, preserves and refreshes metadata, uses Gemini when configured, falls back to local compaction on API failures, and atomically replaces the state file. Exits with an error when the required command-line arguments are missing or the state file does not exist.
-    """
     if len(sys.argv) != 3:
         print("Usage: action_update_dsom.py <pr_diff_file> <dsom_state_file>")
         sys.exit(1)
@@ -341,33 +302,27 @@ def main():
     if api_key:
         print(f"API key detected. Directing Semantic Compaction via {active_agent} AI API...")
 
-        if active_agent.lower() == "antigravity":
-            system_prompt = (
-                "You are Google Antigravity, a Tier-1 Cognitive Digital Twin assisting LinuxMalaysia in the DSOM framework.\n"
-                "Your task is to perform Semantic Compaction on a Pull Request diff.\n"
-                "You will be given the current `current_state.dsom` file and a Pull Request diff.\n"
-                "Analyze the diff and update the `current_state.dsom` file to reflect any new "
-                "architectural decisions, major features, or state changes.\n"
-                "- Keep the output strictly in the OKF v0.1 format.\n"
-                "- Do not add verbose conversational fluff. Only output the updated file content.\n"
-                "- Do not wrap the output in markdown code blocks, just return the raw text."
-            )
-        else:
-            system_prompt = (
-                "You are Google Jules, a Tier-1 Cognitive Digital Twin assisting LinuxMalaysia in the DSOM framework.\n"
-                "Your task is to perform Semantic Compaction on a Pull Request diff.\n"
-                "You will be given the current `current_state.dsom` file and a Pull Request diff.\n"
-                "Analyze the diff and update the `current_state.dsom` file to reflect any new "
-                "architectural decisions, major features, or state changes.\n"
-                "- Keep the output strictly in the OKF v0.1 format.\n"
-                "- Do not add verbose conversational fluff. Only output the updated file content.\n"
-                "- Do not wrap the output in markdown code blocks, just return the raw text."
-            )
+        # Single template for system prompt template with interpolated persona name
+        persona_name = "Antigravity" if active_agent.lower() == "antigravity" else "Jules"
+        system_prompt = (
+            f"You are Google {persona_name}, a Tier-1 Cognitive Digital Twin assisting LinuxMalaysia in the DSOM framework.\n"
+            "Your task is to perform Semantic Compaction on a Pull Request diff.\n"
+            "You will be given the current `current_state.dsom` file and a Pull Request diff.\n"
+            "Analyze the diff and update the `current_state.dsom` file to reflect any new "
+            "architectural decisions, major features, or state changes.\n"
+            "- Keep the output strictly in the OKF v0.1 format.\n"
+            "- Do not add verbose conversational fluff. Only output the updated file content.\n"
+            "- Do not wrap the output in markdown code blocks, just return the raw text."
+        )
 
         user_prompt = f"Current DSOM State:\n{clean_state}\n\nPull Request Diff:\n{diff_content}"
 
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
-        headers = {'Content-Type': 'application/json'}
+        # Updated endpoint to remove key query parameter, using gemini-1.5-pro model
+        url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent"
+        headers = {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': api_key
+        }
         payload = {
             "contents": [{
                 "role": "user",
@@ -397,8 +352,13 @@ def main():
                 ai_text = "\n".join(lines).strip()
 
             # Parse response frontmatter and body
-            _, new_state_body = parse_frontmatter(ai_text, os.path.basename(state_file))
-            print("Successfully processed semantic compaction using AI API.")
+            _, parsed_body = parse_frontmatter(ai_text, os.path.basename(state_file))
+            if not parsed_body or not parsed_body.strip():
+                print("Warning: Parsed model response body is empty or whitespace-only.")
+                new_state_body = None
+            else:
+                new_state_body = parsed_body
+                print("Successfully processed semantic compaction using AI API.")
         except Exception as e:
             print(f"Warning: Failed to call Gemini API ({e}). Falling back to local semantic compaction.")
             new_state_body = None
@@ -414,8 +374,8 @@ def main():
     new_frontmatter_block = serialise_frontmatter(updated_frontmatter, os.path.basename(state_file))
     final_content = new_frontmatter_block + new_state_body.strip() + "\n"
 
-    # Save atomically
-    atomic_replace_file(state_file, final_content, os.path.basename(state_file))
+    # Save atomically, preserving original had_bom flag
+    atomic_replace_file(state_file, final_content, os.path.basename(state_file), had_bom=had_bom)
     print(f"Successfully updated {state_file}")
 
 if __name__ == "__main__":

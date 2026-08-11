@@ -43,7 +43,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           ACTIVE_AGENT: "Jules"
         run: |
-          uv run --with requests --with pyyaml .github/scripts/action_update_dsom.py pr.diff .agents/brain/current_state.dsom
+          uv run --with requests==2.34.2 --with pyyaml==6.0.3 .github/scripts/action_update_dsom.py pr.diff .agents/brain/current_state.dsom
 
       - name: Commit and push updated DSOM state
         run: |
