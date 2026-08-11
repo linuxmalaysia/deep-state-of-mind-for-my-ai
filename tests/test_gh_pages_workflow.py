@@ -91,10 +91,10 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
         self.assertIn("timeout-minutes: 15", self.content)
 
     def test_checkout_step_present(self):
-        self.assertIn("uses: actions/checkout@v4", self.content)
+        self.assertIn("uses: actions/checkout@vIV", self.content)
 
     def test_setup_python_step_present_with_expected_version(self):
-        self.assertIn("uses: actions/setup-python@v5", self.content)
+        self.assertIn("uses: actions/setup-python@v7", self.content)
         self.assertRegex(self.content, r'python-version:\s*"3\.12"')
         self.assertRegex(self.content, r'cache:\s*"pip"')
 
@@ -183,12 +183,12 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_checkout_step_action_pinned(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         checkout_step = steps[0]
-        self.assertEqual(checkout_step["uses"], "actions/checkout@v4")
+        self.assertEqual(checkout_step["uses"], "actions/checkout@vIV")
 
     def test_setup_python_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         setup_python_step = steps[1]
-        self.assertEqual(setup_python_step["uses"], "actions/setup-python@v5")
+        self.assertEqual(setup_python_step["uses"], "actions/setup-python@v7")
         self.assertEqual(setup_python_step["with"]["python-version"], "3.12")
         self.assertEqual(setup_python_step["with"]["cache"], "pip")
 
