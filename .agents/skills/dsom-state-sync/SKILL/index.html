@@ -2574,12 +2574,12 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <ol>
 <li><strong>Python &amp; <code>uv</code></strong>: The <code>uv</code> package manager must be available on the system.</li>
-<li><strong>OpenAI API Key</strong>: The environment variable <code>OPENAI_API_KEY</code> must be set in the executing terminal. (Follow Rule 24 for defensive credential handling).</li>
+<li><strong>Gemini API Key (Optional)</strong>: The environment variable <code>GEMINI_API_KEY</code> or <code>GOOGLE_API_KEY</code> can be set in the executing terminal to leverage the Gemini AI API for compaction. If neither credential is set, the system automatically falls back to a zero-API local Semantic Compaction engine.</li>
 <li><strong>Diff File</strong>: A valid Git diff file or text file containing changes must be prepared.</li>
 </ol>
 <h2 id="execution-flow">Execution Flow</h2>
 <p>When tasked with running the state sync locally, execute the following terminal command (ensure you replace <code>&lt;diff_file&gt;</code> with the actual path to your diff):</p>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>openai<span class="w"> </span>--with<span class="w"> </span>requests<span class="w"> </span>.github/scripts/action_update_dsom.py<span class="w"> </span>&lt;diff_file&gt;<span class="w"> </span>.agents/brain/current_state.dsom
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span><span class="nv">requests</span><span class="o">==</span><span class="m">2</span>.34.2<span class="w"> </span>--with<span class="w"> </span><span class="nv">pyyaml</span><span class="o">==</span><span class="m">6</span>.0.3<span class="w"> </span>.github/scripts/action_update_dsom.py<span class="w"> </span>&lt;diff_file&gt;<span class="w"> </span>.agents/brain/current_state.dsom
 </code></pre></div>
 <h3 id="execution-rules">Execution Rules</h3>
 <ol>
