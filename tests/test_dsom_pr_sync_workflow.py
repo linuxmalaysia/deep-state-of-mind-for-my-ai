@@ -3,9 +3,10 @@ Unit tests for .github/workflows/dsom-pr-sync.yml
 
 This PR bumped the `astral-sh/setup-uv` action from v3 to v5 and added an
 explicit `cache-dependency-glob` input so that uv's cache key is scoped to
-`requirements.txt`. These tests guard that specific change (and the
-surrounding "Install uv" step configuration) without re-testing unrelated,
-pre-existing parts of the workflow.
+`requirements.txt`. A subsequent change added a "Set up Node.js 24" step
+immediately after the checkout step. These tests guard those specific
+changes (and the surrounding "Install uv" step configuration) without
+re-testing unrelated, pre-existing parts of the workflow.
 
 Following the convention established in tests/test_gh_pages_workflow.py,
 two layers of testing are used:
@@ -97,6 +98,62 @@ class DsomPrSyncSetupUvStepTextTests(unittest.TestCase):
 
     def test_no_tab_characters(self):
         self.assertNotIn("\t", self.content, "Workflow file should not contain tab characters")
+
+
+class DsomPrSyncSetupNodeStepTextTests(unittest.TestCase):
+    """Regex/substring checks scoped to the new "Set up Node.js 24" step."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.content = WORKFLOW_PATH.read_text(encoding="utf-8")
+        match = re.search(
+            r"- name:\s*Set up Node\.js 24\r?\n(?P<body>(?:[ \t]+\S.*\r?\n?)+)",
+            cls.content,
+        )
+        assert match is not None, 'Could not locate the "Set up Node.js 24" step block'
+        cls.setup_node_step = match.group(0)
+
+    def test_setup_node_step_present(self):
+        self.assertIn("name: Set up Node.js 24", self.content)
+
+    def test_uses_setup_node_action(self):
+        self.assertIn("uses: actions/setup-node@v4", self.setup_node_step)
+
+    def test_node_version_pinned_to_24(self):
+        self.assertRegex(self.setup_node_step, r'node-version:\s*"24"')
+
+    def test_setup_node_step_precedes_install_uv_step(self):
+        self.assertLess(
+            self.content.index("name: Set up Node.js 24"),
+            self.content.index("name: Install uv"),
+        )
+
+
+@unittest.skipUnless(HAS_YAML, "PyYAML is not installed in this environment")
+class DsomPrSyncSetupNodeStepStructureTests(unittest.TestCase):
+    """Structural checks against the parsed YAML document, scoped to the
+    "Set up Node.js 24" step added by this PR."""
+
+    @classmethod
+    def setUpClass(cls):
+        with WORKFLOW_PATH.open(encoding="utf-8") as fh:
+            cls.doc = yaml.safe_load(fh)
+        steps = cls.doc["jobs"]["update-dsom-state"]["steps"]
+        cls.setup_node_step = next(
+            s for s in steps if s.get("name") == "Set up Node.js 24"
+        )
+
+    def test_setup_node_step_action_pinned(self):
+        self.assertEqual(self.setup_node_step["uses"], "actions/setup-node@v4")
+
+    def test_setup_node_step_with_inputs(self):
+        self.assertEqual(self.setup_node_step["with"]["node-version"], "24")
+
+    def test_setup_node_step_is_second_step(self):
+        steps = self.doc["jobs"]["update-dsom-state"]["steps"]
+        step_names = [s.get("name") for s in steps]
+        self.assertEqual(step_names[0], "Checkout repository")
+        self.assertEqual(step_names[1], "Set up Node.js 24")
 
 
 @unittest.skipUnless(HAS_YAML, "PyYAML is not installed in this environment")

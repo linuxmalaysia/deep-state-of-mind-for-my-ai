@@ -3,9 +3,11 @@ Unit tests for .github/workflows/openwiki-update.yml
 
 This PR bumped the `astral-sh/setup-uv` action from v3 to v5 and added an
 explicit `cache-dependency-glob` input so that uv's cache key is scoped to
-`requirements.txt`. These tests guard that specific change (and the
-surrounding "Install uv" step configuration) without re-testing unrelated,
-pre-existing parts of the workflow.
+`requirements.txt`. A subsequent change added a "Set up Node.js 24" step
+right after checkout, and a "Set up Python" step (pinned to 3.12) between
+"Install uv" and "Run Native OpenWiki Emulator". These tests guard those
+specific changes (and the surrounding "Install uv" step configuration)
+without re-testing unrelated, pre-existing parts of the workflow.
 
 Following the convention established in tests/test_gh_pages_workflow.py,
 two layers of testing are used:
@@ -97,6 +99,99 @@ class OpenwikiUpdateSetupUvStepTextTests(unittest.TestCase):
 
     def test_no_tab_characters(self):
         self.assertNotIn("\t", self.content, "Workflow file should not contain tab characters")
+
+
+class OpenwikiUpdateSetupNodeAndPythonStepTextTests(unittest.TestCase):
+    """Regex/substring checks scoped to the new "Set up Node.js 24" and
+    "Set up Python" steps added by this PR."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.content = WORKFLOW_PATH.read_text(encoding="utf-8")
+        node_match = re.search(
+            r"- name:\s*Set up Node\.js 24\r?\n(?P<body>(?:[ \t]+\S.*\r?\n?)+)",
+            cls.content,
+        )
+        assert node_match is not None, 'Could not locate the "Set up Node.js 24" step block'
+        cls.setup_node_step = node_match.group(0)
+
+        python_match = re.search(
+            r"- name:\s*Set up Python\r?\n(?P<body>(?:[ \t]+\S.*\r?\n?)+)",
+            cls.content,
+        )
+        assert python_match is not None, 'Could not locate the "Set up Python" step block'
+        cls.setup_python_step = python_match.group(0)
+
+    def test_setup_node_step_present(self):
+        self.assertIn("name: Set up Node.js 24", self.content)
+
+    def test_uses_setup_node_action(self):
+        self.assertIn("uses: actions/setup-node@v4", self.setup_node_step)
+
+    def test_node_version_pinned_to_24(self):
+        self.assertRegex(self.setup_node_step, r'node-version:\s*"24"')
+
+    def test_setup_node_step_precedes_install_uv_step(self):
+        self.assertLess(
+            self.content.index("name: Set up Node.js 24"),
+            self.content.index("name: Install uv"),
+        )
+
+    def test_setup_python_step_present(self):
+        self.assertIn("name: Set up Python", self.content)
+
+    def test_uses_setup_python_action(self):
+        self.assertIn("uses: actions/setup-python@v7", self.setup_python_step)
+
+    def test_python_version_pinned_to_3_12(self):
+        self.assertRegex(self.setup_python_step, r'python-version:\s*"3\.12"')
+
+    def test_setup_python_step_between_install_uv_and_emulator_step(self):
+        install_uv_index = self.content.index("name: Install uv")
+        setup_python_index = self.content.index("name: Set up Python")
+        emulator_index = self.content.index("name: Run Native OpenWiki Emulator")
+        self.assertLess(install_uv_index, setup_python_index)
+        self.assertLess(setup_python_index, emulator_index)
+
+
+@unittest.skipUnless(HAS_YAML, "PyYAML is not installed in this environment")
+class OpenwikiUpdateSetupNodeAndPythonStepStructureTests(unittest.TestCase):
+    """Structural checks against the parsed YAML document, scoped to the
+    "Set up Node.js 24" and "Set up Python" steps added by this PR."""
+
+    @classmethod
+    def setUpClass(cls):
+        with WORKFLOW_PATH.open(encoding="utf-8") as fh:
+            cls.doc = yaml.safe_load(fh)
+        cls.steps = cls.doc["jobs"]["update"]["steps"]
+        cls.step_names = [s.get("name") for s in cls.steps]
+
+    def test_setup_node_step_action_and_inputs(self):
+        step = self.steps[self.step_names.index("Set up Node.js 24")]
+        self.assertEqual(step["uses"], "actions/setup-node@v4")
+        self.assertEqual(step["with"]["node-version"], "24")
+
+    def test_setup_python_step_action_and_inputs(self):
+        step = self.steps[self.step_names.index("Set up Python")]
+        self.assertEqual(step["uses"], "actions/setup-python@v7")
+        self.assertEqual(step["with"]["python-version"], "3.12")
+
+    def test_setup_node_step_is_second_step(self):
+        self.assertEqual(self.step_names[0], "Check out repository")
+        self.assertEqual(self.step_names[1], "Set up Node.js 24")
+
+    def test_setup_python_step_precedes_emulator_step(self):
+        self.assertLess(
+            self.step_names.index("Set up Python"),
+            self.step_names.index("Run Native OpenWiki Emulator"),
+        )
+
+    def test_no_duplicate_step_names(self):
+        self.assertEqual(
+            len(self.step_names),
+            len(set(self.step_names)),
+            "Step names should be unique",
+        )
 
 
 @unittest.skipUnless(HAS_YAML, "PyYAML is not installed in this environment")
