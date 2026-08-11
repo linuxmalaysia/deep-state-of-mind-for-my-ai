@@ -127,7 +127,7 @@ class DsomPrSyncGeminiMigrationStructureTests(unittest.TestCase):
 
     def test_run_command_uses_uv_with_requests_and_pyyaml(self):
         run_command = self.compaction_step["run"]
-        self.assertIn("uv run --with requests --with pyyaml", run_command)
+        self.assertIn("uv run --with requests==2.34.2 --with pyyaml==6.0.3", run_command)
         self.assertNotIn("openai", run_command)
 
     def test_compaction_step_follows_set_up_python_step(self):
