@@ -34,6 +34,15 @@ CustomLoader.yaml_implicit_resolvers = {
 }
 
 def needs_double_quotes(s):
+    """
+    Determine whether a string requires double-quoted YAML serialization.
+    
+    Parameters:
+    	s (str): The value to evaluate.
+    
+    Returns:
+    		bool: `True` if the value requires double quotes, `False` otherwise.
+    """
     if not isinstance(s, str):
         return False
     if s == "":
@@ -55,6 +64,16 @@ def needs_double_quotes(s):
     return False
 
 def serialise_val(val, key):
+    """
+    Serialize a metadata value into its YAML frontmatter representation.
+    
+    Parameters:
+        val: The value to serialize.
+        key: The metadata key associated with the value.
+    
+    Returns:
+        str: The serialized value.
+    """
     if isinstance(val, list):
         formatted_elements = []
         for item in val:
@@ -78,6 +97,15 @@ def serialise_val(val, key):
     return dumped.strip()
 
 def read_file_and_strip_bom(filepath):
+    """
+    Read a UTF-8 text file and remove any byte-order marks from its content.
+    
+    Returns:
+    	tuple[str, bool]: The cleaned file content and whether a leading UTF-8 BOM was detected.
+    
+    Raises:
+    	OSError: If the file cannot be read.
+    """
     had_bom = False
     if os.path.exists(filepath):
         try:
@@ -93,6 +121,19 @@ def read_file_and_strip_bom(filepath):
     return clean_content, had_bom
 
 def parse_frontmatter(content, rel_path):
+    """
+    Parse leading YAML frontmatter blocks and return their merged fields with the remaining content.
+    
+    Parameters:
+        content: File content that may begin with one or more YAML frontmatter blocks.
+        rel_path: Relative file path used in parsing error messages.
+    
+    Returns:
+        A tuple containing the merged frontmatter mapping and the content following the frontmatter blocks.
+    
+    Raises:
+        ValueError: If a frontmatter block cannot be parsed or does not contain a mapping.
+    """
     existing_frontmatter = {}
     rest_of_content = content
 
@@ -118,6 +159,15 @@ def parse_frontmatter(content, rel_path):
     return existing_frontmatter, rest_of_content
 
 def normalise_metadata(existing_frontmatter, rel_path, filename):
+    """
+    Normalize DSOM metadata while preserving existing values and additional fields.
+    
+    Parameters:
+        existing_frontmatter (dict): Existing frontmatter values to normalize.
+    
+    Returns:
+        dict: Metadata with defaults applied and a refreshed UTC timestamp.
+    """
     okf_version = existing_frontmatter.get('okf_version', 0.1)
     okf_type = existing_frontmatter.get('type', 'dsom_state')
     title = existing_frontmatter.get('title', "DSOM Current State")
@@ -140,6 +190,16 @@ def normalise_metadata(existing_frontmatter, rel_path, filename):
     return updated_frontmatter
 
 def serialise_frontmatter(updated_frontmatter, filename):
+    """
+    Serialize metadata as a YAML frontmatter block with standard fields first.
+    
+    Parameters:
+        updated_frontmatter (dict): Metadata fields and values to serialize.
+        filename (str): Associated filename retained for interface compatibility.
+    
+    Returns:
+        str: YAML frontmatter enclosed by delimiter lines.
+    """
     ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
     yaml_lines = []
     for k in ordered_keys:
@@ -153,6 +213,14 @@ def serialise_frontmatter(updated_frontmatter, filename):
     return "---\n" + "\n".join(yaml_lines) + "\n---\n"
 
 def atomic_replace_file(filepath, new_content, filename):
+    """
+    Atomically replace a file with new UTF-8 text while preserving existing permissions.
+    
+    Parameters:
+        filepath (str): Path to the file to replace.
+        new_content (str): Text to write to the file.
+        filename (str): Filename component used for the temporary file name.
+    """
     file_dir = os.path.dirname(filepath)
     temp_file = None
     temp_filepath = None
@@ -184,8 +252,14 @@ def atomic_replace_file(filepath, new_content, filename):
 
 def local_compaction(diff_content, rest_of_content):
     """
-    Parses the git diff content and updates rest_of_content (markdown body)
-    locally, adding the summary to the Condensed History section.
+    Adds a local diff summary to the document's Condensed History section.
+    
+    Parameters:
+    	diff_content (str): Git diff content to summarize.
+    	rest_of_content (str): Markdown body to update.
+    
+    Returns:
+    	str: The updated Markdown body containing the diff summary.
     """
     file_changes = {}
     current_file = None
@@ -233,6 +307,11 @@ def local_compaction(diff_content, rest_of_content):
     return updated_body
 
 def main():
+    """
+    Updates the DSOM state file using AI-assisted or local semantic compaction of a pull request diff.
+    
+    The function reads the diff and existing state, preserves and refreshes metadata, uses Gemini when configured, falls back to local compaction on API failures, and atomically replaces the state file. Exits with an error when the required command-line arguments are missing or the state file does not exist.
+    """
     if len(sys.argv) != 3:
         print("Usage: action_update_dsom.py <pr_diff_file> <dsom_state_file>")
         sys.exit(1)
