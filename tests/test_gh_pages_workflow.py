@@ -93,6 +93,27 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
     def test_checkout_step_present(self):
         self.assertIn("uses: actions/checkout@v6.0.2", self.content)
 
+    def test_setup_node_step_present_with_expected_version(self):
+        self.assertIn("name: Set up Node.js 24", self.content)
+        self.assertIn("uses: actions/setup-node@v4", self.content)
+        self.assertRegex(self.content, r'node-version:\s*"24"')
+
+    def test_install_uv_step_present_with_expected_inputs(self):
+        self.assertIn("name: Install uv", self.content)
+        self.assertIn("uses: astral-sh/setup-uv@v5", self.content)
+        self.assertRegex(self.content, r"enable-cache:\s*true")
+        self.assertRegex(
+            self.content,
+            r'cache-dependency-glob:\s*"requirements\.txt"',
+        )
+
+    def test_setup_node_and_install_uv_precede_setup_python(self):
+        node_index = self.content.index("name: Set up Node.js 24")
+        uv_index = self.content.index("name: Install uv")
+        python_index = self.content.index("name: Set up Python")
+        self.assertLess(node_index, uv_index)
+        self.assertLess(uv_index, python_index)
+
     def test_setup_python_step_present_with_expected_version(self):
         self.assertIn("uses: actions/setup-python@v7", self.content)
         self.assertRegex(self.content, r'python-version:\s*"3\.12"')
@@ -101,8 +122,16 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
     def test_installs_mkdocs_material(self):
         self.assertIn("uv pip install --system mkdocs-material", self.content)
 
+    def test_no_longer_upgrades_pip_directly(self):
+        # Regression guard: the old `python -m pip install --upgrade pip`
+        # step must have been fully replaced by uv-based installs.
+        self.assertNotIn("python -m pip install --upgrade pip", self.content)
+
     def test_builds_site_with_mkdocs(self):
         self.assertTrue("mkdocs build" in self.content or "generate_sitemaps.py" in self.content)
+
+    def test_builds_sitemaps_via_uv_run(self):
+        self.assertIn("uv run python tools/generate_sitemaps.py", self.content)
 
     def test_deploy_step_uses_peaceiris_action(self):
         self.assertIn("uses: peaceiris/actions-gh-pages@v4", self.content)
@@ -187,6 +216,21 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
         checkout_step = steps[0]
         self.assertEqual(checkout_step["uses"], "actions/checkout@v6.0.2")
 
+    def test_setup_node_step_inputs(self):
+        steps = self.doc["jobs"]["deploy-pages"]["steps"]
+        setup_node_step = steps[1]
+        self.assertEqual(setup_node_step["uses"], "actions/setup-node@v4")
+        self.assertEqual(setup_node_step["with"]["node-version"], "24")
+
+    def test_install_uv_step_inputs(self):
+        steps = self.doc["jobs"]["deploy-pages"]["steps"]
+        install_uv_step = steps[2]
+        self.assertEqual(install_uv_step["uses"], "astral-sh/setup-uv@v5")
+        self.assertTrue(install_uv_step["with"]["enable-cache"])
+        self.assertEqual(
+            install_uv_step["with"]["cache-dependency-glob"], "requirements.txt"
+        )
+
     def test_setup_python_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         setup_python_step = steps[3]
@@ -200,10 +244,25 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
         run_lines = install_step["run"]
         self.assertIn("uv pip install --system mkdocs-material", run_lines)
 
+    def test_install_dependencies_step_no_longer_uses_plain_pip(self):
+        # Regression guard: the prior pip-based install (with a separate
+        # `pip install --upgrade pip` line) must be fully removed, not
+        # merely supplemented by the uv-based install.
+        steps = self.doc["jobs"]["deploy-pages"]["steps"]
+        install_step = steps[4]
+        run_lines = install_step["run"]
+        self.assertNotIn("pip install --upgrade pip", run_lines)
+        self.assertNotIn("pip install mkdocs-material", run_lines)
+
     def test_build_step_command(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         build_step = steps[5]
         self.assertTrue("mkdocs build" in build_step["run"] or "generate_sitemaps.py" in build_step["run"])
+
+    def test_build_step_invoked_via_uv_run(self):
+        steps = self.doc["jobs"]["deploy-pages"]["steps"]
+        build_step = steps[5]
+        self.assertIn("uv run python tools/generate_sitemaps.py", build_step["run"])
 
     def test_deploy_step_configuration(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]

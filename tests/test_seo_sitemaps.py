@@ -126,6 +126,72 @@ class SitemapXmlStructureTests(unittest.TestCase):
             self.assertRegex(lastmod.text, r'^\d{4}-\d{2}-\d{2}$')
 
 
+class SitemapAgentsUrlRegressionTests(unittest.TestCase):
+    """Regression tests for the `.agents/` URLs newly generated into the
+    unified sitemaps (previously the sitemaps only listed top-level docs
+    pages, omitting the `.agents/` tree entirely)."""
+
+    # A representative sample of `.agents/` pages that must now be present,
+    # covering brain notes, skills, and workflows subtrees.
+    AGENTS_SAMPLE_PATHS = [
+        ".agents/AGENTS/",
+        ".agents/brain/DSOM_TEMPLATE/",
+        ".agents/brain/palace_registry/",
+        ".agents/skills/dsom-bootstrap/SKILL/",
+        ".agents/skills/openwiki-compiler/SKILL/",
+        ".agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/",
+    ]
+
+    @classmethod
+    def setUpClass(cls):
+        cls.txt_lines = {
+            line.strip()
+            for line in (REPO_ROOT / "sitemap.txt").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        }
+        namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+        xml_root = ET.parse(REPO_ROOT / "sitemap.xml").getroot()
+        cls.xml_locs = {
+            loc.text
+            for loc in xml_root.findall('.//ns:url/ns:loc', namespace)
+        }
+
+    def test_agents_sample_urls_present_for_github_pages_in_txt(self):
+        for path in self.AGENTS_SAMPLE_PATHS:
+            with self.subTest(path=path):
+                self.assertIn(f"{GITHUB_PAGES_BASE}{path}", self.txt_lines)
+
+    def test_agents_sample_urls_present_for_readthedocs_in_txt(self):
+        for path in self.AGENTS_SAMPLE_PATHS:
+            with self.subTest(path=path):
+                self.assertIn(f"{READTHEDOCS_BASE}{path}", self.txt_lines)
+
+    def test_agents_sample_urls_present_in_xml(self):
+        for path in self.AGENTS_SAMPLE_PATHS:
+            with self.subTest(path=path):
+                self.assertIn(f"{GITHUB_PAGES_BASE}{path}", self.xml_locs)
+                self.assertIn(f"{READTHEDOCS_BASE}{path}", self.xml_locs)
+
+    def test_sitemap_txt_and_xml_have_matching_url_sets(self):
+        # sitemap.txt and sitemap.xml are generated from the same source
+        # list, so both formats must expose exactly the same URLs.
+        self.assertEqual(self.txt_lines, self.xml_locs)
+
+
+class RootAndDocsSitemapConsistencyTests(unittest.TestCase):
+    """Verify the root and docs/ copies of each sitemap stay in sync."""
+
+    def test_sitemap_txt_root_and_docs_copies_are_identical(self):
+        root_content = (REPO_ROOT / "sitemap.txt").read_text(encoding="utf-8")
+        docs_content = (REPO_ROOT / "docs" / "sitemap.txt").read_text(encoding="utf-8")
+        self.assertEqual(root_content, docs_content)
+
+    def test_sitemap_xml_root_and_docs_copies_are_identical(self):
+        root_content = (REPO_ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        docs_content = (REPO_ROOT / "docs" / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertEqual(root_content, docs_content)
+
+
 class SummaryMdIntegrityAndGitBookUrlTests(unittest.TestCase):
     """Verify the integrity of SUMMARY.md links and check for dead links."""
 
