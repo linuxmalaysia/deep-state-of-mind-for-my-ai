@@ -29,7 +29,7 @@ Please note that this project does not represent a live, production-grade deploy
 
 We are deeply committed to privacy and data protection. We have done our best to protect anyone and organisation referenced, simulated, or involved in the design and execution of this baseline.
 
-* **Anonymised Metadata:** All IP addresses, domains, and configuration/test names used within the configurations, tests, and documentation are either strictly fictional, non-routable, or reserved documentation blocks (such as `.internal` or `.example`). This privacy statement explicitly excludes public attribution identities and real author or contributor names (such as Harisfazillah Jamel (LinuxMalaysia)), while preserving the intended privacy clarification.
+* **Anonymised Metadata:** IP addresses, domains, and names used within the synthetic, non-public configuration and test data are either strictly fictional, non-routable, or reserved documentation blocks (such as `.internal` or `.example`). This privacy statement explicitly excludes public documentation, external-service links (such as GitHub, GitBook, Read the Docs, or Render), public attribution identities, and real author or contributor names (such as Harisfazillah Jamel (LinuxMalaysia)), while preserving the intended privacy clarification.
 * **Zero Real-World Storage:** This repository does not harvest, process, or store any actual personally identifying information (PII) of third parties.
 
 ---

@@ -180,6 +180,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 ---
 
 ## 16. The Legal & Disclaimer Entry Point (Risk Governance)
+
 *If you want to review the privacy statement, cost and design assumptions, or liability disclaimers for this repository.*
 
 **Read This First:** [`LEGAL-NOTICE.md`](LEGAL-NOTICE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/))
