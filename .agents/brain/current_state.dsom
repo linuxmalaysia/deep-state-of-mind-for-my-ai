@@ -17,9 +17,7 @@ This file maintains a condensed, token-efficient representation of the project's
 
 ## Condensed History
 
-
-
-
+- [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+413, -137).
 - [Auto-Sync] Modified files: .github/workflows/crda.yml (+12, -1), .github/workflows/dsom-pr-sync.yml (+5, -0), .github/workflows/gh-pages.yml (+13, -3), .github/workflows/openwiki-update.yml (+10, -0), docs/sitemap.txt (+158, -0), docs/sitemap.xml (+950, -318), sitemap.txt (+158, -0), sitemap.xml (+950, -318).
 - [Auto-Sync] Modified files: tests/test_crda_workflow.py (+176, -0), tests/test_dsom_pr_sync_workflow.py (+60, -3), tests/test_gh_pages_workflow.py (+72, -12), tests/test_openwiki_update_workflow.py (+98, -3), tests/test_seo_sitemaps.py (+66, -0).
 - [Auto-Sync] Modified files: .agents/brain/current_state.dsom (+1, -3), .github/workflows/crda.yml (+4, -2), .github/workflows/dsom-pr-sync.yml (+2, -2), .github/workflows/gh-pages.yml (+4, -2), .github/workflows/openwiki-update.yml (+2, -2), tests/test_current_state_dsom_semantic_compaction.py (+4, -19), tests/test_dsom_gemini_workflow_migration.py (+2, -2), tests/test_dsom_pr_sync_gemini_migration.py (+1, -1), tests/test_gh_pages_workflow.py (+2, -11), tests/test_workflow_actions_version_bump.py (+0, -240).
