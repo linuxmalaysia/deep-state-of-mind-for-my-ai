@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
-timestamp: "2026-08-11T23:00:36Z"
+timestamp: "2026-08-12T06:41:20Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
 ---
@@ -17,10 +17,10 @@ This file maintains a condensed, token-efficient representation of the project's
 
 ## Condensed History
 
+
+- [Auto-Sync] Modified files: .agents/brain/current_state.dsom (+3, -6), LEGAL-NOTICE.md (+48, -0), START-HERE.md (+10, -1), SUMMARY.md (+1, -0), docs/LEGAL-NOTICE.md (+1, -0), docs/sitemap.txt (+3, -0), docs/sitemap.xml (+488, -476), llms.txt (+1, -0), mkdocs.yml (+2, -0), sitemap.txt (+3, -0), sitemap.xml (+488, -476), tests/test_docs_symlinks.py (+22, -4), tests/test_legal_notice_disclaimer.py (+0, -495), tests/test_mkdocs_nav.py (+1, -0).
 - [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+413, -137).
 - [Auto-Sync] Modified files: .github/workflows/crda.yml (+12, -1), .github/workflows/dsom-pr-sync.yml (+5, -0), .github/workflows/gh-pages.yml (+13, -3), .github/workflows/openwiki-update.yml (+10, -0), docs/sitemap.txt (+158, -0), docs/sitemap.xml (+950, -318), sitemap.txt (+158, -0), sitemap.xml (+950, -318).
-- [Auto-Sync] Modified files: tests/test_crda_workflow.py (+176, -0), tests/test_dsom_pr_sync_workflow.py (+60, -3), tests/test_gh_pages_workflow.py (+72, -12), tests/test_openwiki_update_workflow.py (+98, -3), tests/test_seo_sitemaps.py (+66, -0).
-- [Auto-Sync] Modified files: .agents/brain/current_state.dsom (+1, -3), .github/workflows/crda.yml (+4, -2), .github/workflows/dsom-pr-sync.yml (+2, -2), .github/workflows/gh-pages.yml (+4, -2), .github/workflows/openwiki-update.yml (+2, -2), tests/test_current_state_dsom_semantic_compaction.py (+4, -19), tests/test_dsom_gemini_workflow_migration.py (+2, -2), tests/test_dsom_pr_sync_gemini_migration.py (+1, -1), tests/test_gh_pages_workflow.py (+2, -11), tests/test_workflow_actions_version_bump.py (+0, -240).
 - Refactored .github/scripts/action_update_dsom.py to integrate Gemini/Google API for Jules/Antigravity and local automated compaction fallback.
 - Initial boilerplate replaced with DSOM-specific policies.
 - Automated DSOM State Sync deployed.
