@@ -21,6 +21,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Changelog](CHANGELOG.md): Unreleased and recent framework changes.
 - [History](HISTORY.md): Universal chronological ledger of project milestones.
 - [Security Policy](SECURITY.md): Supported versions, private vulnerability disclosure process, and DSOM-specific remediation tools.
+- [Legal Notice & Disclaimer](LEGAL-NOTICE.md): Cost and design assumptions, privacy statement, and liability disclaimers for the DSOM framework.
 
 ## Architecture & Protocols
 - [AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md): The Sovereign Constitution outlining core GitOps, AIOps, and Ansible execution rules.

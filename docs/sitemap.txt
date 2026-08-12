@@ -97,6 +97,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/HOWTO-SETUP-WSL-AL
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/HOWTO-UPGRADE-DSOM/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/HOWTO-UPGRADE-LEGACY-DSOM/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/HUMAN-HANDOVER-CONTEXT/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/LEGAL-NOTICE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/MIRROR-OF-KNOWLEDGE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/OKF-ADOPTION-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/PALACE-BUILD-STORY/
@@ -279,6 +280,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-SETUP-WSL-ALM
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-UPGRADE-DSOM/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-UPGRADE-LEGACY-DSOM/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HUMAN-HANDOVER-CONTEXT/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/MIRROR-OF-KNOWLEDGE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/PALACE-BUILD-STORY/
@@ -469,6 +471,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-sod-palace
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-template-reset
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/history
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/legal-notice
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/references/howto-bootstrap-sovereign-ai-project
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/references/okf-adoption-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/references/the-sovereign-ai-agent-workspace-v2_-architecting-persistent-memory-custom-skills-and-contextual-continuity-20260619

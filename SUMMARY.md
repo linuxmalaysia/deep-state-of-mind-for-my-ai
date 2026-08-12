@@ -15,6 +15,7 @@ topics: ["dsom", "documentation"]
 * [📜 Changelog](CHANGELOG.md)
 * [🤝 Contributing Guidelines](CONTRIBUTING.md)
 * [🛡️ Security Policy](SECURITY.md)
+* [⚖️ Legal Notice & Disclaimer](LEGAL-NOTICE.md)
 
 ## 🏛️ 1. Sovereign Governance
 
