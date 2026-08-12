@@ -1,0 +1,53 @@
+---
+okf_version: 0.1
+type: agent_skill
+title: "🗺️ Sitemap & SEO Asset Generator Skill"
+timestamp: "2026-08-12T12:00:00Z"
+description: "Configures and manages sitemap and robots.txt generation to optimize SEO indexation for GitHub Pages, Read the Docs, and GitBook."
+topics: ["sitemap", "seo", "automation", "gitbook", "readthedocs"]
+name: sitemap-seo-generator
+---
+# 🗺️ Sitemap & SEO Asset Generator Skill
+
+**Purpose**: To guide AI Agents (Antigravity, Google Jules, Cursor, Claude) in executing the automated sitemap and SEO asset generation workflow using the Python utility (`tools/generate_sitemaps.py`).
+
+---
+
+## When to use this skill
+
+- When creating or modifying markdown files and needing to ensure sitemaps and search indexes are updated.
+- When validating the integrity of `SUMMARY.md` navigation links for GitBook compatibility.
+- When diagnosing robots.txt, sitemap.xml, or sitemap.txt indexing pathways.
+
+---
+
+## How to use it
+
+### 1. Execute Sitemap & SEO Generation
+
+AI agents execute sitemap generation natively via `uv run` (Rule 16 Mandate):
+
+```bash
+uv run python tools/generate_sitemaps.py
+```
+
+### 2. Validation and Output Locations
+
+The script performs the following actions:
+- Builds the MkDocs site (`site/` folder) to compile the base sitemap.
+- Parses `site/sitemap.xml` for all GitHub Pages URLs.
+- Derives all corresponding Read the Docs URLs.
+- Processes `SUMMARY.md` to map and validate all GitBook URLs.
+- Ensures all referenced markdown files exist in the repository to prevent broken links.
+- Writes three files (`sitemap.txt`, `sitemap.xml`, and `robots.txt`) to the root, `docs/`, and `site/` directories.
+
+---
+
+## Quality Gates & Compliance
+
+1. **Rule 16 (`uv` Mandate):** Never execute with raw python or pip; always use `uv run`.
+2. **Rule 25 (BOM-less & Quoting):** Ensure all sitemaps are generated with valid absolute URIs.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-12*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

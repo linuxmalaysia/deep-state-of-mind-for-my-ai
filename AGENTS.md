@@ -82,6 +82,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `okf-frontmatter-injector` | Injects OKF v0.1 YAML frontmatter (`okf_version`, `type`, `title`, `timestamp`, `topics`) into any `.md` file missing it. | File path or directory. | Updated `.md` files with valid OKF frontmatter. |
 | `dsom-signature-injector` | Appends the DSOM ownership, timestamp, and GPL v3.0 signature to `.md` files; prepends comment headers to scripts. | File path(s). | Signed files with standard DSOM footer. |
 | `palace-auditor` | Audits the Sovereign Markdown Palace — verifies index links, finds undocumented scripts, and proposes structural cleanups. | No input required. | Audit report with orphaned files and broken links. |
+| `sitemap-seo-generator` | Generates and compiles standard sitemaps and SEO assets across platforms (GitHub Pages, Read the Docs, GitBook) to optimize search indexing. | No input required. | Generated `sitemap.txt`, `sitemap.xml`, and `robots.txt` files. |
 
 ### Document Output Skills
 
@@ -177,7 +178,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `.agents/brain/walkthrough.md` | Session history and Mental Anchors (resume context). |
 | `.agents/brain/palace_registry.md` | Spatial index of the Sovereign Markdown Palace. |
 | `.agents/brain/active_context_manifest.md` | Live list of files currently in scope. |
-| `.agents/skills/` | OKF-compliant executable skill SOPs (31 skills). |
+| `.agents/skills/` | OKF-compliant executable skill SOPs (32 skills). |
 | `.agents/workflows/` | Multi-agent orchestration governance workflows. |
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |
