@@ -29,7 +29,7 @@ Please note that this project does not represent a live, production-grade deploy
 
 We are deeply committed to privacy and data protection. We have done our best to protect anyone and organisation referenced, simulated, or involved in the design and execution of this baseline.
 
-* **Anonymised Metadata:** All IP addresses, domains, names, and contact details used within the configurations, tests, and documentation are either strictly fictional, non-routable, or reserved documentation blocks (such as `.internal` or `.example`).
+* **Anonymised Metadata:** All IP addresses, domains, and configuration/test names used within the configurations, tests, and documentation are either strictly fictional, non-routable, or reserved documentation blocks (such as `.internal` or `.example`). This privacy statement explicitly excludes public attribution identities and real author or contributor names (such as Harisfazillah Jamel (LinuxMalaysia)), while preserving the intended privacy clarification.
 * **Zero Real-World Storage:** This repository does not harvest, process, or store any actual personally identifying information (PII) of third parties.
 
 ---
@@ -39,7 +39,7 @@ We are deeply committed to privacy and data protection. We have done our best to
 Use of this project, its code, and its documents is at your own risk.
 
 * **As-Is Basis:** All files, playbooks, scripts, and documentation are provided "as-is" without warranty of any kind, express or implied.
-* **Disclaimer of Liability:** The project contributors, authors, and organisations shall not be held liable or responsible for any decisions or actions taken based on these materials. We are not going to be responsible or liable for any service interruptions, system crashes, security incidents, loss of data, or any other damages arising from the implementation or adaptation of these materials.
+* **Disclaimer of Liability:** The project contributors, authors, and organisations shall not be held liable or responsible for any decisions or actions taken based on these materials. We will not be responsible or liable for any service interruptions, system crashes, security incidents, loss of data, or any other damages arising from the implementation or adaptation of these materials.
 * **User Responsibility:** Users assume full responsibility for validating and securing their own infrastructure and configurations before applying any patterns demonstrated in this repository.
 
 ---

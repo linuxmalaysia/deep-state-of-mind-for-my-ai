@@ -26,6 +26,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **AI Root Gateway** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/) | First-read summary for AI agents |
 | **Full AI Constitution** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/) | 27 Core Constitutional AI Laws |
 | **AI Sitemap (LLMs.txt)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt) | Plain-text AI crawler sitemap |
+| **Legal Notice & Disclaimer** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/) | Legal notice & liability disclaimer |
 | **OpenWiki Integration Guide** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/) | Python OpenWiki code & prompts |
 | **OpenWiki Operational HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/) | Python emulator CLI commands |
 | **FastMCP Server HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/) | Cursor & Claude Desktop setups |
@@ -177,5 +178,12 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`docs/tools/HOWTO-OPENWIKI.md`](docs/tools/HOWTO-OPENWIKI.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/)) and [`docs/governance/OPENWIKI-INTEGRATION-GUIDE.md`](docs/governance/OPENWIKI-INTEGRATION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/))
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-09*
+
+## 16. The Legal & Disclaimer Entry Point (Risk Governance)
+*If you want to review the privacy statement, cost and design assumptions, or liability disclaimers for this repository.*
+
+**Read This First:** [`LEGAL-NOTICE.md`](LEGAL-NOTICE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/))
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-11*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

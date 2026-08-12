@@ -48,6 +48,7 @@ GIT_AVAILABLE = shutil.which("git") is not None
 SYMLINK_SPECS = [
     ("SECURITY.md", "../SECURITY.md", "SECURITY.md"),
     ("START-HERE.md", "../START-HERE.md", "START-HERE.md"),
+    ("LEGAL-NOTICE.md", "../LEGAL-NOTICE.md", "LEGAL-NOTICE.md"),
 ]
 
 DIR_SYMLINK_SPECS = [
@@ -90,6 +91,10 @@ class DocsSymlinkExistenceTests(unittest.TestCase):
         path = DOCS_DIR / "START-HERE.md"
         self.assertTrue(path.exists(), f"Expected {path} to exist")
 
+    def test_legal_notice_symlink_path_exists(self):
+        path = DOCS_DIR / "LEGAL-NOTICE.md"
+        self.assertTrue(path.exists(), f"Expected {path} to exist")
+
     def test_agents_symlink_path_exists(self):
         path = DOCS_DIR / ".agents"
         self.assertTrue(path.exists(), f"Expected {path} to exist")
@@ -110,6 +115,13 @@ class DocsSymlinkExistenceTests(unittest.TestCase):
         self.assertTrue(
             _is_symlink_or_windows_git_symlink(path),
             "docs/START-HERE.md must be a real symlink or git symlink pointer",
+        )
+
+    def test_legal_notice_is_a_symlink(self):
+        path = DOCS_DIR / "LEGAL-NOTICE.md"
+        self.assertTrue(
+            _is_symlink_or_windows_git_symlink(path),
+            "docs/LEGAL-NOTICE.md must be a real symlink or git symlink pointer",
         )
 
     def test_agents_is_a_symlink(self):
@@ -246,7 +258,7 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
             raise RuntimeError("git executable not found in PATH")  # noqa: TRY003
         git_executable = str(pathlib.Path(git_path).resolve())
         result = subprocess.run(
-            [git_executable, "ls-files", "-s", "docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks"],
+            [git_executable, "ls-files", "-s", "docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks", "docs/LEGAL-NOTICE.md"],
             cwd=REPO_ROOT,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -266,6 +278,9 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
     def test_start_here_tracked_with_symlink_mode(self):
         self.assertEqual(self.entries.get("docs/START-HERE.md"), "120000")
 
+    def test_legal_notice_tracked_with_symlink_mode(self):
+        self.assertEqual(self.entries.get("docs/LEGAL-NOTICE.md"), "120000")
+
     def test_agents_tracked_with_symlink_mode(self):
         self.assertEqual(self.entries.get("docs/.agents"), "120000")
 
@@ -275,7 +290,7 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
     def test_all_new_symlinks_present_in_index(self):
         self.assertEqual(
             set(self.entries.keys()),
-            {"docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks"},
+            {"docs/SECURITY.md", "docs/START-HERE.md", "docs/.agents", "docs/playbooks", "docs/LEGAL-NOTICE.md"},
         )
 
 
@@ -370,11 +385,14 @@ class MkdocsNavReferencesTests(unittest.TestCase):
     def test_nav_declares_start_here_entry(self):
         self.assertRegex(self.content, r"START HERE:\s*START-HERE\.md")
 
+    def test_nav_declares_legal_notice_entry(self):
+        self.assertRegex(self.content, r"Legal Notice & Disclaimer:\s*LEGAL-NOTICE\.md")
+
     def test_nav_entries_resolve_within_docs_dir(self):
-        # mkdocs resolves bare "SECURITY.md" / "START-HERE.md" nav values
+        # mkdocs resolves bare "SECURITY.md" / "START-HERE.md" / "LEGAL-NOTICE.md" nav values
         # relative to docs_dir; confirm the resolved paths actually exist
         # thanks to the new symlinks.
-        for nav_value in ("SECURITY.md", "START-HERE.md"):
+        for nav_value in ("SECURITY.md", "START-HERE.md", "LEGAL-NOTICE.md"):
             with self.subTest(nav_value=nav_value):
                 self.assertTrue((DOCS_DIR / nav_value).exists())
 

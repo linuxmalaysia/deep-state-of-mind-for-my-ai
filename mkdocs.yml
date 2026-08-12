@@ -11,7 +11,7 @@ site_author: Harisfazillah Jamel (LinuxMalaysia)
 repo_url: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai
 site_url: https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/
 edit_uri: blob/main/docs/
-copyright: 'All costs, designs, unit amounts, and scenarios detailed within this document are based entirely on assumptions. This project and its accompanying documentation are compiled strictly for training, educational, and planning proposal purposes. Use at your own risk. We are not going to be responsible. We have done our best to protect anyone and organisation. <a href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/">Legal Notice & Disclaimer</a>'
+copyright: 'All costs, designs, unit amounts, and scenarios detailed within this document are based entirely on assumptions. This project and its accompanying documentation are compiled strictly for training, educational, and planning proposal purposes. Use at your own risk. We will not be responsible. We have done our best to protect anyone and organisation. <a href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/">Legal Notice & Disclaimer</a>'
 
 hooks:
   - tools/mkdocs_hooks.py

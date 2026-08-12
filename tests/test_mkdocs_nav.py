@@ -158,6 +158,7 @@ class MkdocsNavCorrectedPathTextTests(unittest.TestCase):
             "README.md",
             "START-HERE.md",
             "SECURITY.md",
+            "LEGAL-NOTICE.md",
             ".agents/brain/task.md",
             "playbooks/dsom/site.yml",
             "tools-and-automation/audit-pre-flight.md",
