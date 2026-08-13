@@ -32,6 +32,9 @@ This closet documents the **Sovereign Toolchain** — all scripts that operation
 | `sod-palace.sh/.ps1` | v1.0 | Bash/PS | SOD Ritual automation |
 | `eod-palace.sh/.ps1` | v1.0 | Bash/PS | EOD Ritual automation |
 | `dsom-onboard.sh/.ps1` | v1.0 | Bash/PS | Repository adoption/grafting engine |
+| `openwiki_emulator.py` | v1.0 | Python | Native zero-dependency OpenWiki compiler & self-healing Mermaid validator |
+| `generate_sitemaps.py` | v1.0 | Python | Automated sitemap & SEO asset generation (GitHub Pages, Read the Docs, GitBook) |
+| `server.py` | v1.0 | Python | Native FastMCP Model Context Protocol server for Sovereign Markdown Palace |
 
 ## 📚 Documentation (The Encyclopedia)
 
@@ -44,11 +47,13 @@ The following high-fidelity guides are stored in `docs/tools/`:
 - `HOWTO-TEMPLATE-RESET.md` | `HOWTO-SETUP-WSL-ALMALINUX.md` | `HOWTO-SETUP-DSOM-CONTROL-NODE.md`
 - `HOWTO-CHECKUSAGE.md` | `HOWTO-CHECKUSAGE-LINUX.md` | `HOWTO-BUILD-SOVEREIGN-BOOK.md`
 - `HOWTO-GENERATE-WALKTHROUGH.md`
+- `HOWTO-OPENWIKI.md` | `HOWTO-MCP-SERVER.md`
 
 ## 🗝️ Key Design Laws
 
 - **No blind `git add .`** — All tools use selective staging (`git add -u`).
 - **Bash-first:** Every tool has a Linux bash version. PowerShell provides Windows parity.
+- **Python-first and Zero-Binary (Rule 16 & Rule 27):** Core compiling and schema operations must be written in pure Python using `uv run` to ensure complete, zero-binary cross-platform portability.
 - **Standalone Documents:** One feature per document for maximum AI/Human density.
 - **Palace-aware (v2.1+):** `hibernation.sh` triggers `palace-sync.sh` before the Sovereign Save.
 - **`set -euo pipefail`** enforced in all bash scripts since v6.1.
@@ -64,6 +69,8 @@ The following high-fidelity guides are stored in `docs/tools/`:
 - `2026-03-24`: `check-usage.sh` bash version added.
 - `2026-03-29`: `hibernation.sh/.ps1` → v2.0, `reanimate.sh/.ps1` → v2.1/v2.0, `reanimate-claude` → v2.0.
 - `2026-04-08`: **The Great Documentation Sprint.** `palace-sync.sh/.ps1` v1.0, `checkpoint.ps1`, `sod-palace.ps1`, `eod-palace.ps1` added. 18 HOWTO guides generated.
+- `2026-08-05`: **MCP Server Release.** FastMCP server implemented in `tools/mcp/server.py`.
+- `2026-08-09`: **OpenWiki Zero-Binary Release.** Node-based openwiki replaced with native Python emulator `tools/openwiki_emulator.py`.
 
 ---
 
@@ -74,6 +81,7 @@ The following high-fidelity guides are stored in `docs/tools/`:
 - **Backfill Proposal:** `.agents/brain/palace_update_proposal_2026-04-08_1214.md`
 
 ---
-*Last Refined: 2026-04-08 | Backfill: Full History | Hall: hall_facts | Wing: wing_dsom_core*
+*Last Refined: 2026-08-12 | Backfill: Full History | Hall: hall_facts | Wing: wing_dsom_core*
 
 - [2026-08-02] GitHub Pages Alignment: Tool scripts updated (hibernation.sh and others). Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).
+- [2026-08-12] Added sitemap, openwiki emulator, and MCP server tools to the Tooling Registry.

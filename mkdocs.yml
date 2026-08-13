@@ -123,6 +123,7 @@ nav:
       - Render Deployment Skill: .agents/skills/render-deployment/SKILL.md
       - Jules & Antigravity Collaborative Sync Skill: .agents/skills/jules-antigravity-sync/SKILL.md
       - OpenWiki Knowledge Graph Compiler Skill: .agents/skills/openwiki-compiler/SKILL.md
+      - Sitemap & SEO Asset Generator Skill: .agents/skills/sitemap-seo-generator/SKILL.md
   - Ansible:
       - HOWTO Setup Baseline: HOWTO-SETUP-ANSIBLE-BASELINE.md
       - HOWTO Setup AlmaLinux 10 WSL2: HOWTO-SETUP-WSL-ALMALINUX10.md

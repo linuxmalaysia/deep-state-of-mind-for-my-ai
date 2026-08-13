@@ -27,8 +27,14 @@ This closet defines the **Metacognitive Governance Framework** that ensures memo
 ---
 
 ## 🌗 The Tri-Phasic Mind & Functional Modules
-1. **The Architecture:** Partitions AI processing into Active State (fast MCP streams), Twilight State (validation/linting check gates), and Deep State (background EOD palace-sync reviews and push optimization).
+1. **The Architecture (Rule 26):** Partitions AI processing into Active State (fast MCP streams), Twilight State (validation/linting check gates), and Deep State (background EOD palace-sync reviews and push optimization).
 2. **The Subsystems:** Restructured with Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, and Metacognition & Guardrails for enterprise-level safety and compliance.
+
+---
+
+## 🤝 Collaborative Continuity & Zero-Binary Compiling
+1. **Rule 25 (Jules & Antigravity Collaborative Sync):** Establishes peer-to-peer state synchronization and shared operational ledgers between Google Jules and Google Antigravity to secure cognitive continuity.
+2. **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate):** Purges heavy Node.js binary bloat in favor of a native zero-dependency Python knowledge graph and compiler (`tools/openwiki_emulator.py`) integrated into FastMCP.
 
 ---
 
@@ -36,8 +42,9 @@ This closet defines the **Metacognitive Governance Framework** that ensures memo
 - **Primary Drawer:** [walkthrough.md:L190-198](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/brain/walkthrough.md#L190-L198)
 
 ---
-*Last Refined: 2026-08-08 | Hall: hall_facts | Wing: wing_dsom_core*
+*Last Refined: 2026-08-12 | Hall: hall_facts | Wing: wing_dsom_core*
 
 - [2026-07-27] DSOM-AUTOMATED-STATE-SYNC.md created and registered in SUMMARY.md and mkdocs.yml.
 - [2026-08-02] GitHub Pages Alignment: Documentation files updated (mkdocs.yml, SUMMARY.md, docs/*). Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).
 - [2026-08-08] Integrated the Tri-Phasic Mind model and the four core subsystems (docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md) to formally expand our metacognitive ways of DSOM.
+- [2026-08-12] Verified and aligned Rules 25, 26, and 27 knowledge bases within the Palace closets.

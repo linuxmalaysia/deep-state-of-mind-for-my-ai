@@ -153,6 +153,7 @@ topics: ["dsom", "documentation"]
 * [🚀 Render Deployment Skill](.agents/skills/render-deployment/SKILL.md)
 * [🤝 Jules & Antigravity Collaborative Sync Skill](.agents/skills/jules-antigravity-sync/SKILL.md)
 * [🌐 OpenWiki Knowledge Graph Compiler Skill](.agents/skills/openwiki-compiler/SKILL.md)
+* [🗺️ Sitemap & SEO Asset Generator Skill](.agents/skills/sitemap-seo-generator/SKILL.md)
 
 ## 📚 9. References & Genesis Papers
 
