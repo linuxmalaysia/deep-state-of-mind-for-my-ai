@@ -95,12 +95,12 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
 
     def test_setup_node_step_present_with_expected_version(self):
         self.assertIn("name: Set up Node.js 24", self.content)
-        self.assertIn("uses: actions/setup-node@v4", self.content)
+        self.assertIn("uses: actions/setup-node@v7", self.content)
         self.assertRegex(self.content, r'node-version:\s*"24"')
 
     def test_install_uv_step_present_with_expected_inputs(self):
         self.assertIn("name: Install uv", self.content)
-        self.assertIn("uses: astral-sh/setup-uv@v5", self.content)
+        self.assertIn("uses: astral-sh/setup-uv@v10", self.content)
         self.assertRegex(self.content, r"enable-cache:\s*true")
         self.assertRegex(
             self.content,
@@ -219,13 +219,13 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_setup_node_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         setup_node_step = steps[1]
-        self.assertEqual(setup_node_step["uses"], "actions/setup-node@v4")
+        self.assertEqual(setup_node_step["uses"], "actions/setup-node@v7")
         self.assertEqual(setup_node_step["with"]["node-version"], "24")
 
     def test_install_uv_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         install_uv_step = steps[2]
-        self.assertEqual(install_uv_step["uses"], "astral-sh/setup-uv@v5")
+        self.assertEqual(install_uv_step["uses"], "astral-sh/setup-uv@v10")
         self.assertTrue(install_uv_step["with"]["enable-cache"])
         self.assertEqual(
             install_uv_step["with"]["cache-dependency-glob"], "requirements.txt"

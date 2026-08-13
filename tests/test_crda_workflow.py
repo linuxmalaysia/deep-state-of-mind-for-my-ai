@@ -61,12 +61,12 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
 
     def test_setup_node_step_present_with_expected_version(self):
         self.assertIn("name: Set up Node.js 24", self.content)
-        self.assertIn("uses: actions/setup-node@v4", self.content)
+        self.assertIn("uses: actions/setup-node@v7", self.content)
         self.assertRegex(self.content, r'node-version:\s*"24"')
 
     def test_install_uv_step_present_with_expected_inputs(self):
         self.assertIn("name: Install uv", self.content)
-        self.assertIn("uses: astral-sh/setup-uv@v5", self.content)
+        self.assertIn("uses: astral-sh/setup-uv@v10", self.content)
         self.assertRegex(self.content, r"enable-cache:\s*true")
         self.assertRegex(
             self.content,
@@ -131,12 +131,12 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
 
     def test_setup_node_step_inputs(self):
         step = self.steps[self.step_names.index("Set up Node.js 24")]
-        self.assertEqual(step["uses"], "actions/setup-node@v4")
+        self.assertEqual(step["uses"], "actions/setup-node@v7")
         self.assertEqual(step["with"]["node-version"], "24")
 
     def test_install_uv_step_inputs(self):
         step = self.steps[self.step_names.index("Install uv")]
-        self.assertEqual(step["uses"], "astral-sh/setup-uv@v5")
+        self.assertEqual(step["uses"], "astral-sh/setup-uv@v10")
         self.assertTrue(step["with"]["enable-cache"])
         self.assertEqual(step["with"]["cache-dependency-glob"], "requirements.txt")
 

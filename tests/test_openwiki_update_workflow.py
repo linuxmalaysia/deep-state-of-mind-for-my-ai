@@ -72,7 +72,7 @@ class OpenwikiUpdateSetupUvStepTextTests(unittest.TestCase):
         self.assertIn("name: Install uv", self.content)
 
     def test_uses_setup_uv_action_pinned_to_v5(self):
-        self.assertIn("uses: astral-sh/setup-uv@v5", self.install_uv_step)
+        self.assertIn("uses: astral-sh/setup-uv@v10", self.install_uv_step)
 
     def test_does_not_use_old_v3_pin(self):
         # Regression guard: ensure the upgrade from v3 to v5 wasn't reverted
@@ -126,7 +126,7 @@ class OpenwikiUpdateSetupNodeAndPythonStepTextTests(unittest.TestCase):
         self.assertIn("name: Set up Node.js 24", self.content)
 
     def test_uses_setup_node_action(self):
-        self.assertIn("uses: actions/setup-node@v4", self.setup_node_step)
+        self.assertIn("uses: actions/setup-node@v7", self.setup_node_step)
 
     def test_node_version_pinned_to_24(self):
         self.assertRegex(self.setup_node_step, r'node-version:\s*"24"')
@@ -168,7 +168,7 @@ class OpenwikiUpdateSetupNodeAndPythonStepStructureTests(unittest.TestCase):
 
     def test_setup_node_step_action_and_inputs(self):
         step = self.steps[self.step_names.index("Set up Node.js 24")]
-        self.assertEqual(step["uses"], "actions/setup-node@v4")
+        self.assertEqual(step["uses"], "actions/setup-node@v7")
         self.assertEqual(step["with"]["node-version"], "24")
 
     def test_setup_python_step_action_and_inputs(self):
@@ -212,7 +212,7 @@ class OpenwikiUpdateSetupUvStepStructureTests(unittest.TestCase):
         self.assertIsInstance(self.doc, dict)
 
     def test_install_uv_step_action_and_version(self):
-        self.assertEqual(self.install_uv_step["uses"], "astral-sh/setup-uv@v5")
+        self.assertEqual(self.install_uv_step["uses"], "astral-sh/setup-uv@v10")
 
     def test_install_uv_step_with_inputs(self):
         with_block = self.install_uv_step["with"]
