@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "FastMCP Server Integration & Continuous Integration Workflows"
-timestamp: "2026-08-10T21:22:55Z"
+timestamp: "2026-08-13T14:19:24Z"
 topics: ["openwiki", "integrations", "mcp", "ci-cd", "workflows"]
 description: "FastMCP server contract, Context7 RAG endpoints, GitHub Actions workflows."
 ---
@@ -30,11 +30,12 @@ All workspace modifications are compiled, linted, and verified via automated pip
 ### Pull Request Creation Failures
 
 If the **`openwiki-update.yml`** workflow fails at the pull request creation step with the following error:
-```
+
+```text
 GitHub Actions is not permitted to create or approve pull requests. - https://docs.github.com/rest/pulls/pulls#create-a-pull-request
 ```
 
-This indicates that your repository or organization permissions are restricting GitHub Actions from opening pull requests. To resolve this:
+This indicates that your repository or organisation permissions are restricting GitHub Actions from opening pull requests. To resolve this:
 
 1. Navigate to your repository's main page on GitHub.
 2. Click on **Settings** (the gear icon) at the top.
