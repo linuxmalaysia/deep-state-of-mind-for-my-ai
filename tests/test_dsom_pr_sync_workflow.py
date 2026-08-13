@@ -177,6 +177,7 @@ class DsomPrSyncSetupUvStepStructureTests(unittest.TestCase):
         self.assertEqual(self.install_uv_step["uses"], "astral-sh/setup-uv@v10.0.0")
 
     def test_install_uv_step_with_inputs(self):
+        """Verify that the Install uv step enables caching and uses requirements.txt for cache dependencies."""
         with_block = self.install_uv_step["with"]
         self.assertTrue(with_block["enable-cache"])
         self.assertEqual(with_block["cache-dependency-glob"], "requirements.txt")
