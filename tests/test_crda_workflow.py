@@ -60,6 +60,7 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
         cls.content = WORKFLOW_PATH.read_text(encoding="utf-8")
 
     def test_setup_node_step_present_with_expected_version(self):
+        """Verify that the workflow configures Node.js 24 using the expected setup action."""
         self.assertIn("name: Set up Node.js 24", self.content)
         self.assertIn("uses: actions/setup-node@v7", self.content)
         self.assertRegex(self.content, r'node-version:\s*"24"')
