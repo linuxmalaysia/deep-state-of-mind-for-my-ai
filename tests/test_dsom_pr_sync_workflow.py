@@ -78,6 +78,11 @@ class DsomPrSyncSetupUvStepTextTests(unittest.TestCase):
         # or accidentally duplicated elsewhere in the step.
         self.assertNotIn("astral-sh/setup-uv@v3", self.install_uv_step)
 
+    def test_does_not_use_old_v5_pin(self):
+        # Regression guard: ensure the subsequent upgrade from v5 to the
+        # fully-qualified v10.0.0 tag wasn't reverted.
+        self.assertNotIn("astral-sh/setup-uv@v5", self.install_uv_step)
+
     def test_enable_cache_still_true(self):
         self.assertRegex(self.install_uv_step, r"enable-cache:\s*true")
 
@@ -121,6 +126,12 @@ class DsomPrSyncSetupNodeStepTextTests(unittest.TestCase):
 
     def test_node_version_pinned_to_24(self):
         self.assertRegex(self.setup_node_step, r'node-version:\s*"24"')
+
+    def test_does_not_use_old_v4_pin(self):
+        # Regression guard: ensure the upgrade from actions/setup-node@v4 to
+        # @v7 wasn't reverted or accidentally duplicated elsewhere in the
+        # step.
+        self.assertNotIn("actions/setup-node@v4", self.setup_node_step)
 
     def test_setup_node_step_precedes_install_uv_step(self):
         self.assertLess(
@@ -175,6 +186,12 @@ class DsomPrSyncSetupUvStepStructureTests(unittest.TestCase):
 
     def test_install_uv_step_action_and_version(self):
         self.assertEqual(self.install_uv_step["uses"], "astral-sh/setup-uv@v10.0.0")
+
+    def test_install_uv_step_pin_is_full_semver(self):
+        # The astral-sh/setup-uv action is now pinned to a full semantic
+        # version (major.minor.patch), unlike the bare major-version tags
+        # used elsewhere (e.g. actions/setup-node@v7).
+        self.assertRegex(self.install_uv_step["uses"], r"^astral-sh/setup-uv@v\d+\.\d+\.\d+$")
 
     def test_install_uv_step_with_inputs(self):
         """Verify that the Install uv step enables caching and uses requirements.txt for cache dependencies."""

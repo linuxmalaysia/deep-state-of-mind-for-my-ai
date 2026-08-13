@@ -3,6 +3,7 @@ okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
 timestamp: "2026-08-13T13:47:02Z"
+timestamp: "2026-08-13T14:07:55Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
 ---
@@ -20,6 +21,13 @@ This file maintains a condensed, token-efficient representation of the project's
 - [Auto-Sync] Modified files: tests/test_crda_workflow.py (+1, -0), tests/test_dsom_pr_sync_workflow.py (+1, -0).
 - [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+382, -0).
 - [Auto-Sync] Modified files: .agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md (+9, -2), .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md (+9, -1), .agents/skills/sitemap-seo-generator/SKILL.md (+53, -0), AGENTS.md (+2, -1), SUMMARY.md (+1, -0), mkdocs.yml (+1, -0).
+
+
+
+
+- [Auto-Sync] Modified files: tests/test_crda_workflow.py (+23, -4), tests/test_current_state_dsom_semantic_compaction.py (+41, -0), tests/test_dsom_pr_sync_workflow.py (+22, -4), tests/test_gh_pages_workflow.py (+23, -4), tests/test_openwiki_mcp_and_ci_doc.py (+188, -0), tests/test_openwiki_update_workflow.py (+21, -4).
+- [Auto-Sync] Modified files: .agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md (+9, -2), .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md (+9, -1), .agents/skills/sitemap-seo-generator/SKILL.md (+53, -0), AGENTS.md (+2, -1), SUMMARY.md (+1, -0), mkdocs.yml (+1, -0).
+- [Auto-Sync] Modified files: tests/test_sitemap_seo_generator_skill.py (+624, -0).
 - Refactored .github/scripts/action_update_dsom.py to integrate Gemini/Google API for Jules/Antigravity and local automated compaction fallback.
 - Initial boilerplate replaced with DSOM-specific policies.
 - Automated DSOM State Sync deployed.
