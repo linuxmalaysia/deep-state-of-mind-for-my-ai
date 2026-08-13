@@ -1932,6 +1932,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../skills/sitemap-seo-generator/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sitemap & SEO Asset Generator Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2710,6 +2738,24 @@
 <td>Bash/PS</td>
 <td>Repository adoption/grafting engine</td>
 </tr>
+<tr>
+<td><code>openwiki_emulator.py</code></td>
+<td>v1.0</td>
+<td>Python</td>
+<td>Native zero-dependency OpenWiki compiler &amp; self-healing Mermaid validator</td>
+</tr>
+<tr>
+<td><code>generate_sitemaps.py</code></td>
+<td>v1.0</td>
+<td>Python</td>
+<td>Automated sitemap &amp; SEO asset generation (GitHub Pages, Read the Docs, GitBook)</td>
+</tr>
+<tr>
+<td><code>server.py</code></td>
+<td>v1.0</td>
+<td>Python</td>
+<td>Native FastMCP Model Context Protocol server for Sovereign Markdown Palace</td>
+</tr>
 </tbody>
 </table>
 <h2 id="documentation-the-encyclopedia">📚 Documentation (The Encyclopedia)</h2>
@@ -2722,11 +2768,13 @@
 <li><code>HOWTO-TEMPLATE-RESET.md</code> | <code>HOWTO-SETUP-WSL-ALMALINUX.md</code> | <code>HOWTO-SETUP-DSOM-CONTROL-NODE.md</code></li>
 <li><code>HOWTO-CHECKUSAGE.md</code> | <code>HOWTO-CHECKUSAGE-LINUX.md</code> | <code>HOWTO-BUILD-SOVEREIGN-BOOK.md</code></li>
 <li><code>HOWTO-GENERATE-WALKTHROUGH.md</code></li>
+<li><code>HOWTO-OPENWIKI.md</code> | <code>HOWTO-MCP-SERVER.md</code></li>
 </ul>
 <h2 id="key-design-laws">🗝️ Key Design Laws</h2>
 <ul>
 <li><strong>No blind <code>git add .</code></strong> — All tools use selective staging (<code>git add -u</code>).</li>
 <li><strong>Bash-first:</strong> Every tool has a Linux bash version. PowerShell provides Windows parity.</li>
+<li><strong>Python-first and Zero-Binary (Rule 16 &amp; Rule 27):</strong> Core compiling and schema operations must be written in pure Python using <code>uv run</code> to ensure complete, zero-binary cross-platform portability.</li>
 <li><strong>Standalone Documents:</strong> One feature per document for maximum AI/Human density.</li>
 <li><strong>Palace-aware (v2.1+):</strong> <code>hibernation.sh</code> triggers <code>palace-sync.sh</code> before the Sovereign Save.</li>
 <li><strong><code>set -euo pipefail</code></strong> enforced in all bash scripts since v6.1.</li>
@@ -2742,6 +2790,8 @@
 <li><code>2026-03-24</code>: <code>check-usage.sh</code> bash version added.</li>
 <li><code>2026-03-29</code>: <code>hibernation.sh/.ps1</code> → v2.0, <code>reanimate.sh/.ps1</code> → v2.1/v2.0, <code>reanimate-claude</code> → v2.0.</li>
 <li><code>2026-04-08</code>: <strong>The Great Documentation Sprint.</strong> <code>palace-sync.sh/.ps1</code> v1.0, <code>checkpoint.ps1</code>, <code>sod-palace.ps1</code>, <code>eod-palace.ps1</code> added. 18 HOWTO guides generated.</li>
+<li><code>2026-08-05</code>: <strong>MCP Server Release.</strong> FastMCP server implemented in <code>tools/mcp/server.py</code>.</li>
+<li><code>2026-08-09</code>: <strong>OpenWiki Zero-Binary Release.</strong> Node-based openwiki replaced with native Python emulator <code>tools/openwiki_emulator.py</code>.</li>
 </ul>
 <hr />
 <h2 id="retrieval-reference">🔗 Retrieval Reference</h2>
@@ -2751,9 +2801,10 @@
 <li><strong>Backfill Proposal:</strong> <code>.agents/brain/palace_update_proposal_2026-04-08_1214.md</code></li>
 </ul>
 <hr />
-<p><em>Last Refined: 2026-04-08 | Backfill: Full History | Hall: hall_facts | Wing: wing_dsom_core</em></p>
+<p><em>Last Refined: 2026-08-12 | Backfill: Full History | Hall: hall_facts | Wing: wing_dsom_core</em></p>
 <ul>
 <li>[2026-08-02] GitHub Pages Alignment: Tool scripts updated (hibernation.sh and others). Cross-ref: palace_update_proposal_2026-08-02_0048.md (b5f42ae).</li>
+<li>[2026-08-12] Added sitemap, openwiki emulator, and MCP server tools to the Tooling Registry.</li>
 </ul>
 
 

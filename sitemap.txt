@@ -75,6 +75,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/per
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/proposal-docx-formatter/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/publish-to-blogger/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/render-deployment/SKILL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/sitemap-seo-generator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/sod-palace-sync/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/ssh-passwordless-setup/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/
@@ -258,6 +259,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/pers
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/proposal-docx-formatter/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/publish-to-blogger/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/render-deployment/SKILL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/sitemap-seo-generator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/sod-palace-sync/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/ssh-passwordless-setup/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/
@@ -380,6 +382,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/openwiki-compiler/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/publish-to-blogger/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/render-deployment/skill
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/sitemap-seo-generator/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/sod-palace-sync/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/ssh-passwordless-setup/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/workflows/subagent-orchestration-workflow
