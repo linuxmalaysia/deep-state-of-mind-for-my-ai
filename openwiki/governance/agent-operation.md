@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Dual Agent Registry & Sovereign Operational Laws"
-timestamp: "2026-08-10T21:22:55Z"
+timestamp: "2026-08-13T20:31:31Z"
 topics: ["openwiki", "governance", "agents", "protocols", "rules"]
 description: "Dual AGENTS.md registry, 27-rule operating constraints, mechanical boot and behaviour/discovery ordering."
 ---
