@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: documentation
 title: "OpenWiki Documentation Skeleton & Subsystem Index"
-timestamp: "2026-08-13T20:31:31Z"
+timestamp: "2026-08-13T14:19:24Z"
 topics: ["openwiki", "skeleton", "dsom", "inventory"]
 description: "Authoritative inventory ranking, planned page tree, and evidence briefs for the DSOM codebase."
 resource: "file:///home/runner/work/deep-state-of-mind-for-my-ai/deep-state-of-mind-for-my-ai/openwiki/_skeleton.md"
