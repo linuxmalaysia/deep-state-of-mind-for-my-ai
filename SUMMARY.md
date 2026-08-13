@@ -161,6 +161,28 @@ topics: ["dsom", "documentation"]
 * [🚀 HOWTO: Bootstrap Sovereign AI Project](references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md)
 * [🌐 OKF Adoption Guide (Reference)](references/OKF-ADOPTION-GUIDE.md)
 
+## 🎓 10. Diátaxis Developer Space
+
+* [🎓 Tutorials Overview](docs/tutorials/index.md)
+* [🎓 Getting Started with DSOM Tools](docs/tutorials/getting-started.md)
+* [🛠️ How-To Guides Overview](docs/how-to/index.md)
+* [🛠️ Audit and Apply OKF Frontmatter](docs/how-to/audit-and-apply-frontmatter.md)
+* [🛠️ Run FastMCP Server](docs/how-to/run-fastmcp-server.md)
+* [🛠️ Generate SEO Assets and Sitemaps](docs/how-to/generate-sitemaps-seo.md)
+* [🛠️ Operate OpenWiki Emulator](docs/how-to/use-openwiki-emulator.md)
+* [📋 Reference Material Overview](docs/reference/index.md)
+* [📋 generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md)
+* [📋 openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md)
+* [📋 mcp_server.py Reference](docs/reference/mcp_server.md)
+* [📋 apply_okf_frontmatter.py Reference](docs/reference/apply_okf_frontmatter.md)
+* [📋 refactor_okf.py Reference](docs/reference/refactor_okf.md)
+* [📋 bench_brain.py Reference](docs/reference/bench_brain.md)
+* [📋 dsom_token_auditor.py Reference](docs/reference/dsom_token_auditor.md)
+* [📋 mkdocs_hooks.py Reference](docs/reference/mkdocs_hooks.md)
+* [🧠 Explanation and Design Overview](docs/explanation/index.md)
+* [🧠 OpenWiki & FastMCP Architecture](docs/explanation/openwiki-mcp-architecture.md)
+* [🧠 Diátaxis Framework Adoption](docs/explanation/diataxis.md)
+
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-09*
