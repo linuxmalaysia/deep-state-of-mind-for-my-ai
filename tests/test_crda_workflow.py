@@ -66,7 +66,7 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
 
     def test_install_uv_step_present_with_expected_inputs(self):
         self.assertIn("name: Install uv", self.content)
-        self.assertIn("uses: astral-sh/setup-uv@v10", self.content)
+        self.assertIn("uses: astral-sh/setup-uv@v10.0.0", self.content)
         self.assertRegex(self.content, r"enable-cache:\s*true")
         self.assertRegex(
             self.content,
@@ -136,7 +136,7 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
 
     def test_install_uv_step_inputs(self):
         step = self.steps[self.step_names.index("Install uv")]
-        self.assertEqual(step["uses"], "astral-sh/setup-uv@v10")
+        self.assertEqual(step["uses"], "astral-sh/setup-uv@v10.0.0")
         self.assertTrue(step["with"]["enable-cache"])
         self.assertEqual(step["with"]["cache-dependency-glob"], "requirements.txt")
 

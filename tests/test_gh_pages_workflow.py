@@ -100,7 +100,7 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
 
     def test_install_uv_step_present_with_expected_inputs(self):
         self.assertIn("name: Install uv", self.content)
-        self.assertIn("uses: astral-sh/setup-uv@v10", self.content)
+        self.assertIn("uses: astral-sh/setup-uv@v10.0.0", self.content)
         self.assertRegex(self.content, r"enable-cache:\s*true")
         self.assertRegex(
             self.content,
@@ -225,7 +225,7 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_install_uv_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         install_uv_step = steps[2]
-        self.assertEqual(install_uv_step["uses"], "astral-sh/setup-uv@v10")
+        self.assertEqual(install_uv_step["uses"], "astral-sh/setup-uv@v10.0.0")
         self.assertTrue(install_uv_step["with"]["enable-cache"])
         self.assertEqual(
             install_uv_step["with"]["cache-dependency-glob"], "requirements.txt"

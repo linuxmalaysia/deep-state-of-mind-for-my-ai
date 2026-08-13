@@ -72,7 +72,7 @@ class OpenwikiUpdateSetupUvStepTextTests(unittest.TestCase):
         self.assertIn("name: Install uv", self.content)
 
     def test_uses_setup_uv_action_pinned_to_v5(self):
-        self.assertIn("uses: astral-sh/setup-uv@v10", self.install_uv_step)
+        self.assertIn("uses: astral-sh/setup-uv@v10.0.0", self.install_uv_step)
 
     def test_does_not_use_old_v3_pin(self):
         # Regression guard: ensure the upgrade from v3 to v5 wasn't reverted
@@ -212,7 +212,7 @@ class OpenwikiUpdateSetupUvStepStructureTests(unittest.TestCase):
         self.assertIsInstance(self.doc, dict)
 
     def test_install_uv_step_action_and_version(self):
-        self.assertEqual(self.install_uv_step["uses"], "astral-sh/setup-uv@v10")
+        self.assertEqual(self.install_uv_step["uses"], "astral-sh/setup-uv@v10.0.0")
 
     def test_install_uv_step_with_inputs(self):
         with_block = self.install_uv_step["with"]
