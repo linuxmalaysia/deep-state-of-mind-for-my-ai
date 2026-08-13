@@ -95,12 +95,12 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
 
     def test_setup_node_step_present_with_expected_version(self):
         self.assertIn("name: Set up Node.js 24", self.content)
-        self.assertIn("uses: actions/setup-node@v7", self.content)
+        self.assertIn("uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020", self.content)
         self.assertRegex(self.content, r'node-version:\s*"24"')
 
     def test_install_uv_step_present_with_expected_inputs(self):
         self.assertIn("name: Install uv", self.content)
-        self.assertIn("uses: astral-sh/setup-uv@v10.0.0", self.content)
+        self.assertIn("uses: astral-sh/setup-uv@ae62891fec2bb8e7d6c99fc78c9fec3a63790f8d", self.content)
         self.assertRegex(self.content, r"enable-cache:\s*true")
         self.assertRegex(
             self.content,
@@ -157,17 +157,6 @@ class GhPagesWorkflowTextContentTests(unittest.TestCase):
     def test_no_tab_characters(self):
         # YAML is whitespace-sensitive; tabs are a common source of subtle bugs.
         self.assertNotIn("\t", self.content, "Workflow file should not contain tab characters")
-
-    def test_no_longer_uses_old_setup_node_v4_pin(self):
-        # Regression guard: the bump from actions/setup-node@v4 to @v7 must
-        # not have been partially applied or reverted.
-        self.assertNotIn("actions/setup-node@v4", self.content)
-
-    def test_no_longer_uses_old_setup_uv_v5_pin(self):
-        # Regression guard: the bump from astral-sh/setup-uv@v5 to the fully
-        # qualified @v10.0.0 tag must not have been partially applied or
-        # reverted.
-        self.assertNotIn("astral-sh/setup-uv@v5", self.content)
 
 
 @unittest.skipUnless(HAS_YAML, "PyYAML is not installed in this environment")
@@ -230,25 +219,17 @@ class GhPagesWorkflowStructureTests(unittest.TestCase):
     def test_setup_node_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         setup_node_step = steps[1]
-        self.assertEqual(setup_node_step["uses"], "actions/setup-node@v7")
+        self.assertEqual(setup_node_step["uses"], "actions/setup-node@820762786026740c76f36085b0efc47a31fe5020")
         self.assertEqual(setup_node_step["with"]["node-version"], "24")
 
     def test_install_uv_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]
         install_uv_step = steps[2]
-        self.assertEqual(install_uv_step["uses"], "astral-sh/setup-uv@v10.0.0")
+        self.assertEqual(install_uv_step["uses"], "astral-sh/setup-uv@ae62891fec2bb8e7d6c99fc78c9fec3a63790f8d")
         self.assertTrue(install_uv_step["with"]["enable-cache"])
         self.assertEqual(
             install_uv_step["with"]["cache-dependency-glob"], "requirements.txt"
         )
-
-    def test_install_uv_step_pin_is_full_semver(self):
-        # The astral-sh/setup-uv action is now pinned to a full semantic
-        # version (major.minor.patch), unlike the bare major-version tags
-        # used elsewhere (e.g. actions/setup-node@v7).
-        steps = self.doc["jobs"]["deploy-pages"]["steps"]
-        install_uv_step = steps[2]
-        self.assertRegex(install_uv_step["uses"], r"^astral-sh/setup-uv@v\d+\.\d+\.\d+$")
 
     def test_setup_python_step_inputs(self):
         steps = self.doc["jobs"]["deploy-pages"]["steps"]

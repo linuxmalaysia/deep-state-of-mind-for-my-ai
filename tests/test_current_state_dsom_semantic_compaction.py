@@ -155,46 +155,5 @@ class BodyContentRegressionTests(unittest.TestCase):
         self.assertIn("## Archival Pointers", self.body)
 
 
-class NewestAutoSyncEntryRegressionTests(unittest.TestCase):
-    """Pin down this PR's specific diff to the "Condensed History" list:
-    a new entry documenting the test-file changes was inserted above the
-    previous newest entry (the `action_update_dsom.py` rewrite), and two
-    stale entries that were compacted away by an earlier sync are gone.
-    """
-
-    @classmethod
-    def setUpClass(cls):
-        cls.content = STATE_PATH.read_text(encoding="utf-8")
-        match = FRONTMATTER_RE.match(cls.content)
-        assert match is not None
-        cls.body = cls.content[match.end():]
-
-    def test_condensed_history_contains_newest_auto_sync_entry_for_test_files(self):
-        self.assertRegex(
-            self.body,
-            r"- \[Auto-Sync\] Modified files: tests/test_crda_workflow\.py "
-            r"\(\+\d+, -\d+\), tests/test_dsom_pr_sync_workflow\.py \(\+\d+, -\d+\)\.",
-        )
-
-    def test_newest_entry_precedes_action_update_dsom_entry(self):
-        newest_idx = self.body.index("tests/test_crda_workflow.py")
-        script_change_idx = self.body.index(
-            "[Auto-Sync] Modified files: .github/scripts/action_update_dsom.py"
-        )
-        self.assertLess(newest_idx, script_change_idx)
-
-    def test_stale_sitemap_seo_generator_skill_entry_removed(self):
-        # This entry was present in an earlier PR's diff and was compacted
-        # away; it must not resurface.
-        self.assertNotIn("test_sitemap_seo_generator_skill.py (+624, -0)", self.body)
-
-    def test_stale_legal_notice_bundle_entry_removed(self):
-        # This large combined entry (LEGAL-NOTICE.md, sitemap regeneration,
-        # etc.) was present in an earlier PR's diff and was compacted away;
-        # it must not resurface.
-        self.assertNotIn("LEGAL-NOTICE.md (+48, -0)", self.body)
-        self.assertNotIn("docs/sitemap.xml (+488, -476)", self.body)
-
-
 if __name__ == "__main__":
     unittest.main()
