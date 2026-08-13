@@ -60,13 +60,14 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
         cls.content = WORKFLOW_PATH.read_text(encoding="utf-8")
 
     def test_setup_node_step_present_with_expected_version(self):
+        """Verify that the workflow configures Node.js 24 using the expected setup action."""
         self.assertIn("name: Set up Node.js 24", self.content)
-        self.assertIn("uses: actions/setup-node@v4", self.content)
+        self.assertIn("uses: actions/setup-node@v7", self.content)
         self.assertRegex(self.content, r'node-version:\s*"24"')
 
     def test_install_uv_step_present_with_expected_inputs(self):
         self.assertIn("name: Install uv", self.content)
-        self.assertIn("uses: astral-sh/setup-uv@v5", self.content)
+        self.assertIn("uses: astral-sh/setup-uv@v10.0.0", self.content)
         self.assertRegex(self.content, r"enable-cache:\s*true")
         self.assertRegex(
             self.content,
@@ -100,6 +101,17 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
     def test_no_tab_characters(self):
         self.assertNotIn("\t", self.content, "Workflow file should not contain tab characters")
 
+    def test_no_longer_uses_old_setup_node_v4_pin(self):
+        # Regression guard: the bump from actions/setup-node@v4 to @v7 must
+        # not have been partially applied or reverted.
+        self.assertNotIn("actions/setup-node@v4", self.content)
+
+    def test_no_longer_uses_old_setup_uv_v5_pin(self):
+        # Regression guard: the bump from astral-sh/setup-uv@v5 to the fully
+        # qualified @v10.0.0 tag must not have been partially applied or
+        # reverted.
+        self.assertNotIn("astral-sh/setup-uv@v5", self.content)
+
 
 @unittest.skipUnless(HAS_YAML, "PyYAML is not installed in this environment")
 class CrdaWorkflowStructureTests(unittest.TestCase):
@@ -131,14 +143,21 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
 
     def test_setup_node_step_inputs(self):
         step = self.steps[self.step_names.index("Set up Node.js 24")]
-        self.assertEqual(step["uses"], "actions/setup-node@v4")
+        self.assertEqual(step["uses"], "actions/setup-node@v7")
         self.assertEqual(step["with"]["node-version"], "24")
 
     def test_install_uv_step_inputs(self):
         step = self.steps[self.step_names.index("Install uv")]
-        self.assertEqual(step["uses"], "astral-sh/setup-uv@v5")
+        self.assertEqual(step["uses"], "astral-sh/setup-uv@v10.0.0")
         self.assertTrue(step["with"]["enable-cache"])
         self.assertEqual(step["with"]["cache-dependency-glob"], "requirements.txt")
+
+    def test_install_uv_step_pin_is_full_semver(self):
+        # The astral-sh/setup-uv action is now pinned to a full semantic
+        # version (major.minor.patch), unlike the bare major-version tags
+        # used elsewhere (e.g. actions/setup-node@v7).
+        step = self.steps[self.step_names.index("Install uv")]
+        self.assertRegex(step["uses"], r"^astral-sh/setup-uv@v\d+\.\d+\.\d+$")
 
     def test_setup_python_step_inputs(self):
         step = self.steps[self.step_names.index("Set up Python 3.12")]
