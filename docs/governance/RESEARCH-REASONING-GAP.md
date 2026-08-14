@@ -171,10 +171,10 @@ This would close the gap entirely while maintaining full sovereignty and zero ve
 
 | Document | Relevance |
 |---|---|
-| [`docs/PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md) | Why the Palace was built |
+| [`docs/PALACE-BUILD-STORY.md`](../PALACE-BUILD-STORY.md) | Why the Palace was built |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace specification |
-| [`docs/EOD-RITUAL.md`](EOD-RITUAL.md) | Hibernation Notes export protocol |
-| [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | Palace usage guide |
+| [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) | Hibernation Notes export protocol |
+| [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md) | Palace usage guide |
 
 ---
 *Research finding documented: 2026-04-08*

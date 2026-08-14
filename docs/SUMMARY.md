@@ -10,8 +10,8 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 
 ## 🧠 Getting Started
 
-* [Home](../README.md)
-* [START HERE](../START-HERE.md)
+* [Home](README.md)
+* [START HERE](START-HERE.md)
 
 ## 🎓 Tutorials
 

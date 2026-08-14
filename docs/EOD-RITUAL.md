@@ -376,12 +376,12 @@ Every `walkthrough.md` Session Anchor must follow this format:
 | [`docs/REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) | AI session prompts |
 | [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) | AI model switch ritual |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | Palace structure + closet update guide |
-| [`tools/git-ritual.sh`](../tools/git-ritual.sh) | SOD pull + EOD semantic commit |
-| [`tools/hibernation.sh`](../tools/hibernation.sh) | EOD safety checker (v2.1: includes palace-sync) |
-| [`tools/palace-sync.sh`](../tools/palace-sync.sh) | Palace spatial reflection engine |
-| [`tools/privacy-guardian.sh`](../tools/privacy-guardian.sh) | Manifest scanner |
-| [`playbooks/dsom/eod-palace.yml`](../playbooks/dsom/eod-palace.yml) | Ansible EOD automation (T2) |
-| [`playbooks/dsom/privacy-scan.yml`](../playbooks/dsom/privacy-scan.yml) | Ansible privacy scan |
+| [`tools/git-ritual.sh`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/git-ritual.sh) | SOD pull + EOD semantic commit |
+| [`tools/hibernation.sh`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/hibernation.sh) | EOD safety checker (v2.1: includes palace-sync) |
+| [`tools/palace-sync.sh`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/palace-sync.sh) | Palace spatial reflection engine |
+| [`tools/privacy-guardian.sh`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/privacy-guardian.sh) | Manifest scanner |
+| [`playbooks/dsom/eod-palace.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/eod-palace.yml) | Ansible EOD automation (T2) |
+| [`playbooks/dsom/privacy-scan.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/privacy-scan.yml) | Ansible privacy scan |
 
 ---
 

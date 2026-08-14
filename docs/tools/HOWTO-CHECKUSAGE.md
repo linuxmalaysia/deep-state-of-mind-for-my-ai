@@ -276,8 +276,8 @@ If the current session exceeds `CriticalMB`, begin a new Antigravity conversatio
 | [`docs/SOD-RITUAL.md`](../SOD-RITUAL.md) | Start-of-Day Ritual — includes session health check |
 | [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) | End-of-Day Ritual — Hibernation Notes export |
 | [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE.md) | AI prompts for new session reanimation |
-| [`tools/audit-pre-flight.sh`](../../tools/audit-pre-flight.sh) | Full 5-check workspace audit (Linux/WSL2) |
-| [`tools/audit-pre-flight.ps1`](../../tools/audit-pre-flight.ps1) | Full 5-check workspace audit (Windows) |
+| [`tools/audit-pre-flight.sh`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/audit-pre-flight.sh) | Full 5-check workspace audit (Linux/WSL2) |
+| [`tools/audit-pre-flight.ps1`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/audit-pre-flight.ps1) | Full 5-check workspace audit (Windows) |
 
 ---
 

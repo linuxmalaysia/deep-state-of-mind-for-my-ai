@@ -335,11 +335,11 @@ The SOD is **FAILED** if the AI:
 | [`docs/EOD-RITUAL.md`](EOD-RITUAL.md) | End-of-Day hibernation ritual |
 | [`docs/HUMAN-HANDOVER-CONTEXT.md`](HUMAN-HANDOVER-CONTEXT.md) | Session handover prompt template |
 | [`docs/REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) | AI session prompts |
-| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) | Project Identity Card |
-| [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | The Sovereign Constitution |
+| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](governance/AI-COGNITIVE-TWIN-PROTOCOL.md) | Project Identity Card |
+| [`docs/AI-MASTER-PROTOCOL.md`](governance/AI-MASTER-PROTOCOL.md) | The Sovereign Constitution |
 | [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) | AI model switch ritual |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | Palace structure + AI Walk protocol |
-| [`playbooks/dsom/sod-palace.yml`](../playbooks/dsom/sod-palace.yml) | Ansible SOD automation (T2) |
+| [`playbooks/dsom/sod-palace.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/sod-palace.yml) | Ansible SOD automation (T2) |
 
 ---
 

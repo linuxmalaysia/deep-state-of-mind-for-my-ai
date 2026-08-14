@@ -250,8 +250,8 @@ EOD
 
 ```
 
-> **Playbooks:** [`playbooks/dsom/sod-palace.yml`](../playbooks/dsom/sod-palace.yml) | [`playbooks/dsom/eod-palace.yml`](../playbooks/dsom/eod-palace.yml)
-> **Full specs:** [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md)
+> **Playbooks:** [`playbooks/dsom/sod-palace.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/sod-palace.yml) | [`playbooks/dsom/eod-palace.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/eod-palace.yml)
+> **Full specs:** [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md)
 
 ---
 

@@ -262,9 +262,9 @@ Then load the memory dump into the new AI session along with the manifest genera
 | [`docs/SOD-RITUAL.md`](SOD-RITUAL.md) | Full Start-of-Day ritual guide |
 | [`docs/EOD-RITUAL.md`](EOD-RITUAL.md) | Full End-of-Day hibernation ritual |
 | [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) | Switching AI providers |
-| [`docs/MULTI-AGENT-PROTOCOLS.md`](MULTI-AGENT-PROTOCOLS.md) | Universal multi-agent injection method |
-| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) | Project Identity Card |
-| [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | The Sovereign Constitution |
+| [`docs/MULTI-AGENT-PROTOCOLS.md`](governance/MULTI-AGENT-PROTOCOLS.md) | Universal multi-agent injection method |
+| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](governance/AI-COGNITIVE-TWIN-PROTOCOL.md) | Project Identity Card |
+| [`docs/AI-MASTER-PROTOCOL.md`](governance/AI-MASTER-PROTOCOL.md) | The Sovereign Constitution |
 
 ---
 

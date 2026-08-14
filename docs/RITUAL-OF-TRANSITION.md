@@ -249,12 +249,12 @@ cat .agents/brain/walkthrough.md | tail -30
 
 | Priority | Document | When |
 |:---|:---|:---|
-| 1 | [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | Every session |
+| 1 | [`docs/AI-MASTER-PROTOCOL.md`](governance/AI-MASTER-PROTOCOL.md) | Every session |
 | 2 | [`docs/SOD-RITUAL.md`](SOD-RITUAL.md) | Every morning |
 | 3 | [`docs/EOD-RITUAL.md`](EOD-RITUAL.md) | Every evening |
 | 4 | [`docs/REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) | When prompting AI |
 | 5 | [`docs/HUMAN-HANDOVER-CONTEXT.md`](HUMAN-HANDOVER-CONTEXT.md) | New session, new AI |
-| 6 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) | Per project — fill once |
+| 6 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](governance/AI-COGNITIVE-TWIN-PROTOCOL.md) | Per project — fill once |
 
 ---
 

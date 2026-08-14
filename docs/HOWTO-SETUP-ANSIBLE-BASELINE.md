@@ -40,9 +40,9 @@ This guide describes how to establish the **Ansible baseline** for any new proje
 
 ### 1.3 Related Documents
 
-- [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) — Strategic doctrine
-- [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) — Project identity template
-- [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) — Governance laws
+- [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md) — Strategic doctrine
+- [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](governance/AI-COGNITIVE-TWIN-PROTOCOL.md) — Project identity template
+- [`docs/AI-MASTER-PROTOCOL.md`](governance/AI-MASTER-PROTOCOL.md) — Governance laws
 
 ---
 
@@ -446,7 +446,7 @@ EOF
 - [Ansible Documentation](https://docs.ansible.com/)
 - [Ansible Vault Guide](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 - [Conventional Commits Standard](https://www.conventionalcommits.org/)
-- [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+- [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
 
 ---
 

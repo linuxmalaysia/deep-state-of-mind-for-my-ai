@@ -214,7 +214,7 @@ The per-section alerting capability (flagging individual `##` sections that brea
 | [BYTE-CAPPED-EXECUTION-FRAMEWORK.md](BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | Enforcement model for Byte-Capped Executions (Rule 10). |
 | [DSOM-TOKEN-EFFICIENCY-REPORT.md](DSOM-TOKEN-EFFICIENCY-REPORT.md) | Token efficiency audit proving 96.23% reduction via DSOM protocol. |
 | [PYTHON-UV-ENVIRONMENT-GUIDE.md](PYTHON-UV-ENVIRONMENT-GUIDE.md) | Mandated `uv` execution environment (Rule 16). |
-| [dsom-token-calculator SKILL.md](../../.agents/skills/dsom-token-calculator/SKILL.md) | Executable skill for local token footprint measurement. |
+| [dsom-token-calculator SKILL.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/dsom-token-calculator/SKILL.md) | Executable skill for local token footprint measurement. |
 
 ---
 

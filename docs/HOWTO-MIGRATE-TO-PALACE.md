@@ -139,7 +139,7 @@ The registry should list:
 - All Halls within each Wing
 - All Rooms with their paths and purpose
 
-See [`.agents/brain/palace_registry.md`](../.agents/brain/palace_registry.md) in this reference repo for the full format.
+See [`.agents/brain/palace_registry.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/palace_registry.md) in this reference repo for the full format.
 
 ---
 
@@ -327,8 +327,8 @@ No. Only create Rooms relevant to your project. For a pure software dev project,
 |---|---|
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | First-time guide — what the Palace is |
 | [`docs/PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md) | How and why the Palace was built |
-| [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace Protocol specification |
-| [`.agents/brain/palace_registry.md`](../.agents/brain/palace_registry.md) | Live Room index |
+| [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace Protocol specification |
+| [`.agents/brain/palace_registry.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/palace_registry.md) | Live Room index |
 
 ---
 *Document created: 2026-04-08 | Palace v1.0 | DSOM Protocol v6.1*

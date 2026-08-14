@@ -135,12 +135,12 @@ A: The context window might be stale. Start a **New Chat Session** and perform t
 
 ## 5. References
 
-* [Changelog](../CHANGELOG.md)
+* [Changelog](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/CHANGELOG.md)
 * [Ritual of Transition](RITUAL-OF-TRANSITION.md)
 * [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
 * [SOD-RITUAL.md](SOD-RITUAL.md) — Step 1a: Ansible Palace SOD
 * [EOD-RITUAL.md](EOD-RITUAL.md) — Step 2a: Ansible Palace EOD
-* [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+* [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

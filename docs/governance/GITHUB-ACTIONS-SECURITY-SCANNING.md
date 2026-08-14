@@ -133,8 +133,8 @@ jobs:
 - [`snyk/actions`](https://github.com/snyk/actions) — Official Snyk GitHub Actions.
 - [`github/codeql-action` changelog](https://github.blog/changelog/2025-10-28-upcoming-deprecation-of-codeql-action-v3/) — v3 deprecation notice.
 - [`redhat-actions/crda`](https://github.com/redhat-actions/crda) — Archived; no longer maintained.
-- [`.agents/skills/github-actions-snyk-scanner/SKILL.md`](../../.agents/skills/github-actions-snyk-scanner/SKILL.md) — Executable SOP for this workflow.
-- [`.github/workflows/crda.yml`](../../.github/workflows/crda.yml) — Live workflow file in this repository.
+- [`.agents/skills/github-actions-snyk-scanner/SKILL.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/github-actions-snyk-scanner/SKILL.md) — Executable SOP for this workflow.
+- [`.github/workflows/crda.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.github/workflows/crda.yml) — Live workflow file in this repository.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27*

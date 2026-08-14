@@ -258,12 +258,12 @@ Without Zero-Global Memory, there is no mechanism to enforce any of this discipl
 
 | Document | Description |
 |---|---|
-| [AGENTS.md](../../.agents/AGENTS.md) | Core rulebook: Rules 1, 8, 10, 18 governing memory architecture. |
+| [AGENTS.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md) | Core rulebook: Rules 1, 8, 10, 18 governing memory architecture. |
 | [DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md](DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md) | Token efficiency playbook showing how Zero-Global Memory enables 96.23% context reduction. |
 | [BYTE-CAPPED-EXECUTION-FRAMEWORK.md](BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | Circuit breaker enforcement preventing context flooding. |
 | [DSOM-INGESTION-LATENCY-ARCHITECTURE.md](DSOM-INGESTION-LATENCY-ARCHITECTURE.md) | Empirical benchmarks: local OKF reads vs. remote RAG latency. |
 | [DSOM-EPISODIC-RECORD-TEMPLATE.md](../DSOM-EPISODIC-RECORD-TEMPLATE.md) | Canonical template for the session anchor serialisation format. |
-| [active_context_manifest.md](../../.agents/brain/active_context_manifest.md) | OKF manifest bounding active session file scope. |
+| [active_context_manifest.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/active_context_manifest.md) | OKF manifest bounding active session file scope. |
 
 ---
 

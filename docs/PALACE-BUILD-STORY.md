@@ -137,10 +137,10 @@ The Sovereign Markdown Palace v1.0 is a **living, sovereign, version-controlled,
 
 | Document | Purpose |
 |---|---|
-| [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace Protocol specification |
-| [`.agents/brain/palace_registry.md`](../.agents/brain/palace_registry.md) | Live Room index with Quick-Reference table |
-| [`tools/palace-sync.sh`](../tools/palace-sync.sh) | Primary sync tool (Bash) |
-| [`tools/palace-sync.ps1`](../tools/palace-sync.ps1) | Sync tool (PowerShell parity) |
+| [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace Protocol specification |
+| [`.agents/brain/palace_registry.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/palace_registry.md) | Live Room index with Quick-Reference table |
+| [`tools/palace-sync.sh`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/palace-sync.sh) | Primary sync tool (Bash) |
+| [`tools/palace-sync.ps1`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/palace-sync.ps1) | Sync tool (PowerShell parity) |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | First-time setup guide |
 | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](HOWTO-MIGRATE-TO-PALACE.md) | Migration guide for existing DSOM users |
 

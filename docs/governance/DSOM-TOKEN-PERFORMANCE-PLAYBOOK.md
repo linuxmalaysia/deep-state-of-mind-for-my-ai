@@ -210,9 +210,9 @@ Identify any `.agents/brain/` files exceeding 4,000 tokens and add them to the `
 | [BYTE-CAPPED-EXECUTION-FRAMEWORK.md](BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | Enforcement model for Rule 10 Byte-Capped Executions. |
 | [DSOM-INGESTION-LATENCY-ARCHITECTURE.md](DSOM-INGESTION-LATENCY-ARCHITECTURE.md) | L2 analysis: local OKF reads vs. remote RAG/vector latency with empirical benchmarks. |
 | [PYTHON-UV-ENVIRONMENT-GUIDE.md](PYTHON-UV-ENVIRONMENT-GUIDE.md) | Mandated `uv` execution environment (Rule 16). |
-| [dsom-token-calculator SKILL.md](../../.agents/skills/dsom-token-calculator/SKILL.md) | Executable skill: local token footprint measurement with per-section breach alerting. |
-| [active_context_manifest.md](../../.agents/brain/active_context_manifest.md) | OKF manifest declaring active session files — replaces symlink pattern. |
-| [AGENTS.md](../../.agents/AGENTS.md) | Core rulebook: Rules 6, 10, 12, 16, 18, 19 govern token efficiency. |
+| [dsom-token-calculator SKILL.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/dsom-token-calculator/SKILL.md) | Executable skill: local token footprint measurement with per-section breach alerting. |
+| [active_context_manifest.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/active_context_manifest.md) | OKF manifest declaring active session files — replaces symlink pattern. |
+| [AGENTS.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md) | Core rulebook: Rules 6, 10, 12, 16, 18, 19 govern token efficiency. |
 
 ---
 

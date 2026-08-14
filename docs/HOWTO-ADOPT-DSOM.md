@@ -147,8 +147,8 @@ A: You skipped **Step 3**. The AI only knows what is in the `.agents/brain` file
 
 ## 5. References
 
-* [AI Master Protocol](AI-MASTER-PROTOCOL.md)
-* [Operational Guide](OPERATIONAL-GUIDE.md)
+* [AI Master Protocol](governance/AI-MASTER-PROTOCOL.md)
+* [Operational Guide](governance/OPERATIONAL-GUIDE.md)
 * [HOWTO: Palace Onboarding](HOWTO-PALACE-ONBOARDING.md)
 * [HOWTO: Migrate to Palace](HOWTO-MIGRATE-TO-PALACE.md)
 * [SOD Ritual](SOD-RITUAL.md)

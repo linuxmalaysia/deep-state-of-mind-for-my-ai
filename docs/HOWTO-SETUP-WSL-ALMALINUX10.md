@@ -232,8 +232,8 @@ options="metadata,umask=77,fmask=11"
 ## Related Documents
 
 - [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md) — Ansible project directory setup
-- [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) — Three-pillar strategy
-- [`docs/ANSIBLE-CONTROL-NODE-PROTOCOL.md`](ANSIBLE-CONTROL-NODE-PROTOCOL.md) — Control node operating standards
+- [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md) — Three-pillar strategy
+- [`docs/ANSIBLE-CONTROL-NODE-PROTOCOL.md`](reference-architectures/ANSIBLE-CONTROL-NODE-PROTOCOL.md) — Control node operating standards
 - [`playbooks/dsom/`](../playbooks/dsom/) — DSOM operational playbooks
 
 ---

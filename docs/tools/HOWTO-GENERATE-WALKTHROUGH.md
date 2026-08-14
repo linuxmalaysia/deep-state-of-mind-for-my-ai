@@ -98,7 +98,7 @@ The tool prints a block like this:
 
 | Document | Purpose |
 |:---|:---|
-| [`.agents/brain/walkthrough.md`](../../.agents/brain/walkthrough.md) | The target file for the generated output. |
+| [`.agents/brain/walkthrough.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/walkthrough.md) | The target file for the generated output. |
 | [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) | Where this tool fits in the session close-out. |
 
 ---

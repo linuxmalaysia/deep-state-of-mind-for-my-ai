@@ -107,7 +107,7 @@ bash tools/build_sovereign_book.sh
 | Document | Purpose |
 |:---|:---|
 | [`SUMMARY.md`](../../SUMMARY.md) | The definitive index used to order the book. |
-| [`HISTORY.md`](../../HISTORY.md) | Updated automatically after every build. |
+| [`HISTORY.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/HISTORY.md) | Updated automatically after every build. |
 
 ---
 

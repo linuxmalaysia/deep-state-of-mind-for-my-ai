@@ -124,7 +124,7 @@ Run the interactive `git-ritual` to finalize the session. It is often triggered 
 |:---|:---|
 | [`docs/SOD-RITUAL.md`](../SOD-RITUAL.md) | Standard Operating Procedure for Start-of-Day. |
 | [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) | Standard Operating Procedure for End-of-Day. |
-| [`AI-MASTER-PROTOCOL.md`](../AI-MASTER-PROTOCOL.md) | Governance laws requiring Atomic Git Hygiene. |
+| [`AI-MASTER-PROTOCOL.md`](../governance/AI-MASTER-PROTOCOL.md) | Governance laws requiring Atomic Git Hygiene. |
 
 ---
 

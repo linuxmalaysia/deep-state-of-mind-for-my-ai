@@ -36,7 +36,7 @@ This guide describes how the **Ansible baseline** is established for the **Examp
 
 ### 1.3 Related Documents
 
-- [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) — Governance laws
+- [`docs/AI-MASTER-PROTOCOL.md`](../governance/AI-MASTER-PROTOCOL.md) — Governance laws
 
 ---
 

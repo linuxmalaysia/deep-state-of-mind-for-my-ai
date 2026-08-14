@@ -253,8 +253,8 @@ See [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) for the full hando
 | [`docs/EOD-RITUAL.md`](EOD-RITUAL.md) | Full End-of-Day hibernation ritual |
 | [`docs/CLAUDE-SETUP.md`](CLAUDE-SETUP.md) | Claude.ai integration protocol |
 | [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) | Switching AI providers |
-| [`docs/MULTI-AGENT-PROTOCOLS.md`](MULTI-AGENT-PROTOCOLS.md) | Universal multi-agent injection method |
-| [`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | The Sovereign Constitution |
+| [`docs/MULTI-AGENT-PROTOCOLS.md`](governance/MULTI-AGENT-PROTOCOLS.md) | Universal multi-agent injection method |
+| [`docs/AI-MASTER-PROTOCOL.md`](governance/AI-MASTER-PROTOCOL.md) | The Sovereign Constitution |
 
 ---
 

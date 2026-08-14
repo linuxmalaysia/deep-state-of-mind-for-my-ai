@@ -10,7 +10,7 @@ resource: "file:///docs/HOWTO-UPGRADE-LEGACY-DSOM.md"
 
 # HOWTO: Upgrade Legacy DSOM Projects
 
-> **Entry Point 5:** This document serves as the Legacy Upgrade Entry Point. See [START-HERE.md](../START-HERE.md) for the master onboarding roadmap.
+> **Entry Point 5:** This document serves as the Legacy Upgrade Entry Point. See [START-HERE.md](START-HERE.md) for the master onboarding roadmap.
 
 If you are operating a legacy DSOM project and need to modernize it to the current master architectural baseline, you must systematically inject the following modern protocols to achieve compliance.
 

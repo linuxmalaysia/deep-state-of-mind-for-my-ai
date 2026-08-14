@@ -10,7 +10,7 @@ resource: "file:///docs/HOWTO-PALACE-ONBOARDING.md"
 
 # 🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents
 
-> **Entry Point 4:** This document serves as the Daily Operations Entry Point. See [START-HERE.md](../START-HERE.md) for the master onboarding roadmap.
+> **Entry Point 4:** This document serves as the Daily Operations Entry Point. See [START-HERE.md](START-HERE.md) for the master onboarding roadmap.
 
 > **Who this document is for:** Any new human user adopting DSOM, or any AI agent reading this repo for the first time.
 

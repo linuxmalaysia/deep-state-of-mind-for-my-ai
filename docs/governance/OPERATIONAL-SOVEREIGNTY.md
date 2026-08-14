@@ -350,8 +350,8 @@ From v6.0, Ansible is the exclusive mechanism for production state changes. The 
 
 The **Sovereign Identity** (`dsom-admin`, UID 2001) is the standard execution context for all Ansible operations. Idempotency, `ansible-vault`-only secrets, and inventory-driven targeting are non-negotiable.
 
-> **Playbook reference:** [`playbooks/dsom/site.yml`](../playbooks/dsom/site.yml) — master entry point
-> **Contributor guide:** [`CONTRIBUTING.md`](../CONTRIBUTING.md) — Ansible standards and hybrid workflow
+> **Playbook reference:** [`playbooks/dsom/site.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/site.yml) — master entry point
+> **Contributor guide:** [`CONTRIBUTING.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/CONTRIBUTING.md) — Ansible standards and hybrid workflow
 
 ---
 
@@ -387,7 +387,7 @@ The following documents constitute the **Sovereign Document Stack** for any v6.1
 | **Palace Build Story** | **[`PALACE-BUILD-STORY.md`](../PALACE-BUILD-STORY.md)** |
 | Ansible Setup | [`HOWTO-SETUP-ANSIBLE-BASELINE.md`](../HOWTO-SETUP-ANSIBLE-BASELINE.md) |
 | WSL2 Setup | [`HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10.md) |
-| Contributors | [`CONTRIBUTING.md`](../CONTRIBUTING.md) |
+| Contributors | [`CONTRIBUTING.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/CONTRIBUTING.md) |
 
 ---
 
