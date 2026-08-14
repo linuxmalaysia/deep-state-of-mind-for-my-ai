@@ -95,9 +95,9 @@ nav:
       - Ritual of Transition: RITUAL-OF-TRANSITION.md
       - Personalization: PERSONALIZATION.md
   - AI Brain:
-      - Task: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/task.md
-      - Implementation Plan: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/implementation_plan.md
-      - Walkthrough: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/walkthrough.md
+      - Task: .agents/brain/task.md
+      - Implementation Plan: .agents/brain/implementation_plan.md
+      - Walkthrough: .agents/brain/walkthrough.md
   - AI Setup:
       - Cognitive Twin Protocol Template: governance/AI-COGNITIVE-TWIN-PROTOCOL.md
       - Reanimation Template: REANIMATION-PROMPT-TEMPLATE.md
@@ -108,30 +108,30 @@ nav:
       - DSOM Claude Initialiser: model-specifics/dsom-claude-initialiser.md
       - Copilot: COPILOT-SETUP.md
   - AI Agent Skills & Workflows:
-      - Subagent Orchestration Workflow: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md
-      - EOD Palace Sync Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/eod-palace-sync/SKILL.md
-      - SOD Palace Sync Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/sod-palace-sync/SKILL.md
-      - DSOM Token Calculator Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/dsom-token-calculator/SKILL.md
-      - DSOM Knowledge Ingester: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/dsom-knowledge-ingester/SKILL.md
-      - Publish to Blogger Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/publish-to-blogger/SKILL.md
-      - Git Commit Resolver Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/git-commit-resolver/SKILL.md
-      - Git History Scrubber Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/git-history-scrubber/SKILL.md
-      - Initialize GitOps Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/initialize-gitops/SKILL.md
-      - Forensic Log Audit Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/forensic-log-audit/SKILL.md
-      - SSH Passwordless Setup Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/ssh-passwordless-setup/SKILL.md
-      - GitHub Actions Snyk Scanner Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/github-actions-snyk-scanner/SKILL.md
-      - Render Deployment Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/render-deployment/SKILL.md
-      - Jules & Antigravity Collaborative Sync Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/jules-antigravity-sync/SKILL.md
-      - OpenWiki Knowledge Graph Compiler Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/openwiki-compiler/SKILL.md
-      - Sitemap & SEO Asset Generator Skill: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/sitemap-seo-generator/SKILL.md
+      - Subagent Orchestration Workflow: .agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW.md
+      - EOD Palace Sync Skill: .agents/skills/eod-palace-sync/SKILL.md
+      - SOD Palace Sync Skill: .agents/skills/sod-palace-sync/SKILL.md
+      - DSOM Token Calculator Skill: .agents/skills/dsom-token-calculator/SKILL.md
+      - DSOM Knowledge Ingester: .agents/skills/dsom-knowledge-ingester/SKILL.md
+      - Publish to Blogger Skill: .agents/skills/publish-to-blogger/SKILL.md
+      - Git Commit Resolver Skill: .agents/skills/git-commit-resolver/SKILL.md
+      - Git History Scrubber Skill: .agents/skills/git-history-scrubber/SKILL.md
+      - Initialize GitOps Skill: .agents/skills/initialize-gitops/SKILL.md
+      - Forensic Log Audit Skill: .agents/skills/forensic-log-audit/SKILL.md
+      - SSH Passwordless Setup Skill: .agents/skills/ssh-passwordless-setup/SKILL.md
+      - GitHub Actions Snyk Scanner Skill: .agents/skills/github-actions-snyk-scanner/SKILL.md
+      - Render Deployment Skill: .agents/skills/render-deployment/SKILL.md
+      - Jules & Antigravity Collaborative Sync Skill: .agents/skills/jules-antigravity-sync/SKILL.md
+      - OpenWiki Knowledge Graph Compiler Skill: .agents/skills/openwiki-compiler/SKILL.md
+      - Sitemap & SEO Asset Generator Skill: .agents/skills/sitemap-seo-generator/SKILL.md
   - Ansible:
       - HOWTO Setup Baseline: HOWTO-SETUP-ANSIBLE-BASELINE.md
       - HOWTO Setup AlmaLinux 10 WSL2: HOWTO-SETUP-WSL-ALMALINUX10.md
   - Playbooks:
-      - DSOM site.yml: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/site.yml
-      - audit-preflight: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/audit-preflight.yml
-      - init-brain: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/init-brain.yml
-      - privacy-scan: https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/privacy-scan.yml
+      - DSOM site.yml: playbooks/dsom/site.yml
+      - audit-preflight: playbooks/dsom/audit-preflight.yml
+      - init-brain: playbooks/dsom/init-brain.yml
+      - privacy-scan: playbooks/dsom/privacy-scan.yml
   - Tools:
       - Pre-Flight: tools-and-automation/audit-pre-flight.md
       - Init Brain: tools-and-automation/init-brain.md

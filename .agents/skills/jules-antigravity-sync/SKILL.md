@@ -67,9 +67,9 @@ The following is the authoritative and permanent repository of Jules and Antigra
 
 ## Historic Code Merges & PRs by Jules
 
-The following is the permanent ledger of PRs and code modifications executed by Google Jules:
+The following is the permanent ledger of PRs and code modifications executed by Google Jules. A comprehensive, high-fidelity log of all Jules' historic PRs, reviews, CodeRabbit comments, and technical resolutions is maintained inside `.agents/brain/jules_pr_history.md`.
 
-### 1. Read the Docs Integration & Validation
+### 1. Read the Docs Integration & Validation (PR #22)
 - **Accomplishment**: Configured `.readthedocs.yaml` at the root with Ubuntu 24.04, Python 3.13, and MkDocs. Appended standard DSOM license/ownership headers and synced all ledgers.
 - **Testing Layer**: Created `tests/test_readthedocs_config.py` and `tests/test_readthedocs_ledger_sync.py` to assert RTD and GitBook configuration compliance.
 
@@ -88,6 +88,9 @@ The following is the permanent ledger of PRs and code modifications executed by 
 
 ### 6. Windows Git-Symlink & CRLF Test Guardrails
 - **Accomplishment**: Enhanced test discovery suites (`tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_okf_quoting.py`, `tests/test_docs_symlinks.py`) to detect Git text-pointer symlinks (`content.startswith("../")`) on Windows native checkouts, handle CRLF byte fences (`b"---\r\n"`), and conditionally scope POSIX `chmod` bit assertions (`if os.name != "nt":`).
+
+### 7. Google Jules PR & Comment History Ledger
+- **Accomplishment**: Created the master conversational and code merge ledger `.agents/brain/jules_pr_history.md` detailing PRs #22, #23, #24, #25, #26, #27, and #34, as well as automated CodeRabbit review integration and feedback cycles.
 
 ---
 
