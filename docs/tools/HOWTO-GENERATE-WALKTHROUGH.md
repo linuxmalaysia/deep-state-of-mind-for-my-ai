@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-GENERATE-WALKTHROUGH.md."
 resource: "file:///docs/tools/HOWTO-GENERATE-WALKTHROUGH.md"
 ---
+
 # HOWTO: generate-walkthrough — Session Scribe
 
 # docs/tools/HOWTO-GENERATE-WALKTHROUGH.md
@@ -19,7 +20,7 @@ resource: "file:///docs/tools/HOWTO-GENERATE-WALKTHROUGH.md"
 
 ## 1. Purpose
 
-`generate-walkthrough` is the **Session Summarizer** of the DSOM ecosystem. It automates the extraction of "Accomplishments" from your Git history and your `task.md` file, formatting them into a standardized "Session Anchor" block ready to be pasted into `walkthrough.md`.
+`generate-walkthrough` is the **Session Summarizer** of the DSOM ecosystem. It automates the extraction of "Accomplishments" from your Git history and your `task.md` file, formatting them into a standardised "Session Anchor" block ready to be pasted into `walkthrough.md`.
 
 **Use it to:**
 - Automatically harvest all commit messages from "Today".
@@ -48,13 +49,19 @@ resource: "file:///docs/tools/HOWTO-GENERATE-WALKTHROUGH.md"
 ### 3.1 Standard Generation
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\generate-walkthrough.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/generate-walkthrough.sh
+
 ```
 
 ---
@@ -72,12 +79,15 @@ bash tools/generate-walkthrough.sh
 The tool prints a block like this:
 
 ```markdown
+
 ## 🏁 Session Anchor: 2026-04-08 (Auto-Generated)
+
 - **Accomplished:**
     - [x] Initialise project (SELESAI)
     - feat(ui): add modern glassmorphism
 - **Current State:** [UPDATE ME]
 - **Mental Anchor:** [UPDATE ME]
+
 ```
 
 **Instruction:** Copy this entire block and paste it at the TOP of your **`.agents/brain/walkthrough.md`** file during your End-of-Day ritual. Fill in the `[UPDATE ME]` fields manually to provide the AI with logical context for the next session.
@@ -95,7 +105,6 @@ The tool prints a block like this:
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

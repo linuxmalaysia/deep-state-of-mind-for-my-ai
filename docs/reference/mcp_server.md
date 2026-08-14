@@ -5,6 +5,7 @@ title: "Reference: mcp_server.md"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "mcp", "fastmcp"]
 ---
+
 # tools/mcp/server.py reference
 
 FastMCP Model Context Protocol (MCP) server implementation for the DSOM Palace.
@@ -21,6 +22,7 @@ The `server.py` utility exposes the Sovereign Markdown Palace, active brain asse
 
 ```bash
 uv run tools/mcp/server.py
+
 ```
 
 ## Environment variables
@@ -49,3 +51,8 @@ AI clients can execute these tools dynamically:
 - **mcp[cli]:** Model Context Protocol Python library.
 - **fastmcp:** Modern FastMCP helper wrapper.
 - **pyyaml:** YAML loader configuration parser.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

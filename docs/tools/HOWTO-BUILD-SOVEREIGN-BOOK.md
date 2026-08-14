@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-BUILD-SOVEREIGN-BOOK.md."
 resource: "file:///docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md"
 ---
+
 # HOWTO: build_sovereign_book — PDF Internal Repository Archiver
 
 # docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md
@@ -42,13 +43,17 @@ resource: "file:///docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md"
 ### 2.1 Installing Dependencies
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt-get update && sudo apt-get install -y pandoc librsvg2-bin fonts-noto-color-emoji texlive-luatex texlive-latex-extra texlive-fonts-recommended texlive-plain-generic
+
 ```
 
 **AlmaLinux/RHEL:**
+
 ```bash
 sudo dnf install -y pandoc librsvg2-tools google-noto-emoji-color-fonts texlive-scheme-medium
+
 ```
 
 ---
@@ -59,6 +64,7 @@ sudo dnf install -y pandoc librsvg2-tools google-noto-emoji-color-fonts texlive-
 
 ```bash
 bash tools/build_sovereign_book.sh
+
 ```
 
 ---
@@ -107,7 +113,6 @@ bash tools/build_sovereign_book.sh
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

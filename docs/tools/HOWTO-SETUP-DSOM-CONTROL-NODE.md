@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-SETUP-DSOM-CONTROL-NODE.md."
 resource: "file:///docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md"
 ---
+
 # HOWTO: setup-dsom-control-node — Linux Environment Hardening
 
 # docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md
@@ -19,7 +20,7 @@ resource: "file:///docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md"
 
 ## 1. Purpose
 
-`setup-dsom-control-node` is the **System Configuration Engine** for a fresh DSOM Tier 2 node. It transforms a vanilla Linux installation into a fully hardened, Ansible-ready control node with standardized user identities and performance-tuned WSL interoperability settings.
+`setup-dsom-control-node` is the **System Configuration Engine** for a fresh DSOM Tier 2 node. It transforms a vanilla Linux installation into a fully hardened, Ansible-ready control node with standardised user identities and performance-tuned WSL interoperability settings.
 
 **Use it to:**
 - Provision the standard **`dsom-admin`** service user (UID 2001).
@@ -50,8 +51,11 @@ resource: "file:///docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md"
 If you used the `setup-wsl-almalinux10.ps1` orchestrator, this tool is run **automatically** on your behalf. To re-run it manually:
 
 ```bash
+
 # Run as root inside the WSL instance
+
 bash tools/setup-dsom-control-node.sh
+
 ```
 
 ---
@@ -61,18 +65,21 @@ bash tools/setup-dsom-control-node.sh
 The tool performs several persistent system modifications:
 
 ### 4.1 Identity Management
+
 - Creates group `dsom-admin` (GID 2001).
 - Creates user `dsom-admin` (UID 2001).
 - Adds user to the `wheel` group.
 - Configures **passwordless sudo** via `/etc/sudoers.d/dsom-admin`.
 
 ### 4.2 WSL Interoperability (`/etc/wsl.conf`)
+
 - Sets `default=dsom-admin`.
 - Enables `systemd=true`.
 - Disables `appendWindowsPath=false` (to prevent PATH pollution).
 - Mounts `/mnt/c` with `metadata` options enabled (improves permission handling).
 
 ### 4.3 SSH Hardening
+
 - Generates `~/.ssh/id_ed25519` for the `dsom-admin` user.
 - Sets strict permission 700/600 on the `.ssh` directory.
 
@@ -107,7 +114,6 @@ The tool performs several persistent system modifications:
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

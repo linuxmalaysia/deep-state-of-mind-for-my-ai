@@ -6,6 +6,7 @@ timestamp: "2026-08-05T22:23:51Z"
 topics: ["dsom", "documentation"]
 description: "Analysis of Andrej Karpathy's LLM WIKI concept and how it maps to DSOM architecture."
 ---
+
 # 🧠 DSOM vs. LLM WIKI: Comparative Analysis & Adoption Strategy
 
 > **Entry Point 8:** This document serves as the Sovereign Knowledge Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
@@ -39,6 +40,7 @@ Karpathy defines three architectural layers and several core operations. Here is
 While we have the structure, the LLM WIKI highlights three operational verbs that we can adopt to make the DSOM Palace self-sustaining and compounding: **Ingest**, **Query**, and **Lint**.
 
 ### A. The "Ingest" Protocol (Automated Synthesis)
+
 **The Concept:** When a new raw source (e.g., an article, a NOSS PDF, a meeting transcript) is introduced, the AI shouldn't just read it. It should extract the data, summarize it, create new concept pages, and link it into the existing Wiki.
 **Our Adoption:** We need a strict separation between `raw_sources/` and the synthesized Palace. We should create a **`dsom-knowledge-ingester` skill**. When you drop a PDF into `raw_sources/`, I execute this skill to:
 1. Extract the text.
@@ -47,6 +49,7 @@ While we have the structure, the LLM WIKI highlights three operational verbs tha
 4. Update `SUMMARY.md` and `mkdocs.yml` (using our new Rule 14).
 
 ### B. The "Lint" Ritual (Automated Health Checks)
+
 **The Concept:** The AI periodically health-checks the Wiki for contradictions, orphan pages, and stale claims.
 **Our Adoption:** As the Sovereign Markdown Palace grows, context can rot. We should introduce a **`palace-auditor` skill** (a monthly or ad-hoc ritual) where I crawl `docs/` and `.agents/` to:
 1. Find broken Markdown links.
@@ -54,6 +57,7 @@ While we have the structure, the LLM WIKI highlights three operational verbs tha
 3. Identify "orphan" documents that are not listed in `palace_registry.md` or `SUMMARY.md`.
 
 ### C. The "Query" Loop (Compounding Answers)
+
 **The Concept:** When the LLM generates a really good answer, comparison, or analysis, it shouldn't disappear into the chat history. It should be filed back into the Wiki.
 **Our Adoption:** We currently do this manually when I create an "Artifact" and we save it. We should establish a core behavioral rule: **"Any time a complex architectural analysis or troubleshooting guide is generated in chat, the AI must proactively propose saving it as a persistent `.md` document in the Palace."**
 

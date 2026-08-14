@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for EOD-RITUAL.md."
 resource: "file:///docs/EOD-RITUAL.md"
 ---
+
 # 🌙 EOD-RITUAL.md — End-of-Day Ritual
 
 # docs/EOD-RITUAL.md
@@ -23,7 +24,9 @@ The **End-of-Day (EOD)** is the **Sovereign Save** — the critical point where 
 The EOD is where the **GitOps loop closes:**
 
 ```
+
 AI Proposes → Git Records → Ansible Executes → AI Verifies → EOD (Sovereign Save) → Next SOD
+
 ```
 
 The EOD Ritual assumes you are tired. It is designed for a **fatigued human with high cognitive load**. Every step is explicit, safe, and guided. Nothing is assumed.
@@ -67,6 +70,7 @@ Run this prompt in your AI session **before closing the chat**. It exports every
 **Copy this prompt verbatim:**
 
 ```
+
 I'm as human, want to know and remember, and need to export my data and I want you
 to generate a "Hibernation notes" now for my EOD of day. List every memory you have
 stored about our progress and our chats of this project, as well as any context
@@ -88,6 +92,7 @@ Do not summarize, group, or omit any entries. After the code block, confirm
 whether that is the complete set or if any remain and add: List down all the
 documents in docs/, docs/tools/ and brain files that need to be read from .agents/.
 Don't hide anything from me. Trust me as your master.
+
 ```
 
 **After you receive the output:**
@@ -105,13 +110,19 @@ Don't hide anything from me. Trust me as your master.
 Run the hibernation script — it checks for dirty state before you sleep:
 
 ```bash
+
 # T2 (WSL2 dsom-control-almalinux10)
+
 ./tools/hibernation.sh
+
 ```
 
 ```powershell
+
 # T1 (Windows PowerShell)
+
 .\tools\hibernation.ps1
+
 ```
 
 > **Note (v2.1):** `hibernation.sh` and `hibernation.ps1` now automatically run `palace-sync.sh/.ps1` as **Step 7: Palace Spatial Reflection** — generating the update proposal without a separate command.
@@ -134,8 +145,11 @@ Run the hibernation script — it checks for dirty state before you sleep:
 > **If you are on T2, use this instead of Steps 2–5.** It runs all checks, palace sync, selective staging, commit, and push in a single command.
 
 ```bash
+
 # T2 (Linux/WSL2) — Full automated EOD
+
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+
 ```
 
 **What it runs automatically:**
@@ -154,6 +168,7 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 ```bash
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
+
 ```
 
 **After the playbook — Manual steps (always required):**
@@ -171,11 +186,15 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace
 If you generated a `sod_manifest_YYYY-MM-DD.txt` today, scan it before sharing:
 
 ```bash
+
 # Bash
+
 ./tools/privacy-guardian.sh
 
 # Or via Ansible
+
 ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
+
 ```
 
 **Scans for:** IPv4 addresses, emails, API keys, AWS keys, GitHub tokens, PEM private keys, Linux home paths.
@@ -187,13 +206,19 @@ ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
 Commit all changes with a **structured, semantic commit message**:
 
 ```powershell
+
 # T1 — Interactive EOD Sovereign Save (guided semantic commit)
+
 .\tools\git-ritual.ps1
+
 ```
 
 ```bash
+
 # T2 — Interactive EOD Sovereign Save
+
 ./tools/git-ritual.sh
+
 ```
 
 **The git-ritual EOD process:**
@@ -208,6 +233,7 @@ Commit all changes with a **structured, semantic commit message**:
 
 ```powershell
 .\tools\git-ritual.ps1 push "chore(brain): EOD sovereign save — [Phase-X/vX.X]"
+
 ```
 
 **Why semantic commits?** Every future AI session reads `git log`. Meaningful messages = better context recovery next SOD.
@@ -219,15 +245,19 @@ Commit all changes with a **structured, semantic commit message**:
 After pushing from T1, ensure T2 is synchronised:
 
 ```bash
+
 # Inside dsom-control-almalinux10
+
 cd /mnt/d/Users/LinuxMalaysia/Projects/[YOUR_PROJECT]
 git pull origin main
+
 ```
 
 Or use the git-ritual SOD pull on T2:
 
 ```bash
 ./tools/git-ritual.sh sod
+
 ```
 
 **Why:** T1 (Windows) and T2 (WSL2) must always be at the same commit. Never let them drift.
@@ -239,10 +269,12 @@ Or use the git-ritual SOD pull on T2:
 Before closing your terminal, write this in your physical notebook or digital notes:
 
 ```
+
 TOMORROW: [ONE SENTENCE — exactly where to resume, what to run first]
 DATE: [YYYY-MM-DD]
 PROJECT: [PROJECT NAME]
 NEXT ACTION: [e.g. "Run ansible-playbook playbooks/dsom/audit-preflight.yml after SOD pull"]
+
 ```
 
 This is your **offline backup** in case your brain has its own context decay overnight.
@@ -252,6 +284,7 @@ This is your **offline backup** in case your brain has its own context decay ove
 ## ✅ 3. EOD Completion Checklist
 
 ```
+
 [ ] task.md — updated: [x] done, [ ] tomorrow's targets set
 [ ] walkthrough.md — new Session Anchor written with Mental Anchor sentence
 [ ] (RECOMMENDED T2) ansible-playbook eod-palace.yml — all checks + palace sync + commit + push
@@ -263,6 +296,7 @@ This is your **offline backup** in case your brain has its own context decay ove
 [ ] Palace closets updated and committed (if proposal had changes)
 [ ] T2 WSL2 — git pull confirms sync with T1
 [ ] Tomorrow's first action noted (physical/digital notebook)
+
 ```
 
 **DO NOT SLEEP until all items are checked.**
@@ -290,35 +324,45 @@ This is your **offline backup** in case your brain has its own context decay ove
 Every `walkthrough.md` Session Anchor must follow this format:
 
 ```markdown
+
 ## 🏁 Session Anchor: [YYYY-MM-DD] — [Short Phase Name]
 
 ### Accomplished
+
 - [What was done — concrete, specific]
 - [Second item if applicable]
 
 ### Why
+
 - [The architectural reasoning — not just the what, but the why]
 
 ### Mental Anchor
+
 > [ONE SENTENCE: exact state of the system right now. Where to resume in the next session.]
+
 ```
 
 **Example:**
 
 ```markdown
+
 ## 🏁 Session Anchor: 2026-03-10 — AlmaLinux 10 WSL2 Setup
 
 ### Accomplished
+
 - Created dsom-control-almalinux10 WSL2 setup scripts (setup-wsl-almalinux10.ps1, setup-dsom-control-node.sh).
 - Created DSOM Ansible playbooks in playbooks/dsom/ (audit, init-brain, privacy-scan, site).
 
 ### Why
+
 - T2 needs a dedicated Ansible Control Node (AlmaLinux 10) to avoid mixing Windows and Linux operations.
 - Ansible playbooks make the tools/ bash scripts reusable on any node in the inventory.
 
 ### Mental Anchor
+
 > WSL2 scripts created and pushed [v6.1.0]. Next: run setup-wsl-almalinux10.ps1 as Administrator, bootstrap
 > dsom-admin, verify ansible localhost -m ping inside dsom-control-almalinux10.
+
 ```
 
 ---
@@ -344,7 +388,6 @@ Every `walkthrough.md` Session Anchor must follow this format:
 *Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline EOD template** for all projects built on this skeleton.*
 *Last Updated: 2026-04-08 | Version: v6.1 + Palace v1.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

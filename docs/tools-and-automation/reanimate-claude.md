@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for reanimate-claude.md."
 resource: "file:///docs/tools-and-automation/reanimate-claude.md"
 ---
+
 # 🤖 Claude Reanimation (reanimate-claude.sh)
 
 > **"Hello, Claude."** - Provider-Specific Context Injection.
@@ -28,6 +29,7 @@ resource: "file:///docs/tools-and-automation/reanimate-claude.md"
 
 ```bash
 ./tools/reanimate-claude.sh
+
 ```
 
 ## 4. 🧠 Logic Flow
@@ -38,9 +40,9 @@ resource: "file:///docs/tools-and-automation/reanimate-claude.md"
 4. **Finalization:** Writes to `DSOM-CLAUDE-INIT.md`.
 
 ## 5. 📝 Extracted Comments
+
 >
 > "Optimized for Claude.ai Project Knowledge Base."
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

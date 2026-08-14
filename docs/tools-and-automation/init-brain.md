@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for init-brain.md."
 resource: "file:///tools-and-automation/init-brain.md"
 ---
+
 # 🧠 Brain Initializer (init-brain.sh)
 
 > **"A clean home for a clear mind."** - Initializing the Cognitive State.
@@ -28,6 +29,7 @@ resource: "file:///tools-and-automation/init-brain.md"
 
 ```bash
 ./tools/init-brain.sh
+
 ```
 
 ## 4. 🧠 Logic Flow
@@ -37,9 +39,9 @@ resource: "file:///tools-and-automation/init-brain.md"
 3. **Artifact Generation:** Populates `task.md`, `walkthrough.md`, `implementation_plan.md`, and `DSOM_TEMPLATE.md` with default boilerplate content *only if they don't exist*.
 
 ## 5. 📝 Extracted Comments
+
 >
 > "Safely initializes the Deep State of Mind (DSOM) directory and artifacts at the repository root to ensure cognitive continuity for AI agents."
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

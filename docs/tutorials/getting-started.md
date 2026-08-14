@@ -5,6 +5,7 @@ title: "Tutorial: Getting Started with DSOM Tools"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "tutorial", "getting-started", "tools"]
 ---
+
 # Getting started with DSOM tools
 
 A step-by-step tutorial guiding you through running, auditing, and integrating the DSOM workspace toolchain.
@@ -50,7 +51,6 @@ Now we will verify that all Markdown documentation satisfies the strict Open Kno
    head -n 8 docs/tutorials/index.md
    ```
 
-
 ---
 
 ## Lesson 3: Start the FastMCP server
@@ -70,9 +70,7 @@ Let's publish our documentation Palace directly to AI clients.
    uv run --with pyyaml --with pytest --with mcp==1.2.1 --with fastmcp pytest tests/test_mcp_server.py
    ```
 
-
 **Congratulations!** You have completed the getting started tutorial for DSOM.
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*

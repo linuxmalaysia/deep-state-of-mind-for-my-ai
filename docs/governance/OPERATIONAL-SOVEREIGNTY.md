@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for OPERATIONAL-SOVEREIGNTY.md."
 resource: "file:///docs/governance/OPERATIONAL-SOVEREIGNTY.md"
 ---
+
 # **Operational Sovereignty through Metacognitive Governance: Integrating the Deep State of Mind Protocol with CAPM and Git-Native PMO Frameworks**
 
 The Deep State of Mind (DSOM) protocol serves as a **metacognitive governance framework** designed to establish an active, persistent bridge between human architectural intent and machine execution. By transforming documentation from a passive record into a **sovereign ecosystem**, the protocol ensures high-fidelity continuity across diverse AI agents and distributed teams.
@@ -27,6 +28,7 @@ Sovereignty is operationalised through the **5W1H Framework**:
 * **How:** Enforced through **Atomic Git Hygiene**, mandatory Handshake protocols, and the **Ansible Palace SOD/EOD Ritual** (`sod-palace.yml` / `eod-palace.yml`).
 
 ```
+
 mindmap
   root((Operational Sovereignty))
     Who
@@ -46,6 +48,7 @@ mindmap
     How
       - Atomic Git Hygiene
       - Mandatory Handshake Protocols
+
 ```
 
 ---
@@ -62,6 +65,7 @@ To maintain structural integrity, the DSOM protocol utilizes a four-level hierar
 | **L4** | **Process Instances** | History of **Mental Anchors** and Logic Breakthroughs | `walkthrough.md` |
 
 ```
+
 classDiagram
     class L1_Phases {
         Rituals of Transition
@@ -83,6 +87,7 @@ classDiagram
     L1_Phases <|-- L2_GenericTasks
     L2_GenericTasks <|-- L3_SpecialisedTasks
     L3_SpecialisedTasks <|-- L4_ProcessInstances
+
 ```
 
 ---
@@ -98,6 +103,7 @@ DSOM embeds professional project management standards directly into the reposito
 * **Quality Management:** Enforced through pre-flight audits and pedagogical standards based on the **Linux Documentation Project (LDP)**.
 
 ```
+
 flowchart TD
     A[Integration & Scope Governance] -->|AI-MASTER-PROTOCOL.md| B[Project Constitution]
     A -->|implementation_plan.md| C[Roadmap]
@@ -123,6 +129,7 @@ Within an **ITIL 4 framework**, the `.agents/brain/` directory acts as the **Ser
 5. **Spatial (`palace_registry.md` + `wings/`):** The **Sovereign Markdown Palace** — knowledge indexed by location (Wing > Room > Closet). Loaded via Section [14] of the SOD manifest.
 
 ```
+
 pie showData
     title DSOM Brain Temporal States
     "Eternal (AI-MASTER-PROTOCOL.md)" : 20
@@ -130,6 +137,7 @@ pie showData
     "Present (task.md)" : 20
     "Past (walkthrough.md)" : 20
     "Spatial (palace_registry.md)" : 20
+
 ```
 
 ---
@@ -143,6 +151,7 @@ Context persistence is managed through three critical rituals:
 * **End-of-Day (EOD) / Hibernation:** The human and AI define a Mental Anchor and perform a **Sovereign Save** to commit the session’s logical flow to the repository.
 
 ```
+
 stateDiagram-v2
     [*] --> SOD
     SOD: Start-of-Day (Reanimation)
@@ -151,6 +160,7 @@ stateDiagram-v2
     ActiveFlow --> EOD
     EOD: End-of-Day (Hibernation)
     EOD --> [*]
+
 ```
 
 ---
@@ -168,6 +178,7 @@ Automation tools anchor AI logic in physical reality:
 * **`ansible-playbook eod-palace.yml`:** Automates the full EOD loop (validate → palace-sync → commit → push) on T2.
 
 ```
+
 flowchart LR
     Init[init-brain.sh] --> Audit[audit-pre-flight.sh]
     Audit --> Reanimate[reanimate.sh]
@@ -177,6 +188,7 @@ flowchart LR
     Palace --> Proposal[palace_update_proposal]
     SOD[sod-palace.yml] --> Audit
     EOD[eod-palace.yml] --> Palace
+
 ```
 
 ---
@@ -186,6 +198,7 @@ flowchart LR
 To ensure professional precision and technical rigour, the protocol strictly enforces naming and documentation standards in **UK English** and **DBP-standard Malay (Piawai)**. Regional colloquialisms and Indonesian loanwords are strictly prohibited to maintain architectural clarity.
 
 ```
+
 flowchart TD
     A[Documentation Standards] --> B[UK English]
     A --> C[DBP-standard Malay (Piawai)]
@@ -195,6 +208,7 @@ flowchart TD
     C --> F
     D --> F
     E --> F
+
 ```
 
 ---
@@ -227,6 +241,7 @@ If you are using specific IDE agents, the sources suggest pointing them to the l
 * **GitHub Copilot:** Utilize `.github/copilot-instructions.md` to enforce these architectural laws and references.
 
 ```
+
 flowchart TD
     %% Root
     DSOM[Operational Sovereignty through Metacognitive Governance]
@@ -279,6 +294,7 @@ flowchart TD
     Language --> Malay[DBP-standard Malay (Piawai)]
     Language --> NoColloq[No Colloquialisms]
     Language --> NoLoan[No Indonesian Loanwords]
+
 ```
 
 ---
@@ -296,7 +312,9 @@ Sections 1–7 above establish the metacognitive and governance foundations of D
 DSOM sovereignty is now enforced by three pillars + Palace operating as a closed loop:
 
 ```
+
 AI Proposes → Git Records → Ansible Executes → AI Verifies → Palace Remembers → EOD Save → (next SOD)
+
 ```
 
 | Pillar | Sovereign Law |
@@ -315,7 +333,9 @@ AI Proposes → Git Records → Ansible Executes → AI Verifies → Palace Reme
 Code and configuration flow through a defined hierarchy — no tier may be bypassed. The sovereign identity `dsom-admin:2001:2001` is consistent across all tiers derived from this skeleton.
 
 ```
+
 T1 (Windows/AI) → git push → T2 (WSL2 dsom-control-almalinux10) → ansible-playbook → T3/T4
+
 ```
 
 > **Setup guide:** [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10.md)
@@ -375,7 +395,6 @@ The following documents constitute the **Sovereign Document Stack** for any v6.1
 *Primary Repository: <https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai>*
 *Official Documentation: <https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/> and <https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai>*
 *Original Manifesto: v5.x (retained intact) | v6.1 Addendum: 2026-03-10 | Palace v1.0 Addendum: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

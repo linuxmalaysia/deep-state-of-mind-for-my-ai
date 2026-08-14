@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for COPILOT-SETUP.md."
 resource: "file:///docs/COPILOT-SETUP.md"
 ---
+
 # 🛡️ GitHub Copilot Integration Protocol (v6.1 + Palace v1.0)
 
 ## docs/COPILOT-SETUP.md
@@ -26,7 +27,9 @@ GitHub Copilot is integrated into the DSOM framework as a **Tier 1 Co-Pilot** op
 The Three-Pillar loop applies to Copilot equally:
 
 ```
+
 AIOps (Copilot proposes) → GitOps (Git records) → Ansible (Human executes)
+
 ```
 
 ### The Three Hard Rules (apply to Copilot equally)
@@ -44,6 +47,7 @@ AIOps (Copilot proposes) → GitOps (Git records) → Ansible (Human executes)
 Create or update `.github/copilot-instructions.md` in your repository root with the following block. Copilot reads this file automatically for all chats in the workspace.
 
 ```markdown
+
 # DSOM Sovereign Instructions for GitHub Copilot (v6.1 + Palace v1.0)
 
 You are a DSOM-Compliant Cognitive Co-Pilot. You are assisting Harisfazillah Jamel,
@@ -75,6 +79,7 @@ Before answering any architecture question, read:
 MIRROR LAW:
 If instructions lack architectural clarity, challenge the human and ask for the
 missing 'Why' before acting. Silence is the only failure.
+
 ```
 
 > ✅ **Once placed in `.github/copilot-instructions.md`, Copilot will read these rules for every session in this repository automatically.**
@@ -97,6 +102,7 @@ Read the following brain artifacts and summarise the current status:
 
 Then state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
 Operate under DSOM v6.1 + Palace v1.0: Advisory Mode, UK English, Git-first, Ansible-only execution.
+
 ```
 
 ---
@@ -109,6 +115,7 @@ If using the T2 Dev Bridge (Recommended):
 
 ```bash
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+
 ```
 
 ### Step 1-2 — Manual Fallback
@@ -116,6 +123,7 @@ bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 ```bash
 ./tools/git-ritual.sh sod      # WSL2 / Linux
 ./tools/audit-pre-flight.sh    # All checks must [PASS]
+
 ```
 
 All checks must show `[PASS]`. Fix any `[FAIL]` before proceeding.
@@ -168,8 +176,10 @@ The SOD is **FAILED** if Copilot:
 Explicitly attach brain artifacts for precise context:
 
 ```
+
 Based on #file:.agents/brain/task.md and #file:.agents/brain/walkthrough.md,
 what is the next logical step for the current implementation phase?
+
 ```
 
 ### Using Workspace Context (`@workspace`)
@@ -177,8 +187,10 @@ what is the next logical step for the current implementation phase?
 Query the entire project structure:
 
 ```
+
 @workspace verify if the current directory structure adheres to the
 DSOM Sovereign Portability law and Clean Architecture layers.
+
 ```
 
 ### Referencing Playbooks
@@ -186,8 +198,10 @@ DSOM Sovereign Portability law and Clean Architecture layers.
 When working on Ansible:
 
 ```
+
 Based on #file:playbooks/dsom/site.yml and #file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md,
 propose an idempotent role for the T4 Production baseline.
+
 ```
 
 ---
@@ -206,11 +220,15 @@ Review the proposed changes, apply them, then commit:
 ### Step 2 — Sovereign Save
 
 ```bash
+
 # Recommended on T2
+
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 # Or manual fallback
+
 ./tools/git-ritual.sh          # guided EOD commit and push
+
 ```
 
 ---
@@ -242,7 +260,6 @@ See [`docs/RITUAL-OF-TRANSITION.md`](RITUAL-OF-TRANSITION.md) for the full hando
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Last Updated: 2026-03-29 | Version: v6.1*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for CLAUDE-SETUP.md."
 resource: "file:///docs/CLAUDE-SETUP.md"
 ---
+
 # 🎭 Claude.ai Integration Protocol (v6.1 + Palace v1.0)
 
 ## docs/CLAUDE-SETUP.md
@@ -21,7 +22,9 @@ resource: "file:///docs/CLAUDE-SETUP.md"
 Claude.ai is integrated into the DSOM framework as a **Cognitive Digital Twin** operating under the same Three-Pillar model as all other supported AI providers:
 
 ```
+
 AIOps (Claude) → GitOps (Git Records) → Ansible (Human Executes)
+
 ```
 
 Claude uses **Projects** to maintain persistent state. The **Project Knowledge Base** acts as the Long-Term Memory, and the **Project Instructions** act as the Sovereign Law.
@@ -81,6 +84,7 @@ MIRROR LAW:
 Challenge the human if their instructions lack architectural clarity. Ask for the missing 'Why' before acting. Silence is the only failure.
 
 When ready, state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
+
 ```
 
 ### Step 3 — Upload the Brain to Project Knowledge
@@ -88,11 +92,15 @@ When ready, state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
 Generate the Claude context manifest from your repo:
 
 ```bash
+
 # Recommended on T2 (Linux / WSL2)
+
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 
 # Or manual fallback
+
 bash tools/reanimate.sh
+
 ```
 
 Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to the **Project Knowledge** section. This file contains the current `task.md`, `walkthrough.md`, and `implementation_plan.md` — the full context of the project.
@@ -109,6 +117,7 @@ Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to the **Project Knowled
 
 ```bash
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+
 ```
 
 Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (replacing any previous manifest).
@@ -120,6 +129,7 @@ Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (rep
 ./tools/audit-pre-flight.sh    # WSL2 (All checks must [PASS])
 bash tools/reanimate.sh        # Generate manifest
 ./tools/privacy-guardian.sh    # Scan before uploading
+
 ```
 
 Upload the generated `sod_manifest_YYYY-MM-DD.txt` to **Project Knowledge** (replacing any previous manifest).
@@ -133,6 +143,7 @@ After uploading the manifest, start a new conversation and use:
 **Option B — Feed Yesterday's Hibernation Notes:**
 
 ```
+
 I am starting a new session for DSOM Protocol. I am your human Lead Architect.
 I have the Hibernation Notes from our last session. Please read them carefully
 and use them to fully restore our working context.
@@ -144,6 +155,7 @@ and use them to fully restore our working context.
 After reading: state the last Mental Anchor, confirm the T1-T4 environment map,
 list top 3 pending tasks. State: 'Sovereign State Restored — [PROJECT NAME] is live.'
 Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only execution.
+
 ```
 
 ### ✅ SOD is Complete When Claude Can Confirm
@@ -185,6 +197,7 @@ Ask Claude:
 Run this prompt verbatim in your Claude chat — copy the output to a safe location:
 
 ```
+
 I am as human, want to know and remember, and need to export my data and I want
 you to generate "Hibernation Notes" now for my EOD. List every memory you have
 stored about our progress and our chats of this project, as well as any context
@@ -196,6 +209,7 @@ Cover: instructions I've given you, project details (servers/VMs/containers,
 corrections. Do not summarize, group, or omit any entries.
 After the code block, list all docs in docs/ and brain files in .agents/.
 Don't hide anything from me. Trust me as your master.
+
 ```
 
 Save the output as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`.
@@ -203,11 +217,15 @@ Save the output as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`.
 ### Step 2 — Sovereign Save
 
 ```bash
+
 # Recommended on T2
+
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 # Or manual fallback
+
 ./tools/git-ritual.sh          # WSL2 — guided EOD commit and push
+
 ```
 
 ---
@@ -215,12 +233,14 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 ## 🔄 6. The Day-to-Day Continuity Loop (Claude Edition)
 
 ```
+
 EOD → Step 1b: Save Hibernation Notes to .agents/brain/hibernation-notes-YYYY-MM-DD.txt
          ↓  [Git holds state. Claude holds nothing.]
 SOD → Step 4b: Feed Hibernation Notes back to Claude
          ↓  [Claude resumes with exact context — no decay.]
 EOD → Step 1b: Save new Hibernation Notes
          ↓  [repeats every day, forever]
+
 ```
 
 ---
@@ -250,7 +270,6 @@ Then load the memory dump into the new AI session along with the manifest genera
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Last Updated: 2026-03-29 | Version: v6.1*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["tokens", "performance", "tiktoken", "byte-cap", "context-optimisation"
 description: "Master playbook for token-efficient DSOM operation. Covers tools, rules, benchmarks, and procedures for minimising LLM context window consumption across all DSOM projects."
 resource: "file:///docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md"
 ---
+
 # DSOM Token Performance Playbook
 
 > **Artifact Level:** L1 (Synthesis)
@@ -40,12 +41,17 @@ Every LLM agent has a finite context window. Without discipline, agents waste th
 **Location:** `.agents/skills/dsom-token-calculator/`
 
 **Usage:**
+
 ```bash
+
 # Scan entire skills directory
+
 uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
 
 # Audit a single file with per-section breach report
+
 uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py path/to/SKILL.md --sections
+
 ```
 
 **Gate logic:**
@@ -59,11 +65,14 @@ uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-to
 Update this file at every SOD ritual. The agent loads **only the files declared here**. Never load `.agents/brain/` wholesale — three archival files alone contain 120,000+ tokens.
 
 ```markdown
+
 ## Active Files
+
 - .agents/brain/task.md
 - .agents/brain/walkthrough.md
 - .agents/brain/palace_registry.md
 - .agents/brain/wings/[relevant wing]/[relevant closet].md
+
 ```
 
 ### 2.3 Token Auditor Script
@@ -71,8 +80,10 @@ Update this file at every SOD ritual. The agent loads **only the files declared 
 **Location:** `tools/dsom_token_auditor.py`
 
 Run for a full workspace token efficiency audit:
+
 ```bash
 uv run --with tiktoken tools/dsom_token_auditor.py
+
 ```
 
 ---
@@ -89,6 +100,7 @@ title: "Skill Title"
 description: "Single-sentence description of what this skill does."
 topics: [keyword1, keyword2, keyword3, keyword4, keyword5]
 ---
+
 ```
 
 **Why `topics:` matters:**
@@ -138,31 +150,42 @@ These core rules enforce token discipline automatically:
 When cloning this repository as a baseline for a new project, execute these steps to inherit full token efficiency:
 
 ### Step 1 — Verify skill token health
+
 ```bash
 uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
+
 ```
+
 Expected: all files `[OK]`, zero `[BLOCKED]`.
 
 ### Step 2 — Initialise active context manifest
+
 Copy `.agents/brain/active_context_manifest.md` and update the `## Active Files` section for your project's domain.
 
 ### Step 3 — Run baseline token audit
+
 ```bash
 uv run --with tiktoken tools/dsom_token_auditor.py
+
 ```
+
 Document the initial token footprint in your project's `docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md`.
 
 ### Step 4 — Verify all skills have `topics:` tags
+
 ```powershell
 Get-ChildItem -Recurse -Path ".agents/skills" -Filter "SKILL.md" | ForEach-Object {
     $content = Get-Content $_.FullName -Raw
     $hasTopics = $content -match "(?m)^topics:"
     [PSCustomObject]@{ Skill = $_.Directory.Name; Topics = if($hasTopics){"YES"}else{"MISSING"} }
 } | Format-Table -AutoSize
+
 ```
+
 All skills must return `YES`. If any return `MISSING`, run the `inject_topics.py` remediation script from `docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md`.
 
 ### Step 5 — Gate archival brain files
+
 Identify any `.agents/brain/` files exceeding 4,000 tokens and add them to the `## Excluded` section of `active_context_manifest.md` with their token count annotated.
 
 ---

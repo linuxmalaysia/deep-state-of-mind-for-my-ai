@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for AI-MASTER-PROTOCOL.md."
 resource: "file:///docs/governance/AI-MASTER-PROTOCOL.md"
 ---
+
 ### 📜 docs/AI-MASTER-PROTOCOL.md (Refactored v6.1 + Palace v1.0)
 
 # 📜 DSOM Master Directive: AI Governance Protocol (v6.1 + Palace v1.0)
@@ -193,14 +194,16 @@ To prevent Git merge conflicts and context leakage:
 DSOM (Deep State of Mind) serves as the operational engine for the broader **Digital Sovereignty Operational Model (DSOM)**.
 
 ### i) The Sovereign Pillars
+
 * **Data Sovereignty:** All 'Brain' artifacts remain in local storage (`.agents/brain/`). Unauthorized external access to project logic is prevented by Git-based state management.
 * **Technology Sovereignty:** We prioritize Open Source stacks (Linux, Podman, Ansible). We use AI as a service, but our 'Logic' is provider-agnostic.
 * **Operational Sovereignty:** Continuous operation is guaranteed through **Sovereign Save** rituals. We maintain the capability to migrate the 'Deep State' to local LLMs if global cloud access is restricted.
 
 ### ii) Hybrid-Sovereign Strategy & Air-Gapped GitOps
+
 * **Public/Educational Workloads:** For projects designed for public adoption, learning, and open-source contribution (like the core DSOM repository), standard public infrastructure (like GitHub/GitLab) is completely acceptable and recommended.
 * **Non-Sensitive Workload:** High-compute AI processing (Gemini/Claude) using standard APIs.
-* **Critical Data & Absolute Air-Gapped GitOps:** For projects that process proprietary code, classified intelligence, or sensitive internal IP, the architecture mandates **Absolute Air-Gapped GitOps**. In these environments, all infrastructure must be localized. The AI interacts exclusively with self-hosted Git backends (e.g., Gitea) and local CI/CD schedulers (e.g., SemaphoreUI) over internal SSH bridges, ensuring zero external exposure of the Sovereign Workspace.
+* **Critical Data & Absolute Air-Gapped GitOps:** For projects that process proprietary code, classified intelligence, or sensitive internal IP, the architecture mandates **Absolute Air-Gapped GitOps**. In these environments, all infrastructure must be localised. The AI interacts exclusively with self-hosted Git backends (e.g., Gitea) and local CI/CD schedulers (e.g., SemaphoreUI) over internal SSH bridges, ensuring zero external exposure of the Sovereign Workspace.
 
 ---
 
@@ -208,7 +211,6 @@ DSOM (Deep State of Mind) serves as the operational engine for the broader **Dig
 **Last Human Audit:** 2026-04-08 | **Protocol Version:** v6.1 (GitOps + AIOps + Ansible + Palace Pillars)
 
 ---
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

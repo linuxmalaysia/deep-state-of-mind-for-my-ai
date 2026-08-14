@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-GIT-RITUAL.md."
 resource: "file:///docs/tools/HOWTO-GIT-RITUAL.md"
 ---
+
 # HOWTO: git-ritual — Sovereign GitOps Hygiene
 
 # docs/tools/HOWTO-GIT-RITUAL.md
@@ -49,10 +50,12 @@ resource: "file:///docs/tools/HOWTO-GIT-RITUAL.md"
 
 ```powershell
 .\tools\git-ritual.ps1 sod
+
 ```
 
 ```bash
 bash tools/git-ritual.sh sod
+
 ```
 
 Fetches from origin and performs a rebase pull if the branch has diverged.
@@ -61,10 +64,12 @@ Fetches from origin and performs a rebase pull if the branch has diverged.
 
 ```powershell
 .\tools\git-ritual.ps1
+
 ```
 
 ```bash
 bash tools/git-ritual.sh
+
 ```
 
 Follow the interactive prompts to:
@@ -77,10 +82,12 @@ Follow the interactive prompts to:
 
 ```powershell
 .\tools\git-ritual.ps1 push "feat(auth): add login flow [v1.0]"
+
 ```
 
 ```bash
 bash tools/git-ritual.sh push "feat(auth): add login flow [v1.0]"
+
 ```
 
 Stages all changes (`git add -A`), commits with the provided message, and pushes to `origin main`.
@@ -102,9 +109,11 @@ Stages all changes (`git add -A`), commits with the provided message, and pushes
 ## 5. Integration with the Daily Rituals
 
 ### 5.1 Start-of-Day (SOD)
+
 Run `git-ritual sod` to ensure you are building on the latest state before executing `audit-pre-flight`.
 
 ### 5.2 End-of-Day (EOD)
+
 Run the interactive `git-ritual` to finalize the session. It is often triggered as the final step of the **EOD Ritual** to cement the "Sovereign State".
 
 ---
@@ -121,7 +130,6 @@ Run the interactive `git-ritual` to finalize the session. It is often triggered 
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

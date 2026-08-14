@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol", "cognitive", "architecture"]
 description: "Production-ready blueprint detailing the Tri-Phasic Mind model and functional subsystems integrated within the DSOM framework."
 resource: "file:///docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"
 ---
+
 # 🧠 The Tri-Phasic Mind: DSOM Cognitive Architecture and Functional Subsystems
 
 ## 🏛️ 1. Architectural Foundation & Overview
@@ -22,6 +23,7 @@ To resolve these constraints, the **Deep State of Mind (DSOM)** framework adopts
 DSOM partitions AI cognition into three distinct temporal execution layers, mirroring human cognitive processing states to achieve deterministic behavior.
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────────┐
 │                        THE TRI-PHASIC MIND                             │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -34,20 +36,24 @@ DSOM partitions AI cognition into three distinct temporal execution layers, mirr
 │ 🌙 Deep State       │ End-of-Day consolidation, palace-sync reviews,   │
 │                      │ semantic compaction, and git-ops push.          │
 └────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### i) The Active State (The Conscious Mind)
+
 * **Purpose:** Real-time human-AI interaction and task execution.
 * **Execution Boundary:** Fast, low-latency sessions using direct developer-facing interfaces (e.g. Cursor, Claude Desktop, Copilot).
-* **Technical Mapping:** Backed by the native Model Context Protocol (MCP) server running via `tools/mcp/server.py`. The Active State leverages localized, byte-capped CLI tools to fetch file states and execute targeted tasks without human intervention. It serves as the immediate "sensorimotor" interface of the Cognitive Twin.
+* **Technical Mapping:** Backed by the native Model Context Protocol (MCP) server running via `tools/mcp/server.py`. The Active State leverages localised, byte-capped CLI tools to fetch file states and execute targeted tasks without human intervention. It serves as the immediate "sensorimotor" interface of the Cognitive Twin.
 
 ### ii) The Twilight State (The Subconscious Mind)
+
 * **Purpose:** Near-real-time reflection, inline guardrails, and compliance enforcement.
 * **Execution Boundary:** Continuous checks running alongside or immediately following Active State loops.
 * **Technical Mapping:** Enforced via our pre-flight diagnostics (`tools/audit-pre-flight.sh`), token performance limits (`tools/check-usage.sh`), and the automated PR state sync workflow (`dsom-pr-sync.yml`). The Twilight State constantly monitors the Active State to detect logic loops, prevent token inflation (via `dsom-token-calculator`), and block non-compliant writes before they are formally integrated into the master repository.
 
 ### iii) The Deep State (The Unconscious / Dream Mind)
-* **Purpose:** Background optimization, semantic consolidation, and knowledge evolution.
+
+* **Purpose:** Background optimisation, semantic consolidation, and knowledge evolution.
 * **Execution Boundary:** Scheduled, out-of-band execution loops triggered at low-traffic times or session completion.
 * **Technical Mapping:** Driven by our Start-of-Day (SOD) and End-of-Day (EOD) automated rituals (`playbooks/dsom/eod-palace.yml` and `tools/hibernation.sh`). During the Deep State phase, the system executes semantic reflection via the `palace-sync` engine, compiling raw chronological git commits and chaotic chat histories into highly structured, OKF-compliant Palace closets. This is the stage where the repository's semantic index (`palace_registry.md`) is regenerated and pushed to multi-remote endpoints to achieve synchronization.
 
@@ -58,25 +64,29 @@ DSOM partitions AI cognition into three distinct temporal execution layers, mirr
 The cognitive operations of the DSOM Cognitive Twin are driven by four core subsystems that govern information flow, retention, and execution.
 
 ### i) Cognitive Architecture (Reasoning & Alignment)
+
 The Cognitive Twin acts as an expert advisor, executing logic via two distinct processing modes:
 * **System 1 (Reactive Operations):** For routine tasks (e.g. standard file writes or syntax checking), the AI executes lightweight, pre-defined automated skills from `.agents/skills/` directly to minimize latency and token expenditure.
 * **System 2 (Reflective Operations):** Complex architectural prompts trigger our strict **Local Knowledge-First Discovery Flow** (Rules 20 and 21) and the **CRISP² Strategy**. The AI initiates a "scratchpad" internal monologue, decomposing the instruction into separate design stages before writing a single line of code.
 * **Emotional Resonance (Tone Mapping):** An abstraction layer that aligns response register and vocabulary to match the Sovereign Architect’s expert-level systems engineering persona (e.g. UK English syntax, pragmatic phrasing, zero corporate fluff). The system continuously evaluates the "Substance" metric, challenging the user if instructions lack structural or architectural logic.
 
 ### ii) Memory Stratification (The Sovereign Storage Plane)
+
 Memory in DSOM is completely stratified and decoupled to prevent context pollution:
 * **Sensory Memory (Token Buffer):** The ephemeral attention window of the underlying LLM session, containing only the immediate active tokens in the chat prompt.
 * **Working Memory (Active Scope):** Managed explicitly via `.agents/brain/active_context_manifest.md`. It declares the precise subset of files currently in scope, replacing bloated global folder references with laser-focused targets.
 * **Episodic Memory (Chronological Ledger):** Stored in `.agents/brain/walkthrough.md`. This is the universal chronological walkthrough ledger of session milestones, tracking decision logs and mental anchors across historical sessions.
-* **Semantic Memory (Sovereign Palace):** Implemented via the **Sovereign Markdown Palace** under `.agents/brain/wings/`. Absolute facts, standardized infrastructure definitions, and governance rules are permanently stored in specific Palace rooms, indexed by `palace_registry.md`.
+* **Semantic Memory (Sovereign Palace):** Implemented via the **Sovereign Markdown Palace** under `.agents/brain/wings/`. Absolute facts, standardised infrastructure definitions, and governance rules are permanently stored in specific Palace rooms, indexed by `palace_registry.md`.
 
 ### iii) "Dreaming" & Consolidation (Semantic Compaction)
+
 The Cognitive Twin continually refines and optimizes its stored memory using three mechanisms:
 * **Memory Pruning:** The EOD `palace-sync` runs semantic pruning to merge repetitive, verbose chat histories into a single, compact, metadata-rich Palace update proposal (`palace_update_proposal_*.md`).
 * **Synthetic Data Generation:** When a playbook or custom script fails during staging/testing, the AI leverages the failure logs to generate edge-case regression test suites inside `tests/` and templates under `.agents/brain/DSOM_TEMPLATE.md`, ensuring future subagents inherit this defensive logic.
 * **Concept Linking:** Disconnected workspace chats are analyzed during EOD, identifying hidden relationships between files and automatically updating references in global indexes like `SUMMARY.md`, `mkdocs.yml`, `llms.txt`, and automated sitemap generators (`tools/generate_sitemaps.py`).
 
 ### iv) Metacognition & Guardrails (Self-Audit & Control)
+
 The framework enforces cognitive safety and sovereignty through three unbreakable guardrails:
 * **Self-Evaluation:** Handled programmatically via `palace-auditor` and our python-based pytest test suite (`tests/`), which rate compliance against the strict Open Knowledge Format (OKF) v0.1, cross-platform Windows symlink guardrails, and file structure rules.
 * **Alignment Drifts:** Programmatic verification of Byte-Capped Executions prevents the model from adopting hallucinated or toxic biases injected by unvetted user prompts.

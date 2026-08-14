@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-TEMPLATE-RESET.md."
 resource: "file:///docs/tools/HOWTO-TEMPLATE-RESET.md"
 ---
+
 # HOWTO: template-reset — Project Purification Tool
 
 ## docs/tools/HOWTO-TEMPLATE-RESET.md
@@ -44,13 +45,19 @@ resource: "file:///docs/tools/HOWTO-TEMPLATE-RESET.md"
 ## 3. Usage
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\template-reset.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/template-reset.sh
+
 ```
 
 ### 3.1 Confirmation Prompt
@@ -93,7 +100,6 @@ This is a **Pre-Lifecycle** tool. It is run exactly once after cloning a templat
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

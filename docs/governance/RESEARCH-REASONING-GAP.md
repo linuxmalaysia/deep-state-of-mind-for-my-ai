@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for RESEARCH-REASONING-GAP.md."
 resource: "file:///docs/governance/RESEARCH-REASONING-GAP.md"
 ---
+
 # 🧩 The Reasoning Gap: What DSOM Solves and What It Doesn't
 
 > *"The reasoning, the tradeoffs, the 'we tried X and it failed because Y' — all trapped in chat windows that evaporate when the session ends."*
@@ -57,6 +58,7 @@ DSOM does **not** automatically capture the *reasoning* behind decisions. It cap
 - ❌ **What alternatives were considered and rejected**
 - ❌ **The conversation thread** that produced the reasoning
 - ❌ **"We tried X and it failed because Y"** — unless manually committed
+
 ### Why It Matters
 
 Decisions made today become constraints six months from now. If the reasoning is lost:
@@ -68,6 +70,7 @@ Decisions made today become constraints six months from now. If the reasoning is
 ### Example Scenario
 
 ```
+
 Session Day 1:
   Human: "Why are we using Macvlan instead of bridge networking?"
   AI: "Because Elasticsearch nodes needed their own routable IPs for 
@@ -77,12 +80,12 @@ Session Day 180 (new AI, same repo):
   Human: "Why are we using Macvlan?"
   AI: "I don't know. The config shows Macvlan but there's no reasoning 
        documented. Do you want to reconsider?"
+
 ```
 
 The outcome (Macvlan config) is in Git. The *reasoning* is gone.
 
 ---
-
 
 ---
 
@@ -91,8 +94,10 @@ The outcome (Macvlan config) is in Git. The *reasoning* is gone.
 The existing EOD ritual includes the **Hibernation Notes export prompt**, which asks the AI to dump its full in-session memory before the session ends:
 
 ```
+
 "List every memory you have stored about our progress and our chats of 
 this project... Cover: reasoning, tradeoffs, what failed and why..."
+
 ```
 
 **Limitation:** This relies on the AI's **in-session memory at that moment**. If the session was long, context was refreshed mid-session, or the AI forgot earlier reasoning, the export is incomplete.
@@ -112,6 +117,7 @@ Hibernation Notes mitigate the gap — they do not close it.
 ```text
 "Log this decision to walkthrough.md:
  Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
+
 ```
 
 ### Example
@@ -123,6 +129,7 @@ Hibernation Notes mitigate the gap — they do not close it.
  Reason: Nodes need routable IPs for cluster discovery. Bridge caused split-brain 
           under 3-node load test on 2026-03-15.
  Context: Revisit if we move to Kubernetes (CNI handles this differently)."
+
 ```
 
 This entry lands in Git **during the session**, not hours later in a summary that may lose fidelity.
@@ -174,7 +181,6 @@ This would close the gap entirely while maintaining full sovereignty and zero ve
 *Identified by: Harisfazillah Jamel (LinuxMalaysia) in session with Google Antigravity*
 *Inspired by and originated from: MemPalace research ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace))*
 *Protocol: DSOM v6.1 + Palace v1.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

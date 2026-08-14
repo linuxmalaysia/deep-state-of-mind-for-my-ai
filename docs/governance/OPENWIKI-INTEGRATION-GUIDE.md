@@ -7,6 +7,7 @@ topics: ["openwiki", "dsom", "governance", "python", "emulator", "zero-binary", 
 description: "Production guide, architectural specification, and reusable implementation blueprint for native Python OpenWiki emulation."
 resource: "file:///docs/governance/OPENWIKI-INTEGRATION-GUIDE.md"
 ---
+
 # 🌐 OpenWiki Integration Blueprint & Native Python Emulator Architecture
 
 ## 🏛️ 1. Architectural Overview & Feasibility
@@ -22,6 +23,7 @@ By adopting OpenWiki into the DSOM framework, the Cognitive Twin enhances its **
 To eliminate runtime friction associated with Node.js binaries (`NODE_MODULE_VERSION` mismatches, Visual Studio C++ `better-sqlite3` build dependencies, Windows UAC background elevation hangs, and 135 MB node_modules disk bloat), DSOM introduces the **Native Python OpenWiki Emulator (`tools/openwiki_emulator.py`)**.
 
 ### Key Architectural Advantages:
+
 1. **Zero External Binaries:** Requires zero Node.js binaries, `npm` packages, or C++ compilers.
 2. **Environment Isolation:** Executes natively via `uv run --with pyyaml python tools/openwiki_emulator.py` (Rule 16).
 3. **API Rate Limit Resilience (Error 429 Bypass):** Local AI agents (Gemini, Claude, GPT-4) read `./openwiki/_skeleton.md` and complete page synthesis autonomously without consuming external LLM API rate limits.
@@ -36,11 +38,15 @@ Developers and human architects can replicate this zero-binary architecture on a
 ### Code Sample: `tools/openwiki_emulator.py`
 
 ```python
+
 # /// script
 # dependencies = [
+
 #     "pyyaml>=6.0",
 # ]
+
 # ///
+
 """
 OpenWiki Emulator & Knowledge Graph Generator
 Author:   Harisfazillah Jamel (LinuxMalaysia)
@@ -61,10 +67,8 @@ import yaml
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 OPENWIKI_DIR = REPO_ROOT / "openwiki"
 
-
 def get_timestamp() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
 
 def ensure_openwiki_dirs():
     dirs = [
@@ -80,15 +84,14 @@ def ensure_openwiki_dirs():
     for d in dirs:
         d.mkdir(parents=True, exist_ok=True)
 
-
 def main():
     print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR}...")
     ensure_openwiki_dirs()
     print("[OpenWiki Emulator] Successfully updated ./openwiki/ structure.")
 
-
 if __name__ == "__main__":
     main()
+
 ```
 
 ### AI Prompt Template for Building Custom Emulators
@@ -114,6 +117,7 @@ Requirements:
 4. All generated markdown files MUST include OKF v0.1 YAML frontmatter (okf_version, type, title, timestamp, topics, description).
 5. The script MUST run non-interactively without Node.js binaries, npm packages, or external API keys."
 ================================================================================
+
 ```
 
 ---

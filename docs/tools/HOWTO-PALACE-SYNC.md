@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-PALACE-SYNC.md."
 resource: "file:///docs/tools/HOWTO-PALACE-SYNC.md"
 ---
+
 # HOWTO: palace-sync — Kingdom Spatial Mapping
 
 # docs/tools/HOWTO-PALACE-SYNC.md
@@ -49,10 +50,12 @@ resource: "file:///docs/tools/HOWTO-PALACE-SYNC.md"
 
 ```powershell
 .\tools\palace-sync.ps1
+
 ```
 
 ```bash
 bash tools/palace-sync.sh
+
 ```
 
 Analyzes commits since the date stored in `.palace-sync-marker`. Used during every End-of-Day ritual.
@@ -61,10 +64,12 @@ Analyzes commits since the date stored in `.palace-sync-marker`. Used during eve
 
 ```powershell
 .\tools\palace-sync.ps1 -Backfill
+
 ```
 
 ```bash
 bash tools/palace-sync.sh --backfill
+
 ```
 
 Scans the **entire git history** from the first commit. Essential for onboarding an existing repository into the Palace architecture.
@@ -106,7 +111,6 @@ The tool uses regex patterns to map files to Rooms:
 
 *Standard: DSOM For My AI Protocol v6.1 | Palace v1.0 | Harisfazillah Jamel*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

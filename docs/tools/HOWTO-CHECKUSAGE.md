@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-CHECKUSAGE.md."
 resource: "file:///docs/tools/HOWTO-CHECKUSAGE.md"
 ---
+
 # HOWTO: CheckUsage.ps1 — Antigravity Session Monitor
 
 # docs/tools/HOWTO-CHECKUSAGE.md
@@ -49,6 +50,7 @@ Open PowerShell and run:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 ```
 
 This allows locally written scripts to run. It only affects your user account. You will not need to run this again.
@@ -57,7 +59,9 @@ This allows locally written scripts to run. It only affects your user account. Y
 
 ```powershell
 Get-ExecutionPolicy -Scope CurrentUser
+
 # Expected: RemoteSigned
+
 ```
 
 ---
@@ -68,6 +72,7 @@ Get-ExecutionPolicy -Scope CurrentUser
 
 ```powershell
 .\tools\CheckUsage.ps1
+
 ```
 
 Displays the current state of all sessions and exits. A usage tip is shown at the bottom.
@@ -76,6 +81,7 @@ Displays the current state of all sessions and exits. A usage tip is shown at th
 
 ```powershell
 .\tools\CheckUsage.ps1 -Loop
+
 ```
 
 Refreshes every 60 seconds. Shows a countdown bar between refreshes. Press **Ctrl+C** to stop.
@@ -94,31 +100,41 @@ Options:
   -Top             (-n)   Show only top N sessions            [default: all]
   -NoPulse                Suppress countdown bar in loop mode
   -Help            (-h)   Show the full help screen
+
 ```
 
 ### 4.4 Examples
 
 ```powershell
+
 # Snapshot — run once and exit
+
 .\tools\CheckUsage.ps1
 
 # Live monitor with default 60s refresh
+
 .\tools\CheckUsage.ps1 -Loop
 
 # Live monitor with 30s refresh (short alias)
+
 .\tools\CheckUsage.ps1 -l -i 30
 
 # Top 5 largest sessions only
+
 .\tools\CheckUsage.ps1 -Top 5
 
 # Tighter thresholds — warn at 10MB, critical at 25MB
+
 .\tools\CheckUsage.ps1 -ThresholdMB 10 -CriticalMB 25
 
 # Live monitor for large projects, suppress countdown bar
+
 .\tools\CheckUsage.ps1 -Loop -NoPulse -CriticalMB 80
 
 # Show full help screen
+
 .\tools\CheckUsage.ps1 -Help
+
 ```
 
 ---
@@ -152,8 +168,10 @@ Options:
 ### 5.3 Summary Footer
 
 ```
+
 Sessions (26 total)  |  Total: 354.97 MB  |  Est Tokens: 22,185,625  |  WARN: 9  |  CRIT: 0
 Token basis: 1 MB ~ 62,500 tokens (4 chars/token avg)
+
 ```
 
 - **Total MB** — total disk used by all `.pb` files
@@ -167,9 +185,11 @@ Token basis: 1 MB ~ 62,500 tokens (4 chars/token avg)
 The tool estimates tokens using:
 
 ```
+
 1 MB  =  ~250,000 characters  (binary file, predominantly text)
 1 token ≈ 4 characters         (Gemini / GPT average)
 ∴ 1 MB ≈ 62,500 tokens
+
 ```
 
 This is more accurate than the commonly cited 50,000 tokens/MB. Actual token count varies by content type (code is denser than prose).
@@ -183,13 +203,16 @@ This is more accurate than the commonly cited 50,000 tokens/MB. Actual token cou
 ### Script will not run — Execution Policy error
 
 ```
+
 CheckUsage.ps1 cannot be loaded because running scripts is disabled on this system.
+
 ```
 
 **Fix:** Run once in PowerShell:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 ```
 
 ---
@@ -197,7 +220,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ### Unknown parameter error
 
 ```
+
 [ERROR] Unknown parameter(s): -Loops
+
 ```
 
 **Cause:** Typo in the parameter name.
@@ -208,7 +233,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ### No .pb files found
 
 ```
+
 No .pb conversation files found.
+
 ```
 
 **Cause:** Antigravity has not yet created any conversation context files, or the path is wrong.
@@ -227,11 +254,15 @@ Ensure you are using `-Loop` (not `-Loops` or `-loop`). The `-l` short alias als
 As part of the **Start-of-Day Ritual** (`docs/SOD-RITUAL.md` Step 1), run the snapshot to verify the current session health before starting work:
 
 ```powershell
+
 # SOD check — confirm current session is Nominal
+
 .\tools\CheckUsage.ps1
 
 # If current session is [CRT], start a new Antigravity chat and reanimate
+
 # See: docs/REANIMATION-PROMPT-TEMPLATE.md → Prompt 2
+
 ```
 
 If the current session exceeds `CriticalMB`, begin a new Antigravity conversation and use the **SOD Reanimation Prompt** to restore context.
@@ -252,7 +283,6 @@ If the current session exceeds `CriticalMB`, begin a new Antigravity conversatio
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Tool Version: v8.6 | Document Version: v1.0 | Created: 2026-03-10*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for hibernation.md."
 resource: "file:///tools-and-automation/hibernation.md"
 ---
+
 # 🌙 Hibernation Sequence (hibernation.sh)
 
 > **"Sleep is the best meditation."** - Dalai Lama (and DSOM Protocol).
@@ -28,6 +29,7 @@ resource: "file:///tools-and-automation/hibernation.md"
 
 ```bash
 ./tools/hibernation.sh
+
 ```
 
 ## 4. 🧠 Logic Flow (The Algorithm)
@@ -38,9 +40,9 @@ resource: "file:///tools-and-automation/hibernation.md"
 4. **Safe Push:** Prompts user for confirmation before executing `git push origin main`.
 
 ## 5. 📝 Extracted Comments
+
 >
 > "We never 'just close the window.' We must perform a controlled shutdown to prevent context decay."
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-PRIVACY-GUARDIAN.md."
 resource: "file:///docs/tools/HOWTO-PRIVACY-GUARDIAN.md"
 ---
+
 # HOWTO: privacy-guardian — Data Masking Defense
 
 # docs/tools/HOWTO-PRIVACY-GUARDIAN.md
@@ -48,19 +49,26 @@ resource: "file:///docs/tools/HOWTO-PRIVACY-GUARDIAN.md"
 ### 3.1 Standard Scanning
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\privacy-guardian.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/privacy-guardian.sh
+
 ```
 
 ### 3.2 Ansible Sweep
 
 ```bash
 ansible-playbook playbooks/dsom/privacy-scan.yml
+
 ```
 
 ---
@@ -111,7 +119,6 @@ The tool utilizes a library of high-fidelity regex patterns:
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

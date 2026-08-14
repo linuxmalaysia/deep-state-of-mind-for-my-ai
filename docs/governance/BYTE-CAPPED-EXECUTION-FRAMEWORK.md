@@ -6,11 +6,12 @@ timestamp: "2026-07-18T14:54:00Z"
 topics: ["dsom", "documentation"]
 description: "Technical layout and deployment model of the DSOM Token Calculator Skill."
 ---
+
 # Procedural Automation: Byte-Capped Execution Framework
 
 ## Abstract
 
-Memory load management and token inflation pose critical failure risks within complex multi-agent setups. If context sizes grow unchecked, processing cycles fail due to truncated payloads and context drift. This article breaks down the technical layout and deployment model of the **DSOM Token Calculator Skill** (`dsom-token-calculator`). This skill acts as a localized gatekeeper that programmatically checks file and workspace sizes prior to cross-thread mutations.
+Memory load management and token inflation pose critical failure risks within complex multi-agent setups. If context sizes grow unchecked, processing cycles fail due to truncated payloads and context drift. This article breaks down the technical layout and deployment model of the **DSOM Token Calculator Skill** (`dsom-token-calculator`). This skill acts as a localised gatekeeper that programmatically checks file and workspace sizes prior to cross-thread mutations.
 
 ---
 
@@ -19,10 +20,12 @@ Memory load management and token inflation pose critical failure risks within co
 Under the Deep State of Mind framework, passive procedural scripts are banned. Instead, code execution rules must reside within an OKF-compliant structure.
 
 ```
+
 .agents/skills/dsom-token-calculator/
 ├── SKILL.md                          # Declarative Instructions & Guardrails
 └── scripts/
     └── calculate-tokens.py           # Self-contained Token Engine
+
 ```
 
 ### 1.1 Declarative Guardrails (`SKILL.md`)
@@ -40,8 +43,10 @@ timestamp: 2026-07-18T14:52:39Z
 ---
 
 # Operational Enforcements:
+
 - Trigger this skill dynamically before any output loop that handles extensive datasets or raw configurations.
 - If payload calculations return totals greater than **4000 tokens**, the system must block raw screen serialization and switch to targeted `view_file` calls or chunked reading.
+
 ```
 
 ---
@@ -52,12 +57,16 @@ By configuring an isolated, on-demand execution runtime via Python `uv`, the scr
 
 ```python
 #!/usr/bin/env python3
+
 # -*- coding: utf-8 -*-
 # ---
+
 # okf_version: 0.1
 # type: executable_script
+
 # title: "Core Token Counter Runtime"
 # license: "GNU General Public License v3.0"
+
 # ---
 
 import os
@@ -109,6 +118,7 @@ if __name__ == "__main__":
         sys.exit(1)
     
     scan_path(sys.argv[1])
+
 ```
 
 ---
@@ -121,6 +131,7 @@ By routing execution parameters directly via the `uv` toolchain, package require
 
 ```bash
 uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py [TARGET_PATH]
+
 ```
 
 ### Self-Audit Loop Workflow
@@ -139,6 +150,7 @@ This programmatic loop enforces predictable context scaling across distributed s
                                        • Halt raw text stream
                                        • Cache payload to filesystem
                                        • Emit metadata status header only
+
 ```
 
 With this integration applied, subagents running automated diagnostic sweeps across multi-node infrastructures can inspect log sizes locally. This ensures they summarize data blocks before passing heavy text streams back to the primary deployment thread.

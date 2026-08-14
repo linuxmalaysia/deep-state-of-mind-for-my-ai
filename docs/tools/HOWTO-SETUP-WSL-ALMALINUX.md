@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-SETUP-WSL-ALMALINUX.md."
 resource: "file:///docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md"
 ---
+
 # HOWTO: setup-wsl-almalinux10 — T2 Control Node Provisioner
 
 # docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md
@@ -48,8 +49,11 @@ resource: "file:///docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md"
 Run this once from an elevated (Administrator) PowerShell terminal:
 
 ```powershell
+
 # From the project root
+
 .\tools\setup-wsl-almalinux10.ps1
+
 ```
 
 ---
@@ -94,7 +98,6 @@ Run this once from an elevated (Administrator) PowerShell terminal:
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

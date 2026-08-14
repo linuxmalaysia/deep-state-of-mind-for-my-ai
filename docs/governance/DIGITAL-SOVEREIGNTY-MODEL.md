@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for DIGITAL-SOVEREIGNTY-MODEL.md."
 resource: "file:///docs/governance/DIGITAL-SOVEREIGNTY-MODEL.md"
 ---
+
 ### 📜 docs/DIGITAL-SOVEREIGNTY-MODEL.md (v2.0)
 
 # 🏛️ Digital Sovereignty Operational Model (DSOM)
@@ -84,7 +85,6 @@ The **Digital Sovereignty Operational Model (DSOM)** provides the **"Why"** (Str
 *Standard: DSOM Protocol v6.1 + Palace v1.0 | UK English & DBP-Malay (Piawai)*
 
 ---
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

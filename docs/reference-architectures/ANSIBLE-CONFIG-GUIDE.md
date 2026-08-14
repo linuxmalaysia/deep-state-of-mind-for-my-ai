@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for ANSIBLE-CONFIG-GUIDE.md."
 resource: "file:///docs/reference-architectures/ANSIBLE-CONFIG-GUIDE.md"
 ---
+
 # [DOC] DSOM Ansible Configuration Guide (Example Elastic SOC v1.0)
 # docs/ANSIBLE-CONFIG-GUIDE.md
 
@@ -57,6 +58,7 @@ In the Example Elastic SOC architecture, we enforce a strict hybrid privilege mo
     ├── sysadmin-vm-prep.sh    # Dual-Stage VM Bootstrapper (Bash)
     ├── eod-palace.ps1         # End-of-Day GitOps Hibernation
     └── sod-palace.ps1         # Start-of-Day AI Reanimation
+
 ```
 
 ---
@@ -90,14 +92,13 @@ In the Example Elastic SOC architecture, we enforce a strict hybrid privilege mo
 
 ## 🚀 Deployment Sequence (The Sovereign Rhythm)
 
-1.  **Stage 1 - VM Injection**: Execute `bash tools/sysadmin-vm-prep.sh <ip>` from the Jumphost to standardize the OS base, standardize SSH keys, and inject the `dsom-admin` user.
+1.  **Stage 1 - VM Injection**: Execute `bash tools/sysadmin-vm-prep.sh <ip>` from the Jumphost to standardise the OS base, standardise SSH keys, and inject the `dsom-admin` user.
 2.  **Stage 2 - Baseline Hardening**: Ansible runs `roles/setup_os` to install security tooling (Lynis, Auditd), deploy UFW rules, and dynamically inject RAM-aware `sysctl` buffers for Elasticsearch.
 3.  **Stage 3 - Autonomous Audit**: AI runs the `node-health-check` and `audit-node-security` skills to guarantee the node hits a Lynis score of 70+ before proceeding.
 4.  **Stage 4 - Persistence Fabric**: Deploy Elasticsearch and Wazuh infrastructure (Pending Phase 3).
 
 ---
 *Maintained by the DSOM Engineering Team & AI Cognitive Twin | Example Elastic SOC v1.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

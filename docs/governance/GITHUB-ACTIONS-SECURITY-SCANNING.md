@@ -7,6 +7,7 @@ topics: ["snyk", "github-actions", "security", "crda", "ci-cd", "sarif", "govern
 description: "L2 analysis document capturing the CRDA deprecation, Snyk replacement pattern, and proven workflow template for DSOM GitHub repositories."
 resource: "file:///docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md"
 ---
+
 # GitHub Actions Security Scanning — CRDA → Snyk Migration
 
 > **Status:** Active Governance Document | DSOM Security Standard | 2026-07-27
@@ -24,10 +25,12 @@ The DSOM-standard replacement is the **native Snyk GitHub Action** (`snyk/action
 When CRDA fails, the GitHub Actions log shows:
 
 ```
+
 crda exited with code 1
 FIL Unable to reach the server.
 error="Post \"https://gw.api.openshift.io/user?user_key=...\": dial tcp:
 lookup gw.api.openshift.io on 127.0.0.53:53: no such host"
+
 ```
 
 This is a permanent infrastructure failure — not a configuration error. No amount of reconfiguration will resolve it.
@@ -110,6 +113,7 @@ jobs:
         with:
           sarif_file: snyk.sarif
           category: snyk-python-scan
+
 ```
 
 ---

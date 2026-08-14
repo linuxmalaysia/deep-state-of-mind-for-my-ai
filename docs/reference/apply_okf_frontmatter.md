@@ -5,6 +5,7 @@ title: "Reference: apply_okf_frontmatter.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "okf", "frontmatter"]
 ---
+
 # apply_okf_frontmatter.py reference
 
 Authoritative Open Knowledge Format (OKF v0.1) compliance and enforcement engine.
@@ -20,8 +21,11 @@ The `apply_okf_frontmatter.py` tool scans directories and ensures all `.md` file
 ## CLI signature
 
 ```bash
+
 # Scan and standardise files in a target directory (defaults to current directory)
+
 uv run python tools/apply_okf_frontmatter.py docs/
+
 ```
 
 ## Mandatory fields enforced
@@ -54,3 +58,8 @@ Detects if strings contain colons, parentheses, emojis, or spaces, requiring YAM
 
 Atomically updates files via temporary sibling structures and `os.replace()`, preserving permissions.
 - **Mechanism:** Prevents data truncation in the event of hardware or system execution hangs.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

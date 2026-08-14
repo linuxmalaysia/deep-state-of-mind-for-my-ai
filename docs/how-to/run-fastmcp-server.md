@@ -5,6 +5,7 @@ title: "How-To: Run the FastMCP Server"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "mcp", "server"]
 ---
+
 # Run the FastMCP server
 
 This guide explains how to configure, start, and debug the local Model Context Protocol (MCP) server to expose the Sovereign Palace to AI editors.
@@ -20,6 +21,7 @@ Launch the server using `uv run` to isolate and resolve dependencies dynamically
 
 ```bash
 uv run tools/mcp/server.py
+
 ```
 
 ## Step 2: Configure AI editors (Cursor / Claude Desktop)
@@ -48,6 +50,7 @@ Open `~/.code/claude_desktop_config.json` (macOS/Linux) or `%APPDATA%/Claude/cla
     }
   }
 }
+
 ```
 
 ## Step 3: Verify server functionality
@@ -56,8 +59,8 @@ Execute the standard test suite to confirm that the server registers all require
 
 ```bash
 uv run --with pyyaml --with pytest --with mcp==1.2.1 --with fastmcp pytest tests/test_mcp_server.py
-```
 
+```
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*

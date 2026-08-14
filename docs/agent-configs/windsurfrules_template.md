@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for windsurfrules_template.md."
 resource: "file:///docs/agent-configs/windsurfrules_template.md"
 ---
+
 # .windsurfrules (DSOM Template)
 
 # Copy this content to your project root as `.windsurfrules`
@@ -27,7 +28,6 @@ resource: "file:///docs/agent-configs/windsurfrules_template.md"
     "commit": "git commit -m"
   }
 }
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

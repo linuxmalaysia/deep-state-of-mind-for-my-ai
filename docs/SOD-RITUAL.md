@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for SOD-RITUAL.md."
 resource: "file:///docs/SOD-RITUAL.md"
 ---
+
 # 🌅 SOD-RITUAL.md — Start-of-Day Ritual
 
 # docs/SOD-RITUAL.md
@@ -25,7 +26,9 @@ Since AI has amnesia between sessions, the SOD Ritual transfers the **Deep State
 **The Three-Pillar Loop always starts with SOD:**
 
 ```
+
 SOD (Re-sync) → AI Proposes → Git Records → Ansible Executes → AI Verifies → EOD (Save)
+
 ```
 
 ---
@@ -50,15 +53,21 @@ Before starting, know your tiers:
 Pull the latest state from the remote before doing anything:
 
 ```powershell
+
 # T1 — Git Ritual: SOD Pull
+
 .\tools\git-ritual.ps1 sod
+
 ```
 
 Or on T2 (WSL2):
 
 ```bash
+
 # T2 — Git Ritual: SOD Pull
+
 ./tools/git-ritual.sh sod
+
 ```
 
 **Why:** Ensures you start from the true current state — not yesterday's stale copy.
@@ -70,8 +79,11 @@ Or on T2 (WSL2):
 > **If you are on T2, use this instead of Steps 1–3.** It runs git pull, audit, palace check, and reanimate in a single command.
 
 ```bash
+
 # T2 (Linux/WSL2) — Full automated SOD
+
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+
 ```
 
 **What it runs automatically:**
@@ -98,16 +110,23 @@ bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 Run the pre-flight audit to verify the physical workspace is ready:
 
 ```powershell
+
 # T1 (Windows PowerShell)
+
 .\tools\audit-pre-flight.ps1
+
 ```
 
 ```bash
+
 # T2 (WSL2 AlmaLinux 10)
+
 ./tools/audit-pre-flight.sh
 
 # Or via Ansible (checks localhost + all inventory nodes simultaneously)
+
 ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
+
 ```
 
 **The audit checks (v5.0):**
@@ -127,13 +146,19 @@ ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
 Generate the full context manifest for AI upload:
 
 ```bash
+
 # T2 (WSL2)
+
 bash tools/reanimate.sh
+
 ```
 
 ```powershell
+
 # T1 (Windows PowerShell)
+
 .\tools\reanimate.ps1
+
 ```
 
 **What the manifest contains (v2.2 — Palace-aware):**
@@ -159,8 +184,11 @@ bash tools/reanimate.sh
 
 ```bash
 ./tools/privacy-guardian.sh
+
 # Or via Ansible:
+
 ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
+
 ```
 
 ---
@@ -190,6 +218,7 @@ This is the **mirror prompt** to the EOD Step 1b Hibernation Notes Export. It fe
 **Copy this prompt verbatim:**
 
 ```
+
 I am starting a new session for DSOM Protocol. I am your human Lead Architect.
 I have the Hibernation Notes from our last session. Please read them carefully
 and use them to fully restore our working context.
@@ -212,6 +241,7 @@ From this point, operate under DSOM Protocol v6.1:
 - Every change goes to Git before execution.
 - Ansible is the only executor for OS-level tasks.
 - Wait for my output after each step before proceeding.
+
 ```
 
 **What happens next:**
@@ -225,6 +255,7 @@ From this point, operate under DSOM Protocol v6.1:
 **The day-to-day continuity loop:**
 
 ```
+
 DAY N EOD:           SOD Step 1 → 1b (Hibernation Notes saved)
                               ↓
                      [You sleep. Git holds the state.]
@@ -235,6 +266,7 @@ DAY N+1 SOD:         Step 4b (Hibernation Notes fed back to AI)
                               ↓
 DAY N+1 EOD:         Step 1b (new Hibernation Notes saved)
                               ↓  [repeats forever]
+
 ```
 
 **Where to find yesterday's Hibernation Notes:**
@@ -278,6 +310,7 @@ The SOD is **FAILED** if the AI:
 ## ✅ 5. SOD Completion Checklist
 
 ```
+
 [ ] (RECOMMENDED T2) ansible-playbook sod-palace.yml — git pull + audit + palace check + reanimate
 [ ]   OR (Manual T1/T2) git-ritual.sh sod — pulled latest from origin/main
 [ ]   OR (Manual T1/T2) audit-pre-flight.sh — all steps PASS
@@ -288,6 +321,7 @@ The SOD is **FAILED** if the AI:
 [ ] AI confirmed Mental Anchor
 [ ] AI confirmed 4-Tier environment map
 [ ] AI stated "Sovereign State Synchronised"
+
 ```
 
 **You are now cleared to begin active work.**
@@ -312,7 +346,6 @@ The SOD is **FAILED** if the AI:
 *Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline SOD template** for all projects built on this skeleton.*
 *Last Updated: 2026-04-08 | Version: v6.1 + Palace v1.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

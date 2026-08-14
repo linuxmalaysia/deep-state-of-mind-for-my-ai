@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-REANIMATE-CLAUDE.md."
 resource: "file:///docs/tools/HOWTO-REANIMATE-CLAUDE.md"
 ---
+
 # HOWTO: reanimate-claude — Anthropic Context Injection
 
 # docs/tools/HOWTO-REANIMATE-CLAUDE.md
@@ -46,13 +47,19 @@ resource: "file:///docs/tools/HOWTO-REANIMATE-CLAUDE.md"
 ## 3. Usage
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\reanimate-claude.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/reanimate-claude.sh
+
 ```
 
 The script generates a file named **`DSOM-CLAUDE-INIT.md`** in the project root.
@@ -89,7 +96,6 @@ After uploading the manifest, use this prompt in your first Claude interaction:
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-AUDIT-PRE-FLIGHT.md."
 resource: "file:///docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md"
 ---
+
 # HOWTO: audit-pre-flight — Intelligence Integrity Sync
 
 # docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md
@@ -50,19 +51,26 @@ resource: "file:///docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md"
 ### 3.1 Standard Execution
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\audit-pre-flight.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/audit-pre-flight.sh
+
 ```
 
 ### 3.2 Ansible Validation
 
 ```bash
 ansible-playbook playbooks/dsom/audit-preflight.yml
+
 ```
 
 ---
@@ -110,7 +118,6 @@ This script is natively integrated into **`sod-palace`**. Under the **Start-of-D
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

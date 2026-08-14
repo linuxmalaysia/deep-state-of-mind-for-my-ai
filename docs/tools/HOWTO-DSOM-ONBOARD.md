@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-DSOM-ONBOARD.md."
 resource: "file:///docs/tools/HOWTO-DSOM-ONBOARD.md"
 ---
+
 # HOWTO: dsom-onboard — Repository Adoption Engine
 
 # docs/tools/HOWTO-DSOM-ONBOARD.md
@@ -51,13 +52,19 @@ resource: "file:///docs/tools/HOWTO-DSOM-ONBOARD.md"
 You do NOT need to manually download the DSOM repository to use this. You only need the bootstrap script:
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\dsom-onboard.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/dsom-onboard.sh
+
 ```
 
 ---
@@ -102,7 +109,6 @@ After the script finishes, you must perform the following Git manual steps:
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["mcp", "fastmcp", "howto", "dsom", "server", "cursor", "claude"]
 description: "Step-by-step operational guide for running, configuring, and connecting the DSOM FastMCP Server to Cursor, Claude Desktop, and IDE assistants."
 resource: "file:///docs/tools/HOWTO-MCP-SERVER.md"
 ---
+
 # 🛠️ HOWTO: Operating DSOM FastMCP Knowledge Server
 
 This operational guide provides step-by-step instructions for running, configuring, and connecting the **DSOM FastMCP Knowledge Server (`tools/mcp/server.py`)** via Model Context Protocol (MCP) to AI IDEs such as Cursor, Claude Desktop, and VSCode.
@@ -18,8 +19,10 @@ This operational guide provides step-by-step instructions for running, configuri
 The MCP server runs natively in Python using `uv` with PEP 723 inline script dependencies (`mcp`, `fastmcp`, `pyyaml`). Zero global installation required.
 
 ### Launching the Stdio MCP Server:
+
 ```bash
 uv run tools/mcp/server.py
+
 ```
 
 ---
@@ -27,6 +30,7 @@ uv run tools/mcp/server.py
 ## 🔌 2. IDE Integration & Configuration Guides
 
 ### A. Cursor IDE (`.cursor/mcp.json` or Settings -> MCP):
+
 Add the following JSON configuration to Cursor under **Settings > Features > MCP**:
 
 ```json
@@ -42,11 +46,13 @@ Add the following JSON configuration to Cursor under **Settings > Features > MCP
     }
   }
 }
+
 ```
 
 ---
 
 ### B. Claude Desktop (`claude_desktop_config.json`):
+
 Add the server entry to `%APPDATA%\Claude\claude_desktop_config.json` (Windows) or `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
 
 ```json
@@ -61,6 +67,7 @@ Add the server entry to `%APPDATA%\Claude\claude_desktop_config.json` (Windows) 
     }
   }
 }
+
 ```
 
 ---

@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-HIBERNATION.md."
 resource: "file:///docs/tools/HOWTO-HIBERNATION.md"
 ---
+
 # HOWTO: hibernation — Legacy Safety Verifier
 
 # docs/tools/HOWTO-HIBERNATION.md
@@ -40,10 +41,12 @@ The `hibernation` scripts function as safety gates that strictly prohibit the te
 
 ```powershell
 .\tools\hibernation.ps1
+
 ```
 
 ```bash
 bash tools/hibernation.sh
+
 ```
 
 ---
@@ -77,7 +80,6 @@ Only use `hibernation.sh` directly if you operate in environments pre-dating Pal
 
 *Standard: DSOM For My AI Protocol v6.1 | Palace v1.0 | Harisfazillah Jamel*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

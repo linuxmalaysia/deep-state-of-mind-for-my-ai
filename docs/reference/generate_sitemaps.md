@@ -5,6 +5,7 @@ title: "Reference: generate_sitemaps.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "sitemaps", "seo"]
 ---
+
 # generate_sitemaps.py reference
 
 Dynamic, unified sitemap and search engine optimiser (SEO) asset generator.
@@ -21,6 +22,7 @@ The `generate_sitemaps.py` utility builds the MkDocs static site. It compiles UR
 
 ```bash
 uv run python tools/generate_sitemaps.py
+
 ```
 
 ## Inputs
@@ -64,3 +66,8 @@ Parses the generated `site/sitemap.xml` XML structure.
 Converts raw Markdown file paths to URL-safe lower-case slugs.
 - **Arguments:** `path_str` (string relative markdown file path).
 - **Returns:** String normalised GitBook URL slug.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

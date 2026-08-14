@@ -7,10 +7,12 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for ANSIBLE-DEPLOYMENT-ARCHITECTURE.md."
 resource: "file:///docs/reference-architectures/ANSIBLE-DEPLOYMENT-ARCHITECTURE.md"
 ---
+
 # [CONSTRUCT] Ansible Deployment Architecture: Example Elastic SOC (v1.0)
 # docs/ANSIBLE-DEPLOYMENT-ARCHITECTURE.md
 
 ## 🎯 Overview
+
 This document provides the technical blueprint for the **Example Elastic SOC** orchestration layer. The architecture unifies OS hardening, persistence, and visualization to support a highly stabilized 16-node backbone. It integrates Elasticsearch, Wazuh SIEM, Nginx Reverse Proxy, and Elastic Fleet Agents under a single Sovereign Fabric.
 
 ---
@@ -40,6 +42,7 @@ Unlike legacy architectures that split ingestion and persistence across separate
 ---
 
 ## [SHIELD] The Doctrine: "Rootful Orchestration, Rootless Execution"
+
 We enforce a **Hybrid Security Model** optimized for high-performance distributed SIEM loads:
 
 1.  **Rootful Orchestration**: Ansible orchestration from the Jumphost (Tier 3) operates with `become: yes` to manage OS-level kernel tuning (e.g., massive 134MB TCP buffers for >=64GB nodes), firewall administration, and audit daemons.
@@ -70,13 +73,13 @@ DSOM Persistence is anchored in **Sovereign Trust Projection**:
 ---
 
 ## [TEST] High-Fidelity AI Pulse Verification
+
 Unlike monolithic bash scripts of the past, Example Elastic SOC employs **AI Agent Skills** for verification:
 - **Security Validation**: The `audit-node-security` skill remotely triggers a CIS Lynis 3.0.9 audit and parses the result, demanding a Hardening Index of 70+ before Phase 3 can begin.
 - **Service Validation**: The `node-health-check` skill natively queries `systemctl`, `ufw status`, `chronyc`, and `auditctl` to guarantee the OS baseline is enforcing the policy.
 
 ---
 *Maintained by the DSOM Engineering Team & AI Cognitive Twin | Example Elastic SOC v1.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

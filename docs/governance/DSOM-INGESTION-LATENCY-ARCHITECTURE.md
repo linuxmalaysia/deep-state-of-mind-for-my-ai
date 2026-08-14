@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "Architectural analysis of DSOM local knowledge ingestion vs. remote RAG/vector pipelines, with empirical benchmarks and implementation guidance."
 resource: "file:///docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md"
 ---
+
 # Ingestion Latency and Contextual Mapping Velocities in DSOM
 
 > **Artifact Level:** L2 (Analysis)
@@ -23,6 +24,7 @@ Traditional knowledge retrieval architectures introduce high latency due to remo
 Because DSOM bypasses remote networks and embedding calculation queues, the speed of acquiring complete directory awareness matches the localised processing parameters of the agent environment.
 
 ```
+
        [ REPOSITORY STEP ]           [ PROCESSING PIPELINE ]           [ TIME HORIZON ]
 
     ┌────────────────────────┐
@@ -59,6 +61,7 @@ okf_version: 0.1
 type: engineering_matrix
 title: "Target Room Architecture"
 ---
+
 ```
 
 By reading only the metadata block first, the model validates the scope, data freshness, and relevance of a directory path within milliseconds, without wasting processing power on long plaintext analysis.
@@ -69,6 +72,7 @@ The model executes the local calculation utility before parsing any text blocks:
 
 ```bash
 uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py [TARGET_PATH]
+
 ```
 
 This script runs locally to instantly return exact workspace size limits, mapping layout constraints before files are fed into the main context engine.
@@ -139,6 +143,7 @@ def split_markdown_by_section(md_text: str) -> list:
     # Split only on lines that START with ##, avoiding frontmatter
     parts = re.split(r'(?m)^## ', md_text)
     return [parts[0]] + [f"## {p}" for p in parts[1:]]
+
 ```
 
 > **Caution:** A naive `split("\n## ")` breaks YAML frontmatter blocks that contain `##` inside string values. The regex above anchors to line start with `(?m)^` to avoid this.
@@ -158,9 +163,12 @@ type: active_context_manifest
 title: "Active Context — YYYY-MM-DD"
 description: "Declares the exact file paths the agent must load for the current task session."
 ---
+
 ## Active Files
+
 - .agents/brain/task.md
 - .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md
+
 ```
 
 The agent reads this manifest on SOD, then loads only the listed files. Same cognitive architecture, zero portability risk.

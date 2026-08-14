@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for PALACE-BUILD-STORY.md."
 resource: "file:///docs/PALACE-BUILD-STORY.md"
 ---
+
 # 🏛️ PALACE-BUILD-STORY: How the Sovereign Markdown Palace Was Built
 
 > *"Sovereignty through Spatial Awareness. Recall through Structured Reflection."*
@@ -48,6 +49,7 @@ Neither replaces the other. They work in tandem — **Dual-Mode Persistence**.
 The Palace is a 5-layer directory hierarchy inside `.agents/brain/`:
 
 ```
+
 .agents/brain/wings/
 └── wing_dsom_core/               # Wing (Domain)
     ├── hall_facts/               # Hall (Memory Type: Immutable Laws)
@@ -61,6 +63,7 @@ The Palace is a 5-layer directory hierarchy inside `.agents/brain/`:
     │   └── room_ledger/closet.md
     └── hall_discoveries/         # Hall (Memory Type: Breakthroughs & Misc)
         └── room_uncategorised/closet.md
+
 ```
 
 Each `closet.md` is a **distilled, high-density knowledge summary** — what the AI actually needs to know, without reading 300 lines of raw session logs.
@@ -145,7 +148,6 @@ The Sovereign Markdown Palace v1.0 is a **living, sovereign, version-controlled,
 *Build Story recorded by: Cognitive Digital Twin (Google Antigravity)*
 *Lead Architect: Harisfazillah Jamel (LinuxMalaysia)*
 *Protocol: DSOM v6.1 + Palace v1.0 | Tag: v10.0.0-palace*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

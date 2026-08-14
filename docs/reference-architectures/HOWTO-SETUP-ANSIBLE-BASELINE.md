@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-SETUP-ANSIBLE-BASELINE.md."
 resource: "file:///docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md"
 ---
+
 # 🛠️ HOWTO: Set Up the Ansible Baseline for a DSOM Project (Example Elastic SOC)
 
 **Title:** HOWTO: Set Up the Ansible Baseline for Example Elastic SOC
@@ -86,6 +87,7 @@ Encrypt secrets required for Elastic Stack (like `elastic_password`, certificate
 
 ```bash
 ansible-vault encrypt /path/to/secrets_draft.yml --output vault/production_secrets.yml
+
 ```
 
 Vault encryption ensures secrets can never be accidentally committed to Git. The vault password itself is stored out-of-band.
@@ -95,14 +97,17 @@ Vault encryption ensures secrets can never be accidentally committed to Git. The
 ## 4. Troubleshooting
 
 ### Problem: `UNREACHABLE! Failed to connect`
+
 - **Cause**: SSH key not distributed to target node, or wrong `ansible_host` IP.
 - **Fix**: Run `ssh-copy-id [USER]@[HOST]` from your Tier 2 Dev Bridge, then retry the ping.
 
 ### Problem: `MODULE FAILURE: No Python interpreter found`
+
 - **Cause**: Python 3 not installed on target node.
 - **Fix**: Install Python: `sudo apt install -y python3` (Debian/Ubuntu) or `sudo dnf install -y python3` (RHEL/Rocky).
 
 ### Problem: Playbook is not idempotent (changes on re-run)
+
 - **Cause**: Task uses `command:` or `shell:` module without `changed_when: false` or `creates:` condition.
 - **Fix**: Replace with idempotent modules. Use `changed_when: false` for read-only commands.
 

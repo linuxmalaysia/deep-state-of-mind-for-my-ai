@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for ITIL-ALIGNMENT.md."
 resource: "file:///docs/governance/ITIL-ALIGNMENT.md"
 ---
+
 # 🏥 DSOM ITIL 4 Alignment Strategy
 
 > **"Value Co-creation through Service Relationships."**
@@ -171,11 +172,11 @@ flowchart TD
     S10 --> S9
     Operation_Layer --> Improvement_Layer
     Improvement_Layer --> Governance_Layer
+
 ```
 
 ---
 *Verified by Harisfazillah Jamel | ITIL 4 Aligned | 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

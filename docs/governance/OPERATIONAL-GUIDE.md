@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for OPERATIONAL-GUIDE.md."
 resource: "file:///docs/governance/OPERATIONAL-GUIDE.md"
 ---
+
 # 📖 DSOM Operational Guide (Level 3 - Specialised Tasks)
 
 > **"Theory without Practice is Hallucination. Practice without Theory is Chaos."**
@@ -30,6 +31,7 @@ The Reanimation Ritual is not just running a script; it is a **Cognitive Handsha
 
 ```bash
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+
 ```
 
 Then upload the manifest and say: *"Initialise DSOM Protocol v6.1 + Palace v1.0. Walk the Palace Registry in Section [14]. State: 'Sovereign State Synchronised' when ready."*
@@ -43,11 +45,15 @@ Before waking the AI, we must verify that the physical environment matches the e
 **Command:**
 
 ```bash
+
 # Linux / WSL2
+
 ./tools/audit-pre-flight.sh
 
 # Windows
+
 .\tools\audit-pre-flight.ps1
+
 ```
 
 **Success Criteria:**
@@ -65,11 +71,15 @@ We aggregate all context into a single "Truth File."
 **Command:**
 
 ```bash
+
 # Linux
+
 ./tools/reanimate.sh
 
 # Windows
+
 .\tools\reanimate.ps1
+
 ```
 
 **What is Injected (v2.2 — Palace-aware)?**
@@ -106,6 +116,7 @@ We never "just close the window." We must perform a controlled shutdown to preve
 
 ```bash
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+
 ```
 
 After it completes — review `palace_update_proposal_YYYY-MM-DD.md` with your AI and update relevant closets.
@@ -125,11 +136,15 @@ Run the hibernation tool to verify safety.
 **Command:**
 
 ```bash
+
 # Linux
+
 ./tools/hibernation.sh
 
 # Windows
+
 .\tools\hibernation.ps1
+
 ```
 
 **The Logic (v2.1 — Palace-aware):**
@@ -198,14 +213,19 @@ The AI **never** directly runs commands on remote infrastructure. The workflow i
 Before executing **any** playbook, the following must be verified:
 
 ```bash
+
 # 1. Run the DSOM pre-flight audit
+
 ./tools/audit-pre-flight.sh
 
 # 2. Verify Ansible connectivity to all target nodes
+
 ansible all -m ping -i inventory/hosts.yml
 
 # 3. Dry-run the playbook first
+
 ansible-playbook playbooks/site.yml --check --diff
+
 ```
 
 If any step fails, execution is **stopped**. The AI diagnoses the failure and proposes a fix.
@@ -240,7 +260,6 @@ For full doctrine, see [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-AN
 ---
 
 *Last Updated: 2026-04-08 (v6.1 + Palace v1.0: Ansible SOD/EOD playbooks, Section [14] Palace Registry, Palace Migration scenarios)*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

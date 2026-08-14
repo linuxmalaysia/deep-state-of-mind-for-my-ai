@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-ADOPT-DSOM.md."
 resource: "file:///docs/HOWTO-ADOPT-DSOM.md"
 ---
+
 # HOWTO: Adopt DSOM in Existing Projects (Brownfield)
 
 **Author:** Harisfazillah Jamel
@@ -42,25 +43,32 @@ If you want to keep updated with DSOM core changes:
 git submodule add https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git .dsom-core
 cp -r .dsom-core/tools .
 cp -r .dsom-core/docs .
+
 ```
 
 **Option B: Direct Copy**
 Clone DSOM elsewhere and copy the folders:
 
 ```bash
+
 # In a temporary folder
+
 git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git dsom-temp
+
 # In your target project
+
 cp -r ../dsom-temp/tools .
 cp -r ../dsom-temp/docs .
+
 ```
 
-### Step 2: Initialize the Brain
+### Step 2: Initialise the Brain
 
 Run the initializer to create the `.agents/brain/` structure. This script is **non-destructive**—it will not overwrite existing work, but since you are adopting, these files likely don't exist yet.
 
 ```bash
 bash tools/init-brain.sh
+
 ```
 
 *Output:* Created `task.md`, `walkthrough.md`, `implementation_plan.md`.
@@ -92,14 +100,16 @@ Establish the security perimeter immediately.
 
 ```gitignore
 !/.agents/brain/*.md
+
 ```
 
-### Step 4b: Initialize the Palace
+### Step 4b: Initialise the Palace
 
 Backfill the Sovereign Markdown Palace from your existing Git history:
 
 ```bash
 bash tools/palace-sync.sh --backfill
+
 ```
 
 This generates `.agents/brain/palace_update_proposal_YYYY-MM-DD.md` — review it with your AI and create the closets in `.agents/brain/wings/`.
@@ -112,6 +122,7 @@ Generate your first "Cognitive Handshake" manifest:
 
 ```bash
 bash tools/reanimate.sh
+
 ```
 
 **Action:** Upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
@@ -142,7 +153,6 @@ A: You skipped **Step 3**. The AI only knows what is in the `.agents/brain` file
 * [HOWTO: Migrate to Palace](HOWTO-MIGRATE-TO-PALACE.md)
 * [SOD Ritual](SOD-RITUAL.md)
 * [EOD Ritual](EOD-RITUAL.md)
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-SOD-PALACE.md."
 resource: "file:///docs/tools/HOWTO-SOD-PALACE.md"
 ---
+
 # HOWTO: sod-palace — Start-of-Day Ritual
 
 # docs/tools/HOWTO-SOD-PALACE.md
@@ -49,13 +50,19 @@ The `sod-palace` toolkit natively automates the **Sovereign Start-of-Day (SOD) M
 ### 3.1 Standard Execution 
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\sod-palace.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/sod-palace.sh
+
 ```
 
 ### 3.2 Output Workflow
@@ -69,7 +76,7 @@ You will sequentially see the Git operations flow, followed by the outcome of `[
 | Output Keyword | Meaning | Action Needed |
 |:---|:---|:---|
 | `[OK] Palace Registry found` | Spatial integration is primed. | Proceed normally. |
-| `[WARN] Palace Registry missing` | Workspace is missing index. | Run `tools/palace-sync` to initialize. |
+| `[WARN] Palace Registry missing` | Workspace is missing index. | Run `tools/palace-sync` to initialise. |
 | `[FAIL] Security Validation` | Audit mechanism found issues. | Investigate failed tests before continuing. |
 
 ---
@@ -92,7 +99,6 @@ This script completely replaces Steps 1 through 3 of the legacy DSOM `docs/SOD-R
 
 *Standard: DSOM For My AI Protocol v6.1 | Palace v1.0 | Harisfazillah Jamel*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

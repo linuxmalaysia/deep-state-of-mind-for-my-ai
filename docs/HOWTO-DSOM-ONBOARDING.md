@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-DSOM-ONBOARDING.md."
 resource: "file:///docs/HOWTO-DSOM-ONBOARDING.md"
 ---
+
 # 🚀 HOWTO: Adopt DSOM Using Automated Onboarding
 
 Incorporating the Deep State of Mind (DSOM) framework into an existing project used to involve a manual process of cloning, copying, and aligning files. This is now fully automated via the **DSOM Onboarding Automation**.
@@ -34,14 +35,19 @@ If you have an existing Git repository and want to "DSOM-ify" it by pulling in a
 If you are native on Linux/macOS or inside a WSL2 shell, use the bash bootstrap.
 
 ```bash
+
 # 1. Download the safe bootstrap script to the root of your repository
+
 curl -O https://raw.githubusercontent.com/linuxmalaysia/deep-state-of-mind-for-my-ai/main/tools/dsom-onboard.sh
 
 # 2. Add execution permissions
+
 chmod +x dsom-onboard.sh
 
 # 3. Run the onboarding process
+
 ./dsom-onboard.sh
+
 ```
 
 ### Option 2: Windows (PowerShell)
@@ -49,11 +55,15 @@ chmod +x dsom-onboard.sh
 If you are using Windows natively but have WSL configured, the PowerShell script bridges the command execution automatically.
 
 ```powershell
+
 # 1. Download the safe bootstrap script to the root of your repository
+
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/linuxmalaysia/deep-state-of-mind-for-my-ai/main/tools/dsom-onboard.ps1" -OutFile "dsom-onboard.ps1"
 
 # 2. Run the onboarding process
+
 .\dsom-onboard.ps1
+
 ```
 
 ---
@@ -81,12 +91,12 @@ git add .
 git commit -m "chore: onboard DSOM architectural standards"
 git checkout main
 git merge dsom-onboarding-YYYY-MM-DD-HHMMSS
+
 ```
 
 ### 4. Continue Normal Setup
 
 Proceed to adapt the `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` file as outlined in the core README. Your repository is now a fully sovereign DSOM environment!
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

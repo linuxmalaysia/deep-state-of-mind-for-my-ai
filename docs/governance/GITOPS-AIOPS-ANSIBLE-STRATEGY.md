@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for GITOPS-AIOPS-ANSIBLE-STRATEGY.md."
 resource: "file:///docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md"
 ---
+
 # 🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)
 
 > **Entry Point 9:** This document serves as the Security & Defense Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
@@ -22,6 +23,7 @@ This document defines the **strategic doctrine** for the three operational pilla
 ## 1. The Three-Pillar Model (+ Palace)
 
 ```
+
 +--------------------------------------------------------------+
 |                   DSOM OPERATING MODEL                       |
 |                                                              |
@@ -42,6 +44,7 @@ This document defines the **strategic doctrine** for the three operational pilla
 |  |  EOD: palace-sync.sh writes spatial update proposal     | |
 |  +----------------------------------------------------------+ |
 +--------------------------------------------------------------+
+
 ```
 
 **The Integration Loop:**
@@ -71,6 +74,7 @@ The AI operates exclusively as the **Cognitive Digital Twin** — an advisory in
 ### 2.2 AIOps Workflow
 
 ```
+
 Log / Event → AI Analysis → Diagnosis + Playbook Proposal
                                       ↓
                           Human Review & Approval
@@ -78,6 +82,7 @@ Log / Event → AI Analysis → Diagnosis + Playbook Proposal
                           Git Commit → Ansible Execute
                                       ↓
                           Output → AI Verification Loop
+
 ```
 
 ### 2.3 AI Context Requirements
@@ -114,6 +119,7 @@ Before any advisory session, the AI **MUST** read:
 All commits must follow the **Conventional Commits** standard:
 
 ```
+
 type(scope): descriptive message [Phase-XX/vX.X]
 
 Types: feat | fix | docs | chore | refactor | test | ci
@@ -123,23 +129,31 @@ Examples:
   feat(ansible): add kafka broker idempotency role [Phase-12/v2.3]
   fix(inventory): correct 'dsom_suffix' variable for node-02 [Phase-14/v2.4]
   docs(brain): update walkthrough mental anchor for Phase 15
+
 ```
 
 ### 3.4 Sync Ritual (The Push-Pull Cycle)
 
 ```bash
+
 # Tier 1 (Command Centre): Author & Push
+
 git add .
 git commit -m "feat(scope): descriptive message [Phase-XX/vX.X]"
 git push origin main
 
 # Tier 2 (Dev Bridge): Palace SOD — full automated reanimation
+
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+
 # Then upload manifest + handshake with AI
 
 # Tier 2 (Dev Bridge): Palace EOD — full automated save
+
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+
 # Then review palace_update_proposal + update closets
+
 ```
 
 > **Manual alternative (T1 Windows):**
@@ -154,6 +168,7 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 ## ⚙️ 4. The Executor Pillar (Ansible / uv / Node)
 
 ### 4.1 Execution Modularity
+
 While DSOM was originally forged for heavy infrastructure automation using **Ansible**, the actual mechanics of the Third Pillar (The Hand) apply to *any* project type. The Executor is fully modular:
 - **Infrastructure:** `ansible-playbook` (OS-level operations)
 - **Data Science / Python:** `uv run` (Isolated Python execution)
@@ -163,6 +178,7 @@ While DSOM was originally forged for heavy infrastructure automation using **Ans
 Regardless of the tool, the Executor acts as the **exclusive mechanism** for altering state. No manual edits or ad-hoc tinkering are permitted outside the execution scripts.
 
 ### 4.2 The Windows WSL2 Bridge (Control Node)
+
 For projects operating on Windows 11 without a dedicated Linux jumphost, **WSL2 (Ubuntu or AlmaLinux)** must be configured as the local Control Node.
 - This "Execution Bridge" ensures that humans and AI agents can seamlessly leverage standard Linux tooling (Ansible, Make, Bash) natively within the Windows environment.
 - It removes architectural friction, allowing DSOM to be applied universally across OS environments without requiring external VMs.
@@ -182,6 +198,7 @@ If your project is utilizing Ansible as the Executor, the following laws apply:
 Every DSOM project using Ansible MUST follow this structure:
 
 ```
+
 [project-root]/
 ├── ansible.cfg                    # Ansible configuration
 ├── inventory/
@@ -205,6 +222,7 @@ Every DSOM project using Ansible MUST follow this structure:
 │       └── defaults/main.yml
 └── vault/
     └── .gitignore                 # Vault files NEVER committed to Git
+
 ```
 
 ### 4.4 Ansible Prerequisites Checklist
@@ -221,24 +239,32 @@ Before running any playbook, the AI MUST verify all of the following:
 ### 4.5 Core Ansible Commands Reference
 
 ```bash
+
 # Verify connectivity to all nodes
+
 ansible all -m ping -i inventory/hosts.yml
 
 # Dry-run (check mode) — always run before live execution
+
 ansible-playbook playbooks/site.yml -i inventory/hosts.yml --check --diff
 
 # Full execution with logging
+
 ansible-playbook playbooks/site.yml -i inventory/hosts.yml \
   2>&1 | tee .logs/deploy-$(date +%Y%m%d-%H%M%S).log
 
 # Run a specific role/tag only
+
 ansible-playbook playbooks/site.yml -i inventory/hosts.yml --tags "[tag_name]"
 
 # Encrypt a secrets file with vault
+
 ansible-vault encrypt vault/production_secrets.yml
 
 # View encrypted vault file
+
 ansible-vault view vault/production_secrets.yml
+
 ```
 
 ---
@@ -292,7 +318,6 @@ When starting a new project with DSOM, use this checklist to establish the three
 
 *Created by the DSOM Engineering Team | v2.0 | 2026-04-08*
 *Standard: UK English | Licensed under GPLv3*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

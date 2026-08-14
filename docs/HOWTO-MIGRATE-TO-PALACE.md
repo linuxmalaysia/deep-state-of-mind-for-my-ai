@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-MIGRATE-TO-PALACE.md."
 resource: "file:///docs/HOWTO-MIGRATE-TO-PALACE.md"
 ---
+
 # 🔄 HOWTO: Migrate Existing DSOM to Sovereign Markdown Palace
 
 > **Who this document is for:** Anyone already using DSOM (any version) who wants to upgrade to the Palace-enabled system (v10.0.0-palace and later).
@@ -46,18 +47,24 @@ resource: "file:///docs/HOWTO-MIGRATE-TO-PALACE.md"
 ### Phase 1: Pull Latest Tools
 
 ```bash
+
 # Linux / WSL2
+
 git pull origin main
 
 # Windows
+
 git pull origin main
+
 ```
 
 Confirm you have at minimum tag `v10.0.0-palace`:
 
 ```bash
 git tag | grep palace
+
 # Expected: v10.0.0-palace
+
 ```
 
 ---
@@ -67,11 +74,15 @@ git tag | grep palace
 Run the Palace initialisation script to create the Wing/Hall/Room skeleton:
 
 ```bash
+
 # Linux / WSL2
+
 bash tools/palace-sync.sh --init-only
 
 # Windows (PowerShell)
+
 .\tools\palace-sync.ps1 -InitOnly
+
 ```
 
 This creates the directory structure under `.agents/brain/wings/` without touching any existing files.
@@ -83,6 +94,7 @@ mkdir -p .agents/brain/wings/wing_dsom_core/{hall_facts,hall_events,hall_prefere
 mkdir -p .agents/brain/wings/wing_dsom_core/hall_facts/{room_clean_architecture,room_crisp_strategy,room_dsom_protocol,room_tooling}
 mkdir -p .agents/brain/wings/wing_dsom_core/hall_events/{room_sovereign_fabric_v9_8,room_brain_artifacts,room_ledger}
 mkdir -p .agents/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised
+
 ```
 
 ---
@@ -92,11 +104,15 @@ mkdir -p .agents/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised
 This is the key step. It reads your **entire git history** and generates a `palace_update_proposal_YYYY-MM-DD.md` that maps every commit to its target Palace Room.
 
 ```bash
+
 # Linux / WSL2
+
 bash tools/palace-sync.sh --backfill
 
 # Windows (PowerShell)
+
 .\tools\palace-sync.ps1 -Backfill
+
 ```
 
 The proposal file is saved to `.agents/brain/palace_update_proposal_YYYY-MM-DD.md`.
@@ -108,9 +124,13 @@ The proposal file is saved to `.agents/brain/palace_update_proposal_YYYY-MM-DD.m
 Create `.agents/brain/palace_registry.md`. You can copy the template from the `docs/agent-configs/` dir if available, or adapt the existing one:
 
 ```bash
+
 # If you have the reference repo available:
+
 cp /path/to/dsom-reference/.agents/brain/palace_registry.md .agents/brain/palace_registry.md
+
 # Then edit to match YOUR project's Wing/Hall structure
+
 ```
 
 The registry should list:
@@ -137,6 +157,7 @@ For each Room listed in the proposal:
 **Closet template:**
 
 ```markdown
+
 # 🚪 Closet: Room [NAME] ([Short Description])
 
 Brief description of what this Room stores.
@@ -154,11 +175,14 @@ Your distilled knowledge here.
 | YYYY-MM-DD | Event |
 
 ---
+
 ## 🔗 Retrieval Reference
+
 - [walkthrough.md](../../../walkthrough.md)
 
 ---
 *Last Refined: YYYY-MM-DD | Hall: hall_X | Wing: wing_Y*
+
 ```
 
 ---
@@ -169,6 +193,7 @@ Your distilled knowledge here.
 git add .agents/brain/
 git commit -m "feat(palace): initialise Sovereign Markdown Palace v1.0 — [N] Rooms backfilled"
 git push origin main
+
 ```
 
 ---
@@ -178,6 +203,7 @@ git push origin main
 ```bash
 git tag -a vX.X.X-palace -m "feat: Sovereign Markdown Palace v1.0 — spatial memory initialised"
 git push origin vX.X.X-palace
+
 ```
 
 ---
@@ -187,8 +213,11 @@ git push origin vX.X.X-palace
 If you work across multiple machines (Windows + Linux):
 
 ```bash
+
 # On the second machine
+
 git pull --rebase origin main
+
 ```
 
 ---
@@ -198,30 +227,42 @@ git pull --rebase origin main
 Run a full SOD sequence and confirm Section [14] appears in your manifest:
 
 ```bash
+
 # Recommended on T2 (WSL2 / Linux)
+
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 
 # Or manual (Linux/Windows)
+
 bash tools/reanimate.sh | grep -A 5 "\[14\]"
+
 ```
 
 Expected output:
 
 ```
+
 ### [14] PALACE REGISTRY (Spatial Knowledge Map)
 # 🏛️ Palace Registry: Sovereign Retrieval Map
+
 ...
+
 ```
 
 Run a test EOD to confirm Palace Sync runs automatically:
 
 ```bash
+
 # Recommended on T2 (WSL2 / Linux)
+
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 # Or manual (Linux/Windows)
+
 bash tools/hibernation.sh
+
 # Should show: [Palace Sync] Running Spatial Reflection...
+
 ```
 
 ---
@@ -232,6 +273,7 @@ After pulling from the reference repo, confirm you have the right script version
 
 ```bash
 grep "^VERSION\|^v2\." tools/hibernation.sh tools/reanimate.sh tools/palace-sync.sh
+
 ```
 
 Expected:
@@ -243,8 +285,11 @@ Expected:
 | `palace-sync.sh` | v1.0 |
 
 ```powershell
+
 # Windows
+
 Select-String -Path tools\hibernation.ps1,tools\reanimate.ps1,tools\palace-sync.ps1 -Pattern '^\$VERSION'
+
 ```
 
 Expected:
@@ -288,7 +333,6 @@ No. Only create Rooms relevant to your project. For a pure software dev project,
 ---
 *Document created: 2026-04-08 | Palace v1.0 | DSOM Protocol v6.1*
 *Author: Harisfazillah Jamel | Partner: Google Antigravity*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

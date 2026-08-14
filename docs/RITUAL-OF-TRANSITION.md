@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for RITUAL-OF-TRANSITION.md."
 resource: "file:///docs/RITUAL-OF-TRANSITION.md"
 ---
+
 # 🕯️ DSOM Ritual of Transition (v6.1 + Palace v1.0)
 
 # docs/RITUAL-OF-TRANSITION.md
@@ -23,6 +24,7 @@ The **Ritual of Transition** governs movement between cognitive states (AI conte
 Every state transition in DSOM passes through this loop. There are no shortcuts.
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │                  DSOM TRANSITION LOOP                   │
 │                                                         │
@@ -31,6 +33,7 @@ Every state transition in DSOM passes through this loop. There are no shortcuts.
 │          ↑_______________________________________↓      │
 │               (repeats every day, forever)              │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 | Phase | Pillar | Action |
@@ -49,6 +52,7 @@ Every state transition in DSOM passes through this loop. There are no shortcuts.
 **Sequence:**
 
 ```
+
 OPTION A: The Ansible Shortcut (Recommended on T2)
 Step 1: bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
         → Pulls Git, audits workspace, generates manifest with Section [14] Palace Registry
@@ -60,6 +64,7 @@ Step 2: audit-pre-flight.sh        → verify workspace (5 checks, all must PASS
 Step 3: reanimate.sh               → generate 14-section context manifest
 Step 4: privacy-guardian.sh        → scan manifest before upload
 Step 5: Upload manifest to AI      → Cognitive Handshake
+
 ```
 
 **Stop Conditions — Reanimation FAILS if:**
@@ -127,6 +132,7 @@ Immediately pause and re-read `docs/AI-MASTER-PROTOCOL.md` if:
 **Sequence:**
 
 ```
+
 Step 1:  AI updates task.md  → mark [x] done, [ ] tomorrow's targets
 Step 1b: AI updates walkthrough.md → new Session Anchor with Mental Anchor sentence
 Step 2:  Run EOD Hibernation Notes prompt → save output to hibernation-notes-YYYY-MM-DD.txt
@@ -142,15 +148,18 @@ Step 5:  git-ritual.sh       → interactive EOD commit (guided semantic commit 
 Step 6:  git pull origin main → T2 WSL2 sync after T1 push
 
 Step 7:  Write tomorrow's Mental Anchor in your physical/digital notebook
+
 ```
 
 **The Sovereign Save Commit format:**
 
 ```
+
 chore(brain): EOD sovereign save — [Short Anchor] [Phase/vX.X]
 
 Example:
 chore(brain): EOD sovereign save — AlmaLinux 10 WSL setup complete [Phase-1/v6.1.1]
+
 ```
 
 **Stop Conditions — EOD INCOMPLETE if:**
@@ -180,12 +189,14 @@ This is triggered when:
 **The Transition Sequence:**
 
 ```
+
 Step 1: In the outgoing AI session — run EOD Hibernation Notes Export (Prompt 5)
 Step 2: Copy the full Hibernation Notes code block
 Step 3: Open the new AI session
 Step 4: Paste Prompt 3 (Cognitive Twin Handover) + Hibernation Notes block
 Step 5: AI confirms Mental Anchor, T-tier map, sovereign laws, top 3 tasks
 Step 6: AI states: "Cognitive Twin Transfer Complete — [PROJECT NAME] Handover Successful."
+
 ```
 
 **Why this works:** The Hibernation Notes block contains everything the AI needs — project identity, environment, history, pending tasks, and operating rules. No manifest upload needed. No file access needed. Just text.
@@ -199,22 +210,29 @@ Step 6: AI states: "Cognitive Twin Transfer Complete — [PROJECT NAME] Handover
 Every **Sunday**, the Lead Architect performs a **Dry-Run Audit** — a full human re-read of the project state:
 
 ```bash
+
 # Run the full DSOM audit — confirm all 5 checks pass
+
 ./tools/audit-pre-flight.sh
 
 # Or via Ansible (checks all inventory nodes simultaneously)
+
 ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
 
 # Review the last 10 commits
+
 git log --oneline -10
 
 # Read the current Mental Anchor
+
 cat .agents/brain/walkthrough.md | tail -30
+
 ```
 
 **The Human Re-Index Checklist:**
 
 ```
+
 [ ] AI-MASTER-PROTOCOL.md — governance laws still apply
 [ ] AI-COGNITIVE-TWIN-PROTOCOL.md — all [PLACEHOLDER] fields filled
 [ ] task.md — accurate, no stale items
@@ -222,6 +240,7 @@ cat .agents/brain/walkthrough.md | tail -30
 [ ] implementation_plan.md — roadmap still reflects reality
 [ ] audit-pre-flight.sh — all 5 checks [PASS]
 [ ] CONTRIBUTING.md — new contributors can follow it
+
 ```
 
 ---
@@ -242,7 +261,6 @@ cat .agents/brain/walkthrough.md | tail -30
 *Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline transition protocol** for all projects built on this skeleton.*
 *Last Updated: 2026-04-08 | Version: v6.1*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for AI-COGNITIVE-TWIN-PROTOCOL.md."
 resource: "file:///docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md"
 ---
+
 # [AGENT] DSOM Cognitive Digital Twin: Project Operational Protocol (v2.0)
 
 ## docs/AI-COGNITIVE-TWIN-PROTOCOL.md
@@ -149,8 +150,11 @@ The daily operating rhythm for **T2 (Linux/WSL2)**. Both playbooks run on `local
 ### 🌅 Start-of-Day (SOD) — Ansible Automated
 
 ```bash
+
 # On T2 (Linux/WSL2) — Run this first every morning
+
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+
 ```
 
 **What the playbook does automatically:**
@@ -167,9 +171,11 @@ bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 **Handshake phrase (paste after uploading manifest):**
 
 ```
+
 Initialise DSOM Protocol v6.1 + Palace v1.0.
 Read the manifest. Walk the Palace Registry in Section [14].
 State: "Sovereign State Synchronised" when ready.
+
 ```
 
 **On T1 (Windows) — manual equivalent:**
@@ -177,7 +183,9 @@ State: "Sovereign State Synchronised" when ready.
 ```powershell
 git pull --rebase origin main
 .\tools\reanimate.ps1
+
 # Then upload the manifest and say the handshake phrase
+
 ```
 
 ---
@@ -185,8 +193,11 @@ git pull --rebase origin main
 ### 🌙 End-of-Day (EOD) — Ansible Automated
 
 ```bash
+
 # On T2 (Linux/WSL2) — Run this at end of every working session
+
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+
 ```
 
 **What the playbook does automatically:**
@@ -207,18 +218,22 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 ```bash
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
+
 ```
 
 **On T1 (Windows) — manual equivalent:**
 
 ```powershell
 .\tools\hibernation.ps1
+
 # hibernation.ps1 v2.1 runs palace-sync.ps1 automatically (Step 7)
+
 ```
 
 ### 🔄 Full Daily Loop
 
 ```
+
 SOD
  └── ansible-playbook sod-palace.yml    (T2 auto)
        └── Upload manifest + handshake       (Human manual)
@@ -232,6 +247,7 @@ EOD
  └── ansible-playbook eod-palace.yml    (T2 auto)
        └── Review palace_update_proposal     (Human+AI)
              └── Update closets + commit     (Human+AI)
+
 ```
 
 > **Playbooks:** [`playbooks/dsom/sod-palace.yml`](../playbooks/dsom/sod-palace.yml) | [`playbooks/dsom/eod-palace.yml`](../playbooks/dsom/eod-palace.yml)
@@ -276,13 +292,13 @@ files that need to be read from .agents/ (Specifically check
 tools/audit-pre-flight.sh, tools/reanimate.sh, tools/palace-sync.sh,
 .agents/brain/palace_registry.md, and playbooks/dsom/sod-palace.yml +
 eod-palace.yml).
+
 ```
 
 ---
 
 *Created by the DSOM Engineering Team | Template v3.0 | Aligned with DSOM Master Protocol v6.1 + Palace v1.0*
 *Last Updated: 2026-04-08 | Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

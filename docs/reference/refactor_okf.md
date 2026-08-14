@@ -5,6 +5,7 @@ title: "Reference: refactor_okf.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "okf", "refactor"]
 ---
+
 # refactor_okf.py reference
 
 Batch refactoring script for Open Knowledge Format (OKF) frontmatter structures.
@@ -20,11 +21,15 @@ The `refactor_okf.py` tool processes files across the repository, strips leading
 ## CLI signature
 
 ```bash
+
 # Preview expected changes without executing in-place writes
+
 uv run python tools/refactor_okf.py --dry-run
 
 # Refactor and overwrite files with standardised compliance
+
 uv run python tools/refactor_okf.py
+
 ```
 
 ## Internal Python API
@@ -40,3 +45,8 @@ The tool ignores these directories to prevent unnecessary modifications:
 - `node_modules`
 - `.pytest_cache`
 - `.venv`
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

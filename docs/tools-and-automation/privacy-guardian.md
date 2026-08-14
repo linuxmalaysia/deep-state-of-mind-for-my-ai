@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for privacy-guardian.md."
 resource: "file:///tools-and-automation/privacy-guardian.md"
 ---
+
 # 🛡️ Privacy Guardian (privacy-guardian.sh)
 
 > **"Loose lips sink ships."** - Preventing Data Leaks to AI Models.
@@ -28,6 +29,7 @@ resource: "file:///tools-and-automation/privacy-guardian.md"
 
 ```bash
 ./tools/privacy-guardian.sh
+
 ```
 
 ## 4. 🧠 Logic Flow
@@ -46,9 +48,9 @@ resource: "file:///tools-and-automation/privacy-guardian.md"
 3. **Reporting:** Exits with `1` if leaks are found, requiring manual remediation.
 
 ## 5. 📝 Extracted Comments
+
 >
 > "Scans the generated DSOM reanimation manifest for sensitive information before it is uploaded to an external AI model."
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

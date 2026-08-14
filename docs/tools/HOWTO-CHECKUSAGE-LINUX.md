@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-CHECKUSAGE-LINUX.md."
 resource: "file:///docs/tools/HOWTO-CHECKUSAGE-LINUX.md"
 ---
+
 # HOWTO: check-usage.sh — Antigravity Session Monitor (Linux)
 
 # docs/tools/HOWTO-CHECKUSAGE-LINUX.md
@@ -47,12 +48,14 @@ resource: "file:///docs/tools/HOWTO-CHECKUSAGE-LINUX.md"
 
 ```bash
 bash tools/check-usage.sh
+
 ```
 
 ### 3.2 Live Monitor (Loop Mode)
 
 ```bash
 bash tools/check-usage.sh --loop
+
 ```
 
 Refreshes every 60 seconds with a countdown pulse bar.
@@ -69,6 +72,7 @@ Options:
   -c, --critical MB       CRITICAL threshold [default: 50]
   -n, --top N             Show only top N sessions
   --no-pulse              Suppress the progress bar
+
 ```
 
 ---
@@ -111,7 +115,6 @@ Run this tool on your WSL2 node during the **Start-of-Day Ritual** to ensure tha
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

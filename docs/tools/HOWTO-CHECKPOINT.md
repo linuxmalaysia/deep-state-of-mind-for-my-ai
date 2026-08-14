@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-CHECKPOINT.md."
 resource: "file:///docs/tools/HOWTO-CHECKPOINT.md"
 ---
+
 # HOWTO: checkpoint — Quick Sync
 
 # docs/tools/HOWTO-CHECKPOINT.md
@@ -45,13 +46,19 @@ The `checkpoint` tool is the **agile mid-task preservation algorithm**. While th
 ## 3. Usage
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\checkpoint.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/checkpoint.sh
+
 ```
 
 ---
@@ -84,7 +91,6 @@ Use this continuously every 60-90 minutes throughout active development. Since c
 
 *Standard: DSOM For My AI Protocol v6.1 | Palace v1.0 | Harisfazillah Jamel*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

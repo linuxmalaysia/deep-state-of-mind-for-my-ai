@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for PERSONALIZATION.md."
 resource: "file:///docs/PERSONALIZATION.md"
 ---
+
 ## 📜 docs/PERSONALIZATION.md (Refactored v5.6)
 
 # 🧠 DSOM Personalisation: The Cognitive Digital Twin — Gemini Edition (v6.1 + Palace v1.0)
@@ -96,7 +97,6 @@ To verify integration, run this prompt in a fresh session:
 **Current Status:** `ACTIVE` | **Last Human Audit:** 2026-04-08 | **Version:** v6.1 + Palace v1.0
 
 ---
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

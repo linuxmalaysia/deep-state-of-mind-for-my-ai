@@ -5,6 +5,7 @@ title: Reference Material Index
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "documentation", "diataxis", "reference"]
 ---
+
 # DSOM reference material
 
 Welcome to the **Deep State of Mind (DSOM) Reference Material** quadrant, structured according to the **Diátaxis Framework**.
@@ -19,9 +20,8 @@ Reference material provides **highly structured, key factual information** detai
 - **[apply_okf_frontmatter.py](apply_okf_frontmatter.md):** OKF YAML frontmatter compliance and enforcement script.
 - **[refactor_okf.py](refactor_okf.md):** OKF frontmatter batch re-ordering and UTF-8 validation tool.
 - **[bench_brain.py](bench_brain.md):** Spatial context memory access throughput benchmark.
-- **[dsom_token_auditor.py](dsom_token_auditor.md):** Tiktoken-based token optimization and audit calculator.
+- **[dsom_token_auditor.py](dsom_token_auditor.md):** Tiktoken-based token optimisation and audit calculator.
 - **[mkdocs_hooks.py](mkdocs_hooks.md):** Custom MkDocs page hooks for link rewriting and path normalization.
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*

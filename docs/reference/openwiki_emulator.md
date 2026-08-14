@@ -5,6 +5,7 @@ title: "Reference: openwiki_emulator.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "openwiki", "emulator"]
 ---
+
 # openwiki_emulator.py reference
 
 Zero-binary, pure Python CLI tool emulating the OpenWiki documentation environment.
@@ -20,17 +21,23 @@ The `openwiki_emulator.py` script replaces external Node.js binaries and cloud A
 ## CLI options
 
 ```bash
-# Initialize and compile the full OpenWiki workspace (default action)
+
+# Initialise and compile the full OpenWiki workspace (default action)
+
 uv run python tools/openwiki_emulator.py --init
 
 # Retrieve recent Git changes and update context history
+
 uv run python tools/openwiki_emulator.py --update
 
 # Perform search against OpenWiki YAML metadata
+
 uv run python tools/openwiki_emulator.py --search "ansible"
 
 # Export a standalone offline HTML interactive knowledge graph
+
 uv run python tools/openwiki_emulator.py --export-graph
+
 ```
 
 ## Inputs
@@ -65,3 +72,8 @@ Validates Mermaid diagram layout syntax, bracket matches, and unescaped quotes.
 Scans a markdown file, detects corrupted or plain code fences, and repairs them.
 - **Arguments:** `filepath` (absolute target file `pathlib.Path`).
 - **Mechanism:** Degrades blocks in place with errors; heals corrected blocks back to active schemas.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

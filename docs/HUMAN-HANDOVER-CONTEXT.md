@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HUMAN-HANDOVER-CONTEXT.md."
 resource: "file:///docs/HUMAN-HANDOVER-CONTEXT.md"
 ---
+
 # 🤝 HUMAN-HANDOVER-CONTEXT.md
 
 # Path: docs/HUMAN-HANDOVER-CONTEXT.md
@@ -93,30 +94,40 @@ Whenever changes are pushed from Windows (T1), perform this ritual to align all 
 ```bash
 cd /mnt/[T2_MOUNTED_PATH]
 git pull origin main
+
 ```
 
 **Step 2 — Promote to T3 Jump Host / Ansible Control (if applicable)**
 
 ```bash
+
 # Run from T2 WSL2 — promote project to T3 orchestrator
+
 rsync -avz --checksum --delete \
     --exclude '.git' --exclude '.gemini' --exclude '.agents' \
     ./ dsom-admin@[T3_IP]:/opt/[YOUR_PROJECT_NAME]/
+
 ```
 
 **Step 3 — Verify T3 Ansible Connectivity**
 
 ```bash
+
 # Run from T2 WSL2
+
 ansible all -m ping -i inventory/hosts.yml
+
 ```
 
 **Step 4 — Optional: Remote Audit from T1 via WSL**
 
 ```powershell
+
 # Run from Windows PowerShell (T1) — bridges through T2 → T3
+
 wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `
     "ssh -t dsom-admin@[T3_IP] 'cd /opt/[YOUR_PROJECT_NAME] && bash tools/audit-pre-flight.sh'"
+
 ```
 
 ---
@@ -144,11 +155,13 @@ AI will **wait for your results** before proceeding. Never assume success.
 #### 📌 Current State (Fill in at each session end)
 
 ```
+
 CURRENT STATE: [DESCRIBE_CURRENT_STATE e.g. v1.0 — Ansible baseline deployed, Kafka brokers up]
 Environment:   [e.g. 3-node test cluster]
 Last Commit:   [PASTE LAST COMMIT HASH AND MESSAGE]
 Mental Anchor: [ONE SENTENCE — exact state and where to resume]
 Next Action:   [WHAT THE AI SHOULD DO FIRST IN THE NEW SESSION]
+
 ```
 
 ---
@@ -173,7 +186,6 @@ Next Action:   [WHAT THE AI SHOULD DO FIRST IN THE NEW SESSION]
 *Standard: DSOM For My AI Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *Template source: docs/HUMAN-HANDOVER-CONTEXT.md | Updated: 2026-04-08*
 *Adapted from: DSOM elasticsearch-kibana-podman project (v9.4 Sovereign Recovery model)*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

@@ -5,6 +5,7 @@ title: "Explanation: Diátaxis Framework Adoption"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "explanation", "diataxis", "documentation"]
 ---
+
 # Diátaxis framework adoption in DSOM
 
 An architectural overview explaining the adoption, structure, and benefits of the Diátaxis documentation framework in the DSOM project.
@@ -25,6 +26,7 @@ Acq.  |  (Learning-   |  (Problem-    |
 Und.  |  (Concept-    |  (Information-|
       |   oriented)   |   oriented)   |
       +---------------+---------------+
+
 ```
 
 ## Why adopt Diátaxis in DSOM?
@@ -55,7 +57,6 @@ Our documentation Palace is structured cleanly inside `docs/` using the four Di�
 4. **Explanation (`docs/explanation/`):**
    - Context, architecture, and design rationale behind our components.
    - Example: [OpenWiki & FastMCP Architecture](openwiki-mcp-architecture.md).
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*

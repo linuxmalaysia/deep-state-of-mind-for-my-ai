@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for MULTI-AGENT-PROTOCOLS.md."
 resource: "file:///docs/governance/MULTI-AGENT-PROTOCOLS.md"
 ---
+
 # 🤖 DSOM Multi-Agent Protocols (v6.1)
 
 > **Entry Point 6:** This document serves as the Subagent Swarm Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
@@ -44,11 +45,14 @@ Regardless of the agent, the **DSOM Laws** must be injected before the first pro
 Create/Update the specific rule file (e.g., `.cursorrules`) in the root directory with this pointer:
 
 ```text
+
 # .cursorrules / .windsurfrules
+
 YOU ARE A DSOM-COMPLIANT AGENT.
 BEFORE ANSWERING, READ: docs/AI-MASTER-PROTOCOL.md
 FOLLOW: docs/PERSONALIZATION.md
 CRITICAL: DO NOT CREATE GLOBAL VARIABLES. ADHERE TO CLEAN ARCHITECTURE.
+
 ```
 
 ### For Tier 2 (Autonomous)
@@ -109,10 +113,10 @@ If the Palace Registry is missing, the agent must flag this and request that the
 
 ```bash
 bash tools/palace-sync.sh --backfill
+
 ```
 
 *Last Updated: 2026-04-08 | Standard: DSOM For My AI Protocol v6.1 + Palace v1.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

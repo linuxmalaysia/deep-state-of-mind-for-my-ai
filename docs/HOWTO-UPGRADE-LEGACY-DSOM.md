@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for migrating older DSOM projects to the current architectural baseline."
 resource: "file:///docs/HOWTO-UPGRADE-LEGACY-DSOM.md"
 ---
+
 # HOWTO: Upgrade Legacy DSOM Projects
 
 > **Entry Point 5:** This document serves as the Legacy Upgrade Entry Point. See [START-HERE.md](../START-HERE.md) for the master onboarding roadmap.

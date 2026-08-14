@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for HUB-AND-SPOKE-MODEL.md."
 resource: "file:///docs/governance/HUB-AND-SPOKE-MODEL.md"
 ---
+
 ### 📜 docs/HUB-AND-SPOKE-MODEL.md (v2.0)
 
 # 🏛️ The Hub-and-Spoke Collaboration Model
@@ -127,7 +128,6 @@ ls .agents/brain/member/
 3. **LDP Compliance:** The clear structure and command examples follow the **Linux Documentation Project** standards for technical manuals.
 
 ---
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

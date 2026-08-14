@@ -7,6 +7,7 @@ topics: ["openwiki", "python", "emulator", "howto", "dsom", "zero-binary", "uv"]
 description: "Step-by-step operational guide for maintaining OpenWiki knowledge graphs natively via Python (uv) without Node.js binaries or external API rate limits."
 resource: "file:///docs/tools/HOWTO-OPENWIKI.md"
 ---
+
 # 🛠️ HOWTO: Operating OpenWiki & Native Python Zero-Binary Emulator
 
 This operational guide provides step-by-step instructions for running and maintaining **OpenWiki** knowledge graphs within the Deep State of Mind (DSOM) framework.
@@ -19,7 +20,7 @@ Under **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, all OpenWiki
 
 | Operational Intent | Python `uv` Command | Description / Result |
 | :--- | :--- | :--- |
-| **Initialize Knowledge Base** | `uv run --with pyyaml python tools/openwiki_emulator.py --init` | Re-generates all 10 OKF-compliant `.md` wiki pages & skeleton structure. |
+| **Initialise Knowledge Base** | `uv run --with pyyaml python tools/openwiki_emulator.py --init` | Re-generates all 10 OKF-compliant `.md` wiki pages & skeleton structure. |
 | **Incremental Diff Update** | `uv run --with pyyaml python tools/openwiki_emulator.py --update` | Checks `git status` / `git diff` and updates evidence blocks for changed files. |
 | **Fast Frontmatter Search** | `uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"` | Performs sub-millisecond search over OKF YAML frontmatter (`topics:`, `title:`, `description:`). |
 | **Export Offline Graph** | `uv run --with pyyaml python tools/openwiki_emulator.py --export-graph` | Generates a standalone, offline HTML graph file at `openwiki/graph.html`. |
@@ -44,11 +45,15 @@ If you are setting up OpenWiki emulation on another repository or project, follo
 Save the following code as `tools/openwiki_emulator.py` in your repository root:
 
 ```python
+
 # /// script
 # dependencies = [
+
 #     "pyyaml>=6.0",
 # ]
+
 # ///
+
 """
 OpenWiki Emulator & Knowledge Graph Generator
 Author:   Harisfazillah Jamel (LinuxMalaysia)
@@ -71,10 +76,8 @@ import yaml
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 OPENWIKI_DIR = REPO_ROOT / "openwiki"
 
-
 def get_timestamp() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
 
 def ensure_openwiki_dirs():
     dirs = [
@@ -90,12 +93,10 @@ def ensure_openwiki_dirs():
     for d in dirs:
         d.mkdir(parents=True, exist_ok=True)
 
-
 def cmd_init():
     print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR}...")
     ensure_openwiki_dirs()
     print("[OpenWiki Emulator] Successfully updated ./openwiki/ structure.")
-
 
 def cmd_search(query: str):
     print(f"[OpenWiki Search] Querying frontmatter for: '{query}'...")
@@ -111,10 +112,9 @@ def cmd_search(query: str):
         except Exception:
             pass
 
-
 def main():
     parser = argparse.ArgumentParser(description="Native Python OpenWiki Emulator")
-    parser.add_argument("--init", action="store_true", help="Initialize full wiki")
+    parser.add_argument("--init", action="store_true", help="Initialise full wiki")
     parser.add_argument("--update", action="store_true", help="Compile recent Git diffs")
     parser.add_argument("--search", type=str, help="Fast OKF metadata search query")
     parser.add_argument("--export-graph", action="store_true", help="Generate standalone offline HTML graph")
@@ -125,9 +125,9 @@ def main():
     else:
         cmd_init()
 
-
 if __name__ == "__main__":
     main()
+
 ```
 
 ---
@@ -156,6 +156,7 @@ Requirements:
 5. All generated markdown files MUST include OKF v0.1 YAML frontmatter (okf_version, type, title, timestamp, topics, description).
 6. The script MUST run non-interactively without Node.js binaries, npm packages, or external API keys."
 ================================================================================
+
 ```
 
 ---

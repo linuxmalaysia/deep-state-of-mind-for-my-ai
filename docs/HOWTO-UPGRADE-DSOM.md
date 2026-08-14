@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-UPGRADE-DSOM.md."
 resource: "file:///docs/HOWTO-UPGRADE-DSOM.md"
 ---
+
 # HOWTO: Upgrade and Audit DSOM (Scenario 2)
 
 **Author:** Harisfazillah Jamel
@@ -36,6 +37,7 @@ Before overwriting tools, ensure your Brain artifacts are safe.
 
 ```bash
 cp -r .agents/brain .agents/brain_backup_$(date +%F)
+
 ```
 
 ### Step 2: Update Tooling and Docs
@@ -48,6 +50,7 @@ You need to overwrite the `tools/` and `docs/` directories with the latest versi
 git submodule update --remote
 cp -r .dsom-core/tools .
 cp -r .dsom-core/docs .
+
 ```
 
 **If Manual Copy:**
@@ -89,6 +92,7 @@ The Sovereign Markdown Palace is the key new feature in v6.1. Add it by backfill
 
 ```bash
 bash tools/palace-sync.sh --backfill
+
 ```
 
 This generates `palace_update_proposal_YYYY-MM-DD.md`. Share it with your AI and create the initial closets in `.agents/brain/wings/`.
@@ -137,7 +141,6 @@ A: The context window might be stale. Start a **New Chat Session** and perform t
 * [SOD-RITUAL.md](SOD-RITUAL.md) — Step 1a: Ansible Palace SOD
 * [EOD-RITUAL.md](EOD-RITUAL.md) — Step 2a: Ansible Palace EOD
 * [GITOPS-AIOPS-ANSIBLE-STRATEGY.md](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

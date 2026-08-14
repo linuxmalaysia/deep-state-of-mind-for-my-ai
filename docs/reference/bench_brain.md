@@ -5,6 +5,7 @@ title: "Reference: bench_brain.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "benchmark", "brain"]
 ---
+
 # bench_brain.py reference
 
 Spatial brain performance benchmarking utility.
@@ -21,6 +22,7 @@ The `bench_brain.py` tool measures read latency and byte throughput across brain
 
 ```bash
 uv run python tools/bench_brain.py
+
 ```
 
 ## Inputs
@@ -52,3 +54,8 @@ Recursively gathers matching files.
 
 Evaluates overall reading performance.
 - **Returns:** Tuple containing `(total_bytes, elapsed_seconds)`.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

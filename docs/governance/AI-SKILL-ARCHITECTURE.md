@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "Governance policy defining how AI agents discover, trigger, and execute modular skills as operational manuals, utilising token optimisation."
 resource: "file:///docs/governance/AI-SKILL-ARCHITECTURE.md"
 ---
+
 # AI Skill Architecture
 
 > **Entry Point 7:** This document is part of the Procedural Skill Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.
@@ -42,7 +43,7 @@ The following 18 skills are currently registered in this project's local workspa
 4. **dsom-project-cloner**
 5. **eod-palace-sync**
 6. **forensic-log-audit**
-7. **initialize-gitops**
+7. **initialise-gitops**
 8. **latex-proposal-compiler**
 9. **node-proposal-formatter**
 10. **node-slide-generator**
@@ -54,7 +55,6 @@ The following 18 skills are currently registered in this project's local workspa
 16. **proposal-docx-formatter**
 17. **sod-palace-sync**
 18. **ssh-passwordless-setup**
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-11*

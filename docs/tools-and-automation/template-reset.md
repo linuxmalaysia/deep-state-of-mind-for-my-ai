@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for template-reset.md."
 resource: "file:///docs/tools-and-automation/template-reset.md"
 ---
+
 # ♻️ Template Reset (template-reset.sh)
 
 > **"Tabula Rasa."** - Returning to the beginning.
@@ -28,6 +29,7 @@ resource: "file:///docs/tools-and-automation/template-reset.md"
 
 ```bash
 ./tools/template-reset.sh
+
 ```
 
 ## 4. 🧠 Logic Flow
@@ -39,9 +41,9 @@ resource: "file:///docs/tools-and-automation/template-reset.md"
 5. **Instruction:** Guides user to add files and start fresh history.
 
 ## 5. 📝 Extracted Comments
+
 >
 > "Prepares a DSOM clone for a new project. It purges old Git history and resets brain artifacts to a 'Golden Image' state."
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

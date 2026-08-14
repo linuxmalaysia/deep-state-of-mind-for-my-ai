@@ -7,11 +7,13 @@ topics: ["dsom", "documentation"]
 description: "A comprehensive index of all executable scripts (.ps1, .sh) and Ansible playbooks/variables (.yml) currently active in the DSOM framework for human auditing purposes."
 resource: "file:///docs/governance/AUTOMATION-AUDIT-LIST.md"
 ---
+
 # Automation & Script Audit Ledger
 
 This document serves as a human-auditable index of all executable automation scripts and configuration files currently present in the DSOM workspace. It is segmented by file type to facilitate security, syntax, and operational auditing.
 
 ## 1. Shell Scripts (`.sh`)
+
 *POSIX-compliant scripts used for Linux and Termux environments.*
 
 - **`tools/audit-pre-flight.sh`**: Performs initial system compliance and environment checks prior to AI operations.
@@ -28,12 +30,13 @@ This document serves as a human-auditable index of all executable automation scr
 - **`tools/palace-sync.sh`**: Synchronizes the local brain state with the upstream Git repository to ensure cross-device continuity.
 - **`tools/privacy-guardian.sh`**: Scans the workspace for leaked credentials or PII before allowing Git commits.
 - **`tools/reanimate-claude.sh`**: Specialized Start of Day (SOD) script for environments powered by Claude models.
-- **`tools/reanimate.sh`**: The standard Start of Day (SOD) script to wake the agent, load context, and initialize the terminal.
+- **`tools/reanimate.sh`**: The standard Start of Day (SOD) script to wake the agent, load context, and initialise the terminal.
 - **`tools/setup-dsom-control-node.sh`**: Provisions a new Linux host machine to act as a centralized DSOM control node.
-- **`tools/sod-palace.sh`**: Start of Day (SOD) ritual to initialize the memory palace ledger.
+- **`tools/sod-palace.sh`**: Start of Day (SOD) ritual to initialise the memory palace ledger.
 - **`tools/template-reset.sh`**: Wipes the current operational state and restores the `.agents/brain` to its pristine baseline template.
 
 ## 2. PowerShell Scripts (`.ps1`)
+
 *Cross-platform orchestration scripts designed for Windows and PowerShell Core.*
 
 - **`tools/audit-pre-flight.ps1`**: Performs initial system compliance and environment checks prior to AI operations.
@@ -51,18 +54,21 @@ This document serves as a human-auditable index of all executable automation scr
 - **`tools/reanimate-claude.ps1`**: Specialized Start of Day (SOD) script for Claude models.
 - **`tools/reanimate.ps1`**: The standard Start of Day (SOD) script to wake the agent and load context.
 - **`tools/setup-wsl-almalinux10.ps1`**: Provisions a Windows Subsystem for Linux (WSL) environment running AlmaLinux 10.
-- **`tools/sod-palace.ps1`**: Start of Day (SOD) ritual to initialize the memory palace ledger.
+- **`tools/sod-palace.ps1`**: Start of Day (SOD) ritual to initialise the memory palace ledger.
 - **`tools/template-reset.ps1`**: Wipes the current state and restores the `.agents/brain` baseline template.
 
 ## 3. YAML Configurations & Playbooks (`.yml`)
+
 *Ansible playbooks, role tasks, and inventory configurations.*
 
 ### Root & Inventory
+
 - **`mkdocs.yml`**: Core configuration for the MkDocs static site generator used to publish DSOM documentation.
 - **`inventory/hosts.yml`**: Ansible inventory file defining target nodes and server groups.
 - **`inventory/group_vars/all.yml`**: Global variables and shared secrets for the Ansible infrastructure fabric.
 
 ### Ansible Playbooks
+
 - **`playbooks/common.yml`**: Baseline configurations and hardening applied to all infrastructure nodes.
 - **`playbooks/preflight.yml`**: Pre-execution checks and environment validation for the Ansible fabric.
 - **`playbooks/dsom/audit-preflight.yml`**: Ansible orchestration translating the standalone audit pre-flight checks to multi-node environments.
@@ -75,6 +81,7 @@ This document serves as a human-auditable index of all executable automation scr
 - **`playbooks/dsom/sod-palace.yml`**: Ansible orchestration for Start of Day initialization across nodes.
 
 ### Ansible Roles (Common)
+
 - **`roles/common/defaults/main.yml`**: Default variable definitions for the common baseline role.
 - **`roles/common/handlers/main.yml`**: Reusable service handlers (e.g., restarting SSH/Nginx) for the common role.
 - **`roles/common/meta/main.yml`**: Role dependency definitions and Galaxy metadata.

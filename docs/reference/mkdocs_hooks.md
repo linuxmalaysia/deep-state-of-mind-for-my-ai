@@ -5,6 +5,7 @@ title: "Reference: mkdocs_hooks.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "mkdocs", "hooks"]
 ---
+
 # mkdocs_hooks.py reference
 
 Custom MkDocs page compilation hook for relative Markdown URL rewriting.
@@ -24,6 +25,7 @@ Automated by the static site compiler. Registered inside `mkdocs.yml`:
 ```yaml
 hooks:
   - tools/mkdocs_hooks.py
+
 ```
 
 ## Functions
@@ -39,3 +41,8 @@ Interceptors registered by the MkDocs lifecycle.
 - **External links:** Keeps `http://`, `https://`, `mailto:`, `ftp:`, and `#` anchor links unchanged.
 - **`docs/` prefix:** Strips `docs/` from relative paths (e.g. `docs/governance/PROTOCOL.md` becomes `governance/PROTOCOL.md`).
 - **`../../` prefix:** Normalises double-parent directories (e.g. `../../AGENTS.md` becomes `../AGENTS.md`).
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

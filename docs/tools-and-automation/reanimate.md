@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for reanimate.md."
 resource: "file:///docs/tools-and-automation/reanimate.md"
 ---
+
 # 🌅 Reanimation Engine (reanimate.sh)
 
 > **"Wake up, Neo."** - Ingesting the Project State.
@@ -29,6 +30,7 @@ resource: "file:///docs/tools-and-automation/reanimate.md"
 
 ```bash
 ./tools/reanimate.sh
+
 ```
 
 ## 4. 🧠 Logic Flow
@@ -44,9 +46,9 @@ resource: "file:///docs/tools-and-automation/reanimate.md"
 4. **Output:** Generates `sod_manifest_[DATE].txt` in root.
 
 ## 5. 📝 Extracted Comments
+
 >
 > "Aggregates ALL core DSOM artifacts. Features an interactive multi-line input for EOD summaries."
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

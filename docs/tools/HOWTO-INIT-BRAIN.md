@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-INIT-BRAIN.md."
 resource: "file:///docs/tools/HOWTO-INIT-BRAIN.md"
 ---
+
 # HOWTO: init-brain — Cognitive Infrastructure Bootstrap
 
 # docs/tools/HOWTO-INIT-BRAIN.md
@@ -22,7 +23,7 @@ resource: "file:///docs/tools/HOWTO-INIT-BRAIN.md"
 `init-brain` is the **Day Zero Initializer** for any DSOM-compliant repository. It creates the physical directory structure and the foundational Markdown artifacts required for an AI to store and retrieve persistent project state.
 
 **Use it to:**
-- Initialize the `.agents/brain/` directory at the repository root.
+- Initialise the `.agents/brain/` directory at the repository root.
 - Create the 4 core artifacts: `task.md`, `walkthrough.md`, `implementation_plan.md`, and the `DSOM_TEMPLATE.md`.
 - Restore missing brain state files if they were accidentally deleted.
 - Bootstrapping a fresh "External Memory" for your Cognitive Twin.
@@ -48,19 +49,26 @@ resource: "file:///docs/tools/HOWTO-INIT-BRAIN.md"
 ### 3.1 Standard Initialization
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\init-brain.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/init-brain.sh
+
 ```
 
 ### 3.2 Ansible Provisioning
 
 ```bash
 ansible-playbook playbooks/dsom/init-brain.yml
+
 ```
 
 ---
@@ -96,7 +104,6 @@ This is a **one-time setup** tool. Once the brain is initialized, you should swi
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

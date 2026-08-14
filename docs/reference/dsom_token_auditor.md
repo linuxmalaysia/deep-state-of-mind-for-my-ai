@@ -5,6 +5,7 @@ title: "Reference: dsom_token_auditor.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "tokens", "audit"]
 ---
+
 # dsom_token_auditor.py reference
 
 Tiktoken-based token efficiency and context load calculation script.
@@ -21,6 +22,7 @@ The `dsom_token_auditor.py` script compares non-DSOM "Bloated" context loads aga
 
 ```bash
 uv run --with tiktoken python tools/dsom_token_auditor.py
+
 ```
 
 ## Outputs
@@ -49,3 +51,8 @@ Generates a raw string simulating chat history and massive file loads.
 ### `generate_dsom_context()`
 
 Generates a raw string simulating episodic records and relative link references.
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

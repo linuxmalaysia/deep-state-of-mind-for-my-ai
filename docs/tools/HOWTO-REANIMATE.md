@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-REANIMATE.md."
 resource: "file:///docs/tools/HOWTO-REANIMATE.md"
 ---
+
 # HOWTO: reanimate — AI Context Handshake
 
 # docs/tools/HOWTO-REANIMATE.md
@@ -48,13 +49,19 @@ resource: "file:///docs/tools/HOWTO-REANIMATE.md"
 ### 3.1 Standard Reanimation
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\reanimate.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/reanimate.sh
+
 ```
 
 ### 3.2 Interactive Injection
@@ -96,7 +103,6 @@ After generating the manifest, upload `sod_manifest_YYYY-MM-DD.txt` to your AI a
 
 *Standard: DSOM For My AI Protocol v6.1 | Harisfazillah Jamel | LinuxMalaysia*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

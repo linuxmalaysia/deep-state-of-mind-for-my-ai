@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-SETUP-ANSIBLE-BASELINE.md."
 resource: "file:///docs/HOWTO-SETUP-ANSIBLE-BASELINE.md"
 ---
+
 # 🛠️ HOWTO: Set Up the Ansible Baseline for a DSOM Project
 
 **Title:** HOWTO: Set Up the Ansible Baseline for a DSOM Project
@@ -60,16 +61,21 @@ Before beginning, verify the following are available on your **Tier 2 Dev Bridge
 ### Install Ansible (if not present)
 
 ```bash
+
 # Ubuntu / Debian
+
 sudo apt update && sudo apt install -y python3-pip
 pip3 install ansible
 
 # RHEL / AlmaLinux / Rocky Linux
+
 sudo dnf install -y python3-pip
 pip3 install ansible
 
 # Verify
+
 ansible --version
+
 ```
 
 ---
@@ -83,7 +89,9 @@ ansible --version
 **Command:**
 
 ```bash
+
 # From project root (Tier 2 Dev Bridge or WSL2)
+
 mkdir -p inventory/group_vars inventory/host_vars
 mkdir -p playbooks/dsom
 mkdir -p roles
@@ -91,9 +99,11 @@ mkdir -p vault
 mkdir -p .logs
 
 # Protect the vault directory — NEVER commit secrets
+
 cat >> .gitignore << 'EOF'
 
 # Ansible Vault & Sensitive Files
+
 vault/*.yml
 !vault/.gitignore
 *.retry
@@ -101,7 +111,9 @@ vault/*.yml
 EOF
 
 # Create vault .gitignore placeholder
+
 echo "# Vault secrets are NEVER committed to Git" > vault/.gitignore
+
 ```
 
 **Outcome:** The standard DSOM Ansible directory skeleton exists at your project root.
@@ -134,6 +146,7 @@ become_user         = root
 ssh_args            = -o ControlMaster=auto -o ControlPersist=60s
 pipelining          = True
 EOF
+
 ```
 
 **Outcome:** `ansible.cfg` is created with DSOM-standard settings.
@@ -151,8 +164,10 @@ EOF
 ```bash
 cat > inventory/hosts.yml << 'EOF'
 ---
+
 # DSOM Ansible Inventory Template
 # Project: [YOUR_PROJECT_NAME]
+
 # Last Updated: [DATE]
 # IMPORTANT: This file must NOT contain secrets. Use ansible-vault for credentials.
 
@@ -183,6 +198,7 @@ all:
           ansible_host: "[PROD_IP_OR_HOSTNAME]"
           ansible_user: "[PROD_USER]"             # e.g., dsom-admin
 EOF
+
 ```
 
 **Outcome:** `inventory/hosts.yml` is created as the node topology source of truth.
@@ -198,7 +214,9 @@ EOF
 ```bash
 cat > inventory/group_vars/all.yml << 'EOF'
 ---
+
 # Variables applied to ALL hosts
+
 project_name:   "[YOUR_PROJECT_NAME]"
 project_path:   "/opt/[YOUR_PROJECT_NAME]"
 deploy_user:    "[YOUR_DEPLOY_USER]"
@@ -207,12 +225,17 @@ EOF
 
 cat > inventory/group_vars/production.yml << 'EOF'
 ---
+
 # Production-specific overrides
+
 deploy_uid:   "[PROD_UID]"            # e.g., 2001
 project_path: "/opt/[YOUR_PROJECT_NAME]-prod"
+
 # Vault-injected variables — DO NOT put secrets here
 # credentials: "{{ vault_production_credentials }}"
+
 EOF
+
 ```
 
 **Outcome:** Declarative group variables established for the GitOps single-source-of-truth principle.
@@ -228,8 +251,10 @@ EOF
 ```bash
 cat > playbooks/preflight.yml << 'EOF'
 ---
+
 # DSOM Pre-flight Verification Playbook
 # Purpose: Verify connectivity and baseline state before any deployment.
+
 # Usage:   ansible-playbook playbooks/preflight.yml
 # Rule:    This playbook MUST pass before any other playbook is run.
 
@@ -271,6 +296,7 @@ cat > playbooks/preflight.yml << 'EOF'
           Project path '{{ project_path }}' on {{ inventory_hostname }}:
           {{ 'EXISTS' if project_dir.stat.exists else 'NOT YET CREATED (expected for fresh deploy)' }}
 EOF
+
 ```
 
 **Outcome:** The pre-flight playbook exists and is ready to validate the environment.
@@ -284,14 +310,19 @@ EOF
 **Command:**
 
 ```bash
+
 # Basic connectivity ping
+
 ansible all -m ping -i inventory/hosts.yml
 
 # Run the pre-flight playbook in check mode first
+
 ansible-playbook playbooks/preflight.yml --check
 
 # Run the pre-flight playbook live
+
 ansible-playbook playbooks/preflight.yml
+
 ```
 
 **Success Criteria:**
@@ -309,7 +340,9 @@ ansible-playbook playbooks/preflight.yml
 **Command:**
 
 ```bash
+
 # Create and encrypt a secrets file
+
 cat > /tmp/secrets_draft.yml << 'EOF'
 ---
 vault_deploy_password:    "CHANGE_ME"
@@ -318,11 +351,14 @@ vault_api_key:            "CHANGE_ME"
 EOF
 
 # Encrypt it with ansible-vault
+
 ansible-vault encrypt /tmp/secrets_draft.yml --output vault/production_secrets.yml
 rm /tmp/secrets_draft.yml
 
 # Verify the encrypted file (enter vault password when prompted)
+
 ansible-vault view vault/production_secrets.yml
+
 ```
 
 **Outcome:** Secrets are encrypted and stored in `vault/`. The plaintext file is destroyed immediately. The `vault/` directory is excluded from Git via `.gitignore`.
@@ -338,10 +374,13 @@ ansible-vault view vault/production_secrets.yml
 **Command:**
 
 ```bash
+
 # Append Ansible checks to the existing audit script
+
 cat >> tools/audit-pre-flight.sh << 'EOF'
 
 # ── Ansible Pre-flight Checks ─────────────────────────────────────────────────
+
 echo "--- [ANSIBLE] Verifying Ansible Baseline ---"
 
 if ! command -v ansible &>/dev/null; then
@@ -370,6 +409,7 @@ fi
 
 echo "[OK] Ansible baseline verified."
 EOF
+
 ```
 
 **Outcome:** The DSOM audit script now validates the Ansible baseline as part of every session Reanimation.

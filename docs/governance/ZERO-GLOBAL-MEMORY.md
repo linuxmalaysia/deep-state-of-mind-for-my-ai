@@ -7,6 +7,7 @@ topics: ["memory", "sovereignty", "zero-global", "palace", "git-native"]
 description: "Comprehensive architectural analysis of the Zero-Global Memory mandate in DSOM. Covers the problem, the solution, the mechanics, and the operational procedures that make AI memory persistent, auditable, and vendor-independent."
 resource: "file:///docs/governance/ZERO-GLOBAL-MEMORY.md"
 ---
+
 # Zero-Global Memory: The Sovereign AI Memory Architecture
 
 > **Artifact Level:** L2 (Analysis)
@@ -24,12 +25,15 @@ By enforcing Zero-Global Memory, the DSOM framework resolves the most critical s
 Standard LLM deployments suffer from three compounding memory failures:
 
 ### 1.1 Session Wipeout
+
 Every chat session is isolated. When a session closes, the AI loses all accumulated context: server names, IP schemes, design decisions, in-progress task states, and personal preferences. The next session starts from zero.
 
 ### 1.2 Vendor Lock-in
+
 When project memory accumulates inside a proprietary AI tool (e.g., saved chats, project instructions stored in the vendor's cloud), migrating to a different model or provider requires re-teaching everything from scratch. The institutional knowledge is trapped.
 
 ### 1.3 No Audit Trail
+
 There is no way to ask: *"What did the AI know on 14 July, and who told it that?"* Memory changes are invisible and unversioned. This is catastrophic for regulated or security-sensitive operational environments.
 
 ---
@@ -43,6 +47,7 @@ Zero-Global Memory resolves all three failures by a single architectural constra
 Every piece of operational knowledge the AI needs must exist as a committed file in the repository before the AI can act on it. If it is not in Git, it does not exist.
 
 ```
+
 ╔══════════════════════════════════════════════════════════╗
 ║            ZERO-GLOBAL MEMORY ARCHITECTURE               ║
 ╠══════════════════════════════════════════════════════════╣
@@ -61,6 +66,7 @@ Every piece of operational knowledge the AI needs must exist as a committed file
 ║  ✅  tools/                   operational ritual scripts  ║
 ║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
+
 ```
 
 ---
@@ -72,6 +78,7 @@ Every piece of operational knowledge the AI needs must exist as a committed file
 Memory is not stored as a flat list of notes. It is structured into a spatial architecture — the **Sovereign Markdown Palace** — organised into hierarchical rooms:
 
 ```
+
 .agents/brain/
 ├── palace_registry.md         ← master spatial index
 ├── active_context_manifest.md ← active session file list
@@ -85,6 +92,7 @@ Memory is not stored as a flat list of notes. It is structured into a spatial ar
     │           └── closet.md  ← specific knowledge unit
     └── wing_infrastructure/
         └── ...
+
 ```
 
 Each `closet.md` contains a bounded, single-topic knowledge unit (OKF-compliant). The AI navigates this structure deterministically — it does not search, it reads from a declared address.
@@ -94,14 +102,18 @@ Each `closet.md` contains a bounded, single-topic knowledge unit (OKF-compliant)
 The AI never loads the entire `.agents/brain/` directory. Instead, it reads only the files declared in `active_context_manifest.md` at the start of each session:
 
 ```markdown
+
 ## Active Files
+
 - .agents/brain/task.md
 - .agents/brain/walkthrough.md
 - .agents/brain/palace_registry.md
 - .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md
 
 ## Excluded (Archival — load via view_file with line ranges only)
+
 # palace_update_proposal files: 30,000–55,000 tokens each
+
 ```
 
 This is the **Progressive Disclosure** principle applied to memory: load only what is needed for the current session. The three archival `palace_update_proposal` files in the baseline repository alone contain 120,466 tokens — loading them wholesale would consume the entire context window before any work begins.
@@ -111,11 +123,13 @@ This is the **Progressive Disclosure** principle applied to memory: load only wh
 At the end of every significant workflow, the AI generates a `[DSOM EPISODIC RECORD]` block — a compact serialisation of the session's cognitive state. This record is saved by the human operator and used to reanimate the next session precisely where the last one ended:
 
 ```
+
 [DSOM EPISODIC RECORD]
 1. IDENTITY & CONTEXT MATRIX   → who, what project, which gem
 2. THE DELTA (COGNITIVE LOCK)  → last milestone, blocking issues
 3. MEMORY CORE & PARAMETERS    → rules asserted, file dependencies
 4. NEXT ACTION QUEUE           → exact next steps
+
 ```
 
 Without this record, the next session begins from zero. With it, reanimation takes seconds.
@@ -135,6 +149,7 @@ graph TD
     F -->|Maps to| G[tools/ scripts & <br/> docs/tools/ guides]
     
     C -.->|Updated by| D
+
 ```
 
 **Relational Matrix:**
@@ -150,11 +165,13 @@ graph TD
 ### 4.1 Start-of-Day (SOD) — Memory Reanimation
 
 ```
+
 1. Read active_context_manifest.md  → determine which files to load
 2. Read task.md                     → restore current task state
 3. Read walkthrough.md              → read session anchor
 4. Read palace_registry.md          → orient spatial memory index
 5. Load only declared wing closets  → domain-specific context
+
 ```
 
 Total token cost for a typical SOD load: **~2,500–4,000 tokens** — well within the 4,000-token quality gate for individual files, and far below the ~145,000 tokens that would be consumed by loading the entire brain.
@@ -174,6 +191,7 @@ Every decision, discovery, or architectural change made during a session must be
 ### 4.3 End-of-Day (EOD) — Memory Serialisation
 
 ```
+
 1. Update task.md with completed/pending items
 2. Write session anchor to walkthrough.md
 3. Generate [DSOM EPISODIC RECORD] block
@@ -181,6 +199,7 @@ Every decision, discovery, or architectural change made during a session must be
 5. Run palace-sync to generate palace_update_proposal
 6. Atomic git commits per logical task boundary
 7. Push to origin/main (the external memory backup)
+
 ```
 
 ---

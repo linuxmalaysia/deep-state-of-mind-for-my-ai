@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-PALACE-ONBOARDING.md."
 resource: "file:///docs/HOWTO-PALACE-ONBOARDING.md"
 ---
+
 # 🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents
 
 > **Entry Point 4:** This document serves as the Daily Operations Entry Point. See [START-HERE.md](../START-HERE.md) for the master onboarding roadmap.
@@ -24,7 +25,9 @@ resource: "file:///docs/HOWTO-PALACE-ONBOARDING.md"
 ### Step 1 — Read the Palace Registry (Your Spatial Map)
 
 ```
+
 .agents/brain/palace_registry.md
+
 ```
 
 This is your entry point. It lists all Wings, Halls, and Rooms with a Quick-Reference table mapping tasks to the correct Room.
@@ -60,6 +63,7 @@ Think of it as a **library index**: instead of reading every book to find a fact
 ### How Does It Work With the Rest of DSOM?
 
 ```
+
 YOUR PROJECT REPOSITORY
 │
 ├── README.md                     ← START HERE (overview + daily rituals)
@@ -80,6 +84,7 @@ YOUR PROJECT REPOSITORY
             └── wing_dsom_core/
                 ├── hall_facts/   ← Laws, architecture, tools
                 └── hall_events/  ← Milestones, versions, brain history
+
 ```
 
 ### The Document Reading Chain (First Time)
@@ -136,6 +141,7 @@ Specific subjects within a hall. Each room has one `closet.md`.
 ## 🔄 The Palace in the Daily Loop
 
 ```
+
 SOD (Start of Day)
   └── bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1) (or bash tools/reanimate.sh)
         └── Audits environment, validates Git, executes Palace check
@@ -152,6 +158,7 @@ EOD (End of Day)
         └── Validates artifacts, runs palace-sync.sh automatically
               └── Generates palace_update_proposal_YYYY-MM-DD.md
                     └── AI reviews → updates closets → registry stays fresh
+
 ```
 
 ---
@@ -162,9 +169,12 @@ When you start a new project on this DSOM instance, create a new Wing:
 
 ```bash
 mkdir -p .agents/brain/wings/wing_YOUR_PROJECT/{hall_facts,hall_events,hall_discoveries}
+
 # Create at minimum one Room
+
 mkdir -p .agents/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview
 touch .agents/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview/closet.md
+
 ```
 
 Then register it in `palace_registry.md`.
@@ -180,7 +190,6 @@ Then register it in `palace_registry.md`.
 ---
 *Document created: 2026-04-08 | Palace v1.0 | DSOM Protocol v6.1*
 *Author: Harisfazillah Jamel | Partner: Google Antigravity*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

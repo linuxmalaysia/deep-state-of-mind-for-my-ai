@@ -6,11 +6,12 @@ timestamp: "2026-07-18T09:15:00Z"
 topics: ["dsom", "documentation"]
 description: "Comprehensive audit report detailing the 96% token reduction achieved by the DSOM Protocol and recent integration milestones."
 ---
+
 # DSOM Token Efficiency & Integration Report
 
 ## 1. Executive Summary
 
-This report serves as the formal verification of the Deep State of Mind (DSOM) framework's token optimization capabilities. By strictly enforcing the **Episodic Resume Protocol (Rule 18)** and **Progressive Disclosure (Rule 9)**, the DSOM architecture achieves a **96.23% reduction** in LLM context bloat compared to traditional, monolithic chat operations.
+This report serves as the formal verification of the Deep State of Mind (DSOM) framework's token optimisation capabilities. By strictly enforcing the **Episodic Resume Protocol (Rule 18)** and **Progressive Disclosure (Rule 9)**, the DSOM architecture achieves a **96.23% reduction** in LLM context bloat compared to traditional, monolithic chat operations.
 
 Additionally, this report chronicles the recent architectural integrations that solidify the Sovereign Engine's interoperability with external AI systems.
 
@@ -32,6 +33,7 @@ To establish a universally recognized, machine-readable baseline, the following 
 To mathematically prove the efficiency of the DSOM protocol without requiring network calls or paid API keys, an isolated Python token auditor was engineered.
 
 ### Methodology
+
 - **Tokenizer Proxy:** `tiktoken` (highly accurate local mapping for OpenAI/modern LLM tokenization).
 - **Execution Environment:** Isolated `uv` Python runtime (compliant with Rule 16).
 - **Scenario A (Bloated):** Simulates passing standard long-running chat history, full unoptimized markdown file loads, and conversational fluff.
@@ -110,6 +112,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ### Script Output
@@ -121,6 +124,7 @@ Scenario A (Bloated Context): 2465 tokens
 Scenario B (DSOM Optimized Context): 93 tokens
 Token Reduction: 96.23%
 Absolute Savings: 2372 tokens per turn
+
 ```
 
 ---

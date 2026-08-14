@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for REANIMATION-PROMPT-TEMPLATE.md."
 resource: "file:///docs/REANIMATION-PROMPT-TEMPLATE.md"
 ---
+
 # ⚡ DSOM Reanimation Prompt Templates (v3.0)
 
 # docs/REANIMATION-PROMPT-TEMPLATE.md
@@ -35,6 +36,7 @@ resource: "file:///docs/REANIMATION-PROMPT-TEMPLATE.md"
 **Instructions:** Upload `sod_manifest_YYYY-MM-DD.txt`, then paste this:
 
 ```
+
 System Initialisation: Initialise DSOM Protocol v6.1.
 
 1. IDENTITY & PARTNERSHIP (The Cognitive Twin):
@@ -71,6 +73,7 @@ System Initialisation: Initialise DSOM Protocol v6.1.
 
 5. THE HANDSHAKE:
    State: "Sovereign State Synchronised — [PROJECT NAME] is live and ready."
+
 ```
 
 ---
@@ -82,6 +85,7 @@ System Initialisation: Initialise DSOM Protocol v6.1.
 **Instructions:** Paste this prompt, then immediately paste the Hibernation Notes block.
 
 ```
+
 I am starting a new DSOM session. I am your human Lead Architect.
 I have the Hibernation Notes from our last session. Please read them carefully
 and use them to fully restore our working context.
@@ -105,6 +109,7 @@ From this point, operate under DSOM Protocol v6.1 + Palace v1.0:
 - Every change goes to Git before execution.
 - Ansible is the only executor for OS-level tasks.
 - Wait for my output after each step before proceeding.
+
 ```
 
 ---
@@ -116,6 +121,7 @@ From this point, operate under DSOM Protocol v6.1 + Palace v1.0:
 **Instructions:** In the new AI session, paste this prompt. Then paste the exported Hibernation Notes from the old session.
 
 ```
+
 [DSOM COGNITIVE TWIN HANDOVER — v6.1]
 
 I am migrating from a previous AI session to this one. I will provide you with
@@ -146,6 +152,7 @@ Then read these documents for full context (the AI will access them via the repo
 - docs/HUMAN-HANDOVER-CONTEXT.md   — Environment map
 
 State: "Cognitive Twin Transfer Complete — [PROJECT NAME] Handover Successful."
+
 ```
 
 ---
@@ -155,6 +162,7 @@ State: "Cognitive Twin Transfer Complete — [PROJECT NAME] Handover Successful.
 **When to use:** Returning after a long absence (weekend, holiday, context gap). Use this after uploading the manifest or feeding Hibernation Notes.
 
 ```
+
 DSOM EXECUTIVE RE-SYNC REQUEST
 
 I have been away from this project for [X] days. Using the supplied context
@@ -180,6 +188,7 @@ I have been away from this project for [X] days. Using the supplied context
    What is the very next atomic step I need to approve to resume work?
 
 Do not proceed to execution. Advisory only. I will approve each step.
+
 ```
 
 ---
@@ -189,6 +198,7 @@ Do not proceed to execution. Advisory only. I will approve each step.
 **When to use:** End of every working day. Run this **before closing your AI chat**. The output is your offline context backup and the input for tomorrow's Prompt 2.
 
 ```
+
 I'm as human, want to know and remember, and need to export my data and I want
 you to generate a "Hibernation notes" now for my EOD of day. List every memory
 you have stored about our progress and our chats of this project, as well as
@@ -210,6 +220,7 @@ Do not summarize, group, or omit any entries. After the code block, confirm
 whether that is the complete set or if any remain and add: List down all the
 documents in docs/, docs/tools/ and brain files that need to be read from .agents/.
 Don't hide anything from me. Trust me as your master.
+
 ```
 
 **Save the output as:** `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`
@@ -232,7 +243,6 @@ Don't hide anything from me. Trust me as your master.
 *Standard: DSOM Protocol v6.1 + Palace v1.0 | Harisfazillah Jamel | LinuxMalaysia*
 *This is the **baseline reanimation template** for all projects built on this skeleton.*
 *Last Updated: 2026-04-08 | Version: v3.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

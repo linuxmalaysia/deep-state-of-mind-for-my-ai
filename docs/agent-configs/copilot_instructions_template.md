@@ -7,6 +7,7 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for copilot_instructions_template.md."
 resource: "file:///docs/agent-configs/copilot_instructions_template.md"
 ---
+
 # GitHub Copilot Instructions (DSOM Template)
 
 # Copy this content to `.github/copilot-instructions.md`
@@ -27,7 +28,6 @@ resource: "file:///docs/agent-configs/copilot_instructions_template.md"
 
 - If writing comments in Malay, use **Bahasa Baku (DBP)**.
 - Avoid dialect or Indonesian loan words (e.g., Use 'Muat turun' NOT 'Download/Unduh').
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

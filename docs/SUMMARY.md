@@ -5,6 +5,7 @@ title: "Table of Contents (GitBook Summary)"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "documentation", "diataxis", "summary"]
 ---
+
 # Table of contents
 
 ## 🧠 Getting Started
@@ -42,7 +43,6 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 * [Overview](explanation/index.md)
 * [OpenWiki & FastMCP Architecture](explanation/openwiki-mcp-architecture.md)
 * [Diátaxis Framework Adoption](explanation/diataxis.md)
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*

@@ -7,6 +7,7 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for AI-COGNITIVE-LOGGING-PROTOCOL.md."
 resource: "file:///docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md"
 ---
+
 # 📜 AI Cognitive Logging Protocol (Cross-AI Standard)
 # docs/AI-COGNITIVE-LOGGING-PROTOCOL.md
 
@@ -33,28 +34,33 @@ When updating a `closet.md` during the EOD Hibernation Ritual, the active AI mus
 ### Standard Format Header
 
 ```markdown
+
 # 🗄️ Spatial Closet: [Topic]
+
 **Primary Conversation ID:** [Insert Unique Session/Conversation ID Here]
 **Log Path / Reference:** [Insert Absolute Path to Transcript OR Cloud URL]
 
 ## 📌 Context
+
 [The distilled human-readable summary...]
+
 ```
 
 ## 🧠 4. Current Implementations
 
 ### Implementation A: Google DeepMind Gemini (Antigravity)
+
 *   **Mechanism**: Gemini automatically generates chronological JSONL transcripts for every conversation.
 *   **Log Location**: `<appDataDir>\brain\<conversation-id>\.system_generated\logs\transcript.jsonl`
 *   **Data Stored**: Exact user prompts (`USER_INPUT`), terminal commands executed (`tool_calls`), and thought processes.
 *   **How it maps**: We drop the Gemini `conversation-id` into the `closet.md`. If a future agent needs to know exactly what bash command Gemini ran to fix a bug, they grep that specific `transcript.jsonl` file.
 
 ### Implementation B: [Other AI Provider]
+
 *(If you are Claude, ChatGPT, or another agent reading this: You must fill out this section for your own architecture when you encounter it!)*
 
 ---
 *Maintained by the DSOM Engineering Team | Cross-AI Logging Standard v1.0*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

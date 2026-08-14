@@ -7,6 +7,7 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-EOD-PALACE.md."
 resource: "file:///docs/tools/HOWTO-EOD-PALACE.md"
 ---
+
 # HOWTO: eod-palace — End-of-Day Saves
 
 # docs/tools/HOWTO-EOD-PALACE.md
@@ -48,13 +49,19 @@ The `eod-palace` toolkit natively automates the **Sovereign End-of-Day (EOD) Loo
 ## 3. Usage
 
 ```powershell
+
 # Windows (T1)
+
 .\tools\eod-palace.ps1
+
 ```
 
 ```bash
+
 # WSL2 / Linux (T2)
+
 bash tools/eod-palace.sh
+
 ```
 
 ---
@@ -86,7 +93,6 @@ This script enforces final Git execution before shutdown and replaces manual int
 
 *Standard: DSOM For My AI Protocol v6.1 | Palace v1.0 | Harisfazillah Jamel*
 *Document Version: v1.0 | Created: 2026-04-08*
-
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*

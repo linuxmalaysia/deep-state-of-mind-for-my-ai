@@ -5,6 +5,7 @@ title: "How-To: Check and Apply OKF Compliance"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "okf", "compliance"]
 ---
+
 # Check and apply OKF compliance
 
 This guide explains how to audit, standardise, and auto-correct Markdown files to ensure compliance with the **Open Knowledge Format (OKF v0.1)**.
@@ -20,6 +21,7 @@ Run the `apply_okf_frontmatter.py` tool pointing directly to your documentation 
 
 ```bash
 uv run --with pyyaml python tools/apply_okf_frontmatter.py docs/
+
 ```
 
 ## Step 2: Batch re-order metadata fields
@@ -32,6 +34,7 @@ Verify planned modifications without making changes on disk:
 
 ```bash
 uv run --with pyyaml python tools/refactor_okf.py docs/ --dry-run
+
 ```
 
 ### In-place execution
@@ -40,15 +43,17 @@ Apply standard formatting and reordering rules atomically:
 
 ```bash
 uv run --with pyyaml python tools/refactor_okf.py docs/
+
 ```
 
 ## Step 3: Verify the output
 
 To confirm that the changes were executed successfully and no Byte Order Marks remain, use the standard test suite:
+
 ```bash
 uv run --with pyyaml --with pytest pytest tests/test_okf_frontmatter_bom_reorder.py
-```
 
+```
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
