@@ -152,6 +152,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 ---
 
 ## 12. The Initialisation Entry Point (Mechanical Boot Sequence)
+
 *If you need to understand how the AI's cognitive engine boots up, reanimates, and establishes its laws before the first prompt is processed.*
 
 **Read This First:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md)

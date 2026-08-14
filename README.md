@@ -14,7 +14,7 @@ resource: "file:///README.md"
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 [![Version](https://img.shields.io/badge/Version-10.4.0--governance-blue.svg)]()
 [![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
-[![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
+[![Licence](https://img.shields.io/badge/Licence-GPL--3.0-orange.svg)]()
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
 [![Standard](https://img.shields.io/badge/AI%20Standard-Cognitive%20Digital%20Twin-purple.svg)]()
 [![Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-blue.svg)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
@@ -541,7 +541,7 @@ Once Step 6 is complete, the AI knows:
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
 | [`docs/governance/OKF-MIND-OPTIMIZATION.md`](docs/governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimisation — Artifact Pyramid & Procedural Memory |
-| [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimization (GEO) — AI-ready documentation policies |
+| [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimisation (GEO) — AI-ready documentation policies |
 | [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) | ⚙️ AI Skill Architecture — Progressive Disclosure & Semantic Routing mechanics |
 | [`docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`](docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md) | 🏗️ Architecture Analysis — Codebase and Structural breakdown of the framework |
 | [`docs/governance/ZERO-GLOBAL-MEMORY.md`](docs/governance/ZERO-GLOBAL-MEMORY.md) | 🧠 Zero-Global Memory — The Sovereign AI Memory Architecture & Cognitive Flow |

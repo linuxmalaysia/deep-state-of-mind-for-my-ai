@@ -48,9 +48,10 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 ---
 
 ## 1. The Engineering Entry Point (Project Scaffolding)
+
 *If you are setting up a brand new DSOM project repository for the first time.*
 
-**Read This First:** [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))
+**Read This First:** [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))
 
 **Why it matters:** This is the master blueprint. It explicitly instructs the human or the AI on how to execute the `dsom-project-cloner` and `dsom-bootstrap` skills. It establishes the initial Git Worktree isolation and ensures the spatial memory (`.agents/brain/`) is properly initialized before any real work begins.
 
@@ -77,18 +78,20 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 ---
 
 ## 4. The Daily Operations Entry Point (Day 2 Management)
+
 *If the project is already running, and you are starting your work day or recovering from a server reboot.*
 
-**Read This First:** [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md)
+**Read This First:** [`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md)
 
 **Why it matters:** This teaches the human and the AI how to read the `palace_registry.md` ledger during the Start of Day (SOD) ritual. It ensures the AI never suffers from memory loss between sessions by strictly governing thread states through spatial memory.
 
 ---
 
 ## 5. The Legacy Upgrade Entry Point (Existing DSOM Projects)
+
 *If you are operating a legacy DSOM project and need to modernize it to the current master architectural baseline.*
 
-**Read This First:** [`docs/HOWTO-UPGRADE-LEGACY-DSOM.md`](docs/HOWTO-UPGRADE-LEGACY-DSOM.md)
+**Read This First:** [`HOWTO-UPGRADE-LEGACY-DSOM.md`](HOWTO-UPGRADE-LEGACY-DSOM.md)
 
 ---
 
@@ -110,72 +113,82 @@ To configure your AI client, point it to our `uv`-managed server script:
 ```
 
 ### Entry Point 4: Subagent Orchestration Workflow
+
 *If you are scaling complex engineering tasks using autonomous AI subagents.*
 
-**Read This First:** [`docs/governance/MULTI-AGENT-PROTOCOLS.md`](docs/governance/MULTI-AGENT-PROTOCOLS.md)
+**Read This First:** [`governance/MULTI-AGENT-PROTOCOLS.md`](governance/MULTI-AGENT-PROTOCOLS.md)
 
 ---
 
 ## 7. The Procedural Skill Entry Point (AI Automation)
+
 *If you need to teach your AI how to perform repetitive operational workflows.*
 
-**Read This First:** [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) and [`docs/governance/AI-SLASH-COMMANDS-GUIDE.md`](docs/governance/AI-SLASH-COMMANDS-GUIDE.md)
+**Read This First:** [`governance/AI-SKILL-ARCHITECTURE.md`](governance/AI-SKILL-ARCHITECTURE.md) and [`governance/AI-SLASH-COMMANDS-GUIDE.md`](governance/AI-SLASH-COMMANDS-GUIDE.md)
 
 ---
 
 ## 8. The Sovereign Knowledge Entry Point (LLM WIKI Adoption)
+
 *If you are migrating legacy documentation into an AI-native memory palace.*
 
-**Read This First:** [`docs/governance/LLM-WIKI-ADOPTION.md`](docs/governance/LLM-WIKI-ADOPTION.md)
+**Read This First:** [`governance/LLM-WIKI-ADOPTION.md`](governance/LLM-WIKI-ADOPTION.md)
 
 ---
 
 ## 9. The Security & Defense Entry Point (Defensive GitOps)
+
 *If you are adopting DSOM for secure infrastructure or production environments.*
 
-**Read This First:** [`docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+**Read This First:** [`governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
 
 ---
 
 ## 10. The Token Performance Entry Point (Context Efficiency)
+
 *If you are onboarding a new AI agent or bootstrapping a new project and want to ensure token-efficient LLM operation from day one.*
 
-**Read This First:** [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
+**Read This First:** [`governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
 
 ---
 
 ## 11. The Discovery Entry Point (Knowledge-First Protocol)
+
 *If you are an AI agent or human operator attempting to execute an exploratory terminal command or probe external nodes.*
 
-**Read This First:** [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
+**Read This First:** [`governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 
 ---
 
 ## 12. The Initialisation Entry Point (Mechanical Boot Sequence)
+
 *If you need to understand how the AI's cognitive engine boots up, reanimates, and establishes its laws before the first prompt is processed.*
 
-**Read This First:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
+**Read This First:** [`governance/AI-INITIALIZATION-SEQUENCE.md`](governance/AI-INITIALIZATION-SEQUENCE.md)
 
 ---
 
 ## 13. The Automated State Sync Entry Point (Semantic Compaction)
+
 *If you need to understand how DSOM manages token bloat automatically across Pull Requests.*
 
-**Read This First:** [`docs/governance/DSOM-AUTOMATED-STATE-SYNC.md`](docs/governance/DSOM-AUTOMATED-STATE-SYNC.md)
+**Read This First:** [`governance/DSOM-AUTOMATED-STATE-SYNC.md`](governance/DSOM-AUTOMATED-STATE-SYNC.md)
 
 ---
 
 ## 14. The Cognitive Architecture Entry Point (The Tri-Phasic Mind)
+
 *If you need to understand how the AI's cognitive pipeline is split into Active, Twilight, and Deep states.*
 
-**Read This First:** [`docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`](docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
+**Read This First:** [`governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`](governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
 
 ---
 
 ## 15. The Native OpenWiki Knowledge Graph Entry Point (Zero-Binary Architecture)
+
 *If you want to maintain a high-density, zero-binary knowledge graph across your repository.*
 
-**Read This First:** [`docs/tools/HOWTO-OPENWIKI.md`](docs/tools/HOWTO-OPENWIKI.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/)) and [`docs/governance/OPENWIKI-INTEGRATION-GUIDE.md`](docs/governance/OPENWIKI-INTEGRATION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/))
+**Read This First:** [`tools/HOWTO-OPENWIKI.md`](tools/HOWTO-OPENWIKI.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/)) and [`governance/OPENWIKI-INTEGRATION-GUIDE.md`](governance/OPENWIKI-INTEGRATION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/))
 
 ---
 

@@ -13,8 +13,8 @@ resource: "file:///README.md"
 
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 [![Version](https://img.shields.io/badge/Version-10.4.0--governance-blue.svg)]()
-[![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
-[![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
+[![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
+[![Licence](https://img.shields.io/badge/Licence-GPL--3.0-orange.svg)]()
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
 [![Standard](https://img.shields.io/badge/AI%20Standard-Cognitive%20Digital%20Twin-purple.svg)]()
 [![Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-blue.svg)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
@@ -110,7 +110,7 @@ DSOM maintains **two synchronised `AGENTS.md` files** to serve both project-awar
 
 ### Step 1 — Clone and Reset
 
-> **🏗️ Scaffolding a New Project?** If you are migrating the highly customised AI skills and Sovereign Engine from this repo to a brand new one, you MUST follow the [**DSOM Project Cloning Guide**](docs/HOWTO-CLONE-DSOM-PROJECT.md) first to ensure no cognitive capabilities are lost.
+> **🏗️ Scaffolding a New Project?** If you are migrating the highly customised AI skills and Sovereign Engine from this repo to a brand new one, you MUST follow the [**DSOM Project Cloning Guide**](HOWTO-CLONE-DSOM-PROJECT.md) first to ensure no cognitive capabilities are lost.
 
 ```bash
 # Clone the DSOM skeleton
@@ -224,10 +224,10 @@ Each Room has a `closet.md` — a distilled, high-density knowledge summary the 
 
 | If you are... | Go to... |
 |---|---|
-| **First-time user or AI agent** | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) |
-| **Existing DSOM user upgrading** | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) |
-| **Reading how the Palace was built** | [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) |
-| **Full Palace specification** | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) |
+| **First-time user or AI agent** | [`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) |
+| **Existing DSOM user upgrading** | [`HOWTO-MIGRATE-TO-PALACE.md`](HOWTO-MIGRATE-TO-PALACE.md) |
+| **Reading how the Palace was built** | [`PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md) |
+| **Full Palace specification** | [`DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) |
 
 ### 🧩 Known Gap: The Reasoning Problem
 
@@ -244,7 +244,7 @@ Six months of daily AI use generates millions of tokens of conversation. Every d
  Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
 ```
 
-📖 **Full analysis:** [`docs/RESEARCH-REASONING-GAP.md`](docs/RESEARCH-REASONING-GAP.md)
+📖 **Full analysis:** [`RESEARCH-REASONING-GAP.md`](RESEARCH-REASONING-GAP.md)
 
 ---
 
@@ -256,7 +256,7 @@ When you define your Persona Profile, the AI will automatically adopt your tone,
 
 | Use Case | Guide |
 |---|---|
-| **Define your AI's Persona** | [`docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md`](docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md) |
+| **Define your AI's Persona** | [`agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md`](agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md) |
 
 ---
 
@@ -266,7 +266,7 @@ DSOM enables your Cognitive Twin to autonomously self-heal, scaffold, and execut
 
 | Use Case | Guide |
 |---|---|
-| **View or Create AI Skills** | [`docs/AI-AGENT-SKILLS-GUIDE.md`](docs/AI-AGENT-SKILLS-GUIDE.md) |
+| **View or Create AI Skills** | [`AI-AGENT-SKILLS-GUIDE.md`](AI-AGENT-SKILLS-GUIDE.md) |
 
 ---
 
@@ -276,15 +276,15 @@ If you want to integrate the deep-state-of-mind architecture into an entirely ne
 
 | Use Case | Guide |
 |---|---|
-| **Automated Repository Onboarding** | [`docs/HOWTO-DSOM-ONBOARDING.md`](docs/HOWTO-DSOM-ONBOARDING.md) |
-| **Clone / Scaffold New Project** | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) |
-| **DSOM Bootstrapping Baseline** | [`docs/HOWTO-DSOM-BASELINE.md`](docs/HOWTO-DSOM-BASELINE.md) |
+| **Automated Repository Onboarding** | [`HOWTO-DSOM-ONBOARDING.md`](HOWTO-DSOM-ONBOARDING.md) |
+| **Clone / Scaffold New Project** | [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) |
+| **DSOM Bootstrapping Baseline** | [`HOWTO-DSOM-BASELINE.md`](HOWTO-DSOM-BASELINE.md) |
 
 ---
 
 ## 📅 Daily Operating Rituals
 
-> **Full ritual guides:** [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md)
+> **Full ritual guides:** [`SOD-RITUAL.md`](SOD-RITUAL.md) | [`EOD-RITUAL.md`](EOD-RITUAL.md)
 
 ---
 
@@ -484,7 +484,7 @@ deep-state-of-mind-for-my-ai/
 
 When switching AI models, chat windows, or accounts, use the **Sovereign Handover Prompt** to export all context:
 
-Copy from [`docs/REANIMATION-PROMPT-TEMPLATE.md`](docs/REANIMATION-PROMPT-TEMPLATE.md) → **Prompt Variant 2: Session Handover**.
+Copy from [`REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) → **Prompt Variant 2: Session Handover**.
 
 Paste it into the **old** AI session first to get a full memory dump, then load the dump into the **new** AI session along with your manifest.
 
@@ -536,33 +536,33 @@ Once Step 6 is complete, the AI knows:
 | [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
 | [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |
 | [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 9 primary onboarding entry points. Read this first! |
-| [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialisation Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
-| [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
-| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
-| [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
-| [`docs/governance/OKF-MIND-OPTIMIZATION.md`](docs/governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimisation — Artifact Pyramid & Procedural Memory |
-| [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimization (GEO) — AI-ready documentation policies |
-| [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) | ⚙️ AI Skill Architecture — Progressive Disclosure & Semantic Routing mechanics |
-| [`docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`](docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md) | 🏗️ Architecture Analysis — Codebase and Structural breakdown of the framework |
-| [`docs/governance/ZERO-GLOBAL-MEMORY.md`](docs/governance/ZERO-GLOBAL-MEMORY.md) | 🧠 Zero-Global Memory — The Sovereign AI Memory Architecture & Cognitive Flow |
-| [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md) | ⚡ Token Efficiency Playbook — Benchmarks proving 96.23% context reduction |
-| [`docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | 🛡️ Byte-Capped Execution — Circuit breaker preventing context flooding |
-| [`docs/governance/AUTOMATION-AUDIT-LIST.md`](docs/governance/AUTOMATION-AUDIT-LIST.md) | 📋 Automation Audit Ledger — Comprehensive index of all execution scripts |
-| [`docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
-| [`docs/governance/NOSS-INTEGRATION-GUIDE.md`](docs/governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
-| [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md) | 📚 Knowledge-First Discovery — SOP for local OKF frontmatter search before terminal execution |
+| [`governance/AI-INITIALIZATION-SEQUENCE.md`](governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialisation Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
+| [`AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
+| [`AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
+| [`DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
+| [`governance/OKF-MIND-OPTIMIZATION.md`](governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimisation — Artifact Pyramid & Procedural Memory |
+| [`governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimisation (GEO) — AI-ready documentation policies |
+| [`governance/AI-SKILL-ARCHITECTURE.md`](governance/AI-SKILL-ARCHITECTURE.md) | ⚙️ AI Skill Architecture — Progressive Disclosure & Semantic Routing mechanics |
+| [`governance/DSOM-ARCHITECTURE-ANALYSIS.md`](governance/DSOM-ARCHITECTURE-ANALYSIS.md) | 🏗️ Architecture Analysis — Codebase and Structural breakdown of the framework |
+| [`governance/ZERO-GLOBAL-MEMORY.md`](governance/ZERO-GLOBAL-MEMORY.md) | 🧠 Zero-Global Memory — The Sovereign AI Memory Architecture & Cognitive Flow |
+| [`governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md) | ⚡ Token Efficiency Playbook — Benchmarks proving 96.23% context reduction |
+| [`governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`](governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | 🛡️ Byte-Capped Execution — Circuit breaker preventing context flooding |
+| [`governance/AUTOMATION-AUDIT-LIST.md`](governance/AUTOMATION-AUDIT-LIST.md) | 📋 Automation Audit Ledger — Comprehensive index of all execution scripts |
+| [`governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
+| [`governance/NOSS-INTEGRATION-GUIDE.md`](governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
+| [`governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md) | 📚 Knowledge-First Discovery — SOP for local OKF frontmatter search before terminal execution |
 | [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
-| [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
-| [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
-| [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
-| [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) | 📖 How and why the Palace was built |
-| [`docs/README.md`](docs/README.md) | 📖 **Substance Copy** — Local, portable copy of the main project README. |
-| [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide |
-| [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md) | 🌙 Full End-of-Day ritual guide |
-| [`docs/HUMAN-HANDOVER-CONTEXT.md`](docs/HUMAN-HANDOVER-CONTEXT.md) | 🤝 Session handover prompt |
-| [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md) | Three-pillar strategic doctrine |
-| [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](docs/HOWTO-SETUP-ANSIBLE-BASELINE.md) | Step-by-step Ansible baseline setup |
-| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](docs/REANIMATION-PROMPT-TEMPLATE.md) | AI session prompt templates |
+| [`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
+| [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
+| [`HOWTO-MIGRATE-TO-PALACE.md`](HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
+| [`PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md) | 📖 How and why the Palace was built |
+| [`README.md`](README.md) | 📖 **Substance Copy** — Local, portable copy of the main project README. |
+| [`SOD-RITUAL.md`](SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide |
+| [`EOD-RITUAL.md`](EOD-RITUAL.md) | 🌙 Full End-of-Day ritual guide |
+| [`HUMAN-HANDOVER-CONTEXT.md`](HUMAN-HANDOVER-CONTEXT.md) | 🤝 Session handover prompt |
+| [`GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) | Three-pillar strategic doctrine |
+| [`HOWTO-SETUP-ANSIBLE-BASELINE.md`](HOWTO-SETUP-ANSIBLE-BASELINE.md) | Step-by-step Ansible baseline setup |
+| [`REANIMATION-PROMPT-TEMPLATE.md`](REANIMATION-PROMPT-TEMPLATE.md) | AI session prompt templates |
 
 ---
 
@@ -572,9 +572,9 @@ This framework is provider-agnostic. Tested and configured for:
 
 | AI | Setup Guide |
 |:---|:---|
-| Google Gemini | [`docs/PERSONALIZATION.md`](docs/PERSONALIZATION.md) |
-| Anthropic Claude | [`docs/CLAUDE-SETUP.md`](docs/CLAUDE-SETUP.md) |
-| GitHub Copilot | [`docs/COPILOT-SETUP.md`](docs/COPILOT-SETUP.md) |
+| Google Gemini | [`PERSONALIZATION.md`](PERSONALIZATION.md) |
+| Anthropic Claude | [`CLAUDE-SETUP.md`](CLAUDE-SETUP.md) |
+| GitHub Copilot | [`COPILOT-SETUP.md`](COPILOT-SETUP.md) |
 | Google Antigravity | Direct — uses this repo as workspace |
 
 ---

@@ -157,7 +157,7 @@ def _resolve_path(path: pathlib.Path) -> pathlib.Path:
     if path.is_symlink():
         return path.resolve()
     for doc_rel, _, root_filename in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
-        if path.name == doc_rel:
+        if path.name == doc_rel or path.as_posix().endswith("docs/" + doc_rel):
             return (REPO_ROOT / root_filename).resolve()
     return path.resolve()
 
