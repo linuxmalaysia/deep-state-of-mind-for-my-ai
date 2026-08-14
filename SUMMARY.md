@@ -20,6 +20,7 @@ topics: ["dsom", "documentation"]
 ## 🏛️ 1. Sovereign Governance
 
 * [🤖 AI Initialization Sequence](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
+* [🤖 Generative Engine Optimisation (GEO)](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md)
 * [👑 Operational Sovereignty Manifesto](docs/governance/OPERATIONAL-SOVEREIGNTY.md)
 * [📜 AI Master Protocol](docs/governance/AI-MASTER-PROTOCOL.md)
 * [🧠 The Tri-Phasic Mind Architecture](docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)

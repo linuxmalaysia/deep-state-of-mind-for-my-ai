@@ -74,6 +74,7 @@ nav:
   - Governance:
       - AI Initialization Sequence: governance/AI-INITIALIZATION-SEQUENCE.md
       - AI Master Protocol: governance/AI-MASTER-PROTOCOL.md
+      - Generative Engine Optimisation: governance/GENERATIVE-ENGINE-OPTIMIZATION.md
       - The Tri-Phasic Mind Architecture: governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md
       - DSOM Automated State Sync: governance/DSOM-AUTOMATED-STATE-SYNC.md
       - Native MCP Architecture: governance/DSOM-MCP-ARCHITECTURE.md

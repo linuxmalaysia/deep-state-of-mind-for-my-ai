@@ -156,8 +156,10 @@ class DocsSymlinkTargetTests(unittest.TestCase):
 def _resolve_path(path: pathlib.Path) -> pathlib.Path:
     if path.is_symlink():
         return path.resolve()
+    resolved_path = path.resolve()
     for doc_rel, _, root_filename in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
-        if path.name == doc_rel or path.as_posix().endswith("docs/" + doc_rel):
+        expected_docs_path = (DOCS_DIR / doc_rel).resolve()
+        if resolved_path == expected_docs_path:
             return (REPO_ROOT / root_filename).resolve()
     return path.resolve()
 
@@ -178,6 +180,10 @@ class DocsSymlinkResolutionTests(unittest.TestCase):
                     _resolve_path(path),
                     (REPO_ROOT / root_filename).resolve(),
                 )
+
+    def test_unrelated_same_named_path_not_resolved_to_root_target(self):
+        unrelated = REPO_ROOT / "references" / "SECURITY.md"
+        self.assertEqual(_resolve_path(unrelated), unrelated.resolve())
 
     def test_symlinks_do_not_dangle(self):
         for doc_relative, _, _ in SYMLINK_SPECS:

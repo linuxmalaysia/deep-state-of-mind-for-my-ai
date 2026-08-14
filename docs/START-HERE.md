@@ -199,5 +199,5 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`LEGAL-NOTICE.md`](LEGAL-NOTICE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/))
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-11*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
