@@ -2,6 +2,7 @@
 okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
+timestamp: "2026-08-14T05:21:18Z"
 timestamp: "2026-08-14T05:28:35Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
@@ -17,6 +18,9 @@ This file maintains a condensed, token-efficient representation of the project's
 
 ## Condensed History
 
+- [Auto-Sync] Modified files: tools/check_docs_links.py (+19, -4), tools/parse_llms_txt.py (+40, -5).
+- [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+382, -0).
+- [Auto-Sync] Modified files: .agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md (+9, -2), .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md (+9, -1), .agents/skills/sitemap-seo-generator/SKILL.md (+53, -0), AGENTS.md (+2, -1), SUMMARY.md (+1, -0), mkdocs.yml (+1, -0).
 
 
 

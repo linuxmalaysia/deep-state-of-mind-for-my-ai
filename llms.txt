@@ -56,5 +56,26 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [LLM Wiki Adoption](docs/governance/LLM-WIKI-ADOPTION.md): Defines the Sovereign Knowledge framework.
 - [Active Context Manifest](.agents/brain/active_context_manifest.md): OKF manifest declaring active session files — replaces symlink pattern for cross-platform portability.
 
+## Diátaxis Developer Space
+- [Tutorials Overview](docs/tutorials/index.md): Standard Diátaxis learning lessons.
+- [Getting Started with DSOM Tools](docs/tutorials/getting-started.md): Beginner hands-on walk-through of OpenWiki, OKF audit, and FastMCP.
+- [How-To Guides Overview](docs/how-to/index.md): Practical problem-oriented guides for DSOM tools.
+- [Audit and Apply OKF Frontmatter](docs/how-to/audit-and-apply-frontmatter.md): How-to for running frontmatter audit/refactoring.
+- [Run FastMCP Server](docs/how-to/run-fastmcp-server.md): How-to for running and configuring FastMCP.
+- [Generate SEO Assets and Sitemaps](docs/how-to/generate-sitemaps-seo.md): How-to for compiling SEO sitemaps and robots.
+- [Operate OpenWiki Emulator](docs/how-to/use-openwiki-emulator.md): How-to for initializing/searching the OpenWiki.
+- [Reference Material Overview](docs/reference/index.md): Structured key reference facts index.
+- [generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md): Factual reference for sitemap generator.
+- [openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md): Factual reference for OpenWiki emulator.
+- [mcp_server.py Reference](docs/reference/mcp_server.md): Factual reference for FastMCP server.
+- [apply_okf_frontmatter.py Reference](docs/reference/apply_okf_frontmatter.md): Factual reference for OKF frontmatter tool.
+- [refactor_okf.py Reference](docs/reference/refactor_okf.md): Factual reference for OKF refactoring.
+- [bench_brain.py Reference](docs/reference/bench_brain.md): Factual reference for spatial bench tool.
+- [dsom_token_auditor.py Reference](docs/reference/dsom_token_auditor.md): Factual reference for token auditor.
+- [mkdocs_hooks.py Reference](docs/reference/mkdocs_hooks.md): Factual reference for MkDocs hooks.
+- [Explanation and Design Overview](docs/explanation/index.md): Context and architectural design decisions.
+- [OpenWiki & FastMCP Architecture](docs/explanation/openwiki-mcp-architecture.md): Structural details of the knowledge layer.
+- [Diátaxis Framework Adoption](docs/explanation/diataxis.md): Conceptual context on adoption of Diátaxis.
+
 ## Model Specifics
 - [HOWTO: Create DSOM Gemini Gem](docs/HOWTO-CREATE-DSOM-GEMINI-GEM.md): Step-by-step guide to configuring a permanent DSOM Cognitive Twin inside the Google Gemini interface.

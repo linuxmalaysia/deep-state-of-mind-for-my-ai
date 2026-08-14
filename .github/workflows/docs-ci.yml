@@ -1,0 +1,74 @@
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Workflow    : Diátaxis Documentation Continuous Integration
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-08-13
+# License     : GNU General Public License v3.0
+# ==============================================================================
+
+name: Documentation CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: docs-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate-docs:
+    name: Validate Diátaxis Documentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@ae62891fec2bb8e7d6c99fc78c9fec3a63790f8d # v10.0.0
+        with:
+          enable-cache: true
+          cache-dependency-glob: "requirements.txt"
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          uv pip install --system pyyaml pytest
+
+      - name: Run Relative Links Validation
+        run: |
+          python tools/check_docs_links.py
+
+      - name: Run OKF Frontmatter Compliance Check
+        run: |
+          python tools/apply_okf_frontmatter.py docs/reference/
+          python tools/apply_okf_frontmatter.py docs/how-to/
+          python tools/apply_okf_frontmatter.py docs/tutorials/
+          python tools/apply_okf_frontmatter.py docs/explanation/
+          git diff --exit-code -- docs
+
+      - name: Run Unit Tests for Link Checker
+        run: |
+          pytest tests/test_docs_links.py
