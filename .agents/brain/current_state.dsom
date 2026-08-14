@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
-timestamp: "2026-08-13T01:09:39Z"
+timestamp: "2026-08-14T05:28:35Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
 ---
@@ -16,10 +16,13 @@ This file maintains a condensed, token-efficient representation of the project's
 - Semantic Compaction pipeline upgraded to support Google Jules & Google Antigravity personas with a robust, zero-API local Python fallback engine.
 
 ## Condensed History
-- [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+382, -0).
-- [Auto-Sync] Modified files: .agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md (+9, -2), .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md (+9, -1), .agents/skills/sitemap-seo-generator/SKILL.md (+53, -0), AGENTS.md (+2, -1), SUMMARY.md (+1, -0), mkdocs.yml (+1, -0).
-- [Auto-Sync] Modified files: tests/test_sitemap_seo_generator_skill.py (+624, -0).
-- [Auto-Sync] Modified files: .agents/brain/current_state.dsom (+3, -6), LEGAL-NOTICE.md (+48, -0), START-HERE.md (+10, -1), SUMMARY.md (+1, -0), docs/LEGAL-NOTICE.md (+1, -0), docs/sitemap.txt (+3, -0), docs/sitemap.xml (+488, -476), llms.txt (+1, -0), mkdocs.yml (+2, -0), sitemap.txt (+3, -0), sitemap.xml (+488, -476), tests/test_docs_symlinks.py (+22, -4), tests/test_legal_notice_disclaimer.py (+0, -495), tests/test_mkdocs_nav.py (+1, -0).
+
+
+
+
+- [Auto-Sync] Modified files: tests/test_diataxis_docs.py (+391, -0), tests/test_docs_ci_workflow.py (+254, -0), tests/test_docs_links.py (+264, -0).
+- [Auto-Sync] Modified files: openwiki/_skeleton.md (+1, -1).
+- [Auto-Sync] Modified files: tests/test_skeleton_resource_field.py (+189, -0).
 - Refactored .github/scripts/action_update_dsom.py to integrate Gemini/Google API for Jules/Antigravity and local automated compaction fallback.
 - Initial boilerplate replaced with DSOM-specific policies.
 - Automated DSOM State Sync deployed.
