@@ -13,6 +13,12 @@ import sys
 from pathlib import Path
 
 def find_repo_root() -> Path:
+    """
+    Locate the repository root containing the `.git` directory.
+    
+    Returns:
+    	Path: The repository root, or the script's grandparent directory when no `.git` directory is found.
+    """
     current = Path(__file__).resolve().parent
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
@@ -20,15 +26,23 @@ def find_repo_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 def is_external_or_special(url: str) -> bool:
-    """Checks if a URL is external, mailto, or anchor-only."""
+    """
+    Identify URLs that should be excluded from relative link validation.
+    
+    Returns:
+        bool: `true` if the URL uses an external or special prefix, `false` otherwise.
+    """
     return url.startswith(("http://", "https://", "mailto:", "ftp:", "#", "file://"))
 
 def validate_links(repo_root: Path) -> list[str]:
     """
-    Scans the Diátaxis documentation files and validates all relative links.
-
+    Scan Diátaxis documentation files and validate their relative links.
+    
+    Parameters:
+        repo_root (Path): Root directory of the repository containing the documentation.
+    
     Returns:
-        list[str]: A list of error messages describing broken links.
+        list[str]: Error messages for unreadable files, out-of-bounds links, or missing targets.
     """
     errors = []
     link_re = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
@@ -86,6 +100,7 @@ def validate_links(repo_root: Path) -> list[str]:
     return errors
 
 def main():
+    """Validate documentation links and exit with a status indicating whether errors were found."""
     repo_root = find_repo_root()
     errors = validate_links(repo_root)
     if errors:
