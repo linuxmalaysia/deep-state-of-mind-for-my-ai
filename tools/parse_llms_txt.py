@@ -15,6 +15,12 @@ from pathlib import Path
 
 # Find repository root
 def find_repo_root() -> Path:
+    """
+    Locate the repository root containing the `.git` directory.
+    
+    Returns:
+        Path: The repository root, or the parent of the script directory when no `.git` directory is found.
+    """
     current = Path(__file__).resolve().parent
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
@@ -23,10 +29,18 @@ def find_repo_root() -> Path:
 
 def parse_llms_txt(llms_path: Path, repo_root: Path) -> list[tuple[str, Path]]:
     """
-    Parses llms.txt to extract title and path for each local Markdown link.
-
+    Extract local Markdown references from an llms.txt file.
+    
+    Parameters:
+        llms_path (Path): Path to the llms.txt file.
+        repo_root (Path): Repository root used to resolve and validate referenced paths.
+    
     Returns:
-        list[tuple[str, Path]]: List of (title, absolute_path) tuples.
+        list[tuple[str, Path]]: Title and absolute path pairs in discovery order.
+    
+    Raises:
+        FileNotFoundError: If the input file or a referenced path is missing, or a referenced path is not a file.
+        ValueError: If a referenced path resolves outside the repository.
     """
     if not llms_path.exists():
         raise FileNotFoundError(f"llms.txt not found at {llms_path}")
@@ -66,7 +80,15 @@ def parse_llms_txt(llms_path: Path, repo_root: Path) -> list[tuple[str, Path]]:
 
 def generate_llms_full_txt(files: list[tuple[str, Path]], output_path: Path, repo_root: Path):
     """
-    Consolidates the full content of all discovered markdown files into one flat file.
+    Consolidate referenced Markdown files into a single UTF-8 text file.
+    
+    Parameters:
+        files (list[tuple[str, Path]]): Markdown file titles and paths to include.
+        output_path (Path): Destination path for the consolidated file.
+        repo_root (Path): Repository root used to format file paths.
+    
+    Raises:
+        IOError: If a referenced Markdown file cannot be read.
     """
     print(f"Generating consolidated text catalog at {output_path}...")
     separator = "\n\n" + "=" * 80 + "\n"
@@ -85,7 +107,15 @@ def generate_llms_full_txt(files: list[tuple[str, Path]], output_path: Path, rep
 
 def generate_llms_context_xml(files: list[tuple[str, Path]], output_path: Path, repo_root: Path):
     """
-    Compiles discovered file contents into a highly structured XML context document.
+    Compile Markdown file contents into a structured XML context document.
+    
+    Parameters:
+        files (list[tuple[str, Path]]): File titles and paths to include.
+        output_path (Path): Destination path for the generated XML file.
+        repo_root (Path): Repository root used to calculate document-relative paths.
+    
+    Raises:
+        IOError: If a referenced file cannot be read.
     """
     print(f"Generating XML context file at {output_path}...")
 
@@ -116,6 +146,11 @@ def generate_llms_context_xml(files: list[tuple[str, Path]], output_path: Path, 
     print(f"Wrote {len(files)} files to {output_path}")
 
 def main():
+    """
+    Parse the input documentation index and generate consolidated text and XML context files.
+    
+    Command-line options control the input index and output paths; all paths are resolved relative to the repository root.
+    """
     parser = argparse.ArgumentParser(description="Parse llms.txt and compile consolidated context files.")
     parser.add_argument("--input", default="llms.txt", help="Path to input llms.txt (default: llms.txt)")
     parser.add_argument("--output-txt", default="llms-full.txt", help="Path to output llms-full.txt")
