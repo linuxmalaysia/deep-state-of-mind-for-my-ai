@@ -58,12 +58,7 @@ DIR_SYMLINK_SPECS = [
 
 
 def _is_symlink_or_windows_git_symlink(path: pathlib.Path) -> bool:
-    if path.is_symlink():
-        return True
-    if path.is_file():
-        # It is a portable regular markdown file!
-        return True
-    return False
+    return path.is_symlink() or path.is_file()
 
 def _read_symlink_target(path: pathlib.Path) -> str:
     if path.is_symlink():
@@ -161,9 +156,9 @@ class DocsSymlinkTargetTests(unittest.TestCase):
 def _resolve_path(path: pathlib.Path) -> pathlib.Path:
     if path.is_symlink():
         return path.resolve()
-    for doc_rel, _, root_filename in SYMLINK_SPECS:
+    for doc_rel, _, root_filename in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
         if path.name == doc_rel:
-            return (path.parent.parent / root_filename).resolve()
+            return (REPO_ROOT / root_filename).resolve()
     return path.resolve()
 
 

@@ -7,13 +7,13 @@ topics: ["dsom", "documentation"]
 ---
 # 🏛️ Palace Update Proposal
 
-> **Generated:** 2026-08-14_1013
+> **Generated (Proposal Generation Time):** 2026-08-14_1013
 > **Mode:** EOD
 > **Scope:** Commits since re-initialisation
 > **Status:** PENDING AI REVIEW — Do not commit until closets are updated.
 > **Owner:** Harisfazillah Jamel (LinuxMalaysia)
-> **Timestamp:** 2026-08-14T08:00:40Z
-> **License:** GNU General Public License v3.0
+> **Timestamp (Session/Event Timestamp):** 2026-08-14T08:00:40Z
+> **Licence:** GNU General Public License v3.0
 
 ---
 

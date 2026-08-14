@@ -78,33 +78,44 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
 ## 🌗 Core Engineering Resolutions & Algorithmic Milestones
 
 ### A. The PyYAML CustomLoader Parser
+
 During frontmatter validation sweeps, PyYAML's default implicit resolver automatically coerced unquoted ISO 8601 timestamps into native Python `datetime` objects. This mutated original string representations (e.g. converting `"2026-08-05T12:00:00Z"` to `datetime.datetime(...)`), causing OKF validation scripts to fail formatting constraints.
+
 * **Jules' Resolution:**
-  Introduced a custom PyYAML loader (`CustomLoader`) derived from `SafeLoader`. To preserve boolean resolvers under `t` and `T` (e.g. `true`, `false`) while preventing automatic timestamp parsing, the loader copies `SafeLoader`'s implicit resolver map into a loader-local map and selectively filters out only `tag:yaml.org,2002:timestamp`:
+  Introduced a custom PyYAML loader (`CustomLoader`) derived from `SafeLoader`. To preserve boolean resolvers while preventing automatic timestamp parsing, the loader creates independent copies of every resolver list from `SafeLoader`'s implicit resolver map and selectively removes `tag:yaml.org,2002:timestamp` across all buckets:
+
   ```python
   class CustomLoader(yaml.SafeLoader):
       pass
 
-  # Copy SafeLoader's implicit resolver map into a loader-local map
-  CustomLoader.yaml_implicit_resolvers = yaml.SafeLoader.yaml_implicit_resolvers.copy()
+  # Copy SafeLoader's implicit resolver map into a loader-local map with independent list copies
+  CustomLoader.yaml_implicit_resolvers = {
+      key: list(resolvers)
+      for key, resolvers in yaml.SafeLoader.yaml_implicit_resolvers.items()
+  }
 
-  # Remove only the timestamp resolver tag while preserving t/T booleans
-  for char in ["t", "T"]:
-      CustomLoader.yaml_implicit_resolvers[char] = [
+  # Remove the timestamp tag from all resolver buckets
+  for key, resolvers in CustomLoader.yaml_implicit_resolvers.items():
+      CustomLoader.yaml_implicit_resolvers[key] = [
           (tag, regexp)
-          for tag, regexp in CustomLoader.yaml_implicit_resolvers[char]
+          for tag, regexp in resolvers
           if tag != "tag:yaml.org,2002:timestamp"
       ]
   ```
+
   This guarantees raw timestamps remain string types while preserving boolean parsing across all compliance scripts (`apply_okf_frontmatter.py`, `refactor_okf.py`).
 
 ### B. Secure Sibling Atomic File Replacement
+
 Standard inline writes (`open(file, 'w')`) carry high risk of leaving empty or corrupt files if execution is interrupted mid-write.
+
 * **Jules' Resolution:**
   Engineered atomic state replacement utilizing standard library file-swapping. Modifications are written to a unique, sibling temporary file, and only upon a clean exit does `os.replace()` atomise the write.
 
 ### C. Cross-Platform Windows Git-Symlink & CRLF Test Guardrails
+
 Cloning the repository on native Windows workstations often converts symlinks to plain-text pointers and forces CRLF line endings, causing POSIX-based tests to throw false-positive errors.
+
 * **Jules' Resolution:**
   Upgraded the test discovery suites (`tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_docs_symlinks.py`) to handle Windows native checkouts.
 

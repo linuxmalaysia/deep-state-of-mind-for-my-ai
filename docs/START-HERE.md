@@ -40,7 +40,7 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 
 | Core Capability / Benefit | How DSOM Achieves It | Empirical Impact / Value |
 | :--- | :--- | :--- |
-| **1. 98%+ Token & Cost Reduction** | **OKF YAML Frontmatter** + **Native OpenWiki (`./openwiki/`)** pre-distill codebase structures into lightweight metadata and 10 concept nodes. | AI agents search metadata in ~50 tokens instead of loading 500,000+ raw code tokens into context windows. |
+| **1. 98%+ Token & Cost Reduction** | **OKF YAML Frontmatter** + **Native OpenWiki (`./openwiki/`)** pre-distil codebase structures into lightweight metadata and 10 concept nodes. | AI agents search metadata in ~50 tokens instead of loading 500,000+ raw code tokens into context windows. |
 | **2. Zero Memory Loss Across Sessions** | **Spatial Memory (`.agents/brain/`)** records session walkthrough anchors (`task.md`, `walkthrough.md`, `palace_registry.md`). | AI digital twins (Gemini, Jules, Claude) reanimate instantly with exact past mental state across chat reboots. |
 | **3. Zero-Binary & Zero-Cost Portability** | Native Python scripts (**`uv run python tools/openwiki_emulator.py`**) replace heavy Node.js binaries and third-party APIs. | Bypasses `NODE_MODULE_VERSION` native compilation crashes, UAC elevation hangs, 135 MB bloat, and LLM API rate limits. |
 | **4. Multi-Agent Cognitive Alignment** | **27 Constitutional AI Laws (`AGENTS.md`)** + **FastMCP Knowledge Server (`tools/mcp/server.py`)**. | Google Jules, Antigravity, Cursor, and Claude Desktop share identical rules, security guardrails, and test contracts. |
@@ -59,9 +59,9 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 ## 2. The Cognitive Entry Point (AI Persona & Rules)
 *If you are an AI agent, or a human programming an AI agent, and need to know the operational rules of this environment.*
 
-**Read This First (Root Gateway):** [`AGENTS.md`](AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/))
+**Read This First (Root Gateway):** [`AGENTS.md`](../AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/))
 
-**Then Read the Full Rulebook:** [`.agents/AGENTS.md`](.agents/AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/))
+**Then Read the Full Rulebook:** [`.agents/AGENTS.md`](../.agents/AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/))
 
 **Why it matters:** The root `AGENTS.md` is the **Gateway File** for AI agents such as Google Jules, Cursor, and Copilot that scan the repository root. It summarises the DSOM protocol and immediately redirects agents to [`.agents/AGENTS.md`](.agents/AGENTS.md) — the **Sovereign Constitution** containing all 27 operational laws, the LinuxMalaysia persona, the Defensive GitOps rules, the OKF mandate, and the UK English writing standard. Keep both files synchronised at all times.
 
@@ -70,7 +70,7 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 ## 3. The External System Entry Point (AI Crawlers)
 *If you are using an external tool (e.g., Google NotebookLM, ChatGPT) to ingest this repository.*
 
-**Read This First:** [`llms.txt`](llms.txt) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt))
+**Read This First:** [`llms.txt`](../llms.txt) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt))
 
 **Why it matters:** Placed at the root of the repository, this file acts as the official AI Sitemap. It explicitly links to all the critical governance documents (including the `NOSS-INTEGRATION-GUIDE.md`) so that external systems immediately understand the architectural constraints and compliance payloads of the project without getting lost in code files.
 
@@ -151,7 +151,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 ---
 
-## 12. The Initialization Entry Point (Mechanical Boot Sequence)
+## 12. The Initialisation Entry Point (Mechanical Boot Sequence)
 *If you need to understand how the AI's cognitive engine boots up, reanimates, and establishes its laws before the first prompt is processed.*
 
 **Read This First:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md)

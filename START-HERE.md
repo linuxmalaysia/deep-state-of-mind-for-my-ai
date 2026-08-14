@@ -40,7 +40,7 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 
 | Core Capability / Benefit | How DSOM Achieves It | Empirical Impact / Value |
 | :--- | :--- | :--- |
-| **1. 98%+ Token & Cost Reduction** | **OKF YAML Frontmatter** + **Native OpenWiki (`./openwiki/`)** pre-distill codebase structures into lightweight metadata and 10 concept nodes. | AI agents search metadata in ~50 tokens instead of loading 500,000+ raw code tokens into context windows. |
+| **1. 98%+ Token & Cost Reduction** | **OKF YAML Frontmatter** + **Native OpenWiki (`./openwiki/`)** pre-distil codebase structures into lightweight metadata and 10 concept nodes. | AI agents search metadata in ~50 tokens instead of loading 500,000+ raw code tokens into context windows. |
 | **2. Zero Memory Loss Across Sessions** | **Spatial Memory (`.agents/brain/`)** records session walkthrough anchors (`task.md`, `walkthrough.md`, `palace_registry.md`). | AI digital twins (Gemini, Jules, Claude) reanimate instantly with exact past mental state across chat reboots. |
 | **3. Zero-Binary & Zero-Cost Portability** | Native Python scripts (**`uv run python tools/openwiki_emulator.py`**) replace heavy Node.js binaries and third-party APIs. | Bypasses `NODE_MODULE_VERSION` native compilation crashes, UAC elevation hangs, 135 MB bloat, and LLM API rate limits. |
 | **4. Multi-Agent Cognitive Alignment** | **27 Constitutional AI Laws (`AGENTS.md`)** + **FastMCP Knowledge Server (`tools/mcp/server.py`)**. | Google Jules, Antigravity, Cursor, and Claude Desktop share identical rules, security guardrails, and test contracts. |
@@ -151,7 +151,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 ---
 
-## 12. The Initialization Entry Point (Mechanical Boot Sequence)
+## 12. The Initialisation Entry Point (Mechanical Boot Sequence)
 *If you need to understand how the AI's cognitive engine boots up, reanimates, and establishes its laws before the first prompt is processed.*
 
 **Read This First:** [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md)
