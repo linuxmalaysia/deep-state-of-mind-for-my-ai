@@ -5,7 +5,6 @@ title: Explanation Index
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "documentation", "diataxis", "explanation"]
 ---
-
 # DSOM explanation and architecture
 
 Welcome to the **Deep State of Mind (DSOM) Explanation** quadrant, structured according to the **Diátaxis Framework**.

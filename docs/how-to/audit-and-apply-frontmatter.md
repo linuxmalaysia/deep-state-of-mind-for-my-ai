@@ -5,7 +5,6 @@ title: "How-To: Check and Apply OKF Compliance"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "okf", "compliance"]
 ---
-
 # Check and apply OKF compliance
 
 This guide explains how to audit, standardise, and auto-correct Markdown files to ensure compliance with the **Open Knowledge Format (OKF v0.1)**.

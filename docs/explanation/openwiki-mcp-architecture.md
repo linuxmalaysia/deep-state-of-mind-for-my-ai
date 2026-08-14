@@ -5,7 +5,6 @@ title: "Explanation: OpenWiki & FastMCP Architecture"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "explanation", "architecture", "mcp", "openwiki"]
 ---
-
 # OpenWiki and FastMCP architecture
 
 An in-depth explanation of the technical design, data flows, and reasoning behind OpenWiki and FastMCP integrations.

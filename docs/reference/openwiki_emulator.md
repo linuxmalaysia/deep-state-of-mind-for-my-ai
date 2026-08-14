@@ -5,7 +5,6 @@ title: "Reference: openwiki_emulator.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "openwiki", "emulator"]
 ---
-
 # openwiki_emulator.py reference
 
 Zero-binary, pure Python CLI tool emulating the OpenWiki documentation environment.

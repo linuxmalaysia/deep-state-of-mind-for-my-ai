@@ -5,7 +5,6 @@ title: "How-To: Run the FastMCP Server"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "mcp", "server"]
 ---
-
 # Run the FastMCP server
 
 This guide explains how to configure, start, and debug the local Model Context Protocol (MCP) server to expose the Sovereign Palace to AI editors.

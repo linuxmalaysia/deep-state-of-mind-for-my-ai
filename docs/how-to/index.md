@@ -5,7 +5,6 @@ title: How-To Guides Index
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "documentation", "diataxis", "how-to"]
 ---
-
 # DSOM how-to guides
 
 Welcome to the **Deep State of Mind (DSOM) How-To Guides** quadrant, structured according to the **Diátaxis Framework**.

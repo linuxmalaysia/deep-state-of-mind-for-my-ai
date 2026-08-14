@@ -5,7 +5,6 @@ title: "Reference: dsom_token_auditor.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "tokens", "audit"]
 ---
-
 # dsom_token_auditor.py reference
 
 Tiktoken-based token efficiency and context load calculation script.
