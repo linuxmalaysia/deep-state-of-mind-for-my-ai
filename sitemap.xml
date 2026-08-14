@@ -441,6 +441,10 @@
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/SUMMARY/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
         <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/agent-configs/SOVEREIGN-PERSONA-TEMPLATE/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
@@ -458,6 +462,18 @@
     </url>
     <url>
         <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/agent-configs/windsurfrules_template/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/diataxis/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/openwiki-mcp-architecture/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
@@ -601,6 +617,26 @@
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/audit-and-apply-frontmatter/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/generate-sitemaps-seo/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/run-fastmcp-server/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/use-openwiki-emulator/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
         <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/model-specifics/dsom-claude-initialiser/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
@@ -622,6 +658,42 @@
     </url>
     <url>
         <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/apply_okf_frontmatter/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/bench_brain/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/dsom_token_auditor/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/generate_sitemaps/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/mcp_server/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/mkdocs_hooks/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/openwiki_emulator/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/refactor_okf/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
@@ -734,6 +806,14 @@
     </url>
     <url>
         <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-TEMPLATE-RESET/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/getting-started/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
@@ -1177,6 +1257,10 @@
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/SUMMARY/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
         <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/agent-configs/SOVEREIGN-PERSONA-TEMPLATE/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
@@ -1194,6 +1278,18 @@
     </url>
     <url>
         <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/agent-configs/windsurfrules_template/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/diataxis/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/openwiki-mcp-architecture/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
@@ -1337,6 +1433,26 @@
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/audit-and-apply-frontmatter/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/generate-sitemaps-seo/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/run-fastmcp-server/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/use-openwiki-emulator/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
         <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/model-specifics/dsom-claude-initialiser/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
@@ -1358,6 +1474,42 @@
     </url>
     <url>
         <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/apply_okf_frontmatter/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/bench_brain/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/dsom_token_auditor/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/generate_sitemaps/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/mcp_server/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/mkdocs_hooks/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/openwiki_emulator/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/refactor_okf/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
@@ -1470,6 +1622,14 @@
     </url>
     <url>
         <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-TEMPLATE-RESET/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/getting-started/</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
@@ -1605,6 +1765,18 @@
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/diataxis</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/index</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/openwiki-mcp-architecture</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
         <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-cognitive-logging-protocol</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
@@ -1725,6 +1897,26 @@
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/audit-and-apply-frontmatter</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/generate-sitemaps-seo</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/index</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/run-fastmcp-server</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/use-openwiki-emulator</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
         <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/howto-adopt-dsom</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
@@ -1806,6 +1998,42 @@
     </url>
     <url>
         <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference-architectures/howto-setup-ansible-baseline</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/apply_okf_frontmatter</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/bench_brain</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/dsom_token_auditor</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/generate_sitemaps</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/index</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/mcp_server</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/mkdocs_hooks</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/openwiki_emulator</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/refactor_okf</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
@@ -1898,6 +2126,14 @@
     </url>
     <url>
         <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-template-reset</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/getting-started</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/index</loc>
         <lastmod>2026-08-14</lastmod>
     </url>
     <url>
