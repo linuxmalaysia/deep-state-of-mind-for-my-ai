@@ -20,10 +20,10 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
 * **Technical Implementation:**
   - Scaffolded `.readthedocs.yaml` at the repository root targeting Ubuntu 24.04 and Python 3.13 with MkDocs.
   - Resolved `.agents` compilation 404s by adding negative exclusions (`!.agents`) to `exclude_docs` in `mkdocs.yml`.
-  - Applied the universal DSOM GPL v3.0 license and signature block to `.readthedocs.yaml` using the signature injector tool.
+  - Applied the universal DSOM GPL v3.0 licence and signature block to `.readthedocs.yaml` using the signature injector tool.
   - Implemented comprehensive unit tests under `tests/test_readthedocs_config.py` and `tests/test_readthedocs_ledger_sync.py` to assert RTD-related configuration integrity.
 * **Comments & Reviews:**
-  - **CodeRabbit AI:** Requested docstrings and detailed method level documentation for the new tests to satisfy clean coding standards.
+  - **CodeRabbit AI:** Requested docstrings and detailed method-level documentation for the new tests to satisfy clean coding standards.
   - **Jules' Response:** Acknowledged the feedback and spawned follow-up tasks to generate inline documentation.
 
 ### 2. Add Docstrings to Read the Docs Config & Injector (PR #23)
@@ -80,7 +80,23 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
 ### A. The PyYAML CustomLoader Parser
 During frontmatter validation sweeps, PyYAML's default implicit resolver automatically coerced unquoted ISO 8601 timestamps into native Python `datetime` objects. This mutated original string representations (e.g. converting `"2026-08-05T12:00:00Z"` to `datetime.datetime(...)`), causing OKF validation scripts to fail formatting constraints.
 * **Jules' Resolution:**
-  Introduced a custom PyYAML loader (`CustomLoader`) derived from `SafeLoader` to preserve raw timestamps as exact string values across all compliance scripts (`apply_okf_frontmatter.py`, `refactor_okf.py`).
+  Introduced a custom PyYAML loader (`CustomLoader`) derived from `SafeLoader`. To preserve boolean resolvers under `t` and `T` (e.g. `true`, `false`) while preventing automatic timestamp parsing, the loader copies `SafeLoader`'s implicit resolver map into a loader-local map and selectively filters out only `tag:yaml.org,2002:timestamp`:
+  ```python
+  class CustomLoader(yaml.SafeLoader):
+      pass
+
+  # Copy SafeLoader's implicit resolver map into a loader-local map
+  CustomLoader.yaml_implicit_resolvers = yaml.SafeLoader.yaml_implicit_resolvers.copy()
+
+  # Remove only the timestamp resolver tag while preserving t/T booleans
+  for char in ["t", "T"]:
+      CustomLoader.yaml_implicit_resolvers[char] = [
+          (tag, regexp)
+          for tag, regexp in CustomLoader.yaml_implicit_resolvers[char]
+          if tag != "tag:yaml.org,2002:timestamp"
+      ]
+  ```
+  This guarantees raw timestamps remain string types while preserving boolean parsing across all compliance scripts (`apply_okf_frontmatter.py`, `refactor_okf.py`).
 
 ### B. Secure Sibling Atomic File Replacement
 Standard inline writes (`open(file, 'w')`) carry high risk of leaving empty or corrupt files if execution is interrupted mid-write.

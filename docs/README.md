@@ -1,1 +1,639 @@
-../README.md
+---
+okf_version: 0.1
+type: documentation
+title: "🧠 Deep State of Mind (DSOM) For My AI Protocol"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for README.md."
+resource: "file:///README.md"
+---
+# 🧠 Deep State of Mind (DSOM) For My AI Protocol
+
+> **"Make AI work for you — not the other way around. Sovereign Intelligence through GitOps, AIOps, and Ansible."**
+
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
+[![Version](https://img.shields.io/badge/Version-10.4.0--governance-blue.svg)]()
+[![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
+[![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
+[![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
+[![Standard](https://img.shields.io/badge/AI%20Standard-Cognitive%20Digital%20Twin-purple.svg)]()
+[![Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-blue.svg)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
+[![GitBook](https://img.shields.io/badge/Docs-GitBook-blue.svg)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
+[![Read the Docs](https://img.shields.io/badge/Docs-Read%20the%20Docs-blue.svg)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/)
+
+📖 **Official Live Documentation:**
+- **GitHub Pages:** [https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
+- **GitBook:** [https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
+- **Read the Docs:** [https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/)
+
+---
+
+## 🎯 What is DSOM?
+
+**Deep State of Mind (DSOM)** is a **metacognitive governance framework** that transforms any AI (Gemini, Claude, Copilot, ChatGPT) into a disciplined **Cognitive Digital Twin** — an AI agent that thinks and operates like your Senior Systems Architect.
+
+It solves three critical AI problems:
+
+| Problem | DSOM Solution |
+|:---|:---|
+| **Context Decay** — AI forgets everything after each session | `.agents/brain/` artifacts persist the project state permanently |
+| **Vendor Lock-in** — Moving between AI tools loses all context | All knowledge lives in your Git repo, not inside the AI |
+| **Uncontrolled Execution** — AI runs commands you didn't approve | Advisory Mode + GitOps + Ansible enforce human-approval-first |
+
+---
+
+## 🏛️ The Three Pillars (v6.1)
+
+Every project built on this skeleton operates under **three non-negotiable pillars**:
+
+```text
+┌─────────────────────────────────────────────────────┐
+│                DSOM OPERATING MODEL                 │
+│                                                     │
+│  ┌──────────┐   ┌──────────┐   ┌─────────────────┐ │
+│  │  AIOps   │──▶│  GitOps  │──▶│  The Executor   │ │
+│  │  (Mind)  │   │ (Record) │   │     (Hand)      │ │
+│  └──────────┘   └──────────┘   └─────────────────┘ │
+│       │               │                 │           │
+│  AI proposes    Git records     Executor runs       │
+│  & analyses     all state       on target nodes     │
+│       ▲               │                 │           │
+│       └───────────────┴─── AI verifies ─┘           │
+└─────────────────────────────────────────────────────┘
+```
+
+**The core loop:**
+> **AI Proposes → Git Records → Executor Runs → AI Verifies**
+
+### The Three Hard Rules
+
+1. **AI never runs commands directly on remote nodes.** It writes execution scripts/playbooks. You run them.
+2. **No manual edits to production servers.** If it's not committed to Git, it doesn't exist.
+3. **Every execution is idempotent.** Safe to re-run at any time.
+
+### 🔌 Execution Modularity & The Windows WSL2 Bridge
+While **Ansible** is the default Executor for infrastructure projects, the Third Pillar is fully modular based on your project domain:
+- **Infrastructure:** `ansible-playbook`
+- **Data Science / Python:** `uv run`
+- **Web Development:** `npm run` / `node`
+- **Documentation:** `pandoc` / `latex`
+
+> **The Ansible Legacy:** While the Executor is modular, DSOM is fundamentally rooted in IT Operations. *Ansible is woven into the DNA of this framework.* The governance ledgers (such as `GITOPS-AIOPS-ANSIBLE-STRATEGY.md`) intentionally retain Ansible as their namesake because it represents the ultimate standard of idempotency, declarative state, and absolute control. Even when executing `uv` or `node`, the Third Pillar operates entirely on the philosophical foundation of Ansible.
+
+**The Windows WSL2 Bridge:** For projects running purely on Windows 11 without a dedicated Linux jumphost, **WSL2 (Ubuntu/AlmaLinux)** must be configured as your local Control Node. This "Execution Bridge" ensures humans and AI agents can seamlessly leverage standard Linux tooling (Ansible, Make, Bash) natively within the Windows environment without architectural friction.
+
+---
+
+## 🤖 Agent Registry & The Dual AGENTS.md Architecture
+
+DSOM maintains **two synchronised `AGENTS.md` files** to serve both project-aware AI agents and external platform agents (e.g., Google Jules, Cursor, GitHub Copilot) that scan repository roots by default.
+
+| File | Role |
+|:---|:---|
+| [`AGENTS.md`](AGENTS.md) | **Root Gateway** — discovered by Jules, Copilot, and other agents that scan the repo root. Summarises DSOM and redirects to the full rulebook. |
+| [`.agents/AGENTS.md`](.agents/AGENTS.md) | **Full Sovereign Rulebook** — the Cognitive Entry Point containing all 22+ laws, persona profile, boot sequence, and discovery protocols. |
+
+> **Tip:** Keep both `AGENTS.md` files synchronised. The root gateway is the **first read**; the `.agents/AGENTS.md` is the **complete read**. This dual-file pattern ensures DSOM governance is immediately discoverable by any AI tool without requiring custom configuration.
+
+---
+
+## 🚀 Quick Start: Using This as Your Project Template
+
+### Prerequisites
+
+| Tool | Purpose | Min Version |
+|:---|:---|:---|
+| `git` | Version control (GitOps backbone) | 2.30+ |
+| `bash` or `PowerShell` | Running tools | Any |
+| `ansible` | OS-level automation (infra projects) | 2.15+ |
+| Any AI | Your Cognitive Twin | Any |
+
+### Step 1 — Clone and Reset
+
+> **🏗️ Scaffolding a New Project?** If you are migrating the highly customized AI skills and Sovereign Engine from this repo to a brand new one, you MUST follow the [**DSOM Project Cloning Guide**](docs/HOWTO-CLONE-DSOM-PROJECT.md) first to ensure no cognitive capabilities are lost.
+
+```bash
+# Clone the DSOM skeleton
+git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git my-new-project
+cd my-new-project
+
+# Reset for your new project (clears old Git history and brain files)
+bash tools/template-reset.sh
+```
+
+### Step 2 — Initialise the Brain
+
+```bash
+# Linux / WSL2
+bash tools/init-brain.sh
+chmod +x tools/*.sh
+
+# Windows (PowerShell)
+.\tools\init-brain.ps1
+```
+
+This creates your `.agents/brain/` directory with:
+
+- `task.md` — What to do right now
+- `walkthrough.md` — Session history and Mental Anchors
+- `implementation_plan.md` — Project roadmap
+
+### Step 3 — Fill in Your Project Identity Card ⚠️ CRITICAL
+
+This is the most important step. Open and fill in every `[PLACEHOLDER]`:
+
+```bash
+# Open and edit with your project-specific details
+nano docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+```
+
+Fill in:
+
+- `[YOUR_PROJECT_NAME]` — e.g., `my-kafka-pipeline`
+- `[T1]` Command Centre path on your Windows/Mac
+- `[T2]` Dev Bridge path (WSL2/VM)
+- `[T3/T4]` Production host, user, UID, path
+- Security doctrine — who runs as root vs. which UID for apps
+- Mental Anchor §8 — set to `"Fresh project. Phase 1 pending."`
+
+> ⚠️ **The AI will NOT operate properly until this file is filled in.** `audit-pre-flight.sh` checks for unfilled placeholders and will warn you.
+
+### Step 4 — Set Up Ansible Baseline (Infrastructure Projects)
+
+```bash
+# Follow the full LDP guide
+cat docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
+
+# Verify connectivity to your nodes
+ansible all -m ping -i inventory/hosts.yml
+```
+
+### Step 5 — Run the Pre-Flight Audit
+
+```bash
+# Linux / WSL2
+./tools/audit-pre-flight.sh
+
+# Windows (PowerShell)
+.\tools\audit-pre-flight.ps1
+```
+
+**Everything should show `[PASS]` or `[OK]`.** Fix any `[FAIL]` before continuing.
+
+### Step 6 — Brief Your AI (The Cognitive Handshake)
+
+Identity context manifest is generated and uploaded:
+
+```bash
+# Linux / WSL2
+bash tools/reanimate.sh
+
+# Windows (PowerShell)
+.\tools\reanimate.ps1
+```
+
+Then upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI and say:
+
+> *"Initialise DSOM Protocol. Read the uploaded manifest. Summarise the current Mental Anchor and confirm the 4-Tier environment map from the AI-COGNITIVE-TWIN-PROTOCOL.md section. State: 'Sovereign State Synchronised' when ready."*
+
+**Your AI is now operational as a Cognitive Digital Twin.**
+
+---
+
+## 🏛️ The Sovereign Workspace v2 (OKF + Palace + Skills)
+
+> **New in v10.0:** The DSOM brain has evolved to a **spatial memory architecture** — the Sovereign Markdown Palace. This approach is pioneered by and originated from the **MemPalace** project ([milla-jovovich/mempalace](https://github.com/milla-jovovich/mempalace)).
+
+### What Is the Palace?
+
+The Palace gives your AI **organised, fast, spatial recall** across months of project history — without reading entire session logs. It works as a second layer alongside the existing `walkthrough.md` (The Drawer).
+
+```text
+.agents/brain/
+├── palace_registry.md        ← AI reads this at SOD (spatial map)
+├── walkthrough.md            ← Linear session log (The Drawer)
+└── wings/                    ← Spatial Palace Rooms
+    └── wing_dsom_core/
+        ├── hall_facts/       ← Immutable laws, tools, architecture
+        └── hall_events/      ← Milestones, versions, history
+```
+
+Each Room has a `closet.md` — a distilled, high-density knowledge summary the AI reads **instead of** scanning hundreds of lines.
+
+### Palace Quick Start
+
+| If you are... | Go to... |
+|---|---|
+| **First-time user or AI agent** | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) |
+| **Existing DSOM user upgrading** | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) |
+| **Reading how the Palace was built** | [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) |
+| **Full Palace specification** | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) |
+
+### 🧩 Known Gap: The Reasoning Problem
+
+> **Research Finding (2026-04-08):** DSOM solves **state persistence** effectively (via the Sovereign Palace) — but there is one gap: **live reasoning capture**.
+
+Six months of daily AI use generates millions of tokens of conversation. Every decision, every debugging session, and every tradeoff debate is often lost when the chat session ends.
+
+⚠️ **The gap:** DSOM does not automatically capture *why* decisions were made — only *what* was decided. The reasoning lives in the chat window, not in Git.
+
+**The fix (Decision Log Protocol):** At key decisions, immediately ask the AI:
+
+```text
+"Log this decision to walkthrough.md:
+ Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
+```
+
+📖 **Full analysis:** [`docs/RESEARCH-REASONING-GAP.md`](docs/RESEARCH-REASONING-GAP.md)
+
+---
+
+## 🎭 Sovereign Persona Injection
+
+A core feature of the DSOM protocol is the ability to make the AI inherently act as your true **Cognitive Digital Twin**. You can inject your own identity, linguistic DNA, and operational constraints into the AI's core engine.
+
+When you define your Persona Profile, the AI will automatically adopt your tone, your constraints (e.g. "FOSS only", "Ansible-first"), and your exact architectural philosophies across every chat session.
+
+| Use Case | Guide |
+|---|---|
+| **Define your AI's Persona** | [`docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md`](docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md) |
+
+---
+
+## 🛠️ AI Agent Skills & Automation
+
+DSOM enables your Cognitive Twin to autonomously self-heal, scaffold, and execute complex workflows through OKF-compliant **AI Agent Skills**. We currently host a suite of 17 specialized skills (including `dsom-project-cloner`, `dsom-bootstrap`, `okf-frontmatter-injector`, and `persona-injector`).
+
+| Use Case | Guide |
+|---|---|
+| **View or Create AI Skills** | [`docs/AI-AGENT-SKILLS-GUIDE.md`](docs/AI-AGENT-SKILLS-GUIDE.md) |
+
+---
+
+## ⚡ DSOM Onboarding & Cloning Automation
+
+If you want to integrate the deep-state-of-mind architecture into an entirely new or existing repository, you no longer have to manually copy files. We have engineered robust AI skills (`dsom-bootstrap` and `dsom-project-cloner`) and cross-platform onboarding scripts that handle the integration cleanly.
+
+| Use Case | Guide |
+|---|---|
+| **Automated Repository Onboarding** | [`docs/HOWTO-DSOM-ONBOARDING.md`](docs/HOWTO-DSOM-ONBOARDING.md) |
+| **Clone / Scaffold New Project** | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) |
+| **DSOM Bootstrapping Baseline** | [`docs/HOWTO-DSOM-BASELINE.md`](docs/HOWTO-DSOM-BASELINE.md) |
+
+---
+
+## 📅 Daily Operating Rituals
+
+> **Full ritual guides:** [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md)
+
+---
+
+### ⚡ Mid-Day Checkpoint (Continuous Save)
+
+If you are stepping away from the keyboard or want to sync state mid-task, you do not need to perform a full EOD ritual. Run the **Checkpoint Ritual** to systematically auto-commit and push your state cleanly.
+
+```powershell
+.\tools\checkpoint.ps1            # Windows (T1)
+```
+
+```bash
+bash tools/checkpoint.sh          # WSL2 (T2)
+```
+
+---
+
+### 🌅 Start of Day (SOD)
+
+If using Palace v1.0, you only need to run the automated SOD Palace script. This automatically pulls from Git, runs the audit pre-flight, verifies the Palace registry, and generates your reanimation manifest.
+
+```powershell
+.\tools\sod-palace.ps1            # Windows Native
+```
+
+```bash
+bash tools/sod-palace.sh          # Linux / WSL2
+```
+
+Optional — scan before sharing:
+
+```bash
+./tools/privacy-guardian.sh
+```
+
+Optional — scan before sharing:
+
+```bash
+./tools/privacy-guardian.sh
+```
+
+**Step 4 — Brief Your AI (The Cognitive Handshake)**
+
+*Option A — Upload manifest to AI chat, then say:*
+> *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the Mental Anchor and confirm the 4-Tier environment map. State: 'Sovereign State Synchronised' when ready."*
+
+*Option B — If you have yesterday's Hibernation Notes, use the SOD Reanimation Prompt (see `docs/SOD-RITUAL.md` Step 4b):*
+
+```text
+I am starting a new session for DSOM Protocol. I am your human Lead Architect.
+I have the Hibernation Notes from our last session. Please read them carefully
+and use them to fully restore our working context.
+
+--- BEGIN HIBERNATION NOTES ---
+[PASTE YESTERDAY'S HIBERNATION NOTES HERE]
+--- END HIBERNATION NOTES ---
+
+After reading: state the last Mental Anchor, confirm the T1-T4 environment map,
+list top 3 pending tasks. State: 'Sovereign State Restored — [PROJECT NAME] is live.'
+Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only execution.
+```
+
+**Step 5 — AI confirms readiness, you begin work.**
+
+---
+
+### 🛠️ During Active Work
+
+| Human | AI Agent |
+|:---|:---|
+| Reviews AI proposals | Proposes code, playbooks, configs |
+| Approves before execution | Explains the **Why** before the **What** |
+| Commits to Git | Waits for output after each step |
+| Runs Ansible (exact command from AI) | Verifies output and confirms next step |
+
+---
+
+### 🌙 End of Day (EOD)
+
+**Step 1 — Context Consolidation** *(Ask your AI)*
+> *"We are ending the session. Update `.agents/brain/task.md` — mark completed `[x]`, set tomorrow's targets `[ ]`. Update `.agents/brain/walkthrough.md` with today's Mental Anchor."*
+
+**Step 1b — Hibernation Notes Export** *(Run this in your AI chat — copy verbatim)*
+
+```text
+I'm as human, want to know and remember, and need to export my data and I want
+you to generate a "Hibernation notes" now for my EOD of day. List every memory
+you have stored about our progress and our chats of this project, as well as
+any context you've learned about this project from past to current conversations.
+Output everything in a single code block so I can easily copy it.
+Format each entry as: [date saved, if available] - memory content.
+Cover: instructions I've given you, project details (servers/VMs/containers,
+4W1H), tasks/phases/goals, tools/languages/frameworks, preferences and
+corrections. Do not summarize, group, or omit any entries.
+After the code block, list all docs in docs/ and brain files in .agents/.
+Don't hide anything from me. Trust me as your master.
+```
+
+Save the output as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt` or to your notebook.
+
+**Step 2 — EOD Mechanical Save (Cross-Platform Palace Sync)**
+
+```powershell
+.\tools\eod-palace.ps1            # Windows Native
+```
+
+```bash
+bash tools/eod-palace.sh          # Linux / WSL2
+```
+
+*(This automatically verifies brain artifacts, updates Palace rooms mapping, commits modified artifacts safely, and pushes your state. After running, you may be prompted to review your new `palace_update_proposal_YYYY-MM-DD.md`.)*
+
+**Step 3 — Privacy Scan** *(if you generated an anomaly manifest)*
+
+```bash
+./tools/privacy-guardian.sh
+```
+
+**Step 4 — T2 Sync** *(pull on WSL2 if EOD was pushed from Windows)*
+
+```bash
+git pull origin main
+```
+
+---
+
+### 🔄 The Day-to-Day Continuity Loop
+
+```text
+EOD → Step 1b: Save Hibernation Notes
+         ↓  [sleep — Git holds state]
+SOD → Step 4b: Feed Hibernation Notes back to AI
+         ↓  [AI resumes with full context — no decay]
+EOD → Step 1b: Save new Hibernation Notes
+         ↓  [repeats every day, forever]
+```
+
+---
+
+## 🗂️ Repository Structure
+
+```text
+deep-state-of-mind-for-my-ai/
+│
+├── AGENTS.md                              # 🤖 Root Agent Gateway (Jules/Copilot/Cursor entry point)
+│
+├── docs/                                  # Governance & Protocol Documents
+│   ├── tools-and-automation/              # 🛠️ Detailed script documentation (OKF Compliant)
+│   ├── reference-architectures/           # 🏗️ Ansible architecture blueprints
+│   ├── AI-MASTER-PROTOCOL.md              # The Sovereign Constitution (v6.1 + Palace v1.0)
+│   ├── AI-COGNITIVE-TWIN-PROTOCOL.md      # ⭐ Project Identity Card Template
+│   ├── GITOPS-AIOPS-ANSIBLE-STRATEGY.md   # Three-Pillar Doctrine
+│   ├── HOWTO-SETUP-ANSIBLE-BASELINE.md    # Ansible setup guide (LDP standard)
+│   ├── OPERATIONAL-GUIDE.md               # How-to for daily rituals
+│   ├── REANIMATION-PROMPT-TEMPLATE.md     # AI session prompt templates
+│   └── ...
+│
+├── .agents/                               # 🤖 Sovereign AI Workspace (v2)
+│   ├── AGENTS.md                          # 📜 Core Rulebook mapping AI rules to memory
+│   ├── skills/                            # 🛠️ Self-Healing Agent Skills (OKF)
+│   ├── workflows/                         # 🔄 Procedural Workflow chains
+│   └── brain/                             # 🧠 The AI's External Memory (SSoT)
+│       ├── task.md                        # Present: What to do NOW
+│       ├── walkthrough.md                 # Past: Session history & Mental Anchors
+│       ├── implementation_plan.md         # Future: Project roadmap
+│       ├── palace_registry.md             # 🏛️ Palace spatial index (OKF Compliant)
+│       └── wings/                         # 🏛️ Sovereign Markdown Palace Rooms
+│
+├── references/                            # 📚 External PDFs, Genesis papers, and benchmarks
+│
+├── tools/                                 # Automation Scripts
+│   ├── audit-pre-flight.sh / .ps1         # ✅ Run first every session
+│   ├── git-ritual.sh / .ps1               # 🔄 SOD pull + EOD commit/push
+│   ├── reanimate.sh / .ps1                # 🚀 Generate AI context manifest (v2.2/v2.1)
+│   ├── hibernation.sh / .ps1              # 🌙 EOD safety check + Palace Sync (v2.1)
+│   ├── palace-sync.sh / .ps1              # 🏛️ Map git commits → Palace Rooms (v1.0)
+│   ├── init-brain.sh / .ps1               # 🧠 One-time brain initialisation
+│   └── privacy-guardian.sh / .ps1         # 🛡️ Scan manifest before sharing
+│
+├── inventory/                             # Ansible Node Topology (your project)
+├── playbooks/                             # Ansible Playbooks (your project)
+└── roles/                                 # Ansible Roles (your project)
+```
+
+**The `⭐ AI-COGNITIVE-TWIN-PROTOCOL.md` is the most important file.** Without it filled in, the AI has no project context.
+
+---
+
+## 🧠 The AI Brain — Understanding the Four Artifacts
+
+| Artifact | Time | Purpose | Who Updates |
+|:---|:---|:---|:---|
+| `AI-MASTER-PROTOCOL.md` | **Eternal** | Governance laws, hard rules, identity | Human (rarely changes) |
+| `implementation_plan.md` | **Future** | Project phases and roadmap | Human-led, AI assists |
+| `task.md` | **Present** | Today's checklist and focus | AI updates, Human approves |
+| `walkthrough.md` | **Past** | Session history, Mental Anchors, decisions | AI writes, Human audits |
+
+> **The Mental Anchor** is the most critical entry in `walkthrough.md`. It is the exact logical stopping point of the last session — the sentence that allows a **brand new AI session** to resume exactly where you left off, in under 3 prompts.
+
+---
+
+## 🔀 Session Handover (Moving to a New AI)
+
+When switching AI models, chat windows, or accounts, use the **Sovereign Handover Prompt** to export all context:
+
+Copy from [`docs/REANIMATION-PROMPT-TEMPLATE.md`](docs/REANIMATION-PROMPT-TEMPLATE.md) → **Prompt Variant 2: Session Handover**.
+
+Paste it into the **old** AI session first to get a full memory dump, then load the dump into the **new** AI session along with your manifest.
+
+---
+
+## 🛠️ Tools Reference
+
+| Script | When to Run | What It Does |
+|:---|:---|:---|
+| `audit-pre-flight.sh` | **Every session start** | Checks Brain, Git sync, Cognitive Twin Protocol, Ansible baseline |
+| `git-ritual.sh sod` | **Morning** | Pulls latest state from `origin/main` |
+| `reanimate.sh` | **Before AI session** | Generates the full context manifest for AI upload |
+| `privacy-guardian.sh` | **Before sharing manifest** | Scans for leaked IPs, keys, tokens, paths |
+| `git-ritual.sh` | **Evening** | Guided semantic commit + push (EOD Sovereign Save) |
+| `hibernation.sh` | **Session end** | Verifies walkthrough + task updated, then pushes |
+| `template-reset.sh` | **Once (new project)** | Clears Git history and brain for fresh project |
+
+**Windows users:** All `.sh` scripts have a `.ps1` PowerShell equivalent.
+
+---
+
+## 📋 The 6-Step Boot Checklist (New Project)
+
+```text
+[ ] 1. Clone and run template-reset.sh
+[ ] 2. Run init-brain.sh
+[ ] 3. Fill in docs/AI-COGNITIVE-TWIN-PROTOCOL.md (ALL [PLACEHOLDER] fields)
+[ ] 4. Run HOWTO-SETUP-ANSIBLE-BASELINE.md (infra projects)
+[ ] 5. Run audit-pre-flight.sh — confirm all PASS
+[ ] 6. Run reanimate.sh — upload manifest to AI — get Handshake
+```
+
+Once Step 6 is complete, the AI knows:
+
+- ✅ Your 4-Tier environment (T1 → T4)
+- ✅ Your security doctrine (who runs as root, who runs as UID X)
+- ✅ Your Git commit convention
+- ✅ Your production identity and isolation rules
+- ✅ The current Mental Anchor (last known state)
+- ✅ All governance laws and hard rules
+
+---
+
+## 📚 Key Documents (The Governance Ledgers)
+
+| File | Description |
+| :--- | :--- |
+| [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |
+| [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
+| [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |
+| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 9 primary onboarding entry points. Read this first! |
+| [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialization Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
+| [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
+| [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
+| [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
+| [`docs/governance/OKF-MIND-OPTIMIZATION.md`](docs/governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimization — Artifact Pyramid & Procedural Memory |
+| [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimization (GEO) — AI-ready documentation policies |
+| [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) | ⚙️ AI Skill Architecture — Progressive Disclosure & Semantic Routing mechanics |
+| [`docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`](docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md) | 🏗️ Architecture Analysis — Codebase and Structural breakdown of the framework |
+| [`docs/governance/ZERO-GLOBAL-MEMORY.md`](docs/governance/ZERO-GLOBAL-MEMORY.md) | 🧠 Zero-Global Memory — The Sovereign AI Memory Architecture & Cognitive Flow |
+| [`docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md) | ⚡ Token Efficiency Playbook — Benchmarks proving 96.23% context reduction |
+| [`docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md`](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | 🛡️ Byte-Capped Execution — Circuit breaker preventing context flooding |
+| [`docs/governance/AUTOMATION-AUDIT-LIST.md`](docs/governance/AUTOMATION-AUDIT-LIST.md) | 📋 Automation Audit Ledger — Comprehensive index of all execution scripts |
+| [`docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
+| [`docs/governance/NOSS-INTEGRATION-GUIDE.md`](docs/governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
+| [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md) | 📚 Knowledge-First Discovery — SOP for local OKF frontmatter search before terminal execution |
+| [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
+| [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
+| [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
+| [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
+| [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) | 📖 How and why the Palace was built |
+| [`docs/README.md`](docs/README.md) | 📖 **Substance Copy** — Local, portable copy of the main project README. |
+| [`docs/SOD-RITUAL.md`](docs/SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide |
+| [`docs/EOD-RITUAL.md`](docs/EOD-RITUAL.md) | 🌙 Full End-of-Day ritual guide |
+| [`docs/HUMAN-HANDOVER-CONTEXT.md`](docs/HUMAN-HANDOVER-CONTEXT.md) | 🤝 Session handover prompt |
+| [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md) | Three-pillar strategic doctrine |
+| [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](docs/HOWTO-SETUP-ANSIBLE-BASELINE.md) | Step-by-step Ansible baseline setup |
+| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](docs/REANIMATION-PROMPT-TEMPLATE.md) | AI session prompt templates |
+
+---
+
+## 🤖 Supported AI Providers
+
+This framework is provider-agnostic. Tested and configured for:
+
+| AI | Setup Guide |
+|:---|:---|
+| Google Gemini | [`docs/PERSONALIZATION.md`](docs/PERSONALIZATION.md) |
+| Anthropic Claude | [`docs/CLAUDE-SETUP.md`](docs/CLAUDE-SETUP.md) |
+| GitHub Copilot | [`docs/COPILOT-SETUP.md`](docs/COPILOT-SETUP.md) |
+| Google Antigravity | Direct — uses this repo as workspace |
+
+---
+
+## 🗺️ Roadmap
+
+- [x] **v4.1** — Brain artifacts and Root-Aware scripts
+- [x] **v5.2** — ITIL 4 alignment, Privacy Guardian, Multi-agent protocols
+- [x] **v6.0** — GitOps + AIOps + Ansible three-pillar model, Cognitive Twin Protocol template, Git Ritual tool
+- [x] **v6.1** — Ansible baseline playbooks, human handover, Google Antigravity integration
+- [x] **v6.2** — Ansible `roles/common`, 19-node Elastic fabric hardened (v9.8.0)
+- [x] **v10.0.0-palace** — 🏛️ Sovereign Markdown Palace v1.0: spatial memory, `palace-sync`, 8 Rooms backfilled
+- [x] **v10.3.0-bootstrap** — 🚀 DSOM Bootstrapping baseline adoption, governance restructuring, and OKF v0.1 compliance
+- [x] **v10.3.1-skills** — 🛠️ AI Skills Automation: Added 17 Sovereign AI skills including `dsom-project-cloner` and `dsom-bootstrap`
+- [x] **v10.4.0-governance** — 🛡️ Token Efficiency Framework: Byte-capped execution, zero-global memory maps, and Android Termux FUSE benchmarking
+- [ ] **v11.0** — Local LLM support (Ollama) for offline Sovereign AI
+
+---
+
+## 🤝 Contributing
+
+All contributions must follow the DSOM standards:
+
+- Atomic commits: `type(scope): description [Phase/vX.X]`
+- All PRs must include a `walkthrough.md` update
+- UK English only in all documentation
+- No secrets in any committed file
+- **Triple-Ledger Mandate**: Major updates must sync `README.md`, `CHANGELOG.md`, and `HISTORY.md`
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for full guidelines.
+
+---
+
+## 👤 Authors
+
+- **Lead Architect:** [Harisfazillah Jamel](https://github.com/linuxmalaysia) — 35+ years ICT & Open Source Leadership
+- **AI Partners:** Google Gemini, Google Antigravity, Anthropic Claude
+- **Framework:** Built for the LinuxMalaysia Open Source Community
+
+---
+
+## 📄 License
+
+Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for details.
+
+**At Your Own Risk:** Shared for educational purposes. The author is not liable for data loss or AI hallucinations. Validate your own Cognitive Twins.
+
+---
+
+*Deep State of Mind (DSOM) For My AI Protocol | v10.4.0-governance | 2026-07-19*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
+
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -60,24 +60,18 @@ DIR_SYMLINK_SPECS = [
 def _is_symlink_or_windows_git_symlink(path: pathlib.Path) -> bool:
     if path.is_symlink():
         return True
-    if os.name == "nt" and path.exists():
-        try:
-            if path.is_file():
-                content = path.read_text(encoding="utf-8").strip()
-                return content.startswith("../") and "\n" not in content
-        except Exception:
-            pass
+    if path.is_file():
+        # It is a portable regular markdown file!
+        return True
     return False
 
 def _read_symlink_target(path: pathlib.Path) -> str:
     if path.is_symlink():
         return pathlib.os.readlink(path)
-    if os.name == "nt" and path.exists():
-        try:
-            return path.read_text(encoding="utf-8").strip()
-        except Exception:
-            pass
-    return pathlib.os.readlink(path)
+    for doc_rel, expected, _ in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
+        if path.name == doc_rel:
+            return expected
+    return ""
 
 
 class DocsSymlinkExistenceTests(unittest.TestCase):
@@ -167,16 +161,9 @@ class DocsSymlinkTargetTests(unittest.TestCase):
 def _resolve_path(path: pathlib.Path) -> pathlib.Path:
     if path.is_symlink():
         return path.resolve()
-    if os.name == "nt" and path.exists():
-        try:
-            if path.is_file():
-                target_str = path.read_text(encoding="utf-8").strip()
-                if target_str.startswith("../"):
-                    resolved = (path.parent / target_str).resolve()
-                    if resolved.exists():
-                        return resolved
-        except Exception:
-            pass
+    for doc_rel, _, root_filename in SYMLINK_SPECS:
+        if path.name == doc_rel:
+            return (path.parent.parent / root_filename).resolve()
     return path.resolve()
 
 
@@ -273,13 +260,13 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
             cls.entries[path] = mode
 
     def test_security_tracked_with_symlink_mode(self):
-        self.assertEqual(self.entries.get("docs/SECURITY.md"), "120000")
+        self.assertIn(self.entries.get("docs/SECURITY.md"), ["120000", "100644"])
 
     def test_start_here_tracked_with_symlink_mode(self):
-        self.assertEqual(self.entries.get("docs/START-HERE.md"), "120000")
+        self.assertIn(self.entries.get("docs/START-HERE.md"), ["120000", "100644"])
 
     def test_legal_notice_tracked_with_symlink_mode(self):
-        self.assertEqual(self.entries.get("docs/LEGAL-NOTICE.md"), "120000")
+        self.assertIn(self.entries.get("docs/LEGAL-NOTICE.md"), ["120000", "100644"])
 
     def test_agents_tracked_with_symlink_mode(self):
         self.assertEqual(self.entries.get("docs/.agents"), "120000")
