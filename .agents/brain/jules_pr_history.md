@@ -80,32 +80,17 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
 ### A. The PyYAML CustomLoader Parser
 During frontmatter validation sweeps, PyYAML's default implicit resolver automatically coerced unquoted ISO 8601 timestamps into native Python `datetime` objects. This mutated original string representations (e.g. converting `"2026-08-05T12:00:00Z"` to `datetime.datetime(...)`), causing OKF validation scripts to fail formatting constraints.
 * **Jules' Resolution:**
-  Introduced a custom PyYAML loader (`CustomLoader`) derived from `SafeLoader` that completely removes the implicit resolver for timestamps:
-  ```python
-  class CustomLoader(yaml.SafeLoader):
-      pass
-  CustomLoader.yaml_implicit_resolvers.pop("t")
-  CustomLoader.yaml_implicit_resolvers.pop("T")
-  ```
-  This preserves raw timestamps as exact string values across all compliance scripts (`apply_okf_frontmatter.py`, `refactor_okf.py`).
+  Introduced a custom PyYAML loader (`CustomLoader`) derived from `SafeLoader` to preserve raw timestamps as exact string values across all compliance scripts (`apply_okf_frontmatter.py`, `refactor_okf.py`).
 
 ### B. Secure Sibling Atomic File Replacement
 Standard inline writes (`open(file, 'w')`) carry high risk of leaving empty or corrupt files if execution is interrupted mid-write.
 * **Jules' Resolution:**
-  Engineered atomic state replacement utilizing standard library file-swapping. Modifications are written to a unique, sibling temporary file, and only upon a clean exit does `os.replace()` atomise the write:
-  ```python
-  with tempfile.NamedTemporaryFile("w", dir=os.path.dirname(filepath), delete=False) as tf:
-      tf.write(new_content)
-  os.replace(tf.name, filepath)
-  ```
+  Engineered atomic state replacement utilizing standard library file-swapping. Modifications are written to a unique, sibling temporary file, and only upon a clean exit does `os.replace()` atomise the write.
 
 ### C. Cross-Platform Windows Git-Symlink & CRLF Test Guardrails
 Cloning the repository on native Windows workstations often converts symlinks to plain-text pointers and forces CRLF line endings, causing POSIX-based tests to throw false-positive errors.
 * **Jules' Resolution:**
-  Upgraded the test discovery suites (`tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_docs_symlinks.py`) to:
-  - Detect text-pointer symlinks via `content.startswith("../")` on Windows checkouts.
-  - Handle CRLF byte fences (`b"---\r\n"`) transparently.
-  - Conditionally restrict POSIX `chmod` bit assertions to non-Windows runtime environments (`if os.name != "nt":`).
+  Upgraded the test discovery suites (`tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_docs_symlinks.py`) to handle Windows native checkouts.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*

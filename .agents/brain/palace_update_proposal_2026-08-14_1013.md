@@ -2,12 +2,12 @@
 okf_version: 0.1
 type: documentation
 title: "🏛️ Palace Update Proposal"
-timestamp: "2026-08-14T08:00:40Z"
+timestamp: "2026-08-14T10:14:11Z"
 topics: ["dsom", "documentation"]
 ---
 # 🏛️ Palace Update Proposal
 
-> **Generated:** 2026-08-14_0758
+> **Generated:** 2026-08-14_1013
 > **Mode:** EOD
 > **Scope:** Commits since re-initialisation
 > **Status:** PENDING AI REVIEW — Do not commit until closets are updated.
