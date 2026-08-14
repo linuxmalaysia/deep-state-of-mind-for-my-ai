@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
-timestamp: "2026-08-14T02:50:34Z"
+timestamp: "2026-08-14T05:28:35Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
 ---
@@ -19,9 +19,10 @@ This file maintains a condensed, token-efficient representation of the project's
 
 
 
+
+- [Auto-Sync] Modified files: tests/test_diataxis_docs.py (+391, -0), tests/test_docs_ci_workflow.py (+254, -0), tests/test_docs_links.py (+264, -0).
 - [Auto-Sync] Modified files: openwiki/_skeleton.md (+1, -1).
 - [Auto-Sync] Modified files: tests/test_skeleton_resource_field.py (+189, -0).
-- [Auto-Sync] No code files modified in diff.
 - Refactored .github/scripts/action_update_dsom.py to integrate Gemini/Google API for Jules/Antigravity and local automated compaction fallback.
 - Initial boilerplate replaced with DSOM-specific policies.
 - Automated DSOM State Sync deployed.
