@@ -5,7 +5,6 @@ title: "Explanation: Diátaxis Framework Adoption"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "explanation", "diataxis", "documentation"]
 ---
-
 # Diátaxis framework adoption in DSOM
 
 An architectural overview explaining the adoption, structure, and benefits of the Diátaxis documentation framework in the DSOM project.

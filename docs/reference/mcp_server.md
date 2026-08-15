@@ -5,7 +5,6 @@ title: "Reference: mcp_server.md"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "mcp", "fastmcp"]
 ---
-
 # tools/mcp/server.py reference
 
 FastMCP Model Context Protocol (MCP) server implementation for the DSOM Palace.

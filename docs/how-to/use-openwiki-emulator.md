@@ -5,7 +5,6 @@ title: "How-To: Operate the OpenWiki Emulator"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "openwiki", "emulator"]
 ---
-
 # Operate the OpenWiki emulator
 
 This guide explains how to initialise, update, and query the local OpenWiki documentation and knowledge graph.

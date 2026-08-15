@@ -5,7 +5,6 @@ title: "Reference: apply_okf_frontmatter.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "okf", "frontmatter"]
 ---
-
 # apply_okf_frontmatter.py reference
 
 Authoritative Open Knowledge Format (OKF v0.1) compliance and enforcement engine.

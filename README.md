@@ -14,7 +14,7 @@ resource: "file:///README.md"
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 [![Version](https://img.shields.io/badge/Version-10.4.0--governance-blue.svg)]()
 [![Palace](https://img.shields.io/badge/Workspace-v2.0--OKF-9b59b6.svg)](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md)
-[![License](https://img.shields.io/badge/License-GPL--3.0-orange.svg)]()
+[![Licence](https://img.shields.io/badge/Licence-GPL--3.0-orange.svg)]()
 [![Author](https://img.shields.io/badge/Author-Harisfazillah%20Jamel-blue.svg)]()
 [![Standard](https://img.shields.io/badge/AI%20Standard-Cognitive%20Digital%20Twin-purple.svg)]()
 [![Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-blue.svg)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/)
@@ -110,7 +110,7 @@ DSOM maintains **two synchronised `AGENTS.md` files** to serve both project-awar
 
 ### Step 1 — Clone and Reset
 
-> **🏗️ Scaffolding a New Project?** If you are migrating the highly customized AI skills and Sovereign Engine from this repo to a brand new one, you MUST follow the [**DSOM Project Cloning Guide**](docs/HOWTO-CLONE-DSOM-PROJECT.md) first to ensure no cognitive capabilities are lost.
+> **🏗️ Scaffolding a New Project?** If you are migrating the highly customised AI skills and Sovereign Engine from this repo to a brand new one, you MUST follow the [**DSOM Project Cloning Guide**](docs/HOWTO-CLONE-DSOM-PROJECT.md) first to ensure no cognitive capabilities are lost.
 
 ```bash
 # Clone the DSOM skeleton
@@ -262,7 +262,7 @@ When you define your Persona Profile, the AI will automatically adopt your tone,
 
 ## 🛠️ AI Agent Skills & Automation
 
-DSOM enables your Cognitive Twin to autonomously self-heal, scaffold, and execute complex workflows through OKF-compliant **AI Agent Skills**. We currently host a suite of 17 specialized skills (including `dsom-project-cloner`, `dsom-bootstrap`, `okf-frontmatter-injector`, and `persona-injector`).
+DSOM enables your Cognitive Twin to autonomously self-heal, scaffold, and execute complex workflows through OKF-compliant **AI Agent Skills**. We currently host a suite of 17 specialised skills (including `dsom-project-cloner`, `dsom-bootstrap`, `okf-frontmatter-injector`, and `persona-injector`).
 
 | Use Case | Guide |
 |---|---|
@@ -312,12 +312,6 @@ If using Palace v1.0, you only need to run the automated SOD Palace script. This
 
 ```bash
 bash tools/sod-palace.sh          # Linux / WSL2
-```
-
-Optional — scan before sharing:
-
-```bash
-./tools/privacy-guardian.sh
 ```
 
 Optional — scan before sharing:
@@ -542,12 +536,12 @@ Once Step 6 is complete, the AI knows:
 | [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
 | [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |
 | [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 9 primary onboarding entry points. Read this first! |
-| [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialization Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
+| [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialisation Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
 | [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | 🏛️ Full Sovereign Markdown Palace specification |
-| [`docs/governance/OKF-MIND-OPTIMIZATION.md`](docs/governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimization — Artifact Pyramid & Procedural Memory |
-| [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimization (GEO) — AI-ready documentation policies |
+| [`docs/governance/OKF-MIND-OPTIMIZATION.md`](docs/governance/OKF-MIND-OPTIMIZATION.md) | 🧠 OKF-Based Mind Optimisation — Artifact Pyramid & Procedural Memory |
+| [`docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md`](docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md) | 🤖 Generative Engine Optimisation (GEO) — AI-ready documentation policies |
 | [`docs/governance/AI-SKILL-ARCHITECTURE.md`](docs/governance/AI-SKILL-ARCHITECTURE.md) | ⚙️ AI Skill Architecture — Progressive Disclosure & Semantic Routing mechanics |
 | [`docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md`](docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md) | 🏗️ Architecture Analysis — Codebase and Structural breakdown of the framework |
 | [`docs/governance/ZERO-GLOBAL-MEMORY.md`](docs/governance/ZERO-GLOBAL-MEMORY.md) | 🧠 Zero-Global Memory — The Sovereign AI Memory Architecture & Cognitive Flow |
@@ -629,10 +623,6 @@ Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for
 
 ---
 
-*Deep State of Mind (DSOM) For My AI Protocol | v10.4.0-governance | 2026-07-19*
-*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
-
-
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

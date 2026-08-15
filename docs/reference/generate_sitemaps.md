@@ -5,7 +5,6 @@ title: "Reference: generate_sitemaps.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "sitemaps", "seo"]
 ---
-
 # generate_sitemaps.py reference
 
 Dynamic, unified sitemap and search engine optimiser (SEO) asset generator.

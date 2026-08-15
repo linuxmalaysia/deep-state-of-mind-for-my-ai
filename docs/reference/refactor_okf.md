@@ -5,7 +5,6 @@ title: "Reference: refactor_okf.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "okf", "refactor"]
 ---
-
 # refactor_okf.py reference
 
 Batch refactoring script for Open Knowledge Format (OKF) frontmatter structures.

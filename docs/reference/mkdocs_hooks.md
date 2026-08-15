@@ -5,7 +5,6 @@ title: "Reference: mkdocs_hooks.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "mkdocs", "hooks"]
 ---
-
 # mkdocs_hooks.py reference
 
 Custom MkDocs page compilation hook for relative Markdown URL rewriting.

@@ -5,7 +5,6 @@ title: "Reference: bench_brain.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "benchmark", "brain"]
 ---
-
 # bench_brain.py reference
 
 Spatial brain performance benchmarking utility.

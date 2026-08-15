@@ -5,7 +5,6 @@ title: Reference Material Index
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "documentation", "diataxis", "reference"]
 ---
-
 # DSOM reference material
 
 Welcome to the **Deep State of Mind (DSOM) Reference Material** quadrant, structured according to the **Diátaxis Framework**.

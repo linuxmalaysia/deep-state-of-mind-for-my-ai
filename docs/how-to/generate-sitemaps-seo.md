@@ -5,7 +5,6 @@ title: "How-To: Generate SEO Assets and Sitemaps"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "seo", "sitemaps"]
 ---
-
 # Generate SEO assets and sitemaps
 
 This guide explains how to compile search engine optimisation (SEO) assets, text listings, standard XML structures, and crawlers rules.

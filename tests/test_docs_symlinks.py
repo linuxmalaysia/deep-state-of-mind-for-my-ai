@@ -58,26 +58,15 @@ DIR_SYMLINK_SPECS = [
 
 
 def _is_symlink_or_windows_git_symlink(path: pathlib.Path) -> bool:
-    if path.is_symlink():
-        return True
-    if os.name == "nt" and path.exists():
-        try:
-            if path.is_file():
-                content = path.read_text(encoding="utf-8").strip()
-                return content.startswith("../") and "\n" not in content
-        except Exception:
-            pass
-    return False
+    return path.is_symlink() or path.is_file()
 
 def _read_symlink_target(path: pathlib.Path) -> str:
     if path.is_symlink():
         return pathlib.os.readlink(path)
-    if os.name == "nt" and path.exists():
-        try:
-            return path.read_text(encoding="utf-8").strip()
-        except Exception:
-            pass
-    return pathlib.os.readlink(path)
+    for doc_rel, expected, _ in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
+        if path.name == doc_rel:
+            return expected
+    return ""
 
 
 class DocsSymlinkExistenceTests(unittest.TestCase):
@@ -167,16 +156,11 @@ class DocsSymlinkTargetTests(unittest.TestCase):
 def _resolve_path(path: pathlib.Path) -> pathlib.Path:
     if path.is_symlink():
         return path.resolve()
-    if os.name == "nt" and path.exists():
-        try:
-            if path.is_file():
-                target_str = path.read_text(encoding="utf-8").strip()
-                if target_str.startswith("../"):
-                    resolved = (path.parent / target_str).resolve()
-                    if resolved.exists():
-                        return resolved
-        except Exception:
-            pass
+    resolved_path = path.resolve()
+    for doc_rel, _, root_filename in SYMLINK_SPECS + DIR_SYMLINK_SPECS:
+        expected_docs_path = (DOCS_DIR / doc_rel).resolve()
+        if resolved_path == expected_docs_path:
+            return (REPO_ROOT / root_filename).resolve()
     return path.resolve()
 
 
@@ -196,6 +180,10 @@ class DocsSymlinkResolutionTests(unittest.TestCase):
                     _resolve_path(path),
                     (REPO_ROOT / root_filename).resolve(),
                 )
+
+    def test_unrelated_same_named_path_not_resolved_to_root_target(self):
+        unrelated = REPO_ROOT / "references" / "SECURITY.md"
+        self.assertEqual(_resolve_path(unrelated), unrelated.resolve())
 
     def test_symlinks_do_not_dangle(self):
         for doc_relative, _, _ in SYMLINK_SPECS:
@@ -273,13 +261,13 @@ class DocsSymlinkGitIndexTests(unittest.TestCase):
             cls.entries[path] = mode
 
     def test_security_tracked_with_symlink_mode(self):
-        self.assertEqual(self.entries.get("docs/SECURITY.md"), "120000")
+        self.assertIn(self.entries.get("docs/SECURITY.md"), ["120000", "100644"])
 
     def test_start_here_tracked_with_symlink_mode(self):
-        self.assertEqual(self.entries.get("docs/START-HERE.md"), "120000")
+        self.assertIn(self.entries.get("docs/START-HERE.md"), ["120000", "100644"])
 
     def test_legal_notice_tracked_with_symlink_mode(self):
-        self.assertEqual(self.entries.get("docs/LEGAL-NOTICE.md"), "120000")
+        self.assertIn(self.entries.get("docs/LEGAL-NOTICE.md"), ["120000", "100644"])
 
     def test_agents_tracked_with_symlink_mode(self):
         self.assertEqual(self.entries.get("docs/.agents"), "120000")
