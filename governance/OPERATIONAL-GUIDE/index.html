@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -4017,9 +4045,11 @@
 <p>Before waking the AI, we must verify that the physical environment matches the expected state.</p>
 <p><strong>Command:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux / WSL2</span>
+
 ./tools/audit-pre-flight.sh
 
 <span class="c1"># Windows</span>
+
 .<span class="se">\t</span>ools<span class="se">\a</span>udit-pre-flight.ps1
 </code></pre></div>
 <p><strong>Success Criteria:</strong></p>
@@ -4034,9 +4064,11 @@
 <p>We aggregate all context into a single "Truth File."</p>
 <p><strong>Command:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux</span>
+
 ./tools/reanimate.sh
 
 <span class="c1"># Windows</span>
+
 .<span class="se">\t</span>ools<span class="se">\r</span>eanimate.ps1
 </code></pre></div>
 <p><strong>What is Injected (v2.2 — Palace-aware)?</strong></p>
@@ -4099,9 +4131,11 @@
 <p>Run the hibernation tool to verify safety.</p>
 <p><strong>Command:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux</span>
+
 ./tools/hibernation.sh
 
 <span class="c1"># Windows</span>
+
 .<span class="se">\t</span>ools<span class="se">\h</span>ibernation.ps1
 </code></pre></div>
 <p><strong>The Logic (v2.1 — Palace-aware):</strong></p>
@@ -4181,12 +4215,15 @@
 <h3 id="guardrail-2-ansible-pre-flight-mandate">Guardrail 2: Ansible Pre-flight Mandate</h3>
 <p>Before executing <strong>any</strong> playbook, the following must be verified:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. Run the DSOM pre-flight audit</span>
+
 ./tools/audit-pre-flight.sh
 
 <span class="c1"># 2. Verify Ansible connectivity to all target nodes</span>
+
 ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml
 
 <span class="c1"># 3. Dry-run the playbook first</span>
+
 ansible-playbook<span class="w"> </span>playbooks/site.yml<span class="w"> </span>--check<span class="w"> </span>--diff
 </code></pre></div>
 <p>If any step fails, execution is <strong>stopped</strong>. The AI diagnoses the failure and proposes a fix.</p>

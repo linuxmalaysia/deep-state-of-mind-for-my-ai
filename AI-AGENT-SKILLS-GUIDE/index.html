@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3482,9 +3510,9 @@
 <h2 id="how-to-create-a-new-skill">📝 How to Create a New Skill</h2>
 <p>All custom skills for this project MUST reside in the <code>.agents/skills/</code> directory.</p>
 <h3 id="step-1-create-the-directory">Step 1: Create the Directory</h3>
-<p>Create a new, aptly named folder for your workflow:
+<p>Create a new, aptly named folder for your workflow:</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>.agents/skills/my-custom-skill
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="step-2-create-the-skillmd-file">Step 2: Create the <code>SKILL.md</code> File</h3>
 <p>Create a <code>SKILL.md</code> file inside that folder. It <strong>must</strong> begin with YAML frontmatter containing the <code>name</code> and <code>description</code>. </p>
 <p><em>Note: The <code>description</code> is critical—the AI agent reads this description secretly in the background to decide if it should load the skill to help the user.</em></p>
@@ -3492,12 +3520,15 @@
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-custom-skill</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">clear,</span><span class="nv"> </span><span class="s">1-2</span><span class="nv"> </span><span class="s">sentence</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">explaining</span><span class="nv"> </span><span class="s">exactly</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">AI</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">load</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">skill.</span><span class="nv"> </span><span class="s">(e.g.,</span><span class="nv"> </span><span class="s">&#39;Use</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">skill</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">user</span><span class="nv"> </span><span class="s">asks</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">deploy</span><span class="nv"> </span><span class="s">HAProxy...&#39;)&quot;</span>
 <span class="nn">---</span>
+
 <span class="c1"># My Custom Skill Guide</span>
 
 <span class="c1">## Purpose</span>
+
 <span class="l l-Scalar l-Scalar-Plain">Briefly explain what this achieves.</span>
 
 <span class="l l-Scalar l-Scalar-Plain">## Execution Steps</span>
+
 <span class="l l-Scalar l-Scalar-Plain">Provide clear, step-by-step markdown instructions.</span><span class="w"> </span>
 <span class="l l-Scalar l-Scalar-Plain">1. Run command A.</span>
 <span class="l l-Scalar l-Scalar-Plain">2. Verify output B.</span>
@@ -3545,8 +3576,8 @@
 <td style="text-align: left;">Parses raw AI conversation transcripts to extract exact historical terminal commands.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Initialize GitOps</strong></td>
-<td style="text-align: left;"><code>.agents/skills/initialize-gitops/SKILL.md</code></td>
+<td style="text-align: left;"><strong>Initialise GitOps</strong></td>
+<td style="text-align: left;"><code>.agents/skills/initialise-gitops/SKILL.md</code></td>
 <td style="text-align: left;">Establishes the foundational GitOps repository and Genesis DSOM architecture.</td>
 </tr>
 <tr>

@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3630,22 +3658,27 @@ This migration adds new files and upgrades existing scripts. It does <strong>not
 <h2 id="migration-checklist">📋 Migration Checklist</h2>
 <h3 id="phase-1-pull-latest-tools">Phase 1: Pull Latest Tools</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux / WSL2</span>
+
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 
 <span class="c1"># Windows</span>
+
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <p>Confirm you have at minimum tag <code>v10.0.0-palace</code>:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>palace
+
 <span class="c1"># Expected: v10.0.0-palace</span>
 </code></pre></div>
 <hr />
 <h3 id="phase-2-initialise-the-palace-structure">Phase 2: Initialise the Palace Structure</h3>
 <p>Run the Palace initialisation script to create the Wing/Hall/Room skeleton:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux / WSL2</span>
+
 bash<span class="w"> </span>tools/palace-sync.sh<span class="w"> </span>--init-only
 
 <span class="c1"># Windows (PowerShell)</span>
+
 .<span class="se">\t</span>ools<span class="se">\p</span>alace-sync.ps1<span class="w"> </span>-InitOnly
 </code></pre></div>
 <p>This creates the directory structure under <code>.agents/brain/wings/</code> without touching any existing files.</p>
@@ -3659,9 +3692,11 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>.agents/brain/wings/wing_
 <h3 id="phase-3-run-the-backfill">Phase 3: Run the Backfill</h3>
 <p>This is the key step. It reads your <strong>entire git history</strong> and generates a <code>palace_update_proposal_YYYY-MM-DD.md</code> that maps every commit to its target Palace Room.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux / WSL2</span>
+
 bash<span class="w"> </span>tools/palace-sync.sh<span class="w"> </span>--backfill
 
 <span class="c1"># Windows (PowerShell)</span>
+
 .<span class="se">\t</span>ools<span class="se">\p</span>alace-sync.ps1<span class="w"> </span>-Backfill
 </code></pre></div>
 <p>The proposal file is saved to <code>.agents/brain/palace_update_proposal_YYYY-MM-DD.md</code>.</p>
@@ -3669,7 +3704,9 @@ bash<span class="w"> </span>tools/palace-sync.sh<span class="w"> </span>--backfi
 <h3 id="phase-4-create-the-palace-registry">Phase 4: Create the Palace Registry</h3>
 <p>Create <code>.agents/brain/palace_registry.md</code>. You can copy the template from the <code>docs/agent-configs/</code> dir if available, or adapt the existing one:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># If you have the reference repo available:</span>
+
 cp<span class="w"> </span>/path/to/dsom-reference/.agents/brain/palace_registry.md<span class="w"> </span>.agents/brain/palace_registry.md
+
 <span class="c1"># Then edit to match YOUR project&#39;s Wing/Hall structure</span>
 </code></pre></div>
 <p>The registry should list:</p>
@@ -3678,7 +3715,7 @@ cp<span class="w"> </span>/path/to/dsom-reference/.agents/brain/palace_registry.
 <li>All Halls within each Wing</li>
 <li>All Rooms with their paths and purpose</li>
 </ul>
-<p>See <a href="../.agents/brain/palace_registry.md"><code>.agents/brain/palace_registry.md</code></a> in this reference repo for the full format.</p>
+<p>See <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/palace_registry.md"><code>.agents/brain/palace_registry.md</code></a> in this reference repo for the full format.</p>
 <hr />
 <h3 id="phase-5-populate-closets-from-the-proposal">Phase 5: Populate Closets from the Proposal</h3>
 <p>Open your generated <code>palace_update_proposal_YYYY-MM-DD.md</code> and work through it section by section.</p>
@@ -3707,7 +3744,9 @@ Your distilled knowledge here.
 | YYYY-MM-DD | Event |
 
 ---
+
 <span class="gu">## 🔗 Retrieval Reference</span>
+
 <span class="k">-</span><span class="w"> </span>[<span class="nt">walkthrough.md</span>](<span class="na">../../walkthrough.md</span>)
 
 ---
@@ -3728,28 +3767,35 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <h3 id="phase-8-sync-the-other-machine">Phase 8: Sync the Other Machine</h3>
 <p>If you work across multiple machines (Windows + Linux):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># On the second machine</span>
+
 git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <hr />
 <h3 id="phase-9-verify">Phase 9: Verify</h3>
 <p>Run a full SOD sequence and confirm Section [14] appears in your manifest:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Recommended on T2 (WSL2 / Linux)</span>
+
 bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\sod-palace.ps1)</span>
 
 <span class="c1"># Or manual (Linux/Windows)</span>
+
 bash<span class="w"> </span>tools/reanimate.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="s2">&quot;\[14\]&quot;</span>
 </code></pre></div>
 <p>Expected output:</p>
 <div class="highlight"><pre><span></span><code>### [14] PALACE REGISTRY (Spatial Knowledge Map)
 # 🏛️ Palace Registry: Sovereign Retrieval Map
+
 ...
 </code></pre></div>
 <p>Run a test EOD to confirm Palace Sync runs automatically:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Recommended on T2 (WSL2 / Linux)</span>
+
 bash<span class="w"> </span>tools/eod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\eod-palace.ps1)</span>
 
 <span class="c1"># Or manual (Linux/Windows)</span>
+
 bash<span class="w"> </span>tools/hibernation.sh
+
 <span class="c1"># Should show: [Palace Sync] Running Spatial Reflection...</span>
 </code></pre></div>
 <hr />
@@ -3781,6 +3827,7 @@ bash<span class="w"> </span>tools/hibernation.sh
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><span class="c"># Windows</span>
+
 <span class="nb">Select-String</span> <span class="n">-Path</span> <span class="n">tools</span><span class="p">\</span><span class="n">hibernation</span><span class="p">.</span><span class="n">ps1</span><span class="p">,</span><span class="n">tools</span><span class="p">\</span><span class="n">reanimate</span><span class="p">.</span><span class="n">ps1</span><span class="p">,</span><span class="n">tools</span><span class="p">\</span><span class="n">palace-sync</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Pattern</span> <span class="s1">&#39;^\$VERSION&#39;</span>
 </code></pre></div>
 <p>Expected:</p>
@@ -3837,11 +3884,11 @@ No. Only create Rooms relevant to your project. For a pure software dev project,
 <td>How and why the Palace was built</td>
 </tr>
 <tr>
-<td><a href="DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md"><code>docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md</code></a></td>
+<td><a href="../governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/"><code>docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md</code></a></td>
 <td>Full Palace Protocol specification</td>
 </tr>
 <tr>
-<td><a href="../.agents/brain/palace_registry.md"><code>.agents/brain/palace_registry.md</code></a></td>
+<td><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/palace_registry.md"><code>.agents/brain/palace_registry.md</code></a></td>
 <td>Live Room index</td>
 </tr>
 </tbody>

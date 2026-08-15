@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3440,6 +3468,7 @@
 <p>This allows locally written scripts to run. It only affects your user account. You will not need to run this again.</p>
 <p><strong>Verify:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+
 <span class="c"># Expected: RemoteSigned</span>
 </code></pre></div>
 <hr />
@@ -3467,24 +3496,31 @@
 </code></pre></div>
 <h3 id="44-examples">4.4 Examples</h3>
 <div class="highlight"><pre><span></span><code><span class="c"># Snapshot — run once and exit</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span>
 
 <span class="c"># Live monitor with default 60s refresh</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Loop</span>
 
 <span class="c"># Live monitor with 30s refresh (short alias)</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-l</span> <span class="n">-i</span> <span class="n">30</span>
 
 <span class="c"># Top 5 largest sessions only</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Top</span> <span class="n">5</span>
 
 <span class="c"># Tighter thresholds — warn at 10MB, critical at 25MB</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-ThresholdMB</span> <span class="n">10</span> <span class="n">-CriticalMB</span> <span class="n">25</span>
 
 <span class="c"># Live monitor for large projects, suppress countdown bar</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Loop</span> <span class="n">-NoPulse</span> <span class="n">-CriticalMB</span> <span class="n">80</span>
 
 <span class="c"># Show full help screen</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Help</span>
 </code></pre></div>
 <hr />
@@ -3628,9 +3664,11 @@ Token basis: 1 MB ~ 62,500 tokens (4 chars/token avg)
 <h2 id="8-integration-with-dsom-sod-ritual">8. Integration with DSOM SOD Ritual</h2>
 <p>As part of the <strong>Start-of-Day Ritual</strong> (<code>docs/SOD-RITUAL.md</code> Step 1), run the snapshot to verify the current session health before starting work:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># SOD check — confirm current session is Nominal</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">CheckUsage</span><span class="p">.</span><span class="n">ps1</span>
 
 <span class="c"># If current session is [CRT], start a new Antigravity chat and reanimate</span>
+
 <span class="c"># See: docs/REANIMATION-PROMPT-TEMPLATE.md → Prompt 2</span>
 </code></pre></div>
 <p>If the current session exceeds <code>CriticalMB</code>, begin a new Antigravity conversation and use the <strong>SOD Reanimation Prompt</strong> to restore context.</p>
@@ -3657,11 +3695,11 @@ Token basis: 1 MB ~ 62,500 tokens (4 chars/token avg)
 <td style="text-align: left;">AI prompts for new session reanimation</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../tools/audit-pre-flight.sh"><code>tools/audit-pre-flight.sh</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/audit-pre-flight.sh"><code>tools/audit-pre-flight.sh</code></a></td>
 <td style="text-align: left;">Full 5-check workspace audit (Linux/WSL2)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../tools/audit-pre-flight.ps1"><code>tools/audit-pre-flight.ps1</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/audit-pre-flight.ps1"><code>tools/audit-pre-flight.ps1</code></a></td>
 <td style="text-align: left;">Full 5-check workspace audit (Windows)</td>
 </tr>
 </tbody>

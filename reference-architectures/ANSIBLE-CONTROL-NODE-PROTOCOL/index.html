@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3423,29 +3451,34 @@
 <h3 id="1-project-promotion-tier-1-tier-3">1. Project Promotion (Tier 1 -&gt; Tier 3)</h3>
 <p>There are two approved methods for synchronizing logic from the Command Centre to the Orchestrator:</p>
 <p><strong>Method A: The GitOps Sync (Standard Workflow)</strong>
-After performing <code>git add</code>, <code>commit</code>, and <code>push</code> commands on Windows (Tier 1), the Sovereign Architect will manually SSH into the Jumphost to pull the authoritative changes:
+After performing <code>git add</code>, <code>commit</code>, and <code>push</code> commands on Windows (Tier 1), the Sovereign Architect will manually SSH into the Jumphost to pull the authoritative changes:</p>
 <div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>dsom-admin@example-node
 <span class="nb">cd</span><span class="w"> </span>/opt/um-elastic-soc
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
-</code></pre></div></p>
+</code></pre></div>
 <p><strong>Method B: The Push Script (Rapid Prototyping)</strong>
-To bypass Windows Git locking issues or push uncommitted drafts, use the custom Agent Skill to cleanly mirror the codebase:
+To bypass Windows Git locking issues or push uncommitted drafts, use the custom Agent Skill to cleanly mirror the codebase:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Mirror the local Windows codebase directly to the example-node Jumphost</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="nb">push-to</span><span class="n">-jumphost</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
-<em>This script uses SCP to rapidly sync all project files while automatically fixing POSIX file permissions.</em></p>
+<p><em>This script uses SCP to rapidly sync all project files while automatically fixing POSIX file permissions.</em></p>
 <h3 id="2-control-node-verification">2. Control Node Verification</h3>
 <p>Once logged into the Jumphost (<code>ssh dsom-admin@example-node</code>), navigate to the project root and ensure the Ansible environment is healthy:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/opt/um-elastic-soc
+
 <span class="c1"># Verify orchestration dependencies</span>
+
 ansible<span class="w"> </span>--version
 </code></pre></div>
 <h3 id="3-execution-the-sovereign-ritual">3. Execution (The Sovereign Ritual)</h3>
 <p>All primary orchestration must occur within the established project root on Tier 3 (<code>/opt/um-elastic-soc</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Step 1: Verify distributed connectivity across the 16 nodes</span>
+
 ansible<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>ping
 
 <span class="c1"># Step 2: Execute the baseline Fabric Playbooks</span>
+
 ansible-playbook<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>playbooks/site.yml
 </code></pre></div>
 <hr />

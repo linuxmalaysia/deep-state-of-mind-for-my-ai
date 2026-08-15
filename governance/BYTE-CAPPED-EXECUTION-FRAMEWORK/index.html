@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3620,7 +3648,7 @@
 
 <h1 id="procedural-automation-byte-capped-execution-framework">Procedural Automation: Byte-Capped Execution Framework</h1>
 <h2 id="abstract">Abstract</h2>
-<p>Memory load management and token inflation pose critical failure risks within complex multi-agent setups. If context sizes grow unchecked, processing cycles fail due to truncated payloads and context drift. This article breaks down the technical layout and deployment model of the <strong>DSOM Token Calculator Skill</strong> (<code>dsom-token-calculator</code>). This skill acts as a localized gatekeeper that programmatically checks file and workspace sizes prior to cross-thread mutations.</p>
+<p>Memory load management and token inflation pose critical failure risks within complex multi-agent setups. If context sizes grow unchecked, processing cycles fail due to truncated payloads and context drift. This article breaks down the technical layout and deployment model of the <strong>DSOM Token Calculator Skill</strong> (<code>dsom-token-calculator</code>). This skill acts as a localised gatekeeper that programmatically checks file and workspace sizes prior to cross-thread mutations.</p>
 <hr />
 <h2 id="1-skill-architecture-mapping">1. Skill Architecture Mapping</h2>
 <p>Under the Deep State of Mind framework, passive procedural scripts are banned. Instead, code execution rules must reside within an OKF-compliant structure.</p>
@@ -3641,6 +3669,7 @@ resource: &quot;file:///.agents/skills/dsom-token-calculator/SKILL.md&quot;
 <span class="gu">---</span>
 
 <span class="gh"># Operational Enforcements:</span>
+
 <span class="k">-</span><span class="w"> </span>Trigger this skill dynamically before any output loop that handles extensive datasets or raw configurations.
 <span class="k">-</span><span class="w"> </span>If payload calculations return totals greater than <span class="gs">**4000 tokens**</span>, the system must block raw screen serialization and switch to targeted <span class="sb">`view_file`</span> calls or chunked reading.
 </code></pre></div>
@@ -3648,12 +3677,16 @@ resource: &quot;file:///.agents/skills/dsom-token-calculator/SKILL.md&quot;
 <h2 id="2-tokenizer-script-engine-implementation">2. Tokenizer Script Engine Implementation</h2>
 <p>By configuring an isolated, on-demand execution runtime via Python <code>uv</code>, the script operates without modifying systemic python system frameworks. This mechanism eliminates package clutter and mitigates dependencies errors.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
 <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="c1"># ---</span>
+
 <span class="c1"># okf_version: 0.1</span>
 <span class="c1"># type: executable_script</span>
+
 <span class="c1"># title: &quot;Core Token Counter Runtime&quot;</span>
 <span class="c1"># license: &quot;GNU General Public License v3.0&quot;</span>
+
 <span class="c1"># ---</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>

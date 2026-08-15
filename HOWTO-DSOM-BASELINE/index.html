@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3497,7 +3525,7 @@
 <li>Recursively copy <code>[BASELINE_PATH]\docs\governance</code> to the current workspace.</li>
 </ul>
 </li>
-<li><strong>Finalise:</strong> Initialize a new <code>sod_manifest_YYYY-MM-DD.txt</code> using the <code>reanimate</code> script in the newly copied <code>tools/</code> directory.</li>
+<li><strong>Finalise:</strong> Initialise a new <code>sod_manifest_YYYY-MM-DD.txt</code> using the <code>reanimate</code> script in the newly copied <code>tools/</code> directory.</li>
 </ol>
 <hr />
 <h2 id="5-execution-path-existing-project">5. Execution Path: EXISTING Project</h2>
@@ -3530,18 +3558,18 @@
 - Inform the user that the DSOM framework has been successfully bootstrapped.</p>
 <h2 id="7-token-performance-verification-mandatory">7. Token Performance Verification (Mandatory)</h2>
 <p>After bootstrapping, every new DSOM project must verify its token health baseline. This prevents context window collapse as the project grows.</p>
-<p><strong>Step 7a — Skill token audit:</strong>
+<p><strong>Step 7a — Skill token audit:</strong></p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>.agents/skills/dsom-token-calculator/scripts/calculate-tokens.py<span class="w"> </span>.agents/skills/
 </code></pre></div>
-Expected: all files <code>[OK]</code>, zero <code>[BLOCKED]</code>.</p>
-<p><strong>Step 7b — Verify all skills have <code>topics:</code> tags:</strong>
+<p>Expected: all files <code>[OK]</code>, zero <code>[BLOCKED]</code>.</p>
+<p><strong>Step 7b — Verify all skills have <code>topics:</code> tags:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="s2">&quot;.agents/skills&quot;</span> <span class="n">-Filter</span> <span class="s2">&quot;SKILL.md&quot;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
     <span class="nv">$content</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span> <span class="n">-Raw</span>
     <span class="nv">$hasTopics</span> <span class="p">=</span> <span class="nv">$content</span> <span class="o">-match</span> <span class="s2">&quot;(?m)^topics:&quot;</span>
     <span class="no">[PSCustomObject]</span><span class="p">@{</span> <span class="n">Skill</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Directory</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span> <span class="n">Topics</span> <span class="p">=</span> <span class="k">if</span><span class="p">(</span><span class="nv">$hasTopics</span><span class="p">){</span><span class="s2">&quot;YES&quot;</span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="s2">&quot;MISSING&quot;</span><span class="p">}</span> <span class="p">}</span>
 <span class="p">}</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-AutoSize</span>
 </code></pre></div>
-All must return <code>YES</code>. If any return <code>MISSING</code>, the OKF Import Mandate (Rule 6) has been violated.</p>
+<p>All must return <code>YES</code>. If any return <code>MISSING</code>, the OKF Import Mandate (Rule 6) has been violated.</p>
 <p><strong>Step 7c — Initialise active context manifest:</strong>
 Edit <code>.agents/brain/active_context_manifest.md</code> to declare your project's active session files and explicitly exclude any archival brain files exceeding 4,000 tokens.</p>
 <p><strong>Reference:</strong> <a href="../governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK/"><code>docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md</code></a></p>

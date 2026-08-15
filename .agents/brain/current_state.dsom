@@ -2,8 +2,7 @@
 okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
-timestamp: "2026-08-14T05:21:18Z"
-timestamp: "2026-08-14T05:28:35Z"
+timestamp: "2026-08-14T05:45:10Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
 ---
@@ -18,15 +17,13 @@ This file maintains a condensed, token-efficient representation of the project's
 
 ## Condensed History
 
+
+- [Auto-Sync] Modified files: .agents/brain/current_state.dsom (+4, -0), .github/workflows/docs-ci.yml (+74, -0), SUMMARY.md (+22, -0), docs/SUMMARY.md (+49, -0), docs/explanation/diataxis.md (+62, -0), docs/explanation/index.md (+22, -0), docs/explanation/openwiki-mcp-architecture.md (+43, -0), docs/how-to/audit-and-apply-frontmatter.md (+55, -0), docs/how-to/generate-sitemaps-seo.md (+52, -0), docs/how-to/index.md (+24, -0), docs/how-to/run-fastmcp-server.md (+64, -0), docs/how-to/use-openwiki-emulator.md (+52, -0), docs/reference/apply_okf_frontmatter.md (+56, -0), docs/reference/bench_brain.md (+54, -0), docs/reference/dsom_token_auditor.md (+51, -0), docs/reference/generate_sitemaps.md (+66, -0), docs/reference/index.md (+28, -0), docs/reference/mcp_server.md (+51, -0), docs/reference/mkdocs_hooks.md (+41, -0), docs/reference/openwiki_emulator.md (+67, -0), docs/reference/refactor_okf.md (+42, -0), docs/sitemap.txt (+62, -0), docs/sitemap.xml (+727, -479), docs/tutorials/getting-started.md (+79, -0), docs/tutorials/index.md (+21, -0), llms-context.xml (+6877, -0), llms-full.txt (+7036, -0), llms.txt (+21, -0), mkdocs.yml (+24, -0), openwiki/_skeleton.md (+1, -1), sitemap.txt (+62, -0), sitemap.xml (+727, -479), tests/test_skeleton_resource_field.py (+0, -189), tools/check_docs_links.py (+117, -0), tools/parse_llms_txt.py (+179, -0).
 - [Auto-Sync] Modified files: tools/check_docs_links.py (+19, -4), tools/parse_llms_txt.py (+40, -5).
 - [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+382, -0).
-- [Auto-Sync] Modified files: .agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet.md (+9, -2), .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md (+9, -1), .agents/skills/sitemap-seo-generator/SKILL.md (+53, -0), AGENTS.md (+2, -1), SUMMARY.md (+1, -0), mkdocs.yml (+1, -0).
 
 
 
-- [Auto-Sync] Modified files: tests/test_diataxis_docs.py (+391, -0), tests/test_docs_ci_workflow.py (+254, -0), tests/test_docs_links.py (+264, -0).
-- [Auto-Sync] Modified files: openwiki/_skeleton.md (+1, -1).
-- [Auto-Sync] Modified files: tests/test_skeleton_resource_field.py (+189, -0).
 - Refactored .github/scripts/action_update_dsom.py to integrate Gemini/Google API for Jules/Antigravity and local automated compaction fallback.
 - Initial boilerplate replaced with DSOM-specific policies.
 - Automated DSOM State Sync deployed.

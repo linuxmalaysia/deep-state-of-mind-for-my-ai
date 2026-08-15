@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3392,7 +3420,7 @@
 <h2 id="1-purpose">1. Purpose</h2>
 <p><code>init-brain</code> is the <strong>Day Zero Initializer</strong> for any DSOM-compliant repository. It creates the physical directory structure and the foundational Markdown artifacts required for an AI to store and retrieve persistent project state.</p>
 <p><strong>Use it to:</strong>
-- Initialize the <code>.agents/brain/</code> directory at the repository root.
+- Initialise the <code>.agents/brain/</code> directory at the repository root.
 - Create the 4 core artifacts: <code>task.md</code>, <code>walkthrough.md</code>, <code>implementation_plan.md</code>, and the <code>DSOM_TEMPLATE.md</code>.
 - Restore missing brain state files if they were accidentally deleted.
 - Bootstrapping a fresh "External Memory" for your Cognitive Twin.</p>
@@ -3427,9 +3455,11 @@
 <h2 id="3-usage">3. Usage</h2>
 <h3 id="31-standard-initialization">3.1 Standard Initialization</h3>
 <div class="highlight"><pre><span></span><code><span class="c"># Windows (T1)</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">init-brain</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># WSL2 / Linux (T2)</span>
+
 bash<span class="w"> </span>tools/init-brain.sh
 </code></pre></div>
 <h3 id="32-ansible-provisioning">3.2 Ansible Provisioning</h3>

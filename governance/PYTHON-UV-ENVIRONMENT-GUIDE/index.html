@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3696,9 +3724,9 @@
 <p>The <code>uv</code> engine bypasses global PATH issues by downloading and isolating exact Python versions on-demand without altering or contaminating the host machine's global state. This enforces strict digital sovereignty and operational isolation.</p>
 <h2 id="installation">Installation</h2>
 <h3 id="windows-powershell">Windows (PowerShell)</h3>
-<p>Execute the following native command to securely install <code>uv</code> into your user profile (<code>~/.local/bin</code>):
+<p>Execute the following native command to securely install <code>uv</code> into your user profile (<code>~/.local/bin</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="linux-macos-termux">Linux / macOS / Termux</h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
@@ -3706,21 +3734,21 @@
 <h2 id="daily-workflow-for-developers-ai-agents">Daily Workflow for Developers &amp; AI Agents</h2>
 <p>Once <code>uv</code> is installed, <strong>do not utilise standard <code>pip</code> or <code>python</code> commands</strong>. Exclusively use <code>uv</code> for all operations to ensure strict environmental isolation and operational compliance.</p>
 <h3 id="1-running-a-script-zero-setup">1. Running a Script (Zero-Setup)</h3>
-<p>If an agent or operator must run a script (<code>verify.py</code>) flawlessly without installing Python manually:
+<p>If an agent or operator must run a script (<code>verify.py</code>) flawlessly without installing Python manually:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>verify.py
 </code></pre></div>
-<em>Note: If the required Python interpreter is not installed, <code>uv</code> will automatically pull the correct version, cache it locally, and execute the script in milliseconds.</em></p>
+<p><em>Note: If the required Python interpreter is not installed, <code>uv</code> will automatically pull the correct version, cache it locally, and execute the script in milliseconds.</em></p>
 <h3 id="2-forcing-a-specific-python-version">2. Forcing a Specific Python Version</h3>
-<p>If a specific script requires legacy support (e.g., Python 3.10):
+<p>If a specific script requires legacy support (e.g., Python 3.10):</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.10<span class="w"> </span>verify.py
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="3-creating-a-project-environment">3. Creating a Project Environment</h3>
-<p>When scaffolding a new Python dependency isolated to a specific logic wing:
+<p>When scaffolding a new Python dependency isolated to a specific logic wing:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>my-project
 <span class="nb">cd</span><span class="w"> </span>my-project
 uv<span class="w"> </span>add<span class="w"> </span>requests<span class="w">    </span><span class="c1"># Installs the &#39;requests&#39; library instantly</span>
 uv<span class="w"> </span>run<span class="w"> </span>main.py<span class="w">     </span><span class="c1"># Runs your code using the isolated environment</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="why-this-matters-for-dsom-sovereign-ai-agents">Why this matters for DSOM Sovereign AI Agents</h2>
 <p>By strictly adopting <code>uv</code>, AI Agents operating within the DSOM framework can safely execute verification scripts, data processing tools, and automation tasks without risking the contamination of the host control node's global environment or silently failing due to missing PATH variables.</p>
 <hr />

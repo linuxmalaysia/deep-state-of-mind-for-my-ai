@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3431,22 +3459,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-how-to-rebuild-and-initialize" class="md-nav__link">
+  <a href="#3-how-to-rebuild-and-initialise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏗️ 3. How to Rebuild and Initialize
+        🏗️ 3. How to Rebuild and Initialise
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🏗️ 3. How to Rebuild and Initialize">
+    <nav class="md-nav" aria-label="🏗️ 3. How to Rebuild and Initialise">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-initialize-the-brain-directory" class="md-nav__link">
+  <a href="#step-1-initialise-the-brain-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Initialize the Brain Directory
+        Step 1: Initialise the Brain Directory
       
     </span>
   </a>
@@ -3531,7 +3559,7 @@
 <p>Instead of relying on the AI's ephemeral chat history, we externalise the AI's memory into a strictly structured physical folder system (<code>.agents/brain/</code>). The AI writes down what it learns into highly distilled <code>closet.md</code> files. When you start a new session, the AI reads these tiny files to instantly reload months of context without hallucinating or exceeding token limits.</p>
 <blockquote>
 <p>[!NOTE]
-<strong>Public vs. Air-Gapped Repositories:</strong> The core DSOM framework (like this repository) is designed for public adoption, learning, and open-source contribution using standard public Git providers (e.g., GitHub, GitLab). However, if you are porting this Palace to a project that handles classified intelligence, proprietary code, or sensitive data, you should enforce <strong>Absolute Air-Gapped GitOps</strong> by utilizing self-hosted, localized Git backends (like Gitea) and internal CI/CD schedulers.</p>
+<strong>Public vs. Air-Gapped Repositories:</strong> The core DSOM framework (like this repository) is designed for public adoption, learning, and open-source contribution using standard public Git providers (e.g., GitHub, GitLab). However, if you are porting this Palace to a project that handles classified intelligence, proprietary code, or sensitive data, you should enforce <strong>Absolute Air-Gapped GitOps</strong> by utilizing self-hosted, localised Git backends (like Gitea) and internal CI/CD schedulers.</p>
 </blockquote>
 <hr />
 <h2 id="2-the-brain-transplant-checklist">📦 2. The "Brain Transplant" Checklist</h2>
@@ -3552,26 +3580,28 @@
 - <code>.agents/skills/eod-palace-sync/</code>
 - <code>.agents/skills/sod-palace-sync/</code></p>
 <hr />
-<h2 id="3-how-to-rebuild-and-initialize">🏗️ 3. How to Rebuild and Initialize</h2>
+<h2 id="3-how-to-rebuild-and-initialise">🏗️ 3. How to Rebuild and Initialise</h2>
 <p>Once you have copied the necessary files into your repository, follow these steps to bootstrap the AI's memory.</p>
-<h3 id="step-1-initialize-the-brain-directory">Step 1: Initialize the Brain Directory</h3>
-<p>Run the initialization script from your project root:
+<h3 id="step-1-initialise-the-brain-directory">Step 1: Initialise the Brain Directory</h3>
+<p>Run the initialization script from your project root:</p>
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>tools/init-brain.sh
 </code></pre></div>
-<em>(This will safely create the <code>.agents/brain/</code> folder, along with the foundational <code>task.md</code>, <code>walkthrough.md</code>, and <code>implementation_plan.md</code> artifacts without overwriting existing work.)</em></p>
+<p><em>(This will safely create the <code>.agents/brain/</code> folder, along with the foundational <code>task.md</code>, <code>walkthrough.md</code>, and <code>implementation_plan.md</code> artifacts without overwriting existing work.)</em></p>
 <h3 id="step-2-define-the-palace-registry-the-map">Step 2: Define the Palace Registry (The Map)</h3>
 <p>Create a file at <code>.agents/brain/palace_registry.md</code>. This is the map the AI will read when it boots up. You must define "Wings" (your project's domains) and "Halls" (the categories of memory).</p>
-<p><strong>Example Template:</strong>
+<p><strong>Example Template:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="gh"># 🗺️ Palace Registry</span>
 
 <span class="gu">## 🏛️ Wings</span>
+
 <span class="k">*</span><span class="w"> </span>  <span class="gs">**wing_frontend:**</span> All UI/UX memory.
 <span class="k">*</span><span class="w"> </span>  <span class="gs">**wing_backend:**</span> All API and database memory.
 
 <span class="gu">## 🚪 Active Closets</span>
+
 <span class="k">*</span><span class="w"> </span>  <span class="sb">`wings/wing_backend/hall_facts/room_architecture/closet.md`</span> - Describes our DB schema.
 <span class="k">*</span><span class="w"> </span>  <span class="sb">`wings/wing_frontend/hall_events/room_sprints/closet.md`</span> - Describes what we built in Sprint 1.
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="step-3-populate-the-closets">Step 3: Populate the Closets</h3>
 <p>Create the folders and <code>closet.md</code> files you defined in your registry. Write a brief, 5-10 line summary of the current state of your project inside them so the AI has a starting point.</p>
 <h3 id="step-4-the-first-reanimation-start-of-day">Step 4: The First Reanimation (Start of Day)</h3>

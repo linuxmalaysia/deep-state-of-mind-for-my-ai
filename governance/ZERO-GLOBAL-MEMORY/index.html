@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3981,12 +4009,14 @@
 <h3 id="32-active-context-manifest">3.2 Active Context Manifest</h3>
 <p>The AI never loads the entire <code>.agents/brain/</code> directory. Instead, it reads only the files declared in <code>active_context_manifest.md</code> at the start of each session:</p>
 <div class="highlight"><pre><span></span><code><span class="gu">## Active Files</span>
+
 <span class="k">-</span><span class="w"> </span>.agents/brain/task.md
 <span class="k">-</span><span class="w"> </span>.agents/brain/walkthrough.md
 <span class="k">-</span><span class="w"> </span>.agents/brain/palace_registry.md
 <span class="k">-</span><span class="w"> </span>.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md
 
 <span class="gu">## Excluded (Archival — load via view_file with line ranges only)</span>
+
 <span class="gh"># palace_update_proposal files: 30,000–55,000 tokens each</span>
 </code></pre></div>
 <p>This is the <strong>Progressive Disclosure</strong> principle applied to memory: load only what is needed for the current session. The three archival <code>palace_update_proposal</code> files in the baseline repository alone contain 120,466 tokens — loading them wholesale would consume the entire context window before any work begins.</p>
@@ -4194,7 +4224,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../../.agents/AGENTS/">AGENTS.md</a></td>
+<td><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md">AGENTS.md</a></td>
 <td>Core rulebook: Rules 1, 8, 10, 18 governing memory architecture.</td>
 </tr>
 <tr>
@@ -4214,7 +4244,7 @@
 <td>Canonical template for the session anchor serialisation format.</td>
 </tr>
 <tr>
-<td><a href="../../.agents/brain/active_context_manifest/">active_context_manifest.md</a></td>
+<td><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/active_context_manifest.md">active_context_manifest.md</a></td>
 <td>OKF manifest bounding active session file scope.</td>
 </tr>
 </tbody>

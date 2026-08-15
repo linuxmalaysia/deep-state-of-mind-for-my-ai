@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3390,7 +3418,7 @@
 </blockquote>
 <hr />
 <h2 id="1-purpose">1. Purpose</h2>
-<p><code>generate-walkthrough</code> is the <strong>Session Summarizer</strong> of the DSOM ecosystem. It automates the extraction of "Accomplishments" from your Git history and your <code>task.md</code> file, formatting them into a standardized "Session Anchor" block ready to be pasted into <code>walkthrough.md</code>.</p>
+<p><code>generate-walkthrough</code> is the <strong>Session Summarizer</strong> of the DSOM ecosystem. It automates the extraction of "Accomplishments" from your Git history and your <code>task.md</code> file, formatting them into a standardised "Session Anchor" block ready to be pasted into <code>walkthrough.md</code>.</p>
 <p><strong>Use it to:</strong>
 - Automatically harvest all commit messages from "Today".
 - Identify all tasks marked as <code>(SELESAI)</code> in your <code>task.md</code>.
@@ -3431,9 +3459,11 @@
 <h2 id="3-usage">3. Usage</h2>
 <h3 id="31-standard-generation">3.1 Standard Generation</h3>
 <div class="highlight"><pre><span></span><code><span class="c"># Windows (T1)</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">generate-walkthrough</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># WSL2 / Linux (T2)</span>
+
 bash<span class="w"> </span>tools/generate-walkthrough.sh
 </code></pre></div>
 <hr />
@@ -3447,6 +3477,7 @@ bash<span class="w"> </span>tools/generate-walkthrough.sh
 <h2 id="5-reading-the-output">5. Reading the Output</h2>
 <p>The tool prints a block like this:</p>
 <div class="highlight"><pre><span></span><code><span class="gu">## 🏁 Session Anchor: 2026-04-08 (Auto-Generated)</span>
+
 <span class="k">-</span><span class="w"> </span><span class="gs">**Accomplished:**</span>
 <span class="w">    </span><span class="k">- [x]</span> Initialise project (SELESAI)
 <span class="w">    </span><span class="k">-</span><span class="w"> </span>feat(ui): add modern glassmorphism
@@ -3465,7 +3496,7 @@ bash<span class="w"> </span>tools/generate-walkthrough.sh
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="../../.agents/brain/walkthrough/"><code>.agents/brain/walkthrough.md</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/walkthrough.md"><code>.agents/brain/walkthrough.md</code></a></td>
 <td style="text-align: left;">The target file for the generated output.</td>
 </tr>
 <tr>

@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3880,13 +3908,15 @@
 <h2 id="2-mandatory-tools-embed-in-every-project">2. Mandatory Tools (Embed in Every Project)</h2>
 <h3 id="21-token-calculator-skill">2.1 Token Calculator Skill</h3>
 <p><strong>Location:</strong> <code>.agents/skills/dsom-token-calculator/</code></p>
-<p><strong>Usage:</strong>
+<p><strong>Usage:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Scan entire skills directory</span>
+
 uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>.agents/skills/dsom-token-calculator/scripts/calculate-tokens.py<span class="w"> </span>.agents/skills/
 
 <span class="c1"># Audit a single file with per-section breach report</span>
+
 uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>.agents/skills/dsom-token-calculator/scripts/calculate-tokens.py<span class="w"> </span>path/to/SKILL.md<span class="w"> </span>--sections
-</code></pre></div></p>
+</code></pre></div>
 <p><strong>Gate logic:</strong>
 - <code>[OK]</code> — file is safe to load wholesale into context
 - <code>[BLOCKED]</code> — file exceeds 4,000 tokens; use <code>view_file</code> with line ranges only</p>
@@ -3894,6 +3924,7 @@ uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </sp
 <p><strong>Location:</strong> <code>.agents/brain/active_context_manifest.md</code></p>
 <p>Update this file at every SOD ritual. The agent loads <strong>only the files declared here</strong>. Never load <code>.agents/brain/</code> wholesale — three archival files alone contain 120,000+ tokens.</p>
 <div class="highlight"><pre><span></span><code><span class="gu">## Active Files</span>
+
 <span class="k">-</span><span class="w"> </span>.agents/brain/task.md
 <span class="k">-</span><span class="w"> </span>.agents/brain/walkthrough.md
 <span class="k">-</span><span class="w"> </span>.agents/brain/palace_registry.md
@@ -3901,9 +3932,9 @@ uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </sp
 </code></pre></div>
 <h3 id="23-token-auditor-script">2.3 Token Auditor Script</h3>
 <p><strong>Location:</strong> <code>tools/dsom_token_auditor.py</code></p>
-<p>Run for a full workspace token efficiency audit:
+<p>Run for a full workspace token efficiency audit:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>tools/dsom_token_auditor.py
-</code></pre></div></p>
+</code></pre></div>
 <hr />
 <h2 id="3-mandatory-okf-frontmatter-standards">3. Mandatory OKF Frontmatter Standards</h2>
 <p>Every <code>SKILL.md</code> must contain these five fields in this order:</p>
@@ -4002,23 +4033,23 @@ The agent performs skill discovery by grepping only <code>topics:</code> and <co
 <h2 id="6-procedures-for-new-project-bootstrap">6. Procedures for New Project Bootstrap</h2>
 <p>When cloning this repository as a baseline for a new project, execute these steps to inherit full token efficiency:</p>
 <h3 id="step-1-verify-skill-token-health">Step 1 — Verify skill token health</h3>
-<p><div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>.agents/skills/dsom-token-calculator/scripts/calculate-tokens.py<span class="w"> </span>.agents/skills/
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>.agents/skills/dsom-token-calculator/scripts/calculate-tokens.py<span class="w"> </span>.agents/skills/
 </code></pre></div>
-Expected: all files <code>[OK]</code>, zero <code>[BLOCKED]</code>.</p>
+<p>Expected: all files <code>[OK]</code>, zero <code>[BLOCKED]</code>.</p>
 <h3 id="step-2-initialise-active-context-manifest">Step 2 — Initialise active context manifest</h3>
 <p>Copy <code>.agents/brain/active_context_manifest.md</code> and update the <code>## Active Files</code> section for your project's domain.</p>
 <h3 id="step-3-run-baseline-token-audit">Step 3 — Run baseline token audit</h3>
-<p><div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>tools/dsom_token_auditor.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>tiktoken<span class="w"> </span>tools/dsom_token_auditor.py
 </code></pre></div>
-Document the initial token footprint in your project's <code>docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md</code>.</p>
+<p>Document the initial token footprint in your project's <code>docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md</code>.</p>
 <h3 id="step-4-verify-all-skills-have-topics-tags">Step 4 — Verify all skills have <code>topics:</code> tags</h3>
-<p><div class="highlight"><pre><span></span><code><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="s2">&quot;.agents/skills&quot;</span> <span class="n">-Filter</span> <span class="s2">&quot;SKILL.md&quot;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="s2">&quot;.agents/skills&quot;</span> <span class="n">-Filter</span> <span class="s2">&quot;SKILL.md&quot;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
     <span class="nv">$content</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span> <span class="n">-Raw</span>
     <span class="nv">$hasTopics</span> <span class="p">=</span> <span class="nv">$content</span> <span class="o">-match</span> <span class="s2">&quot;(?m)^topics:&quot;</span>
     <span class="no">[PSCustomObject]</span><span class="p">@{</span> <span class="n">Skill</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Directory</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span> <span class="n">Topics</span> <span class="p">=</span> <span class="k">if</span><span class="p">(</span><span class="nv">$hasTopics</span><span class="p">){</span><span class="s2">&quot;YES&quot;</span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="s2">&quot;MISSING&quot;</span><span class="p">}</span> <span class="p">}</span>
 <span class="p">}</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-AutoSize</span>
 </code></pre></div>
-All skills must return <code>YES</code>. If any return <code>MISSING</code>, run the <code>inject_topics.py</code> remediation script from <code>docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md</code>.</p>
+<p>All skills must return <code>YES</code>. If any return <code>MISSING</code>, run the <code>inject_topics.py</code> remediation script from <code>docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md</code>.</p>
 <h3 id="step-5-gate-archival-brain-files">Step 5 — Gate archival brain files</h3>
 <p>Identify any <code>.agents/brain/</code> files exceeding 4,000 tokens and add them to the <code>## Excluded</code> section of <code>active_context_manifest.md</code> with their token count annotated.</p>
 <hr />
@@ -4086,15 +4117,15 @@ All skills must return <code>YES</code>. If any return <code>MISSING</code>, run
 <td>Mandated <code>uv</code> execution environment (Rule 16).</td>
 </tr>
 <tr>
-<td><a href="../../.agents/skills/dsom-token-calculator/SKILL/">dsom-token-calculator SKILL.md</a></td>
+<td><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/dsom-token-calculator/SKILL.md">dsom-token-calculator SKILL.md</a></td>
 <td>Executable skill: local token footprint measurement with per-section breach alerting.</td>
 </tr>
 <tr>
-<td><a href="../../.agents/brain/active_context_manifest/">active_context_manifest.md</a></td>
+<td><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/active_context_manifest.md">active_context_manifest.md</a></td>
 <td>OKF manifest declaring active session files — replaces symlink pattern.</td>
 </tr>
 <tr>
-<td><a href="../../.agents/AGENTS/">AGENTS.md</a></td>
+<td><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md">AGENTS.md</a></td>
 <td>Core rulebook: Rules 6, 10, 12, 16, 18, 19 govern token efficiency.</td>
 </tr>
 </tbody>

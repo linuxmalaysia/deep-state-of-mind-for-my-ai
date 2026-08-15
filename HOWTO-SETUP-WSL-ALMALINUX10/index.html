@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3729,10 +3757,12 @@
 <h2 id="phase-1-enable-wsl2-one-time-setup">Phase 1: Enable WSL2 (One-Time Setup)</h2>
 <p>Open <strong>PowerShell as Administrator</strong> and run:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Enable WSL and Virtual Machine Platform</span>
+
 <span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="p">:</span><span class="n">Microsoft-Windows-Subsystem-Linux</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
 <span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="p">:</span><span class="n">VirtualMachinePlatform</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
 
 <span class="c"># Restart Windows, then continue:</span>
+
 <span class="n">wsl</span> <span class="p">-</span><span class="n">-set-default-version</span> <span class="n">2</span>
 <span class="n">wsl</span> <span class="p">-</span><span class="n">-update</span>
 </code></pre></div>
@@ -3746,6 +3776,7 @@ A restart is required after enabling features. After restart, continue with Phas
 <div class="highlight"><pre><span></span><code><span class="nb">cd </span><span class="n">D</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">LinuxMalaysia</span><span class="p">\</span><span class="n">Projects</span><span class="p">\</span><span class="n">deep-state-of-mind-for-my-ai</span>
 
 <span class="c"># Run the automated setup</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">setup-wsl-almalinux10</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <p><strong>What the script does:</strong></p>
@@ -3775,19 +3806,24 @@ A restart is required after enabling features. After restart, continue with Phas
 <h2 id="phase-4-verify-and-restart">Phase 4: Verify and Restart</h2>
 <p>After bootstrap, restart the WSL instance to apply <code>wsl.conf</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Restart the WSL instance</span>
+
 <span class="n">wsl</span> <span class="p">-</span><span class="n">-terminate</span> <span class="n">dsom-control-almalinux10</span>
 
 <span class="c"># Launch (will auto-login as dsom-admin)</span>
+
 <span class="n">wsl</span> <span class="n">-d</span> <span class="n">dsom-control-almalinux10</span>
 </code></pre></div>
 <p>Inside AlmaLinux 10, verify:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Should show dsom-admin (UID 2001)</span>
+
 id
 
 <span class="c1"># Should show ansible version</span>
+
 ansible<span class="w"> </span>--version
 
 <span class="c1"># Should return pong</span>
+
 ansible<span class="w"> </span>localhost<span class="w"> </span>-m<span class="w"> </span>ping
 </code></pre></div>
 <p><strong>Expected output:</strong></p>
@@ -3803,20 +3839,25 @@ localhost | SUCCESS =&gt; { &quot;ping&quot;: &quot;pong&quot; }
 <div class="highlight"><pre><span></span><code><span class="c1"># Inside dsom-control-almalinux10 as dsom-admin</span>
 
 <span class="c1"># Copy your SSH public key to each target node</span>
+
 ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_ed25519.pub<span class="w"> </span><span class="o">[</span>USER<span class="o">]</span>@<span class="o">[</span>TARGET_IP<span class="o">]</span>
 
 <span class="c1"># Test connectivity</span>
+
 ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>-i<span class="w"> </span>/mnt/d/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/inventory/hosts.yml
 </code></pre></div>
 <hr />
 <h2 id="phase-6-run-dsom-ansible-playbooks">Phase 6: Run DSOM Ansible Playbooks</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># From inside dsom-control-almalinux10, cd to your project mount:</span>
+
 <span class="nb">cd</span><span class="w"> </span>/mnt/d/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai
 
 <span class="c1"># Run DSOM pre-flight audit on localhost</span>
+
 ansible-playbook<span class="w"> </span>playbooks/dsom/audit-preflight.yml<span class="w"> </span>-i<span class="w"> </span>localhost,
 
 <span class="c1"># Run the DSOM Palace SOD Ritual (Start of Day)</span>
+
 bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\sod-palace.ps1)</span>
 </code></pre></div>
 <hr />
@@ -3871,8 +3912,8 @@ bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span cl
 <h2 id="related-documents">Related Documents</h2>
 <ul>
 <li><a href="../HOWTO-SETUP-ANSIBLE-BASELINE/"><code>docs/HOWTO-SETUP-ANSIBLE-BASELINE.md</code></a> — Ansible project directory setup</li>
-<li><a href="GITOPS-AIOPS-ANSIBLE-STRATEGY.md"><code>docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md</code></a> — Three-pillar strategy</li>
-<li><a href="ANSIBLE-CONTROL-NODE-PROTOCOL.md"><code>docs/ANSIBLE-CONTROL-NODE-PROTOCOL.md</code></a> — Control node operating standards</li>
+<li><a href="../governance/GITOPS-AIOPS-ANSIBLE-STRATEGY/"><code>docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md</code></a> — Three-pillar strategy</li>
+<li><a href="../reference-architectures/ANSIBLE-CONTROL-NODE-PROTOCOL/"><code>docs/ANSIBLE-CONTROL-NODE-PROTOCOL.md</code></a> — Control node operating standards</li>
 <li><a href="../playbooks/dsom/"><code>playbooks/dsom/</code></a> — DSOM operational playbooks</li>
 </ul>
 <hr />

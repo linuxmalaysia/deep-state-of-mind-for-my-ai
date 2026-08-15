@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -2053,10 +2081,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-read-the-docs-integration-validation" class="md-nav__link">
+  <a href="#1-read-the-docs-integration-validation-pr-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Read the Docs Integration &amp; Validation
+        1. Read the Docs Integration &amp; Validation (PR #22)
       
     </span>
   </a>
@@ -2112,6 +2140,17 @@
     <span class="md-ellipsis">
       
         6. Windows Git-Symlink &amp; CRLF Test Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-google-jules-pr-comment-history-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Google Jules PR &amp; Comment History Ledger
       
     </span>
   </a>
@@ -3715,10 +3754,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-read-the-docs-integration-validation" class="md-nav__link">
+  <a href="#1-read-the-docs-integration-validation-pr-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Read the Docs Integration &amp; Validation
+        1. Read the Docs Integration &amp; Validation (PR #22)
       
     </span>
   </a>
@@ -3774,6 +3813,17 @@
     <span class="md-ellipsis">
       
         6. Windows Git-Symlink &amp; CRLF Test Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-google-jules-pr-comment-history-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Google Jules PR &amp; Comment History Ledger
       
     </span>
   </a>
@@ -3874,8 +3924,8 @@
 </ul>
 <hr />
 <h2 id="historic-code-merges-prs-by-jules">Historic Code Merges &amp; PRs by Jules</h2>
-<p>The following is the permanent ledger of PRs and code modifications executed by Google Jules:</p>
-<h3 id="1-read-the-docs-integration-validation">1. Read the Docs Integration &amp; Validation</h3>
+<p>The following is the permanent ledger of PRs and code modifications executed by Google Jules. A comprehensive, high-fidelity log of all Jules' historic PRs, reviews, CodeRabbit comments, and technical resolutions is maintained inside <code>.agents/brain/jules_pr_history.md</code>.</p>
+<h3 id="1-read-the-docs-integration-validation-pr-22">1. Read the Docs Integration &amp; Validation (PR #22)</h3>
 <ul>
 <li><strong>Accomplishment</strong>: Configured <code>.readthedocs.yaml</code> at the root with Ubuntu 24.04, Python 3.13, and MkDocs. Appended standard DSOM license/ownership headers and synced all ledgers.</li>
 <li><strong>Testing Layer</strong>: Created <code>tests/test_readthedocs_config.py</code> and <code>tests/test_readthedocs_ledger_sync.py</code> to assert RTD and GitBook configuration compliance.</li>
@@ -3901,6 +3951,10 @@
 <ul>
 <li><strong>Accomplishment</strong>: Enhanced test discovery suites (<code>tests/test_okf_frontmatter_bom_reorder.py</code>, <code>tests/test_okf_quoting.py</code>, <code>tests/test_docs_symlinks.py</code>) to detect Git text-pointer symlinks (<code>content.startswith("../")</code>) on Windows native checkouts, handle CRLF byte fences (<code>b"---\r\n"</code>), and conditionally scope POSIX <code>chmod</code> bit assertions (<code>if os.name != "nt":</code>).</li>
 </ul>
+<h3 id="7-google-jules-pr-comment-history-ledger">7. Google Jules PR &amp; Comment History Ledger</h3>
+<ul>
+<li><strong>Accomplishment</strong>: Created the master conversational and code merge ledger <code>.agents/brain/jules_pr_history.md</code> detailing PRs #22, #23, #24, #25, #26, #27, and #34, as well as automated CodeRabbit review integration and feedback cycles.</li>
+</ul>
 <hr />
 <h2 id="procedural-sync-protocol-sop">Procedural Sync Protocol (SOP)</h2>
 <p>When Google Jules or Google Antigravity initializes a session, the following synchronization protocol must be executed:</p>
@@ -3912,7 +3966,7 @@
 <li><strong>Git Log Reconciliation</strong>: Run <code>git log --oneline -n 10</code> to programmatically match brain walkthrough history against real Git commits.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-08</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

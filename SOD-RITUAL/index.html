@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3433,10 +3461,12 @@
 <h3 id="step-1-git-sync-t1-windows-powershell">⚡ Step 1 — Git Sync (T1: Windows PowerShell)</h3>
 <p>Pull the latest state from the remote before doing anything:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># T1 — Git Ritual: SOD Pull</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">git-ritual</span><span class="p">.</span><span class="n">ps1</span> <span class="n">sod</span>
 </code></pre></div>
 <p>Or on T2 (WSL2):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># T2 — Git Ritual: SOD Pull</span>
+
 ./tools/git-ritual.sh<span class="w"> </span>sod
 </code></pre></div>
 <p><strong>Why:</strong> Ensures you start from the true current state — not yesterday's stale copy.</p>
@@ -3446,6 +3476,7 @@
 <p><strong>If you are on T2, use this instead of Steps 1–3.</strong> It runs git pull, audit, palace check, and reanimate in a single command.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="c1"># T2 (Linux/WSL2) — Full automated SOD</span>
+
 bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\sod-palace.ps1)</span>
 </code></pre></div>
 <p><strong>What it runs automatically:</strong></p>
@@ -3491,12 +3522,15 @@ bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span cl
 <h3 id="step-2-intelligence-audit-t1-or-t2">🔍 Step 2 — Intelligence Audit (T1 or T2)</h3>
 <p>Run the pre-flight audit to verify the physical workspace is ready:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># T1 (Windows PowerShell)</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">audit-pre-flight</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># T2 (WSL2 AlmaLinux 10)</span>
+
 ./tools/audit-pre-flight.sh
 
 <span class="c1"># Or via Ansible (checks localhost + all inventory nodes simultaneously)</span>
+
 ansible-playbook<span class="w"> </span>playbooks/dsom/audit-preflight.yml<span class="w"> </span>-i<span class="w"> </span>localhost,
 </code></pre></div>
 <p><strong>The audit checks (v5.0):</strong></p>
@@ -3512,9 +3546,11 @@ ansible-playbook<span class="w"> </span>playbooks/dsom/audit-preflight.yml<span 
 <h3 id="step-3-generate-reanimation-manifest-t1-or-t2">🚀 Step 3 — Generate Reanimation Manifest (T1 or T2)</h3>
 <p>Generate the full context manifest for AI upload:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># T2 (WSL2)</span>
+
 bash<span class="w"> </span>tools/reanimate.sh
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c"># T1 (Windows PowerShell)</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">reanimate</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <p><strong>What the manifest contains (v2.2 — Palace-aware):</strong></p>
@@ -3586,7 +3622,9 @@ bash<span class="w"> </span>tools/reanimate.sh
 </table>
 <p><strong>Run privacy scan before sharing:</strong></p>
 <div class="highlight"><pre><span></span><code>./tools/privacy-guardian.sh
+
 <span class="c1"># Or via Ansible:</span>
+
 ansible-playbook<span class="w"> </span>playbooks/dsom/privacy-scan.yml<span class="w"> </span>-i<span class="w"> </span>localhost,
 </code></pre></div>
 <hr />
@@ -3768,11 +3806,11 @@ DAY N+1 EOD:         Step 1b (new Hibernation Notes saved)
 <td style="text-align: left;">AI session prompts</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="AI-COGNITIVE-TWIN-PROTOCOL.md"><code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code></a></td>
+<td style="text-align: left;"><a href="../governance/AI-COGNITIVE-TWIN-PROTOCOL/"><code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code></a></td>
 <td style="text-align: left;">Project Identity Card</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="AI-MASTER-PROTOCOL.md"><code>docs/AI-MASTER-PROTOCOL.md</code></a></td>
+<td style="text-align: left;"><a href="../governance/AI-MASTER-PROTOCOL/"><code>docs/AI-MASTER-PROTOCOL.md</code></a></td>
 <td style="text-align: left;">The Sovereign Constitution</td>
 </tr>
 <tr>
@@ -3784,7 +3822,7 @@ DAY N+1 EOD:         Step 1b (new Hibernation Notes saved)
 <td style="text-align: left;">Palace structure + AI Walk protocol</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../playbooks/dsom/sod-palace.yml"><code>playbooks/dsom/sod-palace.yml</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/sod-palace.yml"><code>playbooks/dsom/sod-palace.yml</code></a></td>
 <td style="text-align: left;">Ansible SOD automation (T2)</td>
 </tr>
 </tbody>

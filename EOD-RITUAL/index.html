@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3458,9 +3486,11 @@ Don&#39;t hide anything from me. Trust me as your master.
 <h3 id="step-2-hibernation-safety-check-t1-or-t2">�💤 Step 2 — Hibernation Safety Check (T1 or T2)</h3>
 <p>Run the hibernation script — it checks for dirty state before you sleep:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># T2 (WSL2 dsom-control-almalinux10)</span>
+
 ./tools/hibernation.sh
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c"># T1 (Windows PowerShell)</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">hibernation</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <blockquote>
@@ -3482,6 +3512,7 @@ Don&#39;t hide anything from me. Trust me as your master.
 <p><strong>If you are on T2, use this instead of Steps 2–5.</strong> It runs all checks, palace sync, selective staging, commit, and push in a single command.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="c1"># T2 (Linux/WSL2) — Full automated EOD</span>
+
 bash<span class="w"> </span>tools/eod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\eod-palace.ps1)</span>
 </code></pre></div>
 <p><strong>What it runs automatically:</strong></p>
@@ -3539,9 +3570,11 @@ bash<span class="w"> </span>tools/eod-palace.sh<span class="w">  </span><span cl
 <h3 id="step-3-privacy-scan-before-sharing-any-manifest">🔐 Step 3 — Privacy Scan (Before Sharing Any Manifest)</h3>
 <p>If you generated a <code>sod_manifest_YYYY-MM-DD.txt</code> today, scan it before sharing:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash</span>
+
 ./tools/privacy-guardian.sh
 
 <span class="c1"># Or via Ansible</span>
+
 ansible-playbook<span class="w"> </span>playbooks/dsom/privacy-scan.yml<span class="w"> </span>-i<span class="w"> </span>localhost,
 </code></pre></div>
 <p><strong>Scans for:</strong> IPv4 addresses, emails, API keys, AWS keys, GitHub tokens, PEM private keys, Linux home paths.</p>
@@ -3549,9 +3582,11 @@ ansible-playbook<span class="w"> </span>playbooks/dsom/privacy-scan.yml<span cla
 <h3 id="step-4-sovereign-save-eod-git-ritual-t1-windows-powershell">🔄 Step 4 — Sovereign Save: EOD Git Ritual (T1: Windows PowerShell)</h3>
 <p>Commit all changes with a <strong>structured, semantic commit message</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># T1 — Interactive EOD Sovereign Save (guided semantic commit)</span>
+
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">git-ritual</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># T2 — Interactive EOD Sovereign Save</span>
+
 ./tools/git-ritual.sh
 </code></pre></div>
 <p><strong>The git-ritual EOD process:</strong></p>
@@ -3570,6 +3605,7 @@ ansible-playbook<span class="w"> </span>playbooks/dsom/privacy-scan.yml<span cla
 <h3 id="step-5-t2-sync-wsl2-pull-after-t1-push">🔃 Step 5 — T2 Sync (WSL2 Pull After T1 Push)</h3>
 <p>After pushing from T1, ensure T2 is synchronised:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Inside dsom-control-almalinux10</span>
+
 <span class="nb">cd</span><span class="w"> </span>/mnt/d/Users/LinuxMalaysia/Projects/<span class="o">[</span>YOUR_PROJECT<span class="o">]</span>
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
@@ -3648,27 +3684,33 @@ NEXT ACTION: [e.g. &quot;Run ansible-playbook playbooks/dsom/audit-preflight.yml
 <div class="highlight"><pre><span></span><code><span class="gu">## 🏁 Session Anchor: [YYYY-MM-DD] — [Short Phase Name]</span>
 
 <span class="gu">### Accomplished</span>
+
 <span class="k">-</span><span class="w"> </span>[What was done — concrete, specific]
 <span class="k">-</span><span class="w"> </span>[Second item if applicable]
 
 <span class="gu">### Why</span>
+
 <span class="k">-</span><span class="w"> </span>[The architectural reasoning — not just the what, but the why]
 
 <span class="gu">### Mental Anchor</span>
+
 <span class="k">&gt; </span><span class="ge">[ONE SENTENCE: exact state of the system right now. Where to resume in the next session.]</span>
 </code></pre></div>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="gu">## 🏁 Session Anchor: 2026-03-10 — AlmaLinux 10 WSL2 Setup</span>
 
 <span class="gu">### Accomplished</span>
+
 <span class="k">-</span><span class="w"> </span>Created dsom-control-almalinux10 WSL2 setup scripts (setup-wsl-almalinux10.ps1, setup-dsom-control-node.sh).
 <span class="k">-</span><span class="w"> </span>Created DSOM Ansible playbooks in playbooks/dsom/ (audit, init-brain, privacy-scan, site).
 
 <span class="gu">### Why</span>
+
 <span class="k">-</span><span class="w"> </span>T2 needs a dedicated Ansible Control Node (AlmaLinux 10) to avoid mixing Windows and Linux operations.
 <span class="k">-</span><span class="w"> </span>Ansible playbooks make the tools/ bash scripts reusable on any node in the inventory.
 
 <span class="gu">### Mental Anchor</span>
+
 <span class="k">&gt; </span><span class="ge">WSL2 scripts created and pushed [v6.1.0]. Next: run setup-wsl-almalinux10.ps1 as Administrator, bootstrap</span>
 <span class="k">&gt; </span><span class="ge">dsom-admin, verify ansible localhost -m ping inside dsom-control-almalinux10.</span>
 </code></pre></div>
@@ -3703,27 +3745,27 @@ NEXT ACTION: [e.g. &quot;Run ansible-playbook playbooks/dsom/audit-preflight.yml
 <td style="text-align: left;">Palace structure + closet update guide</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../tools/git-ritual.sh"><code>tools/git-ritual.sh</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/git-ritual.sh"><code>tools/git-ritual.sh</code></a></td>
 <td style="text-align: left;">SOD pull + EOD semantic commit</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../tools/hibernation.sh"><code>tools/hibernation.sh</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/hibernation.sh"><code>tools/hibernation.sh</code></a></td>
 <td style="text-align: left;">EOD safety checker (v2.1: includes palace-sync)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../tools/palace-sync.sh"><code>tools/palace-sync.sh</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/palace-sync.sh"><code>tools/palace-sync.sh</code></a></td>
 <td style="text-align: left;">Palace spatial reflection engine</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../tools/privacy-guardian.sh"><code>tools/privacy-guardian.sh</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/privacy-guardian.sh"><code>tools/privacy-guardian.sh</code></a></td>
 <td style="text-align: left;">Manifest scanner</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../playbooks/dsom/eod-palace.yml"><code>playbooks/dsom/eod-palace.yml</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/eod-palace.yml"><code>playbooks/dsom/eod-palace.yml</code></a></td>
 <td style="text-align: left;">Ansible EOD automation (T2)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="../playbooks/dsom/privacy-scan.yml"><code>playbooks/dsom/privacy-scan.yml</code></a></td>
+<td style="text-align: left;"><a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/privacy-scan.yml"><code>playbooks/dsom/privacy-scan.yml</code></a></td>
 <td style="text-align: left;">Ansible privacy scan</td>
 </tr>
 </tbody>

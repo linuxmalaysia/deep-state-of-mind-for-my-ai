@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/">
       
       
-        <link rel="prev" href="../AI-MASTER-PROTOCOL/">
+        <link rel="prev" href="../GENERATIVE-ENGINE-OPTIMIZATION/">
       
       
         <link rel="next" href="../DSOM-AUTOMATED-STATE-SYNC/">
@@ -467,6 +467,34 @@
     
   
     AI Master Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
   
 
     
@@ -3752,7 +3780,7 @@
 <ul>
 <li><strong>Purpose:</strong> Real-time human-AI interaction and task execution.</li>
 <li><strong>Execution Boundary:</strong> Fast, low-latency sessions using direct developer-facing interfaces (e.g. Cursor, Claude Desktop, Copilot).</li>
-<li><strong>Technical Mapping:</strong> Backed by the native Model Context Protocol (MCP) server running via <code>tools/mcp/server.py</code>. The Active State leverages localized, byte-capped CLI tools to fetch file states and execute targeted tasks without human intervention. It serves as the immediate "sensorimotor" interface of the Cognitive Twin.</li>
+<li><strong>Technical Mapping:</strong> Backed by the native Model Context Protocol (MCP) server running via <code>tools/mcp/server.py</code>. The Active State leverages localised, byte-capped CLI tools to fetch file states and execute targeted tasks without human intervention. It serves as the immediate "sensorimotor" interface of the Cognitive Twin.</li>
 </ul>
 <h3 id="ii-the-twilight-state-the-subconscious-mind">ii) The Twilight State (The Subconscious Mind)</h3>
 <ul>
@@ -3762,7 +3790,7 @@
 </ul>
 <h3 id="iii-the-deep-state-the-unconscious-dream-mind">iii) The Deep State (The Unconscious / Dream Mind)</h3>
 <ul>
-<li><strong>Purpose:</strong> Background optimization, semantic consolidation, and knowledge evolution.</li>
+<li><strong>Purpose:</strong> Background optimisation, semantic consolidation, and knowledge evolution.</li>
 <li><strong>Execution Boundary:</strong> Scheduled, out-of-band execution loops triggered at low-traffic times or session completion.</li>
 <li><strong>Technical Mapping:</strong> Driven by our Start-of-Day (SOD) and End-of-Day (EOD) automated rituals (<code>playbooks/dsom/eod-palace.yml</code> and <code>tools/hibernation.sh</code>). During the Deep State phase, the system executes semantic reflection via the <code>palace-sync</code> engine, compiling raw chronological git commits and chaotic chat histories into highly structured, OKF-compliant Palace closets. This is the stage where the repository's semantic index (<code>palace_registry.md</code>) is regenerated and pushed to multi-remote endpoints to achieve synchronization.</li>
 </ul>
@@ -3779,7 +3807,7 @@
 * <strong>Sensory Memory (Token Buffer):</strong> The ephemeral attention window of the underlying LLM session, containing only the immediate active tokens in the chat prompt.
 * <strong>Working Memory (Active Scope):</strong> Managed explicitly via <code>.agents/brain/active_context_manifest.md</code>. It declares the precise subset of files currently in scope, replacing bloated global folder references with laser-focused targets.
 * <strong>Episodic Memory (Chronological Ledger):</strong> Stored in <code>.agents/brain/walkthrough.md</code>. This is the universal chronological walkthrough ledger of session milestones, tracking decision logs and mental anchors across historical sessions.
-* <strong>Semantic Memory (Sovereign Palace):</strong> Implemented via the <strong>Sovereign Markdown Palace</strong> under <code>.agents/brain/wings/</code>. Absolute facts, standardized infrastructure definitions, and governance rules are permanently stored in specific Palace rooms, indexed by <code>palace_registry.md</code>.</p>
+* <strong>Semantic Memory (Sovereign Palace):</strong> Implemented via the <strong>Sovereign Markdown Palace</strong> under <code>.agents/brain/wings/</code>. Absolute facts, standardised infrastructure definitions, and governance rules are permanently stored in specific Palace rooms, indexed by <code>palace_registry.md</code>.</p>
 <h3 id="iii-dreaming-consolidation-semantic-compaction">iii) "Dreaming" &amp; Consolidation (Semantic Compaction)</h3>
 <p>The Cognitive Twin continually refines and optimizes its stored memory using three mechanisms:
 * <strong>Memory Pruning:</strong> The EOD <code>palace-sync</code> runs semantic pruning to merge repetitive, verbose chat histories into a single, compact, metadata-rich Palace update proposal (<code>palace_update_proposal_*.md</code>).

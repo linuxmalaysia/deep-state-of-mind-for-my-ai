@@ -3,6 +3,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/AGENTS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/DSOM_TEMPLATE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/active_context_manifest/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/implementation_plan/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/jules_pr_history/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/member/haris/walkthrough/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_registry/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-04-08_1214/
@@ -31,6 +32,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/pala
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-07-31_1600/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-02_0048/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-05_2157/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-14_0758/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/GOVERNANCE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/OPERATIONAL-GUIDE-PHP/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/OPERATIONAL-GUIDE/
@@ -207,6 +209,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/DSOM_TEMPLATE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/active_context_manifest/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/implementation_plan/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/jules_pr_history/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/member/haris/walkthrough/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_registry/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-04-08_1214/
@@ -235,6 +238,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palac
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-07-31_1600/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-02_0048/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-05_2157/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-14_0758/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/GOVERNANCE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/OPERATIONAL-GUIDE-PHP/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/OPERATIONAL-GUIDE/
@@ -458,6 +462,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-token-efficiency-report
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-token-performance-playbook
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-tri-phasic-cognitive-architecture
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/generative-engine-optimization
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/github-actions-security-scanning
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/gitops-aiops-ansible-strategy
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/hub-and-spoke-model

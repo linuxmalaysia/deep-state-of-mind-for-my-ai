@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3504,7 +3532,7 @@
 <hr />
 <h2 id="deployment-sequence-the-sovereign-rhythm">🚀 Deployment Sequence (The Sovereign Rhythm)</h2>
 <ol>
-<li><strong>Stage 1 - VM Injection</strong>: Execute <code>bash tools/sysadmin-vm-prep.sh &lt;ip&gt;</code> from the Jumphost to standardize the OS base, standardize SSH keys, and inject the <code>dsom-admin</code> user.</li>
+<li><strong>Stage 1 - VM Injection</strong>: Execute <code>bash tools/sysadmin-vm-prep.sh &lt;ip&gt;</code> from the Jumphost to standardise the OS base, standardise SSH keys, and inject the <code>dsom-admin</code> user.</li>
 <li><strong>Stage 2 - Baseline Hardening</strong>: Ansible runs <code>roles/setup_os</code> to install security tooling (Lynis, Auditd), deploy UFW rules, and dynamically inject RAM-aware <code>sysctl</code> buffers for Elasticsearch.</li>
 <li><strong>Stage 3 - Autonomous Audit</strong>: AI runs the <code>node-health-check</code> and <code>audit-node-security</code> skills to guarantee the node hits a Lynis score of 70+ before proceeding.</li>
 <li><strong>Stage 4 - Persistence Fabric</strong>: Deploy Elasticsearch and Wazuh infrastructure (Pending Phase 3).</li>

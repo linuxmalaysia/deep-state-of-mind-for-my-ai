@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3607,15 +3635,19 @@ Step 6: AI states: &quot;Cognitive Twin Transfer Complete — [PROJECT NAME] Han
 <h2 id="6-the-sunday-human-refresh-protocol">🏛️ 6. The Sunday Human Refresh Protocol</h2>
 <p>Every <strong>Sunday</strong>, the Lead Architect performs a <strong>Dry-Run Audit</strong> — a full human re-read of the project state:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Run the full DSOM audit — confirm all 5 checks pass</span>
+
 ./tools/audit-pre-flight.sh
 
 <span class="c1"># Or via Ansible (checks all inventory nodes simultaneously)</span>
+
 ansible-playbook<span class="w"> </span>playbooks/dsom/audit-preflight.yml<span class="w"> </span>-i<span class="w"> </span>localhost,
 
 <span class="c1"># Review the last 10 commits</span>
+
 git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>-10
 
 <span class="c1"># Read the current Mental Anchor</span>
+
 cat<span class="w"> </span>.agents/brain/walkthrough.md<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-30
 </code></pre></div>
 <p><strong>The Human Re-Index Checklist:</strong></p>
@@ -3640,7 +3672,7 @@ cat<span class="w"> </span>.agents/brain/walkthrough.md<span class="w"> </span><
 <tbody>
 <tr>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;"><a href="AI-MASTER-PROTOCOL.md"><code>docs/AI-MASTER-PROTOCOL.md</code></a></td>
+<td style="text-align: left;"><a href="../governance/AI-MASTER-PROTOCOL/"><code>docs/AI-MASTER-PROTOCOL.md</code></a></td>
 <td style="text-align: left;">Every session</td>
 </tr>
 <tr>
@@ -3665,7 +3697,7 @@ cat<span class="w"> </span>.agents/brain/walkthrough.md<span class="w"> </span><
 </tr>
 <tr>
 <td style="text-align: left;">6</td>
-<td style="text-align: left;"><a href="AI-COGNITIVE-TWIN-PROTOCOL.md"><code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code></a></td>
+<td style="text-align: left;"><a href="../governance/AI-COGNITIVE-TWIN-PROTOCOL/"><code>docs/AI-COGNITIVE-TWIN-PROTOCOL.md</code></a></td>
 <td style="text-align: left;">Per project — fill once</td>
 </tr>
 </tbody>

@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3660,9 +3688,12 @@
 <h3 id="code-sample-toolsopenwiki_emulatorpy">Code Sample: <code>tools/openwiki_emulator.py</code></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># /// script</span>
 <span class="c1"># dependencies = [</span>
+
 <span class="c1">#     &quot;pyyaml&gt;=6.0&quot;,</span>
 <span class="c1"># ]</span>
+
 <span class="c1"># ///</span>
+
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">OpenWiki Emulator &amp; Knowledge Graph Generator</span>
 <span class="sd">Author:   Harisfazillah Jamel (LinuxMalaysia)</span>
@@ -3683,10 +3714,8 @@
 <span class="n">REPO_ROOT</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
 <span class="n">OPENWIKI_DIR</span> <span class="o">=</span> <span class="n">REPO_ROOT</span> <span class="o">/</span> <span class="s2">&quot;openwiki&quot;</span>
 
-
 <span class="k">def</span><span class="w"> </span><span class="nf">get_timestamp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%SZ&quot;</span><span class="p">)</span>
-
 
 <span class="k">def</span><span class="w"> </span><span class="nf">ensure_openwiki_dirs</span><span class="p">():</span>
     <span class="n">dirs</span> <span class="o">=</span> <span class="p">[</span>
@@ -3702,12 +3731,10 @@
     <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">:</span>
         <span class="n">d</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[OpenWiki Emulator] Generating native wiki under </span><span class="si">{</span><span class="n">OPENWIKI_DIR</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
     <span class="n">ensure_openwiki_dirs</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[OpenWiki Emulator] Successfully updated ./openwiki/ structure.&quot;</span><span class="p">)</span>
-
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>

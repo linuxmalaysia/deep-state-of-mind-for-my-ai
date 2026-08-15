@@ -487,6 +487,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3984,6 +4012,7 @@
 <p>The daily operating rhythm for <strong>T2 (Linux/WSL2)</strong>. Both playbooks run on <code>localhost</code> — no remote host required.</p>
 <h3 id="start-of-day-sod-ansible-automated">🌅 Start-of-Day (SOD) — Ansible Automated</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># On T2 (Linux/WSL2) — Run this first every morning</span>
+
 bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\sod-palace.ps1)</span>
 </code></pre></div>
 <p><strong>What the playbook does automatically:</strong></p>
@@ -4036,11 +4065,13 @@ State: &quot;Sovereign State Synchronised&quot; when ready.
 <p><strong>On T1 (Windows) — manual equivalent:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">pull</span> <span class="p">-</span><span class="n">-rebase</span> <span class="n">origin</span> <span class="n">main</span>
 <span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">reanimate</span><span class="p">.</span><span class="n">ps1</span>
+
 <span class="c"># Then upload the manifest and say the handshake phrase</span>
 </code></pre></div>
 <hr />
 <h3 id="end-of-day-eod-ansible-automated">🌙 End-of-Day (EOD) — Ansible Automated</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># On T2 (Linux/WSL2) — Run this at end of every working session</span>
+
 bash<span class="w"> </span>tools/eod-palace.sh<span class="w">  </span><span class="c1"># (Windows: .\tools\eod-palace.ps1)</span>
 </code></pre></div>
 <p><strong>What the playbook does automatically:</strong></p>
@@ -4105,6 +4136,7 @@ bash<span class="w"> </span>tools/eod-palace.sh<span class="w">  </span><span cl
 </code></pre></div>
 <p><strong>On T1 (Windows) — manual equivalent:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">tools</span><span class="p">\</span><span class="n">hibernation</span><span class="p">.</span><span class="n">ps1</span>
+
 <span class="c"># hibernation.ps1 v2.1 runs palace-sync.ps1 automatically (Step 7)</span>
 </code></pre></div>
 <h3 id="full-daily-loop">🔄 Full Daily Loop</h3>
@@ -4123,8 +4155,8 @@ EOD
              └── Update closets + commit     (Human+AI)
 </code></pre></div>
 <blockquote>
-<p><strong>Playbooks:</strong> <a href="../../playbooks/dsom/sod-palace.yml"><code>playbooks/dsom/sod-palace.yml</code></a> | <a href="../../playbooks/dsom/eod-palace.yml"><code>playbooks/dsom/eod-palace.yml</code></a>
-<strong>Full specs:</strong> <a href="HOWTO-PALACE-ONBOARDING.md"><code>docs/HOWTO-PALACE-ONBOARDING.md</code></a></p>
+<p><strong>Playbooks:</strong> <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/sod-palace.yml"><code>playbooks/dsom/sod-palace.yml</code></a> | <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/eod-palace.yml"><code>playbooks/dsom/eod-palace.yml</code></a>
+<strong>Full specs:</strong> <a href="../../HOWTO-PALACE-ONBOARDING/"><code>docs/HOWTO-PALACE-ONBOARDING.md</code></a></p>
 </blockquote>
 <hr />
 <h2 id="9-session-handover-the-cognitive-twin-trigger">🤝 9. Session Handover (The Cognitive Twin Trigger)</h2>

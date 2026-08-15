@@ -483,6 +483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
@@ -3474,7 +3502,7 @@
 
 <h1 id="howto-clone-a-dsom-project-scaffolding-blueprint">HOWTO: Clone a DSOM Project (Scaffolding Blueprint)</h1>
 <blockquote>
-<p><strong>Entry Point 1:</strong> This document serves as the Engineering Entry Point for the DSOM framework. See <a href="../START-HERE.md">START-HERE.md</a> for the master onboarding roadmap.</p>
+<p><strong>Entry Point 1:</strong> This document serves as the Engineering Entry Point for the DSOM framework. See <a href="../START-HERE/">START-HERE.md</a> for the master onboarding roadmap.</p>
 </blockquote>
 <p><strong>ATTENTION:</strong> This document is the master blueprint for replicating the Deep State of Mind (DSOM) architecture, including highly customised AI Agent Skills and Sovereign Personas, into a completely new repository. </p>
 <p>If you are building a <em>new</em> project based on this repository, you <strong>MUST</strong> follow this guide to ensure the AI's cognitive capabilities, tools, and constraints are correctly ported.</p>
@@ -3504,6 +3532,7 @@
 <h2 id="2-step-by-step-cloning-execution">2. Step-by-Step Cloning Execution</h2>
 <p>If you are a human or an AI agent performing this scaffolding, execute the following commands in the root of your <strong>NEW</strong> project, pointing to the <strong>OLD</strong> baseline path.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. Establish Directories</span>
+
 mkdir<span class="w"> </span>-p<span class="w"> </span>.agents/brain/wings
 mkdir<span class="w"> </span>-p<span class="w"> </span>.agents/skills
 mkdir<span class="w"> </span>-p<span class="w"> </span>docs/agent-configs
@@ -3511,27 +3540,30 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>docs/governance
 mkdir<span class="w"> </span>-p<span class="w"> </span>tools
 
 <span class="c1"># 2. Copy the Engine and Skills</span>
+
 cp<span class="w"> </span><span class="o">[</span>OLD_PATH<span class="o">]</span>/.agents/AGENTS.md<span class="w"> </span>.agents/
 cp<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span>OLD_PATH<span class="o">]</span>/.agents/skills/*<span class="w"> </span>.agents/skills/
 
 <span class="c1"># 3. Copy Governance and Documentation</span>
+
 cp<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span>OLD_PATH<span class="o">]</span>/docs/agent-configs/*<span class="w"> </span>docs/agent-configs/
 cp<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span>OLD_PATH<span class="o">]</span>/docs/governance/*<span class="w"> </span>docs/governance/
 cp<span class="w"> </span><span class="o">[</span>OLD_PATH<span class="o">]</span>/docs/AI-AGENT-SKILLS-GUIDE.md<span class="w"> </span>docs/
 cp<span class="w"> </span><span class="o">[</span>OLD_PATH<span class="o">]</span>/docs/HOWTO-*.md<span class="w"> </span>docs/
 
 <span class="c1"># 4. Copy Ritual Toolchain</span>
+
 cp<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span>OLD_PATH<span class="o">]</span>/tools/*<span class="w"> </span>tools/
 </code></pre></div>
 <hr />
 <h2 id="3-post-clone-initialization">3. Post-Clone Initialization</h2>
-<p>Once the files are copied into the new repository, you must initialize the AI's identity, memory, and version control.</p>
+<p>Once the files are copied into the new repository, you must initialise the AI's identity, memory, and version control.</p>
 <ol>
-<li><strong>Initialize Git Repository:</strong> The ritual scripts rely on Git to determine branch and commit state. You must initialize Git first.
+<li><strong>Initialise Git Repository:</strong> The ritual scripts rely on Git to determine branch and commit state. You must initialise Git first.
    <div class="highlight"><pre><span></span><code>git<span class="w"> </span>init
 git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
 </code></pre></div></li>
-<li><strong>Initialize Brain Artifacts (Optional but Recommended):</strong> To prevent startup warnings, create empty brain artifacts.
+<li><strong>Initialise Brain Artifacts (Optional but Recommended):</strong> To prevent startup warnings, create empty brain artifacts.
    <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>.agents/brain
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# 📝 Task List&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>.agents/brain/task.md
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# 🚶 Session Walkthrough&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>.agents/brain/walkthrough.md
