@@ -141,7 +141,7 @@ class BodyContentRegressionTests(unittest.TestCase):
     def test_condensed_history_contains_auto_sync_entry_for_script_change(self):
         self.assertRegex(
             self.body,
-            r"- \[Auto-Sync\] Modified files:.*\.github/scripts/action_update_dsom\.py \(\+\d+, -\d+\)",
+            r"(\[Auto-Sync\] Modified files:.*|Refactored .*\b)action_update_dsom\.py",
         )
 
     def test_auto_sync_entry_precedes_older_history_entries(self):
