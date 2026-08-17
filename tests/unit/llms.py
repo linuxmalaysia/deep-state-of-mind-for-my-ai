@@ -8,6 +8,18 @@ import xml.etree.ElementTree as ET
 import unittest
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
+    """
+    Find the repository root containing a `.git` entry.
+    
+    Parameters:
+    	start (pathlib.Path): Path from which to begin searching.
+    
+    Returns:
+    	pathlib.Path: The nearest ancestor containing a `.git` entry.
+    
+    Raises:
+    	RuntimeError: If no repository root is found.
+    """
     current = start.resolve()
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
