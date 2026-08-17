@@ -2157,6 +2157,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#8-unit-test-suite-modularisation-package-refactoring-pr-74-pr-76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Unit Test Suite Modularisation &amp; Package Refactoring (PR #74 &amp; PR #76)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3830,6 +3841,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#8-unit-test-suite-modularisation-package-refactoring-pr-74-pr-76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Unit Test Suite Modularisation &amp; Package Refactoring (PR #74 &amp; PR #76)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3955,6 +3977,11 @@
 <ul>
 <li><strong>Accomplishment</strong>: Created the master conversational and code merge ledger <code>.agents/brain/jules_pr_history.md</code> detailing PRs #22, #23, #24, #25, #26, #27, and #34, as well as automated CodeRabbit review integration and feedback cycles.</li>
 </ul>
+<h3 id="8-unit-test-suite-modularisation-package-refactoring-pr-74-pr-76">8. Unit Test Suite Modularisation &amp; Package Refactoring (PR #74 &amp; PR #76)</h3>
+<ul>
+<li><strong>Accomplishment</strong>: Deconstructed monolithic test suites into modular submodules under <code>tests/unit/</code> (<code>ansible.py</code>, <code>containers.py</code>, <code>llms.py</code>, <code>markdown.py</code>, <code>sitemaps.py</code>). Standardised test assertions for container digests, OKF frontmatter AST nodes, and sitemaps fixtures, scaling the automated test suite to 724 unit tests.</li>
+<li><strong>Testing Layer</strong>: Verified via <code>tests/test_unit.py</code> and modular package discovery.</li>
+</ul>
 <hr />
 <h2 id="procedural-sync-protocol-sop">Procedural Sync Protocol (SOP)</h2>
 <p>When Google Jules or Google Antigravity initializes a session, the following synchronization protocol must be executed:</p>
@@ -3964,9 +3991,11 @@
 <li><strong>Walkthrough Inspection</strong>: Verify the latest <code>Session Anchor</code> inside <code>.agents/brain/walkthrough.md</code> to map recent milestones.</li>
 <li><strong>Task Verification</strong>: Align on current session duties in <code>.agents/brain/task.md</code>.</li>
 <li><strong>Git Log Reconciliation</strong>: Run <code>git log --oneline -n 10</code> to programmatically match brain walkthrough history against real Git commits.</li>
+<li><strong>Brain Stash Conflict Resolution</strong>: When executing <code>git pull --rebase</code> results in stash merge conflicts inside <code>.agents/brain/</code> (<code>checkpoint_summary.txt</code> or <code>walkthrough.md</code>), agents must perform a constructive merge: retain all recent Jules PR milestones alongside local session achievements, rather than discarding either agent's context.</li>
+<li><strong>Strict OKF Frontmatter Invariant for Rules</strong>: All markdown files created by agents—including workspace rules in <code>.agents/rules/</code>—must include all 5 required OKF v0.1 fields (<code>okf_version</code>, <code>type</code>, <code>title</code>, <code>timestamp</code>, <code>topics</code>).</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-18</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
