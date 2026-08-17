@@ -115,3 +115,22 @@ To record a permanent history of all PRs worked on by Google Jules, including co
 ### Integration Mental Anchor (2026-08-14 — Jules Historic PRs & EOD Consolidation)
 
 > Compiled Google Jules' historic PR merges and conversational records into a dedicated brain ledger.
+
+## 🏁 Session Anchor: 2026-08-14 — Documentation Standardisation & MkDocs Fixes
+
+- Resolved PR 69/70 merge conflicts, merged, and cleaned up branches.
+- Standardised UK English spellings across `docs/`.
+- Audited and fixed MarkdownLint violations (`MD022`, `MD031`).
+- Injected Sovereign Signatures across `.md` documents.
+- Audited GitHub Actions workflows for proper pinning and `persist-credentials: false`.
+- Fixed MkDocs link decay warnings (46 links) and achieved zero warnings in strict mode.
+- Adopted Antigravity Rule for Windows Git Execution Guardrail (`.agents/rules/windows-git-execution.md`).
+- Integrated PR #74 and PR #76 refactoring unit tests into modular `tests/unit/` package.
+
+### Underlying Rationale
+
+To maintain the highest quality of sovereign documentation, ensure CI/CD robustness (zero link decay), and enforce safe, fail-fast background execution for AI-driven Git operations on Windows.
+
+### Integration Mental Anchor
+
+> Standardised documentation, achieved zero MkDocs link decay, and adopted Windows Git Execution Guardrail.

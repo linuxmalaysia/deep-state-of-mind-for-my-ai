@@ -96,8 +96,10 @@ def parse_frontmatter(content, rel_path):
     existing_frontmatter = {}
     rest_of_content = content
 
-    match = FRONTMATTER_RE.match(rest_of_content)
-    if match:
+    while True:
+        match = FRONTMATTER_RE.match(rest_of_content)
+        if not match:
+            break
         yaml_block = match.group(1)
         try:
             parsed = yaml.load(yaml_block, Loader=CustomLoader)
@@ -150,14 +152,14 @@ def serialise_frontmatter(updated_frontmatter, filename):
 
     return "---\n" + "\n".join(yaml_lines) + "\n---\n"
 
-def atomic_replace_file(filepath, new_content, filename, had_bom=False):
+def atomic_replace_file(filepath, new_content, filename):
     file_dir = os.path.dirname(filepath) or "."
     temp_file = None
     temp_filepath = None
     try:
         temp_file = tempfile.NamedTemporaryFile(
             dir=file_dir, prefix=".temp_", suffix=f"_{filename}",
-            mode='w', encoding='utf-8-sig' if had_bom else 'utf-8', delete=False
+            mode='w', encoding='utf-8', delete=False
         )
         temp_filepath = temp_file.name
         temp_file.write(new_content)
@@ -248,29 +250,42 @@ def local_compaction(diff_content, rest_of_content):
 
         # Determine the index of the next heading in the updated list
         next_heading_idx = len(lines)
-        for idx, l in enumerate(lines):
-            if l.strip().startswith("##"):
+        for idx in range(insert_idx + 1, len(lines)):
+            if lines[idx].strip().startswith("##"):
                 next_heading_idx = idx
                 break
 
-        # Filter and cap [Auto-Sync] entries in this section to 3
-        auto_sync_indices = []
-        for idx in range(next_heading_idx):
-            if lines[idx].strip().startswith("- [Auto-Sync]"):
-                auto_sync_indices.append(idx)
+        # Re-compact old entries under the same heading to prevent unbounded growth
+        # Keep maximum 5 auto-sync bullets under Condensed History
+        bullets = []
+        non_bullets = []
+        for idx, l in enumerate(lines[:next_heading_idx]):
+            if l.strip().startswith("- [Auto-Sync]"):
+                bullets.append(l)
+            else:
+                non_bullets.append(l)
 
-        MAX_RETAINED_AUTO_SYNC = 3
-        if len(auto_sync_indices) > MAX_RETAINED_AUTO_SYNC:
-            to_remove = auto_sync_indices[MAX_RETAINED_AUTO_SYNC:]
-            for r_idx in sorted(to_remove, reverse=True):
-                lines.pop(r_idx)
+        if len(bullets) > 5:
+            bullets = bullets[:5]
 
-        updated_body = parts[0] + target_heading + "\n" + "\n".join(lines)
+        new_section_lines = []
+        bullet_idx = 0
+        for l in non_bullets:
+            new_section_lines.append(l)
+            if l.strip().startswith("##") or l == "":
+                while bullet_idx < len(bullets):
+                    new_section_lines.append(bullets[bullet_idx])
+                    bullet_idx += 1
+
+        while bullet_idx < len(bullets):
+            new_section_lines.append(bullets[bullet_idx])
+            bullet_idx += 1
+
+        rest_of_content = parts[0] + target_heading + "\n" + "\n".join(new_section_lines + lines[next_heading_idx:])
     else:
-        # Fallback to appending at the end of the file
-        updated_body = rest_of_content.strip() + f"\n\n## Condensed History\n- [Auto-Sync] {summary_text}\n"
+        rest_of_content = rest_of_content.rstrip() + f"\n\n{target_heading}\n- [Auto-Sync] {summary_text}\n"
 
-    return updated_body
+    return rest_of_content
 
 def main():
     if len(sys.argv) != 3:
@@ -280,49 +295,49 @@ def main():
     diff_file = sys.argv[1]
     state_file = sys.argv[2]
 
-    # Read diff file
-    with open(diff_file, "r", encoding="utf-8") as f:
-        diff_content = f.read()
-
-    # Read state file and strip BOM
-    if not os.path.exists(state_file):
-        print(f"Error: DSOM state file {state_file} does not exist.")
+    if not os.path.exists(diff_file):
+        print(f"Error: PR diff file not found at {diff_file}")
         sys.exit(1)
+
+    if not os.path.exists(state_file):
+        print(f"Error: DSOM state file not found at {state_file}")
+        sys.exit(1)
+
+    with open(diff_file, 'r', encoding='utf-8') as f:
+        diff_content = f.read()
 
     clean_state, had_bom = read_file_and_strip_bom(state_file)
     existing_frontmatter, rest_of_content = parse_frontmatter(clean_state, os.path.basename(state_file))
 
-    # Detect the agent persona to use
-    active_agent = os.environ.get("ACTIVE_AGENT", "Jules")
+    # Determine Active Agent context
+    active_agent = os.getenv("ACTIVE_AGENT", "Jules")
     print(f"Active Agent context detected: {active_agent}")
 
-    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
     new_state_body = None
 
     if api_key:
         print(f"API key detected. Directing Semantic Compaction via {active_agent} AI API...")
 
-        # Single template for system prompt template with interpolated persona name
         persona_name = "Antigravity" if active_agent.lower() == "antigravity" else "Jules"
         system_prompt = (
             f"You are Google {persona_name}, a Tier-1 Cognitive Digital Twin assisting LinuxMalaysia in the DSOM framework.\n"
-            "Your task is to perform Semantic Compaction on a Pull Request diff.\n"
-            "You will be given the current `current_state.dsom` file and a Pull Request diff.\n"
-            "Analyze the diff and update the `current_state.dsom` file to reflect any new "
-            "architectural decisions, major features, or state changes.\n"
-            "- Keep the output strictly in the OKF v0.1 format.\n"
-            "- Do not add verbose conversational fluff. Only output the updated file content.\n"
-            "- Do not wrap the output in markdown code blocks, just return the raw text."
+            "You are executing automated Semantic Compaction on a newly merged Pull Request diff.\n"
+            "Your task is to update the current DSOM state document to reflect the changes in the diff.\n"
+            "Rules:\n"
+            "1. Output ONLY the updated Markdown body (starting with # DSOM Current State).\n"
+            "2. Preserve existing sections (## Active State, ## Condensed History, ## Cognitive Anchors).\n"
+            "3. Update the ## Active State section to summarise the new repository state accurately.\n"
+            "4. Prepend a new bullet in ## Condensed History capturing the key architectural decisions in this PR.\n"
+            "5. Do NOT include YAML frontmatter in your response (it will be injected programmatically).\n"
+            "6. Use Standard UK English spelling."
         )
 
         user_prompt = f"Current DSOM State:\n{clean_state}\n\nPull Request Diff:\n{diff_content}"
 
-        # Updated endpoint to remove key query parameter, using gemini-1.5-pro model
-        url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent"
-        headers = {
-            'Content-Type': 'application/json',
-            'x-goog-api-key': api_key
-        }
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={api_key}"
+        headers = {'Content-Type': 'application/json'}
         payload = {
             "contents": [{
                 "role": "user",
@@ -351,7 +366,6 @@ def main():
                     lines = lines[:-1]
                 ai_text = "\n".join(lines).strip()
 
-            # Parse response frontmatter and body
             _, parsed_body = parse_frontmatter(ai_text, os.path.basename(state_file))
             if not parsed_body or not parsed_body.strip():
                 print("Warning: Parsed model response body is empty or whitespace-only.")
@@ -374,8 +388,8 @@ def main():
     new_frontmatter_block = serialise_frontmatter(updated_frontmatter, os.path.basename(state_file))
     final_content = new_frontmatter_block + new_state_body.strip() + "\n"
 
-    # Save atomically, preserving original had_bom flag
-    atomic_replace_file(state_file, final_content, os.path.basename(state_file), had_bom=had_bom)
+    # Save atomically
+    atomic_replace_file(state_file, final_content, os.path.basename(state_file))
     print(f"Successfully updated {state_file}")
 
 if __name__ == "__main__":
