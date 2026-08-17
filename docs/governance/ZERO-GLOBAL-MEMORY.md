@@ -153,7 +153,7 @@ graph TD
 ```
 
 **Relational Matrix:**
-- **`AGENTS.md`**: The absolute cognitive entry point. Governs the format and behavioral constraints for every subsequent file.
+- **`AGENTS.md`**: The absolute cognitive entry point. Governs the format and behavioural constraints for every subsequent file.
 - **`active_context_manifest.md`**: The Session Bootloader. Directs the AI to selectively load task, walkthrough, and spatial memory indices without flooding tokens.
 - **`palace_registry.md`**: The Spatial Map. Indexes all knowledge rooms (closets), preventing the need for the AI to "search" the filesystem blindly.
 - **`task.md` & `walkthrough.md`**: The short-term action queue and episodic memory anchor, functioning together to serialize the precise state of execution.

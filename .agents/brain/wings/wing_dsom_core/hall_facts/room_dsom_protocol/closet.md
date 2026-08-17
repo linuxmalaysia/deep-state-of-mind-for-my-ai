@@ -27,7 +27,7 @@ This closet defines the **Metacognitive Governance Framework** that ensures memo
 ---
 
 ## 🌗 The Tri-Phasic Mind & Functional Modules
-1. **The Architecture (Rule 26):** Partitions AI processing into Active State (fast MCP streams), Twilight State (validation/linting check gates), and Deep State (background EOD palace-sync reviews and push optimization).
+1. **The Architecture (Rule 26):** Partitions AI processing into Active State (fast MCP streams), Twilight State (validation/linting check gates), and Deep State (background EOD palace-sync reviews and push optimisation).
 2. **The Subsystems:** Restructured with Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, and Metacognition & Guardrails for enterprise-level safety and compliance.
 
 ---

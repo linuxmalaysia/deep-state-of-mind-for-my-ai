@@ -25,7 +25,7 @@ name: dsom-policy-adopter
 2. **Draft Governance Document**
    - Create a dedicated, highly-structured Markdown file in the docs/governance/ directory.
    - The file must contain OKF v0.1 YAML frontmatter (with okf_version, 	ype: documentation, 	itle, and 	imestamp).
-   - Format the document strictly following the Generative Engine Optimization (GEO) standard: Authoritative tone, verifiable statistics/quotes, H2 user-centric headings, and 200-400 word chunks.
+   - Format the document strictly following the Generative Engine Optimisation (GEO) standard: Authoritative tone, verifiable statistics/quotes, H2 user-centric headings, and 200-400 word chunks.
 
 3. **Core Engine Injection (AGENTS.md)**
    - Distill the most critical, actionable constraints from the new policy.

@@ -8,7 +8,7 @@ description: "Architectural policy for ensuring documentation is machine-readabl
 resource: "file:///docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md"
 ---
 
-# Generative Engine Optimization (GEO)
+# Generative Engine Optimisation (GEO)
 
 This governance document establishes the standard for architecting all documentation within the DSOM framework to be natively "AI-ready." The digital landscape has shifted from traditional deterministic search (SEO) to probabilistic information synthesis (GEO/AEO).
 
@@ -22,7 +22,7 @@ All human contributors and AI agents must actively employ the following content 
 - **Quotation Addition (+41% lift):** Provide discrete, attributable human expertise.
 - **Statistics Addition (+31-38% lift):** Replace vague qualitative prose with specific, verifiable data points.
 - **Cite Sources (+35% lift):** Inject inline references to credible third parties.
-- **Fluency Optimization (+26% lift):** Improve stylistic clarity to make text mechanically easier for the LLM to parse.
+- **Fluency Optimisation (+26% lift):** Improve stylistic clarity to make text mechanically easier for the LLM to parse.
 - **Authoritative Tone (+21% lift):** Remove hedging and uncertain phrasing, which models interpret as low-confidence data.
 
 *Note: Keyword stuffing actively harms visibility by triggering AI trust-layer penalties (-8% to -12% drop).*

@@ -20,7 +20,7 @@ To resolve these constraints, the **Deep State of Mind (DSOM)** framework adopts
 
 ## 🌗 2. The Tri-Phasic Mind Model
 
-DSOM partitions AI cognition into three distinct temporal execution layers, mirroring human cognitive processing states to achieve deterministic behavior.
+DSOM partitions AI cognition into three distinct temporal execution layers, mirroring human cognitive processing states to achieve deterministic behaviour.
 
 ```
 

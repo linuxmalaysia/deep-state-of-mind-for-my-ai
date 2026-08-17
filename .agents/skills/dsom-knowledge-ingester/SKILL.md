@@ -19,7 +19,7 @@ Use this skill when the user provides a new external source (PDF, Markdown, Web 
    - Synthesize the key concepts, rules, and architectural data.
 3. **Wiki Integration (The Palace):**
    - Create a new `.md` file in the appropriate directory (e.g., `docs/governance/`, `hall_facts/`).
-   - Format the file according to DSOM Generative Engine Optimization (GEO) standards (atomic chunks, H2 headers, expert tone).
+   - Format the file according to DSOM Generative Engine Optimisation (GEO) standards (atomic chunks, H2 headers, expert tone).
    - Inject the OKF v0.1 frontmatter and the Sovereign Signature using `dsom-signature-injector`.
 4. **Ledger & Index Updates:**
    - Add the new file to `SUMMARY.md` and `mkdocs.yml` (Dual Documentation Sync).

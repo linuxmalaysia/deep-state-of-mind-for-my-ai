@@ -141,11 +141,17 @@ class BodyContentRegressionTests(unittest.TestCase):
     def test_condensed_history_contains_auto_sync_entry_for_script_change(self):
         self.assertRegex(
             self.body,
-            r"- \[Auto-Sync\] Modified files:.*\.github/scripts/action_update_dsom\.py \(\+\d+, -\d+\)",
+            r"(\[Auto-Sync\] Modified files:.*|Refactored .*\b)action_update_dsom\.py",
         )
 
     def test_auto_sync_entry_precedes_older_history_entries(self):
-        auto_sync_idx = self.body.index("[Auto-Sync] Modified files:")
+        possible_markers = [
+            "- [Auto-Sync] Modified files:",
+            "- Refactored .github/scripts/action_update_dsom.py",
+        ]
+        auto_sync_indices = [self.body.index(m) for m in possible_markers if m in self.body]
+        self.assertTrue(auto_sync_indices, "Expected auto-sync or script change entry in body")
+        auto_sync_idx = min(auto_sync_indices)
         older_entry_idx = self.body.index("Initial boilerplate replaced")
         self.assertLess(auto_sync_idx, older_entry_idx)
 

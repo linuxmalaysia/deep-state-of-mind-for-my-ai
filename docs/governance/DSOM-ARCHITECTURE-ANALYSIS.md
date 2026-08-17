@@ -12,7 +12,7 @@ resource: "file:///docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md"
 
 ## Abstract
 
-This document deconstructs the operational architecture of the **Deep State of Mind (DSOM)** framework, shifting the paradigm from a mere Git repository to a sovereign **Defense-in-Depth AIOps Engine**. Designed for high-availability IT operations, this framework positions an AI Cognitive Twin (The Senior ICT Consultant) at the core of a zero-trust infrastructure. The architecture forces deterministic behavior through strict spatial memory boundaries, procedural skill routing, and localised, self-healing orchestration patterns.
+This document deconstructs the operational architecture of the **Deep State of Mind (DSOM)** framework, shifting the paradigm from a mere Git repository to a sovereign **Defense-in-Depth AIOps Engine**. Designed for high-availability IT operations, this framework positions an AI Cognitive Twin (The Senior ICT Consultant) at the core of a zero-trust infrastructure. The architecture forces deterministic behaviour through strict spatial memory boundaries, procedural skill routing, and localised, self-healing orchestration patterns.
 
 ---
 
@@ -96,7 +96,7 @@ The framework drives system operations through three distinct, deterministic run
 
 ## 4. The Cognitive IT Consultant (AIOps Role)
 
-The DSOM framework transforms large language models into disciplined Senior ICT Consultants. The AI does not operate with unchecked autonomy; its behavior is rigorously controlled by the **Command-First Architecture**.
+The DSOM framework transforms large language models into disciplined Senior ICT Consultants. The AI does not operate with unchecked autonomy; its behaviour is rigorously controlled by the **Command-First Architecture**.
 
 - **Ansible Playbook Generation:** Rather than logging directly into remote production nodes to execute ad-hoc bash commands, the AI acts as a configuration engineer. It drafts idempotent `playbooks/` that humans review and execute.
 - **Procedural SOP Execution:** When tasked with operations, the AI leverages `.agents/skills/`. Through **Semantic Routing** and **Progressive Disclosure**, the AI identifies the exact standard operating procedure (e.g., `forensic-log-audit`) and strictly follows the embedded quality gates.
@@ -124,7 +124,7 @@ Transparency is the final layer of defense. Every configuration update, policy s
 
 ## Summary of System Benefits
 
-By binding an advanced AI to a strict, Git-backed spatial memory repository, the DSOM framework systematically converts open-ended generative behavior into a disciplined, auditable enterprise engineering asset.
+By binding an advanced AI to a strict, Git-backed spatial memory repository, the DSOM framework systematically converts open-ended generative behaviour into a disciplined, auditable enterprise engineering asset.
 
 1. **Context Leak Prevention:** Isolating spatial memory to the `.agents/brain` directory blocks unverified global memory persistence.
 2. **Flawless Orchestration:** Enforcing ASCII-only formatting guarantees clean log rendering and reliable execution across orchestration platforms.
