@@ -33,6 +33,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/pala
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-02_0048/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-05_2157/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-14_0758/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-18_0623/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/GOVERNANCE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/OPERATIONAL-GUIDE-PHP/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/OPERATIONAL-GUIDE/
@@ -240,6 +241,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palac
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-02_0048/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-05_2157/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-14_0758/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-18_0623/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/GOVERNANCE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/OPERATIONAL-GUIDE-PHP/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/OPERATIONAL-GUIDE/
