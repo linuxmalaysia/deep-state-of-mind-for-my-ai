@@ -3662,9 +3662,9 @@
 <div class="highlight"><pre><span></span><code>---
 okf_version: 0.1
 type: procedural_skill
-title: &quot;Procedural Specification: DSOM Token Calculator&quot;
-description: &quot;Calculates token counts via tiktoken in isolated uv Python runspaces.&quot;
-resource: &quot;file:///.agents/skills/dsom-token-calculator/SKILL.md&quot;
+title: "Procedural Specification: DSOM Token Calculator"
+description: "Calculates token counts via tiktoken in isolated uv Python runspaces."
+resource: "file:///.agents/skills/dsom-token-calculator/SKILL.md"
 <span class="gu">timestamp: 2026-07-18T14:52:39Z</span>
 <span class="gu">---</span>
 
@@ -3684,8 +3684,8 @@ resource: &quot;file:///.agents/skills/dsom-token-calculator/SKILL.md&quot;
 <span class="c1"># okf_version: 0.1</span>
 <span class="c1"># type: executable_script</span>
 
-<span class="c1"># title: &quot;Core Token Counter Runtime&quot;</span>
-<span class="c1"># license: &quot;GNU General Public License v3.0&quot;</span>
+<span class="c1"># title: "Core Token Counter Runtime"</span>
+<span class="c1"># license: "GNU General Public License v3.0"</span>
 
 <span class="c1"># ---</span>
 
@@ -3693,48 +3693,48 @@ resource: &quot;file:///.agents/skills/dsom-token-calculator/SKILL.md&quot;
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tiktoken</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">count_tokens_in_file</span><span class="p">(</span><span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads file content and calculates exact token footprints via tiktoken.&quot;&quot;&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">count_tokens_in_file</span><span class="p">(</span><span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"gpt-4"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Reads file content and calculates exact token footprints via tiktoken."""</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="n">encoding</span> <span class="o">=</span> <span class="n">tiktoken</span><span class="o">.</span><span class="n">encoding_for_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoding</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[ERROR] Failed to read target resource </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[ERROR] Failed to read target resource </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">return</span> <span class="mi">0</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">scan_path</span><span class="p">(</span><span class="n">target_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses and computes tokens for explicit files or workspace directory trees.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Parses and computes tokens for explicit files or workspace directory trees."""</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">target_path</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[ERROR] Target path &#39;</span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s2">&#39; does not exist in active workspace.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[ERROR] Target path '</span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s2">' does not exist in active workspace."</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="n">total_tokens</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">target_path</span><span class="p">):</span>
         <span class="n">tokens</span> <span class="o">=</span> <span class="n">count_tokens_in_file</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[FILE] </span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tokens</span><span class="si">}</span><span class="s2"> tokens&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[FILE] </span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tokens</span><span class="si">}</span><span class="s2"> tokens"</span><span class="p">)</span>
         <span class="n">total_tokens</span> <span class="o">=</span> <span class="n">tokens</span>
     <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">target_path</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[DIR] Initiating workspace sweep across target: </span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[DIR] Initiating workspace sweep across target: </span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">target_path</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
                 <span class="c1"># Restrict scanning scope to plaintext assets to prevent binary processing overhead</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.py&quot;</span><span class="p">,</span> <span class="s2">&quot;.md&quot;</span><span class="p">,</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.json&quot;</span><span class="p">,</span> <span class="s2">&quot;.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;.sh&quot;</span><span class="p">,</span> <span class="s2">&quot;.ps1&quot;</span><span class="p">,</span> <span class="s2">&quot;.css&quot;</span><span class="p">,</span> <span class="s2">&quot;.html&quot;</span><span class="p">,</span> <span class="s2">&quot;.js&quot;</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">".py"</span><span class="p">,</span> <span class="s2">".md"</span><span class="p">,</span> <span class="s2">".txt"</span><span class="p">,</span> <span class="s2">".json"</span><span class="p">,</span> <span class="s2">".yml"</span><span class="p">,</span> <span class="s2">".yaml"</span><span class="p">,</span> <span class="s2">".sh"</span><span class="p">,</span> <span class="s2">".ps1"</span><span class="p">,</span> <span class="s2">".css"</span><span class="p">,</span> <span class="s2">".html"</span><span class="p">,</span> <span class="s2">".js"</span><span class="p">)):</span>
                     <span class="k">continue</span>
                 <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
                 <span class="n">tokens</span> <span class="o">=</span> <span class="n">count_tokens_in_file</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">tokens</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; [ASSET] </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tokens</span><span class="si">}</span><span class="s2"> tokens&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" [ASSET] </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tokens</span><span class="si">}</span><span class="s2"> tokens"</span><span class="p">)</span>
                     <span class="n">total_tokens</span> <span class="o">+=</span> <span class="n">tokens</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[SUMMARY] TOTAL COMPUTED WORKSPACE TOKENS: </span><span class="si">{</span><span class="n">total_tokens</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[SUMMARY] TOTAL COMPUTED WORKSPACE TOKENS: </span><span class="si">{</span><span class="n">total_tokens</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[ERROR] Missing target parameter path.&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Usage: uv run --with tiktoken calculate-tokens.py [TARGET_PATH]&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"[ERROR] Missing target parameter path."</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Usage: uv run --with tiktoken calculate-tokens.py [TARGET_PATH]"</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="n">scan_path</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>

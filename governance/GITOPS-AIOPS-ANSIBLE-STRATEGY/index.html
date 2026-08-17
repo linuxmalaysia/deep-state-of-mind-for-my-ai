@@ -4139,14 +4139,14 @@ Scope: the component or role affected (e.g., kafka, logstash, haproxy)
 
 Examples:
   feat(ansible): add kafka broker idempotency role [Phase-12/v2.3]
-  fix(inventory): correct &#39;dsom_suffix&#39; variable for node-02 [Phase-14/v2.4]
+  fix(inventory): correct 'dsom_suffix' variable for node-02 [Phase-14/v2.4]
   docs(brain): update walkthrough mental anchor for Phase 15
 </code></pre></div>
 <h3 id="34-sync-ritual-the-push-pull-cycle">3.4 Sync Ritual (The Push-Pull Cycle)</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Tier 1 (Command Centre): Author &amp; Push</span>
 
 git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(scope): descriptive message [Phase-XX/vX.X]&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"feat(scope): descriptive message [Phase-XX/vX.X]"</span>
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 
 <span class="c1"># Tier 2 (Dev Bridge): Palace SOD — full automated reanimation</span>
@@ -4241,7 +4241,7 @@ ansible-playbook<span class="w"> </span>playbooks/site.yml<span class="w"> </spa
 
 <span class="c1"># Run a specific role/tag only</span>
 
-ansible-playbook<span class="w"> </span>playbooks/site.yml<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>--tags<span class="w"> </span><span class="s2">&quot;[tag_name]&quot;</span>
+ansible-playbook<span class="w"> </span>playbooks/site.yml<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>--tags<span class="w"> </span><span class="s2">"[tag_name]"</span>
 
 <span class="c1"># Encrypt a secrets file with vault</span>
 

@@ -3680,22 +3680,22 @@ DSOM with the Sovereign Markdown Palace addresses the <strong>state persistence<
 </ul>
 <h3 id="example-scenario">Example Scenario</h3>
 <div class="highlight"><pre><span></span><code>Session Day 1:
-  Human: &quot;Why are we using Macvlan instead of bridge networking?&quot;
-  AI: &quot;Because Elasticsearch nodes needed their own routable IPs for 
+  Human: "Why are we using Macvlan instead of bridge networking?"
+  AI: "Because Elasticsearch nodes needed their own routable IPs for 
        cluster discovery. Bridge networking caused split-brain under 
-       load. We tested this in Phase 42 and it failed with 3 nodes.&quot;
+       load. We tested this in Phase 42 and it failed with 3 nodes."
 Session Day 180 (new AI, same repo):
-  Human: &quot;Why are we using Macvlan?&quot;
-  AI: &quot;I don&#39;t know. The config shows Macvlan but there&#39;s no reasoning 
-       documented. Do you want to reconsider?&quot;
+  Human: "Why are we using Macvlan?"
+  AI: "I don't know. The config shows Macvlan but there's no reasoning 
+       documented. Do you want to reconsider?"
 </code></pre></div>
 <p>The outcome (Macvlan config) is in Git. The <em>reasoning</em> is gone.</p>
 <hr />
 <hr />
 <h2 id="current-mitigation-hibernation-notes">🔧 Current Mitigation: Hibernation Notes</h2>
 <p>The existing EOD ritual includes the <strong>Hibernation Notes export prompt</strong>, which asks the AI to dump its full in-session memory before the session ends:</p>
-<div class="highlight"><pre><span></span><code>&quot;List every memory you have stored about our progress and our chats of 
-this project... Cover: reasoning, tradeoffs, what failed and why...&quot;
+<div class="highlight"><pre><span></span><code>"List every memory you have stored about our progress and our chats of 
+this project... Cover: reasoning, tradeoffs, what failed and why..."
 </code></pre></div>
 <p><strong>Limitation:</strong> This relies on the AI's <strong>in-session memory at that moment</strong>. If the session was long, context was refreshed mid-session, or the AI forgot earlier reasoning, the export is incomplete.</p>
 <p>Hibernation Notes mitigate the gap — they do not close it.</p>
@@ -3704,16 +3704,16 @@ this project... Cover: reasoning, tradeoffs, what failed and why...&quot;
 <h3 id="the-principle">The Principle</h3>
 <p><strong>Capture reasoning in the moment, not at EOD.</strong> At every significant architectural decision, constraint, or failure, immediately ask the AI to log it:</p>
 <h3 id="the-command">The Command</h3>
-<div class="highlight"><pre><span></span><code>&quot;Log this decision to walkthrough.md:
- Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]&quot;
+<div class="highlight"><pre><span></span><code>"Log this decision to walkthrough.md:
+ Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
 </code></pre></div>
 <h3 id="example">Example</h3>
-<div class="highlight"><pre><span></span><code>&quot;Log this decision to walkthrough.md:
+<div class="highlight"><pre><span></span><code>"Log this decision to walkthrough.md:
  Decision: Macvlan networking for Elasticsearch nodes
  Alternatives: Bridge networking (tested Phase 42), Host networking (security risk)
  Reason: Nodes need routable IPs for cluster discovery. Bridge caused split-brain 
           under 3-node load test on 2026-03-15.
- Context: Revisit if we move to Kubernetes (CNI handles this differently).&quot;
+ Context: Revisit if we move to Kubernetes (CNI handles this differently)."
 </code></pre></div>
 <p>This entry lands in Git <strong>during the session</strong>, not hours later in a summary that may lose fidelity.</p>
 <h3 id="when-to-trigger-a-decision-log">When to Trigger a Decision Log</h3>

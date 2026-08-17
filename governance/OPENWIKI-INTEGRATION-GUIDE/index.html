@@ -3689,12 +3689,12 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># /// script</span>
 <span class="c1"># dependencies = [</span>
 
-<span class="c1">#     &quot;pyyaml&gt;=6.0&quot;,</span>
+<span class="c1">#     "pyyaml&gt;=6.0",</span>
 <span class="c1"># ]</span>
 
 <span class="c1"># ///</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="sd">OpenWiki Emulator &amp; Knowledge Graph Generator</span>
 <span class="sd">Author:   Harisfazillah Jamel (LinuxMalaysia)</span>
 <span class="sd">License:  GNU General Public License v3.0</span>
@@ -3702,7 +3702,7 @@
 <span class="sd">Description:</span>
 <span class="sd">Emulates the OpenWiki CLI documentation &amp; knowledge graph generation natively in Python</span>
 <span class="sd">using `uv run`, requiring zero Node.js binaries or external API keys.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
@@ -3712,31 +3712,31 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
 
 <span class="n">REPO_ROOT</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
-<span class="n">OPENWIKI_DIR</span> <span class="o">=</span> <span class="n">REPO_ROOT</span> <span class="o">/</span> <span class="s2">&quot;openwiki&quot;</span>
+<span class="n">OPENWIKI_DIR</span> <span class="o">=</span> <span class="n">REPO_ROOT</span> <span class="o">/</span> <span class="s2">"openwiki"</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_timestamp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%SZ&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%SZ"</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">ensure_openwiki_dirs</span><span class="p">():</span>
     <span class="n">dirs</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">OPENWIKI_DIR</span><span class="p">,</span>
-        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">&quot;architecture&quot;</span><span class="p">,</span>
-        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">&quot;governance&quot;</span><span class="p">,</span>
-        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">&quot;memory&quot;</span><span class="p">,</span>
-        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">&quot;automation&quot;</span><span class="p">,</span>
-        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">&quot;integrations&quot;</span><span class="p">,</span>
-        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">&quot;publishing&quot;</span><span class="p">,</span>
-        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">&quot;quality&quot;</span><span class="p">,</span>
+        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">"architecture"</span><span class="p">,</span>
+        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">"governance"</span><span class="p">,</span>
+        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">"memory"</span><span class="p">,</span>
+        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">"automation"</span><span class="p">,</span>
+        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">"integrations"</span><span class="p">,</span>
+        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">"publishing"</span><span class="p">,</span>
+        <span class="n">OPENWIKI_DIR</span> <span class="o">/</span> <span class="s2">"quality"</span><span class="p">,</span>
     <span class="p">]</span>
     <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">:</span>
         <span class="n">d</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[OpenWiki Emulator] Generating native wiki under </span><span class="si">{</span><span class="n">OPENWIKI_DIR</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[OpenWiki Emulator] Generating native wiki under </span><span class="si">{</span><span class="n">OPENWIKI_DIR</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
     <span class="n">ensure_openwiki_dirs</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[OpenWiki Emulator] Successfully updated ./openwiki/ structure.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"[OpenWiki Emulator] Successfully updated ./openwiki/ structure."</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="ai-prompt-template-for-building-custom-emulators">AI Prompt Template for Building Custom Emulators</h3>
@@ -3745,19 +3745,19 @@
 AI PROMPT TEMPLATE: BUILD A NATIVE PYTHON OPENWIKI EMULATOR SCRIPT
 ================================================================================
 
-&quot;You are a Senior Systems Architect. I want you to build a native Python
+"You are a Senior Systems Architect. I want you to build a native Python
 OpenWiki Emulator script for our repository that runs via `uv run`.
 
 Requirements:
 1. Create a script at `tools/openwiki_emulator.py` with inline `uv` metadata (`pyyaml&gt;=6.0`).
-2. Analyze our repository&#39;s directory topology, key configuration files (README.md, AGENTS.md, etc.), and test suites.
+2. Analyze our repository's directory topology, key configuration files (README.md, AGENTS.md, etc.), and test suites.
 3. Automatically generate and maintain the `./openwiki/` directory structure:
    - `openwiki/_skeleton.md` (Inventory ranking, planned page tree, evidence briefs).
    - `openwiki/quickstart.md` (Topology map and task-routing table).
    - Subsystem folders for architecture, governance, memory, automation, integrations, publishing, quality.
    - `openwiki/.last-update.json` (Containing ISO timestamp and compilation status).
 4. All generated markdown files MUST include OKF v0.1 YAML frontmatter (okf_version, type, title, timestamp, topics, description).
-5. The script MUST run non-interactively without Node.js binaries, npm packages, or external API keys.&quot;
+5. The script MUST run non-interactively without Node.js binaries, npm packages, or external API keys."
 ================================================================================
 </code></pre></div>
 <hr />

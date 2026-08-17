@@ -3539,9 +3539,9 @@
 <h2 id="high-level-architecture">High-level architecture</h2>
 <p>The DSOM knowledge layer bridges localised documents to active AI agents via two complementary components:</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
-    Files[&quot;Sovereign Markdown Files&lt;br/&gt;(docs/, openwiki/)&quot;] --&gt;|Local Indexing| Server[&quot;FastMCP Server&lt;br/&gt;(tools/mcp/server.py)&quot;]
-    Files --&gt;|Compilation| Web[&quot;Static Docs Site&lt;br/&gt;(GitHub Pages / RTD)&quot;]
-    Server --&gt;|JSON-RPC via stdio| Agent[&quot;AI Agent&lt;br/&gt;(Cursor, Copilot, Claude)&quot;]
+    Files["Sovereign Markdown Files&lt;br/&gt;(docs/, openwiki/)"] --&gt;|Local Indexing| Server["FastMCP Server&lt;br/&gt;(tools/mcp/server.py)"]
+    Files --&gt;|Compilation| Web["Static Docs Site&lt;br/&gt;(GitHub Pages / RTD)"]
+    Server --&gt;|JSON-RPC via stdio| Agent["AI Agent&lt;br/&gt;(Cursor, Copilot, Claude)"]
 </code></pre></div>
 <h2 id="why-pure-python-openwiki">Why pure Python OpenWiki?</h2>
 <p>Historically, OpenWiki implementations required heavy Node.js runtimes or cloud compiler keys. This design violated <strong>Sovereign AI Rule 27 (Zero-Binary Mandate)</strong>.</p>

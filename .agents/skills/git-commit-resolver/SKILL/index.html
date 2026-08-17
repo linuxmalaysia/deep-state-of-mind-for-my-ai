@@ -3645,7 +3645,7 @@ As a result, some commit IDs stored in the <code>.agents/brain/</code> memory (e
 <p>If a commit hash is invalid, do not assume the work was lost. Find the context of the commit by reading the surrounding text in the brain artifact or ledger to determine the <strong>Commit Subject/Message</strong> or <strong>Date</strong>.</p>
 <h3 id="2-search-git-log-by-message">2. Search Git Log by Message</h3>
 <p>Use the <code>git log</code> command with the <code>--grep</code> flag to search for the original commit message.</p>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>log<span class="w"> </span>--grep<span class="o">=</span><span class="s2">&quot;&lt;part of the commit message&gt;&quot;</span><span class="w"> </span>--oneline
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>log<span class="w"> </span>--grep<span class="o">=</span><span class="s2">"&lt;part of the commit message&gt;"</span><span class="w"> </span>--oneline
 </code></pre></div>
 <em>Example:</em> If the old hash <code>abc1234</code> was for "docs: update gitbook architecture", run:
 <code>git log --grep="update gitbook architecture" --oneline</code></p>

@@ -3643,7 +3643,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">CustomLoader</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="c1"># Copy SafeLoader&#39;s implicit resolver map into a loader-local map with independent list copies</span>
+<span class="c1"># Copy SafeLoader's implicit resolver map into a loader-local map with independent list copies</span>
 <span class="n">CustomLoader</span><span class="o">.</span><span class="n">yaml_implicit_resolvers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">key</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">resolvers</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">resolvers</span> <span class="ow">in</span> <span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="o">.</span><span class="n">yaml_implicit_resolvers</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
@@ -3654,7 +3654,7 @@
     <span class="n">CustomLoader</span><span class="o">.</span><span class="n">yaml_implicit_resolvers</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">regexp</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">regexp</span> <span class="ow">in</span> <span class="n">resolvers</span>
-        <span class="k">if</span> <span class="n">tag</span> <span class="o">!=</span> <span class="s2">&quot;tag:yaml.org,2002:timestamp&quot;</span>
+        <span class="k">if</span> <span class="n">tag</span> <span class="o">!=</span> <span class="s2">"tag:yaml.org,2002:timestamp"</span>
     <span class="p">]</span>
 </code></pre></div>
 <p>This guarantees raw timestamps remain string types while preserving boolean parsing across all compliance scripts (<code>apply_okf_frontmatter.py</code>, <code>refactor_okf.py</code>).</p>

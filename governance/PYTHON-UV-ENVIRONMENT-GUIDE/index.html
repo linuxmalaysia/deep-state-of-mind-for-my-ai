@@ -3725,7 +3725,7 @@
 <h2 id="installation">Installation</h2>
 <h3 id="windows-powershell">Windows (PowerShell)</h3>
 <p>Execute the following native command to securely install <code>uv</code> into your user profile (<code>~/.local/bin</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">"irm https://astral.sh/uv/install.ps1 | iex"</span>
 </code></pre></div>
 <h3 id="linux-macos-termux">Linux / macOS / Termux</h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
@@ -3746,7 +3746,7 @@
 <p>When scaffolding a new Python dependency isolated to a specific logic wing:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>my-project
 <span class="nb">cd</span><span class="w"> </span>my-project
-uv<span class="w"> </span>add<span class="w"> </span>requests<span class="w">    </span><span class="c1"># Installs the &#39;requests&#39; library instantly</span>
+uv<span class="w"> </span>add<span class="w"> </span>requests<span class="w">    </span><span class="c1"># Installs the 'requests' library instantly</span>
 uv<span class="w"> </span>run<span class="w"> </span>main.py<span class="w">     </span><span class="c1"># Runs your code using the isolated environment</span>
 </code></pre></div>
 <h2 id="why-this-matters-for-dsom-sovereign-ai-agents">Why this matters for DSOM Sovereign AI Agents</h2>

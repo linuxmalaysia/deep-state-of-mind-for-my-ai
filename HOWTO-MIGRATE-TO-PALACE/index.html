@@ -3707,7 +3707,7 @@ bash<span class="w"> </span>tools/palace-sync.sh<span class="w"> </span>--backfi
 
 cp<span class="w"> </span>/path/to/dsom-reference/.agents/brain/palace_registry.md<span class="w"> </span>.agents/brain/palace_registry.md
 
-<span class="c1"># Then edit to match YOUR project&#39;s Wing/Hall structure</span>
+<span class="c1"># Then edit to match YOUR project's Wing/Hall structure</span>
 </code></pre></div>
 <p>The registry should list:</p>
 <ul>
@@ -3755,12 +3755,12 @@ Your distilled knowledge here.
 <hr />
 <h3 id="phase-6-commit-the-palace">Phase 6: Commit the Palace</h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.agents/brain/
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(palace): initialise Sovereign Markdown Palace v1.0 — [N] Rooms backfilled&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"feat(palace): initialise Sovereign Markdown Palace v1.0 — [N] Rooms backfilled"</span>
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <hr />
 <h3 id="phase-7-tag-the-milestone">Phase 7: Tag the Milestone</h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>vX.X.X-palace<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat: Sovereign Markdown Palace v1.0 — spatial memory initialised&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>vX.X.X-palace<span class="w"> </span>-m<span class="w"> </span><span class="s2">"feat: Sovereign Markdown Palace v1.0 — spatial memory initialised"</span>
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>vX.X.X-palace
 </code></pre></div>
 <hr />
@@ -3779,7 +3779,7 @@ bash<span class="w"> </span>tools/sod-palace.sh<span class="w">  </span><span cl
 
 <span class="c1"># Or manual (Linux/Windows)</span>
 
-bash<span class="w"> </span>tools/reanimate.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="s2">&quot;\[14\]&quot;</span>
+bash<span class="w"> </span>tools/reanimate.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="s2">"\[14\]"</span>
 </code></pre></div>
 <p>Expected output:</p>
 <div class="highlight"><pre><span></span><code>### [14] PALACE REGISTRY (Spatial Knowledge Map)
@@ -3801,7 +3801,7 @@ bash<span class="w"> </span>tools/hibernation.sh
 <hr />
 <h2 id="verify-your-tool-versions">🧩 Verify Your Tool Versions</h2>
 <p>After pulling from the reference repo, confirm you have the right script versions:</p>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;^VERSION\|^v2\.&quot;</span><span class="w"> </span>tools/hibernation.sh<span class="w"> </span>tools/reanimate.sh<span class="w"> </span>tools/palace-sync.sh
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"^VERSION\|^v2\."</span><span class="w"> </span>tools/hibernation.sh<span class="w"> </span>tools/reanimate.sh<span class="w"> </span>tools/palace-sync.sh
 </code></pre></div>
 <p>Expected:</p>
 <table>
@@ -3828,7 +3828,7 @@ bash<span class="w"> </span>tools/hibernation.sh
 </table>
 <div class="highlight"><pre><span></span><code><span class="c"># Windows</span>
 
-<span class="nb">Select-String</span> <span class="n">-Path</span> <span class="n">tools</span><span class="p">\</span><span class="n">hibernation</span><span class="p">.</span><span class="n">ps1</span><span class="p">,</span><span class="n">tools</span><span class="p">\</span><span class="n">reanimate</span><span class="p">.</span><span class="n">ps1</span><span class="p">,</span><span class="n">tools</span><span class="p">\</span><span class="n">palace-sync</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Pattern</span> <span class="s1">&#39;^\$VERSION&#39;</span>
+<span class="nb">Select-String</span> <span class="n">-Path</span> <span class="n">tools</span><span class="p">\</span><span class="n">hibernation</span><span class="p">.</span><span class="n">ps1</span><span class="p">,</span><span class="n">tools</span><span class="p">\</span><span class="n">reanimate</span><span class="p">.</span><span class="n">ps1</span><span class="p">,</span><span class="n">tools</span><span class="p">\</span><span class="n">palace-sync</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Pattern</span> <span class="s1">'^\$VERSION'</span>
 </code></pre></div>
 <p>Expected:</p>
 <table>

@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
-timestamp: "2026-08-14T05:45:10Z"
+timestamp: "2026-08-15T01:00:47Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
 ---
@@ -18,9 +18,10 @@ This file maintains a condensed, token-efficient representation of the project's
 ## Condensed History
 
 
+
+- [Auto-Sync] Modified files: .agents/brain/.palace-sync-marker (+1, -1), .agents/brain/checkpoint_summary.txt (+17, -20), .agents/brain/jules_pr_history.md (+124, -0), .agents/brain/palace_update_proposal_2026-08-14_0758.md (+111, -0), .agents/brain/walkthrough.md (+15, -1), .agents/skills/jules-antigravity-sync/SKILL.md (+8, -3), LEGAL-NOTICE.md (+1, -1), README.md (+7, -17), START-HERE.md (+4, -3), SUMMARY.md (+1, -0), docs/LEGAL-NOTICE.md (+48, -0), docs/README.md (+629, -0), docs/SECURITY.md (+77, -0), docs/START-HERE.md (+203, -0), docs/explanation/diataxis.md (+0, -1), docs/explanation/index.md (+0, -1), docs/explanation/openwiki-mcp-architecture.md (+0, -1), docs/how-to/audit-and-apply-frontmatter.md (+0, -1), docs/how-to/generate-sitemaps-seo.md (+0, -1), docs/how-to/index.md (+0, -1), docs/how-to/run-fastmcp-server.md (+0, -1), docs/how-to/use-openwiki-emulator.md (+0, -1), docs/reference/apply_okf_frontmatter.md (+0, -1), docs/reference/bench_brain.md (+0, -1), docs/reference/dsom_token_auditor.md (+0, -1), docs/reference/generate_sitemaps.md (+0, -1), docs/reference/index.md (+0, -1), docs/reference/mcp_server.md (+0, -1), docs/reference/mkdocs_hooks.md (+0, -1), docs/reference/openwiki_emulator.md (+0, -1), docs/reference/refactor_okf.md (+0, -1), docs/sitemap.txt (+165, -0), docs/sitemap.xml (+660, -0), docs/tutorials/getting-started.md (+0, -1), docs/tutorials/index.md (+0, -1), mkdocs.yml (+24, -23), sitemap.txt (+165, -0), sitemap.xml (+660, -0), tests/test_docs_symlinks.py (+17, -29).
 - [Auto-Sync] Modified files: .agents/brain/current_state.dsom (+4, -0), .github/workflows/docs-ci.yml (+74, -0), SUMMARY.md (+22, -0), docs/SUMMARY.md (+49, -0), docs/explanation/diataxis.md (+62, -0), docs/explanation/index.md (+22, -0), docs/explanation/openwiki-mcp-architecture.md (+43, -0), docs/how-to/audit-and-apply-frontmatter.md (+55, -0), docs/how-to/generate-sitemaps-seo.md (+52, -0), docs/how-to/index.md (+24, -0), docs/how-to/run-fastmcp-server.md (+64, -0), docs/how-to/use-openwiki-emulator.md (+52, -0), docs/reference/apply_okf_frontmatter.md (+56, -0), docs/reference/bench_brain.md (+54, -0), docs/reference/dsom_token_auditor.md (+51, -0), docs/reference/generate_sitemaps.md (+66, -0), docs/reference/index.md (+28, -0), docs/reference/mcp_server.md (+51, -0), docs/reference/mkdocs_hooks.md (+41, -0), docs/reference/openwiki_emulator.md (+67, -0), docs/reference/refactor_okf.md (+42, -0), docs/sitemap.txt (+62, -0), docs/sitemap.xml (+727, -479), docs/tutorials/getting-started.md (+79, -0), docs/tutorials/index.md (+21, -0), llms-context.xml (+6877, -0), llms-full.txt (+7036, -0), llms.txt (+21, -0), mkdocs.yml (+24, -0), openwiki/_skeleton.md (+1, -1), sitemap.txt (+62, -0), sitemap.xml (+727, -479), tests/test_skeleton_resource_field.py (+0, -189), tools/check_docs_links.py (+117, -0), tools/parse_llms_txt.py (+179, -0).
 - [Auto-Sync] Modified files: tools/check_docs_links.py (+19, -4), tools/parse_llms_txt.py (+40, -5).
-- [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+382, -0).
 
 
 

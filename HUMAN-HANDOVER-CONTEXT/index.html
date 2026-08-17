@@ -3512,7 +3512,7 @@ git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </
 <div class="highlight"><pre><span></span><code><span class="c1"># Run from T2 WSL2 — promote project to T3 orchestrator</span>
 
 rsync<span class="w"> </span>-avz<span class="w"> </span>--checksum<span class="w"> </span>--delete<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--exclude<span class="w"> </span><span class="s1">&#39;.git&#39;</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s1">&#39;.gemini&#39;</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s1">&#39;.agents&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--exclude<span class="w"> </span><span class="s1">'.git'</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s1">'.gemini'</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s1">'.agents'</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>./<span class="w"> </span>dsom-admin@<span class="o">[</span>T3_IP<span class="o">]</span>:/opt/<span class="o">[</span>YOUR_PROJECT_NAME<span class="o">]</span>/
 </code></pre></div>
 <p><strong>Step 3 — Verify T3 Ansible Connectivity</strong></p>
@@ -3524,7 +3524,7 @@ ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </s
 <div class="highlight"><pre><span></span><code><span class="c"># Run from Windows PowerShell (T1) — bridges through T2 → T3</span>
 
 <span class="n">wsl</span> <span class="n">-d</span> <span class="n">dsom-control-almalinux10</span> <span class="n">-u</span> <span class="n">dsom-admin</span> <span class="n">-e</span> <span class="n">bash</span> <span class="n">-c</span> <span class="p">`</span>
-    <span class="s2">&quot;ssh -t dsom-admin@[T3_IP] &#39;cd /opt/[YOUR_PROJECT_NAME] &amp;&amp; bash tools/audit-pre-flight.sh&#39;&quot;</span>
+    <span class="s2">"ssh -t dsom-admin@[T3_IP] 'cd /opt/[YOUR_PROJECT_NAME] &amp;&amp; bash tools/audit-pre-flight.sh'"</span>
 </code></pre></div>
 <hr />
 <h4 id="sovereign-directive-the-handshake-trigger">🏁 Sovereign Directive (The Handshake Trigger)</h4>

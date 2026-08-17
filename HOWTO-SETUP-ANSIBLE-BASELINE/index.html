@@ -4078,7 +4078,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>.logs
 
 <span class="c1"># Protect the vault directory — NEVER commit secrets</span>
 
-cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 
 <span class="s"># Ansible Vault &amp; Sensitive Files</span>
 
@@ -4090,14 +4090,14 @@ cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore<span class
 
 <span class="c1"># Create vault .gitignore placeholder</span>
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# Vault secrets are NEVER committed to Git&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>vault/.gitignore
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"# Vault secrets are NEVER committed to Git"</span><span class="w"> </span>&gt;<span class="w"> </span>vault/.gitignore
 </code></pre></div>
 <p><strong>Outcome:</strong> The standard DSOM Ansible directory skeleton exists at your project root.</p>
 <hr />
 <h3 id="step-2-create-ansiblecfg">Step 2: Create <code>ansible.cfg</code></h3>
 <p><strong>Action:</strong> Create the Ansible configuration file at the project root.</p>
 <p><strong>Command:</strong></p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>ansible.cfg<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>ansible.cfg<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 <span class="s">[defaults]</span>
 <span class="s">inventory           = inventory/hosts.yml</span>
 <span class="s">roles_path          = roles</span>
@@ -4125,7 +4125,7 @@ cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore<span class
 <h3 id="step-3-create-inventoryhostsyml">Step 3: Create <code>inventory/hosts.yml</code></h3>
 <p><strong>Action:</strong> Create the inventory template. Replace all <code>[PLACEHOLDER]</code> values with your actual node details.</p>
 <p><strong>Command:</strong></p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/hosts.yml<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/hosts.yml<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 <span class="s">---</span>
 
 <span class="s"># DSOM Ansible Inventory Template</span>
@@ -4136,30 +4136,30 @@ cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore<span class
 
 <span class="s">all:</span>
 <span class="s">  vars:</span>
-<span class="s">    ansible_user: &quot;[YOUR_DEPLOY_USER]&quot;       # e.g., example-user, dsom-admin</span>
-<span class="s">    ansible_ssh_private_key_file: &quot;~/.ssh/[YOUR_KEY_NAME]&quot;</span>
-<span class="s">    ansible_python_interpreter: &quot;/usr/bin/python3&quot;</span>
+<span class="s">    ansible_user: "[YOUR_DEPLOY_USER]"       # e.g., example-user, dsom-admin</span>
+<span class="s">    ansible_ssh_private_key_file: "~/.ssh/[YOUR_KEY_NAME]"</span>
+<span class="s">    ansible_python_interpreter: "/usr/bin/python3"</span>
 
 <span class="s">  children:</span>
 <span class="s">    # ── Tier 2: Development / Dev Bridge ──────────────────────────────</span>
 <span class="s">    dev:</span>
 <span class="s">      hosts:</span>
 <span class="s">        dev-node-01:</span>
-<span class="s">          ansible_host: &quot;[DEV_IP_OR_HOSTNAME]&quot;   # e.g., 10.10.10.11</span>
-<span class="s">          ansible_user: &quot;[DEV_USER]&quot;              # e.g., example-user</span>
+<span class="s">          ansible_host: "[DEV_IP_OR_HOSTNAME]"   # e.g., 10.10.10.11</span>
+<span class="s">          ansible_user: "[DEV_USER]"              # e.g., example-user</span>
 
 <span class="s">    # ── Tier 3: Staging / UAT ─────────────────────────────────────────</span>
 <span class="s">    staging:</span>
 <span class="s">      hosts:</span>
 <span class="s">        staging-node-01:</span>
-<span class="s">          ansible_host: &quot;[STAGING_IP_OR_HOSTNAME]&quot;</span>
+<span class="s">          ansible_host: "[STAGING_IP_OR_HOSTNAME]"</span>
 
 <span class="s">    # ── Tier 4: Production ────────────────────────────────────────────</span>
 <span class="s">    production:</span>
 <span class="s">      hosts:</span>
 <span class="s">        prod-node-01:</span>
-<span class="s">          ansible_host: &quot;[PROD_IP_OR_HOSTNAME]&quot;</span>
-<span class="s">          ansible_user: &quot;[PROD_USER]&quot;             # e.g., dsom-admin</span>
+<span class="s">          ansible_host: "[PROD_IP_OR_HOSTNAME]"</span>
+<span class="s">          ansible_user: "[PROD_USER]"             # e.g., dsom-admin</span>
 <span class="s">EOF</span>
 </code></pre></div>
 <p><strong>Outcome:</strong> <code>inventory/hosts.yml</code> is created as the node topology source of truth.</p>
@@ -4167,27 +4167,27 @@ cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore<span class
 <h3 id="step-4-create-group-variables">Step 4: Create Group Variables</h3>
 <p><strong>Action:</strong> Create baseline variable files for all hosts and environment groups.</p>
 <p><strong>Command:</strong></p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/group_vars/all.yml<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/group_vars/all.yml<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 <span class="s">---</span>
 
 <span class="s"># Variables applied to ALL hosts</span>
 
-<span class="s">project_name:   &quot;[YOUR_PROJECT_NAME]&quot;</span>
-<span class="s">project_path:   &quot;/opt/[YOUR_PROJECT_NAME]&quot;</span>
-<span class="s">deploy_user:    &quot;[YOUR_DEPLOY_USER]&quot;</span>
-<span class="s">deploy_uid:     &quot;[YOUR_UID]&quot;          # e.g., 1000 (dev) or 2001 (prod)</span>
+<span class="s">project_name:   "[YOUR_PROJECT_NAME]"</span>
+<span class="s">project_path:   "/opt/[YOUR_PROJECT_NAME]"</span>
+<span class="s">deploy_user:    "[YOUR_DEPLOY_USER]"</span>
+<span class="s">deploy_uid:     "[YOUR_UID]"          # e.g., 1000 (dev) or 2001 (prod)</span>
 <span class="s">EOF</span>
 
-cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/group_vars/production.yml<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/group_vars/production.yml<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 <span class="s">---</span>
 
 <span class="s"># Production-specific overrides</span>
 
-<span class="s">deploy_uid:   &quot;[PROD_UID]&quot;            # e.g., 2001</span>
-<span class="s">project_path: &quot;/opt/[YOUR_PROJECT_NAME]-prod&quot;</span>
+<span class="s">deploy_uid:   "[PROD_UID]"            # e.g., 2001</span>
+<span class="s">project_path: "/opt/[YOUR_PROJECT_NAME]-prod"</span>
 
 <span class="s"># Vault-injected variables — DO NOT put secrets here</span>
-<span class="s"># credentials: &quot;{{ vault_production_credentials }}&quot;</span>
+<span class="s"># credentials: "{{ vault_production_credentials }}"</span>
 
 <span class="s">EOF</span>
 </code></pre></div>
@@ -4196,7 +4196,7 @@ cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/group_vars/prod
 <h3 id="step-5-create-the-pre-flight-verification-playbook">Step 5: Create the Pre-flight Verification Playbook</h3>
 <p><strong>Action:</strong> Create a playbook to verify the Ansible baseline is functional before any deployment.</p>
 <p><strong>Command:</strong></p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>playbooks/preflight.yml<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>playbooks/preflight.yml<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 <span class="s">---</span>
 
 <span class="s"># DSOM Pre-flight Verification Playbook</span>
@@ -4205,17 +4205,17 @@ cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/group_vars/prod
 <span class="s"># Usage:   ansible-playbook playbooks/preflight.yml</span>
 <span class="s"># Rule:    This playbook MUST pass before any other playbook is run.</span>
 
-<span class="s">- name: &quot;DSOM Pre-flight Verification&quot;</span>
+<span class="s">- name: "DSOM Pre-flight Verification"</span>
 <span class="s">  hosts: all</span>
 <span class="s">  gather_facts: true</span>
 <span class="s">  become: false</span>
 
 <span class="s">  tasks:</span>
-<span class="s">    - name: &quot;Verify node connectivity and Python availability&quot;</span>
+<span class="s">    - name: "Verify node connectivity and Python availability"</span>
 <span class="s">      ansible.builtin.ping:</span>
 <span class="s">      register: ping_result</span>
 
-<span class="s">    - name: &quot;Display node OS information&quot;</span>
+<span class="s">    - name: "Display node OS information"</span>
 <span class="s">      ansible.builtin.debug:</span>
 <span class="s">        msg: &gt;</span>
 <span class="s">          Node: {{ inventory_hostname }} |</span>
@@ -4223,25 +4223,25 @@ cat<span class="w"> </span>&gt;<span class="w"> </span>inventory/group_vars/prod
 <span class="s">          Kernel: {{ ansible_kernel }} |</span>
 <span class="s">          Python: {{ ansible_python_version }}</span>
 
-<span class="s">    - name: &quot;Verify deploy user identity&quot;</span>
-<span class="s">      ansible.builtin.command: &quot;id&quot;</span>
+<span class="s">    - name: "Verify deploy user identity"</span>
+<span class="s">      ansible.builtin.command: "id"</span>
 <span class="s">      register: id_output</span>
 <span class="s">      changed_when: false</span>
 
-<span class="s">    - name: &quot;Show deploy user identity&quot;</span>
+<span class="s">    - name: "Show deploy user identity"</span>
 <span class="s">      ansible.builtin.debug:</span>
-<span class="s">        msg: &quot;Identity on {{ inventory_hostname }}: {{ id_output.stdout }}&quot;</span>
+<span class="s">        msg: "Identity on {{ inventory_hostname }}: {{ id_output.stdout }}"</span>
 
-<span class="s">    - name: &quot;Verify project path exists (if already deployed)&quot;</span>
+<span class="s">    - name: "Verify project path exists (if already deployed)"</span>
 <span class="s">      ansible.builtin.stat:</span>
-<span class="s">        path: &quot;{{ project_path }}&quot;</span>
+<span class="s">        path: "{{ project_path }}"</span>
 <span class="s">      register: project_dir</span>
 
-<span class="s">    - name: &quot;Report project path status&quot;</span>
+<span class="s">    - name: "Report project path status"</span>
 <span class="s">      ansible.builtin.debug:</span>
 <span class="s">        msg: &gt;</span>
-<span class="s">          Project path &#39;{{ project_path }}&#39; on {{ inventory_hostname }}:</span>
-<span class="s">          {{ &#39;EXISTS&#39; if project_dir.stat.exists else &#39;NOT YET CREATED (expected for fresh deploy)&#39; }}</span>
+<span class="s">          Project path '{{ project_path }}' on {{ inventory_hostname }}:</span>
+<span class="s">          {{ 'EXISTS' if project_dir.stat.exists else 'NOT YET CREATED (expected for fresh deploy)' }}</span>
 <span class="s">EOF</span>
 </code></pre></div>
 <p><strong>Outcome:</strong> The pre-flight playbook exists and is ready to validate the environment.</p>
@@ -4273,11 +4273,11 @@ ansible-playbook<span class="w"> </span>playbooks/preflight.yml
 <p><strong>Command:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create and encrypt a secrets file</span>
 
-cat<span class="w"> </span>&gt;<span class="w"> </span>/tmp/secrets_draft.yml<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>/tmp/secrets_draft.yml<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 <span class="s">---</span>
-<span class="s">vault_deploy_password:    &quot;CHANGE_ME&quot;</span>
-<span class="s">vault_db_root_password:   &quot;CHANGE_ME&quot;</span>
-<span class="s">vault_api_key:            &quot;CHANGE_ME&quot;</span>
+<span class="s">vault_deploy_password:    "CHANGE_ME"</span>
+<span class="s">vault_db_root_password:   "CHANGE_ME"</span>
+<span class="s">vault_api_key:            "CHANGE_ME"</span>
 <span class="s">EOF</span>
 
 <span class="c1"># Encrypt it with ansible-vault</span>
@@ -4299,37 +4299,37 @@ ansible-vault<span class="w"> </span>view<span class="w"> </span>vault/productio
 <p><strong>Command:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Append Ansible checks to the existing audit script</span>
 
-cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>tools/audit-pre-flight.sh<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>tools/audit-pre-flight.sh<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 
 <span class="s"># ── Ansible Pre-flight Checks ─────────────────────────────────────────────────</span>
 
-<span class="s">echo &quot;--- [ANSIBLE] Verifying Ansible Baseline ---&quot;</span>
+<span class="s">echo "--- [ANSIBLE] Verifying Ansible Baseline ---"</span>
 
 <span class="s">if ! command -v ansible &amp;&gt;/dev/null; then</span>
-<span class="s">  echo &quot;[FAIL] Ansible is not installed. Run: pip3 install ansible&quot;</span>
+<span class="s">  echo "[FAIL] Ansible is not installed. Run: pip3 install ansible"</span>
 <span class="s">  exit 1</span>
 <span class="s">fi</span>
-<span class="s">echo &quot;[OK] Ansible: $(ansible --version | head -1)&quot;</span>
+<span class="s">echo "[OK] Ansible: $(ansible --version | head -1)"</span>
 
-<span class="s">if [ ! -f &quot;inventory/hosts.yml&quot; ]; then</span>
-<span class="s">  echo &quot;[FAIL] inventory/hosts.yml is missing. Create it from the DSOM template.&quot;</span>
+<span class="s">if [ ! -f "inventory/hosts.yml" ]; then</span>
+<span class="s">  echo "[FAIL] inventory/hosts.yml is missing. Create it from the DSOM template."</span>
 <span class="s">  exit 1</span>
 <span class="s">fi</span>
-<span class="s">echo &quot;[OK] inventory/hosts.yml exists.&quot;</span>
+<span class="s">echo "[OK] inventory/hosts.yml exists."</span>
 
-<span class="s">if [ ! -f &quot;ansible.cfg&quot; ]; then</span>
-<span class="s">  echo &quot;[WARN] ansible.cfg is missing. Using Ansible defaults.&quot;</span>
+<span class="s">if [ ! -f "ansible.cfg" ]; then</span>
+<span class="s">  echo "[WARN] ansible.cfg is missing. Using Ansible defaults."</span>
 <span class="s">else</span>
-<span class="s">  echo &quot;[OK] ansible.cfg exists.&quot;</span>
+<span class="s">  echo "[OK] ansible.cfg exists."</span>
 <span class="s">fi</span>
 
-<span class="s">if [ ! -f &quot;playbooks/preflight.yml&quot; ]; then</span>
-<span class="s">  echo &quot;[WARN] playbooks/preflight.yml is missing. Add it for full pre-flight support.&quot;</span>
+<span class="s">if [ ! -f "playbooks/preflight.yml" ]; then</span>
+<span class="s">  echo "[WARN] playbooks/preflight.yml is missing. Add it for full pre-flight support."</span>
 <span class="s">else</span>
-<span class="s">  echo &quot;[OK] playbooks/preflight.yml exists.&quot;</span>
+<span class="s">  echo "[OK] playbooks/preflight.yml exists."</span>
 <span class="s">fi</span>
 
-<span class="s">echo &quot;[OK] Ansible baseline verified.&quot;</span>
+<span class="s">echo "[OK] Ansible baseline verified."</span>
 <span class="s">EOF</span>
 </code></pre></div>
 <p><strong>Outcome:</strong> The DSOM audit script now validates the Ansible baseline as part of every session Reanimation.</p>
