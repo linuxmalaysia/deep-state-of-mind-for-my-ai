@@ -2174,6 +2174,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bidirectional-handover-matrix-antigravity-jules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bidirectional Handover Matrix (Antigravity ⟷ Jules)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#procedural-sync-protocol-sop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3858,6 +3869,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bidirectional-handover-matrix-antigravity-jules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bidirectional Handover Matrix (Antigravity ⟷ Jules)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#procedural-sync-protocol-sop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3982,6 +4004,51 @@
 <li><strong>Accomplishment</strong>: Deconstructed monolithic test suites into modular submodules under <code>tests/unit/</code> (<code>ansible.py</code>, <code>containers.py</code>, <code>llms.py</code>, <code>markdown.py</code>, <code>sitemaps.py</code>). Standardised test assertions for container digests, OKF frontmatter AST nodes, and sitemaps fixtures, scaling the automated test suite to 724 unit tests.</li>
 <li><strong>Testing Layer</strong>: Verified via <code>tests/test_unit.py</code> and modular package discovery.</li>
 </ul>
+<hr />
+<h2 id="bidirectional-handover-matrix-antigravity-jules">Bidirectional Handover Matrix (Antigravity ⟷ Jules)</h2>
+<p>When transitioning active session control between Google Antigravity and Google Jules, both agents must utilise the shared spatial ledgers to communicate what was accomplished and what needs to be executed next:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Handover File</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Read Priority</th>
+<th style="text-align: left;">Update Moment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>.agents/brain/task.md</code></td>
+<td style="text-align: left;"><strong>Live Task Board &amp; Immediate Next Steps</strong></td>
+<td style="text-align: left;"><strong>High</strong> (Step 1)</td>
+<td style="text-align: left;">Check off <code>[x]</code> upon task completion; append <code>[ ]</code> for pending actions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.agents/brain/walkthrough.md</code></td>
+<td style="text-align: left;"><strong>Chronological Session Anchors</strong></td>
+<td style="text-align: left;"><strong>High</strong> (Step 2)</td>
+<td style="text-align: left;">Append <code>## 🏁 Session Anchor: YYYY-MM-DD</code> detailing rationale and mental anchor.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.agents/brain/current_state.dsom</code></td>
+<td style="text-align: left;"><strong>Machine-Compacted Sovereign State</strong></td>
+<td style="text-align: left;"><strong>Medium</strong> (Step 3)</td>
+<td style="text-align: left;">Auto-compacted via CI PR sync (<code>dsom-pr-sync.yml</code>) or EOD rituals.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.agents/brain/checkpoint_summary.txt</code></td>
+<td style="text-align: left;"><strong>EOD Handshake Memory Dump</strong></td>
+<td style="text-align: left;"><strong>Medium</strong> (Step 4)</td>
+<td style="text-align: left;">Generated at EOD containing <code>MENTAL ANCHOR FOR TOMORROW (SOD)</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.agents/brain/jules_pr_history.md</code></td>
+<td style="text-align: left;"><strong>Jules' PR &amp; Review History Ledger</strong></td>
+<td style="text-align: left;"><strong>Reference</strong></td>
+<td style="text-align: left;">Updated whenever new PRs and CodeRabbit reviews are merged.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="procedural-sync-protocol-sop">Procedural Sync Protocol (SOP)</h2>
 <p>When Google Jules or Google Antigravity initializes a session, the following synchronization protocol must be executed:</p>
