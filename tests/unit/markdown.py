@@ -22,13 +22,9 @@ class TestMarkdownCompliance(unittest.TestCase):
     def setUpClass(cls):
         cls.repo_root = _find_repo_root(pathlib.Path(__file__).parent)
 
-    def test_markdown_okf_compliance(self):
-        """Verify Markdown files adhere to OKF v0.1 schema frontmatter rules."""
-        exclude_files = {"CLAUDE.md"}
-        exclude_dirs = {".git", "node_modules", ".pytest_cache", "venv", ".venv", "openwiki", "site"}
-
-        FRONTMATTER_RE = re.compile(r"\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)", re.DOTALL)
-        REQUIRED_FIELDS = {"okf_version", "type", "title", "timestamp", "topics"}
+    def _discover_md_files(self) -> list[pathlib.Path]:
+        exclude_files = {"CLAUDE.md", "CHANGELOG.md", "HISTORY.md"}
+        exclude_dirs = {".git", "node_modules", ".pytest_cache", "venv", ".venv", "openwiki", "site", "references"}
 
         md_files = []
         for dirpath, dirnames, filenames in os.walk(self.repo_root):
@@ -37,7 +33,6 @@ class TestMarkdownCompliance(unittest.TestCase):
                 if filename.endswith(".md") and filename not in exclude_files:
                     filepath = pathlib.Path(dirpath) / filename
                     if not filepath.is_symlink():
-                        # Check for Windows git text symlinks cleanly without suppressing errors
                         try:
                             content = filepath.read_text(encoding="utf-8").strip()
                             if content.startswith("../") and "\n" not in content and len(content) < 250:
@@ -45,6 +40,14 @@ class TestMarkdownCompliance(unittest.TestCase):
                         except (OSError, UnicodeDecodeError) as err:
                             self.fail(f"Failed to read markdown file {filepath.relative_to(self.repo_root)}: {err}")
                         md_files.append(filepath)
+        return md_files
+
+    def test_markdown_okf_compliance(self):
+        """Verify Markdown files adhere to OKF v0.1 schema frontmatter rules."""
+        FRONTMATTER_RE = re.compile(r"\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)", re.DOTALL)
+        REQUIRED_FIELDS = {"okf_version", "type", "title", "timestamp", "topics"}
+
+        md_files = self._discover_md_files()
 
         for md_file in md_files:
             with self.subTest(file=md_file.relative_to(self.repo_root).as_posix()):
@@ -57,11 +60,23 @@ class TestMarkdownCompliance(unittest.TestCase):
                 match = FRONTMATTER_RE.match(text)
                 self.assertIsNotNone(match, f"{md_file.name} must contain valid frontmatter block")
 
-                data = yaml.safe_load(match.group(1))
+                raw_fm = match.group(1)
+                data = yaml.safe_load(raw_fm)
                 self.assertIsInstance(data, dict, f"Frontmatter in {md_file.name} must parse to a mapping")
 
                 for field in REQUIRED_FIELDS:
                     self.assertIn(field, data, f"Frontmatter in {md_file.name} missing required field '{field}'")
+
+                # Verify okf_version equals 0.1
+                self.assertEqual(data.get("okf_version"), 0.1, f"okf_version in {md_file.name} must equal 0.1")
+
+                # Verify timestamp uses a double-quoted YAML scalar
+                if "timestamp:" in raw_fm:
+                    self.assertRegex(
+                        raw_fm,
+                        r'timestamp:\s*"[^"]+"',
+                        f"Timestamp field in {md_file.name} must be a double-quoted YAML scalar",
+                    )
 
     def test_markdown_governance_footers(self):
         """Verify presence of governance footers or copyright signatures in Markdown docs."""
@@ -77,10 +92,7 @@ class TestMarkdownCompliance(unittest.TestCase):
 
     def test_uk_english_documentation_spellings(self):
         """Verify UK English spelling conventions across documentation corpus and reject unapproved US variants."""
-        doc_files = [self.repo_root / "README.md"] + [
-            p for p in (self.repo_root / "docs").glob("**/*.md")
-            if p.is_file() and not p.is_symlink()
-        ]
+        doc_files = self._discover_md_files()
 
         UK_TERMS = ["organisation", "optimisation", "behaviour", "standardised", "localised", "categorises"]
         US_UK_PAIRS = [
@@ -98,7 +110,7 @@ class TestMarkdownCompliance(unittest.TestCase):
                 text = doc.read_text(encoding="utf-8")
                 clean_lines = []
                 for line in text.splitlines():
-                    # Skip lines that are URLs, external citations, or specific legacy document titles/citations (e.g. OKF-MIND-OPTIMIZATION.md)
+                    # Skip lines that are URLs, external citations, or specific legacy document titles/citations
                     if any(kw in line.lower() for kw in ("http://", "https://", "snyk organisation", "org id", "snyk organization", "optimization.md", "engine-optimization", "mind optimization", "engine optimization", "agentic optimization")):
                         continue
                     clean_lines.append(line)

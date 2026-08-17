@@ -145,7 +145,10 @@ class BodyContentRegressionTests(unittest.TestCase):
         )
 
     def test_auto_sync_entry_precedes_older_history_entries(self):
-        possible_markers = ["action_update_dsom.py", "[Auto-Sync] Modified files:"]
+        possible_markers = [
+            "- [Auto-Sync] Modified files:",
+            "- Refactored .github/scripts/action_update_dsom.py",
+        ]
         auto_sync_indices = [self.body.index(m) for m in possible_markers if m in self.body]
         self.assertTrue(auto_sync_indices, "Expected auto-sync or script change entry in body")
         auto_sync_idx = min(auto_sync_indices)

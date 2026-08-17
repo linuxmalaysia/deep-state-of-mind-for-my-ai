@@ -17,11 +17,11 @@ This document serves as the operational guide for translating the National Occup
 It is critical to establish the architectural hierarchy: **Deep State of Mind (DSOM) is the Sovereign Engine and Master Baseline.** 
 
 DSOM natively governs the workspace through a multi-protocol ecosystem. The AI agents within this ecosystem are bound by several strict standards simultaneously:
-*   **Open Knowledge Format (OKF v0.1):** For metadata routing and documentation structures.
-*   **Generative Engine Optimisation (GEO):** For deterministic, machine-readable output generation.
-*   **Defensive GitOps / Defense-in-Depth:** For operational security and infrastructure isolation.
-*   **POSIX / Termux Compatibility:** For cross-platform script execution.
-*   **Sovereign Linguistics:** Strict adherence to UK English and standard Bahasa Melayu Malaysia (Piawai).
+* **Open Knowledge Format (OKF v0.1):** For metadata routing and documentation structures.
+* **Generative Engine Optimisation (GEO):** For deterministic, machine-readable output generation.
+* **Defensive GitOps / Defense-in-Depth:** For operational security and infrastructure isolation.
+* **POSIX / Termux Compatibility:** For cross-platform script execution.
+* **Sovereign Linguistics:** Strict adherence to UK English and standard Bahasa Melayu Malaysia (Piawai).
 
 **NOSS is treated as a Compliance Payload.** 
 NOSS does not govern the system; rather, the DSOM engine *executes* NOSS standards as modular skills to achieve national compliance. Whether it is a Level 2, Level 3, or Diploma-level standard, it is processed simply as another set of standard operating procedures (SOPs) within the `.agents/skills/` directory.

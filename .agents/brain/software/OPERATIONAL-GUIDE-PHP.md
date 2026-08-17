@@ -68,7 +68,7 @@ Every task issued executes the following lifecycle:
 ## 6. 📈 Performance & Memory Governance
 
 * **Memory Limits:** Strictly defined in `php.ini` per service (e.g., 128M/256M).
-* **Optimization:** OpCache must be enabled in all Production Docker images.
+* **Optimisation:** OpCache must be enabled in all Production Docker images.
 * **Profiling:** XHProf or Blackfire usage mandatory for Sev2 performance incidents.
 
 ## 7. 🛡️ Sovereign Security & Vulnerability

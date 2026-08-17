@@ -44,7 +44,7 @@ class TestContainerfileSecurity(unittest.TestCase):
                 lines = content.splitlines()
 
                 # 1. Base image pinning check
-                from_lines = [l.strip() for l in lines if l.strip().startswith("FROM ")]
+                from_lines = [line.strip() for line in lines if line.strip().startswith("FROM ")]
                 self.assertGreater(len(from_lines), 0, f"{cfile.name} must have at least one FROM instruction")
                 for from_line in from_lines:
                     tokens = from_line.split()[1:]
@@ -68,7 +68,7 @@ class TestContainerfileSecurity(unittest.TestCase):
                         )
 
                 # 2. Secret leakage check in ENV (matching both KEY=VAL and KEY VAL formats)
-                env_lines = [l.strip() for l in lines if l.strip().startswith("ENV ")]
+                env_lines = [line.strip() for line in lines if line.strip().startswith("ENV ")]
                 for env_line in env_lines:
                     self.assertNotRegex(
                         env_line,

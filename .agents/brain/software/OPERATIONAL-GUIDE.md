@@ -61,7 +61,7 @@ All services must be **Sovereign-Portable**:
 ## 7. 📈 Performance & Resource Governance
 - **Limits:** Strictly defined resource quotas (CPU/Memory) per service.
 - **Profiling:** Language-specific profiling mandatory for Sev2 performance incidents.
-- **Optimization:** Caching and OpCache equivalents must be enabled in production builds.
+- **Optimisation:** Caching and OpCache equivalents must be enabled in production builds.
 
 ## 8. 🚨 Incident & SRE Protocols
 - **Service Levels:**

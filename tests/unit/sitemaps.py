@@ -38,7 +38,7 @@ class TestSitemapsAndContext7(unittest.TestCase):
         self.assertEqual(root_xml.read_text(encoding="utf-8"), docs_xml.read_text(encoding="utf-8"))
 
         # Verify sitemap.txt structure
-        txt_lines = [l.strip() for l in root_txt.read_text(encoding="utf-8").splitlines() if l.strip()]
+        txt_lines = [line.strip() for line in root_txt.read_text(encoding="utf-8").splitlines() if line.strip()]
         self.assertGreater(len(txt_lines), 0, "sitemap.txt must not be empty")
         for line in txt_lines:
             self.assertTrue(line.startswith("https://") or line.startswith("http://"), f"URL in sitemap.txt must be absolute: {line}")
