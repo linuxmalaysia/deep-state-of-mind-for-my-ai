@@ -3520,14 +3520,14 @@
 <h1 id="open-knowledge-format-okf-adoption-guide">Open Knowledge Format (OKF) Adoption Guide</h1>
 <h2 id="what-is-the-open-knowledge-format-okf">What is the Open Knowledge Format (OKF)?</h2>
 <p>Introduced by Google Cloud on June 12, 2026, the <strong>Open Knowledge Format (OKF)</strong> is a vendor-neutral, open specification designed to solve the "context problem" in AI-driven development. </p>
-<p>Historically, AI agents struggle because organizational knowledge (runbooks, architecture decisions, API schemas) is scattered across disparate wikis, databases, and code comments. OKF creates a standardised "common language" for knowledge by structuring it so that it is equally readable by human engineers and autonomous AI agents.</p>
+<p>Historically, AI agents struggle because organisational knowledge (runbooks, architecture decisions, API schemas) is scattered across disparate wikis, databases, and code comments. OKF creates a standardised "common language" for knowledge by structuring it so that it is equally readable by human engineers and autonomous AI agents.</p>
 <h3 id="core-structure-of-okf-v01">Core Structure of OKF v0.1</h3>
 <p>OKF does not require proprietary vector databases or complex SDKs. It relies on standard, Git-native technologies:
-1.  <strong>Knowledge Bundles:</strong> A self-contained, hierarchical collection of knowledge documents. Our <code>.agents/brain</code> and <code>.agents/skills</code> directories act as knowledge bundles.
-2.  <strong>Concepts (Markdown Files):</strong> A single unit of knowledge within a bundle, represented as one markdown document (e.g., our <code>closet.md</code> and <code>SKILL.md</code> files).
-3.  <strong>Concept IDs:</strong> The logical path of the concept's file within the bundle (without the <code>.md</code> suffix).
-4.  <strong>YAML Frontmatter:</strong> Every Markdown concept must begin with structured YAML metadata (e.g., <code>type</code>, <code>title</code>, <code>description</code>). This allows the files to be programmatically queried and cataloged by AI agents before they read the entire file.
-5.  <strong>Directory-Based Organization:</strong> Files are grouped logically in directories and committed directly alongside the codebase they describe.</p>
+1. <strong>Knowledge Bundles:</strong> A self-contained, hierarchical collection of knowledge documents. Our <code>.agents/brain</code> and <code>.agents/skills</code> directories act as knowledge bundles.
+2. <strong>Concepts (Markdown Files):</strong> A single unit of knowledge within a bundle, represented as one Markdown document (e.g., our <code>closet.md</code> and <code>SKILL.md</code> files).
+3. <strong>Concept IDs:</strong> The logical path of the concept's file within the bundle (without the <code>.md</code> suffix).
+4. <strong>YAML Frontmatter:</strong> Every Markdown concept must begin with structured YAML metadata (e.g., <code>type</code>, <code>title</code>, <code>description</code>). This allows the files to be programmatically queried and cataloged by AI agents before they read the entire file.
+5. <strong>Directory-Based Organisation:</strong> Files are grouped logically in directories and committed directly alongside the codebase they describe.</p>
 <hr />
 <h2 id="how-okf-aligns-with-the-sovereign-ai-workspace-dsom">How OKF Aligns with the Sovereign AI Workspace (DSOM)</h2>
 <p>The incredible realization is that our existing <strong>Deep State of Mind (DSOM)</strong> framework and the <strong>Spatial Memory Palace</strong> (<code>.agents/brain/</code> and <code>.agents/skills/</code>) are already a near-perfect implementation of the Open Knowledge Format.</p>

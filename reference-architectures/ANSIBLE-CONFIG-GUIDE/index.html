@@ -3418,7 +3418,7 @@
 <h2 id="tool-the-ansible-blueprint-ansiblecfg">🛠️ [TOOL] The Ansible Blueprint (<code>ansible.cfg</code>)</h2>
 <p>The <code>ansible.cfg</code> file is explicitly optimized for the <strong>DSOM Sovereign Fabric</strong>:
 * <strong>Pipelining</strong>: Enabled to reduce SSH handshake latency across our distributed 16-node backbone.
-* <strong>YAML Callback</strong>: Standardized for high-fidelity human/AI audit of deployment steps.
+* <strong>YAML Callback</strong>: Standardised for high-fidelity human/AI audit of deployment steps.
 * <strong>Rootful Orchestration</strong>: Enabled via <code>become: true</code> at the task level for OS tuning (networking, dynamic kernel buffers, UFW rules, and topology mappings).
 * <strong>Orchestrator User</strong>: Ansible connects natively via the <code>dsom-admin</code> identity using <code>ed25519</code> keys.
 * <strong>Remote Temp Resilience</strong>: Ansible is configured to seamlessly utilize <code>/tmp</code> with <code>allow_world_readable_tmpfiles = True</code> to bypass strict unprivileged execution limits during root escalations.</p>
@@ -3461,7 +3461,7 @@
 <li><strong>Identity (Production)</strong>:<ul>
 <li><code>ansible_user</code>: Set to <code>dsom-admin</code>.</li>
 <li><code>ansible_become</code>: Must be <code>true</code> for <code>setup_os</code> tasks.</li>
-<li><strong>UID:GID</strong>: Standardized at <strong>2001:2001</strong>.</li>
+<li><strong>UID:GID</strong>: Standardised at <strong>2001:2001</strong>.</li>
 </ul>
 </li>
 <li><strong>Container Sovereignty</strong>: <code>keep-id</code> prevents data directory ownership leaks to root during volume mounting.
