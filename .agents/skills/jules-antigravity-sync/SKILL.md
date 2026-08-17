@@ -100,6 +100,20 @@ The following is the permanent ledger of PRs and code modifications executed by 
 
 ---
 
+## Bidirectional Handover Matrix (Antigravity ⟷ Jules)
+
+When transitioning active session control between Google Antigravity and Google Jules, both agents must utilise the shared spatial ledgers to communicate what was accomplished and what needs to be executed next:
+
+| Handover File | Purpose | Read Priority | Update Moment |
+| :--- | :--- | :--- | :--- |
+| `.agents/brain/task.md` | **Live Task Board & Immediate Next Steps** | **High** (Step 1) | Check off `[x]` upon task completion; append `[ ]` for pending actions. |
+| `.agents/brain/walkthrough.md` | **Chronological Session Anchors** | **High** (Step 2) | Append `## 🏁 Session Anchor: YYYY-MM-DD` detailing rationale and mental anchor. |
+| `.agents/brain/current_state.dsom` | **Machine-Compacted Sovereign State** | **Medium** (Step 3) | Auto-compacted via CI PR sync (`dsom-pr-sync.yml`) or EOD rituals. |
+| `.agents/brain/checkpoint_summary.txt` | **EOD Handshake Memory Dump** | **Medium** (Step 4) | Generated at EOD containing `MENTAL ANCHOR FOR TOMORROW (SOD)`. |
+| `.agents/brain/jules_pr_history.md` | **Jules' PR & Review History Ledger** | **Reference** | Updated whenever new PRs and CodeRabbit reviews are merged. |
+
+---
+
 ## Procedural Sync Protocol (SOP)
 
 When Google Jules or Google Antigravity initializes a session, the following synchronization protocol must be executed:
