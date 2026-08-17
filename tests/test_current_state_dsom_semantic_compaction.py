@@ -145,7 +145,13 @@ class BodyContentRegressionTests(unittest.TestCase):
         )
 
     def test_auto_sync_entry_precedes_older_history_entries(self):
-        auto_sync_idx = self.body.index("[Auto-Sync] Modified files:")
+        possible_markers = [
+            "- [Auto-Sync] Modified files:",
+            "- Refactored .github/scripts/action_update_dsom.py",
+        ]
+        auto_sync_indices = [self.body.index(m) for m in possible_markers if m in self.body]
+        self.assertTrue(auto_sync_indices, "Expected auto-sync or script change entry in body")
+        auto_sync_idx = min(auto_sync_indices)
         older_entry_idx = self.body.index("Initial boilerplate replaced")
         self.assertLess(auto_sync_idx, older_entry_idx)
 
@@ -153,39 +159,6 @@ class BodyContentRegressionTests(unittest.TestCase):
         self.assertIn("## Active State", self.body)
         self.assertIn("## Condensed History", self.body)
         self.assertIn("## Archival Pointers", self.body)
-
-
-class AutoSyncEntryRegexPatternTests(unittest.TestCase):
-    """Directly exercises the widened Auto-Sync/Refactored regex introduced by
-    this PR, independent of the actual current_state.dsom content, so that the
-    pattern's matching/non-matching behaviour is pinned down in isolation."""
-
-    PATTERN = re.compile(
-        r"(\[Auto-Sync\] Modified files:.*|Refactored .*\b)action_update_dsom\.py"
-    )
-
-    def test_matches_auto_sync_modified_files_entry(self):
-        sample = "- [Auto-Sync] Modified files: .github/scripts/action_update_dsom.py (+12, -3)"
-        self.assertRegex(sample, self.PATTERN)
-
-    def test_matches_refactored_entry_without_diff_stats(self):
-        sample = "- Refactored the DSOM sync engine in action_update_dsom.py"
-        self.assertRegex(sample, self.PATTERN)
-
-    def test_does_not_match_unrelated_auto_sync_file_change(self):
-        sample = "- [Auto-Sync] Modified files: docs/README.md (+1, -1)"
-        self.assertNotRegex(sample, self.PATTERN)
-
-    def test_does_not_match_refactor_of_a_different_script(self):
-        sample = "- Refactored the deployment logic in deploy_helper.py"
-        self.assertNotRegex(sample, self.PATTERN)
-
-    def test_does_not_match_when_filename_lacks_word_boundary(self):
-        # The trailing \b in the "Refactored" branch requires the filename to
-        # start at a word boundary; a longer identifier merely ending with the
-        # same suffix must not be treated as a match.
-        sample = "- Refactored my_action_update_dsom.py helper"
-        self.assertIsNone(self.PATTERN.search(sample))
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ Top-level directories representing a major project, person, or entity.
 
 ### ii) Halls (The Memory Corridors)
 
-Standardized memory types shared across every wing to ensure consistency.
+Standardised memory types shared across every wing to ensure consistency.
 
 * `hall_facts`: Immutable laws, architectural decisions, and "Truths."
 * `hall_events`: Chronological milestones and session anchors.

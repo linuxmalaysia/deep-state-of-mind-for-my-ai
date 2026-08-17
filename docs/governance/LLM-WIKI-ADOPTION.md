@@ -25,7 +25,7 @@ Karpathy defines three architectural layers and several core operations. Here is
 
 | LLM WIKI Concept | DSOM Implementation | Status |
 | :--- | :--- | :--- |
-| **The Schema** (Instructions on how the LLM should maintain the wiki) | `AGENTS.md` (The Sovereign Constitution) and `SKILL.md` files that dictate exact behavioral guardrails and operational workflows. | **Implemented** (Highly Mature) |
+| **The Schema** (Instructions on how the LLM should maintain the wiki) | `AGENTS.md` (The Sovereign Constitution) and `SKILL.md` files that dictate exact behavioural guardrails and operational workflows. | **Implemented** (Highly Mature) |
 | **The Wiki** (LLM-maintained Markdown files) | The **Sovereign Markdown Palace** (`docs/governance/`, `hall_facts`, etc.). | **Implemented** |
 | **`index.md`** (Content catalog for navigation) | `palace_registry.md` (Our spatial memory map). | **Implemented** |
 | **`log.md`** (Chronological tracking) | `HISTORY.md` (Universal Ledger) and `CHANGELOG.md`. | **Implemented** |
@@ -59,7 +59,7 @@ While we have the structure, the LLM WIKI highlights three operational verbs tha
 ### C. The "Query" Loop (Compounding Answers)
 
 **The Concept:** When the LLM generates a really good answer, comparison, or analysis, it shouldn't disappear into the chat history. It should be filed back into the Wiki.
-**Our Adoption:** We currently do this manually when I create an "Artifact" and we save it. We should establish a core behavioral rule: **"Any time a complex architectural analysis or troubleshooting guide is generated in chat, the AI must proactively propose saving it as a persistent `.md` document in the Palace."**
+**Our Adoption:** We currently do this manually when I create an "Artifact" and we save it. We should establish a core behavioural rule: **"Any time a complex architectural analysis or troubleshooting guide is generated in chat, the AI must proactively propose saving it as a persistent `.md` document in the Palace."**
 
 ---
 

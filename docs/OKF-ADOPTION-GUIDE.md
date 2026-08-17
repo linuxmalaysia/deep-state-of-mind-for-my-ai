@@ -14,16 +14,16 @@ resource: "file:///docs/OKF-ADOPTION-GUIDE.md"
 
 Introduced by Google Cloud on June 12, 2026, the **Open Knowledge Format (OKF)** is a vendor-neutral, open specification designed to solve the "context problem" in AI-driven development. 
 
-Historically, AI agents struggle because organizational knowledge (runbooks, architecture decisions, API schemas) is scattered across disparate wikis, databases, and code comments. OKF creates a standardised "common language" for knowledge by structuring it so that it is equally readable by human engineers and autonomous AI agents.
+Historically, AI agents struggle because organisational knowledge (runbooks, architecture decisions, API schemas) is scattered across disparate wikis, databases, and code comments. OKF creates a standardised "common language" for knowledge by structuring it so that it is equally readable by human engineers and autonomous AI agents.
 
 ### Core Structure of OKF v0.1
 
 OKF does not require proprietary vector databases or complex SDKs. It relies on standard, Git-native technologies:
-1.  **Knowledge Bundles:** A self-contained, hierarchical collection of knowledge documents. Our `.agents/brain` and `.agents/skills` directories act as knowledge bundles.
-2.  **Concepts (Markdown Files):** A single unit of knowledge within a bundle, represented as one markdown document (e.g., our `closet.md` and `SKILL.md` files).
-3.  **Concept IDs:** The logical path of the concept's file within the bundle (without the `.md` suffix).
-4.  **YAML Frontmatter:** Every Markdown concept must begin with structured YAML metadata (e.g., `type`, `title`, `description`). This allows the files to be programmatically queried and cataloged by AI agents before they read the entire file.
-5.  **Directory-Based Organization:** Files are grouped logically in directories and committed directly alongside the codebase they describe.
+1. **Knowledge Bundles:** A self-contained, hierarchical collection of knowledge documents. Our `.agents/brain` and `.agents/skills` directories act as knowledge bundles.
+2. **Concepts (Markdown Files):** A single unit of knowledge within a bundle, represented as one Markdown document (e.g., our `closet.md` and `SKILL.md` files).
+3. **Concept IDs:** The logical path of the concept's file within the bundle (without the `.md` suffix).
+4. **YAML Frontmatter:** Every Markdown concept must begin with structured YAML metadata (e.g., `type`, `title`, `description`). This allows the files to be programmatically queried and cataloged by AI agents before they read the entire file.
+5. **Directory-Based Organisation:** Files are grouped logically in directories and committed directly alongside the codebase they describe.
 
 ---
 

@@ -10,7 +10,7 @@ resource: "file:///.agents/brain/software/implementation_plan.md"
 # 🗺️ Software Implementation Plan (Language-Agnostic)
 
 ## 🎯 Strategic Objective
-To provide a scalable, sovereign development environment capable of governing multiple programming languages through standardized ITIL 4 service gates.
+To provide a scalable, sovereign development environment capable of governing multiple programming languages through standardised ITIL 4 service gates.
 
 ## 🏗️ Phase 1: Foundation (Current)
 - [x] Establish `.agents/brain/software/` spoke.

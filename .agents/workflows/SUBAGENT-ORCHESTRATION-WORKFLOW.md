@@ -34,7 +34,7 @@ Pass the explicit contextual task to the subagent. Inform them that they are ope
 The subagent will:
 1. Initialize the DSOM Handshake (reading the Palace).
 2. Execute the delegated task.
-3. Update their localized `.agents/brain/` artifacts.
+3. Update their localised `.agents/brain/` artefacts.
 4. Execute `git add .` and `git commit -m "feat(subagent): completed task X"`.
 5. Send a message back to the Lead Architect indicating task completion.
 

@@ -18,7 +18,7 @@ Use this skill when the user asks to ensure documentation is OKF (Open Knowledge
    ```bash
    python .agents/skills/okf-frontmatter-injector/scripts/apply_okf.py <TARGET_DIRECTORY>
    ```
-4. The script will automatically skip files that already possess frontmatter. It categorizes files dynamically based on their folder structure (e.g. `agent_skill`, `governance_protocol`, etc.).
+4. The script will automatically skip files that already possess frontmatter. It categorises files dynamically based on their folder structure (e.g. `agent_skill`, `governance_protocol`, etc.).
 5. Inform the user of the total number of files modified based on the script's output.
 
 

@@ -83,7 +83,7 @@ The tool deploys the following structures safely (**it will not overwrite** exis
 | `task.md` | The AI's TODO list. |
 | `walkthrough.md` | The session history and Mental Anchor log. |
 | `implementation_plan.md` | The roadmap and design goals. |
-| `DSOM_TEMPLATE.md` | Standardized format for deep walkthrough sections. |
+| `DSOM_TEMPLATE.md` | Standardised format for deep walkthrough sections. |
 
 ---
 

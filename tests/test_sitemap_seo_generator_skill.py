@@ -379,12 +379,15 @@ class ClosetDsomProtocolUpdateTests(unittest.TestCase):
         self.assertTrue(self.content.strip())
 
     def test_tri_phasic_mind_heading_now_cites_rule_26(self):
-        self.assertIn(
-            "1. **The Architecture (Rule 26):** Partitions AI processing into "
-            "Active State (fast MCP streams), Twilight State "
-            "(validation/linting check gates), and Deep State (background "
-            "EOD palace-sync reviews and push optimization).",
-            self.content,
+        self.assertTrue(
+            ("1. **The Architecture (Rule 26):** Partitions AI processing into "
+             "Active State (fast MCP streams), Twilight State "
+             "(validation/linting check gates), and Deep State (background "
+             "EOD palace-sync reviews and push optimization)." in self.content) or
+            ("1. **The Architecture (Rule 26):** Partitions AI processing into "
+             "Active State (fast MCP streams), Twilight State "
+             "(validation/linting check gates), and Deep State (background "
+             "EOD palace-sync reviews and push optimisation)." in self.content)
         )
 
     def test_old_unlabelled_architecture_heading_is_gone(self):

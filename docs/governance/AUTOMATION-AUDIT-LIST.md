@@ -85,7 +85,7 @@ This document serves as a human-auditable index of all executable automation scr
 - **`roles/common/defaults/main.yml`**: Default variable definitions for the common baseline role.
 - **`roles/common/handlers/main.yml`**: Reusable service handlers (e.g., restarting SSH/Nginx) for the common role.
 - **`roles/common/meta/main.yml`**: Role dependency definitions and Galaxy metadata.
-- **`roles/common/tasks/directories.yml`**: Idempotent creation of standard organizational directory structures.
+- **`roles/common/tasks/directories.yml`**: Idempotent creation of standard organisational directory structures.
 - **`roles/common/tasks/main.yml`**: Primary execution file orchestrating the sub-tasks for the common role.
 - **`roles/common/tasks/packages.yml`**: Package management definitions for baseline dependencies (e.g., `git`, `curl`, `podman`).
 - **`roles/common/tasks/sysctl.yml`**: Kernel parameter tuning and security hardening via `sysctl`.
