@@ -8,18 +8,6 @@ import unittest
 import yaml
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
-    """
-    Locate the repository root containing a `.git` entry.
-    
-    Parameters:
-    	start (pathlib.Path): Path from which to search the directory hierarchy.
-    
-    Returns:
-    	pathlib.Path: The nearest ancestor containing a `.git` entry.
-    
-    Raises:
-    	RuntimeError: If no repository root is found.
-    """
     current = start.resolve()
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
@@ -34,7 +22,7 @@ class TestMarkdownCompliance(unittest.TestCase):
     """Markdown schema, governance footers, and spelling compliance tests."""
 
     def test_markdown_okf_compliance(self):
-        """Verify that repository Markdown files use valid UTF-8 and required OKF v0.1 frontmatter fields."""
+        """Verify Markdown files adhere to OKF v0.1 schema frontmatter rules."""
         exclude_files = {"CLAUDE.md"}
         exclude_dirs = {".git", "node_modules", ".pytest_cache", "venv", ".venv", "openwiki", "site"}
 
