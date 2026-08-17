@@ -1,34 +1,38 @@
-[2026-08-14] - INSTRUCTIONS GIVEN:
+[2026-08-14] - INSTRUCTIONS GIVEN: 
 - Strict adherence to Standard UK English and DBP-standard Bahasa Melayu Malaysia only. 
-- Omit conversational filler. 
-- Output technical configurations as clean, Git-native Markdown. 
-- Abide by the "Zero-Global / Spatial Memory" mandate (Rule 1).
-- Apply OKF-compliant frontmatter to all knowledge files (Rule 2).
-- Execute strictly via `uv` instead of raw `pip` or `python` (Rule 16).
+- Execute strictly via uv instead of raw pip or python (Rule 16).
 - Symmetrically update all ledgers (README, HISTORY, CHANGELOG) when modifying architecture (Rule 8).
+- The AI is strictly forbidden from executing monolithic blanket commits (git commit -am). (Rule 4).
+- Windows Git Execution Guardrail: Export fail-fast environment variables for background Git execution.
 - Output the `[DSOM EPISODIC RECORD]` anchor block at the end of every workflow (Rule 18).
 - Keep Jules' historic PR merges and conversation details recorded for cross-session cognitive continuity (Rule 25).
 
 [2026-08-14] - PROJECT CONTEXT & 4W1H:
 - Project: Deep State of Mind (DSOM) For My AI.
-- Owner: Harisfazillah Jamel (LinuxMalaysia).
 - Goal: Sovereign framework to deploy and govern LLMs safely via GitOps, Ansible, and isolated agents. 
-- Infrastructure: T1 (Windows Operator) passing configurations down to T2 (WSL2/AlmaLinux 10 Control Node) and T3/T4 targets.
 
 [2026-08-14] - TASKS, PHASES, AND MILESTONES ACHIEVED:
 - Checked all historic Pull Requests completed by Google Jules (PRs #22, #23, #24, #25, #26, #27, #34).
 - Extracted code merge descriptions, comments read, and answers from automated CodeRabbit reviews.
 - Formulated the master PR ledger at `.agents/brain/jules_pr_history.md` in full compliance with OKF v0.1.
 - Updated the joint collaborative sync skill file `.agents/skills/jules-antigravity-sync/SKILL.md` to reference the new ledger.
-- Appended today's Session Anchor (2026-08-14) to `.agents/brain/walkthrough.md`.
+- Resolved PR 69/70 merge conflicts, merged, and cleaned up branches.
+- Standardised UK English spellings across `docs/`.
+- Audited and fixed MarkdownLint violations (MD022, MD031).
+- Injected Sovereign Signatures across `.md` documents.
+- Audited GitHub Actions workflows for proper pinning and `persist-credentials: false`.
+- Fixed MkDocs link decay warnings (46 links) and achieved zero strict mode warnings.
+- Adopted Antigravity Rule for Windows Git Execution Guardrail (`.agents/rules/windows-git-execution.md`).
+- Integrated PR #74 and PR #76 refactoring unit tests into modular `tests/unit/` package.
 
 [2026-08-14] - TOOLS, LANGUAGES, AND FRAMEWORKS:
-- Python (`uv`), `tiktoken`, Markdown, Open Knowledge Format (OKF) YAML frontmatter, Git, Ansible.
+- Python (`uv`), `pytest`, `tiktoken`, `mkdocs-material`, Markdown, Open Knowledge Format (OKF) YAML frontmatter, Git, Ansible.
 - PowerShell (`.\tools\eod-palace.ps1`) and Bash (`tools/hibernation.sh`) for cross-platform Palace sync and hibernation.
 
 [2026-08-14] - PREFERENCES & BEHAVIOR CORRECTIONS:
 - Reinforced that all new documentation files must follow strict OKF v0.1 guidelines and maintain standard UK English spelling.
 - Ensured atomic, semantic Git commits and selective staging of brain artifacts during EOD cycles.
+- Re-enforced that the AI must *never* blindly hang on Git commands; adopted Windows Git Execution Guardrail.
 
 This represents the complete and total set of contextual memory for this operation.
 
@@ -37,6 +41,10 @@ REQUIRED READING FOR NEXT SESSION REANIMATION:
 - .agents/AGENTS.md
 - .agents/brain/jules_pr_history.md
 - .agents/skills/jules-antigravity-sync/SKILL.md
+- docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
+- docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md
+- docs/governance/ZERO-GLOBAL-MEMORY.md
+- .agents/rules/windows-git-execution.md
 
 MENTAL ANCHOR FOR TOMORROW (SOD):
-> **Google Jules' historic PR merges, CodeRabbit reviews, and technical solutions have been externalised to the `.agents/brain/jules_pr_history.md` master ledger. All sync skills and walkthrough anchors have been consolidated and EOD-verified. Ready to resume with clean, persistent context.**
+> **Google Jules' historic PR merges and CodeRabbit reviews externalised to `.agents/brain/jules_pr_history.md`. Unit tests modularised into `tests/unit/`. Documentation standardised to UK English with zero MkDocs link decay, and Windows Git Execution Guardrail codified under `.agents/rules/windows-git-execution.md`. Ready to proceed.**
