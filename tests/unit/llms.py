@@ -60,6 +60,76 @@ class TestLlmsTxtParser(unittest.TestCase):
             self.assertEqual(root.tag, "context")
             self.assertIn("total_files", root.attrib)
 
+    def test_parse_llms_txt_raises_for_missing_input_file(self):
+        """parse_llms_txt must raise FileNotFoundError when the index file is absent."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            missing_llms = tmp_root / "llms.txt"
+            with self.assertRaises(FileNotFoundError):
+                parse_llms_txt.parse_llms_txt(missing_llms, tmp_root)
+
+    def test_parse_llms_txt_ignores_external_http_links(self):
+        """External http(s) links referenced in llms.txt must be skipped."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            (tmp_root / "local.md").write_text("# Local\n", encoding="utf-8")
+            llms_path = tmp_root / "llms.txt"
+            llms_path.write_text(
+                "[External](https://example.com/page.md)\n"
+                "[Local](local.md)\n",
+                encoding="utf-8",
+            )
+            discovered = parse_llms_txt.parse_llms_txt(llms_path, tmp_root)
+            self.assertEqual(len(discovered), 1)
+            self.assertEqual(discovered[0][0], "Local")
+            self.assertEqual(discovered[0][1], (tmp_root / "local.md").resolve())
+
+    def test_parse_llms_txt_raises_for_out_of_bounds_path(self):
+        """A referenced path resolving outside repo_root must raise ValueError."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir) / "repo"
+            tmp_root.mkdir()
+            llms_path = tmp_root / "llms.txt"
+            llms_path.write_text("[Escape](../outside.md)\n", encoding="utf-8")
+            with self.assertRaises(ValueError):
+                parse_llms_txt.parse_llms_txt(llms_path, tmp_root)
+
+    def test_parse_llms_txt_raises_for_missing_referenced_file(self):
+        """A referenced Markdown file that does not exist must raise FileNotFoundError."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            llms_path = tmp_root / "llms.txt"
+            llms_path.write_text("[Ghost](ghost.md)\n", encoding="utf-8")
+            with self.assertRaises(FileNotFoundError):
+                parse_llms_txt.parse_llms_txt(llms_path, tmp_root)
+
+    def test_parse_llms_txt_deduplicates_repeated_references(self):
+        """The same Markdown path referenced multiple times must only appear once."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            (tmp_root / "dup.md").write_text("# Dup\n", encoding="utf-8")
+            llms_path = tmp_root / "llms.txt"
+            llms_path.write_text(
+                "[First](dup.md)\n[Second](dup.md)\n",
+                encoding="utf-8",
+            )
+            discovered = parse_llms_txt.parse_llms_txt(llms_path, tmp_root)
+            self.assertEqual(len(discovered), 1)
+            self.assertEqual(discovered[0][0], "First")
+
+    def test_generate_llms_full_txt_wraps_read_failure_in_ioerror(self):
+        """A discovered file that disappears before compilation must raise IOError."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            vanished = tmp_root / "vanished.md"
+            vanished.write_text("# Gone\n", encoding="utf-8")
+            discovered = [("Vanished", vanished)]
+            vanished.unlink()
+            with self.assertRaises(IOError):
+                parse_llms_txt.generate_llms_full_txt(
+                    discovered, tmp_root / "out.txt", tmp_root
+                )
+
 
 if __name__ == "__main__":
     unittest.main()

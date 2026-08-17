@@ -5,6 +5,11 @@ import os
 import pathlib
 import re
 import unittest
+import sys
+import tempfile
+import unittest
+from unittest import mock
+
 import yaml
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
@@ -90,6 +95,113 @@ class TestMarkdownCompliance(unittest.TestCase):
                     combined_text,
                     f"Documentation corpus should incorporate standard UK English spelling '{uk_term}'"
                 )
+
+    def test_frontmatter_regex_matches_crlf_line_endings(self):
+        """FRONTMATTER_RE must match a frontmatter block using CRLF line endings."""
+        text = "---\r\nokf_version: 0.1\r\ntitle: X\r\n---\r\nBody text\r\n"
+        match = FRONTMATTER_RE.match(text)
+        self.assertIsNotNone(match)
+        self.assertIn("okf_version: 0.1", match.group(1))
+
+    def test_frontmatter_regex_returns_none_without_closing_fence(self):
+        """FRONTMATTER_RE must not match when the closing --- fence is absent."""
+        text = "---\nokf_version: 0.1\ntitle: X\nBody text with no closing fence\n"
+        self.assertIsNone(FRONTMATTER_RE.match(text))
+
+    def test_markdown_okf_compliance_accepts_valid_frontmatter(self):
+        """A Markdown file with all required OKF fields must pass compliance."""
+        module = sys.modules[__name__]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            (tmp_root / "valid.md").write_text(
+                "---\n"
+                "okf_version: 0.1\n"
+                "type: doc\n"
+                "title: Valid Doc\n"
+                'timestamp: "2026-01-01T00:00:00Z"\n'
+                'topics: ["a"]\n'
+                "---\n"
+                "Body\n",
+                encoding="utf-8",
+            )
+            with mock.patch.object(module, "REPO_ROOT", tmp_root):
+                self.test_markdown_okf_compliance()  # must not raise
+
+    def _run_okf_compliance_test_and_get_result(self):
+        """Run test_markdown_okf_compliance in an isolated suite/result.
+
+        The production test wraps its per-file assertions in
+        ``self.subTest(...)``, which swallows individual assertion failures,
+        so ``assertRaises(AssertionError)`` around a direct call would never
+        observe them. A real TestSuite/TestResult surfaces them instead.
+        """
+        suite = unittest.TestSuite()
+        suite.addTest(self.__class__("test_markdown_okf_compliance"))
+        result = unittest.TestResult()
+        suite.run(result)
+        return result
+
+    def test_markdown_okf_compliance_rejects_missing_required_field(self):
+        """A Markdown file missing a required frontmatter field must fail compliance."""
+        module = sys.modules[__name__]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            (tmp_root / "invalid.md").write_text(
+                "---\n"
+                "okf_version: 0.1\n"
+                "type: doc\n"
+                "title: Invalid Doc\n"
+                "---\n"
+                "Body\n",
+                encoding="utf-8",
+            )
+            with mock.patch.object(module, "REPO_ROOT", tmp_root):
+                result = self._run_okf_compliance_test_and_get_result()
+            self.assertFalse(result.wasSuccessful())
+
+    def test_markdown_okf_compliance_flags_utf8_bom(self):
+        """A Markdown file starting with a UTF-8 BOM must fail compliance."""
+        module = sys.modules[__name__]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            content = (
+                "---\n"
+                "okf_version: 0.1\n"
+                "type: doc\n"
+                "title: BOM Doc\n"
+                'timestamp: "2026-01-01T00:00:00Z"\n'
+                'topics: ["a"]\n'
+                "---\n"
+                "Body\n"
+            )
+            (tmp_root / "bom.md").write_bytes(b"\xef\xbb\xbf" + content.encode("utf-8"))
+            with mock.patch.object(module, "REPO_ROOT", tmp_root):
+                result = self._run_okf_compliance_test_and_get_result()
+            self.assertFalse(result.wasSuccessful())
+
+    def test_markdown_governance_footers_raises_when_docs_directory_missing(self):
+        """Compliance must fail when the repository has no docs/ directory at all."""
+        module = sys.modules[__name__]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            with mock.patch.object(module, "REPO_ROOT", tmp_root):
+                with self.assertRaises(AssertionError):
+                    self.test_markdown_governance_footers()
+
+    def test_markdown_governance_footers_rejects_missing_license_reference(self):
+        """A docs Markdown file lacking any governance/license reference must fail."""
+        module = sys.modules[__name__]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            docs_dir = tmp_root / "docs"
+            docs_dir.mkdir()
+            (docs_dir / "no_footer.md").write_text("Just plain content.\n", encoding="utf-8")
+            with mock.patch.object(module, "REPO_ROOT", tmp_root):
+                suite = unittest.TestSuite()
+                suite.addTest(self.__class__("test_markdown_governance_footers"))
+                result = unittest.TestResult()
+                suite.run(result)
+            self.assertFalse(result.wasSuccessful())
 
 
 if __name__ == "__main__":
