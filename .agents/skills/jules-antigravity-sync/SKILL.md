@@ -94,6 +94,10 @@ The following is the permanent ledger of PRs and code modifications executed by 
 
 - **Accomplishment**: Created the master conversational and code merge ledger `.agents/brain/jules_pr_history.md` detailing PRs #22, #23, #24, #25, #26, #27, and #34, as well as automated CodeRabbit review integration and feedback cycles.
 
+### 8. Unit Test Suite Modularisation & Package Refactoring (PR #74 & PR #76)
+- **Accomplishment**: Deconstructed monolithic test suites into modular submodules under `tests/unit/` (`ansible.py`, `containers.py`, `llms.py`, `markdown.py`, `sitemaps.py`). Standardised test assertions for container digests, OKF frontmatter AST nodes, and sitemaps fixtures, scaling the automated test suite to 724 unit tests.
+- **Testing Layer**: Verified via `tests/test_unit.py` and modular package discovery.
+
 ---
 
 ## Procedural Sync Protocol (SOP)
@@ -105,7 +109,9 @@ When Google Jules or Google Antigravity initializes a session, the following syn
 3. **Walkthrough Inspection**: Verify the latest `Session Anchor` inside `.agents/brain/walkthrough.md` to map recent milestones.
 4. **Task Verification**: Align on current session duties in `.agents/brain/task.md`.
 5. **Git Log Reconciliation**: Run `git log --oneline -n 10` to programmatically match brain walkthrough history against real Git commits.
+6. **Brain Stash Conflict Resolution**: When executing `git pull --rebase` results in stash merge conflicts inside `.agents/brain/` (`checkpoint_summary.txt` or `walkthrough.md`), agents must perform a constructive merge: retain all recent Jules PR milestones alongside local session achievements, rather than discarding either agent's context.
+7. **Strict OKF Frontmatter Invariant for Rules**: All markdown files created by agents—including workspace rules in `.agents/rules/`—must include all 5 required OKF v0.1 fields (`okf_version`, `type`, `title`, `timestamp`, `topics`).
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-18*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
