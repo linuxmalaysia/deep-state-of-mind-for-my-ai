@@ -19,7 +19,7 @@ resource: "file:///docs/reference-architectures/ANSIBLE-CONFIG-GUIDE.md"
 
 The `ansible.cfg` file is explicitly optimized for the **DSOM Sovereign Fabric**:
 * **Pipelining**: Enabled to reduce SSH handshake latency across our distributed 16-node backbone.
-* **YAML Callback**: Standardized for high-fidelity human/AI audit of deployment steps.
+* **YAML Callback**: Standardised for high-fidelity human/AI audit of deployment steps.
 * **Rootful Orchestration**: Enabled via `become: true` at the task level for OS tuning (networking, dynamic kernel buffers, UFW rules, and topology mappings).
 * **Orchestrator User**: Ansible connects natively via the `dsom-admin` identity using `ed25519` keys.
 * **Remote Temp Resilience**: Ansible is configured to seamlessly utilize `/tmp` with `allow_world_readable_tmpfiles = True` to bypass strict unprivileged execution limits during root escalations.
@@ -69,7 +69,7 @@ In the Example Elastic SOC architecture, we enforce a strict hybrid privilege mo
 - **Identity (Production)**:
     - `ansible_user`: Set to `dsom-admin`.
     - `ansible_become`: Must be `true` for `setup_os` tasks.
-    - **UID:GID**: Standardized at **2001:2001**.
+    - **UID:GID**: Standardised at **2001:2001**.
 - **Container Sovereignty**: `keep-id` prevents data directory ownership leaks to root during volume mounting.
     > **[BRAIN] Logic**: In rootless environments, `keep-id` ensures the host UID **exactly mirrors** the container UID (2001->2001). This allows the Sovereign Architect to natively own the Elasticsearch and Wazuh NVMe data, enabling manual maintenance without `sudo`.
 

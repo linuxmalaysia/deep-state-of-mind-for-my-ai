@@ -27,7 +27,7 @@ To eliminate runtime friction associated with Node.js binaries (`NODE_MODULE_VER
 1. **Zero External Binaries:** Requires zero Node.js binaries, `npm` packages, or C++ compilers.
 2. **Environment Isolation:** Executes natively via `uv run --with pyyaml python tools/openwiki_emulator.py` (Rule 16).
 3. **API Rate Limit Resilience (Error 429 Bypass):** Local AI agents (Gemini, Claude, GPT-4) read `./openwiki/_skeleton.md` and complete page synthesis autonomously without consuming external LLM API rate limits.
-4. **Repository Footprint Optimization:** Reclaims **~135.3 MB** of disk space, maintaining overall repository size at **~30.84 MB**.
+4. **Repository Footprint Optimisation:** Reclaims **~135.3 MB** of disk space, maintaining overall repository size at **~30.84 MB**.
 
 ---
 

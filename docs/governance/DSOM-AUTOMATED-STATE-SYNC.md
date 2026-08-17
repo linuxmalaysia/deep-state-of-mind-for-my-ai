@@ -11,7 +11,7 @@ description: "Governance rules for Semantic Compaction via GitHub Actions."
 
 ## 1. Vectorized Memory Tiering
 
-Instead of pushing an entire project history into every prompt, DSOM categorizes information into distinct operational layers:
+Instead of pushing an entire project history into every prompt, DSOM categorises information into distinct operational layers:
 *   **Active Layer**: Houses only the immediate, high-priority variables for the current task.
 *   **Compressed Layer**: Stores foundational rules and past decisions as dense, key-value indices (`.agents/brain/current_state.dsom`).
 *   **Archival Layer**: Offloads long-term data to the Git history and Sovereign Markdown Palace.
