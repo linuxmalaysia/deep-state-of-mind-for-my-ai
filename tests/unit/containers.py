@@ -19,9 +19,10 @@ class TestContainerfileSecurity(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.repo_root = _find_repo_root(pathlib.Path(__file__).parent)
+        cls.digest_re = re.compile(r"@sha256:[a-fA-F0-9]{64}\b")
 
     def test_containerfile_security_and_structure(self):
-        """Verify Containerfile/Dockerfile security, base image pinning, and non-root USER declarations."""
+        """Verify Containerfile/Dockerfile security, immutable base image digest pinning, and non-root USER declarations."""
         container_files = list(self.repo_root.glob("Containerfile*")) + list(self.repo_root.glob("Dockerfile*"))
         container_files.extend(self.repo_root.glob("**/Containerfile*"))
         container_files.extend(self.repo_root.glob("**/Dockerfile*"))
@@ -53,19 +54,12 @@ class TestContainerfileSecurity(unittest.TestCase):
                     self.assertGreater(len(image_tokens), 0, f"Missing image reference in {from_line}")
                     image_ref = image_tokens[0]
 
-                    # Validate tag or digest presence
-                    has_digest = "@sha256:" in image_ref or "@" in image_ref
-                    has_tag = ":" in image_ref
+                    # Validate complete immutable sha256 digest presence
+                    has_valid_digest = bool(self.digest_re.search(image_ref))
                     self.assertTrue(
-                        has_digest or has_tag,
-                        f"{cfile.name} base image '{image_ref}' must be pinned with a version tag or digest",
+                        has_valid_digest,
+                        f"{cfile.name} base image '{image_ref}' must be pinned with an explicit immutable @sha256:<64-hex> digest",
                     )
-
-                    if has_tag and not has_digest:
-                        tag = image_ref.split(":")[-1]
-                        self.assertNotEqual(
-                            tag, "latest", f"{cfile.name} base image should not use unpinned :latest tag"
-                        )
 
                 # 2. Secret leakage check in ENV (matching both KEY=VAL and KEY VAL formats)
                 env_lines = [line.strip() for line in lines if line.strip().startswith("ENV ")]

@@ -8,9 +8,9 @@ description: "Architectural policy codifying Progressive Disclosure, Artifact Py
 resource: "file:///docs/governance/OKF-MIND-OPTIMIZATION.md"
 ---
 
-# OKF-Based AI Agent Mind Optimization
+# OKF-Based AI Agent Mind Optimisation
 
-This governance document codifies the principles of Cognitive Architecture designed to combat context decay and the "lost-in-the-middle" phenomenon in LLMs, specifically adopting the research from the OKF Agentic Optimization protocols.
+This governance document codifies the principles of Cognitive Architecture designed to combat context decay and the "lost-in-the-middle" phenomenon in LLMs, specifically adopting the research from the OKF Agentic Optimisation protocols.
 
 ## 1. The Epistemological Crisis
 

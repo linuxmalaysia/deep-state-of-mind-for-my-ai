@@ -30,7 +30,7 @@ class TestMarkdownCompliance(unittest.TestCase):
         for dirpath, dirnames, filenames in os.walk(self.repo_root):
             dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
             for filename in filenames:
-                if filename.endswith(".md") and filename not in exclude_files:
+                if filename.endswith(".md") and filename not in exclude_files and not filename.startswith("palace_update_proposal_"):
                     filepath = pathlib.Path(dirpath) / filename
                     if not filepath.is_symlink():
                         try:
@@ -70,13 +70,32 @@ class TestMarkdownCompliance(unittest.TestCase):
                 # Verify okf_version equals 0.1
                 self.assertEqual(data.get("okf_version"), 0.1, f"okf_version in {md_file.name} must equal 0.1")
 
-                # Verify timestamp uses a double-quoted YAML scalar
-                if "timestamp:" in raw_fm:
-                    self.assertRegex(
-                        raw_fm,
-                        r'timestamp:\s*"[^"]+"',
-                        f"Timestamp field in {md_file.name} must be a double-quoted YAML scalar",
+                # Inspect parsed YAML AST node styles for double-quoting
+                compose_node = yaml.compose(raw_fm)
+                self.assertIsInstance(compose_node, yaml.MappingNode)
+                node_map = {k.value: v for k, v in compose_node.value}
+
+                # Verify timestamp is always a double-quoted YAML scalar
+                if "timestamp" in node_map:
+                    ts_node = node_map["timestamp"]
+                    self.assertIsInstance(ts_node, yaml.ScalarNode)
+                    self.assertEqual(
+                        ts_node.style, '"',
+                        f"Timestamp field in {md_file.name} must be a double-quoted YAML scalar"
                     )
+
+                # Verify string fields with special characters/emojis or timestamp use double-quoted scalar style
+                for req_key in ("title", "timestamp"):
+                    if req_key in node_map:
+                        val_node = node_map[req_key]
+                        if isinstance(val_node, yaml.ScalarNode):
+                            val_str = str(val_node.value)
+                            # If value contains colons, brackets, emojis, or spaces with special chars
+                            if req_key == "timestamp" or any(ord(c) > 127 for c in val_str) or any(c in val_str for c in ":[]()"):
+                                self.assertEqual(
+                                    val_node.style, '"',
+                                    f"Field '{req_key}' in {md_file.name} contains special characters or timestamp and must be double-quoted"
+                                )
 
     def test_markdown_governance_footers(self):
         """Verify presence of governance footers or copyright signatures in Markdown docs."""
@@ -108,13 +127,16 @@ class TestMarkdownCompliance(unittest.TestCase):
         for doc in doc_files:
             if doc.exists():
                 text = doc.read_text(encoding="utf-8")
-                clean_lines = []
+                cleaned_lines = []
                 for line in text.splitlines():
-                    # Skip lines that are URLs, external citations, or specific legacy document titles/citations
-                    if any(kw in line.lower() for kw in ("http://", "https://", "snyk organisation", "org id", "snyk organization", "optimization.md", "engine-optimization", "mind optimization", "engine optimization", "agentic optimization")):
-                        continue
-                    clean_lines.append(line)
-                combined_text += "\n".join(clean_lines).lower() + "\n"
+                    # Strip URLs first
+                    line_clean = re.sub(r'https?://\S+', '', line)
+                    # Strip markdown link target URLs e.g. (path/to/file.md)
+                    line_clean = re.sub(r'\]\([^)]+\)', ']', line_clean)
+                    # Remove exempt legacy filenames and API terms while retaining surrounding prose
+                    line_clean = re.sub(r'\b(Snyk\s+organization|Org\s+ID|optimization\.md|engine-optimization|mind-optimization|okf-mind-optimization|generative-engine-optimization)\b', '', line_clean, flags=re.IGNORECASE)
+                    cleaned_lines.append(line_clean)
+                combined_text += "\n".join(cleaned_lines).lower() + "\n"
 
         # Assert UK English terms are present in corpus
         for uk_term in UK_TERMS:

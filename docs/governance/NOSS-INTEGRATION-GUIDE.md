@@ -19,7 +19,7 @@ It is critical to establish the architectural hierarchy: **Deep State of Mind (D
 DSOM natively governs the workspace through a multi-protocol ecosystem. The AI agents within this ecosystem are bound by several strict standards simultaneously:
 * **Open Knowledge Format (OKF v0.1):** For metadata routing and documentation structures.
 * **Generative Engine Optimisation (GEO):** For deterministic, machine-readable output generation.
-* **Defensive GitOps / Defense-in-Depth:** For operational security and infrastructure isolation.
+* **Defensive GitOps / Defence-in-Depth:** For operational security and infrastructure isolation.
 * **POSIX / Termux Compatibility:** For cross-platform script execution.
 * **Sovereign Linguistics:** Strict adherence to UK English and standard Bahasa Melayu Malaysia (Piawai).
 
