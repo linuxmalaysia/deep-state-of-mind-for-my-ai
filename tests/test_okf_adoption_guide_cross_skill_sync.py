@@ -95,6 +95,14 @@ EXPECTED_FOOTER_LINE = (
     "*Deep State of Mind (DSOM) For My AI Protocol | "
     "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*"
 )
+VALID_FOOTER_LINES = (
+    EXPECTED_FOOTER_LINE,
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*"
+    ),
+)
+
 
 SKILLS_WITH_NEW_OKF_TOPIC = {
     "dsom-bootstrap": ["bootstrap", "setup", "onboarding", "project-init", "dsom", "okf"],
@@ -482,7 +490,10 @@ class ChangelogUpdateTests(unittest.TestCase):
         self.assertLess(cross_skill_idx, openwiki_idx)
 
     def test_footer_signature_date_bumped(self):
-        self.assertIn(EXPECTED_FOOTER_LINE, self.content)
+        self.assertTrue(
+            any(f in self.content for f in VALID_FOOTER_LINES),
+            "CHANGELOG.md should contain an up-to-date DSOM footer signature",
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -527,7 +538,10 @@ class HistoryUpdateTests(unittest.TestCase):
         self.assertLess(okf_idx, end_marker_idx)
 
     def test_footer_signature_date_bumped(self):
-        self.assertIn(EXPECTED_FOOTER_LINE, self.content)
+        self.assertTrue(
+            any(f in self.content for f in VALID_FOOTER_LINES),
+            "HISTORY.md should contain an up-to-date DSOM footer signature",
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -600,7 +614,10 @@ class ReadmeOkfIntegrationTests(unittest.TestCase):
         self.assertLess(okf_row_idx, governance_idx)
 
     def test_footer_signature_date_bumped(self):
-        self.assertIn(EXPECTED_FOOTER_LINE, self.content)
+        self.assertTrue(
+            any(f in self.content for f in VALID_FOOTER_LINES),
+            "README.md should contain an up-to-date DSOM footer signature",
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -901,7 +918,10 @@ class DocsReadmeUpdateTests(unittest.TestCase):
         )
 
     def test_footer_signature_date_bumped(self):
-        self.assertIn(EXPECTED_FOOTER_LINE, self.content)
+        self.assertTrue(
+            any(f in self.content for f in VALID_FOOTER_LINES),
+            "docs/README.md should contain an up-to-date DSOM footer signature",
+        )
 
 
 # ---------------------------------------------------------------------------

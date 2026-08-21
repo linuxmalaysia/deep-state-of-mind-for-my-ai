@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Opportunistic OKF v0.2 Migration Mandate (Rule 6):** Codified the requirement to migrate documents to OKF v0.2 (`sources`, `generated`, `verified`, `status`, `stale_after`) opportunistically during standard editing workflows, strictly forbidding token-wasting mass full-corpus rewrites.
+- **Downstream Asymmetry & Cognitive State Preservation Mandate (Rule 28):** Codified the architectural rule governing the Reference Forge (comprehensive baseline engine) vs. Minimal Downstream Adoption (lean 6-pillar footprint keeping client source code >90% of repository volume).
 - **DSOM Cognitive State Preservation & Minimal Downstream Adoption Architecture:** Authored foundational human-to-Gemini proposal (`docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`) establishing the Asymmetry Principle (comprehensive framework engine vs. lightweight, zero-bloat downstream project adoption), 6 core pillars of persistent memory, and Diátaxis 4-Quadrant navigation compass integration in `START-HERE.md`.
 - **Dedicated Open Knowledge Format (OKF) Adoption Guide:** Authored a comprehensive, human- and AI-readable specification document (`docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md`) detailing Google Cloud's OKF v0.1 and v0.2 standards, token optimization, progressive disclosure, trust signals, and step-by-step adoption for DSOM repositories.
 - **OKF Context Engine Integration:** Elevated OKF as Entry Point 17 in `START-HERE.md` and integrated OKF documentation references across `README.md`, `docs/README.md`, `SUMMARY.md`, and `mkdocs.yml`.
@@ -358,5 +360,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
