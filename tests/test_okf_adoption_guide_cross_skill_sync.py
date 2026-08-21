@@ -696,6 +696,9 @@ class StartHereOkfEntryPointTests(unittest.TestCase):
         if "## 18." in self.content:
             entry_18_idx = self.content.index("## 18.")
             self.assertLess(entry_17_idx, entry_18_idx)
+        if "## 19." in self.content:
+            entry_19_idx = self.content.index("## 19.")
+            self.assertLess(entry_18_idx, entry_19_idx)
 
     def test_footer_signature_date_bumped(self):
         self.assertTrue(

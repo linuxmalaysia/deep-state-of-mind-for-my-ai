@@ -44,7 +44,7 @@ Use this compass to jump directly to the exact information you or your AI agent 
 | :--- | :--- | :--- |
 | **🎓 Tutorials**<br>*(Learning-oriented · Practical)* | **Learning the craft step-by-step.** Guided onboarding for beginners establishing DSOM. | • [Entry Point 1: Engineering & Scaffolding](#1-the-engineering-entry-point-project-scaffolding)<br>• [Entry Point 12: Mechanical Boot Sequence](#12-the-initialisation-entry-point-mechanical-boot-sequence)<br>• [Entry Point 17: OKF Master Guide](#17-the-open-knowledge-format-okf-entry-point-foundational-context-engine_1) |
 | **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture) |
-| **📚 Reference**<br>*(Information-oriented · Theoretical)* | **Factual, authoritative lookup.** Specifications, API structures, and constitutional laws. | • [Entry Point 2: Full AI Constitution (`AGENTS.md`)](#2-the-cognitive-entry-point-ai-persona-rules)<br>• [Entry Point 3: AI Sitemap (`llms.txt`)](#3-the-external-system-entry-point-ai-crawlers)<br>• [Entry Point 16: Legal & Risk Disclaimer](#16-the-legal-disclaimer-entry-point-risk-governance)<br>• [Entry Point 18: Guardrails Master Guide](#18-the-ai-guardrails-custom-validators-entry-point-defense-in-depth-safety) |
+| **📚 Reference**<br>*(Information-oriented · Theoretical)* | **Factual, authoritative lookup.** Specifications, API structures, and constitutional laws. | • [Entry Point 2: Full AI Constitution (`AGENTS.md`)](#2-the-cognitive-entry-point-ai-persona-rules)<br>• [Entry Point 3: AI Sitemap (`llms.txt`)](#3-the-external-system-entry-point-ai-crawlers)<br>• [Entry Point 16: Legal & Risk Disclaimer](#16-the-legal-disclaimer-entry-point-risk-governance)<br>• [Entry Point 18: Guardrails Master Guide](#18-the-ai-guardrails-custom-validators-entry-point-defense-in-depth-safety)<br>• [Entry Point 19: Episodic Record Template](#19-the-episodic-record-state-anchor-entry-point-zero-context-amnesia) |
 | **💡 Explanation**<br>*(Understanding-oriented · Theoretical)* | **Architecture, rationale & philosophy.** Understanding *why* DSOM works and saves tokens. | • [Entry Point 8: LLM WIKI Architecture](#8-the-sovereign-knowledge-entry-point-llm-wiki-adoption)<br>• [Entry Point 9: Defensive GitOps Strategy](#9-the-security-defense-entry-point-defensive-gitops)<br>• [Entry Point 10: Token Performance Playbook](#10-the-token-performance-entry-point-context-efficiency)<br>• [Entry Point 14: The Tri-Phasic Mind](#14-the-cognitive-architecture-entry-point-the-tri-phasic-mind) |
 
 ---
@@ -234,6 +234,15 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`governance/AI-GUARDRAILS-MASTER-GUIDE.md`](governance/AI-GUARDRAILS-MASTER-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-GUARDRAILS-MASTER-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-GUARDRAILS-MASTER-GUIDE/))
 
 **Why it matters:** Autonomous agents must operate within deterministic boundaries. DSOM enforces a Tri-Phasic guardrail pipeline: Active FastMCP tool argument validation, Twilight State AST/regex command interception (blocking raw `pip` and credential leaks), and Deep State automated pytest gates.
+
+---
+
+## 19. The Episodic Record & State Anchor Entry Point (Zero Context Amnesia)
+*If you need to understand how the AI maintains unbroken mental state across chat reboots and platform boundaries via episodic serialisation.*
+
+**Read This First:** [`DSOM-EPISODIC-RECORD-TEMPLATE.md`](DSOM-EPISODIC-RECORD-TEMPLATE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/DSOM-EPISODIC-RECORD-TEMPLATE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/DSOM-EPISODIC-RECORD-TEMPLATE/))
+
+**Why it matters:** Enforces Rule 18 (The Episodic Resume Protocol). At the end of every major workflow or session handover, the AI outputs a strictly formatted `[DSOM EPISODIC RECORD]` block containing timestamps, test counts, Git commits, and mental anchors, enabling zero-loss resume across Google Jules, Cursor, Claude Desktop, and Gemini.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
