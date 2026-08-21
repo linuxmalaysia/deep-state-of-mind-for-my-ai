@@ -95,6 +95,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/diatax
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/openwiki-mcp-architecture/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-COGNITIVE-TWIN-PROTOCOL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-GUARDRAILS-MASTER-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-INITIALIZATION-SEQUENCE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-MASTER-PROTOCOL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-SKILL-ARCHITECTURE/
@@ -277,6 +278,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/diataxi
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/openwiki-mcp-architecture/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-COGNITIVE-TWIN-PROTOCOL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-GUARDRAILS-MASTER-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-INITIALIZATION-SEQUENCE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-MASTER-PROTOCOL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-SKILL-ARCHITECTURE/
@@ -400,6 +402,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/openwiki-mcp-architecture
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-cognitive-logging-protocol
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-cognitive-twin-protocol
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-guardrails-master-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-initialization-sequence
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-master-protocol
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/automation-audit-list
