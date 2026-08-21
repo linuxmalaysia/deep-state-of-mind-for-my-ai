@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "guardrails-ai-dsom"
+version = "0.1.0"
+description = "Sovereign AI Guardrails and Custom Validators for the Deep State of Mind (DSOM) protocol"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+authors = [
+    { name = "Harisfazillah Jamel (LinuxMalaysia)", email = "linuxmalaysia@songketmail.com" },
+]
+keywords = [
+    "guardrails",
+    "guardrails-ai",
+    "dsom",
+    "validation",
+    "security",
+    "okf",
+    "mcp",
+    "ai-safety",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.optional-dependencies]
+guardrails = ["guardrails-ai>=0.5.0", "pydantic>=2.0.0"]
+yaml = ["pyyaml>=6.0"]
+tokens = ["tiktoken>=0.7.0"]
+all = [
+    "guardrails-ai>=0.5.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "tiktoken>=0.7.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pyyaml>=6.0",
+    "tiktoken>=0.7.0",
+    "fastmcp>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/"
+Repository = "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai"
+Documentation = "https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-GUARDRAILS-MASTER-GUIDE/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/guardrails_dsom"]
