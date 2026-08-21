@@ -34,7 +34,7 @@ This folder contains the AI's core rules and its working memory.
 
 This is the most critical step. This repository contains custom AI skills (e.g., document compilation, OKF injection, automated onboarding) that the AI needs to function effectively.
 - **Copy:** Recursively copy all folders inside `.agents/skills/` to your new project's `.agents/skills/` directory.
-- *Verify:* Ensure each skill contains a `SKILL.md` file that is OKF v0.1 compliant.
+- *Verify:* Ensure each skill contains a `SKILL.md` file that is OKF (v0.1/v0.2) compliant.
 
 ### Pillar C: Governance & Configuration (`docs/`)
 

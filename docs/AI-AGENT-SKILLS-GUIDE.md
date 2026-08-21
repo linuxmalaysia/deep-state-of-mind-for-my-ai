@@ -88,7 +88,7 @@ This is the active ledger of all AI Agent Skills currently deployed in this repo
 | **Node Proposal Formatter** | `.agents/skills/node-proposal-formatter/SKILL.md` | Formats markdown proposals using Node wrappers. |
 | **Node Slide Generator** | `.agents/skills/node-slide-generator/SKILL.md` | Generates HTML/PDF slide decks from Markdown via Node/Marp. |
 | **ODP Slide Generator** | `.agents/skills/odp-slide-generator/SKILL.md` | Generates LibreOffice Impress (ODP) presentations from Markdown. |
-| **OKF Frontmatter Injector** | `.agents/skills/okf-frontmatter-injector/SKILL.md` | Scans a directory and automatically injects OKF v0.1 YAML frontmatter into Markdown files. |
+| **OKF Frontmatter Injector** | `.agents/skills/okf-frontmatter-injector/SKILL.md` | Scans a directory and automatically injects OKF (v0.1/v0.2) YAML frontmatter into Markdown files. |
 | **Palace Auditor** | `.agents/skills/palace-auditor/SKILL.md` | Crawls the workspace to verify links and maintain the Sovereign Memory Palace. |
 | **PDF Text Extractor** | `.agents/skills/pdf-text-extractor/SKILL.md` | Extracts raw text from PDF files for agent analysis. |
 | **Persona Injector** | `.agents/skills/persona-injector/SKILL.md` | Guides a user to define their Sovereign Persona and injects it into the core AGENTS.md rulebook. |
@@ -97,5 +97,5 @@ This is the active ledger of all AI Agent Skills currently deployed in this repo
 | **SSH Passwordless Setup** | `.agents/skills/ssh-passwordless-setup/SKILL.md` | Configures passwordless, multi-hop SSH routing using `~/.ssh/config` to bypass agent limits. |
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
