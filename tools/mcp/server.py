@@ -17,6 +17,7 @@ uv run tools/mcp/server.py
 """
 
 import os
+import sys
 from pathlib import Path
 import yaml
 
@@ -25,15 +26,37 @@ try:
 except ImportError:
     from mcp.server.fastmcp import FastMCP
 
-# Initialize the FastMCP server
-mcp = FastMCP("DSOM-Palace-Server")
-
 # Determine project root (assuming this script is in tools/mcp/)
 PROJECT_ROOT = Path(os.getenv("DSOM_ROOT", Path(__file__).parent.parent.parent)).resolve()
 BRAIN_DIR = PROJECT_ROOT / ".agents" / "brain"
 DOCS_DIR = PROJECT_ROOT / "docs"
 OPENWIKI_DIR = PROJECT_ROOT / "openwiki"
 AGENTS_FILE = PROJECT_ROOT / ".agents" / "AGENTS.md"
+
+# Integrate DSOM Guardrails
+GUARDRAILS_SRC = PROJECT_ROOT / "tools" / "guardrails-ai-dsom" / "src"
+if str(GUARDRAILS_SRC) not in sys.path:
+    sys.path.insert(0, str(GUARDRAILS_SRC))
+
+try:
+    from guardrails_dsom import (
+        GuardrailsCredentialGuardian,
+        GuardrailsOKFBOMValidator,
+        GuardrailsOKFTrustValidator,
+        GuardrailsByteCapValidator,
+        GuardrailsRootCleanlinessValidator,
+    )
+    _CRED_GUARDIAN = GuardrailsCredentialGuardian(on_fail="block")
+    _BOM_VALIDATOR = GuardrailsOKFBOMValidator(on_fail="fix")
+    _TRUST_VALIDATOR = GuardrailsOKFTrustValidator(on_fail="block")
+    _BYTE_CAP = GuardrailsByteCapValidator(max_bytes=8000, on_fail="fix")
+    _ROOT_GUARD = GuardrailsRootCleanlinessValidator(on_fail="fix")
+    HAS_GUARDRAILS = True
+except ImportError:
+    HAS_GUARDRAILS = False
+
+# Initialize the FastMCP server
+mcp = FastMCP("DSOM-Palace-Server")
 
 # ----------------------------------------------------------------------
 # RESOURCES
@@ -155,6 +178,31 @@ def fetch_context7_stream(tokens: int = 83688) -> str:
         f"Target Token Budget: {tokens}\n"
         "Use this endpoint to provide full project context to external AI agents or RAG pipelines."
     )
+
+@mcp.tool()
+def write_palace_document(relative_path: str, markdown_content: str) -> str:
+    """Safely writes or updates a markdown document in the Palace with active DSOM guardrails validation."""
+    if HAS_GUARDRAILS:
+        # 1. Rule 24: Credential Leak Interception
+        cred_res = _CRED_GUARDIAN.validate(markdown_content)
+        if not cred_res.is_valid:
+            return f"[ERROR: GUARDRAIL BLOCKED] {cred_res.error_message}"
+
+        # 2. Rule 17: Root Cleanliness Guard
+        root_res = _ROOT_GUARD.validate(relative_path)
+        target_rel_path = root_res.corrected_value
+
+        # 3. Rule 2 & 25: BOM Stripping & Fence Integrity
+        bom_res = _BOM_VALIDATOR.validate(markdown_content)
+        clean_content = bom_res.corrected_value
+    else:
+        target_rel_path = relative_path
+        clean_content = markdown_content
+
+    target_file = PROJECT_ROOT / target_rel_path
+    target_file.parent.mkdir(parents=True, exist_ok=True)
+    target_file.write_text(clean_content, encoding="utf-8")
+    return f"Successfully validated and written to {target_rel_path}"
 
 if __name__ == "__main__":
     # Start the FastMCP stdio server

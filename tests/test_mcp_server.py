@@ -40,6 +40,11 @@ class McpServerResourceTests(unittest.TestCase):
         self.assertIsInstance(results, str)
         self.assertGreater(len(results), 0)
 
+    def test_write_palace_document_blocks_credentials(self):
+        leak_content = "This contains a secret: ghp_123456789012345678901234567890123456"
+        res = server.write_palace_document("docs/test_secret.md", leak_content)
+        self.assertIn("[ERROR: GUARDRAIL BLOCKED]", res)
+
 
 if __name__ == "__main__":
     unittest.main()

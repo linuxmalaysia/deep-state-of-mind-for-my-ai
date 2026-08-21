@@ -56,11 +56,10 @@ declare -a PATTERNS=(
 
 LEAK_FOUND=0
 
-# 4. Scanning Process
-echo "🔍 Scanning for sensitive patterns..."
+echo "🔍 Scanning for sensitive patterns via Bash regex..."
 for pattern in "${PATTERNS[@]}"; do
     # Search and get line numbers
-    FOUND=$(grep -Eon "$pattern" "$TARGET_FILE")
+    FOUND=$(grep -Eon "$pattern" "$TARGET_FILE" || true)
     if [ -n "$FOUND" ]; then
         echo ""
         echo "⚠️  POTENTIAL LEAK DETECTED (Line:Match):"
@@ -68,6 +67,26 @@ for pattern in "${PATTERNS[@]}"; do
         LEAK_FOUND=1
     fi
 done
+
+# 4b. Scanning via guardrails-ai-dsom Python Engine
+echo "🔍 Scanning via guardrails-ai-dsom Python Engine..."
+if uv run --with-editable "${REPO_ROOT}/tools/guardrails-ai-dsom" python -c "
+import sys
+from pathlib import Path
+from guardrails_dsom import GuardrailsCredentialGuardian
+
+content = Path('${TARGET_FILE}').read_text(encoding='utf-8')
+res = GuardrailsCredentialGuardian().validate(content)
+if not res.is_valid:
+    print(f'GUARDRAIL_BLOCKED: {res.error_message}')
+    sys.exit(1)
+print('GUARDRAIL_PASS')
+"; then
+    echo "✅ [PASS] guardrails-ai-dsom Credential Guardian verified clean."
+else
+    echo "❌ ⚠️  GUARDRAILS-AI-DSOM LEAK DETECTED!"
+    LEAK_FOUND=1
+fi
 
 echo "----------------------------------------------------------------------"
 

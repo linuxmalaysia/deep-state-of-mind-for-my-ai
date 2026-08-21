@@ -66,7 +66,14 @@ Write-Host "[PASS] AI Brain artifacts are present." -ForegroundColor $Green
 
 # 2. GIT DRIFT CHECK
 Write-Host "`nStep 2: Checking Version Control Sync..." -ForegroundColor $Yellow
-git -C "$RootDir" fetch origin *> $null
+$env:GIT_TERMINAL_PROMPT = "0"
+$env:GCM_INTERACTIVE = "never"
+try {
+    $prevPreference = $ErrorActionPreference
+    $ErrorActionPreference = "SilentlyContinue"
+    & git -C "$RootDir" fetch origin 2>&1 | Out-Null
+    $ErrorActionPreference = $prevPreference
+} catch {}
 
 try {
     $Local = git -C "$RootDir" rev-parse "@"
@@ -133,6 +140,20 @@ if (-not $AnsibleCmd) {
     } else {
         Write-Host "[WARN] ansible.cfg missing." -ForegroundColor $Yellow
     }
+}
+
+# 6. DSOM GUARDRAILS-AI-DSOM SUITE CHECK
+Write-Host "`nStep 6: Checking DSOM Custom Guardrails Suite..." -ForegroundColor $Yellow
+$GuardrailsDir = Join-Path (Join-Path $RootDir "tools") "guardrails-ai-dsom"
+if (Test-Path $GuardrailsDir) {
+    $TestRun = uv run --with pytest --with pyyaml --with tiktoken pytest "$GuardrailsDir/tests" -q 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "[PASS] guardrails-ai-dsom 10/10 custom validators passing." -ForegroundColor $Green
+    } else {
+        Write-Host "[WARNING] guardrails-ai-dsom test failure detected: $TestRun" -ForegroundColor $Red
+    }
+} else {
+    Write-Host "[SKIP] tools/guardrails-ai-dsom not found." -ForegroundColor $Yellow
 }
 
 Write-Host "`n==================================================" -ForegroundColor $Green

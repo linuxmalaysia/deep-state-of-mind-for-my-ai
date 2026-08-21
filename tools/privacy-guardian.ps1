@@ -69,8 +69,8 @@ $Patterns = @(
 
 $LeakFound = $false
 
-# 4. Scanning Process
-Write-Host "🔍 Scanning for sensitive patterns..." -ForegroundColor $Yellow
+# 4. Scanning Process via Native Regex
+Write-Host "🔍 Scanning for sensitive patterns via PowerShell Engine..." -ForegroundColor $Yellow
 
 foreach ($Pattern in $Patterns) {
     try {
@@ -85,6 +85,29 @@ foreach ($Pattern in $Patterns) {
     } catch {
         # Silently ignore regex errors if any
     }
+}
+
+# 4b. Scanning Process via guardrails-ai-dsom Python Engine
+Write-Host "`n🔍 Scanning via guardrails-ai-dsom Python Engine..." -ForegroundColor $Yellow
+$GuardrailsCheck = uv run --with-editable "$RepoRoot/tools/guardrails-ai-dsom" python -c "
+import sys
+from pathlib import Path
+from guardrails_dsom import GuardrailsCredentialGuardian
+
+content = Path(r'$TargetFile').read_text(encoding='utf-8')
+guardian = GuardrailsCredentialGuardian()
+res = guardian.validate(content)
+if not res.is_valid:
+    print(f'GUARDRAIL_BLOCKED: {res.error_message}')
+    sys.exit(1)
+print('GUARDRAIL_PASS')
+" 2>&1
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "`n⚠️  GUARDRAILS-AI-DSOM LEAK DETECTED: $GuardrailsCheck" -ForegroundColor $Red
+    $LeakFound = $true
+} else {
+    Write-Host "[PASS] guardrails-ai-dsom Credential Guardian verified clean." -ForegroundColor $Green
 }
 
 Write-Host "----------------------------------------------------------------------"

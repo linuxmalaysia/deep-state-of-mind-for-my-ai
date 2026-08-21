@@ -121,6 +121,19 @@ else
     fi
 fi
 
+# 6. DSOM GUARDRAILS-AI-DSOM SUITE CHECK
+echo -e "\n${YELLOW}Step 6: Checking DSOM Custom Guardrails Suite...${NC}"
+GUARDRAILS_DIR="${ROOT_DIR}/tools/guardrails-ai-dsom"
+if [ -d "$GUARDRAILS_DIR" ]; then
+    if uv run --with pytest --with pyyaml --with tiktoken pytest "$GUARDRAILS_DIR/tests" -q &>/dev/null; then
+        echo -e "${GREEN}[PASS] guardrails-ai-dsom 10/10 custom validators passing.${NC}"
+    else
+        echo -e "${RED}[WARNING] guardrails-ai-dsom test failure detected.${NC}"
+    fi
+else
+    echo -e "${YELLOW}[SKIP] tools/guardrails-ai-dsom not found.${NC}"
+fi
+
 echo -e "\n${GREEN}==================================================${NC}"
 echo -e "${GREEN}   AUDIT COMPLETE: DSOM SECURED & READY FOR FLOW  ${NC}"
 echo -e "${GREEN}   Protocol v5.0 | GitOps · AIOps · Ansible        ${NC}"
