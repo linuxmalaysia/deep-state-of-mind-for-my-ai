@@ -3,8 +3,8 @@ okf_version: 0.1
 type: skill
 title: DSOM Policy Adopter
 timestamp: "2026-08-20T23:30:00Z"
-topics: ["policy", "governance", "pdf", "ingestion", "compliance", "okf"]
 description: "Automatically ingests an external research paper or policy document (PDF/Markdown) and formally integrates it into the DSOM framework governance and core rules."
+topics: ["policy", "governance", "pdf", "ingestion", "compliance", "okf"]
 name: dsom-policy-adopter
 ---
 # DSOM Policy Adopter Skill

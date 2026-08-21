@@ -3,8 +3,8 @@ okf_version: 0.1
 type: agent_skill
 title: okf-frontmatter-injector
 timestamp: "2026-08-20T23:30:00Z"
-topics: ["okf", "frontmatter", "yaml", "compliance", "markdown"]
 description: "Scans a target directory and automatically injects OKF v0.1 YAML frontmatter into any Markdown files missing it."
+topics: ["okf", "frontmatter", "yaml", "compliance", "markdown"]
 ---
 # 💉 OKF Frontmatter Injector
 

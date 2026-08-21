@@ -3,8 +3,8 @@ okf_version: 0.1
 type: skill
 title: DSOM Project Cloner Skill
 timestamp: "2026-08-20T23:30:00Z"
-topics: ["project", "scaffold", "clone", "dsom", "setup", "okf"]
 description: "Scaffolds a new DSOM project by copying the Sovereign Engine, Intelligence Payload, Governance, and Ritual Scripts from the baseline repository to a user-specified target path."
+topics: ["project", "scaffold", "clone", "dsom", "setup", "okf"]
 name: dsom-project-cloner
 ---
 # 🏗️ DSOM Project Cloner Skill

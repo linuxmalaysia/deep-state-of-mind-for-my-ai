@@ -3,8 +3,8 @@ okf_version: 0.1
 type: agent_skill
 title: "📥 DSOM Knowledge Ingester Skill"
 timestamp: "2026-08-20T23:30:00Z"
-topics: ["knowledge", "ingestion", "okf", "palace", "markdown"]
 description: "Executes the Ingest protocol inspired by the LLM WIKI concept to process external raw documents and synthesise them into the Sovereign Markdown Palace."
+topics: ["knowledge", "ingestion", "okf", "palace", "markdown"]
 name: dsom-knowledge-ingester
 ---
 # 📥 DSOM Knowledge Ingester Skill

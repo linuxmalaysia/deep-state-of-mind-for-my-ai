@@ -3,8 +3,8 @@ okf_version: 0.1
 type: skill
 title: "OpenWiki Knowledge Graph Compiler Skill"
 timestamp: "2026-08-20T23:30:00Z"
-topics: ["openwiki", "skill", "compilation", "knowledge", "graph", "dsom", "python", "okf"]
 description: "Procedural SOP for executing the native Python OpenWiki Emulator to compile, update, and maintain codebase knowledge graphs within DSOM."
+topics: ["openwiki", "skill", "compilation", "knowledge", "graph", "dsom", "python", "okf"]
 name: openwiki-compiler
 ---
 # OpenWiki Knowledge Graph Compiler Skill

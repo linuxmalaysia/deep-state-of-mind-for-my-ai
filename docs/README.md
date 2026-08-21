@@ -222,7 +222,7 @@ Each Room has a `closet.md` — a distilled, high-density knowledge summary the 
 
 ### Open Knowledge Format (OKF) Integration
 
-The DSOM Spatial Memory Palace and Skill Library are standardized on Google Cloud's **Open Knowledge Format (OKF v0.1 & v0.2)**. By using YAML frontmatter metadata and progressive disclosure directory routers (`index.md`), DSOM achieves a **98%+ token compression ratio**, allowing AI agents to query knowledge in ~50 tokens per file instead of reading massive, unformatted code files. Read the full [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) to adopt OKF across your repository.
+The DSOM Spatial Memory Palace and Skill Library are standardised on Google Cloud's **Open Knowledge Format (OKF v0.1 & v0.2)**. By using YAML frontmatter metadata and progressive disclosure directory routers (`index.md`), DSOM achieves a **98%+ token compression ratio**, allowing AI agents to query knowledge in ~50 tokens per file instead of reading massive, unformatted code files. Read the full [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) to adopt OKF across your repository.
 
 ### Palace Quick Start
 
