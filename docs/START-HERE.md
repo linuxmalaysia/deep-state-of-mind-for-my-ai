@@ -214,5 +214,15 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`LEGAL-NOTICE.md`](LEGAL-NOTICE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/))
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+
+## 17. The Open Knowledge Format (OKF) Entry Point (Foundational Context Engine)
+*If you are adopting OKF v0.1/v0.2 to structure your repository's documentation and memory assets for maximum AI token efficiency and zero context loss.*
+
+**Read This First:** [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/))
+
+**Why it matters:** OKF is Google Cloud's vendor-neutral specification that powers DSOM's spatial memory architecture (`.agents/brain/` and `.agents/skills/`). It achieves 98%+ token compression, enables progressive disclosure directory routing, and preserves persistent memory across AI agent reboots.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
+

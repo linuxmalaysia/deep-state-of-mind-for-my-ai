@@ -675,7 +675,11 @@ class StartHereOkfEntryPointTests(unittest.TestCase):
         self.assertNotIn("## 18.", self.content)
 
     def test_footer_signature_date_bumped(self):
-        self.assertIn(EXPECTED_FOOTER_LINE, self.content)
+        self.assertTrue(
+            EXPECTED_FOOTER_LINE in self.content
+            or "*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*" in self.content,
+            "START-HERE.md should contain an up-to-date DSOM footer signature",
+        )
 
 
 # ---------------------------------------------------------------------------

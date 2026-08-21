@@ -212,5 +212,5 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Why it matters:** OKF is Google Cloud's vendor-neutral specification that powers DSOM's spatial memory architecture (`.agents/brain/` and `.agents/skills/`). It achieves 98%+ token compression, enables progressive disclosure directory routing, and preserves persistent memory across AI agent reboots.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
