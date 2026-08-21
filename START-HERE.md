@@ -35,6 +35,21 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 
 ---
 
+## 🧭 The Diátaxis Documentation Compass: How to Navigate DSOM
+
+Following the [Diátaxis Documentation Framework](https://diataxis.fr/), DSOM documentation is organised across two fundamental axes: **Learning vs. Working** (Acquisition vs. Application) and **Practical vs. Theoretical** (Action vs. Knowledge).
+
+Use this compass to jump directly to the exact information you or your AI agent need:
+
+| Documentation Quadrant | User Intent & Orientation | Primary DSOM Entry Points |
+| :--- | :--- | :--- |
+| **🎓 Tutorials**<br>*(Learning-oriented · Practical)* | **Learning the craft step-by-step.** Guided onboarding for beginners establishing DSOM. | • [Entry Point 1: Engineering & Scaffolding](#1-the-engineering-entry-point-project-scaffolding)<br>• [Entry Point 12: Mechanical Boot Sequence](#12-the-initialisation-entry-point-mechanical-boot-sequence)<br>• [Entry Point 17: OKF Master Guide](#17-the-open-knowledge-format-okf-entry-point-foundational-context-engine_1) |
+| **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture) |
+| **📚 Reference**<br>*(Information-oriented · Theoretical)* | **Factual, authoritative lookup.** Specifications, API structures, and constitutional laws. | • [Entry Point 2: Full AI Constitution (`AGENTS.md`)](#2-the-cognitive-entry-point-ai-persona-rules)<br>• [Entry Point 3: AI Sitemap (`llms.txt`)](#3-the-external-system-entry-point-ai-crawlers)<br>• [Entry Point 16: Legal & Risk Disclaimer](#16-the-legal-disclaimer-entry-point-risk-governance) |
+| **💡 Explanation**<br>*(Understanding-oriented · Theoretical)* | **Architecture, rationale & philosophy.** Understanding *why* DSOM works and saves tokens. | • [Entry Point 8: LLM WIKI Architecture](#8-the-sovereign-knowledge-entry-point-llm-wiki-adoption)<br>• [Entry Point 9: Defensive GitOps Strategy](#9-the-security-defense-entry-point-defensive-gitops)<br>• [Entry Point 10: Token Performance Playbook](#10-the-token-performance-entry-point-context-efficiency)<br>• [Entry Point 14: The Tri-Phasic Mind](#14-the-cognitive-architecture-entry-point-the-tri-phasic-mind) |
+
+---
+
 ## 🌟 Why Adopt DSOM in Your Project? (Core Architectural Benefits)
 
 Adopting the DSOM protocol into any new or existing project delivers four transformative capabilities:

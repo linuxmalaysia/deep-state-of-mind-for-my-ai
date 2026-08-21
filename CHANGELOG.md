@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **DSOM Cognitive State Preservation & Minimal Downstream Adoption Architecture:** Authored foundational human-to-Gemini proposal (`docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`) establishing the Asymmetry Principle (comprehensive framework engine vs. lightweight, zero-bloat downstream project adoption), 6 core pillars of persistent memory, and Diátaxis 4-Quadrant navigation compass integration in `START-HERE.md`.
 - **Dedicated Open Knowledge Format (OKF) Adoption Guide:** Authored a comprehensive, human- and AI-readable specification document (`docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md`) detailing Google Cloud's OKF v0.1 and v0.2 standards, token optimization, progressive disclosure, trust signals, and step-by-step adoption for DSOM repositories.
 - **OKF Context Engine Integration:** Elevated OKF as Entry Point 17 in `START-HERE.md` and integrated OKF documentation references across `README.md`, `docs/README.md`, `SUMMARY.md`, and `mkdocs.yml`.
 - **Cross-Skill OKF Compliance Mandate:** Updated key operational skills (`okf-frontmatter-injector`, `dsom-policy-adopter`, `dsom-knowledge-ingester`, `dsom-bootstrap`, `dsom-project-cloner`, `openwiki-compiler`, `palace-auditor`) to explicitly embed `okf-frontmatter-injector` execution (`python tools/apply_okf_frontmatter.py`) as a mandatory step whenever new Markdown documents or memory assets are created or modified.

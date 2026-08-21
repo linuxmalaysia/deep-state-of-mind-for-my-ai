@@ -17,6 +17,9 @@
 - Synchronised and integrated Google Jules updates (PR #77 OKF Master Guide Adoption & PR #78 CodeRabbit tests).
 - Updated Jules PR History ledger in `.agents/brain/jules_pr_history.md` with PR #74, #76, #77, and #78.
 - Validated OKF frontmatter compliance across all 7 modified skills and updated test assertions.
+- Integrated Diátaxis 4-Quadrant Navigation Compass into `START-HERE.md` and `docs/START-HERE.md`.
+- Authored the Human Proposal: `docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`.
+- Synchronised omni-documentation and ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
 - Verified 100% test suite pass rate (841/841 unit tests passing cleanly).
 - Maintained clean multi-remote tracking with GitHub and GitLab.
 
@@ -31,6 +34,7 @@
 This represents the complete and total set of contextual memory for this operation.
 
 REQUIRED READING FOR NEXT SESSION REANIMATION:
+- docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md
 - docs/OKF-ADOPTION-GUIDE.md
 - START-HERE.md
 - .agents/AGENTS.md
@@ -40,4 +44,4 @@ REQUIRED READING FOR NEXT SESSION REANIMATION:
 - .agents/rules/windows-git-execution.md
 
 MENTAL ANCHOR FOR NEXT SESSION:
-> **Google Jules PR #77 and #78 synchronized, OKF Master Guide and cross-skill adoption active, 841 unit tests passing (100%), and brain memory fully aligned.**
+> **Diátaxis 4-Quadrant Compass integrated into START-HERE, Human Proposal on DSOM Cognitive State Preservation published, all ledgers synchronized, and 841 unit tests passing (100%).**

@@ -169,3 +169,19 @@ To maintain cognitive alignment with Google Jules, adopt the authoritative OKF v
 ### Integration Mental Anchor
 
 > Synchronised Google Jules' PR #77 and #78, adopted the OKF Master Guide and cross-skill validation, and confirmed 100% test suite pass rate (841 tests).
+
+## 🏁 Session Anchor: 2026-08-21 — Diátaxis Navigation Compass & DSOM Cognitive State Preservation Architecture
+
+- Integrated the Diátaxis 4-Quadrant Navigation Compass into `START-HERE.md` and `docs/START-HERE.md`, mapping the 17 entry points across Learning vs. Working and Action vs. Knowledge axes.
+- Authored the Human-to-Gemini Architectural Proposal: [`docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md), documenting the Asymmetry Principle (comprehensive framework engine vs. lightweight, zero-bloat downstream adoption) and the 6 Core Pillars of persistent AI memory.
+- Synchronised omni-documentation and ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
+- Verified 100% unit test pass rate (**841/841 unit tests passing**).
+
+### Underlying Rationale
+
+To elevate `START-HERE.md` to Diátaxis documentation standards for human and AI clarity, and formally codify the architectural doctrine that downstream projects should adopt DSOM's core memory mechanics in a lightweight, high-density manner without documentation bloat.
+
+### Integration Mental Anchor
+
+> Integrated Diátaxis 4-Quadrant Compass in START-HERE, published the Human Proposal on DSOM Cognitive State Preservation, synchronized all ledgers, and verified 841/841 unit tests passing (100%).
+

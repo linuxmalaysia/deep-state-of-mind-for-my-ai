@@ -557,6 +557,7 @@ Once Step 6 is complete, the AI knows:
 | [`governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
 | [`governance/NOSS-INTEGRATION-GUIDE.md`](governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
 | [`governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md) | 📚 Knowledge-First Discovery — SOP for local OKF frontmatter search before terminal execution |
+| [`governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`](governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md) | 🧠 **Cognitive State Preservation Proposal** — Human-to-Gemini architectural blueprint on persistent AI memory and minimal downstream adoption |
 | [`../llms.txt`](../llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
 | [`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |

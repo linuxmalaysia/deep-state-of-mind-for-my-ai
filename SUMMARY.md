@@ -45,6 +45,7 @@ topics: ["dsom", "documentation"]
 * [⚡ DSOM Efficiency Protocols](docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md)
 * [📚 SOP: Knowledge-First Discovery](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 * [🛡️ GitHub Actions Security Scanning](docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md)
+* [🧠 DSOM Cognitive State Preservation & Minimal Downstream Proposal](docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md)
 
 ## 🌅 2. Operational Rituals
 

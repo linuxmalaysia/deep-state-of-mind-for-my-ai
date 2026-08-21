@@ -29,5 +29,9 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Validate OKF Adoption Guide cross-skill compliance and update test assertions (`test_okf_adoption_guide_cross_skill_sync.py`).
 - `[x]` Verify 100% test pass rate across entire suite (841/841 unit tests passing).
 - `[x]` Synchronize spatial brain files (`walkthrough.md`, `checkpoint_summary.txt`, `task.md`).
+- `[x]` Integrate Diátaxis 4-Quadrant Navigation Compass into `START-HERE.md` and `docs/START-HERE.md`.
+- `[x]` Author Human-to-Gemini Architectural Proposal: `docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`.
+- `[x]` Synchronize Omni-Documentation & Ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
+- `[x]` Validate 100% unit test suite passing (841/841 tests).
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-05*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*

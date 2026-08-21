@@ -44,6 +44,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [DSOM Ingestion Latency Architecture](docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md): L2 analysis with empirical benchmarks comparing local OKF reads vs. remote RAG/vector latency. Covers active context manifest pattern and anti-patterns.
 
 ## Agent Skills & Multi-Agent
+- [Cognitive State Preservation Proposal](docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md): Human-to-Gemini architectural proposal on AI cognitive state persistence across sessions and minimal downstream adoption without documentation bloat.
 - [Multi-Agent Protocols](docs/governance/MULTI-AGENT-PROTOCOLS.md): Governs safe deployment of Subagent Swarms via Git Worktree Isolation.
 - [Agent Skills Guide](docs/AI-AGENT-SKILLS-GUIDE.md): How AI subagents utilize OKF-compliant execution manuals.
 - [Skill Architecture](docs/governance/AI-SKILL-ARCHITECTURE.md): The structural design for OKF-compliant semantic AI skills.
