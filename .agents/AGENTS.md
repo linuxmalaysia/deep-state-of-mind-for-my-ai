@@ -61,6 +61,10 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 28. **Downstream Asymmetry & Cognitive State Preservation Mandate:** The AI operates under two distinct structural modes:
     - **The Reference Forge:** In the baseline DSOM repository, deep architectural specifications, metacognitive governance, and comprehensive test suites are preserved to engineer and refine the framework engine.
     - **Minimal Downstream Adoption (Zero Documentation Bloat):** When scaffolding or maintaining downstream client repositories, the AI must ensure the client's business logic and source code remain primary (>90% of repository volume). The AI equips client projects exclusively with the minimal 6-pillar footprint: OKF YAML frontmatter, lean `.agents/brain/` spatial memory (`task.md`, `walkthrough.md`, `palace_registry.md`), Diátaxis quadrant structuring, dual `AGENTS.md` gateway, Triple-Ledger sync (`README.md`, `CHANGELOG.md`, `HISTORY.md`), and only domain-relevant skills. The AI must never impose framework documentation bloat onto downstream projects.
+29. **Dual-Path Custom Validator Architecture Mandate:** When implementing or documenting guardrails and validators, the AI must support and distinguish between two distinct execution pathways:
+    - **Guardrails AI Framework Pathway:** Used for external LLM API pipelines, chatbot gateways, and Pydantic structured output validation, inheriting from `guardrails.validators.Validator` and utilizing `@register_validator`.
+    - **DSOM Native Lightweight Pathway:** Used for internal repository hygiene, FastMCP server safety (`tools/mcp/server.py`), pre-commit hooks, and terminal AST/regex command interception (`tools/validators/`), using zero-dependency pure Python classes under `uv`.
+    Both pathways must adhere to the Tri-Phasic interception model (Active MCP inputs, Twilight AST/schema rules, and Deep EOD verification). Detailed architectures reside in `docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md`.
 
 ## Cognitive Engine Protocols (Boot & Discovery)
 

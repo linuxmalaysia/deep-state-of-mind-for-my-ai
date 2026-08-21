@@ -59,6 +59,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Native OpenWiki Emulator Mandate** | AI maintains `./openwiki/` documentation trees directly via native Python scripts (`uv run --with pyyaml python tools/openwiki_emulator.py`), eliminating external Node.js binaries, UAC elevation hangs, and API rate limits. |
 | **Downstream Asymmetry (Zero-Bloat)** | Baseline repo houses the full metacognitive engine, while downstream projects adopt a lean 6-pillar footprint where source code remains >90% of repository volume. |
 | **Diátaxis Documentation Compass** | Enforces 4-quadrant separation (Tutorials, How-To Guides, Reference, Explanation) across `START-HERE.md` and `docs/` to eliminate cognitive fatigue and maximize token efficiency. |
+| **Dual-Path Custom Validators** | Integrates both the Guardrails AI Framework (for external LLM apps/Pydantic schemas) and the DSOM Native Lightweight Pathway (for FastMCP/AST command interception and offline safety) across Tri-Phasic states. |
 
 ---
 
