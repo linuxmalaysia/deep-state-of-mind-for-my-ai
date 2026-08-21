@@ -1,11 +1,16 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Open Knowledge Format (OKF) Adoption Guide: The Foundational Context Engine for DSOM"
 timestamp: "2026-08-20T23:00:00Z"
 topics: ["okf", "dsom", "documentation", "context-engineering", "progressive-disclosure", "llm-wiki"]
 description: "The authoritative guide for human engineers and AI agents to understand, implement, and adopt the Open Knowledge Format (OKF v0.1 & v0.2) within the Deep State of Mind (DSOM) protocol."
 resource: "file:///docs/OKF-ADOPTION-GUIDE.md"
+sources: ["https://cloud.google.com/blog/products/databases/announcing-open-knowledge-format-for-gen-ai", ".agents/AGENTS.md"]
+generated: "google-antigravity"
+verified: true
+status: "approved"
+stale_after: "2027-08-20T00:00:00Z"
 ---
 
 # 🌐 Open Knowledge Format (OKF) Adoption Guide: The Foundational Context Engine for DSOM

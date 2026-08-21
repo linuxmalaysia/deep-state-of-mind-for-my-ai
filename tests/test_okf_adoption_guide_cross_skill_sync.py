@@ -723,7 +723,7 @@ class OkfAdoptionGuideFrontmatterTests(unittest.TestCase):
     def test_docs_copy_frontmatter(self):
         content = DOCS_OKF_GUIDE_PATH.read_text(encoding="utf-8")
         _, parsed = _extract_frontmatter_block(content)
-        self.assertEqual(parsed.get("okf_version"), 0.1)
+        self.assertIn(parsed.get("okf_version"), (0.1, 0.2))
         self.assertEqual(parsed.get("type"), "documentation")
         self.assertEqual(parsed.get("title"), self.EXPECTED_TITLE)
         self.assertEqual(parsed.get("timestamp"), "2026-08-20T23:00:00Z")
@@ -733,7 +733,7 @@ class OkfAdoptionGuideFrontmatterTests(unittest.TestCase):
     def test_references_copy_frontmatter(self):
         content = REFERENCES_OKF_GUIDE_PATH.read_text(encoding="utf-8")
         _, parsed = _extract_frontmatter_block(content)
-        self.assertEqual(parsed.get("okf_version"), 0.1)
+        self.assertIn(parsed.get("okf_version"), (0.1, 0.2))
         self.assertEqual(parsed.get("type"), "documentation")
         self.assertEqual(parsed.get("title"), self.EXPECTED_TITLE)
         self.assertEqual(parsed.get("timestamp"), "2026-08-20T23:00:00Z")

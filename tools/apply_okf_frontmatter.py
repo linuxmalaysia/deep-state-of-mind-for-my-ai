@@ -182,8 +182,13 @@ def normalise_metadata(existing_frontmatter, rest_of_content, rel_path, filename
     """
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
-    if okf_version is None or str(okf_version) != '0.1':
+    if okf_version is None or str(okf_version) not in ('0.1', '0.2'):
         okf_version = 0.1
+    else:
+        try:
+            okf_version = float(okf_version)
+        except (ValueError, TypeError):
+            okf_version = 0.1
 
     # 2. type
     okf_type = existing_frontmatter.get('type')

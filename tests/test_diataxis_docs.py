@@ -163,13 +163,13 @@ class DiataxisFileExistenceTests(unittest.TestCase):
 class DiataxisFrontmatterTextFormatTests(unittest.TestCase):
     """Regex-based OKF frontmatter checks that don't require a YAML parser."""
 
-    def test_frontmatter_declares_okf_version_0_1(self):
+    def test_frontmatter_declares_okf_version(self):
         for relative_path, _ in NEW_DIATAXIS_FILES:
             with self.subTest(path=relative_path):
                 content = (DOCS_DIR / relative_path).read_text(encoding="utf-8")
                 raw, _ = _extract_frontmatter(content)
                 self.assertIsNotNone(raw, f"docs/{relative_path} missing frontmatter block")
-                self.assertRegex(raw, r"okf_version:\s*0\.1")
+                self.assertRegex(raw, r"okf_version:\s*0\.[12]")
 
     def test_frontmatter_declares_type_documentation(self):
         for relative_path, _ in NEW_DIATAXIS_FILES:
@@ -209,7 +209,7 @@ class DiataxisFrontmatterStructureTests(unittest.TestCase):
                 content = (DOCS_DIR / relative_path).read_text(encoding="utf-8")
                 _, parsed = _extract_frontmatter(content)
                 self.assertIsInstance(parsed, dict)
-                self.assertEqual(parsed["okf_version"], 0.1)
+                self.assertIn(parsed["okf_version"], (0.1, 0.2))
                 self.assertEqual(parsed["type"], "documentation")
                 self.assertEqual(parsed["title"], expected_title)
                 self.assertIsInstance(parsed["timestamp"], str)

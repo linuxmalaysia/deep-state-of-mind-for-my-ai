@@ -67,8 +67,8 @@ class TestMarkdownCompliance(unittest.TestCase):
                 for field in REQUIRED_FIELDS:
                     self.assertIn(field, data, f"Frontmatter in {md_file.name} missing required field '{field}'")
 
-                # Verify okf_version equals 0.1
-                self.assertEqual(data.get("okf_version"), 0.1, f"okf_version in {md_file.name} must equal 0.1")
+                # Verify okf_version equals 0.1 or 0.2
+                self.assertIn(data.get("okf_version"), (0.1, 0.2), f"okf_version in {md_file.name} must equal 0.1 or 0.2")
 
                 # Inspect parsed YAML AST node styles for double-quoting
                 compose_node = yaml.compose(raw_fm)
