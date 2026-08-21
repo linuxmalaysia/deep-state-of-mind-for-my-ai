@@ -2,8 +2,8 @@
 okf_version: 0.1
 type: documentation
 title: "🧠 Deep State of Mind (DSOM) For My AI Protocol"
-timestamp: "2026-07-04T09:40:04Z"
-topics: ["dsom", "documentation"]
+timestamp: "2026-08-20T23:20:00Z"
+topics: ["dsom", "documentation", "okf"]
 description: "OKF-compliant documentation for README.md."
 resource: "file:///README.md"
 ---
@@ -220,11 +220,16 @@ The Palace gives your AI **organised, fast, spatial recall** across months of pr
 
 Each Room has a `closet.md` — a distilled, high-density knowledge summary the AI reads **instead of** scanning hundreds of lines.
 
+### Open Knowledge Format (OKF) Integration
+
+The DSOM Spatial Memory Palace and Skill Library are standardised on Google Cloud's **Open Knowledge Format (OKF v0.1 & v0.2)**. By using YAML frontmatter metadata and progressive disclosure directory routers (`index.md`), DSOM achieves a **98%+ token compression ratio**, allowing AI agents to query knowledge in ~50 tokens per file instead of reading massive, unformatted code files. Read the full [`docs/OKF-ADOPTION-GUIDE.md`](docs/OKF-ADOPTION-GUIDE.md) to adopt OKF across your repository.
+
 ### Palace Quick Start
 
 | If you are... | Go to... |
 |---|---|
 | **First-time user or AI agent** | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) |
+| **Adopting OKF in your project** | [`docs/OKF-ADOPTION-GUIDE.md`](docs/OKF-ADOPTION-GUIDE.md) |
 | **Existing DSOM user upgrading** | [`docs/HOWTO-MIGRATE-TO-PALACE.md`](docs/HOWTO-MIGRATE-TO-PALACE.md) |
 | **Reading how the Palace was built** | [`docs/PALACE-BUILD-STORY.md`](docs/PALACE-BUILD-STORY.md) |
 | **Full Palace specification** | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) |
@@ -535,7 +540,8 @@ Once Step 6 is complete, the AI knows:
 | [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |
 | [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
 | [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |
-| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 9 primary onboarding entry points. Read this first! |
+| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 17 primary onboarding entry points. Read this first! |
+| [`docs/OKF-ADOPTION-GUIDE.md`](docs/OKF-ADOPTION-GUIDE.md) | 🌐 **Open Knowledge Format (OKF) Guide** — Authoritative guide to OKF v0.1/v0.2 context engine. |
 | [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialisation Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
 | [`docs/AI-MASTER-PROTOCOL.md`](docs/AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
 | [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](docs/AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
@@ -624,5 +630,5 @@ Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for
 ---
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

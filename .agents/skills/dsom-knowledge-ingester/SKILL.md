@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: agent_skill
 title: "📥 DSOM Knowledge Ingester Skill"
-timestamp: "2026-08-05T22:23:51Z"
+timestamp: "2026-08-20T23:30:00Z"
 description: "Executes the Ingest protocol inspired by the LLM WIKI concept to process external raw documents and synthesise them into the Sovereign Markdown Palace."
 topics: ["knowledge", "ingestion", "okf", "palace", "markdown"]
 name: dsom-knowledge-ingester
@@ -20,7 +20,8 @@ Use this skill when the user provides a new external source (PDF, Markdown, Web 
 3. **Wiki Integration (The Palace):**
    - Create a new `.md` file in the appropriate directory (e.g., `docs/governance/`, `hall_facts/`).
    - Format the file according to DSOM Generative Engine Optimisation (GEO) standards (atomic chunks, H2 headers, expert tone).
-   - Inject the OKF v0.1 frontmatter and the Sovereign Signature using `dsom-signature-injector`.
+   - Execute `uv run python tools/apply_okf_frontmatter.py <directory>` to verify and inject OKF v0.1 frontmatter headers into all newly synthesized Markdown documents.
+   - Run `python .agents/skills/dsom-signature-injector/scripts/inject.py <directory>` to append standard GPL v3.0 ownership signatures.
 4. **Ledger & Index Updates:**
    - Add the new file to `SUMMARY.md` and `mkdocs.yml` (Dual Documentation Sync).
    - Add the new file to `.agents/brain/palace_registry.md`.
@@ -28,5 +29,5 @@ Use this skill when the user provides a new external source (PDF, Markdown, Web 
 5. **Confirmation:** Provide the user with a summary of the concepts extracted and the new pages created.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-16*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

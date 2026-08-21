@@ -2,9 +2,9 @@
 okf_version: 0.1
 type: agent_skill
 title: "🚀 DSOM Bootstrap Skill"
-timestamp: "2026-08-05T22:23:51Z"
+timestamp: "2026-08-20T23:30:00Z"
 description: "Executes the DSOM bootstrapping process for a new or existing project by reading the HOWTO-DSOM-BASELINE.md guide and pulling files from the permanent baseline repository."
-topics: ["bootstrap", "setup", "onboarding", "project-init", "dsom"]
+topics: ["bootstrap", "setup", "onboarding", "project-init", "dsom", "okf"]
 name: dsom-bootstrap
 ---
 # 🚀 DSOM Bootstrap Skill
@@ -21,10 +21,13 @@ Use this skill when you are operating in a new or existing workspace that lacks 
    - Use your terminal execution tools (`run_command`) to perform the recursive copies (`cp -r` or `Copy-Item -Recurse`) from the defined Baseline Path.
    - For EXISTING projects, ensure you read existing files and perform intelligent merges using your file editing tools, rather than destructive overwrites.
 5. **Sanitize (If New):** Ensure the `checkpoint_summary.txt`, `task.md`, and `walkthrough.md` in `.agents/brain/` are emptied of baseline history.
-6. **Verify:** Run the `tools/diagnostic.ps1` or `tools/diagnostic.sh` script to confirm the port was successful.
-7. **Report:** Output a success message to the user, confirming that the AI now possesses full DSOM capabilities, tools, and documentation.
+6. **OKF Frontmatter Compliance & Signature Injection:**
+   - Execute `uv run python tools/apply_okf_frontmatter.py .` to ensure all imported or ported Markdown documents have valid OKF v0.1 frontmatter.
+   - Run `python .agents/skills/dsom-signature-injector/scripts/inject.py .` to apply GPL v3.0 signature footers across all ported documentation.
+7. **Verify:** Run the `tools/diagnostic.ps1` or `tools/diagnostic.sh` script to confirm the port was successful.
+8. **Report:** Output a success message to the user, confirming that the AI now possesses full DSOM capabilities, tools, and documentation.
 
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

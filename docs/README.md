@@ -2,10 +2,10 @@
 okf_version: 0.1
 type: documentation
 title: "🧠 Deep State of Mind (DSOM) For My AI Protocol"
-timestamp: "2026-07-04T09:40:04Z"
-topics: ["dsom", "documentation"]
+timestamp: "2026-08-20T23:20:00Z"
+topics: ["dsom", "documentation", "okf"]
 description: "OKF-compliant documentation for README.md."
-resource: "file:///README.md"
+resource: "file:///docs/README.md"
 ---
 # 🧠 Deep State of Mind (DSOM) For My AI Protocol
 
@@ -90,7 +90,7 @@ DSOM maintains **two synchronised `AGENTS.md` files** to serve both project-awar
 
 | File | Role |
 |:---|:---|
-| [`AGENTS.md`](AGENTS.md) | **Root Gateway** — discovered by Jules, Copilot, and other agents that scan the repo root. Summarises DSOM and redirects to the full rulebook. |
+| [`AGENTS.md`](../AGENTS.md) | **Root Gateway** — discovered by Jules, Copilot, and other agents that scan the repo root. Summarises DSOM and redirects to the full rulebook. |
 | [`.agents/AGENTS.md`](.agents/AGENTS.md) | **Full Sovereign Rulebook** — the Cognitive Entry Point containing all 22+ laws, persona profile, boot sequence, and discovery protocols. |
 
 > **Tip:** Keep both `AGENTS.md` files synchronised. The root gateway is the **first read**; the `.agents/AGENTS.md` is the **complete read**. This dual-file pattern ensures DSOM governance is immediately discoverable by any AI tool without requiring custom configuration.
@@ -144,7 +144,7 @@ This is the most important step. Open and fill in every `[PLACEHOLDER]`:
 
 ```bash
 # Open and edit with your project-specific details
-nano docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+nano AI-COGNITIVE-TWIN-PROTOCOL.md
 ```
 
 Fill in:
@@ -162,7 +162,7 @@ Fill in:
 
 ```bash
 # Follow the full LDP guide
-cat docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
+cat HOWTO-SETUP-ANSIBLE-BASELINE.md
 
 # Verify connectivity to your nodes
 ansible all -m ping -i inventory/hosts.yml
@@ -182,7 +182,7 @@ ansible all -m ping -i inventory/hosts.yml
 
 ### Step 6 — Brief Your AI (The Cognitive Handshake)
 
-Identity context manifest is generated and uploaded:
+Generate the context manifest and upload it to your AI:
 
 ```bash
 # Linux / WSL2
@@ -220,11 +220,16 @@ The Palace gives your AI **organised, fast, spatial recall** across months of pr
 
 Each Room has a `closet.md` — a distilled, high-density knowledge summary the AI reads **instead of** scanning hundreds of lines.
 
+### Open Knowledge Format (OKF) Integration
+
+The DSOM Spatial Memory Palace and Skill Library are standardised on Google Cloud's **Open Knowledge Format (OKF v0.1 & v0.2)**. By using YAML frontmatter metadata and progressive disclosure directory routers (`index.md`), DSOM achieves a **98%+ token compression ratio**, allowing AI agents to query knowledge in ~50 tokens per file instead of reading massive, unformatted code files. Read the full [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) to adopt OKF across your repository.
+
 ### Palace Quick Start
 
 | If you are... | Go to... |
 |---|---|
 | **First-time user or AI agent** | [`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) |
+| **Adopting OKF in your project** | [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) |
 | **Existing DSOM user upgrading** | [`HOWTO-MIGRATE-TO-PALACE.md`](HOWTO-MIGRATE-TO-PALACE.md) |
 | **Reading how the Palace was built** | [`PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md) |
 | **Full Palace specification** | [`DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) |
@@ -325,7 +330,7 @@ Optional — scan before sharing:
 *Option A — Upload manifest to AI chat, then say:*
 > *"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the Mental Anchor and confirm the 4-Tier environment map. State: 'Sovereign State Synchronised' when ready."*
 
-*Option B — If you have yesterday's Hibernation Notes, use the SOD Reanimation Prompt (see `docs/SOD-RITUAL.md` Step 4b):*
+*Option B — If you have yesterday's Hibernation Notes, use the SOD Reanimation Prompt (see `SOD-RITUAL.md` Step 4b):*
 
 ```text
 I am starting a new session for DSOM Protocol. I am your human Lead Architect.
@@ -511,7 +516,7 @@ Paste it into the **old** AI session first to get a full memory dump, then load 
 ```text
 [ ] 1. Clone and run template-reset.sh
 [ ] 2. Run init-brain.sh
-[ ] 3. Fill in docs/AI-COGNITIVE-TWIN-PROTOCOL.md (ALL [PLACEHOLDER] fields)
+[ ] 3. Fill in AI-COGNITIVE-TWIN-PROTOCOL.md (ALL [PLACEHOLDER] fields)
 [ ] 4. Run HOWTO-SETUP-ANSIBLE-BASELINE.md (infra projects)
 [ ] 5. Run audit-pre-flight.sh — confirm all PASS
 [ ] 6. Run reanimate.sh — upload manifest to AI — get Handshake
@@ -535,7 +540,8 @@ Once Step 6 is complete, the AI knows:
 | [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |
 | [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
 | [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |
-| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 9 primary onboarding entry points. Read this first! |
+| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 17 primary onboarding entry points. Read this first! |
+| [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) | 🌐 **Open Knowledge Format (OKF) Guide** — Authoritative guide to OKF v0.1/v0.2 context engine. |
 | [`governance/AI-INITIALIZATION-SEQUENCE.md`](governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialisation Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
 | [`AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |
 | [`AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) | ⭐ **Fill this in first** — Project Identity Card |
@@ -551,12 +557,11 @@ Once Step 6 is complete, the AI knows:
 | [`governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
 | [`governance/NOSS-INTEGRATION-GUIDE.md`](governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
 | [`governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md) | 📚 Knowledge-First Discovery — SOP for local OKF frontmatter search before terminal execution |
-| [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
+| [`../llms.txt`](../llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
 | [`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
 | [`HOWTO-MIGRATE-TO-PALACE.md`](HOWTO-MIGRATE-TO-PALACE.md) | 🔄 Upgrade guide — existing DSOM → Palace v1.0 |
 | [`PALACE-BUILD-STORY.md`](PALACE-BUILD-STORY.md) | 📖 How and why the Palace was built |
-| [`README.md`](README.md) | 📖 **Substance Copy** — Local, portable copy of the main project README. |
 | [`SOD-RITUAL.md`](SOD-RITUAL.md) | 🌅 Full Start-of-Day ritual guide |
 | [`EOD-RITUAL.md`](EOD-RITUAL.md) | 🌙 Full End-of-Day ritual guide |
 | [`HUMAN-HANDOVER-CONTEXT.md`](HUMAN-HANDOVER-CONTEXT.md) | 🤝 Session handover prompt |
@@ -604,7 +609,7 @@ All contributions must follow the DSOM standards:
 - No secrets in any committed file
 - **Triple-Ledger Mandate**: Major updates must sync `README.md`, `CHANGELOG.md`, and `HISTORY.md`
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for full guidelines.
+See [`../CONTRIBUTING.md`](../CONTRIBUTING.md) for full guidelines.
 
 ---
 
@@ -618,12 +623,12 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for full guidelines.
 
 ## 📄 License
 
-Licensed under **GNU General Public License v3.0**. See [`LICENSE`](LICENSE) for details.
+Licensed under **GNU General Public License v3.0**. See [`../LICENSE`](../LICENSE) for details.
 
 **At Your Own Risk:** Shared for educational purposes. The author is not liable for data loss or AI hallucinations. Validate your own Cognitive Twins.
 
 ---
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
