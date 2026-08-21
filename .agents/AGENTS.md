@@ -64,7 +64,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
 29. **Dual-Path Custom Validator Architecture Mandate:** When implementing or documenting guardrails and validators, the AI must support and distinguish between two distinct execution pathways:
     - **Guardrails AI Framework Pathway:** Used for external LLM API pipelines, chatbot gateways, and Pydantic structured output validation, inheriting from `guardrails.validators.Validator` and utilizing `@register_validator`.
     - **DSOM Native Lightweight Pathway:** Used for internal repository hygiene, FastMCP server safety (`tools/mcp/server.py`), pre-commit hooks, and terminal AST/regex command interception (`tools/validators/`), using zero-dependency pure Python classes under `uv`.
-    Both pathways must adhere to the Tri-Phasic interception model (Active MCP inputs, Twilight AST/schema rules, and Deep EOD verification). Detailed architectures reside in `docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md`.
+    Both pathways must adhere to the Tri-Phasic interception model (Active MCP inputs, Twilight AST/schema rules, and Deep EOD verification). Detailed master architectures and comparative blueprints reside in `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` and `docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md`.
 
 ## Cognitive Engine Protocols (Boot & Discovery)
 
