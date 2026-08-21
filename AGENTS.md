@@ -17,7 +17,7 @@ Welcome to the **Deep State of Mind (DSOM)** Sovereign AI Agent Workspace. If yo
 
 ## Critical Instructions for AI Agents
 
-1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 27 detailed rules governing this project. The file you are reading now is a summary gateway only.
+1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 29 detailed rules governing this project. The file you are reading now is a summary gateway only.
 
 2. **Access Spatial Memory:** Extend your search to all brain files located in `.agents/brain/`. Read the following files to restore full operational context:
    - `task.md` — Active and completed task list (present state).
@@ -60,6 +60,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Downstream Asymmetry (Zero-Bloat)** | Baseline repo houses the full metacognitive engine, while downstream projects adopt a lean 6-pillar footprint where source code remains >90% of repository volume. |
 | **Diátaxis Documentation Compass** | Enforces 4-quadrant separation (Tutorials, How-To Guides, Reference, Explanation) across `START-HERE.md` and `docs/` to eliminate cognitive fatigue and maximize token efficiency. |
 | **Dual-Path Custom Validators** | Integrates both the Guardrails AI Framework (for external LLM apps/Pydantic schemas) and the DSOM Native Lightweight Pathway (for FastMCP/AST command interception and offline safety) across Tri-Phasic states. |
+| **The Episodic Resume Protocol (Zero Amnesia)** | AI emits a serialized `[DSOM EPISODIC RECORD]` summary block containing live commit hashes, test metrics, and cognitive delta at major milestones to guarantee zero-loss session resumes. |
 
 ---
 
@@ -187,7 +188,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |
 | `docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md` | The 5-step Knowledge-First Discovery Protocol. |
-| `START-HERE.md` | Master onboarding map with 12 defined entry points. |
+| `START-HERE.md` | Master onboarding map with 19 defined entry points. |
 | `llms.txt` | AI Sitemap for external crawlers (NotebookLM, ChatGPT, etc.). |
 | `tools/` | Cross-platform automation scripts for all daily DSOM rituals. |
 
@@ -196,7 +197,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 > **Tip:** Keep both `AGENTS.md` files up to date — the root gateway and `.agents/AGENTS.md`. This helps Google Jules, Cursor, GitHub Copilot, other AI agents, and your human teammates work with this repository more effectively and in full alignment with the DSOM protocol.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
 
 <!-- OPENWIKI:START -->
