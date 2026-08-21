@@ -46,6 +46,7 @@ topics: ["dsom", "documentation"]
 * [📚 SOP: Knowledge-First Discovery](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 * [🛡️ GitHub Actions Security Scanning](docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md)
 * [🧠 DSOM Cognitive State Preservation & Minimal Downstream Proposal](docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md)
+* [🛡️ Custom Validators in DSOM Guide](docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md)
 
 ## 🌅 2. Operational Rituals
 
