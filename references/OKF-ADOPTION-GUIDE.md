@@ -109,12 +109,19 @@ The OKF specification reserves two explicit filenames at any hierarchical direct
 
 ### OKF v0.2 Trust Signals & Provenance Profile
 
-OKF v0.2 extends v0.1 by adding opt-in trust and provenance metadata fields in YAML frontmatter to allow autonomous agents to verify agent-generated content:
-* `sources`: Array of origin URLs or relative paths (`["docs/governance/AI-MASTER-PROTOCOL.md"]`).
-* `generated`: ISO 8601 timestamp or agent ID that generated the document.
-* `verified`: Verification status (`true` / `false` / ISO timestamp).
-* `status`: Lifecycle state (`draft`, `approved`, `deprecated`).
-* `stale_after`: ISO 8601 date indicating when the context must be re-validated.
+OKF v0.2 extends v0.1 by adding opt-in trust and provenance metadata fields in YAML frontmatter to allow autonomous agents to verify agent-generated content and maintain lifecycle hygiene:
+
+| OKF v0.2 Field | Type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| `sources` | `list[string]` | Array of origin URLs, file paths, or ADRs used to synthesize this document. | `["docs/OKF-ADOPTION-GUIDE.md", ".agents/AGENTS.md"]` |
+| `generated` | `string` | Agent identifier, model name, or generation timestamp. | `"google-antigravity"`, `"gemini-2.5-pro"` |
+| `verified` | `boolean` / `string` | Verification flag or timestamp of human review. | `true`, `"2026-08-21T20:50:00Z"` |
+| `status` | `string` | Document lifecycle state (`draft`, `approved`, `deprecated`, `superseded`). | `"approved"` |
+| `stale_after` | `string` | ISO 8601 UTC date when this knowledge must be re-evaluated. | `"2027-08-21T00:00:00Z"` |
+
+> [!TIP]
+> **Opportunistic v0.2 Upgrade (The Token Protection Rule):**
+> Downstream projects and baseline repositories should upgrade from `okf_version: 0.1` to `okf_version: 0.2` **opportunistically** (when modifying, verifying, or synthesizing files) rather than triggering mass corpus rewrites.
 
 ---
 
@@ -126,7 +133,7 @@ Follow this 6-step SOP to adopt OKF across any new or existing codebase:
 Organise knowledge assets into distinct, logical directories alongside source code:
 ```text
 .agents/
-├── brain/                   <-- Spatial Memory Palace (okf_version: 0.1)
+├── brain/                   <-- Spatial Memory Palace (okf_version: 0.1 / 0.2)
 │   ├── index.md             <-- Directory Router
 │   ├── log.md               <-- Chronological Update Ledger
 │   └── wings/               <-- Domain Closets
@@ -160,8 +167,8 @@ When an AI agent or developer modifies knowledge nodes, append an entry to `log.
 ```markdown
 # Knowledge Bundle Change Log
 
-## 2026-08-20
-* **Updated:** `docs/OKF-ADOPTION-GUIDE.md` - Integrated deep research and OKF v0.2 trust signals.
+## 2026-08-21
+* **Updated:** `docs/OKF-ADOPTION-GUIDE.md` - Upgraded to OKF v0.2 trust profile with explicit examples.
 ```
 
 ### Step 5: Enforce OKF in CI/CD Workflows
@@ -187,7 +194,7 @@ uv run python tools/openwiki_emulator.py --search "OKF"
 
 ## 💡 Concrete Code Examples & YAML Templates
 
-### Example 1: OKF Agent Skill (`.agents/skills/audit-cluster/SKILL.md`)
+### Example 1: OKF v0.1 Baseline Agent Skill (`.agents/skills/audit-cluster/SKILL.md`)
 ```yaml
 ---
 okf_version: 0.1
@@ -206,20 +213,48 @@ resource: "file:///.agents/skills/audit-cluster/SKILL.md"
 2. Verify output and report status to user.
 ```
 
-### Example 2: Spatial Memory Closet (`.agents/brain/wings/room_tooling/closet.md`)
+### Example 2: OKF v0.2 Governance Blueprint with Provenance (`docs/governance/SAMPLE-POLICY.md`)
 ```yaml
 ---
-okf_version: 0.1
+okf_version: 0.2
+type: governance_protocol
+title: "Zero-Trust Agent Hardening Policy"
+timestamp: "2026-08-21T20:00:00Z"
+topics: ["security", "zero-trust", "agent-hardening", "dsom", "okf"]
+description: "Codifies strict zero-trust sandbox rules and least-privilege token access for autonomous AI subagents."
+resource: "file:///docs/governance/SAMPLE-POLICY.md"
+sources: ["docs/governance/AI-MASTER-PROTOCOL.md", "https://csrc.nist.gov/publications/detail/sp/800-207/final"]
+generated: "google-antigravity"
+verified: true
+status: "approved"
+stale_after: "2027-08-21T00:00:00Z"
+---
+
+# 🛡️ Zero-Trust Agent Hardening Policy
+
+## Policy Enforcement
+Autonomous subagents must operate under isolated Git worktrees and have read-only access to root credentials.
+```
+
+### Example 3: OKF v0.2 Spatial Memory Closet (`.agents/brain/wings/room_tooling/closet.md`)
+```yaml
+---
+okf_version: 0.2
 type: architecture_concept
 title: "Room Tooling Memory Closet"
-timestamp: "2026-08-20T14:30:00Z"
-description: "Archived operational state for DSOM tooling scripts."
-topics: ["tooling", "python", "automation", "memory-palace"]
+timestamp: "2026-08-21T20:30:00Z"
+description: "Archived operational state and execution parameters for DSOM tooling scripts."
+topics: ["tooling", "python", "automation", "memory-palace", "okf"]
 resource: "file:///.agents/brain/wings/room_tooling/closet.md"
+sources: [".agents/brain/palace_registry.md", "tools/apply_okf_frontmatter.py"]
+generated: "google-antigravity"
+verified: true
+status: "approved"
+stale_after: "2026-11-21T00:00:00Z"
 ---
 
 # Room Tooling Distillation
-This closet tracks the execution parameters of `tools/openwiki_emulator.py` and `tools/generate_sitemaps.py`.
+This closet tracks the execution parameters of `tools/openwiki_emulator.py`, `tools/apply_okf_frontmatter.py`, and `tools/generate_sitemaps.py`.
 ```
 
 ---

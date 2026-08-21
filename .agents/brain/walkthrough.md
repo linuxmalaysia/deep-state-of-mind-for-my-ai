@@ -170,22 +170,29 @@ To maintain cognitive alignment with Google Jules, adopt the authoritative OKF v
 
 > Synchronised Google Jules' PR #77 and #78, adopted the OKF Master Guide and cross-skill validation, and confirmed 100% test suite pass rate (841 tests).
 
-## 🏁 Session Anchor: 2026-08-21 — Diátaxis Navigation Compass & DSOM Cognitive State Preservation Architecture
+## 🏁 Session Anchor: 2026-08-21 — EOD Hibernation & OKF v0.2 Protocol Enablement
 
-- Integrated the Diátaxis 4-Quadrant Navigation Compass into `START-HERE.md` and `docs/START-HERE.md`, mapping the 17 entry points across Learning vs. Working and Action vs. Knowledge axes.
-- Authored the Human-to-Gemini Architectural Proposal: [`docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md), documenting the Asymmetry Principle (comprehensive framework engine vs. lightweight, zero-bloat downstream adoption) and the 6 Core Pillars of persistent AI memory.
-- Synchronised omni-documentation and ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
-- Verified 100% unit test pass rate (**841/841 unit tests passing**).
+- Enabled full **OKF v0.2 Trust Profile** support in toolchains (`tools/apply_okf_frontmatter.py`) and across unit test suites (`tests/unit/markdown.py`, `tests/test_diataxis_docs.py`, `tests/test_okf_adoption_guide_cross_skill_sync.py`).
+- Opportunistically upgraded actively edited documents to OKF v0.2 with complete provenance/trust signals (`sources`, `generated`, `verified`, `status`, `stale_after`):
+  - `docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`
+  - `docs/OKF-ADOPTION-GUIDE.md` & `references/OKF-ADOPTION-GUIDE.md`
+  - `docs/AI-AGENT-SKILLS-GUIDE.md`
+  - `docs/HOWTO-CLONE-DSOM-PROJECT.md`
+- Codified and reinforced four core constitutional rules in [`.agents/AGENTS.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/AGENTS.md):
+  - **Rule 2**: Dual OKF v0.1 / v0.2 standard support.
+  - **Rule 6**: Opportunistic OKF v0.2 migration and mandatory edit-time upgrade without token waste.
+  - **Rule 13**: Sovereign signature footer modification date invariant.
+  - **Rule 28**: Downstream Asymmetry & Cognitive State Preservation Mandate.
+- Verified 100% unit test suite passing (**841/841 unit tests passing**).
+- Verified skill token safety via `dsom-token-calculator` (0 blocked skills).
+- Completed Start-to-End GitOps synchronisation across GitHub (`origin`) and GitLab (`gitlab`).
 
 ### Underlying Rationale
 
-To elevate `START-HERE.md` to Diátaxis documentation standards for human and AI clarity, and formally codify the architectural doctrine that downstream projects should adopt DSOM's core memory mechanics in a lightweight, high-density manner without documentation bloat.
+To ensure digital sovereignty, maintain flawless metacognitive state across AI sessions, empower downstream projects with lightweight persistent memory, and transition seamlessly to OKF v0.2 at zero additional token cost.
 
 ### Integration Mental Anchor
 
-> Integrated Diátaxis 4-Quadrant Compass in START-HERE, published the Human Proposal on DSOM Cognitive State Preservation, synchronized all ledgers, and verified 841/841 unit tests passing (100%).
-
-### Upcoming Architectural Priority
-- **Open Knowledge Format (OKF) v0.2 Migration:** Upgrading toolchains (`apply_okf_frontmatter.py`, `okf-frontmatter-injector`) and test suites to support OKF v0.2 trust signals (`sources`, `generated`, `verified`, `status`, `stale_after`) as soon as possible.
+> **EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.**
 
 

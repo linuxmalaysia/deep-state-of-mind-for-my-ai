@@ -33,6 +33,8 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Author Human-to-Gemini Architectural Proposal: `docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`.
 - `[x]` Synchronize Omni-Documentation & Ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
 - `[x]` Validate 100% unit test suite passing (841/841 tests).
-- `[ ]` Implement and migrate framework assets to Open Knowledge Format (OKF) v0.2 specification (adding trust signals: `sources`, `generated`, `verified`, `status`, `stale_after`).
+- `[x]` Enable OKF v0.2 trust profile in toolchain and test suites, and opportunistically upgrade edited documents.
+- `[x]` Reinforce Rule 2, Rule 6, Rule 13, and Rule 28 in the core AI constitution (`.agents/AGENTS.md`).
+- `[x]` Complete End-of-Day (EOD) context saving, hibernation ritual, and multi-remote push.
 
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-05*
