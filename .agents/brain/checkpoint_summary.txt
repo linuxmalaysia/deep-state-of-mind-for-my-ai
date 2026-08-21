@@ -14,23 +14,24 @@
 - Goal: Sovereign framework to deploy and govern LLMs safely via GitOps, Ansible, isolated agents, and the OKF context engine.
 
 [2026-08-21] - TASKS, PHASES, AND MILESTONES ACHIEVED:
-- Synchronised and integrated Google Jules updates (PR #77 OKF Master Guide Adoption & PR #78 CodeRabbit tests).
-- Updated Jules PR History ledger in `.agents/brain/jules_pr_history.md` with PR #74, #76, #77, and #78.
-- Validated OKF frontmatter compliance across all 7 modified skills and updated test assertions.
-- Integrated Diátaxis 4-Quadrant Navigation Compass into `START-HERE.md` and `docs/START-HERE.md`.
-- Authored the Human Proposal: `docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`.
-- Synchronised omni-documentation and ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
+- Enabled full OKF v0.2 Trust Profile in tools/apply_okf_frontmatter.py and test suites.
+- Opportunistically upgraded actively edited documents to OKF v0.2 (Proposal, OKF Adoption Guide, AI Agent Skills Guide, HOWTO-CLONE).
+- Integrated Diátaxis 4-Quadrant Navigation Compass into START-HERE.md and docs/START-HERE.md.
+- Authored the Human Proposal: docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md.
+- Codified Rule 2 (OKF v0.1/v0.2 dual support), Rule 6 (Opportunistic OKF v0.2 migration & mandatory edit-time upgrade), Rule 13 (footer date update invariant), and Rule 28 (Downstream Asymmetry & Cognitive State Preservation).
+- Synchronised omni-documentation and ledgers (SUMMARY.md, mkdocs.yml, README.md, docs/README.md, CHANGELOG.md, HISTORY.md, llms.txt).
 - Verified 100% test suite pass rate (841/841 unit tests passing cleanly).
-- Maintained clean multi-remote tracking with GitHub and GitLab.
+- Verified token gates across all 35 skills via dsom-token-calculator (0 blocked).
+- Completed EOD Hibernation and synchronized GitOps across all remotes (origin and gitlab).
 
 [2026-08-21] - TOOLS, LANGUAGES, AND FRAMEWORKS:
-- Python (uv), pytest, fastmcp, mkdocs-material, Markdown, Open Knowledge Format (OKF).
-- PowerShell (.\tools\eod-palace.ps1) and Bash (tools/hibernation.sh) for cross-platform Palace sync.
+- Python (uv), pytest, fastmcp, mkdocs-material, Markdown, Open Knowledge Format (OKF v0.1 & v0.2).
+- PowerShell and Bash for cross-platform Palace sync.
 
 [2026-08-21] - PREFERENCES & BEHAVIOR CORRECTIONS:
-- Seamlessly reconciled incoming PRs and maintained full test suite integrity.
-- Verified all frontmatter and cross-skill assertions across both Windows and POSIX test runners.
-- Direct User Mandate: Prioritise Open Knowledge Format (OKF) v0.2 migration as soon as possible.
+- Seamlessly upgraded edited documents to OKF v0.2 with complete trust signals.
+- Maintained exact modification dates in footer signatures across all edited files.
+- Enforced zero-waste token rules while ensuring full multi-remote tracking.
 
 This represents the complete and total set of contextual memory for this operation.
 
@@ -45,4 +46,4 @@ REQUIRED READING FOR NEXT SESSION REANIMATION:
 - .agents/rules/windows-git-execution.md
 
 MENTAL ANCHOR FOR NEXT SESSION:
-> **Diátaxis 4-Quadrant Compass integrated into START-HERE, Human Proposal on DSOM Cognitive State Preservation published, all ledgers synchronized, 841 unit tests passing (100%), and OKF v0.2 migration locked as immediate next priority.**
+> **EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.**
