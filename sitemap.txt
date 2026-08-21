@@ -110,6 +110,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-AU
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-CUSTOM-VALIDATORS-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-EFFICIENCY-PROTOCOLS/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-MCP-ARCHITECTURE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-TOKEN-EFFICIENCY-REPORT/
@@ -293,6 +294,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AUT
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-CUSTOM-VALIDATORS-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-EFFICIENCY-PROTOCOLS/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-MCP-ARCHITECTURE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-TOKEN-EFFICIENCY-REPORT/
@@ -414,6 +416,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-cognitive-state-preservation-proposal
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-custom-validators-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-efficiency-protocols
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-guardrails-catalog-submission-review
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-ingestion-latency-architecture
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-mcp-architecture
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-token-efficiency-report
