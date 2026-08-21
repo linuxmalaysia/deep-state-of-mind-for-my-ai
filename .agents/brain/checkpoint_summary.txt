@@ -30,6 +30,7 @@
 [2026-08-21] - PREFERENCES & BEHAVIOR CORRECTIONS:
 - Seamlessly reconciled incoming PRs and maintained full test suite integrity.
 - Verified all frontmatter and cross-skill assertions across both Windows and POSIX test runners.
+- Direct User Mandate: Prioritise Open Knowledge Format (OKF) v0.2 migration as soon as possible.
 
 This represents the complete and total set of contextual memory for this operation.
 
@@ -44,4 +45,4 @@ REQUIRED READING FOR NEXT SESSION REANIMATION:
 - .agents/rules/windows-git-execution.md
 
 MENTAL ANCHOR FOR NEXT SESSION:
-> **Diátaxis 4-Quadrant Compass integrated into START-HERE, Human Proposal on DSOM Cognitive State Preservation published, all ledgers synchronized, and 841 unit tests passing (100%).**
+> **Diátaxis 4-Quadrant Compass integrated into START-HERE, Human Proposal on DSOM Cognitive State Preservation published, all ledgers synchronized, 841 unit tests passing (100%), and OKF v0.2 migration locked as immediate next priority.**

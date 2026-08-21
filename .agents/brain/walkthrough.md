@@ -185,3 +185,7 @@ To elevate `START-HERE.md` to Diátaxis documentation standards for human and AI
 
 > Integrated Diátaxis 4-Quadrant Compass in START-HERE, published the Human Proposal on DSOM Cognitive State Preservation, synchronized all ledgers, and verified 841/841 unit tests passing (100%).
 
+### Upcoming Architectural Priority
+- **Open Knowledge Format (OKF) v0.2 Migration:** Upgrading toolchains (`apply_okf_frontmatter.py`, `okf-frontmatter-injector`) and test suites to support OKF v0.2 trust signals (`sources`, `generated`, `verified`, `status`, `stale_after`) as soon as possible.
+
+
