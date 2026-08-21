@@ -2,9 +2,9 @@
 okf_version: 0.1
 type: agent_skill
 title: "🕵️ Palace Auditor Skill"
-timestamp: "2026-08-05T22:23:51Z"
+timestamp: "2026-08-20T23:30:00Z"
+topics: ["palace", "audit", "brain", "index", "cleanup", "okf"]
 description: "A diagnostic skill that crawls the workspace to verify index.md links, identify undocumented scripts in tools/, and propose structural cleanups to maintain the Sovereign Memory Palace."
-topics: ["palace", "audit", "brain", "index", "cleanup"]
 name: palace-auditor
 ---
 # 🕵️ Palace Auditor Skill
@@ -14,20 +14,22 @@ Use this skill when the user requests a workspace audit, health check, or when p
 
 ## Instructions
 1. **Diagnostic Check:** Run `.\tools\diagnostic.ps1` (or `./tools/diagnostic.sh` on Linux) and capture the output. Ensure all dependencies (`uv`, `node`, `git`) and paths are healthy.
-2. **Index Verification:** Read `.agents/brain/index.md`. Verify that every `closet.md` or `.md` file listed under `Path:` actually exists in the filesystem.
-3. **Toolchain Audit:**
+2. **OKF Frontmatter Compliance Audit:** Run `uv run python tools/apply_okf_frontmatter.py .agents/brain/` and `docs/` to audit and fix any Markdown files missing OKF v0.1 frontmatter headers.
+3. **Index Verification:** Read `.agents/brain/index.md`. Verify that every `closet.md` or `.md` file listed under `Path:` actually exists in the filesystem.
+4. **Toolchain Audit:**
    - List all files in the `tools/` directory.
    - List all documentation files in `docs/tools/`.
    - Identify any `.ps1`, `.sh`, `.py`, or `.js` script in `tools/` that does NOT have a corresponding structural blueprint in `docs/tools/`.
    - Identify any script that lacks either its `.ps1` or `.sh` cross-platform twin.
-4. **Report Generation:** Create a report artifact for the user summarizing:
+5. **Report Generation:** Create a report artifact for the user summarizing:
    - System Diagnostic Health.
+   - OKF Frontmatter Compliance Status.
    - Broken links in `index.md` (if any).
    - Undocumented scripts.
    - Scripts violating the Cross-Platform Mandate.
-5. **Propose Actions:** Suggest specific actions to resolve the findings.
+6. **Propose Actions:** Suggest specific actions to resolve the findings.
 
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

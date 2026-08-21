@@ -33,6 +33,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/pala
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-02_0048/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-05_2157/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-14_0758/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_update_proposal_2026-08-18_0623/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/GOVERNANCE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/OPERATIONAL-GUIDE-PHP/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/OPERATIONAL-GUIDE/
@@ -48,6 +49,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wing
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wings/wing_dsom_core/hall_facts/room_crisp_strategy/closet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/rules/windows-git-execution/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/context7-indexer/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/cross-platform-translator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-bootstrap/SKILL/
@@ -239,6 +241,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palac
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-02_0048/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-05_2157/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-14_0758/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_update_proposal_2026-08-18_0623/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/GOVERNANCE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/OPERATIONAL-GUIDE-PHP/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/OPERATIONAL-GUIDE/
@@ -254,6 +257,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings/wing_dsom_core/hall_facts/room_crisp_strategy/closet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/rules/windows-git-execution/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/context7-indexer/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/cross-platform-translator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-bootstrap/SKILL/

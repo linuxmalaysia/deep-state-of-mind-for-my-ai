@@ -2,8 +2,8 @@
 okf_version: 0.1
 type: documentation
 title: "📜 Universal Ledger: Deep State of Mind (DSOM)"
-timestamp: "2026-07-04T09:40:04Z"
-topics: ["dsom", "documentation"]
+timestamp: "2026-08-20T23:25:00Z"
+topics: ["dsom", "documentation", "history", "okf"]
 description: "OKF-compliant documentation for HISTORY.md."
 resource: "file:///HISTORY.md"
 ---
@@ -110,9 +110,10 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-07-19]: **Android Termux Extrapolation.** Created `tools/bench_brain.py` and empirically benchmarked Android FUSE latency overhead, formally integrating the ~3.5x multiplier into the architecture ledgers (`DSOM-INGESTION-LATENCY-ARCHITECTURE.md` and `DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`).
 - [2026-07-26]: **Local Knowledge-First Protocol & Temporal Verification.** Codified Rules 20 and 21, and established `docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`. This mandates a 5-step discovery flow where AI agents perform OKF frontmatter searches locally and verify OKF timestamps before executing exploratory terminal commands, pausing for human consensus if the local knowledge is contextually stale. Embedded this protocol as the 11th Entry Point in `START-HERE.md` and explicitly mandated its inclusion in project clones via `docs/HOWTO-CLONE-DSOM-PROJECT.md`. Injected the protocol into core governance (`AI-MASTER-PROTOCOL.md`, `DSOM-EFFICIENCY-PROTOCOLS.md`, `OKF-MIND-OPTIMIZATION.md`) to establish it as a foundational engine mechanic. Published `docs/governance/AI-INITIALIZATION-SEQUENCE.md` to explicitly document the mechanical boot process (AGENTS.md -> Brain -> START-HERE -> Governance -> Skills). Redefined the Third Pillar from strictly "Ansible" to the modular "Executor" in `GITOPS-AIOPS-ANSIBLE-STRATEGY.md` and `README.md`, formalizing `uv`, `npm`, and `pandoc` as valid executors, and explicitly establishing Windows WSL2 as the mandatory execution bridge for Windows-only projects.
 - [2026-08-05]: **Read the Docs Integration.** Configured `.readthedocs.yaml` at the repository root using Ubuntu 24.04, Python 3.13, and MkDocs to enable automated document compilation on Read the Docs. Appended standard DSOM licence/ownership headers, added a new unit testing layer in `tests/test_readthedocs_config.py`, and updated the project's brain artefacts.
+- [2026-08-20]: **Open Knowledge Format (OKF) Master Guide & Cross-Skill Adoption.** Authored the master `docs/OKF-ADOPTION-GUIDE.md` (and reference copy `references/OKF-ADOPTION-GUIDE.md`), synthesizing deep research into Google Cloud's OKF v0.1 and v0.2 specifications. Integrated OKF as Entry Point 17 in `START-HERE.md`, updated `README.md`, `CHANGELOG.md`, `SUMMARY.md`, and `mkdocs.yml`, and embedded OKF frontmatter validation into all documentation/ingestion operational skills in `.agents/skills/`.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.4.0-governance | Harisfazillah Jamel*
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

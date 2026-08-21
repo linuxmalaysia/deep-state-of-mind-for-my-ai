@@ -2,8 +2,8 @@
 okf_version: 0.1
 type: documentation
 title: "📜 Changelog: Deep State of Mind (DSOM) For My AI"
-timestamp: "2026-07-04T09:40:04Z"
-topics: ["dsom", "documentation"]
+timestamp: "2026-08-20T23:25:00Z"
+topics: ["dsom", "documentation", "changelog", "okf"]
 description: "OKF-compliant documentation for CHANGELOG.md."
 resource: "file:///CHANGELOG.md"
 ---
@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Dedicated Open Knowledge Format (OKF) Adoption Guide:** Authored a comprehensive, human- and AI-readable specification document (`docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md`) detailing Google Cloud's OKF v0.1 and v0.2 standards, token optimization, progressive disclosure, trust signals, and step-by-step adoption for DSOM repositories.
+- **OKF Context Engine Integration:** Elevated OKF as Entry Point 17 in `START-HERE.md` and integrated OKF documentation references across `README.md`, `docs/README.md`, `SUMMARY.md`, and `mkdocs.yml`.
+- **Cross-Skill OKF Compliance Mandate:** Updated key operational skills (`okf-frontmatter-injector`, `dsom-policy-adopter`, `dsom-knowledge-ingester`, `dsom-bootstrap`, `dsom-project-cloner`, `openwiki-compiler`, `palace-auditor`) to explicitly embed `okf-frontmatter-injector` execution (`python tools/apply_okf_frontmatter.py`) as a mandatory step whenever new Markdown documents or memory assets are created or modified.
 - **Native Python OpenWiki Emulator (Rule 27):** Built `tools/openwiki_emulator.py` with `--init`, `--update`, `--search`, and `--export-graph` CLI modes, eliminating Node.js runtime friction (version mismatches, native C++ compilation, UAC elevation hangs, and API rate limits). Reclaimed 135.3 MB of local disk space.
 - **FastMCP OpenWiki Knowledge Bridge:** Integrated OpenWiki resources (`dsom://openwiki/skeleton`, `dsom://openwiki/quickstart`), governance rulebook (`dsom://governance/agents`), and the `search_openwiki(query)` RAG search tool into `tools/mcp/server.py`.
 - **OpenWiki Code Samples & Prompt Templates:** Authored comprehensive code samples and reusable AI prompt templates in `HOWTO-OPENWIKI.md`, `OPENWIKI-INTEGRATION-GUIDE.md`, and `HOWTO-MCP-SERVER.md`.
@@ -354,5 +357,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

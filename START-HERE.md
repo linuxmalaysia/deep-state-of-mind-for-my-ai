@@ -2,8 +2,8 @@
 okf_version: 0.1
 type: documentation
 title: "START HERE: DSOM Project Benefits & Entry Points"
-timestamp: "2026-08-09T11:33:00Z"
-topics: ["onboarding", "entry-points", "dsom", "sovereign", "baseline", "benefits", "github-pages", "openwiki"]
+timestamp: "2026-08-20T23:15:00Z"
+topics: ["onboarding", "entry-points", "dsom", "sovereign", "baseline", "benefits", "github-pages", "openwiki", "okf"]
 description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new or existing projects via Git or direct GitHub Pages URLs."
 resource: "file:///START-HERE.md"
 ---
@@ -23,6 +23,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | :--- | :--- | :--- |
 | **Master Documentation Site** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | Main searchable MkDocs site |
 | **Master Entry Map** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/) | Topology map & benefits |
+| **OKF Adoption Guide** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/) | Foundational OKF v0.1/v0.2 context engine guide |
 | **AI Root Gateway** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/) | First-read summary for AI agents |
 | **Full AI Constitution** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/) | 27 Core Constitutional AI Laws |
 | **AI Sitemap (LLMs.txt)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt) | Plain-text AI crawler sitemap |
@@ -187,5 +188,14 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`LEGAL-NOTICE.md`](LEGAL-NOTICE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/))
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+
+## 17. The Open Knowledge Format (OKF) Entry Point (Foundational Context Engine)
+*If you are adopting OKF v0.1/v0.2 to structure your repository's documentation and memory assets for maximum AI token efficiency and zero context loss.*
+
+**Read This First:** [`docs/OKF-ADOPTION-GUIDE.md`](docs/OKF-ADOPTION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/))
+
+**Why it matters:** OKF is Google Cloud's vendor-neutral specification that powers DSOM's spatial memory architecture (`.agents/brain/` and `.agents/skills/`). It achieves 98%+ token compression, enables progressive disclosure directory routing, and preserves persistent memory across AI agent reboots.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
