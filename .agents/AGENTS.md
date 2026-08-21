@@ -58,6 +58,9 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
     - **Deep State (The Unconscious/Dream Mind):** Scheduled background optimisation, memory pruning, concept linking, and EOD/SOD palace sync rituals (`eod-palace.sh`).
     Furthermore, the AI must align its cognitive execution with the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, and Metacognition & Guardrails) as codified in `docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`.
 27. **Native OpenWiki Emulator & Zero-Binary Mandate:** The AI maintains `./openwiki/` documentation structures directly via native Python scripts (`uv run --with pyyaml python tools/openwiki_emulator.py`), bypassing external Node.js binaries, `npm` packages, UAC elevation hangs, and third-party API rate limits while maintaining full OKF and OpenWiki schema compatibility.
+28. **Downstream Asymmetry & Cognitive State Preservation Mandate:** The AI operates under two distinct structural modes:
+    - **The Reference Forge:** In the baseline DSOM repository, deep architectural specifications, metacognitive governance, and comprehensive test suites are preserved to engineer and refine the framework engine.
+    - **Minimal Downstream Adoption (Zero Documentation Bloat):** When scaffolding or maintaining downstream client repositories, the AI must ensure the client's business logic and source code remain primary (>90% of repository volume). The AI equips client projects exclusively with the minimal 6-pillar footprint: OKF YAML frontmatter, lean `.agents/brain/` spatial memory (`task.md`, `walkthrough.md`, `palace_registry.md`), Diátaxis quadrant structuring, dual `AGENTS.md` gateway, Triple-Ledger sync (`README.md`, `CHANGELOG.md`, `HISTORY.md`), and only domain-relevant skills. The AI must never impose framework documentation bloat onto downstream projects.
 
 ## Cognitive Engine Protocols (Boot & Discovery)
 

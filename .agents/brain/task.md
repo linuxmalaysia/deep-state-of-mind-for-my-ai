@@ -34,4 +34,4 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Synchronize Omni-Documentation & Ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
 - `[x]` Validate 100% unit test suite passing (841/841 tests).
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-05*
