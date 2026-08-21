@@ -761,10 +761,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-okf-agent-skill-agentsskillsaudit-clusterskillmd" class="md-nav__link">
+  <a href="#example-1-okf-v01-baseline-agent-skill-agentsskillsaudit-clusterskillmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example 1: OKF Agent Skill (.agents/skills/audit-cluster/SKILL.md)
+        Example 1: OKF v0.1 Baseline Agent Skill (.agents/skills/audit-cluster/SKILL.md)
       
     </span>
   </a>
@@ -772,10 +772,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2-spatial-memory-closet-agentsbrainwingsroom_toolingclosetmd" class="md-nav__link">
+  <a href="#example-2-okf-v02-governance-blueprint-with-provenance-docsgovernancesample-policymd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example 2: Spatial Memory Closet (.agents/brain/wings/room_tooling/closet.md)
+        Example 2: OKF v0.2 Governance Blueprint with Provenance (docs/governance/SAMPLE-POLICY.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-okf-v02-spatial-memory-closet-agentsbrainwingsroom_toolingclosetmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: OKF v0.2 Spatial Memory Closet (.agents/brain/wings/room_tooling/closet.md)
       
     </span>
   </a>
@@ -4020,10 +4031,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-okf-agent-skill-agentsskillsaudit-clusterskillmd" class="md-nav__link">
+  <a href="#example-1-okf-v01-baseline-agent-skill-agentsskillsaudit-clusterskillmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example 1: OKF Agent Skill (.agents/skills/audit-cluster/SKILL.md)
+        Example 1: OKF v0.1 Baseline Agent Skill (.agents/skills/audit-cluster/SKILL.md)
       
     </span>
   </a>
@@ -4031,10 +4042,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2-spatial-memory-closet-agentsbrainwingsroom_toolingclosetmd" class="md-nav__link">
+  <a href="#example-2-okf-v02-governance-blueprint-with-provenance-docsgovernancesample-policymd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example 2: Spatial Memory Closet (.agents/brain/wings/room_tooling/closet.md)
+        Example 2: OKF v0.2 Governance Blueprint with Provenance (docs/governance/SAMPLE-POLICY.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-okf-v02-spatial-memory-closet-agentsbrainwingsroom_toolingclosetmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: OKF v0.2 Spatial Memory Closet (.agents/brain/wings/room_tooling/closet.md)
       
     </span>
   </a>
@@ -4195,19 +4217,61 @@
 * <strong><code>index.md</code>:</strong> Serves as a directory router and progressive disclosure listing. It contains no frontmatter (except the bundle-root <code>index.md</code>, which MAY declare <code>okf_version: "0.1"</code>).
 * <strong><code>log.md</code>:</strong> Maintains a chronological ledger of updates organized in reverse-chronological order under ISO 8601 date headings (e.g., <code>## 2026-08-20</code>).</p>
 <h3 id="okf-v02-trust-signals-provenance-profile">OKF v0.2 Trust Signals &amp; Provenance Profile</h3>
-<p>OKF v0.2 extends v0.1 by adding opt-in trust and provenance metadata fields in YAML frontmatter to allow autonomous agents to verify agent-generated content:
-* <code>sources</code>: Array of origin URLs or relative paths (<code>["docs/governance/AI-MASTER-PROTOCOL.md"]</code>).
-* <code>generated</code>: ISO 8601 timestamp or agent ID that generated the document.
-* <code>verified</code>: Verification status (<code>true</code> / <code>false</code> / ISO timestamp).
-* <code>status</code>: Lifecycle state (<code>draft</code>, <code>approved</code>, <code>deprecated</code>).
-* <code>stale_after</code>: ISO 8601 date indicating when the context must be re-validated.</p>
+<p>OKF v0.2 extends v0.1 by adding opt-in trust and provenance metadata fields in YAML frontmatter to allow autonomous agents to verify agent-generated content and maintain lifecycle hygiene:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">OKF v0.2 Field</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>sources</code></td>
+<td style="text-align: left;"><code>list[string]</code></td>
+<td style="text-align: left;">Array of origin URLs, file paths, or ADRs used to synthesize this document.</td>
+<td style="text-align: left;"><code>["docs/OKF-ADOPTION-GUIDE.md", ".agents/AGENTS.md"]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>generated</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Agent identifier, model name, or generation timestamp.</td>
+<td style="text-align: left;"><code>"google-antigravity"</code>, <code>"gemini-2.5-pro"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>verified</code></td>
+<td style="text-align: left;"><code>boolean</code> / <code>string</code></td>
+<td style="text-align: left;">Verification flag or timestamp of human review.</td>
+<td style="text-align: left;"><code>true</code>, <code>"2026-08-21T20:50:00Z"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Document lifecycle state (<code>draft</code>, <code>approved</code>, <code>deprecated</code>, <code>superseded</code>).</td>
+<td style="text-align: left;"><code>"approved"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>stale_after</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">ISO 8601 UTC date when this knowledge must be re-evaluated.</td>
+<td style="text-align: left;"><code>"2027-08-21T00:00:00Z"</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!TIP]
+<strong>Opportunistic v0.2 Upgrade (The Token Protection Rule):</strong>
+Downstream projects and baseline repositories should upgrade from <code>okf_version: 0.1</code> to <code>okf_version: 0.2</code> <strong>opportunistically</strong> (when modifying, verifying, or synthesizing files) rather than triggering mass corpus rewrites.</p>
+</blockquote>
 <hr />
 <h2 id="step-by-step-okf-adoption-guide-for-humans-ai-agents">🛠️ Step-by-Step OKF Adoption Guide for Humans &amp; AI Agents</h2>
 <p>Follow this 6-step SOP to adopt OKF across any new or existing codebase:</p>
 <h3 id="step-1-establish-knowledge-bundle-structure">Step 1: Establish Knowledge Bundle Structure</h3>
 <p>Organise knowledge assets into distinct, logical directories alongside source code:
 <div class="highlight"><pre><span></span><code>.agents/
-├── brain/                   &lt;-- Spatial Memory Palace (okf_version: 0.1)
+├── brain/                   &lt;-- Spatial Memory Palace (okf_version: 0.1 / 0.2)
 │   ├── index.md             &lt;-- Directory Router
 │   ├── log.md               &lt;-- Chronological Update Ledger
 │   └── wings/               &lt;-- Domain Closets
@@ -4235,8 +4299,8 @@ python<span class="w"> </span>.agents/skills/okf-frontmatter-injector/scripts/ap
 <p>When an AI agent or developer modifies knowledge nodes, append an entry to <code>log.md</code>:
 <div class="highlight"><pre><span></span><code><span class="gh"># Knowledge Bundle Change Log</span>
 
-<span class="gu">## 2026-08-20</span>
-<span class="k">*</span><span class="w"> </span><span class="gs">**Updated:**</span> <span class="sb">`docs/OKF-ADOPTION-GUIDE.md`</span> - Integrated deep research and OKF v0.2 trust signals.
+<span class="gu">## 2026-08-21</span>
+<span class="k">*</span><span class="w"> </span><span class="gs">**Updated:**</span> <span class="sb">`docs/OKF-ADOPTION-GUIDE.md`</span> - Upgraded to OKF v0.2 trust profile with explicit examples.
 </code></pre></div></p>
 <h3 id="step-5-enforce-okf-in-cicd-workflows">Step 5: Enforce OKF in CI/CD Workflows</h3>
 <p>Integrate automated OKF compliance testing into your GitHub Actions workflow (<code>.github/workflows/docs-ci.yml</code>):
@@ -4255,7 +4319,7 @@ uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </sp
 </code></pre></div></p>
 <hr />
 <h2 id="concrete-code-examples-yaml-templates">💡 Concrete Code Examples &amp; YAML Templates</h2>
-<h3 id="example-1-okf-agent-skill-agentsskillsaudit-clusterskillmd">Example 1: OKF Agent Skill (<code>.agents/skills/audit-cluster/SKILL.md</code>)</h3>
+<h3 id="example-1-okf-v01-baseline-agent-skill-agentsskillsaudit-clusterskillmd">Example 1: OKF v0.1 Baseline Agent Skill (<code>.agents/skills/audit-cluster/SKILL.md</code>)</h3>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
 <span class="nt">okf_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">agent_skill</span>
@@ -4272,19 +4336,45 @@ uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </sp
 <span class="nt">1. Run diagnostic script</span><span class="p">:</span><span class="w"> </span><span class="err">`</span><span class="l l-Scalar l-Scalar-Plain">tools/audit-pre-flight.sh`</span>
 <span class="l l-Scalar l-Scalar-Plain">2. Verify output and report status to user.</span>
 </code></pre></div>
-<h3 id="example-2-spatial-memory-closet-agentsbrainwingsroom_toolingclosetmd">Example 2: Spatial Memory Closet (<code>.agents/brain/wings/room_tooling/closet.md</code>)</h3>
+<h3 id="example-2-okf-v02-governance-blueprint-with-provenance-docsgovernancesample-policymd">Example 2: OKF v0.2 Governance Blueprint with Provenance (<code>docs/governance/SAMPLE-POLICY.md</code>)</h3>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">okf_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="nt">okf_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">governance_protocol</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"Zero-Trust</span><span class="nv"> </span><span class="s">Agent</span><span class="nv"> </span><span class="s">Hardening</span><span class="nv"> </span><span class="s">Policy"</span>
+<span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-08-21T20:00:00Z"</span>
+<span class="nt">topics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"security"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"zero-trust"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"agent-hardening"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"dsom"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"okf"</span><span class="p p-Indicator">]</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Codifies</span><span class="nv"> </span><span class="s">strict</span><span class="nv"> </span><span class="s">zero-trust</span><span class="nv"> </span><span class="s">sandbox</span><span class="nv"> </span><span class="s">rules</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">least-privilege</span><span class="nv"> </span><span class="s">token</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">autonomous</span><span class="nv"> </span><span class="s">AI</span><span class="nv"> </span><span class="s">subagents."</span>
+<span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="s">"file:///docs/governance/SAMPLE-POLICY.md"</span>
+<span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"docs/governance/AI-MASTER-PROTOCOL.md"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"https://csrc.nist.gov/publications/detail/sp/800-207/final"</span><span class="p p-Indicator">]</span>
+<span class="nt">generated</span><span class="p">:</span><span class="w"> </span><span class="s">"google-antigravity"</span>
+<span class="nt">verified</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s">"approved"</span>
+<span class="nt">stale_after</span><span class="p">:</span><span class="w"> </span><span class="s">"2027-08-21T00:00:00Z"</span>
+<span class="nn">---</span>
+
+<span class="c1"># 🛡️ Zero-Trust Agent Hardening Policy</span>
+
+<span class="c1">## Policy Enforcement</span>
+<span class="l l-Scalar l-Scalar-Plain">Autonomous subagents must operate under isolated Git worktrees and have read-only access to root credentials.</span>
+</code></pre></div>
+<h3 id="example-3-okf-v02-spatial-memory-closet-agentsbrainwingsroom_toolingclosetmd">Example 3: OKF v0.2 Spatial Memory Closet (<code>.agents/brain/wings/room_tooling/closet.md</code>)</h3>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">okf_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
 <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">architecture_concept</span>
 <span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"Room</span><span class="nv"> </span><span class="s">Tooling</span><span class="nv"> </span><span class="s">Memory</span><span class="nv"> </span><span class="s">Closet"</span>
-<span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-08-20T14:30:00Z"</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Archived</span><span class="nv"> </span><span class="s">operational</span><span class="nv"> </span><span class="s">state</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">DSOM</span><span class="nv"> </span><span class="s">tooling</span><span class="nv"> </span><span class="s">scripts."</span>
-<span class="nt">topics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"tooling"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"python"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"automation"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"memory-palace"</span><span class="p p-Indicator">]</span>
+<span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-08-21T20:30:00Z"</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Archived</span><span class="nv"> </span><span class="s">operational</span><span class="nv"> </span><span class="s">state</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">execution</span><span class="nv"> </span><span class="s">parameters</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">DSOM</span><span class="nv"> </span><span class="s">tooling</span><span class="nv"> </span><span class="s">scripts."</span>
+<span class="nt">topics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"tooling"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"python"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"automation"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"memory-palace"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"okf"</span><span class="p p-Indicator">]</span>
 <span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="s">"file:///.agents/brain/wings/room_tooling/closet.md"</span>
+<span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">".agents/brain/palace_registry.md"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"tools/apply_okf_frontmatter.py"</span><span class="p p-Indicator">]</span>
+<span class="nt">generated</span><span class="p">:</span><span class="w"> </span><span class="s">"google-antigravity"</span>
+<span class="nt">verified</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s">"approved"</span>
+<span class="nt">stale_after</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-11-21T00:00:00Z"</span>
 <span class="nn">---</span>
 
 <span class="c1"># Room Tooling Distillation</span>
-<span class="l l-Scalar l-Scalar-Plain">This closet tracks the execution parameters of `tools/openwiki_emulator.py` and `tools/generate_sitemaps.py`.</span>
+<span class="l l-Scalar l-Scalar-Plain">This closet tracks the execution parameters of `tools/openwiki_emulator.py`, `tools/apply_okf_frontmatter.py`, and `tools/generate_sitemaps.py`.</span>
 </code></pre></div>
 <hr />
 <h2 id="verification-testing">🧪 Verification &amp; Testing</h2>
