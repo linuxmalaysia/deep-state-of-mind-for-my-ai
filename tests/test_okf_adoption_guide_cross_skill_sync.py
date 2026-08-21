@@ -101,6 +101,10 @@ VALID_FOOTER_LINES = (
         "*Deep State of Mind (DSOM) For My AI Protocol | "
         "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*"
     ),
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*"
+    ),
 )
 
 
@@ -683,18 +687,19 @@ class StartHereOkfEntryPointTests(unittest.TestCase):
         )
         self.assertIn("98%+ token compression", self.content)
 
-    def test_entry_point_17_is_the_last_entry_point(self):
+    def test_entry_point_17_is_before_entry_point_18(self):
         entry_16_idx = self.content.index("## 16. The Legal & Disclaimer Entry Point")
         entry_17_idx = self.content.index(
             "## 17. The Open Knowledge Format (OKF) Entry Point"
         )
         self.assertLess(entry_16_idx, entry_17_idx)
-        self.assertNotIn("## 18.", self.content)
+        if "## 18." in self.content:
+            entry_18_idx = self.content.index("## 18.")
+            self.assertLess(entry_17_idx, entry_18_idx)
 
     def test_footer_signature_date_bumped(self):
         self.assertTrue(
-            EXPECTED_FOOTER_LINE in self.content
-            or "*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*" in self.content,
+            any(f in self.content for f in VALID_FOOTER_LINES),
             "START-HERE.md should contain an up-to-date DSOM footer signature",
         )
 

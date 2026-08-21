@@ -39,7 +39,8 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [GitOps Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Defense-in-depth, history sanitization, and infrastructure as code.
 - [Python & UV Environment Guide](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md): Mandatory use of `uv` to ensure isolated execution environments.
 - [DSOM Token Performance Playbook](docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md): L1 master playbook — embed into all new DSOM projects for 96.23% token reduction. Covers tools, rules, benchmarks, and bootstrap procedures.
-- [DSOM Token Efficiency Report](docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md): Mathematical audit proving a 96% token reduction via Progressive Disclosure.
+- [The Master Guide to AI Guardrails & Custom Validators](docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md): The definitive, comprehensive master reference on AI guardrails, Tri-Phasic interception, and dual-path (Guardrails AI framework + DSOM native lightweight runtime) validator implementation.
+- [DSOM Custom Validators Guide](docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md): Architectural comparison and code templates for building custom guardrails validators.
 - [Byte-Capped Execution Framework](docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md): Procedural automation deploying `tiktoken` to programmatically intercept massive text payloads and block runaway context inflation.
 - [DSOM Ingestion Latency Architecture](docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md): L2 analysis with empirical benchmarks comparing local OKF reads vs. remote RAG/vector latency. Covers active context manifest pattern and anti-patterns.
 
