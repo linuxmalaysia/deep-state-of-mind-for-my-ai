@@ -459,6 +459,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
@@ -2065,10 +2093,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-ai-fallback-synthesis-protocol" class="md-nav__link">
+  <a href="#3-ai-fallback-synthesis-protocol-okf-compliance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. AI Fallback Synthesis Protocol
+        3. AI Fallback Synthesis Protocol &amp; OKF Compliance
       
     </span>
   </a>
@@ -3600,10 +3628,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-ai-fallback-synthesis-protocol" class="md-nav__link">
+  <a href="#3-ai-fallback-synthesis-protocol-okf-compliance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. AI Fallback Synthesis Protocol
+        3. AI Fallback Synthesis Protocol &amp; OKF Compliance
       
     </span>
   </a>
@@ -3666,12 +3694,13 @@ uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </sp
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>pyyaml<span class="w"> </span>python<span class="w"> </span>tools/openwiki_emulator.py
 </code></pre></div></p>
 <hr />
-<h3 id="3-ai-fallback-synthesis-protocol">3. AI Fallback Synthesis Protocol</h3>
+<h3 id="3-ai-fallback-synthesis-protocol-okf-compliance">3. AI Fallback Synthesis Protocol &amp; OKF Compliance</h3>
 <p>When drafting or updating <code>./openwiki/</code> documentation:</p>
 <ol>
 <li><strong>Skeleton Analysis:</strong> Read <code>./openwiki/_skeleton.md</code> to inspect the planned page tree, subsystem rankings, and evidence links.</li>
 <li><strong>Autonomous Page Drafting:</strong> The AI agent (Gemini / Antigravity) directly drafts all planned <code>.md</code> pages under <code>./openwiki/</code> using project context and OKF YAML frontmatter.</li>
-<li><strong>Regression Verification:</strong> Run unit test assertions (<code>uv run --with pyyaml python -m unittest ...</code>).</li>
+<li><strong>OKF Frontmatter Compliance &amp; Signature:</strong> Execute <code>uv run --with pyyaml python tools/apply_okf_frontmatter.py ./openwiki/</code> to validate and apply OKF v0.1 YAML frontmatter headers across all generated OpenWiki concept pages, followed by <code>python .agents/skills/dsom-signature-injector/scripts/inject.py ./openwiki/</code> to append signature footers.</li>
+<li><strong>Regression Verification:</strong> Run unit test assertions (<code>uv run --with pyyaml python -m unittest tests/test_openwiki_emulator.py tests/test_openwiki_update_workflow.py tests/test_okf_frontmatter_bom_reorder.py</code>).</li>
 </ol>
 <hr />
 <h2 id="quality-gates-security-rules">Quality Gates &amp; Security Rules</h2>
@@ -3681,7 +3710,7 @@ uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </sp
 <li><strong>Rule 27 (Native OpenWiki Emulator Mandate):</strong> Maintain <code>./openwiki/</code> directly via <code>tools/openwiki_emulator.py</code>, eliminating external Node.js binaries and API rate limit dependencies.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-09</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

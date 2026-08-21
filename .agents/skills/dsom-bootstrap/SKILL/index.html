@@ -455,6 +455,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
@@ -3452,11 +3480,14 @@
 <li>Use your terminal execution tools (<code>run_command</code>) to perform the recursive copies (<code>cp -r</code> or <code>Copy-Item -Recurse</code>) from the defined Baseline Path.</li>
 <li>For EXISTING projects, ensure you read existing files and perform intelligent merges using your file editing tools, rather than destructive overwrites.</li>
 <li><strong>Sanitize (If New):</strong> Ensure the <code>checkpoint_summary.txt</code>, <code>task.md</code>, and <code>walkthrough.md</code> in <code>.agents/brain/</code> are emptied of baseline history.</li>
+<li><strong>OKF Frontmatter Compliance &amp; Signature Injection:</strong></li>
+<li>Execute <code>uv run python tools/apply_okf_frontmatter.py .</code> to ensure all imported or ported Markdown documents have valid OKF v0.1 frontmatter.</li>
+<li>Run <code>python .agents/skills/dsom-signature-injector/scripts/inject.py .</code> to apply GPL v3.0 signature footers across all ported documentation.</li>
 <li><strong>Verify:</strong> Run the <code>tools/diagnostic.ps1</code> or <code>tools/diagnostic.sh</code> script to confirm the port was successful.</li>
 <li><strong>Report:</strong> Output a success message to the user, confirming that the AI now possesses full DSOM capabilities, tools, and documentation.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

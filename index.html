@@ -510,6 +510,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#open-knowledge-format-okf-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Knowledge Format (OKF) Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#palace-quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -915,6 +926,34 @@
     
   
     AI Initialization Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
   
 
     
@@ -4056,6 +4095,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#open-knowledge-format-okf-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Knowledge Format (OKF) Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#palace-quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4420,7 +4470,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="AGENTS.md"><code>AGENTS.md</code></a></td>
+<td style="text-align: left;"><a href="../AGENTS.md"><code>AGENTS.md</code></a></td>
 <td style="text-align: left;"><strong>Root Gateway</strong> — discovered by Jules, Copilot, and other agents that scan the repo root. Summarises DSOM and redirects to the full rulebook.</td>
 </tr>
 <tr>
@@ -4494,7 +4544,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>tools/*.sh
 <h3 id="step-3-fill-in-your-project-identity-card-critical">Step 3 — Fill in Your Project Identity Card ⚠️ CRITICAL</h3>
 <p>This is the most important step. Open and fill in every <code>[PLACEHOLDER]</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Open and edit with your project-specific details</span>
-nano<span class="w"> </span>docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+nano<span class="w"> </span>AI-COGNITIVE-TWIN-PROTOCOL.md
 </code></pre></div>
 <p>Fill in:</p>
 <ul>
@@ -4510,7 +4560,7 @@ nano<span class="w"> </span>docs/AI-COGNITIVE-TWIN-PROTOCOL.md
 </blockquote>
 <h3 id="step-4-set-up-ansible-baseline-infrastructure-projects">Step 4 — Set Up Ansible Baseline (Infrastructure Projects)</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Follow the full LDP guide</span>
-cat<span class="w"> </span>docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
+cat<span class="w"> </span>HOWTO-SETUP-ANSIBLE-BASELINE.md
 
 <span class="c1"># Verify connectivity to your nodes</span>
 ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml
@@ -4524,7 +4574,7 @@ ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </s
 </code></pre></div>
 <p><strong>Everything should show <code>[PASS]</code> or <code>[OK]</code>.</strong> Fix any <code>[FAIL]</code> before continuing.</p>
 <h3 id="step-6-brief-your-ai-the-cognitive-handshake">Step 6 — Brief Your AI (The Cognitive Handshake)</h3>
-<p>Identity context manifest is generated and uploaded:</p>
+<p>Generate the context manifest and upload it to your AI:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux / WSL2</span>
 bash<span class="w"> </span>tools/reanimate.sh
 
@@ -4552,6 +4602,8 @@ bash<span class="w"> </span>tools/reanimate.sh
         └── hall_events/      ← Milestones, versions, history
 </code></pre></div>
 <p>Each Room has a <code>closet.md</code> — a distilled, high-density knowledge summary the AI reads <strong>instead of</strong> scanning hundreds of lines.</p>
+<h3 id="open-knowledge-format-okf-integration">Open Knowledge Format (OKF) Integration</h3>
+<p>The DSOM Spatial Memory Palace and Skill Library are standardised on Google Cloud's <strong>Open Knowledge Format (OKF v0.1 &amp; v0.2)</strong>. By using YAML frontmatter metadata and progressive disclosure directory routers (<code>index.md</code>), DSOM achieves a <strong>98%+ token compression ratio</strong>, allowing AI agents to query knowledge in ~50 tokens per file instead of reading massive, unformatted code files. Read the full <a href="OKF-ADOPTION-GUIDE/"><code>OKF-ADOPTION-GUIDE.md</code></a> to adopt OKF across your repository.</p>
 <h3 id="palace-quick-start">Palace Quick Start</h3>
 <table>
 <thead>
@@ -4564,6 +4616,10 @@ bash<span class="w"> </span>tools/reanimate.sh
 <tr>
 <td><strong>First-time user or AI agent</strong></td>
 <td><a href="HOWTO-PALACE-ONBOARDING/"><code>HOWTO-PALACE-ONBOARDING.md</code></a></td>
+</tr>
+<tr>
+<td><strong>Adopting OKF in your project</strong></td>
+<td><a href="OKF-ADOPTION-GUIDE/"><code>OKF-ADOPTION-GUIDE.md</code></a></td>
 </tr>
 <tr>
 <td><strong>Existing DSOM user upgrading</strong></td>
@@ -4677,7 +4733,7 @@ bash<span class="w"> </span>tools/reanimate.sh
 <blockquote>
 <p><em>"Initialise DSOM Protocol v6.1. Read the uploaded manifest. Summarise the Mental Anchor and confirm the 4-Tier environment map. State: 'Sovereign State Synchronised' when ready."</em></p>
 </blockquote>
-<p><em>Option B — If you have yesterday's Hibernation Notes, use the SOD Reanimation Prompt (see <code>docs/SOD-RITUAL.md</code> Step 4b):</em></p>
+<p><em>Option B — If you have yesterday's Hibernation Notes, use the SOD Reanimation Prompt (see <code>SOD-RITUAL.md</code> Step 4b):</em></p>
 <div class="highlight"><pre><span></span><code>I am starting a new session for DSOM Protocol. I am your human Lead Architect.
 I have the Hibernation Notes from our last session. Please read them carefully
 and use them to fully restore our working context.
@@ -4903,7 +4959,7 @@ EOD → Step 1b: Save new Hibernation Notes
 <h2 id="the-6-step-boot-checklist-new-project">📋 The 6-Step Boot Checklist (New Project)</h2>
 <div class="highlight"><pre><span></span><code>[ ] 1. Clone and run template-reset.sh
 [ ] 2. Run init-brain.sh
-[ ] 3. Fill in docs/AI-COGNITIVE-TWIN-PROTOCOL.md (ALL [PLACEHOLDER] fields)
+[ ] 3. Fill in AI-COGNITIVE-TWIN-PROTOCOL.md (ALL [PLACEHOLDER] fields)
 [ ] 4. Run HOWTO-SETUP-ANSIBLE-BASELINE.md (infra projects)
 [ ] 5. Run audit-pre-flight.sh — confirm all PASS
 [ ] 6. Run reanimate.sh — upload manifest to AI — get Handshake
@@ -4941,7 +4997,11 @@ EOD → Step 1b: Save new Hibernation Notes
 </tr>
 <tr>
 <td style="text-align: left;"><a href="START-HERE/"><code>START-HERE.md</code></a></td>
-<td style="text-align: left;">🚀 <strong>New to DSOM?</strong> The 9 primary onboarding entry points. Read this first!</td>
+<td style="text-align: left;">🚀 <strong>New to DSOM?</strong> The 17 primary onboarding entry points. Read this first!</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="OKF-ADOPTION-GUIDE/"><code>OKF-ADOPTION-GUIDE.md</code></a></td>
+<td style="text-align: left;">🌐 <strong>Open Knowledge Format (OKF) Guide</strong> — Authoritative guide to OKF v0.1/v0.2 context engine.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="governance/AI-INITIALIZATION-SEQUENCE/"><code>governance/AI-INITIALIZATION-SEQUENCE.md</code></a></td>
@@ -5004,7 +5064,7 @@ EOD → Step 1b: Save new Hibernation Notes
 <td style="text-align: left;">📚 Knowledge-First Discovery — SOP for local OKF frontmatter search before terminal execution</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="llms.txt"><code>llms.txt</code></a></td>
+<td style="text-align: left;"><a href="../llms.txt"><code>../llms.txt</code></a></td>
 <td style="text-align: left;">🗺️ Official AI Crawler Sitemap &amp; Ingestion Constraints</td>
 </tr>
 <tr>
@@ -5022,10 +5082,6 @@ EOD → Step 1b: Save new Hibernation Notes
 <tr>
 <td style="text-align: left;"><a href="PALACE-BUILD-STORY/"><code>PALACE-BUILD-STORY.md</code></a></td>
 <td style="text-align: left;">📖 How and why the Palace was built</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="./"><code>README.md</code></a></td>
-<td style="text-align: left;">📖 <strong>Substance Copy</strong> — Local, portable copy of the main project README.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="SOD-RITUAL/"><code>SOD-RITUAL.md</code></a></td>
@@ -5106,7 +5162,7 @@ EOD → Step 1b: Save new Hibernation Notes
 <li>No secrets in any committed file</li>
 <li><strong>Triple-Ledger Mandate</strong>: Major updates must sync <code>README.md</code>, <code>CHANGELOG.md</code>, and <code>HISTORY.md</code></li>
 </ul>
-<p>See <a href="CONTRIBUTING.md"><code>CONTRIBUTING.md</code></a> for full guidelines.</p>
+<p>See <a href="../CONTRIBUTING.md"><code>../CONTRIBUTING.md</code></a> for full guidelines.</p>
 <hr />
 <h2 id="authors">👤 Authors</h2>
 <ul>
@@ -5116,11 +5172,11 @@ EOD → Step 1b: Save new Hibernation Notes
 </ul>
 <hr />
 <h2 id="license">📄 License</h2>
-<p>Licensed under <strong>GNU General Public License v3.0</strong>. See <a href="LICENSE"><code>LICENSE</code></a> for details.</p>
+<p>Licensed under <strong>GNU General Public License v3.0</strong>. See <a href="../LICENSE"><code>../LICENSE</code></a> for details.</p>
 <p><strong>At Your Own Risk:</strong> Shared for educational purposes. The author is not liable for data loss or AI hallucinations. Validate your own Cognitive Twins.</p>
 <hr />
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

@@ -455,6 +455,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
@@ -3444,7 +3472,7 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>The user has provided an absolute path to a document (e.g., PDF or Markdown).</li>
-<li>If the document is a PDF, the AI should use the iew_file or pdf-text-extractor tool to read the contents first.</li>
+<li>If the document is a PDF, the AI should use the view_file or pdf-text-extractor tool to read the contents first.</li>
 </ul>
 <h2 id="execution-workflow">Execution Workflow</h2>
 <ol>
@@ -3457,8 +3485,8 @@
 <li>
 <p><strong>Draft Governance Document</strong></p>
 </li>
-<li>Create a dedicated, highly-structured Markdown file in the docs/governance/ directory.</li>
-<li>The file must contain OKF v0.1 YAML frontmatter (with okf_version,     ype: documentation,     itle, and   imestamp).</li>
+<li>Create a dedicated, highly-structured Markdown file in the <code>docs/governance/</code> directory.</li>
+<li>Run <code>uv run python tools/apply_okf_frontmatter.py docs/governance/</code> to enforce strict OKF v0.1 YAML frontmatter schema compliance (with <code>okf_version</code>, <code>type: documentation</code>, <code>title</code>, <code>timestamp</code>, <code>topics</code>).</li>
 <li>
 <p>Format the document strictly following the Generative Engine Optimisation (GEO) standard: Authoritative tone, verifiable statistics/quotes, H2 user-centric headings, and 200-400 word chunks.</p>
 </li>
@@ -3467,12 +3495,12 @@
 </li>
 <li>Distill the most critical, actionable constraints from the new policy.</li>
 <li>
-<p>Inject these constraints directly as a new numbered Core Rule into .agents/AGENTS.md. Be extremely precise; do not bloat the file.</p>
+<p>Inject these constraints directly as a new numbered Core Rule into <code>.agents/AGENTS.md</code>. Be extremely precise; do not bloat the file.</p>
 </li>
 <li>
 <p><strong>Dual Documentation Sync &amp; Signature</strong></p>
 </li>
-<li><strong>Rule 13 (Signature)</strong>: Inject the standard DSOM ownership, timestamp, and GPL v3.0 license signature at the bottom of the new document.</li>
+<li><strong>Rule 13 (Signature)</strong>: Run <code>python .agents/skills/dsom-signature-injector/scripts/inject.py docs/governance/</code> to inject standard DSOM ownership, timestamp, and GPL v3.0 license signatures for each changed file.</li>
 <li>
 <p><strong>Rule 14 (Dual Sync)</strong>: Explicitly map the new governance document into BOTH <code>SUMMARY.md</code> and <code>mkdocs.yml</code> under the appropriate category to prevent orphaned documentation.</p>
 </li>
@@ -3499,7 +3527,7 @@
 <li>Report the successful adoption to the user, highlighting the exact architectural changes made.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-11</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

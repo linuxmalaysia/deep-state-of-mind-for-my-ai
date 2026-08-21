@@ -459,6 +459,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
@@ -3524,7 +3552,8 @@
 <li><strong>Wiki Integration (The Palace):</strong></li>
 <li>Create a new <code>.md</code> file in the appropriate directory (e.g., <code>docs/governance/</code>, <code>hall_facts/</code>).</li>
 <li>Format the file according to DSOM Generative Engine Optimisation (GEO) standards (atomic chunks, H2 headers, expert tone).</li>
-<li>Inject the OKF v0.1 frontmatter and the Sovereign Signature using <code>dsom-signature-injector</code>.</li>
+<li>Execute <code>uv run python tools/apply_okf_frontmatter.py &lt;directory&gt;</code> to verify and inject OKF v0.1 frontmatter headers into all newly synthesized Markdown documents.</li>
+<li>Run <code>python .agents/skills/dsom-signature-injector/scripts/inject.py &lt;directory&gt;</code> to append standard GPL v3.0 ownership signatures.</li>
 <li><strong>Ledger &amp; Index Updates:</strong></li>
 <li>Add the new file to <code>SUMMARY.md</code> and <code>mkdocs.yml</code> (Dual Documentation Sync).</li>
 <li>Add the new file to <code>.agents/brain/palace_registry.md</code>.</li>
@@ -3532,7 +3561,7 @@
 <li><strong>Confirmation:</strong> Provide the user with a summary of the concepts extracted and the new pages created.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-16</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

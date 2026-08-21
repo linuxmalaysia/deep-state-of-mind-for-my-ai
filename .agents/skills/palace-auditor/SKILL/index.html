@@ -455,6 +455,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
@@ -3445,6 +3473,9 @@
 <h2 id="instructions">Instructions</h2>
 <ol>
 <li><strong>Diagnostic Check:</strong> Run <code>.\tools\diagnostic.ps1</code> (or <code>./tools/diagnostic.sh</code> on Linux) and capture the output. Ensure all dependencies (<code>uv</code>, <code>node</code>, <code>git</code>) and paths are healthy.</li>
+<li><strong>OKF Frontmatter Compliance &amp; Signature Audit:</strong></li>
+<li>Run <code>uv run python tools/apply_okf_frontmatter.py .agents/brain/</code> and <code>docs/</code> to audit and fix any Markdown files missing OKF v0.1 frontmatter headers.</li>
+<li>Run <code>python .agents/skills/dsom-signature-injector/scripts/inject.py .agents/brain/</code> and <code>docs/</code> to sign any repaired Markdown files lacking standard ownership footers (or operate in check-only mode if executing a dry run).</li>
 <li><strong>Index Verification:</strong> Read <code>.agents/brain/index.md</code>. Verify that every <code>closet.md</code> or <code>.md</code> file listed under <code>Path:</code> actually exists in the filesystem.</li>
 <li><strong>Toolchain Audit:</strong></li>
 <li>List all files in the <code>tools/</code> directory.</li>
@@ -3453,13 +3484,14 @@
 <li>Identify any script that lacks either its <code>.ps1</code> or <code>.sh</code> cross-platform twin.</li>
 <li><strong>Report Generation:</strong> Create a report artifact for the user summarizing:</li>
 <li>System Diagnostic Health.</li>
+<li>OKF Frontmatter Compliance Status.</li>
 <li>Broken links in <code>index.md</code> (if any).</li>
 <li>Undocumented scripts.</li>
 <li>Scripts violating the Cross-Platform Mandate.</li>
 <li><strong>Propose Actions:</strong> Suggest specific actions to resolve the findings.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

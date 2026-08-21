@@ -455,6 +455,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
@@ -3441,19 +3469,24 @@
 
 <h1 id="okf-frontmatter-injector">💉 OKF Frontmatter Injector</h1>
 <h2 id="when-to-use-this-skill">When to use this skill</h2>
-<p>Use this skill when the user asks to ensure documentation is OKF (Open Knowledge Format) compliant, or when importing new markdown files that lack standard YAML frontmatter headers.</p>
+<p>Use this skill when the user asks to ensure documentation is OKF (Open Knowledge Format) compliant, or when importing, generating, or modifying Markdown files that lack standard YAML frontmatter headers.</p>
 <h2 id="instructions">Instructions</h2>
 <ol>
-<li>This skill utilises a Python script embedded in <code>scripts/apply_okf.py</code>.</li>
+<li>This skill utilizes native Python tools (<code>tools/apply_okf_frontmatter.py</code>) and the skill helper script <code>scripts/apply_okf.py</code>.</li>
 <li>Ask the user for the target directory to scan (default is the project root <code>.</code>).</li>
-<li>Execute the script using your terminal tools:
-   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>.agents/skills/okf-frontmatter-injector/scripts/apply_okf.py<span class="w"> </span>&lt;TARGET_DIRECTORY&gt;
+<li>Execute the compliance script using <code>uv</code>:
+   <div class="highlight"><pre><span></span><code><span class="c1"># Primary execution via tools/apply_okf_frontmatter.py</span>
+uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>tools/apply_okf_frontmatter.py<span class="w"> </span>&lt;TARGET_DIRECTORY&gt;
+
+<span class="c1"># Or invoke the skill mirror script directly</span>
+python<span class="w"> </span>.agents/skills/okf-frontmatter-injector/scripts/apply_okf.py<span class="w"> </span>&lt;TARGET_DIRECTORY&gt;
 </code></pre></div></li>
-<li>The script will automatically skip files that already possess frontmatter. It categorises files dynamically based on their folder structure (e.g. <code>agent_skill</code>, <code>governance_protocol</code>, etc.).</li>
-<li>Inform the user of the total number of files modified based on the script's output.</li>
+<li>The script automatically skips files that already possess valid frontmatter. It categorises files dynamically based on folder structure (<code>agent_skill</code>, <code>governance_protocol</code>, <code>architecture_concept</code>, etc.).</li>
+<li>Run <code>python .agents/skills/dsom-signature-injector/scripts/inject.py &lt;TARGET_DIRECTORY&gt;</code> to ensure all updated Markdown documents carry the GPL v3.0 signature footer.</li>
+<li>Inform the user of the total number of files scanned and modified based on output telemetry.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

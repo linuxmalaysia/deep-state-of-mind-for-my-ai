@@ -455,6 +455,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
@@ -3461,22 +3489,25 @@
 <ol>
 <li><strong>Verify Target Path:</strong> Ensure you have the absolute path for the new target repository from the user.</li>
 <li><strong>Establish Directories:</strong> Use your terminal execution tools (<code>run_command</code>) to create the mandatory folder structures in the target path:</li>
-<li><code>&lt;target_path&gt;/.agents/brain/wings</code></li>
-<li><code>&lt;target_path&gt;/.agents/skills</code></li>
-<li><code>&lt;target_path&gt;/docs/agent-configs</code></li>
-<li><code>&lt;target_path&gt;/docs/governance</code></li>
-<li><code>&lt;target_path&gt;/tools</code></li>
+<li><code>"$TARGET_PATH/.agents/brain/wings"</code></li>
+<li><code>"$TARGET_PATH/.agents/skills"</code></li>
+<li><code>"$TARGET_PATH/docs/agent-configs"</code></li>
+<li><code>"$TARGET_PATH/docs/governance"</code></li>
+<li><code>"$TARGET_PATH/tools"</code></li>
 <li><strong>Copy the Four Pillars:</strong> Use your terminal execution tools (<code>run_command</code>) to copy the assets from the CURRENT repository (baseline) to the TARGET repository:</li>
-<li><strong>Pillar A (The Engine):</strong> Copy <code>.agents/AGENTS.md</code> to <code>&lt;target_path&gt;/.agents/</code></li>
-<li><strong>Pillar B (The Intelligence Payload):</strong> Recursively copy all contents of <code>.agents/skills/</code> to <code>&lt;target_path&gt;/.agents/skills/</code></li>
+<li><strong>Pillar A (The Engine):</strong> Copy <code>.agents/AGENTS.md</code> to <code>"$TARGET_PATH/.agents/"</code></li>
+<li><strong>Pillar B (The Intelligence Payload):</strong> Recursively copy all contents of <code>.agents/skills/</code> to <code>"$TARGET_PATH/.agents/skills/"</code></li>
 <li><strong>Pillar C (Governance &amp; Configuration):</strong><ul>
-<li>Recursively copy <code>docs/agent-configs/</code> to <code>&lt;target_path&gt;/docs/agent-configs/</code></li>
-<li>Recursively copy <code>docs/governance/</code> to <code>&lt;target_path&gt;/docs/governance/</code></li>
-<li>Copy <code>docs/AI-AGENT-SKILLS-GUIDE.md</code> to <code>&lt;target_path&gt;/docs/</code></li>
-<li>Copy all <code>docs/HOWTO-*.md</code> files to <code>&lt;target_path&gt;/docs/</code></li>
+<li>Recursively copy <code>docs/agent-configs/</code> to <code>"$TARGET_PATH/docs/agent-configs/"</code></li>
+<li>Recursively copy <code>docs/governance/</code> to <code>"$TARGET_PATH/docs/governance/"</code></li>
+<li>Copy <code>docs/AI-AGENT-SKILLS-GUIDE.md</code> to <code>"$TARGET_PATH/docs/"</code></li>
+<li>Copy all <code>docs/HOWTO-*.md</code> files to <code>"$TARGET_PATH/docs/"</code></li>
 </ul>
 </li>
-<li><strong>Pillar D (Ritual Scripts):</strong> Recursively copy <code>tools/</code> to <code>&lt;target_path&gt;/tools/</code></li>
+<li><strong>Pillar D (Ritual Scripts):</strong> Recursively copy <code>tools/</code> to <code>"$TARGET_PATH/tools/"</code></li>
+<li><strong>OKF Frontmatter Compliance &amp; Signature Injection:</strong></li>
+<li>Execute <code>uv run python tools/apply_okf_frontmatter.py "$TARGET_PATH"</code> (shell/PowerShell safe) in the target repository to guarantee complete OKF v0.1 frontmatter compliance across all cloned memory assets and documentation.</li>
+<li>Run <code>python .agents/skills/dsom-signature-injector/scripts/inject.py "$TARGET_PATH"</code> to apply standard GPL v3.0 signature footers.</li>
 <li><strong>Persona Injection Check:</strong> Ask the user if they wish to automatically inject their persona using the <code>persona-injector</code> skill for the new project.</li>
 <li><strong>Finalization:</strong> Output a success message to the user, providing them with the initialization commands for their new workspace:</li>
 <li><code>bash tools/reanimate.sh</code> or <code>.\tools\reanimate.ps1</code></li>
@@ -3484,7 +3515,7 @@
 <li><code>git commit -m "chore(dsom): scaffold genesis dsom architecture and AI skills"</code></li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
