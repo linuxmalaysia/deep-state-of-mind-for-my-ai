@@ -3514,6 +3514,50 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#8-test-suite-modularisation-refactoring-pr-74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Test Suite Modularisation &amp; Refactoring (PR #74)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-coderabbit-unit-tests-for-test-modularisation-pr-76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. CodeRabbit Unit Tests for Test Modularisation (PR #76)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-okf-master-guide-adoption-cross-skill-sync-pr-77" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. OKF Master Guide Adoption &amp; Cross-Skill Sync (PR #77)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-coderabbit-unit-tests-for-okf-adoption-pr-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. CodeRabbit Unit Tests for OKF Adoption (PR #78)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3659,6 +3703,37 @@
 <li><strong>Technical Implementation:</strong></li>
 <li>Mapped root-level folders (<code>.agents/</code>, <code>playbooks/</code>) as symlinks inside the <code>docs/</code> directory.</li>
 <li>Implemented <code>tools/mkdocs_hooks.py</code> to dynamically rewrite raw Markdown paths (converting nested repository-root <code>../../</code> links to <code>../</code>) during the compilation process, enabling absolute link compatibility on both GitHub.com and the compiled HTML static pages.</li>
+</ul>
+<h3 id="8-test-suite-modularisation-refactoring-pr-74">8. Test Suite Modularisation &amp; Refactoring (PR #74)</h3>
+<ul>
+<li><strong>Date:</strong> 2026-08-18</li>
+<li><strong>Objective:</strong> Refactor monolithic <code>tests/test_unit.py</code> into dedicated modular unit test suites under <code>tests/unit/</code>.</li>
+<li><strong>Technical Implementation:</strong></li>
+<li>Decomposed tests into <code>tests/unit/ansible.py</code>, <code>tests/unit/containers.py</code>, <code>tests/unit/llms.py</code>, <code>tests/unit/markdown.py</code>, and <code>tests/unit/sitemaps.py</code>.</li>
+<li>Maintained backward compatibility in <code>tests/test_unit.py</code>.</li>
+</ul>
+<h3 id="9-coderabbit-unit-tests-for-test-modularisation-pr-76">9. CodeRabbit Unit Tests for Test Modularisation (PR #76)</h3>
+<ul>
+<li><strong>Date:</strong> 2026-08-18</li>
+<li><strong>Branch:</strong> <code>coderabbitai/utg/225c56d</code></li>
+<li><strong>Objective:</strong> Automated test suite expansions for modular unit tests.</li>
+</ul>
+<h3 id="10-okf-master-guide-adoption-cross-skill-sync-pr-77">10. OKF Master Guide Adoption &amp; Cross-Skill Sync (PR #77)</h3>
+<ul>
+<li><strong>Date:</strong> 2026-08-20 / 2026-08-21</li>
+<li><strong>Branch:</strong> <code>feat/okf-master-guide-adoption-14170669058403105577</code></li>
+<li><strong>Objective:</strong> Author comprehensive OKF Adoption Guide, establish Entry Point 17, and enforce cross-skill OKF compliance.</li>
+<li><strong>Technical Implementation:</strong></li>
+<li>Authored comprehensive <code>docs/OKF-ADOPTION-GUIDE.md</code> and reference copy <code>references/OKF-ADOPTION-GUIDE.md</code>.</li>
+<li>Registered Entry Point 17 in <code>START-HERE.md</code>, updated <code>README.md</code>, <code>docs/README.md</code>, <code>CHANGELOG.md</code>, <code>HISTORY.md</code>, <code>SUMMARY.md</code>, and <code>mkdocs.yml</code>.</li>
+<li>Embedded <code>apply_okf_frontmatter.py</code> verification across 7 operational skills (<code>dsom-bootstrap</code>, <code>dsom-knowledge-ingester</code>, <code>dsom-policy-adopter</code>, <code>dsom-project-cloner</code>, <code>okf-frontmatter-injector</code>, <code>openwiki-compiler</code>, <code>palace-auditor</code>).</li>
+<li>Added unit testing layer in <code>tests/test_okf_adoption_guide_cross_skill_sync.py</code>.</li>
+</ul>
+<h3 id="11-coderabbit-unit-tests-for-okf-adoption-pr-78">11. CodeRabbit Unit Tests for OKF Adoption (PR #78)</h3>
+<ul>
+<li><strong>Date:</strong> 2026-08-21</li>
+<li><strong>Branch:</strong> <code>coderabbitai/utg/827b6f1</code></li>
+<li><strong>Objective:</strong> Automated test suite additions for PR #77 changes.</li>
 </ul>
 <hr />
 <h2 id="core-engineering-resolutions-algorithmic-milestones">🌗 Core Engineering Resolutions &amp; Algorithmic Milestones</h2>

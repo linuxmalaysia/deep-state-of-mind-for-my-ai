@@ -1,41 +1,43 @@
-[2026-08-18] - INSTRUCTIONS GIVEN: 
+[2026-08-21] - INSTRUCTIONS GIVEN: 
 - Strict adherence to Standard UK English and DBP-standard Bahasa Melayu Malaysia only. 
 - Execute strictly via uv instead of raw pip or python (Rule 16).
 - Symmetrically update all ledgers (README, HISTORY, CHANGELOG) when modifying architecture (Rule 8).
-- The AI is strictly forbidden from executing monolithic blanket commits (git commit -am). (Rule 4).
-- Windows Git Execution Guardrail: Export fail-fast environment variables for background Git execution.
+- The AI is strictly forbidden from executing monolithic blanket commits (git commit -am) (Rule 4).
+- Windows Git Execution Guardrail: Export fail-fast environment variables for background Git execution (Rule 24).
 - Output the `[DSOM EPISODIC RECORD]` anchor block at the end of every workflow (Rule 18).
 - Keep Jules' historic PR merges and conversation details recorded for cross-session cognitive continuity (Rule 25).
 - Follow the Bidirectional Handover Matrix in jules-antigravity-sync skill.
+- Maintain OKF v0.1/v0.2 compliance across all 7 operational skills and documentation.
 
-[2026-08-18] - PROJECT CONTEXT & 4W1H:
+[2026-08-21] - PROJECT CONTEXT & 4W1H:
 - Project: Deep State of Mind (DSOM) For My AI.
-- Goal: Sovereign framework to deploy and govern LLMs safely via GitOps, Ansible, and isolated agents. 
+- Goal: Sovereign framework to deploy and govern LLMs safely via GitOps, Ansible, isolated agents, and the OKF context engine.
 
-[2026-08-18] - TASKS, PHASES, AND MILESTONES ACHIEVED:
-- Reconciled and synchronised all updates from Google Jules (PRs #74 and #76).
-- Audited test suite under modular tests/unit/ structure (724/724 passing).
-- Formally codified Bidirectional Handover Matrix (Antigravity <-> Jules) in jules-antigravity-sync skill.
-- Validated fail-fast Git execution guardrails on Windows.
-- Cleaned and confirmed zero pending stashes; synchronized GitHub and GitLab remotes.
+[2026-08-21] - TASKS, PHASES, AND MILESTONES ACHIEVED:
+- Synchronised and integrated Google Jules updates (PR #77 OKF Master Guide Adoption & PR #78 CodeRabbit tests).
+- Updated Jules PR History ledger in `.agents/brain/jules_pr_history.md` with PR #74, #76, #77, and #78.
+- Validated OKF frontmatter compliance across all 7 modified skills and updated test assertions.
+- Verified 100% test suite pass rate (841/841 unit tests passing cleanly).
+- Maintained clean multi-remote tracking with GitHub and GitLab.
 
-[2026-08-18] - TOOLS, LANGUAGES, AND FRAMEWORKS:
+[2026-08-21] - TOOLS, LANGUAGES, AND FRAMEWORKS:
 - Python (uv), pytest, fastmcp, mkdocs-material, Markdown, Open Knowledge Format (OKF).
 - PowerShell (.\tools\eod-palace.ps1) and Bash (tools/hibernation.sh) for cross-platform Palace sync.
 
-[2026-08-18] - PREFERENCES & BEHAVIOR CORRECTIONS:
-- Preserved both Jules and Antigravity context during git pull rebase conflict resolution.
-- Enforced all 5 OKF fields on newly created rule files.
+[2026-08-21] - PREFERENCES & BEHAVIOR CORRECTIONS:
+- Seamlessly reconciled incoming PRs and maintained full test suite integrity.
+- Verified all frontmatter and cross-skill assertions across both Windows and POSIX test runners.
 
 This represents the complete and total set of contextual memory for this operation.
 
 REQUIRED READING FOR NEXT SESSION REANIMATION:
-- docs/governance/AI-MASTER-PROTOCOL.md
+- docs/OKF-ADOPTION-GUIDE.md
+- START-HERE.md
 - .agents/AGENTS.md
 - .agents/skills/jules-antigravity-sync/SKILL.md
 - .agents/brain/jules_pr_history.md
 - .agents/brain/current_state.dsom
 - .agents/rules/windows-git-execution.md
 
-MENTAL ANCHOR FOR TOMORROW (SOD):
-> **Google Jules updates and PR history synchronized, 724 unit tests passing (100%), Bidirectional Handover Matrix codified in jules-antigravity-sync skill, and multi-remote status clean. Ready for next feature expansion.**
+MENTAL ANCHOR FOR NEXT SESSION:
+> **Google Jules PR #77 and #78 synchronized, OKF Master Guide and cross-skill adoption active, 841 unit tests passing (100%), and brain memory fully aligned.**
