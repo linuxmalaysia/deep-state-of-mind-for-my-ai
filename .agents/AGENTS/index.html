@@ -3656,6 +3656,12 @@ Furthermore, the AI must align its cognitive execution with the four functional 
 <li><strong>Minimal Downstream Adoption (Zero Documentation Bloat):</strong> When scaffolding or maintaining downstream client repositories, the AI must ensure the client's business logic and source code remain primary (&gt;90% of repository volume). The AI equips client projects exclusively with the minimal 6-pillar footprint: OKF YAML frontmatter, lean <code>.agents/brain/</code> spatial memory (<code>task.md</code>, <code>walkthrough.md</code>, <code>palace_registry.md</code>), Diátaxis quadrant structuring, dual <code>AGENTS.md</code> gateway, Triple-Ledger sync (<code>README.md</code>, <code>CHANGELOG.md</code>, <code>HISTORY.md</code>), and only domain-relevant skills. The AI must never impose framework documentation bloat onto downstream projects.</li>
 </ul>
 </li>
+<li><strong>Dual-Path Custom Validator Architecture Mandate:</strong> When implementing or documenting guardrails and validators, the AI must support and distinguish between two distinct execution pathways:<ul>
+<li><strong>Guardrails AI Framework Pathway:</strong> Used for external LLM API pipelines, chatbot gateways, and Pydantic structured output validation, inheriting from <code>guardrails.validators.Validator</code> and utilizing <code>@register_validator</code>.</li>
+<li><strong>DSOM Native Lightweight Pathway:</strong> Used for internal repository hygiene, FastMCP server safety (<code>tools/mcp/server.py</code>), pre-commit hooks, and terminal AST/regex command interception (<code>tools/validators/</code>), using zero-dependency pure Python classes under <code>uv</code>.
+Both pathways must adhere to the Tri-Phasic interception model (Active MCP inputs, Twilight AST/schema rules, and Deep EOD verification). Detailed architectures reside in <code>docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md</code>.</li>
+</ul>
+</li>
 </ol>
 <h2 id="cognitive-engine-protocols-boot-discovery">Cognitive Engine Protocols (Boot &amp; Discovery)</h2>
 <p>To enforce Rules 20, 21, and the Sovereign Architecture, the AI must strictly execute these procedural loops:</p>
