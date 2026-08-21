@@ -209,12 +209,18 @@ if ($true) {
         git commit -m "chore(hibernation): End-of-Day safe shutdown $DateStamp [Phase: $Phase]"
     }
 
-    # Always push to all remotes if configured, otherwise fallback to origin
+    # Always push to all remotes if configured, otherwise fallback to origin and gitlab
+    $env:GIT_TERMINAL_PROMPT = "0"
+    $env:GCM_INTERACTIVE = "never"
+
     $remotes = git remote
     if ($remotes -contains "all") {
         git push all main
     } else {
         git push origin main
+        if ($remotes -contains "gitlab") {
+            git push gitlab main
+        }
     }
 
     Write-Host ""

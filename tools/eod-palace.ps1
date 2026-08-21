@@ -125,8 +125,20 @@ if (-not [string]::IsNullOrWhiteSpace($StagedFiles)) {
 
 # Step 6: Push
 Write-Host ""
-Write-Host "  [6/6] Push to origin/main..." -ForegroundColor Yellow
-git push origin main
+Write-Host "  [6/6] Push to remote repositories..." -ForegroundColor Yellow
+$env:GIT_TERMINAL_PROMPT = "0"
+$env:GCM_INTERACTIVE = "never"
+
+$remotes = git remote
+if ($remotes -contains "all") {
+    git push all main
+} else {
+    git push origin main
+    if ($remotes -contains "gitlab") {
+        git push gitlab main
+    }
+}
+
 
 Write-Host ""
 Write-Host "======================================================================" -ForegroundColor Green
