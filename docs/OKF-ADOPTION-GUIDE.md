@@ -24,7 +24,7 @@ OKF formalises the **"LLM-wiki" paradigm** into a standardised, Git-native repre
 
 The **Deep State of Mind (DSOM)** protocol relies on OKF as its primary context engineering standard. OKF transforms passive documentation into an active, machine-readable **Spatial Memory Palace** (`.agents/brain/` and `.agents/skills/`), delivering four critical performance advantages:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                      Sovereign AI Workspace (DSOM)                      │
 │                                                                         │
@@ -54,8 +54,8 @@ The **Deep State of Mind (DSOM)** protocol relies on OKF as its primary context 
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 1. 98%+ Token & Cost Compression
-Loading raw source code, exhaustive database dumps, or thousands of lines of unformatted documentation into an LLM prompt consumes hundreds of thousands of context tokens, draining API budgets and degrading reasoning quality. In DSOM, OKF YAML frontmatter allows AI agents to scan lightweight metadata blocks (~50 tokens per file) to locate exact information before selectively reading deep content. Empirical benchmarks prove this compresses initial prompt overhead by over 98%.
+### 1. Project Target: 98%+ Token & Cost Compression Ratio
+Loading raw source code, exhaustive database dumps, or thousands of lines of unformatted documentation into an LLM prompt consumes hundreds of thousands of context tokens, draining API budgets and degrading reasoning quality. In DSOM, OKF YAML frontmatter allows AI agents to scan lightweight metadata blocks (~50 tokens per file) to locate exact information before selectively reading deep content. As an engineering target, this compresses initial prompt overhead by over 98%.
 
 ### 2. Progressive Disclosure via Directory Index Routers
 Instead of dumping an entire repository into active memory, OKF uses hierarchical `index.md` files at directory roots. An AI agent reads the root `index.md` first to build a topographical map of available domains, traversing deeper into specific concept files only when required for immediate execution.
@@ -77,9 +77,9 @@ To enable zero-cost context prediction, every L1 and L2 document appends a struc
 
 ### OKF v0.1 Core Frontmatter Fields
 
-Every non-reserved Markdown concept document inside an OKF knowledge bundle MUST begin with a valid YAML frontmatter block enclosed by triple dashes (`---`) at line 1, column 1.
+Every non-reserved Markdown concept document inside an OKF knowledge bundle MUST begin with a valid YAML frontmatter block enclosed by triple dashes (`---`) at line 1, column 1. Note that DSOM enforces a specific OKF profile requiring mandatory `okf_version`, `type`, `title`, `timestamp`, and `topics` fields.
 
-| Field | Type | Required? | Description / Example |
+| Field | Type | Required in DSOM Profile? | Description / Example |
 | :--- | :--- | :--- | :--- |
 | `okf_version` | `float` / `string` | **Yes** | Specification version (e.g., `0.1` or `"0.1"`). |
 | `type` | `string` | **Yes** | Semantic document category (`agent_skill`, `documentation`, `governance_protocol`, `architecture_concept`, `system_audit`). |
@@ -102,14 +102,14 @@ The OKF specification reserves two explicit filenames at any hierarchical direct
 * **`index.md`:** Serves as a directory router and progressive disclosure listing. It contains no frontmatter (except the bundle-root `index.md`, which MAY declare `okf_version: "0.1"`).
 * **`log.md`:** Maintains a chronological ledger of updates organized in reverse-chronological order under ISO 8601 date headings (e.g., `## 2026-08-20`).
 
-### OKF v0.2 Trust Signals & Provenance
+### OKF v0.2 Trust Signals & Provenance Profile
 
-OKF v0.2 extends v0.1 by adding optional trust and provenance metadata fields in YAML frontmatter to allow autonomous agents to verify agent-generated content:
-* `provenance`: Links to the source data or model execution trace that generated the document.
-* `trust`: Numerical or categorical confidence score assigned by validator agents.
-* `freshness`: Expiry policy or expected update frequency.
-* `lifecycle`: State of the knowledge node (`draft`, `approved`, `deprecated`).
-* `attestation`: Cryptographic signature or hash validating content authenticity.
+OKF v0.2 extends v0.1 by adding opt-in trust and provenance metadata fields in YAML frontmatter to allow autonomous agents to verify agent-generated content:
+* `sources`: Array of origin URLs or relative paths (`["docs/governance/AI-MASTER-PROTOCOL.md"]`).
+* `generated`: ISO 8601 timestamp or agent ID that generated the document.
+* `verified`: Verification status (`true` / `false` / ISO timestamp).
+* `status`: Lifecycle state (`draft`, `approved`, `deprecated`).
+* `stale_after`: ISO 8601 date indicating when the context must be re-validated.
 
 ---
 
@@ -119,7 +119,7 @@ Follow this 6-step SOP to adopt OKF across any new or existing codebase:
 
 ### Step 1: Establish Knowledge Bundle Structure
 Organise knowledge assets into distinct, logical directories alongside source code:
-```
+```text
 .agents/
 ├── brain/                   <-- Spatial Memory Palace (okf_version: 0.1)
 │   ├── index.md             <-- Directory Router
@@ -221,13 +221,13 @@ This closet tracks the execution parameters of `tools/openwiki_emulator.py` and 
 
 ## 🧪 Verification & Testing
 
-Verify that your repository maintains 100% OKF compliance by running the unit test suite:
+Verify that your repository maintains complete OKF compliance and zero broken links by running the full test suite and relative link validator:
 
 ```bash
 # Run full pytest suite including OKF compliance tests
-uv run --with pytest --with pyyaml --with mcp==1.2.1 --with fastmcp --with pydantic-settings python -m pytest tests/test_okf_frontmatter_bom_reorder.py
+uv run --with pytest --with pyyaml --with mcp==1.2.1 --with fastmcp --with pydantic-settings python -m pytest
 
-# Validate relative documentation links
+# Validate relative documentation links across Diátaxis docs
 uv run python tools/check_docs_links.py
 ```
 

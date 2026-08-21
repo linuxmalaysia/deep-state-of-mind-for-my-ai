@@ -14,7 +14,9 @@ Use this skill when the user requests a workspace audit, health check, or when p
 
 ## Instructions
 1. **Diagnostic Check:** Run `.\tools\diagnostic.ps1` (or `./tools/diagnostic.sh` on Linux) and capture the output. Ensure all dependencies (`uv`, `node`, `git`) and paths are healthy.
-2. **OKF Frontmatter Compliance Audit:** Run `uv run python tools/apply_okf_frontmatter.py .agents/brain/` and `docs/` to audit and fix any Markdown files missing OKF v0.1 frontmatter headers.
+2. **OKF Frontmatter Compliance & Signature Audit:**
+   - Run `uv run python tools/apply_okf_frontmatter.py .agents/brain/` and `docs/` to audit and fix any Markdown files missing OKF v0.1 frontmatter headers.
+   - Run `python .agents/skills/dsom-signature-injector/scripts/inject.py .agents/brain/` and `docs/` to sign any repaired Markdown files lacking standard ownership footers (or operate in check-only mode if executing a dry run).
 3. **Index Verification:** Read `.agents/brain/index.md`. Verify that every `closet.md` or `.md` file listed under `Path:` actually exists in the filesystem.
 4. **Toolchain Audit:**
    - List all files in the `tools/` directory.

@@ -32,7 +32,7 @@ name: dsom-policy-adopter
    - Inject these constraints directly as a new numbered Core Rule into `.agents/AGENTS.md`. Be extremely precise; do not bloat the file.
 
 4. **Dual Documentation Sync & Signature**
-   - **Rule 13 (Signature)**: Inject the standard DSOM ownership, timestamp, and GPL v3.0 license signature at the bottom of the new document.
+   - **Rule 13 (Signature)**: Run `python .agents/skills/dsom-signature-injector/scripts/inject.py docs/governance/` to inject standard DSOM ownership, timestamp, and GPL v3.0 license signatures for each changed file.
    - **Rule 14 (Dual Sync)**: Explicitly map the new governance document into BOTH `SUMMARY.md` and `mkdocs.yml` under the appropriate category to prevent orphaned documentation.
 
 5. **Triple-Ledger Synchronization**

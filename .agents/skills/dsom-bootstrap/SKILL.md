@@ -21,7 +21,9 @@ Use this skill when you are operating in a new or existing workspace that lacks 
    - Use your terminal execution tools (`run_command`) to perform the recursive copies (`cp -r` or `Copy-Item -Recurse`) from the defined Baseline Path.
    - For EXISTING projects, ensure you read existing files and perform intelligent merges using your file editing tools, rather than destructive overwrites.
 5. **Sanitize (If New):** Ensure the `checkpoint_summary.txt`, `task.md`, and `walkthrough.md` in `.agents/brain/` are emptied of baseline history.
-6. **OKF Frontmatter Compliance:** Execute `uv run python tools/apply_okf_frontmatter.py .` to ensure all imported or ported Markdown documents have valid OKF v0.1 frontmatter.
+6. **OKF Frontmatter Compliance & Signature Injection:**
+   - Execute `uv run python tools/apply_okf_frontmatter.py .` to ensure all imported or ported Markdown documents have valid OKF v0.1 frontmatter.
+   - Run `python .agents/skills/dsom-signature-injector/scripts/inject.py .` to apply GPL v3.0 signature footers across all ported documentation.
 7. **Verify:** Run the `tools/diagnostic.ps1` or `tools/diagnostic.sh` script to confirm the port was successful.
 8. **Report:** Output a success message to the user, confirming that the AI now possesses full DSOM capabilities, tools, and documentation.
 

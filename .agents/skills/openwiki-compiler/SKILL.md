@@ -48,7 +48,7 @@ When drafting or updating `./openwiki/` documentation:
 
 1. **Skeleton Analysis:** Read `./openwiki/_skeleton.md` to inspect the planned page tree, subsystem rankings, and evidence links.
 2. **Autonomous Page Drafting:** The AI agent (Gemini / Antigravity) directly drafts all planned `.md` pages under `./openwiki/` using project context and OKF YAML frontmatter.
-3. **OKF Frontmatter Compliance:** Execute `uv run python tools/apply_okf_frontmatter.py ./openwiki/` to validate and apply OKF v0.1 YAML frontmatter headers across all generated OpenWiki concept pages.
+3. **OKF Frontmatter Compliance & Signature:** Execute `uv run python tools/apply_okf_frontmatter.py ./openwiki/` to validate and apply OKF v0.1 YAML frontmatter headers across all generated OpenWiki concept pages, followed by `python .agents/skills/dsom-signature-injector/scripts/inject.py ./openwiki/` to append signature footers.
 4. **Regression Verification:** Run unit test assertions (`uv run --with pyyaml python -m unittest ...`).
 
 ---

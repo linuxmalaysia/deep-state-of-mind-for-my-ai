@@ -23,7 +23,8 @@ Use this skill when the user asks to ensure documentation is OKF (Open Knowledge
    python .agents/skills/okf-frontmatter-injector/scripts/apply_okf.py <TARGET_DIRECTORY>
    ```
 4. The script automatically skips files that already possess valid frontmatter. It categorises files dynamically based on folder structure (`agent_skill`, `governance_protocol`, `architecture_concept`, etc.).
-5. Inform the user of the total number of files scanned and modified based on output telemetry.
+5. Run `python .agents/skills/dsom-signature-injector/scripts/inject.py <TARGET_DIRECTORY>` to ensure all updated Markdown documents carry the GPL v3.0 signature footer.
+6. Inform the user of the total number of files scanned and modified based on output telemetry.
 
 
 ---

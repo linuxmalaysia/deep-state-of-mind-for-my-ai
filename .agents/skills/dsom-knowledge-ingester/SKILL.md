@@ -21,7 +21,7 @@ Use this skill when the user provides a new external source (PDF, Markdown, Web 
    - Create a new `.md` file in the appropriate directory (e.g., `docs/governance/`, `hall_facts/`).
    - Format the file according to DSOM Generative Engine Optimisation (GEO) standards (atomic chunks, H2 headers, expert tone).
    - Execute `uv run python tools/apply_okf_frontmatter.py <directory>` to verify and inject OKF v0.1 frontmatter headers into all newly synthesized Markdown documents.
-   - Inject the Sovereign Signature using `dsom-signature-injector`.
+   - Run `python .agents/skills/dsom-signature-injector/scripts/inject.py <directory>` to append standard GPL v3.0 ownership signatures.
 4. **Ledger & Index Updates:**
    - Add the new file to `SUMMARY.md` and `mkdocs.yml` (Dual Documentation Sync).
    - Add the new file to `.agents/brain/palace_registry.md`.

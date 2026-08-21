@@ -78,7 +78,9 @@ def parse_github_pages_urls() -> list[str]:
     urls = []
     for loc in root.findall('.//ns:loc', namespace):
         if loc.text:
-            urls.append(loc.text.strip())
+            url_text = loc.text.strip()
+            if "palace_update_proposal_" not in url_text:
+                urls.append(url_text)
 
     print(f"Found {len(urls)} GitHub Pages URLs.")
     return sorted(list(set(urls)))
