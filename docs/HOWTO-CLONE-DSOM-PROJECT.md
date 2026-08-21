@@ -1,11 +1,16 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "HOWTO: Clone a DSOM Project"
-timestamp: "2026-07-04T11:00:00Z"
-topics: ["dsom", "documentation"]
-description: "OKF-compliant documentation for scaffolding a new project from an existing DSOM repository."
+timestamp: "2026-08-21T21:00:00Z"
+topics: ["dsom", "documentation", "cloning", "scaffolding", "okf"]
+description: "Master engineering blueprint for replicating the Deep State of Mind (DSOM) architecture, agent skills, and persona into a new project."
 resource: "file:///docs/HOWTO-CLONE-DSOM-PROJECT.md"
+sources: ["START-HERE.md", "docs/OKF-ADOPTION-GUIDE.md", ".agents/AGENTS.md"]
+generated: "google-antigravity"
+verified: true
+status: "approved"
+stale_after: "2027-08-21T00:00:00Z"
 ---
 
 # HOWTO: Clone a DSOM Project (Scaffolding Blueprint)
@@ -118,5 +123,5 @@ Once the files are copied into the new repository, you must initialise the AI's 
 Your new project is now fully sentient and equipped with the exact same capabilities as the baseline DSOM repository.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-09*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-21*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
