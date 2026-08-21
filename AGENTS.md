@@ -168,6 +168,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `check-usage.sh` / `CheckUsage.ps1` | Audits token and context window usage across brain files and skills. | Periodic maintenance. |
 | `bench_brain.py` | Benchmarks brain file read latency (FUSE/disk) to calibrate token and context performance multipliers. | Performance tuning. |
 | `generate-walkthrough.ps1` / `.sh` | Generates a formatted session walkthrough summary from brain state. | Session documentation. |
+| `guardrails-ai-dsom` | Standalone Python package providing 10 DSOM custom validators for Guardrails AI & FastMCP. | Active/Twilight/Deep safety & pre-commit validation. |
 
 ---
 
@@ -176,7 +177,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | Path | Purpose |
 |:---|:---|
 | `AGENTS.md` | **Root Gateway** — this file. First read for all platform AI agents. |
-| `.agents/AGENTS.md` | **Full Rulebook** — Core laws (27 rules), persona, boot sequence, and discovery protocols. |
+| `.agents/AGENTS.md` | **Full Rulebook** — Core laws (29 rules), persona, boot sequence, and discovery protocols. |
 | `.agents/brain/task.md` | Active task list for the current session. |
 | `.agents/brain/walkthrough.md` | Session history and Mental Anchors (resume context). |
 | `.agents/brain/palace_registry.md` | Spatial index of the Sovereign Markdown Palace. |
