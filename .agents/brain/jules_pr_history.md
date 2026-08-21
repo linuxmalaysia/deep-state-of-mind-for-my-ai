@@ -73,6 +73,33 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
   - Mapped root-level folders (`.agents/`, `playbooks/`) as symlinks inside the `docs/` directory.
   - Implemented `tools/mkdocs_hooks.py` to dynamically rewrite raw Markdown paths (converting nested repository-root `../../` links to `../`) during the compilation process, enabling absolute link compatibility on both GitHub.com and the compiled HTML static pages.
 
+### 8. Test Suite Modularisation & Refactoring (PR #74)
+* **Date:** 2026-08-18
+* **Objective:** Refactor monolithic `tests/test_unit.py` into dedicated modular unit test suites under `tests/unit/`.
+* **Technical Implementation:**
+  - Decomposed tests into `tests/unit/ansible.py`, `tests/unit/containers.py`, `tests/unit/llms.py`, `tests/unit/markdown.py`, and `tests/unit/sitemaps.py`.
+  - Maintained backward compatibility in `tests/test_unit.py`.
+
+### 9. CodeRabbit Unit Tests for Test Modularisation (PR #76)
+* **Date:** 2026-08-18
+* **Branch:** `coderabbitai/utg/225c56d`
+* **Objective:** Automated test suite expansions for modular unit tests.
+
+### 10. OKF Master Guide Adoption & Cross-Skill Sync (PR #77)
+* **Date:** 2026-08-20 / 2026-08-21
+* **Branch:** `feat/okf-master-guide-adoption-14170669058403105577`
+* **Objective:** Author comprehensive OKF Adoption Guide, establish Entry Point 17, and enforce cross-skill OKF compliance.
+* **Technical Implementation:**
+  - Authored comprehensive `docs/OKF-ADOPTION-GUIDE.md` and reference copy `references/OKF-ADOPTION-GUIDE.md`.
+  - Registered Entry Point 17 in `START-HERE.md`, updated `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `SUMMARY.md`, and `mkdocs.yml`.
+  - Embedded `apply_okf_frontmatter.py` verification across 7 operational skills (`dsom-bootstrap`, `dsom-knowledge-ingester`, `dsom-policy-adopter`, `dsom-project-cloner`, `okf-frontmatter-injector`, `openwiki-compiler`, `palace-auditor`).
+  - Added unit testing layer in `tests/test_okf_adoption_guide_cross_skill_sync.py`.
+
+### 11. CodeRabbit Unit Tests for OKF Adoption (PR #78)
+* **Date:** 2026-08-21
+* **Branch:** `coderabbitai/utg/827b6f1`
+* **Objective:** Automated test suite additions for PR #77 changes.
+
 ---
 
 ## 🌗 Core Engineering Resolutions & Algorithmic Milestones

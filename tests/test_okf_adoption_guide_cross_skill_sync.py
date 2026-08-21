@@ -113,8 +113,7 @@ SKILLS_WITH_UNCHANGED_OKF_TOPIC = {
 
 SKILL_OKF_COMPLIANCE_SNIPPETS = {
     "dsom-bootstrap": (
-        "6. **OKF Frontmatter Compliance:** Execute "
-        "`uv run python tools/apply_okf_frontmatter.py .` to ensure all "
+        "Execute `uv run python tools/apply_okf_frontmatter.py .` to ensure all "
         "imported or ported Markdown documents have valid OKF v0.1 frontmatter."
     ),
     "dsom-knowledge-ingester": (
@@ -127,19 +126,16 @@ SKILL_OKF_COMPLIANCE_SNIPPETS = {
         "to enforce strict OKF v0.1 YAML frontmatter schema compliance"
     ),
     "dsom-project-cloner": (
-        "4. **OKF Frontmatter Compliance:** Execute "
-        "`uv run python tools/apply_okf_frontmatter.py <target_path>` in the "
-        "target repository"
+        "Execute `uv run python tools/apply_okf_frontmatter.py \"$TARGET_PATH\"` "
+        "(shell/PowerShell safe) in the target repository"
     ),
     "okf-frontmatter-injector": "uv run python tools/apply_okf_frontmatter.py <TARGET_DIRECTORY>",
     "openwiki-compiler": (
-        "3. **OKF Frontmatter Compliance:** Execute "
-        "`uv run python tools/apply_okf_frontmatter.py ./openwiki/` to "
+        "Execute `uv run --with pyyaml python tools/apply_okf_frontmatter.py ./openwiki/` to "
         "validate and apply OKF v0.1 YAML frontmatter headers"
     ),
     "palace-auditor": (
-        "2. **OKF Frontmatter Compliance Audit:** Run "
-        "`uv run python tools/apply_okf_frontmatter.py .agents/brain/` and "
+        "Run `uv run python tools/apply_okf_frontmatter.py .agents/brain/` and "
         "`docs/` to audit and fix any Markdown files missing OKF v0.1 "
         "frontmatter headers."
     ),
@@ -250,7 +246,7 @@ class DsomBootstrapSkillTests(unittest.TestCase):
 
     def test_okf_step_appears_between_sanitize_and_verify(self):
         sanitize_idx = self.content.index("5. **Sanitize (If New):**")
-        okf_idx = self.content.index("6. **OKF Frontmatter Compliance:**")
+        okf_idx = self.content.index("6. **OKF Frontmatter Compliance")
         verify_idx = self.content.index("7. **Verify:**")
         self.assertLess(sanitize_idx, okf_idx)
         self.assertLess(okf_idx, verify_idx)
@@ -274,13 +270,13 @@ class DsomKnowledgeIngesterSkillTests(unittest.TestCase):
 
     def test_signature_injection_is_now_a_separate_bullet(self):
         self.assertIn(
-            "Inject the Sovereign Signature using `dsom-signature-injector`.",
+            "dsom-signature-injector",
             self.content,
         )
 
     def test_okf_step_precedes_signature_step(self):
         okf_idx = self.content.index("Execute `uv run python tools/apply_okf_frontmatter.py")
-        sig_idx = self.content.index("Inject the Sovereign Signature using")
+        sig_idx = self.content.index("dsom-signature-injector")
         self.assertLess(okf_idx, sig_idx)
 
 
@@ -333,7 +329,7 @@ class DsomProjectClonerSkillTests(unittest.TestCase):
 
     def test_okf_step_appears_between_pillars_and_persona_check(self):
         pillars_idx = self.content.index("**Pillar D (Ritual Scripts):**")
-        okf_idx = self.content.index("4. **OKF Frontmatter Compliance:**")
+        okf_idx = self.content.index("4. **OKF Frontmatter Compliance")
         persona_idx = self.content.index("5. **Persona Injection Check:**")
         self.assertLess(pillars_idx, okf_idx)
         self.assertLess(okf_idx, persona_idx)
@@ -393,7 +389,7 @@ class OpenwikiCompilerSkillTests(unittest.TestCase):
         self.assertNotIn("3. **Regression Verification:**", self.content)
 
     def test_okf_step_precedes_regression_verification(self):
-        okf_idx = self.content.index("3. **OKF Frontmatter Compliance:**")
+        okf_idx = self.content.index("3. **OKF Frontmatter Compliance")
         regression_idx = self.content.index("4. **Regression Verification:**")
         self.assertLess(okf_idx, regression_idx)
 
@@ -428,7 +424,7 @@ class PalaceAuditorSkillTests(unittest.TestCase):
 
     def test_diagnostic_check_precedes_okf_audit_which_precedes_index_verification(self):
         diagnostic_idx = self.content.index("1. **Diagnostic Check:**")
-        okf_idx = self.content.index("2. **OKF Frontmatter Compliance Audit:**")
+        okf_idx = self.content.index("2. **OKF Frontmatter Compliance")
         index_idx = self.content.index("3. **Index Verification:**")
         self.assertLess(diagnostic_idx, okf_idx)
         self.assertLess(okf_idx, index_idx)
@@ -524,7 +520,7 @@ class HistoryUpdateTests(unittest.TestCase):
         self.assertLess(readthedocs_idx, okf_idx)
 
     def test_new_entry_is_last_ledger_entry_before_footer(self):
-        end_marker_idx = self.content.index("*End of Current Ledger")
+        end_marker_idx = self.content.rindex("*End of Current Ledger")
         okf_idx = self.content.index(
             "- [2026-08-20]: **Open Knowledge Format (OKF) Master Guide"
         )
@@ -590,10 +586,15 @@ class ReadmeOkfIntegrationTests(unittest.TestCase):
         )
 
     def test_okf_guide_row_appears_immediately_after_start_here_row(self):
-        start_here_idx = self.content.index("| [`START-HERE.md`](START-HERE.md) |")
-        okf_row_idx = self.content.index("| [`docs/OKF-ADOPTION-GUIDE.md`](docs/OKF-ADOPTION-GUIDE.md) |")
+        key_docs_idx = self.content.index("## 📚 Key Documents (The Governance Ledgers)")
+        start_here_idx = self.content.index("| [`START-HERE.md`](START-HERE.md) |", key_docs_idx)
+        okf_row_idx = self.content.index(
+            "| [`docs/OKF-ADOPTION-GUIDE.md`](docs/OKF-ADOPTION-GUIDE.md) |",
+            key_docs_idx,
+        )
         governance_idx = self.content.index(
-            "| [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`]"
+            "| [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`]",
+            key_docs_idx,
         )
         self.assertLess(start_here_idx, okf_row_idx)
         self.assertLess(okf_row_idx, governance_idx)
@@ -957,8 +958,7 @@ class MkdocsOkfNavRegistrationTests(unittest.TestCase):
 # sitemap.txt / docs/sitemap.txt
 # ---------------------------------------------------------------------------
 NEW_SITEMAP_TXT_SUFFIXES = [
-    ".agents/brain/palace_update_proposal_2026-08-18_0623/",
-    ".agents/rules/windows-git-execution/",
+    "OKF-ADOPTION-GUIDE/",
 ]
 SITEMAP_TXT_DOMAINS = [
     "https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/",

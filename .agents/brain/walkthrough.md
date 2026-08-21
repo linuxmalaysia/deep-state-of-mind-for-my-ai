@@ -152,3 +152,20 @@ To maintain seamless peer-to-peer cognitive continuity and alignment between Goo
 ### Integration Mental Anchor
 
 > Synchronised Google Jules' updates, verified 724 unit tests, and codified the Bidirectional Handover Matrix in jules-antigravity-sync skill.
+
+## 🏁 Session Anchor: 2026-08-21 — Google Jules PR #77 & #78 Sync (OKF Master Guide Adoption)
+
+- Synchronised incoming updates from Google Jules (PR #77 and PR #78) via fast-forward `git pull --rebase`.
+- Integrated the comprehensive Open Knowledge Format (OKF) Master Adoption Guide (`docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md`) with Entry Point 17 in `START-HERE.md`.
+- Aligned 7 operational skills (`dsom-bootstrap`, `dsom-knowledge-ingester`, `dsom-policy-adopter`, `dsom-project-cloner`, `okf-frontmatter-injector`, `openwiki-compiler`, `palace-auditor`) with mandatory OKF frontmatter compliance steps.
+- Validated and updated `tests/test_okf_adoption_guide_cross_skill_sync.py` to ensure complete compatibility across local and CI environments.
+- Updated Jules PR History ledger in `.agents/brain/jules_pr_history.md` with PR #74, #76, #77, and #78.
+- Verified 100% test pass rate across the test suite (**841/841 tests passing**).
+
+### Underlying Rationale
+
+To maintain cognitive alignment with Google Jules, adopt the authoritative OKF v0.1/v0.2 specification across all repository tooling and skills, and ensure complete test pass rate and spatial memory integrity.
+
+### Integration Mental Anchor
+
+> Synchronised Google Jules' PR #77 and #78, adopted the OKF Master Guide and cross-skill validation, and confirmed 100% test suite pass rate (841 tests).
