@@ -1,0 +1,132 @@
+---
+title: "Token Efficiency: 96% Context Reduction in DSOM Sessions"
+sidebarTitle: "Token Efficiency"
+description: "DSOM achieves up to 96.23% context reduction through Byte-Capped Execution, OKF frontmatter search, and the Sovereign Palace spatial memory."
+---
+
+Every AI assistant has a finite context window. In a large, actively developed project, the naive approach — loading every relevant file into every session — rapidly consumes that window before the AI has answered a single question. Conversation history compounds the problem: six months of daily sessions generates millions of tokens of accumulated context, and loading it all is both expensive and slow.
+
+DSOM addresses this at three independent layers. The result is an empirically measured **96.23% reduction in per-session context consumption** compared to monolithic document-loading strategies.
+
+## The DSOM Token Efficiency Stack
+
+The three layers work together, each targeting a different source of context waste:
+
+### Layer 1 — OKF Frontmatter Search
+
+**The problem it solves:** AI agents loading full file bodies to discover what a document contains.
+
+The OpenWiki engine indexes every OKF-compliant Markdown file by its YAML frontmatter. When the AI needs to find a document about a topic, it queries the frontmatter index — consuming roughly **50 tokens** — rather than loading file bodies that can exceed **500,000 tokens** for a large codebase.
+
+For skill discovery specifically, querying the `topics:` and `description:` fields of 25 skills costs approximately **375 tokens** versus **14,400 tokens** for loading all skill bodies in full. That is a **97.4% reduction on every single skill lookup**.
+
+```bash
+# The AI searches metadata — not file content
+uv run --with pyyaml python tools/openwiki_emulator.py --search "ansible"
+```
+
+### Layer 2 — The Sovereign Palace
+
+**The problem it solves:** AI agents re-reading entire session logs to recover context from previous sessions.
+
+The Sovereign Markdown Palace is a spatial memory architecture that replaces flat session log appending. Instead of an ever-growing `walkthrough.md`, knowledge is distilled into `closet.md` files inside named Palace Rooms. Each closet is a high-density summary that the AI reads **instead of** scanning hundreds of lines of raw session history.
+
+At Start of Day (SOD), the AI reads `palace_registry.md` — a spatial map of all Rooms — to orient itself, then navigates only into the Rooms relevant to today's task. This keeps SOD context loading bounded and predictable regardless of how long the project has been running.
+
+```text
+.agents/brain/
+├── palace_registry.md        ← AI reads this at SOD (~2,000 tokens)
+├── walkthrough.md            ← Linear session log (loaded selectively)
+└── wings/
+    └── wing_dsom_core/
+        ├── hall_facts/
+        │   └── closet.md     ← Distilled facts (~500 tokens each)
+        └── hall_events/
+            └── closet.md     ← Milestones and history
+```
+
+### Layer 3 — Byte-Capped Execution Framework
+
+**The problem it solves:** Single files or command outputs flooding the context window.
+
+The Byte-Capped Execution Framework is a circuit breaker. When the AI runs an exploratory terminal operation — reading a large log file, scanning a directory tree — the output is hard-capped to prevent it from consuming the entire context window in a single operation:
+
+```bash
+# Cap command output to prevent context flooding
+some-command 2>&1 | head -c 4000
+```
+
+Any file exceeding the **4,000 token gate** is flagged as `[BLOCKED]` by the token calculator. The AI must use targeted `view_file` calls with specific line ranges rather than loading the file wholesale.
+
+```bash
+# Audit token footprint across all brain files
+uv run --with tiktoken tools/dsom_token_auditor.py
+
+# Audit all skills for token gate compliance
+uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
+```
+
+## Empirical Benchmark
+
+These results were captured on 2026-07-19 on the DSOM baseline repository (Windows / NVMe — T1 node):
+
+| Metric | Value |
+|---|---|
+| Brain directory files | 38 |
+| Total brain tokens | 145,729 |
+| Average read time per file | ~23.9 ms |
+| Average tokenise time per file | ~8.9 ms |
+| Largest single file | `palace_update_proposal` — 55,726 tokens |
+| Brain files exceeding 4,000-token gate | 3 (all archival proposals) |
+| **Overall context reduction vs. monolithic loading** | **96.23%** |
+
+<Tip>
+  The Android Termux FUSE filesystem benchmarking results (from `tools/bench_brain.py` on a Samsung Note 10) show a **~3.5× read latency multiplier** compared to NVMe on Windows. If you work from a mobile Termux environment, keep your active context manifest especially lean — load only the specific closet files relevant to today's task, and avoid loading any of the three archival brain files that exceed the token gate.
+</Tip>
+
+## The Zero-Global Memory Principle
+
+AI agents share **no memory between sessions** by default. When you start a new Claude, Gemini, or Copilot session, the AI has no recollection of previous conversations. This is not a bug — it is the correct baseline.
+
+DSOM's explicit artifact loading is the only memory that persists. The brain artifacts committed to Git are the AI's external memory. Nothing that exists only inside a chat window survives a session restart.
+
+This principle has a critical implication: **the quality of your DSOM brain artifacts directly determines the quality of your AI's context recovery**. A well-maintained `palace_registry.md` and a set of accurate `closet.md` files allows a brand new AI session to recover full project context in under three prompts. A neglected brain leads to context decay and repetitive re-explanation.
+
+## Practical Token Efficiency Tips
+
+<CardGroup cols={2}>
+  <Card title="Run --update after every session" icon="arrows-rotate">
+    Keep your OpenWiki knowledge graph current. An outdated graph means the AI loads files it does not need because the index does not reflect recent changes.
+  </Card>
+  <Card title="Use closet.md, not walkthrough.md" icon="box-archive">
+    Distil important decisions into Palace `closet.md` files instead of endlessly appending to `walkthrough.md`. Closets are dense summaries; `walkthrough.md` is a log. The AI reads closets at SOD — not the full log.
+  </Card>
+  <Card title="Keep the manifest focused" icon="list-check">
+    Your `active_context_manifest.md` should list only the brain artifacts relevant to today's work. Loading `.agents/brain/` wholesale means loading 120,000+ tokens from three archival files alone.
+  </Card>
+  <Card title="Chunk large-file processing" icon="scissors">
+    When asking the AI to process large files, use the Byte-Capped framework directive explicitly: *"Process this file in chunks of max 4KB."* This prevents a single large file from consuming the entire context window.
+  </Card>
+</CardGroup>
+
+## Anti-Patterns to Avoid
+
+| Anti-Pattern | Why It Fails | Correct Alternative |
+|---|---|---|
+| Loading `.agents/brain/` wholesale | Three archival files = 120,000+ tokens. Context window collapses before work begins. | Use `active_context_manifest.md` to declare only needed files. |
+| Creating `SKILL.md` without `topics:` | Forces full-body read on every skill discovery pass. | Always include `topics: [...]` in frontmatter. |
+| Loading a `palace_update_proposal` file directly | 30,000–55,000 tokens each. Instant context flood. | Use `view_file` with targeted line ranges. |
+| Appending to `walkthrough.md` indefinitely | Log grows unbounded; loading it costs more tokens each session. | Distil completed work into Palace closets at EOD. |
+| Using raw `python` or `pip` for tool execution | No environment isolation; PATH hijacking risk on Windows. | Always use `uv run` and `uv add`. |
+
+## Token Efficiency Governance Rules
+
+These rules from the DSOM Sovereign Rulebook enforce token discipline automatically:
+
+| Rule | Mandate |
+|---|---|
+| **Rule 6** | All `SKILL.md` files must include `topics:` (3–5 keywords) in OKF frontmatter |
+| **Rule 10** | Byte-Capped Executions — all exploratory terminal operations must be output-capped |
+| **Rule 12** | Skill discovery uses frontmatter metadata only; full body loaded only at execution time |
+| **Rule 18** | Episodic Resume Protocol — session state serialised at every EOD |
+| **Rule 19** | Skill Modification Quality Gate — run the token calculator before and after every skill edit |

@@ -1,0 +1,118 @@
+---
+title: "template-reset: Reset and Scaffold a New DSOM Project"
+sidebarTitle: "Template Reset"
+description: "Run template-reset once when cloning DSOM as a project template to clear the original Git history and brain artifacts for your new project."
+---
+
+When you clone the DSOM repository to start a new project, you inherit something you do not want: the original project's Git history, Mental Anchors, brain artifacts, and session walkthrough from whoever built DSOM. Your AI must not see any of that — it will confuse your project's identity with someone else's. The `template-reset` script performs a two-stage purge — clearing the Git history and resetting the brain files — so you start at a genuinely clean slate.
+
+## When to Run It
+
+Run `template-reset` exactly once, immediately after `git clone`, before you write a single file or fill in a single placeholder. It is Step 1 of the six-step new project boot sequence:
+
+```text
+[→] 1. Clone and run template-reset.sh    ← You are here
+[ ] 2. Run init-brain.sh
+[ ] 3. Fill in AI-COGNITIVE-TWIN-PROTOCOL.md
+[ ] 4. Set up Ansible baseline (infra projects)
+[ ] 5. Run audit-pre-flight.sh — confirm all PASS
+[ ] 6. Run reanimate.sh — upload manifest — get Handshake
+```
+
+## Run template-reset
+
+<CodeGroup>
+
+```bash Linux / WSL2
+git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git my-new-project
+cd my-new-project
+bash tools/template-reset.sh
+```
+
+```powershell Windows PowerShell
+git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git my-new-project
+cd my-new-project
+.\tools\template-reset.ps1
+```
+
+</CodeGroup>
+
+### Confirmation Prompt
+
+The script will not proceed silently. It prints a hard warning and requires explicit confirmation:
+
+```text
+⚠️  WARNING: This will permanently delete the Git history and reset all brain artifacts.
+This action cannot be undone. Are you sure? (y/N):
+```
+
+Type `y` or `yes` and press Enter to authorise the purge. Press Enter alone or type `n` to abort safely.
+
+## What It Does: The Two Purges
+
+<Steps>
+  <Step title="Git History Purge">
+    The script deletes the `.git` directory entirely and runs `git init` to create a fresh repository with zero commit history. You start at "Commit 0" with no branches, no tags, and no connection to the upstream remote.
+
+    You will need to add your own remote after the reset:
+    ```bash
+    git remote add origin https://github.com/your-org/your-new-project.git
+    ```
+  </Step>
+  <Step title="Brain Artifact Reset">
+    The script overwrites the three core brain files with clean "golden image" templates:
+
+    - **`task.md`** — Reset to a blank "Project Initialisation" entry
+    - **`walkthrough.md`** — Reset with a fresh session anchor dated today
+    - **`implementation_plan.md`** — Reset to an empty Phase 1 structure
+
+    The script does not delete `palace_registry.md` or any Palace wing structure if they exist — you initialise those fresh with `init-brain`.
+  </Step>
+</Steps>
+
+## After the Reset
+
+Once `template-reset` completes, follow this sequence immediately:
+
+<Steps>
+  <Step title="Run init-brain">
+    Scaffold the full `.agents/brain/` structure and any missing artifacts:
+
+    ```bash
+    bash tools/init-brain.sh
+    ```
+  </Step>
+  <Step title="Fill in your project identity">
+    Open `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` and replace every `[PLACEHOLDER]` with your real project values:
+
+    ```bash
+    nano docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+    ```
+
+    Critical fields: `[YOUR_PROJECT_NAME]`, T1–T4 environment paths, production host UIDs, and your security doctrine.
+  </Step>
+  <Step title="Make your first commit">
+    Add your remote, stage everything, and make your first Sovereign commit:
+
+    ```bash
+    git remote add origin https://github.com/your-org/your-new-project.git
+    bash tools/git-ritual.sh push "chore(init): scaffold new DSOM project from template [Phase-1/v0.1]"
+    ```
+  </Step>
+</Steps>
+
+## template-reset vs. No Factory-Reset
+
+DSOM has no "factory-reset" command for live projects. `template-reset` is a **pre-lifecycle** tool — it only makes sense on a fresh clone before any real work has been committed.
+
+Once you have real session history, real Mental Anchors, and real commits in your project, there is no reverting to a blank state without losing that history permanently. If you want to archive a project and start fresh, clone the original DSOM template again and run `template-reset` on the new clone — never on your live working repository.
+
+| Scenario | Correct Tool |
+|:---|:---|
+| Starting a new project from the DSOM template | `template-reset.sh` — once, on a fresh clone |
+| Restoring accidentally deleted brain files | `init-brain.sh` — safe, non-destructive |
+| Live project with real history | Neither — your history is your memory. Protect it. |
+
+<Warning>
+  `template-reset` is irreversible. Deleting the `.git` directory destroys all historical branches, tags, and commit messages from your local copy. There is no undo. Only run this script on a fresh clone immediately after `git clone` — never on a project that has active sessions, real commits, or data you cannot afford to lose.
+</Warning>

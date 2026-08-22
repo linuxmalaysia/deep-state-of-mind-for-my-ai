@@ -1,0 +1,134 @@
+---
+title: "audit-pre-flight: Verify Your Full DSOM Environment"
+sidebarTitle: "Audit Pre-Flight"
+description: "Run the DSOM pre-flight audit before every session to verify brain artifacts, Git sync, Cognitive Twin Protocol placeholders, and Ansible baseline."
+---
+
+Before you generate a manifest or open a chat with your AI, you need confidence that your environment is clean. The `audit-pre-flight` script is your hardened gatekeeper — it runs five deterministic checks in sequence and tells you exactly what passes, what needs attention, and what is a hard blocker. Run it at the start of every session, before the first prompt.
+
+## What It Checks
+
+`audit-pre-flight` executes five checks in order:
+
+<Steps>
+  <Step title="Brain Artifact Check">
+    Verifies that `.agents/brain/task.md` and `.agents/brain/walkthrough.md` both exist and are non-empty. These are the minimum viable artifacts the AI needs to operate. If either is missing, the session cannot start safely.
+  </Step>
+  <Step title="Git Sync Check">
+    Compares your local branch against `origin/main`. If your local state has diverged — either behind (you need to pull) or ahead (you forgot to push after the last session) — the tool flags it. A clean Git state is a prerequisite for every ritual.
+  </Step>
+  <Step title="Environment Discovery">
+    Auto-detects your project's language runtime (Node.js, Python, PHP) and prints the detected version. This is informational — it confirms the tool understands your stack before the AI does.
+  </Step>
+  <Step title="Cognitive Twin Protocol Check">
+    Opens `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` and scans for any unfilled `[PLACEHOLDER]` strings. Every placeholder left unfilled is a gap in the AI's project identity — it will hallucinate details to fill the void. This check has zero tolerance.
+  </Step>
+  <Step title="Ansible Baseline Check">
+    Confirms that the `ansible` command is available in your PATH and that `inventory/hosts.yml` exists. This check is skipped (`[SKIP]`) if you are on a non-infrastructure project that does not use Ansible.
+  </Step>
+</Steps>
+
+## Run the Audit
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/audit-pre-flight.sh
+```
+
+```powershell Windows PowerShell
+.\tools\audit-pre-flight.ps1
+```
+
+</CodeGroup>
+
+### Ansible Multi-Node Validation
+
+For infrastructure projects, you can also run the Ansible-native version to validate the audit across all nodes in your inventory:
+
+```bash
+ansible-playbook playbooks/dsom/audit-preflight.yml
+```
+
+## Expected Output
+
+A healthy session start looks like this:
+
+```text
+[PASS] Brain Check      — task.md and walkthrough.md found
+[PASS] Git Sync         — Local matches origin/main
+[OK]   Discovery        — Node v20.11.0 detected
+[PASS] Cognitive Twin   — No [PLACEHOLDER] fields found
+[SKIP] Ansible Baseline — ansible not installed (non-infra project)
+```
+
+Every check should show `[PASS]`, `[OK]`, or `[SKIP]` before you proceed.
+
+## Status Codes and What to Do
+
+| Label | Meaning | Action Needed |
+|:---|:---|:---|
+| `[PASS]` | Requirement fully met | Proceed to the next check |
+| `[OK]` | Feature detected and active | Informational — no action needed |
+| `[SKIP]` | Optional feature not present | No action if you are not using that feature |
+| `[WARNING]` | Non-fatal drift or configuration issue | Fix before starting work if possible |
+| `[ERROR]` | **Critical failure** | Stop. Fix the dependency before any work begins |
+
+## Resolving Common Failures
+
+<Tabs>
+  <Tab title="Brain Check FAIL">
+    Your `.agents/brain/` directory or one of its core files is missing.
+
+    **Fix:** Run `init-brain.sh` to restore the missing artifacts without overwriting any existing files:
+
+    ```bash
+    bash tools/init-brain.sh
+    ```
+
+    Then re-run the audit.
+  </Tab>
+  <Tab title="Git Sync FAIL">
+    Your local branch has diverged from `origin/main`.
+
+    **Fix — if you are behind (need to pull):**
+    ```bash
+    git pull origin main
+    ```
+
+    **Fix — if you are ahead (forgot to push):**
+    ```bash
+    bash tools/git-ritual.sh
+    ```
+
+    Re-run the audit after syncing.
+  </Tab>
+  <Tab title="Cognitive Twin FAIL">
+    `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` still contains one or more `[PLACEHOLDER]` strings.
+
+    **Fix:** Open the file and replace every placeholder with your real project values:
+
+    ```bash
+    nano docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+    ```
+
+    Common placeholders to fill: `[YOUR_PROJECT_NAME]`, `[T1]` Windows path, `[T2]` WSL2 path, `[T3/T4]` production hosts, UIDs, and security doctrine. Re-run the audit once all fields are filled.
+  </Tab>
+  <Tab title="Ansible Baseline FAIL">
+    Either `ansible` is not installed or `inventory/hosts.yml` does not exist.
+
+    **Fix — install Ansible:**
+    ```bash
+    pip install ansible
+    # or
+    sudo apt install ansible
+    ```
+
+    **Fix — create inventory:**
+    Follow `docs/HOWTO-SETUP-ANSIBLE-BASELINE.md` to scaffold your inventory file. Re-run the audit once both are in place.
+  </Tab>
+</Tabs>
+
+<Warning>
+  Do not start an AI session if any check shows `[ERROR]`. An AI operating on a misaligned brain, an out-of-sync Git state, or an unfilled identity protocol will produce incorrect proposals that diverge from your actual project state. Fix every failure first.
+</Warning>

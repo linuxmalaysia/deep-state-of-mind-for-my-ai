@@ -1,0 +1,143 @@
+---
+title: "DSOM Session Handover: Switch AI Providers and Keep Context"
+sidebarTitle: "Session Handover"
+description: "Switch between AI models or chat sessions without losing context using the DSOM Sovereign Handover Prompt and Hibernation Notes protocol."
+---
+
+When you switch AI models, open a new chat window, or move to a different AI account, the incoming AI session starts with zero knowledge of your project. Every architectural decision, every environment detail, every governance rule, and every in-flight task is invisible to it — as if the project never existed. Without a structured handover protocol, this context loss is total and silent: the new AI will answer your questions confidently while operating completely blind. The DSOM Sovereign Handover Prompt exists to prevent this.
+
+## The Problem: Total Context Loss on Every Switch
+
+AI models do not share memory. Context lives inside a single chat session and disappears the moment you close it or move to a different provider. This creates compounding risk:
+
+- Switching from Gemini to Claude mid-project means starting from scratch
+- Opening a new chat window in the same provider means the same loss
+- Handing the project to a colleague who uses a different AI tool breaks continuity entirely
+
+DSOM solves this by externalising all context into your Git repository and exporting a portable memory dump — the Hibernation Notes — that any AI session can consume to fully reconstruct your project state.
+
+## The Two-Step Handover Process
+
+<Steps>
+
+### Export from the Old Session
+
+In your **current AI session** (the one you are leaving), run the **Sovereign Handover Prompt** to generate a full memory dump. This is Prompt 3 from `docs/REANIMATION-PROMPT-TEMPLATE.md`.
+
+Paste the following into your outgoing AI chat:
+
+```text
+[DSOM COGNITIVE TWIN HANDOVER — v6.1]
+
+I am migrating from a previous AI session to this one. I will provide you with
+the full exported context (Hibernation Notes) from my last session.
+
+You are now the Cognitive Digital Twin of [YOUR_NAME] (Senior Systems Architect).
+Read the context below and adopt it fully as your working memory.
+
+--- BEGIN CONTEXT EXPORT ---
+[PASTE HIBERNATION NOTES FROM PREVIOUS SESSION]
+--- END CONTEXT EXPORT ---
+
+After reading, confirm:
+1. The last Mental Anchor — exact point where we stopped.
+2. The 4-Tier environment map (T1: Windows, T2: WSL2 Dev Bridge,
+   T3: Jump Host / Ansible Control, T4: Production fabric).
+3. The project identity and sovereign identity (your configured admin user and UID).
+4. The top 3 pending tasks.
+5. The Palace Rooms mapping for the current work.
+6. All sovereign laws are loaded: GitOps, Ansible-only, Advisory Mode.
+
+Then read these documents for full context (the AI will access them via the repo):
+- docs/AI-MASTER-PROTOCOL.md       — Governance laws
+- docs/AI-COGNITIVE-TWIN-PROTOCOL.md — Project Identity Card
+- .agents/brain/palace_registry.md  — Palace Spatial Map
+- .agents/brain/task.md             — Current tasks
+- .agents/brain/walkthrough.md      — Session history
+- docs/HUMAN-HANDOVER-CONTEXT.md   — Environment map
+
+State: "Cognitive Twin Transfer Complete — [PROJECT NAME] Handover Successful."
+```
+
+Your outgoing AI will produce a full memory dump in a single code block. Copy the entire block.
+
+<Note>
+If you did not yet generate today's Hibernation Notes, first run the **EOD Hibernation Notes Export** prompt (Prompt 5 from `docs/REANIMATION-PROMPT-TEMPLATE.md`) in your current session to produce the memory block, then use that as the input for this handover step.
+</Note>
+
+### Load into the New Session
+
+Open your **new AI session** (new model, new chat window, or new account). Upload your `sod_manifest_YYYY-MM-DD.txt` if available, then paste the following reanimation prompt — replacing the placeholder with the memory dump you copied in Step 1:
+
+```text
+I am starting a new session for DSOM Protocol. I am your human Lead Architect.
+I have the Hibernation Notes from our last session. Please read them carefully
+and use them to fully restore our working context.
+
+--- BEGIN HIBERNATION NOTES ---
+[PASTE HIBERNATION NOTES BLOCK HERE]
+--- END HIBERNATION NOTES ---
+
+After reading the Hibernation Notes above, do the following:
+
+1. Confirm you have read and understood all entries in the Hibernation Notes.
+2. State the last Mental Anchor — the exact point where we stopped.
+3. Confirm the 4-Tier environment map (T1, T2, T3, T4) and the project identity.
+4. List the top 3 tasks from .agents/brain/task.md that are pending.
+5. State: "Sovereign State Restored — [PROJECT NAME] is live." to confirm you are ready.
+
+From this point, operate under DSOM Protocol v6.1:
+- Advisory Mode only. You propose, I approve, Ansible executes, you verify.
+- UK English in all responses and documentation.
+- Every change goes to Git before execution.
+- Ansible is the only executor for OS-level tasks.
+- Wait for my output after each step before proceeding.
+```
+
+Your new AI session will read the memory dump, confirm the Mental Anchor, map the four-tier environment, list pending tasks, and state readiness. You resume work from the exact stopping point — with no repeated explanations, no re-establishing of architectural intent, and no loss of project history.
+
+</Steps>
+
+## The Continuity Loop: How Context Compounds Over Time
+
+Each day's Hibernation Notes become the next day's reanimation input. Over time, this creates a permanent, compounding project memory that outlasts any individual AI session, any model switch, and any chat window closure.
+
+```text
+EOD → Step 2: Save Hibernation Notes → Git holds state
+         ↓
+SOD → Feed Hibernation Notes back to AI
+         ↓
+AI resumes with full context → Active work session
+         ↓
+EOD → Save new Hibernation Notes → Git holds updated state
+         ↓  [repeats every day, across any AI model, forever]
+```
+
+Because all context is stored in your Git repository — not inside the AI — switching providers is a first-class operation rather than a catastrophic event. The knowledge lives in `.agents/brain/`. The AI is just the reasoning engine that reads it.
+
+<Note>
+**Decision Log Protocol — Capturing *Why*, Not Just *What*.**
+
+The Hibernation Notes export captures what was decided. But the architectural reasoning behind each decision — the debates, the rejected alternatives, the tradeoffs — lives only in the chat window. When the session ends, that reasoning disappears.
+
+To permanently capture decision rationale before it is lost, ask your AI at each key decision point:
+
+```text
+"Log this decision to walkthrough.md:
+Decision: [what] | Alternatives rejected: [what and why] | Reason: [why this]"
+```
+
+This practice converts ephemeral reasoning into permanent Git history. Six months from now, a new AI session — or a new team member — can read `walkthrough.md` and understand not just the current architecture, but exactly why every alternative was rejected. The Decision Log Protocol is what separates a project with history from a project with just a codebase.
+</Note>
+
+## Which Prompt to Use
+
+| Situation | Prompt to Use |
+|:----------|:--------------|
+| Starting fresh with no prior notes | Prompt 1 — Master Reanimation (manifest upload) |
+| Have yesterday's Hibernation Notes | Prompt 2 — SOD Reanimation (Hibernation Notes feed) |
+| Switching to a new AI model or session | Prompt 3 — Cognitive Twin Handover |
+| Returning after 3+ days away | Prompt 4 — Executive Re-sync |
+| Exporting context before closing | Prompt 5 — EOD Hibernation Notes Export |
+
+Full prompt text for all five variants is in `docs/REANIMATION-PROMPT-TEMPLATE.md`.

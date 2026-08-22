@@ -1,0 +1,82 @@
+---
+title: "DSOM Automation Scripts: Full Cross-Platform Reference"
+sidebarTitle: "Overview"
+description: "Complete reference for all DSOM cross-platform automation scripts — every tool has both a Linux/WSL2 .sh and a Windows PowerShell .ps1 equivalent."
+---
+
+Every DSOM automation script ships in two flavours: a `.sh` file for Linux and WSL2 environments, and a `.ps1` PowerShell file for Windows. You never need to choose one platform permanently — the scripts are functionally identical, and you can mix them freely across your T1 (Windows) and T2 (WSL2/Linux) tiers without losing state.
+
+The table below is your master reference. Each row names the script, tells you the right moment to reach for it, and summarises what it actually does. Use it as a quick lookup during daily rituals or when onboarding a new project.
+
+## Master Script Reference
+
+| Script | When to Run | What It Does |
+|:---|:---|:---|
+| `audit-pre-flight.sh` / `.ps1` | Every session start | Checks Brain artifacts, Git sync, Cognitive Twin Protocol placeholders, and Ansible baseline |
+| `init-brain.sh` / `.ps1` | Once (new project) | Creates `.agents/brain/` with core memory artifacts |
+| `reanimate.sh` / `.ps1` | Before every AI session | Generates the full context manifest for AI upload |
+| `sod-palace.sh` / `.ps1` | Morning (SOD) | Full Start-of-Day: pull, audit, verify Palace registry, generate manifest |
+| `eod-palace.sh` / `.ps1` | Evening (EOD) | Full End-of-Day: verify brain, map Palace rooms, commit, and push |
+| `checkpoint.sh` / `.ps1` | Mid-session | Quick save: commit and push without a full Palace sync |
+| `git-ritual.sh` / `.ps1` | SOD or EOD | Guided semantic commit wizard and SOD pull |
+| `hibernation.sh` / `.ps1` | Session end | Verifies walkthrough and task updated, then pushes |
+| `palace-sync.sh` / `.ps1` | After Palace setup | Maps git commits to Palace Rooms in the spatial registry |
+| `privacy-guardian.sh` / `.ps1` | Before sharing any manifest | Scans for leaked IPs, SSH keys, API tokens, and private paths |
+| `template-reset.sh` / `.ps1` | Once (new project) | Clears Git history and resets brain artifacts for a fresh project |
+
+## Script Pages
+
+Dig into the detailed how-to guide for each script below.
+
+<CardGroup cols={2}>
+  <Card title="reanimate" icon="bolt" href="/tools/reanimate">
+    Generate your AI context manifest before every session.
+  </Card>
+  <Card title="Audit Pre-Flight" icon="shield-check" href="/tools/audit-pre-flight">
+    Verify your DSOM setup before starting work.
+  </Card>
+  <Card title="Git Ritual" icon="code-branch" href="/tools/git-ritual">
+    Guided semantic commits for SOD and EOD.
+  </Card>
+  <Card title="Privacy Guardian" icon="lock" href="/tools/privacy-guardian">
+    Scan manifests for sensitive data before sharing.
+  </Card>
+  <Card title="Init Brain" icon="brain" href="/tools/init-brain">
+    Initialise your AI brain artifacts for a new project.
+  </Card>
+  <Card title="Template Reset" icon="rotate-left" href="/tools/template-reset">
+    Scaffold a clean DSOM project from the template.
+  </Card>
+</CardGroup>
+
+## Platform Quick Reference
+
+<CodeGroup>
+
+```bash Linux / WSL2
+# Run any script on Linux or WSL2 with bash:
+bash tools/audit-pre-flight.sh
+bash tools/reanimate.sh
+bash tools/git-ritual.sh sod
+bash tools/git-ritual.sh
+bash tools/privacy-guardian.sh
+bash tools/init-brain.sh
+bash tools/template-reset.sh
+```
+
+```powershell Windows PowerShell
+# Run any script on Windows with PowerShell:
+.\tools\audit-pre-flight.ps1
+.\tools\reanimate.ps1
+.\tools\git-ritual.ps1 sod
+.\tools\git-ritual.ps1
+.\tools\privacy-guardian.ps1
+.\tools\init-brain.ps1
+.\tools\template-reset.ps1
+```
+
+</CodeGroup>
+
+<Note>
+  All scripts must be run from the **repository root** — the directory that contains your `.agents/` folder and `docs/` directory. Running them from a subdirectory will cause path resolution errors.
+</Note>

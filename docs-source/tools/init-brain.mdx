@@ -1,0 +1,118 @@
+---
+title: "init-brain: Initialise Your Project AI Brain Artifacts"
+sidebarTitle: "Init Brain"
+description: "Run init-brain once per new project to scaffold .agents/brain/ with the core AI memory artifacts: task.md, walkthrough.md, and implementation_plan.md."
+---
+
+The `.agents/brain/` directory is where DSOM stores everything your AI needs to remember between sessions — current tasks, session history, the project roadmap, and the spatial Palace index. None of that exists until you run `init-brain`. It is a one-time setup step for every new DSOM project, and it is the foundation that every other tool — `reanimate`, `audit-pre-flight`, `sod-palace` — depends on.
+
+## When to Run It
+
+Run `init-brain` exactly once, immediately after running `template-reset` on a freshly cloned DSOM repository. This is Step 2 of the six-step new project boot sequence:
+
+```text
+[ ] 1. Clone and run template-reset.sh
+[→] 2. Run init-brain.sh          ← You are here
+[ ] 3. Fill in AI-COGNITIVE-TWIN-PROTOCOL.md
+[ ] 4. Set up Ansible baseline (infra projects)
+[ ] 5. Run audit-pre-flight.sh — confirm all PASS
+[ ] 6. Run reanimate.sh — upload manifest — get Handshake
+```
+
+## Run init-brain
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/init-brain.sh
+chmod +x tools/*.sh
+```
+
+```powershell Windows PowerShell
+.\tools\init-brain.ps1
+```
+
+</CodeGroup>
+
+### Ansible Provisioning
+
+For multi-node environments where you want to initialise the brain structure across a fleet of machines:
+
+```bash
+ansible-playbook playbooks/dsom/init-brain.yml
+```
+
+## What It Creates
+
+`init-brain` deploys the following structure under your repository root:
+
+```text
+.agents/
+└── brain/
+    ├── task.md                  ← Today's checklist and current focus
+    ├── walkthrough.md           ← Session history and Mental Anchors
+    ├── implementation_plan.md   ← Project roadmap and phase goals
+    ├── palace_registry.md       ← Palace spatial index (AI reads this at SOD)
+    └── DSOM_TEMPLATE.md         ← Standardised format for walkthrough sections
+```
+
+| Artifact | Time Horizon | Purpose | Who Updates |
+|:---|:---|:---|:---|
+| `task.md` | **Present** | Today's checklist — what to do right now | AI proposes, you approve |
+| `walkthrough.md` | **Past** | Session history, decisions, Mental Anchors | AI writes, you audit |
+| `implementation_plan.md` | **Future** | Project phases and roadmap goals | Human-led, AI assists |
+| `palace_registry.md` | **Spatial** | Map of all Palace Rooms for fast AI recall | Auto-updated by `palace-sync` |
+
+## After Running
+
+Once `init-brain` completes, open each file and add your project-specific initial state before running `audit-pre-flight` or generating your first manifest.
+
+**`task.md`** — Add your first task entries. Format them as checkboxes:
+
+```text
+## Session 1 — Project Initialisation
+
+- [ ] Fill in AI-COGNITIVE-TWIN-PROTOCOL.md
+- [ ] Set up Ansible inventory
+- [ ] Verify all audit-pre-flight checks pass
+```
+
+**`walkthrough.md`** — Add your first Mental Anchor entry:
+
+```text
+## Mental Anchor — Session 1
+
+Fresh project. Phase 1 pending. AI-COGNITIVE-TWIN-PROTOCOL.md not yet filled in.
+Next: complete identity card and run audit-pre-flight.
+```
+
+**`implementation_plan.md`** — Sketch your high-level phases:
+
+```text
+## Phase 1 — Foundation
+- Set up DSOM governance artifacts
+- Configure Ansible baseline
+
+## Phase 2 — Core Delivery
+- [Your project-specific goals here]
+```
+
+<Note>
+  `init-brain` is idempotent — safe to re-run at any time. It will not overwrite any file that already exists. This means you can also use it to restore accidentally deleted brain files without fear of losing content in the files that remain intact.
+</Note>
+
+## Verifying the Result
+
+After running `init-brain`, confirm the structure was created correctly:
+
+```bash
+ls -la .agents/brain/
+```
+
+Then immediately run `audit-pre-flight` to verify the Brain Check passes:
+
+```bash
+bash tools/audit-pre-flight.sh
+```
+
+You should see `[PASS] Brain Check` in the output. If you see `[FAIL]`, check that the `.agents/brain/` directory exists at the repository root and that `task.md` and `walkthrough.md` are non-empty files.

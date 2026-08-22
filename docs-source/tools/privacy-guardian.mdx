@@ -1,0 +1,96 @@
+---
+title: "privacy-guardian: Scan Manifests for Sensitive Data"
+sidebarTitle: "Privacy Guardian"
+description: "Scan your DSOM context manifest for leaked IP addresses, SSH keys, API tokens, and private paths before uploading to any AI provider."
+---
+
+Your DSOM context manifest is a dense snapshot of your project's operational reality. That is precisely what makes it powerful — and precisely what makes it risky. The `AI-COGNITIVE-TWIN-PROTOCOL.md` maps your real T1-T4 environment, which means the generated manifest can contain production server IPs, home directory paths, usernames, and sometimes credentials that leaked in from config files. Before you upload any manifest to an external AI provider, run `privacy-guardian` to catch sensitive data automatically.
+
+## Why It Matters
+
+The manifest that `reanimate` generates pulls content from across your repository. If you have filled in real server addresses in your Cognitive Twin Protocol (e.g., `T3: 192.168.1.50`, `T4: 10.0.0.25`), those values appear in the manifest. If any playbook variable file or config snippet was included, cloud credentials or SSH key fragments may be present too. Uploading this to ChatGPT, Claude, or Gemini without checking means potentially exposing infrastructure details or secrets to a third-party system.
+
+`privacy-guardian` performs a fast heuristic scan of your manifest and flags anything that matches known sensitive data patterns — before the file leaves your machine.
+
+## What It Scans For
+
+| Pattern Type | Examples Detected |
+|:---|:---|
+| **IPv4 addresses** | `192.168.1.50`, `10.0.0.25`, `172.16.0.1` (private ranges and public) |
+| **SSH private key blocks** | `-----BEGIN RSA PRIVATE KEY-----`, `-----BEGIN OPENSSH PRIVATE KEY-----` |
+| **Cloud API tokens** | GitHub (`ghp_...`), Google (`AIza...`), OpenAI (`sk-...`) |
+| **AWS credentials** | Access key patterns (`AKIA...`) |
+| **Slack tokens** | `xoxb-...`, `xoxp-...` |
+| **Filesystem paths with usernames** | `C:\Users\admin\...`, `/home/harisfazillah/...` |
+| **Email addresses** | Any `user@domain.tld` pattern |
+
+## Run the Scan
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/privacy-guardian.sh
+```
+
+```powershell Windows PowerShell
+.\tools\privacy-guardian.ps1
+```
+
+</CodeGroup>
+
+By default, the script scans today's `sod_manifest_YYYY-MM-DD.txt` in your repository root.
+
+### Ansible Multi-Node Sweep
+
+For infrastructure projects where you want to enforce privacy scanning across all nodes before any distributed operation:
+
+```bash
+ansible-playbook playbooks/dsom/privacy-scan.yml
+```
+
+## Reading the Output
+
+The script prints each finding with the file name and line number so you can locate it immediately:
+
+```text
+⚠️  POTENTIAL LEAK — sod_manifest_2026-08-14.txt:47 — IPv4 address: 192.168.1.50
+⚠️  POTENTIAL LEAK — sod_manifest_2026-08-14.txt:83 — Path with username: /home/harisfazillah/projects
+✅ SCAN COMPLETE — 2 potential leaks found. Review before uploading.
+```
+
+| Label | Meaning | Action |
+|:---|:---|:---|
+| `✅ SCAN COMPLETE` (0 findings) | No sensitive patterns detected | Safe to upload to your AI |
+| `⚠️ POTENTIAL LEAK` | A pattern matched at a specific line | Review and redact before uploading |
+| `❌ SCAN FAILED` | A confirmed high-risk secret found | Do not upload. Fix the source file first |
+
+## How to Fix Flagged Items
+
+**For IP addresses and hostnames in `AI-COGNITIVE-TWIN-PROTOCOL.md`:**
+
+Replace real values with placeholder labels for any manifest you intend to share publicly or with a cloud AI. Keep the real values in a local `.env` file that is listed in `.gitignore`:
+
+```text
+# In AI-COGNITIVE-TWIN-PROTOCOL.md — safe for public manifests:
+T3: [PROD-HOST-1] — AlmaLinux 10, uid=1001
+
+# In .env — never committed to Git:
+T3_HOST=192.168.1.50
+T3_USER=deploy
+```
+
+**For accidental credential inclusions:**
+
+Locate the source file that introduced the credential (the line number in the scan output points you to the manifest; trace it back to the original artifact). Remove the credential from the source file, re-run `reanimate` to regenerate a clean manifest, and then re-scan.
+
+**For filesystem paths:**
+
+If your `walkthrough.md` or `task.md` contains absolute paths with your username (e.g., `/home/yourname/project`), replace them with project-relative paths (e.g., `./project`) before the next reanimation.
+
+<Note>
+  `privacy-guardian` is entirely non-destructive. It reads your manifest and reports findings — it never modifies, truncates, or deletes any file. All remediation is your responsibility. Think of it as a pre-flight checklist, not an automatic sanitiser.
+</Note>
+
+## Security Advisory
+
+`privacy-guardian` is a heuristic scanner — it detects known patterns but cannot catch every possible form of sensitive data. Always do a quick manual scroll through your manifest before uploading it to any external AI provider, especially for new projects where the manifest format is unfamiliar. Never upload raw `.env` files, `vault/secrets.yml`, or any file that holds production credentials to an AI chat under any circumstances.

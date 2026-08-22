@@ -1,0 +1,147 @@
+---
+title: "DSOM Start-of-Day: Sync Your Project State and Brief Your AI"
+sidebarTitle: "Start of Day"
+description: "Run the DSOM Start-of-Day ritual to pull the latest project state, verify the Sovereign Palace, and brief your AI for the day's work."
+---
+
+Every DSOM working day begins with a **Start-of-Day (SOD)** ritual — a structured cognitive handshake that transfers your project's full context from the Git-backed `.agents/brain/` directory back into your AI's active working memory. Because every AI session starts with zero knowledge of your project, the SOD is how you eliminate cold starts, restore architectural intent, and resume exactly where you left off. Run through these steps in order before writing a single line of code or asking your AI a single question.
+
+<Steps>
+
+### Pull the Latest State
+
+Run the automated SOD Palace script to synchronise your repository, run the pre-flight audit, verify the Sovereign Palace registry, and generate your reanimation manifest — all in one command.
+
+<CodeGroup>
+
+```bash Linux / WSL2 (T2)
+bash tools/sod-palace.sh
+```
+
+```powershell Windows PowerShell (T1)
+.\tools\sod-palace.ps1
+```
+
+</CodeGroup>
+
+The script runs the following sequence automatically:
+
+| Step | Action |
+|:-----|:--------|
+| 1 | `git pull --rebase origin main` — pulls the latest state |
+| 2 | `tools/audit-pre-flight.sh` — verifies brain artifacts and Git sync |
+| 3 | Verify Palace Registry exists in `.agents/brain/palace_registry.md` |
+| 4 | `tools/reanimate.sh` — generates the full context manifest (includes Section [14] Palace Registry) |
+| 5 | Prints the manifest path and handshake instructions |
+
+When the script completes, it prints the path to the generated `sod_manifest_YYYY-MM-DD.txt` file. Note that path — you will upload it in Step 3.
+
+<Note>
+If any pre-flight check returns `[FAIL]`, stop here and fix the issue before continuing. Do not reanimate a broken state. Re-run `bash tools/audit-pre-flight.sh` after fixing to confirm all checks pass.
+</Note>
+
+### Run the Optional Privacy Scan
+
+If you plan to upload the generated manifest to a hosted AI service (Gemini, Claude, ChatGPT), scan it first to ensure no sensitive data — IP addresses, API keys, tokens, or private paths — is inadvertently included.
+
+```bash
+bash tools/privacy-guardian.sh
+```
+
+The scanner checks for: IPv4 addresses, email addresses, API keys, AWS access keys, GitHub tokens, PEM private keys, and Linux home directory paths. Only proceed to Step 3 once the scan returns `CLEAN`.
+
+### Brief Your AI — The Cognitive Handshake
+
+Upload your manifest and use one of the two reanimation options below depending on whether you have yesterday's Hibernation Notes.
+
+<Tabs>
+  <Tab title="Option A — Upload Manifest">
+    Upload the `sod_manifest_YYYY-MM-DD.txt` file generated in Step 1 to your AI chat, then paste the following handshake phrase:
+
+    ```text
+    Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest.
+    Walk the Palace Registry in Section [14] — identify relevant Rooms for
+    today's work. Summarise the current Mental Anchor from
+    .agents/brain/walkthrough.md. Confirm the 4-Tier environment map from
+    AI-COGNITIVE-TWIN-PROTOCOL.md. State: "Sovereign State Synchronised"
+    when ready.
+    ```
+
+    This is the standard reanimation path after running `sod-palace.sh`. The manifest contains 14 sections covering project identity, governance laws, current tasks, session history, roadmap, Git log, project structure, environment telemetry, and the full Palace Registry.
+  </Tab>
+  <Tab title="Option B — Feed Hibernation Notes">
+    If you saved last night's Hibernation Notes (from the EOD ritual), this is the **fastest and most precise reanimation method** — no manifest upload required.
+
+    Copy the prompt below verbatim, then paste your saved Hibernation Notes block in place of the placeholder:
+
+    ```text
+    I am starting a new session for DSOM Protocol. I am your human Lead Architect.
+    I have the Hibernation Notes from our last session. Please read them carefully
+    and use them to fully restore our working context.
+
+    --- BEGIN HIBERNATION NOTES ---
+    [PASTE HIBERNATION NOTES BLOCK HERE]
+    --- END HIBERNATION NOTES ---
+
+    After reading the Hibernation Notes above, do the following:
+
+    1. Confirm you have read and understood all entries in the Hibernation Notes.
+    2. State the last Mental Anchor — the exact point where we stopped.
+    3. Confirm the 4-Tier environment map (T1, T2, T3, T4) and the project identity.
+    4. List the top 3 tasks from .agents/brain/task.md that are pending.
+    5. State: "Sovereign State Restored — [PROJECT NAME] is live." to confirm you are ready.
+
+    From this point, operate under DSOM Protocol v6.1:
+    - Advisory Mode only. You propose, I approve, Ansible executes, you verify.
+    - UK English in all responses and documentation.
+    - Every change goes to Git before execution.
+    - Ansible is the only executor for OS-level tasks.
+    - Wait for my output after each step before proceeding.
+    ```
+
+    Find yesterday's Hibernation Notes at `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`, or in the notebook or notes app where you copied the output at the end of the last session.
+
+    <Note>
+      The **Mental Anchor** in your Hibernation Notes is the single most critical piece of context. It is the exact logical stopping point of your last session — one sentence that allows a brand-new AI session to resume in under three prompts. Always verify that the AI correctly restates this anchor before beginning work.
+    </Note>
+  </Tab>
+</Tabs>
+
+### Confirm AI Readiness
+
+The SOD is not complete until your AI explicitly confirms that it has loaded all context. After reading the manifest or Hibernation Notes, your AI must state:
+
+```text
+Sovereign State Restored — [PROJECT NAME] is live.
+```
+
+Before accepting this confirmation, verify that your AI can answer all of the following without being prompted:
+
+| Check | What the AI Must State |
+|:------|:----------------------|
+| **Mental Anchor** | The exact last stopping point from `walkthrough.md` |
+| **Environment** | All four tiers: T1 (Windows), T2 (WSL2), T3 (Jump Host), T4 (Production) |
+| **Active Tasks** | The current checklist items from `task.md` |
+| **Roadmap** | The active phase from `implementation_plan.md` |
+| **Doctrine** | Advisory Mode, Ansible-only execution, Git-first |
+
+If your AI asks *"What are we working on?"*, the context did not load. Re-run `bash tools/reanimate.sh` and repeat Step 3.
+
+### Begin Work Under the Active Session Model
+
+With SOD confirmed, you and your AI operate under a strict division of responsibility. This model ensures that nothing reaches production without human review, and that every change is traceable in Git.
+
+| Human | AI |
+|:------|:---|
+| Reviews AI proposals | Proposes code, playbooks, and configs |
+| Approves before execution | Explains the **Why** before the **What** |
+| Commits to Git | Waits for your output after each step |
+| Runs Ansible (exact command from AI) | Verifies output and confirms the next step |
+
+Your AI never runs commands directly on remote nodes. It writes the commands, you run them, and it verifies the result. This is the **Advisory Mode** contract that governs every DSOM session.
+
+</Steps>
+
+<Tip>
+If you are returning after three or more days away, use **Prompt 4 — Executive Re-sync** from `docs/REANIMATION-PROMPT-TEMPLATE.md`. It asks the AI to reconstruct the last major decision, surface any pending friction, and propose the single next atomic step — giving you a structured re-entry without having to read through weeks of session history yourself.
+</Tip>

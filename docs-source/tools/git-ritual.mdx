@@ -1,0 +1,134 @@
+---
+title: "git-ritual: Guided Semantic Git Commits for DSOM Projects"
+sidebarTitle: "Git Ritual"
+description: "Use git-ritual for guided SOD pulls and structured EOD commits that enforce the DSOM atomic commit convention across Linux and Windows."
+---
+
+In DSOM, your Git history is not just a backup — it is a verifiable record of every state change your AI has seen, proposed, and validated. Sloppy commit messages break that record. The `git-ritual` script enforces the DSOM atomic commit convention through an interactive wizard, so every save is structured, human-readable, and AI-referenceable without extra thought.
+
+## SOD Mode: Pull the Latest State
+
+At the start of every day, run `git-ritual` in SOD mode before you do anything else. It fetches from `origin` and performs a rebase pull if your branch has diverged, ensuring you build on the authoritative state.
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/git-ritual.sh sod
+```
+
+```powershell Windows PowerShell
+.\tools\git-ritual.ps1 sod
+```
+
+</CodeGroup>
+
+After a clean SOD pull you will see:
+
+```text
+[OK] Already up to date — origin/main
+```
+
+If there are incoming changes, `git-ritual sod` applies them via rebase and reports what was updated.
+
+<Note>
+  The `sod-palace` script already calls `git-ritual sod` as its first step. If you run the full SOD Palace ritual, you do not need to run `git-ritual sod` separately.
+</Note>
+
+## EOD Mode: The Sovereign Save
+
+At the end of every session — or at any significant milestone — run `git-ritual` without arguments (or with the `eod` flag) to open the interactive commit wizard:
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/git-ritual.sh
+# or explicitly:
+bash tools/git-ritual.sh eod
+```
+
+```powershell Windows PowerShell
+.\tools\git-ritual.ps1
+# or explicitly:
+.\tools\git-ritual.ps1 eod
+```
+
+</CodeGroup>
+
+The wizard walks you through four prompts:
+
+<Steps>
+  <Step title="Select a Type">
+    Choose from the conventional commit types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `style`, `perf`.
+  </Step>
+  <Step title="Define a Scope">
+    Enter the area of the codebase this commit affects — for example: `brain`, `ansible`, `palace`, `playbooks`, `inventory`, `docs`.
+  </Step>
+  <Step title="Write a Description">
+    Write a short present-tense description of what changed. Keep it under 72 characters.
+  </Step>
+  <Step title="Add a Phase Tag (Optional)">
+    Add a phase and version tag to anchor the commit in the project timeline — for example: `Phase-3/v10.4`. Press Enter to skip.
+  </Step>
+</Steps>
+
+The script then stages all changes with `git add -A`, commits, and pushes to `origin main`.
+
+## Direct Commit Mode
+
+If you already have a complete commit message ready, skip the wizard and push in one command:
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/git-ritual.sh push "feat(brain): add Mental Anchor for Session 42 [Phase-3/v10.4]"
+```
+
+```powershell Windows PowerShell
+.\tools\git-ritual.ps1 push "feat(brain): add Mental Anchor for Session 42 [Phase-3/v10.4]"
+```
+
+</CodeGroup>
+
+## The DSOM Commit Convention
+
+Every commit follows this format:
+
+```text
+type(scope): description [Phase/vX.X]
+```
+
+The phase tag is optional but strongly recommended — it anchors the commit in your project's timeline and lets the AI reference specific state snapshots by version.
+
+**Examples:**
+
+```text
+feat(brain): add Mental Anchor for Session 42 [Phase-3/v10.4]
+fix(playbooks): correct nginx vhost path [Phase-2]
+docs(palace): add wing_operations closet summary
+chore(brain): update task.md for EOD — mark Phase-3 tasks complete
+refactor(ansible): extract common hardening to roles/common [Phase-2/v9.8]
+```
+
+## Why Atomic Commits Matter in DSOM
+
+Each commit is a verifiable state snapshot. When you start a new AI session and upload your manifest, the AI can trace back through the Git log and understand not just *what* the current state is, but *how* it arrived there. Vague or bulk commits ("update stuff", "WIP") break this chain — the AI cannot reason about a state it cannot read.
+
+Atomic commits also protect you during session handover. If you switch AI providers or open a new chat window, the commit log serves as a secondary source of truth alongside `walkthrough.md`.
+
+<Tip>
+  Let your AI generate the EOD commit message for you. Before running `git-ritual`, ask it:
+
+  > *"Generate a DSOM-standard commit message for the changes in the staging area. Follow the format `type(scope): description [Phase/vX.X]`."*
+
+  Then paste the output directly into `git-ritual push "..."`. This keeps the commit message accurate, consistent, and tied to the AI's own understanding of what changed.
+</Tip>
+
+## Status Codes
+
+| Label | Meaning | Action |
+|:---|:---|:---|
+| `[OK]` | Already up to date | Proceed with the ritual |
+| `[DONE]` | Commit and push succeeded | None needed |
+| `[CLEAN]` | Nothing to commit | You are already synchronised |
+| `[ERROR]` | Invalid input or Git failure | Read the error and retry |
+| `[ABORTED]` | You cancelled the push | State remains unsaved — re-run when ready |

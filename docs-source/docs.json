@@ -1,0 +1,102 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "DSOM — Deep State of Mind",
+  "theme": "maple",
+  "colors": {
+    "primary": "#6C3FC5",
+    "light": "#EDE8FC",
+    "dark": "#2D1A5E"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "core-concepts"
+            ]
+          },
+          {
+            "group": "Daily Rituals",
+            "pages": [
+              "rituals/start-of-day",
+              "rituals/end-of-day",
+              "rituals/checkpoint",
+              "rituals/session-handover"
+            ]
+          },
+          {
+            "group": "The Sovereign Palace",
+            "pages": [
+              "palace/overview",
+              "palace/onboarding",
+              "palace/migration",
+              "palace/build-story"
+            ]
+          },
+          {
+            "group": "AI Agent Skills",
+            "pages": [
+              "skills/overview",
+              "skills/creating-skills",
+              "skills/skills-registry"
+            ]
+          },
+          {
+            "group": "AI Setup Guides",
+            "pages": [
+              "ai-setup/gemini",
+              "ai-setup/claude",
+              "ai-setup/copilot",
+              "ai-setup/mcp-server"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Tools & Automation",
+        "groups": [
+          {
+            "group": "Automation Scripts",
+            "pages": [
+              "tools/overview",
+              "tools/reanimate",
+              "tools/audit-pre-flight",
+              "tools/git-ritual",
+              "tools/privacy-guardian",
+              "tools/init-brain",
+              "tools/template-reset"
+            ]
+          },
+          {
+            "group": "OpenWiki",
+            "pages": [
+              "tools/openwiki-overview",
+              "tools/openwiki-usage"
+            ]
+          },
+          {
+            "group": "Governance & Protocols",
+            "pages": [
+              "governance/three-pillars",
+              "governance/okf-standard",
+              "governance/multi-agent",
+              "governance/token-efficiency"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai"
+    }
+  }
+}

@@ -34,7 +34,7 @@ import yaml  # type: ignore
 
 def _discover_all_md_files() -> list[pathlib.Path]:
     root_dir = REPO_ROOT
-    exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv', 'openwiki', 'openwiki_win'}
+    exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv', 'openwiki', 'openwiki_win', 'docs-source'}
     exclude_files = {'CLAUDE.md'}
     md_files = []
     for dirpath, dirnames, filenames in os.walk(root_dir):

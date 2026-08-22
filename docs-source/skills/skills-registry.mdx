@@ -1,0 +1,117 @@
+---
+title: "DSOM Built-In Skills Registry: All 17 Agent Skills"
+sidebarTitle: "Skills Registry"
+description: "Complete reference for all 17 pre-built AI Agent Skills that ship with DSOM, including their paths, triggers, and automation targets."
+---
+
+DSOM ships with 17 pre-built Agent Skills that cover the most common operational workflows across project setup, daily memory operations, document generation, and infrastructure management. Every skill is OKF-compliant, versioned in Git, and ready to use the moment you initialise a DSOM repository — no configuration required. Browse the categories below to find the right skill for your task, then trigger it by asking your AI to perform the work it describes.
+
+## Complete Skills Registry
+
+The table below lists all 17 built-in skills with their exact file paths and primary automation purpose.
+
+| Skill Name | Path | Purpose |
+|:---|:---|:---|
+| **Cross-Platform Translator** | `.agents/skills/cross-platform-translator/SKILL.md` | Translates Shell/PowerShell scripts to run cross-platform |
+| **DSOM Bootstrap** | `.agents/skills/dsom-bootstrap/SKILL.md` | Bootstraps the DSOM architecture for a new project |
+| **DSOM Project Cloner** | `.agents/skills/dsom-project-cloner/SKILL.md` | Scaffolds a new DSOM project by copying baseline assets to a target path |
+| **EOD Palace Sync** | `.agents/skills/eod-palace-sync/SKILL.md` | Hibernation ritual to externalise memory into the Palace and push to Git |
+| **Forensic Log Audit** | `.agents/skills/forensic-log-audit/SKILL.md` | Parses AI conversation transcripts to extract exact historical terminal commands |
+| **Initialise GitOps** | `.agents/skills/initialize-gitops/SKILL.md` | Establishes the foundational GitOps repository and Genesis DSOM architecture |
+| **LaTeX Proposal Compiler** | `.agents/skills/latex-proposal-compiler/SKILL.md` | Compiles a Markdown proposal document into a PDF using Pandoc and XeLaTeX |
+| **Node Proposal Formatter** | `.agents/skills/node-proposal-formatter/SKILL.md` | Compiles Markdown proposals into DOCX files using Node.js and the docx package |
+| **Node Slide Generator** | `.agents/skills/node-slide-generator/SKILL.md` | Generates PowerPoint presentations from Markdown outlines via Node.js and pptxgenjs |
+| **ODP Slide Generator** | `.agents/skills/odp-slide-generator/SKILL.md` | Generates LibreOffice Impress ODP presentations from Markdown |
+| **OKF Frontmatter Injector** | `.agents/skills/okf-frontmatter-injector/SKILL.md` | Scans a directory and auto-injects OKF v0.1 YAML frontmatter into Markdown files |
+| **Palace Auditor** | `.agents/skills/palace-auditor/SKILL.md` | Crawls the workspace to verify links and maintain the Sovereign Memory Palace |
+| **PDF Text Extractor** | `.agents/skills/pdf-text-extractor/SKILL.md` | Extracts raw text from PDF files for agent analysis |
+| **Persona Injector** | `.agents/skills/persona-injector/SKILL.md` | Guides you to define your Sovereign Persona and injects it into the core rulebook |
+| **Proposal DOCX Formatter** | `.agents/skills/proposal-docx-formatter/SKILL.md` | Formats Markdown proposals into Microsoft Word DOCX files |
+| **SOD Palace Sync** | `.agents/skills/sod-palace-sync/SKILL.md` | Reanimation ritual to load workspace context and establish the day's tasks |
+| **SSH Passwordless Setup** | `.agents/skills/ssh-passwordless-setup/SKILL.md` | Configures passwordless multi-hop SSH routing via `~/.ssh/config` |
+
+---
+
+## Skills by Category
+
+<Accordion title="Project Setup — Initialise and scaffold DSOM projects">
+  These skills handle the one-time operations you run when creating a new project or onboarding a new repository into the DSOM framework.
+
+  | Skill | Path | When to Use |
+  |:---|:---|:---|
+  | **DSOM Bootstrap** | `.agents/skills/dsom-bootstrap/SKILL.md` | Use when starting a brand-new project and you need the full `.agents/` directory structure, Palace, and AGENTS.md rulebook created from scratch. |
+  | **DSOM Project Cloner** | `.agents/skills/dsom-project-cloner/SKILL.md` | Use when you want to scaffold a new project by copying a validated DSOM baseline — all governance documents, skill stubs, and brain structure — into a new target path. |
+  | **Initialise GitOps** | `.agents/skills/initialize-gitops/SKILL.md` | Use when establishing the foundational GitOps repository for a project, including the Genesis DSOM architecture, remote configuration, and initial commit structure. |
+  | **Persona Injector** | `.agents/skills/persona-injector/SKILL.md` | Use when onboarding a new operator — this skill guides you through defining your Sovereign Persona profile and permanently injects it into the core `.agents/AGENTS.md` rulebook. |
+
+  **Example trigger:** *"Bootstrap DSOM for my new infrastructure project."*
+</Accordion>
+
+<Accordion title="Daily Operations — SOD/EOD memory rituals and audits">
+  These skills govern the daily cognitive lifecycle of your AI — loading context at the start of the day, externalising memory at the end, and auditing the Palace for integrity.
+
+  | Skill | Path | When to Use |
+  |:---|:---|:---|
+  | **SOD Palace Sync** | `.agents/skills/sod-palace-sync/SKILL.md` | Use at the start of every working session. This Reanimation Ritual loads your workspace context — task list, walkthrough history, and Palace registry — so the AI picks up exactly where you left off. |
+  | **EOD Palace Sync** | `.agents/skills/eod-palace-sync/SKILL.md` | Use at the end of every working session. This Hibernation Ritual externalises all session memory, decisions, and discoveries into the Palace and commits the state to Git. |
+  | **Palace Auditor** | `.agents/skills/palace-auditor/SKILL.md` | Use when you suspect broken links, orphaned documents, or Palace drift. The auditor crawls your entire workspace, verifies all internal links, and reports on Palace health. |
+  | **Forensic Log Audit** | `.agents/skills/forensic-log-audit/SKILL.md` | Use when you need to reconstruct the exact terminal commands executed in a previous AI session from raw conversation transcripts — useful after a context loss or session recovery. |
+
+  **Example trigger:** *"Run the end-of-day Palace sync and push to Git."*
+</Accordion>
+
+<Accordion title="Document Generation — Proposals, slides, and PDFs">
+  These skills automate document production pipelines, converting Markdown source files into professional output formats using the appropriate toolchain.
+
+  | Skill | Path | When to Use |
+  |:---|:---|:---|
+  | **LaTeX Proposal Compiler** | `.agents/skills/latex-proposal-compiler/SKILL.md` | Use when compiling a Markdown proposal document into a polished PDF. Invokes Pandoc with XeLaTeX as the PDF engine, applying your project's LaTeX template. |
+  | **Node Proposal Formatter** | `.agents/skills/node-proposal-formatter/SKILL.md` | Use when compiling a Markdown proposal into a DOCX file using the Node.js pipeline — suitable for projects where XeLaTeX is unavailable or a Node/docx workflow is preferred. |
+  | **Proposal DOCX Formatter** | `.agents/skills/proposal-docx-formatter/SKILL.md` | Use when stakeholders require a Microsoft Word DOCX deliverable. Converts your Markdown proposal using Pandoc with the project's reference DOCX template. |
+  | **Node Slide Generator** | `.agents/skills/node-slide-generator/SKILL.md` | Use when generating a PowerPoint presentation from a Markdown outline via Node.js and pptxgenjs. Ideal for technical presentations produced directly from source-controlled Markdown. |
+  | **ODP Slide Generator** | `.agents/skills/odp-slide-generator/SKILL.md` | Use when generating a LibreOffice Impress ODP presentation from Markdown — suitable for environments where Microsoft PowerPoint is unavailable. |
+  | **PDF Text Extractor** | `.agents/skills/pdf-text-extractor/SKILL.md` | Use when you need to extract raw, machine-readable text from a PDF file for analysis, indexing, or ingestion into the Palace. |
+
+  **Example trigger:** *"Compile the Q3 proposal Markdown into a PDF using LaTeX."*
+</Accordion>
+
+<Accordion title="Infrastructure & Compliance — Cross-platform, SSH, and OKF tooling">
+  These skills handle infrastructure configuration tasks and repository-wide compliance operations that keep your codebase and environment in a governed state.
+
+  | Skill | Path | When to Use |
+  |:---|:---|:---|
+  | **SSH Passwordless Setup** | `.agents/skills/ssh-passwordless-setup/SKILL.md` | Use when configuring passwordless multi-hop SSH routing. Writes the correct `~/.ssh/config` entries to bypass interactive authentication prompts in agent-driven automation. |
+  | **Cross-Platform Translator** | `.agents/skills/cross-platform-translator/SKILL.md` | Use when you have a shell script that needs to run on both Linux/macOS and Windows (PowerShell). The skill produces equivalent cross-platform versions of the same logic. |
+  | **OKF Frontmatter Injector** | `.agents/skills/okf-frontmatter-injector/SKILL.md` | Use when importing a batch of external Markdown files into the Palace. The injector scans the target directory and automatically adds OKF v0.1 YAML frontmatter to any file missing it. |
+
+  **Example trigger:** *"Set up passwordless SSH to the staging jump host."*
+</Accordion>
+
+## How to Trigger Any Skill
+
+You do not need to reference a skill by name or path to use it. The DSOM semantic routing layer handles discovery automatically. To trigger any skill, simply ask your AI to perform the task the skill describes in natural language.
+
+<Tip>
+  The AI scans every skill's `description` field silently on every request. As long as your request semantically matches a skill's description, the skill loads and executes automatically — no special syntax required.
+</Tip>
+
+A few practical examples:
+
+```
+"Bootstrap DSOM for my new repository."
+→ Triggers: DSOM Bootstrap
+
+"Run the end-of-day sync and push my memory to Git."
+→ Triggers: EOD Palace Sync
+
+"Compile my proposal.md into a PDF."
+→ Triggers: LaTeX Proposal Compiler
+
+"Set up passwordless SSH to all my production nodes."
+→ Triggers: SSH Passwordless Setup
+
+"Extract all text from the vendor contract PDF."
+→ Triggers: PDF Text Extractor
+```
+
+If you want to extend DSOM with your own workflows, see the [Creating Skills](/skills/creating-skills) guide to build a custom `SKILL.md` that follows the same OKF-compliant pattern.

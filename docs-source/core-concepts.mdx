@@ -1,0 +1,188 @@
+---
+title: "DSOM Core Concepts: Brain, Advisory Mode, and Palace"
+sidebarTitle: "Core Concepts"
+description: "Learn the key concepts behind DSOM: the Three Pillars, the AI brain artifacts, Advisory Mode, the Mental Anchor, and the Sovereign Markdown Palace."
+---
+
+DSOM is built on a small number of interlocking concepts that, once understood, make the entire framework feel inevitable. The AI is always advisory — it never touches a remote node. Git is always the source of truth — if a change is not committed, it does not exist. And the AI's memory always lives in your repository — not in a chat window that closes, not in a vendor's servers you do not control. This page walks through each concept in turn so you understand not just what DSOM does, but why it is designed the way it is.
+
+## The Three Pillars
+
+Every DSOM project operates under three non-negotiable pillars. They are not suggestions or best practices — they are the structural load-bearing walls of the entire framework.
+
+<CardGroup cols={3}>
+  <Card title="Pillar 1: AIOps — The Mind" icon="brain">
+    The AI analyses, proposes, generates, and advises. It produces Ansible playbooks, Python scripts, architectural recommendations, and Git commit messages. It never executes anything directly on a remote node.
+  </Card>
+  <Card title="Pillar 2: GitOps — The Record" icon="code-branch">
+    Git is the single source of truth for all system state. Every proposed change must be committed before it is run. The Git log is the deployment history. The repository is the ground truth — not any live server.
+  </Card>
+  <Card title="Pillar 3: The Executor — The Hand" icon="terminal">
+    A modular execution layer that applies committed changes to target nodes. The Executor is always triggered by a human. The AI tells you the exact command to run; you decide when to run it.
+  </Card>
+</CardGroup>
+
+### The Core Loop
+
+These three pillars operate in a closed, verifiable cycle:
+
+```text
+AI Proposes → Git Records → Executor Runs → AI Verifies
+     ▲                                           │
+     └───────────────────────────────────────────┘
+```
+
+1. **AI Proposes** — The AI analyses the current state and generates the required script, playbook, or configuration change.
+2. **Git Records** — You review and commit the AI's proposal to the repository.
+3. **Executor Runs** — You trigger the execution: `ansible-playbook`, `uv run`, `npm run`, or whatever your project's Executor is.
+4. **AI Verifies** — You paste the execution output back to the AI. It confirms success or proposes remediation.
+
+### Execution Modularity
+
+The Third Pillar is deliberately modular. DSOM was originally forged for infrastructure automation with Ansible, but the execution philosophy — idempotent, human-triggered, Git-first — applies to any project type.
+
+| Project Domain | Executor Tool |
+|:---------------|:--------------|
+| Infrastructure & OS automation | `ansible-playbook` |
+| Data science / Python | `uv run` |
+| Web development | `npm run` / `node` |
+| Documentation compilation | `pandoc` / `latex` |
+
+<Note>
+  Even when you use `uv` or `node` as your Executor, the Third Pillar operates on the same philosophical foundation as Ansible: every execution is idempotent, declared in code, version-controlled in Git, and triggered only by a human decision.
+</Note>
+
+---
+
+## Advisory Mode
+
+Advisory Mode is the single most important operational constraint in DSOM. The AI is **always** in Advisory Mode — in every session, for every task, without exception.
+
+In Advisory Mode, the AI is your most capable colleague: it drafts the playbook, writes the script, identifies the bug, proposes the architecture, and tells you the exact command to run and why. But it does not run that command itself. The **Terminal Trigger** — the final approval to execute any script, push any commit, or run any Ansible playbook against a real node — resides exclusively with you, the human Sovereign Architect.
+
+This is not a technical limitation. It is a deliberate design choice. AI models hallucinate. They misread context. They can propose a perfectly reasonable-sounding command that is catastrophically wrong for your specific environment. Advisory Mode means a human with real-world context is always the last gate before any change reaches production.
+
+| The AI CAN | The AI CANNOT |
+|:-----------|:--------------|
+| Generate Ansible playbooks and scripts | Directly SSH into any node |
+| Analyse log output and recommend fixes | Execute shell commands on remote hosts |
+| Propose Git commits with semantic messages | Push to `main` without your explicit approval |
+| Recommend the exact command for you to run | Auto-run any playbook or script |
+| Store project state and decisions in brain artifacts | Store or handle secrets or credentials |
+
+---
+
+## The Brain Artifacts
+
+The AI's external memory system lives in `.agents/brain/` — four files that together give the AI a complete temporal model of your project. The AI reads all four at the start of every session; together they eliminate context decay entirely.
+
+<CardGroup cols={2}>
+  <Card title="AI-MASTER-PROTOCOL.md — Eternal" icon="scroll">
+    The sovereign constitution. Contains all governance laws, hard rules, the Advisory Mode mandate, the commit convention, and the AI's persona. This file rarely changes. It is the bedrock the AI's behaviour is built on.
+  </Card>
+  <Card title="implementation_plan.md — Future" icon="map">
+    The project roadmap. Contains phases, milestones, and the desired end state. The AI uses this to check that any proposed action aligns with the larger plan before recommending it.
+  </Card>
+  <Card title="task.md — Present" icon="list-check">
+    The active session checklist. Contains today's specific focus, open tasks marked `[ ]`, and completed tasks marked `[x]`. The AI updates this during the session; you approve the updates before committing.
+  </Card>
+  <Card title="walkthrough.md — Past" icon="clock-rotate-left">
+    The full session history. Contains a chronological log of decisions, Ansible run results, architectural choices, and — most critically — the **Mental Anchor** from every session end.
+  </Card>
+</CardGroup>
+
+---
+
+## The Mental Anchor
+
+The Mental Anchor is a single sentence — written by the AI at the end of every session — that captures the exact logical stopping point of your work. It is the most important entry in `walkthrough.md`.
+
+Consider what happens without it: you close your laptop, come back the next morning, open a new AI chat, and spend the first twenty minutes re-explaining your project, your architecture, your current phase, and what you were in the middle of doing. With a Mental Anchor, you upload the session manifest and say the Cognitive Handshake phrase — and the AI picks up exactly where you left off, in under three prompts.
+
+A good Mental Anchor looks like this:
+
+```text
+Phase 3 complete. Kafka broker idempotency role merged to main (v2.3).
+Next action: begin Phase 4 — deploy Logstash pipeline on prod-node-02
+using roles/logstash. Blocker: confirm UID 1001 ownership on /var/log/logstash
+before playbook run.
+```
+
+That one sentence tells a fresh AI session: what phase you are in, what was last completed, what the next concrete action is, and what the open question is. No re-explanation required.
+
+---
+
+## Context Decay
+
+Context Decay is the foundational problem that DSOM was built to eliminate. It happens because AI language models are stateless: each new chat session starts with zero memory of everything that came before. The longer your project runs, the worse the decay gets — and the more time you waste rebuilding context that should never have been lost.
+
+DSOM solves Context Decay at three levels:
+
+1. **Session level** — The Mental Anchor in `walkthrough.md` lets a new session resume in under three prompts.
+2. **Project level** — The `implementation_plan.md` and `task.md` give the AI the full project trajectory without relying on chat history.
+3. **Architectural level** — The Sovereign Markdown Palace (see below) provides spatial, room-based memory that scales to months of project history without flooding the AI's context window.
+
+---
+
+## The Sovereign Markdown Palace
+
+The Sovereign Markdown Palace is a spatial memory architecture introduced in DSOM v10.0. Where `walkthrough.md` is a linear session log — useful but slow to scan at scale — the Palace gives the AI organised, fast, room-based recall across months of project history.
+
+The Palace lives inside `.agents/brain/wings/` and is navigated via a master index file:
+
+```text
+.agents/brain/
+├── palace_registry.md          ← AI reads this first at Start of Day (spatial map)
+├── walkthrough.md              ← Linear session log (The Drawer)
+└── wings/                      ← Spatial Palace Rooms
+    └── wing_dsom_core/
+        ├── hall_facts/         ← Immutable laws, tools, architecture baselines
+        └── hall_events/        ← Milestones, versions, deployment history
+```
+
+At the start of every session, the AI reads `palace_registry.md` to identify which Wings and Rooms are relevant to the current task. Instead of scanning hundreds of lines of raw log, it walks to the right room and reads the `closet.md` — a distilled, high-density knowledge summary written specifically for fast AI recall.
+
+<Tip>
+  Each room's `closet.md` is the key to efficient context loading. Think of it as the executive summary of everything that happened in that domain. The AI reads the closet instead of the full history, which keeps context window usage low even on months-old projects.
+</Tip>
+
+For full Palace documentation, see the [Palace Overview](/palace/overview) guide.
+
+---
+
+## OKF — Open Knowledge Format
+
+OKF (Open Knowledge Format) is the YAML frontmatter standard that DSOM applies to all documentation files. Every Markdown document in a DSOM project — including `closet.md` files, skill definitions, and governance ledgers — carries a structured YAML header that enables programmatic AI indexing.
+
+A minimal OKF header looks like this:
+
+```yaml
+---
+okf_version: 0.1
+type: documentation
+title: "Your Document Title"
+timestamp: "2026-01-15T09:00:00Z"
+topics: ["dsom", "governance"]
+description: "A one-sentence description of what this file contains."
+resource: "file:///docs/your-file.md"
+---
+```
+
+Because every file is indexed the same way, the AI can locate the right document in under 50 tokens by querying OKF metadata — rather than loading hundreds of thousands of tokens of raw file content into its context window. This is what enables DSOM's claimed 96%+ context reduction in benchmarks.
+
+For the full OKF specification, see the [OKF Standard](/governance/okf-standard) reference.
+
+---
+
+## Execution Modularity
+
+The Third Pillar — the Executor — is fully modular by design. You choose the execution tool that fits your project domain; DSOM's governance layer wraps around it regardless of what that tool is.
+
+While **Ansible** is the default Executor for infrastructure projects and is woven into the DNA of the framework — idempotency, declarative state, and absolute human control are Ansible's core values and DSOM's core values — nothing prevents you from running a Python data pipeline, a Node.js web build, or a documentation compilation step under exactly the same governance model.
+
+The rules are always the same, whatever the Executor:
+- Every execution is triggered by a human, never by the AI autonomously.
+- Every execution script is version-controlled in Git before it runs.
+- Every execution is idempotent — safe to run again without side effects.
+
+This modularity means DSOM scales from a solo developer building a Python microservice to a team operating a 19-node Elasticsearch cluster — the governance contract is identical in both cases.

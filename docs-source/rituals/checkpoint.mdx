@@ -1,0 +1,69 @@
+---
+title: "DSOM Checkpoint: Save Your AI State Mid-Session Instantly"
+sidebarTitle: "Checkpoint"
+description: "Use the DSOM checkpoint ritual to commit and push your AI's working state mid-session without performing a full End-of-Day ritual."
+---
+
+The DSOM checkpoint is a lightweight save mechanism you can run at any point during an active working session. It commits your current brain artifacts and project files to Git and pushes them to your remote origin — without triggering a full End-of-Day ritual, updating the Sovereign Palace, or generating Hibernation Notes. Think of it as a manual save point: quick, safe, and reversible. Run it whenever you need to preserve the current state without formally closing the session.
+
+## When to Run a Checkpoint
+
+Run a checkpoint in any of these situations:
+
+- **Stepping away from the keyboard** — you are pausing work mid-task and do not want to lose uncommitted state
+- **Switching machines** — moving from your Windows T1 to WSL2 T2, or picking up on a different device
+- **Natural pause in work** — completing a logical sub-task but not yet ready to close the session
+- **Before a risky operation** — committing a clean known-good state before asking your AI to generate a large refactor, structural change, or destructive migration
+
+<Tip>
+Always run a checkpoint before any large AI-generated refactor. If the refactor produces unexpected results, you can `git revert` to the checkpoint state and start again from a clean base — without losing any of the work that came before it.
+</Tip>
+
+## Run the Checkpoint
+
+<CodeGroup>
+
+```powershell Windows PowerShell (T1)
+.\tools\checkpoint.ps1
+```
+
+```bash Linux / WSL2 (T2)
+bash tools/checkpoint.sh
+```
+
+</CodeGroup>
+
+## What Checkpoint Does
+
+When you run the checkpoint script, it performs the following actions:
+
+1. **Auto-stages brain artifacts** — commits any changes to `.agents/brain/task.md`, `.agents/brain/walkthrough.md`, and `.agents/brain/implementation_plan.md`
+2. **Auto-stages project files** — commits any modified source files, playbooks, configs, and docs
+3. **Pushes to Git origin** — pushes the committed state to `origin/main` immediately
+4. **Does NOT update the Palace** — `palace-sync.sh` is not run; the Palace Registry is not regenerated
+5. **Does NOT generate Hibernation Notes** — the AI memory export is reserved for the EOD ritual
+
+<Note>
+A checkpoint is a Git commit, not an EOD. Your `walkthrough.md` Mental Anchor is not updated, and the Palace closets are not synced. When you return to work, your AI will resume from the last Mental Anchor written during the previous EOD — not from the checkpoint itself. To update the Mental Anchor mid-session, ask your AI manually before running the checkpoint.
+</Note>
+
+## Checkpoint vs. End of Day
+
+Use this table to choose between a checkpoint and a full EOD ritual:
+
+| | Checkpoint | End of Day (EOD) |
+|:--|:-----------|:-----------------|
+| **Git commit + push** | ✅ Yes | ✅ Yes |
+| **Brain artifact save** | ✅ Yes | ✅ Yes |
+| **Palace Registry sync** | ❌ No | ✅ Yes |
+| **Hibernation Notes export** | ❌ No | ✅ Yes |
+| **Mental Anchor update** | ❌ Manual only | ✅ AI-generated |
+| **`task.md` completion review** | ❌ No | ✅ Yes |
+| **Privacy scan** | ❌ No | ✅ Optional |
+| **T2 sync reminder** | ❌ No | ✅ Yes |
+| **Suitable for mid-session use** | ✅ Yes | ⚠️ Heavyweight |
+| **Suitable for session close** | ❌ Incomplete | ✅ Yes |
+
+<Warning>
+Do not use checkpoint as a substitute for the full EOD ritual at the end of your working day. A checkpoint does not generate Hibernation Notes, which means tomorrow's SOD will rely on the manifest upload path rather than the faster Hibernation Notes feed. Always close a working day with the full EOD ritual.
+</Warning>

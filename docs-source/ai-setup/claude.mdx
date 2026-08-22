@@ -1,0 +1,272 @@
+---
+title: "Set Up DSOM with Anthropic Claude"
+sidebarTitle: "Claude"
+description: "Configure Anthropic Claude as your DSOM Cognitive Digital Twin using Projects, system prompts, and the Claude-specific reanimate script."
+---
+
+Anthropic Claude integrates with DSOM through **Claude Projects** — a feature that gives a conversation a persistent instruction set and a dedicated knowledge base that survives across chat sessions. By storing the Sovereign Instructions in the Project and uploading a daily reanimation manifest to the Project Knowledge, Claude operates as a fully initialised Cognitive Digital Twin from the first message of every session. A per-session manifest upload fallback is also available for users without Projects access.
+
+## Overview
+
+Claude uses two layers of persistent state. The **Project Instructions** hold the Sovereign Law — your persona, the seven DSOM Laws, the 4-Tier environment map, and the Mirror Law. The **Project Knowledge Base** holds the daily manifest: a snapshot of `task.md`, `walkthrough.md`, and `palace_registry.md` that tells Claude exactly where you left off. Together they eliminate context loss across chat reboots without requiring you to re-paste instructions every morning.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- A Claude account at [claude.ai](https://claude.ai) with Projects access
+- The DSOM repository cloned locally
+- `uv` installed on your T2 Dev Bridge (WSL2 or Linux) for running the manifest generation scripts
+
+---
+
+## One-Time Setup: Create a Claude Project
+
+<Steps>
+
+### Create the Project
+
+1. Go to [claude.ai](https://claude.ai) and click **Projects** in the left sidebar.
+2. Click **New Project**.
+3. Name it after your DSOM project — for example, `DSOM-deep-state-of-mind`.
+
+### Set the Project Instructions (The Sovereign Guard)
+
+Open **Project Settings → Instructions** and paste the block below, personalising the placeholders with your own details. These instructions define Claude's persona and operating constraints for the entire lifetime of the project. Do not summarise or shorten them — every clause has a specific governance function.
+
+<CodeGroup>
+
+```text Claude Sovereign Instructions (paste into Project Instructions)
+[DSOM SOVEREIGN INSTRUCTIONS v6.1 + Palace v1.0]
+
+You are the Claude-variant of the DSOM Cognitive Digital Twin. You are a Senior
+Systems Architect assisting [YOUR NAME], the project Lead Architect, who operates
+under [X]+ years of ICT and Open Source expertise.
+
+OPERATING MODEL:
+- Advisory Mode ONLY. You propose. The human approves. Ansible executes. You verify.
+- UK English in all responses and documentation.
+- Atomic Git Hygiene: Propose changes one file at a time using
+  'type(scope): description [Phase/vX.X]' format.
+- Ansible is the ONLY executor for OS-level tasks on remote nodes.
+- Wait for human output after each step before proceeding.
+
+DSOM LAWS (non-negotiable):
+1. Zero-Global Pattern — No global variables; strict state management only.
+2. Sovereign Portability — No vendor lock-in; code must be Linux-agnostic.
+3. HA-Ready — Design for clusters and zero-downtime.
+4. Atomic Git Hygiene — One logical change per commit.
+5. Pedagogical Logic — Explain the 'Why' before the 'What'.
+6. GitOps Rule — If it is not committed to Git, it does not exist.
+7. Ansible-First Execution — No ad-hoc commands on target nodes. Playbooks only.
+
+4-TIER ENVIRONMENT:
+- T1 (Command Centre): Human workstation — Code editing, Git, brain artifact maintenance.
+- T2 (Dev Bridge): WSL2 / local VM — Ansible dry-run, log analysis.
+- T3 (Staging): Pre-production validation.
+- T4 (Production): Zero-tolerance for ad-hoc changes. Ansible + GitOps only.
+
+BRAIN SYNC:
+Your Single Source of Truth (SSoT) is the uploaded manifest file
+(e.g. DSOM-CLAUDE-INIT.md) in Project Knowledge.
+Before proposing any action, you MUST read Section [14] Palace Registry and
+walk the relevant spatial Rooms.
+Always refer to it for the current Mental Anchor, task list, and roadmap.
+
+MIRROR LAW:
+Challenge the human if their instructions lack architectural clarity. Ask for the
+missing 'Why' before acting. Silence is the only failure.
+
+When ready, state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
+```
+
+</CodeGroup>
+
+### Generate and Upload the Brain Manifest
+
+Generate the Claude context manifest from your local repository:
+
+<CodeGroup>
+
+```bash Linux / WSL2 (Claude-specific — recommended)
+bash tools/reanimate-claude.sh
+```
+
+```bash General manifest fallback
+bash tools/reanimate.sh
+```
+
+```powershell Windows PowerShell (Claude-specific)
+.\tools\reanimate-claude.ps1
+```
+
+</CodeGroup>
+
+`reanimate-claude.sh` produces `DSOM-CLAUDE-INIT.md` — a sectioned manifest containing the full `task.md`, `walkthrough.md`, `implementation_plan.md`, your Sovereign Constitution, and GitOps strategy, structured for direct upload to Claude Project Knowledge. The general `reanimate.sh` fallback produces `sod_manifest_YYYY-MM-DD.txt` with the same core content.
+
+Upload the generated file to **Project Knowledge** in your Claude Project settings. This file becomes Claude's long-term memory for the project.
+
+<Warning>
+  Re-upload a fresh manifest every Start-of-Day to ensure Claude has your latest Mental Anchor. An outdated manifest will cause Claude to reference stale tasks and old context.
+</Warning>
+
+</Steps>
+
+---
+
+## Start-of-Day (SOD) Ritual for Claude
+
+<Steps>
+
+### Run the SOD Script
+
+<CodeGroup>
+
+```bash Linux / WSL2 (Claude-specific)
+bash tools/reanimate-claude.sh
+```
+
+```bash General fallback
+bash tools/reanimate.sh
+```
+
+```powershell Windows PowerShell (Claude-specific)
+.\tools\reanimate-claude.ps1
+```
+
+</CodeGroup>
+
+### Upload the New Manifest
+
+Go to your Claude Project → **Project Knowledge** → delete yesterday's manifest → upload today's `DSOM-CLAUDE-INIT.md` (or `sod_manifest_YYYY-MM-DD.txt` if you used the fallback script).
+
+### Send the Cognitive Handshake
+
+Open a **new conversation** inside your Project and paste the handshake prompt:
+
+```text
+Initialise DSOM Protocol v6.1 + Palace v1.0. Read the uploaded manifest.
+Walk the Palace Registry (Section [14]). Summarise the current Mental Anchor
+from .agents/brain/walkthrough.md. Confirm the 4-Tier environment map from
+AI-COGNITIVE-TWIN-PROTOCOL.md. State: 'Sovereign State Synchronised' when ready.
+```
+
+### Verify the SOD Checklist
+
+| Check | Expected Content |
+|:------|:-----------------|
+| Mental Anchor | Exact last stopping point from `walkthrough.md` |
+| Environment | T1/T2/T3/T4 tiers confirmed |
+| Active Tasks | Current `task.md` incomplete items |
+| Doctrine | Advisory Mode, Ansible-only, no ad-hoc changes |
+
+</Steps>
+
+---
+
+## SOD Stop Conditions
+
+If any of the following occur, **stop and do not proceed**. Re-run the SOD from Step 2.
+
+| Failure Signal | Root Cause | Fix |
+|:---------------|:-----------|:----|
+| "What are we working on?" | Context not loaded | Re-upload manifest |
+| Proposes to run commands directly on remote nodes | Identity failure | Re-read Project Instructions |
+| Ignores `task.md` checklist | Operational failure | Explicitly send the task list |
+| References wrong environment tier | Environment failure | Re-upload manifest |
+| American English spelling (e.g. "initialize") | Linguistic failure | Remind of UK English mandate |
+
+---
+
+## End-of-Day (EOD) Ritual for Claude
+
+<Steps>
+
+### Consolidate Context
+
+Ask Claude in your Project conversation:
+
+```text
+We are ending the session. Update .agents/brain/task.md — mark completed tasks [x]
+and set tomorrow's targets [ ]. Update .agents/brain/walkthrough.md with today's
+Mental Anchor.
+```
+
+### Export Hibernation Notes
+
+Run this prompt verbatim in your Claude chat and save the output:
+
+```text
+Generate "Hibernation Notes" for my EOD. List every memory you have stored about
+our progress and our chats of this project, as well as any context you've learned
+from past to current conversations. Output everything in a single code block so I
+can easily copy it. Format each entry as: [date saved, if available] - memory content.
+Cover: instructions I've given you, project details (servers/VMs/containers, 4W1H),
+tasks/phases/goals, tools/languages/frameworks, preferences and corrections.
+Do not summarise, group, or omit any entries.
+```
+
+Save the output as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt`.
+
+### Commit and Push
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/eod-palace.sh
+```
+
+```powershell Windows (PowerShell)
+.\tools\eod-palace.ps1
+```
+
+</CodeGroup>
+
+</Steps>
+
+---
+
+## Alternative SOD: Feeding Hibernation Notes
+
+If you prefer not to rely on Project Knowledge file uploads, you can restore full context by feeding yesterday's Hibernation Notes directly into a new chat:
+
+```text
+I am starting a new session for DSOM Protocol. I am your human Lead Architect.
+I have the Hibernation Notes from our last session. Please read them carefully
+and use them to fully restore our working context.
+
+--- BEGIN HIBERNATION NOTES ---
+[PASTE HIBERNATION NOTES BLOCK HERE]
+--- END HIBERNATION NOTES ---
+
+After reading: state the last Mental Anchor, confirm the T1-T4 environment map,
+list top 3 pending tasks. State: 'Sovereign State Restored — [PROJECT NAME] is live.'
+Operate under DSOM v6.1: Advisory Mode, UK English, Git-first, Ansible-only execution.
+```
+
+<Tip>
+  The Hibernation Notes approach is especially useful when switching between Claude and another AI (Gemini, Copilot) mid-project. The same notes block can be fed to any DSOM-compliant model — see `docs/RITUAL-OF-TRANSITION.md` for the cross-AI handover prompt.
+</Tip>
+
+---
+
+## The Continuity Loop
+
+```
+EOD → Save Hibernation Notes to .agents/brain/hibernation-notes-YYYY-MM-DD.txt
+        ↓  [Git holds state. Claude holds nothing between Projects.]
+SOD → Upload new manifest to Project Knowledge
+        ↓  [Claude resumes with exact context — no decay.]
+EOD → Save new Hibernation Notes
+        ↓  [Repeats every day, indefinitely.]
+```
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| `docs/SOD-RITUAL.md` | Full Start-of-Day ritual guide |
+| `docs/EOD-RITUAL.md` | Full End-of-Day hibernation ritual |
+| `docs/RITUAL-OF-TRANSITION.md` | Switching between AI providers |
+| `docs/governance/AI-MASTER-PROTOCOL.md` | The Sovereign Constitution |
+| `docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md` | Project identity card |

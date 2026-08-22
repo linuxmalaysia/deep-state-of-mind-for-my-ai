@@ -1,0 +1,137 @@
+---
+title: "Multi-Agent Protocols: Google Jules, Cursor, Copilot"
+sidebarTitle: "Multi-Agent"
+description: "Configure multiple AI agents — Google Jules, Cursor, Claude, and GitHub Copilot — to share the same DSOM rules, memory, and execution constraints."
+---
+
+When you work with multiple AI tools on the same repository — a cloud coding agent like Google Jules, an IDE assistant like Cursor, and an inline suggestion engine like GitHub Copilot — each one starts from scratch. Without a shared governance layer, they develop inconsistent understandings of your codebase, apply conflicting rules, and generate proposals that contradict each other. You end up spending more time reconciling AI outputs than writing code.
+
+DSOM solves this with a **dual `AGENTS.md` architecture** combined with the FastMCP server. Every AI agent that touches your repository reads from the same constitutional rulebook, enforces the same execution constraints, and operates from the same memory artifacts. The result is a shared cognitive alignment layer across your entire AI toolchain.
+
+## The Dual `AGENTS.md` Architecture
+
+DSOM maintains two synchronised `AGENTS.md` files in every repository:
+
+| File | Role |
+|---|---|
+| `AGENTS.md` (root) | **Gateway file** — discovered automatically by Jules, Copilot, and Cursor when they scan the repository root. Summarises DSOM and redirects to the full rulebook. |
+| `.agents/AGENTS.md` | **Full Sovereign Rulebook** — the Cognitive Entry Point containing all 27 constitutional laws, the persona profile, the boot sequence, and all discovery protocols. |
+
+This dual-file pattern ensures DSOM governance is **immediately discoverable** by any AI tool without requiring custom per-tool configuration. The root gateway is the first read; the `.agents/AGENTS.md` is the complete read.
+
+<Note>
+  Keep both `AGENTS.md` files synchronised at all times. The root gateway summarises the full rulebook — when you add or change a constitutional law in `.agents/AGENTS.md`, update the root gateway summary as well. A misaligned root gateway causes some agents (particularly cloud-based ones) to operate on outdated rules.
+</Note>
+
+## How Each Agent Connects
+
+| AI Tool | How It Reads DSOM Rules |
+|---|---|
+| Google Jules | Reads root `AGENTS.md` automatically when scanning the repository |
+| GitHub Copilot | Reads root `AGENTS.md` + `.github/copilot-instructions.md` |
+| Cursor | Reads root `AGENTS.md` + `.cursorrules` file or MCP server |
+| Claude Desktop | Connects via the FastMCP server (`tools/mcp/server.py`) |
+
+### Google Jules
+
+Jules scans the repository root on every task invocation. Your root `AGENTS.md` is the entry point — it must contain a clear pointer to the full rulebook and a brief summary of DSOM's Advisory Mode requirement so Jules operates within governance constraints from the first prompt.
+
+### GitHub Copilot
+
+Copilot reads both the root `AGENTS.md` and your `.github/copilot-instructions.md` file. Configure `copilot-instructions.md` to reference DSOM explicitly:
+
+```text
+# .github/copilot-instructions.md
+
+YOU ARE A DSOM-COMPLIANT AGENT.
+BEFORE ANSWERING, READ: docs/AI-MASTER-PROTOCOL.md
+FOLLOW: docs/PERSONALIZATION.md
+CRITICAL: Advisory Mode only. Do not execute commands on remote nodes.
+```
+
+### Cursor
+
+Cursor is among the most DSOM-native compatible tools due to its Context Awareness features. Point its rules file at the DSOM master protocol:
+
+```text
+# .cursorrules
+
+YOU ARE A DSOM-COMPLIANT AGENT.
+BEFORE ANSWERING, READ: docs/AI-MASTER-PROTOCOL.md
+FOLLOW: docs/PERSONALIZATION.md
+CRITICAL: DO NOT CREATE GLOBAL VARIABLES. ADHERE TO CLEAN ARCHITECTURE.
+```
+
+Alternatively, connect Cursor to the FastMCP server so it shares the same live memory state as Claude Desktop.
+
+### Claude Desktop (FastMCP)
+
+Claude Desktop connects to the FastMCP server running at `tools/mcp/server.py`. This gives Claude direct access to your DSOM brain artifacts — `task.md`, `walkthrough.md`, `palace_registry.md` — as live tools, rather than requiring you to upload a manifest file manually at the start of every session.
+
+## The Autonomous Agent Handshake Ritual
+
+For Tier 2 autonomous agents (those that operate independently on entire feature implementations, such as CrewAI or AutoGen), you must perform the **Handshake Ritual** before the agent begins any work:
+
+<Steps>
+  <Step title="Generate the Start-of-Day manifest">
+    <CodeGroup>
+
+    ```bash Linux / WSL2
+    bash tools/sod-palace.sh
+    ```
+
+    ```powershell Windows (PowerShell)
+    .\tools\sod-palace.ps1
+    ```
+
+    </CodeGroup>
+
+    This generates `sod_manifest_YYYY-MM-DD.txt` with the full context block including Section [14] (Palace Registry).
+  </Step>
+  <Step title="Feed the manifest to the autonomous agent">
+    Upload `sod_manifest_YYYY-MM-DD.txt` to the agent's context or API configuration. The agent must read the Palace Registry before writing any code or proposing changes.
+  </Step>
+  <Step title="Issue the initialisation prompt">
+    ```text
+    I am initialising the DSOM Protocol v6.1 + Palace v1.0.
+    Acknowledge the architecture in the manifest.
+    Walk the Palace Registry and identify the relevant Rooms for today's task.
+    State 'Sovereign State Synchronised' when ready.
+    ```
+  </Step>
+  <Step title="Confirm readiness before proceeding">
+    Wait for the agent to respond with "Sovereign State Synchronised" before assigning any tasks. This confirms it has read and acknowledged the governance constraints.
+  </Step>
+</Steps>
+
+## The 27 Constitutional Laws
+
+The `.agents/AGENTS.md` Sovereign Rulebook contains 27 constitutional laws that govern every AI agent operating on a DSOM repository. They cover six domains:
+
+<Accordion title="Execution Rules (Rules 1–5)">
+  These laws define the boundary between advisory and execution. The AI proposes; the human runs. No AI agent may execute commands directly on remote nodes, push to `main` without approval, or handle secrets or credentials in any form.
+</Accordion>
+
+<Accordion title="Memory Rules (Rules 6–10, 12, 18)">
+  These laws govern how the AI interacts with the brain artifacts. Every skill must carry OKF `topics:` frontmatter. Skill discovery uses frontmatter only — full body loading is deferred to execution time. The Episodic Resume Protocol serialises session state at every EOD. All exploratory terminal operations are byte-capped to prevent context flooding.
+</Accordion>
+
+<Accordion title="Advisory Mode (Rules 11, 13–15)">
+  The AI always explains **why** before **what**. It never refactors architectural layers (`src/Domain`, `src/Application`) without having read the Master Protocol first. It escalates ambiguous decisions to the human rather than guessing.
+</Accordion>
+
+<Accordion title="Language and Style (Rule 21)">
+  All documentation, commit messages, and AI-generated prose must use **UK English**. American spelling variants are not permitted in DSOM-governed repositories.
+</Accordion>
+
+<Accordion title="OKF Compliance (Rules 16–17, 22–25)">
+  All Python execution uses `uv run` exclusively — no raw `python` or `pip` commands. Every new Markdown file added to `docs/` or `.agents/` must carry valid OKF v0.1 frontmatter before being committed. The AI runs the OKF Frontmatter Injector on any file that lacks frontmatter.
+</Accordion>
+
+<Accordion title="Palace Protocol (Rules 26–27)">
+  Any agent performing advisory, architectural, or code-generation tasks must read `palace_registry.md` before starting work. The Native OpenWiki Emulator (Rule 27) mandates that all OpenWiki operations run via the Python `uv` emulator — no Node.js binaries are permitted.
+</Accordion>
+
+## The Zero-Hallucination Rule
+
+If an AI agent cannot access `docs/AI-MASTER-PROTOCOL.md` — for example, because it is working in a limited context or an external API session — it is **forbidden** from refactoring architectural layers (`src/Domain`, `src/Application`). It may only work on `tools/` or `tests/`. This constraint prevents the agent from making structural changes without the governance context required to make them safely.

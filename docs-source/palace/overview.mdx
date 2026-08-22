@@ -1,0 +1,117 @@
+---
+title: "Sovereign Markdown Palace: Spatial AI Memory Guide"
+sidebarTitle: "Overview"
+description: "The DSOM Sovereign Markdown Palace gives your AI fast, spatial recall across months of project history — without scanning entire session logs."
+---
+
+The Sovereign Markdown Palace is a spatial memory architecture built into the DSOM framework that lets your AI navigate structured knowledge rooms instead of scanning hundreds of lines of raw session history. Rather than forcing the AI to read a growing, flat log file from top to bottom every time it needs a single fact, the Palace lets it walk directly to the right room, open the right closet, and retrieve precisely the context it needs — in a fraction of the tokens.
+
+## The Drawer vs. the Palace
+
+DSOM stores your AI's memory in two complementary layers that work in tandem — never in isolation.
+
+<CardGroup cols={2}>
+  <Card title="The Drawer" icon="drawer">
+    `walkthrough.md` is your linear session log — a time-ordered, verbatim record of every session, decision, and Mental Anchor. It is the permanent audit trail and the source of truth for *what happened*.
+  </Card>
+  <Card title="The Palace" icon="building-columns">
+    `wings/` is your spatial memory layer — a structured directory tree of distilled knowledge summaries organised by domain, type, and topic. It answers *what does the AI need right now* without reading everything.
+  </Card>
+</CardGroup>
+
+The Drawer excels at persistence. The Palace excels at retrieval. Together they form **Dual-Mode Persistence** — the best of both worlds.
+
+<Note>
+  Neither layer replaces the other. If you delete `walkthrough.md`, you lose your audit trail. If you skip building the Palace, your AI will suffer context decay as your project history grows.
+</Note>
+
+## Directory Structure
+
+Every DSOM project with Palace v1.0 enabled has the following layout under `.agents/brain/`:
+
+```text
+.agents/brain/
+├── palace_registry.md        ← AI reads this at SOD (spatial map)
+├── walkthrough.md            ← Linear session log (The Drawer)
+└── wings/
+    └── wing_dsom_core/
+        ├── hall_facts/       ← Immutable laws, tools, architecture
+        └── hall_events/      ← Milestones, versions, history
+```
+
+The hierarchy has five semantic layers:
+
+| Layer | Example | Purpose |
+|---|---|---|
+| **Wing** | `wing_dsom_core` | A major project domain or entity |
+| **Hall** | `hall_facts`, `hall_events` | Memory type — facts, events, preferences, discoveries |
+| **Room** | `room_tooling` | A specific topic within the hall |
+| **Closet** | `room_tooling/closet.md` | A distilled, high-density knowledge summary |
+| **Drawer** | `walkthrough.md` | The verbatim session log — always linked from closets |
+
+## The Closet: High-Density Knowledge Summaries
+
+Every Room contains one file: `closet.md`. This is the distilled truth the AI reads instead of scanning hundreds of lines of raw history. A well-written closet gives the AI 95% of the context it needs in about 5% of the tokens.
+
+Each `closet.md` follows a consistent pattern: a brief description of the room's scope, structured knowledge sections, an evolution timeline, and a retrieval reference linking back to the specific line range in `walkthrough.md` where the original information lives. This cross-link is what prevents AI hallucination — the closet summarises, the Drawer verifies.
+
+<Tip>
+  The closet is not a replacement for detail — it is a navigation shortcut to detail. When the AI needs precision it cannot find in the closet, it follows the retrieval reference link into `walkthrough.md`.
+</Tip>
+
+## How the Palace Is Read at Start of Day
+
+When you run your SOD ritual, the AI follows this exact sequence to reconstruct context in seconds rather than minutes:
+
+<Steps>
+  <Step title="Read palace_registry.md">
+    The AI opens `.agents/brain/palace_registry.md` first. This is the spatial map of the entire Palace — it lists every Wing, Hall, and Room with a Quick-Reference table mapping common tasks to the correct Room path.
+  </Step>
+  <Step title="Identify relevant Rooms">
+    Based on the current task or project focus, the AI identifies which two or three Rooms are relevant. It does not load all closets — only the ones it needs.
+  </Step>
+  <Step title="Read targeted closet.md files">
+    The AI reads only the `closet.md` files for the identified Rooms. Each closet reconstructs the key facts, history, and decisions for that topic in high-density Markdown.
+  </Step>
+  <Step title="Establish the Mental Anchor">
+    With targeted closets loaded, the AI has enough context to state its current Mental Anchor and resume work — typically using around 50 tokens of Palace content versus thousands of tokens from a raw `walkthrough.md` scan.
+  </Step>
+</Steps>
+
+## The `palace-sync` Tool
+
+You do not maintain Palace closets by hand. The `palace-sync` tool bridges your git history and the Palace automatically, reading commit messages and changed file paths to determine which Room each commit belongs to.
+
+```bash
+# Map current git commits into Palace Rooms
+bash tools/palace-sync.sh
+
+# Backfill the entire git history into Palace Rooms
+bash tools/palace-sync.sh --backfill
+```
+
+At End of Day, `eod-palace.sh` runs `palace-sync` automatically as part of the EOD ritual — so your Palace stays current without any manual intervention.
+
+<Accordion title="Path-to-Room mapping logic">
+  The `palace-sync` tool routes commits to Rooms based on the file paths changed in each commit:
+
+  | File Pattern | Target Room |
+  |---|---|
+  | `docs/` | `hall_facts/room_dsom_protocol` |
+  | `tools/` | `hall_facts/room_tooling` |
+  | `playbooks/`, `roles/`, `inventory/` | `hall_events/room_sovereign_fabric` |
+  | `.agents/brain/` | `hall_events/room_brain_artifacts` |
+  | `CHANGELOG.md`, `HISTORY.md` | `hall_events/room_ledger` |
+  | `README.md`, `SUMMARY.md` | `hall_facts/room_dsom_protocol` |
+</Accordion>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Onboarding" icon="rocket" href="/palace/onboarding">
+    Set up the Sovereign Palace for the first time — verify the structure, run palace-sync, and confirm your SOD ritual.
+  </Card>
+  <Card title="Migration" icon="arrow-right-arrow-left" href="/palace/migration">
+    Already using DSOM? Upgrade your existing project from the flat brain artifact model to Palace v1.0.
+  </Card>
+</CardGroup>

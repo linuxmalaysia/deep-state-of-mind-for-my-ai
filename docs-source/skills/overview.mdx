@@ -1,0 +1,111 @@
+---
+title: "DSOM AI Agent Skills: Codified Workflow Automation"
+sidebarTitle: "Overview"
+description: "DSOM AI Agent Skills are OKF-compliant Markdown modules that let any AI instantly learn and execute complex project-specific workflows."
+---
+
+DSOM Agent Skills are the executable memory of your AI. Instead of re-explaining the same workflows in every chat session, you encode that knowledge once into a `SKILL.md` file, and any compatible AI agent — Cursor, OpenHands, or any other OKF-aware provider — can discover and execute it on demand without human hand-holding or loss of context across sessions.
+
+## What Is an Agent Skill?
+
+An Agent Skill is a folder inside `.agents/skills/` that contains a single `SKILL.md` file. That file acts as an on-demand memory module: when a user's request semantically matches the skill's `description` field, the AI loads the full skill body into its active context and follows the embedded instructions to the letter.
+
+```
+.agents/skills/
+└── my-custom-skill/
+    └── SKILL.md      ← The memory module the AI loads
+```
+
+The skill file is a standard OKF-compliant Markdown document. It starts with YAML frontmatter (at minimum `name` and `description`) and continues with human-readable execution steps that the AI treats as a strict Standard Operating Procedure (SOP).
+
+## How the AI Uses Skills
+
+DSOM uses a **Progressive Disclosure** architecture to keep your AI fast and focused. Here is what happens behind the scenes every time you give your AI a task:
+
+<Steps>
+  <Step title="Silent Index Scan">
+    The AI scans only the lightweight `name` and `description` fields from all registered skills — not the full file bodies. This initial pass costs almost no tokens.
+  </Step>
+  <Step title="Semantic Match">
+    If your request semantically matches a skill's `description`, that skill is formally "triggered". The AI fetches the full `SKILL.md` payload only at this moment.
+  </Step>
+  <Step title="SOP Execution">
+    The AI executes the skill's steps exactly as written — no guessing, no improvising. Quality gates and error-recovery paths defined inside the skill are enforced automatically.
+  </Step>
+</Steps>
+
+<Tip>
+  This Progressive Disclosure pattern compresses token overhead by up to **91%** compared to loading all skill content upfront. Your AI stays fast, cheap, and hyper-focused on the task at hand.
+</Tip>
+
+## Key Benefits
+
+<CardGroup cols={2}>
+  <Card title="No Supervision Needed" icon="robot">
+    Repetitive operational tasks run autonomously. Once a skill is defined, your AI executes it without step-by-step human guidance.
+  </Card>
+  <Card title="Encode Knowledge Once" icon="database">
+    Project-specific workflows, scripts, and architectural decisions live permanently in the skill file — not buried in chat history that disappears.
+  </Card>
+  <Card title="Works With Any AI Provider" icon="plug">
+    Skills follow the open AgentSkills.io standard. Cursor, OpenHands, and any OKF-aware agent can discover and run them.
+  </Card>
+  <Card title="OKF-Compliant & Git-Native" icon="code-branch">
+    Every skill is a versioned Markdown file. You track changes, roll back, and review skill logic through standard Git history.
+  </Card>
+</CardGroup>
+
+## The Skills Directory
+
+All skills live under `.agents/skills/` in your repository. Each skill occupies its own named subdirectory:
+
+```
+.agents/skills/
+├── dsom-bootstrap/
+│   └── SKILL.md
+├── eod-palace-sync/
+│   └── SKILL.md
+├── sod-palace-sync/
+│   └── SKILL.md
+└── <your-custom-skill>/
+    └── SKILL.md
+```
+
+The directory name becomes the skill's identifier. Keep names lowercase, hyphen-separated, and descriptive of the workflow they encode.
+
+## Pre-Built Skills Shipped With DSOM
+
+DSOM includes 17 production-ready skills that cover the most common operational workflows out of the box. You can use them immediately without any configuration.
+
+| Skill Name | Path | Purpose |
+|:---|:---|:---|
+| **Cross-Platform Translator** | `.agents/skills/cross-platform-translator/SKILL.md` | Translates Shell/PowerShell scripts to run cross-platform |
+| **DSOM Bootstrap** | `.agents/skills/dsom-bootstrap/SKILL.md` | Bootstraps the DSOM architecture for a new project |
+| **DSOM Project Cloner** | `.agents/skills/dsom-project-cloner/SKILL.md` | Scaffolds a new DSOM project by copying baseline assets |
+| **EOD Palace Sync** | `.agents/skills/eod-palace-sync/SKILL.md` | Hibernation ritual to externalise memory into the Palace and push to Git |
+| **Forensic Log Audit** | `.agents/skills/forensic-log-audit/SKILL.md` | Parses AI conversation transcripts to extract historical terminal commands |
+| **Initialise GitOps** | `.agents/skills/initialize-gitops/SKILL.md` | Establishes the foundational GitOps repository and Genesis DSOM architecture |
+| **LaTeX Proposal Compiler** | `.agents/skills/latex-proposal-compiler/SKILL.md` | Compiles a Markdown proposal into a PDF using Pandoc and XeLaTeX |
+| **Node Proposal Formatter** | `.agents/skills/node-proposal-formatter/SKILL.md` | Compiles Markdown proposals into DOCX files using Node.js and the docx package |
+| **Node Slide Generator** | `.agents/skills/node-slide-generator/SKILL.md` | Generates PowerPoint presentations from Markdown outlines via Node.js and pptxgenjs |
+| **ODP Slide Generator** | `.agents/skills/odp-slide-generator/SKILL.md` | Generates LibreOffice Impress ODP presentations from Markdown |
+| **OKF Frontmatter Injector** | `.agents/skills/okf-frontmatter-injector/SKILL.md` | Scans a directory and auto-injects OKF v0.1 YAML frontmatter into Markdown files |
+| **Palace Auditor** | `.agents/skills/palace-auditor/SKILL.md` | Crawls the workspace to verify links and maintain the Sovereign Memory Palace |
+| **PDF Text Extractor** | `.agents/skills/pdf-text-extractor/SKILL.md` | Extracts raw text from PDF files for agent analysis |
+| **Persona Injector** | `.agents/skills/persona-injector/SKILL.md` | Guides you to define your Sovereign Persona and injects it into the core rulebook |
+| **Proposal DOCX Formatter** | `.agents/skills/proposal-docx-formatter/SKILL.md` | Formats Markdown proposals into Microsoft Word DOCX files |
+| **SOD Palace Sync** | `.agents/skills/sod-palace-sync/SKILL.md` | Reanimation ritual to load workspace context and establish the day's tasks |
+| **SSH Passwordless Setup** | `.agents/skills/ssh-passwordless-setup/SKILL.md` | Configures passwordless multi-hop SSH routing via `~/.ssh/config` |
+
+See the [Skills Registry](/skills/skills-registry) for a full categorised reference including trigger patterns for each skill.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Creating Skills" icon="plus" href="/skills/creating-skills">
+    Build your own custom skills by writing an OKF-compliant SKILL.md file for any workflow in your project.
+  </Card>
+  <Card title="Skills Registry" icon="list" href="/skills/skills-registry">
+    Browse the complete reference for all 17 pre-built skills, grouped by category with trigger descriptions.
+  </Card>
+</CardGroup>

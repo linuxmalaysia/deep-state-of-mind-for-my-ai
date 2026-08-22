@@ -1,0 +1,223 @@
+---
+title: "OpenWiki CLI: Initialise, Update, Search, and Export"
+sidebarTitle: "OpenWiki Usage"
+description: "Run the OpenWiki Python emulator to initialise, update, search, and export your project's AI knowledge graph from the command line."
+---
+
+The OpenWiki emulator ships as a single Python script at `tools/openwiki_emulator.py` in your DSOM repository. You run it via `uv`, which handles dependency isolation automatically — no virtual environments to create manually, no `pip install` steps that pollute your system Python. This page walks you through every available command and explains exactly when to use each one.
+
+## Prerequisites
+
+Before running any OpenWiki command, ensure `uv` is installed on your system.
+
+<CodeGroup>
+
+```bash Linux / WSL2
+# Option 1: install via the official installer (recommended)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Option 2: install via pip if curl is unavailable
+pip install uv
+
+# Verify installation
+uv --version
+```
+
+```powershell Windows (PowerShell)
+# Option 1: install via the official Windows installer
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Option 2: install via pip
+pip install uv
+
+# Verify installation
+uv --version
+```
+
+</CodeGroup>
+
+`uv` automatically fetches `pyyaml` on first run via the `--with pyyaml` flag — you do not need to install it separately.
+
+## All Four CLI Commands
+
+| Command | What It Does |
+|---|---|
+| `uv run --with pyyaml python tools/openwiki_emulator.py --init` | Re-generates all 10 OKF-compliant wiki pages and the full `./openwiki/` directory structure |
+| `uv run --with pyyaml python tools/openwiki_emulator.py --update` | Incremental update — checks `git status` and `git diff`, then refreshes only the pages for changed files |
+| `uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"` | Sub-millisecond search over OKF frontmatter (`topics:`, `title:`, `description:`) |
+| `uv run --with pyyaml python tools/openwiki_emulator.py --export-graph` | Generates a standalone offline HTML graph at `openwiki/graph.html` |
+
+## Step-by-Step Commands
+
+### `--init`: Full Knowledge Base Initialisation
+
+<Steps>
+  <Step title="Run the initialise command">
+    Execute `--init` the first time you set up OpenWiki on a repository, or whenever you want a complete rebuild of the knowledge graph from scratch.
+
+    <CodeGroup>
+
+    ```bash Linux / WSL2
+    uv run --with pyyaml python tools/openwiki_emulator.py --init
+    ```
+
+    ```powershell Windows (PowerShell)
+    uv run --with pyyaml python tools/openwiki_emulator.py --init
+    ```
+
+    </CodeGroup>
+  </Step>
+  <Step title="Confirm the output">
+    The command creates the `./openwiki/` directory and generates all 10 OKF-compliant wiki pages across the subsystem subdirectories. You should see a confirmation line:
+
+    ```text
+    [OpenWiki Emulator] Successfully updated ./openwiki/ structure.
+    ```
+  </Step>
+  <Step title="Commit the results to Git">
+    Add the generated `./openwiki/` directory to Git so every team member and AI agent has access to the same index:
+
+    ```bash
+    git add openwiki/
+    git commit -m "feat(openwiki): initialise knowledge graph [Phase-01/v1.0]"
+    ```
+  </Step>
+</Steps>
+
+**When to use `--init`:**
+- The first time you run OpenWiki on a new project
+- After a major restructuring of your documentation layout
+- After adding OKF frontmatter to a large batch of existing files
+- When `./openwiki/` is missing or corrupted
+
+---
+
+### `--update`: Incremental Diff Update
+
+Use `--update` for routine maintenance. It inspects `git status` and `git diff` to identify which source files have changed since the last commit, then regenerates only the affected wiki pages — keeping execution time fast regardless of repository size.
+
+<CodeGroup>
+
+```bash Linux / WSL2
+uv run --with pyyaml python tools/openwiki_emulator.py --update
+```
+
+```powershell Windows (PowerShell)
+uv run --with pyyaml python tools/openwiki_emulator.py --update
+```
+
+</CodeGroup>
+
+**When to use `--update`:**
+- After every working session, as part of your End-of-Day (EOD) ritual
+- After editing, adding, or deleting any OKF-frontmattered Markdown file
+- Before starting a new AI session so the knowledge graph reflects today's state
+
+<Tip>
+  Make `--update` part of your EOD ritual. Run it immediately before `git commit` so the committed knowledge graph always matches the committed documentation. Add this line to your `eod-palace.sh` or `eod-palace.ps1` script to automate it.
+</Tip>
+
+---
+
+### `--search`: Fast Frontmatter Search
+
+The search command scans only the YAML frontmatter of every indexed file — specifically the `topics:`, `title:`, and `description:` fields — without ever loading document bodies. This makes it dramatically faster than a `grep` over full file content and far cheaper in AI token terms.
+
+<CodeGroup>
+
+```bash Linux / WSL2
+# Search for files related to Ansible
+uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"
+
+# Search for token optimisation content
+uv run --with pyyaml python tools/openwiki_emulator.py --search "token"
+
+# Search for GitOps governance documents
+uv run --with pyyaml python tools/openwiki_emulator.py --search "gitops"
+```
+
+```powershell Windows (PowerShell)
+# Search for files related to Ansible
+uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"
+
+# Search for token optimisation content
+uv run --with pyyaml python tools/openwiki_emulator.py --search "token"
+
+# Search for GitOps governance documents
+uv run --with pyyaml python tools/openwiki_emulator.py --search "gitops"
+```
+
+</CodeGroup>
+
+Each result returns the filename, title, and description — for example:
+
+```text
+[OpenWiki Search] Querying frontmatter for: 'Ansible'...
+ - [automation.md] Ansible Automation Playbooks: Idempotent playbook patterns for infrastructure provisioning.
+ - [governance.md] DSOM Three-Pillar Strategy: GitOps, AIOps, and Ansible doctrine for sovereign AI projects.
+```
+
+**When to use `--search`:**
+- Before asking your AI agent to explore a topic — run the search first and share the results so the AI knows which files to load
+- To verify that new OKF frontmatter you just wrote is correctly indexed
+- To audit topic coverage across your documentation
+
+<Note>
+  The search query is case-insensitive and matches against the full text of each frontmatter block. Searching for `"ansible"` will match files with `topics: ["Ansible"]`, `title: "Ansible Playbooks"`, or `description: "Ansible-based automation..."`.
+</Note>
+
+---
+
+### `--export-graph`: HTML Graph Visualisation
+
+The export command generates a standalone, offline HTML file at `openwiki/graph.html`. Open it in any browser — no server required, no internet connection needed.
+
+<CodeGroup>
+
+```bash Linux / WSL2
+uv run --with pyyaml python tools/openwiki_emulator.py --export-graph
+
+# Then open the graph in your browser
+xdg-open openwiki/graph.html
+```
+
+```powershell Windows (PowerShell)
+uv run --with pyyaml python tools/openwiki_emulator.py --export-graph
+
+# Then open the graph in your browser
+Start-Process openwiki\graph.html
+```
+
+</CodeGroup>
+
+**When to use `--export-graph`:**
+- During onboarding a new team member — share `graph.html` as a visual map of the project's knowledge domains
+- When presenting the repository structure to stakeholders
+- To visually verify that your OKF frontmatter `topics:` tags are creating the right connections between documents
+
+## Recommended Workflow Summary
+
+<Accordion title="First-time setup on a new repository">
+  1. Add OKF frontmatter to your key documentation files (see the [OKF Standard](/governance/okf-standard) guide)
+  2. Run `--init` to generate the full knowledge graph
+  3. Commit `./openwiki/` to Git
+  4. Share the knowledge graph with your AI agent at the start of your first session
+</Accordion>
+
+<Accordion title="Daily working session workflow">
+  **Start of Day (SOD):**
+  - Pull the latest state from Git
+  - Run `--search` with today's focus topic before loading files into your AI session
+
+  **End of Day (EOD):**
+  - Run `--update` to refresh the knowledge graph for any files you edited today
+  - Commit the updated `./openwiki/` alongside your other changes
+</Accordion>
+
+<Accordion title="After bulk documentation changes">
+  If you add OKF frontmatter to many existing files at once (for example, using the OKF Frontmatter Injector skill), always run `--init` rather than `--update`. The `--init` command performs a complete rebuild and ensures no files are missed.
+</Accordion>
+
+<Warning>
+  Never edit the files inside `./openwiki/` by hand. The emulator regenerates them on every `--init` or `--update` run, so manual edits will be overwritten. To change what appears in the knowledge graph, edit the OKF frontmatter in your source Markdown files instead.
+</Warning>

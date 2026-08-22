@@ -1,0 +1,100 @@
+---
+title: "DSOM: Sovereign AI Memory and Governance Framework"
+sidebarTitle: "Introduction"
+description: "Deep State of Mind (DSOM) gives any AI persistent memory, GitOps-backed state, and human-approval-first execution — provider-agnostic and Git-sovereign."
+---
+
+Deep State of Mind (DSOM) is a metacognitive governance framework and project template that transforms any AI — Gemini, Claude, Copilot, ChatGPT, or a local LLM — into a disciplined **Cognitive Digital Twin**: an AI agent that thinks and operates like your Senior Systems Architect. Rather than fighting the stateless nature of AI chat sessions, DSOM externalises the AI's memory entirely into your Git repository, giving you sovereign, persistent, provider-agnostic intelligence that survives every session boundary, every model switch, and every team handover.
+
+## The Three Problems DSOM Solves
+
+Every team that works with AI in production eventually hits the same three walls. DSOM was engineered to knock all three down simultaneously.
+
+| Problem | Why It Hurts | DSOM Solution |
+|:--------|:-------------|:--------------|
+| **Context Decay** — AI forgets everything after each session ends | You re-explain your entire architecture every morning | `.agents/brain/` artifacts persist project state permanently in Git |
+| **Vendor Lock-in** — Moving between AI tools loses all accumulated context | Switching from Gemini to Claude means starting from zero | All knowledge lives in your repo, never inside a proprietary AI model |
+| **Uncontrolled Execution** — AI runs commands you did not explicitly approve | One misunderstood prompt can modify a production system | Advisory Mode + GitOps + modular Executor enforce human-approval-first at every step |
+
+## The Three Pillars
+
+DSOM structures every project around three non-negotiable operational pillars that form a closed governance loop.
+
+```text
+┌─────────────────────────────────────────────────────┐
+│                DSOM OPERATING MODEL                 │
+│                                                     │
+│  ┌──────────┐   ┌──────────┐   ┌─────────────────┐ │
+│  │  AIOps   │──▶│  GitOps  │──▶│  The Executor   │ │
+│  │  (Mind)  │   │ (Record) │   │     (Hand)      │ │
+│  └──────────┘   └──────────┘   └─────────────────┘ │
+│       │               │                 │           │
+│  AI proposes    Git records     Executor runs       │
+│  & analyses     all state       on target nodes     │
+│       ▲               │                 │           │
+│       └───────────────┴─── AI verifies ─┘           │
+└─────────────────────────────────────────────────────┘
+```
+
+<CardGroup cols={3}>
+  <Card title="AIOps — The Mind" icon="brain">
+    The AI operates exclusively as an advisory intelligence layer. It proposes playbooks, generates scripts, analyses logs, and recommends the next action. It never executes autonomously.
+  </Card>
+  <Card title="GitOps — The Record" icon="code-branch">
+    Git is the single source of truth for all system state. Every configuration change, every brain update, and every deployment decision is a commit. If it is not in Git, it does not exist.
+  </Card>
+  <Card title="The Executor — The Hand" icon="terminal">
+    A modular execution layer — Ansible for infrastructure, `uv run` for Python, `npm run` for web — that applies approved changes to target nodes. Only humans pull the trigger.
+  </Card>
+</CardGroup>
+
+**The core loop:** AI Proposes → Git Records → Executor Runs → AI Verifies
+
+## The Three Hard Rules
+
+These rules are non-negotiable across every project that adopts DSOM. They exist to prevent the failure modes that make AI dangerous in production environments.
+
+<Warning>
+  Violating any of these three rules breaks the governance contract and invalidates the safety guarantees DSOM provides.
+</Warning>
+
+1. **AI never runs commands directly on remote nodes.** The AI writes execution scripts and playbooks. You run them.
+2. **No manual edits to production servers.** If a change is not committed to Git, it does not exist.
+3. **Every execution is idempotent.** Every script and playbook must be safe to re-run at any time without side effects.
+
+## The Four AI Brain Artifacts
+
+DSOM gives the AI an external memory system made of four Markdown files stored in `.agents/brain/`. Together they form a complete temporal picture of your project — past, present, future, and eternal.
+
+| Artifact | Time Horizon | Purpose | Who Updates |
+|:---------|:-------------|:--------|:------------|
+| `AI-MASTER-PROTOCOL.md` | **Eternal** | Governance laws, hard rules, persona identity — the sovereign constitution | Human (rarely changes) |
+| `implementation_plan.md` | **Future** | Project phases, roadmap, and desired end state | Human-led, AI assists |
+| `task.md` | **Present** | Today's checklist, current focus, and immediate next action | AI updates, Human approves |
+| `walkthrough.md` | **Past** | Full session history, decisions, and the critical Mental Anchor | AI writes, Human audits |
+
+<Note>
+  The **Mental Anchor** — a single sentence in `walkthrough.md` that captures the exact logical stopping point of the last session — is the most critical entry in the entire brain. It allows a brand-new AI session to resume exactly where you left off in under three prompts.
+</Note>
+
+## Supported AI Providers
+
+DSOM is deliberately provider-agnostic. Your memory, your governance rules, and your project state live in Git — not inside any AI vendor's infrastructure.
+
+| AI Provider | Notes |
+|:------------|:------|
+| **Google Gemini** | Full support; tested daily by the framework author |
+| **Anthropic Claude** | Full support; dedicated setup guide available |
+| **GitHub Copilot** | Full support; root `AGENTS.md` is auto-discovered |
+| **Local LLMs (Ollama)** | In progress — v11.0 roadmap target for full offline Sovereign AI |
+
+## Where to Go Next
+
+<CardGroup cols={2}>
+  <Card title="Quick Start" icon="rocket" href="/quickstart">
+    Clone the template, initialise your AI brain, and perform your first Cognitive Handshake in six steps.
+  </Card>
+  <Card title="Core Concepts" icon="book-open" href="/core-concepts">
+    Understand the Three Pillars, Advisory Mode, the Mental Anchor, and the Sovereign Markdown Palace in depth.
+  </Card>
+</CardGroup>

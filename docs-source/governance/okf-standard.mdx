@@ -1,0 +1,164 @@
+---
+title: "OKF v0.1: The Open Knowledge Format Standard for DSOM"
+sidebarTitle: "OKF Standard"
+description: "OKF v0.1 is DSOM's YAML frontmatter standard that makes every Markdown file programmatically indexable by AI agents and the OpenWiki engine."
+---
+
+The Open Knowledge Format (OKF) v0.1 is a lightweight YAML frontmatter standard that DSOM applies to every Markdown file in the knowledge base. It gives each document a structured identity — a compact block of metadata that any AI agent can parse in under a millisecond without loading the document's full body. When every file in your repository carries OKF frontmatter, the entire project becomes a queryable, machine-readable knowledge graph at near-zero token cost.
+
+## Why OKF Matters
+
+Without a consistent metadata standard, an AI agent exploring your repository must load the full content of every file to understand what each one contains. In a large project this means consuming hundreds of thousands of tokens just to build a map of the codebase — before answering a single question.
+
+OKF solves this at the source. By encoding the document's purpose directly in the frontmatter, you enable:
+
+- **Sub-millisecond semantic search** — the OpenWiki engine queries only `topics:`, `title:`, and `description:` fields, never the body
+- **Up to 98% token reduction** — skill discovery across 25 files costs ~375 tokens (frontmatter only) versus ~14,400 tokens (full bodies)
+- **Consistent indexing** — every AI agent, every tool, every automation script reads the same metadata schema
+- **Autonomous routing** — AI agents use `description:` and `type:` fields to calculate relevance and route tasks to the correct file without human guidance
+
+## The Required Fields
+
+Every OKF-compliant Markdown file must open with this frontmatter block:
+
+```yaml
+---
+okf_version: 0.1
+type: documentation          # see valid values below
+title: "My Document Title"
+timestamp: "2026-01-15T10:00:00Z"
+topics: ["dsom", "ansible", "gitops"]
+description: "A clear one-sentence summary of what this document contains."
+resource: "file:///path/to/file.md"
+---
+```
+
+<Note>
+  The `resource:` field uses a `file://` URI pointing to the document's canonical path within the repository. This allows AI agents to load the file directly when the frontmatter indicates it is relevant, without needing to search for it.
+</Note>
+
+## The `type` Field
+
+The `type` field classifies the document's role in the knowledge base. Use one of these standardised values:
+
+| Value | Use For |
+|---|---|
+| `documentation` | Reference documentation, README files, architecture descriptions |
+| `operational_guide` | Step-by-step HOWTOs, runbooks, setup guides |
+| `governance_protocol` | DSOM constitutional laws, policy documents, compliance standards |
+| `how_to` | Task-focused instructional content with specific procedures |
+| `reference` | API references, command cheat sheets, configuration schemas |
+| `tutorial` | Learning-oriented walkthroughs introducing a concept from scratch |
+
+AI agents and autonomous control planes use the `type` field to route tasks. For example, an agent looking for executable instructions will prioritise `operational_guide` and `how_to` types over `reference` documents.
+
+## Best Practices for `description:`
+
+The `description:` field is the single most important field in the frontmatter. It is what an AI agent reads to decide whether to load the full document. Write it as a standalone sentence that answers one question: **"When should an AI load this file?"**
+
+<CardGroup cols={2}>
+  <Card title="Good description" icon="check">
+    `"Step-by-step operational guide for running the OpenWiki emulator via uv, covering --init, --update, --search, and --export-graph commands."`
+
+    Specific, actionable, tells the AI exactly when this file is relevant.
+  </Card>
+  <Card title="Poor description" icon="xmark">
+    `"Documentation about OpenWiki."`
+
+    Vague, does not help an AI agent decide whether to load the file for a specific task.
+  </Card>
+</CardGroup>
+
+**Write your `description:` as if you are writing a search result snippet.** The AI agent reads dozens of these in a single pass — make yours unambiguous.
+
+## Best Practices for `topics:`
+
+The `topics:` array is a list of searchable keywords that OpenWiki indexes for fast lookup. Follow these rules:
+
+- Use **lowercase only** — `"ansible"` not `"Ansible"`
+- Use **kebab-case for multi-word terms** — `"token-efficiency"` not `"token efficiency"`
+- Include **3 to 7 topics per document** — too few reduces discoverability, too many dilutes signal
+- Choose topics your AI is likely to search for — think about what questions the document answers
+
+```yaml
+# Good — specific, lowercase, appropriately scoped
+topics: ["ansible", "idempotency", "gitops", "playbook", "infrastructure"]
+
+# Poor — too generic, too few, mixed case
+topics: ["DSOM", "docs"]
+```
+
+## Adding OKF Frontmatter to Your Files
+
+### Manual Method
+
+Add the frontmatter block to the very top of each Markdown file, before any other content:
+
+```yaml
+---
+okf_version: 0.1
+type: operational_guide
+title: "Deploying the Kafka Broker Cluster"
+timestamp: "2026-01-15T10:00:00Z"
+topics: ["kafka", "ansible", "infrastructure", "deployment", "clustering"]
+description: "Ansible playbook guide for deploying a multi-node Kafka broker cluster with idempotent role-based automation."
+resource: "file:///docs/operations/kafka-deployment.md"
+---
+```
+
+### Automated Bulk Injection
+
+For repositories with many existing Markdown files, use the **OKF Frontmatter Injector** agent skill. This skill crawls your `docs/` directory, analyses each file's content, generates appropriate frontmatter, and injects it automatically.
+
+To run the injector, ask your AI agent:
+
+```text
+Run the okf-frontmatter-injector skill on the docs/ directory.
+```
+
+The AI will execute the skill, propose frontmatter for each file, and ask you to review and approve the changes before committing them to Git.
+
+<Tip>
+  The OKF Frontmatter Injector is the fastest way to bring an existing repository into compliance. On a repository with 50 documentation files, it typically completes the bulk injection in a single AI session. Run `--init` on OpenWiki immediately after the injection to rebuild the knowledge graph with all newly indexed files.
+</Tip>
+
+## Validating Your Frontmatter
+
+After adding or updating frontmatter, verify that the OpenWiki engine can index your files correctly:
+
+<CodeGroup>
+
+```bash Linux / WSL2
+# Search for your document by a topic you added
+uv run --with pyyaml python tools/openwiki_emulator.py --search "your-topic"
+
+# Rebuild the full knowledge graph to include new files
+uv run --with pyyaml python tools/openwiki_emulator.py --init
+```
+
+```powershell Windows (PowerShell)
+# Search for your document by a topic you added
+uv run --with pyyaml python tools/openwiki_emulator.py --search "your-topic"
+
+# Rebuild the full knowledge graph to include new files
+uv run --with pyyaml python tools/openwiki_emulator.py --init
+```
+
+</CodeGroup>
+
+If your document appears in the search results with the correct title and description, the frontmatter is valid and correctly indexed.
+
+<Warning>
+  Files without valid OKF frontmatter are silently skipped by the OpenWiki indexer and invisible to AI agents during knowledge discovery. If a document is not appearing in search results, check that the frontmatter starts on line 1 of the file, that all seven required fields are present, and that the YAML is valid (no missing quotes, no tab characters).
+</Warning>
+
+## The Reserved OKF Filenames
+
+The OKF v0.1 specification reserves two filenames at every level of a knowledge bundle. Do not use these names for other purposes:
+
+| Filename | Purpose |
+|---|---|
+| `index.md` | Directory listing and progressive disclosure — the AI loads this first when exploring a domain |
+| `log.md` | Chronological history of updates to a knowledge bundle |
+
+The DSOM Memory Palace uses `closet.md` and `SKILL.md` as its primary concept files, which deliberately avoids conflict with these reserved names.

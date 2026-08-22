@@ -1,0 +1,213 @@
+---
+title: "DSOM FastMCP Server: Connect AI Editors Directly"
+sidebarTitle: "MCP Server"
+description: "Run the DSOM FastMCP Knowledge Server to let Claude Desktop, Cursor, and VSCode read your Sovereign Palace and OpenWiki graph without pasting context."
+---
+
+The DSOM FastMCP Knowledge Server eliminates the single most tedious part of working with AI editors: manually copying and pasting context into every chat. Instead of pushing your Palace rooms, task state, and OpenWiki knowledge graph into the chat window yourself, you run a local Model Context Protocol (MCP) server — and your AI editor queries it directly, pulling exactly the information it needs, exactly when it needs it.
+
+## What the MCP Server Does
+
+The server (`tools/mcp/server.py`) is a native Python MCP server that runs as a local subprocess spawned by your AI editor. Communication happens over `stdio` using JSON-RPC — no HTTP ports, no network exposure, no third-party API calls. Everything stays on your machine.
+
+It exposes three pillars of knowledge to any connected AI client:
+
+| Pillar | What It Exposes |
+|:-------|:----------------|
+| **Brain Resources** | Live reads of `.agents/brain/current_state.dsom`, `task.md`, and `walkthrough.md` via `dsom://brain/*` URIs |
+| **Palace Search** | `search_palace(query)` — full-text search across all `docs/` Palace rooms |
+| **OpenWiki Search** | `search_openwiki(query)` — metadata-first search across OKF frontmatter in `openwiki/` |
+
+When an AI client boots up and connects, it reads the brain state URIs immediately — achieving a "Genesis Read" of your current Mental Anchor without you typing a single prompt.
+
+<Note>
+  The DSOM MCP server is for **local use only**. It reads your local repository files via `stdio` and never opens a network port or sends data to any external service. Your Sovereign Palace stays sovereign.
+</Note>
+
+---
+
+## Prerequisites
+
+You need the following before starting the server:
+
+- The DSOM repository cloned locally
+- **`uv`** installed (the Python environment manager used by DSOM for zero-binary portability)
+
+Install `uv` if you do not have it:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+---
+
+## Start the Server
+
+From the root of your DSOM repository, run:
+
+```bash
+uv run tools/mcp/server.py
+```
+
+`uv` manages the Python environment automatically — no `venv` activation, no `pip install` step, no version conflicts. The server starts and listens on `stdio`, ready to accept connections from any configured MCP client.
+
+<Warning>
+  The server must output **only JSON-RPC to `stdout`**. Any debug `print()` statements directed to `stdout` will break the protocol. All logging must go to `stderr`. If you modify `server.py`, keep this rule strictly.
+</Warning>
+
+---
+
+## Configure Claude Desktop
+
+To connect Claude Desktop to the DSOM MCP server, add the following block to your Claude Desktop configuration file.
+
+**Config file location:**
+
+<Tabs>
+  <Tab title="macOS">
+    ```bash
+    ~/Library/Application Support/Claude/claude_desktop_config.json
+    ```
+  </Tab>
+  <Tab title="Windows">
+    ```bash
+    %APPDATA%\Claude\claude_desktop_config.json
+    ```
+  </Tab>
+  <Tab title="Linux">
+    ```bash
+    ~/.config/Claude/claude_desktop_config.json
+    ```
+  </Tab>
+</Tabs>
+
+**Configuration block:**
+
+```json
+{
+  "mcpServers": {
+    "dsom-palace": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with", "mcp",
+        "tools/mcp/server.py"
+      ],
+      "env": {
+        "DSOM_ROOT": "/absolute/path/to/your/dsom/project"
+      }
+    }
+  }
+}
+```
+
+Replace `/absolute/path/to/your/dsom/project` with the actual path to your cloned DSOM repository root.
+
+Restart Claude Desktop after saving the configuration. The `dsom-palace` server will appear in the MCP integrations panel, and Claude will begin querying your Palace automatically at the start of each conversation.
+
+---
+
+## Configure Cursor
+
+Add the DSOM MCP server to Cursor by creating or updating `.cursor/mcp.json` in your project root:
+
+```json
+{
+  "mcpServers": {
+    "dsom-palace": {
+      "command": "uv",
+      "args": [
+        "run",
+        "tools/mcp/server.py"
+      ],
+      "env": {
+        "DSOM_ROOT": "/absolute/path/to/your/dsom/project"
+      }
+    }
+  }
+}
+```
+
+Commit this file to the repository so that any team member who opens the project in Cursor gets the MCP integration automatically.
+
+<Tip>
+  You can also define the MCP server in Cursor's global settings (`~/.cursor/mcp.json`) if you want it available across all projects, not just this one.
+</Tip>
+
+---
+
+## Configure VS Code (Copilot)
+
+For VS Code with GitHub Copilot, create or update `.vscode/mcp.json` in your workspace root. This is the standard location VS Code reads for MCP server configuration:
+
+```json
+{
+  "servers": {
+    "dsom-palace": {
+      "command": "uv",
+      "args": [
+        "run",
+        "tools/mcp/server.py"
+      ],
+      "env": {
+        "DSOM_ROOT": "/absolute/path/to/your/dsom/project"
+      }
+    }
+  }
+}
+```
+
+Commit `.vscode/mcp.json` to the repository so that any team member who opens the project in VS Code gets the MCP integration automatically. VS Code requires Copilot Agent Mode to be active for MCP tools to be available in chat.
+
+---
+
+## What the Server Exposes
+
+Once connected, your AI editor can query the following resources and tools without any manual context injection from you:
+
+### Resources (Read-Only State)
+
+| URI | Source File | Content |
+|:----|:------------|:--------|
+| `dsom://brain/state` | `.agents/brain/current_state.dsom` | Active session state snapshot |
+| `dsom://brain/task` | `.agents/brain/task.md` | Current task checklist |
+| `dsom://brain/walkthrough` | `.agents/brain/walkthrough.md` | Mental Anchor and session history |
+| `dsom://governance/agents` | `.agents/AGENTS.md` | Full 27-law Sovereign Constitution |
+| `dsom://openwiki/skeleton` | `openwiki/_skeleton.md` | OpenWiki subsystem ranking and structure |
+| `dsom://openwiki/quickstart` | `openwiki/quickstart.md` | OpenWiki master entrypoint and task-routing table |
+
+### Tools (Executable Functions)
+
+| Tool | Arguments | What It Does |
+|:-----|:----------|:-------------|
+| `search_palace(query)` | `query: string` | Full-text search across all `docs/` Palace rooms |
+| `search_openwiki(query)` | `query: string` | Metadata-first search over OKF frontmatter in `openwiki/` |
+| `fetch_context7_stream(tokens)` | `tokens: int` (default 83688) | Returns the Context7 RAG stream endpoint URL for external AI pipelines |
+
+### OpenWiki Knowledge Graph
+
+The server also exposes the OpenWiki knowledge graph nodes stored in `./openwiki/`. These are compact, 10-node concept summaries of your codebase that allow the AI to understand architectural relationships in ~50 tokens instead of loading hundreds of thousands of raw source tokens into context.
+
+---
+
+## Security Posture
+
+| Property | Detail |
+|:---------|:-------|
+| **Transport** | `stdio` only — no TCP/HTTP ports opened |
+| **Scope** | Reads local repo files only |
+| **Network** | Zero outbound calls — no data leaves your machine |
+| **Executor** | `uv run` — isolated Python environment, no system-wide packages modified |
+
+The MCP server was designed from the ground up to keep your Sovereign Palace sovereign. Unlike third-party RAG providers that require uploading your codebase to an external service, all semantic search and knowledge retrieval happens strictly on your local machine under your control.
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| `docs/governance/DSOM-MCP-ARCHITECTURE.md` | Full architectural blueprint for the MCP server |
+| `docs/tools/HOWTO-MCP-SERVER.md` | Detailed CLI usage and troubleshooting |
+| `docs/governance/OPENWIKI-INTEGRATION-GUIDE.md` | How the OpenWiki knowledge graph is built and queried |
+| `START-HERE.md` — Entry Point 6 | Quick MCP configuration reference |

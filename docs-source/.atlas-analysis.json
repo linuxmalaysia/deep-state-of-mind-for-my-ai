@@ -1,0 +1,129 @@
+{
+  "projectType": "framework",
+  "projectName": "DSOM — Deep State of Mind",
+  "projectDescription": "A metacognitive governance framework that transforms any AI (Gemini, Claude, Copilot, ChatGPT) into a disciplined Cognitive Digital Twin — an AI agent with persistent memory, GitOps-enforced state, and human-approval-first execution.",
+  "theme": "maple",
+  "primaryColor": "#6C3FC5",
+  "lightColor": "#EDE8FC",
+  "darkColor": "#2D1A5E",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "core-concepts"
+            ]
+          },
+          {
+            "group": "Daily Rituals",
+            "pages": [
+              "rituals/start-of-day",
+              "rituals/end-of-day",
+              "rituals/checkpoint",
+              "rituals/session-handover"
+            ]
+          },
+          {
+            "group": "The Sovereign Palace",
+            "pages": [
+              "palace/overview",
+              "palace/onboarding",
+              "palace/migration",
+              "palace/build-story"
+            ]
+          },
+          {
+            "group": "AI Agent Skills",
+            "pages": [
+              "skills/overview",
+              "skills/creating-skills",
+              "skills/skills-registry"
+            ]
+          },
+          {
+            "group": "AI Setup Guides",
+            "pages": [
+              "ai-setup/gemini",
+              "ai-setup/claude",
+              "ai-setup/copilot",
+              "ai-setup/mcp-server"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Tools & Automation",
+        "groups": [
+          {
+            "group": "Automation Scripts",
+            "pages": [
+              "tools/overview",
+              "tools/reanimate",
+              "tools/audit-pre-flight",
+              "tools/git-ritual",
+              "tools/privacy-guardian",
+              "tools/init-brain",
+              "tools/template-reset"
+            ]
+          },
+          {
+            "group": "OpenWiki",
+            "pages": [
+              "tools/openwiki-overview",
+              "tools/openwiki-usage"
+            ]
+          },
+          {
+            "group": "Governance & Protocols",
+            "pages": [
+              "governance/three-pillars",
+              "governance/okf-standard",
+              "governance/multi-agent",
+              "governance/token-efficiency"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Persistent AI memory via .agents/brain/ Git artifacts — eliminates context decay between sessions",
+    "Sovereign Markdown Palace — spatial memory architecture for organised AI recall",
+    "Three-Pillar Model: AIOps (Mind) + GitOps (Record) + Ansible/Executor (Hand)",
+    "Advisory Mode with Human-Approval-First — AI proposes, human approves, executor runs",
+    "17 pre-built AI Agent Skills (dsom-bootstrap, dsom-project-cloner, okf-frontmatter-injector, etc.)",
+    "Cross-platform: Linux/WSL2 shell scripts + Windows PowerShell equivalents for every tool",
+    "Provider-agnostic: works with Gemini, Claude, Copilot, ChatGPT, and local LLMs",
+    "Native OpenWiki Python emulator — zero Node.js dependency, 98%+ token cost reduction",
+    "FastMCP Knowledge Server for Claude Desktop and Cursor integration",
+    "OKF (Open Knowledge Format) v0.1 YAML frontmatter standard for all documentation",
+    "Privacy Guardian — scans manifests for leaked IPs, keys, tokens before sharing",
+    "Start-of-Day and End-of-Day ritual scripts for automated state sync and hibernation"
+  ],
+  "publicApiSurface": [
+    "bash tools/init-brain.sh / .\\tools\\init-brain.ps1",
+    "bash tools/reanimate.sh / .\\tools\\reanimate.ps1",
+    "bash tools/audit-pre-flight.sh / .\\tools\\audit-pre-flight.ps1",
+    "bash tools/sod-palace.sh / .\\tools\\sod-palace.ps1",
+    "bash tools/eod-palace.sh / .\\tools\\eod-palace.ps1",
+    "bash tools/checkpoint.sh / .\\tools\\checkpoint.ps1",
+    "bash tools/git-ritual.sh sod|eod / .\\tools\\git-ritual.ps1",
+    "bash tools/hibernation.sh / .\\tools\\hibernation.ps1",
+    "bash tools/privacy-guardian.sh / .\\tools\\privacy-guardian.ps1",
+    "bash tools/template-reset.sh / .\\tools\\template-reset.ps1",
+    "bash tools/palace-sync.sh / .\\tools\\palace-sync.ps1",
+    "uv run --with pyyaml python tools/openwiki_emulator.py --init",
+    "uv run --with pyyaml python tools/openwiki_emulator.py --update",
+    "uv run --with pyyaml python tools/openwiki_emulator.py --search \"<query>\"",
+    "uv run --with pyyaml python tools/openwiki_emulator.py --export-graph",
+    "uv run tools/mcp/server.py (FastMCP Knowledge Server)",
+    ".agents/skills/<skill-name>/SKILL.md (AI Agent Skill interface)",
+    "docs/governance/AI-MASTER-PROTOCOL.md (Sovereign Constitution)",
+    "docs/AI-COGNITIVE-TWIN-PROTOCOL.md (Project Identity Card template)"
+  ]
+}

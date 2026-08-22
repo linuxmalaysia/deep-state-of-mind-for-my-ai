@@ -1,0 +1,208 @@
+---
+title: "Create Custom AI Agent Skills for Your DSOM Project"
+sidebarTitle: "Creating Skills"
+description: "Build your own DSOM AI Agent Skills by creating an OKF-compliant SKILL.md file that any AI can discover and execute automatically."
+---
+
+Custom skills are how you permanently encode your project's unique operational knowledge into DSOM. Once you write a skill, every AI agent working in your repository can discover and execute that workflow autonomously — no re-explaining, no context loss between sessions. This page walks you through building a skill from scratch, making it OKF-compliant, and verifying it works.
+
+<Note>
+  The `description` field in your SKILL.md frontmatter is the most critical part of the entire file. The AI reads it silently in the background on every request, scanning for a semantic match before deciding whether to load the skill. A vague description means the skill never triggers. Write it as a precise, 1–2 sentence statement of exactly when this skill should be used.
+</Note>
+
+## Creating Your First Skill
+
+<Steps>
+  <Step title="Create the Skill Directory">
+    Every skill lives in its own subdirectory inside `.agents/skills/`. Create a new folder with a lowercase, hyphen-separated name that clearly identifies the workflow:
+
+    ```bash
+    mkdir -p .agents/skills/my-custom-skill
+    ```
+
+    Choose a name that is specific enough to be unambiguous but short enough to be readable. For example, `deploy-haproxy` is better than `server-deployment-task`.
+  </Step>
+
+  <Step title="Create the SKILL.md File">
+    Create a `SKILL.md` file inside your new directory. The file must begin with YAML frontmatter containing at minimum a `name` and `description`. Everything after the closing `---` is the skill body — the instructions your AI will follow.
+
+    ```yaml
+    ---
+    name: my-custom-skill
+    description: "A very clear, 1-2 sentence description explaining exactly when the AI should load this skill. For example: 'Use this skill when the user asks to deploy HAProxy on a new node or reconfigure an existing load balancer.'"
+    ---
+
+    # My Custom Skill Guide
+
+    ## Purpose
+    Briefly explain what this skill achieves and what problem it solves.
+
+    ## Execution Steps
+    1. Run command A.
+    2. Verify output B.
+    3. If error C happens, do D.
+    ```
+
+    Save this file to `.agents/skills/my-custom-skill/SKILL.md`.
+  </Step>
+
+  <Step title="Write Clear, Atomic Execution Steps">
+    The body of your skill is an SOP that your AI executes verbatim. Write every step as a precise, unambiguous instruction. Apply these principles:
+
+    - **Use imperative verbs** — start every step with "Run", "Verify", "Commit", "Check", "Create", or "Copy".
+    - **Be atomic** — each step should do exactly one thing. If a step branches, split it.
+    - **Include error paths** — for every step that can fail, write an explicit recovery instruction (e.g., "If the exit code is non-zero, inspect the log at `/var/log/app.log` and resolve before continuing").
+    - **End with a verification step** — always include a final step that confirms the workflow completed successfully (e.g., "Run `systemctl status haproxy` and verify the state is `active (running)`").
+
+    ```yaml
+    ## Execution Steps
+
+    1. Run `ansible-playbook playbooks/deploy-haproxy.yml -i inventory/production`.
+    2. Verify the play recap shows zero failed tasks.
+    3. If any task fails, run `ansible-playbook playbooks/deploy-haproxy.yml -i inventory/production --start-at-task "FAILED TASK NAME"` to resume from the failure point.
+    4. SSH into the target node and run `systemctl status haproxy` to confirm the service is active and running.
+    5. Commit the updated inventory file: `git add inventory/ && git commit -m "feat(haproxy): deploy to production node"`.
+    ```
+  </Step>
+
+  <Step title="Make the Skill OKF-Compliant">
+    To enable semantic routing, programmatic indexing, and the Progressive Disclosure architecture, upgrade your frontmatter to the full OKF v0.1 specification. Add the following fields:
+
+    ```yaml
+    ---
+    okf_version: 0.1
+    type: skill
+    title: "My Custom Skill"
+    timestamp: "2026-07-15T10:00:00Z"
+    topics: ["haproxy", "deploy", "infrastructure", "ansible"]
+    description: "Use this skill when the user asks to deploy HAProxy on a new node or reconfigure an existing load balancer."
+    name: my-custom-skill
+    ---
+    ```
+
+    Key OKF field requirements:
+
+    | Field | Requirement |
+    |:---|:---|
+    | `okf_version` | Always `0.1` |
+    | `type` | Always `skill` for SKILL.md files |
+    | `title` | Human-readable skill name in double quotes |
+    | `timestamp` | ISO 8601 UTC timestamp of creation or last modification |
+    | `topics` | Array of 3–5 lowercase keyword strings for semantic grep routing |
+    | `description` | The trigger description — must be in double quotes |
+    | `name` | Matches the directory name exactly, no spaces |
+
+    <Warning>
+      The frontmatter block must start at line 1, column 1 of the file with no leading Byte Order Mark (BOM). The opening `---` must be the very first characters in the file. Any leading whitespace or BOM character will break OKF parsing.
+    </Warning>
+  </Step>
+
+  <Step title="Test the Skill">
+    With your skill saved, open a new session with your AI agent and ask it to perform the task your skill describes. Watch the AI load and execute your codified logic automatically.
+
+    For example, if your skill description reads "Use this skill when the user asks to deploy HAProxy", simply say:
+
+    > "Deploy HAProxy to the production node."
+
+    The AI will silently match this request to your skill's `description`, load the full `SKILL.md`, and begin executing your steps.
+
+    To confirm the skill file itself is well-formed and under the token limit, run the DSOM token calculator:
+
+    ```bash
+    uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
+    ```
+
+    Verify that your new skill file shows no `[BLOCKED]` flag. Skills that exceed 4,000 tokens must have their long example blocks moved to a `references/` subdirectory.
+  </Step>
+</Steps>
+
+## Best Practices
+
+Following these conventions keeps your skills reliable, discoverable, and maintainable across your team and AI providers.
+
+<Accordion title="Write precise, trigger-optimised descriptions">
+  The `description` field is the semantic key that unlocks your skill. Write it as if you are telling the AI exactly when to use this skill — not what it does in general terms.
+
+  **Too vague:** `"Helps with server tasks."`
+
+  **Too broad:** `"Use this skill for infrastructure work."`
+
+  **Just right:** `"Use this skill when the user asks to deploy, reconfigure, or health-check HAProxy on any node in the production or staging environment."`
+</Accordion>
+
+<Accordion title="Keep skills atomic — one skill per workflow">
+  Resist the temptation to bundle multiple unrelated workflows into a single skill. One skill should govern one discrete, repeatable process. When a skill tries to cover too much ground, the AI struggles to apply it precisely and the token footprint balloons.
+
+  If you find yourself writing "Part A: Do X. Part B: Do Y." where X and Y are unrelated, split them into two separate skills.
+</Accordion>
+
+<Accordion title="Always include a verification step">
+  Every skill should end with a concrete check that confirms the workflow succeeded. This gives the AI a clear completion signal and gives you an auditable quality gate.
+
+  Examples of good verification steps:
+  - `Run systemctl status <service> and confirm the state is active (running).`
+  - `Run git log --oneline -1 and verify the commit message matches the expected format.`
+  - `Open the generated PDF and confirm all sections render without LaTeX errors.`
+</Accordion>
+
+<Accordion title="Include explicit failure recovery paths">
+  Production workflows fail. Your skill should anticipate common failure modes and provide exact recovery instructions so the AI can self-heal without escalating to you.
+
+  Structure failure paths like this:
+  ```markdown
+  3. Run `pandoc proposal.md -o proposal.pdf`.
+     - If Pandoc exits with a LaTeX error, check `/tmp/pandoc-latex.log` for the failing line.
+     - If the error references a missing font, run `fc-cache -fv` and retry.
+  ```
+</Accordion>
+
+<Accordion title="Use imperative verbs to start every step">
+  Steps written in imperative mood are unambiguous for AI execution. The AI treats each step as a direct command, not a suggestion.
+
+  | ✅ Imperative (use this) | ❌ Passive (avoid this) |
+  |:---|:---|
+  | Run `git status` | The git status command should be run |
+  | Verify the exit code is 0 | It is expected that the exit code will be 0 |
+  | Commit the changes with a semantic message | Changes should be committed |
+  | Check that the service is active | The service is expected to be active |
+</Accordion>
+
+## Complete Example: A Finished OKF-Compliant Skill
+
+Here is a complete, production-ready skill file you can use as a template:
+
+```yaml
+---
+okf_version: 0.1
+type: skill
+title: "Deploy HAProxy to Production"
+timestamp: "2026-07-15T10:00:00Z"
+topics: ["haproxy", "deploy", "infrastructure", "ansible", "production"]
+description: "Use this skill when the user asks to deploy, reconfigure, or health-check HAProxy on any node in the production or staging environment."
+name: deploy-haproxy
+---
+
+# Deploy HAProxy to Production
+
+## Purpose
+Automates the deployment and post-deployment verification of HAProxy to production nodes using Ansible. Ensures idempotent execution and self-healing on partial failures.
+
+## Pre-Requisites
+- Ansible control node configured with SSH access to production inventory.
+- `playbooks/deploy-haproxy.yml` exists and has been tested in staging.
+
+## Execution Steps
+
+1. Run `git status` and confirm the working tree is clean before deployment.
+2. Run `ansible-playbook playbooks/deploy-haproxy.yml -i inventory/production`.
+   - If any task reports `failed=1`, note the failing task name and run
+     `ansible-playbook playbooks/deploy-haproxy.yml -i inventory/production --start-at-task "FAILING TASK NAME"` to resume.
+3. Verify the Ansible play recap shows `failed=0` and `unreachable=0`.
+4. SSH into the target node: `ssh prod-node-01`.
+5. Run `systemctl status haproxy` and confirm the state is `active (running)`.
+6. Run `haproxy -c -f /etc/haproxy/haproxy.cfg` to validate the live configuration file.
+7. Commit any inventory changes: `git add inventory/ && git commit -m "feat(haproxy): deploy to production"`.
+
+## Verification
+A successful deployment shows `active (running)` from `systemctl status haproxy` and zero errors from the configuration check. If either check fails, escalate to the infrastructure lead before proceeding.
+```

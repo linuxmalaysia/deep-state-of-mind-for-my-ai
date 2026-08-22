@@ -1,0 +1,234 @@
+---
+title: "The Three Pillars: AIOps, GitOps, and the Executor"
+sidebarTitle: "Three Pillars"
+description: "DSOM operates on three non-negotiable pillars — AIOps, GitOps, and the Executor — forming the core loop that keeps every action traceable and reversible."
+---
+
+Every project built on DSOM operates under three non-negotiable pillars: **AIOps** (the Mind), **GitOps** (the Record), and **the Executor** (the Hand). These pillars are not optional features you can toggle on or off — they are the constitutional foundation of the framework. Together they form a closed loop in which every action the AI proposes is recorded in Git before anything runs on any system, and every result is fed back to the AI for verification.
+
+## The Core Operating Loop
+
+```text
+┌─────────────────────────────────────────────────────────┐
+│                  DSOM OPERATING MODEL                   │
+│                                                         │
+│  ┌──────────┐   ┌──────────┐   ┌───────────────────┐   │
+│  │  AIOps   │──▶│  GitOps  │──▶│   The Executor    │   │
+│  │  (Mind)  │   │ (Record) │   │      (Hand)       │   │
+│  └──────────┘   └──────────┘   └───────────────────┘   │
+│       │               │                  │              │
+│  AI proposes     Git records      Executor runs         │
+│  & analyses      all state        on target nodes       │
+│       ▲               │                  │              │
+│       └───────────────┴─── AI verifies ──┘              │
+└─────────────────────────────────────────────────────────┘
+```
+
+**The integration loop runs in four steps:**
+
+1. **AI Proposes** — The AI analyses logs, generates playbooks or scripts, and recommends the next action. It never acts unilaterally.
+2. **Git Records** — You commit the proposed script or configuration to the repository. Nothing is considered real until it is in Git.
+3. **Executor Runs** — You trigger the execution against your target nodes. The AI tells you the exact command to run; you run it.
+4. **AI Verifies** — You paste the execution output back to the AI. The AI analyses the results and confirms success, or proposes remediation.
+
+## The Three Hard Rules
+
+These rules are absolute. They apply to every DSOM project regardless of technology stack, team size, or project maturity.
+
+1. **AI never runs commands directly on remote nodes.** The AI writes execution scripts and playbooks. You run them. The AI operates in Advisory Mode at all times.
+2. **No manual edits to production servers.** If a change is not committed to Git, it does not exist. Ad-hoc SSH edits are forbidden.
+3. **Every execution is idempotent.** Every playbook and script must be safe to re-run multiple times with the same result. No execution may cause data corruption on repeated runs.
+
+---
+
+## Pillar 1 — AIOps: The Mind
+
+AIOps is the cognitive layer. The AI acts as your **Cognitive Digital Twin** — an advisory intelligence that analyses data, generates proposals, and documents decisions. It never executes anything directly.
+
+| The AI **can** | The AI **cannot** |
+|---|---|
+| Generate Ansible playbooks and scripts | Directly SSH into any node |
+| Analyse log output and error messages | Execute shell commands on remote hosts |
+| Recommend architectural changes | Store or handle secrets or credentials |
+| Propose Git commit messages | Push to `main` without your approval |
+| Trigger execution guidance (tell you what to run) | Auto-run any playbook or script |
+
+The AI remains in **Advisory Mode** at all times. Every proposal requires your review and approval before anything changes in your environment.
+
+### AIOps Workflow
+
+```text
+Log / Event → AI Analysis → Diagnosis + Playbook Proposal
+                                       ↓
+                           Human Review & Approval
+                                       ↓
+                           Git Commit → Executor Runs
+                                       ↓
+                           Output → AI Verification Loop
+```
+
+---
+
+## Pillar 2 — GitOps: The Record
+
+Git is the **Single Source of Truth (SSoT)** for every DSOM project. All system state, all desired configuration, and all execution history lives in the repository. If it is not in Git, it does not exist.
+
+### The Five GitOps Laws
+
+1. **No ad-hoc changes.** No manual SSH edits to production or staging nodes. Every change must be committed first.
+2. **Deploy by merge.** The merge to `main` is the trigger for a deployment. No other trigger is valid.
+3. **Branch protection.** The `main` branch requires a Pull Request or explicit authorisation for every change.
+4. **Declarative state.** All configuration files are declarative. The desired state is always readable directly from the repository.
+5. **Audit trail.** Every change has a Git commit with a semantic message. The Git log is your deployment history.
+
+### Commit Convention
+
+All commits follow the **Conventional Commits** standard:
+
+```text
+type(scope): descriptive message [Phase-XX/vX.X]
+
+Types: feat | fix | docs | chore | refactor | test | ci
+Scope: the component or role affected
+
+Examples:
+  feat(ansible): add kafka broker idempotency role [Phase-12/v2.3]
+  fix(inventory): correct dsom_suffix variable for node-02 [Phase-14/v2.4]
+  docs(brain): update walkthrough mental anchor for Phase 15
+```
+
+### The Daily Sync Ritual
+
+<CodeGroup>
+
+```bash Linux / WSL2
+# Start of Day — pull latest state
+git pull origin main
+bash tools/sod-palace.sh
+
+# End of Day — commit and push
+git add .
+git commit -m "feat(scope): descriptive message [Phase-XX/vX.X]"
+git push origin main
+bash tools/eod-palace.sh
+```
+
+```powershell Windows (PowerShell)
+# Start of Day — pull latest state
+git pull origin main
+.\tools\sod-palace.ps1
+
+# End of Day — commit and push
+git add .
+git commit -m "feat(scope): descriptive message [Phase-XX/vX.X]"
+git push origin main
+.\tools\eod-palace.ps1
+```
+
+</CodeGroup>
+
+---
+
+## Pillar 3 — The Executor: The Hand
+
+The Executor is the exclusive mechanism for altering state in your environment. No manual edits, no ad-hoc tinkering outside of the defined execution tools. The Executor is fully modular — it adapts to your project domain:
+
+### Execution Modularity
+
+| Domain | Executor |
+|---|---|
+| Infrastructure | `ansible-playbook` |
+| Python / Data Science | `uv run` |
+| Web Development | `npm run` / `node` |
+| Documentation | `pandoc` / `latex` |
+
+Regardless of which tool you use, the philosophical foundation remains the same: all execution is **declarative, version-controlled, and idempotent**. The Executor is the hand; the AI is the mind that tells the hand what to do; Git is the record that proves it was done.
+
+### Ansible Laws (When Using Ansible as the Executor)
+
+If your project uses Ansible for infrastructure automation, these additional laws apply:
+
+<Steps>
+  <Step title="Idempotency">
+    Every playbook must be safe to re-run multiple times with the same result. No playbook may cause data corruption on repeated execution.
+  </Step>
+  <Step title="No hardcoded secrets">
+    All credentials are managed via `ansible-vault`. Never commit plaintext passwords or API keys to Git.
+  </Step>
+  <Step title="Role-based structure">
+    All automation lives in `roles/` following the Ansible Galaxy standard structure.
+  </Step>
+  <Step title="SSH key authentication">
+    All Ansible connections use SSH key-based auth. Password authentication is prohibited.
+  </Step>
+  <Step title="Pre-flight verification">
+    Run `tools/audit-pre-flight.sh` and confirm all checks pass before executing any playbook.
+  </Step>
+</Steps>
+
+### Core Ansible Commands Reference
+
+<CodeGroup>
+
+```bash Linux / WSL2
+# Verify connectivity to all nodes
+ansible all -m ping -i inventory/hosts.yml
+
+# Dry-run before live execution — always do this first
+ansible-playbook playbooks/site.yml -i inventory/hosts.yml --check --diff
+
+# Full execution with logging
+ansible-playbook playbooks/site.yml -i inventory/hosts.yml \
+  2>&1 | tee .logs/deploy-$(date +%Y%m%d-%H%M%S).log
+
+# Run a specific role or tag only
+ansible-playbook playbooks/site.yml -i inventory/hosts.yml --tags "tag_name"
+```
+
+```powershell Windows (PowerShell — via WSL2)
+# Open WSL2 and run from the Linux layer
+wsl bash -c "ansible all -m ping -i inventory/hosts.yml"
+
+wsl bash -c "ansible-playbook playbooks/site.yml \
+  -i inventory/hosts.yml --check --diff"
+```
+
+</CodeGroup>
+
+---
+
+## The Windows WSL2 Bridge
+
+For projects running entirely on Windows 11 without a dedicated Linux jumphost, you must configure **WSL2 (Ubuntu or AlmaLinux)** as your local Control Node.
+
+This "Execution Bridge" lets you and your AI agents use standard Linux tooling — Ansible, Make, Bash — natively within the Windows environment without requiring external virtual machines or cloud infrastructure.
+
+<Note>
+  WSL2 is not optional for Windows users who need to run Ansible playbooks. The WSL2 Control Node pattern is the only supported path for Windows-based DSOM deployments that target Linux nodes.
+</Note>
+
+<Steps>
+  <Step title="Install WSL2 and Ubuntu">
+    Open PowerShell as Administrator and run:
+
+    ```powershell
+    wsl --install -d Ubuntu
+    ```
+  </Step>
+  <Step title="Install Ansible inside WSL2">
+    ```bash
+    sudo apt update && sudo apt install -y ansible
+    ansible --version
+    ```
+  </Step>
+  <Step title="Configure your SSH keys in WSL2">
+    Copy your SSH private key into `~/.ssh/` inside WSL2, then verify connectivity:
+
+    ```bash
+    ansible all -m ping -i inventory/hosts.yml
+    ```
+  </Step>
+  <Step title="Run all execution commands from WSL2">
+    Use the WSL2 terminal as your Control Node for all Ansible and Bash-based Executor operations. Use the Windows PowerShell terminal only for Git operations and Windows-native tool interactions.
+  </Step>
+</Steps>

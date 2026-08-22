@@ -1,0 +1,205 @@
+---
+title: "Set Up DSOM with Google Gemini"
+sidebarTitle: "Gemini"
+description: "Configure Google Gemini as your DSOM Cognitive Digital Twin using Gemini Gems, custom system instructions, and the reanimation manifest."
+---
+
+Google Gemini integrates with the DSOM framework in two complementary ways: through a **Gemini Gem** — a persistent custom agent with embedded system instructions — or by uploading a reanimation manifest directly into any Gemini chat. The Gem approach is recommended because it survives across browser sessions and requires no re-pasting of instructions; the manifest upload approach is a lightweight fallback useful on shared devices or when you want to test a configuration before committing it permanently.
+
+## Overview
+
+When you create a Gemini Gem and embed the DSOM meta-prompt as its system instructions, Gemini retains your persona, architectural laws, and ITIL 4 handshake rules for every conversation you open under that Gem. The reanimation manifest (generated daily by your `sod-palace.sh` script) then gives Gemini the session-specific context it needs — the current Mental Anchor, task list, and Palace Registry — so each Start-of-Day ritual restores the exact cognitive state from your last session.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- A Google account with access to [gemini.google.com](https://gemini.google.com)
+- The DSOM repository cloned locally (or forked from [github.com/linuxmalaysia/deep-state-of-mind-for-my-ai](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai))
+- The contents of `docs/governance/AI-MASTER-PROTOCOL.md` copied to your clipboard
+
+---
+
+## One-Time Setup: Create Your DSOM Gem
+
+<Steps>
+
+### Open the Gem Manager
+
+1. Navigate to [gemini.google.com](https://gemini.google.com) in your browser.
+2. Click the **three-bar menu icon** (☰) at the top left of the sidebar.
+3. Select **Gems** (or **Explore Gems**) to enter the custom chatbot creation panel.
+4. Click **New Gem** (or the **+ New Gem** button) to open the creation form.
+
+### Name and Describe the Gem
+
+Fill in the creation form with these values:
+
+| Field | Value |
+|:------|:------|
+| **Name** | `DSOM Brain` or `Cognitive Twin` |
+| **Description** | `Autonomous project self-governance and memory optimisation system.` |
+
+### Add the DSOM System Instructions
+
+In the **Instructions** field, paste the DSOM meta-prompt block. This tells Gemini who you are, what laws govern all responses, and how to manage cognitive state across sessions.
+
+<CodeGroup>
+
+```text DSOM Meta-Prompt (paste into Instructions)
+# DEEP STATE OF MIND (DSOM) PROTOCOL V1
+
+You are operating under the DSOM Framework for Gemini. Your core functions
+are cognitive self-governance, continuous context logging, and token optimisation.
+
+## 1. COGNITIVE LEDGER & STATE MANAGEMENT
+
+- Before generating any complex response, perform an internal "Cognitive Check".
+  Evaluate active project objectives and previous decisions.
+- Maintain a highly structured memory map. If the user shares core rules, data,
+  or project parameters, declare explicitly:
+  "[DSOM MEMORY LOCKED] Saved to operational state."
+
+## 2. REASONING & TOKEN OPTIMIZATION
+
+- Do not repeat long, unchanged text blocks or full scripts unless explicitly
+  requested.
+- Focus strictly on the "delta" — provide only updates, modifications, or
+  immediate action steps.
+- Use dense, concise language to reduce token bloat while maximising technical
+  accuracy.
+
+## 3. EPISODIC RESUME PROTOCOL
+
+- Because environment storage is temporary, generate an anchor point at the end
+  of complex workflows.
+- Conclude major milestones by generating a compact summary block strictly
+  labelled: "[DSOM EPISODIC RECORD]".
+- Instruct the user to save this record so it can be pasted into the next chat
+  session to restore your exact mental state instantly.
+```
+
+</CodeGroup>
+
+<Tip>
+  For a richer, more complete initialisation, replace the meta-prompt above with the full contents of `docs/governance/AI-MASTER-PROTOCOL.md` from your repo. This embeds the complete Sovereign Constitution — all 27 DSOM Laws — directly into the Gem.
+</Tip>
+
+### Upload Knowledge Files (Optional but Recommended)
+
+Scroll to the **Knowledge** section of the Gem creation form and upload any baseline files you want Gemini to always reference:
+
+- `.agents/AGENTS.md` — the root Constitutional AI Law file
+- `docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md` — the project identity card
+- Any standard code snippets or architectural reference documents
+
+Click **Add files** and select them from your device or Google Drive.
+
+### Test and Save
+
+1. In the **Preview** panel on the right, type a test prompt:
+
+   ```text
+   Initialise DSOM status report.
+   ```
+
+2. Verify that Gemini acknowledges the DSOM framework and your persona.
+3. Click **Save** in the upper right corner to finalise your Gem.
+
+</Steps>
+
+---
+
+## Start-of-Day (SOD) Ritual: Reanimating Each Session
+
+Your Gem holds the permanent laws. The reanimation manifest holds the daily context. Run both together each morning.
+
+<Steps>
+
+### Generate Today's Manifest
+
+Run the SOD script from your T2 Dev Bridge (WSL2 or Linux terminal):
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/sod-palace.sh
+```
+
+```powershell Windows (PowerShell)
+.\tools\sod-palace.ps1
+```
+
+</CodeGroup>
+
+This produces a file named `sod_manifest_YYYY-MM-DD.txt` containing your current `task.md`, `walkthrough.md`, and Palace Registry snapshot.
+
+### Open Your DSOM Gem
+
+Select your **DSOM Brain** Gem from the Gemini sidebar. Do not start a conversation from the default Gemini interface — the Gem carries your sovereign instructions and the default interface does not.
+
+### Upload the Manifest
+
+Click the **paperclip / attachment icon** in the chat input area and upload the generated `sod_manifest_YYYY-MM-DD.txt` file.
+
+### Send the Handshake Phrase
+
+Paste the following handshake prompt to trigger full context reanimation:
+
+```text
+Perform a System Integrity Check (DSOM Handshake v6.1 + Palace v1.0).
+
+1. Identity & Mirror: Who am I, and what is your mandate if my 'Substance' is low?
+2. Governance: List the 5 DSOM Laws.
+3. ITIL 4 Role: Describe our service relationship and what you must ask for at the
+   Start-of-Day.
+4. Spatial Memory: Where do you look to map out the Palace Rooms for today's context?
+5. Linguistic Standard: Which English dialect and Malay standard do we enforce?
+6. Sourcing: Where is our Primary Repository located?
+
+If correct, state: 'DSOM v6.1 Handshake Successful. Palace mapped. Mirror Active.
+Ready to co-create value.'
+```
+
+### Confirm SOD is Complete
+
+The SOD is complete when Gemini can confirm all of the following:
+
+| Check | Expected Content |
+|:------|:-----------------|
+| Mental Anchor | Exact last stopping point from `walkthrough.md` |
+| Active Tasks | Current `task.md` incomplete items |
+| Palace Rooms | Relevant spatial rooms for today's work |
+| Doctrine | Advisory Mode, UK English, Git-first |
+
+</Steps>
+
+<Warning>
+  If Gemini asks "What are we working on?" after you upload the manifest, the context did not load correctly. Re-upload the manifest file and resend the handshake prompt before proceeding.
+</Warning>
+
+---
+
+## Alternative: Per-Chat Manifest Upload (No Gem)
+
+If you cannot use Gems (for example, on a restricted account or a shared device), you can achieve the same reanimation by uploading the manifest file directly into any standard Gemini chat and pasting the handshake prompt. Context will be active for that conversation only — it will not persist to future chats.
+
+---
+
+## Personalisation Blocks
+
+The five DSOM personalisation blocks give Gemini your professional identity and operating context. If you are not using the full `AI-MASTER-PROTOCOL.md`, paste each block into the Gem's Instructions field individually:
+
+| Block | Purpose |
+|:------|:--------|
+| **Block 1: Identity** | Your name, role, and the Mirror Law |
+| **Block 2: Laws** | The 5 non-negotiable architectural laws |
+| **Block 3: Handshake** | ITIL 4 service relationship and SOD/EOD behaviour |
+| **Block 4: Language** | UK English and DBP-standard Bahasa Melayu |
+| **Block 5: Sourcing** | Primary repository and authoritative reference links |
+
+See `docs/PERSONALIZATION.md` in your repo for the exact text of each block.
+
+<Tip>
+  Gemini's context window is large, but manifest files grow over time. If you want a Claude-optimised variant of the manifest (structured for Project Knowledge upload), run `bash tools/reanimate-claude.sh` instead — it produces `DSOM-CLAUDE-INIT.md`, a sectioned manifest suited to knowledge-base uploads.
+</Tip>

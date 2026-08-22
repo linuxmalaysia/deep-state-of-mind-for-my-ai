@@ -1,0 +1,204 @@
+---
+title: "Migrate Your DSOM Project to Sovereign Palace v1.0"
+sidebarTitle: "Migration"
+description: "Upgrade your existing DSOM project from the flat brain artifact model to the Sovereign Markdown Palace spatial memory architecture in 15–30 minutes."
+---
+
+If you set up your DSOM project before v10.0.0-palace, your brain directory uses the flat artifact model — `walkthrough.md`, `task.md`, and `implementation_plan.md` — which works well for early projects but becomes slow to navigate as months of history accumulate. This guide upgrades your existing project to the Sovereign Markdown Palace spatial memory architecture without disrupting anything already working.
+
+## Who This Is For
+
+This guide is for existing DSOM users whose projects were initialised before Palace v1.0 (released with tag `v10.0.0-palace`). If you are starting a fresh DSOM project today, the Palace structure is included by default — follow the [onboarding guide](/palace/onboarding) instead.
+
+<Note>
+  The migration adds new files and upgrades existing scripts. It does **not** delete or break your existing brain artifacts. Budget 15–30 minutes for a typical project, producing roughly 3–5 git commits.
+</Note>
+
+## Prerequisites
+
+Before you start, confirm you have:
+
+- An existing `.agents/brain/` directory containing at minimum `walkthrough.md`, `task.md`, and `implementation_plan.md`
+- Git access to the project repository (you will be committing at multiple points)
+- DSOM tools updated to at least tag `v10.0.0-palace` — confirm with `git tag | grep palace`
+
+## What Changes
+
+| Component | Before (Old DSOM) | After (Palace v1.0) |
+|---|---|---|
+| Brain structure | `task.md`, `walkthrough.md`, `implementation_plan.md` | + `palace_registry.md` + `wings/` hierarchy |
+| Memory retrieval | Linear scan of `walkthrough.md` | Walk Palace → Room → Closet → Drawer if needed |
+| EOD ritual | Commit + push | + Palace Sync via `bash tools/eod-palace.sh` |
+| SOD manifest | 13 sections | + Section [14]: Palace Registry |
+| `hibernation.sh` | v2.0 | v2.1 (Palace Sync step added) |
+| `reanimate.sh` | v2.1 | v2.2 (Section [14] added) |
+
+<Warning>
+  Do **not** delete `walkthrough.md` at any point during or after this migration. The Palace supplements the Drawer — it does not replace it. Your closets link back to specific line ranges in `walkthrough.md`, and the Drawer remains your permanent audit trail. Deleting it breaks the retrieval chain.
+</Warning>
+
+## Migration Steps
+
+<Steps>
+  <Step title="Read the Current State">
+    Before touching anything, capture your last Mental Anchor from the Drawer so you have a clear reference point:
+
+    ```bash
+    cat .agents/brain/walkthrough.md | tail -50
+    ```
+
+    Note the most recent Mental Anchor section — the date, the logical stopping point, and any pending tasks. This confirms the state you are migrating from and gives you a rollback reference if needed.
+  </Step>
+
+  <Step title="Back Up the Brain">
+    Create a dated backup of your entire brain directory:
+
+    ```bash
+    cp -r .agents/brain .agents/brain-backup-$(date +%Y%m%d)
+    ```
+
+    This backup stays untracked (add `.agents/brain-backup-*` to `.gitignore` if it is not already there). You can delete it once you have verified the migration is working correctly.
+  </Step>
+
+  <Step title="Create Wing Directories">
+    Create the Palace directory structure under `.agents/brain/wings/`. The default Wing for any DSOM project is `wing_dsom_core`:
+
+    ```bash
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_facts
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_events
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_preferences
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_discoveries
+    ```
+
+    Create the standard Rooms within each hall:
+
+    ```bash
+    # hall_facts Rooms
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_facts/room_clean_architecture
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling
+
+    # hall_events Rooms
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_events/room_brain_artifacts
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_events/room_ledger
+
+    # hall_discoveries Room
+    mkdir -p .agents/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised
+    ```
+
+    Only create Rooms that are relevant to your project. A pure software development project does not need `room_sovereign_fabric` (which is for Ansible/infrastructure). Sparse and accurate beats full and inaccurate.
+  </Step>
+
+  <Step title="Run palace-sync to Backfill from Git History">
+    This is the key step. Run `palace-sync` with the backfill flag to read your entire git history and generate a `palace_update_proposal_YYYY-MM-DD.md` that maps every commit to its target Palace Room:
+
+    ```bash
+    bash tools/palace-sync.sh --backfill
+    ```
+
+    On Windows (PowerShell):
+
+    ```powershell
+    .\tools\palace-sync.ps1 -Backfill
+    ```
+
+    Open the generated proposal and review it:
+
+    ```bash
+    cat .agents/brain/palace_update_proposal_$(date +%Y-%m-%d).md
+    ```
+
+    The proposal lists each Room and the historical commits assigned to it. Use this proposal as your guide for populating the `closet.md` files in the next step. Ask your AI to help write the closets based on the proposal — that is exactly the kind of task it is designed for.
+  </Step>
+
+  <Step title="Generate palace_registry.md">
+    The `palace-sync` script creates the `palace_registry.md` automatically when it runs. Verify it exists and review its contents:
+
+    ```bash
+    cat .agents/brain/palace_registry.md
+    ```
+
+    The registry must list every Wing, Hall, and Room you created, with a Quick-Reference table at the top mapping common tasks to Room paths. If your project has custom Rooms, open the registry and add them manually — the file is plain Markdown and follows the same format as the existing entries.
+
+    <Tip>
+      Ask your AI to review the registry and add any Rooms it notices are missing based on your project's history. It can read the backfill proposal and cross-reference it against the registry in one prompt.
+    </Tip>
+  </Step>
+
+  <Step title="Verify with audit-pre-flight">
+    Run the pre-flight audit to confirm the Palace is correctly wired into your environment:
+
+    ```bash
+    bash tools/audit-pre-flight.sh
+    ```
+
+    Look specifically for Palace verification lines in the output:
+
+    ```text
+    [PASS] palace_registry.md exists
+    [PASS] wings/ directory present
+    [PASS] Section [14] Palace Registry enabled in reanimate
+    ```
+
+    Fix any `[FAIL]` lines before proceeding. Then run a full SOD sequence and confirm Section [14] appears in the manifest:
+
+    ```bash
+    bash tools/sod-palace.sh
+    ```
+
+    Expected output includes:
+
+    ```text
+    ### [14] PALACE REGISTRY (Spatial Knowledge Map)
+    # 🏛️ Palace Registry: Sovereign Retrieval Map
+    ```
+
+    Finally, verify that the EOD routine runs Palace Sync automatically:
+
+    ```bash
+    bash tools/eod-palace.sh
+    # Should show: [Palace Sync] Running Spatial Reflection...
+    ```
+  </Step>
+</Steps>
+
+## Commit and Tag the Migration
+
+Once the audit passes and your closets are populated, commit the Palace to Git:
+
+```bash
+git add .agents/brain/
+git commit -m "feat(palace): initialise Sovereign Markdown Palace v1.0 — [N] Rooms backfilled"
+git push origin main
+```
+
+Tag the migration milestone so you have a clear reference point in your project history:
+
+```bash
+git tag -a vX.X.X-palace -m "feat: Sovereign Markdown Palace v1.0 — spatial memory initialised"
+git push origin vX.X.X-palace
+```
+
+If you work across multiple machines, pull on the second machine to sync the Palace:
+
+```bash
+git pull --rebase origin main
+```
+
+## FAQ
+
+<Accordion title="Do I need to re-read all my old walkthrough.md entries?">
+  No. The backfill reads your git history, not the walkthrough directly. Your `walkthrough.md` is not touched during migration. The Palace proposal is generated entirely from commit messages and changed file paths.
+</Accordion>
+
+<Accordion title="My closets are empty or sparse after the backfill — is that OK?">
+  Yes. A sparse, accurate closet is better than a full, inaccurate one. Start with whatever the backfill proposal gives you, and the closets will grow naturally with each EOD ritual as `palace-sync` runs automatically.
+</Accordion>
+
+<Accordion title="Can I skip the backfill and run it later?">
+  Yes, for the short term. The Palace will still work — it just will not have historical context in the Rooms yet. Run `--backfill` when you have time; it is safe to run multiple times.
+</Accordion>
+
+<Accordion title="My project has no Ansible — do I need room_sovereign_fabric?">
+  No. Only create Rooms that are relevant to your project. For a pure software development project, `room_tooling`, `room_architecture`, and `room_ledger` are typically all you need to start.
+</Accordion>

@@ -1,0 +1,87 @@
+---
+title: "OpenWiki: Zero-Binary AI Knowledge Graph for DSOM Projects"
+sidebarTitle: "OpenWiki Overview"
+description: "OpenWiki is a native Python knowledge graph emulator that pre-distils your codebase into lightweight metadata, reducing AI token costs by up to 98%."
+---
+
+OpenWiki is DSOM's built-in knowledge graph engine that transforms your repository's Markdown documentation into a fast, machine-readable index. Instead of forcing an AI agent to load every file in your project from scratch, OpenWiki pre-processes your documents — extracting only the YAML frontmatter metadata — so the AI can locate exactly what it needs in milliseconds, at a tiny fraction of the token cost.
+
+## The Token Cost Problem OpenWiki Solves
+
+Without OpenWiki, an AI agent exploring a large codebase must load raw file content to understand what each document contains. In a mature project this means loading **500,000 or more tokens** just to build a mental map of the repository. That is expensive, slow, and eats into the context window before any real work begins.
+
+With OpenWiki, the same discovery pass costs roughly **50 tokens**. The engine searches only the OKF YAML frontmatter — the `title`, `description`, and `topics` fields — rather than the full document body. The AI reads the index, identifies the three or four files it actually needs, and loads only those.
+
+<Note>
+  This pattern is called **Progressive Disclosure**: deliver the minimum viable semantic information into the context window at the moment it is required, and go deeper only when necessary.
+</Note>
+
+## Zero-Binary Architecture
+
+OpenWiki runs entirely in Python via `uv run`. There is no Node.js runtime to install, no `npm` or `pnpm` dependency tree, no native C++ compilation, and no Visual Studio Build Tools requirement on Windows. A single command installs and executes the emulator in an isolated environment:
+
+```bash
+uv run --with pyyaml python tools/openwiki_emulator.py --init
+```
+
+This design eliminates the two most common friction points in Windows-based development environments:
+
+- **No `node_modules` bloat** — reclaims approximately 135 MB of repository disk space
+- **No UAC elevation hangs** — runs non-interactively without Windows administrator prompts
+
+## What Gets Indexed
+
+OpenWiki indexes any Markdown file in your repository that carries OKF v0.1 YAML frontmatter. A file must include all seven required fields to appear in the knowledge graph:
+
+```yaml
+---
+okf_version: 0.1
+type: documentation
+title: "My Document Title"
+timestamp: "2026-01-15T10:00:00Z"
+topics: ["dsom", "ansible", "gitops"]
+description: "A clear one-sentence summary of what this document contains."
+resource: "file:///docs/my-document.md"
+---
+```
+
+Files without frontmatter are silently skipped. This means you control exactly what the AI discovers by controlling which files carry OKF headers. See the [OKF Standard](/governance/okf-standard) guide for instructions on adding frontmatter to your documents.
+
+## What OpenWiki Produces
+
+Running `--init` generates the `./openwiki/` directory in your repository root. This directory contains:
+
+<CardGroup cols={2}>
+  <Card title="10 OKF-Compliant Wiki Pages" icon="file-lines">
+    Structured Markdown summaries covering architecture, governance, memory, automation, integrations, publishing, and quality domains — all carrying OKF frontmatter so they are themselves indexable.
+  </Card>
+  <Card title="Subsystem Subdirectories" icon="folder-open">
+    Organised folders under `openwiki/` grouping related pages: `architecture/`, `governance/`, `memory/`, `automation/`, `integrations/`, `publishing/`, and `quality/`.
+  </Card>
+  <Card title="Skeleton Index" icon="list">
+    `openwiki/_skeleton.md` provides an inventory ranking, planned page tree, and evidence briefs that help AI agents navigate the knowledge graph without loading every page.
+  </Card>
+  <Card title="Optional Graph Visualisation" icon="diagram-project">
+    `openwiki/graph.html` — a standalone, offline HTML file that renders your knowledge graph visually in any browser. Generated on demand with `--export-graph`.
+  </Card>
+</CardGroup>
+
+## Sub-Millisecond Semantic Search
+
+The OpenWiki search command scans `topics:`, `title:`, and `description:` fields across all indexed files without ever loading their bodies. This keeps search latency well under one millisecond even on repositories with hundreds of documents:
+
+```bash
+uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"
+```
+
+Each matching result returns the file name, title, and description — enough for the AI to decide whether to load the full document.
+
+## API Rate Limit Resilience
+
+Because OpenWiki runs entirely on your local machine and reads only local files, it has no dependency on external LLM API calls during indexing. If your AI provider returns a rate-limit error (HTTP 429) mid-session, the AI agent can still use the pre-built `./openwiki/` index to draft responses and continue working without interruption.
+
+<CardGroup cols={1}>
+  <Card title="Ready to run OpenWiki?" icon="terminal" href="/tools/openwiki-usage">
+    Follow the step-by-step CLI guide to initialise, update, search, and export your knowledge graph.
+  </Card>
+</CardGroup>

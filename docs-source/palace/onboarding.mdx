@@ -1,0 +1,164 @@
+---
+title: "Set Up the Sovereign Markdown Palace for the First Time"
+sidebarTitle: "Onboarding"
+description: "First-time guide for initialising the Sovereign Markdown Palace, reading the palace registry at SOD, and understanding the Wing/Room/Closet structure."
+---
+
+Setting up the Sovereign Markdown Palace for the first time gives your AI a structured spatial memory system it can navigate at every Start of Day — without reading your entire session history from scratch. This guide walks you through verifying the Palace exists after brain initialisation, understanding how the Wing/Room/Closet hierarchy works, and running the SOD ritual that ties it all together.
+
+<Note>
+  If you have not yet initialised your DSOM brain at all, run `bash tools/init-brain.sh` first, then return here. This guide assumes the basic brain setup is complete.
+</Note>
+
+## What Is the closet.md?
+
+Before you begin, understand the most important file in the Palace: `closet.md`. Every Room in the Palace contains exactly one `closet.md` — a distilled, high-density knowledge summary that the AI reads *instead of* scanning raw session history.
+
+Think of the closet as the back cover of a book: it gives the AI the essential facts, decisions, and context for that Room's topic in a fraction of the tokens. When the AI needs deeper detail, the closet links directly to the relevant line range in `walkthrough.md` — so the Drawer remains the source of truth and the closet remains the fast path to it.
+
+<Steps>
+  <Step title="Verify the Palace Exists">
+    After running `init-brain.sh`, confirm that the Palace registry file is in place:
+
+    ```bash
+    ls -la .agents/brain/palace_registry.md
+    ls -la .agents/brain/wings/
+    ```
+
+    You should see `palace_registry.md` and a `wings/` directory. If `palace_registry.md` is missing, the Palace has not been initialised yet — run `bash tools/palace-sync.sh --init-only` to create the skeleton without touching any existing files.
+
+    <Warning>
+      If neither `palace_registry.md` nor the `wings/` directory exists, your DSOM version predates Palace v1.0 (introduced in v10.0.0-palace). Follow the [migration guide](/palace/migration) to upgrade first.
+    </Warning>
+  </Step>
+
+  <Step title="Read the palace_registry.md">
+    Open the registry and review its structure — this is the file your AI reads at every SOD to orient itself spatially:
+
+    ```bash
+    cat .agents/brain/palace_registry.md
+    ```
+
+    The registry contains three key sections:
+
+    - **Wings table** — every major project domain registered in the Palace
+    - **Rooms index** — every Room with its path, hall type, and purpose
+    - **Quick-Reference table** — a task-to-Room lookup the AI uses to navigate directly to what it needs
+
+    Your AI reads this file first at SOD, identifies which Rooms are relevant to the current task, and then reads only those `closet.md` files. It does not read the entire `walkthrough.md` unless a closet's retrieval reference points it there.
+  </Step>
+
+  <Step title="Understand the Wing/Room/Closet Structure">
+    The Palace hierarchy has three levels you work with day-to-day:
+
+    **Wing** — the top-level domain. A Wing groups everything related to one major project or context. The default Wing in every DSOM project is `wing_dsom_core`, which holds the framework's own knowledge. When you start a new project, you create a new Wing alongside it.
+
+    **Hall** — the memory type within a Wing. Every Wing uses the same four standard halls:
+
+    | Hall | What It Holds |
+    |---|---|
+    | `hall_facts` | Immutable laws, architecture decisions, tool inventory |
+    | `hall_events` | Chronological milestones, phase completions, version history |
+    | `hall_preferences` | Architect persona, linguistic rules, stylistic mandates |
+    | `hall_discoveries` | Breakthroughs, research findings, uncategorised insights |
+
+    **Room** — a specific topic within a hall. For example, `room_tooling` inside `hall_facts` holds everything the AI knows about your tools and scripts. Each Room has exactly one `closet.md`.
+
+    A concrete example path: `.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`
+
+    <Tip>
+      When you add a new Room, register it in `palace_registry.md` immediately. The AI cannot navigate to a Room it does not know exists.
+    </Tip>
+  </Step>
+
+  <Step title="Run palace-sync">
+    Run `palace-sync` to map your current git history into Palace Rooms. This generates a `palace_update_proposal_YYYY-MM-DD.md` that tells you exactly which commits belong to which Rooms:
+
+    ```bash
+    bash tools/palace-sync.sh
+    ```
+
+    For a fresh project with little history, this creates a lean proposal. For an existing project with months of commits, use the backfill flag to process the entire history at once:
+
+    ```bash
+    bash tools/palace-sync.sh --backfill
+    ```
+
+    Open the generated proposal file and review it:
+
+    ```bash
+    cat .agents/brain/palace_update_proposal_$(date +%Y-%m-%d).md
+    ```
+
+    The proposal lists each Room and the commits assigned to it — this is the raw material your AI uses to write or update the `closet.md` files in those Rooms.
+  </Step>
+
+  <Step title="Verify the Palace with audit-pre-flight">
+    Run the pre-flight audit to confirm the Palace is correctly wired into your DSOM setup:
+
+    ```bash
+    bash tools/audit-pre-flight.sh
+    ```
+
+    Look for Palace-specific verification lines in the output:
+
+    ```text
+    [PASS] palace_registry.md exists
+    [PASS] wings/ directory present
+    [PASS] Section [14] Palace Registry enabled in reanimate
+    ```
+
+    Fix any `[FAIL]` lines before proceeding. A common first-run issue is a missing `palace_registry.md` — the audit output will tell you which script to run to resolve it.
+  </Step>
+
+  <Step title="Run the SOD Palace Command">
+    With the Palace verified, use the dedicated SOD script for your daily Start of Day ritual. This single command handles everything: pulling from Git, running the audit, verifying the Palace registry, and generating the reanimation manifest with Section [14] (Palace Registry) included.
+
+    ```bash
+    # Linux / WSL2
+    bash tools/sod-palace.sh
+
+    # Windows (PowerShell)
+    .\tools\sod-palace.ps1
+    ```
+
+    The generated manifest includes the full Palace Registry in Section [14], so your AI receives instant spatial awareness on every session start without needing to ask which Rooms exist.
+
+    After running, upload the manifest to your AI and use the standard cognitive handshake prompt:
+
+    ```text
+    Initialise DSOM Protocol v6.1. Read the uploaded manifest.
+    Summarise the current Mental Anchor and confirm the 4-Tier environment map.
+    State: 'Sovereign State Synchronised' when ready.
+    ```
+  </Step>
+</Steps>
+
+## Adding a New Wing for a New Project
+
+When you start a second project on the same DSOM instance, create a dedicated Wing for it rather than mixing its Rooms into `wing_dsom_core`:
+
+```bash
+# Create the Wing skeleton
+mkdir -p .agents/brain/wings/wing_YOUR_PROJECT/{hall_facts,hall_events,hall_discoveries}
+
+# Create at least one Room to get started
+mkdir -p .agents/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview
+touch .agents/brain/wings/wing_YOUR_PROJECT/hall_facts/room_overview/closet.md
+```
+
+Then open `palace_registry.md` and register the new Wing, its Halls, and the `room_overview` Room in the index and Quick-Reference table.
+
+## The Three Sovereign Laws of the Palace
+
+<Accordion title="Plain Markdown Mandate">
+  All closets must be human-legible, plain Markdown. No proprietary encoding, no binary formats. The Palace survives any tool change because it is just files in Git.
+</Accordion>
+
+<Accordion title="Universal Search">
+  Every closet must link back to the original Drawer entry (`walkthrough.md`) with a specific line reference. This cross-link is what prevents AI hallucination — the closet is a pointer, not a replacement for the source record.
+</Accordion>
+
+<Accordion title="Git Sovereignty">
+  Every closet update must be committed to Git alongside the code or documentation change that triggered it. The Palace and the codebase are always in sync because they live in the same repository.
+</Accordion>

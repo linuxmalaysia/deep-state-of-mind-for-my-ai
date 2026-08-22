@@ -1,0 +1,57 @@
+name: Sync Docs to Mintlify Brain
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs-source/**'
+      - 'scripts/sync_docs.py'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run mode (preview plan without pushing)'
+        type: boolean
+        required: false
+        default: true
+      allow_large_deletions:
+        description: 'Allow large deletions (override deletion cap)'
+        type: boolean
+        required: false
+        default: false
+      min_mdx_files:
+        description: 'Minimum required .mdx files (floor)'
+        type: string
+        required: false
+        default: '5'
+      max_deletions:
+        description: 'Maximum allowed deletions cap'
+        type: string
+        required: false
+        default: '10'
+
+jobs:
+  sync-docs:
+    name: Sync Docs Pipeline (Guards A-E)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout App Repository (Source of Truth)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run One-Way Docs Sync
+        env:
+          DOCS_REPO_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
+          DOCS_REPO: 'linuxmalaysia/my-knowledge-brain'
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
+          ALLOW_LARGE_DELETIONS: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.allow_large_deletions || 'false' }}
+          MIN_MDX_FILES: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.min_mdx_files || '5' }}
+          MAX_DELETIONS: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_deletions || '10' }}
+        run: |
+          python scripts/sync_docs.py

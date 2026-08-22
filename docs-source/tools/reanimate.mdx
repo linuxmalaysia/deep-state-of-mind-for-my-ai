@@ -1,0 +1,110 @@
+---
+title: "reanimate: Build and Export Your AI Context Manifest"
+sidebarTitle: "Reanimate"
+description: "The reanimate script assembles your project's complete working context into a single manifest file ready to upload to any AI provider."
+---
+
+Every AI session starts with a cold model that knows nothing about your project. The `reanimate` script solves that by assembling your project's critical artifacts — identity protocol, task list, session history, and environment map — into a single dense manifest file you upload to your AI before saying a word. This is the Cognitive Handshake that eliminates context decay and transforms a stateless model into your Cognitive Digital Twin.
+
+## What reanimate Assembles
+
+When you run `reanimate`, it reads and concatenates the following artifacts into one output file named `sod_manifest_YYYY-MM-DD.txt`:
+
+| Source Artifact | What It Contributes |
+|:---|:---|
+| `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` | Project identity, 4-Tier environment map (T1–T4), security doctrine |
+| `.agents/brain/palace_registry.md` | Spatial Palace index — the AI's organised memory map |
+| `.agents/brain/task.md` | Today's checklist and current focus |
+| `.agents/brain/walkthrough.md` | Full session history and the latest Mental Anchor |
+| `.agents/brain/implementation_plan.md` | Project roadmap and phase goals |
+
+The Mental Anchor — the last entry in `walkthrough.md` — is the most important piece. It is the exact logical stopping point from your last session, allowing the AI to resume in context within three prompts.
+
+## Run reanimate
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/reanimate.sh
+```
+
+```powershell Windows PowerShell
+.\tools\reanimate.ps1
+```
+
+</CodeGroup>
+
+After the manifest is generated, the script prints the output path:
+
+```text
+[OK] Manifest generated: sod_manifest_2026-08-14.txt
+```
+
+### Interactive Injection (Optional)
+
+When you run the script, it will ask:
+
+```text
+Do you have a manual EOD Summary or Master Prompt addition? (y/N)
+```
+
+- **Press Enter (default No):** The script builds the manifest purely from your Git-tracked artifacts.
+- **Type `y` and press Enter:** An input buffer opens. Paste your Hibernation Notes or any custom instructions. Close the buffer with `Ctrl+D` on Linux/WSL2 or type `EOF` on Windows PowerShell.
+
+Use this injection option at SOD when you saved Hibernation Notes at the end of the previous session — it embeds yesterday's exported memory directly into today's manifest.
+
+## Claude-Optimised Variant
+
+If you use Anthropic Claude as your AI provider, run the Claude-specific variant instead. It generates a token-compressed, Claude-optimised manifest that reduces context overhead while preserving all critical state:
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/reanimate-claude.sh
+```
+
+```powershell Windows PowerShell
+.\tools\reanimate-claude.ps1
+```
+
+</CodeGroup>
+
+<Tip>
+  The Claude variant applies DSOM's Byte-Capped Execution framework to strip redundant whitespace and compress repeated headers. Use it whenever you are working within Claude's context window limits on a large project.
+</Tip>
+
+## The Output File
+
+The manifest is saved to your repository root as `sod_manifest_YYYY-MM-DD.txt`. It is a plain-text file — open it in any editor to review its contents before uploading.
+
+The manifest contains:
+
+- **Project identity** — name, version, architecture tier map
+- **Environment map** — T1 (Windows Control Node), T2 (WSL2/Linux Bridge), T3/T4 (production hosts), with user accounts and paths
+- **Current tasks** — today's checklist from `task.md`
+- **Mental Anchor** — the exact resumption point from the last session
+- **Governance laws** — the hard rules your AI must always follow (Advisory Mode, Git-first, Ansible-only execution)
+- **Palace spatial index** — the organised map of all Palace Rooms for fast memory retrieval
+
+## The Cognitive Handshake
+
+After uploading `sod_manifest_YYYY-MM-DD.txt` to your AI chat, send this prompt to trigger the handshake:
+
+```text
+Initialise DSOM Protocol v6.1. Read the uploaded manifest.
+Summarise the Mental Anchor and confirm the 4-Tier environment map.
+State: 'Sovereign State Synchronised' when ready.
+```
+
+Your AI is now operational as a Cognitive Digital Twin. It knows your environment, your current tasks, and where you left off — without you having to explain any of it.
+
+## Status Codes
+
+| Label | Meaning | Action |
+|:---|:---|:---|
+| `[OK]` | Manifest generated successfully | Upload the file to your AI |
+| `[WARNING]` | A brain artifact is missing | Run `init-brain.sh` to restore the missing file |
+
+<Warning>
+  Run `privacy-guardian.sh` before uploading the manifest if your `AI-COGNITIVE-TWIN-PROTOCOL.md` contains real server IP addresses, usernames, or any credentials. The manifest includes your full environment map and can expose production host details to external AI providers. See the [Privacy Guardian](/tools/privacy-guardian) page for full instructions.
+</Warning>

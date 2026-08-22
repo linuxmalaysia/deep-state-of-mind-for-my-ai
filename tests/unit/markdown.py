@@ -24,7 +24,7 @@ class TestMarkdownCompliance(unittest.TestCase):
 
     def _discover_md_files(self) -> list[pathlib.Path]:
         exclude_files = {"CLAUDE.md", "CHANGELOG.md", "HISTORY.md"}
-        exclude_dirs = {".git", "node_modules", ".pytest_cache", "venv", ".venv", "openwiki", "site", "references"}
+        exclude_dirs = {".git", "node_modules", ".pytest_cache", "venv", ".venv", "openwiki", "site", "references", "docs-source"}
 
         md_files = []
         for dirpath, dirnames, filenames in os.walk(self.repo_root):

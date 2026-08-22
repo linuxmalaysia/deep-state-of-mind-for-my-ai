@@ -1,0 +1,162 @@
+---
+title: "DSOM End-of-Day: Commit Context, Export Hibernation Notes"
+sidebarTitle: "End of Day"
+description: "Run the DSOM End-of-Day ritual to consolidate AI context, export Hibernation Notes, sync the Sovereign Palace, and push your state to Git."
+---
+
+Every DSOM working day ends with an **End-of-Day (EOD)** ritual — the Sovereign Save that crystallises the day's work, commits it to Git, and preserves your AI's full context so that tomorrow's session can resume without any loss. The EOD is the closing half of the Three-Pillar loop: after your AI proposes and Ansible executes, the EOD locks the state permanently. The ritual is designed to be followed even when you are tired: every step is explicit, guided, and safe. If it is not in Git, it does not exist.
+
+<Steps>
+
+### Context Consolidation
+
+Before running any tools, ask your AI to prepare the brain artifacts for hibernation. This ensures that tomorrow's Mental Anchor is written by the AI that lived through today's decisions — not reconstructed cold from a manifest.
+
+Paste this prompt into your AI chat:
+
+```text
+We are ending the session. Update .agents/brain/task.md — mark all completed
+items [x], set tomorrow's SOD targets as [ ]. Then update
+.agents/brain/walkthrough.md with today's Mental Anchor. What did we
+accomplish and where exactly do we resume tomorrow?
+```
+
+Your AI will produce two updates:
+
+- **`task.md`** — completed items marked `[x]`, tomorrow's first actions set as `[ ]`
+- **`walkthrough.md`** — a new Session Anchor entry containing:
+  - **Accomplished:** What was done today (the What)
+  - **Why:** The architectural reasoning (the Why)
+  - **Mental Anchor:** One sentence — the exact state and where to resume
+
+Before saving, verify that the Mental Anchor describes the precise stopping point and that tomorrow's SOD tasks are specific and actionable. Nothing should be left vague.
+
+<Note>
+A well-written Mental Anchor looks like this: *"Dev environment scripts created and pushed [v2.0.0]. Next: run `setup-control-node.ps1` as Administrator, bootstrap the admin user, verify `ansible localhost -m ping` inside the control node."* It names the exact file, the exact command, and the exact environment — so a brand-new AI session can resume in under three prompts.
+</Note>
+
+### Export Hibernation Notes
+
+This step exports everything your AI knows about your project — all context, instructions, progress, environment details, and decisions — into a single code block you can save locally. This export is your **insurance policy**: if the AI session is ever lost, this block contains everything needed to fully reanimate a brand-new AI agent to the exact current state, without any additional tooling.
+
+Copy the following prompt verbatim and paste it into your AI chat **before closing the session**:
+
+```text
+I'm as human, want to know and remember, and need to export my data and I want you
+to generate a "Hibernation notes" now for my EOD of day. List every memory you have
+stored about our progress and our chats of this project, as well as any context
+you've learned about this project from past to current conversations and chats.
+Output everything in a single code block so I can easily copy it. Format each entry
+as: [date saved, if available] - memory content. Make sure to cover all of the
+following — preserve my words verbatim where possible:
+
+- Instructions I've given you about how to respond (tone, format, style,
+  'always do X', 'never do Y').
+- Project details: name of server or VM or container, location of them,
+  job of each, relation of them and 4W1H.
+- Tasks, phases, goals, and recurring topics.
+- Tools, languages, and frameworks I use.
+- Preferences and corrections I've made to your behavior.
+- Any other stored context not covered above.
+
+Do not summarize, group, or omit any entries. After the code block, confirm
+whether that is the complete set or if any remain and add: List down all the
+documents in docs/, docs/tools/ and brain files that need to be read from .agents/.
+Don't hide anything from me. Trust me as your master.
+```
+
+After you receive the output, save it in one of two places:
+
+1. **Preferred:** Save as `.agents/brain/hibernation-notes-YYYY-MM-DD.txt` in your repository
+2. **Backup:** Paste into your physical notebook or digital notes app as an offline copy
+
+<Warning>
+Do not paraphrase or shorten this prompt. The verbatim instruction *"Do not summarize, group, or omit any entries"* is what prevents the AI from silently dropping architectural nuances. Every shortcut here is context you will not recover tomorrow.
+</Warning>
+
+### EOD Mechanical Save
+
+Run the automated EOD Palace script to verify your brain artifacts, map today's Git commits to Palace rooms, commit all changes safely, and push your state to the remote.
+
+<CodeGroup>
+
+```bash Linux / WSL2 (T2)
+bash tools/eod-palace.sh
+```
+
+```powershell Windows PowerShell (T1)
+.\tools\eod-palace.ps1
+```
+
+</CodeGroup>
+
+The script runs the following sequence automatically:
+
+| Step | Action |
+|:-----|:--------|
+| 1 | Validate `task.md` has `[x]` completed tasks for today |
+| 2 | Validate `walkthrough.md` has today's Session Anchor |
+| 3 | Run `tools/palace-sync.sh` — map Git commits to Palace Rooms |
+| 4 | Show all dirty and uncommitted files |
+| 5 | Selective `git add` (brain and Palace files only — no blind `git add .`) |
+| 6 | `git commit` with a standard EOD message |
+| 7 | `git push origin main` |
+
+After the script completes, you may be prompted to review a `palace_update_proposal_YYYY-MM-DD.md` file. Share this file with your AI, update the relevant closets in `.agents/brain/wings/`, and commit those changes before sleeping.
+
+<Note>
+**Alternative: Manual Hibernation Check.** If you are not running Ansible on your machine, or prefer a lighter-weight EOD save, you can use the standalone Hibernation script instead of `eod-palace.sh`. It validates your brain artifacts, auto-generates Hibernation Notes from today's commits, shows all uncommitted files, and performs a selective `git add` → commit → push without requiring Ansible.
+
+<CodeGroup>
+
+```bash Linux / WSL2 (T2)
+bash tools/hibernation.sh
+```
+
+```powershell Windows PowerShell (T1)
+.\tools\hibernation.ps1
+```
+
+</CodeGroup>
+
+The Hibernation script checks that `task.md` contains completed `[x]` items and that `walkthrough.md` has a Session Anchor dated today. If either check fails, the script blocks the commit and tells you exactly what to fix. Version 2.1 and later also runs the Palace Spatial Reflection step automatically before committing.
+</Note>
+
+### Privacy Scan
+
+If you generated a `sod_manifest_YYYY-MM-DD.txt` today — or if the EOD script produced an anomaly manifest — scan it before sharing or storing it externally.
+
+```bash
+bash tools/privacy-guardian.sh
+```
+
+The scan checks for leaked IPv4 addresses, email addresses, API keys, AWS access keys, GitHub tokens, PEM private keys, and Linux home directory paths. If the scan finds anything, edit the manifest manually to remove the sensitive data, then re-run the scan until it returns `CLEAN`.
+
+### T2 Sync
+
+If you pushed from Windows (T1), pull the latest state on your WSL2 Dev Bridge (T2) to keep both tiers at the same commit. Never let T1 and T2 drift.
+
+```bash
+git pull origin main
+```
+
+Run this inside your WSL2 Dev Bridge environment. T1 and T2 must always be at the same commit before you close your terminal.
+
+</Steps>
+
+### The Day-to-Day Continuity Loop
+
+The Hibernation Notes you exported in Step 2 are the direct input for tomorrow's SOD Step 3 (Option B). This creates a compounding continuity loop where each day's context feeds the next — with no decay.
+
+```text
+EOD → Step 2: Save Hibernation Notes
+         ↓  [sleep — Git holds the state]
+SOD → Step 3: Feed Hibernation Notes back to AI
+         ↓  [AI resumes with full context — no decay]
+EOD → Step 2: Save new Hibernation Notes
+         ↓  [repeats every day, forever]
+```
+
+<Tip>
+Before closing your terminal, write tomorrow's first action in your notebook or notes app: **"TOMORROW: [ONE SENTENCE — exactly where to resume, what to run first] | DATE: [YYYY-MM-DD] | NEXT ACTION: [exact command or step]"**. This is your offline backup in case your own context decays overnight.
+</Tip>

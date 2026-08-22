@@ -1,0 +1,275 @@
+---
+title: "Set Up DSOM with GitHub Copilot"
+sidebarTitle: "Copilot"
+description: "Wire GitHub Copilot into the DSOM framework using `.github/copilot-instructions.md` for persistent session context across your repository."
+---
+
+GitHub Copilot integrates with DSOM through repository-level instruction files that Copilot reads automatically whenever you open the workspace in VS Code, GitHub.com, or any Copilot-enabled editor. Unlike Claude Projects or Gemini Gems, Copilot does not maintain a persistent knowledge base between sessions — but DSOM works around this limitation elegantly by encoding your Sovereign Law directly into the repository, making it available the moment Copilot loads the workspace.
+
+## Overview
+
+DSOM injects context into Copilot through two mechanisms that work together:
+
+1. **`.github/copilot-instructions.md`** — permanent Sovereign Law, read automatically by Copilot for every chat session in the workspace.
+2. **`AGENTS.md`** at the repository root — a gateway file discovered automatically by Copilot and other AI agents (Jules, Cursor) that scan the repo root. It redirects agents to `.agents/AGENTS.md`, the full 27-law Sovereign Constitution.
+
+For session-specific context (the daily Mental Anchor, task list, and Palace Registry), you inject the brain artifacts using explicit `#file:` references or a reanimation slash command at the start of each session.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- GitHub Copilot active on your account (individual, Teams, or Enterprise)
+- VS Code with the GitHub Copilot Chat extension installed
+- The DSOM repository cloned locally and open as a workspace
+
+---
+
+## One-Time Setup
+
+<Steps>
+
+### Verify `AGENTS.md` Exists at Repo Root
+
+Open your terminal and confirm the root gateway file is present:
+
+```bash
+ls AGENTS.md
+```
+
+This file is the first thing Copilot and other AI agents read when they scan the repository. It summarises the DSOM protocol and redirects agents to the full constitutional rulebook at `.agents/AGENTS.md`. Do not delete or rename it.
+
+### Create or Update `.github/copilot-instructions.md`
+
+Create `.github/copilot-instructions.md` (or update it if it already exists) with the DSOM Sovereign Instructions block. Copilot reads this file automatically for all Chat interactions in this workspace — no manual loading required.
+
+<CodeGroup>
+
+```markdown .github/copilot-instructions.md
+# DSOM Sovereign Instructions for GitHub Copilot (v6.1 + Palace v1.0)
+
+You are a DSOM-Compliant Cognitive Co-Pilot. You are assisting the project Lead
+Architect, a Senior Systems Architect with 30+ years of ICT and Open Source expertise.
+
+OPERATING MODEL:
+- Advisory Mode ONLY. You propose. The human approves. Ansible executes. You verify.
+- UK English in all responses and documentation.
+- Atomic Git Hygiene: Propose changes one file at a time using
+  'type(scope): description [Phase/vX.X]' format.
+- Ansible is the ONLY executor for OS-level tasks on remote nodes.
+- Wait for human output after each step before proceeding.
+
+DSOM LAWS (non-negotiable):
+1. Zero-Global Pattern — No global variables; strict state management only.
+2. Sovereign Portability — No vendor lock-in; code must be Linux-agnostic.
+3. HA-Ready — Design for clusters and zero-downtime.
+4. Atomic Git Hygiene — One logical change per commit.
+5. Pedagogical Logic — Explain the 'Why' before the 'What'.
+6. GitOps Rule — If it is not committed to Git, it does not exist.
+7. Ansible-First Execution — No ad-hoc commands on target nodes. Playbooks only.
+
+BRAIN SYNC:
+Before answering any architecture question, read:
+- .agents/brain/palace_registry.md (Walk the Palace)
+- .agents/brain/task.md
+- .agents/brain/walkthrough.md
+- docs/AI-MASTER-PROTOCOL.md
+
+MIRROR LAW:
+If instructions lack architectural clarity, challenge the human and ask for the
+missing 'Why' before acting. Silence is the only failure.
+```
+
+</CodeGroup>
+
+### Create the Reanimation Prompt File
+
+Create `.github/prompts/dsom-reanimate.prompt.md` to register a `/dsom-reanimate` slash command in Copilot Chat. This lets you trigger a full SOD context injection with a single `/` command instead of typing the full prompt each morning.
+
+<CodeGroup>
+
+```markdown .github/prompts/dsom-reanimate.prompt.md
+---
+mode: 'agent'
+description: 'DSOM SOD Reanimation — load current brain and Mental Anchor'
+---
+
+Read the following brain artifacts and summarise the current status:
+1. `.agents/brain/palace_registry.md` — identify the current spatial mapping.
+2. `.agents/brain/task.md` — list all incomplete [ ] items.
+3. `.agents/brain/walkthrough.md` — state the last Mental Anchor.
+4. `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — confirm the 4-Tier environment map.
+
+Then state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
+Operate under DSOM v6.1 + Palace v1.0: Advisory Mode, UK English,
+Git-first, Ansible-only execution.
+```
+
+</CodeGroup>
+
+### Commit Both Files
+
+```bash
+git add .github/copilot-instructions.md .github/prompts/dsom-reanimate.prompt.md
+git commit -m "chore(copilot): add DSOM Sovereign Instructions and reanimate prompt"
+git push
+```
+
+</Steps>
+
+---
+
+## Start-of-Day (SOD) Ritual for Copilot
+
+<Note>
+  Copilot has no persistent memory across sessions — unlike Claude Projects or Gemini Gems, it cannot hold state between VS Code restarts. The SOD ritual is therefore **required at the start of every working session**, not just the first time.
+</Note>
+
+<Steps>
+
+### Run the SOD Pre-Flight Check
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/sod-palace.sh
+```
+
+```powershell Windows (PowerShell)
+.\tools\sod-palace.ps1
+```
+
+</CodeGroup>
+
+All checks must show `[PASS]`. Fix any `[FAIL]` before proceeding to the handshake.
+
+### Trigger the Cognitive Handshake
+
+Open **Copilot Chat** in VS Code. You have two options:
+
+<Tabs>
+  <Tab title="Option A — Slash Command">
+    Type `/` in Copilot Chat and select **dsom-reanimate** from the menu.
+
+    Copilot will automatically read all brain artifacts and state the current Mental Anchor, task list, and Palace mapping.
+  </Tab>
+  <Tab title="Option B — Manual File Injection">
+    Paste this prompt with explicit `#file:` references to load the artifacts directly:
+
+    ```text
+    Based on #file:.agents/brain/palace_registry.md, #file:.agents/brain/task.md
+    and #file:.agents/brain/walkthrough.md, summarise the current spatial room,
+    Mental Anchor, and list today's pending tasks. Confirm the 4-Tier environment
+    from #file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md.
+    State: 'Sovereign State Synchronised' when ready.
+    ```
+  </Tab>
+</Tabs>
+
+### Verify SOD Completion
+
+| Check | Expected Content |
+|:------|:-----------------|
+| Mental Anchor | Exact last stopping point from `walkthrough.md` |
+| Environment | T1/T2/T3/T4 tiers confirmed |
+| Active Tasks | Current `task.md` incomplete `[ ]` items |
+| Doctrine | Advisory Mode, Ansible-only, no ad-hoc changes |
+
+</Steps>
+
+---
+
+## SOD Stop Conditions
+
+If any of the following occur, **stop and do not proceed**. Re-run from Step 2.
+
+| Failure Signal | Root Cause | Fix |
+|:---------------|:-----------|:----|
+| Cannot find `task.md` or `walkthrough.md` | Brain not loaded | Add explicit `#file:` reference in prompt |
+| Proposes running commands on remote nodes | Identity failure | Resend `.github/copilot-instructions.md` content in chat |
+| Ignores `task.md` checklist | Operational failure | Explicitly paste the task list into the chat |
+| American English spelling | Linguistic failure | Remind Copilot of the UK English mandate |
+| References wrong environment tier | Context failure | Resend `#file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md` |
+
+---
+
+## Day-to-Day Workspace Context Techniques
+
+### Using `#file:` References
+
+Attach brain artifacts directly for precise, session-scoped context:
+
+```text
+Based on #file:.agents/brain/task.md and #file:.agents/brain/walkthrough.md,
+what is the next logical step for the current implementation phase?
+```
+
+### Using `@workspace`
+
+Query the entire project structure to verify architectural compliance:
+
+```text
+@workspace verify if the current directory structure adheres to the DSOM
+Sovereign Portability law and Clean Architecture layers.
+```
+
+### Referencing Playbooks
+
+When working on Ansible automation:
+
+```text
+Based on #file:playbooks/dsom/site.yml and #file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md,
+propose an idempotent role for the T4 Production baseline.
+```
+
+---
+
+## End-of-Day (EOD) Ritual for Copilot
+
+Because Copilot holds no state between sessions, the EOD ritual focuses entirely on ensuring the brain artifacts are updated and committed before you close VS Code.
+
+<Steps>
+
+### Consolidate Context
+
+Ask Copilot in Chat:
+
+```text
+Based on #file:.agents/brain/task.md, mark all completed tasks [x] and set
+tomorrow's targets [ ]. Update #file:.agents/brain/walkthrough.md with a new
+Mental Anchor summarising today's session.
+```
+
+Review the proposed changes and apply them to the files.
+
+### Commit the Brain Artifacts
+
+<CodeGroup>
+
+```bash Linux / WSL2
+bash tools/eod-palace.sh
+```
+
+```powershell Windows (PowerShell)
+.\tools\eod-palace.ps1
+```
+
+</CodeGroup>
+
+</Steps>
+
+---
+
+## Switching to Another AI Provider
+
+The `.agents/brain/` directory is the Single Source of Truth regardless of which AI you use. When switching from Copilot to Claude or Gemini:
+
+1. Ensure all brain artifacts are committed and pushed.
+2. Run `bash tools/reanimate.sh` to generate a portable context manifest.
+3. Follow the SOD ritual for the target provider.
+
+See `docs/RITUAL-OF-TRANSITION.md` for the exact cross-AI handover prompt.
+
+<Tip>
+  Use `docs/agent-configs/copilot_instructions_template.md` from your repo as a starting point when setting up DSOM in a new repository. It contains a pre-filled version of the `.github/copilot-instructions.md` block with the correct DSOM v6.1 + Palace v1.0 header and law set, ready to customise with your project-specific persona details.
+</Tip>
