@@ -52,7 +52,8 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Created canonical root `plugin.json` (schema 1.0.0) and `mcp.json` with `${PLUGIN_ROOT}` variable expansion.
 - `[x]` Created `.agents/skills/agent-plugin-packager/SKILL.md` (OKF v0.2) to automate plugin packaging.
 - `[x]` Codified Rule 30 in `.agents/AGENTS.md` and root `AGENTS.md`.
-- `[x]` Built and validated automated test suite `tests/test_agent_plugins_spec.py`.
+- `[x]` Appended DTS 0.1 concise output standard to Universal Gateways (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`, `.agents/AGENTS.md`).
+- `[x]` Synchronized `dsom-project-cloner` skill and Team Masterclass/Field Notes with Agent Plugins 1.0.0 & DTS 0.1 manifests.
 - `[x]` Verified 100% test pass rate across entire suite (856/856 unit tests passing).
 - `[x]` Complete End-of-Day (EOD) context saving, hibernation ritual, and multi-remote push.
 
