@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context via MCP.">
+        <meta name="description" content="Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context or local code snippets via MCP.">
       
       
         <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Context7 Semantic Indexer - Deep State of Mind (DSOM)</title>
+        <title>Context7 Semantic Indexer & Local Snippet Search - Deep State of Mind (DSOM)</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#context7-semantic-indexer" class="md-skip">
+        <a href="#context7-semantic-indexer-local-snippet-search" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Context7 Semantic Indexer
+              Context7 Semantic Indexer & Local Snippet Search
             
           </span>
         </div>
@@ -3891,6 +3891,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5-local-code-snippet-search-search_code_snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Local Code Snippet Search (search_code_snippets)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-offline-fallback-local-snapshot-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Offline Fallback &amp; Local Snapshot Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3927,30 +3949,42 @@
   
 
 
-<h1 id="context7-semantic-indexer">Context7 Semantic Indexer</h1>
+<h1 id="context7-semantic-indexer-local-snippet-search">Context7 Semantic Indexer &amp; Local Snippet Search</h1>
 <h2 id="purpose">Purpose</h2>
-<p>This skill governs the integration of <a href="https://context7.com">Context7</a> within the DSOM architecture. Context7 acts as the external semantic retrieval engine (RAG) for the Sovereign Markdown Palace (<code>docs/</code>). It parses markdown documentation, chunks it, and generates searchable code/info snippets using an LLM (e.g., <code>gemini-3.1-flash-lite</code>).</p>
+<p>This skill governs the integration of <a href="https://context7.com">Context7</a> within the DSOM architecture. Context7 acts as both an external semantic retrieval engine (RAG) and a local code snippet database for the Sovereign Markdown Palace (<code>docs/</code>). It parses markdown documentation, chunks it, and generates searchable code/command snippets using LLM extraction.</p>
 <h2 id="integration-guidelines">Integration Guidelines</h2>
 <h3 id="1-the-indexing-process">1. The Indexing Process</h3>
-<p>Based on our project structure, Context7 specifically targets the <code>docs/</code> folder (such as <code>docs/governance/OPERATIONAL-SOVEREIGNTY.md</code> and <code>docs/governance/ZERO-GLOBAL-MEMORY.md</code>).
+<p>Based on our project structure, Context7 targets the <code>docs/</code> folder:
 - Context7 clones the <code>main</code> branch.
-- It bypasses non-RST and non-code configurations to focus directly on our Open Knowledge Format (OKF) markdown documentation.</p>
+- It bypasses non-RST and non-code configurations to focus directly on Open Knowledge Format (OKF) markdown documentation.</p>
 <h3 id="2-utilizing-context7-via-mcp">2. Utilizing Context7 via MCP</h3>
 <p>For AI agents (Cursor, Google Jules, Claude) to query this semantic index:
 1. Ensure the agent's MCP (Model Context Protocol) is configured to connect to <code>https://mcp.context7.com/mcp</code>.
 2. The agent must inject the <code>CONTEXT7_API_KEY</code> directly into the MCP client configuration via environment variables.</p>
 <h3 id="3-triggering-re-indexing">3. Triggering Re-indexing</h3>
-<p>Currently, Context7 automatically syncs with the configured repository branch. If a massive structural change occurs in the Palace (e.g., via <code>dsom-state-sync</code>), ensure the changes are fully committed and pushed to <code>main</code> so Context7's webhook or polling mechanism can detect the diff and initiate the Parser step.</p>
+<p>Context7 automatically syncs with the configured repository branch. If a massive structural change occurs in the Palace, ensure the changes are fully committed and pushed to <code>main</code> so Context7's webhook can detect the diff.</p>
 <h3 id="4-direct-llm-endpoint-mcp-stream-access">4. Direct LLM Endpoint &amp; MCP Stream Access</h3>
 <p>For external AI tools (Cursor, Claude, ChatGPT, Gemini, Google Jules), Context7 exposes the live, compiled token stream:
 - <strong>Canonical Stream Endpoint:</strong> <code>https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=83688</code>
 - <strong>MCP Native Tool:</strong> FastMCP exposes the <code>fetch_context7_stream</code> tool inside <code>tools/mcp/server.py</code> to stream or query Context7 snippets dynamically via <code>stdio</code>.
-- <strong>Token Adjustments:</strong> Adjust the <code>?tokens=...</code> parameter (e.g., <code>10000</code>, <code>30000</code>, <code>83688</code>) based on the target LLM's context window budget.</p>
+- <strong>Token Adjustments:</strong> Adjust the <code>?tokens=...</code> parameter (e.g. <code>10000</code>, <code>30000</code>, <code>83688</code>) based on the target LLM's context window budget.</p>
+<h3 id="5-local-code-snippet-search-search_code_snippets">5. Local Code Snippet Search (<code>search_code_snippets</code>)</h3>
+<p>To avoid token bloat and query executable terminal commands quickly without external network round-trips:
+- FastMCP exposes the <code>search_code_snippets(query, limit)</code> tool in <code>tools/mcp/server.py</code>.
+- It searches the parsed blocks in <code>references/llms-from-context7.txt</code> and returns the most relevant code blocks and instructions.
+- A human-readable compiled cheatsheet is maintained in <code>docs/reference/CLI-QUICK-REFERENCE.md</code>.</p>
+<h3 id="6-offline-fallback-local-snapshot-maintenance">6. Offline Fallback &amp; Local Snapshot Maintenance</h3>
+<p>When operating offline or in air-gapped environments:
+- The local snapshot <code>references/llms-from-context7.txt</code> serves as the primary fallback.
+- Calling <code>fetch_context7_stream(return_offline_sample=True)</code> provides immediate local context preview without internet access.</p>
 <h2 id="security-rule-24-mandate">Security (Rule 24 Mandate)</h2>
 <ul>
 <li><strong>NEVER</strong> write the <code>CONTEXT7_API_KEY</code> (e.g., <code>ctx7sk-...</code>) to a local <code>.env</code> file, <code>.git/config</code>, or any file tracked by Git.</li>
 <li><strong>GitLab CI/CD:</strong> If Context7 requires integration via GitLab CI, the API key MUST be stored in GitLab CI/CD Settings as a masked and protected variable.</li>
 </ul>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23</em>
+<em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
 
