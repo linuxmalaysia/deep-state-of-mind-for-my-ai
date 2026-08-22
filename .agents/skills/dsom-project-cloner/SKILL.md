@@ -1,16 +1,28 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: skill
-title: DSOM Project Cloner Skill
-timestamp: "2026-08-20T23:30:00Z"
-description: "Scaffolds a new DSOM project by copying the Sovereign Engine, Intelligence Payload, Governance, and Ritual Scripts from the baseline repository to a user-specified target path."
+title: "DSOM Project Cloner Skill"
+timestamp: "2026-08-22T16:53:00Z"
+description: "Scaffolds a new DSOM project by copying the Sovereign Engine, Universal Gateway Matrix, Governance, and Ritual Tools to a target path, enforcing Downstream Asymmetry."
 topics: ["project", "scaffold", "clone", "dsom", "setup", "okf"]
 name: dsom-project-cloner
+sources:
+  - title: "The Core AI Rulebook (DSOM)"
+    url: "file:///.agents/AGENTS.md"
+  - title: "Team DSOM Masterclass Tutorial"
+    url: "file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md"
+generated: "hybrid"
+verified: true
+status: "active"
+stale_after: "2027-08-22T16:53:00Z"
 ---
 # 🏗️ DSOM Project Cloner Skill
 
 ## When to use this skill
 Use this skill when the user asks to create, clone, scaffold, or bootstrap a **new** DSOM project based on the current baseline repository (e.g., "Create a new project at D:\Projects\my-new-app").
+
+## Downstream Asymmetry Principle
+In downstream projects, **business logic and source code remain primary (>90% of repo volume)**. Cloned repositories receive the minimal 6-Pillar DSOM footprint rather than the entire baseline forge documentation.
 
 ## Prerequisites
 - The user must provide the **absolute path** to the new target repository. Ask for it if not provided.
@@ -18,37 +30,64 @@ Use this skill when the user asks to create, clone, scaffold, or bootstrap a **n
 ## Instructions
 
 1. **Verify Target Path:** Ensure you have the absolute path for the new target repository from the user.
-2. **Establish Directories:** Use your terminal execution tools (`run_command`) to create the mandatory folder structures in the target path:
-   - `"$TARGET_PATH/.agents/brain/wings"`
+2. **Establish Directory Tree:** Use your terminal execution tools (`run_command`) to create the mandatory folder structures in the target path:
+   - `"$TARGET_PATH/.agents/brain"`
    - `"$TARGET_PATH/.agents/skills"`
-   - `"$TARGET_PATH/docs/agent-configs"`
+   - `"$TARGET_PATH/.github"`
    - `"$TARGET_PATH/docs/governance"`
    - `"$TARGET_PATH/tools"`
-3. **Copy the Four Pillars:** Use your terminal execution tools (`run_command`) to copy the assets from the CURRENT repository (baseline) to the TARGET repository:
+3. **Copy the 6 Pillars (Downstream Footprint):**
    - **Pillar A (The Engine & Gateway Matrix):** 
      - Copy `AGENTS.md`, `.cursorrules`, `CLAUDE.md`, and `START-HERE.md` to `"$TARGET_PATH/"`
      - Copy `.agents/AGENTS.md` to `"$TARGET_PATH/.agents/"`
      - Copy `.github/copilot-instructions.md` to `"$TARGET_PATH/.github/"`
-   - **Pillar B (The Intelligence Payload):** Recursively copy all contents of `.agents/skills/` to `"$TARGET_PATH/.agents/skills/"`
-   - **Pillar C (Governance & Configuration):**
-     - Recursively copy `docs/agent-configs/` to `"$TARGET_PATH/docs/agent-configs/"`
-     - Recursively copy `docs/governance/` to `"$TARGET_PATH/docs/governance/"`
-     - Copy `docs/AI-AGENT-SKILLS-GUIDE.md` to `"$TARGET_PATH/docs/"`
-     - Copy all `docs/HOWTO-*.md` files to `"$TARGET_PATH/docs/"`
-   - **Pillar D (Ritual Scripts):** 
+   - **Pillar B (Essential Domain Skills):**
+     - Recursively copy `.agents/skills/dsom-token-calculator/` to `"$TARGET_PATH/.agents/skills/"`
+     - Recursively copy `.agents/skills/dsom-signature-injector/` to `"$TARGET_PATH/.agents/skills/"`
+     - Recursively copy `.agents/skills/initialize-gitops/` to `"$TARGET_PATH/.agents/skills/"`
+   - **Pillar C (Pre-Commit Guardrails & Tools):**
      - Recursively copy `tools/` to `"$TARGET_PATH/tools/"`
-     - Automatically execute `uv run python "$TARGET_PATH/tools/install_git_guardrails.py"` to install the pre-commit gate.
+     - Automatically execute `uv run python "$TARGET_PATH/tools/install_git_guardrails.py"` in the target directory.
+   - **Pillar D (Spatial Memory Genesis):**
+     - Execute `bash tools/init-brain.sh` (or `.\tools\init-brain.ps1`) to populate `.agents/brain/` with blank OKF-compliant templates (`task.md`, `walkthrough.md`, `palace_registry.md`).
 4. **OKF Frontmatter Compliance & Signature Injection:**
-   - Execute `uv run python tools/apply_okf_frontmatter.py "$TARGET_PATH"` (shell/PowerShell safe) in the target repository to guarantee complete OKF v0.1 frontmatter compliance across all cloned memory assets and documentation.
-   - Run `python .agents/skills/dsom-signature-injector/scripts/inject.py "$TARGET_PATH"` to apply standard GPL v3.0 signature footers.
-5. **Persona Injection Check:** Ask the user if they wish to automatically inject their persona using the `persona-injector` skill for the new project.
-6. **Finalization:** Output a success message to the user, providing them with the initialization commands for their new workspace:
+   - Execute `uv run python tools/apply_okf_frontmatter.py "$TARGET_PATH"` to guarantee complete OKF v0.2 frontmatter compliance across all cloned memory assets.
+   - Run `uv run python .agents/skills/dsom-signature-injector/scripts/inject.py "$TARGET_PATH"` to apply standard GPL v3.0 signature footers.
+5. **Finalization:** Output a success message to the user, providing them with the initialization commands for their new workspace:
    - `bash tools/reanimate.sh` or `.\tools\reanimate.ps1`
-   - `uv run python tools/install_git_guardrails.py`
    - `git add .`
-   - `git commit -m "chore(dsom): scaffold genesis dsom architecture, universal gateway matrix, and AI skills"`
-
+   - `git commit -m "chore(dsom): scaffold genesis DSOM architecture and Universal Gateway Matrix"`
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
+
+## Dual-Mode Scaffolding Reference
+
+### Mode 1: Automated AI Prompt Template (Google Antigravity)
+```markdown
+Use the `dsom-project-cloner` skill to scaffold a brand-new DSOM downstream project for me.
+
+Target Repository Path: <ABSOLUTE_TARGET_PATH>
+
+Please:
+1. Create the required directory structure (.agents/brain, .agents/skills, docs/governance, tools/).
+2. Copy the Universal Gateway Matrix (.cursorrules, CLAUDE.md, .github/copilot-instructions.md, AGENTS.md, START-HERE.md).
+3. Copy the Constitutional Rulebook (.agents/AGENTS.md) and reset .agents/brain/ with blank OKF templates.
+4. Copy the tools/ directory and automatically execute `python tools/install_git_guardrails.py` in the new target path.
+5. Ensure all copied markdown files carry valid OKF v0.2 frontmatter and standard DSOM signatures.
+```
+
+### Mode 2: Manual Terminal Copy Commands (PowerShell)
+```powershell
+New-Item -ItemType Directory -Force -Path "$TARGET\.agents\brain", "$TARGET\.agents\skills", "$TARGET\.github", "$TARGET\docs\governance", "$TARGET\tools"
+Copy-Item "$DSOM_BASE\AGENTS.md", "$DSOM_BASE\.cursorrules", "$DSOM_BASE\CLAUDE.md", "$DSOM_BASE\START-HERE.md" "$TARGET\"
+Copy-Item "$DSOM_BASE\.github\copilot-instructions.md" "$TARGET\.github\"
+Copy-Item "$DSOM_BASE\.agents\AGENTS.md" "$TARGET\.agents\"
+Copy-Item -Recurse "$DSOM_BASE\tools\*" "$TARGET\tools\"
+Copy-Item -Recurse "$DSOM_BASE\.agents\skills\dsom-token-calculator", "$DSOM_BASE\.agents\skills\dsom-signature-injector", "$DSOM_BASE\.agents\skills\initialize-gitops" "$TARGET\.agents\skills\"
+Set-Location $TARGET
+bash tools/init-brain.sh
+```
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
