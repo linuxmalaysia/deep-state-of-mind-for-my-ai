@@ -90,6 +90,8 @@ my-project/
 ├── docs/                     <-- Tempat AI tulis/simpan fail .md yang diwujudkan
 ├── references/               <-- Masukkan segala dokumen rujukan mentah berkaitan projek
 ├── tools/                    <-- Skrip automasi & Git Pre-Commit Guardrails
+├── plugin.json               <-- Manifest Agent Plugins 1.0.0 (Google/MS/OpenAI/Cursor)
+├── mcp.json                  <-- Konfigurasi FastMCP Server piawai
 ├── .cursorrules              <-- Gateway untuk Cursor IDE
 ├── CLAUDE.md                 <-- Gateway untuk Claude Desktop
 ├── START-HERE.md             <-- Peta orientasi onboarding pasukan
@@ -98,6 +100,7 @@ my-project/
 
 * **Folder `references/`:** Khas untuk bahan rujukan mentah (PDF, arkitektur sistem asal, dll).
 * **Folder `docs/`:** Tempat di mana agen menulis dan menyimpan dokumentasi rasmi yang ia hasilkan.
+* **Fail `plugin.json` & `mcp.json`:** Pakej piawai **Agent Plugins 1.0.0** untuk integrasi alatan MCP dan kemahiran ejen secara universal rentas pelbagai IDE (Antigravity, Cursor, Jules, Claude).
 
 ---
 
