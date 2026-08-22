@@ -57,7 +57,30 @@ This document serves as a human-auditable index of all executable automation scr
 - **`tools/sod-palace.ps1`**: Start of Day (SOD) ritual to initialise the memory palace ledger.
 - **`tools/template-reset.ps1`**: Wipes the current state and restores the `.agents/brain` baseline template.
 
-## 3. YAML Configurations & Playbooks (`.yml`)
+## 3. Python Scripts (`.py`)
+
+*Isolated Python utilities, compilers, and MCP tooling executed under `uv`.*
+
+- **`tools/apply_okf_frontmatter.py`**: Batch audits and applies OKF v0.2 frontmatter across all project Markdown files.
+- **`tools/bench_brain.py`**: Benchmarks memory read latency across disk, FUSE, and virtualized filesystems.
+- **`tools/build_mintlify_mdx.py`**: Compiles native Markdown and Agent Skills into Mintlify MDX trees and generates `docs.json`.
+- **`tools/fetch_context7_snapshot.py`**: Fetches the compiled LLM RAG text snapshot from Context7 API and stores it in `references/llms-from-context7.txt`.
+- **`tools/install_git_guardrails.py`**: Installs the unbypassable Git pre-commit guardrail hook running `guardrails-ai-dsom`.
+- **`tools/mcp/server.py`**: FastMCP server exposing DSOM memory resources, OpenWiki queries, and code snippet searches over stdio.
+- **`tools/openwiki_emulator.py`**: Native Python emulator compiling and querying the OpenWiki knowledge graph.
+- **`tools/refactor_okf.py`**: Refactors legacy OKF frontmatter to modern standards.
+- **`scripts/sync_docs.py`**: Hardened one-way synchronization tool enforcing 5 Safety Guards (A–E) to publish docs to Mintlify.
+
+## 4. GitHub Actions Workflows & CI/CD (`.yml`)
+
+*Automated CI/CD pipelines governing quality gates, security scans, and documentation deployments.*
+
+- **`.github/workflows/context7-sync.yml`**: Automated weekly scheduled job (Sundays 02:00 UTC) and on-demand workflow dispatch for refreshing Context7 snapshot.
+- **`.github/workflows/sync-docs.yml`**: Automated pipeline compiling MDX and syncing documentation to downstream Mintlify repository under 5 strict safety guards.
+- **`.github/workflows/gh-pages.yml`**: Compiles and deploys MkDocs documentation to GitHub Pages.
+- **`.github/workflows/crda.yml`**: Snyk and dependency vulnerability security scanning.
+
+## 5. YAML Configurations & Playbooks (`.yml`)
 
 *Ansible playbooks, role tasks, and inventory configurations.*
 
@@ -92,5 +115,5 @@ This document serves as a human-auditable index of all executable automation scr
 - **`roles/common/tasks/timezone.yml`**: Idempotent configuration of node timezones and NTP synchronization.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
