@@ -105,6 +105,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/BYTE-CA
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/CRISP2-OPERATIONAL-STRATEGY/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-ARCHITECTURE-ANALYSIS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-AUTOMATED-STATE-SYNC/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
@@ -289,6 +290,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/BYTE-CAP
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/CRISP2-OPERATIONAL-STRATEGY/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-ARCHITECTURE-ANALYSIS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AUTOMATED-STATE-SYNC/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
@@ -412,6 +414,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/crisp2-operational-strategy
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-model
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-operational-model-palace
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/downstream-dsom-compliance-mandate
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-automated-state-sync
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-cognitive-state-preservation-proposal
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-custom-validators-guide
