@@ -256,5 +256,15 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Why it matters:** Enforces Rule 31 (Mintlify One-Way Docs Sync & Safety Guards). A deterministic one-way sync pipeline protected by 5 strict safety guards (A–E) ensuring an empty or half-populated source can never destroy the downstream Mintlify docs repo.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
+
+## 22. The Mintlify User Manual & Downstream Project Prompt Entry Point (Reusable Architecture)
+*If you want to adopt the Mintlify User Manual compilation architecture, copy the universal agent prompt, or scaffold user/admin/developer manuals into any new project.*
+
+**Read This First:** [`docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md`](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/))
+
+**Why it matters:** Provides the drop-in AI agent prompt, 3-manual stratification model (User/Admin/Developer), and scripts for bootstrapping Mintlify documentation pipelines across external projects.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
+

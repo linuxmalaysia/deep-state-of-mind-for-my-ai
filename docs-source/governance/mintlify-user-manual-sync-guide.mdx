@@ -1,0 +1,183 @@
+---
+title: "Mintlify User Manual Architecture & One-Way Sync Guide"
+sidebarTitle: "Mintlify User Manual"
+description: "Comprehensive blueprint and universal AI agent prompt for producing user, admin, and developer manuals with automated MDX compilation and guarded one-wa..."
+---
+
+> **Entry Point 22:** This document is the definitive master blueprint for setting up automated Markdown-to-MDX user manual compilation and a hardened one-way sync pipeline to downstream Mintlify repositories (e.g. `linuxmalaysia/my-knowledge-brain`) powering sites like [harisfazillah.mintlify.site](https://harisfazillah.mintlify.site).
+
+---
+
+## 1. Architectural Philosophy: The Three Manuals Principle
+
+When building documentation sites for production systems, the primary repository source of truth and the downstream public documentation repository serve distinct purposes:
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│ Application / Core Repo (Source of Truth)                   │
+│ docs/ (User, Admin, Dev guides) + .agents/skills/           │
+└───────────────────────────┬─────────────────────────────────┘
+                            │ (python tools/build_mintlify_mdx.py)
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│ Compiled Intermediate Tree: docs-source/ + docs.json        │
+└───────────────────────────┬─────────────────────────────────┘
+                            │ (python scripts/sync_docs.py)
+                            ▼ (5 Strict Safety Guards A-E)
+┌─────────────────────────────────────────────────────────────┐
+│ Downstream Deployment: <OWNER>/<DOCS_REPO>                  │
+│ Pure User Manual, Admin Manual, Developer Manual            │
+└───────────────────────────┬─────────────────────────────────┘
+                            │ (Mintlify Rebuild)
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│ Public Portal: https://<SUBDOMAIN>.mintlify.site            │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### The Three Manuals Stratification
+
+1. **User Manual (End Users / Customers)**: Focuses on features, getting started, workflows, how-to guides, and UI actions.
+2. **Admin Manual (Operators / Integrators)**: Focuses on deployment, identity/access setup, public configuration, backup/recovery, and monitoring.
+3. **Developer Manual (Engineers / API Users)**: Focuses on public SDKs, CLI utilities, webhooks, REST APIs, and extension points.
+
+---
+
+## 2. The Universal AI Agent Prompt
+
+Copy the section below into any AI coding assistant (Google Antigravity, Claude Code, Cursor, GitHub Copilot Workspace, Aider) working inside any project repository:
+
+```text
+## Prompt (copy from here)
+
+You are working inside the GitHub repository <OWNER>/<APP_REPO> (the "app repo"). Your job is to:
+
+1. Compile plain Markdown in docs/ (and optionally skills/) into a polished user-manual Mintlify site under docs-source/.
+2. Set up a one-way, guarded sync pipeline that pushes docs-source/ into the downstream Mintlify repo <OWNER>/<DOCS_REPO> (the "docs repo"), deployed at https://<SUBDOMAIN>.mintlify.app.
+
+The docs repo is never edited by humans, agents, or the Mintlify web editor. Sync is strictly one-way. Never force-push.
+
+### Fixed values (fill in before running)
+
+- App repo (source of truth, edit here): <OWNER>/<APP_REPO>
+- Docs repo (Mintlify-connected, downstream, DO NOT EDIT DIRECTLY): <OWNER>/<DOCS_REPO>
+- Mintlify subdomain: <SUBDOMAIN>.mintlify.app
+- Branch on both repos: main
+- Native Markdown source in app repo: docs/ (and optionally skills/)
+- Compiled Mintlify MDX in app repo: docs-source/
+- Target in docs repo: repo root
+- Sync bot identity: name Docs Sync Bot, email bot@<SUBDOMAIN>.mintlify.app (or a project-owned mailbox)
+- Product / project display name: <PRODUCT_NAME>
+- One-line product value prop: <PRODUCT_VALUE_PROP>
+- Primary audience: end users and integrators of <PRODUCT_NAME> (NOT internal maintainers)
+
+### Content mandate: this site is a USER MANUAL
+
+Everything the compiler emits and every hand-authored .mdx MUST read as an end-user manual for <PRODUCT_NAME>. Non-negotiable.
+
+What this means in practice:
+- Write for the person USING <PRODUCT_NAME>, not the person building or deploying it.
+- Every page answers one of: "What is this?", "How do I do X?", "What does this setting/field mean?", "What went wrong and how do I fix it?".
+- Lead with the reader's goal, then the steps, then the reference detail.
+- Second person ("you"), active voice, imperative mood for instructions.
+- Show working, copy-pasteable examples with expected output where useful.
+- No em dashes or en dashes as punctuation. Use commas, colons, parentheses, or split the sentence.
+- Never invent product facts. If a fact is not in docs/, skills/, or explicit source material, leave a TODO: marker in the body (never in frontmatter) and continue.
+
+INCLUDE (user-manual scope):
+- Getting started: signup, install, first successful action, first working example.
+- Core concepts: product terminology, mental model, key workflows.
+- How-to guides: step-by-step walkthroughs of real user tasks.
+- Tutorials: end-to-end scenarios a new user can follow.
+- Public API / SDK / CLI reference with request/response or command examples.
+- Configuration users actually control through the product UI or public config files.
+- Integrations, webhooks, extension points users set up themselves.
+- Troubleshooting and FAQ written from a user perspective.
+- Governance and legal pages users need (security policy, legal notice, license summary) when applicable.
+
+EXCLUDE (do not document, even if present in the source repo):
+- Internal microservice architecture, service boundaries, internal RPC.
+- Database schemas, migrations, ORM internals.
+- CI/CD pipelines, deployment scripts, infra-as-code, Kubernetes manifests (unless the product IS the infra).
+- Internal admin tools, back-office dashboards.
+- Business-logic implementation details, refactors, ADRs.
+- Auth SYSTEM internals (OAuth provider wiring, session management, token storage). Document ONLY how the user obtains credentials.
+- Server/runtime configuration users never touch.
+- Dependency management, lockfiles, linter/build config.
+- Contribution guides, code review process, internal onboarding.
+
+### User manual site style
+
+Frontmatter on every .mdx (required):
+---
+title: "<50-60 char SEO title, unique across the site>"
+sidebarTitle: "<1-3 word Title Case label>"
+description: "<130-155 chars, unique, adds info beyond the title>"
+---
+
+Rules:
+- sidebarTitle is mandatory and short (1-3 words). Never put the full SEO title in the sidebar. Never repeat <PRODUCT_NAME> in the sidebar.
+- First paragraph of the body MUST be plain prose naming the feature and stating what the page covers.
+- Titles use Title Case. Sidebar labels use Title Case. Group and tab names use Title Case.
+
+Information architecture (docs-source/docs.json):
+- navigation MUST be an object with tabs (≤ 2-3 tabs) or groups. NEVER an array.
+- Hard limits: at most 4-5 groups per tab, never a group with fewer than 2 pages. Merge thin groups.
+- Group and tab names: Title Case, 1-3 words ("Get Started", "Guides", "Reference", "Troubleshooting").
+- Page paths in navigation: extensionless, no leading slash (e.g. guides/first-integration).
+- index is the landing page; quickstart is a working first-run page.
+
+### Deliverables to generate
+
+0. tools/build_mintlify_mdx.py:
+   Translates docs/ and skills/ into docs-source/ (.mdx) and builds docs-source/docs.json.
+
+1. Seed docs-source/:
+   Run python tools/build_mintlify_mdx.py once to populate initial pages and docs.json.
+
+2. scripts/sync_docs.py:
+   Python 3.11 script with 5 strict safety guards (Guards A-E):
+   - Guard A: Source directory and docs.json exist and parse as valid JSON.
+   - Guard B: Minimum .mdx file floor (MIN_MDX_FILES, default 5).
+   - Guard C: Navigation integrity matching all docs.json paths against .mdx files on disk.
+   - Guard D: Diff preview with MAX_DELETIONS cap (default 10).
+   - Guard E: Dry-run support via --dry-run or DRY_RUN=true.
+
+3. .github/workflows/sync-docs.yml:
+   Automated push trigger and workflow_dispatch with dry-run support.
+
+4. docs-source/.mintignore:
+   Ignore internal files: AGENTS.md, AGENTS-PROMPT.md, drafts/, *.draft.mdx.
+
+5. Automated Tests:
+   - tests/test_mintlify_mdx_builder.py: Frontmatter parsing, sidebarTitle synthesis, MDX transforms, docs.json assembly.
+   - tests/test_sync_docs.py: Guards A through E.
+
+## End of prompt
+```
+
+---
+
+## 3. Related Files & Implementation References
+
+| Asset | Location in Repo | Role |
+|:---|:---|:---|
+| **MDX Compiler** | [`tools/build_mintlify_mdx.py`](file:///tools/build_mintlify_mdx.py) | Translates sovereign Markdown into user-manual MDX and compiles `docs.json`. |
+| **Sync Engine** | [`scripts/sync_docs.py`](file:///scripts/sync_docs.py) | Enforces Guards A-E and performs idempotent one-way push. |
+| **CI/CD Pipeline** | [`.github/workflows/sync-docs.yml`](file:///.github/workflows/sync-docs.yml) | Automates build and deployment on push to `main`. |
+| **Compiler Skill** | [`.agents/skills/mintlify-docs-compiler/SKILL.md`](file:///.agents/skills/mintlify-docs-compiler/SKILL) | Standard Operating Procedure (SOP) for executing and auditing the sync pipeline. |
+| **Project Cloner** | [`.agents/skills/dsom-project-cloner/SKILL.md`](file:///.agents/skills/dsom-project-cloner/SKILL) | Scaffolds the entire Mintlify compiler and sync stack into new downstream repositories. |
+| **Mintlify Ignore** | [`docs-source/.mintignore`](file:///docs-source/.mintignore) | Filters internal notes and prompt files from public indexation. |
+
+---
+
+## SOURCES
+- [tools/build_mintlify_mdx.py](file:///tools/build_mintlify_mdx.py): MD-to-MDX compiler and navigation generator.
+- [scripts/sync_docs.py](file:///scripts/sync_docs.py): 5-Guard synchronization tool.
+- [.github/workflows/sync-docs.yml](file:///.github/workflows/sync-docs.yml): GitHub Actions deployment workflow.
+- [.agents/skills/mintlify-docs-compiler/SKILL.md](file:///.agents/skills/mintlify-docs-compiler/SKILL): Mintlify docs compiler skill SOP.
+- [Mintlify Official Documentation](https://mintlify.com/docs): Production MDX specification and component guidelines.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

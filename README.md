@@ -556,8 +556,8 @@ Once Step 6 is complete, the AI knows:
 | [`docs/governance/AUTOMATION-AUDIT-LIST.md`](docs/governance/AUTOMATION-AUDIT-LIST.md) | 📋 Automation Audit Ledger — Comprehensive index of all execution scripts |
 | [`docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md`](docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md) | 🐍 Python UV Guide — Governance policy for isolated Python environments |
 | [`docs/governance/NOSS-INTEGRATION-GUIDE.md`](docs/governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
-| [`docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md) | 📚 Knowledge-First Discovery — SOP for local OKF frontmatter search before terminal execution |
-| [`docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`](docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md) | 🧠 **Cognitive State Preservation Proposal** — Human-to-Gemini architectural blueprint on persistent AI memory and minimal downstream adoption |
+| [`docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md`](docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md) | 🌿 **Mintlify One-Way Sync Pipeline** — Safety-guarded automated publishing to downstream Mintlify documentation sites |
+| [`docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md`](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md) | 📖 **Mintlify User Manual Sync Guide** — Reusable 3-manual architecture and universal AI prompt for downstream repositories |
 | [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |

@@ -41,6 +41,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 * [mkdocs_hooks.py Reference](reference/mkdocs_hooks.md)
 * [Agent Plugins 1.0.0 Specification](governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md)
 * [Mintlify One-Way Sync Pipeline](governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md)
+* [Mintlify User Manual Sync Guide](governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md)
 
 ## 🧠 Explanation and Design
 

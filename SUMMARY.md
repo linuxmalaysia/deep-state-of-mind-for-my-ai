@@ -54,6 +54,7 @@ topics: ["dsom", "documentation"]
 * [🛡️ Downstream DSOM Protocol Compliance Mandate](docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md)
 * [📦 Agent Plugins 1.0.0 Specification & DSOM Integration](docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md)
 * [🌿 Mintlify One-Way Docs Sync & Safety Guards Specification](docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md)
+* [📖 Mintlify User Manual Architecture & One-Way Sync Guide](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md)
 
 ## 🌅 2. Operational Rituals
 
