@@ -99,6 +99,7 @@
               "skills/initialize-gitops",
               "skills/jules-antigravity-sync",
               "skills/latex-proposal-compiler",
+              "skills/mintlify-docs-compiler",
               "skills/node-proposal-formatter",
               "skills/node-slide-generator",
               "skills/odp-slide-generator",

@@ -62,7 +62,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Dual-Path Custom Validators** | Integrates both the Guardrails AI Framework (for external LLM apps/Pydantic schemas) and the DSOM Native Lightweight Pathway (for FastMCP/AST command interception and offline safety) across Tri-Phasic states. |
 | **The Episodic Resume Protocol (Zero Amnesia)** | AI emits a serialized `[DSOM EPISODIC RECORD]` summary block containing live commit hashes, test metrics, and cognitive delta at major milestones to guarantee zero-loss session resumes. |
 | **Agent Plugins 1.0.0 Standard** | Adheres to the vendor-neutral directory standard (`agent-plugins.org/specification`) for packaging skills, MCP servers (`mcp.json`), and manifests (`plugin.json`) across AI tools. |
-| **Mintlify One-Way Docs Sync & Safety Guards** | Governs one-way publishing from `docs-source/` to downstream Mintlify docs repositories (`my-knowledge-brain`) with 5 non-negotiable safety guards (A–E) preventing destruction. |
+| **Mintlify One-Way Docs Sync & Safety Guards** | Compiles `docs/` and `.agents/skills/` to `docs-source/` via `tools/build_mintlify_mdx.py` and governs one-way publishing to downstream Mintlify docs repositories (`my-knowledge-brain`) with 5 non-negotiable safety guards (A–E) preventing destruction. |
 
 ---
 
@@ -90,6 +90,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `dsom-signature-injector` | Appends the DSOM ownership, timestamp, and GPL v3.0 signature to `.md` files; prepends comment headers to scripts. | File path(s). | Signed files with standard DSOM footer. |
 | `palace-auditor` | Audits the Sovereign Markdown Palace — verifies index links, finds undocumented scripts, and proposes structural cleanups. | No input required. | Audit report with orphaned files and broken links. |
 | `sitemap-seo-generator` | Generates and compiles standard sitemaps and SEO assets across platforms (GitHub Pages, Read the Docs, GitBook) to optimize search indexing. | No input required. | Generated `sitemap.txt`, `sitemap.xml`, and `robots.txt` files. |
+| `mintlify-docs-compiler` | Compiles Markdown files and skills into Mintlify MDX format and validates one-way sync under Guards A–E. | `docs/` and `.agents/skills/` | Generated `docs-source/` MDX tree and `docs.json`. |
 
 ### Document Output Skills
 
