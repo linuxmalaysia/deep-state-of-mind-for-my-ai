@@ -1,12 +1,22 @@
 ---
-okf_version: 0.1
-type: skill
+okf_version: 0.2
+type: skill_sop
 title: "Google Jules & Google Antigravity Collaborative Sync"
-timestamp: "2026-08-08T12:00:00Z"
-description: "Procedural SOP for synchronising cognitive context, rule alignment, and historic code modifications between Google Jules and Google Antigravity."
-topics: ["collaboration", "sync", "jules", "antigravity", "git"]
+timestamp: "2026-08-22T23:20:00Z"
+sources:
+  - title: "The Core AI Rulebook (DSOM)"
+    url: "file:///.agents/AGENTS.md"
+  - title: "Jules PR History Ledger"
+    url: "file:///.agents/brain/jules_pr_history.md"
+generated: "human-and-ai"
+verified: "verified"
+status: "authoritative"
+stale_after: "2027-08-22T23:20:00Z"
 name: jules-antigravity-sync
+description: "Procedural SOP for synchronising cognitive context, rule alignment, and historic code modifications between Google Jules and Google Antigravity."
+topics: ["collaboration", "sync", "jules", "antigravity", "git", "powershell", "mintlify", "agent-plugins"]
 ---
+
 # Google Jules & Google Antigravity Collaborative Sync Skill
 
 **Purpose**: To enable Google Jules and Google Antigravity to share, synchronise, and acknowledge each other's code merges, pull requests, and architectural discoveries, establishing complete cognitive continuity across platform agents.
@@ -22,110 +32,88 @@ The following is the authoritative and permanent repository of Jules and Antigra
 
 ### 1. Native OpenWiki Emulator & Zero-Binary Mandate (Rule 27)
 - **Concept**: To eliminate external Node.js-based dependency bloat, elevated privilege requirements (UAC elevation hangs), and third-party API limits, all wiki and documentation compilation tasks are handled by a native Python CLI utility.
-- **Implementation**: Managed in `tools/openwiki_emulator.py`, which is run natively using `uv run --with pyyaml python tools/openwiki_emulator.py`.
-- **Planned Pages**: The emulator dynamically registers and populates nine fully OKF v0.1 compliant planned wiki pages under `./openwiki/` (such as `quickstart.md`, `architecture/overview.md`, etc.).
+- **Implementation**: Managed in `tools/openwiki_emulator.py`, run natively using `uv run --with pyyaml python tools/openwiki_emulator.py`.
+- **Planned Pages**: Dynamically registers and populates fully OKF-compliant planned wiki pages under `./openwiki/`.
 - **Integration**: Codified in `AGENTS.md` and `.agents/AGENTS.md` as **Rule 27**.
 
 ### 2. Model Context Protocol (MCP) Server Integration
-- **Concept**: Exposing the documentation and repository structures directly to AI assistants for low-latency retrieval.
+- **Concept**: Exposing documentation and repository structures directly to AI assistants for low-latency retrieval.
 - **Implementation**: Located in `tools/mcp/server.py` using `FastMCP`.
-- **Capabilities**: Integrates the Sovereign Markdown Palace directly into AI environments, with built-in sub-millisecond OpenWiki search capabilities for context assembly.
+- **Capabilities**: Integrates the Sovereign Markdown Palace directly into AI environments with sub-millisecond OpenWiki search capabilities.
 
 ### 3. Automated Sitemaps & SEO Asset Generation Workflow
 - **Concept**: Optimising public searchability and multi-platform indexing across GitHub Pages, GitBook, and Read the Docs.
 - **Implementation**: Handled by `tools/generate_sitemaps.py` and governed by a customizable `SitemapConfig` object passed to all generator functions.
 - **Validation Gates**:
-  - Automatically builds the MkDocs site.
+  - Automatically builds MkDocs site.
   - Parses `site/sitemap.xml` for GitHub Pages URLs and derives Read the Docs URLs.
   - Processes `SUMMARY.md` for GitBook URLs.
-  - Strictly filters out internal directories (such as `.agents/`).
-  - Performs defensive file verification to raise `FileNotFoundError` with full path context if any target file listed in `SUMMARY.md` does not exist or is not a regular file.
-  - Generates fully compliant `sitemap.txt`, `sitemap.xml`, and `robots.txt` in the workspace root, `docs/`, and `site/` directories.
+  - Generates fully compliant `sitemap.txt`, `sitemap.xml`, and `robots.txt` in workspace root, `docs/`, and `site/` directories.
 
 ### 4. Tri-Phasic Cognitive Architecture & Functional Subsystems (Rule 26)
-- **Concept**: Structuring the AI's cognitive execution based on a Tri-Phasic Mind model to ensure persistent memory alignment and eliminate context decay across ephemeral boundaries.
+- **Concept**: Structuring AI cognitive execution based on a Tri-Phasic Mind model to ensure persistent memory alignment and eliminate context decay across ephemeral boundaries.
 - **Three States**:
-  - **Active State (Conscious)**: Handles direct interactions and high-frequency tool calls (e.g., FastMCP).
-  - **Twilight State (Subconscious)**: Exercises static analysis, linters, and pre-commit checks.
-  - **Deep State (Unconscious/Dreaming)**: Handles EOD consolidation, memory pruning, and palace mapping.
-- **Subsystems**:
-  1. Cognitive Architecture
-  2. Memory Stratification
-  3. Dreaming & Consolidation
-  4. Metacognition & Guardrails
-- **Documentation**: Formally documented in the official blueprint `docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md` and codified as **Rule 26** in both `AGENTS.md` files.
+  - **Active State (Conscious)**: Direct interactions and FastMCP operations.
+  - **Twilight State (Subconscious)**: Linters, pre-commit checks, and token gates (`dsom-token-calculator`).
+  - **Deep State (Unconscious/Dreaming)**: EOD consolidation, memory pruning, and palace mapping.
+- **Documentation**: Formally documented in `docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md` and codified as **Rule 26**.
 
-### 5. Jules & Antigravity Collaborative Knowledge & Sync (Rule 25)
-- **Concept**: Establishing Google Antigravity as a peer Tier-1 AI agent companion with Google Jules under the DSOM framework to guarantee cognitive continuity and peer state synchronization.
-- **Implementation**: Governed by **Rule 25** and tracked via this dedicated sync skill file (`.agents/skills/jules-antigravity-sync/SKILL.md`).
+### 5. Downstream Asymmetry & Cross-Agent Honor Mandate (Rule 28)
+- **Concept**: The baseline repo houses the full metacognitive engine, while downstream repositories adopt the minimal 6-pillar footprint (>90% business logic/code).
+- **Universal Gateway Matrix**: `.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`, and `tools/install_git_guardrails.py` compel foreign AI agents (Cursor, Claude, Copilot) to strictly honor the DSOM brain.
 
-### 6. SKILL.md Frontmatter topics Position Rule
-- **Concept**: Ensuring clean indexing and fast semantic grep routing without loading full file bodies.
-- **Rule**: In all `SKILL.md` files processed by compliance tools (e.g., `apply_okf.py`, `apply_okf_frontmatter.py`, and `tools/refactor_okf.py`), the `topics` field is placed immediately after the `description` field.
+### 6. Dual-Path Custom Validator Architecture (Rule 29)
+- **Concept**: Distinguishes between the Guardrails AI Framework (external LLM apps/Pydantic schemas) and the DSOM Native Lightweight Pathway (zero-dependency pure Python classes under `uv` for FastMCP/AST command interception).
+
+### 7. Agent Plugins 1.0.0 Packaging Standard (Rule 30)
+- **Concept**: Vendor-neutral directory standard (`agent-plugins.org/specification`) backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel.
+- **Implementation**: Root `plugin.json` ($schema 1.0.0), `mcp.json` with `${PLUGIN_ROOT}` placeholder expansion, and `.agents/skills/agent-plugin-packager/SKILL.md`.
+
+### 8. Mintlify MDX Auto-Compiler & One-Way Sync Pipeline (Rule 31)
+- **Concept**: Automatically compiles `docs/` and `.agents/skills/` into Mintlify MDX (`docs-source/`) and executes a deterministic one-way sync to downstream repos (`linuxmalaysia/my-knowledge-brain`) under 5 non-negotiable safety guards (Guards A–E).
+- **Implementation**: Governed by `tools/build_mintlify_mdx.py`, `scripts/sync_docs.py`, `.github/workflows/sync-docs.yml`, and `docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md`.
+
+### 9. Windows PowerShell 5.1 UTF-8 BOM Script Invariant (Rule 25)
+- **Concept**: Windows PowerShell 5.1 default parser fails with syntax errors when executing non-BOM UTF-8 `.ps1` scripts that contain Unicode punctuation, smart quotes, em-dashes, or emojis.
+- **Rule**: All `.ps1` automation scripts in `tools/` must be encoded in UTF-8 with BOM (`utf-8-sig`) to ensure cross-version compatibility across Windows 10/11 and PowerShell Core.
 
 ---
 
 ## Historic Code Merges & PRs by Jules
 
-The following is the permanent ledger of PRs and code modifications executed by Google Jules. A comprehensive, high-fidelity log of all Jules' historic PRs, reviews, CodeRabbit comments, and technical resolutions is maintained inside `.agents/brain/jules_pr_history.md`.
+A comprehensive log of all Jules historic PRs, reviews, CodeRabbit comments, and technical resolutions is maintained inside `.agents/brain/jules_pr_history.md`:
 
-### 1. Read the Docs Integration & Validation (PR #22)
-
-- **Accomplishment**: Configured `.readthedocs.yaml` at the root with Ubuntu 24.04, Python 3.13, and MkDocs. Appended standard DSOM license/ownership headers and synced all ledgers.
-- **Testing Layer**: Created `tests/test_readthedocs_config.py` and `tests/test_readthedocs_ledger_sync.py` to assert RTD and GitBook configuration compliance.
-
-### 2. MkDocs Link & Render Validation (PR #34)
-- **Accomplishment**: Solved critical compilation warnings during Render.com site builds. Negated the exclusion of the `.agents/` folder using `exclude_docs: | \n !.agents` and mapped root-level folders (`.agents/`, `playbooks/`) as symlinks inside `docs/` to allow MkDocs to discover and compile them.
-- **Testing Layer**: Implemented `tests/test_documentation_deployment.py` to assert publishing endpoints.
-
-### 3. PyYAML CustomLoader Parser Improvement
-- **Accomplishment**: Solved the "Unquoted Timestamp Parsing Bug" by introducing `CustomLoader` (a customized SafeLoader variant) inside `tools/apply_okf_frontmatter.py` and other compliance scripts. This bypasses PyYAML's default implicit timestamp resolver to preserve raw, unquoted timestamps as exact string types.
-
-### 4. Secure Sibling Atomic File Replacement
-- **Accomplishment**: Bypassed direct file overrides with a secure write procedure. The compliance tools write changes to a unique sibling temporary file via `tempfile.NamedTemporaryFile` and replace the target path using `os.replace()` only after a successful write.
-
-### 5. Compliance Verification Suite Expansion
-- **Accomplishment**: Extended `tests/test_okf_frontmatter_bom_reorder.py` and quoting validation suites to dynamically discover and verify all markdown files in the repository, guaranteeing a strict BOM-less frontmatter beginning at line 1, column 1.
-
-### 6. Windows Git-Symlink & CRLF Test Guardrails
-- **Accomplishment**: Enhanced test discovery suites (`tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_okf_quoting.py`, `tests/test_docs_symlinks.py`) to detect Git text-pointer symlinks (`content.startswith("../")`) on Windows native checkouts, handle CRLF byte fences (`b"---\r\n"`), and conditionally scope POSIX `chmod` bit assertions (`if os.name != "nt":`).
-
-### 7. Google Jules PR & Comment History Ledger
-
-- **Accomplishment**: Created the master conversational and code merge ledger `.agents/brain/jules_pr_history.md` detailing PRs #22, #23, #24, #25, #26, #27, and #34, as well as automated CodeRabbit review integration and feedback cycles.
-
-### 8. Unit Test Suite Modularisation & Package Refactoring (PR #74 & PR #76)
-- **Accomplishment**: Deconstructed monolithic test suites into modular submodules under `tests/unit/` (`ansible.py`, `containers.py`, `llms.py`, `markdown.py`, `sitemaps.py`). Standardised test assertions for container digests, OKF frontmatter AST nodes, and sitemaps fixtures, scaling the automated test suite to 724 unit tests.
-- **Testing Layer**: Verified via `tests/test_unit.py` and modular package discovery.
+- **PR #22**: Read the Docs Integration & Validation (`.readthedocs.yaml`, Python 3.13).
+- **PR #34**: MkDocs Link & Render Validation (negated exclusion `!.agents`, symlink mapping).
+- **PyYAML CustomLoader**: Solved unquoted timestamp parsing bug by removing implicit timestamp resolvers.
+- **Atomic Writes**: Enforced unique sibling tempfile replacement via `os.replace()`.
+- **Windows Test Guardrails**: Handled Git symlink text-pointers, CRLF byte fences, and conditional `chmod` assertions.
+- **PR #74 & PR #76**: Modularised unit test package into `tests/unit/` (`ansible.py`, `markdown.py`, etc.).
 
 ---
 
 ## Bidirectional Handover Matrix (Antigravity ⟷ Jules)
-
-When transitioning active session control between Google Antigravity and Google Jules, both agents must utilise the shared spatial ledgers to communicate what was accomplished and what needs to be executed next:
 
 | Handover File | Purpose | Read Priority | Update Moment |
 | :--- | :--- | :--- | :--- |
 | `.agents/brain/task.md` | **Live Task Board & Immediate Next Steps** | **High** (Step 1) | Check off `[x]` upon task completion; append `[ ]` for pending actions. |
 | `.agents/brain/walkthrough.md` | **Chronological Session Anchors** | **High** (Step 2) | Append `## 🏁 Session Anchor: YYYY-MM-DD` detailing rationale and mental anchor. |
 | `.agents/brain/current_state.dsom` | **Machine-Compacted Sovereign State** | **Medium** (Step 3) | Auto-compacted via CI PR sync (`dsom-pr-sync.yml`) or EOD rituals. |
-| `.agents/brain/checkpoint_summary.txt` | **EOD Handshake Memory Dump** | **Medium** (Step 4) | Generated at EOD containing `MENTAL ANCHOR FOR TOMORROW (SOD)`. |
+| `.agents/brain/hibernation-notes-*.txt` | **EOD Handshake Memory Dump** | **Medium** (Step 4) | Generated at EOD containing session summary and next steps. |
 | `.agents/brain/jules_pr_history.md` | **Jules' PR & Review History Ledger** | **Reference** | Updated whenever new PRs and CodeRabbit reviews are merged. |
 
 ---
 
 ## Procedural Sync Protocol (SOP)
 
-When Google Jules or Google Antigravity initializes a session, the following synchronization protocol must be executed:
-
-1. **Read Joint Skill**: Read `.agents/skills/jules-antigravity-sync/SKILL.md` (this file) to restore history.
-2. **Read Spatial Registry**: Scan `.agents/brain/palace_registry.md` to identify active palace rooms.
-3. **Walkthrough Inspection**: Verify the latest `Session Anchor` inside `.agents/brain/walkthrough.md` to map recent milestones.
+1. **Read Joint Skill**: Read `.agents/skills/jules-antigravity-sync/SKILL.md` (this file).
+2. **Read Spatial Registry**: Scan `.agents/brain/palace_registry.md`.
+3. **Walkthrough Inspection**: Verify latest `Session Anchor` inside `.agents/brain/walkthrough.md`.
 4. **Task Verification**: Align on current session duties in `.agents/brain/task.md`.
-5. **Git Log Reconciliation**: Run `git log --oneline -n 10` to programmatically match brain walkthrough history against real Git commits.
-6. **Brain Stash Conflict Resolution**: When executing `git pull --rebase` results in stash merge conflicts inside `.agents/brain/` (`checkpoint_summary.txt` or `walkthrough.md`), agents must perform a constructive merge: retain all recent Jules PR milestones alongside local session achievements, rather than discarding either agent's context.
-7. **Strict OKF Frontmatter Invariant for Rules**: All markdown files created by agents—including workspace rules in `.agents/rules/`—must include all 5 required OKF v0.1 fields (`okf_version`, `type`, `title`, `timestamp`, `topics`).
+5. **Git Log Reconciliation**: Run `git log --oneline -n 10` to match brain walkthrough history against Git commits.
+6. **Brain Stash Conflict Resolution**: When executing `git pull --rebase` results in stash merge conflicts, perform a constructive merge preserving both agents' context.
+7. **Strict OKF Frontmatter Invariant**: All `.md` documents must have valid OKF v0.1/v0.2 frontmatter with `topics` placed immediately after `description` in `SKILL.md` files.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-18*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
