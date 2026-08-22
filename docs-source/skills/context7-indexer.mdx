@@ -1,18 +1,18 @@
 ---
-title: "Context7 Semantic Indexer"
+title: "Context7 Semantic Indexer & Local Snippet Search"
 sidebarTitle: "Context7 Semantic Indexer"
-description: "Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context via MCP. Deep State of Mind framework."
+description: "Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context or local code snippets via MCP."
 ---
 
 ## Purpose
-This skill governs the integration of [Context7](https://context7.com) within the DSOM architecture. Context7 acts as the external semantic retrieval engine (RAG) for the Sovereign Markdown Palace (`docs/`). It parses markdown documentation, chunks it, and generates searchable code/info snippets using an LLM (e.g., `gemini-3.1-flash-lite`).
+This skill governs the integration of [Context7](https://context7.com) within the DSOM architecture. Context7 acts as both an external semantic retrieval engine (RAG) and a local code snippet database for the Sovereign Markdown Palace (`docs/`). It parses markdown documentation, chunks it, and generates searchable code/command snippets using LLM extraction.
 
 ## Integration Guidelines
 
 ### 1. The Indexing Process
-Based on our project structure, Context7 specifically targets the `docs/` folder (such as `docs/governance/OPERATIONAL-SOVEREIGNTY.md` and `docs/governance/ZERO-GLOBAL-MEMORY.md`).
+Based on our project structure, Context7 targets the `docs/` folder:
 - Context7 clones the `main` branch.
-- It bypasses non-RST and non-code configurations to focus directly on our Open Knowledge Format (OKF) markdown documentation.
+- It bypasses non-RST and non-code configurations to focus directly on Open Knowledge Format (OKF) markdown documentation.
 
 ### 2. Utilizing Context7 via MCP
 For AI agents (Cursor, Google Jules, Claude) to query this semantic index:
@@ -20,14 +20,29 @@ For AI agents (Cursor, Google Jules, Claude) to query this semantic index:
 2. The agent must inject the `CONTEXT7_API_KEY` directly into the MCP client configuration via environment variables.
 
 ### 3. Triggering Re-indexing
-Currently, Context7 automatically syncs with the configured repository branch. If a massive structural change occurs in the Palace (e.g., via `dsom-state-sync`), ensure the changes are fully committed and pushed to `main` so Context7's webhook or polling mechanism can detect the diff and initiate the Parser step.
+Context7 automatically syncs with the configured repository branch. If a massive structural change occurs in the Palace, ensure the changes are fully committed and pushed to `main` so Context7's webhook can detect the diff.
 
 ### 4. Direct LLM Endpoint & MCP Stream Access
 For external AI tools (Cursor, Claude, ChatGPT, Gemini, Google Jules), Context7 exposes the live, compiled token stream:
 - **Canonical Stream Endpoint:** `https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=83688`
 - **MCP Native Tool:** FastMCP exposes the `fetch_context7_stream` tool inside `tools/mcp/server.py` to stream or query Context7 snippets dynamically via `stdio`.
-- **Token Adjustments:** Adjust the `?tokens=...` parameter (e.g., `10000`, `30000`, `83688`) based on the target LLM's context window budget.
+- **Token Adjustments:** Adjust the `?tokens=...` parameter (e.g. `10000`, `30000`, `83688`) based on the target LLM's context window budget.
+
+### 5. Local Code Snippet Search (`search_code_snippets`)
+To avoid token bloat and query executable terminal commands quickly without external network round-trips:
+- FastMCP exposes the `search_code_snippets(query, limit)` tool in `tools/mcp/server.py`.
+- It searches the parsed blocks in `references/llms-from-context7.txt` and returns the most relevant code blocks and instructions.
+- A human-readable compiled cheatsheet is maintained in `docs/reference/CLI-QUICK-REFERENCE.md`.
+
+### 6. Offline Fallback & Local Snapshot Maintenance
+When operating offline or in air-gapped environments:
+- The local snapshot `references/llms-from-context7.txt` serves as the primary fallback.
+- Calling `fetch_context7_stream(return_offline_sample=True)` provides immediate local context preview without internet access.
 
 ## Security (Rule 24 Mandate)
 - **NEVER** write the `CONTEXT7_API_KEY` (e.g., `ctx7sk-...`) to a local `.env` file, `.git/config`, or any file tracked by Git.
 - **GitLab CI/CD:** If Context7 requires integration via GitLab CI, the API key MUST be stored in GitLab CI/CD Settings as a masked and protected variable.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
