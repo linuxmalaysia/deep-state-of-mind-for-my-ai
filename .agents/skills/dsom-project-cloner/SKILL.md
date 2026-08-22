@@ -45,9 +45,12 @@ In downstream projects, **business logic and source code remain primary (>90% of
      - Recursively copy `.agents/skills/dsom-token-calculator/` to `"$TARGET_PATH/.agents/skills/"`
      - Recursively copy `.agents/skills/dsom-signature-injector/` to `"$TARGET_PATH/.agents/skills/"`
      - Recursively copy `.agents/skills/agent-plugin-packager/` to `"$TARGET_PATH/.agents/skills/"`
+     - Recursively copy `.agents/skills/mintlify-docs-compiler/` to `"$TARGET_PATH/.agents/skills/"`
      - Recursively copy `.agents/skills/initialize-gitops/` to `"$TARGET_PATH/.agents/skills/"`
    - **Pillar C (Pre-Commit Guardrails & Tools):**
      - Recursively copy `tools/` to `"$TARGET_PATH/tools/"`
+     - Copy `scripts/sync_docs.py` to `"$TARGET_PATH/scripts/sync_docs.py"`
+     - Copy `.github/workflows/sync-docs.yml` to `"$TARGET_PATH/.github/workflows/sync-docs.yml"`
      - Automatically execute `uv run python "$TARGET_PATH/tools/install_git_guardrails.py"` in the target directory.
    - **Pillar D (Spatial Memory Genesis):**
      - Execute `bash tools/init-brain.sh` (or `.\tools\init-brain.ps1`) to populate `.agents/brain/` with blank OKF-compliant templates (`task.md`, `walkthrough.md`, `palace_registry.md`).
