@@ -3654,18 +3654,25 @@
 <p>Trigger this skill when the user asks to "cut a release", "create release notes", or "do a release for github/gitlab".</p>
 <h2 id="execution-steps">Execution Steps</h2>
 <ol>
-<li><strong>Changelog Promotion:</strong> Modify <code>CHANGELOG.md</code> to promote the <code>[Unreleased]</code> section into a formal versioned release block (e.g., <code>## [10.4.0-governance] - YYYY-MM-DD</code>). Add an empty <code>[Unreleased]</code> block above it.</li>
-<li><strong>Ledger Sync:</strong> Ensure the version footer in <code>HISTORY.md</code> reflects the new version string.</li>
-<li><strong>Mental Anchor:</strong> Create an EOD-style mental anchor in <code>.agents/brain/checkpoint_summary.txt</code> summarizing the release.</li>
-<li><strong>GitOps Stage:</strong> Commit all changes via <code>git commit -m "docs: cut release &lt;VERSION&gt;"</code>.</li>
-<li><strong>Tagging:</strong> Create a Git tag via <code>git tag -a v&lt;VERSION&gt; -m "Release &lt;VERSION&gt;"</code> and push to all remotes (<code>git push origin main</code>, <code>git push origin v&lt;VERSION&gt;</code>, <code>git push gitlab main</code>, <code>git push gitlab v&lt;VERSION&gt;</code>).</li>
-<li><strong>Release Notes Generation:</strong> Extract the specific release notes from <code>CHANGELOG.md</code> and write them to a temporary file (<code>.agents/brain/scratch/release_notes.txt</code>).</li>
-<li><strong>Platform Deployment:</strong> </li>
+<li><strong>Changelog Promotion:</strong> Modify <code>CHANGELOG.md</code> to promote the <code>[Unreleased]</code> section into a formal versioned release block (e.g., <code>## [10.4.0] - YYYY-MM-DD</code>). Add an empty <code>[Unreleased]</code> block above it.</li>
+<li><strong>Ledger Sync:</strong> Ensure the version entries in <code>HISTORY.md</code> and <code>task.md</code> reflect the new version string and milestones.</li>
+<li><strong>Mental Anchor:</strong> Add a Session Anchor in <code>.agents/brain/walkthrough.md</code> summarizing the release highlights.</li>
+<li><strong>Pre-Release Test Gate:</strong> Run the full test suite to guarantee 100% test pass rate before committing or tagging:
+   <code>uv run --with pytest --with pyyaml --with requests --with tiktoken --with fastmcp pytest</code></li>
+<li><strong>GitOps Stage:</strong> Commit all changes via <code>git commit -m "docs: cut release v&lt;VERSION&gt;"</code>.</li>
+<li><strong>Tagging &amp; Non-Interactive Multi-Remote Push:</strong>
+   Create an annotated Git tag and push to all active remotes using non-interactive Git flags:</li>
+<li><code>git tag -a v&lt;VERSION&gt; -m "Release v&lt;VERSION&gt;: &lt;SUMMARY&gt;"</code></li>
+<li><code>$env:GIT_TERMINAL_PROMPT="0"; $env:GCM_INTERACTIVE="never"; git push origin main; git push origin v&lt;VERSION&gt;; git push gitlab main; git push gitlab v&lt;VERSION&gt;</code></li>
+<li><strong>Release Notes Generation &amp; Handover:</strong></li>
+<li>Create a release notes artifact (<code>release_notes_v&lt;VERSION&gt;.md</code>) summarizing highlights, guardrails, architecture, and metrics.</li>
+<li>Emit the final <code>[DSOM EPISODIC RECORD]</code> handover block.</li>
+<li><strong>Platform Deployment (Optional/CLI):</strong></li>
 <li>Deploy to GitHub: <code>gh release create v&lt;VERSION&gt; -F .agents/brain/scratch/release_notes.txt --title "v&lt;VERSION&gt;"</code></li>
 <li>Deploy to GitLab: <code>glab release create v&lt;VERSION&gt; --name "v&lt;VERSION&gt;" --notes-file .agents/brain/scratch/release_notes.txt</code></li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
