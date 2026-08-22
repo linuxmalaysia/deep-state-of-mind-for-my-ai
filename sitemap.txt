@@ -126,6 +126,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/GITOPS-
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/HUB-AND-SPOKE-MODEL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/ITIL-ALIGNMENT/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/LLM-WIKI-ADOPTION/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/MULTI-AGENT-PROTOCOLS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/NOSS-INTEGRATION-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/OKF-MIND-OPTIMIZATION/
@@ -316,6 +317,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/GITOPS-A
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/HUB-AND-SPOKE-MODEL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/ITIL-ALIGNMENT/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/LLM-WIKI-ADOPTION/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MULTI-AGENT-PROTOCOLS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/NOSS-INTEGRATION-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OKF-MIND-OPTIMIZATION/
@@ -442,6 +444,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/hub-and-spoke-model
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/itil-alignment
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/llm-wiki-adoption
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/mintlify-one-way-sync-pipeline
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/multi-agent-protocols
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/noss-integration-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/openwiki-integration-guide
