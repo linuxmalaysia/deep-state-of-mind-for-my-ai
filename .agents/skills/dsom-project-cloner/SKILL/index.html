@@ -3879,11 +3879,14 @@
 <li>Recursively copy <code>.agents/skills/dsom-token-calculator/</code> to <code>"$TARGET_PATH/.agents/skills/"</code></li>
 <li>Recursively copy <code>.agents/skills/dsom-signature-injector/</code> to <code>"$TARGET_PATH/.agents/skills/"</code></li>
 <li>Recursively copy <code>.agents/skills/agent-plugin-packager/</code> to <code>"$TARGET_PATH/.agents/skills/"</code></li>
+<li>Recursively copy <code>.agents/skills/mintlify-docs-compiler/</code> to <code>"$TARGET_PATH/.agents/skills/"</code></li>
 <li>Recursively copy <code>.agents/skills/initialize-gitops/</code> to <code>"$TARGET_PATH/.agents/skills/"</code></li>
 </ul>
 </li>
 <li><strong>Pillar C (Pre-Commit Guardrails &amp; Tools):</strong><ul>
 <li>Recursively copy <code>tools/</code> to <code>"$TARGET_PATH/tools/"</code></li>
+<li>Copy <code>scripts/sync_docs.py</code> to <code>"$TARGET_PATH/scripts/sync_docs.py"</code></li>
+<li>Copy <code>.github/workflows/sync-docs.yml</code> to <code>"$TARGET_PATH/.github/workflows/sync-docs.yml"</code></li>
 <li>Automatically execute <code>uv run python "$TARGET_PATH/tools/install_git_guardrails.py"</code> in the target directory.</li>
 </ul>
 </li>
