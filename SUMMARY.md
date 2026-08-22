@@ -49,6 +49,7 @@ topics: ["dsom", "documentation"]
 * [🛡️ The Master Guide to AI Guardrails & Custom Validators](docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md)
 * [🛡️ DSOM Guardrail Catalog & Submission Review](docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md)
 * [🛡️ Custom Validators in DSOM Guide](docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md)
+* [🛡️ Downstream DSOM Protocol Compliance Mandate](docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md)
 
 ## 🌅 2. Operational Rituals
 
