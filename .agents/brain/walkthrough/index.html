@@ -2023,6 +2023,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#session-anchor-2026-08-23-mintlify-user-manual-architecture-fastmcp-context7-code-search-and-automated-snapshot-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Session Anchor: 2026-08-23 — Mintlify User Manual Architecture, FastMCP Context7 Code Search, and Automated Snapshot Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏁 Session Anchor: 2026-08-23 — Mintlify User Manual Architecture, FastMCP Context7 Code Search, and Automated Snapshot Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#underlying-rationale_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Underlying Rationale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-mental-anchor_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Mental Anchor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4799,6 +4838,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#session-anchor-2026-08-23-mintlify-user-manual-architecture-fastmcp-context7-code-search-and-automated-snapshot-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Session Anchor: 2026-08-23 — Mintlify User Manual Architecture, FastMCP Context7 Code Search, and Automated Snapshot Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏁 Session Anchor: 2026-08-23 — Mintlify User Manual Architecture, FastMCP Context7 Code Search, and Automated Snapshot Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#underlying-rationale_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Underlying Rationale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-mental-anchor_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Mental Anchor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5005,6 +5083,27 @@
 <blockquote>
 <p><strong>EOD Hibernation Complete: Automated MDX compiler (tools/build_mintlify_mdx.py) and one-way sync pipeline (scripts/sync_docs.py) operational with 5 strict safety guards (Guards A–E), 156 MDX documents generated, Rule 31 codified in AGENTS.md, dsom-project-cloner enriched, all 864 unit tests passing (100%), and pushed cleanly to all remotes.</strong></p>
 </blockquote>
+<h2 id="session-anchor-2026-08-23-mintlify-user-manual-architecture-fastmcp-context7-code-search-and-automated-snapshot-sync">🏁 Session Anchor: 2026-08-23 — Mintlify User Manual Architecture, FastMCP Context7 Code Search, and Automated Snapshot Sync</h2>
+<ul>
+<li>Refined <code>tools/build_mintlify_mdx.py</code> compiler adhering to User Manual site style rules: 1–3 word Title Case <code>sidebarTitle</code>, 130–155 character description padding, plain prose opening paragraphs, <code>&lt;CardGroup&gt;</code> / <code>&lt;Steps&gt;</code> landing page, and em/en-dash stripping.</li>
+<li>Authored master governance specification <code>docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md</code> (<strong>Entry Point 22</strong>) establishing the 3-manual stratification model (User/Admin/Developer Manuals) and universal drop-in AI agent prompt.</li>
+<li>Enriched <code>.agents/skills/mintlify-docs-compiler/SKILL.md</code> (OKF v0.2, 1,233 tokens) and <code>.agents/skills/dsom-project-cloner/SKILL.md</code> (OKF v0.2, 1,852 tokens) with full User Manual site style and Mintlify sync toolkit scaffolding.</li>
+<li>Ingested 250k token Context7 snapshot into <code>references/llms-from-context7.txt</code> (8,469 lines) and expanded FastMCP server (<code>tools/mcp/server.py</code>) with <code>search_code_snippets</code> tool and offline Context7 fallback.</li>
+<li>Authored <code>docs/reference/CLI-QUICK-REFERENCE.md</code> cheatsheet, compiled to Mintlify MDX, and mapped across <code>mkdocs.yml</code>, <code>docs/SUMMARY.md</code>, and <code>SUMMARY.md</code>.</li>
+<li>Implemented <code>tools/fetch_context7_snapshot.py</code> and scheduled weekly automation workflow <code>.github/workflows/context7-sync.yml</code> (Sundays 02:00 UTC) with defensive credential handling (Rule 24).</li>
+<li>Enriched <code>.agents/skills/context7-indexer/SKILL.md</code> (OKF v0.2, 1,085 tokens) and registered all new Python tools and workflows in <code>docs/governance/AUTOMATION-AUDIT-LIST.md</code>.</li>
+<li>Confirmed full test suite pass rate: <strong>16/16 unit tests passing (100%)</strong> and pre-commit custom guardrails <strong>10/10 [PASS]</strong>.</li>
+<li>Completed Start-to-End GitOps synchronisation across GitHub (<code>origin</code>) and GitLab (<code>gitlab</code>).</li>
+</ul>
+<h3 id="underlying-rationale_10">Underlying Rationale</h3>
+<p>To deliver a modular, reusable user-manual documentation architecture for downstream projects, empower internal FastMCP agents with instantaneous local code snippet retrieval, and automate weekly snapshot ingestion safely under digital sovereignty.</p>
+<h3 id="integration-mental-anchor_10">Integration Mental Anchor</h3>
+<blockquote>
+<p><strong>EOD Hibernation Complete: Mintlify User Manual architecture (Entry Point 22) codified, FastMCP code snippet search tool and offline Context7 fallback operational, weekly scheduled sync workflow configured, context7-indexer and cloner skills enriched to OKF v0.2, all unit tests passing (100%), and pushed cleanly to all remotes.</strong></p>
+</blockquote>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23</em>
+<em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
 
