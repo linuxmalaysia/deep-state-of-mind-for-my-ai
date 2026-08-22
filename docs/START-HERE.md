@@ -31,6 +31,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **OpenWiki Operational HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/) | Python emulator CLI commands |
 | **FastMCP Server HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/) | Cursor & Claude Desktop setups |
 | **Project Cloning Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/) | Scaffolding new DSOM clones |
+| **Team Masterclass (Training)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/) | End-to-end team adoption & pair programming |
 
 ---
 
@@ -42,7 +43,7 @@ Use this compass to jump directly to the exact information you or your AI agent 
 
 | Documentation Quadrant | User Intent & Orientation | Primary DSOM Entry Points |
 | :--- | :--- | :--- |
-| **🎓 Tutorials**<br>*(Learning-oriented · Practical)* | **Learning the craft step-by-step.** Guided onboarding for beginners establishing DSOM. | • [Entry Point 1: Engineering & Scaffolding](#1-the-engineering-entry-point-project-scaffolding)<br>• [Entry Point 12: Mechanical Boot Sequence](#12-the-initialisation-entry-point-mechanical-boot-sequence)<br>• [Entry Point 17: OKF Master Guide](#17-the-open-knowledge-format-okf-entry-point-foundational-context-engine_1) |
+| **🎓 Tutorials**<br>*(Learning-oriented · Practical)* | **Learning the craft step-by-step.** Guided onboarding for beginners establishing DSOM. | • [Entry Point 1: Engineering & Scaffolding](#1-the-engineering-entry-point-project-scaffolding-team-masterclass)<br>• [Entry Point 12: Mechanical Boot Sequence](#12-the-initialisation-entry-point-mechanical-boot-sequence)<br>• [Entry Point 17: OKF Master Guide](#17-the-open-knowledge-format-okf-entry-point-foundational-context-engine_1)<br>• [Team Masterclass (Zero to Sovereign AI)](tutorials/TEAM-DSOM-MASTERCLASS.md) |
 | **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture) |
 | **📚 Reference**<br>*(Information-oriented · Theoretical)* | **Factual, authoritative lookup.** Specifications, API structures, and constitutional laws. | • [Entry Point 2: Full AI Constitution (`AGENTS.md`)](#2-the-cognitive-entry-point-ai-persona-rules)<br>• [Entry Point 3: AI Sitemap (`llms.txt`)](#3-the-external-system-entry-point-ai-crawlers)<br>• [Entry Point 16: Legal & Risk Disclaimer](#16-the-legal-disclaimer-entry-point-risk-governance)<br>• [Entry Point 18: Guardrails Master Guide](#18-the-ai-guardrails-custom-validators-entry-point-defense-in-depth-safety)<br>• [Entry Point 19: Episodic Record Template](#19-the-episodic-record-state-anchor-entry-point-zero-context-amnesia) |
 | **💡 Explanation**<br>*(Understanding-oriented · Theoretical)* | **Architecture, rationale & philosophy.** Understanding *why* DSOM works and saves tokens. | • [Entry Point 8: LLM WIKI Architecture](#8-the-sovereign-knowledge-entry-point-llm-wiki-adoption)<br>• [Entry Point 9: Defensive GitOps Strategy](#9-the-security-defense-entry-point-defensive-gitops)<br>• [Entry Point 10: Token Performance Playbook](#10-the-token-performance-entry-point-context-efficiency)<br>• [Entry Point 14: The Tri-Phasic Mind](#14-the-cognitive-architecture-entry-point-the-tri-phasic-mind) |
@@ -62,13 +63,14 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 
 ---
 
-## 1. The Engineering Entry Point (Project Scaffolding)
+## 1. The Engineering Entry Point (Project Scaffolding & Team Masterclass)
 
-*If you are setting up a brand new DSOM project repository for the first time.*
+*If you are setting up a brand new DSOM project repository for the first time or onboarding an engineering team.*
 
-**Read This First:** [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))
+**Read This First (Scaffolding Blueprint):** [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))  
+**Complete Team Curriculum & Pair-Programming Playbook:** [`tutorials/TEAM-DSOM-MASTERCLASS.md`](tutorials/TEAM-DSOM-MASTERCLASS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/))
 
-**Why it matters:** This is the master blueprint. It explicitly instructs the human or the AI on how to execute the `dsom-project-cloner` and `dsom-bootstrap` skills. It establishes the initial Git Worktree isolation and ensures the spatial memory (`.agents/brain/`) is properly initialized before any real work begins.
+**Why it matters:** This provides both the theoretical blueprint and concrete terminal scripts (PowerShell / Bash) as well as AI prompting templates (for Google Antigravity). It guides your team through the entire 4-phase lifecycle: creating the 6-pillar downstream directory tree, initializing dual-remote GitOps (GitHub + GitLab), pair programming with Antigravity, and syncing with Google Jules.
 
 ---
 

@@ -32,6 +32,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **OpenWiki Operational HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/) | Python emulator CLI commands |
 | **FastMCP Server HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/) | Cursor & Claude Desktop setups |
 | **Project Cloning Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/) | Scaffolding new DSOM clones |
+| **Team Masterclass (Training)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/) | End-to-end team adoption & pair programming |
 
 ---
 
@@ -63,12 +64,13 @@ Adopting the DSOM protocol into any new or existing project delivers four transf
 
 ---
 
-## 1. The Engineering Entry Point (Project Scaffolding)
-*If you are setting up a brand new DSOM project repository for the first time.*
+## 1. The Engineering Entry Point (Project Scaffolding & Team Masterclass)
+*If you are setting up a brand new DSOM project repository for the first time or onboarding an engineering team.*
 
-**Read This First:** [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))
+**Read This First (Scaffolding Blueprint):** [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))  
+**Complete Team Curriculum & Pair-Programming Playbook:** [`docs/tutorials/TEAM-DSOM-MASTERCLASS.md`](docs/tutorials/TEAM-DSOM-MASTERCLASS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/))
 
-**Why it matters:** This is the master blueprint. It explicitly instructs the human or the AI on how to execute the `dsom-project-cloner` and `dsom-bootstrap` skills. It establishes the initial Git Worktree isolation and ensures the spatial memory (`.agents/brain/`) is properly initialized before any real work begins.
+**Why it matters:** This provides both the theoretical blueprint and concrete terminal scripts (PowerShell / Bash) as well as AI prompting templates (for Google Antigravity). It guides your team through the entire 4-phase lifecycle: creating the 6-pillar downstream directory tree, initializing dual-remote GitOps (GitHub + GitLab), pair programming with Antigravity, and syncing with Google Jules.
 
 ---
 
