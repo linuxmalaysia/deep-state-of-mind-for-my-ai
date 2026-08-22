@@ -19,6 +19,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **AI Guardrails Master Reference (Entry Point 18):** Authored `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` detailing defense-in-depth safety, threat vectors, Tri-Phasic interception, and dual-path execution.
+- **Guardrail Catalog & Submission Review:** Authored `docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md` cataloging 10 sovereign guardrails for human review and PyPI publishing.
+- **Downstream DSOM Protocol Compliance Mandate:** Authored `docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md` establishing the 5-Pillar Sovereign Anchor Architecture for downstream repositories.
+- **Standalone `guardrails-ai-dsom` Package:** Implemented, tested, and packaged 10 custom validators under PEP 517/621 in `tools/guardrails-ai-dsom/`.
+- **Universal Gateway Matrix:** Deployed root `.cursorrules`, enriched `CLAUDE.md`, upgraded `.github/copilot-instructions.md`, and aligned root `AGENTS.md`.
+- **Git Pre-Commit Guardrails Hook:** Implemented `tools/install_git_guardrails.py` running `guardrails-ai-dsom` on every Git commit.
+- **Episodic Resume Protocol Entry Point 19:** Registered `docs/DSOM-EPISODIC-RECORD-TEMPLATE.md` across `START-HERE.md`, `SUMMARY.md`, `mkdocs.yml`, and `llms.txt`.
+- **Dual-Path Custom Validator Mandate (Rule 29):** Codified Rule 29 in `.agents/AGENTS.md` and root `AGENTS.md`.
+- **Downstream Cross-Agent Honor Mandate (Rule 28):** Codified Rule 28 enforcing Universal Gateway Matrix and pre-commit hooks.
 - **Opportunistic OKF v0.2 Migration Mandate (Rule 6):** Codified the requirement to migrate documents to OKF v0.2 (`sources`, `generated`, `verified`, `status`, `stale_after`) opportunistically during standard editing workflows, strictly forbidding token-wasting mass full-corpus rewrites.
 - **Downstream Asymmetry & Cognitive State Preservation Mandate (Rule 28):** Codified the architectural rule governing the Reference Forge (comprehensive baseline engine) vs. Minimal Downstream Adoption (lean 6-pillar footprint keeping client source code >90% of repository volume).
 - **DSOM Cognitive State Preservation & Minimal Downstream Adoption Architecture:** Authored foundational human-to-Gemini proposal (`docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`) establishing the Asymmetry Principle (comprehensive framework engine vs. lightweight, zero-bloat downstream project adoption), 6 core pillars of persistent memory, and Diátaxis 4-Quadrant navigation compass integration in `START-HERE.md`.
