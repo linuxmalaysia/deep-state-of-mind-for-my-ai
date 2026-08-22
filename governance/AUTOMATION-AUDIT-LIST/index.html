@@ -828,15 +828,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-yaml-configurations-playbooks-yml" class="md-nav__link">
+  <a href="#3-python-scripts-py" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. YAML Configurations &amp; Playbooks (.yml)
+        3. Python Scripts (.py)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. YAML Configurations &amp; Playbooks (.yml)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-github-actions-workflows-cicd-yml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. GitHub Actions Workflows &amp; CI/CD (.yml)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-yaml-configurations-playbooks-yml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. YAML Configurations &amp; Playbooks (.yml)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. YAML Configurations &amp; Playbooks (.yml)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3970,15 +3992,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-yaml-configurations-playbooks-yml" class="md-nav__link">
+  <a href="#3-python-scripts-py" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. YAML Configurations &amp; Playbooks (.yml)
+        3. Python Scripts (.py)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. YAML Configurations &amp; Playbooks (.yml)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-github-actions-workflows-cicd-yml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. GitHub Actions Workflows &amp; CI/CD (.yml)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-yaml-configurations-playbooks-yml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. YAML Configurations &amp; Playbooks (.yml)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. YAML Configurations &amp; Playbooks (.yml)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4084,7 +4128,28 @@
 <li><strong><code>tools/sod-palace.ps1</code></strong>: Start of Day (SOD) ritual to initialise the memory palace ledger.</li>
 <li><strong><code>tools/template-reset.ps1</code></strong>: Wipes the current state and restores the <code>.agents/brain</code> baseline template.</li>
 </ul>
-<h2 id="3-yaml-configurations-playbooks-yml">3. YAML Configurations &amp; Playbooks (<code>.yml</code>)</h2>
+<h2 id="3-python-scripts-py">3. Python Scripts (<code>.py</code>)</h2>
+<p><em>Isolated Python utilities, compilers, and MCP tooling executed under <code>uv</code>.</em></p>
+<ul>
+<li><strong><code>tools/apply_okf_frontmatter.py</code></strong>: Batch audits and applies OKF v0.2 frontmatter across all project Markdown files.</li>
+<li><strong><code>tools/bench_brain.py</code></strong>: Benchmarks memory read latency across disk, FUSE, and virtualized filesystems.</li>
+<li><strong><code>tools/build_mintlify_mdx.py</code></strong>: Compiles native Markdown and Agent Skills into Mintlify MDX trees and generates <code>docs.json</code>.</li>
+<li><strong><code>tools/fetch_context7_snapshot.py</code></strong>: Fetches the compiled LLM RAG text snapshot from Context7 API and stores it in <code>references/llms-from-context7.txt</code>.</li>
+<li><strong><code>tools/install_git_guardrails.py</code></strong>: Installs the unbypassable Git pre-commit guardrail hook running <code>guardrails-ai-dsom</code>.</li>
+<li><strong><code>tools/mcp/server.py</code></strong>: FastMCP server exposing DSOM memory resources, OpenWiki queries, and code snippet searches over stdio.</li>
+<li><strong><code>tools/openwiki_emulator.py</code></strong>: Native Python emulator compiling and querying the OpenWiki knowledge graph.</li>
+<li><strong><code>tools/refactor_okf.py</code></strong>: Refactors legacy OKF frontmatter to modern standards.</li>
+<li><strong><code>scripts/sync_docs.py</code></strong>: Hardened one-way synchronization tool enforcing 5 Safety Guards (A–E) to publish docs to Mintlify.</li>
+</ul>
+<h2 id="4-github-actions-workflows-cicd-yml">4. GitHub Actions Workflows &amp; CI/CD (<code>.yml</code>)</h2>
+<p><em>Automated CI/CD pipelines governing quality gates, security scans, and documentation deployments.</em></p>
+<ul>
+<li><strong><code>.github/workflows/context7-sync.yml</code></strong>: Automated weekly scheduled job (Sundays 02:00 UTC) and on-demand workflow dispatch for refreshing Context7 snapshot.</li>
+<li><strong><code>.github/workflows/sync-docs.yml</code></strong>: Automated pipeline compiling MDX and syncing documentation to downstream Mintlify repository under 5 strict safety guards.</li>
+<li><strong><code>.github/workflows/gh-pages.yml</code></strong>: Compiles and deploys MkDocs documentation to GitHub Pages.</li>
+<li><strong><code>.github/workflows/crda.yml</code></strong>: Snyk and dependency vulnerability security scanning.</li>
+</ul>
+<h2 id="5-yaml-configurations-playbooks-yml">5. YAML Configurations &amp; Playbooks (<code>.yml</code>)</h2>
 <p><em>Ansible playbooks, role tasks, and inventory configurations.</em></p>
 <h3 id="root-inventory">Root &amp; Inventory</h3>
 <ul>
@@ -4117,7 +4182,7 @@
 <li><strong><code>roles/common/tasks/timezone.yml</code></strong>: Idempotent configuration of node timezones and NTP synchronization.</li>
 </ul>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
