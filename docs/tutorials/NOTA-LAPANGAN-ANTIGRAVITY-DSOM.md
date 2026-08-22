@@ -2,9 +2,9 @@
 okf_version: 0.2
 type: guide
 title: "Nota Lapangan: Panduan Praktikal Pasukan untuk AI Antigravity & DSOM Bersama Cikgu Haris"
-timestamp: "2026-08-22T17:18:00Z"
+timestamp: "2026-08-22T17:54:00Z"
 topics: ["antigravity", "gemini", "dsom", "ansible", "gitops", "skills", "jules", "panduan-pasukan"]
-description: "Sintesis nota lapangan praktikal, strategi model, automasi kemahiran (skills), dan disiplin GitOps DSOM untuk perkongsian bersama rakan sepasukan."
+description: "Sintesis nota lapangan praktikal, Langkah 0 onboarding prompt, strategi model, automasi kemahiran (skills), dan disiplin GitOps DSOM untuk perkongsian bersama rakan sepasukan."
 resource: "file:///docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md"
 sources: ["docs/tutorials/TEAM-DSOM-MASTERCLASS.md", "START-HERE.md", ".agents/AGENTS.md"]
 generated: "google-antigravity"
@@ -14,53 +14,72 @@ stale_after: "2027-08-22T00:00:00Z"
 ---
 
 # 📝 Nota Lapangan: Panduan Praktikal AI Antigravity & Protokol DSOM
-### *(Berdasarkan Sesi Perkongsian & Bimbingan Cikgu Haris / LinuxMalaysia)*
+### *(Berdasarkan Sesi Perkongsian & Bimbingan Cikgu Haris / LinuxMalaysia bersama Pasukan)*
 
 > **Sasaran:** Jurutera Perisian, Pentadbir Sistem (SysAdmin), Jurutera DevOps, dan Ahli Pasukan Teknikal.  
-> **Tujuan:** Panduan rujukan pantas dwibahasa (Bahasa Melayu Piawai DBP & Standard UK English) untuk memahami cara bekerja secara efektif bersama AI Agent (Google Antigravity, Gemini Pro, Claude Sonnet, Google Jules) berlandaskan protokol **Deep State of Mind (DSOM)**.
+> **Tujuan:** Panduan rujukan pantas dwibahasa (Bahasa Melayu Piawai DBP & Standard UK English) untuk memahami cara bekerja secara efektif bersama AI Agent berlandaskan rangka kerja **Deep State of Mind (DSOM)**.
 
 ---
 
 ## 📌 Ringkasan Eksekutif & Minda Asas (*Core Mindset*)
 
-Dalam pembangunan moden berbantukan AI, **AI bukan pengganti kepakaran manusia, sebaliknya bertindak sebagai Pengganda Produktiviti (*Productivity Multiplier*) dan Kembar Kognitif Digital (*Cognitive Digital Twin*)**.
+Dalam pembangunan moden berbantukan AI, **AI bukan pengganti kepakaran manusia, sebaliknya bertindak sebagai Pengganda Produktiviti (*Productivity Multiplier*)**. Antara aplikasi utama yang menjadi perantara tugasan harian kita ialah aplikasi desktop **Google Antigravity**.
 
-Masalah terbesar apabila bekerja dengan AI ialah **kehilangan ingatan (*context window amnesia*)** dan **halusinasi arahan terminal (*silent destructive actions*)**. Melalui protokol DSOM dan penggunaan Google Antigravity Desktop, kita membina pagar keselamatan (*guardrails*) dan ingatan kekal (*spatial memory*).
+Masalah terbesar apabila bekerja dengan AI ialah **AI sering lupa (*context window amnesia*)** dan **boleh melakukan tindakan merosakkan secara senyap (*silent destructive actions*)**. Rangka kerja DSOM diwujudkan supaya AI akan sentiasa mengikut *state* (keadaan) dan pemahaman yang sama, waima untuk projek yang baharu bermula. Kita menggunakan pendekatan GitOps untuk membina memori kekal dan pagar keselamatan (*guardrails*).
+
+---
+
+## 🚀 Langkah 0: Memulakan Ejen AI (*Onboarding Prompt*)
+
+Sebelum memulakan sebarang tugasan, amat penting untuk menyegerakkan mana-mana agen AI (Antigravity, Jules, dsb.) dengan kerangka kerja DSOM secara terus daripada sumber rasminya.
+
+Setiap kali anda memulakan projek baharu atau sesi ejen yang baharu, wajib berikan arahan (*prompt*) di bawah supaya AI membaca, memahami, dan memuatkan (*adopt*) pengetahuan tersebut ke dalam struktur ingatannya.
+
+### 📋 Salin & Tampal Prompt Ini kepada AI:
+
+```markdown
+I need you to adopt Deep State Of Mind (DSOM) For My AI by reading this in detail, and make sure you also read all others supporting documents and pages and do your own deep research and make sure all into AI Agents Knowledge and .agents/brain
+
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/
+Welcome to the Deep State of Mind (DSOM) For My AI framework. If you are adopting this repository to bootstrap a new infrastructure/software project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
+DSOM is a modular Sovereign AI Engine. To use it effectively, do not read every file at random. Start with the defined Entry Points depending on your role.
+```
 
 ---
 
 ## 🎯 1. Pengurusan Model & Kos Token (*Model Strategy & Token Budgeting*)
 
+Bergantung pada fasa dan beban tugasan, pilihlah enjin (*model*) yang betul untuk memaksimumkan pulangan sambil menjimatkan token:
+
 | Model | Kegunaan & Peranan | Karakteristik & Tip Penggunaan |
 | :--- | :--- | :--- |
-| **Gemini Pro (Default)** | **Pilihan Utama (*Workhorse*)** | Keseimbangan terbaik antara kepantasan, kefahaman kod, dan kecekapan token. Digunakan untuk 80–90% tugasan harian. |
-| **Claude Sonnet** | **Penaakulan Kompleks (*High-Wisdom*)** | Digunakan apabila menghadapi *architectural refactoring*, pepijat (*bugs*) rumit, atau analisis mendalam. Menggunakan lebih banyak bajet token. |
-| **Model Terbuka / Percuma (Flash Lite / OSS)** | **Tugasan Ringan & Pengekstrakan** | Sangat jimat token; sesuai untuk semakan sintaks asas, penukaran format data, atau carian dokumen ringkas. |
+| **Gemini Pro 3.0 (Default)** | **Pilihan Utama (*Workhorse*)** | Keseimbangan terbaik antara prestasi, kepantasan, dan penggunaan token. Digunakan untuk majoriti tugasan rutin pengekodan harian. |
+| **Claude Sonnet** | **Penaakulan Kompleks (*High-Wisdom*)** | Lebih kebijaksanaan (*wisdom*) namun lebih banyak menggunakan bajet token. Sesuai digunakan selepas habis token Gemini Pro atau ketika menghadapi masalah/pepijat (*bugs*) yang sangat rumit. |
+| **Model Percuma / Terbuka (GPT OSS / Flash)** | **Tugasan Ringan & Pengekstrakan** | Sangat jimat token, tetapi prestasi dan kebijaksanaannya agak kurang. Sesuai untuk carian dokumen atau semakan sintaks asas. |
 
 > [!TIP]
-> **Petua Jimat Token:** Jangan muat naik keseluruhan kod (*codebase*) ke dalam chat! Gunakan format metadata **Open Knowledge Format (OKF)** YAML di bahagian atas fail `.md` supaya AI hanya membaca ringkasan ~50 token berbanding 500,000 token teks penuh kod mentah.
+> **Petua Jimat Token:** Jangan muat naik keseluruhan kod (*codebase*)! Gunakan format metadata **Open Knowledge Format (OKF)** YAML di bahagian atas fail supaya AI hanya membaca ringkasan metadata (~50 token) berbanding teks kod mentah yang besar.
 
 ---
 
 ## 🧠 2. Mengatasi Sifat 'Lupa' AI Melalui Git Sovereignty
 
-AI tidak mempunyai ingatan jangka panjang melainkan kita menyediakan struktur ingatan fizikal:
+AI secara semula jadinya tidak mempunyai memori jangka panjang. Atas sebab ini, kita perlu menggunakan Git (walaupun Git secara *local*) untuk menjejak dan menyemak setiap perubahan.
 
-1. **Komit Git yang Kerap & Berbutir (*Atomic Commits*):**
-   - Arahkan AI untuk membuat `git commit` bagi setiap perubahan logik yang lengkap.
-   - *Contoh Prompt:* `"Sahkan kod dengan ujian unit, kemudian komit fail yang diubah dengan mesej semantik discrete git commit."`
-   - Elakkan arahan pukal `git commit -am` yang mencampurkan semua fail tanpa kawalan.
+1. **Komit Git untuk Setiap Perubahan (*Atomic Commits*):**
+   - Sentiasa arahkan Gemini/Antigravity untuk *commit* ke Git setiap kali ia siap melakukan perubahan kod.
+   - *Contoh Arahan:* `"Sahkan kod ini, kemudian komit fail yang diubah dengan mesej semantik discrete git commit."`
 
 2. **Gunakan Perintah `/learn` untuk Mengekalkan Ingatan:**
-   - Setiap kali anda membetulkan kesilapan AI atau menghasilkan corak kerja yang bagus, taipkan `/learn`.
-   - Antigravity akan menyusun fail `learning_proposal.md` untuk mengabadikan peraturan (*rules*) atau kemahiran (*skills*) tersebut.
-   - **Pencerahan:** Ciri `/learn` terbina di peringkat platform Antigravity IDE (bukan sekadar bergantung kepada akaun berbayar), membolehkan pembaikan diserap terus ke dalam fail SOP tempatan.
+   - Setiap kali terdapat perubahan struktur yang besar atau anda menemui corak kerja yang bagus, arahkan AI dengan menaip `/learn`.
+   - Ini akan menyimpan pengetahuan tersebut ke dalam struktur "Brain" AI.
+   - *(Nota Penting: Fitur `/learn` terbina terus di dalam platform Antigravity IDE untuk mengekalkan ingatan dalam fail `.md` tempatan).*
 
 ---
 
-## 📁 3. Struktur Direktori Projek yang Kemas (*6-Pillar Minimal Footprint*)
+## 📁 3. Struktur Direktori Projek yang Kemas (*DSOM Footprint*)
 
-Untuk memastikan ruang kerja sentiasa bersih dan difahami oleh mana-mana AI, wujudkan struktur folder standard ini:
+Bagi memastikan projek mudah diselenggara dan mudah diindeks oleh agen AI, patuhi struktur folder standard ini:
 
 ```text
 my-project/
@@ -68,76 +87,62 @@ my-project/
 │   ├── AGENTS.md             <-- Perlembagaan & undang-undang AI (29 Rules)
 │   ├── brain/                <-- Ingatan spatial (task.md, walkthrough.md)
 │   └── skills/               <-- Kemahiran projek tempatan (SOP berekod)
-├── docs/                     <-- Dokumentasi rasmi & output dokumen AI
-│   ├── governance/           <-- Polisi teknikal & garis panduan
-│   └── tutorials/            <-- Panduan langkah demi langkah
-├── references/               <-- Tempat letak dokumen rujukan mentah (PDF/Specs)
+├── docs/                     <-- Tempat AI tulis/simpan fail .md yang diwujudkan
+├── references/               <-- Masukkan segala dokumen rujukan mentah berkaitan projek
 ├── tools/                    <-- Skrip automasi & Git Pre-Commit Guardrails
 ├── .cursorrules              <-- Gateway untuk Cursor IDE
 ├── CLAUDE.md                 <-- Gateway untuk Claude Desktop
 ├── START-HERE.md             <-- Peta orientasi onboarding pasukan
-└── README.md / CHANGELOG.md  <-- Lejar universal
+└── README.md                 <-- Lejar universal
 ```
 
-* **Folder `references/`:** Tempat meletakkan fail PDF spesifikasi, dokumen arkitek lama, atau nota perbincangan.
-* **Folder `docs/`:** Tempat AI menulis, menyusun, dan menyimpan analisis teknikal dalam format Markdown `.md`.
+* **Folder `references/`:** Khas untuk bahan rujukan mentah (PDF, arkitektur sistem asal, dll).
+* **Folder `docs/`:** Tempat di mana agen menulis dan menyimpan dokumentasi rasmi yang ia hasilkan.
 
 ---
 
-## 🛡️ 4. Disiplin Pelaksanaan Perintah: Ansible Playbook vs Terminal Terus
+## 🛡️ 4. Disiplin Operasi: Ansible Playbook vs Terminal Terus
 
 > [!CAUTION]
-> **Undang-Undang Utama Keselamatan:** Jangan sesekali membenarkan AI menjalankan perintah bahaya secara terus (*raw terminal commands*) di atas pelayan pengeluaran (*production server*)!
+> **UNDANG-UNDANG MUTLAK KESELAMATAN:** Jangan sekali-kali membenarkan agen AI melaksanakan arahan komander secara terus (*run command*) di atas pelayan pengeluaran (*production server*)!
 
-1. **Jadikan Ansible Playbook sebagai Lejar Operasi:**
-   - Arahkan AI: *"Jangan run command terus. Bina satu Ansible Playbook yang idempoten untuk laksanakan konfigurasi ini."*
-2. **Kelebihan Pendekatan Ini:**
-   - **Boleh Diulang (*Idempotent*):** Boleh diuji berkali-kali tanpa merosakkan sistem.
-   - **Terdokumentasi dalam Git:** Setiap arahan tercatat rapi dalam repositori sebagai rekod audit.
-   - **Keselamatan Terjamin:** Manusia boleh menyemak (*peer review*) setiap tugasan YAML sebelum dimainkan ke pelayan sasaran (`ansible-playbook -i hosts playbook.yml --check`).
+1. **Mandatori Penggunaan Ansible:**
+   - Beri arahan jelas kepada agen: *"Jangan jalankan command secara terus. Bina Ansible playbook untuk konfigurasi ini."*
+2. **Kelebihan Menggunakan Ansible Playbook:**
+   - **Rekod Audit (*Trackable*):** Boleh disimpan dalam Git sebagai rekod siapa yang melaksanakan dan apakah perubahannya.
+   - **Boleh Diulang (*Idempotent*):** Automasi ini boleh dijalankan ke sistem atau pelayan lain dengan selamat tanpa kesan sampingan.
 
 ---
 
 ## ⚙️ 5. Menukar Tugasan Berulang Menjadi *Skills* (AI SOPs)
 
-Apabila anda dapati ada tugasan yang berulang (contoh: format dokumen DOCX, suntik tandatangan lesen, kira token):
+Jangan bazirkan masa anda dan AI mengulang proses yang sama (contohnya memformat laporan atau menstruktur repositori).
 
-1. **Berikan Arahan Penukaran (*Skill Creation Prompt*):**
-   ```markdown
-   Turn this successful workflow and script into a reusable DSOM agent skill.
-   Create a folder under `.agents/skills/<skill-name>/` containing `SKILL.md` with OKF v0.2 frontmatter.
-   ```
-2. **Lokasi Penyimpanan *Skills*:**
-   * **Global / Pengguna:** `~/.gemini/antigravity/builtin/skills/` (Tersedia merentas semua projek).
-   * **Projek Tempatan (*Recommended*):** `<project-root>/.agents/skills/<skill-name>/SKILL.md` (Tersimpan dalam Git projek, membolehkan seluruh pasukan berkongsi kemahiran yang sama).
+1. **Jana Kemahiran (*Skill Creation*):**
+   - Apabila satu proses rumit berjaya disiapkan, beri arahan ini kepada Antigravity:  
+     `"Turn this action into skills"` atau `"Turn this successful workflow into a reusable DSOM agent skill."`
+2. **Lokasi Penyimpanan Skills:**
+   - **Global (Untuk kegunaan peribadi anda di semua projek):** Disimpan di dalam `~/.gemini/skills` atau `~/.gemini/antigravity/builtin/skills/`.
+   - **Projek Tempatan (Untuk dikongsi bersama pasukan):** Disimpan di `<path/to/project/folder>/.agents/skills/<nama-skill>/SKILL.md`.
 
 ---
 
 ## 🤝 6. Kolaborasi Multi-Agent: Google Jules & Antigravity
 
-* **Google Jules (Cloud Autonomous Agent):**
-  * Bertindak di latar belakang (*asynchronous background agent*) melalui GitHub.
-  * Menjalankan audit isu, pembaikan pepijat (*bug fixing*), atau pembinaan ciri baharu dalam *pull request* (PR) berasingan.
-* **Google Antigravity (Local Interactive Twin):**
-  * Digunakan untuk pengaturcaraan berpasangan (*pair-programming*), semakan kod, dan ujian unit tempatan.
-* **Protokol Segerak Selamat (*Safe Rebase Sync*):**
-  Sebelum menarik perubahan yang dibuat oleh Jules, elakkan konflik dengan arahan GitOps bertahan:
-  ```powershell
-  # Windows PowerShell / Bash
-  git stash
-  git pull --rebase origin main
-  git stash pop
-  ```
+Sebagai satu ekosistem, kita menggabungkan keupayaan agen secara lokal dan awan:
+
+* **Google Antigravity (Local Agent):** Aplikasi meja perantara untuk *pair-programming*, ujian tempatan, dan penjanaan dokumen.
+* **Google Jules (Cloud Autonomous Agent):** Agen latar belakang yang khusus digunakan untuk integrasi tugasan di GitHub secara *public*. Ia membaca isu (*Issues*) dan menolak ciri baharu melalui *Pull Request* (PR) tanpa perlu bantuan perantara manusia (berasaskan pelayan).
 
 ---
 
 ## 📋 Senarai Semak Harian Pasukan (*Team Daily Checklist*)
 
 - [ ] **Mula Sesi (SOD):** Buka Antigravity dan baca status tugasan daripada `.agents/brain/task.md`.
-- [ ] **Semasa Membangunkan Ciri:** Wujudkan fail rancangan pelaksanaan (`implementation_plan.md`) sebelum menulis kod besar.
-- [ ] **Sebelum Komit:** Jalankan ujian unit tempatan (`uv run pytest`) untuk memastikan 100% lulus.
-- [ ] **Tamat Sesi (EOD):** Jana blok ringkasan `[DSOM EPISODIC RECORD]` supaya rakan sepasukan atau sesi AI esok hari dapat menyambung kerja dengan sifar amnesia.
+- [ ] **Rancangan:** Pastikan *Implementation Plan* wujud di `docs/` atau `.agents/brain/` sebelum menulis kod besar.
+- [ ] **Pengujian & Komit:** Gunakan Git tempatan dengan komit secara berbutir (*Atomic Commits*). Jika ada perintah pelayan, pastikan ia Ansible YAML!
+- [ ] **Tamat Sesi (EOD):** Jana blok ringkasan `[DSOM EPISODIC RECORD]` supaya AI tidak "lupa" apabila anda mula bekerja esok hari.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*  
+*Deep State of Mind (DSOM) For My AI Protocol | Berdasarkan Bimbingan Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*  
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
