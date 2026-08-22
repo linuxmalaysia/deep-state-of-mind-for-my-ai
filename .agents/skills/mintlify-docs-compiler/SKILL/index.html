@@ -3755,21 +3755,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#operational-architecture" class="md-nav__link">
+  <a href="#user-manual-site-style-standards" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Operational Architecture
+        User Manual Site Style Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Manual Site Style Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-frontmatter-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Frontmatter Requirements
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#the-5-safety-guards-ae" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-information-architecture-docsjson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The 5 Safety Guards (A–E)
+        2. Information Architecture (docs.json)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mintlify-ignore-rules-docs-sourcemintignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mintlify Ignore Rules (docs-source/.mintignore)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-5-safety-guards-a-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 5 Safety Guards (A-E)
       
     </span>
   </a>
@@ -3858,28 +3897,34 @@
 
 
 <h1 id="mintlify-mdx-compiler-one-way-sync">Mintlify MDX Compiler &amp; One-Way Sync</h1>
-<p>This skill automates the compilation of standard Markdown documents in <code>docs/</code> and skills in <code>.agents/skills/</code> into Mintlify-compliant MDX (<code>docs-source/</code>) and executes a one-way synchronization pipeline to the downstream deployment repository (<code>linuxmalaysia/my-knowledge-brain</code>) serving <code>https://harisfazillah.mintlify.site</code>.</p>
-<h2 id="operational-architecture">Operational Architecture</h2>
-<div class="highlight"><pre><span></span><code>┌────────────────────────────────────────────────────────────┐
-│ Sovereign Source of Truth: docs/ &amp; .agents/skills/         │
-└───────────────────────────┬────────────────────────────────┘
-                            │ (python tools/build_mintlify_mdx.py)
-                            ▼
-┌────────────────────────────────────────────────────────────┐
-│ Compiled MDX Tree: docs-source/ + docs.json                │
-└───────────────────────────┬────────────────────────────────┘
-                            │ (python scripts/sync_docs.py)
-                            ▼ (5 Non-Negotiable Safety Guards A–E)
-┌────────────────────────────────────────────────────────────┐
-│ Downstream Deployment: linuxmalaysia/my-knowledge-brain    │
-└───────────────────────────┬────────────────────────────────┘
-                            │ (Mintlify Rebuild)
-                            ▼
-┌────────────────────────────────────────────────────────────┐
-│ Live Documentation: https://harisfazillah.mintlify.site   │
-└────────────────────────────────────────────────────────────┘
+<p>This skill automates compiling standard Markdown documents in <code>docs/</code> and skills in <code>.agents/skills/</code> into Mintlify-compliant MDX (<code>docs-source/</code>) and executing a one-way synchronization pipeline to the downstream deployment repository (<code>linuxmalaysia/my-knowledge-brain</code>) serving <code>https://harisfazillah.mintlify.site</code>.</p>
+<h2 id="user-manual-site-style-standards">User Manual Site Style Standards</h2>
+<p>The compiler (<code>tools/build_mintlify_mdx.py</code>) and any manual MDX authoring must follow these formatting rules:</p>
+<h3 id="1-frontmatter-requirements">1. Frontmatter Requirements</h3>
+<p>Every generated <code>.mdx</code> file must contain valid YAML frontmatter:
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;50-60</span><span class="nv"> </span><span class="s">char</span><span class="nv"> </span><span class="s">SEO</span><span class="nv"> </span><span class="s">title,</span><span class="nv"> </span><span class="s">unique</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">site&gt;"</span>
+<span class="nt">sidebarTitle</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;1-3</span><span class="nv"> </span><span class="s">word</span><span class="nv"> </span><span class="s">Title</span><span class="nv"> </span><span class="s">Case</span><span class="nv"> </span><span class="s">label&gt;"</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;130-155</span><span class="nv"> </span><span class="s">chars,</span><span class="nv"> </span><span class="s">unique,</span><span class="nv"> </span><span class="s">adds</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">beyond</span><span class="nv"> </span><span class="s">title&gt;"</span>
+<span class="nn">---</span>
 </code></pre></div>
-<h2 id="the-5-safety-guards-ae">The 5 Safety Guards (A–E)</h2>
+- <strong><code>sidebarTitle</code></strong>: Mandatory and short (1-3 words). Never put the full SEO title in the sidebar. Never repeat the product name.
+- <strong>First Paragraph</strong>: Must be plain prose (no JSX components, no code fences) naming the feature and stating what the page covers.
+- <strong>Punctuation</strong>: No em dashes (<code>—</code>) or en dashes (<code>–</code>) as punctuation in prose. Use commas, colons, parentheses, or split sentences.</p>
+<h3 id="2-information-architecture-docsjson">2. Information Architecture (<code>docs.json</code>)</h3>
+<ul>
+<li><code>navigation</code> must be an object with tabs (≤ 2-3 tabs), ≤ 4-5 groups per tab, and ≥ 2 pages per group.</li>
+<li>Page paths must be extensionless with no leading slash (e.g. <code>rituals/start-of-day</code>).</li>
+<li><code>index.mdx</code> is the landing page using <code>&lt;CardGroup&gt;</code> and <code>&lt;Steps&gt;</code> without raw HTML or inline CSS.</li>
+</ul>
+<h3 id="3-mintlify-ignore-rules-docs-sourcemintignore">3. Mintlify Ignore Rules (<code>docs-source/.mintignore</code>)</h3>
+<p>Must explicitly ignore non-public assets:
+<div class="highlight"><pre><span></span><code>AGENTS.md
+AGENTS-PROMPT.md
+drafts/
+*.draft.mdx
+</code></pre></div></p>
+<h2 id="the-5-safety-guards-a-e">The 5 Safety Guards (A-E)</h2>
 <table>
 <thead>
 <tr>
@@ -3920,8 +3965,7 @@
 <h3 id="step-1-compile-markdown-to-mintlify-mdx">Step 1: Compile Markdown to Mintlify MDX</h3>
 <p>When documents in <code>docs/</code> or skills in <code>.agents/skills/</code> are created or updated, run the compiler:
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">tools</span><span class="p">/</span><span class="n">build_mintlify_mdx</span><span class="p">.</span><span class="n">py</span>
-</code></pre></div>
-This converts OKF frontmatter to MDX frontmatter, strips redundant titles, and regenerates <code>docs-source/docs.json</code>.</p>
+</code></pre></div></p>
 <h3 id="step-2-validate-with-local-dry-run">Step 2: Validate with Local Dry-Run</h3>
 <p>Run the sync script in dry-run mode to verify all 5 guards and review the diff plan:
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">sync_docs</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-dry-run</span>
@@ -3932,7 +3976,7 @@ This converts OKF frontmatter to MDX frontmatter, strips redundant titles, and r
 <span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">"docs: update sovereign guides and regenerate mdx tree"</span>
 <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">main</span>
 </code></pre></div>
-The GitHub Actions workflow <code>.github/workflows/sync-docs.yml</code> triggers automatically, executes the compiler, runs Guards A–E, and updates <code>my-knowledge-brain</code>.</p>
+The GitHub Actions workflow <code>.github/workflows/sync-docs.yml</code> triggers automatically, executes the compiler, runs Guards A-E, and updates <code>my-knowledge-brain</code> using <code>Docs Sync Bot &lt;bot@harisfazillah.com&gt;</code>.</p>
 <h2 id="recovery-procedure">Recovery Procedure</h2>
 <p>If the downstream repository is corrupted by an unintended push:
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linuxmalaysia/my-knowledge-brain.git
@@ -3943,7 +3987,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 </code></pre></div>
 Then resolve the discrepancy in <code>deep-state-of-mind-for-my-ai</code> under <code>docs/</code> and re-run <code>python scripts/sync_docs.py --dry-run</code>.</p>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
