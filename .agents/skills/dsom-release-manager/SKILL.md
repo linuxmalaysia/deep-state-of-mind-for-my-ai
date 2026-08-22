@@ -1,10 +1,13 @@
 ---
-okf_version: 0.1
-type: agent_skill
+okf_version: 0.2
+type: skill
 title: dsom-release-manager
-timestamp: "2026-07-12T09:50:00Z"
+timestamp: "2026-08-22T11:05:00Z"
 description: "Cuts a formal DSOM release, updates ledgers, tags the repository, and deploys to GitHub/GitLab."
 topics: ["release", "git", "tagging", "changelog", "deployment"]
+sources: [".agents/AGENTS.md", "CHANGELOG.md", "HISTORY.md"]
+verified: true
+status: "active"
 ---
 # 🚀 DSOM Release Manager
 
@@ -12,16 +15,23 @@ topics: ["release", "git", "tagging", "changelog", "deployment"]
 Trigger this skill when the user asks to "cut a release", "create release notes", or "do a release for github/gitlab".
 
 ## Execution Steps
-1. **Changelog Promotion:** Modify `CHANGELOG.md` to promote the `[Unreleased]` section into a formal versioned release block (e.g., `## [10.4.0-governance] - YYYY-MM-DD`). Add an empty `[Unreleased]` block above it.
-2. **Ledger Sync:** Ensure the version footer in `HISTORY.md` reflects the new version string.
-3. **Mental Anchor:** Create an EOD-style mental anchor in `.agents/brain/checkpoint_summary.txt` summarizing the release.
-4. **GitOps Stage:** Commit all changes via `git commit -m "docs: cut release <VERSION>"`.
-5. **Tagging:** Create a Git tag via `git tag -a v<VERSION> -m "Release <VERSION>"` and push to all remotes (`git push origin main`, `git push origin v<VERSION>`, `git push gitlab main`, `git push gitlab v<VERSION>`).
-6. **Release Notes Generation:** Extract the specific release notes from `CHANGELOG.md` and write them to a temporary file (`.agents/brain/scratch/release_notes.txt`).
-7. **Platform Deployment:** 
+1. **Changelog Promotion:** Modify `CHANGELOG.md` to promote the `[Unreleased]` section into a formal versioned release block (e.g., `## [10.4.0] - YYYY-MM-DD`). Add an empty `[Unreleased]` block above it.
+2. **Ledger Sync:** Ensure the version entries in `HISTORY.md` and `task.md` reflect the new version string and milestones.
+3. **Mental Anchor:** Add a Session Anchor in `.agents/brain/walkthrough.md` summarizing the release highlights.
+4. **Pre-Release Test Gate:** Run the full test suite to guarantee 100% test pass rate before committing or tagging:
+   `uv run --with pytest --with pyyaml --with requests --with tiktoken --with fastmcp pytest`
+5. **GitOps Stage:** Commit all changes via `git commit -m "docs: cut release v<VERSION>"`.
+6. **Tagging & Non-Interactive Multi-Remote Push:**
+   Create an annotated Git tag and push to all active remotes using non-interactive Git flags:
+   - `git tag -a v<VERSION> -m "Release v<VERSION>: <SUMMARY>"`
+   - `$env:GIT_TERMINAL_PROMPT="0"; $env:GCM_INTERACTIVE="never"; git push origin main; git push origin v<VERSION>; git push gitlab main; git push gitlab v<VERSION>`
+7. **Release Notes Generation & Handover:**
+   - Create a release notes artifact (`release_notes_v<VERSION>.md`) summarizing highlights, guardrails, architecture, and metrics.
+   - Emit the final `[DSOM EPISODIC RECORD]` handover block.
+8. **Platform Deployment (Optional/CLI):**
    - Deploy to GitHub: `gh release create v<VERSION> -F .agents/brain/scratch/release_notes.txt --title "v<VERSION>"`
    - Deploy to GitLab: `glab release create v<VERSION> --name "v<VERSION>" --notes-file .agents/brain/scratch/release_notes.txt`
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-12*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
