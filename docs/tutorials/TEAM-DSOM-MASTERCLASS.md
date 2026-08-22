@@ -53,6 +53,22 @@ flowchart TD
 
 ---
 
+## 🚀 Step 0: Agent Onboarding Prompt (Genesis Synchronization)
+
+Before issuing code instructions or starting a new agent session (Antigravity, Jules, Cursor, Claude), synchronize the AI agent with the DSOM framework directly from its authoritative online entry point:
+
+### 📋 Copy & Paste This Initialisation Prompt:
+
+```markdown
+I need you to adopt Deep State Of Mind (DSOM) For My AI by reading this in detail, and make sure you also read all others supporting documents and pages and do your own deep research and make sure all into AI Agents Knowledge and .agents/brain
+
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/
+Welcome to the Deep State of Mind (DSOM) For My AI framework. If you are adopting this repository to bootstrap a new infrastructure/software project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
+DSOM is a modular Sovereign AI Engine. To use it effectively, do not read every file at random. Start with the defined Entry Points depending on your role.
+```
+
+---
+
 ## 🛠️ Phase 1: Project Genesis & DSOM Adoption (The 6-Pillar Setup)
 
 When starting a project (whether a Python backend, Node.js API, or Go microservice), you adopt DSOM as the project's **Cognitive Digital Twin**.
@@ -249,9 +265,30 @@ When Antigravity opens your project, it executes the **Mechanical Boot Sequence*
 For non-trivial features, Antigravity uses **Planning Mode**:
 1. It researches local code and documentation first (Rule 20: Knowledge-First Discovery).
 2. It generates an `implementation_plan.md` artifact detailing proposed file diffs and verification tests.
-3. Once approved, it executes changes atomically, runs tests via `uv`, and updates `walkthrough.md`.
+### Step 3.3: Model Selection & Token Budgeting Strategy
+Select the appropriate AI model engine based on task complexity and token budget:
 
-### Step 3.3: Interactive Slash Commands to Teach and Guide
+| Model | Role & Use Case | Characteristics & Tips |
+|:---|:---|:---|
+| **Gemini Pro 3.0 (Default)** | **Primary Daily Workhorse** | Best balance of speed, code accuracy, and token economy. Handles 80–90% of daily programming and refactoring. |
+| **Claude Sonnet** | **Complex Reasoning (High-Wisdom)** | Use for deep architectural design, tricky debugging, or complex policy integration. Consumes more token budget. |
+| **Open-Weights / Flash Lite** | **Lightweight Syntax & Extraction** | Fast and token-free; ideal for quick doc lookups, regex parsing, and basic lint checks. |
+
+> [!TIP]
+> **Token Efficiency Tip:** Never feed 500,000 lines of raw code to the chat. Maintain lightweight **OKF YAML frontmatter** at the top of `.md` files so agents discover structure via ~50-token headers.
+
+### Step 3.4: Server Execution Invariant — Mandate Ansible Playbooks
+> [!CAUTION]
+> **Core Safety Law:** Never allow an AI agent to run raw destructive terminal commands directly against servers!
+
+1. **Express operations as Ansible Playbooks:** Instruct the agent:  
+   *"Do not run direct commands on the server. Write an idempotent Ansible playbook in `playbooks/` to execute this configuration."*
+2. **Key Advantages:**
+   * **Idempotency:** Safe to re-run without unintended side effects.
+   * **Auditability:** Stored and tracked in Git for team peer review.
+   * **Testability:** Can be dry-run safely using `ansible-playbook -i hosts playbook.yml --check`.
+
+### Step 3.5: Interactive Slash Commands to Teach and Guide
 - `/learn` — Invoke after any complex fix, correction, or release milestone. Antigravity will draft a learning proposal to update your project rules or skills permanently.
 - `/schedule` — Schedule background monitoring or recurring timers.
 - `/goal` — Run long-horizon, autonomous multi-step tasks without early stopping.
