@@ -11,6 +11,7 @@ topics: ["dsom", "documentation"]
 
 * [🧠 Home](README.md)
 * [🚀 START HERE: Entry Points](START-HERE.md)
+* [🎓 Team Masterclass: Zero to Sovereign AI](docs/tutorials/TEAM-DSOM-MASTERCLASS.md)
 * [📜 Universal Ledger (History)](HISTORY.md)
 * [📜 Changelog](CHANGELOG.md)
 * [🤝 Contributing Guidelines](CONTRIBUTING.md)

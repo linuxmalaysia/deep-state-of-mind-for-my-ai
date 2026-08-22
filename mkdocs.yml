@@ -152,6 +152,7 @@ nav:
       - Tutorials:
           - Overview: tutorials/index.md
           - Getting Started with DSOM Tools: tutorials/getting-started.md
+          - Team Masterclass: tutorials/TEAM-DSOM-MASTERCLASS.md
       - How-To Guides:
           - Overview: how-to/index.md
           - Audit and Apply OKF Frontmatter: how-to/audit-and-apply-frontmatter.md

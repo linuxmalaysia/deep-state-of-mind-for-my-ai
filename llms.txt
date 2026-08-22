@@ -8,6 +8,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 
 ## Core Entry Points
 - [Start Here](START-HERE.md): The absolute master roadmap for onboarding to DSOM.
+- [Team Masterclass: Zero to Sovereign AI](docs/tutorials/TEAM-DSOM-MASTERCLASS.md): Step-by-step training tutorial for engineering teams adopting DSOM, pair programming with Antigravity, dual GitOps, and multi-agent workflows.
 - [Project Readme](README.md): High-level overview and philosophy.
 - [GitBook Summary / Documentation Index](SUMMARY.md): Navigation index for GitBook integration and general documentation.
 - [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/): Web-based compiled, searchable documentation.
