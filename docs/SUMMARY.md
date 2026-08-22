@@ -17,6 +17,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 
 * [Overview](tutorials/index.md)
 * [Getting Started with DSOM Tools](tutorials/getting-started.md)
+* [Team Masterclass (Zero to Sovereign AI)](tutorials/TEAM-DSOM-MASTERCLASS.md)
 
 ## 🛠️ How-To Guides
 
