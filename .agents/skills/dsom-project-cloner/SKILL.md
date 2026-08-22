@@ -38,12 +38,13 @@ In downstream projects, **business logic and source code remain primary (>90% of
    - `"$TARGET_PATH/tools"`
 3. **Copy the 6 Pillars (Downstream Footprint):**
    - **Pillar A (The Engine & Gateway Matrix):** 
-     - Copy `AGENTS.md`, `.cursorrules`, `CLAUDE.md`, and `START-HERE.md` to `"$TARGET_PATH/"`
+     - Copy `AGENTS.md`, `.cursorrules`, `CLAUDE.md`, `START-HERE.md`, `plugin.json`, and `mcp.json` to `"$TARGET_PATH/"`
      - Copy `.agents/AGENTS.md` to `"$TARGET_PATH/.agents/"`
      - Copy `.github/copilot-instructions.md` to `"$TARGET_PATH/.github/"`
    - **Pillar B (Essential Domain Skills):**
      - Recursively copy `.agents/skills/dsom-token-calculator/` to `"$TARGET_PATH/.agents/skills/"`
      - Recursively copy `.agents/skills/dsom-signature-injector/` to `"$TARGET_PATH/.agents/skills/"`
+     - Recursively copy `.agents/skills/agent-plugin-packager/` to `"$TARGET_PATH/.agents/skills/"`
      - Recursively copy `.agents/skills/initialize-gitops/` to `"$TARGET_PATH/.agents/skills/"`
    - **Pillar C (Pre-Commit Guardrails & Tools):**
      - Recursively copy `tools/` to `"$TARGET_PATH/tools/"`
