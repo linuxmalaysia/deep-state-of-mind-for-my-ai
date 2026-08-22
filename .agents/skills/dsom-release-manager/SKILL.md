@@ -28,9 +28,9 @@ Trigger this skill when the user asks to "cut a release", "create release notes"
 7. **Release Notes Generation & Handover:**
    - Create a release notes artifact (`release_notes_v<VERSION>.md`) summarizing highlights, guardrails, architecture, and metrics.
    - Emit the final `[DSOM EPISODIC RECORD]` handover block.
-8. **Platform Deployment (Optional/CLI):**
-   - Deploy to GitHub: `gh release create v<VERSION> -F .agents/brain/scratch/release_notes.txt --title "v<VERSION>"`
-   - Deploy to GitLab: `glab release create v<VERSION> --name "v<VERSION>" --notes-file .agents/brain/scratch/release_notes.txt`
+8. **Platform Deployment (CLI):**
+   - Deploy to GitHub: `gh release create v<VERSION> -F "<ARTIFACT_PATH>/release_notes_v<VERSION>.md" --title "v<VERSION>: <RELEASE_TITLE>"`
+   - Deploy to GitLab: `glab release create v<VERSION> --name "v<VERSION>: <RELEASE_TITLE>" --notes-file "<ARTIFACT_PATH>/release_notes_v<VERSION>.md"`
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
