@@ -195,27 +195,28 @@ To ensure digital sovereignty, maintain flawless metacognitive state across AI s
 
 > **EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.**
 
-## 🏁 Session Anchor: 2026-08-22 — Mintlify One-Way Docs Sync & Safety Guards (Rule 31)
-
-- Seeded `docs-source/` from the downstream Mintlify repository `linuxmalaysia/my-knowledge-brain`, verifying 100% recursive equality.
+## 🏁 Session Anchor: 2026-08-22 — Mintlify Auto-MDX Compiler, One-Way Docs Sync (Rule 31), and Scaffolding Pipeline
+ 
 - Implemented `scripts/sync_docs.py` equipped with 5 non-negotiable safety guards (Guards A–E) preventing destructive downstream wipe accidents:
   - **Guard A (Source & JSON Integrity):** Asserts `docs-source/` and valid `docs.json` exist.
-  - **Guard B (Minimum File Count):** Enforces `.mdx` file floor (default 5; found 32).
-  - **Guard C (Navigation Integrity):** Validates that all 31 page entries in `docs.json` have corresponding `.mdx` files; reports orphan files cleanly.
+  - **Guard B (Minimum File Count):** Enforces `.mdx` file floor (default 5; 156 generated).
+  - **Guard C (Navigation Integrity):** Validates that all page entries in `docs.json` have corresponding `.mdx` files; reports orphan files cleanly.
   - **Guard D (Diff Preview & Deletion Cap):** Computes added/modified/deleted lists; fails if deletions exceed 10 unless `ALLOW_LARGE_DELETIONS=true`.
   - **Guard E (Dry-Run Mode):** Enables safe plan preview without pushing via `--dry-run` or `DRY_RUN=true`.
-- Authored GitHub Actions workflow `.github/workflows/sync-docs.yml` triggering automatically on `docs-source/**` changes and providing full manual `workflow_dispatch` dry-run controls.
-- Implemented comprehensive automated test suite `tests/test_sync_docs.py` (5/5 unit tests passing).
+- Built and deployed automated Markdown-to-MDX compiler `tools/build_mintlify_mdx.py`, compiling 156 MDX documents and building dynamic `docs.json` navigation index across Documentation and Tools & Diátaxis tabs.
+- Authored automated test suite `tests/test_sync_docs.py` (5/5 tests passing) and `tests/test_mintlify_mdx_builder.py` (3/3 tests passing).
+- Created skill `.agents/skills/mintlify-docs-compiler/SKILL.md` (OKF v0.2, 1,115 tokens) and updated `dsom-project-cloner` skill.
+- Authored master governance specification `docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md` (Entry Point 21).
 - Codified **Rule 31 (Mintlify One-Way Docs Sync & Safety Guards Mandate)** in `.agents/AGENTS.md` and root `AGENTS.md`.
-- Added **Entry Point 21** in `START-HERE.md`, `docs/START-HERE.md`, `llms.txt`, `CHANGELOG.md`, and `HISTORY.md`.
-- Confirmed full test suite pass rate: **861/861 unit tests passing (100%)**.
+- Synchronised omni-documentation navigation across `START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `CHANGELOG.md`, and `HISTORY.md`.
+- Confirmed full test suite pass rate: **864/864 unit tests passing (100%)**.
 
 ### Underlying Rationale
 
-To establish a hardened, un-wipeable, automated one-way publishing bridge from the DSOM source of truth to the downstream Mintlify knowledge brain (`https://harisfazillah.mintlify.site`).
+To establish an automated, un-wipeable, deterministic one-way publishing bridge from the DSOM source of truth (`docs/` & `.agents/skills/`) to the downstream Mintlify knowledge brain (`https://harisfazillah.mintlify.site`).
 
 ### Integration Mental Anchor
 
-> **Mintlify Docs Sync Pipeline Ready: Seeded docs-source/, created scripts/sync_docs.py and .github/workflows/sync-docs.yml with 5 non-negotiable safety guards (Guards A–E), codified Rule 31 in AGENTS.md, all 861 unit tests passing (100%), and pushed cleanly to all remotes.**
+> **EOD Hibernation Complete: Automated MDX compiler (tools/build_mintlify_mdx.py) and one-way sync pipeline (scripts/sync_docs.py) operational with 5 strict safety guards (Guards A–E), 156 MDX documents generated, Rule 31 codified in AGENTS.md, dsom-project-cloner enriched, all 864 unit tests passing (100%), and pushed cleanly to all remotes.**
 
 

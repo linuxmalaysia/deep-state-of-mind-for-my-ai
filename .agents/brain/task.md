@@ -53,13 +53,18 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Created `.agents/skills/agent-plugin-packager/SKILL.md` (OKF v0.2) to automate plugin packaging.
 - `[x]` Codified Rule 30 in `.agents/AGENTS.md` and root `AGENTS.md`.
 - `[x]` Appended DTS 0.1 concise output standard to Universal Gateways (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`, `.agents/AGENTS.md`).
-- `[x]` Synchronized `dsom-project-cloner` skill and Team Masterclass/Field Notes with Agent Plugins 1.0.0 & DTS 0.1 manifests.
 - `[x]` Seeded `docs-source/` with verified full content of downstream Mintlify repository `linuxmalaysia/my-knowledge-brain`.
 - `[x]` Created `scripts/sync_docs.py` with 5 non-negotiable safety guards (Guards A–E) preventing destructive syncs.
 - `[x]` Created `.github/workflows/sync-docs.yml` with automated trigger on `docs-source/**` and `workflow_dispatch` dry-run controls.
 - `[x]` Authored automated test suite `tests/test_sync_docs.py` (5/5 unit tests passing).
+- `[x]` Built and deployed automated Markdown-to-MDX compiler `tools/build_mintlify_mdx.py`, compiling 156 MDX documents and building dynamic `docs.json`.
+- `[x]` Authored unit tests `tests/test_mintlify_mdx_builder.py` (3/3 unit tests passing).
+- `[x]` Created skill `.agents/skills/mintlify-docs-compiler/SKILL.md` (OKF v0.2, 1,115 tokens).
+- `[x]` Authored master governance specification `docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md` (Entry Point 21).
 - `[x]` Codified Rule 31 (Mintlify One-Way Docs Sync & Safety Guards Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
-- `[x]` Integrated Entry Point 21 into `START-HERE.md`, `docs/START-HERE.md`, `llms.txt`, `CHANGELOG.md`, and `HISTORY.md`.
-- `[x]` Verified 100% test pass rate across entire suite (861/861 unit tests passing).
+- `[x]` Synchronised omni-documentation layers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `CHANGELOG.md`, `HISTORY.md`).
+- `[x]` Updated `dsom-project-cloner` skill to scaffold Mintlify compiler, sync scripts, and workflows into new downstream projects.
+- `[x]` Verified 100% test pass rate across entire suite (864/864 unit tests passing).
+- `[x]` Executed End-of-Day (EOD) Hibernation and synchronized with dual remotes (GitHub `origin` & GitLab `gitlab`).
 
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*

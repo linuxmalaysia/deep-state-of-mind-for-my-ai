@@ -1,4 +1,4 @@
-# Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-06-19
+﻿# Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-06-19
 # Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0
 
 <#
@@ -6,7 +6,7 @@
     DSOM Palace Sync Tool v1.0 (PowerShell)
 
 .DESCRIPTION
-    Reads the git commit history and generates a Palace Update Proposal —
+    Reads the git commit history and generates a Palace Update Proposal -
     a structured Markdown file mapping each commit to the relevant Palace Room.
     The AI then reviews this proposal and updates the corresponding closet.md files.
 
@@ -57,7 +57,7 @@ $ProposalFile  = Join-Path $BrainDir "palace_update_proposal_${TimeStamp}.md"
 
 Write-Host ""
 Write-Host "  ======================================================================" -ForegroundColor Cyan
-Write-Host "  🏛️ DSOM Palace Sync Tool — $VERSION" -ForegroundColor Cyan
+Write-Host "  🏛️ DSOM Palace Sync Tool - $VERSION" -ForegroundColor Cyan
 Write-Host "  Mode: $MODE" -ForegroundColor Cyan
 Write-Host "  Date: $DateStamp" -ForegroundColor Cyan
 Write-Host "  ======================================================================" -ForegroundColor Cyan
@@ -161,7 +161,7 @@ $ProposalLines.Add("")
 $ProposalLines.Add("> **Generated:** $TimeStamp  ")
 $ProposalLines.Add("> **Mode:** $MODE  ")
 $ProposalLines.Add("> **Scope:** Commits since $SinceLabel  ")
-$ProposalLines.Add("> **Status:** PENDING AI REVIEW — Do not commit until closets are updated.")
+$ProposalLines.Add("> **Status:** PENDING AI REVIEW - Do not commit until closets are updated.")
 $ProposalLines.Add("")
 $ProposalLines.Add("---")
 $ProposalLines.Add("")
@@ -199,7 +199,7 @@ function Process-Commit {
         if (-not $SeenRooms.ContainsKey($RoomKey)) {
             $SeenRooms[$RoomKey] = $true
             $ClosetPath = "wings/$($Mapping.Wing)/$($Mapping.Hall)/$($Mapping.Room)/closet.md"
-            $script:RoomGroups[$RoomKey].Add("### ``$($script:CurrentHash.Substring(0,7))`` — $($script:CurrentDate)")
+            $script:RoomGroups[$RoomKey].Add("### ``$($script:CurrentHash.Substring(0,7))`` - $($script:CurrentDate)")
             $script:RoomGroups[$RoomKey].Add("**Subject:** $($script:CurrentMsg)")
             $script:RoomGroups[$RoomKey].Add("**Files:** ``$f``")
             $script:RoomGroups[$RoomKey].Add("**Target Closet:** ``.agents/brain/$ClosetPath``")
