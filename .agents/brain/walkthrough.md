@@ -195,7 +195,7 @@ To ensure digital sovereignty, maintain flawless metacognitive state across AI s
 
 > **EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.**
 
-## 🏁 Session Anchor: 2026-08-22 — EOD Hibernation & Guardrails-AI Package & Downstream Compliance
+## 🏁 Session Anchor: 2026-08-22 — EOD Hibernation & Team Masterclass & Field Notes & Skill Upgrade
 
 - Authored Unified Master Reference: `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` (Entry Point 18).
 - Authored Guardrail Catalog & Pre-Submission Review: `docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md`.
@@ -205,16 +205,20 @@ To ensure digital sovereignty, maintain flawless metacognitive state across AI s
 - Created and deployed the **Universal Gateway Matrix** (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`) and **Pre-Commit Hook installer** (`tools/install_git_guardrails.py`).
 - Added **Entry Point 19** (`docs/DSOM-EPISODIC-RECORD-TEMPLATE.md`) for the Episodic Resume Protocol.
 - Codified **Rule 28** (Downstream Asymmetry & Cross-Agent Honor Mandate) and **Rule 29** (Dual-Path Custom Validator Architecture Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
-- Synchronised omni-documentation layers (`START-HERE.md`, `SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `CHANGELOG.md`, `HISTORY.md`).
+- Tagged and published formal Release **v10.4.0** across GitHub and GitLab using `gh` and `glab` CLI tooling.
+- Authored the comprehensive **Team DSOM Masterclass** ([`docs/tutorials/TEAM-DSOM-MASTERCLASS.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/TEAM-DSOM-MASTERCLASS.md)) covering Genesis Scaffolding, Dual-Remote GitOps, Antigravity Pair-Programming, and Google Jules Multi-Agent Collaboration.
+- Authored bilingual **Team Field Notes** ([`docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md)) incorporating Step 0 Onboarding Prompt, Model Strategy (Gemini Pro 3.0 vs Claude Sonnet vs Flash), Ansible Server Execution Invariants, and Skills persistence.
+- Upgraded [`.agents/skills/dsom-project-cloner/SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/dsom-project-cloner/SKILL.md) to **OKF v0.2**, aligned with Downstream Asymmetry 6-pillar footprint, and embedded Dual-Mode scaffolding references.
+- Synchronised omni-documentation layers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `docs/tutorials/index.md`, `mkdocs.yml`, `llms.txt`).
 - Confirmed 100% test suite pass rate (**852/852 unit tests passing cleanly**).
 - Verified multi-remote tracking with GitHub (`origin`) and GitLab (`gitlab`).
 
 ### Underlying Rationale
 
-To empower DSOM with deterministic defence-in-depth safety, provide downstream repositories with an unbypassable mechanism to enforce cross-agent honor and zero-amnesia state synchronization, and ensure complete digital sovereignty.
+To empower DSOM with deterministic defence-in-depth safety, provide downstream engineering teams with clear scaffolding blueprints and operational training playbooks, and guarantee unbroken cognitive continuity across AI agents.
 
 ### Integration Mental Anchor
 
-> **EOD Hibernation Complete: Built and integrated guardrails-ai-dsom with 10 custom validators across operational tools, deployed Universal Gateway Matrix and Git Pre-Commit Guardrails installer, added Entry Points 18 & 19 to START-HERE, codified Rules 28 & 29 in AGENTS.md, all ledgers synchronized, 852 unit tests passing (100%), and pushed to all remotes.**
+> **EOD Hibernation Complete: Published Release v10.4.0 across GitHub and GitLab, authored Team DSOM Masterclass and bilingual Field Notes, upgraded dsom-project-cloner to OKF v0.2, integrated Step 0 Onboarding Prompt and Model Strategy across documentation layers, all 852 unit tests passing (100%), and pushed cleanly to all remotes.**
 
 
