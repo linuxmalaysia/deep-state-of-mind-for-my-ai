@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [10.4.0] - 2026-08-22
+
 ### Added
 - **AI Guardrails Master Reference (Entry Point 18):** Authored `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` detailing defense-in-depth safety, threat vectors, Tri-Phasic interception, and dual-path execution.
 - **Guardrail Catalog & Submission Review:** Authored `docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md` cataloging 10 sovereign guardrails for human review and PyPI publishing.
