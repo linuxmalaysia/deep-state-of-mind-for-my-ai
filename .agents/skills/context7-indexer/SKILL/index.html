@@ -3913,6 +3913,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#7-automated-manual-snapshot-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Automated &amp; Manual Snapshot Updating
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3977,6 +3988,13 @@
 <p>When operating offline or in air-gapped environments:
 - The local snapshot <code>references/llms-from-context7.txt</code> serves as the primary fallback.
 - Calling <code>fetch_context7_stream(return_offline_sample=True)</code> provides immediate local context preview without internet access.</p>
+<h3 id="7-automated-manual-snapshot-updating">7. Automated &amp; Manual Snapshot Updating</h3>
+<ul>
+<li><strong>Manual Invalidation &amp; Fetch:</strong> Run the dedicated tool with desired token budget:
+  <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">tools</span><span class="p">/</span><span class="n">fetch_context7_snapshot</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-tokens</span> <span class="n">250000</span>
+</code></pre></div></li>
+<li><strong>Automated Scheduled Sync:</strong> <code>.github/workflows/context7-sync.yml</code> automatically executes every Sunday at 02:00 UTC (or on-demand via <code>workflow_dispatch</code>), pulling the latest 250k token snapshot using the provisioned <code>CONTEXT7_API_KEY</code> secret.</li>
+</ul>
 <h2 id="security-rule-24-mandate">Security (Rule 24 Mandate)</h2>
 <ul>
 <li><strong>NEVER</strong> write the <code>CONTEXT7_API_KEY</code> (e.g., <code>ctx7sk-...</code>) to a local <code>.env</code> file, <code>.git/config</code>, or any file tracked by Git.</li>
