@@ -2205,6 +2205,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--authoritative"></span>
+  
+
+  
 
       </a>
     </li>
@@ -3886,6 +3893,7 @@
 <li><strong>Multi-platform deployment &amp; tests:</strong> Deployment configurations (Render blueprint <code>render.yaml</code>, Read the Docs <code>.readthedocs.yaml</code>, and GitHub Pages workflow <code>.github/workflows/gh-pages.yml</code>) and their automated test coverage (<code>tests/test_documentation_deployment.py</code>, <code>tests/test_readthedocs_config.py</code>) must be strictly aligned and validated.</li>
 <li><strong>Hibernation Session Anchors:</strong> Automated EOD/Hibernation script (<code>tools/hibernation.sh</code>) requires a matching dated Session Anchor in <code>.agents/brain/walkthrough.md</code> to pass validation.</li>
 <li><strong>Windows Git-Symlink &amp; CRLF Test Guardrails:</strong> Test discovery suites traversing <code>.md</code> files must detect Git text-pointer symlinks (<code>content.startswith("../")</code>) on Windows native checkouts. Raw byte fence checks must handle CRLF line endings (<code>b"---\r\n"</code>), and POSIX <code>chmod</code> bit assertions must be conditionally executed (<code>if os.name != "nt":</code>).</li>
+<li><strong>Windows PowerShell 5.1 UTF-8 BOM Invariant:</strong> All <code>.ps1</code> automation scripts containing Unicode characters, emojis, or non-ASCII punctuation must be encoded in UTF-8 with BOM (<code>utf-8-sig</code>) to ensure seamless execution under Windows PowerShell 5.1 and avoid parser syntax errors.</li>
 </ul>
 </li>
 <li><strong>The Tri-Phasic Cognitive Architecture and Functional Subsystems Mandate:</strong> To guarantee cognitive continuity and eliminate context decay across session boundaries, the AI operates under the <strong>Tri-Phasic Mind</strong> model. The AI must understand, respect, and align its processing with the three cognitive states:<ul>
