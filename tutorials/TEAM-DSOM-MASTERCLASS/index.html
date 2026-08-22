@@ -3046,6 +3046,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 1.2: Adopt the Minimal 6-Pillar Footprint (Downstream Asymmetry)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-a-prompting-google-antigravity-automated-ai-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method A: Prompting Google Antigravity (Automated AI Scaffolding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-b-manual-copy-via-terminal-powershell-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method B: Manual Copy via Terminal (PowerShell / Windows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-c-manual-copy-via-terminal-bash-linux-macos-wsl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method C: Manual Copy via Terminal (Bash / Linux / macOS / WSL2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -3965,6 +4004,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 1.2: Adopt the Minimal 6-Pillar Footprint (Downstream Asymmetry)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-a-prompting-google-antigravity-automated-ai-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method A: Prompting Google Antigravity (Automated AI Scaffolding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-b-manual-copy-via-terminal-powershell-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method B: Manual Copy via Terminal (PowerShell / Windows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-c-manual-copy-via-terminal-bash-linux-macos-wsl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method C: Manual Copy via Terminal (Bash / Linux / macOS / WSL2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4231,13 +4309,85 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>~/projects/my-awesome-ser
 <li><strong>Isolated Python Tooling</strong>:</li>
 <li>Powered by <code>uv</code>.</li>
 </ol>
-<blockquote>
-<p>[!TIP]
-<strong>Automated One-Shot Scaffolding:</strong><br />
-If you have access to the DSOM baseline repository, you can simply instruct Antigravity:<br />
-<em>"Use the <code>dsom-project-cloner</code> skill to scaffold a new project at <code>D:\Projects\my-awesome-service</code>."</em><br />
-Antigravity will automatically create the directories, copy the pillars, inject OKF frontmatter, and install the pre-commit hook!</p>
-</blockquote>
+<hr />
+<h4 id="method-a-prompting-google-antigravity-automated-ai-scaffolding">Method A: Prompting Google Antigravity (Automated AI Scaffolding)</h4>
+<p>If you have Antigravity open in the baseline DSOM workspace or in your new workspace, copy and paste this exact prompt:</p>
+<div class="highlight"><pre><span></span><code>Use the <span class="sb">`dsom-project-cloner`</span> skill to scaffold a brand-new DSOM downstream project for me.
+
+Target Repository Path: D:\Projects\my-awesome-service
+
+Please:
+<span class="k">1.</span> Create the required directory structure (.agents/brain, .agents/skills, docs/governance, tools/).
+<span class="k">2.</span> Copy the Universal Gateway Matrix (.cursorrules, CLAUDE.md, .github/copilot-instructions.md, AGENTS.md).
+<span class="k">3.</span> Copy the Constitutional Rulebook (.agents/AGENTS.md) and reset .agents/brain/ with blank OKF templates.
+<span class="k">4.</span> Copy the tools/ directory and automatically execute <span class="sb">`python tools/install_git_guardrails.py`</span> in the new target path.
+<span class="k">5.</span> Ensure all copied markdown files carry valid OKF v0.2 frontmatter and standard DSOM signatures.
+</code></pre></div>
+<hr />
+<h4 id="method-b-manual-copy-via-terminal-powershell-windows">Method B: Manual Copy via Terminal (PowerShell / Windows)</h4>
+<p>If copying manually from a local clone of <code>deep-state-of-mind-for-my-ai</code> on Windows:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Set variables</span>
+<span class="nv">$DSOM_BASE</span> <span class="p">=</span> <span class="s2">"D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai"</span>
+<span class="nv">$TARGET</span> <span class="p">=</span> <span class="s2">"D:\Projects\my-awesome-service"</span>
+
+<span class="c"># 1. Create Target Directory Tree</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">"$TARGET\.agents\brain"</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">"$TARGET\.agents\skills"</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">"$TARGET\.github"</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">"$TARGET\docs\governance"</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">"$TARGET\tools"</span>
+
+<span class="c"># 2. Copy the Universal Gateway Matrix</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\AGENTS.md"</span> <span class="s2">"$TARGET\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\.cursorrules"</span> <span class="s2">"$TARGET\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\CLAUDE.md"</span> <span class="s2">"$TARGET\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\START-HERE.md"</span> <span class="s2">"$TARGET\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\.github\copilot-instructions.md"</span> <span class="s2">"$TARGET\.github\"</span>
+
+<span class="c"># 3. Copy the Core Rulebook and Tooling</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\.agents\AGENTS.md"</span> <span class="s2">"$TARGET\.agents\"</span>
+<span class="nb">Copy-Item</span> <span class="n">-Recurse</span> <span class="s2">"$DSOM_BASE\tools\*"</span> <span class="s2">"$TARGET\tools\"</span>
+
+<span class="c"># 4. Copy Essential Domain Skills (e.g., token calculator, signature injector)</span>
+<span class="nb">Copy-Item</span> <span class="n">-Recurse</span> <span class="s2">"$DSOM_BASE\.agents\skills\dsom-token-calculator"</span> <span class="s2">"$TARGET\.agents\skills\"</span>
+<span class="nb">Copy-Item</span> <span class="n">-Recurse</span> <span class="s2">"$DSOM_BASE\.agents\skills\dsom-signature-injector"</span> <span class="s2">"$TARGET\.agents\skills\"</span>
+<span class="nb">Copy-Item</span> <span class="n">-Recurse</span> <span class="s2">"$DSOM_BASE\.agents\skills\initialize-gitops"</span> <span class="s2">"$TARGET\.agents\skills\"</span>
+
+<span class="c"># 5. Initialize Fresh Brain in the Target</span>
+<span class="nb">Set-Location</span> <span class="nv">$TARGET</span>
+<span class="n">bash</span> <span class="n">tools</span><span class="p">/</span><span class="n">init-brain</span><span class="p">.</span><span class="n">sh</span>  <span class="c"># Or .\tools\init-brain.ps1</span>
+</code></pre></div>
+<hr />
+<h4 id="method-c-manual-copy-via-terminal-bash-linux-macos-wsl2">Method C: Manual Copy via Terminal (Bash / Linux / macOS / WSL2)</h4>
+<p>If copying on Linux/macOS or via a temporary <code>git clone</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone DSOM baseline into a temp location (if not already local)</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git<span class="w"> </span>/tmp/dsom-baseline
+
+<span class="c1"># Set variables</span>
+<span class="nv">DSOM_BASE</span><span class="o">=</span><span class="s2">"/tmp/dsom-baseline"</span>
+<span class="nv">TARGET</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/projects/my-awesome-service"</span>
+
+<span class="c1"># 1. Create directory tree</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.agents/brain"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.agents/skills"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.github"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/docs/governance"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/tools"</span>
+
+<span class="c1"># 2. Copy Universal Gateway Matrix &amp; Constitution</span>
+cp<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/AGENTS.md"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/"</span>
+cp<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/.cursorrules"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/"</span>
+cp<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/CLAUDE.md"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/"</span>
+cp<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/START-HERE.md"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/"</span>
+cp<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/.github/copilot-instructions.md"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.github/"</span>
+cp<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/.agents/AGENTS.md"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.agents/"</span>
+
+<span class="c1"># 3. Copy Tools &amp; Core Skills</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/tools/"</span>*<span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/tools/"</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/.agents/skills/dsom-token-calculator"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.agents/skills/"</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/.agents/skills/dsom-signature-injector"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.agents/skills/"</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$DSOM_BASE</span><span class="s2">/.agents/skills/initialize-gitops"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">/.agents/skills/"</span>
+
+<span class="c1"># 4. Initialize clean brain templates</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TARGET</span><span class="s2">"</span>
+bash<span class="w"> </span>tools/init-brain.sh
+</code></pre></div>
 <hr />
 <h2 id="phase-2-sovereign-dual-remote-gitops-github-gitlab">🌐 Phase 2: Sovereign Dual-Remote GitOps (GitHub + GitLab)</h2>
 <p>DSOM enforces <strong>digital sovereignty</strong> through multi-cloud redundancy. We never rely on a single git provider.</p>
