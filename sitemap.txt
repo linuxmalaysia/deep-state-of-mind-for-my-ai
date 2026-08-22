@@ -150,6 +150,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference-architec
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/CLI-QUICK-REFERENCE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/apply_okf_frontmatter/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/bench_brain/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/dsom_token_auditor/
@@ -342,6 +343,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference-architect
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/CLI-QUICK-REFERENCE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/apply_okf_frontmatter/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/bench_brain/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/dsom_token_auditor/
@@ -485,6 +487,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference-architectures/howto-setup-ansible-baseline
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/apply_okf_frontmatter
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/bench_brain
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/cli-quick-reference
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/dsom_token_auditor
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/generate_sitemaps
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/index
