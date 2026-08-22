@@ -91,11 +91,96 @@ In downstream projects, **your business code remains primary (>90% of repo volum
 6. **Isolated Python Tooling**:
    - Powered by `uv`.
 
-> [!TIP]
-> **Automated One-Shot Scaffolding:**  
-> If you have access to the DSOM baseline repository, you can simply instruct Antigravity:  
-> *"Use the `dsom-project-cloner` skill to scaffold a new project at `D:\Projects\my-awesome-service`."*  
-> Antigravity will automatically create the directories, copy the pillars, inject OKF frontmatter, and install the pre-commit hook!
+---
+
+#### Method A: Prompting Google Antigravity (Automated AI Scaffolding)
+If you have Antigravity open in the baseline DSOM workspace or in your new workspace, copy and paste this exact prompt:
+
+```markdown
+Use the `dsom-project-cloner` skill to scaffold a brand-new DSOM downstream project for me.
+
+Target Repository Path: D:\Projects\my-awesome-service
+
+Please:
+1. Create the required directory structure (.agents/brain, .agents/skills, docs/governance, tools/).
+2. Copy the Universal Gateway Matrix (.cursorrules, CLAUDE.md, .github/copilot-instructions.md, AGENTS.md).
+3. Copy the Constitutional Rulebook (.agents/AGENTS.md) and reset .agents/brain/ with blank OKF templates.
+4. Copy the tools/ directory and automatically execute `python tools/install_git_guardrails.py` in the new target path.
+5. Ensure all copied markdown files carry valid OKF v0.2 frontmatter and standard DSOM signatures.
+```
+
+---
+
+#### Method B: Manual Copy via Terminal (PowerShell / Windows)
+If copying manually from a local clone of `deep-state-of-mind-for-my-ai` on Windows:
+
+```powershell
+# Set variables
+$DSOM_BASE = "D:\Users\LinuxMalaysia\Projects\deep-state-of-mind-for-my-ai"
+$TARGET = "D:\Projects\my-awesome-service"
+
+# 1. Create Target Directory Tree
+New-Item -ItemType Directory -Force -Path "$TARGET\.agents\brain"
+New-Item -ItemType Directory -Force -Path "$TARGET\.agents\skills"
+New-Item -ItemType Directory -Force -Path "$TARGET\.github"
+New-Item -ItemType Directory -Force -Path "$TARGET\docs\governance"
+New-Item -ItemType Directory -Force -Path "$TARGET\tools"
+
+# 2. Copy the Universal Gateway Matrix
+Copy-Item "$DSOM_BASE\AGENTS.md" "$TARGET\"
+Copy-Item "$DSOM_BASE\.cursorrules" "$TARGET\"
+Copy-Item "$DSOM_BASE\CLAUDE.md" "$TARGET\"
+Copy-Item "$DSOM_BASE\START-HERE.md" "$TARGET\"
+Copy-Item "$DSOM_BASE\.github\copilot-instructions.md" "$TARGET\.github\"
+
+# 3. Copy the Core Rulebook and Tooling
+Copy-Item "$DSOM_BASE\.agents\AGENTS.md" "$TARGET\.agents\"
+Copy-Item -Recurse "$DSOM_BASE\tools\*" "$TARGET\tools\"
+
+# 4. Copy Essential Domain Skills (e.g., token calculator, signature injector)
+Copy-Item -Recurse "$DSOM_BASE\.agents\skills\dsom-token-calculator" "$TARGET\.agents\skills\"
+Copy-Item -Recurse "$DSOM_BASE\.agents\skills\dsom-signature-injector" "$TARGET\.agents\skills\"
+Copy-Item -Recurse "$DSOM_BASE\.agents\skills\initialize-gitops" "$TARGET\.agents\skills\"
+
+# 5. Initialize Fresh Brain in the Target
+Set-Location $TARGET
+bash tools/init-brain.sh  # Or .\tools\init-brain.ps1
+```
+
+---
+
+#### Method C: Manual Copy via Terminal (Bash / Linux / macOS / WSL2)
+If copying on Linux/macOS or via a temporary `git clone`:
+
+```bash
+# Clone DSOM baseline into a temp location (if not already local)
+git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git /tmp/dsom-baseline
+
+# Set variables
+DSOM_BASE="/tmp/dsom-baseline"
+TARGET="$HOME/projects/my-awesome-service"
+
+# 1. Create directory tree
+mkdir -p "$TARGET/.agents/brain" "$TARGET/.agents/skills" "$TARGET/.github" "$TARGET/docs/governance" "$TARGET/tools"
+
+# 2. Copy Universal Gateway Matrix & Constitution
+cp "$DSOM_BASE/AGENTS.md" "$TARGET/"
+cp "$DSOM_BASE/.cursorrules" "$TARGET/"
+cp "$DSOM_BASE/CLAUDE.md" "$TARGET/"
+cp "$DSOM_BASE/START-HERE.md" "$TARGET/"
+cp "$DSOM_BASE/.github/copilot-instructions.md" "$TARGET/.github/"
+cp "$DSOM_BASE/.agents/AGENTS.md" "$TARGET/.agents/"
+
+# 3. Copy Tools & Core Skills
+cp -r "$DSOM_BASE/tools/"* "$TARGET/tools/"
+cp -r "$DSOM_BASE/.agents/skills/dsom-token-calculator" "$TARGET/.agents/skills/"
+cp -r "$DSOM_BASE/.agents/skills/dsom-signature-injector" "$TARGET/.agents/skills/"
+cp -r "$DSOM_BASE/.agents/skills/initialize-gitops" "$TARGET/.agents/skills/"
+
+# 4. Initialize clean brain templates
+cd "$TARGET"
+bash tools/init-brain.sh
+```
 
 ---
 
