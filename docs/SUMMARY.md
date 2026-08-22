@@ -39,6 +39,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 * [bench_brain.py Reference](reference/bench_brain.md)
 * [dsom_token_auditor.py Reference](reference/dsom_token_auditor.md)
 * [mkdocs_hooks.py Reference](reference/mkdocs_hooks.md)
+* [Agent Plugins 1.0.0 Specification](governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md)
 
 ## 🧠 Explanation and Design
 

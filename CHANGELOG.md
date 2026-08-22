@@ -18,6 +18,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Agent Plugins 1.0.0 Standard Specification (Entry Point 20):** Authored `docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md` detailing universal packaging, runtime interoperability, and directory layout standard (`plugin.json`, `mcp.json`, `skills/`).
+- **Standard Manifests:** Added canonical root `plugin.json` (schema 1.0.0) and `mcp.json` mapping DSOM FastMCP Server with `${PLUGIN_ROOT}` and `${PLUGIN_DATA}` environment variable expansion.
+- **Agent Plugin Packager Skill:** Created `.agents/skills/agent-plugin-packager/SKILL.md` (OKF v0.2) to automate packaging of skills and MCP tools into portable plugins.
+- **Rule 30 Codification:** Codified Rule 30 (Agent Plugins 1.0.0 Specification & Packaging Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
+- **Automated Conformance Tests:** Implemented `tests/test_agent_plugins_spec.py` ensuring 100% compliance with Agent Plugins 1.0.0 schema constraints.
+
 ## [10.4.0] - 2026-08-22
 
 ### Added

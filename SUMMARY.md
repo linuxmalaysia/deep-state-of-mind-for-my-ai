@@ -52,6 +52,7 @@ topics: ["dsom", "documentation"]
 * [🛡️ DSOM Guardrail Catalog & Submission Review](docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md)
 * [🛡️ Custom Validators in DSOM Guide](docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md)
 * [🛡️ Downstream DSOM Protocol Compliance Mandate](docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md)
+* [📦 Agent Plugins 1.0.0 Specification & DSOM Integration](docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md)
 
 ## 🌅 2. Operational Rituals
 

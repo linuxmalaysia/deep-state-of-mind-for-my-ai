@@ -195,8 +195,14 @@ To ensure digital sovereignty, maintain flawless metacognitive state across AI s
 
 > **EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.**
 
-## 🏁 Session Anchor: 2026-08-22 — EOD Hibernation & Team Masterclass & Field Notes & Skill Upgrade
+## 🏁 Session Anchor: 2026-08-22 — EOD Hibernation & Agent Plugins 1.0.0 Specification Adoption
 
+- Ingested and adopted Google & Open **Agent Plugins 1.0.0** standard specification (`agent-plugins.org/specification`) backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel.
+- Authored Master Reference: [`docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md) (**Entry Point 20**).
+- Added canonical root manifest [`plugin.json`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/plugin.json) (schema 1.0.0) and [`mcp.json`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/mcp.json) exposing DSOM FastMCP Server with `${PLUGIN_ROOT}` and `${PLUGIN_DATA}` variable expansion.
+- Created [`.agents/skills/agent-plugin-packager/SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/agent-plugin-packager/SKILL.md) (OKF v0.2) to automate plugin bundling.
+- Codified **Rule 30** (Agent Plugins 1.0.0 Specification & Packaging Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
+- Implemented and validated automated test suite [`tests/test_agent_plugins_spec.py`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/tests/test_agent_plugins_spec.py).
 - Authored Unified Master Reference: `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` (Entry Point 18).
 - Authored Guardrail Catalog & Pre-Submission Review: `docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md`.
 - Authored Downstream Compliance Mandate: `docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md` establishing the 5-Pillar Sovereign Anchor Architecture.
@@ -204,21 +210,20 @@ To ensure digital sovereignty, maintain flawless metacognitive state across AI s
 - Fully wired `guardrails-ai-dsom` into operational tools: FastMCP server (`tools/mcp/server.py`), `tools/privacy-guardian.ps1/.sh`, and `tools/audit-pre-flight.ps1/.sh`.
 - Created and deployed the **Universal Gateway Matrix** (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`) and **Pre-Commit Hook installer** (`tools/install_git_guardrails.py`).
 - Added **Entry Point 19** (`docs/DSOM-EPISODIC-RECORD-TEMPLATE.md`) for the Episodic Resume Protocol.
-- Codified **Rule 28** (Downstream Asymmetry & Cross-Agent Honor Mandate) and **Rule 29** (Dual-Path Custom Validator Architecture Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
+- Codified **Rule 28** and **Rule 29** in `.agents/AGENTS.md` and root `AGENTS.md`.
 - Tagged and published formal Release **v10.4.0** across GitHub and GitLab using `gh` and `glab` CLI tooling.
-- Authored the comprehensive **Team DSOM Masterclass** ([`docs/tutorials/TEAM-DSOM-MASTERCLASS.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/TEAM-DSOM-MASTERCLASS.md)) covering Genesis Scaffolding, Dual-Remote GitOps, Antigravity Pair-Programming, and Google Jules Multi-Agent Collaboration.
-- Authored bilingual **Team Field Notes** ([`docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md)) incorporating Step 0 Onboarding Prompt, Model Strategy (Gemini Pro 3.0 vs Claude Sonnet vs Flash), Ansible Server Execution Invariants, and Skills persistence.
-- Upgraded [`.agents/skills/dsom-project-cloner/SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/dsom-project-cloner/SKILL.md) to **OKF v0.2**, aligned with Downstream Asymmetry 6-pillar footprint, and embedded Dual-Mode scaffolding references.
-- Synchronised omni-documentation layers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `docs/tutorials/index.md`, `mkdocs.yml`, `llms.txt`).
-- Confirmed 100% test suite pass rate (**852/852 unit tests passing cleanly**).
+- Authored the comprehensive **Team DSOM Masterclass** ([`docs/tutorials/TEAM-DSOM-MASTERCLASS.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/TEAM-DSOM-MASTERCLASS.md)) and bilingual **Team Field Notes** ([`docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md)).
+- Upgraded [`.agents/skills/dsom-project-cloner/SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/dsom-project-cloner/SKILL.md) to **OKF v0.2**.
+- Synchronised omni-documentation layers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `docs/tutorials/index.md`, `mkdocs.yml`, `llms.txt`, `CHANGELOG.md`, `HISTORY.md`).
+- Confirmed 100% test suite pass rate (**856/856 unit tests passing cleanly**).
 - Verified multi-remote tracking with GitHub (`origin`) and GitLab (`gitlab`).
 
 ### Underlying Rationale
 
-To empower DSOM with deterministic defence-in-depth safety, provide downstream engineering teams with clear scaffolding blueprints and operational training playbooks, and guarantee unbroken cognitive continuity across AI agents.
+To empower DSOM with universal cross-IDE packaging and execution standards via Agent Plugins 1.0.0, deterministic defence-in-depth safety, and seamless team onboarding.
 
 ### Integration Mental Anchor
 
-> **EOD Hibernation Complete: Published Release v10.4.0 across GitHub and GitLab, authored Team DSOM Masterclass and bilingual Field Notes, upgraded dsom-project-cloner to OKF v0.2, integrated Step 0 Onboarding Prompt and Model Strategy across documentation layers, all 852 unit tests passing (100%), and pushed cleanly to all remotes.**
+> **EOD Hibernation Complete: Adopted Agent Plugins 1.0.0 specification with root plugin.json/mcp.json manifests, agent-plugin-packager skill, and Entry Point 20, codified Rule 30 in AGENTS.md, all 856 unit tests passing (100%), and pushed cleanly to all remotes.**
 
 

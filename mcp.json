@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "dsom-knowledge-server": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "fastmcp",
+        "--with",
+        "pyyaml",
+        "python",
+        "${PLUGIN_ROOT}/tools/mcp/server.py"
+      ],
+      "env": {
+        "DSOM_PALACE_ROOT": "${PLUGIN_ROOT}",
+        "DSOM_STORAGE_DIR": "${PLUGIN_DATA}/storage"
+      },
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

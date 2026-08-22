@@ -99,6 +99,7 @@ nav:
       - Guardrail Catalog & Submission Review: governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md
       - Custom Validators Guide: governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md
       - Downstream DSOM Compliance Mandate: governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
+      - Agent Plugins 1.0.0 Specification: governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md
       - Ritual of Transition: RITUAL-OF-TRANSITION.md
       - Personalization: PERSONALIZATION.md
   - AI Brain:

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "deep-state-of-mind",
+  "version": "10.4.0",
+  "description": "Deep State of Mind (DSOM) Sovereign AI Agent Cognitive Architecture, Open Knowledge Format (OKF), and Model Context Protocol (MCP) toolset.",
+  "author": {
+    "name": "Harisfazillah Jamel (LinuxMalaysia)",
+    "email": "linuxmalaysia@gmail.com",
+    "url": "https://github.com/linuxmalaysia"
+  },
+  "homepage": "https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/",
+  "repository": "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai",
+  "license": "GPL-3.0-or-later",
+  "keywords": [
+    "dsom",
+    "ai-agents",
+    "mcp",
+    "agent-skills",
+    "agent-plugins",
+    "digital-sovereignty",
+    "okf",
+    "guardrails"
+  ],
+  "extensions": {
+    "org.dsom.protocol": {
+      "tri_phasic_mind": true,
+      "okf_version": "0.2",
+      "guardrails_level": "strict",
+      "memory_palace_root": ".agents/brain/"
+    }
+  }
+}

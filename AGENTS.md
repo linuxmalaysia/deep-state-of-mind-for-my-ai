@@ -61,6 +61,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Diátaxis Documentation Compass** | Enforces 4-quadrant separation (Tutorials, How-To Guides, Reference, Explanation) across `START-HERE.md` and `docs/` to eliminate cognitive fatigue and maximize token efficiency. |
 | **Dual-Path Custom Validators** | Integrates both the Guardrails AI Framework (for external LLM apps/Pydantic schemas) and the DSOM Native Lightweight Pathway (for FastMCP/AST command interception and offline safety) across Tri-Phasic states. |
 | **The Episodic Resume Protocol (Zero Amnesia)** | AI emits a serialized `[DSOM EPISODIC RECORD]` summary block containing live commit hashes, test metrics, and cognitive delta at major milestones to guarantee zero-loss session resumes. |
+| **Agent Plugins 1.0.0 Standard** | Adheres to the vendor-neutral directory standard (`agent-plugins.org/specification`) for packaging skills, MCP servers (`mcp.json`), and manifests (`plugin.json`) across AI tools. |
 
 ---
 
@@ -74,6 +75,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 |:---|:---|:---|:---|
 | `dsom-bootstrap` | Bootstraps a new or existing project with the DSOM baseline structure. | Target project path. | Initialised `.agents/`, `docs/`, and `tools/` structure. |
 | `dsom-project-cloner` | Scaffolds a brand new DSOM project by copying the sovereign engine from the baseline repo. | Target path, project name. | New DSOM-compliant project directory. |
+| `agent-plugin-packager` | Packages and validates DSOM skills and FastMCP tools into portable Agent Plugins 1.0.0 bundles. | Skill/MCP path. | Compliant Agent Plugin package directory. |
 | `initialize-gitops` | Initialises Git, creates the initial commit structure, and sets up remote tracking. | Repository URL, branch name. | Configured Git repo with DSOM GitOps conventions. |
 | `dsom-release-manager` | Cuts a formal release, updates ledgers (`CHANGELOG.md`, `HISTORY.md`), tags the repo, and pushes to GitHub/GitLab. | Version number, release notes. | Git tag, updated ledgers, pushed release. |
 

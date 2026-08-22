@@ -47,7 +47,13 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Authored Team DSOM Masterclass (`docs/tutorials/TEAM-DSOM-MASTERCLASS.md`) for team onboarding and multi-agent collaboration.
 - `[x]` Authored and improved Team Field Notes (`docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md`) incorporating Step 0 Onboarding Prompt, Model Selection Strategy, and Ansible invariants.
 - `[x]` Upgraded `dsom-project-cloner` skill to OKF v0.2, aligned with Downstream Asymmetry 6-pillar footprint, and embedded Dual-Mode scaffolding references.
-- `[x]` Verified 100% test pass rate across entire suite (852/852 unit tests passing).
+- `[x]` Ingested and adopted Google & Open Agent Plugins 1.0.0 standard specification (`agent-plugins.org/specification`).
+- `[x]` Authored `docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md` (Entry Point 20).
+- `[x]` Created canonical root `plugin.json` (schema 1.0.0) and `mcp.json` with `${PLUGIN_ROOT}` variable expansion.
+- `[x]` Created `.agents/skills/agent-plugin-packager/SKILL.md` (OKF v0.2) to automate plugin packaging.
+- `[x]` Codified Rule 30 in `.agents/AGENTS.md` and root `AGENTS.md`.
+- `[x]` Built and validated automated test suite `tests/test_agent_plugins_spec.py`.
+- `[x]` Verified 100% test pass rate across entire suite (856/856 unit tests passing).
 - `[x]` Complete End-of-Day (EOD) context saving, hibernation ritual, and multi-remote push.
 
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
