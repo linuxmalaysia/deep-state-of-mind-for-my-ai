@@ -1950,15 +1950,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#session-anchor-2026-08-22-mintlify-one-way-docs-sync-safety-guards-rule-31" class="md-nav__link">
+  <a href="#session-anchor-2026-08-22-mintlify-auto-mdx-compiler-one-way-docs-sync-rule-31-and-scaffolding-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏁 Session Anchor: 2026-08-22 — Mintlify One-Way Docs Sync &amp; Safety Guards (Rule 31)
+        🏁 Session Anchor: 2026-08-22 — Mintlify Auto-MDX Compiler, One-Way Docs Sync (Rule 31), and Scaffolding Pipeline
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🏁 Session Anchor: 2026-08-22 — Mintlify One-Way Docs Sync &amp; Safety Guards (Rule 31)">
+    <nav class="md-nav" aria-label="🏁 Session Anchor: 2026-08-22 — Mintlify Auto-MDX Compiler, One-Way Docs Sync (Rule 31), and Scaffolding Pipeline">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4684,15 +4684,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#session-anchor-2026-08-22-mintlify-one-way-docs-sync-safety-guards-rule-31" class="md-nav__link">
+  <a href="#session-anchor-2026-08-22-mintlify-auto-mdx-compiler-one-way-docs-sync-rule-31-and-scaffolding-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏁 Session Anchor: 2026-08-22 — Mintlify One-Way Docs Sync &amp; Safety Guards (Rule 31)
+        🏁 Session Anchor: 2026-08-22 — Mintlify Auto-MDX Compiler, One-Way Docs Sync (Rule 31), and Scaffolding Pipeline
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🏁 Session Anchor: 2026-08-22 — Mintlify One-Way Docs Sync &amp; Safety Guards (Rule 31)">
+    <nav class="md-nav" aria-label="🏁 Session Anchor: 2026-08-22 — Mintlify Auto-MDX Compiler, One-Way Docs Sync (Rule 31), and Scaffolding Pipeline">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4906,26 +4906,27 @@
 <blockquote>
 <p><strong>EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.</strong></p>
 </blockquote>
-<h2 id="session-anchor-2026-08-22-mintlify-one-way-docs-sync-safety-guards-rule-31">🏁 Session Anchor: 2026-08-22 — Mintlify One-Way Docs Sync &amp; Safety Guards (Rule 31)</h2>
+<h2 id="session-anchor-2026-08-22-mintlify-auto-mdx-compiler-one-way-docs-sync-rule-31-and-scaffolding-pipeline">🏁 Session Anchor: 2026-08-22 — Mintlify Auto-MDX Compiler, One-Way Docs Sync (Rule 31), and Scaffolding Pipeline</h2>
 <ul>
-<li>Seeded <code>docs-source/</code> from the downstream Mintlify repository <code>linuxmalaysia/my-knowledge-brain</code>, verifying 100% recursive equality.</li>
 <li>Implemented <code>scripts/sync_docs.py</code> equipped with 5 non-negotiable safety guards (Guards A–E) preventing destructive downstream wipe accidents:</li>
 <li><strong>Guard A (Source &amp; JSON Integrity):</strong> Asserts <code>docs-source/</code> and valid <code>docs.json</code> exist.</li>
-<li><strong>Guard B (Minimum File Count):</strong> Enforces <code>.mdx</code> file floor (default 5; found 32).</li>
-<li><strong>Guard C (Navigation Integrity):</strong> Validates that all 31 page entries in <code>docs.json</code> have corresponding <code>.mdx</code> files; reports orphan files cleanly.</li>
+<li><strong>Guard B (Minimum File Count):</strong> Enforces <code>.mdx</code> file floor (default 5; 156 generated).</li>
+<li><strong>Guard C (Navigation Integrity):</strong> Validates that all page entries in <code>docs.json</code> have corresponding <code>.mdx</code> files; reports orphan files cleanly.</li>
 <li><strong>Guard D (Diff Preview &amp; Deletion Cap):</strong> Computes added/modified/deleted lists; fails if deletions exceed 10 unless <code>ALLOW_LARGE_DELETIONS=true</code>.</li>
 <li><strong>Guard E (Dry-Run Mode):</strong> Enables safe plan preview without pushing via <code>--dry-run</code> or <code>DRY_RUN=true</code>.</li>
-<li>Authored GitHub Actions workflow <code>.github/workflows/sync-docs.yml</code> triggering automatically on <code>docs-source/**</code> changes and providing full manual <code>workflow_dispatch</code> dry-run controls.</li>
-<li>Implemented comprehensive automated test suite <code>tests/test_sync_docs.py</code> (5/5 unit tests passing).</li>
+<li>Built and deployed automated Markdown-to-MDX compiler <code>tools/build_mintlify_mdx.py</code>, compiling 156 MDX documents and building dynamic <code>docs.json</code> navigation index across Documentation and Tools &amp; Diátaxis tabs.</li>
+<li>Authored automated test suite <code>tests/test_sync_docs.py</code> (5/5 tests passing) and <code>tests/test_mintlify_mdx_builder.py</code> (3/3 tests passing).</li>
+<li>Created skill <code>.agents/skills/mintlify-docs-compiler/SKILL.md</code> (OKF v0.2, 1,115 tokens) and updated <code>dsom-project-cloner</code> skill.</li>
+<li>Authored master governance specification <code>docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md</code> (Entry Point 21).</li>
 <li>Codified <strong>Rule 31 (Mintlify One-Way Docs Sync &amp; Safety Guards Mandate)</strong> in <code>.agents/AGENTS.md</code> and root <code>AGENTS.md</code>.</li>
-<li>Added <strong>Entry Point 21</strong> in <code>START-HERE.md</code>, <code>docs/START-HERE.md</code>, <code>llms.txt</code>, <code>CHANGELOG.md</code>, and <code>HISTORY.md</code>.</li>
-<li>Confirmed full test suite pass rate: <strong>861/861 unit tests passing (100%)</strong>.</li>
+<li>Synchronised omni-documentation navigation across <code>START-HERE.md</code>, <code>docs/START-HERE.md</code>, <code>SUMMARY.md</code>, <code>docs/SUMMARY.md</code>, <code>mkdocs.yml</code>, <code>llms.txt</code>, <code>CHANGELOG.md</code>, and <code>HISTORY.md</code>.</li>
+<li>Confirmed full test suite pass rate: <strong>864/864 unit tests passing (100%)</strong>.</li>
 </ul>
 <h3 id="underlying-rationale_9">Underlying Rationale</h3>
-<p>To establish a hardened, un-wipeable, automated one-way publishing bridge from the DSOM source of truth to the downstream Mintlify knowledge brain (<code>https://harisfazillah.mintlify.site</code>).</p>
+<p>To establish an automated, un-wipeable, deterministic one-way publishing bridge from the DSOM source of truth (<code>docs/</code> &amp; <code>.agents/skills/</code>) to the downstream Mintlify knowledge brain (<code>https://harisfazillah.mintlify.site</code>).</p>
 <h3 id="integration-mental-anchor_9">Integration Mental Anchor</h3>
 <blockquote>
-<p><strong>Mintlify Docs Sync Pipeline Ready: Seeded docs-source/, created scripts/sync_docs.py and .github/workflows/sync-docs.yml with 5 non-negotiable safety guards (Guards A–E), codified Rule 31 in AGENTS.md, all 861 unit tests passing (100%), and pushed cleanly to all remotes.</strong></p>
+<p><strong>EOD Hibernation Complete: Automated MDX compiler (tools/build_mintlify_mdx.py) and one-way sync pipeline (scripts/sync_docs.py) operational with 5 strict safety guards (Guards A–E), 156 MDX documents generated, Rule 31 codified in AGENTS.md, dsom-project-cloner enriched, all 864 unit tests passing (100%), and pushed cleanly to all remotes.</strong></p>
 </blockquote>
 
 
