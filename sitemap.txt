@@ -182,6 +182,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-SETUP-
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-SOD-PALACE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-TEMPLATE-RESET/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/TEAM-DSOM-MASTERCLASS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/getting-started/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/
@@ -367,6 +368,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-SETUP-W
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-SOD-PALACE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-TEMPLATE-RESET/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/getting-started/
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/brain/implementation_plan
@@ -500,6 +502,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-template-reset
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/getting-started
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/index
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/team-dsom-masterclass
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/history
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/legal-notice
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/references/howto-bootstrap-sovereign-ai-project
