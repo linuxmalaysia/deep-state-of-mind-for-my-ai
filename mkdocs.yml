@@ -100,6 +100,7 @@ nav:
       - Custom Validators Guide: governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md
       - Downstream DSOM Compliance Mandate: governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
       - Agent Plugins 1.0.0 Specification: governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md
+      - Mintlify One-Way Sync Pipeline: governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md
       - Ritual of Transition: RITUAL-OF-TRANSITION.md
       - Personalization: PERSONALIZATION.md
   - AI Brain:

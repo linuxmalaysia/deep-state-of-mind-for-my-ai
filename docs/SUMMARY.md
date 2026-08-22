@@ -40,6 +40,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 * [dsom_token_auditor.py Reference](reference/dsom_token_auditor.md)
 * [mkdocs_hooks.py Reference](reference/mkdocs_hooks.md)
 * [Agent Plugins 1.0.0 Specification](governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md)
+* [Mintlify One-Way Sync Pipeline](governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md)
 
 ## 🧠 Explanation and Design
 

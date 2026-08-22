@@ -262,7 +262,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 ## 21. The Mintlify One-Way Docs Sync Entry Point (Knowledge Brain Publishing)
 *If you want to publish sovereign documentation from `docs-source/` to a downstream Mintlify docs repository (`linuxmalaysia/my-knowledge-brain`) serving `harisfazillah.mintlify.site`.*
 
-**Read This First:** [`scripts/sync_docs.py`](../scripts/sync_docs.py) & [`.github/workflows/sync-docs.yml`](../.github/workflows/sync-docs.yml) (Live Portal: [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site))
+**Read This First:** [`governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md`](governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/) | Live Portal: [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site))
 
 **Why it matters:** Enforces Rule 31 (Mintlify One-Way Docs Sync & Safety Guards). A deterministic one-way sync pipeline protected by 5 strict safety guards (A–E) ensuring an empty or half-populated source can never destroy the downstream Mintlify docs repo.
 

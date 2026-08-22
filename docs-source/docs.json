@@ -56,6 +56,7 @@
               "governance/hub-and-spoke-model",
               "governance/itil-alignment",
               "governance/llm-wiki-adoption",
+              "governance/mintlify-one-way-sync-pipeline",
               "governance/multi-agent-protocols",
               "governance/noss-integration-guide",
               "governance/okf-mind-optimization",
