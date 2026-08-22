@@ -15,6 +15,7 @@ Tutorials are **guided, step-by-step learning lessons** designed to help beginne
 
 - **[Getting Started with DSOM Tools](getting-started.md):** A beginner-friendly, end-to-end tutorial on initializing the OpenWiki, validating frontmatter compliance, and starting the local FastMCP server.
 - **[Team Masterclass: From Zero to Sovereign AI Pair-Programming](TEAM-DSOM-MASTERCLASS.md):** A comprehensive operational curriculum teaching teams how to bootstrap projects, configure dual GitOps (GitHub + GitLab), pair-program with Antigravity, and collaborate with Google Jules.
+- **[Nota Lapangan: Panduan Praktikal Pasukan untuk Antigravity & DSOM](NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md):** Nota ringkas dan panduan praktikal perkongsian Cikgu Haris mengenai strategi model, automasi kemahiran (skills), dan disiplin Ansible/GitOps.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
