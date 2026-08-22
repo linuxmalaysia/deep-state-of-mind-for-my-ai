@@ -219,4 +219,29 @@ To establish an automated, un-wipeable, deterministic one-way publishing bridge 
 
 > **EOD Hibernation Complete: Automated MDX compiler (tools/build_mintlify_mdx.py) and one-way sync pipeline (scripts/sync_docs.py) operational with 5 strict safety guards (Guards A–E), 156 MDX documents generated, Rule 31 codified in AGENTS.md, dsom-project-cloner enriched, all 864 unit tests passing (100%), and pushed cleanly to all remotes.**
 
+## 🏁 Session Anchor: 2026-08-23 — Mintlify User Manual Architecture, FastMCP Context7 Code Search, and Automated Snapshot Sync
+
+- Refined `tools/build_mintlify_mdx.py` compiler adhering to User Manual site style rules: 1–3 word Title Case `sidebarTitle`, 130–155 character description padding, plain prose opening paragraphs, `<CardGroup>` / `<Steps>` landing page, and em/en-dash stripping.
+- Authored master governance specification `docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md` (**Entry Point 22**) establishing the 3-manual stratification model (User/Admin/Developer Manuals) and universal drop-in AI agent prompt.
+- Enriched `.agents/skills/mintlify-docs-compiler/SKILL.md` (OKF v0.2, 1,233 tokens) and `.agents/skills/dsom-project-cloner/SKILL.md` (OKF v0.2, 1,852 tokens) with full User Manual site style and Mintlify sync toolkit scaffolding.
+- Ingested 250k token Context7 snapshot into `references/llms-from-context7.txt` (8,469 lines) and expanded FastMCP server (`tools/mcp/server.py`) with `search_code_snippets` tool and offline Context7 fallback.
+- Authored `docs/reference/CLI-QUICK-REFERENCE.md` cheatsheet, compiled to Mintlify MDX, and mapped across `mkdocs.yml`, `docs/SUMMARY.md`, and `SUMMARY.md`.
+- Implemented `tools/fetch_context7_snapshot.py` and scheduled weekly automation workflow `.github/workflows/context7-sync.yml` (Sundays 02:00 UTC) with defensive credential handling (Rule 24).
+- Enriched `.agents/skills/context7-indexer/SKILL.md` (OKF v0.2, 1,085 tokens) and registered all new Python tools and workflows in `docs/governance/AUTOMATION-AUDIT-LIST.md`.
+- Confirmed full test suite pass rate: **16/16 unit tests passing (100%)** and pre-commit custom guardrails **10/10 [PASS]**.
+- Completed Start-to-End GitOps synchronisation across GitHub (`origin`) and GitLab (`gitlab`).
+
+### Underlying Rationale
+
+To deliver a modular, reusable user-manual documentation architecture for downstream projects, empower internal FastMCP agents with instantaneous local code snippet retrieval, and automate weekly snapshot ingestion safely under digital sovereignty.
+
+### Integration Mental Anchor
+
+> **EOD Hibernation Complete: Mintlify User Manual architecture (Entry Point 22) codified, FastMCP code snippet search tool and offline Context7 fallback operational, weekly scheduled sync workflow configured, context7-indexer and cloner skills enriched to OKF v0.2, all unit tests passing (100%), and pushed cleanly to all remotes.**
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
+
+
 
