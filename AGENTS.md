@@ -57,7 +57,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Jules & Antigravity Collaborative Sync** | Google Jules and Google Antigravity share collective architectural knowledge, including atomic replacement protocols, YAML CustomLoader safe preservation, MkDocs exclusion negation, custom link rewriting hooks, and Windows Git-symlink/CRLF test guardrails. |
 | **Tri-Phasic Mind & Subsystems** | Cognitive pipeline partitioned into Active (low-latency MCP), Twilight (linters, token gates), and Deep (EOD palace-sync consolidation) states. Enforces the four functional subsystems (Cognitive Architecture, Memory Stratification, "Dreaming" & Consolidation, Metacognition & Guardrails). |
 | **Native OpenWiki Emulator Mandate** | AI maintains `./openwiki/` documentation trees directly via native Python scripts (`uv run --with pyyaml python tools/openwiki_emulator.py`), eliminating external Node.js binaries, UAC elevation hangs, and API rate limits. |
-| **Downstream Asymmetry (Zero-Bloat)** | Baseline repo houses the full metacognitive engine, while downstream projects adopt a lean 6-pillar footprint where source code remains >90% of repository volume. |
+| **Downstream Asymmetry & Cross-Agent Honor** | Baseline repo houses the full metacognitive engine, while downstream projects adopt the lean 6-pillar footprint and Universal Gateway Matrix (`.cursorrules`, `CLAUDE.md`, `copilot-instructions.md`, `AGENTS.md`) compelling foreign AI agents to strictly honor the DSOM brain. |
 | **Diátaxis Documentation Compass** | Enforces 4-quadrant separation (Tutorials, How-To Guides, Reference, Explanation) across `START-HERE.md` and `docs/` to eliminate cognitive fatigue and maximize token efficiency. |
 | **Dual-Path Custom Validators** | Integrates both the Guardrails AI Framework (for external LLM apps/Pydantic schemas) and the DSOM Native Lightweight Pathway (for FastMCP/AST command interception and offline safety) across Tri-Phasic states. |
 | **The Episodic Resume Protocol (Zero Amnesia)** | AI emits a serialized `[DSOM EPISODIC RECORD]` summary block containing live commit hashes, test metrics, and cognitive delta at major milestones to guarantee zero-loss session resumes. |
@@ -170,6 +170,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `bench_brain.py` | Benchmarks brain file read latency (FUSE/disk) to calibrate token and context performance multipliers. | Performance tuning. |
 | `generate-walkthrough.ps1` / `.sh` | Generates a formatted session walkthrough summary from brain state. | Session documentation. |
 | `guardrails-ai-dsom` | Standalone Python package providing 10 DSOM custom validators for Guardrails AI & FastMCP. | Active/Twilight/Deep safety & pre-commit validation. |
+| `install_git_guardrails.py` | Installs the unbypassable Git pre-commit guardrail hook running `guardrails-ai-dsom`. | Repo setup & initialization. |
 
 ---
 
