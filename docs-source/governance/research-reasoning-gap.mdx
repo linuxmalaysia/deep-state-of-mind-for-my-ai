@@ -1,12 +1,13 @@
 ---
 title: "🧩 The Reasoning Gap: What DSOM Solves and What It Doesn't"
-description: "OKF-compliant documentation for RESEARCH-REASONING-GAP.md."
+sidebarTitle: "Reasoning Gap What"
+description: "OKF-compliant documentation for RESEARCH-REASONING-GAP.md. Deep State of Mind framework. Deep State of Mind framework. Deep State of Mind framework."
 ---
 
-> *"The reasoning, the tradeoffs, the 'we tried X and it failed because Y' — all trapped in chat windows that evaporate when the session ends."*
-> — MemPalace research, 2025
+> *"The reasoning, the tradeoffs, the 'we tried X and it failed because Y', all trapped in chat windows that evaporate when the session ends."*
+>, MemPalace research, 2025
 
-**Document Type:** Research Finding | **Status:** Open Gap — Partially Mitigated
+**Document Type:** Research Finding | **Status:** Open Gap, Partially Mitigated
 **Date Identified:** 2026-04-08 | **Protocol Version:** DSOM v6.1 + Palace v1.0
 
 ---
@@ -26,10 +27,10 @@ DSOM with the Sovereign Markdown Palace addresses the **cost and state persisten
 
 ### State Persistence
 
-- `task.md` — What we are working on right now (Present)
-- `walkthrough.md` — Full session history with Mental Anchors (Past)
-- `implementation_plan.md` — Project roadmap (Future)
-- `palace_registry.md` — Spatial index loaded at every SOD
+- `task.md`, What we are working on right now (Present)
+- `walkthrough.md`, Full session history with Mental Anchors (Past)
+- `implementation_plan.md`, Project roadmap (Future)
+- `palace_registry.md`, Spatial index loaded at every SOD
 
 ### Fact Retrieval
 
@@ -37,7 +38,7 @@ Each `closet.md` is a distilled, high-density summary. Instead of scanning 300+ 
 
 ### Git Persistence
 
-Every state change is committed to Git. The project state cannot be lost — it is version-controlled, multi-machine synced, and provider-agnostic.
+Every state change is committed to Git. The project state cannot be lost, it is version-controlled, multi-machine synced, and provider-agnostic.
 
 ---
 
@@ -45,12 +46,12 @@ Every state change is committed to Git. The project state cannot be lost — it 
 
 ### What the Gap Is
 
-DSOM does **not** automatically capture the *reasoning* behind decisions. It captures outcomes — what was decided, what was built, what changed. It does not capture:
+DSOM does **not** automatically capture the *reasoning* behind decisions. It captures outcomes, what was decided, what was built, what changed. It does not capture:
 
 - ❌ **Why** a decision was made
 - ❌ **What alternatives were considered and rejected**
 - ❌ **The conversation thread** that produced the reasoning
-- ❌ **"We tried X and it failed because Y"** — unless manually committed
+- ❌ **"We tried X and it failed because Y"**, unless manually committed
 
 ### Why It Matters
 
@@ -95,7 +96,7 @@ this project... Cover: reasoning, tradeoffs, what failed and why..."
 
 **Limitation:** This relies on the AI's **in-session memory at that moment**. If the session was long, context was refreshed mid-session, or the AI forgot earlier reasoning, the export is incomplete.
 
-Hibernation Notes mitigate the gap — they do not close it.
+Hibernation Notes mitigate the gap, they do not close it.
 
 ---
 
@@ -142,7 +143,7 @@ If the DSOM community grows and the reasoning backlog becomes deep, a sovereign 
 
 - Tool: `ripgrep` (already used) for keyword search across all closets
 - Upgrade: A local embedding model (e.g., via Ollama) to add vector search on top of the existing Markdown files
-- The Markdown files remain the source of truth — the embeddings are a search index only
+- The Markdown files remain the source of truth, the embeddings are a search index only
 
 This would close the gap entirely while maintaining full sovereignty and zero vendor dependency.
 
@@ -164,9 +165,9 @@ This would close the gap entirely while maintaining full sovereignty and zero ve
 
 | Document | Relevance |
 |---|---|
-| [`docs/PALACE-BUILD-STORY.md`](../PALACE-BUILD-STORY.md) | Why the Palace was built |
+| [`docs/PALACE-BUILD-STORY.md`](../PALACE-BUILD-STORY) | Why the Palace was built |
 | [`docs/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md`](DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md) | Full Palace specification |
-| [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) | Hibernation Notes export protocol |
+| [`docs/EOD-RITUAL.md`](../EOD-RITUAL) | Hibernation Notes export protocol |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md) | Palace usage guide |
 
 ---

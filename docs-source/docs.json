@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "DSOM \u2014 Deep State of Mind",
+  "name": "DSOM - Deep State of Mind",
   "theme": "maple",
   "colors": {
     "primary": "#6C3FC5",
@@ -16,15 +16,132 @@
           {
             "group": "Get Started",
             "pages": [
-              "introduction",
+              "index",
               "quickstart",
-              "security",
-              "legal-notice"
+              "core-concepts"
             ]
           },
           {
-            "group": "Governance & Protocols",
+            "group": "Tutorials",
             "pages": [
+              "tutorials/getting-started",
+              "tutorials/index",
+              "tutorials/nota-lapangan-antigravity-dsom",
+              "tutorials/team-dsom-masterclass"
+            ]
+          },
+          {
+            "group": "How-To",
+            "pages": [
+              "how-to/audit-and-apply-frontmatter",
+              "how-to/generate-sitemaps-seo",
+              "how-to/index",
+              "how-to/run-fastmcp-server",
+              "how-to/use-openwiki-emulator"
+            ]
+          },
+          {
+            "group": "Rituals",
+            "pages": [
+              "rituals/start-of-day",
+              "rituals/end-of-day",
+              "rituals/transition-ritual",
+              "rituals/human-handover"
+            ]
+          },
+          {
+            "group": "Skills",
+            "pages": [
+              "skills/agent-plugin-packager",
+              "skills/context7-indexer",
+              "skills/cross-platform-translator",
+              "skills/dsom-bootstrap",
+              "skills/dsom-knowledge-ingester",
+              "skills/dsom-policy-adopter",
+              "skills/dsom-project-cloner",
+              "skills/dsom-release-manager",
+              "skills/dsom-signature-injector",
+              "skills/dsom-state-sync",
+              "skills/dsom-token-calculator",
+              "skills/eod-palace-sync",
+              "skills/forensic-log-audit",
+              "skills/git-commit-resolver",
+              "skills/git-history-scrubber",
+              "skills/github-actions-snyk-scanner",
+              "skills/initialize-gitops",
+              "skills/jules-antigravity-sync",
+              "skills/latex-proposal-compiler",
+              "skills/mintlify-docs-compiler",
+              "skills/node-proposal-formatter",
+              "skills/node-slide-generator",
+              "skills/odp-slide-generator",
+              "skills/okf-frontmatter-injector",
+              "skills/openwiki-compiler",
+              "skills/palace-auditor",
+              "skills/pdf-text-extractor",
+              "skills/persona-injector",
+              "skills/proposal-docx-formatter",
+              "skills/publish-to-blogger",
+              "skills/render-deployment",
+              "skills/sitemap-seo-generator",
+              "skills/sod-palace-sync",
+              "skills/ssh-passwordless-setup"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/apply_okf_frontmatter",
+              "reference/bench_brain",
+              "reference/dsom_token_auditor",
+              "reference/generate_sitemaps",
+              "reference/index",
+              "reference/mcp_server",
+              "reference/mkdocs_hooks",
+              "reference/openwiki_emulator",
+              "reference/refactor_okf",
+              "tools/howto-audit-pre-flight",
+              "tools/howto-build-sovereign-book",
+              "tools/howto-checkpoint",
+              "tools/howto-checkusage-linux",
+              "tools/howto-checkusage",
+              "tools/howto-dsom-onboard",
+              "tools/howto-eod-palace",
+              "tools/howto-generate-walkthrough",
+              "tools/howto-git-ritual",
+              "tools/howto-hibernation",
+              "tools/howto-init-brain",
+              "tools/howto-mcp-server",
+              "tools/howto-openwiki",
+              "tools/howto-palace-sync",
+              "tools/howto-privacy-guardian",
+              "tools/howto-reanimate-claude",
+              "tools/howto-reanimate",
+              "tools/howto-setup-dsom-control-node",
+              "tools/howto-setup-wsl-almalinux",
+              "tools/howto-sod-palace",
+              "tools/howto-template-reset"
+            ]
+          },
+          {
+            "group": "Explanation",
+            "pages": [
+              "explanation/diataxis",
+              "explanation/index",
+              "explanation/openwiki-mcp-architecture"
+            ]
+          },
+          {
+            "group": "Governance",
+            "pages": [
+              "security",
+              "legal-notice",
+              "AGENTS",
               "governance/ai-cognitive-logging-protocol",
               "governance/ai-cognitive-twin-protocol",
               "governance/ai-guardrails-master-guide",
@@ -67,126 +184,6 @@
               "governance/research-reasoning-gap",
               "governance/sop-knowledge-first-discovery",
               "governance/zero-global-memory"
-            ]
-          },
-          {
-            "group": "Daily Rituals",
-            "pages": [
-              "rituals/sod-ritual",
-              "rituals/eod-ritual",
-              "rituals/transition-ritual",
-              "rituals/human-handover"
-            ]
-          },
-          {
-            "group": "AI Agent Skills",
-            "pages": [
-              "skills/agent-plugin-packager",
-              "skills/context7-indexer",
-              "skills/cross-platform-translator",
-              "skills/dsom-bootstrap",
-              "skills/dsom-knowledge-ingester",
-              "skills/dsom-policy-adopter",
-              "skills/dsom-project-cloner",
-              "skills/dsom-release-manager",
-              "skills/dsom-signature-injector",
-              "skills/dsom-state-sync",
-              "skills/dsom-token-calculator",
-              "skills/eod-palace-sync",
-              "skills/forensic-log-audit",
-              "skills/git-commit-resolver",
-              "skills/git-history-scrubber",
-              "skills/github-actions-snyk-scanner",
-              "skills/initialize-gitops",
-              "skills/jules-antigravity-sync",
-              "skills/latex-proposal-compiler",
-              "skills/mintlify-docs-compiler",
-              "skills/node-proposal-formatter",
-              "skills/node-slide-generator",
-              "skills/odp-slide-generator",
-              "skills/okf-frontmatter-injector",
-              "skills/openwiki-compiler",
-              "skills/palace-auditor",
-              "skills/pdf-text-extractor",
-              "skills/persona-injector",
-              "skills/proposal-docx-formatter",
-              "skills/publish-to-blogger",
-              "skills/render-deployment",
-              "skills/sitemap-seo-generator",
-              "skills/sod-palace-sync",
-              "skills/ssh-passwordless-setup"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Tools & Diataxis",
-        "groups": [
-          {
-            "group": "Tools & Automation",
-            "pages": [
-              "tools/howto-audit-pre-flight",
-              "tools/howto-build-sovereign-book",
-              "tools/howto-checkpoint",
-              "tools/howto-checkusage-linux",
-              "tools/howto-checkusage",
-              "tools/howto-dsom-onboard",
-              "tools/howto-eod-palace",
-              "tools/howto-generate-walkthrough",
-              "tools/howto-git-ritual",
-              "tools/howto-hibernation",
-              "tools/howto-init-brain",
-              "tools/howto-mcp-server",
-              "tools/howto-openwiki",
-              "tools/howto-palace-sync",
-              "tools/howto-privacy-guardian",
-              "tools/howto-reanimate-claude",
-              "tools/howto-reanimate",
-              "tools/howto-setup-dsom-control-node",
-              "tools/howto-setup-wsl-almalinux",
-              "tools/howto-sod-palace",
-              "tools/howto-template-reset"
-            ]
-          },
-          {
-            "group": "Tutorials",
-            "pages": [
-              "tutorials/getting-started",
-              "tutorials/index",
-              "tutorials/nota-lapangan-antigravity-dsom",
-              "tutorials/team-dsom-masterclass"
-            ]
-          },
-          {
-            "group": "How-To Guides",
-            "pages": [
-              "how-to/audit-and-apply-frontmatter",
-              "how-to/generate-sitemaps-seo",
-              "how-to/index",
-              "how-to/run-fastmcp-server",
-              "how-to/use-openwiki-emulator"
-            ]
-          },
-          {
-            "group": "Reference",
-            "pages": [
-              "reference/apply_okf_frontmatter",
-              "reference/bench_brain",
-              "reference/dsom_token_auditor",
-              "reference/generate_sitemaps",
-              "reference/index",
-              "reference/mcp_server",
-              "reference/mkdocs_hooks",
-              "reference/openwiki_emulator",
-              "reference/refactor_okf"
-            ]
-          },
-          {
-            "group": "Explanation",
-            "pages": [
-              "explanation/diataxis",
-              "explanation/index",
-              "explanation/openwiki-mcp-architecture"
             ]
           }
         ]

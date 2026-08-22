@@ -1,6 +1,7 @@
 ---
 title: "**Operational Sovereignty through Metacognitive Governance: Integrating the Deep State of Mind Protocol with CAPM and Git-Native PMO Frameworks**"
-description: "OKF-compliant documentation for OPERATIONAL-SOVEREIGNTY.md."
+sidebarTitle: "Operational Sovereignty Through"
+description: "OKF-compliant documentation for OPERATIONAL-SOVEREIGNTY.md. Deep State of Mind framework. Deep State of Mind framework. Deep State of Mind framework."
 ---
 
 The Deep State of Mind (DSOM) protocol serves as a **metacognitive governance framework** designed to establish an active, persistent bridge between human architectural intent and machine execution. By transforming documentation from a passive record into a **sovereign ecosystem**, the protocol ensures high-fidelity continuity across diverse AI agents and distributed teams.
@@ -119,7 +120,7 @@ Within an **ITIL 4 framework**, the `.agents/brain/` directory acts as the **Ser
 2. **Future (`implementation_plan.md`):** Strategic roadmap categorized by individual.
 3. **Present (`task.md`):** Shared working memory and granular checklists to solve short-term context loss.
 4. **Past (`walkthrough.md`):** Narrative logic breakthroughs and **Mental Anchors** (the exact logical stopping point).
-5. **Spatial (`palace_registry.md` + `wings/`):** The **Sovereign Markdown Palace** — knowledge indexed by location (Wing > Room > Closet). Loaded via Section [14] of the SOD manifest.
+5. **Spatial (`palace_registry.md` + `wings/`):** The **Sovereign Markdown Palace**, knowledge indexed by location (Wing > Room > Closet). Loaded via Section [14] of the SOD manifest.
 
 ```
 
@@ -296,7 +297,7 @@ flowchart TD
 
 *Added: 2026-03-10 | Protocol Version: v6.1*
 
-Sections 1–7 above establish the metacognitive and governance foundations of DSOM. This addendum records the **strategic evolution** from documentation governance to a **full operational triad** — without repeating the detailed procedures that are authoritatively documented elsewhere.
+Sections 1–7 above establish the metacognitive and governance foundations of DSOM. This addendum records the **strategic evolution** from documentation governance to a **full operational triad**, without repeating the detailed procedures that are authoritatively documented elsewhere.
 
 ---
 
@@ -317,13 +318,13 @@ AI Proposes → Git Records → Ansible Executes → AI Verifies → Palace Reme
 | **Ansible** | Exclusive OS-level executor. Zero ad-hoc SSH to any node. |
 | **Palace** | Spatial memory layer. AI walks Registry at SOD; palace-sync updates closets at EOD. |
 
-> **Full strategic doctrine:** [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
+> **Full strategic doctrine:** [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY)
 
 ---
 
 ### **9. The 4-Tier Command Highway**
 
-Code and configuration flow through a defined hierarchy — no tier may be bypassed. The sovereign identity `dsom-admin:2001:2001` is consistent across all tiers derived from this skeleton.
+Code and configuration flow through a defined hierarchy, no tier may be bypassed. The sovereign identity `dsom-admin:2001:2001` is consistent across all tiers derived from this skeleton.
 
 ```
 
@@ -331,20 +332,20 @@ T1 (Windows/AI) → git push → T2 (WSL2 dsom-control-almalinux10) → ansible-
 
 ```
 
-> **Setup guide:** [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10.md)
+> **Setup guide:** [`docs/HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10)
 > **Ansible baseline:** [`docs/HOWTO-SETUP-ANSIBLE-BASELINE.md`](../HOWTO-SETUP-ANSIBLE-BASELINE.md)
-> **Environment map:** [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) — fill once per project
+> **Environment map:** [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL), fill once per project
 
 ---
 
 ### **10. Ansible: Executable Sovereignty**
 
-From v6.0, Ansible is the exclusive mechanism for production state changes. The `playbooks/dsom/` directory provides programmatic equivalents of all `tools/` scripts — runnable on `localhost` (T2) or any inventory group.
+From v6.0, Ansible is the exclusive mechanism for production state changes. The `playbooks/dsom/` directory provides programmatic equivalents of all `tools/` scripts, runnable on `localhost` (T2) or any inventory group.
 
 The **Sovereign Identity** (`dsom-admin`, UID 2001) is the standard execution context for all Ansible operations. Idempotency, `ansible-vault`-only secrets, and inventory-driven targeting are non-negotiable.
 
-> **Playbook reference:** [`playbooks/dsom/site.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/site.yml) — master entry point
-> **Contributor guide:** [`CONTRIBUTING.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/CONTRIBUTING.md) — Ansible standards and hybrid workflow
+> **Playbook reference:** [`playbooks/dsom/site.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/site.yml), master entry point
+> **Contributor guide:** [`CONTRIBUTING.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/CONTRIBUTING.md), Ansible standards and hybrid workflow
 
 ---
 
@@ -352,12 +353,12 @@ The **Sovereign Identity** (`dsom-admin`, UID 2001) is the standard execution co
 
 The v6.1 + Palace v1.0 formalisation of day-to-day AI context continuity: the **Hibernation Notes** mechanism bridges the ephemeral AI session with the permanent Git repository. The **Sovereign Markdown Palace** adds spatial memory that persists across sessions as structured Markdown.
 
-At EOD, the AI exports its full context (instructions, environment, history, Mental Anchor) as a single code block. `palace-sync.sh` (or `eod-palace.yml`) generates `palace_update_proposal_YYYY-MM-DD.md`. At the next SOD, the manifest (including Section [14] Palace Registry) is fed back to any AI to restore full context — making DSOM **AI-model-agnostic** and **spatially aware**.
+At EOD, the AI exports its full context (instructions, environment, history, Mental Anchor) as a single code block. `palace-sync.sh` (or `eod-palace.yml`) generates `palace_update_proposal_YYYY-MM-DD.md`. At the next SOD, the manifest (including Section [14] Palace Registry) is fed back to any AI to restore full context, making DSOM **AI-model-agnostic** and **spatially aware**.
 
-> **EOD procedure:** [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) — Step 2a (Ansible Palace EOD)
-> **SOD procedure:** [`docs/SOD-RITUAL.md`](../SOD-RITUAL.md) — Step 1a (Ansible Palace SOD)
-> **AI prompts:** [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE.md) — 5 copy-paste prompts
-> **Palace guide:** [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md) — closet structure and update guide
+> **EOD procedure:** [`docs/EOD-RITUAL.md`](../EOD-RITUAL), Step 2a (Ansible Palace EOD)
+> **SOD procedure:** [`docs/SOD-RITUAL.md`](../SOD-RITUAL), Step 1a (Ansible Palace SOD)
+> **AI prompts:** [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE), 5 copy-paste prompts
+> **Palace guide:** [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md), closet structure and update guide
 
 ---
 
@@ -367,19 +368,19 @@ The following documents constitute the **Sovereign Document Stack** for any v6.1
 
 | Role | Document |
 |:---|:---|
-| Constitution | [`AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) |
+| Constitution | [`AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL) |
 | Project Identity | [`AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md) |
-| Session Handover | [`HUMAN-HANDOVER-CONTEXT.md`](../HUMAN-HANDOVER-CONTEXT.md) |
+| Session Handover | [`HUMAN-HANDOVER-CONTEXT.md`](../HUMAN-HANDOVER-CONTEXT) |
 | Start of Day | [`SOD-RITUAL.md`](../SOD-RITUAL.md) |
-| End of Day | [`EOD-RITUAL.md`](../EOD-RITUAL.md) |
+| End of Day | [`EOD-RITUAL.md`](../EOD-RITUAL) |
 | AI Prompts | [`REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE.md) |
-| Transition | [`RITUAL-OF-TRANSITION.md`](../RITUAL-OF-TRANSITION.md) |
+| Transition | [`RITUAL-OF-TRANSITION.md`](../RITUAL-OF-TRANSITION) |
 | Strategy | [`GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) |
-| Operations | [`OPERATIONAL-GUIDE.md`](OPERATIONAL-GUIDE.md) |
+| Operations | [`OPERATIONAL-GUIDE.md`](OPERATIONAL-GUIDE) |
 | **Palace Memory** | **[`HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md)** |
-| **Palace Build Story** | **[`PALACE-BUILD-STORY.md`](../PALACE-BUILD-STORY.md)** |
+| **Palace Build Story** | **[`PALACE-BUILD-STORY.md`](../PALACE-BUILD-STORY)** |
 | Ansible Setup | [`HOWTO-SETUP-ANSIBLE-BASELINE.md`](../HOWTO-SETUP-ANSIBLE-BASELINE.md) |
-| WSL2 Setup | [`HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10.md) |
+| WSL2 Setup | [`HOWTO-SETUP-WSL-ALMALINUX10.md`](../HOWTO-SETUP-WSL-ALMALINUX10) |
 | Contributors | [`CONTRIBUTING.md`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/CONTRIBUTING.md) |
 
 ---

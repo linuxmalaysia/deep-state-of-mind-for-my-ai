@@ -1,6 +1,7 @@
 ---
 title: "📜 DSOM Master Directive: AI Governance Protocol (v6.1 + Palace v1.0)"
-description: "OKF-compliant documentation for AI-MASTER-PROTOCOL.md."
+sidebarTitle: "Master Directive Ai"
+description: "OKF-compliant documentation for AI-MASTER-PROTOCOL.md. Deep State of Mind framework. Deep State of Mind framework. Deep State of Mind framework."
 ---
 
 ### 📜 docs/AI-MASTER-PROTOCOL.md (Refactored v6.1 + Palace v1.0)
@@ -33,11 +34,11 @@ Automated scripts can break or go missing. To ensure absolute operational sovere
 
 ### 🧠 Advisory over Execution
 
-The AI is in **Advisory Mode** at all times. It proposes, generates, and documents. The **Terminal Trigger** — the final approval to execute any script, Ansible playbook, or Git push — resides exclusively with the **Sovereign Architect**.
+The AI is in **Advisory Mode** at all times. It proposes, generates, and documents. The **Terminal Trigger**, the final approval to execute any script, Ansible playbook, or Git push, resides exclusively with the **Sovereign Architect**.
 
 ### 🔄 GitOps-First Principle
 
-Git is the **single source of truth** for all system state. If a change is not committed to the repository, it does not exist. No manual edits to target nodes are permitted. See [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md) for the full doctrine.
+Git is the **single source of truth** for all system state. If a change is not committed to the repository, it does not exist. No manual edits to target nodes are permitted. See [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY) for the full doctrine.
 
 ---
 
@@ -80,7 +81,7 @@ To ensure **Sovereign Portability**, we enforce the **Inward Dependency Rule**:
 
 * **Agnostic & Portable:** Optimised for Enterprise Linux (RHEL, AlmaLinux, Ubuntu).
 * **High-Availability (HA) Ready:** Designed for clusters and zero-downtime.
-* **IaC Sovereign Law:** Ansible is the **exclusive** OS-level executor. AI generates Ansible playbooks — never raw shell commands for remote execution. Manual SSH changes to production nodes are prohibited.
+* **IaC Sovereign Law:** Ansible is the **exclusive** OS-level executor. AI generates Ansible playbooks, never raw shell commands for remote execution. Manual SSH changes to production nodes are prohibited.
 * **Idempotency Law:** Every Ansible playbook MUST be safe to re-run multiple times with the same outcome.
 * **Zero-Global Pattern:** Use strict state management. No global variables.
 * **Git Sovereignty Doctrine:**
@@ -97,7 +98,7 @@ To ensure **Sovereign Portability**, we enforce the **Inward Dependency Rule**:
 Upon the command **"Initialise DSOM Protocol"**, you MUST execute this boot sequence:
 
 1. **Context Sync:** Analyse the uploaded manifest, including `palace_registry.md` (Spatial Context), `task.md`, `walkthrough.md`, and `implementation_plan.md`.
-2. **Twin Protocol Check:** Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` exists for this project. If it does not, flag it as the first action item. See [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL.md).
+2. **Twin Protocol Check:** Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` exists for this project. If it does not, flag it as the first action item. See [`docs/AI-COGNITIVE-TWIN-PROTOCOL.md`](AI-COGNITIVE-TWIN-PROTOCOL).
 3. **Ansible Check:** Verify `inventory/hosts.yml` exists. If deploying infrastructure, confirm `bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)` was run.
 4. **Audit Verification:** Confirm if the pre-flight checks (via `sod-palace.yml` or `audit-pre-flight.sh`) were successful.
 5. **State Alignment:** Summarise the last **Mental Anchor** from the walkthrough.

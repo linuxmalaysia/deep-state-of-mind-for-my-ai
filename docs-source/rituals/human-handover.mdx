@@ -1,11 +1,12 @@
 ---
 title: "🤝 HUMAN-HANDOVER-CONTEXT.md"
-description: "OKF-compliant documentation for HUMAN-HANDOVER-CONTEXT.md."
+sidebarTitle: "Human Handover Context"
+description: "OKF-compliant documentation for HUMAN-HANDOVER-CONTEXT.md. Deep State of Mind framework. Deep State of Mind framework. Deep State of Mind framework."
 ---
 
 # Path: docs/HUMAN-HANDOVER-CONTEXT.md
 
-> **DSOM For My AI — SESSION HANDOVER TEMPLATE**
+> **DSOM For My AI, SESSION HANDOVER TEMPLATE**
 > Adapt this file for every new project cloned from the DSOM skeleton.
 > Fill in every `[PLACEHOLDER]` with your project-specific values.
 > This file is the **first document** you paste into a new AI session.
@@ -23,10 +24,10 @@ I am starting a new AI session. Synchronise your state with the following:
 1. **READ** the project brief: `docs/` directory and the DSOM brain files.
 2. **SYNC** with the task tracker: `.agents/brain/task.md`
 3. **READ** brain artifacts: `.agents/brain/walkthrough.md` and `.agents/brain/implementation_plan.md`
-4. **VERIFY** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` — confirm all `[PLACEHOLDER]` fields are filled.
+4. **VERIFY** `docs/AI-COGNITIVE-TWIN-PROTOCOL.md`, confirm all `[PLACEHOLDER]` fields are filled.
 5. **READ** `README.md`, `SUMMARY.md`, `CHANGELOG.md`
 6. **RUN** `git log --oneline -20` to read recent commit history.
-7. **WALK THE PALACE** — read `.agents/brain/palace_registry.md` (Section [14] of the SOD manifest) and identify the relevant Wings and Rooms for today's work.
+7. **WALK THE PALACE**, read `.agents/brain/palace_registry.md` (Section [14] of the SOD manifest) and identify the relevant Wings and Rooms for today's work.
 
 Run **Start of Day (SOD)** as per DSOM For My AI Protocol v6.1 + Palace v1.0.
 
@@ -61,7 +62,7 @@ We strictly follow the **4-Tier Command Highway** (T1→T2→T3→T4):
 
 #### 🛡️ Security Doctrine: "Rootful Control, Rootless Application"
 
-- **Rootful Control:** Ansible/sudo manages OS-level tasks — systemd, networking, filesystem.
+- **Rootful Control:** Ansible/sudo manages OS-level tasks, systemd, networking, filesystem.
 - **Rootless Application:** All containers/services run as `[APP_USER]` (UID `[APP_UID]` GID `[APP_GID]`).
 - **Sovereign Identity:** `dsom-admin:2001:2001` on target nodes.
 - **Dev Identity:** `[DEV_USERNAME]:[DEV_UID]:[DEV_GID]` on WSL2.
@@ -82,7 +83,7 @@ We strictly follow the **4-Tier Command Highway** (T1→T2→T3→T4):
 
 Whenever changes are pushed from Windows (T1), perform this ritual to align all tiers:
 
-**Step 1 — Pull on T2 (WSL2: `dsom-control-almalinux10`)**
+**Step 1, Pull on T2 (WSL2: `dsom-control-almalinux10`)**
 
 ```bash
 cd /mnt/[T2_MOUNTED_PATH]
@@ -90,11 +91,11 @@ git pull origin main
 
 ```
 
-**Step 2 — Promote to T3 Jump Host / Ansible Control (if applicable)**
+**Step 2, Promote to T3 Jump Host / Ansible Control (if applicable)**
 
 ```bash
 
-# Run from T2 WSL2 — promote project to T3 orchestrator
+# Run from T2 WSL2, promote project to T3 orchestrator
 
 rsync -avz --checksum --delete \
     --exclude '.git' --exclude '.gemini' --exclude '.agents' \
@@ -102,7 +103,7 @@ rsync -avz --checksum --delete \
 
 ```
 
-**Step 3 — Verify T3 Ansible Connectivity**
+**Step 3, Verify T3 Ansible Connectivity**
 
 ```bash
 
@@ -112,11 +113,11 @@ ansible all -m ping -i inventory/hosts.yml
 
 ```
 
-**Step 4 — Optional: Remote Audit from T1 via WSL**
+**Step 4, Optional: Remote Audit from T1 via WSL**
 
 ```powershell
 
-# Run from Windows PowerShell (T1) — bridges through T2 → T3
+# Run from Windows PowerShell (T1), bridges through T2 → T3
 
 wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `
     "ssh -t dsom-admin@[T3_IP] 'cd /opt/[YOUR_PROJECT_NAME] && bash tools/audit-pre-flight.sh'"
@@ -129,7 +130,7 @@ wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `
 
 After the AI reads all context, trigger the session with:
 
-> *"Initialise DSOM Protocol v6.1 + Palace v1.0 for [YOUR_PROJECT_NAME]. Read the uploaded manifest or this handover file. Walk the Palace Registry in Section [14] — identify the relevant Rooms for today's work. Confirm the 4-Tier Command Highway is mapped. Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` is filled in. State the last Mental Anchor from `.agents/brain/walkthrough.md`. Respond in UK English. State: 'Sovereign State Synchronised — [YOUR_PROJECT_NAME] is live.' when ready."*
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0 for [YOUR_PROJECT_NAME]. Read the uploaded manifest or this handover file. Walk the Palace Registry in Section [14], identify the relevant Rooms for today's work. Confirm the 4-Tier Command Highway is mapped. Verify `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` is filled in. State the last Mental Anchor from `.agents/brain/walkthrough.md`. Respond in UK English. State: 'Sovereign State Synchronised, [YOUR_PROJECT_NAME] is live.' when ready."*
 
 ---
 
@@ -138,7 +139,7 @@ After the AI reads all context, trigger the session with:
 | Method | Command |
 |:---|:---|
 | **Direct Paste** | Copy full terminal output into AI chat |
-| **Log File** | `bash tools/audit-pre-flight.sh \| tee audit_result.log` — share log content |
+| **Log File** | `bash tools/audit-pre-flight.sh \| tee audit_result.log`, share log content |
 | **Ansible Output** | `ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost, \| tee audit_ansible.log` |
 
 AI will **wait for your results** before proceeding. Never assume success.
@@ -149,10 +150,10 @@ AI will **wait for your results** before proceeding. Never assume success.
 
 ```
 
-CURRENT STATE: [DESCRIBE_CURRENT_STATE e.g. v1.0 — Ansible baseline deployed, Kafka brokers up]
+CURRENT STATE: [DESCRIBE_CURRENT_STATE e.g. v1.0, Ansible baseline deployed, Kafka brokers up]
 Environment:   [e.g. 3-node test cluster]
 Last Commit:   [PASTE LAST COMMIT HASH AND MESSAGE]
-Mental Anchor: [ONE SENTENCE — exact state and where to resume]
+Mental Anchor: [ONE SENTENCE, exact state and where to resume]
 Next Action:   [WHAT THE AI SHOULD DO FIRST IN THE NEW SESSION]
 
 ```
@@ -170,8 +171,8 @@ Next Action:   [WHAT THE AI SHOULD DO FIRST IN THE NEW SESSION]
 7. **UK English only** in all documentation and responses.
 8. **Wait for human output** before proceeding with the next step.
 9. **Control yourself during long debugging.** Emit one action at a time.
-10. **Both T1 and T2 must be in sync** — always pull on T2 after T1 push.
-11. **Walk the Palace Registry** at the start of every session — read `palace_registry.md` and load the relevant `closet.md` files before advising.
+10. **Both T1 and T2 must be in sync**, always pull on T2 after T1 push.
+11. **Walk the Palace Registry** at the start of every session, read `palace_registry.md` and load the relevant `closet.md` files before advising.
 12. **Propose Palace closet updates** at EOD if new decisions or discoveries were made.
 
 ---

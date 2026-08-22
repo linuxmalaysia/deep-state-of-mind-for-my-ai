@@ -1,6 +1,7 @@
 ---
 title: "[AGENT] DSOM Cognitive Digital Twin: Project Operational Protocol (v2.0)"
-description: "OKF-compliant documentation for AI-COGNITIVE-TWIN-PROTOCOL.md."
+sidebarTitle: "Agent Cognitive Digital"
+description: "OKF-compliant documentation for AI-COGNITIVE-TWIN-PROTOCOL.md. Deep State of Mind framework. Deep State of Mind framework. Deep State of Mind framework."
 ---
 
 ## docs/AI-COGNITIVE-TWIN-PROTOCOL.md
@@ -13,13 +14,13 @@ description: "OKF-compliant documentation for AI-COGNITIVE-TWIN-PROTOCOL.md."
 
 ## 🏛️ 1. The Cognitive Relationship
 
-The AI operates as the **Cognitive Digital Twin** of the **Lead Architect** (Sovereign Architect). Its primary function is to provide architectural foresight, code generation, and complex log analysis, adhering to the **DSOM Master Protocol** ([`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md)).
+The AI operates as the **Cognitive Digital Twin** of the **Lead Architect** (Sovereign Architect). Its primary function is to provide architectural foresight, code generation, and complex log analysis, adhering to the **DSOM Master Protocol** ([`docs/AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL)).
 
 **The Three Laws of the Twin:**
 
-1. **Advisory over Execution** — The AI proposes and documents; the Sovereign Architect approves and triggers.
-2. **Logic over Operation** — Every action must have a documented architectural reason (the "Why").
-3. **Partnership through Environmental Awareness** — The AI must understand the full 4-Tier environment before acting.
+1. **Advisory over Execution**, The AI proposes and documents; the Sovereign Architect approves and triggers.
+2. **Logic over Operation**, Every action must have a documented architectural reason (the "Why").
+3. **Partnership through Environmental Awareness**, The AI must understand the full 4-Tier environment before acting.
 
 ---
 
@@ -121,9 +122,9 @@ For every phase and significant task:
 4. **Palace Sync**: After every EOD, the Sovereign Markdown Palace (`palace_registry.md` + `wings/`) must reflect the current state. Run `palace-sync.sh` (or `palace-sync.ps1`) to generate the update proposal.
 5. **Decision Log Protocol**: At every key decision, immediately log it to `walkthrough.md`:
    > `"Log this decision: Decision | Alternatives rejected | Reason | Context to revisit"`
-   This closes the **Reasoning Gap** — what was decided AND why must both live in Git.
+   This closes the **Reasoning Gap**, what was decided AND why must both live in Git.
 
-> **Reference:** [`docs/RESEARCH-REASONING-GAP.md`](RESEARCH-REASONING-GAP.md) — The Reasoning Gap analysis and Decision Log Protocol.
+> **Reference:** [`docs/RESEARCH-REASONING-GAP.md`](RESEARCH-REASONING-GAP), The Reasoning Gap analysis and Decision Log Protocol.
 
 ---
 
@@ -138,13 +139,13 @@ The AI is in **Advisory Mode**. It generates, validates, and documents. The **Te
 
 ## 🌅🌙 8a. Daily Rituals: SOD & EOD with Ansible Palace Automation
 
-The daily operating rhythm for **T2 (Linux/WSL2)**. Both playbooks run on `localhost` — no remote host required.
+The daily operating rhythm for **T2 (Linux/WSL2)**. Both playbooks run on `localhost`, no remote host required.
 
-### 🌅 Start-of-Day (SOD) — Ansible Automated
+### 🌅 Start-of-Day (SOD), Ansible Automated
 
 ```bash
 
-# On T2 (Linux/WSL2) — Run this first every morning
+# On T2 (Linux/WSL2), Run this first every morning
 
 bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 
@@ -159,7 +160,7 @@ bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 | 3 | Verify Palace Registry exists | ✅ Auto |
 | 4 | Run `tools/reanimate.sh` (generates SOD manifest with Section [14] Palace Registry) | ✅ Auto |
 | 5 | Print manifest file path and handshake instructions | ✅ Auto |
-| **6** | **Upload manifest to AI + say handshake phrase** | **❌ Manual — always** |
+| **6** | **Upload manifest to AI + say handshake phrase** | **❌ Manual, always** |
 
 **Handshake phrase (paste after uploading manifest):**
 
@@ -171,7 +172,7 @@ State: "Sovereign State Synchronised" when ready.
 
 ```
 
-**On T1 (Windows) — manual equivalent:**
+**On T1 (Windows), manual equivalent:**
 
 ```powershell
 git pull --rebase origin main
@@ -183,11 +184,11 @@ git pull --rebase origin main
 
 ---
 
-### 🌙 End-of-Day (EOD) — Ansible Automated
+### 🌙 End-of-Day (EOD), Ansible Automated
 
 ```bash
 
-# On T2 (Linux/WSL2) — Run this at end of every working session
+# On T2 (Linux/WSL2), Run this at end of every working session
 
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
@@ -204,8 +205,8 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 | 5 | Selective `git add` (brain + palace files only, no blind `git add .`) | ✅ Auto |
 | 6 | Commit with standard EOD message | ✅ Auto |
 | 7 | `git push origin main` | ✅ Auto |
-| **8** | **Review `palace_update_proposal_YYYY-MM-DD.md` with AI** | **❌ Manual — always** |
-| **9** | **Update relevant closets in `.agents/brain/wings/`** | **❌ Manual — always** |
+| **8** | **Review `palace_update_proposal_YYYY-MM-DD.md` with AI** | **❌ Manual, always** |
+| **9** | **Update relevant closets in `.agents/brain/wings/`** | **❌ Manual, always** |
 
 **Skip palace-sync if already run manually:**
 
@@ -214,7 +215,7 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace
 
 ```
 
-**On T1 (Windows) — manual equivalent:**
+**On T1 (Windows), manual equivalent:**
 
 ```powershell
 .\tools\hibernation.ps1
@@ -234,7 +235,7 @@ SOD
 
 Active Work
  └── Code, commit, push                 (Human)
- └── Log key decisions immediately      (Human+AI — Decision Log Protocol)
+ └── Log key decisions immediately      (Human+AI, Decision Log Protocol)
 
 EOD
  └── ansible-playbook eod-palace.yml    (T2 auto)
@@ -244,7 +245,7 @@ EOD
 ```
 
 > **Playbooks:** [`playbooks/dsom/sod-palace.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/sod-palace.yml) | [`playbooks/dsom/eod-palace.yml`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/playbooks/dsom/eod-palace.yml)
-> **Full specs:** [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING.md)
+> **Full specs:** [`docs/HOWTO-PALACE-ONBOARDING.md`](../HOWTO-PALACE-ONBOARDING)
 
 ---
 
@@ -266,7 +267,7 @@ about this project from past conversations.
 Output everything in a single code block so I can easily copy it.
 Format each entry as: [date saved, if available] - memory content.
 
-Make sure to cover all of the following — preserve my words verbatim where possible:
+Make sure to cover all of the following, preserve my words verbatim where possible:
 - Instructions I've given you about how to respond (tone, format, style,
   'always do X', 'never do Y').
 - Project details: name of server or VM or container, location of them,

@@ -1,15 +1,16 @@
 ---
 title: "Zero-Global Memory: The Sovereign AI Memory Architecture"
-description: "Comprehensive architectural analysis of the Zero-Global Memory mandate in DSOM. Covers the problem, the solution, the mechanics, and the operational procedures that make AI memory persistent, auditable, and vendor-independent."
+sidebarTitle: "Zero Global Memory"
+description: "Comprehensive architectural analysis of the Zero-Global Memory mandate in DSOM. Covers the problem, the solution, the mechanics, and the operational pro..."
 ---
 
 > **Artifact Level:** L2 (Analysis)
-> **Rule Reference:** Rule 1, Rule 8, Rule 18 — `.agents/AGENTS.md`
-> **Status:** Active Baseline — foundational doctrine for all DSOM projects.
+> **Rule Reference:** Rule 1, Rule 8, Rule 18, `.agents/AGENTS.md`
+> **Status:** Active Baseline, foundational doctrine for all DSOM projects.
 
 ## Abstract
 
-By enforcing Zero-Global Memory, the DSOM framework resolves the most critical structural failure in standard LLM deployments: the AI's memory is ephemeral, vendor-locked, and unauditable. With this architectural mandate, all project knowledge, operational state, and session context live exclusively in a Git repository — never inside the AI agent itself. The AI becomes a stateless, replaceable reasoning engine. The repository becomes the brain.
+By enforcing Zero-Global Memory, the DSOM framework resolves the most critical structural failure in standard LLM deployments: the AI's memory is ephemeral, vendor-locked, and unauditable. With this architectural mandate, all project knowledge, operational state, and session context live exclusively in a Git repository, never inside the AI agent itself. The AI becomes a stateless, replaceable reasoning engine. The repository becomes the brain.
 
 ---
 
@@ -45,7 +46,7 @@ Every piece of operational knowledge the AI needs must exist as a committed file
 ║            ZERO-GLOBAL MEMORY ARCHITECTURE               ║
 ╠══════════════════════════════════════════════════════════╣
 ║                                                          ║
-║  ❌  AI Agent (stateless — memory wiped on close)        ║
+║  ❌  AI Agent (stateless, memory wiped on close)        ║
 ║                                                          ║
 ║  ✅  .agents/brain/           (Git-committed state)      ║
 ║       ├── task.md             current task queue         ║
@@ -68,7 +69,7 @@ Every piece of operational knowledge the AI needs must exist as a committed file
 
 ### 3.1 The Sovereign Markdown Palace
 
-Memory is not stored as a flat list of notes. It is structured into a spatial architecture — the **Sovereign Markdown Palace** — organised into hierarchical rooms:
+Memory is not stored as a flat list of notes. It is structured into a spatial architecture, the **Sovereign Markdown Palace**, organised into hierarchical rooms:
 
 ```
 
@@ -88,7 +89,7 @@ Memory is not stored as a flat list of notes. It is structured into a spatial ar
 
 ```
 
-Each `closet.md` contains a bounded, single-topic knowledge unit (OKF-compliant). The AI navigates this structure deterministically — it does not search, it reads from a declared address.
+Each `closet.md` contains a bounded, single-topic knowledge unit (OKF-compliant). The AI navigates this structure deterministically, it does not search, it reads from a declared address.
 
 ### 3.2 Active Context Manifest
 
@@ -103,17 +104,17 @@ The AI never loads the entire `.agents/brain/` directory. Instead, it reads only
 - .agents/brain/palace_registry.md
 - .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md
 
-## Excluded (Archival — load via view_file with line ranges only)
+## Excluded (Archival, load via view_file with line ranges only)
 
 # palace_update_proposal files: 30,000–55,000 tokens each
 
 ```
 
-This is the **Progressive Disclosure** principle applied to memory: load only what is needed for the current session. The three archival `palace_update_proposal` files in the baseline repository alone contain 120,466 tokens — loading them wholesale would consume the entire context window before any work begins.
+This is the **Progressive Disclosure** principle applied to memory: load only what is needed for the current session. The three archival `palace_update_proposal` files in the baseline repository alone contain 120,466 tokens, loading them wholesale would consume the entire context window before any work begins.
 
 ### 3.3 The Episodic Resume Protocol (Rule 18)
 
-At the end of every significant workflow, the AI generates a `[DSOM EPISODIC RECORD]` block — a compact serialisation of the session's cognitive state. This record is saved by the human operator and used to reanimate the next session precisely where the last one ended:
+At the end of every significant workflow, the AI generates a `[DSOM EPISODIC RECORD]` block, a compact serialisation of the session's cognitive state. This record is saved by the human operator and used to reanimate the next session precisely where the last one ended:
 
 ```
 
@@ -155,7 +156,7 @@ graph TD
 
 ## 4. Operational Procedures
 
-### 4.1 Start-of-Day (SOD) — Memory Reanimation
+### 4.1 Start-of-Day (SOD), Memory Reanimation
 
 ```
 
@@ -167,9 +168,9 @@ graph TD
 
 ```
 
-Total token cost for a typical SOD load: **~2,500–4,000 tokens** — well within the 4,000-token quality gate for individual files, and far below the ~145,000 tokens that would be consumed by loading the entire brain.
+Total token cost for a typical SOD load: **~2,500–4,000 tokens**, well within the 4,000-token quality gate for individual files, and far below the ~145,000 tokens that would be consumed by loading the entire brain.
 
-### 4.2 During Session — Memory Writes
+### 4.2 During Session, Memory Writes
 
 Every decision, discovery, or architectural change made during a session must be committed to the appropriate location before the session ends:
 
@@ -181,7 +182,7 @@ Every decision, discovery, or architectural change made during a session must be
 | Governance/architecture | `docs/governance/` |
 | Operational procedures | `.agents/skills/` SKILL.md |
 
-### 4.3 End-of-Day (EOD) — Memory Serialisation
+### 4.3 End-of-Day (EOD), Memory Serialisation
 
 ```
 
@@ -215,10 +216,10 @@ Because all memory is in Git, not in the AI:
 
 Zero-Global Memory directly enables the DSOM token efficiency gains (96.23% reduction) because:
 
-1. **Bounded loads** — only declared files are ever loaded; no speculative reads.
-2. **OKF frontmatter routing** — the `topics:` tag on every `SKILL.md` means skill discovery costs ~375 tokens instead of ~14,400 tokens (full bodies).
-3. **4,000-token gate** — the `dsom-token-calculator` skill enforces a circuit breaker, preventing any single file from flooding the context window.
-4. **Archival isolation** — massive palace proposal files (30,000–55,000 tokens each) are permanently excluded from active context via `active_context_manifest.md`.
+1. **Bounded loads**, only declared files are ever loaded; no speculative reads.
+2. **OKF frontmatter routing**, the `topics:` tag on every `SKILL.md` means skill discovery costs ~375 tokens instead of ~14,400 tokens (full bodies).
+3. **4,000-token gate**, the `dsom-token-calculator` skill enforces a circuit breaker, preventing any single file from flooding the context window.
+4. **Archival isolation**, massive palace proposal files (30,000–55,000 tokens each) are permanently excluded from active context via `active_context_manifest.md`.
 
 Without Zero-Global Memory, there is no mechanism to enforce any of this discipline. An AI that "remembers" things internally has no deterministic boundary on what it loads.
 
@@ -229,9 +230,9 @@ Without Zero-Global Memory, there is no mechanism to enforce any of this discipl
 | Rule | Mandate |
 |---|---|
 | **Rule 1** | Memory lives in `.agents/brain`. Synchronise via `palace_registry.md`. |
-| **Rule 8** | Triple-Ledger Sync — update `README.md`, `CHANGELOG.md`, `HISTORY.md` on every architectural change. |
-| **Rule 10** | Byte-Capped Executions — all exploratory reads are output-capped to prevent context flooding. |
-| **Rule 18** | Episodic Resume Protocol — generate `[DSOM EPISODIC RECORD]` at EOD. |
+| **Rule 8** | Triple-Ledger Sync, update `README.md`, `CHANGELOG.md`, `HISTORY.md` on every architectural change. |
+| **Rule 10** | Byte-Capped Executions, all exploratory reads are output-capped to prevent context flooding. |
+| **Rule 18** | Episodic Resume Protocol, generate `[DSOM EPISODIC RECORD]` at EOD. |
 
 ---
 
@@ -252,9 +253,9 @@ Without Zero-Global Memory, there is no mechanism to enforce any of this discipl
 | Document | Description |
 |---|---|
 | [AGENTS.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md) | Core rulebook: Rules 1, 8, 10, 18 governing memory architecture. |
-| [DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md](DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md) | Token efficiency playbook showing how Zero-Global Memory enables 96.23% context reduction. |
+| [DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md](DSOM-TOKEN-PERFORMANCE-PLAYBOOK) | Token efficiency playbook showing how Zero-Global Memory enables 96.23% context reduction. |
 | [BYTE-CAPPED-EXECUTION-FRAMEWORK.md](BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | Circuit breaker enforcement preventing context flooding. |
-| [DSOM-INGESTION-LATENCY-ARCHITECTURE.md](DSOM-INGESTION-LATENCY-ARCHITECTURE.md) | Empirical benchmarks: local OKF reads vs. remote RAG latency. |
+| [DSOM-INGESTION-LATENCY-ARCHITECTURE.md](DSOM-INGESTION-LATENCY-ARCHITECTURE) | Empirical benchmarks: local OKF reads vs. remote RAG latency. |
 | [DSOM-EPISODIC-RECORD-TEMPLATE.md](../DSOM-EPISODIC-RECORD-TEMPLATE.md) | Canonical template for the session anchor serialisation format. |
 | [active_context_manifest.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/brain/active_context_manifest.md) | OKF manifest bounding active session file scope. |
 

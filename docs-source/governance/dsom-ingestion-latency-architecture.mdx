@@ -1,10 +1,11 @@
 ---
 title: "Ingestion Latency and Contextual Mapping Velocities in DSOM"
+sidebarTitle: "Ingestion Latency And"
 description: "Architectural analysis of DSOM local knowledge ingestion vs. remote RAG/vector pipelines, with empirical benchmarks and implementation guidance."
 ---
 
 > **Artifact Level:** L2 (Analysis)
-> **Status:** Verified — Empirical benchmarks captured on T1 (Windows/NVMe) 2026-07-19.
+> **Status:** Verified, Empirical benchmarks captured on T1 (Windows/NVMe) 2026-07-19.
 
 ## Abstract
 
@@ -86,7 +87,7 @@ Bypassing standard vector search indexes eliminates chunk optimisation loops and
 | **Directory Scope Mapping** | **Unpredictable:** Subject to chunk fragmentation and search algorithm thresholds. | **Deterministic:** Full visibility across directory tables via single-pass frontmatter sweeps. |
 | **Resource Efficiency** | Consumes external memory, requires continuous network connections, and scales API costs with every request. | Fits entirely inside local hardware caches, enabling high performance on low-spec mobile setups (like Termux loops). |
 
-### 3.2 Empirical Benchmarks — T1 Node (Windows 11 / NVMe)
+### 3.2 Empirical Benchmarks, T1 Node (Windows 11 / NVMe)
 
 Measured via `tiktoken cl100k_base` across `.agents/brain/` (38 files, 145,729 total tokens):
 
@@ -108,7 +109,7 @@ Measured via `tiktoken cl100k_base` across `.agents/brain/` (38 files, 145,729 t
 | `palace_update_proposal_2026-04-08_2154.md` | 34,534 | 31.192ms | 35.700ms |
 | `palace_update_proposal_2026-04-08_1214.md` | 30,206 | 35.467ms | 39.563ms |
 
-> **Advisory:** The three `palace_update_proposal` files alone account for 120,466 tokens — **82.7% of total brain token mass**. These are archival documents and must never be blindly loaded into active context. The 4,000-token gate correctly blocks them.
+> **Advisory:** The three `palace_update_proposal` files alone account for 120,466 tokens, **82.7% of total brain token mass**. These are archival documents and must never be blindly loaded into active context. The 4,000-token gate correctly blocks them.
 
 > **Termux Note:** Android FUSE filesystem overhead was benchmarked to add a ~3.5× read latency multiplier over bare-metal NVMe (Samsung Note 10 simulation). The bare-metal read times become proportionally higher (e.g. 5.7ms on NVMe becomes ~20ms on Termux/Android). Actual Termux hardware runs confirmed this architectural scaling.
 
@@ -153,7 +154,7 @@ The symlink pattern proposed in earlier drafts is **not suitable for this projec
 ---
 okf_version: 0.1
 type: active_context_manifest
-title: "Active Context — YYYY-MM-DD"
+title: "Active Context, YYYY-MM-DD"
 description: "Declares the exact file paths the agent must load for the current task session."
 ---
 
@@ -186,7 +187,7 @@ The `dsom-token-calculator` skill enforces two-tier gating:
 | **< 4,000 tokens** | Full file content dumped into active context. |
 | **≥ 4,000 tokens** | Script raises `[BLOCKED]` flag. Agent generates OKF summary header and uses `view_file` with line-range targeting instead. |
 
-The per-section alerting capability (flagging individual `##` sections that breach thresholds) is implemented in `calculate-tokens.py` v2 — see `dsom-token-calculator` skill for the updated script.
+The per-section alerting capability (flagging individual `##` sections that breach thresholds) is implemented in `calculate-tokens.py` v2, see `dsom-token-calculator` skill for the updated script.
 
 ---
 
@@ -204,8 +205,8 @@ The per-section alerting capability (flagging individual `##` sections that brea
 
 | Document | Description |
 |---|---|
-| [BYTE-CAPPED-EXECUTION-FRAMEWORK.md](BYTE-CAPPED-EXECUTION-FRAMEWORK.md) | Enforcement model for Byte-Capped Executions (Rule 10). |
-| [DSOM-TOKEN-EFFICIENCY-REPORT.md](DSOM-TOKEN-EFFICIENCY-REPORT.md) | Token efficiency audit proving 96.23% reduction via DSOM protocol. |
+| [BYTE-CAPPED-EXECUTION-FRAMEWORK.md](BYTE-CAPPED-EXECUTION-FRAMEWORK) | Enforcement model for Byte-Capped Executions (Rule 10). |
+| [DSOM-TOKEN-EFFICIENCY-REPORT.md](DSOM-TOKEN-EFFICIENCY-REPORT) | Token efficiency audit proving 96.23% reduction via DSOM protocol. |
 | [PYTHON-UV-ENVIRONMENT-GUIDE.md](PYTHON-UV-ENVIRONMENT-GUIDE.md) | Mandated `uv` execution environment (Rule 16). |
 | [dsom-token-calculator SKILL.md](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/dsom-token-calculator/SKILL.md) | Executable skill for local token footprint measurement. |
 

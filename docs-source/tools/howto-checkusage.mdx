@@ -1,6 +1,7 @@
 ---
-title: "HOWTO: CheckUsage.ps1 — Antigravity Session Monitor"
-description: "OKF-compliant documentation for HOWTO-CHECKUSAGE.md."
+title: "HOWTO: CheckUsage.ps1 - Antigravity Session Monitor"
+sidebarTitle: "Howto Checkusage Ps1"
+description: "OKF-compliant documentation for HOWTO-CHECKUSAGE.md. Deep State of Mind framework. Deep State of Mind framework. Deep State of Mind framework."
 ---
 
 # docs/tools/HOWTO-CHECKUSAGE.md
@@ -12,7 +13,7 @@ description: "OKF-compliant documentation for HOWTO-CHECKUSAGE.md."
 
 ## 1. Purpose
 
-`CheckUsage.ps1` is the **Sovereign Session Monitor** for the Antigravity AI assistant. It reads the `.pb` conversation context files stored locally by Antigravity and displays real-time health metrics for each session — size, estimated token usage, growth velocity, age, and status.
+`CheckUsage.ps1` is the **Sovereign Session Monitor** for the Antigravity AI assistant. It reads the `.pb` conversation context files stored locally by Antigravity and displays real-time health metrics for each session, size, estimated token usage, growth velocity, age, and status.
 
 **Use it to:**
 
@@ -32,7 +33,7 @@ description: "OKF-compliant documentation for HOWTO-CHECKUSAGE.md."
 |:---|:---|:---|
 | Operating System | Windows 10/11 | T1 environment |
 | PowerShell | 5.1+ | Built into Windows |
-| Execution Policy | `RemoteSigned` (CurrentUser) | Set once — see §3 |
+| Execution Policy | `RemoteSigned` (CurrentUser) | Set once, see §3 |
 | Antigravity | Any version | `.pb` files must exist |
 
 ---
@@ -100,7 +101,7 @@ Options:
 
 ```powershell
 
-# Snapshot — run once and exit
+# Snapshot, run once and exit
 
 .\tools\CheckUsage.ps1
 
@@ -116,7 +117,7 @@ Options:
 
 .\tools\CheckUsage.ps1 -Top 5
 
-# Tighter thresholds — warn at 10MB, critical at 25MB
+# Tighter thresholds, warn at 10MB, critical at 25MB
 
 .\tools\CheckUsage.ps1 -ThresholdMB 10 -CriticalMB 25
 
@@ -144,19 +145,19 @@ Options:
 | **Velocity** | Size change since last refresh in loop mode (`+X.XX MB`) |
 | **Age** | Time since last activity (`just now`, `Xm`, `Xh`, `Xd`, `Xw`) |
 | **Last Active** | Timestamp of last write (`MM-DD HH:mm`) |
-| **Status** | Health label — see §5.2 |
+| **Status** | Health label, see §5.2 |
 
 ### 5.2 Status Labels
 
 | Label | Colour | Meaning | Action |
 |:---|:---|:---|:---|
-| `[>>]` | — | **Current session** (most recently modified) | Your active chat |
-| `[OK ]` | Green | Nominal — healthy size and recent activity | None needed |
+| `[>>]` |, | **Current session** (most recently modified) | Your active chat |
+| `[OK ]` | Green | Nominal, healthy size and recent activity | None needed |
 | `[ACT]` | Cyan | **Actively growing** this refresh cycle | Normal during use |
 | `[WRN]` | Yellow | Exceeds `ThresholdMB` (default 20 MB) | Monitor closely |
-| `[CRT]` | Red | **LIMIT RISK** — exceeds `CriticalMB` (default 50 MB) | Consider starting a new session |
+| `[CRT]` | Red | **LIMIT RISK**, exceeds `CriticalMB` (default 50 MB) | Consider starting a new session |
 | `[RPM]` | Magenta | High burst velocity (>2 MB/interval) | Possible rate limit approaching |
-| `[ZZZ]` | Dark Grey | **Dormant** — no activity for `DormantHours` (default 4h) | Safe to ignore |
+| `[ZZZ]` | Dark Grey | **Dormant**, no activity for `DormantHours` (default 4h) | Safe to ignore |
 
 ### 5.3 Summary Footer
 
@@ -167,9 +168,9 @@ Token basis: 1 MB ~ 62,500 tokens (4 chars/token avg)
 
 ```
 
-- **Total MB** — total disk used by all `.pb` files
-- **Est Tokens** — aggregate estimated token count across all sessions
-- **WARN / CRIT** — count of sessions in warning or critical state
+- **Total MB**, total disk used by all `.pb` files
+- **Est Tokens**, aggregate estimated token count across all sessions
+- **WARN / CRIT**, count of sessions in warning or critical state
 
 ---
 
@@ -193,7 +194,7 @@ This is more accurate than the commonly cited 50,000 tokens/MB. Actual token cou
 
 ## 7. Troubleshooting
 
-### Script will not run — Execution Policy error
+### Script will not run, Execution Policy error
 
 ```
 
@@ -248,7 +249,7 @@ As part of the **Start-of-Day Ritual** (`docs/SOD-RITUAL.md` Step 1), run the sn
 
 ```powershell
 
-# SOD check — confirm current session is Nominal
+# SOD check, confirm current session is Nominal
 
 .\tools\CheckUsage.ps1
 
@@ -266,9 +267,9 @@ If the current session exceeds `CriticalMB`, begin a new Antigravity conversatio
 
 | Document | Purpose |
 |:---|:---|
-| [`docs/SOD-RITUAL.md`](../SOD-RITUAL.md) | Start-of-Day Ritual — includes session health check |
-| [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) | End-of-Day Ritual — Hibernation Notes export |
-| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE.md) | AI prompts for new session reanimation |
+| [`docs/SOD-RITUAL.md`](../SOD-RITUAL) | Start-of-Day Ritual, includes session health check |
+| [`docs/EOD-RITUAL.md`](../EOD-RITUAL.md) | End-of-Day Ritual, Hibernation Notes export |
+| [`docs/REANIMATION-PROMPT-TEMPLATE.md`](../REANIMATION-PROMPT-TEMPLATE) | AI prompts for new session reanimation |
 | [`tools/audit-pre-flight.sh`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/audit-pre-flight.sh) | Full 5-check workspace audit (Linux/WSL2) |
 | [`tools/audit-pre-flight.ps1`](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/audit-pre-flight.ps1) | Full 5-check workspace audit (Windows) |
 

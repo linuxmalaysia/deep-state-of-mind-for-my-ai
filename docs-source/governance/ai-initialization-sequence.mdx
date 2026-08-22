@@ -1,5 +1,6 @@
 ---
 title: "AI Initialization Sequence: Establishing Governance"
+sidebarTitle: "Ai Initialization Sequence"
 description: "Details the exact sequence of files an AI agent reads to establish its governance, persona, and memory upon initialization within the DSOM framework."
 ---
 
@@ -9,7 +10,7 @@ This document serves as a foundational read for both human operators and AI agen
 
 ## 1. The Genesis Read: `.agents/AGENTS.md`
 
-The absolute first file the AI reads is [`.agents/AGENTS.md`](file:///.agents/AGENTS.md). 
+The absolute first file the AI reads is [`.agents/AGENTS.md`](file:///.agents/AGENTS). 
 
 This file is automatically injected into the core system instructions by the platform before the first prompt is ever processed. It acts as the **Cognitive Entry Point**. From this single file, the AI inherits:
 - **The Persona:** The profile (e.g., Senior ICT Consultant / LinuxMalaysia), dictating the authoritative, pragmatic, standard UK English tone.
@@ -23,13 +24,13 @@ Because the AI is bound by the "Zero-Global / Spatial Memory" mandate, it does n
 
 ## 3. The Master Onboarding Map: `START-HERE.md`
 
-If the AI is placed in a brand new project or needs to orient itself globally, it references [`START-HERE.md`](file:///START-HERE.md). This is the master blueprint that links out to the 11 Entry Points, ensuring the AI knows exactly which governance document controls which subsystem.
+If the AI is placed in a brand new project or needs to orient itself globally, it references [`START-HERE.md`](file:///START-HERE). This is the master blueprint that links out to the 11 Entry Points, ensuring the AI knows exactly which governance document controls which subsystem.
 
 ## 4. Deep Governance Topography (`docs/governance/`)
 
 When the AI needs to make a complex architectural decision, it relies on the theoretical blueprints stored in the `docs/governance/` directory. The foundational triad includes:
-- **[`AI-MASTER-PROTOCOL.md`](file:///docs/governance/AI-MASTER-PROTOCOL.md):** The Sovereign Constitution. It defines the laws of Multi-Modal Persistence, Spatial Retrieval, and the AI's role as a Peer Architect (Advisory over Execution).
-- **[`DSOM-EFFICIENCY-PROTOCOLS.md`](file:///docs/governance/DSOM-EFFICIENCY-PROTOCOLS.md):** Dictates how the AI must conserve tokens using Progressive Disclosure and Byte-Capped Executions.
+- **[`AI-MASTER-PROTOCOL.md`](file:///docs/governance/AI-MASTER-PROTOCOL):** The Sovereign Constitution. It defines the laws of Multi-Modal Persistence, Spatial Retrieval, and the AI's role as a Peer Architect (Advisory over Execution).
+- **[`DSOM-EFFICIENCY-PROTOCOLS.md`](file:///docs/governance/DSOM-EFFICIENCY-PROTOCOLS):** Dictates how the AI must conserve tokens using Progressive Disclosure and Byte-Capped Executions.
 - **[`OKF-MIND-OPTIMIZATION.md`](file:///docs/governance/OKF-MIND-OPTIMIZATION.md):** Teaches the AI how to use YAML Metadata Semantic Routing (reading `topics:` and `timestamp:`) to find answers locally.
 
 ## 5. Procedural Automation: `.agents/skills/`

@@ -1,6 +1,7 @@
 ---
 title: "📖 DSOM Operational Guide (Level 3 - Specialised Tasks)"
-description: "OKF-compliant documentation for OPERATIONAL-GUIDE.md."
+sidebarTitle: "Operational Level 3"
+description: "OKF-compliant documentation for OPERATIONAL-GUIDE.md. Deep State of Mind framework. Deep State of Mind framework. Deep State of Mind framework."
 ---
 
 > **"Theory without Practice is Hallucination. Practice without Theory is Chaos."**
@@ -75,19 +76,19 @@ We aggregate all context into a single "Truth File."
 
 ```
 
-**What is Injected (v2.2 — Palace-aware)?**
+**What is Injected (v2.2, Palace-aware)?**
 
 | Section | Content |
 |---|---|
 | [1–5] | Identity, Laws, Brain (task/walkthrough/plan) |
 | [6–10] | Git log, file tree, SUMMARY, CHANGELOG, env telemetry |
 | [11–13] | Cognitive Twin, Ansible topology, GitOps strategy |
-| **[14]** | **`palace_registry.md` — AI spatial map (Palace v1.0)** |
+| **[14]** | **`palace_registry.md`, AI spatial map (Palace v1.0)** |
 
 ### Step 3: The Handshake (The Prompt)
 
 Upload the generated text file to the AI and say:
-> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the manifest. Walk the Palace Registry in Section [14] — identify relevant Rooms for today's work. State: 'Sovereign State Synchronised' when ready."*
+> *"Initialise DSOM Protocol v6.1 + Palace v1.0. Read the manifest. Walk the Palace Registry in Section [14], identify relevant Rooms for today's work. State: 'Sovereign State Synchronised' when ready."*
 
 ### Step 4: Walking the Palace (The Retrieval)
 
@@ -112,7 +113,7 @@ bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
 
 ```
 
-After it completes — review `palace_update_proposal_YYYY-MM-DD.md` with your AI and update relevant closets.
+After it completes, review `palace_update_proposal_YYYY-MM-DD.md` with your AI and update relevant closets.
 
 ---
 
@@ -120,7 +121,7 @@ After it completes — review `palace_update_proposal_YYYY-MM-DD.md` with your A
 
 1. **Update `task.md`:** Check off completed items.
 2. **Update `walkthrough.md`:** Create a new "Session Anchor."
-3. **Log decisions:** Apply the Decision Log Protocol — record *why* key decisions were made.
+3. **Log decisions:** Apply the Decision Log Protocol, record *why* key decisions were made.
 
 ### Step 2: The Safe Shutdown
 
@@ -140,11 +141,11 @@ Run the hibernation tool to verify safety.
 
 ```
 
-**The Logic (v2.1 — Palace-aware):**
+**The Logic (v2.1, Palace-aware):**
 
 - Checks `task.md` for `[x]` completed tasks
 - Checks `walkthrough.md` for today's date anchor
-- **Step 7: Palace Spatial Reflection** — auto-runs `palace-sync.sh` to generate `palace_update_proposal_YYYY-MM-DD.md`
+- **Step 7: Palace Spatial Reflection**, auto-runs `palace-sync.sh` to generate `palace_update_proposal_YYYY-MM-DD.md`
 - Commits and pushes if all checks pass
 
 ---
@@ -173,22 +174,22 @@ For detailed step-by-step guides on how to apply DSOM to your specific situation
 ### Scenario 1: Brownfield Adoption
 
 - **Situation:** You have an existing project (Standard Code) and want to add DSOM.
-- **Guide:** [HOWTO: Adopt DSOM in Existing Projects](../HOWTO-ADOPT-DSOM.md)
+- **Guide:** [HOWTO: Adopt DSOM in Existing Projects](../HOWTO-ADOPT-DSOM)
 
 ### Scenario 2: Legacy Upgrade
 
 - **Situation:** You have an older DSOM version (v3/v4) and want to upgrade to v5.x (ITIL/Privacy).
-- **Guide:** [HOWTO: Upgrade and Audit DSOM](../HOWTO-UPGRADE-DSOM.md)
+- **Guide:** [HOWTO: Upgrade and Audit DSOM](../HOWTO-UPGRADE-DSOM)
 
 ### Scenario 3: Palace Migration
 
 - **Situation:** You have DSOM v6.x but no Palace. You want to add the spatial memory layer.
 - **Guide:** [HOWTO: Migrate to Palace](../HOWTO-MIGRATE-TO-PALACE.md)
 
-### Scenario 4: New Adopter — Palace Edition
+### Scenario 4: New Adopter, Palace Edition
 
 - **Situation:** First time setting up DSOM from scratch with Palace v1.0.
-- **Guide:** [HOWTO: Palace Onboarding](../HOWTO-PALACE-ONBOARDING.md)
+- **Guide:** [HOWTO: Palace Onboarding](../HOWTO-PALACE-ONBOARDING)
 
 ---
 
@@ -239,7 +240,7 @@ The AI will not proceed to the next phase without reviewing the execution output
 ### Guardrail 4: Self-Healing Rule
 
 - **NEVER** delete data directories (e.g., `[PROD_PATH]/data`). Deletion requires explicit Sovereign authorisation.
-- Recovery is achieved through **idempotent Ansible automation** — re-running the playbook restores the desired state.
+- Recovery is achieved through **idempotent Ansible automation**, re-running the playbook restores the desired state.
 - If data corruption is suspected, stop all actions, preserve logs, and escalate to the Sovereign Architect.
 
 ### Guardrail 5: GitOps Loop
@@ -248,7 +249,7 @@ The AI will not proceed to the next phase without reviewing the execution output
 - No ad-hoc file edits on target nodes via SSH.
 - The Git commit IS the change record. No commit = no change.
 
-For full doctrine, see [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY.md).
+For full doctrine, see [`docs/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](GITOPS-AIOPS-ANSIBLE-STRATEGY).
 
 ---
 

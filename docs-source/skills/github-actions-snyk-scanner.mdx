@@ -1,9 +1,8 @@
 ---
 title: "GitHub Actions Snyk Security Scanner"
+sidebarTitle: "Github Actions Snyk"
 description: "Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories, replacing the deprecated Red Hat CRDA action."
 ---
-
-# Skill: GitHub Actions Snyk Security Scanner
 
 ## Purpose
 
@@ -13,7 +12,7 @@ Establish a working Snyk dependency vulnerability scanning workflow in any DSOM 
 
 Invoke this skill when:
 - Setting up a new DSOM project on GitHub and requiring CI/CD security scanning.
-- Encountering the error: `crda exited with code 1 — Unable to reach gw.api.openshift.io`.
+- Encountering the error: `crda exited with code 1, Unable to reach gw.api.openshift.io`.
 - Any `redhat-actions/crda` workflow is present in `.github/workflows/`.
 - The user requests dependency vulnerability scanning or SARIF integration.
 
@@ -23,13 +22,13 @@ Invoke this skill when:
 
 - [ ] `SNYK_TOKEN` is set in GitHub → Settings → Secrets → Actions.
 - [ ] `requirements.txt` (Python), `package.json` (Node.js), or equivalent manifest exists at repo root.
-- [ ] `github/codeql-action/upload-sarif@v4` is used (NOT `@v3` — deprecated Dec 2025).
+- [ ] `github/codeql-action/upload-sarif@v4` is used (NOT `@v3`, deprecated Dec 2025).
 - [ ] `continue-on-error: true` is set on the Snyk scan step so SARIF always uploads.
 - [ ] Token audit passes: no `SNYK_TOKEN` value committed to any file.
 
 ---
 
-## Step 1 — Obtain SNYK_TOKEN
+## Step 1, Obtain SNYK_TOKEN
 
 The **SNYK_TOKEN** is the Snyk account API auth token. It is **not** the Snyk Project ID.
 
@@ -43,7 +42,7 @@ The **SNYK_TOKEN** is the Snyk account API auth token. It is **not** the Snyk Pr
 
 ---
 
-## Step 2 — Add Secret to GitHub Repository
+## Step 2, Add Secret to GitHub Repository
 
 1. Navigate to: `https://github.com/<owner>/<repo>/settings/secrets/actions/new`
 2. Set:
@@ -53,7 +52,7 @@ The **SNYK_TOKEN** is the Snyk account API auth token. It is **not** the Snyk Pr
 
 ---
 
-## Step 3 — Create `requirements.txt` (Python Projects)
+## Step 3, Create `requirements.txt` (Python Projects)
 
 Snyk requires a manifest file to scan. If none exists:
 
@@ -69,13 +68,13 @@ For Node.js projects, `package.json` is auto-detected. For other ecosystems, see
 
 ---
 
-## Step 4 — Deploy the Workflow
+## Step 4, Deploy the Workflow
 
 Create or replace `.github/workflows/crda.yml` with the following proven template:
 
 ```yaml
 # ==============================================================================
-# Snyk — Open Source Dependency Vulnerability Scan
+# Snyk, Open Source Dependency Vulnerability Scan
 # Replaces deprecated redhat-actions/crda@v1 (gw.api.openshift.io is offline)
 # ==============================================================================
 name: Snyk Security Scan
@@ -108,7 +107,7 @@ permissions:
 
 jobs:
   snyk-scan:
-    name: Snyk — Python Dependency Vulnerability Scan
+    name: Snyk, Python Dependency Vulnerability Scan
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -134,7 +133,7 @@ jobs:
           args: --sarif-file-output=snyk.sarif --severity-threshold=low
 
       - name: Upload SARIF to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v4   # NOT @v3 — deprecated Dec 2025
+        uses: github/codeql-action/upload-sarif@v4   # NOT @v3, deprecated Dec 2025
         with:
           sarif_file: snyk.sarif
           category: snyk-python-scan
@@ -150,11 +149,11 @@ git push origin main
 
 ---
 
-## Step 5 — Verify Results
+## Step 5, Verify Results
 
 After the workflow completes:
 - Go to **GitHub → Security → Code scanning** to view detected vulnerabilities.
-- The Snyk **Project ID** (from `app.snyk.io`) can be used to query results via the Snyk API — it is not needed in the workflow itself.
+- The Snyk **Project ID** (from `app.snyk.io`) can be used to query results via the Snyk API, it is not needed in the workflow itself.
 
 ---
 
@@ -171,10 +170,10 @@ After the workflow completes:
 
 ## SOURCES
 
-- [`snyk/actions`](https://github.com/snyk/actions) — Official Snyk GitHub Actions repository.
-- [`github/codeql-action`](https://github.com/github/codeql-action) — CodeQL SARIF upload action.
-- [Snyk Auth Token docs](https://docs.snyk.io/snyk-api/authentication-for-api) — Token setup guide.
-- [`docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md`](../../docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md) — DSOM-specific analysis and context.
+- [`snyk/actions`](https://github.com/snyk/actions), Official Snyk GitHub Actions repository.
+- [`github/codeql-action`](https://github.com/github/codeql-action), CodeQL SARIF upload action.
+- [Snyk Auth Token docs](https://docs.snyk.io/snyk-api/authentication-for-api), Token setup guide.
+- [`docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md`](../../docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING), DSOM-specific analysis and context.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27*
