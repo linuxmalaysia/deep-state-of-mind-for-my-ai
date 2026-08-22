@@ -1225,6 +1225,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../../governance/DSOM-AGENT-PLUGINS-SPECIFICATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Plugins 1.0.0 Specification
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--authoritative"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../RITUAL-OF-TRANSITION/" class="md-nav__link">
         
   
@@ -3837,6 +3872,7 @@ Furthermore, the AI must align its cognitive execution with the four functional 
 Both pathways must adhere to the Tri-Phasic interception model (Active MCP inputs, Twilight AST/schema rules, and Deep EOD verification). Detailed master architectures and comparative blueprints reside in <code>docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md</code> and <code>docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md</code>.</li>
 </ul>
 </li>
+<li><strong>Agent Plugins 1.0.0 Specification &amp; Packaging Mandate:</strong> The AI recognizes and strictly adheres to the vendor-neutral <strong>Agent Plugins 1.0.0</strong> directory standard (<code>agent-plugins.org/specification</code>) backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel. Every distributable plugin package must contain a closed root <code>plugin.json</code> (<code>$schema: "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"</code>), fixed-location Agent Skills in <code>skills/</code> (<code>SKILL.md</code>), explicit MCP configurations in <code>mcp.json</code>, and vendor extensions isolated in reverse-domain namespaces (<code>org.dsom.protocol/</code>). All stdio MCP server commands and working directories must respect path containment and expand <code>${PLUGIN_ROOT}</code> and <code>${PLUGIN_DATA}</code> placeholders securely. Master architectural specifications reside in <code>docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md</code>.</li>
 </ol>
 <h2 id="cognitive-engine-protocols-boot-discovery">Cognitive Engine Protocols (Boot &amp; Discovery)</h2>
 <p>To enforce Rules 20, 21, and the Sovereign Architecture, the AI must strictly execute these procedural loops:</p>

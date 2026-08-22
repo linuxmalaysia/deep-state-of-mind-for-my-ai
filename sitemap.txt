@@ -22,6 +22,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wing
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/rules/windows-git-execution/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/agent-plugin-packager/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/context7-indexer/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/cross-platform-translator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-bootstrap/SKILL/
@@ -106,6 +107,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/CRISP2-
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-ARCHITECTURE-ANALYSIS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-AUTOMATED-STATE-SYNC/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
@@ -209,6 +211,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/rules/windows-git-execution/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/agent-plugin-packager/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/context7-indexer/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/cross-platform-translator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-bootstrap/SKILL/
@@ -293,6 +296,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/CRISP2-O
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-ARCHITECTURE-ANALYSIS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AUTOMATED-STATE-SYNC/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
@@ -419,6 +423,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-model
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-operational-model-palace
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/downstream-dsom-compliance-mandate
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-agent-plugins-specification
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-automated-state-sync
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-cognitive-state-preservation-proposal
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-custom-validators-guide
