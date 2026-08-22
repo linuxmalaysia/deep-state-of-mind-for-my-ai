@@ -34,6 +34,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 * [generate_sitemaps.py Reference](reference/generate_sitemaps.md)
 * [openwiki_emulator.py Reference](reference/openwiki_emulator.md)
 * [mcp_server.py Reference](reference/mcp_server.md)
+* [CLI & Terminal Commands Quick Reference](reference/CLI-QUICK-REFERENCE.md)
 * [apply_okf_frontmatter.py Reference](reference/apply_okf_frontmatter.md)
 * [refactor_okf.py Reference](reference/refactor_okf.md)
 * [bench_brain.py Reference](reference/bench_brain.md)

@@ -98,6 +98,7 @@
             "pages": [
               "reference/apply_okf_frontmatter",
               "reference/bench_brain",
+              "reference/cli-quick-reference",
               "reference/dsom_token_auditor",
               "reference/generate_sitemaps",
               "reference/index",

@@ -31,6 +31,7 @@ PROJECT_ROOT = Path(os.getenv("DSOM_ROOT", Path(__file__).parent.parent.parent))
 BRAIN_DIR = PROJECT_ROOT / ".agents" / "brain"
 DOCS_DIR = PROJECT_ROOT / "docs"
 OPENWIKI_DIR = PROJECT_ROOT / "openwiki"
+REFERENCES_DIR = PROJECT_ROOT / "references"
 AGENTS_FILE = PROJECT_ROOT / ".agents" / "AGENTS.md"
 
 # Integrate DSOM Guardrails
@@ -170,14 +171,63 @@ def search_openwiki(query: str) -> str:
     return "\n".join(results)
 
 @mcp.tool()
-def fetch_context7_stream(tokens: int = 83688) -> str:
-    """Fetches the compiled Context7 LLM RAG context stream endpoint URL and usage metadata."""
+def search_code_snippets(query: str, limit: int = 5) -> str:
+    """Searches actionable code snippets, terminal commands, and configuration blocks from the Context7 indexed knowledge base.
+    
+    Args:
+        query: Keyword or command phrase to match (e.g. 'ansible', 'guardrails', 'uv add', 'mint dev').
+        limit: Maximum number of snippet blocks to return (default: 5).
+    """
+    context7_file = REFERENCES_DIR / "llms-from-context7.txt"
+    if not context7_file.exists():
+        return "Error: Local snapshot references/llms-from-context7.txt not found."
+
+    try:
+        content = context7_file.read_text(encoding="utf-8")
+        blocks = content.split("--------------------------------")
+        matched = []
+        for block in blocks:
+            b_clean = block.strip()
+            if not b_clean:
+                continue
+            if query.lower() in b_clean.lower():
+                matched.append(b_clean)
+
+        if not matched:
+            return f"No code snippets found matching query '{query}'."
+
+        total_found = len(matched)
+        result = [f"Found {total_found} matching snippet(s) (showing top {min(limit, total_found)}):\n"]
+        result.extend(matched[:limit])
+        return "\n\n" + ("\n\n---\n\n".join(result))
+    except Exception as e:
+        return f"Error reading code snippets: {str(e)}"
+
+@mcp.tool()
+def fetch_context7_stream(tokens: int = 83688, return_offline_sample: bool = False) -> str:
+    """Fetches the compiled Context7 LLM RAG context stream endpoint URL, or returns a local offline snapshot sample.
+    
+    Args:
+        tokens: Target token budget for the live stream (default: 83688).
+        return_offline_sample: If True, returns the first 2,000 characters from the local offline references snapshot.
+    """
     url = f"https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens={tokens}"
-    return (
-        f"Context7 Live RAG Stream Endpoint: {url}\n"
-        f"Target Token Budget: {tokens}\n"
-        "Use this endpoint to provide full project context to external AI agents or RAG pipelines."
-    )
+    out = [
+        f"Context7 Live RAG Stream Endpoint: {url}",
+        f"Target Token Budget: {tokens}",
+        "Use this endpoint to stream fresh project context into external AI agents or RAG pipelines."
+    ]
+
+    context7_file = REFERENCES_DIR / "llms-from-context7.txt"
+    if return_offline_sample and context7_file.exists():
+        try:
+            sample = context7_file.read_text(encoding="utf-8")[:2000]
+            out.append("\n--- Offline Snapshot Preview (references/llms-from-context7.txt) ---")
+            out.append(sample)
+        except Exception:
+            pass
+
+    return "\n".join(out)
 
 @mcp.tool()
 def write_palace_document(relative_path: str, markdown_content: str) -> str:

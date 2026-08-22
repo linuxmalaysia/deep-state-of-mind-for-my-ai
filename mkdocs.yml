@@ -168,6 +168,7 @@ nav:
           - generate_sitemaps.py: reference/generate_sitemaps.md
           - openwiki_emulator.py: reference/openwiki_emulator.md
           - tools/mcp/server.py: reference/mcp_server.md
+          - CLI Quick Reference: reference/CLI-QUICK-REFERENCE.md
           - apply_okf_frontmatter.py: reference/apply_okf_frontmatter.md
           - refactor_okf.py: reference/refactor_okf.md
           - bench_brain.py: reference/bench_brain.md

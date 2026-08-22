@@ -185,6 +185,7 @@ topics: ["dsom", "documentation"]
 * [📋 generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md)
 * [📋 openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md)
 * [📋 mcp_server.py Reference](docs/reference/mcp_server.md)
+* [📋 CLI & Terminal Commands Quick Reference](docs/reference/CLI-QUICK-REFERENCE.md)
 * [📋 apply_okf_frontmatter.py Reference](docs/reference/apply_okf_frontmatter.md)
 * [📋 refactor_okf.py Reference](docs/reference/refactor_okf.md)
 * [📋 bench_brain.py Reference](docs/reference/bench_brain.md)

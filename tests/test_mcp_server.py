@@ -40,6 +40,16 @@ class McpServerResourceTests(unittest.TestCase):
         self.assertIsInstance(results, str)
         self.assertGreater(len(results), 0)
 
+    def test_search_code_snippets(self):
+        results = server.search_code_snippets("ansible", limit=2)
+        self.assertIsInstance(results, str)
+        self.assertIn("ansible", results.lower())
+
+    def test_fetch_context7_stream(self):
+        res = server.fetch_context7_stream(return_offline_sample=True)
+        self.assertIn("https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai", res)
+        self.assertIn("Offline Snapshot Preview", res)
+
     def test_write_palace_document_blocks_credentials(self):
         leak_content = "This contains a secret: ghp_123456789012345678901234567890123456"
         res = server.write_palace_document("docs/test_secret.md", leak_content)
