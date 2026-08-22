@@ -1,0 +1,46 @@
+name: Fetch Context7 Snapshot
+
+on:
+  schedule:
+    # Run once a week every Sunday at 02:00 UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      tokens:
+        description: 'Token budget to request from Context7'
+        required: false
+        default: '250000'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-context7:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch Context7 LLM Snapshot
+        env:
+          CONTEXT7_API_KEY: ${{ secrets.CONTEXT7_API_KEY }}
+        run: |
+          TOKENS="${{ github.event.inputs.tokens || '250000' }}"
+          python tools/fetch_context7_snapshot.py --tokens "$TOKENS"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "Context7 Sync Bot"
+          git config user.email "bot@harisfazillah.com"
+          git add references/llms-from-context7.txt
+          if git diff --staged --quiet; then
+            echo "No changes in Context7 snapshot."
+          else
+            git commit -m "chore(context7): update offline snapshot references/llms-from-context7.txt"
+            git push origin main
+          fi

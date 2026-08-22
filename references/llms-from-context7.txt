@@ -1,7 +1,6 @@
 ### Setup Ansible Baseline
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/README.md
-llms source: https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai
 
 Displays the setup guide and verifies connectivity to infrastructure nodes.
 

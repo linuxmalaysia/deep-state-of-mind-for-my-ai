@@ -55,6 +55,13 @@ When operating offline or in air-gapped environments:
 - The local snapshot `references/llms-from-context7.txt` serves as the primary fallback.
 - Calling `fetch_context7_stream(return_offline_sample=True)` provides immediate local context preview without internet access.
 
+### 7. Automated & Manual Snapshot Updating
+- **Manual Invalidation & Fetch:** Run the dedicated tool with desired token budget:
+  ```powershell
+  python tools/fetch_context7_snapshot.py --tokens 250000
+  ```
+- **Automated Scheduled Sync:** `.github/workflows/context7-sync.yml` automatically executes every Sunday at 02:00 UTC (or on-demand via `workflow_dispatch`), pulling the latest 250k token snapshot using the provisioned `CONTEXT7_API_KEY` secret.
+
 ## Security (Rule 24 Mandate)
 - **NEVER** write the `CONTEXT7_API_KEY` (e.g., `ctx7sk-...`) to a local `.env` file, `.git/config`, or any file tracked by Git.
 - **GitLab CI/CD:** If Context7 requires integration via GitLab CI, the API key MUST be stored in GitLab CI/CD Settings as a masked and protected variable.
