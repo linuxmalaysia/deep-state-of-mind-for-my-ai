@@ -2,19 +2,21 @@
 okf_version: 0.2
 type: skill
 title: "DSOM Project Cloner Skill"
-timestamp: "2026-08-22T16:53:00Z"
+timestamp: "2026-08-23T07:04:00Z"
 description: "Scaffolds a new DSOM project by copying the Sovereign Engine, Universal Gateway Matrix, Governance, and Ritual Tools to a target path, enforcing Downstream Asymmetry."
-topics: ["project", "scaffold", "clone", "dsom", "setup", "okf"]
+topics: ["project", "scaffold", "clone", "dsom", "setup", "mintlify", "okf"]
 name: dsom-project-cloner
 sources:
   - title: "The Core AI Rulebook (DSOM)"
     url: "file:///.agents/AGENTS.md"
+  - title: "Mintlify User Manual Sync Guide"
+    url: "file:///docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md"
   - title: "Team DSOM Masterclass Tutorial"
     url: "file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md"
 generated: "hybrid"
 verified: true
 status: "active"
-stale_after: "2027-08-22T16:53:00Z"
+stale_after: "2027-08-23T07:04:00Z"
 ---
 # 🏗️ DSOM Project Cloner Skill
 
@@ -33,14 +35,19 @@ In downstream projects, **business logic and source code remain primary (>90% of
 2. **Establish Directory Tree:** Use your terminal execution tools (`run_command`) to create the mandatory folder structures in the target path:
    - `"$TARGET_PATH/.agents/brain"`
    - `"$TARGET_PATH/.agents/skills"`
-   - `"$TARGET_PATH/.github"`
+   - `"$TARGET_PATH/.github/workflows"`
    - `"$TARGET_PATH/docs/governance"`
+   - `"$TARGET_PATH/docs-source"`
    - `"$TARGET_PATH/tools"`
+   - `"$TARGET_PATH/scripts"`
 3. **Copy the 6 Pillars (Downstream Footprint):**
    - **Pillar A (The Engine & Gateway Matrix):** 
      - Copy `AGENTS.md`, `.cursorrules`, `CLAUDE.md`, `START-HERE.md`, `plugin.json`, and `mcp.json` to `"$TARGET_PATH/"`
      - Copy `.agents/AGENTS.md` to `"$TARGET_PATH/.agents/"`
      - Copy `.github/copilot-instructions.md` to `"$TARGET_PATH/.github/"`
+     - Copy `docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md` to `"$TARGET_PATH/docs/governance/"`
+     - Copy `docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md` to `"$TARGET_PATH/docs/governance/"`
+     - Copy `docs-source/.mintignore` to `"$TARGET_PATH/docs-source/"`
    - **Pillar B (Essential Domain Skills):**
      - Recursively copy `.agents/skills/dsom-token-calculator/` to `"$TARGET_PATH/.agents/skills/"`
      - Recursively copy `.agents/skills/dsom-signature-injector/` to `"$TARGET_PATH/.agents/skills/"`
@@ -73,25 +80,29 @@ Use the `dsom-project-cloner` skill to scaffold a brand-new DSOM downstream proj
 Target Repository Path: <ABSOLUTE_TARGET_PATH>
 
 Please:
-1. Create the required directory structure (.agents/brain, .agents/skills, docs/governance, tools/).
+1. Create the required directory structure (.agents/brain, .agents/skills, docs/governance, docs-source, tools/, scripts/).
 2. Copy the Universal Gateway Matrix (.cursorrules, CLAUDE.md, .github/copilot-instructions.md, AGENTS.md, START-HERE.md).
 3. Copy the Constitutional Rulebook (.agents/AGENTS.md) and reset .agents/brain/ with blank OKF templates.
-4. Copy the tools/ directory and automatically execute `python tools/install_git_guardrails.py` in the new target path.
+4. Copy the tools/ directory, sync scripts, and automatically execute `python tools/install_git_guardrails.py` in the new target path.
 5. Ensure all copied markdown files carry valid OKF v0.2 frontmatter and standard DSOM signatures.
 ```
 
 ### Mode 2: Manual Terminal Copy Commands (PowerShell)
 ```powershell
-New-Item -ItemType Directory -Force -Path "$TARGET\.agents\brain", "$TARGET\.agents\skills", "$TARGET\.github", "$TARGET\docs\governance", "$TARGET\tools"
+New-Item -ItemType Directory -Force -Path "$TARGET\.agents\brain", "$TARGET\.agents\skills", "$TARGET\.github\workflows", "$TARGET\docs\governance", "$TARGET\docs-source", "$TARGET\tools", "$TARGET\scripts"
 Copy-Item "$DSOM_BASE\AGENTS.md", "$DSOM_BASE\.cursorrules", "$DSOM_BASE\CLAUDE.md", "$DSOM_BASE\START-HERE.md" "$TARGET\"
 Copy-Item "$DSOM_BASE\.github\copilot-instructions.md" "$TARGET\.github\"
 Copy-Item "$DSOM_BASE\.agents\AGENTS.md" "$TARGET\.agents\"
+Copy-Item "$DSOM_BASE\docs\governance\MINTLIFY-USER-MANUAL-SYNC-GUIDE.md" "$TARGET\docs\governance\"
+Copy-Item "$DSOM_BASE\docs-source\.mintignore" "$TARGET\docs-source\"
+Copy-Item "$DSOM_BASE\scripts\sync_docs.py" "$TARGET\scripts\"
+Copy-Item "$DSOM_BASE\.github\workflows\sync-docs.yml" "$TARGET\.github\workflows\"
 Copy-Item -Recurse "$DSOM_BASE\tools\*" "$TARGET\tools\"
-Copy-Item -Recurse "$DSOM_BASE\.agents\skills\dsom-token-calculator", "$DSOM_BASE\.agents\skills\dsom-signature-injector", "$DSOM_BASE\.agents\skills\initialize-gitops" "$TARGET\.agents\skills\"
+Copy-Item -Recurse "$DSOM_BASE\.agents\skills\dsom-token-calculator", "$DSOM_BASE\.agents\skills\dsom-signature-injector", "$DSOM_BASE\.agents\skills\mintlify-docs-compiler", "$DSOM_BASE\.agents\skills\initialize-gitops" "$TARGET\.agents\skills\"
 Set-Location $TARGET
 bash tools/init-brain.sh
 ```
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
