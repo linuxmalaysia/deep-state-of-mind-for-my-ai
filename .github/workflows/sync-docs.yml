@@ -5,7 +5,10 @@ on:
     branches:
       - main
     paths:
+      - 'docs/**'
       - 'docs-source/**'
+      - '.agents/skills/**'
+      - 'tools/build_mintlify_mdx.py'
       - 'scripts/sync_docs.py'
   workflow_dispatch:
     inputs:
@@ -44,6 +47,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Build Mintlify MDX Knowledge Tree
+        run: |
+          python tools/build_mintlify_mdx.py
 
       - name: Run One-Way Docs Sync
         env:

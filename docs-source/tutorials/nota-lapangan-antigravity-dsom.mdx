@@ -1,0 +1,141 @@
+---
+title: "Nota Lapangan: Panduan Praktikal Pasukan untuk AI Antigravity & DSOM Bersama Cikgu Haris"
+description: "Sintesis nota lapangan praktikal, Langkah 0 onboarding prompt, strategi model, automasi kemahiran (skills), dan disiplin GitOps DSOM untuk perkongsian bersama rakan sepasukan."
+---
+
+# 📝 Nota Lapangan: Panduan Praktikal AI Antigravity & Protokol DSOM
+### *(Berdasarkan Sesi Perkongsian & Bimbingan Cikgu Haris / LinuxMalaysia bersama Pasukan)*
+
+> **Sasaran:** Jurutera Perisian, Pentadbir Sistem (SysAdmin), Jurutera DevOps, dan Ahli Pasukan Teknikal.  
+> **Tujuan:** Panduan rujukan pantas dwibahasa (Bahasa Melayu Piawai DBP & Standard UK English) untuk memahami cara bekerja secara efektif bersama AI Agent berlandaskan rangka kerja **Deep State of Mind (DSOM)**.
+
+---
+
+## 📌 Ringkasan Eksekutif & Minda Asas (*Core Mindset*)
+
+Dalam pembangunan moden berbantukan AI, **AI bukan pengganti kepakaran manusia, sebaliknya bertindak sebagai Pengganda Produktiviti (*Productivity Multiplier*)**. Antara aplikasi utama yang menjadi perantara tugasan harian kita ialah aplikasi desktop **Google Antigravity**.
+
+Masalah terbesar apabila bekerja dengan AI ialah **AI sering lupa (*context window amnesia*)** dan **boleh melakukan tindakan merosakkan secara senyap (*silent destructive actions*)**. Rangka kerja DSOM diwujudkan supaya AI akan sentiasa mengikut *state* (keadaan) dan pemahaman yang sama, waima untuk projek yang baharu bermula. Kita menggunakan pendekatan GitOps untuk membina memori kekal dan pagar keselamatan (*guardrails*).
+
+---
+
+## 🚀 Langkah 0: Memulakan Ejen AI (*Onboarding Prompt*)
+
+Sebelum memulakan sebarang tugasan, amat penting untuk menyegerakkan mana-mana agen AI (Antigravity, Jules, dsb.) dengan kerangka kerja DSOM secara terus daripada sumber rasminya.
+
+Setiap kali anda memulakan projek baharu atau sesi ejen yang baharu, wajib berikan arahan (*prompt*) di bawah supaya AI membaca, memahami, dan memuatkan (*adopt*) pengetahuan tersebut ke dalam struktur ingatannya.
+
+### 📋 Salin & Tampal Prompt Ini kepada AI:
+
+```markdown
+I need you to adopt Deep State Of Mind (DSOM) For My AI by reading this in detail, and make sure you also read all others supporting documents and pages and do your own deep research and make sure all into AI Agents Knowledge and .agents/brain
+
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/
+Welcome to the Deep State of Mind (DSOM) For My AI framework. If you are adopting this repository to bootstrap a new infrastructure/software project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
+DSOM is a modular Sovereign AI Engine. To use it effectively, do not read every file at random. Start with the defined Entry Points depending on your role.
+```
+
+---
+
+## 🎯 1. Pengurusan Model & Kos Token (*Model Strategy & Token Budgeting*)
+
+Bergantung pada fasa dan beban tugasan, pilihlah enjin (*model*) yang betul untuk memaksimumkan pulangan sambil menjimatkan token:
+
+| Model | Kegunaan & Peranan | Karakteristik & Tip Penggunaan |
+| :--- | :--- | :--- |
+| **Gemini Pro 3.0 (Default)** | **Pilihan Utama (*Workhorse*)** | Keseimbangan terbaik antara prestasi, kepantasan, dan penggunaan token. Digunakan untuk majoriti tugasan rutin pengekodan harian. |
+| **Claude Sonnet** | **Penaakulan Kompleks (*High-Wisdom*)** | Lebih kebijaksanaan (*wisdom*) namun lebih banyak menggunakan bajet token. Sesuai digunakan selepas habis token Gemini Pro atau ketika menghadapi masalah/pepijat (*bugs*) yang sangat rumit. |
+| **Model Percuma / Terbuka (GPT OSS / Flash)** | **Tugasan Ringan & Pengekstrakan** | Sangat jimat token, tetapi prestasi dan kebijaksanaannya agak kurang. Sesuai untuk carian dokumen atau semakan sintaks asas. |
+
+> [!TIP]
+> **Petua Jimat Token:** Jangan muat naik keseluruhan kod (*codebase*)! Gunakan format metadata **Open Knowledge Format (OKF)** YAML di bahagian atas fail supaya AI hanya membaca ringkasan metadata (~50 token) berbanding teks kod mentah yang besar.
+
+---
+
+## 🧠 2. Mengatasi Sifat 'Lupa' AI Melalui Git Sovereignty
+
+AI secara semula jadinya tidak mempunyai memori jangka panjang. Atas sebab ini, kita perlu menggunakan Git (walaupun Git secara *local*) untuk menjejak dan menyemak setiap perubahan.
+
+1. **Komit Git untuk Setiap Perubahan (*Atomic Commits*):**
+   - Sentiasa arahkan Gemini/Antigravity untuk *commit* ke Git setiap kali ia siap melakukan perubahan kod.
+   - *Contoh Arahan:* `"Sahkan kod ini, kemudian komit fail yang diubah dengan mesej semantik discrete git commit."`
+
+2. **Gunakan Perintah `/learn` untuk Mengekalkan Ingatan:**
+   - Setiap kali terdapat perubahan struktur yang besar atau anda menemui corak kerja yang bagus, arahkan AI dengan menaip `/learn`.
+   - Ini akan menyimpan pengetahuan tersebut ke dalam struktur "Brain" AI.
+   - *(Nota Penting: Fitur `/learn` terbina terus di dalam platform Antigravity IDE untuk mengekalkan ingatan dalam fail `.md` tempatan).*
+
+---
+
+## 📁 3. Struktur Direktori Projek yang Kemas (*DSOM Footprint*)
+
+Bagi memastikan projek mudah diselenggara dan mudah diindeks oleh agen AI, patuhi struktur folder standard ini:
+
+```text
+my-project/
+├── .agents/
+│   ├── AGENTS.md             <-- Perlembagaan & undang-undang AI (29 Rules)
+│   ├── brain/                <-- Ingatan spatial (task.md, walkthrough.md)
+│   └── skills/               <-- Kemahiran projek tempatan (SOP berekod)
+├── docs/                     <-- Tempat AI tulis/simpan fail .md yang diwujudkan
+├── references/               <-- Masukkan segala dokumen rujukan mentah berkaitan projek
+├── tools/                    <-- Skrip automasi & Git Pre-Commit Guardrails
+├── plugin.json               <-- Manifest Agent Plugins 1.0.0 (Google/MS/OpenAI/Cursor)
+├── mcp.json                  <-- Konfigurasi FastMCP Server piawai
+├── .cursorrules              <-- Gateway untuk Cursor IDE
+├── CLAUDE.md                 <-- Gateway untuk Claude Desktop
+├── START-HERE.md             <-- Peta orientasi onboarding pasukan
+└── README.md                 <-- Lejar universal
+```
+
+* **Folder `references/`:** Khas untuk bahan rujukan mentah (PDF, arkitektur sistem asal, dll).
+* **Folder `docs/`:** Tempat di mana agen menulis dan menyimpan dokumentasi rasmi yang ia hasilkan.
+* **Fail `plugin.json` & `mcp.json`:** Pakej piawai **Agent Plugins 1.0.0** untuk integrasi alatan MCP dan kemahiran ejen secara universal rentas pelbagai IDE (Antigravity, Cursor, Jules, Claude).
+
+---
+
+## 🛡️ 4. Disiplin Operasi: Ansible Playbook vs Terminal Terus
+
+> [!CAUTION]
+> **UNDANG-UNDANG MUTLAK KESELAMATAN:** Jangan sekali-kali membenarkan agen AI melaksanakan arahan komander secara terus (*run command*) di atas pelayan pengeluaran (*production server*)!
+
+1. **Mandatori Penggunaan Ansible:**
+   - Beri arahan jelas kepada agen: *"Jangan jalankan command secara terus. Bina Ansible playbook untuk konfigurasi ini."*
+2. **Kelebihan Menggunakan Ansible Playbook:**
+   - **Rekod Audit (*Trackable*):** Boleh disimpan dalam Git sebagai rekod siapa yang melaksanakan dan apakah perubahannya.
+   - **Boleh Diulang (*Idempotent*):** Automasi ini boleh dijalankan ke sistem atau pelayan lain dengan selamat tanpa kesan sampingan.
+
+---
+
+## ⚙️ 5. Menukar Tugasan Berulang Menjadi *Skills* (AI SOPs)
+
+Jangan bazirkan masa anda dan AI mengulang proses yang sama (contohnya memformat laporan atau menstruktur repositori).
+
+1. **Jana Kemahiran (*Skill Creation*):**
+   - Apabila satu proses rumit berjaya disiapkan, beri arahan ini kepada Antigravity:  
+     `"Turn this action into skills"` atau `"Turn this successful workflow into a reusable DSOM agent skill."`
+2. **Lokasi Penyimpanan Skills:**
+   - **Global (Untuk kegunaan peribadi anda di semua projek):** Disimpan di dalam `~/.gemini/skills` atau `~/.gemini/antigravity/builtin/skills/`.
+   - **Projek Tempatan (Untuk dikongsi bersama pasukan):** Disimpan di `<path/to/project/folder>/.agents/skills/<nama-skill>/SKILL.md`.
+
+---
+
+## 🤝 6. Kolaborasi Multi-Agent: Google Jules & Antigravity
+
+Sebagai satu ekosistem, kita menggabungkan keupayaan agen secara lokal dan awan:
+
+* **Google Antigravity (Local Agent):** Aplikasi meja perantara untuk *pair-programming*, ujian tempatan, dan penjanaan dokumen.
+* **Google Jules (Cloud Autonomous Agent):** Agen latar belakang yang khusus digunakan untuk integrasi tugasan di GitHub secara *public*. Ia membaca isu (*Issues*) dan menolak ciri baharu melalui *Pull Request* (PR) tanpa perlu bantuan perantara manusia (berasaskan pelayan).
+
+---
+
+## 📋 Senarai Semak Harian Pasukan (*Team Daily Checklist*)
+
+- [ ] **Mula Sesi (SOD):** Buka Antigravity dan baca status tugasan daripada `.agents/brain/task.md`.
+- [ ] **Rancangan:** Pastikan *Implementation Plan* wujud di `docs/` atau `.agents/brain/` sebelum menulis kod besar.
+- [ ] **Pengujian & Komit:** Gunakan Git tempatan dengan komit secara berbutir (*Atomic Commits*). Jika ada perintah pelayan, pastikan ia Ansible YAML!
+- [ ] **Tamat Sesi (EOD):** Jana blok ringkasan `[DSOM EPISODIC RECORD]` supaya AI tidak "lupa" apabila anda mula bekerja esok hari.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Berdasarkan Bimbingan Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*  
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "DSOM — Deep State of Mind",
+  "name": "DSOM \u2014 Deep State of Mind",
   "theme": "maple",
   "colors": {
     "primary": "#6C3FC5",
@@ -18,75 +18,173 @@
             "pages": [
               "introduction",
               "quickstart",
-              "core-concepts"
-            ]
-          },
-          {
-            "group": "Daily Rituals",
-            "pages": [
-              "rituals/start-of-day",
-              "rituals/end-of-day",
-              "rituals/checkpoint",
-              "rituals/session-handover"
-            ]
-          },
-          {
-            "group": "The Sovereign Palace",
-            "pages": [
-              "palace/overview",
-              "palace/onboarding",
-              "palace/migration",
-              "palace/build-story"
-            ]
-          },
-          {
-            "group": "AI Agent Skills",
-            "pages": [
-              "skills/overview",
-              "skills/creating-skills",
-              "skills/skills-registry"
-            ]
-          },
-          {
-            "group": "AI Setup Guides",
-            "pages": [
-              "ai-setup/gemini",
-              "ai-setup/claude",
-              "ai-setup/copilot",
-              "ai-setup/mcp-server"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Tools & Automation",
-        "groups": [
-          {
-            "group": "Automation Scripts",
-            "pages": [
-              "tools/overview",
-              "tools/reanimate",
-              "tools/audit-pre-flight",
-              "tools/git-ritual",
-              "tools/privacy-guardian",
-              "tools/init-brain",
-              "tools/template-reset"
-            ]
-          },
-          {
-            "group": "OpenWiki",
-            "pages": [
-              "tools/openwiki-overview",
-              "tools/openwiki-usage"
+              "security",
+              "legal-notice"
             ]
           },
           {
             "group": "Governance & Protocols",
             "pages": [
-              "governance/three-pillars",
-              "governance/okf-standard",
-              "governance/multi-agent",
-              "governance/token-efficiency"
+              "governance/ai-cognitive-logging-protocol",
+              "governance/ai-cognitive-twin-protocol",
+              "governance/ai-guardrails-master-guide",
+              "governance/ai-initialization-sequence",
+              "governance/ai-master-protocol",
+              "governance/ai-skill-architecture",
+              "governance/ai-slash-commands-guide",
+              "governance/automation-audit-list",
+              "governance/byte-capped-execution-framework",
+              "governance/crisp2-operational-strategy",
+              "governance/digital-sovereignty-model",
+              "governance/digital-sovereignty-operational-model-palace",
+              "governance/downstream-dsom-compliance-mandate",
+              "governance/dsom-agent-plugins-specification",
+              "governance/dsom-architecture-analysis",
+              "governance/dsom-automated-state-sync",
+              "governance/dsom-cognitive-state-preservation-proposal",
+              "governance/dsom-custom-validators-guide",
+              "governance/dsom-efficiency-protocols",
+              "governance/dsom-guardrails-catalog-submission-review",
+              "governance/dsom-ingestion-latency-architecture",
+              "governance/dsom-mcp-architecture",
+              "governance/dsom-token-efficiency-report",
+              "governance/dsom-token-performance-playbook",
+              "governance/dsom-tri-phasic-cognitive-architecture",
+              "governance/generative-engine-optimization",
+              "governance/github-actions-security-scanning",
+              "governance/gitops-aiops-ansible-strategy",
+              "governance/hub-and-spoke-model",
+              "governance/itil-alignment",
+              "governance/llm-wiki-adoption",
+              "governance/multi-agent-protocols",
+              "governance/noss-integration-guide",
+              "governance/okf-mind-optimization",
+              "governance/openwiki-integration-guide",
+              "governance/operational-guide",
+              "governance/operational-sovereignty",
+              "governance/python-uv-environment-guide",
+              "governance/research-reasoning-gap",
+              "governance/sop-knowledge-first-discovery",
+              "governance/zero-global-memory"
+            ]
+          },
+          {
+            "group": "Daily Rituals",
+            "pages": [
+              "rituals/sod-ritual",
+              "rituals/eod-ritual",
+              "rituals/transition-ritual",
+              "rituals/human-handover"
+            ]
+          },
+          {
+            "group": "AI Agent Skills",
+            "pages": [
+              "skills/agent-plugin-packager",
+              "skills/context7-indexer",
+              "skills/cross-platform-translator",
+              "skills/dsom-bootstrap",
+              "skills/dsom-knowledge-ingester",
+              "skills/dsom-policy-adopter",
+              "skills/dsom-project-cloner",
+              "skills/dsom-release-manager",
+              "skills/dsom-signature-injector",
+              "skills/dsom-state-sync",
+              "skills/dsom-token-calculator",
+              "skills/eod-palace-sync",
+              "skills/forensic-log-audit",
+              "skills/git-commit-resolver",
+              "skills/git-history-scrubber",
+              "skills/github-actions-snyk-scanner",
+              "skills/initialize-gitops",
+              "skills/jules-antigravity-sync",
+              "skills/latex-proposal-compiler",
+              "skills/node-proposal-formatter",
+              "skills/node-slide-generator",
+              "skills/odp-slide-generator",
+              "skills/okf-frontmatter-injector",
+              "skills/openwiki-compiler",
+              "skills/palace-auditor",
+              "skills/pdf-text-extractor",
+              "skills/persona-injector",
+              "skills/proposal-docx-formatter",
+              "skills/publish-to-blogger",
+              "skills/render-deployment",
+              "skills/sitemap-seo-generator",
+              "skills/sod-palace-sync",
+              "skills/ssh-passwordless-setup"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Tools & Diataxis",
+        "groups": [
+          {
+            "group": "Tools & Automation",
+            "pages": [
+              "tools/howto-audit-pre-flight",
+              "tools/howto-build-sovereign-book",
+              "tools/howto-checkpoint",
+              "tools/howto-checkusage-linux",
+              "tools/howto-checkusage",
+              "tools/howto-dsom-onboard",
+              "tools/howto-eod-palace",
+              "tools/howto-generate-walkthrough",
+              "tools/howto-git-ritual",
+              "tools/howto-hibernation",
+              "tools/howto-init-brain",
+              "tools/howto-mcp-server",
+              "tools/howto-openwiki",
+              "tools/howto-palace-sync",
+              "tools/howto-privacy-guardian",
+              "tools/howto-reanimate-claude",
+              "tools/howto-reanimate",
+              "tools/howto-setup-dsom-control-node",
+              "tools/howto-setup-wsl-almalinux",
+              "tools/howto-sod-palace",
+              "tools/howto-template-reset"
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              "tutorials/getting-started",
+              "tutorials/index",
+              "tutorials/nota-lapangan-antigravity-dsom",
+              "tutorials/team-dsom-masterclass"
+            ]
+          },
+          {
+            "group": "How-To Guides",
+            "pages": [
+              "how-to/audit-and-apply-frontmatter",
+              "how-to/generate-sitemaps-seo",
+              "how-to/index",
+              "how-to/run-fastmcp-server",
+              "how-to/use-openwiki-emulator"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/apply_okf_frontmatter",
+              "reference/bench_brain",
+              "reference/dsom_token_auditor",
+              "reference/generate_sitemaps",
+              "reference/index",
+              "reference/mcp_server",
+              "reference/mkdocs_hooks",
+              "reference/openwiki_emulator",
+              "reference/refactor_okf"
+            ]
+          },
+          {
+            "group": "Explanation",
+            "pages": [
+              "explanation/diataxis",
+              "explanation/index",
+              "explanation/openwiki-mcp-architecture"
             ]
           }
         ]

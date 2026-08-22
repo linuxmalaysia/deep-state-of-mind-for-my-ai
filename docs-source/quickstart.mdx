@@ -1,136 +1,265 @@
 ---
-title: "DSOM Quick Start: From Clone to Cognitive Handshake"
-sidebarTitle: "Quick Start"
-description: "Set up the Deep State of Mind framework, initialise your AI brain, fill in your Project Identity Card, and perform the first Cognitive Handshake."
+title: "START HERE: DSOM Project Benefits & Entry Points"
+description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new or existing projects via Git or direct GitHub Pages URLs."
 ---
 
-Getting a new project running under DSOM takes about fifteen minutes. You clone the template skeleton, initialise the AI brain directory, fill in your project's identity details, run a pre-flight audit, generate a context manifest, and then hand that manifest to your AI with a single handshake phrase. After step six, your AI knows your environment, your security doctrine, your Git conventions, and exactly where you left off — and it will remember all of that every time you start a new session.
+Welcome to the **Deep State of Mind (DSOM) For My AI** framework. If you are adopting this repository to bootstrap a new infrastructure/software project, or onboarding a new human team member or AI agent, you must understand how to enter the system.
 
-<Steps>
+DSOM is a modular Sovereign AI Engine. To use it effectively, do not read every file at random. Start with the defined Entry Points depending on your role.
 
-### Clone and Reset
+---
 
-Clone the DSOM skeleton repository, then immediately run the template-reset script to clear the framework author's Git history and brain files so you start with a clean slate.
+## 🌐 Zero-Clone / Zero-Pull Direct Reading via GitHub Pages URLs
 
-```bash
-# Clone the DSOM skeleton into your new project directory
-git clone https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai.git my-new-project
-cd my-new-project
+If you or your AI agent do **not** want to `git clone` or `git pull` this repository, you can ingest the framework directly via live, HTTPS-hosted GitHub Pages URLs:
 
-# Clear the old Git history and brain artifacts for your fresh project
-bash tools/template-reset.sh
+| Document / Asset | Direct GitHub Pages Live URL | Purpose / Audience |
+| :--- | :--- | :--- |
+| **Master Documentation Site** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | Main searchable MkDocs site |
+| **Master Entry Map** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/) | Topology map & benefits |
+| **AI Root Gateway** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/) | First-read summary for AI agents |
+| **Full AI Constitution** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/) | 27 Core Constitutional AI Laws |
+| **AI Sitemap (LLMs.txt)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt) | Plain-text AI crawler sitemap |
+| **Legal Notice & Disclaimer** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/) | Legal notice & liability disclaimer |
+| **OpenWiki Integration Guide** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/) | Python OpenWiki code & prompts |
+| **OpenWiki Operational HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/) | Python emulator CLI commands |
+| **FastMCP Server HOWTO** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/) | Cursor & Claude Desktop setups |
+| **Project Cloning Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/) | Scaffolding new DSOM clones |
+| **Team Masterclass (Training)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/) | End-to-end team adoption & pair programming |
+| **Agent Plugins Specification** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/) | Agent Plugins 1.0.0 Packaging & MCP Integration |
+| **Mintlify Knowledge Brain (Live)** | [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site) | Auto-synced public Mintlify documentation portal |
+
+---
+
+## 🧭 The Diátaxis Documentation Compass: How to Navigate DSOM
+
+Following the [Diátaxis Documentation Framework](https://diataxis.fr/), DSOM documentation is organised across two fundamental axes: **Learning vs. Working** (Acquisition vs. Application) and **Practical vs. Theoretical** (Action vs. Knowledge).
+
+Use this compass to jump directly to the exact information you or your AI agent need:
+
+| Documentation Quadrant | User Intent & Orientation | Primary DSOM Entry Points |
+| :--- | :--- | :--- |
+| **🎓 Tutorials**<br>*(Learning-oriented · Practical)* | **Learning the craft step-by-step.** Guided onboarding for beginners establishing DSOM. | • [Entry Point 1: Engineering & Scaffolding](#1-the-engineering-entry-point-project-scaffolding-team-masterclass)<br>• [Entry Point 12: Mechanical Boot Sequence](#12-the-initialisation-entry-point-mechanical-boot-sequence)<br>• [Entry Point 17: OKF Master Guide](#17-the-open-knowledge-format-okf-entry-point-foundational-context-engine_1)<br>• [Team Masterclass (Zero to Sovereign AI)](tutorials/TEAM-DSOM-MASTERCLASS.md) |
+| **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture)<br>• [Entry Point 21: Mintlify One-Way Docs Sync](#21-the-mintlify-one-way-docs-sync-entry-point-knowledge-brain-publishing) |
+| **📚 Reference**<br>*(Information-oriented · Theoretical)* | **Factual, authoritative lookup.** Specifications, API structures, and constitutional laws. | • [Entry Point 2: Full AI Constitution (`AGENTS.md`)](#2-the-cognitive-entry-point-ai-persona-rules)<br>• [Entry Point 3: AI Sitemap (`llms.txt`)](#3-the-external-system-entry-point-ai-crawlers)<br>• [Entry Point 16: Legal & Risk Disclaimer](#16-the-legal-disclaimer-entry-point-risk-governance)<br>• [Entry Point 18: Guardrails Master Guide](#18-the-ai-guardrails-custom-validators-entry-point-defense-in-depth-safety)<br>• [Entry Point 19: Episodic Record Template](#19-the-episodic-record-state-anchor-entry-point-zero-context-amnesia)<br>• [Entry Point 20: Agent Plugins 1.0.0 Spec](#20-the-agent-plugins-100-packaging-entry-point-universal-interoperability) |
+| **💡 Explanation**<br>*(Understanding-oriented · Theoretical)* | **Architecture, rationale & philosophy.** Understanding *why* DSOM works and saves tokens. | • [Entry Point 8: LLM WIKI Architecture](#8-the-sovereign-knowledge-entry-point-llm-wiki-adoption)<br>• [Entry Point 9: Defensive GitOps Strategy](#9-the-security-defense-entry-point-defensive-gitops)<br>• [Entry Point 10: Token Performance Playbook](#10-the-token-performance-entry-point-context-efficiency)<br>• [Entry Point 14: The Tri-Phasic Mind](#14-the-cognitive-architecture-entry-point-the-tri-phasic-mind) |
+
+---
+
+## 🌟 Why Adopt DSOM in Your Project? (Core Architectural Benefits)
+
+Adopting the DSOM protocol into any new or existing project delivers four transformative capabilities:
+
+| Core Capability / Benefit | How DSOM Achieves It | Empirical Impact / Value |
+| :--- | :--- | :--- |
+| **1. 98%+ Token & Cost Reduction** | **OKF YAML Frontmatter** + **Native OpenWiki (`./openwiki/`)** pre-distil codebase structures into lightweight metadata and 10 concept nodes. | AI agents search metadata in ~50 tokens instead of loading 500,000+ raw code tokens into context windows. |
+| **2. Zero Memory Loss Across Sessions** | **Spatial Memory (`.agents/brain/`)** records session walkthrough anchors (`task.md`, `walkthrough.md`, `palace_registry.md`). | AI digital twins (Gemini, Jules, Claude) reanimate instantly with exact past mental state across chat reboots. |
+| **3. Zero-Binary & Zero-Cost Portability** | Native Python scripts (**`uv run python tools/openwiki_emulator.py`**) replace heavy Node.js binaries and third-party APIs. | Bypasses `NODE_MODULE_VERSION` native compilation crashes, UAC elevation hangs, 135 MB bloat, and LLM API rate limits. |
+| **4. Multi-Agent Cognitive Alignment** | **27 Constitutional AI Laws (`AGENTS.md`)** + **FastMCP Knowledge Server (`tools/mcp/server.py`)**. | Google Jules, Antigravity, Cursor, and Claude Desktop share identical rules, security guardrails, and test contracts. |
+
+---
+
+## 1. The Engineering Entry Point (Project Scaffolding & Team Masterclass)
+
+*If you are setting up a brand new DSOM project repository for the first time or onboarding an engineering team.*
+
+**Read This First (Scaffolding Blueprint):** [`HOWTO-CLONE-DSOM-PROJECT.md`](HOWTO-CLONE-DSOM-PROJECT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/))  
+**Complete Team Curriculum & Pair-Programming Playbook:** [`tutorials/TEAM-DSOM-MASTERCLASS.md`](tutorials/TEAM-DSOM-MASTERCLASS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/))
+
+**Why it matters:** This provides both the theoretical blueprint and concrete terminal scripts (PowerShell / Bash) as well as AI prompting templates (for Google Antigravity). It guides your team through the entire 4-phase lifecycle: creating the 6-pillar downstream directory tree, initializing dual-remote GitOps (GitHub + GitLab), pair programming with Antigravity, and syncing with Google Jules.
+
+---
+
+## 2. The Cognitive Entry Point (AI Persona & Rules)
+*If you are an AI agent, or a human programming an AI agent, and need to know the operational rules of this environment.*
+
+**Read This First (Root Gateway):** [`AGENTS.md`](../AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/))
+
+**Then Read the Full Rulebook:** [`.agents/AGENTS.md`](../.agents/AGENTS.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/))
+
+**Why it matters:** The root `AGENTS.md` is the **Gateway File** for AI agents such as Google Jules, Cursor, and Copilot that scan the repository root. It summarises the DSOM protocol and immediately redirects agents to [`.agents/AGENTS.md`](.agents/AGENTS.md) — the **Sovereign Constitution** containing all 27 operational laws, the LinuxMalaysia persona, the Defensive GitOps rules, the OKF mandate, and the UK English writing standard. Keep both files synchronised at all times.
+
+---
+
+## 3. The External System Entry Point (AI Crawlers)
+*If you are using an external tool (e.g., Google NotebookLM, ChatGPT) to ingest this repository.*
+
+**Read This First:** [`llms.txt`](../llms.txt) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/llms.txt))
+
+**Why it matters:** Placed at the root of the repository, this file acts as the official AI Sitemap. It explicitly links to all the critical governance documents (including the `NOSS-INTEGRATION-GUIDE.md`) so that external systems immediately understand the architectural constraints and compliance payloads of the project without getting lost in code files.
+
+---
+
+## 4. The Daily Operations Entry Point (Day 2 Management)
+
+*If the project is already running, and you are starting your work day or recovering from a server reboot.*
+
+**Read This First:** [`HOWTO-PALACE-ONBOARDING.md`](HOWTO-PALACE-ONBOARDING.md)
+
+**Why it matters:** This teaches the human and the AI how to read the `palace_registry.md` ledger during the Start of Day (SOD) ritual. It ensures the AI never suffers from memory loss between sessions by strictly governing thread states through spatial memory.
+
+---
+
+## 5. The Legacy Upgrade Entry Point (Existing DSOM Projects)
+
+*If you are operating a legacy DSOM project and need to modernize it to the current master architectural baseline.*
+
+**Read This First:** [`HOWTO-UPGRADE-LEGACY-DSOM.md`](HOWTO-UPGRADE-LEGACY-DSOM.md)
+
+---
+
+## 6. The Subagent Swarm Entry Point (Multi-Agent Orchestration)
+
+### Entry Point 3: The Native MCP Server Integration
+DSOM acts as its own Model Context Protocol (MCP) server (`tools/mcp/server.py`), allowing AI editors (Claude Desktop, Cursor, VSCode) to read the Sovereign Markdown Palace and OpenWiki knowledge graph locally without pasting context.
+
+To configure your AI client, point it to our `uv`-managed server script:
+```json
+{
+  "mcpServers": {
+    "dsom-palace": {
+      "command": "uv",
+      "args": ["run", "tools/mcp/server.py"]
+    }
+  }
+}
 ```
 
-<Tip>
-  If you are migrating an existing DSOM project rather than starting from scratch, follow the [DSOM Project Cloning Guide](https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/HOWTO-CLONE-DSOM-PROJECT.md) instead to preserve all cognitive capabilities during the transfer.
-</Tip>
+### Entry Point 4: Subagent Orchestration Workflow
 
-### Initialise the Brain
+*If you are scaling complex engineering tasks using autonomous AI subagents.*
 
-Run the brain initialisation script for your platform. This creates the `.agents/brain/` directory and seeds it with the four core artifacts your AI will read at the start of every session.
+**Read This First:** [`governance/MULTI-AGENT-PROTOCOLS.md`](governance/MULTI-AGENT-PROTOCOLS.md)
 
-<CodeGroup>
+---
 
-```bash Linux / WSL2
-bash tools/init-brain.sh
-chmod +x tools/*.sh
-```
+## 7. The Procedural Skill Entry Point (AI Automation)
 
-```powershell Windows (PowerShell)
-.\tools\init-brain.ps1
-```
+*If you need to teach your AI how to perform repetitive operational workflows.*
 
-</CodeGroup>
+**Read This First:** [`governance/AI-SKILL-ARCHITECTURE.md`](governance/AI-SKILL-ARCHITECTURE.md) and [`governance/AI-SLASH-COMMANDS-GUIDE.md`](governance/AI-SLASH-COMMANDS-GUIDE.md)
 
-After the script completes, your `.agents/brain/` directory contains four files:
+---
 
-| File | Purpose |
-|:-----|:--------|
-| `task.md` | **Present** — The AI's active checklist; what to work on right now |
-| `walkthrough.md` | **Past** — Session history log and Mental Anchors |
-| `implementation_plan.md` | **Future** — Your project roadmap and phase targets |
-| `DSOM_TEMPLATE.md` | **Template** — A blank walkthrough structure for new session entries |
+## 8. The Sovereign Knowledge Entry Point (LLM WIKI Adoption)
 
-### Fill in Your Project Identity Card
+*If you are migrating legacy documentation into an AI-native memory palace.*
 
-The `docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md` file is the most important file in the entire framework. It is your **Project Identity Card** — the document that tells the AI who you are, what your environment looks like, and how it must behave. Open it and replace every `[PLACEHOLDER]` with your real project details.
+**Read This First:** [`governance/LLM-WIKI-ADOPTION.md`](governance/LLM-WIKI-ADOPTION.md)
 
-```bash
-nano docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
-```
+---
 
-Work through these four sections carefully:
+## 9. The Security & Defense Entry Point (Defensive GitOps)
 
-| Section | What to Fill In | Example |
-|:--------|:----------------|:--------|
-| **Project Name** | `[YOUR_PROJECT_NAME]` | `my-kafka-pipeline` |
-| **4-Tier Environment Map** | T1 = Command Centre path (Windows/Mac), T2 = Dev Bridge (WSL2/VM), T3/T4 = Production host, user, UID, and working path | T1: `C:\Projects\kafka`, T3: `prod-node-01`, user `kafka`, UID `1001` |
-| **Security Doctrine** | Who runs as root vs. which UID your application processes use | `App runs as UID 1001; Ansible connects as deploy user` |
-| **Mental Anchor §8** | Set to `"Fresh project. Phase 1 pending."` for a brand-new project | `Fresh project. Phase 1 pending.` |
+*If you are adopting DSOM for secure infrastructure or production environments.*
 
-<Warning>
-  The AI will not operate correctly until every `[PLACEHOLDER]` in `docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md` is filled in. The `audit-pre-flight.sh` script in the next step will explicitly flag any unfilled values and block you from proceeding.
-</Warning>
+**Read This First:** [`governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md`](governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md)
 
-### Run the Pre-Flight Audit
+---
 
-<Note>
-  **Infrastructure projects only:** If your project uses Ansible to manage remote nodes, complete the Ansible baseline setup before running the audit. Follow `docs/HOWTO-SETUP-ANSIBLE-BASELINE.md` inside the cloned repository, then verify connectivity with `ansible all -m ping -i inventory/hosts.yml`. The pre-flight audit will check for `inventory/hosts.yml` and warn if it is missing.
-</Note>
+## 10. The Token Performance Entry Point (Context Efficiency)
 
-Run the pre-flight audit to verify that your brain artifacts are in place, your Git repository is synchronised, and your Project Identity Card contains no unfilled placeholders.
+*If you are onboarding a new AI agent or bootstrapping a new project and want to ensure token-efficient LLM operation from day one.*
 
-<CodeGroup>
+**Read This First:** [`governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md`](governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md)
 
-```bash Linux / WSL2
-./tools/audit-pre-flight.sh
-```
+---
 
-```powershell Windows (PowerShell)
-.\tools\audit-pre-flight.ps1
-```
+## 11. The Discovery Entry Point (Knowledge-First Protocol)
 
-</CodeGroup>
+*If you are an AI agent or human operator attempting to execute an exploratory terminal command or probe external nodes.*
 
-Every check should report `[PASS]` or `[OK]`. If you see any `[FAIL]` entries, fix the underlying issue before moving to the next step — a failed audit means the AI will receive incomplete or incorrect context during the Cognitive Handshake.
+**Read This First:** [`governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md`](governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md)
 
-### Generate the Context Manifest
+---
 
-Run the reanimate script to bundle all your brain artifacts, your Project Identity Card, and your Palace Registry into a single context manifest file that you will upload to your AI.
+## 12. The Initialisation Entry Point (Mechanical Boot Sequence)
 
-<CodeGroup>
+*If you need to understand how the AI's cognitive engine boots up, reanimates, and establishes its laws before the first prompt is processed.*
 
-```bash Linux / WSL2
-bash tools/reanimate.sh
-```
+**Read This First:** [`governance/AI-INITIALIZATION-SEQUENCE.md`](governance/AI-INITIALIZATION-SEQUENCE.md)
 
-```powershell Windows (PowerShell)
-.\tools\reanimate.ps1
-```
+---
 
-</CodeGroup>
+## 13. The Automated State Sync Entry Point (Semantic Compaction)
 
-The script outputs a file named `sod_manifest_YYYY-MM-DD.txt` in your project root. This manifest is the complete cognitive snapshot of your project — everything the AI needs to resume as your Cognitive Digital Twin without you having to re-explain anything.
+*If you need to understand how DSOM manages token bloat automatically across Pull Requests.*
 
-<Tip>
-  Before uploading the manifest to an external AI service, run `./tools/privacy-guardian.sh` to scan for any leaked IP addresses, API keys, tokens, or internal paths that should not leave your machine.
-</Tip>
+**Read This First:** [`governance/DSOM-AUTOMATED-STATE-SYNC.md`](governance/DSOM-AUTOMATED-STATE-SYNC.md)
 
-### Perform the Cognitive Handshake
+---
 
-Upload the generated `sod_manifest_YYYY-MM-DD.txt` to your AI (as a file attachment or by pasting its contents), then send the following handshake phrase exactly as written:
+## 14. The Cognitive Architecture Entry Point (The Tri-Phasic Mind)
 
-```text
-Initialise DSOM Protocol. Read the uploaded manifest. Summarise the current
-Mental Anchor and confirm the 4-Tier environment map from the
-AI-COGNITIVE-TWIN-PROTOCOL.md section. State: 'Sovereign State Synchronised'
-when ready.
-```
+*If you need to understand how the AI's cognitive pipeline is split into Active, Twilight, and Deep states.*
 
-Wait for the AI to respond with **"Sovereign State Synchronised"** before issuing any project instructions.
+**Read This First:** [`governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md`](governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md)
 
-</Steps>
+---
 
-<Note>
-  Once your AI confirms **"Sovereign State Synchronised"**, it has loaded your complete project context. It now knows your 4-Tier environment map (T1 → T4), your security doctrine (who runs as root and which UID your applications use), your Git commit convention, and the current Mental Anchor — the exact logical point where your last session ended. Every subsequent prompt in this session builds on that shared understanding without any re-explanation.
-</Note>
+## 15. The Native OpenWiki Knowledge Graph Entry Point (Zero-Binary Architecture)
+
+*If you want to maintain a high-density, zero-binary knowledge graph across your repository.*
+
+**Read This First:** [`tools/HOWTO-OPENWIKI.md`](tools/HOWTO-OPENWIKI.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-OPENWIKI/)) and [`governance/OPENWIKI-INTEGRATION-GUIDE.md`](governance/OPENWIKI-INTEGRATION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPENWIKI-INTEGRATION-GUIDE/))
+
+---
+
+## 16. The Legal & Disclaimer Entry Point (Risk Governance)
+
+*If you want to review the privacy statement, cost and design assumptions, or liability disclaimers for this repository.*
+
+**Read This First:** [`LEGAL-NOTICE.md`](LEGAL-NOTICE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/))
+
+---
+
+## 17. The Open Knowledge Format (OKF) Entry Point (Foundational Context Engine)
+*If you are adopting OKF v0.1/v0.2 to structure your repository's documentation and memory assets for maximum AI token efficiency and zero context loss.*
+
+**Read This First:** [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/OKF-ADOPTION-GUIDE/))
+
+**Why it matters:** OKF is Google Cloud's vendor-neutral specification that powers DSOM's spatial memory architecture (`.agents/brain/` and `.agents/skills/`). It achieves 98%+ token compression, enables progressive disclosure directory routing, and preserves persistent memory across AI agent reboots.
+
+> [!IMPORTANT]
+> **Adoption & Migration Rule for Downstream Projects:**
+> Adopt **OKF v0.2** as soon as possible to incorporate trust signals (`sources`, `generated`, `verified`, `status`, `stale_after`). To prevent context window inflation and token waste, **do not execute drastic, mass full-corpus rewrites**. Instead, migrate existing files to OKF v0.2 opportunistically **only when actively editing or updating a document**.
+
+---
+
+## 18. The AI Guardrails & Custom Validators Entry Point (Defense-in-Depth Safety)
+*If you want to understand, configure, or develop deterministic and LLM-powered guardrails (combining Guardrails AI and DSOM Native runtime).*
+
+**Read This First:** [`governance/AI-GUARDRAILS-MASTER-GUIDE.md`](governance/AI-GUARDRAILS-MASTER-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-GUARDRAILS-MASTER-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-GUARDRAILS-MASTER-GUIDE/))
+
+**Why it matters:** Autonomous agents must operate within deterministic boundaries. DSOM enforces a Tri-Phasic guardrail pipeline: Active FastMCP tool argument validation, Twilight State AST/regex command interception (blocking raw `pip` and credential leaks), and Deep State automated pytest gates.
+
+---
+
+## 19. The Episodic Record & State Anchor Entry Point (Zero Context Amnesia)
+*If you need to understand how the AI maintains unbroken mental state across chat reboots and platform boundaries via episodic serialisation.*
+
+**Read This First:** [`DSOM-EPISODIC-RECORD-TEMPLATE.md`](DSOM-EPISODIC-RECORD-TEMPLATE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/DSOM-EPISODIC-RECORD-TEMPLATE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/DSOM-EPISODIC-RECORD-TEMPLATE/))
+
+**Why it matters:** Enforces Rule 18 (The Episodic Resume Protocol). At the end of every major workflow or session handover, the AI outputs a strictly formatted `[DSOM EPISODIC RECORD]` block containing timestamps, test counts, Git commits, and mental anchors, enabling zero-loss resume across Google Jules, Cursor, Claude Desktop, and Gemini.
+
+---
+
+## 20. The Agent Plugins 1.0.0 Packaging Entry Point (Universal Interoperability)
+*If you want to package, distribute, or install DSOM Agent Skills and FastMCP servers into portable, client-agnostic packages across Google Antigravity, Jules, Cursor, Claude Code, and Codex.*
+
+**Read This First:** [`governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md`](governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/))
+
+**Why it matters:** Backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel, the Agent Plugins 1.0.0 directory standard (`agent-plugins.org/specification`) provides a single closed manifest (`plugin.json`), explicit MCP descriptors (`mcp.json`), and fixed `skills/` folders, eliminating packaging friction and drift across all modern AI coding agents.
+
+---
+
+## 21. The Mintlify One-Way Docs Sync Entry Point (Knowledge Brain Publishing)
+*If you want to publish sovereign documentation from `docs-source/` to a downstream Mintlify docs repository (`linuxmalaysia/my-knowledge-brain`) serving `harisfazillah.mintlify.site`.*
+
+**Read This First:** [`scripts/sync_docs.py`](../scripts/sync_docs.py) & [`.github/workflows/sync-docs.yml`](../.github/workflows/sync-docs.yml) (Live Portal: [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site))
+
+**Why it matters:** Enforces Rule 31 (Mintlify One-Way Docs Sync & Safety Guards). A deterministic one-way sync pipeline protected by 5 strict safety guards (A–E) ensuring an empty or half-populated source can never destroy the downstream Mintlify docs repo.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

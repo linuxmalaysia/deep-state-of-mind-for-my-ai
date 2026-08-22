@@ -1,0 +1,31 @@
+---
+title: "dsom-release-manager"
+description: "Cuts a formal DSOM release, updates ledgers, tags the repository, and deploys to GitHub/GitLab."
+---
+
+# 🚀 DSOM Release Manager
+
+## When to use this skill
+Trigger this skill when the user asks to "cut a release", "create release notes", or "do a release for github/gitlab".
+
+## Execution Steps
+1. **Changelog Promotion:** Modify `CHANGELOG.md` to promote the `[Unreleased]` section into a formal versioned release block (e.g., `## [10.4.0] - YYYY-MM-DD`). Add an empty `[Unreleased]` block above it.
+2. **Ledger Sync:** Ensure the version entries in `HISTORY.md` and `task.md` reflect the new version string and milestones.
+3. **Mental Anchor:** Add a Session Anchor in `.agents/brain/walkthrough.md` summarizing the release highlights.
+4. **Pre-Release Test Gate:** Run the full test suite to guarantee 100% test pass rate before committing or tagging:
+   `uv run --with pytest --with pyyaml --with requests --with tiktoken --with fastmcp pytest`
+5. **GitOps Stage:** Commit all changes via `git commit -m "docs: cut release v<VERSION>"`.
+6. **Tagging & Non-Interactive Multi-Remote Push:**
+   Create an annotated Git tag and push to all active remotes using non-interactive Git flags:
+   - `git tag -a v<VERSION> -m "Release v<VERSION>: <SUMMARY>"`
+   - `$env:GIT_TERMINAL_PROMPT="0"; $env:GCM_INTERACTIVE="never"; git push origin main; git push origin v<VERSION>; git push gitlab main; git push gitlab v<VERSION>`
+7. **Release Notes Generation & Handover:**
+   - Create a release notes artifact (`release_notes_v<VERSION>.md`) summarizing highlights, guardrails, architecture, and metrics.
+   - Emit the final `[DSOM EPISODIC RECORD]` handover block.
+8. **Platform Deployment (CLI):**
+   - Deploy to GitHub: `gh release create v<VERSION> -F "<ARTIFACT_PATH>/release_notes_v<VERSION>.md" --title "v<VERSION>: <RELEASE_TITLE>"`
+   - Deploy to GitLab: `glab release create v<VERSION> --name "v<VERSION>: <RELEASE_TITLE>" --notes-file "<ARTIFACT_PATH>/release_notes_v<VERSION>.md"`
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

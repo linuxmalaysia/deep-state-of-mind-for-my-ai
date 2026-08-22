@@ -1,0 +1,181 @@
+---
+title: "GitHub Actions Snyk Security Scanner"
+description: "Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories, replacing the deprecated Red Hat CRDA action."
+---
+
+# Skill: GitHub Actions Snyk Security Scanner
+
+## Purpose
+
+Establish a working Snyk dependency vulnerability scanning workflow in any DSOM GitHub repository using GitHub Actions. This skill replaces the permanently deprecated `redhat-actions/crda@v1` action whose backend (`gw.api.openshift.io`) was shut down by Red Hat.
+
+## Trigger Conditions
+
+Invoke this skill when:
+- Setting up a new DSOM project on GitHub and requiring CI/CD security scanning.
+- Encountering the error: `crda exited with code 1 — Unable to reach gw.api.openshift.io`.
+- Any `redhat-actions/crda` workflow is present in `.github/workflows/`.
+- The user requests dependency vulnerability scanning or SARIF integration.
+
+---
+
+## Quality Gates
+
+- [ ] `SNYK_TOKEN` is set in GitHub → Settings → Secrets → Actions.
+- [ ] `requirements.txt` (Python), `package.json` (Node.js), or equivalent manifest exists at repo root.
+- [ ] `github/codeql-action/upload-sarif@v4` is used (NOT `@v3` — deprecated Dec 2025).
+- [ ] `continue-on-error: true` is set on the Snyk scan step so SARIF always uploads.
+- [ ] Token audit passes: no `SNYK_TOKEN` value committed to any file.
+
+---
+
+## Step 1 — Obtain SNYK_TOKEN
+
+The **SNYK_TOKEN** is the Snyk account API auth token. It is **not** the Snyk Project ID.
+
+1. Log in to **[app.snyk.io](https://app.snyk.io)**.
+2. Click avatar (top-right) → **Account Settings**.
+3. Under **Auth Token** → **click to show** or **Generate**.
+4. Copy the token value (format: `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`).
+
+> **Security Note:** Never commit this token to any file. Add it only as a GitHub Secret.
+> The DSOM `tools/privacy-guardian.ps1` / `.sh` will flag tokens in brain files at EOD.
+
+---
+
+## Step 2 — Add Secret to GitHub Repository
+
+1. Navigate to: `https://github.com/<owner>/<repo>/settings/secrets/actions/new`
+2. Set:
+   - **Name:** `SNYK_TOKEN`
+   - **Secret:** *(paste the token from Step 1)*
+3. Click **Add secret**.
+
+---
+
+## Step 3 — Create `requirements.txt` (Python Projects)
+
+Snyk requires a manifest file to scan. If none exists:
+
+```bash
+# Create requirements.txt listing all external Python dependencies
+# Example for DSOM tools (dsom_token_auditor.py uses tiktoken):
+echo "tiktoken>=0.7.0" > requirements.txt
+git add requirements.txt
+git commit -m "chore(deps): add requirements.txt for Python dependency tracking and Snyk scanning"
+```
+
+For Node.js projects, `package.json` is auto-detected. For other ecosystems, see [Snyk supported languages](https://docs.snyk.io/supported-languages-package-managers-and-frameworks).
+
+---
+
+## Step 4 — Deploy the Workflow
+
+Create or replace `.github/workflows/crda.yml` with the following proven template:
+
+```yaml
+# ==============================================================================
+# Snyk — Open Source Dependency Vulnerability Scan
+# Replaces deprecated redhat-actions/crda@v1 (gw.api.openshift.io is offline)
+# ==============================================================================
+name: Snyk Security Scan
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "requirements.txt"
+      - ".github/workflows/crda.yml"
+
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "requirements.txt"
+      - ".github/workflows/crda.yml"
+
+  schedule:
+    - cron: "0 0 * * 1"   # Every Monday 00:00 UTC
+
+  workflow_dispatch:
+
+concurrency:
+  group: snyk-scan-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  snyk-scan:
+    name: Snyk — Python Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Snyk vulnerability scan
+        uses: snyk/actions/python@master
+        continue-on-error: true          # Allow SARIF upload even if vulnerabilities found
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk.sarif --severity-threshold=low
+
+      - name: Upload SARIF to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v4   # NOT @v3 — deprecated Dec 2025
+        with:
+          sarif_file: snyk.sarif
+          category: snyk-python-scan
+```
+
+Commit and push:
+
+```bash
+git add .github/workflows/crda.yml
+git commit -m "ci(security): replace deprecated CRDA with Snyk native action"
+git push origin main
+```
+
+---
+
+## Step 5 — Verify Results
+
+After the workflow completes:
+- Go to **GitHub → Security → Code scanning** to view detected vulnerabilities.
+- The Snyk **Project ID** (from `app.snyk.io`) can be used to query results via the Snyk API — it is not needed in the workflow itself.
+
+---
+
+## Known Deprecations & Version Pins
+
+| Action | Deprecated Version | Use Instead |
+|:---|:---|:---|
+| `redhat-actions/crda@v1` | ALL versions (backend offline) | `snyk/actions/python@master` |
+| `github/codeql-action/upload-sarif@v3` | Deprecated Dec 2025 | `@v4` |
+| `actions/checkout@v3` | EOL | `@v4` |
+| `actions/setup-python@v4` | Superseded | `@v5` |
+
+---
+
+## SOURCES
+
+- [`snyk/actions`](https://github.com/snyk/actions) — Official Snyk GitHub Actions repository.
+- [`github/codeql-action`](https://github.com/github/codeql-action) — CodeQL SARIF upload action.
+- [Snyk Auth Token docs](https://docs.snyk.io/snyk-api/authentication-for-api) — Token setup guide.
+- [`docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md`](../../docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md) — DSOM-specific analysis and context.
+
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
