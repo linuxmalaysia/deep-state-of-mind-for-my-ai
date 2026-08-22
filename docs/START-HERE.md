@@ -33,6 +33,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **Project Cloning Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/) | Scaffolding new DSOM clones |
 | **Team Masterclass (Training)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/) | End-to-end team adoption & pair programming |
 | **Agent Plugins Specification** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/) | Agent Plugins 1.0.0 Packaging & MCP Integration |
+| **Mintlify Knowledge Brain (Live)** | [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site) | Auto-synced public Mintlify documentation portal |
 
 ---
 
@@ -45,7 +46,7 @@ Use this compass to jump directly to the exact information you or your AI agent 
 | Documentation Quadrant | User Intent & Orientation | Primary DSOM Entry Points |
 | :--- | :--- | :--- |
 | **🎓 Tutorials**<br>*(Learning-oriented · Practical)* | **Learning the craft step-by-step.** Guided onboarding for beginners establishing DSOM. | • [Entry Point 1: Engineering & Scaffolding](#1-the-engineering-entry-point-project-scaffolding-team-masterclass)<br>• [Entry Point 12: Mechanical Boot Sequence](#12-the-initialisation-entry-point-mechanical-boot-sequence)<br>• [Entry Point 17: OKF Master Guide](#17-the-open-knowledge-format-okf-entry-point-foundational-context-engine_1)<br>• [Team Masterclass (Zero to Sovereign AI)](tutorials/TEAM-DSOM-MASTERCLASS.md) |
-| **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture) |
+| **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture)<br>• [Entry Point 21: Mintlify One-Way Docs Sync](#21-the-mintlify-one-way-docs-sync-entry-point-knowledge-brain-publishing) |
 | **📚 Reference**<br>*(Information-oriented · Theoretical)* | **Factual, authoritative lookup.** Specifications, API structures, and constitutional laws. | • [Entry Point 2: Full AI Constitution (`AGENTS.md`)](#2-the-cognitive-entry-point-ai-persona-rules)<br>• [Entry Point 3: AI Sitemap (`llms.txt`)](#3-the-external-system-entry-point-ai-crawlers)<br>• [Entry Point 16: Legal & Risk Disclaimer](#16-the-legal-disclaimer-entry-point-risk-governance)<br>• [Entry Point 18: Guardrails Master Guide](#18-the-ai-guardrails-custom-validators-entry-point-defense-in-depth-safety)<br>• [Entry Point 19: Episodic Record Template](#19-the-episodic-record-state-anchor-entry-point-zero-context-amnesia)<br>• [Entry Point 20: Agent Plugins 1.0.0 Spec](#20-the-agent-plugins-100-packaging-entry-point-universal-interoperability) |
 | **💡 Explanation**<br>*(Understanding-oriented · Theoretical)* | **Architecture, rationale & philosophy.** Understanding *why* DSOM works and saves tokens. | • [Entry Point 8: LLM WIKI Architecture](#8-the-sovereign-knowledge-entry-point-llm-wiki-adoption)<br>• [Entry Point 9: Defensive GitOps Strategy](#9-the-security-defense-entry-point-defensive-gitops)<br>• [Entry Point 10: Token Performance Playbook](#10-the-token-performance-entry-point-context-efficiency)<br>• [Entry Point 14: The Tri-Phasic Mind](#14-the-cognitive-architecture-entry-point-the-tri-phasic-mind) |
 
@@ -255,6 +256,15 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md`](governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/))
 
 **Why it matters:** Backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel, the Agent Plugins 1.0.0 directory standard (`agent-plugins.org/specification`) provides a single closed manifest (`plugin.json`), explicit MCP descriptors (`mcp.json`), and fixed `skills/` folders, eliminating packaging friction and drift across all modern AI coding agents.
+
+---
+
+## 21. The Mintlify One-Way Docs Sync Entry Point (Knowledge Brain Publishing)
+*If you want to publish sovereign documentation from `docs-source/` to a downstream Mintlify docs repository (`linuxmalaysia/my-knowledge-brain`) serving `harisfazillah.mintlify.site`.*
+
+**Read This First:** [`scripts/sync_docs.py`](../scripts/sync_docs.py) & [`.github/workflows/sync-docs.yml`](../.github/workflows/sync-docs.yml) (Live Portal: [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site))
+
+**Why it matters:** Enforces Rule 31 (Mintlify One-Way Docs Sync & Safety Guards). A deterministic one-way sync pipeline protected by 5 strict safety guards (A–E) ensuring an empty or half-populated source can never destroy the downstream Mintlify docs repo.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*

@@ -62,6 +62,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **Dual-Path Custom Validators** | Integrates both the Guardrails AI Framework (for external LLM apps/Pydantic schemas) and the DSOM Native Lightweight Pathway (for FastMCP/AST command interception and offline safety) across Tri-Phasic states. |
 | **The Episodic Resume Protocol (Zero Amnesia)** | AI emits a serialized `[DSOM EPISODIC RECORD]` summary block containing live commit hashes, test metrics, and cognitive delta at major milestones to guarantee zero-loss session resumes. |
 | **Agent Plugins 1.0.0 Standard** | Adheres to the vendor-neutral directory standard (`agent-plugins.org/specification`) for packaging skills, MCP servers (`mcp.json`), and manifests (`plugin.json`) across AI tools. |
+| **Mintlify One-Way Docs Sync & Safety Guards** | Governs one-way publishing from `docs-source/` to downstream Mintlify docs repositories (`my-knowledge-brain`) with 5 non-negotiable safety guards (A–E) preventing destruction. |
 
 ---
 

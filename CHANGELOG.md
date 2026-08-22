@@ -19,11 +19,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Mintlify One-Way Docs Sync Pipeline & Safety Guards (Rule 31 & Entry Point 21):** Implemented `scripts/sync_docs.py` and `.github/workflows/sync-docs.yml` to safely publish `docs-source/` to the downstream docs repo `linuxmalaysia/my-knowledge-brain` serving `https://harisfazillah.mintlify.site`.
+- **5-Layer Safety Guardrails (A–E):** Enforced source validation, minimum 5 `.mdx` files floor, navigation integrity checking every page path in `docs.json`, diff preview with a 10-deletion cap (`ALLOW_LARGE_DELETIONS` override), and dry-run preview mode.
+- **Concise Output Standard (DTS 0.1):** Appended DTS 0.1 output formatting blocks across Universal Gateways (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`, `.agents/AGENTS.md`).
 - **Agent Plugins 1.0.0 Standard Specification (Entry Point 20):** Authored `docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md` detailing universal packaging, runtime interoperability, and directory layout standard (`plugin.json`, `mcp.json`, `skills/`).
 - **Standard Manifests:** Added canonical root `plugin.json` (schema 1.0.0) and `mcp.json` mapping DSOM FastMCP Server with `${PLUGIN_ROOT}` and `${PLUGIN_DATA}` environment variable expansion.
 - **Agent Plugin Packager Skill:** Created `.agents/skills/agent-plugin-packager/SKILL.md` (OKF v0.2) to automate packaging of skills and MCP tools into portable plugins.
-- **Rule 30 Codification:** Codified Rule 30 (Agent Plugins 1.0.0 Specification & Packaging Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
-- **Automated Conformance Tests:** Implemented `tests/test_agent_plugins_spec.py` ensuring 100% compliance with Agent Plugins 1.0.0 schema constraints.
+- **Rule 30 & Rule 31 Codification:** Codified Rule 30 (Agent Plugins 1.0.0 Specification & Packaging Mandate) and Rule 31 (Mintlify One-Way Docs Sync & Safety Guards Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
+- **Automated Conformance Tests:** Implemented `tests/test_agent_plugins_spec.py` and `tests/test_sync_docs.py` ensuring 100% compliance with Agent Plugins 1.0.0 and Mintlify Safety Guards.
 
 ## [10.4.0] - 2026-08-22
 

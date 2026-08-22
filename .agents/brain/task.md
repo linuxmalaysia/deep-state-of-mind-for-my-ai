@@ -54,7 +54,12 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Codified Rule 30 in `.agents/AGENTS.md` and root `AGENTS.md`.
 - `[x]` Appended DTS 0.1 concise output standard to Universal Gateways (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`, `.agents/AGENTS.md`).
 - `[x]` Synchronized `dsom-project-cloner` skill and Team Masterclass/Field Notes with Agent Plugins 1.0.0 & DTS 0.1 manifests.
-- `[x]` Verified 100% test pass rate across entire suite (856/856 unit tests passing).
-- `[x]` Complete End-of-Day (EOD) context saving, hibernation ritual, and multi-remote push.
+- `[x]` Seeded `docs-source/` with verified full content of downstream Mintlify repository `linuxmalaysia/my-knowledge-brain`.
+- `[x]` Created `scripts/sync_docs.py` with 5 non-negotiable safety guards (Guards A–E) preventing destructive syncs.
+- `[x]` Created `.github/workflows/sync-docs.yml` with automated trigger on `docs-source/**` and `workflow_dispatch` dry-run controls.
+- `[x]` Authored automated test suite `tests/test_sync_docs.py` (5/5 unit tests passing).
+- `[x]` Codified Rule 31 (Mintlify One-Way Docs Sync & Safety Guards Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
+- `[x]` Integrated Entry Point 21 into `START-HERE.md`, `docs/START-HERE.md`, `llms.txt`, `CHANGELOG.md`, and `HISTORY.md`.
+- `[x]` Verified 100% test pass rate across entire suite (861/861 unit tests passing).
 
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*

@@ -195,37 +195,27 @@ To ensure digital sovereignty, maintain flawless metacognitive state across AI s
 
 > **EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.**
 
-## 🏁 Session Anchor: 2026-08-22 — EOD Hibernation: Agent Plugins 1.0.0, DTS 0.1, & Universal Scaffolding
+## 🏁 Session Anchor: 2026-08-22 — Mintlify One-Way Docs Sync & Safety Guards (Rule 31)
 
-- Ingested and adopted Google & Open **Agent Plugins 1.0.0** standard specification (`agent-plugins.org/specification`) backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel.
-- Authored Master Reference: [`docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md) (**Entry Point 20**).
-- Added canonical root manifest [`plugin.json`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/plugin.json) (schema 1.0.0) and [`mcp.json`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/mcp.json) exposing DSOM FastMCP Server with `${PLUGIN_ROOT}` and `${PLUGIN_DATA}` variable expansion.
-- Created [`.agents/skills/agent-plugin-packager/SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/agent-plugin-packager/SKILL.md) (OKF v0.2) to automate plugin bundling.
-- Codified **Rule 30** (Agent Plugins 1.0.0 Specification & Packaging Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
-- Appended **DTS 0.1** Concise Output Standard across Universal Gateways (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`, and `.agents/AGENTS.md`).
-- Synchronised [`dsom-project-cloner/SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/dsom-project-cloner/SKILL.md), [`TEAM-DSOM-MASTERCLASS.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/TEAM-DSOM-MASTERCLASS.md), and [`NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md) with Agent Plugins 1.0.0 manifests and packager skill.
-- Implemented and validated automated test suite [`tests/test_agent_plugins_spec.py`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/tests/test_agent_plugins_spec.py).
-- Authored Unified Master Reference: `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` (Entry Point 18).
-- Authored Guardrail Catalog & Pre-Submission Review: `docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md`.
-- Authored Downstream Compliance Mandate: `docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md` establishing the 5-Pillar Sovereign Anchor Architecture.
-- Built, Packaged & Verified **`guardrails-ai-dsom`** (`tools/guardrails-ai-dsom/`) containing 10 custom validators with PEP 517/621 packaging.
-- Fully wired `guardrails-ai-dsom` into operational tools: FastMCP server (`tools/mcp/server.py`), `tools/privacy-guardian.ps1/.sh`, and `tools/audit-pre-flight.ps1/.sh`.
-- Created and deployed the **Universal Gateway Matrix** (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`) and **Pre-Commit Hook installer** (`tools/install_git_guardrails.py`).
-- Added **Entry Point 19** (`docs/DSOM-EPISODIC-RECORD-TEMPLATE.md`) for the Episodic Resume Protocol.
-- Codified **Rule 28** and **Rule 29** in `.agents/AGENTS.md` and root `AGENTS.md`.
-- Tagged and published formal Release **v10.4.0** across GitHub and GitLab using `gh` and `glab` CLI tooling.
-- Authored the comprehensive **Team DSOM Masterclass** ([`docs/tutorials/TEAM-DSOM-MASTERCLASS.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/TEAM-DSOM-MASTERCLASS.md)) and bilingual **Team Field Notes** ([`docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md)).
-- Upgraded [`.agents/skills/dsom-project-cloner/SKILL.md`](file:///d:/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/.agents/skills/dsom-project-cloner/SKILL.md) to **OKF v0.2**.
-- Synchronised omni-documentation layers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `docs/tutorials/index.md`, `mkdocs.yml`, `llms.txt`, `CHANGELOG.md`, `HISTORY.md`).
-- Confirmed 100% test suite pass rate (**856/856 unit tests passing cleanly**).
-- Verified multi-remote tracking with GitHub (`origin`) and GitLab (`gitlab`).
+- Seeded `docs-source/` from the downstream Mintlify repository `linuxmalaysia/my-knowledge-brain`, verifying 100% recursive equality.
+- Implemented `scripts/sync_docs.py` equipped with 5 non-negotiable safety guards (Guards A–E) preventing destructive downstream wipe accidents:
+  - **Guard A (Source & JSON Integrity):** Asserts `docs-source/` and valid `docs.json` exist.
+  - **Guard B (Minimum File Count):** Enforces `.mdx` file floor (default 5; found 32).
+  - **Guard C (Navigation Integrity):** Validates that all 31 page entries in `docs.json` have corresponding `.mdx` files; reports orphan files cleanly.
+  - **Guard D (Diff Preview & Deletion Cap):** Computes added/modified/deleted lists; fails if deletions exceed 10 unless `ALLOW_LARGE_DELETIONS=true`.
+  - **Guard E (Dry-Run Mode):** Enables safe plan preview without pushing via `--dry-run` or `DRY_RUN=true`.
+- Authored GitHub Actions workflow `.github/workflows/sync-docs.yml` triggering automatically on `docs-source/**` changes and providing full manual `workflow_dispatch` dry-run controls.
+- Implemented comprehensive automated test suite `tests/test_sync_docs.py` (5/5 unit tests passing).
+- Codified **Rule 31 (Mintlify One-Way Docs Sync & Safety Guards Mandate)** in `.agents/AGENTS.md` and root `AGENTS.md`.
+- Added **Entry Point 21** in `START-HERE.md`, `docs/START-HERE.md`, `llms.txt`, `CHANGELOG.md`, and `HISTORY.md`.
+- Confirmed full test suite pass rate: **861/861 unit tests passing (100%)**.
 
 ### Underlying Rationale
 
-To empower DSOM with universal cross-IDE packaging via Agent Plugins 1.0.0, concise DTS 0.1 output formatting, deterministic defence-in-depth safety, and seamless team onboarding.
+To establish a hardened, un-wipeable, automated one-way publishing bridge from the DSOM source of truth to the downstream Mintlify knowledge brain (`https://harisfazillah.mintlify.site`).
 
 ### Integration Mental Anchor
 
-> **EOD Hibernation Complete: Adopted Agent Plugins 1.0.0 and DTS 0.1 standards, codified Rule 30 in AGENTS.md, updated dsom-project-cloner skill, all 856 unit tests passing (100%), and pushed cleanly to all remotes.**
+> **Mintlify Docs Sync Pipeline Ready: Seeded docs-source/, created scripts/sync_docs.py and .github/workflows/sync-docs.yml with 5 non-negotiable safety guards (Guards A–E), codified Rule 31 in AGENTS.md, all 861 unit tests passing (100%), and pushed cleanly to all remotes.**
 
 

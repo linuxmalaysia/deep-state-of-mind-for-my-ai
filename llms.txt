@@ -15,6 +15,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/): Web-based compiled, searchable documentation.
 - [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai): Cloud-hosted compiled, searchable documentation.
 - [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/): Cloud-hosted compiled, searchable documentation on Read the Docs.
+- [Official Live Knowledge Brain (Mintlify)](https://harisfazillah.mintlify.site): Auto-synced public documentation and knowledge brain powered by Mintlify.
 - [Context7 Live RAG Payload (10k Tokens)](https://context7.com/gitlab_linuxmalaysia/deep-state-of-mind-for-my-ai/llms.txt?tokens=10000): Pre-indexed, token-budgeted operational code snippets and rules compiled by Context7.
 
 ## Governance & Ledgers
