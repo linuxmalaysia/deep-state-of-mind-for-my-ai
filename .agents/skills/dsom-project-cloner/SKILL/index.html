@@ -3907,14 +3907,19 @@
 <li><strong>Establish Directory Tree:</strong> Use your terminal execution tools (<code>run_command</code>) to create the mandatory folder structures in the target path:</li>
 <li><code>"$TARGET_PATH/.agents/brain"</code></li>
 <li><code>"$TARGET_PATH/.agents/skills"</code></li>
-<li><code>"$TARGET_PATH/.github"</code></li>
+<li><code>"$TARGET_PATH/.github/workflows"</code></li>
 <li><code>"$TARGET_PATH/docs/governance"</code></li>
+<li><code>"$TARGET_PATH/docs-source"</code></li>
 <li><code>"$TARGET_PATH/tools"</code></li>
+<li><code>"$TARGET_PATH/scripts"</code></li>
 <li><strong>Copy the 6 Pillars (Downstream Footprint):</strong></li>
 <li><strong>Pillar A (The Engine &amp; Gateway Matrix):</strong> <ul>
 <li>Copy <code>AGENTS.md</code>, <code>.cursorrules</code>, <code>CLAUDE.md</code>, <code>START-HERE.md</code>, <code>plugin.json</code>, and <code>mcp.json</code> to <code>"$TARGET_PATH/"</code></li>
 <li>Copy <code>.agents/AGENTS.md</code> to <code>"$TARGET_PATH/.agents/"</code></li>
 <li>Copy <code>.github/copilot-instructions.md</code> to <code>"$TARGET_PATH/.github/"</code></li>
+<li>Copy <code>docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md</code> to <code>"$TARGET_PATH/docs/governance/"</code></li>
+<li>Copy <code>docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md</code> to <code>"$TARGET_PATH/docs/governance/"</code></li>
+<li>Copy <code>docs-source/.mintignore</code> to <code>"$TARGET_PATH/docs-source/"</code></li>
 </ul>
 </li>
 <li><strong>Pillar B (Essential Domain Skills):</strong><ul>
@@ -3952,24 +3957,28 @@
 Target Repository Path: &lt;ABSOLUTE_TARGET_PATH&gt;
 
 Please:
-<span class="k">1.</span> Create the required directory structure (.agents/brain, .agents/skills, docs/governance, tools/).
+<span class="k">1.</span> Create the required directory structure (.agents/brain, .agents/skills, docs/governance, docs-source, tools/, scripts/).
 <span class="k">2.</span> Copy the Universal Gateway Matrix (.cursorrules, CLAUDE.md, .github/copilot-instructions.md, AGENTS.md, START-HERE.md).
 <span class="k">3.</span> Copy the Constitutional Rulebook (.agents/AGENTS.md) and reset .agents/brain/ with blank OKF templates.
-<span class="k">4.</span> Copy the tools/ directory and automatically execute <span class="sb">`python tools/install_git_guardrails.py`</span> in the new target path.
+<span class="k">4.</span> Copy the tools/ directory, sync scripts, and automatically execute <span class="sb">`python tools/install_git_guardrails.py`</span> in the new target path.
 <span class="k">5.</span> Ensure all copied markdown files carry valid OKF v0.2 frontmatter and standard DSOM signatures.
 </code></pre></div>
 <h3 id="mode-2-manual-terminal-copy-commands-powershell">Mode 2: Manual Terminal Copy Commands (PowerShell)</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">"$TARGET\.agents\brain"</span><span class="p">,</span> <span class="s2">"$TARGET\.agents\skills"</span><span class="p">,</span> <span class="s2">"$TARGET\.github"</span><span class="p">,</span> <span class="s2">"$TARGET\docs\governance"</span><span class="p">,</span> <span class="s2">"$TARGET\tools"</span>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">"$TARGET\.agents\brain"</span><span class="p">,</span> <span class="s2">"$TARGET\.agents\skills"</span><span class="p">,</span> <span class="s2">"$TARGET\.github\workflows"</span><span class="p">,</span> <span class="s2">"$TARGET\docs\governance"</span><span class="p">,</span> <span class="s2">"$TARGET\docs-source"</span><span class="p">,</span> <span class="s2">"$TARGET\tools"</span><span class="p">,</span> <span class="s2">"$TARGET\scripts"</span>
 <span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\AGENTS.md"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\.cursorrules"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\CLAUDE.md"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\START-HERE.md"</span> <span class="s2">"$TARGET\"</span>
 <span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\.github\copilot-instructions.md"</span> <span class="s2">"$TARGET\.github\"</span>
 <span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\.agents\AGENTS.md"</span> <span class="s2">"$TARGET\.agents\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\docs\governance\MINTLIFY-USER-MANUAL-SYNC-GUIDE.md"</span> <span class="s2">"$TARGET\docs\governance\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\docs-source\.mintignore"</span> <span class="s2">"$TARGET\docs-source\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\scripts\sync_docs.py"</span> <span class="s2">"$TARGET\scripts\"</span>
+<span class="nb">Copy-Item</span> <span class="s2">"$DSOM_BASE\.github\workflows\sync-docs.yml"</span> <span class="s2">"$TARGET\.github\workflows\"</span>
 <span class="nb">Copy-Item</span> <span class="n">-Recurse</span> <span class="s2">"$DSOM_BASE\tools\*"</span> <span class="s2">"$TARGET\tools\"</span>
-<span class="nb">Copy-Item</span> <span class="n">-Recurse</span> <span class="s2">"$DSOM_BASE\.agents\skills\dsom-token-calculator"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\.agents\skills\dsom-signature-injector"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\.agents\skills\initialize-gitops"</span> <span class="s2">"$TARGET\.agents\skills\"</span>
+<span class="nb">Copy-Item</span> <span class="n">-Recurse</span> <span class="s2">"$DSOM_BASE\.agents\skills\dsom-token-calculator"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\.agents\skills\dsom-signature-injector"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\.agents\skills\mintlify-docs-compiler"</span><span class="p">,</span> <span class="s2">"$DSOM_BASE\.agents\skills\initialize-gitops"</span> <span class="s2">"$TARGET\.agents\skills\"</span>
 <span class="nb">Set-Location</span> <span class="nv">$TARGET</span>
 <span class="n">bash</span> <span class="n">tools</span><span class="p">/</span><span class="n">init-brain</span><span class="p">.</span><span class="n">sh</span>
 </code></pre></div>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
