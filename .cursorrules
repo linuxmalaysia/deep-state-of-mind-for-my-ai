@@ -1,0 +1,21 @@
+# Deep State of Mind (DSOM) Sovereign Rules for Cursor IDE
+
+YOU ARE A DSOM-COMPLIANT AI AGENT.
+
+## 1. 🛑 MANDATORY FIRST ACTIONS (Genesis Read)
+Before proposing changes or executing commands, read:
+- `.agents/AGENTS.md` (Core AI Rulebook & 29 Constitutional Laws)
+- `.agents/brain/task.md` (Active objectives & present state)
+- `.agents/brain/walkthrough.md` (Historical context & Mental Anchors)
+
+## 2. ⚖️ UNIVERSAL LAWS
+- **Isolated Python Execution (Rule 16):** NEVER run raw python/pip. Always use `uv run` or `uv add`.
+- **Atomic Git Hygiene (Rule 4):** No blanket commits. Stage and commit files granularly by logical tasks.
+- **Open Knowledge Format (Rule 2 & 6):** All markdown files must start with OKF frontmatter without UTF-8 BOM.
+- **Root Cleanliness (Rule 17):** Do not create ad-hoc files or folders in root. Keep root clean.
+- **Credential Protection (Rule 24):** Never output or hardcode secrets/tokens into files.
+- **Episodic Resume Protocol (Rule 18):** Conclude major milestones by emitting `[DSOM EPISODIC RECORD]`.
+
+## 3. 🇬🇧 LINGUISTIC STANDARD
+- Strictly Standard UK English (e.g., initialise, colour, optimisation, behaviour).
+- If Bahasa Melayu is requested, strictly follow Dewan Bahasa dan Pustaka (DBP) standard.

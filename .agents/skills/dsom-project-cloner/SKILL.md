@@ -25,22 +25,28 @@ Use this skill when the user asks to create, clone, scaffold, or bootstrap a **n
    - `"$TARGET_PATH/docs/governance"`
    - `"$TARGET_PATH/tools"`
 3. **Copy the Four Pillars:** Use your terminal execution tools (`run_command`) to copy the assets from the CURRENT repository (baseline) to the TARGET repository:
-   - **Pillar A (The Engine):** Copy `.agents/AGENTS.md` to `"$TARGET_PATH/.agents/"`
+   - **Pillar A (The Engine & Gateway Matrix):** 
+     - Copy `AGENTS.md`, `.cursorrules`, `CLAUDE.md`, and `START-HERE.md` to `"$TARGET_PATH/"`
+     - Copy `.agents/AGENTS.md` to `"$TARGET_PATH/.agents/"`
+     - Copy `.github/copilot-instructions.md` to `"$TARGET_PATH/.github/"`
    - **Pillar B (The Intelligence Payload):** Recursively copy all contents of `.agents/skills/` to `"$TARGET_PATH/.agents/skills/"`
    - **Pillar C (Governance & Configuration):**
      - Recursively copy `docs/agent-configs/` to `"$TARGET_PATH/docs/agent-configs/"`
      - Recursively copy `docs/governance/` to `"$TARGET_PATH/docs/governance/"`
      - Copy `docs/AI-AGENT-SKILLS-GUIDE.md` to `"$TARGET_PATH/docs/"`
      - Copy all `docs/HOWTO-*.md` files to `"$TARGET_PATH/docs/"`
-   - **Pillar D (Ritual Scripts):** Recursively copy `tools/` to `"$TARGET_PATH/tools/"`
+   - **Pillar D (Ritual Scripts):** 
+     - Recursively copy `tools/` to `"$TARGET_PATH/tools/"`
+     - Automatically execute `uv run python "$TARGET_PATH/tools/install_git_guardrails.py"` to install the pre-commit gate.
 4. **OKF Frontmatter Compliance & Signature Injection:**
    - Execute `uv run python tools/apply_okf_frontmatter.py "$TARGET_PATH"` (shell/PowerShell safe) in the target repository to guarantee complete OKF v0.1 frontmatter compliance across all cloned memory assets and documentation.
    - Run `python .agents/skills/dsom-signature-injector/scripts/inject.py "$TARGET_PATH"` to apply standard GPL v3.0 signature footers.
 5. **Persona Injection Check:** Ask the user if they wish to automatically inject their persona using the `persona-injector` skill for the new project.
 6. **Finalization:** Output a success message to the user, providing them with the initialization commands for their new workspace:
    - `bash tools/reanimate.sh` or `.\tools\reanimate.ps1`
+   - `uv run python tools/install_git_guardrails.py`
    - `git add .`
-   - `git commit -m "chore(dsom): scaffold genesis dsom architecture and AI skills"`
+   - `git commit -m "chore(dsom): scaffold genesis dsom architecture, universal gateway matrix, and AI skills"`
 
 
 ---
