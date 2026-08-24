@@ -7,12 +7,11 @@ topics: ["antigravity", "gemini", "dsom", "ansible", "gitops", "skills", "jules"
 description: "Sintesis nota lapangan praktikal, Langkah 0 onboarding prompt, strategi model, automasi kemahiran (skills), dan disiplin GitOps DSOM untuk perkongsian bersama rakan sepasukan."
 resource: "file:///docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md"
 sources: ["docs/tutorials/TEAM-DSOM-MASTERCLASS.md", "START-HERE.md", ".agents/AGENTS.md"]
-generated: "google-antigravity"
+generated: google-antigravity
 verified: true
-status: "active"
+status: active
 stale_after: "2027-08-22T00:00:00Z"
 ---
-
 # 📝 Nota Lapangan: Panduan Praktikal AI Antigravity & Protokol DSOM
 ### *(Berdasarkan Sesi Perkongsian & Bimbingan Cikgu Haris / LinuxMalaysia bersama Pasukan)*
 

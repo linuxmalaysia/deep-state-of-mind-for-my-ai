@@ -7,12 +7,11 @@ topics: ["training", "tutorial", "onboarding", "antigravity", "jules", "gitops",
 description: "Step-by-step training curriculum and operational playbook teaching engineering teams how to create new projects, adopt the DSOM Sovereign Engine, pair program with Google Antigravity, and collaborate across AI agents like Google Jules."
 resource: "file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md"
 sources: ["START-HERE.md", "docs/HOWTO-CLONE-DSOM-PROJECT.md", "docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md", ".agents/skills/jules-antigravity-sync/SKILL.md"]
-generated: "google-antigravity"
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-22T00:00:00Z"
 ---
-
 # 🎓 DSOM Team Masterclass: From Zero to Sovereign AI Pair-Programming
 
 > **Audience:** Engineering Teams, Technical Leads, DevOps Engineers, and AI System Architects.  
