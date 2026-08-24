@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: documentation
 title: "How-To: Verify and Monitor Site with Google Search Console"
-timestamp: "2026-08-25T10:00:00Z"
+timestamp: "2026-08-22T10:00:00Z"
 topics: ["dsom", "how-to", "seo", "google-search-console", "okf"]
 ---
 # Verify and monitor site with Google Search Console
@@ -82,5 +82,5 @@ After verifying ownership:
 4. Inspect crawl logs under **Indexing > Pages** to detect and fix any unindexed pages or redirection issues.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-25*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

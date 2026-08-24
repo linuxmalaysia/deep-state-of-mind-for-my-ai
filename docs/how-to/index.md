@@ -20,5 +20,5 @@ How-To Guides provide **practical, problem-oriented directions** for completing 
 - **[Verify and Monitor Site with Google Search Console](google-search-console.md):** How to verify site ownership and monitor search performance with Google Search Console.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -113,10 +113,6 @@ VALID_FOOTER_LINES = (
         "*Deep State of Mind (DSOM) For My AI Protocol | "
         "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-24*"
     ),
-    (
-        "*Deep State of Mind (DSOM) For My AI Protocol | "
-        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-25*"
-    ),
 )
 
 
@@ -186,13 +182,17 @@ class SkillFrontmatterTimestampTests(unittest.TestCase):
     """Every touched skill's frontmatter `timestamp` must be bumped."""
 
     def test_timestamp_bumped_to_2026_08_20T23_30_00Z(self):
+        from datetime import datetime, timezone
         for name, path in SKILL_PATHS.items():
             with self.subTest(skill=name):
                 content = path.read_text(encoding="utf-8")
                 _, parsed = _extract_frontmatter_block(content)
                 self.assertIsInstance(parsed, dict)
-                self.assertTrue(str(parsed.get("timestamp")).startswith("2026-08-"))
-                self.assertIsInstance(parsed.get("timestamp"), str)
+                ts = parsed.get("timestamp")
+                self.assertIsInstance(ts, str)
+                parsed_dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+                self.assertGreaterEqual(parsed_dt, datetime(2026, 8, 1, tzinfo=timezone.utc))
+                self.assertLessEqual(parsed_dt, datetime(2026, 8, 31, 23, 59, 59, tzinfo=timezone.utc))
 
     def test_footer_signature_date_bumped(self):
         for name, path in SKILL_PATHS.items():
