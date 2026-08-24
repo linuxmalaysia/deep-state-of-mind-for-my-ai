@@ -58,6 +58,7 @@ NEW_DIATAXIS_FILES = [
     ("how-to/run-fastmcp-server.md", "How-To: Run the FastMCP Server"),
     ("how-to/generate-sitemaps-seo.md", "How-To: Generate SEO Assets and Sitemaps"),
     ("how-to/use-openwiki-emulator.md", "How-To: Operate the OpenWiki Emulator"),
+    ("how-to/google-search-console.md", "How-To: Verify and Monitor Site with Google Search Console"),
     ("reference/index.md", "Reference Material Index"),
     ("reference/generate_sitemaps.md", "Reference: generate_sitemaps.py"),
     ("reference/openwiki_emulator.md", "Reference: openwiki_emulator.py"),
@@ -82,6 +83,7 @@ DIATAXIS_NAV_ENTRIES = [
     ("Run FastMCP Server", "how-to/run-fastmcp-server.md"),
     ("Generate SEO Assets and Sitemaps", "how-to/generate-sitemaps-seo.md"),
     ("Operate OpenWiki Emulator", "how-to/use-openwiki-emulator.md"),
+    ("Verify Google Search Console", "how-to/google-search-console.md"),
     ("Overview", "reference/index.md"),
     ("generate_sitemaps.py", "reference/generate_sitemaps.md"),
     ("openwiki_emulator.py", "reference/openwiki_emulator.md"),
@@ -105,6 +107,7 @@ DIATAXIS_SITEMAP_SAMPLE_PATHS = [
     "how-to/run-fastmcp-server/",
     "how-to/generate-sitemaps-seo/",
     "how-to/use-openwiki-emulator/",
+    "how-to/google-search-console/",
     "reference/",
     "reference/apply_okf_frontmatter/",
     "reference/bench_brain/",
@@ -350,6 +353,28 @@ class DocsSummaryMdTests(unittest.TestCase):
                     f"docs/SUMMARY.md references a non-existent file: {relative_path} "
                     f"(resolved to {resolved})",
                 )
+
+
+class GoogleSearchConsoleVerificationTests(unittest.TestCase):
+    """Verify Google Search Console meta tag override and HTML verification file."""
+
+    def test_override_main_html_exists_and_contains_meta_tag(self):
+        override_file = DOCS_DIR / "overrides" / "main.html"
+        self.assertTrue(override_file.is_file(), "Expected docs/overrides/main.html to exist")
+        content = override_file.read_text(encoding="utf-8")
+        self.assertIn('{% extends "base.html" %}', content)
+        self.assertIn('<meta name="google-site-verification" content="OKJ30rPxLeaG-OocY3C2xkXbYEVgwfMMoaOycjWQJJw" />', content)
+
+    def test_verification_html_files_exist_and_contain_token(self):
+        root_html = REPO_ROOT / "google953c3228b9041989.html"
+        docs_html = DOCS_DIR / "google953c3228b9041989.html"
+        expected_body = "google-site-verification: google953c3228b9041989.html"
+
+        self.assertTrue(root_html.is_file(), "Expected google953c3228b9041989.html at root")
+        self.assertTrue(docs_html.is_file(), "Expected docs/google953c3228b9041989.html")
+
+        self.assertEqual(root_html.read_text(encoding="utf-8").strip(), expected_body)
+        self.assertEqual(docs_html.read_text(encoding="utf-8").strip(), expected_body)
 
 
 class SitemapDiataxisRegressionTests(unittest.TestCase):
