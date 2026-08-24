@@ -17,6 +17,7 @@ How-To Guides provide **practical, problem-oriented directions** for completing 
 - **[Run the FastMCP Server](run-fastmcp-server.md):** How to configure, test, and execute the FastMCP server.
 - **[Generate SEO Assets and Sitemaps](generate-sitemaps-seo.md):** How to generate unified XML/TXT sitemaps and robots.txt.
 - **[Operate the OpenWiki Emulator](use-openwiki-emulator.md):** How to initialise, update, and query the OpenWiki emulator.
+- **[Verify and Monitor Site with Google Search Console](google-search-console.md):** How to verify site ownership and monitor search performance with Google Search Console.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*

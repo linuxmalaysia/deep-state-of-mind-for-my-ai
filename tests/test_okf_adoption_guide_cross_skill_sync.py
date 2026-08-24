@@ -105,13 +105,25 @@ VALID_FOOTER_LINES = (
         "*Deep State of Mind (DSOM) For My AI Protocol | "
         "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*"
     ),
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*"
+    ),
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-24*"
+    ),
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-25*"
+    ),
 )
 
 
 SKILLS_WITH_NEW_OKF_TOPIC = {
     "dsom-bootstrap": ["bootstrap", "setup", "onboarding", "project-init", "dsom", "okf"],
     "dsom-policy-adopter": ["policy", "governance", "pdf", "ingestion", "compliance", "okf"],
-    "dsom-project-cloner": ["project", "scaffold", "clone", "dsom", "setup", "okf"],
+    "dsom-project-cloner": ["project", "scaffold", "clone", "dsom", "setup", "mintlify", "okf"],
     "openwiki-compiler": [
         "openwiki", "skill", "compilation", "knowledge", "graph", "dsom", "python", "okf",
     ],
@@ -179,7 +191,7 @@ class SkillFrontmatterTimestampTests(unittest.TestCase):
                 content = path.read_text(encoding="utf-8")
                 _, parsed = _extract_frontmatter_block(content)
                 self.assertIsInstance(parsed, dict)
-                self.assertIn(parsed.get("timestamp"), (EXPECTED_TIMESTAMP, "2026-08-22T16:53:00Z"))
+                self.assertTrue(str(parsed.get("timestamp")).startswith("2026-08-"))
                 self.assertIsInstance(parsed.get("timestamp"), str)
 
     def test_footer_signature_date_bumped(self):

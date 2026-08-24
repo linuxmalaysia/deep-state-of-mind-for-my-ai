@@ -22,6 +22,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wing
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/rules/windows-git-execution/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/agent-plugin-packager/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/context7-indexer/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/cross-platform-translator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-bootstrap/SKILL/
@@ -40,6 +41,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/git
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/initialize-gitops/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/jules-antigravity-sync/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/latex-proposal-compiler/SKILL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/mintlify-docs-compiler/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/node-proposal-formatter/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/node-slide-generator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/odp-slide-generator/SKILL/
@@ -95,6 +97,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/diatax
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/openwiki-mcp-architecture/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-COGNITIVE-TWIN-PROTOCOL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-GUARDRAILS-MASTER-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-INITIALIZATION-SEQUENCE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-MASTER-PROTOCOL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-SKILL-ARCHITECTURE/
@@ -104,9 +107,14 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/BYTE-CA
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/CRISP2-OPERATIONAL-STRATEGY/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-ARCHITECTURE-ANALYSIS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-AUTOMATED-STATE-SYNC/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-CUSTOM-VALIDATORS-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-EFFICIENCY-PROTOCOLS/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-MCP-ARCHITECTURE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DSOM-TOKEN-EFFICIENCY-REPORT/
@@ -118,6 +126,8 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/GITOPS-
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/HUB-AND-SPOKE-MODEL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/ITIL-ALIGNMENT/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/LLM-WIKI-ADOPTION/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/MULTI-AGENT-PROTOCOLS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/NOSS-INTEGRATION-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/OKF-MIND-OPTIMIZATION/
@@ -131,6 +141,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/ZERO-GL
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/audit-and-apply-frontmatter/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/generate-sitemaps-seo/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/google-search-console/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/run-fastmcp-server/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/use-openwiki-emulator/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/model-specifics/dsom-claude-initialiser/
@@ -140,6 +151,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference-architec
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/CLI-QUICK-REFERENCE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/apply_okf_frontmatter/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/bench_brain/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/reference/dsom_token_auditor/
@@ -177,6 +189,8 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-SETUP-
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-SOD-PALACE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tools/HOWTO-TEMPLATE-RESET/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/TEAM-DSOM-MASTERCLASS/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/tutorials/getting-started/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/
@@ -202,6 +216,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings/wing_dsom_core/hall_facts/room_dsom_protocol/closet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/rules/windows-git-execution/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/agent-plugin-packager/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/context7-indexer/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/cross-platform-translator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-bootstrap/SKILL/
@@ -220,6 +235,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/gith
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/initialize-gitops/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/jules-antigravity-sync/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/latex-proposal-compiler/SKILL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/mintlify-docs-compiler/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/node-proposal-formatter/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/node-slide-generator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/odp-slide-generator/SKILL/
@@ -275,6 +291,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/diataxi
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/openwiki-mcp-architecture/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-COGNITIVE-TWIN-PROTOCOL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-GUARDRAILS-MASTER-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-INITIALIZATION-SEQUENCE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-MASTER-PROTOCOL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-SKILL-ARCHITECTURE/
@@ -284,9 +301,14 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/BYTE-CAP
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/CRISP2-OPERATIONAL-STRATEGY/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-ARCHITECTURE-ANALYSIS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AUTOMATED-STATE-SYNC/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-CUSTOM-VALIDATORS-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-EFFICIENCY-PROTOCOLS/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-MCP-ARCHITECTURE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-TOKEN-EFFICIENCY-REPORT/
@@ -298,6 +320,8 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/GITOPS-A
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/HUB-AND-SPOKE-MODEL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/ITIL-ALIGNMENT/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/LLM-WIKI-ADOPTION/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MULTI-AGENT-PROTOCOLS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/NOSS-INTEGRATION-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OKF-MIND-OPTIMIZATION/
@@ -311,6 +335,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/ZERO-GLO
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/audit-and-apply-frontmatter/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/generate-sitemaps-seo/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/google-search-console/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/run-fastmcp-server/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/use-openwiki-emulator/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/model-specifics/dsom-claude-initialiser/
@@ -320,6 +345,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference-architect
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/CLI-QUICK-REFERENCE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/apply_okf_frontmatter/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/bench_brain/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/reference/dsom_token_auditor/
@@ -357,6 +383,8 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-SETUP-W
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-SOD-PALACE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-TEMPLATE-RESET/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/getting-started/
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/brain/implementation_plan
@@ -396,6 +424,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/openwiki-mcp-architecture
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-cognitive-logging-protocol
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-cognitive-twin-protocol
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-guardrails-master-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-initialization-sequence
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-master-protocol
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/automation-audit-list
@@ -403,8 +432,13 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/crisp2-operational-strategy
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-model
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-operational-model-palace
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/downstream-dsom-compliance-mandate
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-agent-plugins-specification
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-automated-state-sync
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-cognitive-state-preservation-proposal
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-custom-validators-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-efficiency-protocols
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-guardrails-catalog-submission-review
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-ingestion-latency-architecture
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-mcp-architecture
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/dsom-token-efficiency-report
@@ -416,6 +450,8 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/hub-and-spoke-model
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/itil-alignment
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/llm-wiki-adoption
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/mintlify-one-way-sync-pipeline
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/mintlify-user-manual-sync-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/multi-agent-protocols
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/noss-integration-guide
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/openwiki-integration-guide
@@ -427,6 +463,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/zero-global-memory
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/audit-and-apply-frontmatter
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/generate-sitemaps-seo
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/google-search-console
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/index
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/run-fastmcp-server
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/use-openwiki-emulator
@@ -453,6 +490,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference-architectures/howto-setup-ansible-baseline
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/apply_okf_frontmatter
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/bench_brain
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/cli-quick-reference
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/dsom_token_auditor
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/generate_sitemaps
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/index
@@ -485,6 +523,8 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-template-reset
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/getting-started
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/index
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/nota-lapangan-antigravity-dsom
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tutorials/team-dsom-masterclass
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/history
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/legal-notice
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/references/howto-bootstrap-sovereign-ai-project

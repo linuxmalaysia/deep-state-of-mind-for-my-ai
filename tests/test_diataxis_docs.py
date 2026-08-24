@@ -285,8 +285,8 @@ class MkdocsDiataxisNavYamlStructureTests(unittest.TestCase):
             if "Reference Material" in item:
                 reference_entries = item["Reference Material"]
         self.assertIsNotNone(reference_entries)
-        # Overview + 8 Python module reference pages == 9 entries.
-        self.assertEqual(len(reference_entries), 9)
+        # Overview + 9 Python module reference pages == 10 entries.
+        self.assertEqual(len(reference_entries), 10)
 
 
 class LlmsTxtDiataxisSectionTests(unittest.TestCase):
