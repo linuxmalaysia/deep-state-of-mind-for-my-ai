@@ -181,7 +181,7 @@ class SkillFileExistenceTests(unittest.TestCase):
 class SkillFrontmatterTimestampTests(unittest.TestCase):
     """Every touched skill's frontmatter `timestamp` must be bumped."""
 
-    def test_timestamp_bumped_to_2026_08_20T23_30_00Z(self):
+    def test_timestamp_valid_august_2026_range(self):
         from datetime import datetime, timezone
         for name, path in SKILL_PATHS.items():
             with self.subTest(skill=name):

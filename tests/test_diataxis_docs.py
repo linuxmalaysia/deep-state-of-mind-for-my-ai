@@ -281,7 +281,7 @@ class MkdocsDiataxisNavYamlStructureTests(unittest.TestCase):
             labels, ["Tutorials", "How-To Guides", "Reference Material", "Explanation"]
         )
 
-    def test_reference_material_subsection_has_eight_entries(self):
+    def test_reference_material_subsection_has_ten_entries(self):
         section = self._find_diataxis_section()
         reference_entries = None
         for item in section:
