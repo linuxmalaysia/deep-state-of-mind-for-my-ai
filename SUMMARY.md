@@ -181,6 +181,7 @@ topics: ["dsom", "documentation"]
 * [🛠️ Run FastMCP Server](docs/how-to/run-fastmcp-server.md)
 * [🛠️ Generate SEO Assets and Sitemaps](docs/how-to/generate-sitemaps-seo.md)
 * [🛠️ Operate OpenWiki Emulator](docs/how-to/use-openwiki-emulator.md)
+* [🛠️ Verify Google Search Console](docs/how-to/google-search-console.md)
 * [📋 Reference Material Overview](docs/reference/index.md)
 * [📋 generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md)
 * [📋 openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md)
@@ -197,5 +198,5 @@ topics: ["dsom", "documentation"]
 
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-09*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

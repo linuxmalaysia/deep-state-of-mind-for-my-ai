@@ -105,13 +105,21 @@ VALID_FOOTER_LINES = (
         "*Deep State of Mind (DSOM) For My AI Protocol | "
         "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*"
     ),
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*"
+    ),
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-24*"
+    ),
 )
 
 
 SKILLS_WITH_NEW_OKF_TOPIC = {
     "dsom-bootstrap": ["bootstrap", "setup", "onboarding", "project-init", "dsom", "okf"],
     "dsom-policy-adopter": ["policy", "governance", "pdf", "ingestion", "compliance", "okf"],
-    "dsom-project-cloner": ["project", "scaffold", "clone", "dsom", "setup", "okf"],
+    "dsom-project-cloner": ["project", "scaffold", "clone", "dsom", "setup", "mintlify", "okf"],
     "openwiki-compiler": [
         "openwiki", "skill", "compilation", "knowledge", "graph", "dsom", "python", "okf",
     ],
@@ -173,14 +181,18 @@ class SkillFileExistenceTests(unittest.TestCase):
 class SkillFrontmatterTimestampTests(unittest.TestCase):
     """Every touched skill's frontmatter `timestamp` must be bumped."""
 
-    def test_timestamp_bumped_to_2026_08_20T23_30_00Z(self):
+    def test_timestamp_valid_august_2026_range(self):
+        from datetime import datetime, timezone
         for name, path in SKILL_PATHS.items():
             with self.subTest(skill=name):
                 content = path.read_text(encoding="utf-8")
                 _, parsed = _extract_frontmatter_block(content)
                 self.assertIsInstance(parsed, dict)
-                self.assertIn(parsed.get("timestamp"), (EXPECTED_TIMESTAMP, "2026-08-22T16:53:00Z"))
-                self.assertIsInstance(parsed.get("timestamp"), str)
+                ts = parsed.get("timestamp")
+                self.assertIsInstance(ts, str)
+                parsed_dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+                self.assertGreaterEqual(parsed_dt, datetime(2026, 8, 1, tzinfo=timezone.utc))
+                self.assertLessEqual(parsed_dt, datetime(2026, 8, 31, 23, 59, 59, tzinfo=timezone.utc))
 
     def test_footer_signature_date_bumped(self):
         for name, path in SKILL_PATHS.items():

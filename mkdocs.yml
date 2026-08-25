@@ -26,6 +26,7 @@ validation:
 
 theme:
   name: material
+  custom_dir: docs/overrides
   font:
     text: Inter
     code: Roboto Mono
@@ -163,6 +164,7 @@ nav:
           - Run FastMCP Server: how-to/run-fastmcp-server.md
           - Generate SEO Assets and Sitemaps: how-to/generate-sitemaps-seo.md
           - Operate OpenWiki Emulator: how-to/use-openwiki-emulator.md
+          - Verify Google Search Console: how-to/google-search-console.md
       - Reference Material:
           - Overview: reference/index.md
           - generate_sitemaps.py: reference/generate_sitemaps.md
