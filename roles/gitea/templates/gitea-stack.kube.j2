@@ -1,0 +1,11 @@
+[Unit]
+Description=Gitea GitOps Service (Podman Kube Quadlet)
+After=network-online.target
+
+[Kube]
+Yaml=gitea-stack.yaml
+PublishPort={{ gitea_http_port }}:3000
+PublishPort={{ gitea_ssh_port }}:22
+
+[Install]
+WantedBy=default.target

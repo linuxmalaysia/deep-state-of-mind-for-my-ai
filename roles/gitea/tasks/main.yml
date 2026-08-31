@@ -1,0 +1,27 @@
+---
+- name: TLS | Generate and deploy TLS certificates
+  ansible.builtin.import_tasks: tls.yml
+
+- name: Quadlet | Ensure Quadlet directory exists
+  ansible.builtin.file:
+    path: "~/.config/containers/systemd"
+    state: directory
+    mode: "0755"
+
+- name: Quadlet | Deploy Gitea Kube Quadlet YAML
+  ansible.builtin.template:
+    src: "gitea-stack.yaml.j2"
+    dest: "~/.config/containers/systemd/gitea-stack.yaml"
+    mode: "0600"
+
+- name: Quadlet | Deploy Gitea Kube Quadlet Unit
+  ansible.builtin.template:
+    src: "gitea-stack.kube.j2"
+    dest: "~/.config/containers/systemd/gitea-stack.kube"
+    mode: "0644"
+  notify: Reload systemd user daemon
+
+- name: Quadlet | Reload systemd user daemon for Quadlet generation
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+    scope: user

@@ -1,0 +1,18 @@
+---
+profile: min
+exclude_paths:
+  - .venv/
+  - venv/
+  - node_modules/
+  - site/
+  - .git/
+skip_list:
+  - command-instead-of-module
+  - no-changed-when
+  - yaml
+  - risky-file-permissions
+  - risky-shell-pipe
+  - fqcn
+  - var-naming
+  - jinja
+  - name

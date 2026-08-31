@@ -126,9 +126,17 @@ class DocsCiWorkflowTextContentTests(unittest.TestCase):
         self.assertRegex(self.content, r'python-version:\s*"3\.12"')
         self.assertRegex(self.content, r'cache:\s*"pip"')
 
+    def test_gitleaks_step_present(self):
+        self.assertIn("name: Run Gitleaks Secret Scanner", self.content)
+        self.assertIn("uses: gitleaks/gitleaks-action@v2", self.content)
+
     def test_install_dependencies_step_installs_expected_packages(self):
         self.assertIn("name: Install Dependencies", self.content)
-        self.assertIn("uv pip install --system pyyaml pytest", self.content)
+        self.assertIn("uv pip install --system pyyaml pytest ansible-core ansible-lint", self.content)
+
+    def test_ansible_lint_step_present(self):
+        self.assertIn("name: Run Ansible Lint Static Analysis", self.content)
+        self.assertIn("ansible-lint playbooks/ roles/", self.content)
 
     def test_relative_links_validation_step_present(self):
         self.assertIn("name: Run Relative Links Validation", self.content)
@@ -207,10 +215,12 @@ class DocsCiWorkflowStructureTests(unittest.TestCase):
             step_names,
             [
                 "Checkout Repository",
+                "Run Gitleaks Secret Scanner",
                 "Set up Node.js 24",
                 "Install uv",
                 "Set up Python",
                 "Install Dependencies",
+                "Run Ansible Lint Static Analysis",
                 "Run Relative Links Validation",
                 "Run OKF Frontmatter Compliance Check",
                 "Run Unit Tests for Link Checker",
@@ -225,19 +235,29 @@ class DocsCiWorkflowStructureTests(unittest.TestCase):
         )
         self.assertFalse(checkout_step["with"]["persist-credentials"])
 
+    def test_gitleaks_step_configuration(self):
+        steps = self.doc["jobs"]["validate-docs"]["steps"]
+        gitleaks_step = steps[1]
+        self.assertEqual(gitleaks_step["uses"], "gitleaks/gitleaks-action@v2")
+
     def test_install_dependencies_step_command(self):
         steps = self.doc["jobs"]["validate-docs"]["steps"]
-        install_step = steps[4]
-        self.assertIn("uv pip install --system pyyaml pytest", install_step["run"])
+        install_step = steps[5]
+        self.assertIn("uv pip install --system pyyaml pytest ansible-core ansible-lint", install_step["run"])
+
+    def test_ansible_lint_step_command(self):
+        steps = self.doc["jobs"]["validate-docs"]["steps"]
+        ansible_lint_step = steps[6]
+        self.assertIn("ansible-lint playbooks/ roles/", ansible_lint_step["run"])
 
     def test_relative_links_step_command(self):
         steps = self.doc["jobs"]["validate-docs"]["steps"]
-        link_step = steps[5]
+        link_step = steps[7]
         self.assertIn("python tools/check_docs_links.py", link_step["run"])
 
     def test_frontmatter_compliance_step_command_covers_all_quadrants_and_diff_guard(self):
         steps = self.doc["jobs"]["validate-docs"]["steps"]
-        frontmatter_step = steps[6]
+        frontmatter_step = steps[8]
         run_lines = frontmatter_step["run"]
         for quadrant in ("reference", "how-to", "tutorials", "explanation"):
             with self.subTest(quadrant=quadrant):
@@ -246,7 +266,7 @@ class DocsCiWorkflowStructureTests(unittest.TestCase):
 
     def test_unit_tests_step_command(self):
         steps = self.doc["jobs"]["validate-docs"]["steps"]
-        tests_step = steps[7]
+        tests_step = steps[9]
         self.assertIn("pytest tests/test_docs_links.py", tests_step["run"])
 
 

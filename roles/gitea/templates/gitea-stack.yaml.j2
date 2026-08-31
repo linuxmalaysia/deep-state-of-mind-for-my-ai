@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: gitea-stack
+  name: gitea-stack
+spec:
+  containers:
+    - name: gitea-db
+      image: docker.io/library/postgres:15-alpine@sha256:4770281b16c891e4a6828551a37c22e4eb24eb20755b38031d27976192ddf39f
+      command:
+        - postgres
+        - -c
+        - max_connections={{ gitea_postgres_max_connections }}
+        - -c
+        - shared_buffers={{ gitea_postgres_shared_buffers }}
+        - -c
+        - effective_cache_size={{ gitea_postgres_effective_cache_size }}
+        - -c
+        - maintenance_work_mem={{ gitea_postgres_maintenance_work_mem }}
+        - -c
+        - work_mem={{ gitea_postgres_work_mem }}
+      env:
+        - name: POSTGRES_USER
+          value: gitea
+        - name: POSTGRES_PASSWORD
+          value: "{{ gitea_db_password }}"
+        - name: POSTGRES_DB
+          value: gitea
+        - name: POSTGRES_MAX_CONNECTIONS
+          value: "{{ gitea_postgres_max_connections }}"
+        - name: POSTGRES_SHARED_BUFFERS
+          value: "{{ gitea_postgres_shared_buffers }}"
+        - name: POSTGRES_EFFECTIVE_CACHE_SIZE
+          value: "{{ gitea_postgres_effective_cache_size }}"
+        - name: POSTGRES_MAINTENANCE_WORK_MEM
+          value: "{{ gitea_postgres_maintenance_work_mem }}"
+        - name: POSTGRES_WORK_MEM
+          value: "{{ gitea_postgres_work_mem }}"
+      volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: gitea-db-data
+
+    - name: gitea-app
+      image: docker.io/gitea/gitea:1.26.3@sha256:f232490d16d1ff86ea562ba76a6b8762d02c8eb1608ebcfecaa8f3df9df30b42
+      ports:
+        - containerPort: 3000
+          hostPort: {{ gitea_http_port }}
+        - containerPort: 22
+          hostPort: {{ gitea_ssh_port }}
+      env:
+        - name: GITEA__database__DB_TYPE
+          value: postgres
+        - name: GITEA__database__HOST
+          value: 127.0.0.1:5432
+        - name: GITEA__database__NAME
+          value: gitea
+        - name: GITEA__database__USER
+          value: gitea
+        - name: GITEA__database__PASSWD
+          value: "{{ gitea_db_password }}"
+        - name: GITEA__server__PROTOCOL
+          value: https
+        - name: GITEA__server__DOMAIN
+          value: "{{ gitea_domain }}"
+        - name: GITEA__server__ROOT_URL
+          value: "{{ gitea_root_url }}"
+        - name: GITEA__server__HTTP_PORT
+          value: "{{ gitea_http_port }}"
+        - name: GITEA__server__SSH_PORT
+          value: "{{ gitea_ssh_port }}"
+        - name: GITEA__server__SSH_LISTEN_PORT
+          value: "22"
+        - name: GITEA__server__CERT_FILE
+          value: /etc/gitea/certs/gitea.crt
+        - name: GITEA__server__KEY_FILE
+          value: /etc/gitea/certs/gitea.key
+        - name: GITEA__security__INSTALL_LOCK
+          value: "true"
+      volumeMounts:
+        - mountPath: /data
+          name: gitea-app-data
+        - mountPath: /etc/gitea/certs
+          name: gitea-certs
+          readOnly: true
+        - mountPath: /etc/localtime
+          name: etc-localtime
+          readOnly: true
+
+  volumes:
+    - name: gitea-db-data
+      persistentVolumeClaim:
+        claimName: gitea_db_data
+    - name: gitea-app-data
+      persistentVolumeClaim:
+        claimName: gitea_app_data
+    - name: gitea-certs
+      hostPath:
+        path: ~/.config/gitea/certs
+        type: Directory
+    - name: etc-localtime
+      hostPath:
+        path: /etc/localtime
+        type: File

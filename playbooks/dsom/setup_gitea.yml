@@ -1,0 +1,6 @@
+---
+- name: Deploy Sovereign Gitea GitOps Stack via Quadlet
+  hosts: all
+  become: false
+  roles:
+    - role: gitea
