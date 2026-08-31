@@ -10,7 +10,21 @@
 
 - name: TLS | Ensure target cert directory exists
   ansible.builtin.file:
-    path: "~/.config/gitea/certs"
+    path: "{{ gitea_certs_dir }}"
     state: directory
     mode: "0755"
+  become: false
+
+- name: TLS | Ensure target cert file exists
+  ansible.builtin.file:
+    path: "{{ gitea_certs_dir }}/gitea.crt"
+    state: touch
+    mode: "0644"
+  become: false
+
+- name: TLS | Ensure target key file exists
+  ansible.builtin.file:
+    path: "{{ gitea_certs_dir }}/gitea.key"
+    state: touch
+    mode: "0640"
   become: false

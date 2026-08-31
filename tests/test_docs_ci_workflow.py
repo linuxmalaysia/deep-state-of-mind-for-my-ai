@@ -128,7 +128,7 @@ class DocsCiWorkflowTextContentTests(unittest.TestCase):
 
     def test_gitleaks_step_present(self):
         self.assertIn("name: Run Gitleaks Secret Scanner", self.content)
-        self.assertIn("uses: gitleaks/gitleaks-action@v2", self.content)
+        self.assertIn("uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7", self.content)
 
     def test_install_dependencies_step_installs_expected_packages(self):
         self.assertIn("name: Install Dependencies", self.content)
@@ -239,7 +239,7 @@ class DocsCiWorkflowStructureTests(unittest.TestCase):
     def test_gitleaks_step_configuration(self):
         steps = self.doc["jobs"]["validate-docs"]["steps"]
         gitleaks_step = steps[1]
-        self.assertEqual(gitleaks_step["uses"], "gitleaks/gitleaks-action@v2")
+        self.assertEqual(gitleaks_step["uses"], "gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7")
 
     def test_install_dependencies_step_command(self):
         steps = self.doc["jobs"]["validate-docs"]["steps"]

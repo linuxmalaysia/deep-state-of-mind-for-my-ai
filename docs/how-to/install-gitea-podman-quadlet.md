@@ -238,8 +238,7 @@ systemctl --user enable --now pod-gitea-stack.service
      containers:
        - name: gitea-db
          image: docker.io/library/postgres:15-alpine@sha256:4770281b16c891e4a6828551a37c22e4eb24eb20755b38031d27976192ddf39f
-         command:
-           - postgres
+         args:
            - -c
            - max_connections=200
            - -c

@@ -1,6 +1,6 @@
 ---
 - name: Deploy Sovereign Gitea GitOps Stack via Quadlet
-  hosts: all
+  hosts: "{{ target_hosts | default('localhost') }}"
   become: false
   roles:
     - role: gitea

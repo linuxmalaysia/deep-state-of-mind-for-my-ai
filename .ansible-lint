@@ -10,8 +10,6 @@ skip_list:
   - command-instead-of-module
   - no-changed-when
   - yaml
-  - risky-file-permissions
-  - risky-shell-pipe
   - fqcn
   - var-naming
   - jinja
