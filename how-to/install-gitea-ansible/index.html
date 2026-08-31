@@ -7,15 +7,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OKF-compliant documentation for ITIL-ALIGNMENT.md.">
+        <meta name="description" content="Step-by-step instructions for automated deployment of Gitea over HTTPS using rootless Podman and Ansible playbooks with high-entropy credential vaulting and 5-year TLS certificate generation.">
       
       
         <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
       
       
-        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/ITIL-ALIGNMENT/">
+        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-ansible/">
       
       
+        <link rel="prev" href="../install-gitea-podman-quadlet/">
+      
+      
+        <link rel="next" href="../audit-and-apply-frontmatter/">
       
       
         
@@ -28,7 +32,7 @@
 
     
       
-        <title>🏥 DSOM ITIL 4 Alignment Strategy - Deep State of Mind (DSOM)</title>
+        <title>How-To: Deploy Sovereign Gitea via Automated Ansible Playbook - Deep State of Mind (DSOM)</title>
       
     
     
@@ -81,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dsom-itil-4-alignment-strategy" class="md-skip">
+        <a href="#how-to-deploy-sovereign-gitea-via-automated-ansible-playbook" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🏥 DSOM ITIL 4 Alignment Strategy
+              How-To: Deploy Sovereign Gitea via Automated Ansible Playbook
             
           </span>
         </div>
@@ -430,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
+      <a href="../../governance/AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
         
   
   
@@ -493,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AI-MASTER-PROTOCOL/" class="md-nav__link">
+      <a href="../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -521,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
         
   
   
@@ -549,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -577,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
+      <a href="../../governance/DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
         
   
   
@@ -605,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../governance/DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -633,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
+      <a href="../../governance/GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
         
   
   
@@ -661,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OPERATIONAL-GUIDE/" class="md-nav__link">
+      <a href="../../governance/OPERATIONAL-GUIDE/" class="md-nav__link">
         
   
   
@@ -689,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
+      <a href="../../governance/NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
         
   
   
@@ -717,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
+      <a href="../../governance/PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
         
   
   
@@ -745,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AUTOMATION-AUDIT-LIST/" class="md-nav__link">
+      <a href="../../governance/AUTOMATION-AUDIT-LIST/" class="md-nav__link">
         
   
   
@@ -773,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
+      <a href="../../governance/DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
         
   
   
@@ -801,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
+      <a href="../../governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
         
   
   
@@ -829,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -857,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
+      <a href="../../governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
         
   
   
@@ -885,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ZERO-GLOBAL-MEMORY/" class="md-nav__link">
+      <a href="../../governance/ZERO-GLOBAL-MEMORY/" class="md-nav__link">
         
   
   
@@ -913,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LLM-WIKI-ADOPTION/" class="md-nav__link">
+      <a href="../../governance/LLM-WIKI-ADOPTION/" class="md-nav__link">
         
   
   
@@ -941,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
+      <a href="../../governance/OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
         
   
   
@@ -969,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
+      <a href="../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -997,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
+      <a href="../../governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
         
   
   
@@ -1025,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
+      <a href="../../governance/GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
         
   
   
@@ -1053,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/" class="md-nav__link">
+      <a href="../../governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/" class="md-nav__link">
         
   
   
@@ -1088,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AI-GUARDRAILS-MASTER-GUIDE/" class="md-nav__link">
+      <a href="../../governance/AI-GUARDRAILS-MASTER-GUIDE/" class="md-nav__link">
         
   
   
@@ -1123,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/" class="md-nav__link">
+      <a href="../../governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/" class="md-nav__link">
         
   
   
@@ -1158,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-CUSTOM-VALIDATORS-GUIDE/" class="md-nav__link">
+      <a href="../../governance/DSOM-CUSTOM-VALIDATORS-GUIDE/" class="md-nav__link">
         
   
   
@@ -1193,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/" class="md-nav__link">
+      <a href="../../governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/" class="md-nav__link">
         
   
   
@@ -1228,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSOM-AGENT-PLUGINS-SPECIFICATION/" class="md-nav__link">
+      <a href="../../governance/DSOM-AGENT-PLUGINS-SPECIFICATION/" class="md-nav__link">
         
   
   
@@ -1263,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MINTLIFY-ONE-WAY-SYNC-PIPELINE/" class="md-nav__link">
+      <a href="../../governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/" class="md-nav__link">
         
   
   
@@ -1298,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MINTLIFY-USER-MANUAL-SYNC-GUIDE/" class="md-nav__link">
+      <a href="../../governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/" class="md-nav__link">
         
   
   
@@ -1585,7 +1589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
+      <a href="../../governance/AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -1669,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
+      <a href="../../governance/MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -2884,20 +2888,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
         
           
           <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
@@ -2918,7 +2922,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3116,20 +3120,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" checked>
         
           
           <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
@@ -3150,7 +3154,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_12_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3168,7 +3172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -3196,7 +3200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/install-gitea-podman-quadlet/" class="md-nav__link">
+      <a href="../install-gitea-podman-quadlet/" class="md-nav__link">
         
   
   
@@ -3228,10 +3232,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../how-to/install-gitea-ansible/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Gitea via Ansible Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3254,6 +3292,187 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview &amp; Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview &amp; Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-architecture-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Architecture Specs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-prerequisites-ansible-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prerequisites &amp; Ansible Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ansible-role-playbook-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ansible Role &amp; Playbook Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ansible Role &amp; Playbook Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-defaults-rolesgiteadefaultsmainyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Defaults (roles/gitea/defaults/main.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-task-execution-flow-rolesgiteatasksmainyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Task Execution Flow (roles/gitea/tasks/main.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sovereign-tls-task-automation-rolesgiteataskstlsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sovereign TLS Task Automation (roles/gitea/tasks/tls.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-playbook-execution-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Playbook Execution Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Playbook Execution Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-locally-on-active-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Locally on Active Host
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-remote-host-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Remote Host Inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-using-ansible-vault-for-encrypted-passwords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Using Ansible Vault for Encrypted Passwords
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-post-deployment-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Post-Deployment Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-securing-secrets-in-ansible-git-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Securing Secrets in Ansible &amp; Git (Best Practices)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3266,7 +3485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/audit-and-apply-frontmatter/" class="md-nav__link">
+      <a href="../audit-and-apply-frontmatter/" class="md-nav__link">
         
   
   
@@ -3294,7 +3513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/run-fastmcp-server/" class="md-nav__link">
+      <a href="../run-fastmcp-server/" class="md-nav__link">
         
   
   
@@ -3322,7 +3541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/generate-sitemaps-seo/" class="md-nav__link">
+      <a href="../generate-sitemaps-seo/" class="md-nav__link">
         
   
   
@@ -3350,7 +3569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/use-openwiki-emulator/" class="md-nav__link">
+      <a href="../use-openwiki-emulator/" class="md-nav__link">
         
   
   
@@ -3378,7 +3597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/google-search-console/" class="md-nav__link">
+      <a href="../google-search-console/" class="md-nav__link">
         
   
   
@@ -3926,88 +4145,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-the-service-relationship" class="md-nav__link">
+  <a href="#1-overview-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 🏛️ The Service Relationship
+        1. Overview &amp; Architecture
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-the-service-value-chain-svc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 🔄 The Service Value Chain (SVC)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 🔄 The Service Value Chain (SVC)">
+    <nav class="md-nav" aria-label="1. Overview &amp; Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#i-engage-the-handshake" class="md-nav__link">
+  <a href="#key-architecture-specs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        i) Engage (The Handshake)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ii-plan-the-architectural-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ii) Plan (The Architectural Design)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iii-design-transition-the-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        iii) Design &amp; Transition (The Logic)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iv-obtainbuild-the-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        iv) Obtain/Build (The Execution)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#v-deliver-support-the-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v) Deliver &amp; Support (The Verification)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vi-improve-the-sunday-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        vi) Improve (The Sunday Audit)
+        Key Architecture Specs
       
     </span>
   </a>
@@ -4020,10 +4173,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-service-knowledge-management-system-skms" class="md-nav__link">
+  <a href="#2-prerequisites-ansible-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 🧠 Service Knowledge Management System (SKMS)
+        2. Prerequisites &amp; Ansible Setup
       
     </span>
   </a>
@@ -4031,10 +4184,110 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-continual-improvement-the-7-guiding-principles" class="md-nav__link">
+  <a href="#3-ansible-role-playbook-structure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 📈 Continual Improvement (The 7 Guiding Principles)
+        3. Ansible Role &amp; Playbook Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ansible Role &amp; Playbook Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-defaults-rolesgiteadefaultsmainyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Defaults (roles/gitea/defaults/main.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-task-execution-flow-rolesgiteatasksmainyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Task Execution Flow (roles/gitea/tasks/main.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sovereign-tls-task-automation-rolesgiteataskstlsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sovereign TLS Task Automation (roles/gitea/tasks/tls.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-playbook-execution-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Playbook Execution Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Playbook Execution Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-locally-on-active-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Locally on Active Host
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-remote-host-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Remote Host Inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-using-ansible-vault-for-encrypted-passwords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Using Ansible Vault for Encrypted Passwords
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-post-deployment-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Post-Deployment Verification
       
     </span>
   </a>
@@ -4042,65 +4295,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-governance-risk-management" class="md-nav__link">
+  <a href="#6-securing-secrets-in-ansible-git-best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 🛡️ Governance &amp; Risk Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-multiagent-federation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. 🌐 Multi‑Agent Federation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-metrics-measurement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. 📊 Metrics &amp; Measurement
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-feedback-incident-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. 🔄 Feedback &amp; Incident Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-integration-with-crisp2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. 🧩 Integration with CRISP²
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-compliance-standards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. 📜 Compliance &amp; Standards
+        6. Securing Secrets in Ansible &amp; Git (Best Practices)
       
     </span>
   </a>
@@ -4127,152 +4325,196 @@
   
 
 
-<h1 id="dsom-itil-4-alignment-strategy">🏥 DSOM ITIL 4 Alignment Strategy</h1>
-<blockquote>
-<p><strong>"Value Co-creation through Service Relationships."</strong></p>
-</blockquote>
-<h2 id="1-the-service-relationship">1. 🏛️ The Service Relationship</h2>
-<p>In the DSOM Framework, the relationship between the <strong>Lead Architect (Harisfazillah Jamel)</strong> and the <strong>AI Agent (Gemini/Claude)</strong> is defined as a <strong>Service Relationship</strong>.</p>
-<ul>
-<li><strong>Service Provider:</strong> The AI Agent (Providing Intelligence, Code Generation, and Analysis).</li>
-<li><strong>Service Consumer:</strong> The Lead Architect (Defining Requirements, Constraints, and Value).</li>
-<li><strong>Asset:</strong> The Codebase and Documentation (<code>.agents/brain</code>).</li>
-</ul>
-<p>The goal is not just "Output" (Code), but <strong>"Outcome"</strong> (Sovereign, Maintainable, and Scalable Infrastructure).</p>
+<h1 id="how-to-deploy-sovereign-gitea-via-automated-ansible-playbook">🛠️ How-To: Deploy Sovereign Gitea via Automated Ansible Playbook</h1>
+<p>This guide details how to automate the standalone deployment of a self-hosted Gitea GitOps stack over rootless Podman using Ansible playbooks. The workflow handles OS dependencies, linger enablement, secret vaulting, 5-year Sovereign TLS certificate generation, Quadlet systemd unit deployment, and installation screen bypass automatically.</p>
 <hr />
-<h2 id="2-the-service-value-chain-svc">2. 🔄 The Service Value Chain (SVC)</h2>
-<p>Every "Task" or "Prompt" issued to the AI executes the DSOM Service Value Chain:</p>
-<h3 id="i-engage-the-handshake">i) Engage (The Handshake)</h3>
+<h2 id="1-overview-architecture">1. Overview &amp; Architecture</h2>
+<p>Using Ansible for deployment guarantees idempotent, reproducible infrastructure provisioning.</p>
+<h3 id="key-architecture-specs">Key Architecture Specs</h3>
 <ul>
-<li><strong>ITIL Action:</strong> Understand stakeholder needs.</li>
-<li><strong>DSOM Implementation:</strong> The <code>bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)</code> process. The AI <em>engages</em> with the <code>palace_registry.md</code>, <code>task.md</code> and <code>walkthrough.md</code>.</li>
-<li><strong>Artifact:</strong> <code>sod_manifest_YYYY-MM-DD.txt</code></li>
-</ul>
-<h3 id="ii-plan-the-architectural-design">ii) Plan (The Architectural Design)</h3>
-<ul>
-<li><strong>ITIL Action:</strong> Ensure shared understanding of the vision.</li>
-<li><strong>DSOM Implementation:</strong> Verifying <code>implementation_plan.md</code> and <code>AI-MASTER-PROTOCOL.md</code>.</li>
-<li><strong>Artifact:</strong> <code>task.md</code> (Updated)</li>
-</ul>
-<h3 id="iii-design-transition-the-logic">iii) Design &amp; Transition (The Logic)</h3>
-<ul>
-<li><strong>ITIL Action:</strong> Meeting requirements.</li>
-<li><strong>DSOM Implementation:</strong> Writing logical intent in <code>walkthrough.md</code> <em>before</em> writing code.</li>
-<li><strong>Artifact:</strong> <code>walkthrough.md</code> (Mental Anchor)</li>
-</ul>
-<h3 id="iv-obtainbuild-the-execution">iv) Obtain/Build (The Execution)</h3>
-<ul>
-<li><strong>ITIL Action:</strong> Creation of service components.</li>
-<li><strong>DSOM Implementation:</strong> Writing code using <strong>Atomic Git Hygiene</strong>.</li>
-<li><strong>Artifact:</strong> Source Code (<code>tools/</code>, <code>src/</code>)</li>
-</ul>
-<h3 id="v-deliver-support-the-verification">v) Deliver &amp; Support (The Verification)</h3>
-<ul>
-<li><strong>ITIL Action:</strong> Ensuring value co-creation.</li>
-<li><strong>DSOM Implementation:</strong> Running <code>bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)</code> to validate artifacts and generate proposals.</li>
-<li><strong>Artifact:</strong> <code>CHANGELOG.md</code> and <code>.agents/brain/</code> updates.</li>
-</ul>
-<h3 id="vi-improve-the-sunday-audit">vi) Improve (The Sunday Audit)</h3>
-<ul>
-<li><strong>ITIL Action:</strong> Continual improvement of products and services.</li>
-<li><strong>DSOM Implementation:</strong> The <strong>Sunday Human Audit</strong> to refine the protocol.</li>
-<li><strong>Artifact:</strong> Protocol updates and <code>HISTORY.md</code>.</li>
+<li><strong>Default Domain / Host IP:</strong> <code>10.17.250.28</code> (or target inventory host)</li>
+<li><strong>Database Backend:</strong> PostgreSQL 15 (Alpine)</li>
+<li><strong>Application Server:</strong> Gitea 1.26.3</li>
+<li><strong>HTTP/HTTPS Port:</strong> <code>3000</code> (Mapped to container port <code>3000</code> over HTTPS)</li>
+<li><strong>SSH Port:</strong> <code>2222</code> (Mapped to container port <code>22</code> for Git over SSH)</li>
+<li><strong>Security &amp; TLS:</strong> TLS certificates generated via <code>community.crypto</code> and signed by Sovereign CA.</li>
+<li><strong>Automated Bypass:</strong> Bypasses web installation screen programmatically (<code>GITEA__security__INSTALL_LOCK: "true"</code>).</li>
 </ul>
 <hr />
-<h2 id="3-service-knowledge-management-system-skms">3. 🧠 Service Knowledge Management System (SKMS)</h2>
-<p>The <code>.agents/brain/</code> directory constitutes the project's <strong>SKMS</strong>. It is the Single Source of Truth for:</p>
-<ul>
-<li><strong>Service Portfolio:</strong> <code>implementation_plan.md</code> (Strategic roadmap) and <code>palace_registry.md</code> (Spatial memory).</li>
-<li><strong>Service Catalogue:</strong> <code>OPERATIONAL-GUIDE.md</code> (Capabilities).</li>
-<li><strong>Configuration Management (CMS):</strong> <code>task.md</code> and <code>walkthrough.md</code> (Current state).</li>
-</ul>
-<hr />
-<h2 id="4-continual-improvement-the-7-guiding-principles">4. 📈 Continual Improvement (The 7 Guiding Principles)</h2>
-<ol>
-<li><strong>Focus on Value:</strong> Does this verify Sovereignty?</li>
-<li><strong>Start Where You Are:</strong> Use <code>sod-palace.yml</code> for context.</li>
-<li><strong>Progress Iteratively with Feedback:</strong> Atomic Commits.</li>
-<li><strong>Collaborate and Promote Visibility:</strong> Update <code>walkthrough.md</code>.</li>
-<li><strong>Think and Work Holistically:</strong> Respect <code>Zero-Global</code>.</li>
-<li><strong>Keep it Simple and Practical:</strong> No over-engineering.</li>
-<li><strong>Optimize and Automate:</strong> Build <code>tools/</code> for repetition.</li>
-</ol>
-<hr />
-<h2 id="5-governance-risk-management">5. 🛡️ Governance &amp; Risk Management</h2>
-<p>Governance ensures accountability and risk mitigation across all AI‑assisted development.</p>
-<ul>
-<li><strong>Governance Gates:</strong> Automated checks in <code>.github/workflows/</code> enforce compliance.</li>
-<li><strong>Risk Mitigation:</strong> <code>privacy-guardian.sh</code> applies a fail‑closed principle.</li>
-<li><strong>Artifact:</strong> <code>GOVERNANCE.md</code> and audit logs.</li>
-</ul>
-<hr />
-<h2 id="6-multiagent-federation">6. 🌐 Multi‑Agent Federation</h2>
-<p>DSOM recognises multiple AI agents as equal peers in a federated ecosystem.</p>
-<ul>
-<li><strong>Hub‑and‑Spoke Model:</strong> Synchronises IDE agents and autonomous workers.</li>
-<li><strong>Equal Peers:</strong> Each agent contributes intelligence within its domain.</li>
-<li><strong>Artifact:</strong> <code>MULTI-AGENT-PROTOCOLS.md</code>.</li>
-</ul>
-<hr />
-<h2 id="7-metrics-measurement">7. 📊 Metrics &amp; Measurement</h2>
-<p>Performance and value delivery are tracked using quantitative metrics.</p>
-<ul>
-<li><strong>CPI/SPI:</strong> Embedded in <code>implementation_plan.md</code> (Cost/Schedule Performance).</li>
-<li><strong>Audit Scripts:</strong> Generate reports on task completion and compliance.</li>
-<li><strong>Artifact:</strong> <code>metrics_report.md</code>.</li>
-</ul>
-<hr />
-<h2 id="8-feedback-incident-management">8. 🔄 Feedback &amp; Incident Management</h2>
-<p>DSOM integrates ITIL incident and request handling into its workflow.</p>
-<ul>
-<li><strong>Incidents (Bugs):</strong> Logged in <code>walkthrough.md</code> as part of the audit trail.</li>
-<li><strong>Service Requests (Features):</strong> Tracked in <code>task.md</code> for execution.</li>
-<li><strong>Artifact:</strong> <code>INCIDENTS.md</code> and <code>REQUESTS.md</code>.</li>
-</ul>
-<hr />
-<h2 id="9-integration-with-crisp2">9. 🧩 Integration with CRISP²</h2>
-<p>ITIL phases are mapped directly to DSOM’s CRISP² hierarchy:</p>
-<ul>
-<li><strong>Engage ↔ L1 Rituals:</strong> Handshake and reanimation (SOD/EOD Ansible loops).</li>
-<li><strong>Plan ↔ L2 Mandates:</strong> CRISP pillars define scope.</li>
-<li><strong>Design &amp; Transition ↔ L3 Specialised Tasks:</strong> Clean Architecture.</li>
-<li><strong>Audit ↔ L4 Process Instances:</strong> Mental anchors, Palace spatial map, and audit trails.</li>
-</ul>
-<hr />
-<h2 id="10-compliance-standards">10. 📜 Compliance &amp; Standards</h2>
-<p>DSOM enforces external standards to ensure portability.</p>
-<ul>
-<li><strong>Documentation:</strong> Follows Linux Documentation Project (LDP) structure.</li>
-<li><strong>Semantic Integrity:</strong> Adheres to Semantic Versioning 2.0.0.</li>
-<li><strong>Changelog:</strong> <code>CHANGELOG.md</code> records all notable changes.</li>
-</ul>
-<hr />
-<div class="highlight"><pre><span></span><code>flowchart TD
-    subgraph Governance_Layer [L1-L2 Governance]
-        S1[1. Service Relationship] --&gt; S5[5. Governance &amp; Risk]
-        S5 --&gt; S10[10. Compliance &amp; Standards]
-    end
-
-    subgraph Operation_Layer [L3-L4 Tactical]
-        S2[2. Service Value Chain] --&gt; S3[3. SKMS .agents/brain]
-        S3 --&gt; S8[8. Incident &amp; Request]
-        S6[6. Multi-Agent Federation] --&gt; S2
-    end
-
-    subgraph Improvement_Layer [Audit &amp; Feedback]
-        S4[4. 7 Guiding Principles] --&gt; S7[7. Metrics &amp; CPI/SPI]
-        S7 --&gt; S9[9. CRISP2 Mapping]
-        S9 --&gt; S4
-    end
-
-    S10 --&gt; S9
-    Operation_Layer --&gt; Improvement_Layer
-    Improvement_Layer --&gt; Governance_Layer
+<h2 id="2-prerequisites-ansible-setup">2. Prerequisites &amp; Ansible Setup</h2>
+<p>Ensure Ansible and required collection packages are installed on the control node:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install required Ansible collections for Podman and Crypto tasks</span>
+ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>containers.podman<span class="w"> </span>community.crypto<span class="w"> </span>community.general
+</code></pre></div>
+<p>Verify target inventory connectivity:</p>
+<div class="highlight"><pre><span></span><code>ansible<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>target_hosts<span class="w"> </span>-m<span class="w"> </span>ping
 </code></pre></div>
 <hr />
-<p><em>Verified by Harisfazillah Jamel | ITIL 4 Aligned | 2026-04-08</em></p>
+<h2 id="3-ansible-role-playbook-structure">3. Ansible Role &amp; Playbook Structure</h2>
+<p>The deployment relies on Ansible role variables and task definitions:</p>
+<h3 id="role-defaults-rolesgiteadefaultsmainyml">Role Defaults (<code>roles/gitea/defaults/main.yml</code>)</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">gitea_domain</span><span class="p">:</span><span class="w"> </span><span class="s">"10.17.250.28"</span>
+<span class="nt">gitea_root_url</span><span class="p">:</span><span class="w"> </span><span class="s">"https://10.17.250.28:3000/"</span>
+<span class="nt">gitea_http_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
+<span class="nt">gitea_ssh_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2222</span>
+<span class="nt">gitea_db_password</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">vault_gitea_db_password</span><span class="nv"> </span><span class="s">}}"</span>
+</code></pre></div>
+<h3 id="main-task-execution-flow-rolesgiteatasksmainyml">Main Task Execution Flow (<code>roles/gitea/tasks/main.yml</code>)</h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate and deploy TLS certificates</span>
+<span class="w">  </span><span class="nt">ansible.builtin.import_tasks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tls.yml</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure Quadlet directory exists</span>
+<span class="w">  </span><span class="nt">ansible.builtin.file</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.config/containers/systemd/</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0755'</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Gitea Kube Quadlet YAML (mode 0600 for secrets)</span>
+<span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"gitea-stack.yaml.j2"</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">"~/.config/containers/systemd/gitea-stack.yaml"</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0600'</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Gitea Kube Quadlet Unit</span>
+<span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"gitea-stack.kube.j2"</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">"~/.config/containers/systemd/gitea-stack.kube"</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0644'</span>
+<span class="w">  </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reload systemd user daemon</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reload systemd user daemon for Quadlet generation</span>
+<span class="w">  </span><span class="nt">ansible.builtin.shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">systemctl --user daemon-reload</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XDG_RUNTIME_DIR</span><span class="p">:</span><span class="w"> </span><span class="s">"/run/user/{{</span><span class="nv"> </span><span class="s">ansible_user_uid</span><span class="nv"> </span><span class="s">}}"</span>
+<span class="w">  </span><span class="nt">changed_when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure Gitea service is enabled and started</span>
+<span class="w">  </span><span class="nt">ansible.builtin.systemd</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-stack.service</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span>
+<span class="w">    </span><span class="nt">daemon_reload</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XDG_RUNTIME_DIR</span><span class="p">:</span><span class="w"> </span><span class="s">"/run/user/{{</span><span class="nv"> </span><span class="s">ansible_user_uid</span><span class="nv"> </span><span class="s">}}"</span>
+</code></pre></div>
+<h3 id="sovereign-tls-task-automation-rolesgiteataskstlsyml">Sovereign TLS Task Automation (<code>roles/gitea/tasks/tls.yml</code>)</h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure local certs directory exists</span>
+<span class="w">  </span><span class="nt">ansible.builtin.file</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated"</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0700'</span>
+<span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">run_once</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate Gitea private key</span>
+<span class="w">  </span><span class="nt">community.crypto.openssl_privatekey</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated/{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}-gitea.key"</span>
+<span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2048</span>
+<span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate Gitea CSR</span>
+<span class="w">  </span><span class="nt">community.crypto.openssl_csr</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated/{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}-gitea.csr"</span>
+<span class="w">    </span><span class="nt">privatekey_path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated/{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}-gitea.key"</span>
+<span class="w">    </span><span class="nt">common_name</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}"</span>
+<span class="w">    </span><span class="nt">subject_alt_name</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"IP:{{</span><span class="nv"> </span><span class="s">ansible_host</span><span class="nv"> </span><span class="s">}}"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"DNS:{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}"</span>
+<span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sign Gitea certificate with Sovereign CA</span>
+<span class="w">  </span><span class="nt">community.crypto.x509_certificate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated/{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}-gitea.crt"</span>
+<span class="w">    </span><span class="nt">csr_path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated/{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}-gitea.csr"</span>
+<span class="w">    </span><span class="nt">ownca_path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/dsom-elasticsearch-ca.crt"</span>
+<span class="w">    </span><span class="nt">ownca_privatekey_path</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/dsom-elasticsearch-ca.key"</span>
+<span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ownca</span>
+<span class="w">    </span><span class="nt">ownca_not_after</span><span class="p">:</span><span class="w"> </span><span class="s">"+1825d"</span>
+<span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure target cert directory exists</span>
+<span class="w">  </span><span class="nt">ansible.builtin.file</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"~/.config/gitea/certs"</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0755'</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Sovereign CA certificate</span>
+<span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/dsom-elasticsearch-ca.crt"</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">"~/.config/gitea/certs/ca.crt"</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0644'</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Gitea certificate</span>
+<span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated/{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}-gitea.crt"</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">"~/.config/gitea/certs/gitea.crt"</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0644'</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Gitea key</span>
+<span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/generated/{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}-gitea.key"</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">"~/.config/gitea/certs/gitea.key"</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0644'</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Sovereign CA to Host Trust Store (Debian family)</span>
+<span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/dsom-elasticsearch-ca.crt"</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/local/share/ca-certificates/sovereign-ca.crt</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0644'</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">become_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_os_family == 'Debian'</span>
+<span class="w">  </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">update ca-certificates</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Sovereign CA to Host Trust Store (Red Hat family)</span>
+<span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/../vault/dsom-elasticsearch-ca.crt"</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/pki/ca-trust/source/anchors/sovereign-ca.crt</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">'0644'</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">become_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_os_family == 'RedHat'</span>
+<span class="w">  </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">update ca-trust</span>
+</code></pre></div>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-04</em>
+<h2 id="4-playbook-execution-commands">4. Playbook Execution Commands</h2>
+<h3 id="deploy-locally-on-active-host">Deploy Locally on Active Host</h3>
+<div class="highlight"><pre><span></span><code>ansible-playbook<span class="w"> </span>playbooks/dsom/setup_gitea.yml
+</code></pre></div>
+<h3 id="deploy-remote-host-inventory">Deploy Remote Host Inventory</h3>
+<div class="highlight"><pre><span></span><code>ansible-playbook<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>playbooks/dsom/setup_gitea.yml<span class="w"> </span>-e<span class="w"> </span><span class="s2">"target_hosts=gitea_production_nodes"</span>
+</code></pre></div>
+<h3 id="deploy-using-ansible-vault-for-encrypted-passwords">Deploy Using Ansible Vault for Encrypted Passwords</h3>
+<div class="highlight"><pre><span></span><code>ansible-playbook<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>playbooks/dsom/setup_gitea.yml<span class="w"> </span>--ask-vault-pass
+</code></pre></div>
+<hr />
+<h2 id="5-post-deployment-verification">5. Post-Deployment Verification</h2>
+<p>Verify that Gitea systemd service and containers are active on target host:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verify systemd user service status</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>gitea-stack.service
+
+<span class="c1"># Verify podman containers are running</span>
+podman<span class="w"> </span>pod<span class="w"> </span>ps
+podman<span class="w"> </span>ps
+</code></pre></div>
+<hr />
+<h2 id="6-securing-secrets-in-ansible-git-best-practices">6. Securing Secrets in Ansible &amp; Git (Best Practices)</h2>
+<ol>
+<li><strong>Ansible Vault:</strong> Always store database and admin credentials in encrypted vault files (<code>ansible-vault create</code>).</li>
+<li><strong>Dynamic Ingestion:</strong> Use <code>lookup('ansible.builtin.env', 'GITEA_DB_PASSWORD')</code> for runtime terminal injection.</li>
+<li><strong>Repository Exclusions:</strong> Confirm <code>.gitignore</code> includes <code>*.env</code>, <code>*credentials.txt</code>, and private key files (<code>*.key</code>).</li>
+</ol>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

@@ -7,19 +7,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Step-by-step operational guide for running, configuring, and connecting the DSOM FastMCP Server to Cursor, Claude Desktop, and IDE assistants.">
+        <meta name="description" content="Step-by-step instructions for standalone deployment of Gitea over HTTPS using rootless Podman pods and Podman 5 systemd Quadlets with automated web installation bypass.">
       
       
         <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
       
       
-        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tools/HOWTO-MCP-SERVER/">
+        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-podman-quadlet/">
       
       
-        <link rel="prev" href="../HOWTO-OPENWIKI/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../tutorials/">
+        <link rel="next" href="../install-gitea-ansible/">
       
       
         
@@ -32,7 +32,7 @@
 
     
       
-        <title>🛠️ HOWTO: Operating DSOM FastMCP Knowledge Server - Deep State of Mind (DSOM)</title>
+        <title>How-To: Deploy Sovereign Gitea via Rootless Podman & Quadlet - Deep State of Mind (DSOM)</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#howto-operating-dsom-fastmcp-knowledge-server" class="md-skip">
+        <a href="#how-to-deploy-sovereign-gitea-via-rootless-podman-quadlet" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🛠️ HOWTO: Operating DSOM FastMCP Knowledge Server
+              How-To: Deploy Sovereign Gitea via Rootless Podman & Quadlet
             
           </span>
         </div>
@@ -2608,20 +2608,20 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
           <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
@@ -2642,7 +2642,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2828,7 +2828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HOWTO-OPENWIKI/" class="md-nav__link">
+      <a href="../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
         
   
   
@@ -2853,37 +2853,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FastMCP Server
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
         
   
   
@@ -2899,154 +2872,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-fast-execution-protocol-rule-16-uv-mandate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ⚡ 1. Fast Execution Protocol (Rule 16 uv Mandate)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⚡ 1. Fast Execution Protocol (Rule 16 uv Mandate)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#launching-the-stdio-mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Launching the Stdio MCP Server:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ide-integration-configuration-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔌 2. IDE Integration &amp; Configuration Guides
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔌 2. IDE Integration &amp; Configuration Guides">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-cursor-ide-cursormcpjson-or-settings-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A. Cursor IDE (.cursor/mcp.json or Settings -&gt; MCP):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-claude-desktop-claude_desktop_configjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B. Claude Desktop (claude_desktop_config.json):
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-exposed-mcp-endpoint-matrix-resources-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📊 3. Exposed MCP Endpoint Matrix (Resources &amp; Tools)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📊 3. Exposed MCP Endpoint Matrix (Resources &amp; Tools)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-mcp-resources-6-read-only-protocol-uris" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A. MCP Resources (6 Read-Only Protocol URIs)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-mcp-tools-3-executable-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B. MCP Tools (3 Executable Tools)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-troubleshooting-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🧪 4. Troubleshooting &amp; Verification
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔗 5. References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3063,20 +2888,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
         
           
           <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
@@ -3097,7 +2922,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3295,20 +3120,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" checked>
         
           
           <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
@@ -3329,7 +3154,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_12_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3347,7 +3172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -3372,10 +3197,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../how-to/install-gitea-podman-quadlet/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Gitea via Podman & Quadlet
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3398,6 +3257,315 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview &amp; Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview &amp; Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-step-by-step-installation-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Step-by-Step Installation Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Step-by-Step Installation Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-a-generate-tls-certificates-directory-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step A: Generate TLS Certificates &amp; Directory Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-b-create-storage-volumes-podman-pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step B: Create Storage Volumes &amp; Podman Pod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-c-secure-secrets-management-giteaenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step C: Secure Secrets Management (gitea.env)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-d-deploy-postgresql-database-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step D: Deploy PostgreSQL Database Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-e-deploy-gitea-https-application-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step E: Deploy Gitea HTTPS Application Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-f-systemd-quadlet-unit-file-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step F: Systemd Quadlet &amp; Unit File Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step F: Systemd Quadlet &amp; Unit File Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-podman-native-systemd-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Podman Native Systemd Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-podman-5-native-quadlet-kube-gitea-stackkube-gitea-stackyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Podman 5 Native Quadlet Kube (gitea-stack.kube &amp; gitea-stack.yaml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-post-installation-account-token-repository-setup-cli-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Post-Installation Account, Token &amp; Repository Setup (CLI &amp; API)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Post-Installation Account, Token &amp; Repository Setup (CLI &amp; API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-create-admin-account-via-gitea-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Create Admin Account via Gitea CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-create-access-token-organisation-via-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Create Access Token &amp; Organisation via API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-register-host-ssh-public-key-port-2222-revoke-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Register Host SSH Public Key (Port 2222) &amp; Revoke Token
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-git-remote-client-access-https-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Git Remote &amp; Client Access (HTTPS &amp; SSH)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Git Remote &amp; Client Access (HTTPS &amp; SSH)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#https-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPS Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-setup-port-2222" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Setup (Port 2222)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-maintenance-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Maintenance &amp; Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Maintenance &amp; Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-status-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Status &amp; Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-permission-denied-reading-giteakey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting: "Permission Denied" Reading gitea.key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decommissioning-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decommissioning &amp; Cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3410,7 +3578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/install-gitea-ansible/" class="md-nav__link">
+      <a href="../install-gitea-ansible/" class="md-nav__link">
         
   
   
@@ -3445,7 +3613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/audit-and-apply-frontmatter/" class="md-nav__link">
+      <a href="../audit-and-apply-frontmatter/" class="md-nav__link">
         
   
   
@@ -3473,7 +3641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/run-fastmcp-server/" class="md-nav__link">
+      <a href="../run-fastmcp-server/" class="md-nav__link">
         
   
   
@@ -3501,7 +3669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/generate-sitemaps-seo/" class="md-nav__link">
+      <a href="../generate-sitemaps-seo/" class="md-nav__link">
         
   
   
@@ -3529,7 +3697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/use-openwiki-emulator/" class="md-nav__link">
+      <a href="../use-openwiki-emulator/" class="md-nav__link">
         
   
   
@@ -3557,7 +3725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/google-search-console/" class="md-nav__link">
+      <a href="../google-search-console/" class="md-nav__link">
         
   
   
@@ -4105,22 +4273,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-fast-execution-protocol-rule-16-uv-mandate" class="md-nav__link">
+  <a href="#1-overview-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ 1. Fast Execution Protocol (Rule 16 uv Mandate)
+        1. Overview &amp; Architecture
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⚡ 1. Fast Execution Protocol (Rule 16 uv Mandate)">
+    <nav class="md-nav" aria-label="1. Overview &amp; Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#launching-the-stdio-mcp-server" class="md-nav__link">
+  <a href="#architecture-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Launching the Stdio MCP Server:
+        Architecture Specifications
       
     </span>
   </a>
@@ -4133,22 +4301,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ide-integration-configuration-guides" class="md-nav__link">
+  <a href="#2-prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔌 2. IDE Integration &amp; Configuration Guides
+        2. Prerequisites
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔌 2. IDE Integration &amp; Configuration Guides">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-step-by-step-installation-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Step-by-Step Installation Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Step-by-Step Installation Commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-cursor-ide-cursormcpjson-or-settings-mcp" class="md-nav__link">
+  <a href="#step-a-generate-tls-certificates-directory-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Cursor IDE (.cursor/mcp.json or Settings -&gt; MCP):
+        Step A: Generate TLS Certificates &amp; Directory Setup
       
     </span>
   </a>
@@ -4156,10 +4335,132 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#b-claude-desktop-claude_desktop_configjson" class="md-nav__link">
+  <a href="#step-b-create-storage-volumes-podman-pod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B. Claude Desktop (claude_desktop_config.json):
+        Step B: Create Storage Volumes &amp; Podman Pod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-c-secure-secrets-management-giteaenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step C: Secure Secrets Management (gitea.env)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-d-deploy-postgresql-database-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step D: Deploy PostgreSQL Database Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-e-deploy-gitea-https-application-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step E: Deploy Gitea HTTPS Application Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-f-systemd-quadlet-unit-file-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step F: Systemd Quadlet &amp; Unit File Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step F: Systemd Quadlet &amp; Unit File Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-podman-native-systemd-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Podman Native Systemd Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-podman-5-native-quadlet-kube-gitea-stackkube-gitea-stackyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Podman 5 Native Quadlet Kube (gitea-stack.kube &amp; gitea-stack.yaml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-post-installation-account-token-repository-setup-cli-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Post-Installation Account, Token &amp; Repository Setup (CLI &amp; API)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Post-Installation Account, Token &amp; Repository Setup (CLI &amp; API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-create-admin-account-via-gitea-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Create Admin Account via Gitea CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-create-access-token-organisation-via-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Create Access Token &amp; Organisation via API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-register-host-ssh-public-key-port-2222-revoke-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Register Host SSH Public Key (Port 2222) &amp; Revoke Token
       
     </span>
   </a>
@@ -4172,22 +4473,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-exposed-mcp-endpoint-matrix-resources-tools" class="md-nav__link">
+  <a href="#5-git-remote-client-access-https-ssh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📊 3. Exposed MCP Endpoint Matrix (Resources &amp; Tools)
+        5. Git Remote &amp; Client Access (HTTPS &amp; SSH)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📊 3. Exposed MCP Endpoint Matrix (Resources &amp; Tools)">
+    <nav class="md-nav" aria-label="5. Git Remote &amp; Client Access (HTTPS &amp; SSH)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-mcp-resources-6-read-only-protocol-uris" class="md-nav__link">
+  <a href="#https-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. MCP Resources (6 Read-Only Protocol URIs)
+        HTTPS Setup
       
     </span>
   </a>
@@ -4195,10 +4496,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#b-mcp-tools-3-executable-tools" class="md-nav__link">
+  <a href="#ssh-setup-port-2222" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B. MCP Tools (3 Executable Tools)
+        SSH Setup (Port 2222)
       
     </span>
   </a>
@@ -4211,24 +4512,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-troubleshooting-verification" class="md-nav__link">
+  <a href="#6-maintenance-troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧪 4. Troubleshooting &amp; Verification
+        6. Maintenance &amp; Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Maintenance &amp; Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-status-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Status &amp; Logs
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#5-references" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-permission-denied-reading-giteakey" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔗 5. References
+        Troubleshooting: "Permission Denied" Reading gitea.key
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decommissioning-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decommissioning &amp; Cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4252,132 +4581,404 @@
   
 
 
-<h1 id="howto-operating-dsom-fastmcp-knowledge-server">🛠️ HOWTO: Operating DSOM FastMCP Knowledge Server</h1>
-<p>This operational guide provides step-by-step instructions for running, configuring, and connecting the <strong>DSOM FastMCP Knowledge Server (<code>tools/mcp/server.py</code>)</strong> via Model Context Protocol (MCP) to AI IDEs such as Cursor, Claude Desktop, and VSCode.</p>
+<h1 id="how-to-deploy-sovereign-gitea-via-rootless-podman-quadlet">🚀 How-To: Deploy Sovereign Gitea via Rootless Podman &amp; Quadlet</h1>
+<p>This guide provides step-by-step instructions for deploying a standalone, self-hosted Gitea GitOps core natively on unprivileged rootless Podman infrastructure (using Podman Pods or systemd Quadlets) enforced over HTTPS.</p>
 <hr />
-<h2 id="1-fast-execution-protocol-rule-16-uv-mandate">⚡ 1. Fast Execution Protocol (Rule 16 <code>uv</code> Mandate)</h2>
-<p>The MCP server runs natively in Python using <code>uv</code> with PEP 723 inline script dependencies (<code>mcp</code>, <code>fastmcp</code>, <code>pyyaml</code>). Zero global installation required.</p>
-<h3 id="launching-the-stdio-mcp-server">Launching the Stdio MCP Server:</h3>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>tools/mcp/server.py
-</code></pre></div>
-<hr />
-<h2 id="2-ide-integration-configuration-guides">🔌 2. IDE Integration &amp; Configuration Guides</h2>
-<h3 id="a-cursor-ide-cursormcpjson-or-settings-mcp">A. Cursor IDE (<code>.cursor/mcp.json</code> or Settings -&gt; MCP):</h3>
-<p>Add the following JSON configuration to Cursor under <strong>Settings &gt; Features &gt; MCP</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"dsom-palace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uv"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">"run"</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">"tools/mcp/server.py"</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${workspaceFolder}"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h3 id="b-claude-desktop-claude_desktop_configjson">B. Claude Desktop (<code>claude_desktop_config.json</code>):</h3>
-<p>Add the server entry to <code>%APPDATA%\Claude\claude_desktop_config.json</code> (Windows) or <code>~/Library/Application Support/Claude/claude_desktop_config.json</code> (macOS):</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"dsom-palace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uv"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">"run"</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">"D:\\Users\\LinuxMalaysia\\Projects\\deep-state-of-mind-for-my-ai\\tools\\mcp\\server.py"</span>
-<span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="3-exposed-mcp-endpoint-matrix-resources-tools">📊 3. Exposed MCP Endpoint Matrix (Resources &amp; Tools)</h2>
-<h3 id="a-mcp-resources-6-read-only-protocol-uris">A. MCP Resources (6 Read-Only Protocol URIs)</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Resource URI</th>
-<th style="text-align: left;">Description / Source File</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><code>dsom://brain/state</code></strong></td>
-<td style="text-align: left;">Reads condensed DSOM state (<code>.agents/brain/current_state.dsom</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>dsom://brain/task</code></strong></td>
-<td style="text-align: left;">Reads active session task list (<code>.agents/brain/task.md</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>dsom://brain/walkthrough</code></strong></td>
-<td style="text-align: left;">Reads session walkthrough anchors (<code>.agents/brain/walkthrough.md</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>dsom://governance/agents</code></strong></td>
-<td style="text-align: left;">Reads the 27 Constitutional AI Rules (<code>.agents/AGENTS.md</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>dsom://openwiki/skeleton</code></strong></td>
-<td style="text-align: left;">Reads OpenWiki subsystem rankings (<code>openwiki/_skeleton.md</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>dsom://openwiki/quickstart</code></strong></td>
-<td style="text-align: left;">Reads OpenWiki master entrypoint (<code>openwiki/quickstart.md</code>).</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="b-mcp-tools-3-executable-tools">B. MCP Tools (3 Executable Tools)</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Tool Name</th>
-<th style="text-align: left;">Parameters</th>
-<th style="text-align: left;">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><code>search_palace</code></strong></td>
-<td style="text-align: left;"><code>query: str</code></td>
-<td style="text-align: left;">Performs bounded text search over <code>docs/*.md</code> (capped at 8,000 chars).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>search_openwiki</code></strong></td>
-<td style="text-align: left;"><code>query: str</code></td>
-<td style="text-align: left;">Performs sub-millisecond search over OpenWiki OKF frontmatter metadata (<code>topics:</code>, <code>title:</code>, <code>description:</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>fetch_context7_stream</code></strong></td>
-<td style="text-align: left;"><code>tokens: int = 83688</code></td>
-<td style="text-align: left;">Returns the live Context7 LLM RAG context stream endpoint URL.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="4-troubleshooting-verification">🧪 4. Troubleshooting &amp; Verification</h2>
-<ol>
-<li><strong>Verify Python Environment:</strong>
-   Ensure <code>uv</code> is installed and accessible on your PATH (<code>uv --version</code>).</li>
-<li><strong>Test Server Startup:</strong>
-   <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>tools/mcp/server.py<span class="w"> </span>--help
-</code></pre></div></li>
-<li><strong>Verify Regression Suite:</strong>
-   <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>pyyaml<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>tests/test_okf_frontmatter_bom_reorder.py<span class="w"> </span>tests/test_okf_quoting.py<span class="w"> </span>tests/test_seo_sitemaps.py<span class="w"> </span>tests/test_docs_symlinks.py
-</code></pre></div></li>
-</ol>
-<hr />
-<h2 id="5-references">🔗 5. References</h2>
+<h2 id="1-overview-architecture">1. Overview &amp; Architecture</h2>
+<p>Gitea serves as the local "Sovereign" Source of Truth for all GitOps repositories and infrastructure-as-code.</p>
+<h3 id="architecture-specifications">Architecture Specifications</h3>
 <ul>
-<li><strong>MCP Server Script:</strong> <a href="file:///tools/mcp/server.py"><code>tools/mcp/server.py</code></a></li>
-<li><strong>Native OpenWiki Emulator:</strong> <a href="file:///tools/openwiki_emulator.py"><code>tools/openwiki_emulator.py</code></a></li>
-<li><strong>OpenWiki Integration Blueprint:</strong> <a href="file:///docs/governance/OPENWIKI-INTEGRATION-GUIDE.md"><code>docs/governance/OPENWIKI-INTEGRATION-GUIDE.md</code></a></li>
+<li><strong>Target Host / Domain:</strong> <code>10.17.250.28</code> (or your host IP / FQDN)</li>
+<li><strong>Database Backend:</strong> PostgreSQL 15 (Alpine)</li>
+<li><strong>Application Server:</strong> Gitea 1.26.3</li>
+<li><strong>HTTP/HTTPS Port:</strong> <code>3000</code> (Mapped to container port <code>3000</code> over HTTPS)</li>
+<li><strong>SSH Port:</strong> <code>2222</code> (Mapped to container port <code>22</code> for Git over SSH)</li>
+<li><strong>Security &amp; Protocol:</strong> HTTPS enforced with TLS certificates signed by Sovereign CA.</li>
+<li><strong>Automated Installation Bypass:</strong> The Gitea Web UI installer is bypassed programmatically via runtime environment variables (<code>GITEA__security__INSTALL_LOCK: "true"</code>).</li>
 </ul>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-09</em>
+<h2 id="2-prerequisites">2. Prerequisites</h2>
+<p>Before running any installation steps, verify the host system requirements:</p>
+<ol>
+<li><strong>Enable User Linger:</strong>
+   Rootless container services run within unprivileged user space. Enabling linger ensures systemd user daemons and containers remain active across reboots and SSH session logouts:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>loginctl<span class="w"> </span>enable-linger<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span>
+</code></pre></div>
+<ol>
+<li><strong>Verify Podman &amp; Dependencies:</strong>
+   Confirm that Podman (v4+ or v5+) and Podman Compose are installed:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>--version
+podman-compose<span class="w"> </span>--version
+</code></pre></div>
+<hr />
+<h2 id="3-step-by-step-installation-commands">3. Step-by-Step Installation Commands</h2>
+<h3 id="step-a-generate-tls-certificates-directory-setup">Step A: Generate TLS Certificates &amp; Directory Setup</h3>
+<ol>
+<li><strong>Create Configuration and Certificate Directories:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/gitea/certs
+chmod<span class="w"> </span><span class="m">0755</span><span class="w"> </span>~/.config/gitea/certs
+</code></pre></div>
+<ol>
+<li><strong>Generate Private Key and Self-Signed / Sovereign Certificate:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate 2048-bit RSA Private Key with owner-only permissions (0600)</span>
+openssl<span class="w"> </span>genrsa<span class="w"> </span>-out<span class="w"> </span>~/.config/gitea/certs/gitea.key<span class="w"> </span><span class="m">2048</span>
+chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>~/.config/gitea/certs/gitea.key
+
+<span class="c1"># Generate 5-year Self-Signed / Sovereign Certificate with Subject Alt Name (SAN)</span>
+openssl<span class="w"> </span>req<span class="w"> </span>-new<span class="w"> </span>-x509<span class="w"> </span>-key<span class="w"> </span>~/.config/gitea/certs/gitea.key<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-out<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>-days<span class="w"> </span><span class="m">1825</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-subj<span class="w"> </span><span class="s2">"/C=MY/ST=Kuala Lumpur/L=Kuala Lumpur/O=Sovereign/OU=IT/CN=10.17.250.28"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-addext<span class="w"> </span><span class="s2">"subjectAltName = DNS:10.17.250.28, IP:10.17.250.28, DNS:localhost, IP:127.0.0.1"</span>
+chmod<span class="w"> </span><span class="m">0644</span><span class="w"> </span>~/.config/gitea/certs/gitea.crt
+</code></pre></div>
+<blockquote>
+<p><strong>Security &amp; Rootless UID Mapping Note:</strong> In rootless Podman, the invoking host user UID (e.g. 1000) maps to UID 0 (root) inside the container namespace, whereas Gitea runs internally as unprivileged user <code>git</code> (UID/GID 1000 inside container, mapped to host subuid range e.g. 100999).
+Because of this namespace mapping, a host key file with mode <code>0600</code> owned by host UID 1000 is inaccessible to container UID 1000 unless permissions are <code>0644</code> or group permissions allow access (<code>chmod 0640</code> with appropriate group ownership).
+If Gitea reports permission denied reading <code>gitea.key</code>, verify user mapping via <code>podman exec gitea-app id</code> or <code>podman exec gitea-stack-gitea-app id</code> and adjust <code>gitea.key</code> read permissions accordingly.</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Install Sovereign CA in Host Trust Store:</strong></p>
+</li>
+<li>
+<p><strong>On Debian / Ubuntu:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>/usr/local/share/ca-certificates/sovereign-gitea-ca.crt
+sudo<span class="w"> </span>update-ca-certificates
+</code></pre></div>
+</li>
+<li>
+<p><strong>On Red Hat / AlmaLinux / CentOS:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>/etc/pki/ca-trust/source/anchors/sovereign-gitea-ca.crt
+sudo<span class="w"> </span>update-ca-trust
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h3 id="step-b-create-storage-volumes-podman-pod">Step B: Create Storage Volumes &amp; Podman Pod</h3>
+<ol>
+<li><strong>Create Podman Pod with HTTP (3000) and SSH (2222) Port Mappings:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>pod<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--name<span class="w"> </span>gitea-stack<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--publish<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--publish<span class="w"> </span><span class="m">2222</span>:22
+</code></pre></div>
+<ol>
+<li><strong>Create Storage Volumes:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>gitea_db_data
+podman<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>gitea_app_data
+</code></pre></div>
+<hr />
+<h3 id="step-c-secure-secrets-management-giteaenv">Step C: Secure Secrets Management (<code>gitea.env</code>)</h3>
+<p>To prevent embedding plaintext credentials in CLI parameters or systemd unit files, generate a high-entropy password and store environment secrets in a strict <code>0600</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">GITEA_SECURE_DB_PASS</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-base64<span class="w"> </span><span class="m">24</span><span class="k">)</span>
+
+cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; gitea.env</span>
+<span class="s">POSTGRES_USER=gitea</span>
+<span class="s">POSTGRES_PASSWORD=${GITEA_SECURE_DB_PASS}</span>
+<span class="s">POSTGRES_DB=gitea</span>
+<span class="s">GITEA__database__DB_TYPE=postgres</span>
+<span class="s">GITEA__database__HOST=127.0.0.1:5432</span>
+<span class="s">GITEA__database__NAME=gitea</span>
+<span class="s">GITEA__database__USER=gitea</span>
+<span class="s">GITEA__database__PASSWD=${GITEA_SECURE_DB_PASS}</span>
+<span class="s">GITEA__server__PROTOCOL=https</span>
+<span class="s">GITEA__server__DOMAIN=10.17.250.28</span>
+<span class="s">GITEA__server__ROOT_URL=https://10.17.250.28:3000/</span>
+<span class="s">GITEA__server__HTTP_PORT=3000</span>
+<span class="s">GITEA__server__SSH_PORT=2222</span>
+<span class="s">GITEA__server__SSH_LISTEN_PORT=22</span>
+<span class="s">GITEA__server__CERT_FILE=/etc/gitea/certs/gitea.crt</span>
+<span class="s">GITEA__server__KEY_FILE=/etc/gitea/certs/gitea.key</span>
+<span class="s">GITEA__security__INSTALL_LOCK=true</span>
+<span class="s">EOF</span>
+chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>gitea.env
+</code></pre></div>
+<hr />
+<h3 id="step-d-deploy-postgresql-database-container">Step D: Deploy PostgreSQL Database Container</h3>
+<p>Deploy PostgreSQL 15 within the rootless pod:</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span>--detach<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--name<span class="w"> </span>gitea-db<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--pod<span class="w"> </span>gitea-stack<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--env-file<span class="w"> </span>gitea.env<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--volume<span class="w"> </span>gitea_db_data:/var/lib/postgresql/data:Z<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>docker.io/library/postgres:15-alpine
+</code></pre></div>
+<hr />
+<h3 id="step-e-deploy-gitea-https-application-container">Step E: Deploy Gitea HTTPS Application Container</h3>
+<p>Deploy Gitea 1.26.3 with volume mounts for certificates (including <code>:ro,Z</code> for SELinux relabeling), application data, and timezone:</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span>--detach<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--name<span class="w"> </span>gitea-app<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--pod<span class="w"> </span>gitea-stack<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--env-file<span class="w"> </span>gitea.env<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--volume<span class="w"> </span>gitea_app_data:/data:Z<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--volume<span class="w"> </span>~/.config/gitea/certs:/etc/gitea/certs:ro,Z<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--volume<span class="w"> </span>/etc/localtime:/etc/localtime:ro<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>docker.io/gitea/gitea:1.26.3
+</code></pre></div>
+<hr />
+<h3 id="step-f-systemd-quadlet-unit-file-integration">Step F: Systemd Quadlet &amp; Unit File Integration</h3>
+<p>To manage the standalone stack via user-level systemd:</p>
+<h4 id="option-1-podman-native-systemd-generation">Option 1: Podman Native Systemd Generation</h4>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/systemd/user/
+<span class="nb">cd</span><span class="w"> </span>~/.config/systemd/user/
+podman<span class="w"> </span>generate<span class="w"> </span>systemd<span class="w"> </span>--name<span class="w"> </span>gitea-stack<span class="w"> </span>--files<span class="w"> </span>--new
+systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
+systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>pod-gitea-stack.service
+</code></pre></div>
+<h4 id="option-2-podman-5-native-quadlet-kube-gitea-stackkube-gitea-stackyaml">Option 2: Podman 5 Native Quadlet Kube (<code>gitea-stack.kube</code> &amp; <code>gitea-stack.yaml</code>)</h4>
+<ol>
+<li>Create <code>~/.config/containers/systemd/gitea-stack.kube</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Gitea GitOps Service (Podman Kube Quadlet)</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+
+<span class="k">[Kube]</span>
+<span class="na">Yaml</span><span class="o">=</span><span class="s">gitea-stack.yaml</span>
+<span class="na">PublishPort</span><span class="o">=</span><span class="s">3000:3000</span>
+<span class="na">PublishPort</span><span class="o">=</span><span class="s">2222:22</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">default.target</span>
+</code></pre></div>
+<ol>
+<li>Create <code>~/.config/containers/systemd/gitea-stack.yaml</code> with mode <code>0600</code> (substituting <code>${HOME}</code> for your target user home path):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-stack</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-stack</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-db</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/library/postgres:15-alpine</span>
+<span class="w">      </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;GENERATE_HIGH_ENTROPY_DB_PASSWORD&gt;"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea</span>
+<span class="w">      </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/postgresql/data</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-db-data</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-app</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/gitea/gitea:1.26.3</span>
+<span class="w">      </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
+<span class="w">          </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span>
+<span class="w">          </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2222</span>
+<span class="w">      </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__database__DB_TYPE</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__database__HOST</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:5432</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__database__NAME</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__database__USER</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__database__PASSWD</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;GENERATE_HIGH_ENTROPY_DB_PASSWORD&gt;"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__PROTOCOL</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__DOMAIN</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"10.17.250.28"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__ROOT_URL</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"https://10.17.250.28:3000/"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__HTTP_PORT</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"3000"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__SSH_PORT</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"2222"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__SSH_LISTEN_PORT</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"22"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__CERT_FILE</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/gitea/certs/gitea.crt</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__server__KEY_FILE</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/gitea/certs/gitea.key</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GITEA__security__INSTALL_LOCK</span>
+<span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">      </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/data</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-app-data</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/gitea/certs</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-certs</span>
+<span class="w">          </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/localtime</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">etc-localtime</span>
+<span class="w">          </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-db-data</span>
+<span class="w">      </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea_db_data</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-app-data</span>
+<span class="w">      </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea_app_data</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitea-certs</span>
+<span class="w">      </span><span class="nt">hostPath</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/{{ ansible_user }}/.config/gitea/certs</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Directory</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">etc-localtime</span>
+<span class="w">      </span><span class="nt">hostPath</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/localtime</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">File</span>
+</code></pre></div>
+<ol>
+<li>Reload systemd user daemon and start Quadlet service:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
+systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>gitea-stack.service
+</code></pre></div>
+<hr />
+<h2 id="4-post-installation-account-token-repository-setup-cli-api">4. Post-Installation Account, Token &amp; Repository Setup (CLI &amp; API)</h2>
+<p>Once Gitea is active over HTTPS on port 3000, perform initial administrative setup programmatically using <code>podman exec</code> (Gitea CLI) and <code>curl</code> (Gitea API).</p>
+<h3 id="a-create-admin-account-via-gitea-cli">A. Create Admin Account via Gitea CLI</h3>
+<p>Execute user creation directly inside the container. Note that under manual Podman Pod deployment the container is named <code>gitea-app</code>, whereas under Quadlet Kube deployment Podman names the container <code>gitea-stack-gitea-app</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">read</span><span class="w"> </span>-sp<span class="w"> </span><span class="s2">"Enter Gitea Admin Password: "</span><span class="w"> </span>GITEA_ADMIN_PASS
+
+<span class="c1"># For Podman CLI Pod deployment:</span>
+podman<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-u<span class="w"> </span>git<span class="w"> </span>gitea-app<span class="w"> </span>gitea<span class="w"> </span>admin<span class="w"> </span>user<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--username<span class="w"> </span>dsom-admin<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--password<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GITEA_ADMIN_PASS</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--email<span class="w"> </span>admin@dsom.local<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--admin
+
+<span class="c1"># For Quadlet Kube deployment (gitea-stack-gitea-app):</span>
+<span class="c1"># podman exec -u git gitea-stack-gitea-app gitea admin user create --username dsom-admin --password "${GITEA_ADMIN_PASS}" --email admin@dsom.local --admin</span>
+</code></pre></div>
+<h3 id="b-create-access-token-organisation-via-api">B. Create Access Token &amp; Organisation via API</h3>
+<p>To prevent exposing credentials in process listings or command history, pass authentication via a mode-0600 <code>curl</code> config file (<code>~/.gitea-auth-config</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Prepare secure 0600 curl config file</span>
+cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; ~/.gitea-auth-config</span>
+<span class="s">user = "dsom-admin:${GITEA_ADMIN_PASS}"</span>
+<span class="s">EOF</span>
+chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>~/.gitea-auth-config
+
+<span class="c1"># 1. Create route-scoped setup token</span>
+curl<span class="w"> </span>-s<span class="w"> </span>--cacert<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>--config<span class="w"> </span>~/.gitea-auth-config<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"https://10.17.250.28:3000/api/v1/users/dsom-admin/tokens"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-d<span class="w"> </span><span class="s1">'{"name": "setup-token", "scopes": ["write:org", "write:repository", "write:user"]}'</span><span class="w"> </span>&gt;<span class="w"> </span>token_resp.json
+
+<span class="c1"># Remove authentication config file immediately</span>
+rm<span class="w"> </span>-f<span class="w"> </span>~/.gitea-auth-config
+
+<span class="c1"># Extract token and token ID for subsequent requests</span>
+<span class="nv">GITEA_TOKEN</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">'"sha1":"[^"]*'</span><span class="w"> </span>token_resp.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">'"'</span><span class="w"> </span>-f4<span class="k">)</span>
+<span class="nv">GITEA_TOKEN_ID</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">'"id":[^,]*'</span><span class="w"> </span>token_resp.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">':'</span><span class="w"> </span>-f2<span class="k">)</span>
+rm<span class="w"> </span>-f<span class="w"> </span>token_resp.json
+
+<span class="c1"># 2. Create Organisation using Access Token</span>
+curl<span class="w"> </span>-s<span class="w"> </span>--cacert<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"https://10.17.250.28:3000/api/v1/orgs"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Authorization: token </span><span class="si">${</span><span class="nv">GITEA_TOKEN</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-d<span class="w"> </span><span class="s1">'{"username": "songketmailsdnbhd-group", "visibility": "public"}'</span>
+
+<span class="c1"># 3. Create Repository under Organisation</span>
+curl<span class="w"> </span>-s<span class="w"> </span>--cacert<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"https://10.17.250.28:3000/api/v1/orgs/songketmailsdnbhd-group/repos"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Authorization: token </span><span class="si">${</span><span class="nv">GITEA_TOKEN</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-d<span class="w"> </span><span class="s1">'{"name": "um-elastic-soc", "private": false}'</span>
+</code></pre></div>
+<h3 id="c-register-host-ssh-public-key-port-2222-revoke-token">C. Register Host SSH Public Key (Port 2222) &amp; Revoke Token</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Prepare JSON payload containing public key</span>
+cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; ssh-key-payload.json</span>
+<span class="s">{</span>
+<span class="s">  "title": "node-admin-key",</span>
+<span class="s">  "key": "$(cat ~/.ssh/id_dsom_ed25519.pub)",</span>
+<span class="s">  "read_only": false</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 2. Upload key via Gitea API</span>
+curl<span class="w"> </span>-s<span class="w"> </span>--cacert<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"https://10.17.250.28:3000/api/v1/user/keys"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Authorization: token </span><span class="si">${</span><span class="nv">GITEA_TOKEN</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-d<span class="w"> </span>@ssh-key-payload.json
+rm<span class="w"> </span>-f<span class="w"> </span>ssh-key-payload.json
+
+<span class="c1"># 3. Revoke temporary setup token</span>
+curl<span class="w"> </span>-s<span class="w"> </span>--cacert<span class="w"> </span>~/.config/gitea/certs/gitea.crt<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">"https://10.17.250.28:3000/api/v1/users/dsom-admin/tokens/</span><span class="si">${</span><span class="nv">GITEA_TOKEN_ID</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">"Authorization: token </span><span class="si">${</span><span class="nv">GITEA_TOKEN</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">unset</span><span class="w"> </span>GITEA_TOKEN<span class="w"> </span>GITEA_ADMIN_PASS<span class="w"> </span>GITEA_TOKEN_ID
+
+<span class="c1"># 4. Verify SSH fingerprint out-of-band before appending to known_hosts</span>
+ssh-keygen<span class="w"> </span>-lf<span class="w"> </span>&lt;<span class="o">(</span>ssh-keyscan<span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span><span class="w"> </span><span class="m">10</span>.17.250.28<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="o">)</span>
+<span class="c1"># Verify output fingerprint matches host admin key, then append:</span>
+ssh-keyscan<span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span><span class="w"> </span><span class="m">10</span>.17.250.28<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.ssh/known_hosts
+</code></pre></div>
+<hr />
+<h2 id="5-git-remote-client-access-https-ssh">5. Git Remote &amp; Client Access (HTTPS &amp; SSH)</h2>
+<h3 id="https-setup">HTTPS Setup</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Trust Sovereign CA in Git</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.sslCAInfo<span class="w"> </span>~/.config/gitea/certs/gitea.crt
+
+<span class="c1"># Add remote and push</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>sovereign<span class="w"> </span><span class="s2">"https://10.17.250.28:3000/songketmailsdnbhd-group/um-elastic-soc.git"</span>
+git<span class="w"> </span>push<span class="w"> </span>sovereign<span class="w"> </span>main
+</code></pre></div>
+<h3 id="ssh-setup-port-2222">SSH Setup (Port 2222)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add SSH remote pointing to mapped port 2222</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>gitea<span class="w"> </span>ssh://git@10.17.250.28:2222/songketmailsdnbhd-group/um-elastic-soc.git
+
+<span class="c1"># Fetch and Push</span>
+git<span class="w"> </span>fetch<span class="w"> </span>gitea
+git<span class="w"> </span>push<span class="w"> </span>gitea<span class="w"> </span>main
+</code></pre></div>
+<hr />
+<h2 id="6-maintenance-troubleshooting">6. Maintenance &amp; Troubleshooting</h2>
+<h3 id="service-status-logs">Service Status &amp; Logs</h3>
+<p>Support commands cover both systemd unit names (<code>pod-gitea-stack.service</code> for generated systemd, <code>gitea-stack.service</code> for Quadlet Kube):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check service status (Generated systemd or Quadlet Kube)</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>pod-gitea-stack.service
+systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>gitea-stack.service
+
+<span class="c1"># View live container logs</span>
+journalctl<span class="w"> </span>--user<span class="w"> </span>-u<span class="w"> </span>pod-gitea-stack.service<span class="w"> </span>-f
+journalctl<span class="w"> </span>--user<span class="w"> </span>-u<span class="w"> </span>gitea-stack.service<span class="w"> </span>-f
+
+<span class="c1"># Restart active service</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span>restart<span class="w"> </span>pod-gitea-stack.service
+systemctl<span class="w"> </span>--user<span class="w"> </span>restart<span class="w"> </span>gitea-stack.service
+</code></pre></div>
+<h3 id="troubleshooting-permission-denied-reading-giteakey">Troubleshooting: "Permission Denied" Reading <code>gitea.key</code></h3>
+<p>If Gitea container fails to read key permissions on startup, check user namespace identity via <code>podman exec gitea-app id</code> or <code>podman exec gitea-stack-gitea-app id</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ensure readable permissions for host user session</span>
+chmod<span class="w"> </span><span class="m">0644</span><span class="w"> </span>~/.config/gitea/certs/gitea.crt
+chmod<span class="w"> </span><span class="m">0644</span><span class="w"> </span>~/.config/gitea/certs/gitea.key
+
+systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
+systemctl<span class="w"> </span>--user<span class="w"> </span>restart<span class="w"> </span>gitea-stack.service
+</code></pre></div>
+<h3 id="decommissioning-cleanup">Decommissioning &amp; Cleanup</h3>
+<p>To ensure neither Option 1 nor Option 2 remains active after cleanup, stop and disable both unit names:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stop and disable both possible service unit instances</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span>disable<span class="w"> </span>--now<span class="w"> </span>pod-gitea-stack.service<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span>disable<span class="w"> </span>--now<span class="w"> </span>gitea-stack.service<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+
+<span class="c1"># Remove unit and Quadlet manifest files</span>
+rm<span class="w"> </span>-f<span class="w"> </span>~/.config/systemd/user/*gitea-stack*
+rm<span class="w"> </span>-f<span class="w"> </span>~/.config/containers/systemd/*gitea-stack*
+systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
+
+<span class="c1"># Remove containers, pods, and storage volumes</span>
+podman<span class="w"> </span>pod<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>gitea-stack<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+podman<span class="w"> </span>volume<span class="w"> </span>rm<span class="w"> </span>gitea_db_data<span class="w"> </span>gitea_app_data<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
