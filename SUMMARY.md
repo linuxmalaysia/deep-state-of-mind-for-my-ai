@@ -177,6 +177,8 @@ topics: ["dsom", "documentation"]
 * [🎓 Tutorials Overview](docs/tutorials/index.md)
 * [🎓 Getting Started with DSOM Tools](docs/tutorials/getting-started.md)
 * [🛠️ How-To Guides Overview](docs/how-to/index.md)
+* [🛠️ Deploy Sovereign Gitea via Podman & Quadlet](docs/how-to/install-gitea-podman-quadlet.md)
+* [🛠️ Deploy Sovereign Gitea via Ansible Playbook](docs/how-to/install-gitea-ansible.md)
 * [🛠️ Audit and Apply OKF Frontmatter](docs/how-to/audit-and-apply-frontmatter.md)
 * [🛠️ Run FastMCP Server](docs/how-to/run-fastmcp-server.md)
 * [🛠️ Generate SEO Assets and Sitemaps](docs/how-to/generate-sitemaps-seo.md)
