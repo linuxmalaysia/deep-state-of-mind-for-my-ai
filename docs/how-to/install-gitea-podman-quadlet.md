@@ -170,7 +170,12 @@ podman run --detach \
     --restart always \
     --env-file gitea.env \
     --volume gitea_db_data:/var/lib/postgresql/data:Z \
-    docker.io/library/postgres:15-alpine
+    docker.io/library/postgres:15-alpine \
+    -c max_connections=200 \
+    -c shared_buffers=256MB \
+    -c effective_cache_size=1GB \
+    -c maintenance_work_mem=64MB \
+    -c work_mem=16MB
 ```
 
 ---

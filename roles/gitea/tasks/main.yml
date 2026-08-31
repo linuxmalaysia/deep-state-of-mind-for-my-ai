@@ -1,26 +1,25 @@
 ---
-- name: Validation | Verify database password is provided
+- name: Check | Database password is provided
   ansible.builtin.assert:
     that:
       - gitea_db_password is defined
       - gitea_db_password | length > 0
     fail_msg: "gitea_db_password must be set to a non-empty value (e.g., via vault_gitea_db_password)."
 
-- name: Linger | Ensure user lingering is enabled
+- name: Check | User lingering is enabled
   ansible.builtin.command: "loginctl enable-linger {{ ansible_user_id | default(ansible_user) }}"
   changed_when: false
-  failed_when: false
 
 - name: TLS | Generate and deploy TLS certificates
   ansible.builtin.import_tasks: tls.yml
 
-- name: Quadlet | Ensure Quadlet directory exists
+- name: Check | Quadlet directory exists
   ansible.builtin.file:
     path: "~/.config/containers/systemd"
     state: directory
     mode: "0755"
 
-- name: Quadlet | Deploy Gitea Kube Quadlet YAML
+- name: Check | Quadlet YAML deployed
   ansible.builtin.template:
     src: "gitea-stack.yaml.j2"
     dest: "~/.config/containers/systemd/gitea-stack.yaml"
@@ -34,7 +33,7 @@
     mode: "0644"
   notify: Reload systemd user daemon and restart gitea-stack
 
-- name: Systemd | Ensure Gitea Quadlet service is started
+- name: Check | Gitea Quadlet service is started
   ansible.builtin.systemd_service:
     name: gitea-stack.service
     state: started

@@ -15,16 +15,16 @@
     mode: "0755"
   become: false
 
-- name: TLS | Ensure target cert file exists
+- name: Check | Target cert file exists
   ansible.builtin.file:
     path: "{{ gitea_certs_dir }}/gitea.crt"
     state: touch
     mode: "0644"
   become: false
 
-- name: TLS | Ensure target key file exists
+- name: Check | Target key file exists
   ansible.builtin.file:
     path: "{{ gitea_certs_dir }}/gitea.key"
     state: touch
-    mode: "0640"
+    mode: "0600"
   become: false

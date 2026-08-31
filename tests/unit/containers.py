@@ -140,20 +140,23 @@ class TestQuadletManifestSchema(unittest.TestCase):
                 self.assertNotIn(
                     "command",
                     pg_container,
-                    f"PostgreSQL container in {yfile.name} must not override 'command', use 'args' instead so entrypoint initializes properly",
+                    f"PostgreSQL container in {yfile.name} must not override 'command', use 'args' instead so entrypoint initialises properly",
                 )
 
-                pg_args_str = " ".join(pg_container.get("args", []))
+                pg_args = pg_container.get("args", [])
+                pg_args_str = " ".join(pg_args)
                 env_vars = {e.get("name"): str(e.get("value")) for e in pg_container.get("env", []) if isinstance(e, dict)}
 
-                has_conn_tuning = "max_connections" in pg_args_str or "POSTGRES_MAX_CONNECTIONS" in env_vars
-                has_buf_tuning = "shared_buffers" in pg_args_str or "POSTGRES_SHARED_BUFFERS" in env_vars
-                has_cache_tuning = "effective_cache_size" in pg_args_str or "POSTGRES_EFFECTIVE_CACHE_SIZE" in env_vars
-                has_work_tuning = "work_mem" in pg_args_str or "POSTGRES_WORK_MEM" in env_vars
+                has_conn_tuning = bool(re.search(r"\bmax_connections\b", pg_args_str)) or "POSTGRES_MAX_CONNECTIONS" in env_vars
+                has_buf_tuning = bool(re.search(r"\bshared_buffers\b", pg_args_str)) or "POSTGRES_SHARED_BUFFERS" in env_vars
+                has_cache_tuning = bool(re.search(r"\beffective_cache_size\b", pg_args_str)) or "POSTGRES_EFFECTIVE_CACHE_SIZE" in env_vars
+                has_maint_tuning = bool(re.search(r"\bmaintenance_work_mem\b", pg_args_str)) or "POSTGRES_MAINTENANCE_WORK_MEM" in env_vars
+                has_work_tuning = bool(re.search(r"(?<!maintenance_)work_mem\b", pg_args_str)) or ("POSTGRES_WORK_MEM" in env_vars and "POSTGRES_MAINTENANCE_WORK_MEM" not in env_vars)
 
                 self.assertTrue(has_conn_tuning, f"PostgreSQL max_connections tuning parameter missing in {yfile.name}")
                 self.assertTrue(has_buf_tuning, f"PostgreSQL shared_buffers tuning parameter missing in {yfile.name}")
                 self.assertTrue(has_cache_tuning, f"PostgreSQL effective_cache_size tuning parameter missing in {yfile.name}")
+                self.assertTrue(has_maint_tuning, f"PostgreSQL maintenance_work_mem tuning parameter missing in {yfile.name}")
                 self.assertTrue(has_work_tuning, f"PostgreSQL work_mem tuning parameter missing in {yfile.name}")
 
 

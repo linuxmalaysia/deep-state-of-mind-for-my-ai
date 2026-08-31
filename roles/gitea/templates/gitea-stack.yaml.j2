@@ -23,7 +23,7 @@ spec:
         - name: POSTGRES_USER
           value: gitea
         - name: POSTGRES_PASSWORD
-          value: "{{ gitea_db_password }}"
+          value: {{ gitea_db_password | to_json }}
         - name: POSTGRES_DB
           value: gitea
         - name: POSTGRES_MAX_CONNECTIONS
@@ -57,7 +57,7 @@ spec:
         - name: GITEA__database__USER
           value: gitea
         - name: GITEA__database__PASSWD
-          value: "{{ gitea_db_password }}"
+          value: {{ gitea_db_password | to_json }}
         - name: GITEA__server__PROTOCOL
           value: https
         - name: GITEA__server__DOMAIN
