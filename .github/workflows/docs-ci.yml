@@ -62,6 +62,7 @@ jobs:
       - name: Install Dependencies
         run: |
           uv pip install --system pyyaml pytest ansible-core ansible-lint
+          ansible-galaxy collection install community.general community.crypto ansible.posix
 
       - name: Run Ansible Lint Static Analysis
         run: |

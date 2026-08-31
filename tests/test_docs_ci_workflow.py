@@ -133,6 +133,7 @@ class DocsCiWorkflowTextContentTests(unittest.TestCase):
     def test_install_dependencies_step_installs_expected_packages(self):
         self.assertIn("name: Install Dependencies", self.content)
         self.assertIn("uv pip install --system pyyaml pytest ansible-core ansible-lint", self.content)
+        self.assertIn("ansible-galaxy collection install community.general community.crypto ansible.posix", self.content)
 
     def test_ansible_lint_step_present(self):
         self.assertIn("name: Run Ansible Lint Static Analysis", self.content)
