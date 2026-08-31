@@ -4358,6 +4358,11 @@ ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<
 <span class="nt">gitea_http_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
 <span class="nt">gitea_ssh_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2222</span>
 <span class="nt">gitea_db_password</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">vault_gitea_db_password</span><span class="nv"> </span><span class="s">}}"</span>
+<span class="nt">gitea_postgres_max_connections</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span>
+<span class="nt">gitea_postgres_shared_buffers</span><span class="p">:</span><span class="w"> </span><span class="s">"256MB"</span>
+<span class="nt">gitea_postgres_effective_cache_size</span><span class="p">:</span><span class="w"> </span><span class="s">"1GB"</span>
+<span class="nt">gitea_postgres_maintenance_work_mem</span><span class="p">:</span><span class="w"> </span><span class="s">"64MB"</span>
+<span class="nt">gitea_postgres_work_mem</span><span class="p">:</span><span class="w"> </span><span class="s">"16MB"</span>
 </code></pre></div>
 <h3 id="main-task-execution-flow-rolesgiteatasksmainyml">Main Task Execution Flow (<code>roles/gitea/tasks/main.yml</code>)</h3>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate and deploy TLS certificates</span>
