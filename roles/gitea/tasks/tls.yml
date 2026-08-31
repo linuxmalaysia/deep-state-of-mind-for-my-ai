@@ -1,0 +1,30 @@
+---
+- name: TLS | Ensure local certs directory exists
+  ansible.builtin.file:
+    path: "{{ playbook_dir }}/../vault/generated"
+    state: directory
+    mode: "0700"
+  delegate_to: localhost
+  run_once: true
+  become: false
+
+- name: TLS | Ensure target cert directory exists
+  ansible.builtin.file:
+    path: "{{ gitea_certs_dir }}"
+    state: directory
+    mode: "0755"
+  become: false
+
+- name: Check | Target cert file exists
+  ansible.builtin.file:
+    path: "{{ gitea_certs_dir }}/gitea.crt"
+    state: touch
+    mode: "0644"
+  become: false
+
+- name: Check | Target key file exists
+  ansible.builtin.file:
+    path: "{{ gitea_certs_dir }}/gitea.key"
+    state: touch
+    mode: "0600"
+  become: false

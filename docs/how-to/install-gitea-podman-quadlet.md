@@ -134,6 +134,11 @@ cat <<EOF > gitea.env
 POSTGRES_USER=gitea
 POSTGRES_PASSWORD=${GITEA_SECURE_DB_PASS}
 POSTGRES_DB=gitea
+POSTGRES_MAX_CONNECTIONS=200
+POSTGRES_SHARED_BUFFERS=256MB
+POSTGRES_EFFECTIVE_CACHE_SIZE=1GB
+POSTGRES_MAINTENANCE_WORK_MEM=64MB
+POSTGRES_WORK_MEM=16MB
 GITEA__database__DB_TYPE=postgres
 GITEA__database__HOST=127.0.0.1:5432
 GITEA__database__NAME=gitea
@@ -165,7 +170,12 @@ podman run --detach \
     --restart always \
     --env-file gitea.env \
     --volume gitea_db_data:/var/lib/postgresql/data:Z \
-    docker.io/library/postgres:15-alpine
+    docker.io/library/postgres:15-alpine \
+    -c max_connections=200 \
+    -c shared_buffers=256MB \
+    -c effective_cache_size=1GB \
+    -c maintenance_work_mem=64MB \
+    -c work_mem=16MB
 ```
 
 ---
@@ -232,7 +242,18 @@ systemctl --user enable --now pod-gitea-stack.service
    spec:
      containers:
        - name: gitea-db
-         image: docker.io/library/postgres:15-alpine
+         image: docker.io/library/postgres:15-alpine@sha256:4770281b16c891e4a6828551a37c22e4eb24eb20755b38031d27976192ddf39f
+         args:
+           - -c
+           - max_connections=200
+           - -c
+           - shared_buffers=256MB
+           - -c
+           - effective_cache_size=1GB
+           - -c
+           - maintenance_work_mem=64MB
+           - -c
+           - work_mem=16MB
          env:
            - name: POSTGRES_USER
              value: gitea
@@ -240,12 +261,22 @@ systemctl --user enable --now pod-gitea-stack.service
              value: "<GENERATE_HIGH_ENTROPY_DB_PASSWORD>"
            - name: POSTGRES_DB
              value: gitea
+           - name: POSTGRES_MAX_CONNECTIONS
+             value: "200"
+           - name: POSTGRES_SHARED_BUFFERS
+             value: "256MB"
+           - name: POSTGRES_EFFECTIVE_CACHE_SIZE
+             value: "1GB"
+           - name: POSTGRES_MAINTENANCE_WORK_MEM
+             value: "64MB"
+           - name: POSTGRES_WORK_MEM
+             value: "16MB"
          volumeMounts:
            - mountPath: /var/lib/postgresql/data
              name: gitea-db-data
 
        - name: gitea-app
-         image: docker.io/gitea/gitea:1.26.3
+         image: docker.io/gitea/gitea:1.26.3@sha256:f232490d16d1ff86ea562ba76a6b8762d02c8eb1608ebcfecaa8f3df9df30b42
          ports:
            - containerPort: 3000
              hostPort: 3000

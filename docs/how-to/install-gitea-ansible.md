@@ -63,6 +63,11 @@ gitea_root_url: "https://10.17.250.28:3000/"
 gitea_http_port: 3000
 gitea_ssh_port: 2222
 gitea_db_password: "{{ vault_gitea_db_password }}"
+gitea_postgres_max_connections: 200
+gitea_postgres_shared_buffers: "256MB"
+gitea_postgres_effective_cache_size: "1GB"
+gitea_postgres_maintenance_work_mem: "64MB"
+gitea_postgres_work_mem: "16MB"
 ```
 
 ### Main Task Execution Flow (`roles/gitea/tasks/main.yml`)
