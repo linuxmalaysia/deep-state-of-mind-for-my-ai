@@ -23,6 +23,8 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 ## 🛠️ How-To Guides
 
 * [Overview](how-to/index.md)
+* [🛠️ Deploy Sovereign Gitea via Podman & Quadlet](how-to/install-gitea-podman-quadlet.md)
+* [🛠️ Deploy Sovereign Gitea via Ansible Playbook](how-to/install-gitea-ansible.md)
 * [Audit and Apply OKF Frontmatter](how-to/audit-and-apply-frontmatter.md)
 * [Run FastMCP Server](how-to/run-fastmcp-server.md)
 * [Generate SEO Assets and Sitemaps](how-to/generate-sitemaps-seo.md)

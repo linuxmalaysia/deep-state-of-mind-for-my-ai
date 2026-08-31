@@ -142,6 +142,8 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/audit-and-apply-frontmatter/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/generate-sitemaps-seo/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/google-search-console/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-gitea-ansible/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-gitea-podman-quadlet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/run-fastmcp-server/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/use-openwiki-emulator/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/model-specifics/dsom-claude-initialiser/
@@ -336,6 +338,8 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/audit-and-apply-frontmatter/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/generate-sitemaps-seo/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/google-search-console/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-ansible/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-podman-quadlet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/run-fastmcp-server/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/use-openwiki-emulator/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/model-specifics/dsom-claude-initialiser/
@@ -465,6 +469,8 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/generate-sitemaps-seo
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/google-search-console
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/index
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-ansible
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-podman-quadlet
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/run-fastmcp-server
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/use-openwiki-emulator
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/howto-adopt-dsom

@@ -13,6 +13,8 @@ Welcome to the **Deep State of Mind (DSOM) How-To Guides** quadrant, structured 
 
 How-To Guides provide **practical, problem-oriented directions** for completing specific, real-world tasks using DSOM tools.
 
+- **[Deploy Sovereign Gitea via Podman & Quadlet](install-gitea-podman-quadlet.md):** How to deploy standalone Gitea over HTTPS using rootless Podman pods and Podman 5 systemd Quadlets.
+- **[Deploy Sovereign Gitea via Ansible Playbook](install-gitea-ansible.md):** How to automate standalone Gitea deployment over HTTPS using Ansible playbooks, secret vaulting, and Sovereign TLS certificate generation.
 - **[Check and Apply OKF Compliance](audit-and-apply-frontmatter.md):** How to audit and auto-correct frontmatter using `apply_okf_frontmatter.py` and `refactor_okf.py`.
 - **[Run the FastMCP Server](run-fastmcp-server.md):** How to configure, test, and execute the FastMCP server.
 - **[Generate SEO Assets and Sitemaps](generate-sitemaps-seo.md):** How to generate unified XML/TXT sitemaps and robots.txt.
