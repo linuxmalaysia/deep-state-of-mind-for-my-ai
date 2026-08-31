@@ -26,7 +26,7 @@ Gitea serves as the local "Sovereign" Source of Truth for all GitOps repositorie
 
 * **Target Host / Domain:** `10.17.250.28` (or your host IP / FQDN)
 * **Database Backend:** PostgreSQL 15 (Alpine)
-* **Application Server:** Gitea 1.26.1
+* **Application Server:** Gitea 1.26.3
 * **HTTP/HTTPS Port:** `3000` (Mapped to container port `3000` over HTTPS)
 * **SSH Port:** `2222` (Mapped to container port `22` for Git over SSH)
 * **Security & Protocol:** HTTPS enforced with TLS certificates signed by Sovereign CA.
@@ -81,17 +81,21 @@ Before running any installation steps, verify the host system requirements:
    chmod 0644 ~/.config/gitea/certs/gitea.crt
    ```
 
-   > **Security & Rootless Note:** Private keys are protected with `0600` permissions on the host. When mounting into unprivileged rootless Podman containers, Podman's user namespace mapping ensures the internal process UID matches host user ownership, allowing the container to read the key securely.
+   > **Security & Rootless UID Mapping Note:** In rootless Podman, the invoking host user UID (e.g. 1000) maps to UID 0 (root) inside the container namespace, whereas Gitea runs internally as unprivileged user `git` (UID/GID 1000 inside container, mapped to host subuid range e.g. 100999).
+   > Because of this namespace mapping, a host key file with mode `0600` owned by host UID 1000 is inaccessible to container UID 1000 unless permissions are `0644` or group permissions allow access (`chmod 0640` with appropriate group ownership).
+   > If Gitea reports permission denied reading `gitea.key`, verify user mapping via `podman exec gitea-app id` or `podman exec gitea-stack-gitea-app id` and adjust `gitea.key` read permissions accordingly.
 
 3. **Install Sovereign CA in Host Trust Store:**
 
    * **On Debian / Ubuntu:**
+
      ```bash
      sudo cp ~/.config/gitea/certs/gitea.crt /usr/local/share/ca-certificates/sovereign-gitea-ca.crt
      sudo update-ca-certificates
      ```
 
-   * **On RedHat / AlmaLinux / CentOS:**
+   * **On Red Hat / AlmaLinux / CentOS:**
+
      ```bash
      sudo cp ~/.config/gitea/certs/gitea.crt /etc/pki/ca-trust/source/anchors/sovereign-gitea-ca.crt
      sudo update-ca-trust
@@ -121,23 +125,26 @@ Before running any installation steps, verify the host system requirements:
 
 ### Step C: Secure Secrets Management (`gitea.env`)
 
-To prevent embedding plaintext credentials in CLI parameters or systemd unit files, store environment secrets in a strict `0600` file:
+To prevent embedding plaintext credentials in CLI parameters or systemd unit files, generate a high-entropy password and store environment secrets in a strict `0600` file:
 
 ```bash
+GITEA_SECURE_DB_PASS=$(openssl rand -base64 24)
+
 cat <<EOF > gitea.env
 POSTGRES_USER=gitea
-POSTGRES_PASSWORD=dSoM_G1t3a_H@rd3n3d_99X
+POSTGRES_PASSWORD=${GITEA_SECURE_DB_PASS}
 POSTGRES_DB=gitea
 GITEA__database__DB_TYPE=postgres
 GITEA__database__HOST=127.0.0.1:5432
 GITEA__database__NAME=gitea
 GITEA__database__USER=gitea
-GITEA__database__PASSWD=dSoM_G1t3a_H@rd3n3d_99X
+GITEA__database__PASSWD=${GITEA_SECURE_DB_PASS}
 GITEA__server__PROTOCOL=https
 GITEA__server__DOMAIN=10.17.250.28
 GITEA__server__ROOT_URL=https://10.17.250.28:3000/
 GITEA__server__HTTP_PORT=3000
 GITEA__server__SSH_PORT=2222
+GITEA__server__SSH_LISTEN_PORT=22
 GITEA__server__CERT_FILE=/etc/gitea/certs/gitea.crt
 GITEA__server__KEY_FILE=/etc/gitea/certs/gitea.key
 GITEA__security__INSTALL_LOCK=true
@@ -165,7 +172,7 @@ podman run --detach \
 
 ### Step E: Deploy Gitea HTTPS Application Container
 
-Deploy Gitea 1.26.1 with volume mounts for certificates, application data, and timezone:
+Deploy Gitea 1.26.3 with volume mounts for certificates (including `:ro,Z` for SELinux relabeling), application data, and timezone:
 
 ```bash
 podman run --detach \
@@ -174,9 +181,9 @@ podman run --detach \
     --restart always \
     --env-file gitea.env \
     --volume gitea_app_data:/data:Z \
-    --volume ~/.config/gitea/certs:/etc/gitea/certs:ro \
+    --volume ~/.config/gitea/certs:/etc/gitea/certs:ro,Z \
     --volume /etc/localtime:/etc/localtime:ro \
-    docker.io/gitea/gitea:1.26.1
+    docker.io/gitea/gitea:1.26.3
 ```
 
 ---
@@ -213,7 +220,7 @@ systemctl --user enable --now pod-gitea-stack.service
    WantedBy=default.target
    ```
 
-2. Create `~/.config/containers/systemd/gitea-stack.yaml`:
+2. Create `~/.config/containers/systemd/gitea-stack.yaml` with mode `0600` (substituting `${HOME}` for your target user home path):
 
    ```yaml
    apiVersion: v1
@@ -230,7 +237,7 @@ systemctl --user enable --now pod-gitea-stack.service
            - name: POSTGRES_USER
              value: gitea
            - name: POSTGRES_PASSWORD
-             value: "dSoM_G1t3a_H@rd3n3d_99X"
+             value: "<GENERATE_HIGH_ENTROPY_DB_PASSWORD>"
            - name: POSTGRES_DB
              value: gitea
          volumeMounts:
@@ -238,7 +245,7 @@ systemctl --user enable --now pod-gitea-stack.service
              name: gitea-db-data
 
        - name: gitea-app
-         image: docker.io/gitea/gitea:1.26.1
+         image: docker.io/gitea/gitea:1.26.3
          ports:
            - containerPort: 3000
              hostPort: 3000
@@ -254,7 +261,7 @@ systemctl --user enable --now pod-gitea-stack.service
            - name: GITEA__database__USER
              value: gitea
            - name: GITEA__database__PASSWD
-             value: "dSoM_G1t3a_H@rd3n3d_99X"
+             value: "<GENERATE_HIGH_ENTROPY_DB_PASSWORD>"
            - name: GITEA__server__PROTOCOL
              value: https
            - name: GITEA__server__DOMAIN
@@ -263,6 +270,10 @@ systemctl --user enable --now pod-gitea-stack.service
              value: "https://10.17.250.28:3000/"
            - name: GITEA__server__HTTP_PORT
              value: "3000"
+           - name: GITEA__server__SSH_PORT
+             value: "2222"
+           - name: GITEA__server__SSH_LISTEN_PORT
+             value: "22"
            - name: GITEA__server__CERT_FILE
              value: /etc/gitea/certs/gitea.crt
            - name: GITEA__server__KEY_FILE
@@ -288,7 +299,7 @@ systemctl --user enable --now pod-gitea-stack.service
            claimName: gitea_app_data
        - name: gitea-certs
          hostPath:
-           path: /home/dsom-admin/.config/gitea/certs
+           path: /home/{{ ansible_user }}/.config/gitea/certs
            type: Directory
        - name: etc-localtime
          hostPath:
@@ -296,7 +307,7 @@ systemctl --user enable --now pod-gitea-stack.service
            type: File
    ```
 
-3. Reload systemd user daemon and start service:
+3. Reload systemd user daemon and start Quadlet service:
 
    ```bash
    systemctl --user daemon-reload
@@ -311,29 +322,45 @@ Once Gitea is active over HTTPS on port 3000, perform initial administrative set
 
 ### A. Create Admin Account via Gitea CLI
 
-Execute user creation directly inside the container:
+Execute user creation directly inside the container. Note that under manual Podman Pod deployment the container is named `gitea-app`, whereas under Quadlet Kube deployment Podman names the container `gitea-stack-gitea-app`:
 
 ```bash
 read -sp "Enter Gitea Admin Password: " GITEA_ADMIN_PASS
 
+# For Podman CLI Pod deployment:
 podman exec -u git gitea-app gitea admin user create \
     --username dsom-admin \
     --password "${GITEA_ADMIN_PASS}" \
     --email admin@dsom.local \
     --admin
+
+# For Quadlet Kube deployment (gitea-stack-gitea-app):
+# podman exec -u git gitea-stack-gitea-app gitea admin user create --username dsom-admin --password "${GITEA_ADMIN_PASS}" --email admin@dsom.local --admin
 ```
 
 ### B. Create Access Token & Organisation via API
 
-```bash
-# 1. Create Access Token for programmatic API access
-curl -s --cacert ~/.config/gitea/certs/gitea.crt -X POST "https://10.17.250.28:3000/api/v1/users/dsom-admin/tokens" \
-     -u "dsom-admin:${GITEA_ADMIN_PASS}" \
-     -H "Content-Type: application/json" \
-     -d '{"name": "setup-token", "scopes": ["all"]}' > token_resp.json
+To prevent exposing credentials in process listings or command history, pass authentication via a mode-0600 `curl` config file (`~/.gitea-auth-config`):
 
-# Extract token for subsequent requests
+```bash
+# Prepare secure 0600 curl config file
+cat <<EOF > ~/.gitea-auth-config
+user = "dsom-admin:${GITEA_ADMIN_PASS}"
+EOF
+chmod 0600 ~/.gitea-auth-config
+
+# 1. Create route-scoped setup token
+curl -s --cacert ~/.config/gitea/certs/gitea.crt --config ~/.gitea-auth-config \
+     -X POST "https://10.17.250.28:3000/api/v1/users/dsom-admin/tokens" \
+     -H "Content-Type: application/json" \
+     -d '{"name": "setup-token", "scopes": ["write:org", "write:repository", "write:user"]}' > token_resp.json
+
+# Remove authentication config file immediately
+rm -f ~/.gitea-auth-config
+
+# Extract token and token ID for subsequent requests
 GITEA_TOKEN=$(grep -o '"sha1":"[^"]*' token_resp.json | cut -d'"' -f4)
+GITEA_TOKEN_ID=$(grep -o '"id":[^,]*' token_resp.json | cut -d':' -f2)
 rm -f token_resp.json
 
 # 2. Create Organisation using Access Token
@@ -349,7 +376,7 @@ curl -s --cacert ~/.config/gitea/certs/gitea.crt -X POST "https://10.17.250.28:3
      -d '{"name": "um-elastic-soc", "private": false}'
 ```
 
-### C. Register Host SSH Public Key (Port 2222)
+### C. Register Host SSH Public Key (Port 2222) & Revoke Token
 
 ```bash
 # 1. Prepare JSON payload containing public key
@@ -368,7 +395,14 @@ curl -s --cacert ~/.config/gitea/certs/gitea.crt -X POST "https://10.17.250.28:3
      -d @ssh-key-payload.json
 rm -f ssh-key-payload.json
 
-# 3. Register SSH Host Fingerprint
+# 3. Revoke temporary setup token
+curl -s --cacert ~/.config/gitea/certs/gitea.crt -X DELETE "https://10.17.250.28:3000/api/v1/users/dsom-admin/tokens/${GITEA_TOKEN_ID}" \
+     -H "Authorization: token ${GITEA_TOKEN}"
+unset GITEA_TOKEN GITEA_ADMIN_PASS GITEA_TOKEN_ID
+
+# 4. Verify SSH fingerprint out-of-band before appending to known_hosts
+ssh-keygen -lf <(ssh-keyscan -p 2222 10.17.250.28 2>/dev/null)
+# Verify output fingerprint matches host admin key, then append:
 ssh-keyscan -p 2222 10.17.250.28 >> ~/.ssh/known_hosts
 ```
 
@@ -404,35 +438,52 @@ git push gitea main
 
 ### Service Status & Logs
 
+Support commands cover both systemd unit names (`pod-gitea-stack.service` for generated systemd, `gitea-stack.service` for Quadlet Kube):
+
 ```bash
-# Check service status
+# Check service status (Generated systemd or Quadlet Kube)
 systemctl --user status pod-gitea-stack.service
+systemctl --user status gitea-stack.service
 
 # View live container logs
 journalctl --user -u pod-gitea-stack.service -f
+journalctl --user -u gitea-stack.service -f
 
-# Restart service
+# Restart active service
 systemctl --user restart pod-gitea-stack.service
+systemctl --user restart gitea-stack.service
 ```
 
 ### Troubleshooting: "Permission Denied" Reading `gitea.key`
 
-If Gitea container fails to read key permissions on startup:
+If Gitea container fails to read key permissions on startup, check user namespace identity via `podman exec gitea-app id` or `podman exec gitea-stack-gitea-app id`:
 
 ```bash
-chmod 0600 ~/.config/gitea/certs/gitea.key
+# Ensure readable permissions for host user session
+chmod 0644 ~/.config/gitea/certs/gitea.crt
+chmod 0644 ~/.config/gitea/certs/gitea.key
+
 systemctl --user daemon-reload
-systemctl --user restart pod-gitea-stack.service
+systemctl --user restart gitea-stack.service
 ```
 
 ### Decommissioning & Cleanup
 
+To ensure neither Option 1 nor Option 2 remains active after cleanup, stop and disable both unit names:
+
 ```bash
-systemctl --user disable --now pod-gitea-stack.service
+# Stop and disable both possible service unit instances
+systemctl --user disable --now pod-gitea-stack.service 2>/dev/null || true
+systemctl --user disable --now gitea-stack.service 2>/dev/null || true
+
+# Remove unit and Quadlet manifest files
 rm -f ~/.config/systemd/user/*gitea-stack*
+rm -f ~/.config/containers/systemd/*gitea-stack*
 systemctl --user daemon-reload
-podman pod rm -f gitea-stack
-podman volume rm gitea_db_data gitea_app_data
+
+# Remove containers, pods, and storage volumes
+podman pod rm -f gitea-stack 2>/dev/null || true
+podman volume rm gitea_db_data gitea_app_data 2>/dev/null || true
 ```
 
 ---

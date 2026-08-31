@@ -26,7 +26,7 @@ Using Ansible for deployment guarantees idempotent, reproducible infrastructure 
 
 * **Default Domain / Host IP:** `10.17.250.28` (or target inventory host)
 * **Database Backend:** PostgreSQL 15 (Alpine)
-* **Application Server:** Gitea 1.26.1
+* **Application Server:** Gitea 1.26.3
 * **HTTP/HTTPS Port:** `3000` (Mapped to container port `3000` over HTTPS)
 * **SSH Port:** `2222` (Mapped to container port `22` for Git over SSH)
 * **Security & TLS:** TLS certificates generated via `community.crypto` and signed by Sovereign CA.
@@ -58,11 +58,11 @@ The deployment relies on Ansible role variables and task definitions:
 ### Role Defaults (`roles/gitea/defaults/main.yml`)
 
 ```yaml
-gitea_domain: "localhost"
-gitea_root_url: "https://localhost:3000/"
+gitea_domain: "10.17.250.28"
+gitea_root_url: "https://10.17.250.28:3000/"
 gitea_http_port: 3000
 gitea_ssh_port: 2222
-gitea_db_password: "dSoM_G1t3a_H@rd3n3d_99X"
+gitea_db_password: "{{ vault_gitea_db_password }}"
 ```
 
 ### Main Task Execution Flow (`roles/gitea/tasks/main.yml`)
@@ -77,18 +77,23 @@ gitea_db_password: "dSoM_G1t3a_H@rd3n3d_99X"
     state: directory
     mode: '0755'
 
-- name: Deploy Gitea Kube Quadlet (YAML & Kube)
+- name: Deploy Gitea Kube Quadlet YAML (mode 0600 for secrets)
   ansible.builtin.template:
-    src: "{{ item }}.j2"
-    dest: "~/.config/containers/systemd/{{ item }}"
+    src: "gitea-stack.yaml.j2"
+    dest: "~/.config/containers/systemd/gitea-stack.yaml"
+    mode: '0600'
+
+- name: Deploy Gitea Kube Quadlet Unit
+  ansible.builtin.template:
+    src: "gitea-stack.kube.j2"
+    dest: "~/.config/containers/systemd/gitea-stack.kube"
     mode: '0644'
-  loop:
-    - gitea-stack.yaml
-    - gitea-stack.kube
   notify: reload systemd user daemon
 
 - name: Reload systemd user daemon for Quadlet generation
   ansible.builtin.shell: systemctl --user daemon-reload
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ ansible_user_uid }}"
   changed_when: false
 
 - name: Ensure Gitea service is enabled and started
@@ -98,6 +103,8 @@ gitea_db_password: "dSoM_G1t3a_H@rd3n3d_99X"
     enabled: yes
     scope: user
     daemon_reload: yes
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ ansible_user_uid }}"
 ```
 
 ### Sovereign TLS Task Automation (`roles/gitea/tasks/tls.yml`)
@@ -166,17 +173,28 @@ gitea_db_password: "dSoM_G1t3a_H@rd3n3d_99X"
   ansible.builtin.copy:
     src: "{{ playbook_dir }}/../vault/generated/{{ inventory_hostname }}-gitea.key"
     dest: "~/.config/gitea/certs/gitea.key"
-    mode: '0600'
+    mode: '0644'
   become: false
 
-- name: Install Sovereign CA to Host Trust Store
+- name: Install Sovereign CA to Host Trust Store (Debian family)
   ansible.builtin.copy:
     src: "{{ playbook_dir }}/../vault/dsom-elasticsearch-ca.crt"
     dest: /usr/local/share/ca-certificates/sovereign-ca.crt
     mode: '0644'
   become: true
   become_user: root
+  when: ansible_os_family == 'Debian'
   notify: update ca-certificates
+
+- name: Install Sovereign CA to Host Trust Store (Red Hat family)
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../vault/dsom-elasticsearch-ca.crt"
+    dest: /etc/pki/ca-trust/source/anchors/sovereign-ca.crt
+    mode: '0644'
+  become: true
+  become_user: root
+  when: ansible_os_family == 'RedHat'
+  notify: update ca-trust
 ```
 
 ---
