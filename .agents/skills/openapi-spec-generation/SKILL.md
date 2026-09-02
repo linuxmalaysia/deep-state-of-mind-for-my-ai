@@ -52,7 +52,8 @@ Validate the specification using OpenAPI linters (e.g. `redocly` or `vacuum`):
 ```bash
 npx @redocly/cli@1.25.0 lint openapi.yaml
 ```
-Integrity verification: `@redocly/cli@1.25.0` (SHA512 checksum verified via package-lock.json).
+
+Integrity verification: `@redocly/cli@1.25.0` (ensure `package-lock.json` records `@redocly/cli@1.25.0` and that execution uses the locked dependency; when no lockfile is available, perform explicit checksum validation before executing the CLI).
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-02*

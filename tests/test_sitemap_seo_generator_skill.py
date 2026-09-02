@@ -242,9 +242,9 @@ class AgentsMdSkillRegistrationTests(unittest.TestCase):
             self.content,
         )
 
-    def test_stale_31_skill_count_is_not_present(self):
+    def test_stale_32_skill_count_is_not_present(self):
         # Regression guard: the old count must not linger anywhere in the file.
-        self.assertNotIn("OKF-compliant executable skill SOPs (31 skills)", self.content)
+        self.assertNotIn("OKF-compliant executable skill SOPs (32 skills)", self.content)
 
     def test_new_skill_row_appears_after_palace_auditor(self):
         palace_auditor_index = self.content.index("`palace-auditor`")
