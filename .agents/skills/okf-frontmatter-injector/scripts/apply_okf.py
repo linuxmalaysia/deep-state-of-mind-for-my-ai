@@ -11,6 +11,14 @@
 # ==============================================================================
 # Protocol    : Deep State of Mind (DSOM) For My AI
 # Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-09-02
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
+
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
 # Timestamp   : 2026-08-05
 # License     : GNU General Public License v3.0
 # Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
