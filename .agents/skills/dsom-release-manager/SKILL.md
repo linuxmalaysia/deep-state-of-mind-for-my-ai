@@ -7,7 +7,7 @@ description: "Cuts a formal DSOM release, updates ledgers, tags the repository, 
 topics: ["release", "git", "tagging", "changelog", "deployment"]
 sources: [".agents/AGENTS.md", "CHANGELOG.md", "HISTORY.md"]
 verified: true
-status: "active"
+status: active
 ---
 # 🚀 DSOM Release Manager
 

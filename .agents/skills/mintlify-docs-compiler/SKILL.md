@@ -3,21 +3,15 @@ okf_version: 0.2
 type: skill_sop
 title: "Mintlify MDX Compiler & One-Way Sync"
 timestamp: "2026-08-23T06:57:00Z"
-sources:
-  - title: "Mintlify Documentation"
-    url: "https://mintlify.com/docs"
-  - file:///tools/build_mintlify_mdx.py
-  - file:///scripts/sync_docs.py
-  - file:///.github/workflows/sync-docs.yml
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
-stale_after: "2027-08-23T06:57:00Z"
-name: mintlify-docs-compiler
 description: "Compiles Sovereign Markdown Palace documents into Mintlify MDX trees and syncs to downstream docs repository under 5 strict safety guards."
 topics: ["mintlify", "docs", "sync", "mdx", "safety-guards", "user-manual-style"]
+sources: [{title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///tools/build_mintlify_mdx.py", "file:///scripts/sync_docs.py", "file:///.github/workflows/sync-docs.yml"]
+generated: human-and-ai
+verified: verified
+status: authoritative
+stale_after: "2027-08-23T06:57:00Z"
+name: mintlify-docs-compiler
 ---
-
 # Mintlify MDX Compiler & One-Way Sync
 
 This skill automates compiling standard Markdown documents in `docs/` and skills in `.agents/skills/` into Mintlify-compliant MDX (`docs-source/`) and executing a one-way synchronization pipeline to the downstream deployment repository (`linuxmalaysia/my-knowledge-brain`) serving `https://harisfazillah.mintlify.site`.

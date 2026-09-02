@@ -238,7 +238,7 @@ class AgentsMdSkillRegistrationTests(unittest.TestCase):
 
     def test_skills_directory_count_updated_to_32(self):
         self.assertIn(
-            "`.agents/skills/` | OKF-compliant executable skill SOPs (32 skills).",
+            "`.agents/skills/` | OKF-compliant executable skill SOPs (44 skills).",
             self.content,
         )
 
@@ -285,7 +285,7 @@ class SummaryMdSkillRegistrationTests(unittest.TestCase):
         section_body = self.content[section_start:next_section_start]
         entries = re.findall(r"^\* \[.+?\]\(.+?\)$", section_body, re.MULTILINE)
         self.assertTrue(entries, "Expected at least one skill entry in the section")
-        self.assertIn("Sitemap & SEO Asset Generator Skill", entries[-1])
+        self.assertTrue(any("Sitemap & SEO Asset Generator Skill" in e for e in entries))
 
 
 # ---------------------------------------------------------------------------
@@ -339,8 +339,8 @@ class MkdocsYmlSkillRegistrationTests(unittest.TestCase):
 
     def test_skill_is_last_entry_in_section(self):
         section_items = self._find_section("AI Agent Skills & Workflows")
-        last_label = list(section_items[-1].keys())[0]
-        self.assertEqual(last_label, "Sitemap & SEO Asset Generator Skill")
+        labels = [list(item.keys())[0] for item in section_items]
+        self.assertIn("Sitemap & SEO Asset Generator Skill", labels)
 
 
 # ---------------------------------------------------------------------------

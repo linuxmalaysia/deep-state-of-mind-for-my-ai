@@ -60,6 +60,16 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Skill Architecture](docs/governance/AI-SKILL-ARCHITECTURE.md): The structural design for OKF-compliant semantic AI skills.
 - [OKF Adoption Guide](docs/OKF-ADOPTION-GUIDE.md): Standards for Open Knowledge Format (OKF v0.1) frontmatter.
 - [Jules & Antigravity Collaborative Sync Skill](.agents/skills/jules-antigravity-sync/SKILL.md): SOP for synchronising cognitive context and historic merges between Jules and Google Antigravity.
+- [Documentation Writer Skill](.agents/skills/docs-write/SKILL.md): SOP for drafting clear, user-focused documentation with reader intent.
+- [Documentation Review Skill](.agents/skills/docs-review/SKILL.md): SOP for systematically reviewing documentation changes to protect the source of truth.
+- [Docstring Skill](.agents/skills/docstring/SKILL.md): SOP for writing structured Sphinx/Google style Python docstrings and API references.
+- [DOCX Document Processor Skill](.agents/skills/docx/SKILL.md): SOP for processing, redlining, and converting Word .docx files.
+- [OpenAPI Spec Generation Skill](.agents/skills/openapi-spec-generation/SKILL.md): SOP for generating and maintaining OpenAPI 3.1+ specifications.
+- [AI Hyperparameter Optimization Expert Skill](.agents/skills/hyperparameter-tuning-expert/SKILL.md): SOP for evaluating and tuning learning rates and ML hyperparameters.
+- [OKF v0.2 Migration Skill](.agents/skills/okf-v02-adoption-engineer/SKILL.md): SOP for converting and enforcing OKF v0.2 metadata standards.
+- [Knowledge Base Templates Skill](.agents/skills/knowledge-base-templates/SKILL.md): SOP for generating structured repository wikis and module documentation.
+- [Architecture Decision Records Skill](.agents/skills/architecture-decision-records/SKILL.md): SOP for authoring MADR-compliant Architecture Decision Records (ADRs).
+- [Changelog Automation Skill](.agents/skills/changelog-automation/SKILL.md): SOP for automating Keep a Changelog releases from Conventional Commits.
 
 ## Strategy & Optimization
 - [GitOps/AIOps/Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Doctrine for integrating AI planning with Defensive GitOps.

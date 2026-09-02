@@ -1,20 +1,17 @@
 ---
 okf_version: 0.2
 type: skill_sop
-title: "Agent Plugin Packager"
+title: Agent Plugin Packager
 timestamp: "2026-08-22T19:45:00Z"
-sources:
-  - title: "Agent Plugins Specification 1.0.0"
-    url: "https://agent-plugins.org/specification"
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
-stale_after: "2027-08-22T19:45:00Z"
-name: agent-plugin-packager
 description: "Packages, validates, and scaffolds DSOM skills and FastMCP servers into portable Agent Plugins 1.0.0 compliant bundles."
 topics: ["agent-plugins", "packaging", "mcp", "skills", "scaffolding"]
+sources: [{title: Agent Plugins Specification 1.0.0, url: 'https://agent-plugins.org/specification'}]
+generated: human-and-ai
+verified: verified
+status: authoritative
+stale_after: "2027-08-22T19:45:00Z"
+name: agent-plugin-packager
 ---
-
 # Agent Plugin Packager Skill
 
 > **SOP Type:** Automated Packaging & Verification  

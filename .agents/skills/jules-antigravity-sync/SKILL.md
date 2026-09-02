@@ -3,20 +3,15 @@ okf_version: 0.2
 type: skill_sop
 title: "Google Jules & Google Antigravity Collaborative Sync"
 timestamp: "2026-08-22T23:20:00Z"
-sources:
-  - title: "The Core AI Rulebook (DSOM)"
-    url: "file:///.agents/AGENTS.md"
-  - title: "Jules PR History Ledger"
-    url: "file:///.agents/brain/jules_pr_history.md"
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
-stale_after: "2027-08-22T23:20:00Z"
-name: jules-antigravity-sync
 description: "Procedural SOP for synchronising cognitive context, rule alignment, and historic code modifications between Google Jules and Google Antigravity."
 topics: ["collaboration", "sync", "jules", "antigravity", "git", "powershell", "mintlify", "agent-plugins"]
+sources: [{title: The Core AI Rulebook (DSOM), url: 'file:///.agents/AGENTS.md'}, {title: Jules PR History Ledger, url: 'file:///.agents/brain/jules_pr_history.md'}]
+generated: human-and-ai
+verified: verified
+status: authoritative
+stale_after: "2027-08-22T23:20:00Z"
+name: jules-antigravity-sync
 ---
-
 # Google Jules & Google Antigravity Collaborative Sync Skill
 
 **Purpose**: To enable Google Jules and Google Antigravity to share, synchronise, and acknowledge each other's code merges, pull requests, and architectural discoveries, establishing complete cognitive continuity across platform agents.
