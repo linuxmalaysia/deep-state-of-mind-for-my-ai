@@ -10,6 +10,7 @@ name: changelog-automation
 # 📜 Changelog Automation Skill (`changelog-automation`)
 
 ## Purpose
+
 The `changelog-automation` skill automates the generation and maintenance of project changelogs from Git commit histories, pull requests, and release tags. Adhering to the [Keep a Changelog](https://keepachangelog.com/) standard and Conventional Commits specifications, it ensures change logs communicate user impact and breaking changes rather than dumping raw commit messages.
 
 ---

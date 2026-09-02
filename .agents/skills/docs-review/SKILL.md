@@ -10,6 +10,7 @@ name: docs-review
 # 🔍 Documentation Review Skill (`docs-review`)
 
 ## Purpose
+
 The `docs-review` skill facilitates systematic review of documentation changes, pull requests, files, and diffs to ensure accuracy, completeness, maintainability, and style guide compliance. It protects the source of truth by comparing documentation claims against actual code, CLI flags, API schemas, and test outputs.
 
 ---

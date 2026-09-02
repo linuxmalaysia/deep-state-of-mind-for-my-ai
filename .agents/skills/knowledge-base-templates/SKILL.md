@@ -31,12 +31,14 @@ The `knowledge-base-templates` skill provides reusable templates and structural 
 ## Standard Template Schemas
 
 ### 1. Architecture & Module Overview Template
+- **Owner & Review Cadence**: Designated maintainer team, owner identity, and mandatory review cadence (or `stale_after` date).
 - **Title & Purpose**: High-level summary of the subsystem or module.
 - **Component Diagram**: Mermaid flowchart or sequence diagram.
 - **Key File Maps**: Table listing primary source files and their responsibilities.
 - **Operational Dependencies**: Upstream services and downstream consumers.
 
 ### 2. Operational Runbook Template
+- **Owner & Review Cadence**: Designated maintainer team, owner identity, and mandatory review cadence (or `stale_after` date).
 - **Overview & Severity**: Impact summary and alert thresholds.
 - **Prerequisites**: Access levels, tools, and CLI requirements.
 - **Step-by-Step Remediation**: Sequential recovery instructions.

@@ -10,6 +10,7 @@ name: docs-write
 # ✍️ Documentation Writer Skill (`docs-write`)
 
 ## Purpose
+
 The `docs-write` skill assists users and AI agents in creating and editing documentation that adheres to a clear, conversational, and user-focussed writing style. It addresses common challenges faced by technical writers and engineers when conveying complex technical information in an accessible manner, ensuring documentation is engaging, structured, and easy to navigate.
 
 ---
@@ -34,17 +35,20 @@ The `docs-write` skill assists users and AI agents in creating and editing docum
 ## Writing & Editing Process
 
 ### Step 1: Identify Reader Intent & Inputs
+
 Confirm inputs before writing:
 - Targeted reader persona and level of expertise.
 - Exact code paths, CLI commands, or API parameters.
 - Existing documentation pages affected by the change.
 
 ### Step 2: Drafting
+
 - Use active voice and simple, direct UK English prose.
 - Present instructions as explicit commands.
 - Include concrete code or CLI examples with realistic outputs.
 
 ### Step 3: Formatting & Structure
+
 - Structure material following the **Diátaxis framework** (Tutorial, How-To Guide, Reference, or Explanation).
 - Maintain clear, descriptive heading hierarchies (MD022/MD031 compliant with blank lines around headings and fenced code blocks).
 - Avoid vague headings like "Overview" or "Miscellaneous". Use action-oriented titles.

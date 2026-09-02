@@ -10,6 +10,7 @@ name: architecture-decision-records
 # 🏛️ Architecture Decision Records Skill (`architecture-decision-records`)
 
 ## Purpose
+
 The `architecture-decision-records` skill provides a structured framework for documenting significant technical decisions through Architecture Decision Records (ADRs). It captures the context, rationale, trade-offs, and consequences behind architectural choices, ensuring historical clarity and facilitating decision reviews.
 
 ---

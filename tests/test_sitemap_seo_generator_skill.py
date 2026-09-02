@@ -236,7 +236,7 @@ class AgentsMdSkillRegistrationTests(unittest.TestCase):
             self.content,
         )
 
-    def test_skills_directory_count_updated_to_32(self):
+    def test_skills_directory_count_updated_to_44(self):
         self.assertIn(
             "`.agents/skills/` | OKF-compliant executable skill SOPs (44 skills).",
             self.content,
@@ -277,7 +277,7 @@ class SummaryMdSkillRegistrationTests(unittest.TestCase):
         target = REPO_ROOT / matches[0]
         self.assertTrue(target.is_file())
 
-    def test_new_skill_entry_is_last_in_skills_and_workflows_section(self):
+    def test_sitemap_skill_entry_present_in_skills_and_workflows_section(self):
         section_start = self.content.index("## 🤖 8. AI Agent Skills & Workflows")
         next_section_start = self.content.index(
             "## 📚 9. References & Genesis Papers"
@@ -337,9 +337,9 @@ class MkdocsYmlSkillRegistrationTests(unittest.TestCase):
             ".agents/skills/sitemap-seo-generator/SKILL.md",
         )
 
-    def test_skill_is_last_entry_in_section(self):
+    def test_sitemap_skill_present_in_section(self):
         section_items = self._find_section("AI Agent Skills & Workflows")
-        labels = [list(item.keys())[0] for item in section_items]
+        labels = [next(iter(item)) for item in section_items]
         self.assertIn("Sitemap & SEO Asset Generator Skill", labels)
 
 

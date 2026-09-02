@@ -140,7 +140,7 @@ nav:
       - Docstring & Function Reference Skill: .agents/skills/docstring/SKILL.md
       - DOCX Document Processor Skill: .agents/skills/docx/SKILL.md
       - OpenAPI Spec Generation Skill: .agents/skills/openapi-spec-generation/SKILL.md
-      - AI Hyperparameter Optimization Expert Skill: .agents/skills/hyperparameter-tuning-expert/SKILL.md
+      - AI Hyperparameter Optimisation Expert Skill: .agents/skills/hyperparameter-tuning-expert/SKILL.md
       - OKF v0.2 Migration & Compliance Standard Skill: .agents/skills/okf-v02-adoption-engineer/SKILL.md
       - Knowledge Base Templates Skill: .agents/skills/knowledge-base-templates/SKILL.md
       - Architecture Decision Records Skill: .agents/skills/architecture-decision-records/SKILL.md

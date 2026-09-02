@@ -50,8 +50,9 @@ Format the output as valid OpenAPI 3.1+ YAML:
 ### Step 3: Validation
 Validate the specification using OpenAPI linters (e.g. `redocly` or `vacuum`):
 ```bash
-npx @redocly/cli lint openapi.yaml
+npx @redocly/cli@1.25.0 lint openapi.yaml
 ```
+Integrity verification: `@redocly/cli@1.25.0` (SHA512 checksum verified via package-lock.json).
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-02*

@@ -10,6 +10,7 @@ name: docstring
 # 🐍 Docstring & Function Reference Skill (`docstring`)
 
 ## Purpose
+
 The `docstring` skill provides a structured approach to writing clear, accurate, and consistent docstrings for functions, classes, and modules. It ensures code documentation serves future maintainers and API consumers by explaining intent, contracts, side effects, failure modes, and edge cases rather than merely restating implementation line by line.
 
 ---

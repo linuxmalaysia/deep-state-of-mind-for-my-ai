@@ -130,7 +130,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `cross-platform-translator` | Analyses a `.ps1` or `.sh` script and generates its functional equivalent in the other shell language. | Shell script (`.ps1` or `.sh`). | Translated script in the target language. |
 | `persona-injector` | Injects the DSOM Cognitive Twin persona profile into a new AI configuration. | Target AI platform config. | Updated persona profile. |
 | `dsom-token-calculator` | Runs `tiktoken` against `.agents/skills/` to audit token counts and flag any `SKILL.md` exceeding the 4,000-token gate. | No input required. | Token audit report; flags `[BLOCKED]` files. |
-| `hyperparameter-tuning-expert` | Analyzes, optimizes, and debugs learning rates and hyperparameters in deep learning models across frameworks. | Learning rate and ML framework. | Risk assessment and remediation code. |
+| `hyperparameter-tuning-expert` | Analyses, optimises, and debugs learning rates and hyperparameters in deep learning models across frameworks. | Learning rate and ML framework. | Risk assessment and remediation code. |
 
 ### Session Ritual Skills
 
