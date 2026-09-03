@@ -135,6 +135,16 @@ nav:
       - Jules & Antigravity Collaborative Sync Skill: .agents/skills/jules-antigravity-sync/SKILL.md
       - OpenWiki Knowledge Graph Compiler Skill: .agents/skills/openwiki-compiler/SKILL.md
       - Sitemap & SEO Asset Generator Skill: .agents/skills/sitemap-seo-generator/SKILL.md
+      - Documentation Writer Skill: .agents/skills/docs-write/SKILL.md
+      - Documentation Review Skill: .agents/skills/docs-review/SKILL.md
+      - Docstring & Function Reference Skill: .agents/skills/docstring/SKILL.md
+      - DOCX Document Processor Skill: .agents/skills/docx/SKILL.md
+      - OpenAPI Spec Generation Skill: .agents/skills/openapi-spec-generation/SKILL.md
+      - AI Hyperparameter Optimisation Expert Skill: .agents/skills/hyperparameter-tuning-expert/SKILL.md
+      - OKF v0.2 Migration & Compliance Standard Skill: .agents/skills/okf-v02-adoption-engineer/SKILL.md
+      - Knowledge Base Templates Skill: .agents/skills/knowledge-base-templates/SKILL.md
+      - Architecture Decision Records Skill: .agents/skills/architecture-decision-records/SKILL.md
+      - Changelog Automation Skill: .agents/skills/changelog-automation/SKILL.md
   - Ansible:
       - HOWTO Setup Baseline: HOWTO-SETUP-ANSIBLE-BASELINE.md
       - HOWTO Setup AlmaLinux 10 WSL2: HOWTO-SETUP-WSL-ALMALINUX10.md

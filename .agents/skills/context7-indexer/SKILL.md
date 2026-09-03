@@ -3,21 +3,15 @@ okf_version: 0.2
 type: skill_sop
 title: "Context7 Semantic Indexer & Local Snippet Search"
 timestamp: "2026-08-23T07:45:00Z"
-sources:
-  - title: "Context7 Documentation"
-    url: "https://context7.com"
-  - file:///tools/mcp/server.py
-  - file:///references/llms-from-context7.txt
-  - file:///docs/reference/CLI-QUICK-REFERENCE.md
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
-stale_after: "2027-08-23T07:45:00Z"
-name: context7-indexer
 description: "Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context or local code snippets via MCP."
 topics: ["context7", "semantic", "index", "mcp", "rag", "code-snippets", "offline-snapshot"]
+sources: [{title: Context7 Documentation, url: 'https://context7.com'}, "file:///tools/mcp/server.py", "file:///references/llms-from-context7.txt", "file:///docs/reference/CLI-QUICK-REFERENCE.md"]
+generated: human-and-ai
+verified: verified
+status: authoritative
+stale_after: "2027-08-23T07:45:00Z"
+name: context7-indexer
 ---
-
 # Context7 Semantic Indexer & Local Snippet Search
 
 ## Purpose

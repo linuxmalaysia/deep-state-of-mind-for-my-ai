@@ -91,6 +91,14 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `palace-auditor` | Audits the Sovereign Markdown Palace — verifies index links, finds undocumented scripts, and proposes structural cleanups. | No input required. | Audit report with orphaned files and broken links. |
 | `sitemap-seo-generator` | Generates and compiles standard sitemaps and SEO assets across platforms (GitHub Pages, Read the Docs, GitBook) to optimize search indexing. | No input required. | Generated `sitemap.txt`, `sitemap.xml`, and `robots.txt` files. |
 | `mintlify-docs-compiler` | Compiles Markdown files and skills into Mintlify MDX format and validates one-way sync under Guards A–E. | `docs/` and `.agents/skills/` | Generated `docs-source/` MDX tree and `docs.json`. |
+| `docs-write` | Assists users in creating and editing documentation with a clear, conversational style and reader intent. | Target reader, context code/docs. | Compliant Markdown/MDX prose. |
+| `docs-review` | Performs systematic reviews of documentation changes, PR diffs, and files to protect the source of truth. | PR diff or local doc file. | Sequential numbered issue review report. |
+| `docstring` | Generates structured Python function docstrings and inline API references explaining intent and contracts. | Function/class signature and code. | Sphinx/Google-style docstring. |
+| `openapi-spec-generation` | Generates, validates, and maintains OpenAPI 3.1+ specifications from code or design drafts. | Code paths or API design draft. | OpenAPI 3.1+ YAML spec. |
+| `okf-v02-adoption-engineer` | Converts, validates, and enforces Open Knowledge Format (OKF) v0.2 standards with core trust signals. | Raw Markdown or OKF v0.1 file. | OKF v0.2 compliant document. |
+| `knowledge-base-templates` | Provides reusable templates and structural frameworks for internal wikis, concept maps, and module docs. | Project/monorepo structure. | Structured KB wiki template. |
+| `architecture-decision-records` | Writes and maintains Architecture Decision Records (ADRs) following standard MADR format. | Architectural context and choices. | Formatted MADR ADR document. |
+| `changelog-automation` | Automates changelog generation following Keep a Changelog and Conventional Commits. | Git commits, PRs, releases. | Formatted Changelog. |
 
 ### Document Output Skills
 
@@ -103,6 +111,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `odp-slide-generator` | Generates styled 3-column corporate presentation slides (PPTX/ODP) using `python-pptx`. | Markdown outline or structured text. | PPTX/ODP file. |
 | `publish-to-blogger` | Converts a markdown artifact into clean HTML for publishing on Blogger.com. | Markdown `.md` file. | HTML snippet with DSOM Human-AI Synergy Statement. |
 | `pdf-text-extractor` | Downloads an external PDF and extracts its text content using `curl` and an isolated `uv` Python environment. | PDF URL. | Extracted plain text. |
+| `docx` | Handles creation, editing, redlining, tracked changes, and text extraction for .docx Word documents. | Word file or Markdown source. | Formatted DOCX or extracted Markdown. |
 
 ### Git & Security Skills
 
@@ -121,6 +130,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `cross-platform-translator` | Analyses a `.ps1` or `.sh` script and generates its functional equivalent in the other shell language. | Shell script (`.ps1` or `.sh`). | Translated script in the target language. |
 | `persona-injector` | Injects the DSOM Cognitive Twin persona profile into a new AI configuration. | Target AI platform config. | Updated persona profile. |
 | `dsom-token-calculator` | Runs `tiktoken` against `.agents/skills/` to audit token counts and flag any `SKILL.md` exceeding the 4,000-token gate. | No input required. | Token audit report; flags `[BLOCKED]` files. |
+| `hyperparameter-tuning-expert` | Analyses, optimises, and debugs learning rates and hyperparameters in deep learning models across frameworks. | Learning rate and ML framework. | Risk assessment and remediation code. |
 
 ### Session Ritual Skills
 
@@ -188,7 +198,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `.agents/brain/walkthrough.md` | Session history and Mental Anchors (resume context). |
 | `.agents/brain/palace_registry.md` | Spatial index of the Sovereign Markdown Palace. |
 | `.agents/brain/active_context_manifest.md` | Live list of files currently in scope. |
-| `.agents/skills/` | OKF-compliant executable skill SOPs (32 skills). |
+| `.agents/skills/` | OKF-compliant executable skill SOPs (44 skills). |
 | `.agents/workflows/` | Multi-agent orchestration governance workflows. |
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |
