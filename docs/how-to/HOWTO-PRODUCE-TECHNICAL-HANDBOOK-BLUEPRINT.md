@@ -1,24 +1,17 @@
 ---
 okf_version: 0.2
-type: "how-to"
+type: how-to
 title: "How to Produce a Project Technical Handbook: The AI Prompt Engineering & Skill Adoption Blueprint"
 timestamp: "2026-09-05T05:00:00Z"
 topics: ["pandoc", "pdf", "handbook", "prompt-engineering", "print-optimized", "diataxis", "gitops", "aiops", "transferable-skills"]
 description: "Comprehensive operational handbook and transferable AI prompt library for analyzing code repositories, synthesizing Diataxis documentation, baking native vector diagrams, and compiling publication-grade print-ready handbooks (PDF, HTML, EPUB) using Pandoc and Headless Chromium."
-status: "stable"
+status: stable
 stale_after: "2027-09-05"
-sources:
-  - id: "dsom_agents_rulebook"
-    title: "The Core AI Rulebook (DSOM Rule 11 & Rule 22)"
-    path: ".agents/AGENTS.md"
-  - id: "dsom_technical_book_compiler_skill"
-    title: "Technical Ebook & Handbook Compiler Skill"
-    path: ".agents/skills/dsom-technical-book-compiler/SKILL.md"
-  - id: "technical_book_compiler_prompt_guide"
-    title: "Technical Book Design & PDF Compilation Master Prompt Guide"
-    path: "docs/governance/TECHNICAL-BOOK-DESIGN-AND-PDF-COMPILER-PROMPT-GUIDE.md"
+sources: [{id: dsom_agents_rulebook, path: .agents/AGENTS.md, title: The Core AI Rulebook (DSOM
+    Rule 11 & Rule 22)}, {id: dsom_technical_book_compiler_skill, path: .agents/skills/dsom-technical-book-compiler/SKILL.md,
+  title: Technical Ebook & Handbook Compiler Skill}, {id: technical_book_compiler_prompt_guide, path: docs/governance/TECHNICAL-BOOK-DESIGN-AND-PDF-COMPILER-PROMPT-GUIDE.md,
+  title: Technical Book Design & PDF Compilation Master Prompt Guide}]
 ---
-
 # How to Produce a Project Technical Handbook: The AI Prompt Engineering & Skill Adoption Blueprint
 
 > **Classification:** Technical Standard & Transferable Knowledge Base
