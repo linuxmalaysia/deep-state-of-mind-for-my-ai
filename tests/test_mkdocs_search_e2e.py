@@ -22,7 +22,7 @@ def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
         if (parent / ".git").exists():
             return parent
     raise RuntimeError(
-        f"Could not locate repository root (.git not found) starting from path '{start}'. "
+        f"Cannot locate repository root (.git not found) starting from path '{start}'. "
         "Please run tests inside a valid Git checkout repository."
     )
 

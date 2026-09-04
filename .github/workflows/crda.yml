@@ -108,6 +108,9 @@ jobs:
           sarif_file: snyk-python.sarif
           category: snyk-python-scan
 
+      - name: Install Node.js dependencies
+        run: npm ci --ignore-scripts
+
       - name: Run Snyk Node.js vulnerability scan
         uses: snyk/actions/node@12140f4059e244892ae643824a95459a102120dd # master
         continue-on-error: true          # Allow SARIF upload even if vulnerabilities found

@@ -16,12 +16,16 @@ except ImportError:
 GATE_THRESHOLD = 4000
 
 
+class RepoRootNotFoundError(RuntimeError):
+    """Raised when repository root cannot be located."""
+
+
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
     current = start.resolve()
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
             return parent
-    raise RuntimeError(
+    raise RepoRootNotFoundError(
         f"Could not locate repository root (.git not found) starting from path '{start}'. "
         "Please run tests inside a valid Git checkout repository."
     )

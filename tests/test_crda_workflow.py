@@ -127,6 +127,9 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
         self.assertEqual(py_upload["with"]["sarif_file"], "snyk-python.sarif")
         self.assertEqual(py_upload["with"]["category"], "snyk-python-scan")
 
+        install_node_deps = steps_by_name["Install Node.js dependencies"]
+        self.assertEqual(install_node_deps["run"], "npm ci --ignore-scripts")
+
         node_step = steps_by_name["Run Snyk Node.js vulnerability scan"]
         self.assertEqual(node_step["uses"], "snyk/actions/node@12140f4059e244892ae643824a95459a102120dd")
         self.assertEqual(node_step["with"]["args"], "--sarif-file-output=snyk-node.sarif --severity-threshold=low")
@@ -150,6 +153,7 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
                 "Install Python dependencies",
                 "Run Snyk Python vulnerability scan",
                 "Upload Python SARIF to GitHub Code Scanning",
+                "Install Node.js dependencies",
                 "Run Snyk Node.js vulnerability scan",
                 "Upload Node.js SARIF to GitHub Code Scanning",
             ],
