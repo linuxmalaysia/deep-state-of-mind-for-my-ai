@@ -90,12 +90,15 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
         self.assertNotIn("run: pip install -r requirements.txt", self.content)
 
     def test_snyk_scan_step_still_present(self):
-        # Sanity check: the core purpose of this workflow (the Snyk scan)
+        # Sanity check: the core purpose of this workflow (the Snyk scans)
         # must remain untouched by the tooling changes.
         self.assertIn("uses: snyk/actions/python@master", self.content)
+        self.assertIn("uses: snyk/actions/node@master", self.content)
 
     def test_sarif_upload_step_still_present(self):
         self.assertIn("uses: github/codeql-action/upload-sarif@v4", self.content)
+        self.assertIn("category: snyk-python-scan", self.content)
+        self.assertIn("category: snyk-node-scan", self.content)
 
     def test_no_tab_characters(self):
         self.assertNotIn("\t", self.content, "Workflow file should not contain tab characters")
@@ -124,8 +127,10 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
                 "Install uv",
                 "Set up Python 3.12",
                 "Install Python dependencies",
-                "Run Snyk vulnerability scan",
-                "Upload SARIF to GitHub Code Scanning",
+                "Run Snyk Python vulnerability scan",
+                "Upload Python SARIF to GitHub Code Scanning",
+                "Run Snyk Node.js vulnerability scan",
+                "Upload Node.js SARIF to GitHub Code Scanning",
             ],
         )
 

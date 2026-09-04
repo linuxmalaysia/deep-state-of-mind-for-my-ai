@@ -36,12 +36,16 @@ on:
     branches: [ "main" ]
     paths:
       - "requirements.txt"
+      - "package.json"
+      - "package-lock.json"
       - ".github/workflows/crda.yml"
 
   pull_request:
     branches: [ "main" ]
     paths:
       - "requirements.txt"
+      - "package.json"
+      - "package-lock.json"
       - ".github/workflows/crda.yml"
 
   schedule:
@@ -90,16 +94,30 @@ jobs:
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
 
-      - name: Run Snyk vulnerability scan
+      - name: Run Snyk Python vulnerability scan
         uses: snyk/actions/python@master
         continue-on-error: true          # Allow SARIF upload even if vulnerabilities found
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --sarif-file-output=snyk.sarif --severity-threshold=low
+          args: --sarif-file-output=snyk-python.sarif --severity-threshold=low
 
-      - name: Upload SARIF to GitHub Code Scanning
+      - name: Upload Python SARIF to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v4
         with:
-          sarif_file: snyk.sarif
+          sarif_file: snyk-python.sarif
           category: snyk-python-scan
+
+      - name: Run Snyk Node.js vulnerability scan
+        uses: snyk/actions/node@master
+        continue-on-error: true          # Allow SARIF upload even if vulnerabilities found
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk-node.sarif --severity-threshold=low
+
+      - name: Upload Node.js SARIF to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: snyk-node.sarif
+          category: snyk-node-scan
