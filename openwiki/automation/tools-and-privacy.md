@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Sovereign Automation Tools & Privacy Guardian Boundaries"
-timestamp: "2026-08-13T14:19:24Z"
+timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "automation", "tools", "privacy", "guardian"]
 description: "Native Bash/PowerShell ritual tools, Privacy Guardian, onboarding/reset boundaries."
 ---
