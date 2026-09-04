@@ -1,0 +1,5639 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive operational handbook and transferable AI prompt library for analyzing code repositories, synthesizing Diataxis documentation, baking native vector diagrams, and compiling publication-grade print-ready handbooks (PDF, HTML, EPUB) using Pandoc and Headless Chromium.">
+      
+      
+        <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
+      
+      
+        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/">
+      
+      
+        <link rel="prev" href="../google-search-console/">
+      
+      
+        <link rel="next" href="../../reference/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+  <meta name="google-site-verification" content="OKJ30rPxLeaG-OocY3C2xkXbYEVgwfMMoaOycjWQJJw" />
+
+    
+      
+        <title>How to Produce a Project Technical Handbook: The AI Prompt Engineering & Skill Adoption Blueprint - Deep State of Mind (DSOM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-produce-a-project-technical-handbook-the-ai-prompt-engineering-skill-adoption-blueprint" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deep State of Mind (DSOM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to Produce a Project Technical Handbook: The AI Prompt Engineering & Skill Adoption Blueprint
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Deep State of Mind (DSOM)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../START-HERE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START HERE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LEGAL-NOTICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal Notice & Disclaimer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Initialization Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Knowledge Format Guide
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Master Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Engine Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Tri-Phasic Mind Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Automated State Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native MCP Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitOps · AIOps · Ansible Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/OPERATIONAL-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOSS Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python UV Environment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/AUTOMATION-AUDIT-LIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Audit Ledger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Efficiency Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Byte-Capped Execution Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingestion Latency Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Performance Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/ZERO-GLOBAL-MEMORY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero-Global Memory Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/LLM-WIKI-ADOPTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM WIKI Adoption Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Integration Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Efficiency Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge-First Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Security Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognitive State Preservation Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/AI-GUARDRAILS-MASTER-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Guardrails Master Guide
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guardrail Catalog & Submission Review
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-CUSTOM-VALIDATORS-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Validators Guide
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Downstream DSOM Compliance Mandate
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-AGENT-PLUGINS-SPECIFICATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Plugins 1.0.0 Specification
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--authoritative"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mintlify One-Way Sync Pipeline
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--authoritative"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mintlify User Manual Sync Guide
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--authoritative"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RITUAL-OF-TRANSITION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ritual of Transition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PERSONALIZATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Brain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Brain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/implementation_plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/brain/walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognitive Twin Protocol Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REANIMATION-PROMPT-TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DSOM-EPISODIC-RECORD-TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Episodic Record Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HOWTO-CREATE-DSOM-GEMINI-GEM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini DSOM Gem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLAUDE-SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-specifics/dsom-claude-initialiser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Claude Initialiser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../COPILOT-SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copilot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent Skills & Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Agent Skills & Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subagent Orchestration Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/eod-palace-sync/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/sod-palace-sync/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOD Palace Sync Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-token-calculator/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Token Calculator Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM Knowledge Ingester
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/publish-to-blogger/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish to Blogger Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-commit-resolver/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git Commit Resolver Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/git-history-scrubber/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git History Scrubber Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/initialize-gitops/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initialize GitOps Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/forensic-log-audit/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forensic Log Audit Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Passwordless Setup Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions Snyk Scanner Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/render-deployment/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Render Deployment Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/jules-antigravity-sync/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jules & Antigravity Collaborative Sync Skill
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--authoritative"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/openwiki-compiler/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki Knowledge Graph Compiler Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/sitemap-seo-generator/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sitemap & SEO Asset Generator Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/docs-write/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Writer Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/docs-review/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Review Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/docstring/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docstring & Function Reference Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/docx/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOCX Document Processor Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/openapi-spec-generation/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenAPI Spec Generation Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/hyperparameter-tuning-expert/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Hyperparameter Optimisation Expert Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/okf-v02-adoption-engineer/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OKF v0.2 Migration & Compliance Standard Skill
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/knowledge-base-templates/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base Templates Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/architecture-decision-records/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decision Records Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.agents/skills/changelog-automation/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog Automation Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HOWTO-SETUP-ANSIBLE-BASELINE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup Baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HOWTO-SETUP-WSL-ALMALINUX10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOWTO Setup AlmaLinux 10 WSL2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Playbooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/site.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSOM site.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    audit-preflight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/init-brain.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    init-brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    privacy-scan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pre-Flight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/init-brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Init Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/reanimate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reanimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/hibernation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hibernation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/privacy-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-automation/template-reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastMCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diátaxis Developer Space
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diátaxis Developer Space
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started with DSOM Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/TEAM-DSOM-MASTERCLASS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Masterclass
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nota Lapangan Pasukan
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-gitea-podman-quadlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Gitea via Podman & Quadlet
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-gitea-ansible/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Gitea via Ansible Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit-and-apply-frontmatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit and Apply OKF Frontmatter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-fastmcp-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run FastMCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generate-sitemaps-seo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generate SEO Assets and Sitemaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-openwiki-emulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate OpenWiki Emulator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-search-console/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify Google Search Console
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produce a Project Technical Handbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produce a Project Technical Handbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-overview-transferability-mandate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Executive Overview &amp; Transferability Mandate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Executive Overview &amp; Transferability Mandate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-blueprint-provides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Blueprint Provides:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-prompt-transformation-matrix-from-conversational-ask-to-production-ai-master-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Prompt Transformation Matrix: From Conversational Ask to Production AI Master Prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Prompt Transformation Matrix: From Conversational Ask to Production AI Master Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-project-discovery-architectural-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 1: Project Discovery &amp; Architectural Modeling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 1: Project Discovery &amp; Architectural Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-2-resolving-diagram-failures-mermaid-to-native-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 2: Resolving Diagram Failures (Mermaid to Native SVG)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 2: Resolving Diagram Failures (Mermaid to Native SVG)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-3-diataxis-documentation-enrichment-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 3: Diátaxis Documentation Enrichment &amp; Ingestion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 3: Diátaxis Documentation Enrichment &amp; Ingestion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-4-the-narrative-epic-heart-soul-and-sovereign-blood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 4: The Narrative Epic (Heart, Soul, and Sovereign Blood)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 4: The Narrative Epic (Heart, Soul, and Sovereign Blood)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-5-clean-architecture-separation-standalone-markdown-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 5: Clean Architecture Separation (Standalone Markdown Document)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 5: Clean Architecture Separation (Standalone Markdown Document)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-6-print-optimized-formatting-restoration-zero-toner-waste-cover-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 6: Print-Optimized Formatting Restoration (Zero Toner Waste &amp; Cover Injection)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 6: Print-Optimized Formatting Restoration (Zero Toner Waste &amp; Cover Injection)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-17-non-negotiable-technical-book-compilation-invariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The 17 Non-Negotiable Technical Book Compilation Invariants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reusable-project-book-assembler-template-toolsbuild_project_bookpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Reusable Project Book Assembler Template (tools/build_project_book.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-standalone-reusable-skill-specification-project-technical-book-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Standalone Reusable Skill Specification (project-technical-book-compiler)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Standalone Reusable Skill Specification (project-technical-book-compiler)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-compile-standalone-interactive-html-pandoc-3x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Compile Standalone Interactive HTML (Pandoc 3.x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bake-native-vector-svgs-inline-theme-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bake Native Vector SVGs &amp; Inline Theme CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-compile-publication-grade-pdf-headless-chromium-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Compile Publication-Grade PDF (Headless Chromium / Edge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-compile-epub-3-ebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Compile EPUB 3 Ebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-operational-checklist-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Operational Checklist &amp; Quality Assurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Material
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference Material
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/generate_sitemaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    generate_sitemaps.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/openwiki_emulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    openwiki_emulator.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/mcp_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tools/mcp/server.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/CLI-QUICK-REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Quick Reference
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--authoritative"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/apply_okf_frontmatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apply_okf_frontmatter.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/refactor_okf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    refactor_okf.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/bench_brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    bench_brain.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/dsom_token_auditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dsom_token_auditor.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/mkdocs_hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mkdocs_hooks.py
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/openwiki-mcp-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWiki & FastMCP Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/diataxis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diátaxis Framework Adoption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-overview-transferability-mandate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Executive Overview &amp; Transferability Mandate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Executive Overview &amp; Transferability Mandate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-blueprint-provides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Blueprint Provides:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-prompt-transformation-matrix-from-conversational-ask-to-production-ai-master-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Prompt Transformation Matrix: From Conversational Ask to Production AI Master Prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Prompt Transformation Matrix: From Conversational Ask to Production AI Master Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-project-discovery-architectural-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 1: Project Discovery &amp; Architectural Modeling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 1: Project Discovery &amp; Architectural Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-2-resolving-diagram-failures-mermaid-to-native-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 2: Resolving Diagram Failures (Mermaid to Native SVG)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 2: Resolving Diagram Failures (Mermaid to Native SVG)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-3-diataxis-documentation-enrichment-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 3: Diátaxis Documentation Enrichment &amp; Ingestion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 3: Diátaxis Documentation Enrichment &amp; Ingestion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-4-the-narrative-epic-heart-soul-and-sovereign-blood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 4: The Narrative Epic (Heart, Soul, and Sovereign Blood)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 4: The Narrative Epic (Heart, Soul, and Sovereign Blood)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-5-clean-architecture-separation-standalone-markdown-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 5: Clean Architecture Separation (Standalone Markdown Document)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 5: Clean Architecture Separation (Standalone Markdown Document)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-6-print-optimized-formatting-restoration-zero-toner-waste-cover-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 6: Print-Optimized Formatting Restoration (Zero Toner Waste &amp; Cover Injection)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt 6: Print-Optimized Formatting Restoration (Zero Toner Waste &amp; Cover Injection)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversational-human-ask_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversational Human Ask:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-grade-ai-master-prompt_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production-Grade AI Master Prompt:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-17-non-negotiable-technical-book-compilation-invariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The 17 Non-Negotiable Technical Book Compilation Invariants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reusable-project-book-assembler-template-toolsbuild_project_bookpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Reusable Project Book Assembler Template (tools/build_project_book.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-standalone-reusable-skill-specification-project-technical-book-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Standalone Reusable Skill Specification (project-technical-book-compiler)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Standalone Reusable Skill Specification (project-technical-book-compiler)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-compile-standalone-interactive-html-pandoc-3x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Compile Standalone Interactive HTML (Pandoc 3.x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bake-native-vector-svgs-inline-theme-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bake Native Vector SVGs &amp; Inline Theme CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-compile-publication-grade-pdf-headless-chromium-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Compile Publication-Grade PDF (Headless Chromium / Edge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-compile-epub-3-ebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Compile EPUB 3 Ebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-operational-checklist-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Operational Checklist &amp; Quality Assurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="how-to-produce-a-project-technical-handbook-the-ai-prompt-engineering-skill-adoption-blueprint">How to Produce a Project Technical Handbook: The AI Prompt Engineering &amp; Skill Adoption Blueprint</h1>
+<blockquote>
+<p><strong>Classification:</strong> Technical Standard &amp; Transferable Knowledge Base
+<strong>Target Audience:</strong> Lead Architects, DevOps/SRE Engineers, and Autonomous AI Coding Assistants
+<strong>Standard:</strong> Terminal &amp; Cloud Technical Book Standard (DSOM Rule 11 &amp; Rule 22)
+<strong>Author &amp; Lead Consultant:</strong> Harisfazillah Jamel (LinuxMalaysia)
+<strong>Compiled By:</strong> Antigravity Cognitive Digital Twin</p>
+</blockquote>
+<hr />
+<h2 id="1-executive-overview-transferability-mandate">1. Executive Overview &amp; Transferability Mandate</h2>
+<p>Modern software, DevOps, and infrastructure projects frequently suffer from <strong>fragmented documentation</strong>. Architectural intent is split across READMEs, tribal chat logs, wiki pages, runbooks, and inline source code comments. When teams need to present their systems for audits, client handovers, team onboarding, or management reviews, they lack a single, authoritative, publication-grade volume.</p>
+<p>This guide provides a <strong>100% transferable blueprint</strong> that enables any engineering repository—whether built on Ansible, Terraform, Kubernetes, Python, Go, or Cloud Native architectures—to synthesize its entire codebase and documentation into a cohesive, print-optimized technical book (PDF, interactive HTML, and EPUB 3).</p>
+<h3 id="what-this-blueprint-provides">What This Blueprint Provides:</h3>
+<ol>
+<li><strong>The Prompt Transformation Matrix:</strong> All conversational prompts typically asked by human leads, rewritten into high-fidelity, optimized master prompts that any AI agent can execute without ambiguity.</li>
+<li><strong>The 6-Phase Engineering Pipeline:</strong> Discovery, visual modeling, Diataxis ingestion, narrative storytelling, print formatting, and multi-format compilation.</li>
+<li><strong>The 17 Core Compilation Invariants:</strong> Solutions to every major compilation hurdle (syntax crashes, dark container ink waste, missing covers, unrendered Mermaid blocks, unparsed callout alerts, and browser process timeouts).</li>
+<li><strong>Drop-in Reusable Skill Specification:</strong> An autonomous skill definition that can be copied directly into <code>.agents/skills/</code> of any target repository.</li>
+</ol>
+<hr />
+<h2 id="2-the-prompt-transformation-matrix-from-conversational-ask-to-production-ai-master-prompts">2. The Prompt Transformation Matrix: From Conversational Ask to Production AI Master Prompts</h2>
+<p>When humans communicate with AI assistants during technical book compilation, their initial requests are often short and intuitive. However, generic AI assistants often misinterpret these asks—generating dark code blocks, omitting cover pages, hardcoding narrative text into compiler scripts, or failing to render diagrams.</p>
+<p>Below is the complete <strong>Before &amp; After Matrix</strong>, translating conversational requests into robust, constraint-enforced AI master prompts.</p>
+<hr />
+<h3 id="prompt-1-project-discovery-architectural-modeling">Prompt 1: Project Discovery &amp; Architectural Modeling</h3>
+<h4 id="conversational-human-ask">Conversational Human Ask:</h4>
+<blockquote>
+<p><em>"I need you to produce a book for this project. Start with understanding the project by understanding the ansible playbook and documents that can be related to the ansible playbook. Make sure we have diagram of flow of works and flow of how ansible work."</em></p>
+</blockquote>
+<h4 id="production-grade-ai-master-prompt">Production-Grade AI Master Prompt:</h4>
+<div class="highlight"><pre><span></span><code>You are a Principal Technical Author and Systems Architect. Your mission is to analyze this repository and assemble an authoritative, publication-grade Technical Handbook.
+
+PHASE 1: REPOSITORY DISCOVERY &amp; TAXONOMY
+<span class="k">1.</span> Scan the repository inventory, orchestration playbooks/manifests, roles, configuration templates, and documentation suites.
+<span class="k">2.</span> Catalog all operational components into logical tiers (e.g., Command Centres, Orchestration Bridges, Persistence Fabrics, Telemetry Ingestion Workers).
+<span class="k">3.</span> Map every production playbook/code file to its corresponding documentation, runbooks, and Root Cause Analysis (RCA) reports.
+
+PHASE 2: ARCHITECTURAL VISUAL MODELING
+Construct two comprehensive architectural flowcharts:
+<span class="k">1.</span> The End-to-End Command Highway: Visualizing the multi-tier flow of code from local development and GitOps remotes to target nodes.
+<span class="k">2.</span> The Orchestration Execution Engine: Visualizing how automation tasks inspect hardware, apply declarative baselines, enforce zero-trust security, and verify system state.
+
+OUTPUT REQUIREMENTS:
+<span class="k">-</span><span class="w"> </span>Structure the book into clear, hierarchical Parts and Chapters following the Diataxis framework.
+<span class="k">-</span><span class="w"> </span>Ensure every code artifact has a dedicated sub-chapter accompanied by developer operational context and architectural rationale.
+</code></pre></div>
+<hr />
+<h3 id="prompt-2-resolving-diagram-failures-mermaid-to-native-svg">Prompt 2: Resolving Diagram Failures (Mermaid to Native SVG)</h3>
+<h4 id="conversational-human-ask_1">Conversational Human Ask:</h4>
+<blockquote>
+<p><em>"The diagram is not showing in the book."</em></p>
+</blockquote>
+<h4 id="production-grade-ai-master-prompt_1">Production-Grade AI Master Prompt:</h4>
+<div class="highlight"><pre><span></span><code>You are a Graphics &amp; Headless Browser Print Specialist. The Mermaid diagrams in our compiled HTML/PDF are failing to render or displaying syntax error graphics.
+
+ROOT CAUSE ANALYSIS:
+<span class="k">1.</span> Headless Chrome/Edge print engines capture DOM snapshots in milliseconds, outrunning asynchronous client-side Mermaid JavaScript CDN libraries.
+<span class="k">2.</span> Pandoc wraps <span class="sb">`&lt;pre class="mermaid"&gt;`</span> blocks in <span class="sb">`&lt;code&gt;`</span> tags and escapes HTML arrows (<span class="sb">`--&gt;`</span> becomes <span class="sb">`--&amp;gt;`</span>), corrupting Mermaid syntax.
+
+REMEDIATION MANDATE (NATIVE VECTOR SVG PRE-RENDERING):
+<span class="k">1.</span> Eliminate client-side Mermaid JavaScript rendering entirely for PDF production.
+<span class="k">2.</span> Author a standalone Python script (e.g., <span class="sb">`tools/bake_native_svg.py`</span>) that pre-renders or directly substitutes Mermaid code blocks with clean, styled, inline vector <span class="sb">`&lt;svg&gt;`</span> markup.
+<span class="k">3.</span> Ensure SVG elements include viewBox definitions, drop-shadow filters, high-contrast text labels (using 'Inter' or system sans-serif), and responsive container wrappers (<span class="sb">`&lt;div class="mermaid-svg-container"&gt;`</span>).
+<span class="k">4.</span> Execute this transformation directly on the generated <span class="sb">`handbook.html`</span> prior to launching the headless browser PDF print step.
+</code></pre></div>
+<hr />
+<h3 id="prompt-3-diataxis-documentation-enrichment-ingestion">Prompt 3: Diátaxis Documentation Enrichment &amp; Ingestion</h3>
+<h4 id="conversational-human-ask_2">Conversational Human Ask:</h4>
+<blockquote>
+<p><em>"Add into our books, content from md documents that is related to each of our ansible playbooks. Enrich our book."</em></p>
+</blockquote>
+<h4 id="production-grade-ai-master-prompt_2">Production-Grade AI Master Prompt:</h4>
+<div class="highlight"><pre><span></span><code>You are a Technical Documentation Compiler. Your task is to enrich every playbook chapter in the Technical Handbook by dynamically ingesting its accompanying operational runbooks, explanations, and incident reports.
+
+MANDATORY INGESTION &amp; SANITIZATION RULES:
+<span class="k">1.</span> Frontmatter &amp; Signature Stripping: Parse each ingested markdown file and strip all YAML metadata fences (<span class="sb">`--- ... ---`</span>) and document signature footers (<span class="sb">`*Maintained by...*`</span>) to prevent Pandoc parser collisions (<span class="sb">`Unknown alias`</span>).
+<span class="k">2.</span> Heading Level Offsetting: Apply a dynamic heading level offset (+2 levels: <span class="sb">`#`</span> becomes <span class="sb">`###`</span>, <span class="sb">`##`</span> becomes <span class="sb">`####`</span>) to ensure ingested document headings nest cleanly beneath the parent Chapter title in the Table of Contents.
+<span class="k">3.</span> Markdown Horizontal Rule Sanitization: Replace all internal standalone horizontal rules (<span class="sb">`\n---\n`</span>) with triple asterisks (<span class="sb">`\n***\n`</span>) to prevent Pandoc from falsely interpreting them as YAML metadata blocks.
+<span class="k">4.</span> Operational Provenance Banner: Inject an audit pill above each ingested document:
+   <span class="sb">`&lt;div class="doc-provenance"&gt;&lt;strong&gt;Operational Reference Guide:&lt;/strong&gt; &lt;code&gt;path/to/file.md&lt;/code&gt;&lt;/div&gt;`</span>
+<span class="k">5.</span> Developer Commentary Extraction: Scan the leading comment block of each code file for keywords (BUG, FIX, WARNING, CRITICAL, NEVER, escalation). Render matches as high-visibility callouts (<span class="sb">`callout-warning`</span> or <span class="sb">`callout-note`</span>) above the code fence.
+</code></pre></div>
+<hr />
+<h3 id="prompt-4-the-narrative-epic-heart-soul-and-sovereign-blood">Prompt 4: The Narrative Epic (Heart, Soul, and Sovereign Blood)</h3>
+<h4 id="conversational-human-ask_3">Conversational Human Ask:</h4>
+<blockquote>
+<p><em>"I need a chapter that's like a story, all about this project and infra from start to end, how it can be built, deployed, and operated. Highlight the use of ansible + semaphoreui + gitea as GitOps, and AIOps with human in the loop. Add about deep state of mind (DSOM) of My AI as the AI memory and brain. This chapter is not technical; it is about the heart, soul, and blood of this project."</em></p>
+</blockquote>
+<h4 id="production-grade-ai-master-prompt_3">Production-Grade AI Master Prompt:</h4>
+<div class="highlight"><pre><span></span><code>You are a Principal Technical Biographer and Systems Philosopher. Author an evocative, inspiring narrative chapter titled:
+"# Prologue: The Story of &lt;Project Name&gt; — Heart, Soul, and Sovereign Blood {.unnumbered}"
+
+NARRATIVE STRUCTURE &amp; THEMES:
+<span class="k">1.</span> The Spark in the Dark (Why This Fabric Was Born):
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Paint the operational reality: telemetry deluge, memory exhaustion, swap death spirals, and the painful loss of context when engineers step away from the terminal.
+<span class="k">2.</span> The Trinity of Motion (GitOps, The Control Node, and The Hand):
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Explain how Git serves as the immutable source of truth, Semaphore UI acts as the scheduled heartbeat, and Ansible operates as the indomitable physical hand shaping the infrastructure.
+<span class="k">3.</span> The Mind in the Machine (Deep State of Mind &amp; AIOps):
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Address the fatal flaw of Large Language Models: Context Decay (cognitive amnesia).
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Chronicle the creation of the Sovereign Markdown Palace (<span class="sb">`.agents/brain/`</span>, <span class="sb">`palace_registry.md`</span>, Start-of-Day reanimation, and End-of-Day hibernation), preserving unbroken historical context across operational shifts.
+<span class="k">4.</span> The Sacred Balance (AIOps with Human-in-the-Loop):
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Reject blind, dangerous auto-remediation.
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Embed the Sovereign AIOps Integration Loop (ASCII architectural diagram): AI proposes remediation -&gt; Sovereign Human verifies and commits -&gt; Ansible executes -&gt; AI audits and records memory.
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Articulate the Three Laws of the Twin: Advisory over Execution, Logic over Operation, and Partnership through Environmental Awareness.
+<span class="k">5.</span> From Raw Metal to Living Shield:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Walk through the 5 foundational phases from genesis virtual machine bootstrapping to hardened security baselines, rootless container pods, threat analytics, and continuous Day-2 operations.
+<span class="k">6.</span> The Heart, Soul, and Blood:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>Close with the philosophical trifecta: Sovereignty, Discipline, and Human-AI Symbiosis.
+</code></pre></div>
+<hr />
+<h3 id="prompt-5-clean-architecture-separation-standalone-markdown-document">Prompt 5: Clean Architecture Separation (Standalone Markdown Document)</h3>
+<h4 id="conversational-human-ask_4">Conversational Human Ask:</h4>
+<blockquote>
+<p><em>"I need the story to be in its own md file."</em></p>
+</blockquote>
+<h4 id="production-grade-ai-master-prompt_4">Production-Grade AI Master Prompt:</h4>
+<div class="highlight"><pre><span></span><code>You are a Clean Architecture and Diataxis Specialist. Refactor the narrative story chapter out of inline Python script strings into a dedicated, reusable documentation artifact.
+
+IMPLEMENTATION STEPS:
+<span class="k">1.</span> Author the file <span class="sb">`docs/explanation/THE-STORY-OF-&lt;PROJECT&gt;.md`</span> with complete OKF v0.2 YAML frontmatter (<span class="sb">`type: documentation`</span>, <span class="sb">`title: ...`</span>).
+<span class="k">2.</span> Embed the complete narrative text, ASCII loop diagram, and formal DSOM signature footer.
+<span class="k">3.</span> Register the new document in <span class="sb">`SUMMARY.md`</span> under the <span class="sb">`explanation`</span> quadrant to ensure GitBook/MkDocs navigation indexing.
+<span class="k">4.</span> Update the book compiler script (<span class="sb">`tools/build_book.py`</span>) to dynamically ingest this document using <span class="sb">`ingest_doc_file("docs/explanation/THE-STORY-OF-&lt;PROJECT&gt;.md", heading_offset=0, show_provenance=False)`</span> directly into the book's Prologue.
+</code></pre></div>
+<hr />
+<h3 id="prompt-6-print-optimized-formatting-restoration-zero-toner-waste-cover-injection">Prompt 6: Print-Optimized Formatting Restoration (Zero Toner Waste &amp; Cover Injection)</h3>
+<h4 id="conversational-human-ask_5">Conversational Human Ask:</h4>
+<blockquote>
+<p><em>"What happened to my book? We lost the formatting. No cover, black background? That needs to be checked again."</em></p>
+</blockquote>
+<h4 id="production-grade-ai-master-prompt_5">Production-Grade AI Master Prompt:</h4>
+<div class="highlight"><pre><span></span><code>You are a Print Production Engineer and CSS Specialist. Diagnose and fix the visual formatting regressions in our compiled PDF and HTML handbook.
+
+SYMPTOMS TO REMEDY:
+<span class="k">1.</span> Missing Cover Page: Re-inject <span class="sb">`--include-before-body=build/book/cover.html`</span> in the Pandoc build chain. Ensure <span class="sb">`.cover-page`</span> in CSS declares <span class="sb">`break-after: page; min-height: 250mm;`</span> so the cover fills Page 1 completely and cleanly page-breaks before the Table of Contents.
+<span class="k">2.</span> Black Background Code Blocks: Replace dark syntax highlighting (e.g. <span class="sb">`--syntax-highlighting=espresso`</span>) with <span class="sb">`--syntax-highlighting=tango`</span>. Ensure CSS enforces <span class="sb">`pre, code, div.sourceCode { background-color: #F8FAFC !important; border: 1px solid #CBD5E1 !important; color: #0F172A !important; }`</span> to eliminate toner waste.
+<span class="k">3.</span> External CSS Linking Failures: Prevent headless browser path resolution failures by reading <span class="sb">`terminal-theme.css`</span> and inlining the complete stylesheet directly into <span class="sb">`&lt;style&gt;`</span> inside <span class="sb">`&lt;head&gt;`</span> of the HTML before PDF generation.
+<span class="k">4.</span> Raw GitHub Alert Syntax: Detect all <span class="sb">`&gt; [!NOTE]`</span>, <span class="sb">`&gt; [!WARNING]`</span>, <span class="sb">`&gt; [!TIP]`</span>, <span class="sb">`&gt; [!IMPORTANT]`</span>, and <span class="sb">`&gt; [!CAUTION]`</span> syntax in ingested markdown files and transform them into styled pastel HTML callout cards (<span class="sb">`&lt;div class="callout callout-note"&gt;&lt;strong&gt;💡 Note&lt;/strong&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;`</span>).
+<span class="k">5.</span> Asynchronous Process Premature Exit: When compiling via Microsoft Edge on Windows PowerShell, execute with <span class="sb">`Start-Process -FilePath $edge -ArgumentList ... -Wait`</span> using an isolated user profile (<span class="sb">`--user-data-dir`</span>) to ensure the process does not terminate before the PDF file buffer is completely written.
+</code></pre></div>
+<hr />
+<h2 id="3-the-17-non-negotiable-technical-book-compilation-invariants">3. The 17 Non-Negotiable Technical Book Compilation Invariants</h2>
+<p>Any automated compilation pipeline must adhere to these 17 strict invariants:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">Invariant Name</th>
+<th style="text-align: left;">Failure Mode Addressed</th>
+<th style="text-align: left;">Architectural Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Pure White Standard</strong></td>
+<td style="text-align: left;">Dark gray backgrounds waste ink and look muddy</td>
+<td style="text-align: left;">Force <code>@page { background: #FFFFFF; }</code> and <code>body { background-color: #FFFFFF !important; }</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2</strong></td>
+<td style="text-align: left;"><strong>Light Alabaster Code</strong></td>
+<td style="text-align: left;">Solid black terminal containers waste ink</td>
+<td style="text-align: left;">Code containers must use <code>#F8FAFC</code> background with <code>#CBD5E1</code> border and dark charcoal text <code>#0F172A</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3</strong></td>
+<td style="text-align: left;"><strong>Syntax Theme (<code>tango</code>)</strong></td>
+<td style="text-align: left;">Dark themes (<code>espresso</code>, <code>zenburn</code>) force black code backgrounds</td>
+<td style="text-align: left;">Strictly enforce <code>--syntax-highlighting=tango</code> for light-background compatibility.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4</strong></td>
+<td style="text-align: left;"><strong>Standalone Cover Injection</strong></td>
+<td style="text-align: left;">Raw Markdown covers break page layout and spill over</td>
+<td style="text-align: left;">Author <code>cover.html</code> and inject via <code>--include-before-body=cover.html</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5</strong></td>
+<td style="text-align: left;"><strong>Cover Single-Page Fit</strong></td>
+<td style="text-align: left;">Cover content spilling into Table of Contents</td>
+<td style="text-align: left;">Enforce <code>.cover-page { break-after: page; min-height: 250mm; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6</strong></td>
+<td style="text-align: left;"><strong>Frontmatter Stripping</strong></td>
+<td style="text-align: left;">Pandoc crashes with <code>Unknown alias</code> error</td>
+<td style="text-align: left;">Strip <code>--- ... ---</code> blocks from all ingested markdown files before concatenation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7</strong></td>
+<td style="text-align: left;"><strong>Horizontal Rule Sanitization</strong></td>
+<td style="text-align: left;"><code>\n---\n</code> parsed by Pandoc as YAML start</td>
+<td style="text-align: left;">Regex replace <code>\n---\n</code> with <code>\n***\n</code> in all ingested content.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>8</strong></td>
+<td style="text-align: left;"><strong>GitHub Alert Card Conversion</strong></td>
+<td style="text-align: left;"><code>&gt; [!NOTE]</code> renders as unstyled plain text</td>
+<td style="text-align: left;">Programmatically transform into <code>&lt;div class="callout callout-note"&gt;&lt;strong&gt;💡 Note&lt;/strong&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>9</strong></td>
+<td style="text-align: left;"><strong>Self-Contained Embedded CSS</strong></td>
+<td style="text-align: left;">Headless browsers fail to resolve relative CSS links</td>
+<td style="text-align: left;">Read <code>terminal-theme.css</code> and inject directly into <code>&lt;style&gt;</code> inside <code>&lt;head&gt;</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10</strong></td>
+<td style="text-align: left;"><strong>Dynamic Backtick Scaling</strong></td>
+<td style="text-align: left;">Triple backticks inside code blocks close outer fence</td>
+<td style="text-align: left;">Count max backticks in code and scale outer fence to N+1 (e.g. <code>````</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>11</strong></td>
+<td style="text-align: left;"><strong>Heading Offset (+2)</strong></td>
+<td style="text-align: left;">Embedded guide titles collide with Book H1/H2</td>
+<td style="text-align: left;">Dynamically increment heading level (<code>#</code> to <code>###</code>, <code>##</code> to <code>####</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>12</strong></td>
+<td style="text-align: left;"><strong>Native Vector SVG Baking</strong></td>
+<td style="text-align: left;">Client-side Mermaid race conditions in headless PDF</td>
+<td style="text-align: left;">Pre-render diagrams to <code>&lt;svg&gt;</code> and inject into HTML before headless PDF execution.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>13</strong></td>
+<td style="text-align: left;"><strong>Mermaid Namespace Isolation</strong></td>
+<td style="text-align: left;">Global node ID collisions across multiple diagrams</td>
+<td style="text-align: left;">Prefix node IDs with unique namespace prefixes (<code>TB_</code>, <code>AN_</code>, <code>TH_</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>14</strong></td>
+<td style="text-align: left;"><strong>Pandoc Code-Tag Wrapping</strong></td>
+<td style="text-align: left;">Pandoc wraps <code>&lt;pre class="mermaid"&gt;&lt;code&gt;</code> and escapes HTML</td>
+<td style="text-align: left;">SVG replacement regexes must match both standard and <code>&lt;code&gt;</code>-wrapped pre blocks and unescape arrows (<code>--&amp;gt;</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>15</strong></td>
+<td style="text-align: left;"><strong>Windows Isolated Browser Profile</strong></td>
+<td style="text-align: left;">Edge crashes or hangs if user desktop instances are running</td>
+<td style="text-align: left;">Launch Edge with <code>--user-data-dir="$env:TEMP/edge-pdf-$(Get-Random)"</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>16</strong></td>
+<td style="text-align: left;"><strong>Synchronous Edge Execution</strong></td>
+<td style="text-align: left;">PowerShell returns before Edge finishes writing PDF</td>
+<td style="text-align: left;">Always use <code>Start-Process -FilePath $edge -ArgumentList ... -Wait</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>17</strong></td>
+<td style="text-align: left;"><strong>Provenance Audit Banners</strong></td>
+<td style="text-align: left;">Loss of traceability for ingested runbooks</td>
+<td style="text-align: left;">Inject <code>&lt;div class="doc-provenance"&gt;</code> detailing the repository source path.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-reusable-project-book-assembler-template-toolsbuild_project_bookpy">4. Reusable Project Book Assembler Template (<code>tools/build_project_book.py</code>)</h2>
+<p>Below is the clean, modular Python assembler that can be copied directly into any repository:
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">"""</span>
+<span class="sd">Universal Technical Handbook Assembler &amp; Multi-Format Compiler</span>
+<span class="sd">Standard: Terminal &amp; Cloud Standard (DSOM Rule 11 &amp; Rule 22)</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">ROOT_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"."</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">BUILD_DIR</span> <span class="o">=</span> <span class="n">ROOT_DIR</span> <span class="o">/</span> <span class="s2">"build"</span> <span class="o">/</span> <span class="s2">"book"</span>
+<span class="n">BUILD_DIR</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">MASTER_MD</span> <span class="o">=</span> <span class="n">BUILD_DIR</span> <span class="o">/</span> <span class="s2">"master_book.md"</span>
+<span class="n">COVER_HTML</span> <span class="o">=</span> <span class="n">BUILD_DIR</span> <span class="o">/</span> <span class="s2">"cover.html"</span>
+<span class="n">THEME_CSS</span> <span class="o">=</span> <span class="n">BUILD_DIR</span> <span class="o">/</span> <span class="s2">"terminal-theme.css"</span>
+<span class="n">HANDBOOK_HTML</span> <span class="o">=</span> <span class="n">BUILD_DIR</span> <span class="o">/</span> <span class="s2">"handbook.html"</span>
+<span class="n">HANDBOOK_PDF</span> <span class="o">=</span> <span class="n">BUILD_DIR</span> <span class="o">/</span> <span class="s2">"handbook.pdf"</span>
+<span class="n">HANDBOOK_EPUB</span> <span class="o">=</span> <span class="n">BUILD_DIR</span> <span class="o">/</span> <span class="s2">"handbook.epub"</span>
+
+<span class="n">WARNING_KEYWORDS</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">"\b(BUG|FIX|Confirmed|live|vendor|NEVER|destroy|destructive|ORA-\d+|crash|escalation|hard way|WARNING|CAUTION|CRITICAL)\b"</span><span class="p">,</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span>
+<span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strip_frontmatter_and_footer</span><span class="p">(</span><span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">lines</span> <span class="ow">and</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"---"</span><span class="p">:</span>
+        <span class="n">end_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">lines</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"---"</span><span class="p">:</span>
+                <span class="n">end_idx</span> <span class="o">=</span> <span class="n">idx</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">end_idx</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">end_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\n---\s*\n\*.*"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\n---\n"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">***</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_github_alerts</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">alert_types</span> <span class="o">=</span> <span class="s2">"NOTE|TIP|WARNING|IMPORTANT|CAUTION|SUCCESS"</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">"^&gt;\s*(?:\*\*)?\[!("</span> <span class="o">+</span> <span class="n">alert_types</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">")\]"</span>
+        <span class="o">+</span> <span class="sa">r</span><span class="s2">"\s*"</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">"(?:\*\*)?(?:[ \t]*(.*))?\n((?:^&gt;.*$\n?)*)"</span><span class="p">,</span>
+        <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span>
+    <span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">replacer</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+        <span class="n">alert_type</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="n">first_line</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span>
+        <span class="n">raw_body</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">first_line</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">raw_body</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+            <span class="n">clean_line</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"^&gt;\s?"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clean_line</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">alert_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"WARNING"</span><span class="p">,</span> <span class="s2">"CAUTION"</span><span class="p">,</span> <span class="s2">"IMPORTANT"</span><span class="p">):</span>
+            <span class="n">css_class</span> <span class="o">=</span> <span class="s2">"callout callout-warning"</span>
+            <span class="n">icon</span> <span class="o">=</span> <span class="s2">"⚠️"</span> <span class="k">if</span> <span class="n">alert_type</span> <span class="o">!=</span> <span class="s2">"CAUTION"</span> <span class="k">else</span> <span class="s2">"🛑"</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">alert_type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">alert_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"TIP"</span><span class="p">,</span> <span class="s2">"SUCCESS"</span><span class="p">):</span>
+            <span class="n">css_class</span> <span class="o">=</span> <span class="s2">"callout callout-tip"</span>
+            <span class="n">icon</span> <span class="o">=</span> <span class="s2">"💡"</span> <span class="k">if</span> <span class="n">alert_type</span> <span class="o">==</span> <span class="s2">"TIP"</span> <span class="k">else</span> <span class="s2">"✅"</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">alert_type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">css_class</span> <span class="o">=</span> <span class="s2">"callout callout-note"</span>
+            <span class="n">icon</span> <span class="o">=</span> <span class="s2">"💡"</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s2">"Note"</span>
+
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">&lt;div class="</span><span class="si">{</span><span class="n">css_class</span><span class="si">}</span><span class="s1">"&gt;</span><span class="se">\n</span><span class="s1">&lt;strong&gt;</span><span class="si">{</span><span class="n">icon</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/strong&gt;</span><span class="se">\n\n</span><span class="si">{</span><span class="n">body</span><span class="si">}</span><span class="se">\n</span><span class="s1">&lt;/div&gt;</span><span class="se">\n\n</span><span class="s1">'</span>
+
+    <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replacer</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scale_backticks</span><span class="p">(</span><span class="n">code_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="n">max_ticks</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(`{3,})"</span><span class="p">,</span> <span class="n">code_text</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_ticks</span><span class="p">:</span>
+            <span class="n">max_ticks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">fence</span> <span class="o">=</span> <span class="s2">"`"</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">max_ticks</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fence</span><span class="p">,</span> <span class="n">fence</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_commentary</span><span class="p">(</span><span class="n">code_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">lang</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"yaml"</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">code_text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">comment_lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start_idx</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">lines</span> <span class="ow">and</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"---"</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_idx</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">stripped</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">stripped</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">stripped</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"#"</span><span class="p">):</span>
+            <span class="n">comment_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stripped</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">comment_lines</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">comment_text</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">comment_lines</span><span class="p">)</span>
+    <span class="n">is_warning</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">WARNING_KEYWORDS</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">comment_text</span><span class="p">))</span>
+    <span class="n">callout_class</span> <span class="o">=</span> <span class="s2">"callout callout-warning"</span> <span class="k">if</span> <span class="n">is_warning</span> <span class="k">else</span> <span class="s2">"callout callout-note"</span>
+    <span class="n">callout_title</span> <span class="o">=</span> <span class="s2">"Developer Commentary — Read Before Executing"</span> <span class="k">if</span> <span class="n">is_warning</span> <span class="k">else</span> <span class="s2">"Developer Operational Context"</span>
+    <span class="n">callout_icon</span> <span class="o">=</span> <span class="s2">"⚠️"</span> <span class="k">if</span> <span class="n">is_warning</span> <span class="k">else</span> <span class="s2">"💡"</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"&gt; </span><span class="si">{</span><span class="n">cl</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">comment_lines</span><span class="p">[:</span><span class="mi">15</span><span class="p">])</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">'&lt;div class="</span><span class="si">{</span><span class="n">callout_class</span><span class="si">}</span><span class="s1">"&gt;</span><span class="se">\n</span><span class="s1">&lt;strong&gt;</span><span class="si">{</span><span class="n">callout_icon</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">callout_title</span><span class="si">}</span><span class="s1">&lt;/strong&gt;</span><span class="se">\n\n</span><span class="si">{</span><span class="n">body</span><span class="si">}</span><span class="se">\n</span><span class="s1">&lt;/div&gt;</span><span class="se">\n</span><span class="s1">'</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ingest_code_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">lang</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">anchor</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*File not found: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">*</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">"replace"</span><span class="p">)</span>
+    <span class="n">callout</span> <span class="o">=</span> <span class="n">extract_commentary</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">lang</span><span class="p">)</span>
+    <span class="n">fence_start</span><span class="p">,</span> <span class="n">fence_end</span> <span class="o">=</span> <span class="n">scale_backticks</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">md_parts</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;a id=</span><span class="se">\"</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="se">\"</span><span class="s2">&gt;&lt;/a&gt;</span><span class="se">\n</span><span class="s2">### </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">]</span>
+    <span class="n">md_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**Source File:** `</span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="p">)</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span><span class="si">}</span><span class="s2">`</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">callout</span><span class="p">:</span>
+        <span class="n">md_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">callout</span><span class="p">)</span>
+    <span class="n">md_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">fence_start</span><span class="si">}{</span><span class="n">lang</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">fence_end</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">md_parts</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ingest_doc_file</span><span class="p">(</span><span class="n">rel_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">heading_offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">show_provenance</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">ROOT_DIR</span> <span class="o">/</span> <span class="n">rel_path</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*Documentation file not found: </span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s2">*</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">"replace"</span><span class="p">)</span>
+    <span class="n">clean</span> <span class="o">=</span> <span class="n">strip_frontmatter_and_footer</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+    <span class="n">clean</span> <span class="o">=</span> <span class="n">convert_github_alerts</span><span class="p">(</span><span class="n">clean</span><span class="p">)</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">clean</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">"^(#{1,6})\s+(.*)$"</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+            <span class="n">lvl</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">heading_offset</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+            <span class="n">hashes</span> <span class="o">=</span> <span class="s2">"#"</span> <span class="o">*</span> <span class="n">lvl</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">hashes</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+    <span class="n">header</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">&lt;div class="doc-provenance"&gt;&lt;strong&gt;Operational Reference Guide:&lt;/strong&gt; &lt;code&gt;</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">&lt;/code&gt;&lt;/div&gt;</span><span class="se">\n</span><span class="s1">'</span> <span class="k">if</span> <span class="n">show_provenance</span> <span class="k">else</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="n">header</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_master_book</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Assembling master book markdown..."</span><span class="p">)</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># 1. Book Executive Overview</span>
+    <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"""# Executive Overview {.unnumbered}</span>
+<span class="s2">&gt; **Classification:** Private And Confidential (P&amp;C)</span>
+<span class="s2">&gt; **Compiled By:** Autonomous Cognitive Twin</span>
+<span class="s2">&gt; **Standard:** Terminal &amp; Cloud Technical Handbook Standard</span>
+<span class="s2">"""</span><span class="p">)</span>
+
+    <span class="c1"># 2. Prologue Story (Dynamically Ingested from Standalone File)</span>
+    <span class="n">story_path</span> <span class="o">=</span> <span class="s2">"docs/explanation/THE-STORY-OF-PROJECT.md"</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ROOT_DIR</span> <span class="o">/</span> <span class="n">story_path</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ingest_doc_file</span><span class="p">(</span><span class="n">story_path</span><span class="p">,</span> <span class="n">heading_offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">show_provenance</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="c1"># 3. Dynamic Chapters and Code Ingestion</span>
+    <span class="c1"># Add your project-specific parts and chapters here...</span>
+
+    <span class="n">full_text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+    <span class="n">MASTER_MD</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">full_text</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Master markdown written: </span><span class="si">{</span><span class="n">MASTER_MD</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">full_text</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> bytes)"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">build_master_book</span><span class="p">()</span>
+</code></pre></div></p>
+<hr />
+<h2 id="5-standalone-reusable-skill-specification-project-technical-book-compiler">5. Standalone Reusable Skill Specification (<code>project-technical-book-compiler</code>)</h2>
+<p>To adopt this capability in another repository, copy the specification below into <code>.agents/skills/project-technical-book-compiler/SKILL.md</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">okf_version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.2"</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"skill"</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"Project</span><span class="nv"> </span><span class="s">Technical</span><span class="nv"> </span><span class="s">Book</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Handbook</span><span class="nv"> </span><span class="s">Compiler"</span>
+<span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-09-05T00:00:00Z"</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Autonomously</span><span class="nv"> </span><span class="s">synthesizes</span><span class="nv"> </span><span class="s">repository</span><span class="nv"> </span><span class="s">code,</span><span class="nv"> </span><span class="s">Diataxis</span><span class="nv"> </span><span class="s">documentation,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">telemetry</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">publication-grade</span><span class="nv"> </span><span class="s">print-ready</span><span class="nv"> </span><span class="s">PDF,</span><span class="nv"> </span><span class="s">standalone</span><span class="nv"> </span><span class="s">HTML,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">EPUB</span><span class="nv"> </span><span class="s">handbooks</span><span class="nv"> </span><span class="s">using</span><span class="nv"> </span><span class="s">Pandoc,</span><span class="nv"> </span><span class="s">Headless</span><span class="nv"> </span><span class="s">Chromium,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Terminal</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Cloud</span><span class="nv"> </span><span class="s">design</span><span class="nv"> </span><span class="s">framework."</span>
+<span class="nt">topics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pandoc"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"pdf"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"html"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"epub"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"print-optimized"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"diataxis"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"handbook"</span><span class="p p-Indicator">]</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s">"stable"</span>
+<span class="nt">stale_after</span><span class="p">:</span><span class="w"> </span><span class="s">"2027-09-05"</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"project-technical-book-compiler"</span>
+<span class="nn">---</span>
+
+<span class="c1"># Project Technical Book &amp; Handbook Compiler</span>
+
+<span class="c1">## Purpose</span>
+<span class="l l-Scalar l-Scalar-Plain">Standardises the automated assembly, styling, and multi-format compilation of entire project repositories into unified, publication-grade engineering handbooks.</span>
+
+<span class="l l-Scalar l-Scalar-Plain">## Execution Commands</span>
+
+<span class="l l-Scalar l-Scalar-Plain">### 1. Build Master Markdown</span>
+<span class="l l-Scalar l-Scalar-Plain">```bash</span>
+<span class="l l-Scalar l-Scalar-Plain">uv run python tools/build_project_book.py</span>
+</code></pre></div>
+<h3 id="2-compile-standalone-interactive-html-pandoc-3x">2. Compile Standalone Interactive HTML (Pandoc 3.x)</h3>
+<div class="highlight"><pre><span></span><code><span class="n">pandoc</span> <span class="n">build</span><span class="p">/</span><span class="n">book</span><span class="p">/</span><span class="n">master_book</span><span class="p">.</span><span class="nb">md </span><span class="n">-o</span> <span class="n">build</span><span class="p">/</span><span class="n">book</span><span class="p">/</span><span class="n">handbook</span><span class="p">.</span><span class="n">html</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-standalone</span> <span class="p">-</span><span class="n">-toc</span> <span class="p">-</span><span class="n">-toc-depth</span><span class="p">=</span><span class="n">3</span> <span class="p">-</span><span class="n">-number-sections</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-include-before-body</span><span class="p">=</span><span class="n">build</span><span class="p">/</span><span class="n">book</span><span class="p">/</span><span class="n">cover</span><span class="p">.</span><span class="n">html</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-css</span><span class="p">=</span><span class="n">terminal-theme</span><span class="p">.</span><span class="n">css</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-syntax-highlighting</span><span class="p">=</span><span class="n">tango</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-metadata</span> <span class="n">title</span><span class="p">=</span><span class="s2">"Project Technical Handbook"</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-metadata</span> <span class="n">author</span><span class="p">=</span><span class="s2">"Lead Architect"</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-metadata</span> <span class="n">date</span><span class="p">=</span><span class="s2">"September 2026"</span> <span class="n">-V</span> <span class="n">lang</span><span class="p">=</span><span class="n">en</span>
+</code></pre></div>
+<h3 id="3-bake-native-vector-svgs-inline-theme-css">3. Bake Native Vector SVGs &amp; Inline Theme CSS</h3>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>tools/bake_native_svg.py
+</code></pre></div>
+<h3 id="4-compile-publication-grade-pdf-headless-chromium-edge">4. Compile Publication-Grade PDF (Headless Chromium / Edge)</h3>
+<div class="highlight"><pre><span></span><code><span class="nv">$tmpProfile</span> <span class="p">=</span> <span class="s2">"$env:TEMP\edge-pdf-profile-</span><span class="p">$(</span><span class="nb">Get-Random</span><span class="p">)</span><span class="s2">"</span>
+<span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="s2">"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"</span> <span class="p">`</span>
+  <span class="n">-ArgumentList</span> <span class="s2">"--headless=new"</span><span class="p">,</span> <span class="s2">"--disable-gpu"</span><span class="p">,</span> <span class="s2">"--run-all-compositor-stages-before-draw"</span><span class="p">,</span> <span class="p">`</span>
+  <span class="s2">"--no-pdf-header-footer"</span><span class="p">,</span> <span class="s2">"--print-to-pdf=d:\path\to\build\book\handbook.pdf"</span><span class="p">,</span> <span class="p">`</span>
+  <span class="s2">"--user-data-dir=$tmpProfile"</span><span class="p">,</span> <span class="s2">"file:///d:/path/to/build/book/handbook.html"</span> <span class="n">-Wait</span>
+<span class="nb">Remove-Item</span> <span class="n">-Recurse</span> <span class="n">-Force</span> <span class="nv">$tmpProfile</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</code></pre></div>
+<h3 id="5-compile-epub-3-ebook">5. Compile EPUB 3 Ebook</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">pandoc</span> <span class="n">build</span><span class="p">/</span><span class="n">book</span><span class="p">/</span><span class="n">master_book</span><span class="p">.</span><span class="nb">md </span><span class="n">-o</span> <span class="n">build</span><span class="p">/</span><span class="n">book</span><span class="p">/</span><span class="n">handbook</span><span class="p">.</span><span class="n">epub</span> <span class="p">`</span>
+  <span class="n">-t</span> <span class="n">epub3</span> <span class="p">-</span><span class="n">-toc</span> <span class="p">-</span><span class="n">-toc-depth</span><span class="p">=</span><span class="n">3</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-css</span><span class="p">=</span><span class="n">build</span><span class="p">/</span><span class="n">book</span><span class="p">/</span><span class="n">terminal-theme</span><span class="p">.</span><span class="n">css</span> <span class="p">`</span>
+  <span class="p">-</span><span class="n">-metadata</span> <span class="n">title</span><span class="p">=</span><span class="s2">"Project Technical Handbook"</span>
+</code></pre></div>
+```</p>
+<hr />
+<h2 id="6-operational-checklist-quality-assurance">6. Operational Checklist &amp; Quality Assurance</h2>
+<p>Before delivering any compiled handbook to stakeholders, execute this audit checklist:</p>
+<ul>
+<li>[ ] <strong>Cover Page Audit:</strong> Page 1 renders as a full-page bordered card with P&amp;C badges and metadata table; breaks cleanly before Table of Contents.</li>
+<li>[ ] <strong>Zero Toner Waste Audit:</strong> All code containers have <code>#F8FAFC</code> light gray backgrounds with dark charcoal text and <code>tango</code> syntax colors. Zero black terminal boxes exist.</li>
+<li>[ ] <strong>Callout Card Audit:</strong> All operational notes, warnings, and tips render as styled pastel cards with icons (<code>💡 Note</code>, <code>⚠️ Warning</code>, <code>💡 Tip</code>). Zero raw <code>[!NOTE]</code> markdown syntax leaks survive.</li>
+<li>[ ] <strong>Vector Diagram Audit:</strong> All architecture and workflow diagrams render as crisp, scalable vector SVGs directly inline.</li>
+<li>[ ] <strong>Inline CSS Audit:</strong> CSS is embedded directly into <code>&lt;style&gt;</code> inside <code>&lt;head&gt;</code> to prevent external relative link breakage.</li>
+<li>[ ] <strong>Soft-Path Link Audit:</strong> All internal cross-references point to clean <code>#chap-...</code> or <code>#code-...</code> fragments without surviving absolute filesystem paths (<code>file:///</code> or drive letters).</li>
+<li>[ ] <strong>Pagination Audit:</strong> Verified zero empty filler pages exist between chapters.</li>
+</ul>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-05</em>
+<em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All costs, designs, unit amounts, and scenarios detailed within this document are based entirely on assumptions. This project and its accompanying documentation are compiled strictly for training, educational, and planning proposal purposes. Use at your own risk. We will not be responsible. We have done our best to protect anyone and organisation. <a href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/LEGAL-NOTICE/">Legal Notice & Disclaimer</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
