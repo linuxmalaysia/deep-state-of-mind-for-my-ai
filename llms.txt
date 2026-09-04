@@ -83,6 +83,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [How-To Guides Overview](docs/how-to/index.md): Practical problem-oriented guides for DSOM tools.
 - [Deploy Sovereign Gitea via Podman & Quadlet](docs/how-to/install-gitea-podman-quadlet.md): Step-by-step standalone Gitea deployment over HTTPS using rootless Podman pods and systemd Quadlets.
 - [Deploy Sovereign Gitea via Ansible Playbook](docs/how-to/install-gitea-ansible.md): Automated standalone Gitea deployment over HTTPS using Ansible playbooks, secret vaulting, and Sovereign TLS certificate generation.
+- [How to Produce a Project Technical Handbook](docs/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT.md): Transferable AI prompt engineering blueprint, 17 compilation invariants, and skill adoption guide for compiling codebases and Diataxis docs into print-optimized PDF, HTML, and EPUB books.
 - [Audit and Apply OKF Frontmatter](docs/how-to/audit-and-apply-frontmatter.md): How-to for running frontmatter audit/refactoring.
 - [Run FastMCP Server](docs/how-to/run-fastmcp-server.md): How-to for running and configuring FastMCP.
 - [Generate SEO Assets and Sitemaps](docs/how-to/generate-sitemaps-seo.md): How-to for compiling SEO sitemaps and robots.

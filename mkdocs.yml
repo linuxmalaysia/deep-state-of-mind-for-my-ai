@@ -177,6 +177,7 @@ nav:
           - Generate SEO Assets and Sitemaps: how-to/generate-sitemaps-seo.md
           - Operate OpenWiki Emulator: how-to/use-openwiki-emulator.md
           - Verify Google Search Console: how-to/google-search-console.md
+          - Produce a Project Technical Handbook: how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT.md
       - Reference Material:
           - Overview: reference/index.md
           - generate_sitemaps.py: reference/generate_sitemaps.md
