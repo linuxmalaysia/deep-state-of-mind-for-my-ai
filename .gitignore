@@ -73,7 +73,7 @@ __pycache__/
 # Node (JS/CSS test tooling for docs/javascripts, docs/stylesheets)
 node_modules/
 npm-debug.log*
-package-lock.json
+!package-lock.json
 
 # IDEs (VS Code, Cursor, IDX)
 .vscode/

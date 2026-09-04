@@ -90,12 +90,15 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
         self.assertNotIn("run: pip install -r requirements.txt", self.content)
 
     def test_snyk_scan_step_still_present(self):
-        # Sanity check: the core purpose of this workflow (the Snyk scan)
+        # Sanity check: the core purpose of this workflow (the Snyk scans)
         # must remain untouched by the tooling changes.
-        self.assertIn("uses: snyk/actions/python@master", self.content)
+        self.assertIn("uses: snyk/actions/python@12140f4059e244892ae643824a95459a102120dd", self.content)
+        self.assertIn("uses: snyk/actions/node@12140f4059e244892ae643824a95459a102120dd", self.content)
 
     def test_sarif_upload_step_still_present(self):
         self.assertIn("uses: github/codeql-action/upload-sarif@v4", self.content)
+        self.assertIn("category: snyk-python-scan", self.content)
+        self.assertIn("category: snyk-node-scan", self.content)
 
     def test_no_tab_characters(self):
         self.assertNotIn("\t", self.content, "Workflow file should not contain tab characters")
@@ -112,6 +115,30 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
         cls.steps = cls.doc["jobs"]["snyk-scan"]["steps"]
         cls.step_names = [s.get("name") for s in cls.steps]
 
+    def test_snyk_scan_steps_detailed_mapping(self):
+        steps_by_name = {s.get("name"): s for s in self.steps}
+
+        py_step = steps_by_name["Run Snyk Python vulnerability scan"]
+        self.assertEqual(py_step["uses"], "snyk/actions/python@12140f4059e244892ae643824a95459a102120dd")
+        self.assertEqual(py_step["with"]["args"], "--sarif-file-output=snyk-python.sarif --severity-threshold=low")
+
+        py_upload = steps_by_name["Upload Python SARIF to GitHub Code Scanning"]
+        self.assertEqual(py_upload["uses"], "github/codeql-action/upload-sarif@v4")
+        self.assertEqual(py_upload["with"]["sarif_file"], "snyk-python.sarif")
+        self.assertEqual(py_upload["with"]["category"], "snyk-python-scan")
+
+        install_node_deps = steps_by_name["Install Node.js dependencies"]
+        self.assertEqual(install_node_deps["run"], "npm ci --ignore-scripts")
+
+        node_step = steps_by_name["Run Snyk Node.js vulnerability scan"]
+        self.assertEqual(node_step["uses"], "snyk/actions/node@12140f4059e244892ae643824a95459a102120dd")
+        self.assertEqual(node_step["with"]["args"], "--sarif-file-output=snyk-node.sarif --severity-threshold=low")
+
+        node_upload = steps_by_name["Upload Node.js SARIF to GitHub Code Scanning"]
+        self.assertEqual(node_upload["uses"], "github/codeql-action/upload-sarif@v4")
+        self.assertEqual(node_upload["with"]["sarif_file"], "snyk-node.sarif")
+        self.assertEqual(node_upload["with"]["category"], "snyk-node-scan")
+
     def test_document_parses_to_a_mapping(self):
         self.assertIsInstance(self.doc, dict)
 
@@ -124,8 +151,11 @@ class CrdaWorkflowStructureTests(unittest.TestCase):
                 "Install uv",
                 "Set up Python 3.12",
                 "Install Python dependencies",
-                "Run Snyk vulnerability scan",
-                "Upload SARIF to GitHub Code Scanning",
+                "Run Snyk Python vulnerability scan",
+                "Upload Python SARIF to GitHub Code Scanning",
+                "Install Node.js dependencies",
+                "Run Snyk Node.js vulnerability scan",
+                "Upload Node.js SARIF to GitHub Code Scanning",
             ],
         )
 
