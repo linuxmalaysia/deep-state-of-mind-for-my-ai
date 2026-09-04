@@ -110,9 +110,9 @@ Your task is to take an entire repository of Markdown (.md) documents and source
    - Rewrite all markdown links using a 3-tier normalisation lookup:
      * Tier 1 (Exact Match): Check raw relative path against dictionary.
      * Tier 2 (Normalised Match): Strip 'file:///', Windows drive letters ('C:/', 'D:/'), project root prefix, and 'build/' prefix, then check dictionary.
-     * Tier 3 (Basename-Only Match): Strip all parent directories and check dictionary by filename only.
+     * Tier 3 (Basename-Only Match): Strip all parent directories and check dictionary by filename only (skipping external-scheme targets and rejecting ambiguous duplicate basenames).
      * Preserve '#fragment' anchor jumps across all three tiers.
-   - Post-Compile Audit: Assert zero absolute path leaks ('D:/', 'C:/', 'file:///') survive in compiled PDF/HTML links.
+   - Post-Compile Audit: Assert zero absolute path leaks ('D:/', 'C:/', 'file:///') survive in compiled PDF, HTML, EPUB, or ODT links.
 
 6. DEVELOPER COMMENTARY EXTRACTION PROTOCOL:
    - For every ingested Ansible playbook, shell script, or configuration file, parse the leading '#' comment block (contiguous comments before the first active code key).
@@ -273,11 +273,8 @@ pandoc build/book/master_book.md -o build/book/handbook.html \
   --metadata date="September 2026" -V lang=en
 
 # 2. Compile Publication-Grade PDF via Headless Chromium
-msedge.exe --headless=new --disable-gpu \
-  --run-all-compositor-stages-before-draw \
-  --virtual-time-budget=8000 \
-  --print-to-pdf=build/book/handbook.pdf \
-  file:///D:/Users/LinuxMalaysia/Projects/cbc-mcmc/build/book/handbook.html
+# Note: Construct the local HTML file URI dynamically from your project checkout path at runtime.
+python -c "import subprocess, sys, os; file_uri = Path(os.path.abspath('build/book/handbook.html')).as_uri(); subprocess.run(['msedge.exe', '--headless=new', '--disable-gpu', '--run-all-compositor-stages-before-draw', '--virtual-time-budget=8000', f'--print-to-pdf=build/book/handbook.pdf', file_uri], timeout=60)"
 
 # 3. Compile EPUB 3 Ebook
 pandoc build/book/master_book.md -o build/book/handbook.epub \
@@ -301,7 +298,7 @@ pandoc build/book/master_book.md -o build/book/handbook.odt \
 
 Below is the full, unabridged operational specification of the `dsom-technical-book-compiler` skill:
 
-```yaml
+````yaml
 ---
 okf_version: "0.2"
 type: "skill"
@@ -326,13 +323,13 @@ name: "dsom-technical-book-compiler"
 1. **Interactive / Screen Mode:** Optional dark slate container (#0F172A) for code and off-white (#F8FAFC) reading background.
 2. **Physical Print / PDF Handbook Mode (Zero Ink Waste):**
    - **Pure White Background:** `@page { background: #FFFFFF; }` and `body { background-color: #FFFFFF !important; }` to eliminate grayish tints and toner waste.
-   - **Light Code Blocks:** Code containers use `#F8FAFC` light gray with `#CBD5E1` border, dark text (`#0F172A`), and high-contrast dark syntax highlighting (Pandoc `tango`). Black or solid dark containers are strictly forbidden.
+   - **Light Code Blocks:** Code containers use `#F8FAFC` light gray with `#CBD5E1` border, dark text (`#0F1F2A`), and high-contrast dark syntax highlighting (Pandoc `tango`). Black or solid dark containers are strictly forbidden.
    - **Light Pastel Callouts:** Soft pastel backgrounds (`#FEF2F2` for warnings, `#F0F9FF` for notes, `#F0FDF4` for tips) with colored left borders.
    - **Full Confidentiality Statement:** Must be written as `Private And Confidential (P&C)` (uppercase `PRIVATE AND CONFIDENTIAL (P&C)` in running headers).
    - **Attribution Standard:** Compilations must be credited as `Compile by: Harisfazillah Jamel`.
 
 ## Technical Execution Constraints
-1. **Footer & Frontmatter Stripping:** When assembling 100+ documents, individual OKF frontmatter and DSOM signature footers must be stripped to prevent Pandoc YAML parser collisions (`Unknown alias`).
+1. **Footer & Frontmatter Stripping:** Individual OKF frontmatter and DSOM signature footers must be stripped across all multi-document builds to prevent Pandoc YAML parser collisions (`Unknown alias`).
 2. **Dynamic Backtick Fence Scaling:** When wrapping source code containing triple backticks (` ``` `), the enclosing fence must scale dynamically to 4 or 5 backticks (` ```` `).
 3. **Mermaid HTML Unescaping Protocol:** Pandoc automatically escapes HTML entities inside `<pre class="mermaid"><code>` (`&quot;`, `&lt;br/&gt;`, `--&gt;`). The compilation pipeline must decode these entities before browser rendering to prevent Mermaid 10 syntax error bomb graphics.
 4. **Standalone Cover Body Inclusion:** Never embed raw HTML covers inside Markdown files. Generate a standalone `cover.html` passed via `--include-before-body=cover.html`. Enforce `.cover-title { break-before: avoid !important; }` and `#title-block-header { display: none !important; }` to prevent cover fragmentation.
@@ -341,15 +338,15 @@ name: "dsom-technical-book-compiler"
 7. **Mermaid Multi-Diagram Isolation Protocol:**
    - *Diagram-Scoped Namespace:* Prohibit reusing identical node IDs (e.g., `NODE1`, `CBE`, `PWP`) across diagrams. Prefix all node IDs with a unique diagram namespace (e.g., `TB_`, `PA_`, `PB_`, `PC_`) to prevent global symbol collisions.
    - *Sequential Headless DOM Replacement:* Headless Chromium renders in milliseconds, causing default `mermaid.run()` timestamp IDs (`Date.now()`) to collide and nest diagrams inside one container. Mandate sequential rendering via `mermaid.render(id, code)` with unique IDs (`diagram_svg_${i}`) replacing `<pre class="mermaid">` innerHTML sequentially.
-8. **Soft-Path Link Resolution Mandate (3-Tier Normalisation):** The compilation pipeline must dynamically map all chapters (`#chap-{slug}`) and ingested code blocks (`#code-{slug}`) and rewrite all markdown links via a **3-tier normalisation pipeline**: (1) *Exact match* — look up the raw target in `link_map` as-is; (2) *Normalised match* — strip `file:///`, Windows drive letters (`D:/`, `C:/`), the project root prefix, and the `build/` intermediate directory prefix, then retry; (3) *Basename-only match* — strip all directory components and retry with the filename only. Pre-index basename-only keys into `link_map` before rewriting. Preserve `#fragment` suffixes across all tiers. Run a post-compile link audit asserting zero absolute path leaks (`D:/`, `C:/`, `file:///`, `build/` prefixes) survive in any PDF/HTML link target.
+8. **Soft-Path Link Resolution Mandate (3-Tier Normalisation):** The compilation pipeline must dynamically map all chapters (`#chap-{slug}`) and ingested code blocks (`#code-{slug}`) and rewrite all markdown links via a **3-tier normalisation pipeline**: (1) *Exact match* — look up the raw target in `link_map` as-is; (2) *Normalised match* — strip `file:///`, Windows drive letters (`D:/`, `C:/`), the project root prefix, and the `build/` intermediate directory prefix, then retry; (3) *Basename-only match* — strip all directory components and retry with the filename only (skipping external-scheme targets and rejecting ambiguous duplicate basenames). Pre-index basename-only keys into `link_map` before rewriting. Preserve `#fragment` suffixes across all tiers. Run a post-compile link audit asserting zero absolute path leaks (`D:/`, `C:/`, `file:///`, `build/` prefixes) survive in any PDF, HTML, EPUB, or ODT link target.
 9. **Full-Spectrum Code Ingestion:** Ingest all production playbooks, Jinja2 templates, inventories, host/group variables, shell scripts, and candidate staging playbooks into dedicated book chapters to produce self-contained handbooks.
-10. **Developer Commentary Extraction Protocol:** For every YAML playbook, shell script, or INI file ingested, extract the leading `#` comment block (all contiguous comment lines before the first YAML key, after the `---` fence) and render it as an HTML callout div above the code fence. Classify by keyword scan: comments containing `BUG`, `FIX`, `Confirmed`, `live`, `vendor`, `NEVER`, `ORA-\d+`, `destroy`, `destructive`, `hard way`, or `escalation` render as `callout-warning` (⚠️ orange, label `Read Before Executing`); all others render as `callout-note` (💡 blue). Preserve original `#` lines inside the code fence unchanged. CSS must define `.callout-warning p`, `.callout-note p`, and `strong` selectors with explicit `padding: 12px 16px` and `page-break-inside: avoid` for clean print rendering.
+10. **Developer Commentary Extraction Protocol:** For every YAML playbook, shell script, or INI file ingested, extract the leading `#` comment block (all contiguous comment lines before the first YAML key, after the --- fence) and render it as an HTML callout div above the code fence. Classify by keyword scan: comments containing `BUG`, `FIX`, `Confirmed`, `live`, `vendor`, `NEVER`, `destroy`, `destructive`, `ORA-\d+`, `crash`, `escalation`, or `hard way` render as `callout-warning` (⚠️ orange, label `Read Before Executing`); all others render as `callout-note` (💡 blue). Preserve original `#` lines inside the code fence unchanged. CSS must define `.callout-warning p`, `.callout-note p`, and `strong` selectors with explicit `padding: 12px 16px` and `page-break-inside: avoid` for clean print rendering.
 
 ## Execution Command
 ```bash
 uv run python .agents/skills/dsom-technical-book-compiler/scripts/compile-book.py
 ```
-```
+````
 
 ---
 
@@ -365,4 +362,4 @@ Before finalizing any compiled handbook, the AI agent must verify:
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-04*
-*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | PRIVATE & CONFIDENTIAL (P&C) | All Rights Reserved*
+*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | PRIVATE AND CONFIDENTIAL (P&C) | All Rights Reserved*
