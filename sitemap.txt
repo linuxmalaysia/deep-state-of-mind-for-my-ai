@@ -38,6 +38,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dso
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-release-manager/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-signature-injector/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-state-sync/SKILL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-technical-book-compiler/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-token-calculator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/eod-palace-sync/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/forensic-log-audit/SKILL/
@@ -147,6 +148,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/OPERATI
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/PYTHON-UV-ENVIRONMENT-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/RESEARCH-REASONING-GAP/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/TECHNICAL-BOOK-DESIGN-AND-PDF-COMPILER-PROMPT-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/ZERO-GLOBAL-MEMORY/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/audit-and-apply-frontmatter/
@@ -244,6 +246,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-release-manager/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-signature-injector/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-state-sync/SKILL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-technical-book-compiler/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-token-calculator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/eod-palace-sync/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/forensic-log-audit/SKILL/
@@ -353,6 +356,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPERATIO
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/PYTHON-UV-ENVIRONMENT-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/RESEARCH-REASONING-GAP/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/TECHNICAL-BOOK-DESIGN-AND-PDF-COMPILER-PROMPT-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/ZERO-GLOBAL-MEMORY/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/audit-and-apply-frontmatter/
