@@ -21,7 +21,10 @@ def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
     for parent in [current, *current.parents]:
         if (parent / ".git").exists():
             return parent
-    raise RuntimeError("Could not locate repository root (.git not found)")
+    raise RuntimeError(
+        f"Could not locate repository root (.git not found) starting from path '{start}'. "
+        "Please run tests inside a valid Git checkout repository."
+    )
 
 
 REPO_ROOT = _find_repo_root(pathlib.Path(__file__).parent)
@@ -49,7 +52,10 @@ class SkillTokenFootprintTests(unittest.TestCase):
         breaches = []
         for skill_path in sorted(skill_files):
             rel_path = skill_path.relative_to(REPO_ROOT)
-            content = skill_path.read_text(encoding="utf-8", errors="ignore")
+            try:
+                content = skill_path.read_text(encoding="utf-8")
+            except UnicodeDecodeError as err:
+                self.fail(f"UTF-8 decoding failed for '{rel_path}': {err}")
             token_count = len(self.enc.encode(content))
             if token_count >= GATE_THRESHOLD:
                 breaches.append((str(rel_path), token_count))
@@ -57,7 +63,8 @@ class SkillTokenFootprintTests(unittest.TestCase):
         self.assertEqual(
             len(breaches),
             0,
-            f"The following SKILL.md files breached the {GATE_THRESHOLD:,}-token gate: {breaches}",
+            f"The following SKILL.md files breached the {GATE_THRESHOLD:,}-token gate: {breaches}. "
+            f"Please reduce every listed file below GATE_THRESHOLD ({GATE_THRESHOLD:,} tokens).",
         )
 
 

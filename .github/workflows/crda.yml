@@ -64,7 +64,7 @@ permissions:
 
 jobs:
   snyk-scan:
-    name: Snyk — Python Dependency Vulnerability Scan
+    name: Snyk — Python & Node.js Dependency Vulnerability Scan
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -95,7 +95,7 @@ jobs:
         run: uv pip install --system -r requirements.txt
 
       - name: Run Snyk Python vulnerability scan
-        uses: snyk/actions/python@master
+        uses: snyk/actions/python@b2fe5f490a614741f238cb20d3fdbdcfa7d7675e # master
         continue-on-error: true          # Allow SARIF upload even if vulnerabilities found
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -109,7 +109,7 @@ jobs:
           category: snyk-python-scan
 
       - name: Run Snyk Node.js vulnerability scan
-        uses: snyk/actions/node@master
+        uses: snyk/actions/node@b2fe5f490a614741f238cb20d3fdbdcfa7d7675e # master
         continue-on-error: true          # Allow SARIF upload even if vulnerabilities found
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

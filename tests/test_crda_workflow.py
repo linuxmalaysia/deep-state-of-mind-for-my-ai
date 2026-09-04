@@ -92,8 +92,8 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
     def test_snyk_scan_step_still_present(self):
         # Sanity check: the core purpose of this workflow (the Snyk scans)
         # must remain untouched by the tooling changes.
-        self.assertIn("uses: snyk/actions/python@master", self.content)
-        self.assertIn("uses: snyk/actions/node@master", self.content)
+        self.assertIn("uses: snyk/actions/python@b2fe5f490a614741f238cb20d3fdbdcfa7d7675e", self.content)
+        self.assertIn("uses: snyk/actions/node@b2fe5f490a614741f238cb20d3fdbdcfa7d7675e", self.content)
 
     def test_sarif_upload_step_still_present(self):
         self.assertIn("uses: github/codeql-action/upload-sarif@v4", self.content)
@@ -106,6 +106,35 @@ class CrdaWorkflowTextContentTests(unittest.TestCase):
 
 @unittest.skipUnless(HAS_YAML, "PyYAML is not installed in this environment")
 class CrdaWorkflowStructureTests(unittest.TestCase):
+    """Structural checks against the parsed YAML document."""
+
+    @classmethod
+    def setUpClass(cls):
+        with WORKFLOW_PATH.open(encoding="utf-8") as fh:
+            cls.doc = yaml.safe_load(fh)
+        cls.steps = cls.doc["jobs"]["snyk-scan"]["steps"]
+        cls.step_names = [s.get("name") for s in cls.steps]
+
+    def test_snyk_scan_steps_detailed_mapping(self):
+        steps_by_name = {s.get("name"): s for s in self.steps}
+
+        py_step = steps_by_name["Run Snyk Python vulnerability scan"]
+        self.assertEqual(py_step["uses"], "snyk/actions/python@b2fe5f490a614741f238cb20d3fdbdcfa7d7675e")
+        self.assertEqual(py_step["with"]["args"], "--sarif-file-output=snyk-python.sarif --severity-threshold=low")
+
+        py_upload = steps_by_name["Upload Python SARIF to GitHub Code Scanning"]
+        self.assertEqual(py_upload["uses"], "github/codeql-action/upload-sarif@v4")
+        self.assertEqual(py_upload["with"]["sarif_file"], "snyk-python.sarif")
+        self.assertEqual(py_upload["with"]["category"], "snyk-python-scan")
+
+        node_step = steps_by_name["Run Snyk Node.js vulnerability scan"]
+        self.assertEqual(node_step["uses"], "snyk/actions/node@b2fe5f490a614741f238cb20d3fdbdcfa7d7675e")
+        self.assertEqual(node_step["with"]["args"], "--sarif-file-output=snyk-node.sarif --severity-threshold=low")
+
+        node_upload = steps_by_name["Upload Node.js SARIF to GitHub Code Scanning"]
+        self.assertEqual(node_upload["uses"], "github/codeql-action/upload-sarif@v4")
+        self.assertEqual(node_upload["with"]["sarif_file"], "snyk-node.sarif")
+        self.assertEqual(node_upload["with"]["category"], "snyk-node-scan")
     """Structural checks against the parsed YAML document."""
 
     @classmethod
