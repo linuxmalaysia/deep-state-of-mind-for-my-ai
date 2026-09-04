@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Ansible Baseline & Automation Fabric Specification"
-timestamp: "2026-08-13T14:19:24Z"
+timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "automation", "ansible", "fabric", "wsl2"]
 description: "Inventory tiers, ansible.cfg, preflight/common playbooks, WSL2 control node."
 ---

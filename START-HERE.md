@@ -34,6 +34,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **Project Cloning Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/HOWTO-CLONE-DSOM-PROJECT/) | Scaffolding new DSOM clones |
 | **Team Masterclass (Training)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/) | End-to-end team adoption & pair programming |
 | **Agent Plugins Specification** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/) | Agent Plugins 1.0.0 Packaging & MCP Integration |
+| **Technical Handbook Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/) | How-To Produce a Project Technical Handbook Blueprint |
 | **Mintlify Knowledge Brain (Live)** | [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site) | Auto-synced public Mintlify documentation portal |
 
 ---

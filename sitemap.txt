@@ -38,6 +38,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dso
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-release-manager/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-signature-injector/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-state-sync/SKILL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-technical-book-compiler/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/dsom-token-calculator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/eod-palace-sync/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/forensic-log-audit/SKILL/
@@ -147,8 +148,10 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/OPERATI
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/PYTHON-UV-ENVIRONMENT-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/RESEARCH-REASONING-GAP/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/TECHNICAL-BOOK-DESIGN-AND-PDF-COMPILER-PROMPT-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/ZERO-GLOBAL-MEMORY/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/audit-and-apply-frontmatter/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/generate-sitemaps-seo/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/google-search-console/
@@ -244,6 +247,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-release-manager/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-signature-injector/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-state-sync/SKILL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-technical-book-compiler/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-token-calculator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/eod-palace-sync/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/forensic-log-audit/SKILL/
@@ -353,8 +357,10 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/OPERATIO
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/PYTHON-UV-ENVIRONMENT-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/RESEARCH-REASONING-GAP/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/TECHNICAL-BOOK-DESIGN-AND-PDF-COMPILER-PROMPT-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/ZERO-GLOBAL-MEMORY/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/audit-and-apply-frontmatter/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/generate-sitemaps-seo/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/google-search-console/
@@ -498,6 +504,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/audit-and-apply-frontmatter
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/generate-sitemaps-seo
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/google-search-console
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/howto-produce-technical-handbook-blueprint
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/index
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-ansible
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-podman-quadlet
