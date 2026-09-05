@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "OpenWiki Instructions"
-timestamp: "2026-09-04T21:16:57Z"
+timestamp: "2026-09-05T11:43:26Z"
 topics: ["openwiki", "instructions"]
 description: "Standard instructions for operating the OpenWiki Native Python Emulator."
 ---

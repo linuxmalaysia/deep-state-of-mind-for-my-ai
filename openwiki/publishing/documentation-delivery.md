@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Multi-Channel Documentation Delivery & SEO Engine"
-timestamp: "2026-09-04T21:16:57Z"
+timestamp: "2026-09-05T11:43:26Z"
 topics: ["openwiki", "publishing", "delivery", "seo", "mkdocs"]
 description: "MkDocs nav, GitHub Pages, RTD, Render, GitBook, SEO sitemaps."
 ---
