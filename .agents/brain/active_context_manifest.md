@@ -19,9 +19,11 @@ description: "OKF-compliant manifest declaring the exact file paths the agent mu
 - `.agents/brain/palace_registry.md`
 
 ## Active Task Files (Update per session)
-- `docs/START-AI-AGENTS-PROMPT.md`
-- `START-HERE.md`
-- `.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`
+- `.markdownlint.json`
+- `.agents/skills/dsom-knowledge-ingester/SKILL.md`
+- `.agents/skills/okf-v02-adoption-engineer/SKILL.md`
+- `package.json`
+- `tests/test_okf_adoption_guide_cross_skill_sync.py`
 
 ## Governance (Load on demand — verify token count first)
 - `docs/governance/AI-MASTER-PROTOCOL.md`
