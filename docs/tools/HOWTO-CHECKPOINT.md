@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-CHECKPOINT.md."
 resource: "file:///docs/tools/HOWTO-CHECKPOINT.md"
 ---
-
 # HOWTO: checkpoint — Quick Sync
 
 # docs/tools/HOWTO-CHECKPOINT.md

@@ -1,6 +1,6 @@
 ---
-okf_version: "0.1"
-type: "documentation"
+okf_version: 0.1
+type: documentation
 title: "FastMCP Server Integration & Continuous Integration Workflows"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "integrations", "mcp", "ci-cd", "workflows"]

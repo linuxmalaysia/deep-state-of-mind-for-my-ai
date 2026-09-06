@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for EOD-RITUAL.md."
 resource: "file:///docs/EOD-RITUAL.md"
 ---
-
 # 🌙 EOD-RITUAL.md — End-of-Day Ritual
 
 # docs/EOD-RITUAL.md

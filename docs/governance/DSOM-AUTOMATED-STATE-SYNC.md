@@ -6,7 +6,6 @@ timestamp: "2026-07-27T00:00:00Z"
 topics: ["compaction", "state", "action", "github"]
 description: "Governance rules for Semantic Compaction via GitHub Actions."
 ---
-
 # DSOM Automated State Sync
 
 ## 1. Vectorized Memory Tiering

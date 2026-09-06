@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-TEMPLATE-RESET.md."
 resource: "file:///docs/tools/HOWTO-TEMPLATE-RESET.md"
 ---
-
 # HOWTO: template-reset — Project Purification Tool
 
 ## docs/tools/HOWTO-TEMPLATE-RESET.md

@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "Architectural policy codifying Progressive Disclosure, Artifact Pyramid, and Semantic Routing."
 resource: "file:///docs/governance/OKF-MIND-OPTIMIZATION.md"
 ---
-
 # OKF-Based AI Agent Mind Optimisation
 
 This governance document codifies the principles of Cognitive Architecture designed to combat context decay and the "lost-in-the-middle" phenomenon in LLMs, specifically adopting the research from the OKF Agentic Optimisation protocols.

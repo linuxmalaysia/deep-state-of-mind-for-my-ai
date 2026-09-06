@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-CHECKUSAGE.md."
 resource: "file:///docs/tools/HOWTO-CHECKUSAGE.md"
 ---
-
 # HOWTO: CheckUsage.ps1 — Antigravity Session Monitor
 
 # docs/tools/HOWTO-CHECKUSAGE.md

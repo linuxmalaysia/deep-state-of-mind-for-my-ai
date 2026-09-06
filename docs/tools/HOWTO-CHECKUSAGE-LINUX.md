@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-CHECKUSAGE-LINUX.md."
 resource: "file:///docs/tools/HOWTO-CHECKUSAGE-LINUX.md"
 ---
-
 # HOWTO: check-usage.sh — Antigravity Session Monitor (Linux)
 
 # docs/tools/HOWTO-CHECKUSAGE-LINUX.md

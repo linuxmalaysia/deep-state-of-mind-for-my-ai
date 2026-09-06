@@ -6,19 +6,12 @@ timestamp: "2026-08-22T07:15:00Z"
 topics: ["guardrails", "guardrails-hub", "dsom", "validation", "pypi", "security", "okf", "ast"]
 description: "Comprehensive catalog and publication roadmap for the 10 DSOM Guardrails, prepared for human review and packaging as standalone PyPI packages under the Guardrails AI ecosystem."
 resource: "file:///docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md"
-sources: [
-  "https://guardrailsai.com/guardrails/docs",
-  "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators",
-  "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md",
-  "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md",
-  ".agents/AGENTS.md"
-]
-generated: "google-antigravity"
+sources: ["https://guardrailsai.com/guardrails/docs", "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", ".agents/AGENTS.md"]
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-22T00:00:00Z"
 ---
-
 # 🛡️ DSOM Guardrail Catalog & Guardrails AI Submission Review Document
 
 > **Document Purpose:** Human Review & Publication Roadmap  

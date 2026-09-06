@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "Architectural policy for ensuring documentation is machine-readable and highly cited by AI Answer Engines."
 resource: "file:///docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md"
 ---
-
 # Generative Engine Optimisation (GEO)
 
 This governance document establishes the standard for architecting all documentation within the DSOM framework to be natively "AI-ready." The digital landscape has shifted from traditional deterministic search (SEO) to probabilistic information synthesis (GEO/AEO).

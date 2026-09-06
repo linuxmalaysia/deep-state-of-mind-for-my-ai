@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-PRIVACY-GUARDIAN.md."
 resource: "file:///docs/tools/HOWTO-PRIVACY-GUARDIAN.md"
 ---
-
 # HOWTO: privacy-guardian — Data Masking Defense
 
 # docs/tools/HOWTO-PRIVACY-GUARDIAN.md

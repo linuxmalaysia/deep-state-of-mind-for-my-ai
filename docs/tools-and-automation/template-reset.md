@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for template-reset.md."
 resource: "file:///docs/tools-and-automation/template-reset.md"
 ---
-
 # ♻️ Template Reset (template-reset.sh)
 
 > **"Tabula Rasa."** - Returning to the beginning.

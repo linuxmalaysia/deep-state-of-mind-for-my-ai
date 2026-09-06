@@ -96,6 +96,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/REANIMATION-PROMPT
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/RITUAL-OF-TRANSITION/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/SECURITY/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/SOD-RITUAL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/START-AI-AGENTS-PROMPT/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/START-HERE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/SUMMARY/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/agent-configs/SOVEREIGN-PERSONA-TEMPLATE/
@@ -305,6 +306,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/REANIMATION-PROMPT-
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/RITUAL-OF-TRANSITION/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/SECURITY/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/SOD-RITUAL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/SUMMARY/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/agent-configs/SOVEREIGN-PERSONA-TEMPLATE/
@@ -543,6 +545,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/reference/refactor_okf
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/ritual-of-transition
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/sod-ritual
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-audit-pre-flight
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-build-sovereign-book
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/tools/howto-checkpoint

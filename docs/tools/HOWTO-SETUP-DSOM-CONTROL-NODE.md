@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-SETUP-DSOM-CONTROL-NODE.md."
 resource: "file:///docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md"
 ---
-
 # HOWTO: setup-dsom-control-node — Linux Environment Hardening
 
 # docs/tools/HOWTO-SETUP-DSOM-CONTROL-NODE.md

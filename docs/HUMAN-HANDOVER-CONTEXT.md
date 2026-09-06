@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HUMAN-HANDOVER-CONTEXT.md."
 resource: "file:///docs/HUMAN-HANDOVER-CONTEXT.md"
 ---
-
 # 🤝 HUMAN-HANDOVER-CONTEXT.md
 
 # Path: docs/HUMAN-HANDOVER-CONTEXT.md

@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for AI-MASTER-PROTOCOL.md."
 resource: "file:///docs/governance/AI-MASTER-PROTOCOL.md"
 ---
-
 ### 📜 docs/AI-MASTER-PROTOCOL.md (Refactored v6.1 + Palace v1.0)
 
 # 📜 DSOM Master Directive: AI Governance Protocol (v6.1 + Palace v1.0)

@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-SOD-PALACE.md."
 resource: "file:///docs/tools/HOWTO-SOD-PALACE.md"
 ---
-
 # HOWTO: sod-palace — Start-of-Day Ritual
 
 # docs/tools/HOWTO-SOD-PALACE.md

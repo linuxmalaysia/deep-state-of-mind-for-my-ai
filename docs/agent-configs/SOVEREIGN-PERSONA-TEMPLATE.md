@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "Template to define a core persona, linguistic DNA, and operational constraints for the AI Cognitive Twin."
 resource: "file:///docs/agent-configs/SOVEREIGN-PERSONA-TEMPLATE.md"
 ---
-
 # Sovereign Persona Profile Template
 
 > **USAGE:** This is a template to inject your specific identity, writing style, and architectural preferences into your Cognitive Digital Twin.

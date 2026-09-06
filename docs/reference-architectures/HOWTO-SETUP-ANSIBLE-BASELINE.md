@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-SETUP-ANSIBLE-BASELINE.md."
 resource: "file:///docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md"
 ---
-
 # 🛠️ HOWTO: Set Up the Ansible Baseline for a DSOM Project (Example Elastic SOC)
 
 **Title:** HOWTO: Set Up the Ansible Baseline for Example Elastic SOC

@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for reanimate.md."
 resource: "file:///docs/tools-and-automation/reanimate.md"
 ---
-
 # 🌅 Reanimation Engine (reanimate.sh)
 
 > **"Wake up, Neo."** - Ingesting the Project State.

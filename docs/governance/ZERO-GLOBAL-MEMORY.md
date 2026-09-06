@@ -7,7 +7,6 @@ topics: ["memory", "sovereignty", "zero-global", "palace", "git-native"]
 description: "Comprehensive architectural analysis of the Zero-Global Memory mandate in DSOM. Covers the problem, the solution, the mechanics, and the operational procedures that make AI memory persistent, auditable, and vendor-independent."
 resource: "file:///docs/governance/ZERO-GLOBAL-MEMORY.md"
 ---
-
 # Zero-Global Memory: The Sovereign AI Memory Architecture
 
 > **Artifact Level:** L2 (Analysis)

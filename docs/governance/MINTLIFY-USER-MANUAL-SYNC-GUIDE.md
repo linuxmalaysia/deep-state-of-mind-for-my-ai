@@ -3,21 +3,14 @@ okf_version: 0.2
 type: governance
 title: "Mintlify User Manual Architecture & One-Way Sync Guide"
 timestamp: "2026-08-23T07:02:00Z"
-sources:
-  - title: "Mintlify Documentation"
-    url: "https://mintlify.com/docs"
-  - file:///tools/build_mintlify_mdx.py
-  - file:///scripts/sync_docs.py
-  - file:///.github/workflows/sync-docs.yml
-  - file:///.agents/skills/mintlify-docs-compiler/SKILL.md
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
-stale_after: "2027-08-23T07:02:00Z"
 topics: ["mintlify", "user-manual", "sync", "mdx", "safety-guards", "automation", "gitops"]
+sources: [{title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///tools/build_mintlify_mdx.py", "file:///scripts/sync_docs.py", "file:///.github/workflows/sync-docs.yml", "file:///.agents/skills/mintlify-docs-compiler/SKILL.md"]
+generated: human-and-ai
+verified: verified
+status: authoritative
+stale_after: "2027-08-23T07:02:00Z"
 description: "Comprehensive blueprint and universal AI agent prompt for producing user, admin, and developer manuals with automated MDX compilation and guarded one-way Mintlify sync."
 ---
-
 # Mintlify User Manual Architecture & One-Way Sync Guide
 
 > **Entry Point 22:** This document is the definitive master blueprint for setting up automated Markdown-to-MDX user manual compilation and a hardened one-way sync pipeline to downstream Mintlify repositories (e.g. `linuxmalaysia/my-knowledge-brain`) powering sites like [harisfazillah.mintlify.site](https://harisfazillah.mintlify.site).

@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for MULTI-AGENT-PROTOCOLS.md."
 resource: "file:///docs/governance/MULTI-AGENT-PROTOCOLS.md"
 ---
-
 # 🤖 DSOM Multi-Agent Protocols (v6.1)
 
 > **Entry Point 6:** This document serves as the Subagent Swarm Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.

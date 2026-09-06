@@ -1,3 +1,10 @@
+---
+okf_version: 0.1
+type: documentation
+title: "Deep State of Mind (DSOM) Instructions for Claude Code & Claude Desktop"
+timestamp: "2026-09-06T03:26:12Z"
+topics: ["dsom", "documentation"]
+---
 # Deep State of Mind (DSOM) Instructions for Claude Code & Claude Desktop
 
 > **ATTENTION CLAUDE:** This repository is governed by the **Deep State of Mind (DSOM)** framework.

@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for DIGITAL-SOVEREIGNTY-MODEL.md."
 resource: "file:///docs/governance/DIGITAL-SOVEREIGNTY-MODEL.md"
 ---
-
 ### 📜 docs/DIGITAL-SOVEREIGNTY-MODEL.md (v2.0)
 
 # 🏛️ Digital Sovereignty Operational Model (DSOM)

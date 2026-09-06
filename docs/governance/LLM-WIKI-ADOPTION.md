@@ -6,7 +6,6 @@ timestamp: "2026-08-05T22:23:51Z"
 topics: ["dsom", "documentation"]
 description: "Analysis of Andrej Karpathy's LLM WIKI concept and how it maps to DSOM architecture."
 ---
-
 # 🧠 DSOM vs. LLM WIKI: Comparative Analysis & Adoption Strategy
 
 > **Entry Point 8:** This document serves as the Sovereign Knowledge Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.

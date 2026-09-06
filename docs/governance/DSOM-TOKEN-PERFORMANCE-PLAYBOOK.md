@@ -7,7 +7,6 @@ topics: ["tokens", "performance", "tiktoken", "byte-cap", "context-optimisation"
 description: "Master playbook for token-efficient DSOM operation. Covers tools, rules, benchmarks, and procedures for minimising LLM context window consumption across all DSOM projects."
 resource: "file:///docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md"
 ---
-
 # DSOM Token Performance Playbook
 
 > **Artifact Level:** L1 (Synthesis)

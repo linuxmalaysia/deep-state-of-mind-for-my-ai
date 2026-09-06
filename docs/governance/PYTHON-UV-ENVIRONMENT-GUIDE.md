@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "Governance policy and operational standard for managing isolated Python environments using the uv package manager within the DSOM framework."
 resource: "file:///docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md"
 ---
-
 # Python `uv` Environment Setup Guide
 
 This document outlines the standard governance approach for managing Python environments and dependencies across the Deep State of Mind (DSOM) framework and its distributed control nodes.

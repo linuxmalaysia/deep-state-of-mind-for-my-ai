@@ -34,7 +34,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **Team Masterclass (Training)** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/tutorials/TEAM-DSOM-MASTERCLASS/) | End-to-end team adoption & pair programming |
 | **Agent Plugins Specification** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/) | Agent Plugins 1.0.0 Packaging & MCP Integration |
 | **Mintlify Knowledge Brain (Live)** | [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site) | Auto-synced public Mintlify documentation portal |
-| **Start AI Agents Prompt** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/) | Universal copy-paste prompt for first-time AI agent setup |
+| **Start AI Agents Prompt** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/) (GitBook: [`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt`](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt)) | Universal copy-paste prompt for first-time AI agent setup |
 
 ---
 
@@ -282,7 +282,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 *If you need a copy-pasteable master prompt to initialise and align any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) with full DSOM Protocol compliance for first-time project setup.*
 
-**Read This First:** [`START-AI-AGENTS-PROMPT.md`](START-AI-AGENTS-PROMPT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/))
+**Read This First:** [`START-AI-AGENTS-PROMPT.md`](START-AI-AGENTS-PROMPT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/) | GitBook Mirror: [`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt`](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt))
 
 **Why it matters:** Provides the universal, copy-pasteable prompt and execution checklist for humans to ask AI agents to set up dual `AGENTS.md` gateways, `.agents/brain/` spatial memory, OKF frontmatter, Universal Gateway Matrix, and 4-tier environment maps in a single interaction.
 

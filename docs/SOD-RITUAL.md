@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for SOD-RITUAL.md."
 resource: "file:///docs/SOD-RITUAL.md"
 ---
-
 # 🌅 SOD-RITUAL.md — Start-of-Day Ritual
 
 # docs/SOD-RITUAL.md

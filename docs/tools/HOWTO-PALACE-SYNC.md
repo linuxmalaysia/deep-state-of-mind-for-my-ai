@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-PALACE-SYNC.md."
 resource: "file:///docs/tools/HOWTO-PALACE-SYNC.md"
 ---
-
 # HOWTO: palace-sync — Kingdom Spatial Mapping
 
 # docs/tools/HOWTO-PALACE-SYNC.md

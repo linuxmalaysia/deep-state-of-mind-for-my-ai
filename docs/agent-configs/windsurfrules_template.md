@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for windsurfrules_template.md."
 resource: "file:///docs/agent-configs/windsurfrules_template.md"
 ---
-
 # .windsurfrules (DSOM Template)
 
 # Copy this content to your project root as `.windsurfrules`

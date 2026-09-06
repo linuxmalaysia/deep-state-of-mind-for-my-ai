@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for privacy-guardian.md."
 resource: "file:///tools-and-automation/privacy-guardian.md"
 ---
-
 # 🛡️ Privacy Guardian (privacy-guardian.sh)
 
 > **"Loose lips sink ships."** - Preventing Data Leaks to AI Models.

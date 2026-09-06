@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for copilot_instructions_template.md."
 resource: "file:///docs/agent-configs/copilot_instructions_template.md"
 ---
-
 # GitHub Copilot Instructions (DSOM Template)
 
 # Copy this content to `.github/copilot-instructions.md`

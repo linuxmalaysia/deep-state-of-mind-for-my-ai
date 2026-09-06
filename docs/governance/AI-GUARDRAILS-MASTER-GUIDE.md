@@ -6,21 +6,12 @@ timestamp: "2026-08-22T07:10:00Z"
 topics: ["guardrails", "validation", "ast", "mcp", "dsom", "twilight-state", "security", "okf"]
 description: "The definitive, comprehensive master guide to AI guardrails and custom validator architectures in the Deep State of Mind (DSOM) framework, combining the Guardrails AI framework with DSOM's native lightweight runtime."
 resource: "file:///docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md"
-sources: [
-  "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators",
-  "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md",
-  "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md",
-  "docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md",
-  "docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md",
-  "docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md",
-  ".agents/AGENTS.md"
-]
-generated: "google-antigravity"
+sources: ["https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", "docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md", "docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md", "docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md", ".agents/AGENTS.md"]
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-22T00:00:00Z"
 ---
-
 # 🛡️ The Master Guide to AI Guardrails & Custom Validators (DSOM Protocol)
 
 > **Document Type:** Sovereign Master Architecture & Implementation Blueprint  

@@ -6,7 +6,6 @@ timestamp: "2026-07-26T07:07:00Z"
 topics: ["okf", "discovery", "context-management", "brain", "dsom", "SOP"]
 description: "SOP detailing how AI agents and human operators leverage OKF YAML frontmatter (topics, description) in .agents/brain/ and docs/ to perform fast local discovery before terminal execution."
 ---
-
 # 📚 SOP: Local Knowledge-First Discovery & OKF Context Protocol
 
 ## 1. Executive Intent

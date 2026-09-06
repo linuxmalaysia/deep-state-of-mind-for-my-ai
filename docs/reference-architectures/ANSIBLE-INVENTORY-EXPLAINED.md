@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for ANSIBLE-INVENTORY-EXPLAINED.md."
 resource: "file:///docs/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED.md"
 ---
-
 # [CONSTRUCT] Ansible Inventory Architecture (Example Elastic SOC v1.0)
 # docs/ANSIBLE-INVENTORY-EXPLAINED.md
 

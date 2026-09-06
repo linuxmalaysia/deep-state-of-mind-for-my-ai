@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for hibernation.md."
 resource: "file:///tools-and-automation/hibernation.md"
 ---
-
 # 🌙 Hibernation Sequence (hibernation.sh)
 
 > **"Sleep is the best meditation."** - Dalai Lama (and DSOM Protocol).

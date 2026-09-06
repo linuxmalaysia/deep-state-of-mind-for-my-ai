@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for RITUAL-OF-TRANSITION.md."
 resource: "file:///docs/RITUAL-OF-TRANSITION.md"
 ---
-
 # 🕯️ DSOM Ritual of Transition (v6.1 + Palace v1.0)
 
 # docs/RITUAL-OF-TRANSITION.md

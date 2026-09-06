@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for dsom-claude-initialiser.md."
 resource: "file:///docs/model-specifics/dsom-claude-initialiser.md"
 ---
-
 # 🧪 DSOM Claude Initialiser
 
 ---

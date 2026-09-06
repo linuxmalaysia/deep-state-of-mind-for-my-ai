@@ -1,6 +1,6 @@
 ---
-okf_version: "0.1"
-type: "documentation"
+okf_version: 0.1
+type: documentation
 title: "Dual Agent Registry & Sovereign Operational Laws"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "governance", "agents", "protocols", "rules"]

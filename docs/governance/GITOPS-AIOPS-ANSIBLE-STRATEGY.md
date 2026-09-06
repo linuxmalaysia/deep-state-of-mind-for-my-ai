@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for GITOPS-AIOPS-ANSIBLE-STRATEGY.md."
 resource: "file:///docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md"
 ---
-
 # 🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)
 
 > **Entry Point 9:** This document serves as the Security & Defense Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.

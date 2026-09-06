@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for PALACE-BUILD-STORY.md."
 resource: "file:///docs/PALACE-BUILD-STORY.md"
 ---
-
 # 🏛️ PALACE-BUILD-STORY: How the Sovereign Markdown Palace Was Built
 
 > *"Sovereignty through Spatial Awareness. Recall through Structured Reflection."*

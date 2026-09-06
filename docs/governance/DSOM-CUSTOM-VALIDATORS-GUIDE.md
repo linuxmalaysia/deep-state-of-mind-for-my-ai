@@ -6,17 +6,12 @@ timestamp: "2026-08-21T22:15:00Z"
 topics: ["guardrails", "validation", "ast", "mcp", "dsom", "twilight-state", "okf"]
 description: "Architectural blueprint and implementation guide detailing how to build custom deterministic and LLM-powered validators within the Deep State of Mind (DSOM) framework, inspired by Guardrails AI principles."
 resource: "file:///docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md"
-sources: [
-  "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators",
-  "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md",
-  ".agents/AGENTS.md"
-]
-generated: "google-antigravity"
+sources: ["https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", ".agents/AGENTS.md"]
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-21T00:00:00Z"
 ---
-
 # 🛡️ Custom Validators in DSOM: Guardrails Architecture & Implementation Blueprint
 
 > **Reference URL:** [Guardrails AI Custom Validators Guide](https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators)  

@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "Architectural analysis of DSOM local knowledge ingestion vs. remote RAG/vector pipelines, with empirical benchmarks and implementation guidance."
 resource: "file:///docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md"
 ---
-
 # Ingestion Latency and Contextual Mapping Velocities in DSOM
 
 > **Artifact Level:** L2 (Analysis)

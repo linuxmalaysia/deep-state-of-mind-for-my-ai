@@ -8,7 +8,7 @@ description: "Sovereign coding instructions instructing GitHub Copilot to strict
 resource: "file:///.github/copilot-instructions.md"
 sources: [".agents/AGENTS.md", "START-HERE.md"]
 verified: true
-status: "active"
+status: active
 ---
 # 🛡️ DSOM Sovereign Coding Instructions for GitHub Copilot
 

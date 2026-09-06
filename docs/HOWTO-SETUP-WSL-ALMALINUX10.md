@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-SETUP-WSL-ALMALINUX10.md."
 resource: "file:///docs/HOWTO-SETUP-WSL-ALMALINUX10.md"
 ---
-
 # 🐧 HOWTO: Setup AlmaLinux 10 WSL2 as DSOM Ansible Control Node
 
 > **Tier 2 (Dev Bridge): AlmaLinux 10 → `dsom-control-almalinux10`**

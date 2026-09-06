@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-HIBERNATION.md."
 resource: "file:///docs/tools/HOWTO-HIBERNATION.md"
 ---
-
 # HOWTO: hibernation — Legacy Safety Verifier
 
 # docs/tools/HOWTO-HIBERNATION.md

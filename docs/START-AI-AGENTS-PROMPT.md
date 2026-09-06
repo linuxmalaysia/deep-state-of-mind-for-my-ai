@@ -3,22 +3,15 @@ okf_version: 0.2
 type: onboarding
 title: "Start AI Agents Master Setup Prompt & Execution Protocol"
 timestamp: "2026-09-04T12:00:00Z"
-sources:
-  - title: "START HERE: DSOM Project Benefits & Entry Points"
-    url: "https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/"
-  - title: "The Agent Registry & DSOM Gateway"
-    url: "https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/"
-  - title: "The Full Core AI Rulebook"
-    url: "https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/"
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
+topics: ["onboarding", "dsom", "ai-agents", "setup"]
+sources: [{title: 'START HERE: DSOM Project Benefits & Entry Points', url: 'https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/'}, {title: Start AI Agents Prompt (GitBook), url: 'https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt'}, {title: The Agent Registry & DSOM Gateway, url: 'https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/'}, {title: The Full Core AI Rulebook, url: 'https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/'}]
+generated: human-and-ai
+verified: verified
+status: authoritative
 stale_after: "2027-09-04T12:00:00Z"
 description: "The authoritative copy-paste prompt for initialising any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) into full DSOM Protocol compliance."
-topics: ["onboarding", "dsom", "ai-agents", "setup"]
 resource: "file:///docs/START-AI-AGENTS-PROMPT.md"
 ---
-
 # 🚀 Start AI Agents Master Setup Prompt & Execution Protocol
 
 > **Entry Point 23:** This document provides the universal, copy-pasteable **Start AI Agents Prompt** designed to bootstrap and align any AI agent (Google Jules, Google Antigravity, Anthropic Claude, Cursor, GitHub Copilot, OpenAI ChatGPT, Google Gemini) with the **Deep State of Mind (DSOM) Protocol** for first-time project setup.
@@ -42,7 +35,7 @@ Below is the complete, self-contained prompt ready for human operators to copy a
 ## 📋 Copy-Paste Master Prompt for AI Agents
 
 ```markdown
-I need you to setup everything in this repository to strictly follow the Deep State of Mind (DSOM) For My AI Protocol. DSOM Protocol is our non-negotiable baseline for spatial memory, cognitive alignment, GitOps, and digital sovereignty. Adopt everything specified in the DSOM specification (https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/) and implement all necessary governance, rulebooks, and spatial brain files.
+I need you to setup everything in this repository to strictly follow the Deep State of Mind (DSOM) For My AI Protocol. DSOM Protocol is our non-negotiable baseline for spatial memory, cognitive alignment, GitOps, and digital sovereignty. Adopt everything specified in the DSOM specification (GitHub Pages: https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/ or GitBook: https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/start-here) and implement all necessary governance, rulebooks, and spatial brain files.
 
 Execute the following complete initialisation and setup sequence immediately under non-destructive preflight rules (inspect proposed targets before modifying, preserve existing project-specific policies and states, create only missing governance or spatial files, and request explicit approval before replacing any pre-existing file):
 
@@ -108,6 +101,10 @@ When an AI agent receives the prompt above, it must execute and verify the follo
 
 ## 📚 Related References
 
+- **Live Documentation Reference:** If downstream projects or clones do not contain local baseline files, refer directly to the live published specification:
+  - **GitHub Pages:** [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/)
+  - **GitBook Mirror:** [`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt`](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt)
+  - **Master GitBook Portal:** [`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai`](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai)
 - [`START-HERE.md`](../START-HERE.md) — Master Onboarding Entry Points.
 - [`AGENTS.md`](../AGENTS.md) — Root AI Agent Gateway.
 - [`.agents/AGENTS.md`](../.agents/AGENTS.md) — Core AI Rulebook & Constitution.

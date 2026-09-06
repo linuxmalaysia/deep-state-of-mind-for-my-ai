@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for ITIL-ALIGNMENT.md."
 resource: "file:///docs/governance/ITIL-ALIGNMENT.md"
 ---
-
 # 🏥 DSOM ITIL 4 Alignment Strategy
 
 > **"Value Co-creation through Service Relationships."**

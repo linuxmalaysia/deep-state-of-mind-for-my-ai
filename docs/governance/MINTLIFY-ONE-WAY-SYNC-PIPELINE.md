@@ -3,20 +3,14 @@ okf_version: 0.2
 type: governance
 title: "Mintlify One-Way Docs Sync & Safety Guards Specification"
 timestamp: "2026-08-22T22:42:00Z"
-sources:
-  - title: "Mintlify Documentation"
-    url: "https://mintlify.com/docs"
-  - file:///scripts/sync_docs.py
-  - file:///tools/build_mintlify_mdx.py
-  - file:///.github/workflows/sync-docs.yml
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
-stale_after: "2027-08-22T22:42:00Z"
 topics: ["mintlify", "sync", "governance", "mdx", "safety-guards", "gitops"]
+sources: [{title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///scripts/sync_docs.py", "file:///tools/build_mintlify_mdx.py", "file:///.github/workflows/sync-docs.yml"]
+generated: human-and-ai
+verified: verified
+status: authoritative
+stale_after: "2027-08-22T22:42:00Z"
 description: "Master governance specification for automated Markdown-to-MDX compilation and deterministic one-way sync to Mintlify downstream repositories under 5 non-negotiable safety guards."
 ---
-
 # Mintlify One-Way Docs Sync & Safety Guards Specification
 
 > **Entry Point 21:** This document governs the automated compilation of standard Markdown documents in `docs/` and skills in `.agents/skills/` into Mintlify MDX (`docs-source/`) and their deterministic, one-way synchronization to downstream docs repositories (e.g. `linuxmalaysia/my-knowledge-brain`) powering [harisfazillah.mintlify.site](https://harisfazillah.mintlify.site).

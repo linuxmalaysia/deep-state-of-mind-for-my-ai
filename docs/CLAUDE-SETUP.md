@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for CLAUDE-SETUP.md."
 resource: "file:///docs/CLAUDE-SETUP.md"
 ---
-
 # 🎭 Claude.ai Integration Protocol (v6.1 + Palace v1.0)
 
 ## docs/CLAUDE-SETUP.md

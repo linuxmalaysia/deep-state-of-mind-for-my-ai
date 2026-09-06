@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-GENERATE-WALKTHROUGH.md."
 resource: "file:///docs/tools/HOWTO-GENERATE-WALKTHROUGH.md"
 ---
-
 # HOWTO: generate-walkthrough — Session Scribe
 
 # docs/tools/HOWTO-GENERATE-WALKTHROUGH.md

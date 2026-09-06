@@ -6,7 +6,6 @@ timestamp: "2026-07-31T00:00:00Z"
 topics: ["mcp", "architecture", "rag", "context7", "server"]
 description: "Research and architectural blueprint for converting the DSOM Palace into a native MCP server for AI clients."
 ---
-
 # DSOM-MCP-ARCHITECTURE.md
 
 > **"Context is not a static text block; it is an interactive resource. Let the AI query the Palace itself."**

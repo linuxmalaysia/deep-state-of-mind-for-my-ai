@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for audit-pre-flight.md."
 resource: "file:///tools-and-automation/audit-pre-flight.md"
 ---
-
 # 📜 Audit Pre-Flight (audit-pre-flight.sh)
 
 > **"Trust, but Verify."** - The physical reality check before the AI wakes up.

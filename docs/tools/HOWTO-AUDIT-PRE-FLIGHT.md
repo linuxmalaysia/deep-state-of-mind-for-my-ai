@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-AUDIT-PRE-FLIGHT.md."
 resource: "file:///docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md"
 ---
-
 # HOWTO: audit-pre-flight — Intelligence Integrity Sync
 
 # docs/tools/HOWTO-AUDIT-PRE-FLIGHT.md

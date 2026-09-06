@@ -7,12 +7,11 @@ topics: ["okf", "dsom", "documentation", "context-engineering", "progressive-dis
 description: "The authoritative guide for human engineers and AI agents to understand, implement, and adopt the Open Knowledge Format (OKF v0.1 & v0.2) within the Deep State of Mind (DSOM) protocol."
 resource: "file:///references/OKF-ADOPTION-GUIDE.md"
 sources: ["https://cloud.google.com/blog/products/databases/announcing-open-knowledge-format-for-gen-ai", ".agents/AGENTS.md"]
-generated: "google-antigravity"
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-20T00:00:00Z"
 ---
-
 # 🌐 Open Knowledge Format (OKF) Adoption Guide: The Foundational Context Engine for DSOM
 
 ## Executive Summary & Core Concept

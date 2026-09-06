@@ -7,12 +7,11 @@ topics: ["dsom", "documentation", "skills", "okf"]
 description: "The central registry and learning guide for creating and using AI Agent Skills within the Deep State of Mind (DSOM) framework."
 resource: "file:///docs/AI-AGENT-SKILLS-GUIDE.md"
 sources: [".agents/AGENTS.md", "docs/OKF-ADOPTION-GUIDE.md"]
-generated: "google-antigravity"
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-21T00:00:00Z"
 ---
-
 # 🤖 AI Agent Skills Development Guide
 
 This document serves as the central registry and learning guide for creating **AI Agent Skills** within our project infrastructure.

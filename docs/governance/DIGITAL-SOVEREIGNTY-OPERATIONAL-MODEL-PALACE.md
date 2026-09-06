@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md."
 resource: "file:///docs/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE.md"
 ---
-
 # 🏛️ Sovereign Markdown Palace Protocol (v1.0)
 
 > **"Sovereignty through Spatial Awareness. Recall through Structured Reflection."**

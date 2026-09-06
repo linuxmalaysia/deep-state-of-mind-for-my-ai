@@ -6,15 +6,10 @@ timestamp: "2026-08-22T10:45:00Z"
 topics: ["dsom", "governance", "downstream", "ai-alignment", "compliance", "guardrails", "multi-agent"]
 description: "Strategic blueprint and actionable mechanics for ensuring downstream repositories using DSOM as their cognitive brain compel external AI agents and human contributors to recognize, learn from, and strictly honor the DSOM protocol."
 resource: "file:///docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md"
-sources: [
-  "docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md",
-  "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md",
-  "START-HERE.md",
-  ".agents/AGENTS.md"
-]
-generated: "google-antigravity"
+sources: ["docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md", "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "START-HERE.md", ".agents/AGENTS.md"]
+generated: google-antigravity
 verified: true
-status: "proposed"
+status: proposed
 stale_after: "2027-08-22T00:00:00Z"
 ---
 # Downstream DSOM Protocol Compliance & Cross-Agent Honor Mandate
