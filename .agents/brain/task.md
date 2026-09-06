@@ -83,5 +83,6 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Authored Start AI Agents Master Setup Prompt & Execution Protocol (`docs/START-AI-AGENTS-PROMPT.md`) as Entry Point 23.
 - `[x]` Synchronized omni-documentation layers and ledgers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`).
 - `[x]` Updated root `AGENTS.md`, `.agents/AGENTS.md`, and spatial brain files (`task.md`, `walkthrough.md`, `active_context_manifest.md`).
+- `[x]` Adopted OKF v0.2 trust signals, System Protocol `/learn` Knowledge Ingestion Command, and pinned `markdownlint-cli` 0.49.1.
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-04*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*

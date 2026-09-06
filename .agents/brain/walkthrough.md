@@ -274,8 +274,21 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 
 > **EOD Palace Sync Complete: Updated Start AI Agents Prompt with canonical GitBook live URLs, resolved PR review comments, synchronized sitemaps, and achieved 100% test pass rate across all active test suites.**
 
+## 🏁 Session Anchor: 2026-09-06 — OKF v0.2 Trust Signals, System Protocol /learn Command, and markdownlint-cli Pinning
+
+- Updated `.markdownlint.json` configuration rules for `MD013` (line_length: 120), `MD025` (`front_matter_title: "^title:"`), `MD033: false`, `MD041: false`.
+- Updated `.agents/skills/dsom-knowledge-ingester/SKILL.md` to OKF v0.2 (`spec_version: "0.2"`) and integrated the `/learn [Topic, URL, or Context]` Knowledge Ingestion Command protocol.
+- Standardised UK English spelling (`optimised`, `finalising`, `synthesised`) across `dsom-knowledge-ingester/SKILL.md`.
+- Pinned `markdownlint-cli` `0.49.1` in `package.json` / `package-lock.json` and updated SOP commands in `dsom-knowledge-ingester/SKILL.md` and `okf-v02-adoption-engineer/SKILL.md` to `npx --no-install markdownlint-cli --fix <filename.md>`.
+- Updated `tests/test_okf_adoption_guide_cross_skill_sync.py` regression test assertions to verify OKF v0.2 frontmatter headers and synthesised UK spelling.
+- Confirmed 100% test pass rate (811 passed, 72 skipped).
+
+### Integration Mental Anchor
+
+> **EOD Palace Sync Complete: Adopted OKF v0.2 trust signals, /learn command protocol, pinned markdownlint-cli 0.49.1, updated MD025 front_matter_title regex, and achieved 100% test suite pass rate.**
+
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-04*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
 
 
