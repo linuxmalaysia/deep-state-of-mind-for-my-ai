@@ -11,6 +11,7 @@ topics: ["dsom", "documentation"]
 
 * [🧠 Home](README.md)
 * [🚀 START HERE: Entry Points](START-HERE.md)
+* [🤖 Start AI Agents Master Prompt](docs/START-AI-AGENTS-PROMPT.md)
 * [🎓 Team Masterclass: Zero to Sovereign AI](docs/tutorials/TEAM-DSOM-MASTERCLASS.md)
 * [📝 Nota Lapangan: Panduan Praktikal Pasukan](docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md)
 * [📜 Universal Ledger (History)](HISTORY.md)

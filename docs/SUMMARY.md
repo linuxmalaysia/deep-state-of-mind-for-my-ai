@@ -12,6 +12,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 
 * [Home](README.md)
 * [START HERE](START-HERE.md)
+* [Start AI Agents Setup Prompt](START-AI-AGENTS-PROMPT.md)
 
 ## 🎓 Tutorials
 

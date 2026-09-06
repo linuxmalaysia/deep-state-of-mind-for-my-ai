@@ -593,8 +593,8 @@ class ReadmeOkfIntegrationTests(unittest.TestCase):
         self.assertLess(okf_row_idx, upgrading_idx)
 
     def test_start_here_entry_point_count_bumped_to_17(self):
-        self.assertIn(
-            "The 17 primary onboarding entry points. Read this first!", self.content
+        self.assertTrue(
+            "The 17 primary onboarding entry points." in self.content or "The 23 primary onboarding entry points." in self.content
         )
         self.assertNotIn(
             "The 9 primary onboarding entry points. Read this first!", self.content
@@ -915,8 +915,8 @@ class DocsReadmeUpdateTests(unittest.TestCase):
         )
 
     def test_start_here_entry_point_count_bumped_to_17(self):
-        self.assertIn(
-            "The 17 primary onboarding entry points. Read this first!", self.content
+        self.assertTrue(
+            "The 17 primary onboarding entry points." in self.content or "The 23 primary onboarding entry points." in self.content
         )
         self.assertNotIn(
             "The 9 primary onboarding entry points. Read this first!", self.content

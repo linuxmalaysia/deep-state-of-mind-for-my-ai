@@ -36,6 +36,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **Agent Plugins Specification** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-AGENT-PLUGINS-SPECIFICATION/) | Agent Plugins 1.0.0 Packaging & MCP Integration |
 | **Technical Handbook Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/) | How-To Produce a Project Technical Handbook Blueprint |
 | **Mintlify Knowledge Brain (Live)** | [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site) | Auto-synced public Mintlify documentation portal |
+| **Start AI Agents Prompt** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/) | Universal copy-paste prompt for first-time AI agent setup |
 
 ---
 
@@ -48,7 +49,7 @@ Use this compass to jump directly to the exact information you or your AI agent 
 | Documentation Quadrant | User Intent & Orientation | Primary DSOM Entry Points |
 | :--- | :--- | :--- |
 | **🎓 Tutorials**<br>*(Learning-oriented · Practical)* | **Learning the craft step-by-step.** Guided onboarding for beginners establishing DSOM. | • [Entry Point 1: Engineering & Scaffolding](#1-the-engineering-entry-point-project-scaffolding)<br>• [Entry Point 12: Mechanical Boot Sequence](#12-the-initialisation-entry-point-mechanical-boot-sequence)<br>• [Entry Point 17: OKF Master Guide](#17-the-open-knowledge-format-okf-entry-point-foundational-context-engine_1)<br>• [Team Masterclass (Zero to Sovereign AI)](docs/tutorials/TEAM-DSOM-MASTERCLASS.md) |
-| **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture)<br>• [Entry Point 21: Mintlify One-Way Docs Sync](#21-the-mintlify-one-way-docs-sync-entry-point-knowledge-brain-publishing) |
+| **🛠️ How-To Guides**<br>*(Problem-oriented · Practical)* | **Solving real-world tasks & operations.** Step-by-step procedures for daily management. | • [Entry Point 4: Daily Operations (SOD/EOD)](#4-the-daily-operations-entry-point-day-2-management)<br>• [Entry Point 6: Multi-Agent & MCP Setup](#6-the-subagent-swarm-entry-point-multi-agent-orchestration)<br>• [Entry Point 7: Procedural AI Skills](#7-the-procedural-skill-entry-point-ai-automation)<br>• [Entry Point 15: Native OpenWiki Emulator](#15-the-native-openwiki-knowledge-graph-entry-point-zero-binary-architecture)<br>• [Entry Point 21: Mintlify One-Way Docs Sync](#21-the-mintlify-one-way-docs-sync-entry-point-knowledge-brain-publishing)<br>• [Entry Point 23: Start AI Agents Setup Prompt](#23-the-start-ai-agents-prompt-entry-point-first-time-agent-setup) |
 | **📚 Reference**<br>*(Information-oriented · Theoretical)* | **Factual, authoritative lookup.** Specifications, API structures, and constitutional laws. | • [Entry Point 2: Full AI Constitution (`AGENTS.md`)](#2-the-cognitive-entry-point-ai-persona-rules)<br>• [Entry Point 3: AI Sitemap (`llms.txt`)](#3-the-external-system-entry-point-ai-crawlers)<br>• [Entry Point 16: Legal & Risk Disclaimer](#16-the-legal-disclaimer-entry-point-risk-governance)<br>• [Entry Point 18: Guardrails Master Guide](#18-the-ai-guardrails-custom-validators-entry-point-defense-in-depth-safety)<br>• [Entry Point 19: Episodic Record Template](#19-the-episodic-record-state-anchor-entry-point-zero-context-amnesia)<br>• [Entry Point 20: Agent Plugins 1.0.0 Spec](#20-the-agent-plugins-100-packaging-entry-point-universal-interoperability) |
 | **💡 Explanation**<br>*(Understanding-oriented · Theoretical)* | **Architecture, rationale & philosophy.** Understanding *why* DSOM works and saves tokens. | • [Entry Point 8: LLM WIKI Architecture](#8-the-sovereign-knowledge-entry-point-llm-wiki-adoption)<br>• [Entry Point 9: Defensive GitOps Strategy](#9-the-security-defense-entry-point-defensive-gitops)<br>• [Entry Point 10: Token Performance Playbook](#10-the-token-performance-entry-point-context-efficiency)<br>• [Entry Point 14: The Tri-Phasic Mind](#14-the-cognitive-architecture-entry-point-the-tri-phasic-mind) |
 
@@ -264,6 +265,16 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md`](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/))
 
 **Why it matters:** Provides the drop-in AI agent prompt, 3-manual stratification model (User/Admin/Developer), and scripts for bootstrapping Mintlify documentation pipelines across external projects.
+
+---
+
+## 23. The Start AI Agents Prompt Entry Point (First-Time Agent Setup)
+
+*If you need a copy-pasteable master prompt to initialise and align any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) with full DSOM Protocol compliance for first-time project setup.*
+
+**Read This First:** [`docs/START-AI-AGENTS-PROMPT.md`](docs/START-AI-AGENTS-PROMPT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/))
+
+**Why it matters:** Provides the universal, copy-pasteable prompt and execution checklist for humans to ask AI agents to set up dual `AGENTS.md` gateways, `.agents/brain/` spatial memory, OKF frontmatter, Universal Gateway Matrix, and 4-tier environment maps in a single interaction.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*

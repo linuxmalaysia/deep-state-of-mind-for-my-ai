@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Start AI Agents Setup Prompt & Execution Protocol (Entry Point 23):** Authored `docs/START-AI-AGENTS-PROMPT.md` providing a universal, copy-pasteable setup prompt and execution protocol for human operators to initialize any AI agent (Google Jules, Antigravity, Claude, Cursor, Copilot, Gemini) into full DSOM Protocol compliance for first-time project setup.
 - **Mintlify User Manual Architecture & Downstream Sync Guide (Entry Point 22):** Authored `docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md` detailing the 3-manual stratification model (User/Admin/Developer Manuals), compiler requirements, and the universal drop-in AI agent prompt for other repositories.
 - **Mintlify One-Way Docs Sync Pipeline & Safety Guards (Rule 31 & Entry Point 21):** Implemented `scripts/sync_docs.py` and `.github/workflows/sync-docs.yml` to safely publish `docs-source/` to the downstream docs repo `linuxmalaysia/my-knowledge-brain` serving `https://harisfazillah.mintlify.site`.
 - **5-Layer Safety Guardrails (A–E):** Enforced source validation, minimum 5 `.mdx` files floor, navigation integrity checking every page path in `docs.json`, diff preview with a 10-deletion cap (`ALLOW_LARGE_DELETIONS` override), and dry-run preview mode.

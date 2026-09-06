@@ -203,7 +203,8 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |
 | `docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md` | The 5-step Knowledge-First Discovery Protocol. |
-| `START-HERE.md` | Master onboarding map with 19 defined entry points. |
+| `START-HERE.md` | Master onboarding map with 23 defined entry points. |
+| `docs/START-AI-AGENTS-PROMPT.md` | Universal copy-paste setup prompt for first-time AI agent onboarding. |
 | `llms.txt` | AI Sitemap for external crawlers (NotebookLM, ChatGPT, etc.). |
 | `tools/` | Cross-platform automation scripts for all daily DSOM rituals. |
 
@@ -212,7 +213,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 > **Tip:** Keep both `AGENTS.md` files up to date — the root gateway and `.agents/AGENTS.md`. This helps Google Jules, Cursor, GitHub Copilot, other AI agents, and your human teammates work with this repository more effectively and in full alignment with the DSOM protocol.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-04*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
 
 <!-- OPENWIKI:START -->
