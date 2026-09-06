@@ -144,6 +144,9 @@ SKILL_OKF_COMPLIANCE_SNIPPETS = {
         "Execute `uv run python tools/apply_okf_frontmatter.py --require-okf-v02 "
         "<directory>` to normalise metadata and reject newly synthesised Markdown "
         "documents unless"
+        "Execute `uv run python tools/apply_okf_frontmatter.py <directory>` "
+        "to verify and inject OKF v0.2 frontmatter headers into all newly "
+        "synthesised Markdown documents."
     ),
     "dsom-policy-adopter": (
         "Run `uv run python tools/apply_okf_frontmatter.py docs/governance/` "

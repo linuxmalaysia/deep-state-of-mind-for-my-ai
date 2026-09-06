@@ -107,6 +107,15 @@ class TaskMdChecklistContentTests(unittest.TestCase):
             "*Deep State of Mind (DSOM) For My AI Protocol | "
             "Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*",
             self.content,
+        valid_dates = ["2026-08-05", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-09-04", "2026-09-06"]
+        found = any(
+            f"*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | {d}*"
+            in self.content
+            for d in valid_dates
+        )
+        self.assertTrue(
+            found,
+            "task.md should contain an up-to-date DSOM signature footer",
         )
 
 

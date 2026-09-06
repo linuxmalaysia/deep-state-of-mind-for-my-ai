@@ -5,6 +5,7 @@ type: agent_skill
 title: "🌐 OKF v0.2 Migration & Compliance Standard Skill"
 timestamp: "2026-09-02T23:40:00Z"
 description: "Converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
+description: "Seamlessly converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
 topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
 name: okf-v02-adoption-engineer
 version: "1.2.0"

@@ -104,6 +104,8 @@ Before presenting the generated knowledge asset or finalising the file write, yo
 3. Verify that the frontmatter block does not trigger errors by keeping the file starting cleanly with `---` on line 1.
 4. Execute `uv run python tools/apply_okf_frontmatter.py --require-okf-v02 <directory>` to normalise metadata and reject newly synthesised Markdown documents unless `okf_version`, `spec_version`, `concept_id`, `status`, `stale_after`, `sources`, and `generated` contain valid OKF v0.2 values.
 5. Run `uv run .agents/skills/dsom-signature-injector/scripts/inject.py <directory>` to append standard GPL v3.0 ownership signatures.
+4. Execute `uv run python tools/apply_okf_frontmatter.py <directory>` to verify and inject OKF v0.2 frontmatter headers into all newly synthesised Markdown documents.
+5. Run `python .agents/skills/dsom-signature-injector/scripts/inject.py <directory>` to append standard GPL v3.0 ownership signatures.
 <!-- markdownlint-enable MD013 -->
 
 ---
@@ -126,5 +128,6 @@ Once validation is clean, save the file to the designated path and output a summ
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)*
 *GNU General Public License v3.0*
