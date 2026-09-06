@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "Governance policy defining how AI agents discover, trigger, and execute modular skills as operational manuals, utilising token optimisation."
 resource: "file:///docs/governance/AI-SKILL-ARCHITECTURE.md"
 ---
-
 # AI Skill Architecture
 
 > **Entry Point 7:** This document is part of the Procedural Skill Entry Point. See [START-HERE.md](../../START-HERE.md) for the master onboarding roadmap.

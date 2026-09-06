@@ -7,12 +7,11 @@ topics: ["dsom", "documentation", "cloning", "scaffolding", "okf"]
 description: "Master engineering blueprint for replicating the Deep State of Mind (DSOM) architecture, agent skills, and persona into a new project."
 resource: "file:///docs/HOWTO-CLONE-DSOM-PROJECT.md"
 sources: ["START-HERE.md", "docs/OKF-ADOPTION-GUIDE.md", ".agents/AGENTS.md"]
-generated: "google-antigravity"
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-21T00:00:00Z"
 ---
-
 # HOWTO: Clone a DSOM Project (Scaffolding Blueprint)
 
 > **Entry Point 1:** This document serves as the Engineering Entry Point for the DSOM framework. See [START-HERE.md](START-HERE.md) for the master onboarding roadmap.

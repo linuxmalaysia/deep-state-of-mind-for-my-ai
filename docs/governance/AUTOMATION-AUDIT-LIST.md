@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "A comprehensive index of all executable scripts (.ps1, .sh) and Ansible playbooks/variables (.yml) currently active in the DSOM framework for human auditing purposes."
 resource: "file:///docs/governance/AUTOMATION-AUDIT-LIST.md"
 ---
-
 # Automation & Script Audit Ledger
 
 This document serves as a human-auditable index of all executable automation scripts and configuration files currently present in the DSOM workspace. It is segmented by file type to facilitate security, syntax, and operational auditing.

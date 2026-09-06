@@ -6,7 +6,6 @@ timestamp: "2026-07-18T08:56:00Z"
 topics: ["dsom", "documentation"]
 description: "Step-by-step guide to configuring a permanent DSOM Cognitive Twin Gem inside the Google Gemini interface."
 ---
-
 # How to Create a Gemini Gem for DSOM
 
 Setting up a custom Gem inside the Gemini web interface is the best way to make the Deep State of Mind (DSOM) protocol permanent across your AI sessions. Follow these steps to configure your DSOM Gem.

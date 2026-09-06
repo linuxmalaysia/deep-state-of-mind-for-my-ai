@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-EOD-PALACE.md."
 resource: "file:///docs/tools/HOWTO-EOD-PALACE.md"
 ---
-
 # HOWTO: eod-palace — End-of-Day Saves
 
 # docs/tools/HOWTO-EOD-PALACE.md

@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-ADOPT-DSOM.md."
 resource: "file:///docs/HOWTO-ADOPT-DSOM.md"
 ---
-
 # HOWTO: Adopt DSOM in Existing Projects (Brownfield)
 
 **Author:** Harisfazillah Jamel

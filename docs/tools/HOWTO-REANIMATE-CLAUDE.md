@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-REANIMATE-CLAUDE.md."
 resource: "file:///docs/tools/HOWTO-REANIMATE-CLAUDE.md"
 ---
-
 # HOWTO: reanimate-claude — Anthropic Context Injection
 
 # docs/tools/HOWTO-REANIMATE-CLAUDE.md

@@ -1,6 +1,6 @@
 ---
-okf_version: "0.1"
-type: "documentation"
+okf_version: 0.1
+type: documentation
 title: "Quality Verification Framework & Regression Test Suites"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "quality", "verification", "testing", "assertions"]

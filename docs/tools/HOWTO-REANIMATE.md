@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-REANIMATE.md."
 resource: "file:///docs/tools/HOWTO-REANIMATE.md"
 ---
-
 # HOWTO: reanimate — AI Context Handshake
 
 # docs/tools/HOWTO-REANIMATE.md

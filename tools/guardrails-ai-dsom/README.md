@@ -6,17 +6,12 @@ timestamp: "2026-08-22T07:25:00Z"
 topics: ["guardrails", "guardrails-ai", "dsom", "validation", "pypi", "security"]
 description: "Documentation and usage reference for the guardrails-ai-dsom standalone Python package."
 resource: "file:///tools/guardrails-ai-dsom/README.md"
-sources: [
-  "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md",
-  "docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md",
-  ".agents/AGENTS.md"
-]
-generated: "google-antigravity"
+sources: ["docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md", ".agents/AGENTS.md"]
+generated: google-antigravity
 verified: true
-status: "approved"
+status: approved
 stale_after: "2027-08-22T00:00:00Z"
 ---
-
 # 🛡️ guardrails-ai-dsom
 
 > **Sovereign AI Guardrails and Custom Validators for the Deep State of Mind (DSOM) Protocol**

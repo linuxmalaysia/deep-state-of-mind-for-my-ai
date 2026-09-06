@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for REANIMATION-PROMPT-TEMPLATE.md."
 resource: "file:///docs/REANIMATION-PROMPT-TEMPLATE.md"
 ---
-
 # ⚡ DSOM Reanimation Prompt Templates (v3.0)
 
 # docs/REANIMATION-PROMPT-TEMPLATE.md

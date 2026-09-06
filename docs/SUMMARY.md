@@ -5,7 +5,6 @@ title: "Table of Contents (GitBook Summary)"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "documentation", "diataxis", "summary"]
 ---
-
 # Table of contents
 
 ## 🧠 Getting Started

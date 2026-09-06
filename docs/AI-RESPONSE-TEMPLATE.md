@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for AI-RESPONSE-TEMPLATE.md."
 resource: "file:///docs/AI-RESPONSE-TEMPLATE.md"
 ---
-
 ### 📜 docs/AI-RESPONSE-TEMPLATE.md
 
 ```markdown

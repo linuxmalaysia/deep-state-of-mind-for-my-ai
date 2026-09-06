@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-BUILD-SOVEREIGN-BOOK.md."
 resource: "file:///docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md"
 ---
-
 # HOWTO: build_sovereign_book — PDF Internal Repository Archiver
 
 # docs/tools/HOWTO-BUILD-SOVEREIGN-BOOK.md

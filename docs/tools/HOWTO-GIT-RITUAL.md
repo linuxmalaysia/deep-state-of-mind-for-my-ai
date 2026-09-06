@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-GIT-RITUAL.md."
 resource: "file:///docs/tools/HOWTO-GIT-RITUAL.md"
 ---
-
 # HOWTO: git-ritual — Sovereign GitOps Hygiene
 
 # docs/tools/HOWTO-GIT-RITUAL.md

@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for COPILOT-SETUP.md."
 resource: "file:///docs/COPILOT-SETUP.md"
 ---
-
 # 🛡️ GitHub Copilot Integration Protocol (v6.1 + Palace v1.0)
 
 ## docs/COPILOT-SETUP.md

@@ -7,7 +7,6 @@ topics: ["mcp", "fastmcp", "howto", "dsom", "server", "cursor", "claude"]
 description: "Step-by-step operational guide for running, configuring, and connecting the DSOM FastMCP Server to Cursor, Claude Desktop, and IDE assistants."
 resource: "file:///docs/tools/HOWTO-MCP-SERVER.md"
 ---
-
 # 🛠️ HOWTO: Operating DSOM FastMCP Knowledge Server
 
 This operational guide provides step-by-step instructions for running, configuring, and connecting the **DSOM FastMCP Knowledge Server (`tools/mcp/server.py`)** via Model Context Protocol (MCP) to AI IDEs such as Cursor, Claude Desktop, and VSCode.

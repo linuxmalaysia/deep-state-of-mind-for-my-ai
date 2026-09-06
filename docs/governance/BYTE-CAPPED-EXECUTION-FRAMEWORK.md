@@ -6,7 +6,6 @@ timestamp: "2026-07-18T14:54:00Z"
 topics: ["dsom", "documentation"]
 description: "Technical layout and deployment model of the DSOM Token Calculator Skill."
 ---
-
 # Procedural Automation: Byte-Capped Execution Framework
 
 ## Abstract

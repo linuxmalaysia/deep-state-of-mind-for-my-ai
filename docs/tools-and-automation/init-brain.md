@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for init-brain.md."
 resource: "file:///tools-and-automation/init-brain.md"
 ---
-
 # 🧠 Brain Initializer (init-brain.sh)
 
 > **"A clean home for a clear mind."** - Initializing the Cognitive State.

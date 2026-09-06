@@ -1,5 +1,5 @@
 ---
-okf_version: "0.1"
+okf_version: 0.1
 type: documentation
 title: "OpenWiki Documentation Skeleton & Subsystem Index"
 timestamp: "2026-09-04T21:16:57Z"

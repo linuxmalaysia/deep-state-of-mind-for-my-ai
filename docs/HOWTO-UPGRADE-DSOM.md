@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-UPGRADE-DSOM.md."
 resource: "file:///docs/HOWTO-UPGRADE-DSOM.md"
 ---
-
 # HOWTO: Upgrade and Audit DSOM (Scenario 2)
 
 **Author:** Harisfazillah Jamel

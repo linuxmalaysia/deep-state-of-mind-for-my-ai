@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for PERSONALIZATION.md."
 resource: "file:///docs/PERSONALIZATION.md"
 ---
-
 ## 📜 docs/PERSONALIZATION.md (Refactored v5.6)
 
 # 🧠 DSOM Personalisation: The Cognitive Digital Twin — Gemini Edition (v6.1 + Palace v1.0)

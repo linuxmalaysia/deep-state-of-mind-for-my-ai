@@ -3,20 +3,16 @@ okf_version: 0.2
 type: governance
 title: "Agent Plugins 1.0.0 Specification & DSOM Protocol Integration"
 timestamp: "2026-08-22T19:45:00Z"
-sources:
-  - title: "Agent Plugins Specification 1.0.0"
-    url: "https://agent-plugins.org/specification"
-  - title: "Google Developers Blog: Agent Plugins package your skills, tools, and more"
-    url: "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/"
-generated: "human-and-ai"
-verified: "verified"
-status: "authoritative"
-stale_after: "2027-08-22T19:45:00Z"
 topics: ["agent-plugins", "specification", "mcp", "skills", "interoperability", "dsom"]
+sources: [{title: Agent Plugins Specification 1.0.0, url: 'https://agent-plugins.org/specification'}, {title: 'Google Developers Blog: Agent Plugins package your skills, tools, and more',
+  url: 'https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/'}]
+generated: human-and-ai
+verified: verified
+status: authoritative
+stale_after: "2027-08-22T19:45:00Z"
 description: "Master governance and architectural integration guide for adopting the open Agent Plugins 1.0.0 specification across DSOM."
 resource: "file:///docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md"
 ---
-
 # 📦 Agent Plugins 1.0.0 Specification & DSOM Integration
 
 > **Entry Point 20:** This document defines the packaging, distribution, and runtime interoperability architecture for **Agent Plugins 1.0.0** within the Deep State of Mind (DSOM) framework.

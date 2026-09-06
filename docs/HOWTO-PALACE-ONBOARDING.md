@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-PALACE-ONBOARDING.md."
 resource: "file:///docs/HOWTO-PALACE-ONBOARDING.md"
 ---
-
 # 🏛️ HOWTO: Palace Onboarding — First-Time Guide for Users and AI Agents
 
 > **Entry Point 4:** This document serves as the Daily Operations Entry Point. See [START-HERE.md](START-HERE.md) for the master onboarding roadmap.

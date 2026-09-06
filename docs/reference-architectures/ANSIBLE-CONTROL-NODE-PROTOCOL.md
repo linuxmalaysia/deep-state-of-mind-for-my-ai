@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for ANSIBLE-CONTROL-NODE-PROTOCOL.md."
 resource: "file:///docs/reference-architectures/ANSIBLE-CONTROL-NODE-PROTOCOL.md"
 ---
-
 # 🎮 DSOM Ansible Control Node Protocol (Example Elastic SOC v1.0)
 # docs/ANSIBLE-CONTROL-NODE-PROTOCOL.md
 

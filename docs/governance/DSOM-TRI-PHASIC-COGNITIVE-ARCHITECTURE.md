@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol", "cognitive", "architecture"]
 description: "Production-ready blueprint detailing the Tri-Phasic Mind model and functional subsystems integrated within the DSOM framework."
 resource: "file:///docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"
 ---
-
 # 🧠 The Tri-Phasic Mind: DSOM Cognitive Architecture and Functional Subsystems
 
 ## 🏛️ 1. Architectural Foundation & Overview

@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for MIRROR-OF-KNOWLEDGE.md."
 resource: "file:///docs/MIRROR-OF-KNOWLEDGE.md"
 ---
-
 # Mirror of Knowledge: AI Persona Manifest (v2.0)
 
 # docs/MIRROR-OF-KNOWLEDGE.md

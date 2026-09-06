@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for AI-COGNITIVE-TWIN-PROTOCOL.md."
 resource: "file:///docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md"
 ---
-
 # [AGENT] DSOM Cognitive Digital Twin: Project Operational Protocol (v2.0)
 
 ## docs/AI-COGNITIVE-TWIN-PROTOCOL.md

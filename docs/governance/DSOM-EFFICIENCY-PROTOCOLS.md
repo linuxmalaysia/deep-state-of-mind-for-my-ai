@@ -6,7 +6,6 @@ timestamp: "2026-08-05T22:23:51Z"
 topics: ["dsom", "documentation"]
 description: "A comprehensive breakdown of how DSOM achieves perfect memory retention with maximum token efficiency via RAG-style mechanisms, Progressive Disclosure, and strict persona constraints."
 ---
-
 # 🧠 DSOM: The Engine of Persistent Memory & Efficiency
 
 > **Published Article:** [DSOM: Engine of Persistent Memory](https://www.linuxmalaysia.com/2026/07/dsom-engine-of-persistent-memory.html)

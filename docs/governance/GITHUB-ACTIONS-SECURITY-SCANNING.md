@@ -7,7 +7,6 @@ topics: ["snyk", "github-actions", "security", "crda", "ci-cd", "sarif", "govern
 description: "L2 analysis document capturing the CRDA deprecation, Snyk replacement pattern, and proven workflow template for DSOM GitHub repositories."
 resource: "file:///docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md"
 ---
-
 # GitHub Actions Security Scanning — CRDA → Snyk Migration
 
 > **Status:** Active Governance Document | DSOM Security Standard | 2026-07-27

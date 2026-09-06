@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-DSOM-ONBOARD.md."
 resource: "file:///docs/tools/HOWTO-DSOM-ONBOARD.md"
 ---
-
 # HOWTO: dsom-onboard — Repository Adoption Engine
 
 # docs/tools/HOWTO-DSOM-ONBOARD.md

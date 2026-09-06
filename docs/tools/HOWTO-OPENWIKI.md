@@ -7,7 +7,6 @@ topics: ["openwiki", "python", "emulator", "howto", "dsom", "zero-binary", "uv"]
 description: "Step-by-step operational guide for maintaining OpenWiki knowledge graphs natively via Python (uv) without Node.js binaries or external API rate limits."
 resource: "file:///docs/tools/HOWTO-OPENWIKI.md"
 ---
-
 # 🛠️ HOWTO: Operating OpenWiki & Native Python Zero-Binary Emulator
 
 This operational guide provides step-by-step instructions for running and maintaining **OpenWiki** knowledge graphs within the Deep State of Mind (DSOM) framework.

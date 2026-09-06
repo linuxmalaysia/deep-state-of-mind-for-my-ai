@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for AI-COGNITIVE-LOGGING-PROTOCOL.md."
 resource: "file:///docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md"
 ---
-
 # 📜 AI Cognitive Logging Protocol (Cross-AI Standard)
 # docs/AI-COGNITIVE-LOGGING-PROTOCOL.md
 

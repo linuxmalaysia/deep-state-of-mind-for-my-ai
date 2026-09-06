@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-PORT-AI-PALACE.md."
 resource: "file:///docs/HOWTO-PORT-AI-PALACE.md"
 ---
-
 # 🚀 HOWTO: Port the AI Spatial Memory Palace to Other Projects
 
 **Target Audience:** Development Teams, AI Engineers, and Lead Architects looking to solve "AI Context Decay" (Amnesia) in their own repositories.

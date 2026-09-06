@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "Governance protocol explaining how National Occupational Skills Standards (NOSS) are translated and adopted as modular AI skills under the master DSOM framework."
 resource: "file:///docs/governance/NOSS-INTEGRATION-GUIDE.md"
 ---
-
 # Integrating National Standards (NOSS) into the DSOM Baseline
 
 This document serves as the operational guide for translating the National Occupational Skills Standard (NOSS) into modular, executable AI skills. It sits alongside the primary `AI-SKILL-ARCHITECTURE.md` to demonstrate how external compliance frameworks are systematically ingested by our AI agents.

@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for HOWTO-MIGRATE-TO-PALACE.md."
 resource: "file:///docs/HOWTO-MIGRATE-TO-PALACE.md"
 ---
-
 # 🔄 HOWTO: Migrate Existing DSOM to Sovereign Markdown Palace
 
 > **Who this document is for:** Anyone already using DSOM (any version) who wants to upgrade to the Palace-enabled system (v10.0.0-palace and later).

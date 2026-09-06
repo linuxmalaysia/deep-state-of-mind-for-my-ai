@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-INIT-BRAIN.md."
 resource: "file:///docs/tools/HOWTO-INIT-BRAIN.md"
 ---
-
 # HOWTO: init-brain — Cognitive Infrastructure Bootstrap
 
 # docs/tools/HOWTO-INIT-BRAIN.md

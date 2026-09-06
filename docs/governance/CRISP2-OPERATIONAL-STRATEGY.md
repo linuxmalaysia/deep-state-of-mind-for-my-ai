@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for CRISP2-OPERATIONAL-STRATEGY.md."
 resource: "file:///docs/governance/CRISP2-OPERATIONAL-STRATEGY.md"
 ---
-
 # 🛡️ CRISP² Operational Strategy: The Five Pillars of Persistence
 
 **Author:** Harisfazillah Jamel  

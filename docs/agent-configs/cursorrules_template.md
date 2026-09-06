@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for cursorrules_template.md."
 resource: "file:///docs/agent-configs/cursorrules_template.md"
 ---
-
 # .cursorrules (DSOM Template)
 
 # Copy this content to your project root as `.cursorrules`

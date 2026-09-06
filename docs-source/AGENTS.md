@@ -1,3 +1,10 @@
+---
+okf_version: 0.1
+type: documentation
+title: Instructions for AI agents and humans
+timestamp: "2026-09-06T03:26:13Z"
+topics: ["dsom", "documentation"]
+---
 # Instructions for AI agents and humans
 
 This repository (`linuxmalaysia/my-knowledge-brain`) is the **downstream Mintlify docs deployment repo** for [harisfazillah.mintlify.app](https://harisfazillah.mintlify.app). It is **auto-synced one-way** from `linuxmalaysia/deep-state-of-mind-for-my-ai` under `docs-source/`.

@@ -1,6 +1,6 @@
 ---
-okf_version: "0.1"
-type: "documentation"
+okf_version: 0.1
+type: documentation
 title: "Multi-Channel Documentation Delivery & SEO Engine"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "publishing", "delivery", "seo", "mkdocs"]

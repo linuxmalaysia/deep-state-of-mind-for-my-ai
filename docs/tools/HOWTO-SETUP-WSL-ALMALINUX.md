@@ -7,7 +7,6 @@ topics: ["dsom", "automation", "tool"]
 description: "OKF-compliant documentation for HOWTO-SETUP-WSL-ALMALINUX.md."
 resource: "file:///docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md"
 ---
-
 # HOWTO: setup-wsl-almalinux10 — T2 Control Node Provisioner
 
 # docs/tools/HOWTO-SETUP-WSL-ALMALINUX.md

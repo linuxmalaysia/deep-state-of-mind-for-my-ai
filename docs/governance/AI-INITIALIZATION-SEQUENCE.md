@@ -7,7 +7,6 @@ topics: ["initialization", "governance", "memory", "onboarding"]
 description: "Details the exact sequence of files an AI agent reads to establish its governance, persona, and memory upon initialization within the DSOM framework."
 resource: "file:///docs/governance/AI-INITIALIZATION-SEQUENCE.md"
 ---
-
 # AI Initialization Sequence: Establishing Governance
 
 When an AI agent boots up (or reanimates) within the Deep State of Mind (DSOM) framework, it does not start as a blank slate. Governance, persona, and memory are mechanically injected into the cognitive processing layer through a very specific sequence of files.

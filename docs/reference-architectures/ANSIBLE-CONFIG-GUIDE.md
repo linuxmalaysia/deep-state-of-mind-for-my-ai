@@ -7,7 +7,6 @@ topics: ["dsom", "documentation"]
 description: "OKF-compliant documentation for ANSIBLE-CONFIG-GUIDE.md."
 resource: "file:///docs/reference-architectures/ANSIBLE-CONFIG-GUIDE.md"
 ---
-
 # [DOC] DSOM Ansible Configuration Guide (Example Elastic SOC v1.0)
 # docs/ANSIBLE-CONFIG-GUIDE.md
 

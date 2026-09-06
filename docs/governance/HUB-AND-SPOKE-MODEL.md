@@ -7,7 +7,6 @@ topics: ["dsom", "governance", "protocol"]
 description: "OKF-compliant documentation for HUB-AND-SPOKE-MODEL.md."
 resource: "file:///docs/governance/HUB-AND-SPOKE-MODEL.md"
 ---
-
 ### 📜 docs/HUB-AND-SPOKE-MODEL.md (v2.0)
 
 # 🏛️ The Hub-and-Spoke Collaboration Model
