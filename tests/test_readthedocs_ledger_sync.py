@@ -103,6 +103,10 @@ class TaskMdChecklistContentTests(unittest.TestCase):
         self.assertLess(eod_index, readthedocs_index)
 
     def test_dsom_signature_footer_present(self):
+        self.assertIn(
+            "*Deep State of Mind (DSOM) For My AI Protocol | "
+            "Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*",
+            self.content,
         valid_dates = ["2026-08-05", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-09-04", "2026-09-06"]
         found = any(
             f"*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | {d}*"
@@ -131,7 +135,7 @@ class WalkthroughMdFrontmatterTests(unittest.TestCase):
         self.assertIsInstance(self.frontmatter, dict)
 
     def test_frontmatter_fields(self):
-        self.assertEqual(self.frontmatter.get("okf_version"), 0.1)
+        self.assertEqual(self.frontmatter.get("okf_version"), 0.2)
         self.assertEqual(self.frontmatter.get("type"), "walkthrough_ledger")
         self.assertEqual(self.frontmatter.get("title"), "🗺️ DSOM Session Walkthrough")
         self.assertEqual(
@@ -187,7 +191,8 @@ class WalkthroughMdSessionAnchorContentTests(unittest.TestCase):
 
     def test_underlying_rationale_and_mental_anchor_sections_present(self):
         self.assertIn("### Underlying Rationale", self.content)
-        self.assertIn("### Integration Mental Anchor", self.content)
+        self.assertIn("### Read the Docs Integration Mental Anchor", self.content)
+        self.assertEqual(self.content.count("### Integration Mental Anchor\n"), 1)
 
 
 class ChangelogReadthedocsEntryTests(unittest.TestCase):

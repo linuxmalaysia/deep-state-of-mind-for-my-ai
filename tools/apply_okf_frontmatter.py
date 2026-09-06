@@ -3,14 +3,14 @@
 # ==============================================================================
 # Protocol    : Deep State of Mind (DSOM) For My AI
 # Author      : Harisfazillah Jamel (LinuxMalaysia)
-# Timestamp   : 2026-08-05
+# Timestamp   : 2026-09-06
 # License     : GNU General Public License v3.0
 # Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
 # ==============================================================================
 """
 OKF Frontmatter Compliance Script.
-Scans a target directory and ensures all .md files use OKF v0.1 YAML frontmatter
-with the required fields (okf_version, type, title, timestamp, topics).
+Scans a target directory and ensures all .md files use OKF YAML frontmatter.
+The strict mode rejects incomplete or malformed OKF v0.2 trust metadata.
 """
 import os
 import sys
@@ -21,6 +21,7 @@ import tempfile
 import stat
 import yaml
 from datetime import datetime, timezone
+from urllib.parse import urlparse
 
 FRONTMATTER_RE = re.compile(r'\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)', re.DOTALL)
 
@@ -176,13 +177,24 @@ def parse_frontmatter(content, rel_path):
     return existing_frontmatter, rest_of_content
 
 
-def normalise_metadata(existing_frontmatter, rest_of_content, rel_path, filename):
+def normalise_metadata(
+    existing_frontmatter,
+    rest_of_content,
+    rel_path,
+    filename,
+    *,
+    require_okf_v02=False,
+):
     """
     Normalises the mandatory OKF metadata fields and returns updated_frontmatter.
     """
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
-    if okf_version is None or str(okf_version) not in ('0.1', '0.2'):
+    if require_okf_v02 and okf_version is not None and str(okf_version) != '0.2':
+        raise ValueError(f"OKF v0.2 validation failed for {rel_path}: okf_version must be 0.2.")
+    if require_okf_v02:
+        okf_version = 0.2
+    elif okf_version is None or str(okf_version) not in ('0.1', '0.2'):
         okf_version = 0.1
     else:
         try:
@@ -236,7 +248,112 @@ def normalise_metadata(existing_frontmatter, rest_of_content, rel_path, filename
                 v = v.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
             updated_frontmatter[k] = v
 
+    if require_okf_v02:
+        spec_version = existing_frontmatter.get('spec_version')
+        if spec_version is not None and str(spec_version) != '0.2':
+            raise ValueError(f"OKF v0.2 validation failed for {rel_path}: spec_version must be 0.2.")
+        updated_frontmatter['spec_version'] = '0.2'
+
     return updated_frontmatter
+
+
+def validate_okf_v02_metadata(metadata, rel_path):
+    """Reject incomplete or malformed OKF v0.2 trust metadata."""
+    required_fields = (
+        'okf_version',
+        'spec_version',
+        'concept_id',
+        'status',
+        'stale_after',
+        'sources',
+        'generated',
+    )
+    missing = [field for field in required_fields if field not in metadata]
+    if missing:
+        fields = ', '.join(missing)
+        raise ValueError(f"OKF v0.2 validation failed for {rel_path}: missing fields: {fields}.")
+
+    if str(metadata['okf_version']) != '0.2':
+        raise ValueError(f"OKF v0.2 validation failed for {rel_path}: okf_version must be 0.2.")
+    if str(metadata['spec_version']) != '0.2':
+        raise ValueError(f"OKF v0.2 validation failed for {rel_path}: spec_version must be 0.2.")
+
+    concept_id = metadata['concept_id']
+    if not isinstance(concept_id, str) or not re.fullmatch(r'[a-z][a-z0-9]*(?:_[a-z0-9]+)*', concept_id):
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: concept_id must use snake_case."
+        )
+
+    status = metadata['status']
+    if not isinstance(status, str) or status not in {'draft', 'stable', 'deprecated'}:
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: status must be draft, stable, or deprecated."
+        )
+
+    stale_after = metadata['stale_after']
+    try:
+        parsed_stale_after = datetime.strptime(stale_after, '%Y-%m-%d')
+    except (TypeError, ValueError) as exc:
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: stale_after must use YYYY-MM-DD."
+        ) from exc
+    if parsed_stale_after.strftime('%Y-%m-%d') != stale_after:
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: stale_after must use YYYY-MM-DD."
+        )
+
+    sources = metadata['sources']
+    if not isinstance(sources, list) or not sources:
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: sources must be a non-empty list."
+        )
+    for index, source in enumerate(sources):
+        if not isinstance(source, dict):
+            raise ValueError(
+                f"OKF v0.2 validation failed for {rel_path}: sources[{index}] must be a mapping."
+            )
+        for field in ('id', 'title', 'author', 'url'):
+            value = source.get(field)
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(
+                    f"OKF v0.2 validation failed for {rel_path}: "
+                    f"sources[{index}].{field} must be a non-empty string."
+                )
+        source_url = urlparse(source['url'])
+        if not source_url.scheme or (
+            source_url.scheme in {'http', 'https'} and not source_url.netloc
+        ):
+            raise ValueError(
+                f"OKF v0.2 validation failed for {rel_path}: "
+                f"sources[{index}].url must be an absolute URL."
+            )
+
+    generated = metadata['generated']
+    if not isinstance(generated, dict):
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: generated must be a mapping."
+        )
+    generated_by = generated.get('by')
+    if not isinstance(generated_by, str) or not generated_by.strip():
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: generated.by must be a non-empty string."
+        )
+    generated_timestamp = generated.get('timestamp')
+    if not isinstance(generated_timestamp, str):
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: generated.timestamp must be an ISO 8601 UTC string."
+        )
+    try:
+        parsed_timestamp = datetime.fromisoformat(generated_timestamp.replace('Z', '+00:00'))
+    except ValueError as exc:
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: generated.timestamp must be an ISO 8601 UTC string."
+        ) from exc
+    utc_offset = parsed_timestamp.utcoffset()
+    if parsed_timestamp.tzinfo is None or utc_offset is None or utc_offset.total_seconds() != 0:
+        raise ValueError(
+            f"OKF v0.2 validation failed for {rel_path}: generated.timestamp must be an ISO 8601 UTC string."
+        )
 
 
 def serialise_frontmatter(updated_frontmatter, rel_path, filename):
@@ -298,7 +415,7 @@ def atomic_replace_file(filepath, new_content, filename):
 
 
 # Main process_file implementation
-def process_file(filepath, root_dir, *, dry_run=False):
+def process_file(filepath, root_dir, *, dry_run=False, require_okf_v02=False):
     """
     Orchestrates the compliance flow for a single Markdown file.
     Note: dry_run is keyword-only.
@@ -313,7 +430,15 @@ def process_file(filepath, root_dir, *, dry_run=False):
     existing_frontmatter, rest_of_content = parse_frontmatter(clean_content, rel_path)
 
     # 3. Normalise OKF metadata fields
-    updated_frontmatter = normalise_metadata(existing_frontmatter, rest_of_content, rel_path, filename)
+    updated_frontmatter = normalise_metadata(
+        existing_frontmatter,
+        rest_of_content,
+        rel_path,
+        filename,
+        require_okf_v02=require_okf_v02,
+    )
+    if require_okf_v02:
+        validate_okf_v02_metadata(updated_frontmatter, rel_path)
 
     # 4. Serialise frontmatter
     new_frontmatter_block = serialise_frontmatter(updated_frontmatter, rel_path, filename)
@@ -330,8 +455,13 @@ def process_file(filepath, root_dir, *, dry_run=False):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Ensure OKF v0.1 compliance on all Markdown files.")
+    parser = argparse.ArgumentParser(description="Ensure OKF compliance on all Markdown files.")
     parser.add_argument("directory", nargs="?", default=".", help="Root directory to scan (default: '.')")
+    parser.add_argument(
+        "--require-okf-v02",
+        action="store_true",
+        help="Reject Markdown files without complete, valid OKF v0.2 trust metadata.",
+    )
     args = parser.parse_args()
 
     root_dir = os.path.abspath(args.directory)
@@ -366,7 +496,7 @@ def main():
 
             total_count += 1
             try:
-                if process_file(filepath, root_dir):
+                if process_file(filepath, root_dir, require_okf_v02=args.require_okf_v02):
                     rel = os.path.relpath(filepath, root_dir).replace('\\', '/')
                     print(f"Standardised/Injected OKF: {rel}")
                     modified_count += 1
