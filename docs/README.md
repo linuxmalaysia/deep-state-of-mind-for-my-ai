@@ -540,7 +540,8 @@ Once Step 6 is complete, the AI knows:
 | [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |
 | [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
 | [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |
-| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 17 primary onboarding entry points. Read this first! |
+| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 23 primary onboarding entry points. Read this first! |
+| [`docs/START-AI-AGENTS-PROMPT.md`](docs/START-AI-AGENTS-PROMPT.md) | 🤖 **Start AI Agents Prompt** — Universal setup prompt for first-time AI agent onboarding. |
 | [`OKF-ADOPTION-GUIDE.md`](OKF-ADOPTION-GUIDE.md) | 🌐 **Open Knowledge Format (OKF) Guide** — Authoritative guide to OKF v0.1/v0.2 context engine. |
 | [`governance/AI-INITIALIZATION-SEQUENCE.md`](governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialisation Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
 | [`AI-MASTER-PROTOCOL.md`](AI-MASTER-PROTOCOL.md) | 📜 Master Protocol — Core rules for GitOps, AIOps, and Ansible execution |

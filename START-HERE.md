@@ -269,7 +269,8 @@ To configure your AI client, point it to our `uv`-managed server script:
 ---
 
 ## 23. The Start AI Agents Prompt Entry Point (First-Time Agent Setup)
-*If you need a copy-pasteable master prompt to initialize and align any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) with full DSOM Protocol compliance for first-time project setup.*
+
+*If you need a copy-pasteable master prompt to initialise and align any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) with full DSOM Protocol compliance for first-time project setup.*
 
 **Read This First:** [`docs/START-AI-AGENTS-PROMPT.md`](docs/START-AI-AGENTS-PROMPT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/))
 

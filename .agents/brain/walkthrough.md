@@ -251,6 +251,17 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 
 > **EOD Hibernation Complete: Snyk Node scanning added, package-lock.json tracked, token footprint gate test implemented, Playwright MkDocs E2E search test verified, all 879 unit/E2E tests passing (100%).**
 
+## 🏁 Session Anchor: 2026-09-04 — Start AI Agents Master Setup Prompt & Protocol
+
+- Authored `docs/START-AI-AGENTS-PROMPT.md` (**Entry Point 23**) providing a copy-pasteable master prompt and execution protocol for human operators to initialize any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) into full DSOM Protocol compliance for first-time setup.
+- Synchronized all omni-documentation navigation layers and ledgers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`).
+- Synchronized root `AGENTS.md` gateway and `.agents/AGENTS.md` core rulebook timestamps and entry point counts.
+- Updated spatial memory ledgers in `.agents/brain/` (`task.md`, `walkthrough.md`, `active_context_manifest.md`).
+
+### Integration Mental Anchor
+
+> **Start AI Agents Prompt Created: Authored docs/START-AI-AGENTS-PROMPT.md as Entry Point 23, providing a universal copy-paste setup prompt and execution protocol for first-time AI agent onboarding across dual AGENTS.md gateways, spatial brain files, OKF frontmatter, Universal Gateway Matrix, and 4-tier environment maps.**
+
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-04*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -14,8 +14,8 @@ generated: "human-and-ai"
 verified: "verified"
 status: "authoritative"
 stale_after: "2027-09-04T12:00:00Z"
-topics: ["onboarding", "start-prompt", "dsom", "ai-agents", "setup", "agents-md", "brain"]
-description: "The authoritative copy-paste prompt for initializing any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) into full DSOM Protocol compliance."
+description: "The authoritative copy-paste prompt for initialising any AI agent (Jules, Antigravity, Claude, Cursor, Copilot, Gemini) into full DSOM Protocol compliance."
+topics: ["onboarding", "dsom", "ai-agents", "setup"]
 resource: "file:///docs/START-AI-AGENTS-PROMPT.md"
 ---
 
@@ -29,7 +29,7 @@ resource: "file:///docs/START-AI-AGENTS-PROMPT.md"
 
 When introducing an AI agent to a project for the first time, human operators need a single, deterministic prompt that forces the AI agent to:
 1. Establish the **Dual `AGENTS.md` Gateway Architecture** (`AGENTS.md` at root and `.agents/AGENTS.md` in `.agents/`).
-2. Initialize spatial memory in `.agents/brain/` (`task.md`, `walkthrough.md`, `palace_registry.md`, `active_context_manifest.md`).
+2. Initialise spatial memory in `.agents/brain/` (`task.md`, `walkthrough.md`, `palace_registry.md`, `active_context_manifest.md`).
 3. Apply the **Open Knowledge Format (OKF v0.1/v0.2)** YAML frontmatter standard across all Markdown files.
 4. Enforce the **Universal Gateway Matrix** (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`) and pre-commit guardrails.
 5. Scaffold the **6-Pillar Downstream Footprint** without imposing framework bloat on downstream source code.
@@ -44,7 +44,7 @@ Below is the complete, self-contained prompt ready for human operators to copy a
 ```markdown
 I need you to setup everything in this repository to strictly follow the Deep State of Mind (DSOM) For My AI Protocol. DSOM Protocol is our non-negotiable baseline for spatial memory, cognitive alignment, GitOps, and digital sovereignty. Adopt everything specified in the DSOM specification (https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/) and implement all necessary governance, rulebooks, and spatial brain files.
 
-Execute the following complete initialisation and setup sequence immediately:
+Execute the following complete initialisation and setup sequence immediately under non-destructive preflight rules (inspect proposed targets before modifying, preserve existing project-specific policies and states, create only missing governance or spatial files, and request explicit approval before replacing any pre-existing file):
 
 ### 1. DUAL AGENTS.MD ARCHITECTURE SETUP
 Create and synchronise the dual AGENTS.md registry:
@@ -56,7 +56,7 @@ Create the `.agents/brain/` spatial memory directory and populate the 4 foundati
 - **`task.md`:** Present state checklist covering Phase 1 initialisation, environment mapping, and pending tasks.
 - **`walkthrough.md`:** Historical session log and Mental Anchors recording the project genesis session.
 - **`palace_registry.md`:** Spatial index of the Sovereign Markdown Palace mapping wings, halls, and rooms (`room_clean_architecture`, `room_crisp_strategy`, `room_dsom_protocol`, `room_tooling`, `room_ledger`).
-- **`active_context_manifest.md`:** Live tracking manifest listing all files currently in active engineering scope.
+- **`active_context_manifest.md`:** Live tracking manifest listing all files currently in active engineering scope with valid OKF frontmatter.
 
 ### 3. UNIVERSAL GATEWAY MATRIX & DOWNSTREAM FOOTPRINT
 Deploy the Universal Gateway Matrix to compel foreign AI agents (Cursor, Claude Code, Copilot, Jules, Gemini) to strictly honor the DSOM brain:
@@ -79,7 +79,7 @@ Create or update `docs/AI-COGNITIVE-TWIN-PROTOCOL.md` (or `docs/governance/AI-CO
 - **T4:** Production Node Fabric.
 
 ### 6. CONFIRMATION HANDSHAKE
-Upon completing setup, verify all files with read tools, confirm zero linter/test errors, and state:
+Upon completing setup, verify all files with read tools, confirm zero linter/test/compliance errors, and state:
 "Sovereign State Synchronised — DSOM Protocol is fully operational and active."
 ```
 
@@ -98,10 +98,11 @@ When an AI agent receives the prompt above, it must execute and verify the follo
    - Confirm `.agents/brain/task.md` lists current initialisation tasks.
    - Confirm `.agents/brain/walkthrough.md` contains a valid Session Anchor.
    - Confirm `.agents/brain/palace_registry.md` indexes active palace rooms.
+   - Confirm `.agents/brain/active_context_manifest.md` is present with valid OKF frontmatter and tracks active context.
 4. **Verify Universal Gateways:**
    - Confirm `.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, and `AGENTS.md` are populated and present.
-5. **Run Test Suite:**
-   - Run `uv run pytest` to ensure 100% test pass rate across all compliance assertions.
+5. **Run Test Suite & Compliance Checks:**
+   - Run `uv run pytest` and verify full compliance to ensure zero linter or test errors across all compliance assertions.
 
 ---
 

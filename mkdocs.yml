@@ -70,6 +70,7 @@ markdown_extensions:
 nav:
   - Home: README.md
   - START HERE: START-HERE.md
+  - Start AI Agents Setup Prompt: START-AI-AGENTS-PROMPT.md
   - Security Policy: SECURITY.md
   - Legal Notice & Disclaimer: LEGAL-NOTICE.md
   - Governance:

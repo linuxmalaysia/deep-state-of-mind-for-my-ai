@@ -19,6 +19,8 @@ description: "OKF-compliant manifest declaring the exact file paths the agent mu
 - `.agents/brain/palace_registry.md`
 
 ## Active Task Files (Update per session)
+- `docs/START-AI-AGENTS-PROMPT.md`
+- `START-HERE.md`
 - `.agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md`
 
 ## Governance (Load on demand — verify token count first)

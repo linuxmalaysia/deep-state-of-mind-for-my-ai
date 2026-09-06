@@ -80,5 +80,8 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Enriched `context7-indexer` skill (OKF v0.2, 1,085 tokens) and registered tools in `docs/governance/AUTOMATION-AUDIT-LIST.md`.
 - `[x]` Verified 100% unit test pass rate across builder, sync script, and FastMCP server (`16/16 tests passing`).
 - `[x]` Executed End-of-Day (EOD) Hibernation and synchronized with dual remotes (GitHub `origin` & GitLab `gitlab`).
+- `[x]` Authored Start AI Agents Master Setup Prompt & Execution Protocol (`docs/START-AI-AGENTS-PROMPT.md`) as Entry Point 23.
+- `[x]` Synchronized omni-documentation layers and ledgers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`).
+- `[x]` Updated root `AGENTS.md`, `.agents/AGENTS.md`, and spatial brain files (`task.md`, `walkthrough.md`, `active_context_manifest.md`).
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-04*
