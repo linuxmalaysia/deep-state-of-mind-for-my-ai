@@ -113,6 +113,10 @@ VALID_FOOTER_LINES = (
         "*Deep State of Mind (DSOM) For My AI Protocol | "
         "Harisfazillah Jamel (LinuxMalaysia) | 2026-08-24*"
     ),
+    (
+        "*Deep State of Mind (DSOM) For My AI Protocol | "
+        "Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*"
+    ),
 )
 
 
@@ -137,9 +141,9 @@ SKILL_OKF_COMPLIANCE_SNIPPETS = {
         "imported or ported Markdown documents have valid OKF v0.1 frontmatter."
     ),
     "dsom-knowledge-ingester": (
-        "Execute `uv run python tools/apply_okf_frontmatter.py <directory>` "
-        "to verify and inject OKF v0.2 frontmatter headers into all newly "
-        "synthesised Markdown documents."
+        "Execute `uv run python tools/apply_okf_frontmatter.py --require-okf-v02 "
+        "<directory>` to normalise metadata and reject newly synthesised Markdown "
+        "documents unless"
     ),
     "dsom-policy-adopter": (
         "Run `uv run python tools/apply_okf_frontmatter.py docs/governance/` "
@@ -297,8 +301,17 @@ class DsomKnowledgeIngesterSkillTests(unittest.TestCase):
             self.content,
         )
 
+    def test_signature_injection_uses_uv_run(self):
+        self.assertIn(
+            "Run `uv run .agents/skills/dsom-signature-injector/scripts/inject.py "
+            "<directory>`",
+            self.content,
+        )
+
     def test_okf_step_precedes_signature_step(self):
-        okf_idx = self.content.index("Execute `uv run python tools/apply_okf_frontmatter.py")
+        okf_idx = self.content.index(
+            "Execute `uv run python tools/apply_okf_frontmatter.py --require-okf-v02"
+        )
         sig_idx = self.content.index("dsom-signature-injector")
         self.assertLess(okf_idx, sig_idx)
 

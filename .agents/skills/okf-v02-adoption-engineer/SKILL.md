@@ -4,7 +4,7 @@ spec_version: "0.2"
 type: agent_skill
 title: "🌐 OKF v0.2 Migration & Compliance Standard Skill"
 timestamp: "2026-09-02T23:40:00Z"
-description: "Seamlessly converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
+description: "Converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
 topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
 name: okf-v02-adoption-engineer
 version: "1.2.0"
@@ -69,7 +69,7 @@ context-ready OKF v0.2 document.
      string (`YYYY-MM-DD`).
    - **Attestation Registry**: Structurally register compute requirements without embedding raw runtimes.
 3. **Content Alignment Rules**:
-   - Organize prose strictly using the **Diátaxis framework** (Tutorials, How-To Guides, Reference, Explanation).
+   - Organise prose strictly using the **Diátaxis framework** (Tutorials, How-To Guides, Reference, Explanation).
    - Maintain cross-linking consistency using relative Markdown links (`[Anchor Text](filename.md)`).
    - Standardize vocabulary using **UK English** spelling patterns across all procedural files.
 
@@ -105,6 +105,7 @@ sources:
   - id: "internal_schema_ddl"
     title: "Database Connection Schema DDL"
     author: "DevOps Architecture Guild"
+    url: "https://example.com/database/schema"
 generated:
   by: "OKF v0.2 Adoption Tooling"
   timestamp: "2026-09-02T23:40:00Z"
@@ -119,5 +120,5 @@ This document acts as the definitive playbook for launching our production data 
 ```
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-02*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

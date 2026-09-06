@@ -1,9 +1,21 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
+spec_version: "0.2"
 type: walkthrough_ledger
+concept_id: "dsom_session_walkthrough"
 title: "🗺️ DSOM Session Walkthrough"
-timestamp: "2026-08-14T12:00:00Z"
+status: "stable"
+stale_after: "2027-03-06"
+timestamp: "2026-09-06T12:30:00Z"
 topics: ["readthedocs", "configuration", "testing"]
+sources:
+  - id: "dsom_task_ledger"
+    title: "DSOM Task List"
+    author: "Harisfazillah Jamel"
+    url: "file:///.agents/brain/task.md"
+generated:
+  by: "DSOM Session Workflow"
+  timestamp: "2026-09-06T12:30:00Z"
 ---
 # DSOM Native MCP Architecture Complete
 
@@ -39,7 +51,7 @@ Today's session updated OKF specs and co-working protocols with Google Jules.
 
 To ensure continuous integration and automatic deployment of documentation on Read the Docs alongside GitHub Pages and GitBook.
 
-### Integration Mental Anchor
+### Read the Docs Integration Mental Anchor
 
 > Added official Read the Docs configuration and ensured full compliance with DSOM's signature and testing standards.
 
@@ -53,7 +65,7 @@ To ensure continuous integration and automatic deployment of documentation on Re
 
 To adopt and formalise the Tri-Phasic Mind and cognitive subsystems as core, actionable DSOM ways of working, ensuring complete cognitive continuity and structural safety.
 
-### Integration Mental Anchor
+### Tri-Phasic Cognitive Mind Integration Mental Anchor
 
 > Formalised and adopted the Tri-Phasic Mind cognitive model and functional subsystems under DSOM Rule 26.
 
@@ -67,7 +79,7 @@ To adopt and formalise the Tri-Phasic Mind and cognitive subsystems as core, act
 
 To prevent any cognitive context gaps when switching between Jules and Antigravity, and to empower both assistants with absolute awareness of each other's contributions and compliance standards.
 
-### Integration Mental Anchor
+### Jules and Antigravity Sync Mental Anchor
 
 > Established Jules & Antigravity Collaborative Sync protocol to synchronize shared cognitive context and historic code modifications.
 
@@ -81,7 +93,7 @@ To prevent any cognitive context gaps when switching between Jules and Antigravi
 
 To ensure complete cross-platform test reliability across native Windows checkouts, WSL2 Linux nodes, and CI/CD pipelines without false positive failures on text-pointer symlinks or CRLF line endings.
 
-### Integration Mental Anchor
+### Windows Git-Symlink and CRLF Mental Anchor
 
 > Adopted Windows Git-Symlink & CRLF Test Guardrails into DSOM Constitution (Rule 25) and test suite.
 
@@ -98,7 +110,7 @@ To ensure complete cross-platform test reliability across native Windows checkou
 
 To eliminate Node.js runtime friction (version mismatches, native C++ compilation, UAC elevation hangs, and API rate limits) while maintaining a zero-binary, ultra-fast Python OpenWiki knowledge graph integrated into FastMCP for Google Jules, Gemini, and Cursor.
 
-### Integration Mental Anchor
+### OpenWiki and FastMCP Integration Mental Anchor
 
 > Adopted Native OpenWiki Emulator & Zero-Binary Mandate (Rule 27) and FastMCP OpenWiki Knowledge Bridge into DSOM framework.
 
@@ -131,7 +143,7 @@ To record a permanent history of all PRs worked on by Google Jules, including co
 
 To maintain the highest quality of sovereign documentation, ensure CI/CD robustness (zero link decay), and enforce safe, fail-fast background execution for AI-driven Git operations on Windows.
 
-### Integration Mental Anchor
+### Documentation Standardisation Mental Anchor
 
 > Standardised documentation, achieved zero MkDocs link decay, and adopted Windows Git Execution Guardrail.
 
@@ -149,7 +161,7 @@ To maintain the highest quality of sovereign documentation, ensure CI/CD robustn
 
 To maintain seamless peer-to-peer cognitive continuity and alignment between Google Jules and Google Antigravity, while safeguarding cross-platform test reliability and multi-remote Git hygiene.
 
-### Integration Mental Anchor
+### Bidirectional Handover Mental Anchor
 
 > Synchronised Google Jules' updates, verified 724 unit tests, and codified the Bidirectional Handover Matrix in jules-antigravity-sync skill.
 
@@ -166,7 +178,7 @@ To maintain seamless peer-to-peer cognitive continuity and alignment between Goo
 
 To maintain cognitive alignment with Google Jules, adopt the authoritative OKF v0.1/v0.2 specification across all repository tooling and skills, and ensure complete test pass rate and spatial memory integrity.
 
-### Integration Mental Anchor
+### OKF Master Guide Adoption Mental Anchor
 
 > Synchronised Google Jules' PR #77 and #78, adopted the OKF Master Guide and cross-skill validation, and confirmed 100% test suite pass rate (841 tests).
 
@@ -191,7 +203,7 @@ To maintain cognitive alignment with Google Jules, adopt the authoritative OKF v
 
 To ensure digital sovereignty, maintain flawless metacognitive state across AI sessions, empower downstream projects with lightweight persistent memory, and transition seamlessly to OKF v0.2 at zero additional token cost.
 
-### Integration Mental Anchor
+### OKF v0.2 Enablement Mental Anchor
 
 > **EOD Hibernation Complete: OKF v0.2 trust profile enabled across toolchains and tests, actively edited documents upgraded with full trust signals, Rules 2, 6, 13, and 28 codified in AGENTS.md, all ledgers synchronized, 841 unit tests passing (100%), and pushed to all remotes.**
 
@@ -215,7 +227,7 @@ To ensure digital sovereignty, maintain flawless metacognitive state across AI s
 
 To establish an automated, un-wipeable, deterministic one-way publishing bridge from the DSOM source of truth (`docs/` & `.agents/skills/`) to the downstream Mintlify knowledge brain (`https://harisfazillah.mintlify.site`).
 
-### Integration Mental Anchor
+### Mintlify Compiler and Sync Mental Anchor
 
 > **EOD Hibernation Complete: Automated MDX compiler (tools/build_mintlify_mdx.py) and one-way sync pipeline (scripts/sync_docs.py) operational with 5 strict safety guards (Guards A–E), 156 MDX documents generated, Rule 31 codified in AGENTS.md, dsom-project-cloner enriched, all 864 unit tests passing (100%), and pushed cleanly to all remotes.**
 
@@ -235,7 +247,7 @@ To establish an automated, un-wipeable, deterministic one-way publishing bridge 
 
 To deliver a modular, reusable user-manual documentation architecture for downstream projects, empower internal FastMCP agents with instantaneous local code snippet retrieval, and automate weekly snapshot ingestion safely under digital sovereignty.
 
-### Integration Mental Anchor
+### Mintlify Manual and Context7 Mental Anchor
 
 > **EOD Hibernation Complete: Mintlify User Manual architecture (Entry Point 22) codified, FastMCP code snippet search tool and offline Context7 fallback operational, weekly scheduled sync workflow configured, context7-indexer and cloner skills enriched to OKF v0.2, all unit tests passing (100%), and pushed cleanly to all remotes.**
 
@@ -247,7 +259,7 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 - Created `tests/test_mkdocs_search_e2e.py` using Playwright Python API to verify search modal indexing on compiled `site/` output.
 - All 879 tests in the repository pass cleanly (100%).
 
-### Integration Mental Anchor
+### Security Scanning and Token Gate Mental Anchor
 
 > **EOD Hibernation Complete: Snyk Node scanning added, package-lock.json tracked, token footprint gate test implemented, Playwright MkDocs E2E search test verified, all 879 unit/E2E tests passing (100%).**
 
@@ -258,7 +270,7 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 - Synchronized root `AGENTS.md` gateway and `.agents/AGENTS.md` core rulebook timestamps and entry point counts.
 - Updated spatial memory ledgers in `.agents/brain/` (`task.md`, `walkthrough.md`, `active_context_manifest.md`).
 
-### Integration Mental Anchor
+### Start AI Agents Protocol Mental Anchor
 
 > **Start AI Agents Prompt Created: Authored docs/START-AI-AGENTS-PROMPT.md as Entry Point 23, providing a universal copy-paste setup prompt and execution protocol for first-time AI agent onboarding across dual AGENTS.md gateways, spatial brain files, OKF frontmatter, Universal Gateway Matrix, and 4-tier environment maps.**
 
@@ -270,7 +282,7 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 - Verified test suite pass rate: 812 passed, 71 skipped, 0 failed (100% pass rate).
 - Resolved and replied to PR review comments (#5557383773, #5557471628, #5558633465) on Pull Request #87.
 
-### Integration Mental Anchor
+### GitBook Links and PR Resolution Mental Anchor
 
 > **EOD Palace Sync Complete: Updated Start AI Agents Prompt with canonical GitBook live URLs, resolved PR review comments, synchronized sitemaps, and achieved 100% test pass rate across all active test suites.**
 
@@ -290,6 +302,5 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
-
 
 

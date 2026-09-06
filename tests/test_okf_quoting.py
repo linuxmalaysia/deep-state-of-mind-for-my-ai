@@ -19,6 +19,7 @@ These tests exercise the two new/rewritten helper functions directly and
 also exercise `process_file()` end-to-end against temporary files to confirm
 the on-disk output matches the new quoting/encoding behaviour.
 """
+import copy
 import json
 import os
 import sys
@@ -30,7 +31,12 @@ import yaml
 # Add repo root to PYTHONPATH so `tools` is importable, matching the
 # convention used by the existing OKF regression tests.
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from tools.apply_okf_frontmatter import needs_double_quotes, serialise_val, process_file
+from tools.apply_okf_frontmatter import (
+    needs_double_quotes,
+    process_file,
+    serialise_val,
+    validate_okf_v02_metadata,
+)
 
 
 class NeedsDoubleQuotesTests(unittest.TestCase):
@@ -151,6 +157,62 @@ class SerializeValFallbackTests(unittest.TestCase):
         self.assertEqual(result, "null")
 
 
+class OkfV02MetadataValidationTests(unittest.TestCase):
+    def setUp(self):
+        self.metadata = {
+            "okf_version": 0.2,
+            "spec_version": "0.2",
+            "concept_id": "database_deployment",
+            "status": "stable",
+            "stale_after": "2027-03-06",
+            "sources": [
+                {
+                    "id": "source_1",
+                    "title": "Source One",
+                    "author": "Example Author",
+                    "url": "https://example.com/source",
+                }
+            ],
+            "generated": {
+                "by": "DSOM Ingestion Agent",
+                "timestamp": "2026-09-06T12:00:00Z",
+            },
+        }
+
+    def test_accepts_complete_metadata(self):
+        validate_okf_v02_metadata(self.metadata, "example.md")
+
+    def test_rejects_each_missing_required_field(self):
+        for field in self.metadata:
+            with self.subTest(field=field):
+                incomplete = copy.deepcopy(self.metadata)
+                del incomplete[field]
+                with self.assertRaisesRegex(ValueError, rf"missing fields: {field}"):
+                    validate_okf_v02_metadata(incomplete, "example.md")
+
+    def test_rejects_malformed_trust_values(self):
+        invalid_values = {
+            "concept_id": "Not Snake Case",
+            "status": "approved",
+            "stale_after": "2027-02-30",
+            "sources": [{"id": "source_1", "title": "Source", "author": "Author"}],
+            "generated": {"by": "Agent", "timestamp": "2026-09-06T12:00:00"},
+        }
+        for field, value in invalid_values.items():
+            with self.subTest(field=field):
+                invalid = copy.deepcopy(self.metadata)
+                invalid[field] = value
+                with self.assertRaises(ValueError):
+                    validate_okf_v02_metadata(invalid, "example.md")
+
+    def test_rejects_source_without_absolute_url(self):
+        invalid = copy.deepcopy(self.metadata)
+        invalid["sources"][0]["url"] = "relative/source"
+
+        with self.assertRaisesRegex(ValueError, "must be an absolute URL"):
+            validate_okf_v02_metadata(invalid, "example.md")
+
+
 class ProcessFileQuotingIntegrationTests(unittest.TestCase):
     def setUp(self):
         self.fd, self.path = tempfile.mkstemp(suffix=".md")
@@ -191,6 +253,56 @@ class ProcessFileQuotingIntegrationTests(unittest.TestCase):
 
         new_content = self._read_text()
         self.assertIn('title: "🧠 Deep State of Mind (DSOM)"', new_content)
+
+    def test_strict_v02_mode_sets_versions_and_preserves_metadata(self):
+        input_content = (
+            "---\n"
+            "type: reference\n"
+            "concept_id: database_deployment\n"
+            "title: Database Deployment\n"
+            "timestamp: '2026-09-06T12:00:00Z'\n"
+            "topics: [database, deployment]\n"
+            "status: stable\n"
+            "stale_after: '2027-03-06'\n"
+            "sources:\n"
+            "  - id: source_1\n"
+            "    title: Source One\n"
+            "    author: Example Author\n"
+            "    url: https://example.com/source\n"
+            "generated:\n"
+            "  by: DSOM Ingestion Agent\n"
+            "  timestamp: '2026-09-06T12:00:00Z'\n"
+            "custom_field: preserved\n"
+            "---\n"
+            "# Database Deployment\n"
+        )
+        self._write(input_content)
+
+        modified = process_file(
+            self.path,
+            os.path.dirname(self.path),
+            require_okf_v02=True,
+        )
+
+        self.assertTrue(modified)
+        frontmatter = yaml.safe_load(self._read_text().split("---")[1])
+        self.assertEqual(frontmatter["okf_version"], 0.2)
+        self.assertEqual(frontmatter["spec_version"], "0.2")
+        self.assertEqual(frontmatter["topics"], ["database", "deployment"])
+        self.assertEqual(frontmatter["custom_field"], "preserved")
+
+    def test_strict_v02_mode_rejects_incomplete_metadata_without_writing(self):
+        input_content = "---\ntitle: Incomplete\n---\n# Incomplete\n"
+        self._write(input_content)
+
+        with self.assertRaisesRegex(ValueError, "missing fields"):
+            process_file(
+                self.path,
+                os.path.dirname(self.path),
+                require_okf_v02=True,
+            )
+
+        self.assertEqual(self._read_text(), input_content)
 
     def test_topics_list_is_rendered_as_inline_double_quoted_array(self):
         input_content = (
