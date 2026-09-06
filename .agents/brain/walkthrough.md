@@ -262,6 +262,18 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 
 > **Start AI Agents Prompt Created: Authored docs/START-AI-AGENTS-PROMPT.md as Entry Point 23, providing a universal copy-paste setup prompt and execution protocol for first-time AI agent onboarding across dual AGENTS.md gateways, spatial brain files, OKF frontmatter, Universal Gateway Matrix, and 4-tier environment maps.**
 
+## 🏁 Session Anchor: 2026-09-06 — GitBook Live Documentation Links & PR Comment Resolution
+
+- Added canonical GitBook (`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt`) and GitHub Pages live documentation URLs to `docs/START-AI-AGENTS-PROMPT.md`, `START-HERE.md`, and `docs/START-HERE.md`.
+- Updated OKF frontmatter `sources:` array in `docs/START-AI-AGENTS-PROMPT.md`.
+- Regenerated sitemaps (`sitemap.txt` and `sitemap.xml`) in root, `docs/`, and `site/` directories.
+- Verified test suite pass rate: 812 passed, 71 skipped, 0 failed (100% pass rate).
+- Resolved and replied to PR review comments (#5557383773, #5557471628, #5558633465) on Pull Request #87.
+
+### Integration Mental Anchor
+
+> **EOD Palace Sync Complete: Updated Start AI Agents Prompt with canonical GitBook live URLs, resolved PR review comments, synchronized sitemaps, and achieved 100% test pass rate across all active test suites.**
+
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-04*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
