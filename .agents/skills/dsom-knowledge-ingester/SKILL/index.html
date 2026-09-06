@@ -1553,6 +1553,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
 
       </a>
     </li>
@@ -4650,6 +4657,7 @@ You must populate the <strong>Five Trust &amp; Freshness Pillars</strong>:</p>
 </ul>
 <h5 id="example-frontmatter-structure">Example Frontmatter Structure</h5>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">okf_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
 <span class="nt">spec_version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.2"</span>
 <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"how-to"</span>
 <span class="nt">concept_id</span><span class="p">:</span><span class="w"> </span><span class="s">"ingested_topic_name"</span>
@@ -4685,6 +4693,8 @@ You must populate the <strong>Five Trust &amp; Freshness Pillars</strong>:</p>
 <li>Programmatically invoke <code>npx --no-install markdownlint-cli --fix &lt;filename.md&gt;</code> to resolve auto-formattable style errors.</li>
 <li>Ensure that the document successfully passes all rules permitted by the local <code>.markdownlint.json</code> configuration file.</li>
 <li>Verify that the frontmatter block does not trigger errors by keeping the file starting cleanly with <code>---</code> on line 1.</li>
+<li>Execute <code>uv run python tools/apply_okf_frontmatter.py --require-okf-v02 &lt;directory&gt;</code> to normalise metadata and reject newly synthesised Markdown documents unless <code>okf_version</code>, <code>spec_version</code>, <code>concept_id</code>, <code>status</code>, <code>stale_after</code>, <code>sources</code>, and <code>generated</code> contain valid OKF v0.2 values.</li>
+<li>Run <code>uv run .agents/skills/dsom-signature-injector/scripts/inject.py &lt;directory&gt;</code> to append standard GPL v3.0 ownership signatures.</li>
 <li>Execute <code>uv run python tools/apply_okf_frontmatter.py &lt;directory&gt;</code> to verify and inject OKF v0.2 frontmatter headers into all newly synthesised Markdown documents.</li>
 <li>Run <code>python .agents/skills/dsom-signature-injector/scripts/inject.py &lt;directory&gt;</code> to append standard GPL v3.0 ownership signatures.</li>
 </ol>
@@ -4706,7 +4716,8 @@ You must populate the <strong>Five Trust &amp; Freshness Pillars</strong>:</p>
 <li>The computed <code>stale_after</code> date and trust attributes.</li>
 </ul>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06</em>
+<em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)</em>
 <em>GNU General Public License v3.0</em></p>
 
