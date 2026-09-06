@@ -1,49 +1,72 @@
 ---
 okf_version: 0.2
+spec_version: "0.2"
 type: agent_skill
 title: "🌐 OKF v0.2 Migration & Compliance Standard Skill"
 timestamp: "2026-09-02T23:40:00Z"
-description: "Seamlessly converts, validates, and enforces Open Knowledge Format (OKF) v0.2 standards with core trust signals across workspace Markdown files."
+description: "Seamlessly converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
 topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
-spec_version: "0.2"
 name: okf-v02-adoption-engineer
 version: "1.2.0"
 author: AI Workspace Assistant
 status: stable
 stale_after: "2027-09-02"
-sources: [{author: Google Cloud Platform, id: google_okf_spec, title: Google Cloud Knowledge
-    Catalog - OKF v0.2 Specification, url: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md'}]
-generated: {by: Workspace AI Assistant, timestamp: '2026-09-02T23:40:00Z'}
-verified: {by: Repository Maintainer, timestamp: '2026-09-02T23:45:00Z'}
-inputs: {document_type: {default: guide, description: 'The OKF concept type mapping (e.g.
-      guide, playbook, policy, api, agent_skill, architecture).', type: string}, stale_duration_days: {
-    default: 180, description: Number of days before the document requires human review.,
-    type: integer}, target_file_content: {description: The raw Markdown prose or legacy
-      OKF v0.1 content requiring conversion or validation., required: true, type: string}}
-outputs: {compliant_markdown: {description: The fully transformed Markdown file containing
-      validated OKF v0.2 compliant YAML frontmatter., type: string}, validation_report: {
-    description: A summary highlighting structural metadata adjustments or missing
-      trust signals., type: string}}
+sources:
+  - id: google_okf_spec
+    title: Google Cloud Knowledge Catalog - OKF v0.2 Specification
+    author: Google Cloud Platform
+    url: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md'
+generated:
+  by: Workspace AI Assistant
+  timestamp: '2026-09-02T23:40:00Z'
+verified:
+  by: Repository Maintainer
+  timestamp: '2026-09-02T23:45:00Z'
+inputs:
+  document_type:
+    default: guide
+    description: 'The OKF concept type mapping (e.g. guide, playbook, policy, api, agent_skill, architecture).'
+    type: string
+  stale_duration_days:
+    default: 180
+    description: Number of days before the document requires human review.
+    type: integer
+  target_file_content:
+    description: The raw Markdown prose or legacy OKF v0.1 content requiring conversion or validation.
+    required: true
+    type: string
+outputs:
+  compliant_markdown:
+    description: The fully transformed Markdown file containing validated OKF v0.2 compliant YAML frontmatter.
+    type: string
+  validation_report:
+    description: A summary highlighting structural metadata adjustments or missing trust signals.
+    type: string
 ---
-# 🌐 OKF v0.2 Migration & Compliance Standard Skill (`okf-v02-adoption-engineer`)
+## 🌐 OKF v0.2 Migration & Compliance Standard Skill (`okf-v02-adoption-engineer`)
 
-## Skill Role
+### Skill Role
 
-You act as an expert Repository Architect and System Compliance Agent specialising in structured context optimisation. Your objective is to process incoming Markdown text and output an airtight, zero-cost context-ready OKF v0.2 document.
+You act as an expert Repository Architect and System Compliance Agent specialising in structured context
+optimisation. Your objective is to process incoming Markdown text and output an airtight, zero-cost
+context-ready OKF v0.2 document.
 
 ---
 
-## Core Directives & Standards
+### Core Directives & Standards
 
 1. **Enforce the Mandatory Conformance Surface**:
    - Every processed document must strictly start on line 1, column 1 with triple-dash (`---`) YAML frontmatter.
    - The `type` field is strictly required and represents a functional classification.
    - Ensure `spec_version: "0.2"` is explicitly declared.
 2. **Inject the Five Trust & Freshness Pillars (v0.2 Standard)**:
-   - **Provenance (`sources`)**: Explicitly list backing reference material using structural sub-fields (`id`, `title`, `author`, `url`).
-   - **Trust Indicators (`generated`, `verified`)**: Track automated production and human review actors to derive reliability tiers.
+   - **Provenance (`sources`)**: Explicitly list backing reference material using structural sub-fields
+     (`id`, `title`, `author`, `url`).
+   - **Trust Indicators (`generated`, `verified`)**: Track automated production and human review actors
+     to derive reliability tiers.
    - **Lifecycle State (`status`)**: Map explicitly to `draft`, `stable`, or `deprecated`.
-   - **Freshness Constraint (`stale_after`)**: Dynamically append or enforce an absolute expiration date string (`YYYY-MM-DD`).
+   - **Freshness Constraint (`stale_after`)**: Dynamically append or enforce an absolute expiration date
+     string (`YYYY-MM-DD`).
    - **Attestation Registry**: Structurally register compute requirements without embedding raw runtimes.
 3. **Content Alignment Rules**:
    - Organize prose strictly using the **Diátaxis framework** (Tutorials, How-To Guides, Reference, Explanation).
@@ -52,15 +75,23 @@ You act as an expert Repository Architect and System Compliance Agent specialisi
 
 ---
 
-## Execution Workflow
+### Execution Workflow
 
-1. **Parser Hook**: Scan text for existing frontmatter blocks. If converting from legacy v0.1 configurations, safely migrate fields.
+1. **Parser Hook**: Scan text for existing frontmatter blocks. If converting from legacy v0.1 configurations,
+   safely migrate fields.
 2. **Metadata Enrichment**: Compute and inject missing metadata blocks (`stale_after`, `generated`, `sources`).
-3. **Attestation Integrity Check**: Ensure signature blocks do not break frontmatter boundaries or cause YAML syntax errors.
+3. **Attestation Integrity Check**: Ensure signature blocks do not break frontmatter boundaries or cause YAML
+   syntax errors.
+4. **Workspace Quality Enforcement (`markdownlint-cli`)**:
+   - Programmatically invoke `npx --no-install markdownlint-cli --fix <filename.md>` to resolve auto-formattable style errors.
+   - Ensure that the document successfully passes all rules permitted by the local
+     `.markdownlint.json` configuration file.
+   - Verify that the frontmatter block does not trigger errors by keeping the file starting cleanly
+     with `---` on line 1.
 
 ---
 
-## Expected Output Specimen
+### Expected Output Specimen
 
 ```markdown
 ---
