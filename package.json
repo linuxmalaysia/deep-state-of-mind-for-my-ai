@@ -9,7 +9,8 @@
   "devDependencies": {
     "@redocly/cli": "^1.25.0",
     "jest": "^30.0.0",
-    "jest-environment-jsdom": "^30.0.0"
+    "jest-environment-jsdom": "^30.0.0",
+    "markdownlint-cli": "0.49.1"
   },
   "jest": {
     "testEnvironment": "jsdom",

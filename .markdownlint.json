@@ -6,7 +6,7 @@
     "tables": false
   },
   "MD025": {
-    "front_matter_title": "^[a-zA-Z0-9]"
+    "front_matter_title": "^title:"
   },
   "MD033": false,
   "MD036": false,

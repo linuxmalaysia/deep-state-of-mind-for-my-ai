@@ -83,7 +83,7 @@ context-ready OKF v0.2 document.
 3. **Attestation Integrity Check**: Ensure signature blocks do not break frontmatter boundaries or cause YAML
    syntax errors.
 4. **Workspace Quality Enforcement (`markdownlint-cli`)**:
-   - Programmatically invoke `npx markdownlint-cli --fix <filename.md>` to resolve auto-formattable style errors.
+   - Programmatically invoke `npx --no-install markdownlint-cli --fix <filename.md>` to resolve auto-formattable style errors.
    - Ensure that the document successfully passes all rules permitted by the local
      `.markdownlint.json` configuration file.
    - Verify that the frontmatter block does not trigger errors by keeping the file starting cleanly
