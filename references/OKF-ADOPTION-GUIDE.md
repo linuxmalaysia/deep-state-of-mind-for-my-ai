@@ -125,12 +125,14 @@ When AI agents answer complex analytical questions—such as calculating fiscal 
 In OKF v0.2, this challenge is solved through **Attested Computations** (`type: Attested Computation`).
 
 #### What is an Attested Computation?
+
 An Attested Computation carries a sanctioned, deterministic way to compute a value. Instead of embedding raw SQL, shell scripts, or python code directly inside narrative text, OKF separates definition from execution contract:
 1. **Runtime Binding:** The `runtime` property (e.g. `bigquery`, `postgres`, `dbt`, `python`, `bash`) defines precisely how parameters are bound and interpreted.
 2. **Reusability:** A single computation can back multiple metrics, dashboards, and operational playbooks across the organisation.
 3. **Independent Trust:** Each computation maintains its own `verified`, `stale_after`, and `attester` state, allowing metrics to verify independently.
 
 #### The 6-Step Mechanical Execution & Attestation Lifecycle
+
 OKF v0.2 separates specification from runtime execution in 6 clear steps:
 1. **Discover:** Agents locate the computation via `type: Attested Computation` or via links from narrative metric docs.
 2. **Load:** The agent reads the contract frontmatter and computation block.
@@ -140,6 +142,7 @@ OKF v0.2 separates specification from runtime execution in 6 clear steps:
 6. **Gate:** The system surfaces the verified result or blocks stale/failing computations.
 
 #### Verification vs. Attestation
+
 It is crucial to distinguish between doc-level verification and runtime attestation:
 * **Doc-Level Verification (`verified`):** Confirms that the metric definition matches business policy (stored in the document bundle, updated periodically).
 * **Runtime Attestation (`attester`):** Confirms that a specific runtime execution produced the value correctly (per-call, evaluating an un-stored execution receipt).

@@ -32,13 +32,15 @@ Rather than embedding raw SQL queries, shell commands, or Python execution scrip
 
 An Attested Computation is a standalone, first-class OKF concept (`type: Attested Computation`) that carries a sanctioned, deterministic way to compute a value. It specifies everything required for execution and mechanical verification:
 
-```yaml
+````yaml
 ---
 okf_version: 0.2
 spec_version: "0.2"
 concept_id: "revenue_for_fiscal_year"
 type: "Attested Computation"
 title: "Revenue for fiscal year"
+timestamp: "2026-06-25T09:00:00Z"
+topics: ["revenue", "bigquery", "attested-computation", "finance"]
 description: "Recognized revenue for a fiscal year, per Finance's definition."
 status: "stable"
 stale_after: "2026-09-23"
@@ -76,7 +78,7 @@ WHERE fiscal_year = @year
 The computation binds only the declared `parameters`, per the recognition policy.[^rev-policy]
 
 [^rev-policy]: Revenue recognition policy
-```
+````
 
 ---
 
