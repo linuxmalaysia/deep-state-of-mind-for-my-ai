@@ -50,6 +50,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 
 * [Overview](explanation/index.md)
 * [OpenWiki & FastMCP Architecture](explanation/openwiki-mcp-architecture.md)
+* [Attested Computations in OKF v0.2](explanation/attested-computations-okf.md)
 * [Diátaxis Framework Adoption](explanation/diataxis.md)
 
 ---

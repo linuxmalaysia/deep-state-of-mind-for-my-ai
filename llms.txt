@@ -100,6 +100,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [mkdocs_hooks.py Reference](docs/reference/mkdocs_hooks.md): Factual reference for MkDocs hooks.
 - [Explanation and Design Overview](docs/explanation/index.md): Context and architectural design decisions.
 - [OpenWiki & FastMCP Architecture](docs/explanation/openwiki-mcp-architecture.md): Structural details of the knowledge layer.
+- [Attested Computations in OKF v0.2](docs/explanation/attested-computations-okf.md): Explores Attested Computations in OKF v0.2, bridging definitions and runnable queries for verifiable AI knowledge.
 - [Diátaxis Framework Adoption](docs/explanation/diataxis.md): Conceptual context on adoption of Diátaxis.
 
 ## Model Specifics
