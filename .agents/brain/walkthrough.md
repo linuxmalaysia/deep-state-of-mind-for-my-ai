@@ -308,7 +308,7 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 - Registered the new guide across navigation layers (`mkdocs.yml`, `docs/SUMMARY.md`, `SUMMARY.md`, `llms.txt`, `START-HERE.md`, `docs/explanation/index.md`).
 - Added unit test suite `tests/test_attested_computations_okf.py` verifying OKF v0.2 frontmatter compliance, navigation indexing, and skill definitions (100% pass rate).
 
-### Underlying Rationale
+### Attested Computations Rationale
 
 To transform AI-driven analytics and telemetry queries from black-box assumptions into verifiable, deterministic contracts with mechanical no-LLM attestation gates.
 

@@ -51,7 +51,7 @@ parameters:
     required: true
 executor:
   resource: "references/skills/run-on-bq.md"
-  receipt: ["job_id", "executed_sql", "result"]
+  receipt: ["job_id", "executed_sql", "result", "executor_signature"]
 attester:
   resource: "references/attesters/sql-equality.py"
 generated:
@@ -99,8 +99,8 @@ Each computation maintains its own `verified`, `stale_after`, and `attester` met
 
 1. **`runtime`**: Identifies the execution environment (`bigquery`, `postgres`, `dbt`, `python`, `bash`).
 2. **`parameters`**: Typed, named variables the AI agent is permitted to supply. Agents MUST NOT alter the underlying computation query itself.
-3. **`executor`**: Defines execution instructions (`resource`) and required evidence elements returned in the receipt (`receipt`).
-4. **`attester`**: Points to deterministic (no-LLM) code that inspects the execution receipt and returns an unambiguous pass/fail attestation verdict.
+3. **`executor`**: Defines execution instructions (`resource`) and required evidence elements returned in the receipt (`receipt`), incorporating authenticated provenance to bind the execution to a trusted executor.
+4. **`attester`**: Points to deterministic (no-LLM) code that inspects the execution receipt, verifies authenticated executor provenance, and returns an unambiguous pass/fail attestation verdict.
 
 ---
 
