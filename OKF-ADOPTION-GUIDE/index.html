@@ -697,6 +697,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#okf-v02-attested-computations-verifiable-ai-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OKF v0.2 Attested Computations (Verifiable AI Knowledge)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OKF v0.2 Attested Computations (Verifiable AI Knowledge)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-attested-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an Attested Computation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-6-step-mechanical-execution-attestation-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 6-Step Mechanical Execution &amp; Attestation Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-vs-attestation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification vs. Attestation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4568,6 +4618,41 @@
   
   
     <li class="md-nav__item">
+      <a href="../explanation/attested-computations-okf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attested Computations in OKF v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../explanation/diataxis/" class="md-nav__link">
         
   
@@ -4755,6 +4840,56 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#okf-v02-attested-computations-verifiable-ai-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OKF v0.2 Attested Computations (Verifiable AI Knowledge)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OKF v0.2 Attested Computations (Verifiable AI Knowledge)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-attested-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an Attested Computation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-6-step-mechanical-execution-attestation-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 6-Step Mechanical Execution &amp; Attestation Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-vs-attestation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification vs. Attestation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5088,6 +5223,26 @@
 </tr>
 </tbody>
 </table>
+<h3 id="okf-v02-attested-computations-verifiable-ai-knowledge">OKF v0.2 Attested Computations (Verifiable AI Knowledge)</h3>
+<p>When AI agents answer complex analytical questions—such as calculating fiscal revenue, cluster CPU utilization, or memory allocations—knowing what a metric means is only half the battle. We also need to guarantee that the value was produced using the exact, sanctioned computation rather than agent improvisation.</p>
+<p>In OKF v0.2, this challenge is solved through <strong>Attested Computations</strong> (<code>type: Attested Computation</code>).</p>
+<h4 id="what-is-an-attested-computation">What is an Attested Computation?</h4>
+<p>An Attested Computation carries a sanctioned, deterministic way to compute a value. Instead of embedding raw SQL, shell scripts, or python code directly inside narrative text, OKF separates definition from execution contract:
+1. <strong>Runtime Binding:</strong> The <code>runtime</code> property (e.g. <code>bigquery</code>, <code>postgres</code>, <code>dbt</code>, <code>python</code>, <code>bash</code>) defines precisely how parameters are bound and interpreted.
+2. <strong>Reusability:</strong> A single computation can back multiple metrics, dashboards, and operational playbooks across the organisation.
+3. <strong>Independent Trust:</strong> Each computation maintains its own <code>verified</code>, <code>stale_after</code>, and <code>attester</code> state, allowing metrics to verify independently.</p>
+<h4 id="the-6-step-mechanical-execution-attestation-lifecycle">The 6-Step Mechanical Execution &amp; Attestation Lifecycle</h4>
+<p>OKF v0.2 separates specification from runtime execution in 6 clear steps:
+1. <strong>Discover:</strong> Agents locate the computation via <code>type: Attested Computation</code> or via links from narrative metric docs.
+2. <strong>Load:</strong> The agent reads the contract frontmatter and computation block.
+3. <strong>Parameterize:</strong> The agent supplies valid values for declared <code>parameters</code> (e.g., <code>year: 2026</code>).
+4. <strong>Execute:</strong> The executor runs the bound computation and returns an evidence receipt (e.g., job ID, executed SQL/script, and result set).
+5. <strong>Attest:</strong> The agent or system runs the deterministic (no-LLM) attester script over the receipt to verify that the query executed matches the sanctioned computation without unauthorized modifications.
+6. <strong>Gate:</strong> The system surfaces the verified result or blocks stale/failing computations.</p>
+<h4 id="verification-vs-attestation">Verification vs. Attestation</h4>
+<p>It is crucial to distinguish between doc-level verification and runtime attestation:
+* <strong>Doc-Level Verification (<code>verified</code>):</strong> Confirms that the metric definition matches business policy (stored in the document bundle, updated periodically).
+* <strong>Runtime Attestation (<code>attester</code>):</strong> Confirms that a specific runtime execution produced the value correctly (per-call, evaluating an un-stored execution receipt).</p>
 <blockquote>
 <p>[!TIP]
 <strong>Opportunistic v0.2 Upgrade (The Token Protection Rule):</strong>

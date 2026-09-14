@@ -7,35 +7,39 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Executes Semantic Compaction locally by analyzing a Git diff and updating current_state.dsom using OpenAI.">
+        <meta name="description" content="Explores Attested Computations in OKF v0.2, bridging metrics definitions and runnable queries so AI agents and consumers can mechanically verify AI-generated insights.">
       
       
         <meta name="author" content="Harisfazillah Jamel (LinuxMalaysia)">
       
       
-        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/dsom-state-sync/SKILL/">
+        <link rel="canonical" href="https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/attested-computations-okf/">
       
       
+        <link rel="prev" href="../openwiki-mcp-architecture/">
+      
+      
+        <link rel="next" href="../diataxis/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
   <meta name="google-site-verification" content="OKJ30rPxLeaG-OocY3C2xkXbYEVgwfMMoaOycjWQJJw" />
 
     
       
-        <title>DSOM State Sync Skill - Deep State of Mind (DSOM)</title>
+        <title>Attested Computations in Open Knowledge Format (OKF v0.2): Ensuring Verifiable AI Knowledge - Deep State of Mind (DSOM)</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -54,9 +58,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -81,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dsom-state-sync-skill" class="md-skip">
+        <a href="#attested-computations-in-open-knowledge-format-okf-v02-ensuring-verifiable-ai-knowledge" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +101,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-header__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DSOM State Sync Skill
+              Attested Computations in Open Knowledge Format (OKF v0.2): Ensuring Verifiable AI Knowledge
             
           </span>
         </div>
@@ -243,7 +247,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
+    <a href="../.." title="Deep State of Mind (DSOM)" class="md-nav__button md-logo" aria-label="Deep State of Mind (DSOM)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -273,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -300,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../START-HERE/" class="md-nav__link">
+      <a href="../../START-HERE/" class="md-nav__link">
         
   
   
@@ -327,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../START-AI-AGENTS-PROMPT/" class="md-nav__link">
+      <a href="../../START-AI-AGENTS-PROMPT/" class="md-nav__link">
         
   
   
@@ -361,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../SECURITY/" class="md-nav__link">
+      <a href="../../SECURITY/" class="md-nav__link">
         
   
   
@@ -388,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../LEGAL-NOTICE/" class="md-nav__link">
+      <a href="../../LEGAL-NOTICE/" class="md-nav__link">
         
   
   
@@ -464,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
+      <a href="../../governance/AI-INITIALIZATION-SEQUENCE/" class="md-nav__link">
         
   
   
@@ -492,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
+      <a href="../../OKF-ADOPTION-GUIDE/" class="md-nav__link">
         
   
   
@@ -527,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
+      <a href="../../governance/AI-MASTER-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -555,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
+      <a href="../../governance/GENERATIVE-ENGINE-OPTIMIZATION/" class="md-nav__link">
         
   
   
@@ -583,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -611,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
+      <a href="../../governance/DSOM-AUTOMATED-STATE-SYNC/" class="md-nav__link">
         
   
   
@@ -639,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../governance/DSOM-MCP-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -667,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
+      <a href="../../governance/GITOPS-AIOPS-ANSIBLE-STRATEGY/" class="md-nav__link">
         
   
   
@@ -695,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/OPERATIONAL-GUIDE/" class="md-nav__link">
+      <a href="../../governance/OPERATIONAL-GUIDE/" class="md-nav__link">
         
   
   
@@ -723,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
+      <a href="../../governance/NOSS-INTEGRATION-GUIDE/" class="md-nav__link">
         
   
   
@@ -751,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
+      <a href="../../governance/PYTHON-UV-ENVIRONMENT-GUIDE/" class="md-nav__link">
         
   
   
@@ -779,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/AUTOMATION-AUDIT-LIST/" class="md-nav__link">
+      <a href="../../governance/AUTOMATION-AUDIT-LIST/" class="md-nav__link">
         
   
   
@@ -807,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
+      <a href="../../governance/DSOM-TOKEN-EFFICIENCY-REPORT/" class="md-nav__link">
         
   
   
@@ -835,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
+      <a href="../../governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/" class="md-nav__link">
         
   
   
@@ -863,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
+      <a href="../../governance/DSOM-INGESTION-LATENCY-ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -891,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
+      <a href="../../governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK/" class="md-nav__link">
         
   
   
@@ -919,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/ZERO-GLOBAL-MEMORY/" class="md-nav__link">
+      <a href="../../governance/ZERO-GLOBAL-MEMORY/" class="md-nav__link">
         
   
   
@@ -947,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/LLM-WIKI-ADOPTION/" class="md-nav__link">
+      <a href="../../governance/LLM-WIKI-ADOPTION/" class="md-nav__link">
         
   
   
@@ -975,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
+      <a href="../../governance/OPENWIKI-INTEGRATION-GUIDE/" class="md-nav__link">
         
   
   
@@ -1003,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
+      <a href="../../governance/DSOM-EFFICIENCY-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -1031,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
+      <a href="../../governance/SOP-KNOWLEDGE-FIRST-DISCOVERY/" class="md-nav__link">
         
   
   
@@ -1059,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
+      <a href="../../governance/GITHUB-ACTIONS-SECURITY-SCANNING/" class="md-nav__link">
         
   
   
@@ -1087,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/" class="md-nav__link">
+      <a href="../../governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL/" class="md-nav__link">
         
   
   
@@ -1122,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/AI-GUARDRAILS-MASTER-GUIDE/" class="md-nav__link">
+      <a href="../../governance/AI-GUARDRAILS-MASTER-GUIDE/" class="md-nav__link">
         
   
   
@@ -1157,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/" class="md-nav__link">
+      <a href="../../governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW/" class="md-nav__link">
         
   
   
@@ -1192,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-CUSTOM-VALIDATORS-GUIDE/" class="md-nav__link">
+      <a href="../../governance/DSOM-CUSTOM-VALIDATORS-GUIDE/" class="md-nav__link">
         
   
   
@@ -1227,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/" class="md-nav__link">
+      <a href="../../governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE/" class="md-nav__link">
         
   
   
@@ -1262,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/DSOM-AGENT-PLUGINS-SPECIFICATION/" class="md-nav__link">
+      <a href="../../governance/DSOM-AGENT-PLUGINS-SPECIFICATION/" class="md-nav__link">
         
   
   
@@ -1297,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/" class="md-nav__link">
+      <a href="../../governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE/" class="md-nav__link">
         
   
   
@@ -1332,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/" class="md-nav__link">
+      <a href="../../governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE/" class="md-nav__link">
         
   
   
@@ -1367,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../RITUAL-OF-TRANSITION/" class="md-nav__link">
+      <a href="../../RITUAL-OF-TRANSITION/" class="md-nav__link">
         
   
   
@@ -1395,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../PERSONALIZATION/" class="md-nav__link">
+      <a href="../../PERSONALIZATION/" class="md-nav__link">
         
   
   
@@ -1479,7 +1483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../brain/task/" class="md-nav__link">
+      <a href="../../.agents/brain/task/" class="md-nav__link">
         
   
   
@@ -1507,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../brain/implementation_plan/" class="md-nav__link">
+      <a href="../../.agents/brain/implementation_plan/" class="md-nav__link">
         
   
   
@@ -1535,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../brain/walkthrough/" class="md-nav__link">
+      <a href="../../.agents/brain/walkthrough/" class="md-nav__link">
         
   
   
@@ -1626,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
+      <a href="../../governance/AI-COGNITIVE-TWIN-PROTOCOL/" class="md-nav__link">
         
   
   
@@ -1654,7 +1658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../REANIMATION-PROMPT-TEMPLATE/" class="md-nav__link">
+      <a href="../../REANIMATION-PROMPT-TEMPLATE/" class="md-nav__link">
         
   
   
@@ -1682,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../DSOM-EPISODIC-RECORD-TEMPLATE/" class="md-nav__link">
+      <a href="../../DSOM-EPISODIC-RECORD-TEMPLATE/" class="md-nav__link">
         
   
   
@@ -1710,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../governance/MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
+      <a href="../../governance/MULTI-AGENT-PROTOCOLS/" class="md-nav__link">
         
   
   
@@ -1738,7 +1742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../HOWTO-CREATE-DSOM-GEMINI-GEM/" class="md-nav__link">
+      <a href="../../HOWTO-CREATE-DSOM-GEMINI-GEM/" class="md-nav__link">
         
   
   
@@ -1766,7 +1770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../CLAUDE-SETUP/" class="md-nav__link">
+      <a href="../../CLAUDE-SETUP/" class="md-nav__link">
         
   
   
@@ -1794,7 +1798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../model-specifics/dsom-claude-initialiser/" class="md-nav__link">
+      <a href="../../model-specifics/dsom-claude-initialiser/" class="md-nav__link">
         
   
   
@@ -1822,7 +1826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../COPILOT-SETUP/" class="md-nav__link">
+      <a href="../../COPILOT-SETUP/" class="md-nav__link">
         
   
   
@@ -1906,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/" class="md-nav__link">
+      <a href="../../.agents/workflows/SUBAGENT-ORCHESTRATION-WORKFLOW/" class="md-nav__link">
         
   
   
@@ -1934,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eod-palace-sync/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/eod-palace-sync/SKILL/" class="md-nav__link">
         
   
   
@@ -1962,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sod-palace-sync/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/sod-palace-sync/SKILL/" class="md-nav__link">
         
   
   
@@ -1990,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dsom-token-calculator/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/dsom-token-calculator/SKILL/" class="md-nav__link">
         
   
   
@@ -2018,7 +2022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dsom-knowledge-ingester/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/dsom-knowledge-ingester/SKILL/" class="md-nav__link">
         
   
   
@@ -2053,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../publish-to-blogger/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/publish-to-blogger/SKILL/" class="md-nav__link">
         
   
   
@@ -2081,7 +2085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git-commit-resolver/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/git-commit-resolver/SKILL/" class="md-nav__link">
         
   
   
@@ -2109,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git-history-scrubber/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/git-history-scrubber/SKILL/" class="md-nav__link">
         
   
   
@@ -2137,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../initialize-gitops/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/initialize-gitops/SKILL/" class="md-nav__link">
         
   
   
@@ -2165,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../forensic-log-audit/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/forensic-log-audit/SKILL/" class="md-nav__link">
         
   
   
@@ -2193,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ssh-passwordless-setup/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/ssh-passwordless-setup/SKILL/" class="md-nav__link">
         
   
   
@@ -2221,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../github-actions-snyk-scanner/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/github-actions-snyk-scanner/SKILL/" class="md-nav__link">
         
   
   
@@ -2249,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../render-deployment/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/render-deployment/SKILL/" class="md-nav__link">
         
   
   
@@ -2277,7 +2281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../jules-antigravity-sync/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/jules-antigravity-sync/SKILL/" class="md-nav__link">
         
   
   
@@ -2312,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openwiki-compiler/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/openwiki-compiler/SKILL/" class="md-nav__link">
         
   
   
@@ -2340,7 +2344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sitemap-seo-generator/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/sitemap-seo-generator/SKILL/" class="md-nav__link">
         
   
   
@@ -2368,7 +2372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs-write/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/docs-write/SKILL/" class="md-nav__link">
         
   
   
@@ -2396,7 +2400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs-review/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/docs-review/SKILL/" class="md-nav__link">
         
   
   
@@ -2424,7 +2428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docstring/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/docstring/SKILL/" class="md-nav__link">
         
   
   
@@ -2452,7 +2456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docx/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/docx/SKILL/" class="md-nav__link">
         
   
   
@@ -2480,7 +2484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openapi-spec-generation/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/openapi-spec-generation/SKILL/" class="md-nav__link">
         
   
   
@@ -2508,7 +2512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hyperparameter-tuning-expert/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/hyperparameter-tuning-expert/SKILL/" class="md-nav__link">
         
   
   
@@ -2536,7 +2540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okf-v02-adoption-engineer/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/okf-v02-adoption-engineer/SKILL/" class="md-nav__link">
         
   
   
@@ -2571,7 +2575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../knowledge-base-templates/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/knowledge-base-templates/SKILL/" class="md-nav__link">
         
   
   
@@ -2599,7 +2603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture-decision-records/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/architecture-decision-records/SKILL/" class="md-nav__link">
         
   
   
@@ -2627,7 +2631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog-automation/SKILL/" class="md-nav__link">
+      <a href="../../.agents/skills/changelog-automation/SKILL/" class="md-nav__link">
         
   
   
@@ -2711,7 +2715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../HOWTO-SETUP-ANSIBLE-BASELINE/" class="md-nav__link">
+      <a href="../../HOWTO-SETUP-ANSIBLE-BASELINE/" class="md-nav__link">
         
   
   
@@ -2739,7 +2743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../HOWTO-SETUP-WSL-ALMALINUX10/" class="md-nav__link">
+      <a href="../../HOWTO-SETUP-WSL-ALMALINUX10/" class="md-nav__link">
         
   
   
@@ -2823,7 +2827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../playbooks/dsom/site.yml" class="md-nav__link">
+      <a href="../../playbooks/dsom/site.yml" class="md-nav__link">
         
   
   
@@ -2851,7 +2855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
+      <a href="../../playbooks/dsom/audit-preflight.yml" class="md-nav__link">
         
   
   
@@ -2879,7 +2883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../playbooks/dsom/init-brain.yml" class="md-nav__link">
+      <a href="../../playbooks/dsom/init-brain.yml" class="md-nav__link">
         
   
   
@@ -2907,7 +2911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
+      <a href="../../playbooks/dsom/privacy-scan.yml" class="md-nav__link">
         
   
   
@@ -2991,7 +2995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
+      <a href="../../tools-and-automation/audit-pre-flight/" class="md-nav__link">
         
   
   
@@ -3019,7 +3023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools-and-automation/init-brain/" class="md-nav__link">
+      <a href="../../tools-and-automation/init-brain/" class="md-nav__link">
         
   
   
@@ -3047,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools-and-automation/reanimate/" class="md-nav__link">
+      <a href="../../tools-and-automation/reanimate/" class="md-nav__link">
         
   
   
@@ -3075,7 +3079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools-and-automation/hibernation/" class="md-nav__link">
+      <a href="../../tools-and-automation/hibernation/" class="md-nav__link">
         
   
   
@@ -3103,7 +3107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools-and-automation/privacy-guardian/" class="md-nav__link">
+      <a href="../../tools-and-automation/privacy-guardian/" class="md-nav__link">
         
   
   
@@ -3131,7 +3135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools-and-automation/template-reset/" class="md-nav__link">
+      <a href="../../tools-and-automation/template-reset/" class="md-nav__link">
         
   
   
@@ -3159,7 +3163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
+      <a href="../../tools/HOWTO-OPENWIKI/" class="md-nav__link">
         
   
   
@@ -3187,7 +3191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
+      <a href="../../tools/HOWTO-MCP-SERVER/" class="md-nav__link">
         
   
   
@@ -3219,20 +3223,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
         
           
           <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
@@ -3253,7 +3257,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3320,7 +3324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tutorials/" class="md-nav__link">
+      <a href="../../tutorials/" class="md-nav__link">
         
   
   
@@ -3348,7 +3352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tutorials/getting-started/" class="md-nav__link">
+      <a href="../../tutorials/getting-started/" class="md-nav__link">
         
   
   
@@ -3376,7 +3380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tutorials/TEAM-DSOM-MASTERCLASS/" class="md-nav__link">
+      <a href="../../tutorials/TEAM-DSOM-MASTERCLASS/" class="md-nav__link">
         
   
   
@@ -3411,7 +3415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM/" class="md-nav__link">
+      <a href="../../tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM/" class="md-nav__link">
         
   
   
@@ -3503,7 +3507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/" class="md-nav__link">
+      <a href="../../how-to/" class="md-nav__link">
         
   
   
@@ -3531,7 +3535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/install-gitea-podman-quadlet/" class="md-nav__link">
+      <a href="../../how-to/install-gitea-podman-quadlet/" class="md-nav__link">
         
   
   
@@ -3566,7 +3570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/install-gitea-ansible/" class="md-nav__link">
+      <a href="../../how-to/install-gitea-ansible/" class="md-nav__link">
         
   
   
@@ -3601,7 +3605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/audit-and-apply-frontmatter/" class="md-nav__link">
+      <a href="../../how-to/audit-and-apply-frontmatter/" class="md-nav__link">
         
   
   
@@ -3629,7 +3633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/run-fastmcp-server/" class="md-nav__link">
+      <a href="../../how-to/run-fastmcp-server/" class="md-nav__link">
         
   
   
@@ -3657,7 +3661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/generate-sitemaps-seo/" class="md-nav__link">
+      <a href="../../how-to/generate-sitemaps-seo/" class="md-nav__link">
         
   
   
@@ -3685,7 +3689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/use-openwiki-emulator/" class="md-nav__link">
+      <a href="../../how-to/use-openwiki-emulator/" class="md-nav__link">
         
   
   
@@ -3713,7 +3717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/google-search-console/" class="md-nav__link">
+      <a href="../../how-to/google-search-console/" class="md-nav__link">
         
   
   
@@ -3741,7 +3745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/" class="md-nav__link">
+      <a href="../../how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/" class="md-nav__link">
         
   
   
@@ -3833,7 +3837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/" class="md-nav__link">
+      <a href="../../reference/" class="md-nav__link">
         
   
   
@@ -3861,7 +3865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/generate_sitemaps/" class="md-nav__link">
+      <a href="../../reference/generate_sitemaps/" class="md-nav__link">
         
   
   
@@ -3889,7 +3893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/openwiki_emulator/" class="md-nav__link">
+      <a href="../../reference/openwiki_emulator/" class="md-nav__link">
         
   
   
@@ -3917,7 +3921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/mcp_server/" class="md-nav__link">
+      <a href="../../reference/mcp_server/" class="md-nav__link">
         
   
   
@@ -3945,7 +3949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/CLI-QUICK-REFERENCE/" class="md-nav__link">
+      <a href="../../reference/CLI-QUICK-REFERENCE/" class="md-nav__link">
         
   
   
@@ -3980,7 +3984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/apply_okf_frontmatter/" class="md-nav__link">
+      <a href="../../reference/apply_okf_frontmatter/" class="md-nav__link">
         
   
   
@@ -4008,7 +4012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/refactor_okf/" class="md-nav__link">
+      <a href="../../reference/refactor_okf/" class="md-nav__link">
         
   
   
@@ -4036,7 +4040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/bench_brain/" class="md-nav__link">
+      <a href="../../reference/bench_brain/" class="md-nav__link">
         
   
   
@@ -4064,7 +4068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/dsom_token_auditor/" class="md-nav__link">
+      <a href="../../reference/dsom_token_auditor/" class="md-nav__link">
         
   
   
@@ -4092,7 +4096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/mkdocs_hooks/" class="md-nav__link">
+      <a href="../../reference/mkdocs_hooks/" class="md-nav__link">
         
   
   
@@ -4125,20 +4129,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_4" checked>
         
           
           <label class="md-nav__link" for="__nav_13_4" id="__nav_13_4_label" tabindex="0">
@@ -4159,7 +4163,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_13_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4177,7 +4181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../explanation/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -4205,7 +4209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../explanation/openwiki-mcp-architecture/" class="md-nav__link">
+      <a href="../openwiki-mcp-architecture/" class="md-nav__link">
         
   
   
@@ -4230,10 +4234,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../explanation/attested-computations-okf/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attested Computations in OKF v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4256,6 +4294,142 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-foundational-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview &amp; Foundational Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-attested-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an Attested Computation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles-design-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles &amp; Design Benefits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles &amp; Design Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-runtime-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Runtime Binding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reusability-across-the-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reusability Across the Workspace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-independent-trust-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Independent Trust Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-structure-key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Structure &amp; Key Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-6-step-mechanical-execution-attestation-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 6-Step Mechanical Execution &amp; Attestation Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-vs-attestation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification vs. Attestation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-impact-on-dsom-v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion &amp; Impact on DSOM v0.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4268,7 +4442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../explanation/diataxis/" class="md-nav__link">
+      <a href="../diataxis/" class="md-nav__link">
         
   
   
@@ -4331,10 +4505,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#overview-foundational-challenge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Purpose
+        Overview &amp; Foundational Challenge
       
     </span>
   </a>
@@ -4342,10 +4516,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#what-is-an-attested-computation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        What is an Attested Computation?
       
     </span>
   </a>
@@ -4353,22 +4527,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#execution-flow" class="md-nav__link">
+  <a href="#core-principles-design-benefits" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Execution Flow
+        Core Principles &amp; Design Benefits
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Execution Flow">
+    <nav class="md-nav" aria-label="Core Principles &amp; Design Benefits">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#execution-rules" class="md-nav__link">
+  <a href="#1-runtime-binding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Execution Rules
+        1. Runtime Binding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reusability-across-the-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reusability Across the Workspace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-independent-trust-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Independent Trust Signals
       
     </span>
   </a>
@@ -4377,6 +4573,50 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-structure-key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Structure &amp; Key Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-6-step-mechanical-execution-attestation-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 6-Step Mechanical Execution &amp; Attestation Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-vs-attestation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification vs. Attestation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-impact-on-dsom-v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion &amp; Impact on DSOM v0.2
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4400,27 +4640,112 @@
   
 
 
-<h1 id="dsom-state-sync-skill">DSOM State Sync Skill</h1>
-<h2 id="purpose">Purpose</h2>
-<p>This skill allows AI agents to manually execute the <strong>Semantic Compaction</strong> process outside of the standard GitHub Actions PR workflow. It analyzes a provided diff file and uses an LLM to condense and append significant architectural changes into the project's compressed memory tier (<code>.agents/brain/current_state.dsom</code>).</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<ol>
-<li><strong>Python &amp; <code>uv</code></strong>: The <code>uv</code> package manager must be available on the system.</li>
-<li><strong>Gemini API Key (Optional)</strong>: The environment variable <code>GEMINI_API_KEY</code> or <code>GOOGLE_API_KEY</code> can be set in the executing terminal to leverage the Gemini AI API for compaction. If neither credential is set, the system automatically falls back to a zero-API local Semantic Compaction engine.</li>
-<li><strong>Diff File</strong>: A valid Git diff file or text file containing changes must be prepared.</li>
-</ol>
-<h2 id="execution-flow">Execution Flow</h2>
-<p>When tasked with running the state sync locally, execute the following terminal command (ensure you replace <code>&lt;diff_file&gt;</code> with the actual path to your diff):</p>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span><span class="nv">requests</span><span class="o">==</span><span class="m">2</span>.34.2<span class="w"> </span>--with<span class="w"> </span><span class="nv">pyyaml</span><span class="o">==</span><span class="m">6</span>.0.3<span class="w"> </span>.github/scripts/action_update_dsom.py<span class="w"> </span>&lt;diff_file&gt;<span class="w"> </span>.agents/brain/current_state.dsom
+<h1 id="attested-computations-in-open-knowledge-format-okf-v02-ensuring-verifiable-ai-knowledge">🔐 Attested Computations in Open Knowledge Format (OKF v0.2): Ensuring Verifiable AI Knowledge</h1>
+<h2 id="overview-foundational-challenge">Overview &amp; Foundational Challenge</h2>
+<p>When AI agents answer complex analytical questions—such as calculating fiscal revenue, cluster bandwidth utilization, or gross profit—knowing what a metric means is only half the battle. In production AI environments, human operators and automated governance gates must also guarantee that the resulting figure was produced using the exact, sanctioned computation rather than agent improvisation or hallucinated query execution.</p>
+<p>In Open Knowledge Format (OKF) v0.2, this challenge is solved through <strong>Attested Computations</strong> (<code>type: Attested Computation</code>).</p>
+<p>Rather than embedding raw SQL queries, shell commands, or Python execution scripts directly inside narrative documentation or relying on black-box LLM SQL generation, OKF separates the semantic definition of a concept from its execution and attestation contract.</p>
+<hr />
+<h2 id="what-is-an-attested-computation">What is an Attested Computation?</h2>
+<p>An Attested Computation is a standalone, first-class OKF concept (<code>type: Attested Computation</code>) that carries a sanctioned, deterministic way to compute a value. It specifies everything required for execution and mechanical verification:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">okf_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+<span class="nt">spec_version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.2"</span>
+<span class="nt">concept_id</span><span class="p">:</span><span class="w"> </span><span class="s">"revenue_for_fiscal_year"</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"Attested</span><span class="nv"> </span><span class="s">Computation"</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"Revenue</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">fiscal</span><span class="nv"> </span><span class="s">year"</span>
+<span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-06-25T09:00:00Z"</span>
+<span class="nt">topics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"revenue"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"bigquery"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"attested-computation"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"finance"</span><span class="p p-Indicator">]</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Recognized</span><span class="nv"> </span><span class="s">revenue</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fiscal</span><span class="nv"> </span><span class="s">year,</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">Finance's</span><span class="nv"> </span><span class="s">definition."</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s">"stable"</span>
+<span class="nt">stale_after</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-09-23"</span>
+<span class="nt">runtime</span><span class="p">:</span><span class="w"> </span><span class="s">"bigquery"</span>
+<span class="nt">parameters</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"year"</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"integer"</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">executor</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="s">"references/skills/run-on-bq.md"</span>
+<span class="w">  </span><span class="nt">receipt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"job_id"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"executed_sql"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"result"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"executor_signature"</span><span class="p p-Indicator">]</span>
+<span class="nt">attester</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="s">"references/attesters/sql-equality.py"</span>
+<span class="nt">generated</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">by</span><span class="p">:</span><span class="w"> </span><span class="s">"reference_agent/gemini-2.5-pro"</span>
+<span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-06-20T22:53:05Z"</span>
+<span class="nt">verified</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">by</span><span class="p">:</span><span class="w"> </span><span class="s">"human:ahormati"</span>
+<span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2026-06-25T09:00:00Z"</span>
+<span class="nt">sources</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">"rev-policy"</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"Revenue</span><span class="nv"> </span><span class="s">recognition</span><span class="nv"> </span><span class="s">policy"</span>
+<span class="w">    </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s">"Finance</span><span class="nv"> </span><span class="s">Guild"</span>
+<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">"https://wiki.acme.internal/finance/revenue-recognition"</span>
+<span class="nn">---</span>
+
+<span class="c1"># Computation</span>
+
+<span class="err">```</span><span class="l l-Scalar l-Scalar-Plain">sql</span>
+<span class="l l-Scalar l-Scalar-Plain">SELECT SUM(amount) AS revenue</span>
+<span class="l l-Scalar l-Scalar-Plain">FROM finance.recognized_revenue</span>
+<span class="l l-Scalar l-Scalar-Plain">WHERE fiscal_year = @year</span>
+<span class="l l-Scalar l-Scalar-Plain">```</span>
+
+<span class="l l-Scalar l-Scalar-Plain">The computation binds only the declared `parameters`, per the recognition policy.[^rev-policy]</span>
+
+<span class="l l-Scalar l-Scalar-Plain">[^rev-policy]</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Revenue recognition policy</span>
 </code></pre></div>
-<h3 id="execution-rules">Execution Rules</h3>
+<hr />
+<h2 id="core-principles-design-benefits">Core Principles &amp; Design Benefits</h2>
+<h3 id="1-runtime-binding">1. Runtime Binding</h3>
+<p>The <code>runtime</code> property (e.g. <code>bigquery</code>, <code>postgres</code>, <code>dbt</code>, <code>python</code>, <code>bash</code>) defines precisely how parameters are bound and interpreted. Autonomous agents supply valid values for declared parameters without modifying the underlying query string.</p>
+<h3 id="2-reusability-across-the-workspace">2. Reusability Across the Workspace</h3>
+<p>A single sanctioned Attested Computation can back multiple metrics, dashboards, AI agent toolcalls, and operational playbooks across the organisation.</p>
+<h3 id="3-independent-trust-signals">3. Independent Trust Signals</h3>
+<p>Each computation maintains its own <code>verified</code>, <code>stale_after</code>, and <code>attester</code> metadata fields. This ensures individual metrics verify independently and automatically expire when underlying business policies or schemas evolve.</p>
+<hr />
+<h2 id="contract-structure-key-components">Contract Structure &amp; Key Components</h2>
 <ol>
-<li><strong>Never write the API key to disk</strong>: If the API key is not present in the environment, instruct the human operator to export it manually in their terminal session before proceeding.</li>
-<li><strong>Review before execution</strong>: Generate the diff file locally first (e.g., <code>git diff &gt; local.diff</code>) and verify its contents to prevent bloating the compaction prompt with irrelevant artifact changes.</li>
-<li><strong>Verify Timestamp</strong>: After successful execution, check <code>.agents/brain/current_state.dsom</code> to ensure the <code>timestamp</code> in the OKF frontmatter was correctly updated.</li>
+<li><strong><code>runtime</code></strong>: Identifies the execution environment (<code>bigquery</code>, <code>postgres</code>, <code>dbt</code>, <code>python</code>, <code>bash</code>).</li>
+<li><strong><code>parameters</code></strong>: Typed, named variables the AI agent is permitted to supply. Agents MUST NOT alter the underlying computation query itself.</li>
+<li><strong><code>executor</code></strong>: Defines execution instructions (<code>resource</code>) and required evidence elements returned in the receipt (<code>receipt</code>), incorporating authenticated provenance to bind the execution to a trusted executor.</li>
+<li><strong><code>attester</code></strong>: Points to deterministic (no-LLM) code that inspects the execution receipt, verifies authenticated executor provenance, and returns an unambiguous pass/fail attestation verdict.</li>
 </ol>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-07-27</em>
+<h2 id="the-6-step-mechanical-execution-attestation-lifecycle">The 6-Step Mechanical Execution &amp; Attestation Lifecycle</h2>
+<p>The OKF specification separates specification from runtime execution in 6 deterministic steps:</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              Attested Computation Execution Lifecycle                  │
+│                                                                         │
+│  ┌────────────┐     ┌────────────┐     ┌────────────────┐               │
+│  │ 1. Discover│ ──&gt; │  2. Load   │ ──&gt; │ 3. Parameterize│               │
+│  └────────────┘     └────────────┘     └───────┬────────┘               │
+│                                                │                        │
+│                                                ▼                        │
+│  ┌────────────┐     ┌────────────┐     ┌────────────────┐               │
+│  │  6. Gate   │ &lt;── │ 5. Attest  │ &lt;── │   4. Execute   │               │
+│  └────────────┘     └────────────┘     └────────────────┘               │
+└─────────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<ol>
+<li><strong>Discover:</strong> Agents locate the computation via <code>type: Attested Computation</code> or via links from narrative metric docs.</li>
+<li><strong>Load:</strong> The agent reads the frontmatter contract and computation block.</li>
+<li><strong>Parameterize:</strong> The agent supplies valid values for declared parameters (e.g., <code>year: 2026</code>).</li>
+<li><strong>Execute:</strong> The executor runs the bound computation and returns an evidence receipt (e.g., job ID, executed query, and result payload).</li>
+<li><strong>Attest:</strong> The agent or system runs the deterministic attester script over the receipt to verify that the query executed matched the sanctioned computation without unauthorized modifications.</li>
+<li><strong>Gate:</strong> The governance system surfaces the verified result or blocks stale/failing computations.</li>
+</ol>
+<hr />
+<h2 id="verification-vs-attestation">Verification vs. Attestation</h2>
+<p>It is crucial to distinguish between doc-level verification and runtime attestation:</p>
+<ul>
+<li><strong>Doc-Level Verification (<code>verified</code>):</strong> Confirms that the metric definition matches business policy (stored in the document bundle, updated periodically during human or automated audits).</li>
+<li><strong>Runtime Attestation (<code>attester</code>):</strong> Confirms that a specific runtime execution produced the value correctly (per-call, un-stored receipt evaluation executed by deterministic code).</li>
+</ul>
+<hr />
+<h2 id="conclusion-impact-on-dsom-v02">Conclusion &amp; Impact on DSOM v0.2</h2>
+<p>Attested Computations in OKF v0.2 transform AI-driven analytics and operational telemetry from a "trust me" black box into a verifiable, deterministic science. By establishing clear contracts between definitions, parameters, executors, and deterministic attesters, organisations deploying DSOM digital twins can operate autonomous agents with absolute confidence in data integrity.</p>
+<hr />
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
@@ -4478,12 +4803,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../../../javascripts/extra.js"></script>
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>
