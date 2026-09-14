@@ -5,6 +5,7 @@ title: DSOM State Sync Skill
 timestamp: "2026-07-27T00:00:00Z"
 description: "Executes Semantic Compaction locally by analyzing a Git diff and updating current_state.dsom using OpenAI."
 topics: ["compaction", "state", "sync", "openai", "dsom"]
+name: dsom-state-sync
 ---
 # DSOM State Sync Skill
 

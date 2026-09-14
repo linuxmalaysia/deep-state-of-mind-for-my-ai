@@ -239,6 +239,18 @@ def normalise_metadata(
         'topics': topics
     }
 
+    # Populate/preserve 'name' in frontmatter for skill files
+    if filename == "SKILL.md" or ".agents/skills/" in rel_path:
+        name = existing_frontmatter.get('name')
+        if not name:
+            parts = rel_path.split('/')
+            if len(parts) >= 2:
+                name = parts[-2]
+            else:
+                name = os.path.basename(os.path.dirname(os.path.abspath(rel_path)))
+        if name:
+            updated_frontmatter['name'] = name
+
     # Preserve other fields
     for k, v in existing_frontmatter.items():
         if k not in updated_frontmatter:
@@ -362,7 +374,7 @@ def serialise_frontmatter(updated_frontmatter, rel_path, filename):
     """
     special_reorder = filename == "SKILL.md"
     if special_reorder:
-        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
+        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics', 'name']
     else:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
 
