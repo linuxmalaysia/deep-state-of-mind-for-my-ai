@@ -299,6 +299,23 @@ To deliver a modular, reusable user-manual documentation architecture for downst
 
 > **EOD Palace Sync Complete: Adopted OKF v0.2 trust signals, /learn command protocol, pinned markdownlint-cli 0.49.1, updated MD025 front_matter_title regex, and achieved 100% test suite pass rate.**
 
+## 🏁 Session Anchor: 2026-09-06 — Attested Computations in OKF v0.2 Adoption
+
+- Adopted Attested Computations in OKF v0.2 (`type: Attested Computation`) across the DSOM framework and documentation corpus based on the RedLineSoft engineering specification.
+- Authored dedicated Diátaxis Explanation guide `docs/explanation/attested-computations-okf.md` covering execution contracts, parameter bindings, runtime environments (`bigquery`, `postgres`, `dbt`, `python`, `bash`), receipts, attester scripts, and the 6-step mechanical lifecycle (Discover, Load, Parameterize, Execute, Attest, Gate).
+- Integrated Attested Computations, runtime bindings, reusability, and attestation rules into `docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md`.
+- Enhanced `.agents/skills/okf-v02-adoption-engineer/SKILL.md` to support `Attested Computation` document classification and attestation registry handling.
+- Registered the new guide across navigation layers (`mkdocs.yml`, `docs/SUMMARY.md`, `SUMMARY.md`, `llms.txt`, `START-HERE.md`, `docs/explanation/index.md`).
+- Added unit test suite `tests/test_attested_computations_okf.py` verifying OKF v0.2 frontmatter compliance, navigation indexing, and skill definitions (100% pass rate).
+
+### Attested Computations Rationale
+
+To transform AI-driven analytics and telemetry queries from black-box assumptions into verifiable, deterministic contracts with mechanical no-LLM attestation gates.
+
+### Attested Computations Adoption Mental Anchor
+
+> **Attested Computations Adopted: Created docs/explanation/attested-computations-okf.md, updated adoption guides, skills, and sitemaps for OKF v0.2 Attested Computations, and verified 100% test suite pass rate.**
+
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

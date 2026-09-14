@@ -14,6 +14,7 @@ Welcome to the **Deep State of Mind (DSOM) Explanation** quadrant, structured ac
 Explanation material focuses on **discussion, architectural context, design decisions**, and conceptual context behind the OpenWiki tools and DSOM frameworks.
 
 - **[OpenWiki & FastMCP Architecture](openwiki-mcp-architecture.md):** High-level design, RAG context streams, data flow, and components.
+- **[Attested Computations in OKF v0.2](attested-computations-okf.md):** Ensuring verifiable AI knowledge through deterministic contracts, parameter binding, and attester scripts.
 - **[Diátaxis Framework Adoption](diataxis.md):** Architectural design decision and rationale for integrating the Diátaxis Framework into DSOM.
 
 ---

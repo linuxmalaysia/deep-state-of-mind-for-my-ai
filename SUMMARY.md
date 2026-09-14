@@ -208,6 +208,7 @@ topics: ["dsom", "documentation"]
 * [📋 mkdocs_hooks.py Reference](docs/reference/mkdocs_hooks.md)
 * [🧠 Explanation and Design Overview](docs/explanation/index.md)
 * [🧠 OpenWiki & FastMCP Architecture](docs/explanation/openwiki-mcp-architecture.md)
+* [🔒 Attested Computations in OKF v0.2](docs/explanation/attested-computations-okf.md)
 * [🧠 Diátaxis Framework Adoption](docs/explanation/diataxis.md)
 
 

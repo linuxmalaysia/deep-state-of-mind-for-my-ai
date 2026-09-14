@@ -84,5 +84,11 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Synchronized omni-documentation layers and ledgers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`).
 - `[x]` Updated root `AGENTS.md`, `.agents/AGENTS.md`, and spatial brain files (`task.md`, `walkthrough.md`, `active_context_manifest.md`).
 - `[x]` Adopted OKF v0.2 trust signals, System Protocol `/learn` Knowledge Ingestion Command, and pinned `markdownlint-cli` 0.49.1.
+- `[x]` Adopted Attested Computations in OKF v0.2 (`type: Attested Computation`) across the DSOM framework and documentation corpus based on the RedLineSoft engineering specification.
+- `[x]` Authored dedicated Diátaxis Explanation guide `docs/explanation/attested-computations-okf.md`.
+- `[x]` Integrated Attested Computations into `docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md`.
+- `[x]` Enhanced `.agents/skills/okf-v02-adoption-engineer/SKILL.md` to support `Attested Computation` concept classification.
+- `[x]` Registered Attested Computations across navigation layers (`mkdocs.yml`, `docs/SUMMARY.md`, `SUMMARY.md`, `llms.txt`, `START-HERE.md`, `docs/explanation/index.md`).
+- `[x]` Added unit test suite `tests/test_attested_computations_okf.py` (100% pass rate).
 
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*

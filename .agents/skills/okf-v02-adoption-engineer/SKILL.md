@@ -4,7 +4,6 @@ spec_version: "0.2"
 type: agent_skill
 title: "🌐 OKF v0.2 Migration & Compliance Standard Skill"
 timestamp: "2026-09-02T23:40:00Z"
-description: "Converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
 description: "Seamlessly converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
 topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
 name: okf-v02-adoption-engineer
@@ -26,7 +25,7 @@ verified:
 inputs:
   document_type:
     default: guide
-    description: 'The OKF concept type mapping (e.g. guide, playbook, policy, api, agent_skill, architecture).'
+    description: 'The OKF concept type mapping (e.g. guide, playbook, policy, api, agent_skill, architecture, Attested Computation).'
     type: string
   stale_duration_days:
     default: 180
@@ -68,7 +67,7 @@ context-ready OKF v0.2 document.
    - **Lifecycle State (`status`)**: Map explicitly to `draft`, `stable`, or `deprecated`.
    - **Freshness Constraint (`stale_after`)**: Dynamically append or enforce an absolute expiration date
      string (`YYYY-MM-DD`).
-   - **Attestation Registry**: Structurally register compute requirements without embedding raw runtimes.
+   - **Attestation Registry**: Structurally register compute requirements and execution contracts for `type: Attested Computation` (`runtime`, `parameters`, `executor`, `attester`) without embedding raw runtimes.
 3. **Content Alignment Rules**:
    - Organise prose strictly using the **Diátaxis framework** (Tutorials, How-To Guides, Reference, Explanation).
    - Maintain cross-linking consistency using relative Markdown links (`[Anchor Text](filename.md)`).

@@ -118,6 +118,35 @@ OKF v0.2 extends v0.1 by adding opt-in trust and provenance metadata fields in Y
 | `status` | `string` | Document lifecycle state (`draft`, `approved`, `deprecated`, `superseded`). | `"approved"` |
 | `stale_after` | `string` | ISO 8601 UTC date when this knowledge must be re-evaluated. | `"2027-08-21T00:00:00Z"` |
 
+### OKF v0.2 Attested Computations (Verifiable AI Knowledge)
+
+When AI agents answer complex analytical questions—such as calculating fiscal revenue, cluster CPU utilization, or memory allocations—knowing what a metric means is only half the battle. We also need to guarantee that the value was produced using the exact, sanctioned computation rather than agent improvisation.
+
+In OKF v0.2, this challenge is solved through **Attested Computations** (`type: Attested Computation`).
+
+#### What is an Attested Computation?
+
+An Attested Computation carries a sanctioned, deterministic way to compute a value. Instead of embedding raw SQL, shell scripts, or python code directly inside narrative text, OKF separates definition from execution contract:
+1. **Runtime Binding:** The `runtime` property (e.g. `bigquery`, `postgres`, `dbt`, `python`, `bash`) defines precisely how parameters are bound and interpreted.
+2. **Reusability:** A single computation can back multiple metrics, dashboards, and operational playbooks across the organisation.
+3. **Independent Trust:** Each computation maintains its own `verified`, `stale_after`, and `attester` state, allowing metrics to verify independently.
+
+#### The 6-Step Mechanical Execution & Attestation Lifecycle
+
+OKF v0.2 separates specification from runtime execution in 6 clear steps:
+1. **Discover:** Agents locate the computation via `type: Attested Computation` or via links from narrative metric docs.
+2. **Load:** The agent reads the contract frontmatter and computation block.
+3. **Parameterize:** The agent supplies valid values for declared `parameters` (e.g., `year: 2026`).
+4. **Execute:** The executor runs the bound computation and returns an evidence receipt (e.g., job ID, executed SQL/script, and result set).
+5. **Attest:** The agent or system runs the deterministic (no-LLM) attester script over the receipt to verify that the query executed matches the sanctioned computation without unauthorized modifications.
+6. **Gate:** The system surfaces the verified result or blocks stale/failing computations.
+
+#### Verification vs. Attestation
+
+It is crucial to distinguish between doc-level verification and runtime attestation:
+* **Doc-Level Verification (`verified`):** Confirms that the metric definition matches business policy (stored in the document bundle, updated periodically).
+* **Runtime Attestation (`attester`):** Confirms that a specific runtime execution produced the value correctly (per-call, evaluating an un-stored execution receipt).
+
 > [!TIP]
 > **Opportunistic v0.2 Upgrade (The Token Protection Rule):**
 > Downstream projects and baseline repositories should upgrade from `okf_version: 0.1` to `okf_version: 0.2` **opportunistically** (when modifying, verifying, or synthesizing files) rather than triggering mass corpus rewrites.
