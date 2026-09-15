@@ -90,5 +90,11 @@ topics: ["readthedocs", "configuration", "testing"]
 - `[x]` Enhanced `.agents/skills/okf-v02-adoption-engineer/SKILL.md` to support `Attested Computation` concept classification.
 - `[x]` Registered Attested Computations across navigation layers (`mkdocs.yml`, `docs/SUMMARY.md`, `SUMMARY.md`, `llms.txt`, `START-HERE.md`, `docs/explanation/index.md`).
 - `[x]` Added unit test suite `tests/test_attested_computations_okf.py` (100% pass rate).
+- `[x]` Enforce kebab-case `name` attribute across all 45 `.agents/skills/*/SKILL.md` frontmatter headers.
+- `[x]` Update `tools/apply_okf_frontmatter.py` (`normalise_metadata` and `process_file`) to derive skill `name` directly from `.agents/skills` parent directory.
+- `[x]` Add `SkillNameFrontmatterTests` in `tests/test_okf_frontmatter_bom_reorder.py` to validate kebab-case skill names.
+- `[x]` Resolve PR review comments (#5679502188, #5680362256, #5680653968) on PR #94.
+- `[x]` Update Jules PR history ledger (`.agents/brain/jules_pr_history.md`) with PR #94.
+- `[x]` Execute End-of-Day (EOD) Hibernation and palace synchronization (`.agents/brain/walkthrough.md`, `checkpoint_summary.txt`, `task.md`).
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-15*
