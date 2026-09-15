@@ -186,8 +186,11 @@ def normalise_metadata(
     require_okf_v02=False,
     filepath=None,
 ):
-    """
-    Normalises the mandatory OKF metadata fields and returns updated_frontmatter.
+    """Normalize required OKF metadata and return the resulting mapping.
+
+    Skill files receive a ``name`` derived from the parent directory. ``filepath``
+    supplies the on-disk path for that derivation; ``rel_path`` is the fallback.
+    Strict v0.2 mode raises ``ValueError`` for conflicting version metadata.
     """
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
@@ -371,8 +374,9 @@ def validate_okf_v02_metadata(metadata, rel_path):
 
 
 def serialise_frontmatter(updated_frontmatter, rel_path, filename):
-    """
-    Serialises the frontmatter keeping the specific order of keys.
+    """Serialize metadata with fixed key ordering into an OKF frontmatter block.
+
+    For ``SKILL.md``, ``name`` follows ``topics``.
     """
     special_reorder = filename == "SKILL.md"
     if special_reorder:
@@ -430,9 +434,13 @@ def atomic_replace_file(filepath, new_content, filename):
 
 # Main process_file implementation
 def process_file(filepath, root_dir, *, dry_run=False, require_okf_v02=False):
-    """
-    Orchestrates the compliance flow for a single Markdown file.
-    Note: dry_run is keyword-only.
+    """Normalize one Markdown file's OKF frontmatter.
+
+    The function removes BOMs and atomically replaces changed files. Skill names
+    come from their parent directories. Dry-run mode reports needed changes
+    without writing. The return value indicates whether content changed or needs
+    changing. Parsing and strict validation errors propagate as ``ValueError``;
+    file access errors propagate as ``OSError``.
     """
     rel_path = os.path.relpath(filepath, root_dir).replace('\\', '/')
     filename = os.path.basename(filepath)
