@@ -1,47 +1,30 @@
 ---
 okf_version: 0.2
-spec_version: "0.2"
 type: agent_skill
 title: "🌐 OKF v0.2 Migration & Compliance Standard Skill"
 timestamp: "2026-09-02T23:40:00Z"
 description: "Seamlessly converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
 topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
 name: okf-v02-adoption-engineer
+spec_version: "0.2"
 version: "1.2.0"
 author: AI Workspace Assistant
 status: stable
 stale_after: "2027-09-02"
-sources:
-  - id: google_okf_spec
-    title: Google Cloud Knowledge Catalog - OKF v0.2 Specification
-    author: Google Cloud Platform
-    url: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md'
-generated:
-  by: Workspace AI Assistant
-  timestamp: '2026-09-02T23:40:00Z'
-verified:
-  by: Repository Maintainer
-  timestamp: '2026-09-02T23:45:00Z'
-inputs:
-  document_type:
-    default: guide
-    description: 'The OKF concept type mapping (e.g. guide, playbook, policy, api, agent_skill, architecture, Attested Computation).'
-    type: string
-  stale_duration_days:
-    default: 180
-    description: Number of days before the document requires human review.
-    type: integer
-  target_file_content:
-    description: The raw Markdown prose or legacy OKF v0.1 content requiring conversion or validation.
-    required: true
-    type: string
-outputs:
-  compliant_markdown:
-    description: The fully transformed Markdown file containing validated OKF v0.2 compliant YAML frontmatter.
-    type: string
-  validation_report:
-    description: A summary highlighting structural metadata adjustments or missing trust signals.
-    type: string
+sources: [{author: Google Cloud Platform, id: google_okf_spec, title: Google Cloud Knowledge
+    Catalog - OKF v0.2 Specification, url: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md'}]
+generated: {by: Workspace AI Assistant, timestamp: '2026-09-02T23:40:00Z'}
+verified: {by: Repository Maintainer, timestamp: '2026-09-02T23:45:00Z'}
+inputs: {document_type: {default: guide, description: 'The OKF concept type mapping (e.g.
+      guide, playbook, policy, api, agent_skill, architecture, Attested Computation).',
+    type: string}, stale_duration_days: {default: 180, description: Number of days
+      before the document requires human review., type: integer}, target_file_content: {
+    description: The raw Markdown prose or legacy OKF v0.1 content requiring conversion
+      or validation., required: true, type: string}}
+outputs: {compliant_markdown: {description: The fully transformed Markdown file containing
+      validated OKF v0.2 compliant YAML frontmatter., type: string}, validation_report: {
+    description: A summary highlighting structural metadata adjustments or missing
+      trust signals., type: string}}
 ---
 ## 🌐 OKF v0.2 Migration & Compliance Standard Skill (`okf-v02-adoption-engineer`)
 

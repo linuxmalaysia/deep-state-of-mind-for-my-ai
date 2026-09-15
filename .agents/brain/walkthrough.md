@@ -316,6 +316,23 @@ To transform AI-driven analytics and telemetry queries from black-box assumption
 
 > **Attested Computations Adopted: Created docs/explanation/attested-computations-okf.md, updated adoption guides, skills, and sitemaps for OKF v0.2 Attested Computations, and verified 100% test suite pass rate.**
 
+## 🏁 Session Anchor: 2026-09-15 — Kebab-Case Skill Name Enforcements & EOD Hibernation
+
+- Standardised all 45 `.agents/skills/*/SKILL.md` files to contain a kebab-case `name` frontmatter attribute matching their parent directory name, adhering to OpenViking and Warp skills specifications.
+- Updated `tools/apply_okf_frontmatter.py` (`normalise_metadata` and `process_file`) to accept `filepath` and derive skill `name` directly from the parent directory for all files under `.agents/skills`.
+- Added `SkillNameFrontmatterTests` in `tests/test_okf_frontmatter_bom_reorder.py` to validate kebab-case skill names matching parent directories across all 45 skill files.
+- Resolved and replied to all PR review comments (#5679502188, #5680362256, #5680653968) on PR #94.
+- Verified 100% test pass rate across test suite (**894 passed, 1 skipped**).
+- Appended EOD Palace Sync updates to `.agents/brain/` (`walkthrough.md`, `checkpoint_summary.txt`, `task.md`, `jules_pr_history.md`).
+
+### Underlying Rationale
+
+To ensure complete compliance with OpenViking and Warp skill specifications across all 45 skills, enforce automated frontmatter normalization for skills, and maintain absolute cognitive continuity across PRs and sessions.
+
+### Kebab-Case Skill Name Mental Anchor
+
+> **EOD Hibernation Complete: Enforced kebab-case skill name frontmatter attribute across all 45 skills, updated apply_okf_frontmatter.py tooling and unit tests, resolved PR review comments, and verified 100% test suite pass rate.**
+
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

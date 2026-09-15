@@ -5,6 +5,7 @@ title: sod-palace-sync
 timestamp: "2026-06-19T14:00:00Z"
 description: "The Reanimation (Start of Day) ritual to load the workspace context and establish the day's tasks."
 topics: ["sod", "palace", "sync", "git", "ritual"]
+name: sod-palace-sync
 ---
 # 🌅 SOD Palace Sync (Reanimation)
 

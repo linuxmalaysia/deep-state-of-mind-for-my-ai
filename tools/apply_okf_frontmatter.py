@@ -184,6 +184,7 @@ def normalise_metadata(
     filename,
     *,
     require_okf_v02=False,
+    filepath=None,
 ):
     """
     Normalises the mandatory OKF metadata fields and returns updated_frontmatter.
@@ -238,6 +239,19 @@ def normalise_metadata(
         'timestamp': timestamp,
         'topics': topics
     }
+
+    # Always derive 'name' from the skill file's parent directory for skill files under .agents/skills
+    if ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):
+        if filepath:
+            name = os.path.basename(os.path.dirname(os.path.abspath(filepath)))
+        else:
+            parts = rel_path.split('/')
+            if len(parts) >= 2:
+                name = parts[-2]
+            else:
+                name = os.path.basename(os.path.dirname(os.path.abspath(rel_path)))
+        if name:
+            updated_frontmatter['name'] = name
 
     # Preserve other fields
     for k, v in existing_frontmatter.items():
@@ -362,7 +376,7 @@ def serialise_frontmatter(updated_frontmatter, rel_path, filename):
     """
     special_reorder = filename == "SKILL.md"
     if special_reorder:
-        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics']
+        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics', 'name']
     else:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
 
@@ -436,6 +450,7 @@ def process_file(filepath, root_dir, *, dry_run=False, require_okf_v02=False):
         rel_path,
         filename,
         require_okf_v02=require_okf_v02,
+        filepath=filepath,
     )
     if require_okf_v02:
         validate_okf_v02_metadata(updated_frontmatter, rel_path)

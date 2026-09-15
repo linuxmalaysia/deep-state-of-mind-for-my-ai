@@ -5,6 +5,7 @@ title: forensic-log-audit
 timestamp: "2026-06-19T14:00:00Z"
 description: "Scrapes raw JSONL transcripts to recover exact commands from historical conversations."
 topics: ["audit", "logs", "forensic", "security", "analysis"]
+name: forensic-log-audit
 tags: ["audit", "logs", "jsonl"]
 ---
 # forensic-log-audit

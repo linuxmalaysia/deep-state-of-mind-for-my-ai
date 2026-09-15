@@ -5,6 +5,7 @@ title: ssh-passwordless-setup
 timestamp: "2026-06-19T14:00:00Z"
 description: "Orchestrates SSH jump configurations for Linux servers."
 topics: ["ssh", "passwordless", "ansible", "keys", "setup"]
+name: ssh-passwordless-setup
 tags: ["ssh", "auth", "linux"]
 ---
 # ssh-passwordless-setup
