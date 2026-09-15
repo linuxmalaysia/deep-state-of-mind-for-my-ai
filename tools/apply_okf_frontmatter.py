@@ -240,8 +240,8 @@ def normalise_metadata(
         'topics': topics
     }
 
-    # Always derive 'name' from the skill file's parent directory for skill files
-    if filename == "SKILL.md" or ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):
+    # Always derive 'name' from the skill file's parent directory for skill files under .agents/skills
+    if ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):
         if filepath:
             name = os.path.basename(os.path.dirname(os.path.abspath(filepath)))
         else:
