@@ -240,18 +240,16 @@ def normalise_metadata(
         'topics': topics
     }
 
-    # Populate/preserve 'name' in frontmatter for skill files
+    # Always derive 'name' from the skill file's parent directory for skill files
     if filename == "SKILL.md" or ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):
-        name = existing_frontmatter.get('name')
-        if not name:
-            if filepath:
-                name = os.path.basename(os.path.dirname(os.path.abspath(filepath)))
+        if filepath:
+            name = os.path.basename(os.path.dirname(os.path.abspath(filepath)))
+        else:
+            parts = rel_path.split('/')
+            if len(parts) >= 2:
+                name = parts[-2]
             else:
-                parts = rel_path.split('/')
-                if len(parts) >= 2:
-                    name = parts[-2]
-                else:
-                    name = os.path.basename(os.path.dirname(os.path.abspath(rel_path)))
+                name = os.path.basename(os.path.dirname(os.path.abspath(rel_path)))
         if name:
             updated_frontmatter['name'] = name
 
