@@ -184,6 +184,7 @@ def normalise_metadata(
     filename,
     *,
     require_okf_v02=False,
+    filepath=None,
 ):
     """
     Normalises the mandatory OKF metadata fields and returns updated_frontmatter.
@@ -240,14 +241,17 @@ def normalise_metadata(
     }
 
     # Populate/preserve 'name' in frontmatter for skill files
-    if filename == "SKILL.md" or ".agents/skills/" in rel_path:
+    if filename == "SKILL.md" or ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):
         name = existing_frontmatter.get('name')
         if not name:
-            parts = rel_path.split('/')
-            if len(parts) >= 2:
-                name = parts[-2]
+            if filepath:
+                name = os.path.basename(os.path.dirname(os.path.abspath(filepath)))
             else:
-                name = os.path.basename(os.path.dirname(os.path.abspath(rel_path)))
+                parts = rel_path.split('/')
+                if len(parts) >= 2:
+                    name = parts[-2]
+                else:
+                    name = os.path.basename(os.path.dirname(os.path.abspath(rel_path)))
         if name:
             updated_frontmatter['name'] = name
 
@@ -448,6 +452,7 @@ def process_file(filepath, root_dir, *, dry_run=False, require_okf_v02=False):
         rel_path,
         filename,
         require_okf_v02=require_okf_v02,
+        filepath=filepath,
     )
     if require_okf_v02:
         validate_okf_v02_metadata(updated_frontmatter, rel_path)
