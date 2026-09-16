@@ -4463,6 +4463,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#12-enforce-kebab-case-skill-name-attribute-frontmatter-tooling-pr-94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Enforce Kebab-Case Skill Name Attribute &amp; Frontmatter Tooling (PR #94)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4639,6 +4650,19 @@
 <li><strong>Date:</strong> 2026-08-21</li>
 <li><strong>Branch:</strong> <code>coderabbitai/utg/827b6f1</code></li>
 <li><strong>Objective:</strong> Automated test suite additions for PR #77 changes.</li>
+</ul>
+<h3 id="12-enforce-kebab-case-skill-name-attribute-frontmatter-tooling-pr-94">12. Enforce Kebab-Case Skill Name Attribute &amp; Frontmatter Tooling (PR #94)</h3>
+<ul>
+<li><strong>Date:</strong> 2026-09-15</li>
+<li><strong>Branch:</strong> <code>jules-kebab-case-skill-name</code></li>
+<li><strong>Objective:</strong> Enforce kebab-case <code>name</code> attribute in YAML frontmatter across all <code>.agents/skills/*/SKILL.md</code> files matching their parent directory name, update OKF frontmatter compliance tooling (<code>tools/apply_okf_frontmatter.py</code>), and add unit test assertions (<code>SkillNameFrontmatterTests</code>).</li>
+<li><strong>Technical Implementation:</strong></li>
+<li>Standardised all 45 <code>.agents/skills/*/SKILL.md</code> frontmatter headers with a <code>name:</code> field matching their parent directory in kebab-case.</li>
+<li>Updated <code>normalise_metadata</code> in <code>tools/apply_okf_frontmatter.py</code> to accept <code>filepath</code> and derive skill <code>name</code> directly from <code>os.path.basename(os.path.dirname(os.path.abspath(filepath)))</code> for files under <code>.agents/skills</code>.</li>
+<li>Added <code>SkillNameFrontmatterTests</code> in <code>tests/test_okf_frontmatter_bom_reorder.py</code> asserting that all 45 skill frontmatters contain a valid kebab-case <code>name</code> matching their parent directory name.</li>
+<li><strong>Comments &amp; Reviews:</strong></li>
+<li><strong>CodeRabbit AI:</strong> Requested deriving skill <code>name</code> directly from <code>filepath</code> in <code>normalise_metadata</code> and scoping derivation strictly to <code>.agents/skills</code> paths.</li>
+<li><strong>Jules' Response:</strong> Updated <code>tools/apply_okf_frontmatter.py</code> accordingly and replied to all comments.</li>
 </ul>
 <hr />
 <h2 id="core-engineering-resolutions-algorithmic-milestones">🌗 Core Engineering Resolutions &amp; Algorithmic Milestones</h2>

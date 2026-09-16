@@ -1,11 +1,11 @@
-[MENTAL ANCHOR - 2026-09-06]
+[MENTAL ANCHOR - 2026-09-15]
 Project: Deep State of Mind (DSOM) For My AI Protocol
-Objective: OKF v0.2 Trust Signals, System Protocol /learn Ingestion Command, and markdownlint-cli Pinning
+Objective: Kebab-case Skill Name Enforcements & EOD Hibernation Ritual (PR #94)
 
-Active Phase: Completed OKF v0.2 adoption across skills, /learn protocol integration, markdownlint-cli pinning, and PR review comments.
-Walkthrough Anchor: 2026-09-06 Session Anchor appended in .agents/brain/walkthrough.md.
-Task Status: All tasks completed and verified with 100% test suite pass rate (811 passed, 72 skipped).
+Active Phase: Completed kebab-case name frontmatter attribute enforcement across all 45 skills, updated apply_okf_frontmatter.py tooling to derive skill names from parent directories under .agents/skills, added SkillNameFrontmatterTests unit tests, resolved PR #94 review comments, and completed EOD Hibernation.
+Walkthrough Anchor: 2026-09-15 Session Anchor appended in .agents/brain/walkthrough.md.
+Task Status: All PR tasks completed and verified with 100% test suite pass rate (894 passed, 1 skipped).
 
 Next Steps for Next Agent:
-- Resume from jules-1215476398369562552-7752609b or main.
-- All 811 unit tests are green.
+- PR #94 is fully validated and ready for merge into main/master branch.
+- All 894 unit tests are green.
