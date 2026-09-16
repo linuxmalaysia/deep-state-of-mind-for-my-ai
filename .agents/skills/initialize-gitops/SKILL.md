@@ -5,6 +5,7 @@ title: initialize-gitops
 timestamp: "2026-06-19T14:00:00Z"
 description: "Establishes the foundational GitOps repository, configures the .gitignore, and commits the Genesis DSOM architecture for a new project."
 topics: ["gitops", "init", "git", "sovereign", "setup"]
+name: initialize-gitops
 ---
 # 🐙 Initialize GitOps Skill
 

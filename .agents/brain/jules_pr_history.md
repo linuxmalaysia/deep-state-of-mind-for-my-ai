@@ -100,6 +100,18 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
 * **Branch:** `coderabbitai/utg/827b6f1`
 * **Objective:** Automated test suite additions for PR #77 changes.
 
+### 12. Enforce Kebab-Case Skill Name Attribute & Frontmatter Tooling (PR #94)
+* **Date:** 2026-09-15
+* **Branch:** `jules-kebab-case-skill-name`
+* **Objective:** Enforce kebab-case `name` attribute in YAML frontmatter across all `.agents/skills/*/SKILL.md` files matching their parent directory name, update OKF frontmatter compliance tooling (`tools/apply_okf_frontmatter.py`), and add unit test assertions (`SkillNameFrontmatterTests`).
+* **Technical Implementation:**
+  - Standardised all 45 `.agents/skills/*/SKILL.md` frontmatter headers with a `name:` field matching their parent directory in kebab-case.
+  - Updated `normalise_metadata` in `tools/apply_okf_frontmatter.py` to accept `filepath` and derive skill `name` directly from `os.path.basename(os.path.dirname(os.path.abspath(filepath)))` for files under `.agents/skills`.
+  - Added `SkillNameFrontmatterTests` in `tests/test_okf_frontmatter_bom_reorder.py` asserting that all 45 skill frontmatters contain a valid kebab-case `name` matching their parent directory name.
+* **Comments & Reviews:**
+  - **CodeRabbit AI:** Requested deriving skill `name` directly from `filepath` in `normalise_metadata` and scoping derivation strictly to `.agents/skills` paths.
+  - **Jules' Response:** Updated `tools/apply_okf_frontmatter.py` accordingly and replied to all comments.
+
 ---
 
 ## 🌗 Core Engineering Resolutions & Algorithmic Milestones

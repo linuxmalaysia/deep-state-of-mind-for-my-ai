@@ -5,8 +5,8 @@ title: "🧠 AI Hyperparameter Optimisation Expert Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Analyses, optimises, and debugs learning rates and hyperparameters in deep learning models across PyTorch and TensorFlow frameworks."
 topics: ["machine-learning", "hyperparameters", "optimisation", "pytorch", "tensorflow"]
-spec_version: "0.2"
 name: hyperparameter-tuning-expert
+spec_version: "0.2"
 version: "1.0.0"
 author: AI Assistant
 inputs: {framework: {default: PyTorch, description: 'The machine learning framework used (e.g.

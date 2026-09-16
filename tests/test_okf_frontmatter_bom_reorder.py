@@ -587,5 +587,34 @@ class UnlistedSkillReorderingTests(unittest.TestCase):
                 )
 
 
+class SkillNameFrontmatterTests(unittest.TestCase):
+    """Sanity checks for all skill files to verify presence of kebab-case name in frontmatter matching directory name."""
+
+    def test_skill_frontmatter_contains_valid_kebab_case_name(self):
+        all_files = _discover_all_md_files()
+        skill_files = [f for f in all_files if f.name == "SKILL.md" and ".agents/skills" in f.as_posix()]
+        self.assertGreaterEqual(len(skill_files), 45, "Expected at least 45 skill SKILL.md files")
+
+        for skill_path in skill_files:
+            relative = skill_path.relative_to(REPO_ROOT).as_posix()
+            dir_name = skill_path.parent.name
+            with self.subTest(path=relative):
+                content = _read_text_stripping_bom(skill_path)
+                raw, parsed = _extract_frontmatter_block(content)
+                self.assertIsNotNone(parsed, f"Expected parseable frontmatter in {relative}")
+                self.assertIn("name", parsed, f"Expected 'name:' field in {relative}")
+                name_val = parsed["name"]
+                self.assertIsInstance(name_val, str, f"'name' in {relative} must be a string")
+                self.assertEqual(
+                    name_val,
+                    dir_name,
+                    f"Skill name '{name_val}' in {relative} does not match directory name '{dir_name}'",
+                )
+                self.assertTrue(
+                    re.match(r"^[a-z0-9]+(-[a-z0-9]+)*$", name_val),
+                    f"Skill name '{name_val}' in {relative} must be in valid kebab-case",
+                )
+
+
 if __name__ == "__main__":
     unittest.main()
