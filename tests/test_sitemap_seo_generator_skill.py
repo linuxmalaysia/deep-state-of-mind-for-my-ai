@@ -238,7 +238,7 @@ class AgentsMdSkillRegistrationTests(unittest.TestCase):
 
     def test_skills_directory_count_updated_to_44(self):
         self.assertIn(
-            "`.agents/skills/` | OKF-compliant executable skill SOPs (44 skills).",
+            "`.agents/skills/` | OKF-compliant executable skill SOPs (46 skills).",
             self.content,
         )
 
