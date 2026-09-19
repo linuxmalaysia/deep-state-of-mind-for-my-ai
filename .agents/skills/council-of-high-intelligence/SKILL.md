@@ -19,7 +19,7 @@ tags: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]
 ## 1. Overview & Capability Scope
 The **Council of High Intelligence** skill orchestrates a structured, multi-persona deliberation workflow. Instead of relying on a single AI persona's output, this skill simulates a panel of specialized domain experts who independently evaluate a prompt, debate trade-offs, perform cross-examination, and reach a unified, resilient consensus decision.
 
-<Image src="image_agent_tag_3439772652216829028" alt="Multi-agent collaboration ecosystem workflow steps including Planning, Routing, Execution, Validation, and Optimization" caption="Five-stage multi-agent deliberation framework" />
+<Image src="image_agent_tag_3439772652216829028" alt="Multi-agent collaboration ecosystem workflow steps including Planning, Routing, Execution, Validation, and Optimisation" caption="Five-stage multi-agent deliberation framework" />
 
 ---
 
