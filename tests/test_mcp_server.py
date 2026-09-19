@@ -62,6 +62,14 @@ class McpServerResourceTests(unittest.TestCase):
         self.assertIn("Council Decision Record", res)
         self.assertIn(topic, res)
 
+    def test_run_council_rejects_absolute_output_path(self):
+        res = server.run_council(topic="Test", output_path="/tmp/evil_cdr.md")
+        self.assertIn("Error: Invalid output_path. Absolute paths are not permitted", res)
+
+    def test_run_council_rejects_parent_traversal_path(self):
+        res = server.run_council(topic="Test", output_path="../evil_cdr.md")
+        self.assertIn("Error: Invalid output_path. Parent directory traversal is not permitted", res)
+
 
 if __name__ == "__main__":
     unittest.main()

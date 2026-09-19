@@ -3,8 +3,8 @@ Unit tests for the Native Python Council Emulator (tools/council_emulator.py).
 
 Verifies that:
 1. `get_timestamp()` produces valid ISO 8601 UTC timestamp strings.
-2. `evaluate_topic()` produces structured persona evaluations across all modes ('quick', 'full', 'duo', 'triad').
-3. `generate_cdr()` formats valid OKF v0.2 frontmatter and Markdown sections.
+2. `evaluate_topic()` produces structured persona evaluations across all modes ('quick', 'full', 'duo', 'triad') and raises ValueError for invalid mode.
+3. `generate_cdr()` formats valid OKF v0.2 frontmatter YAML and Markdown sections.
 4. `run_council()` executes deliberation and optionally writes CDR artifacts to disk.
 5. `cmd_search()` queries Council Decision Record documents.
 6. CLI `main()` parses arguments cleanly via argparse.
@@ -63,6 +63,11 @@ class EvaluateTopicTests(unittest.TestCase):
         self.assertEqual(len(res["perspectives"]), 3)
         self.assertEqual(res["perspectives"]["Domain Specialist"]["title"], "Cybersecurity Specialist")
 
+    def test_evaluate_topic_invalid_mode_raises_value_error(self):
+        with self.assertRaises(ValueError) as cm:
+            council_emulator.evaluate_topic("Invalid Mode Test", mode="unsupported_mode")
+        self.assertIn("Invalid mode 'unsupported_mode'", str(cm.exception))
+
     def test_evaluate_topic_includes_debate_and_verdict(self):
         res = council_emulator.evaluate_topic("FastMCP Tool Exposure", context="Production SLA required")
         self.assertTrue(len(res["debate_points"]) >= 3)
@@ -81,14 +86,22 @@ class GenerateCdrTests(unittest.TestCase):
         cdr_md = council_emulator.generate_cdr(topic, evaluation, timestamp="2026-09-19T12:00:00Z")
 
         self.assertTrue(cdr_md.startswith("---"))
-        self.assertIn('okf_version: "0.2"', cdr_md)
-        self.assertIn('type: "documentation"', cdr_md)
-        self.assertIn(f'title: "Council Decision Record: {topic}"', cdr_md)
-        self.assertIn("# Council Decision Record (CDR): Adopting FastMCP Server", cdr_md)
-        self.assertIn("## 1. Executive Summary", cdr_md)
-        self.assertIn("## 2. Persona Perspectives Matrix", cdr_md)
-        self.assertIn("## 3. Deliberation & Trade-off Debate", cdr_md)
-        self.assertIn("## 4. Final Council Verdict & Action Plan", cdr_md)
+        parts = cdr_md.split("---", 2)
+        self.assertEqual(len(parts), 3)
+
+        meta = yaml.safe_load(parts[1])
+        self.assertEqual(meta["okf_version"], "0.2")
+        self.assertEqual(meta["type"], "documentation")
+        self.assertEqual(meta["title"], f"Council Decision Record: {topic}")
+        self.assertEqual(meta["timestamp"], "2026-09-19T12:00:00Z")
+        self.assertEqual(meta["spec_version"], "0.2")
+
+        body = parts[2]
+        self.assertIn("# Council Decision Record (CDR): Adopting FastMCP Server", body)
+        self.assertIn("## 1. Executive Summary", body)
+        self.assertIn("## 2. Persona Perspectives Matrix", body)
+        self.assertIn("## 3. Deliberation & Trade-off Debate", body)
+        self.assertIn("## 4. Final Council Verdict & Action Plan", body)
 
     def test_generate_cdr_frontmatter_valid_yaml(self):
         topic = "Quadlet Container Deployment"
@@ -155,11 +168,21 @@ class MainCliTests(unittest.TestCase):
             self.assertIn("Council Decision Record", output)
             self.assertIn("CI Workflow Hardening", output)
 
+    def test_cli_output_flag_empty_value_generates_slug_path(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            fake_dest = pathlib.Path(tmpdir) / "docs" / "decisions" / "cdr-ci-workflow-hardening.md"
+            with mock.patch.object(council_emulator, "REPO_ROOT", pathlib.Path(tmpdir)):
+                with mock.patch.object(council_emulator, "DECISIONS_DIR", pathlib.Path(tmpdir) / "docs" / "decisions"):
+                    with mock.patch("sys.argv", ["council_emulator.py", "--topic", "CI Workflow Hardening", "-o"]):
+                        with contextlib.redirect_stdout(io.StringIO()):
+                            council_emulator.main()
+            self.assertTrue(fake_dest.is_file())
+
     def test_cli_search_argument(self):
         with mock.patch("sys.argv", ["council_emulator.py", "--search", "nonexistent_query_xyz"]):
-            with contextlib.redirect_stdout(io.StringIO()) as stdout:
+            with contextlib.redirect_stderr(io.StringIO()) as stderr:
                 council_emulator.main()
-            output = stdout.getvalue()
+            output = stderr.getvalue()
             self.assertIn("No Council Decision Records matched query", output)
 
 

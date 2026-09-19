@@ -283,6 +283,19 @@ def run_council(
     """
     if not HAS_COUNCIL:
         return "Error: council_emulator module not available."
+
+    if output_path:
+        out_p = Path(output_path)
+        if out_p.is_absolute():
+            return "Error: Invalid output_path. Absolute paths are not permitted in MCP mode."
+        if ".." in out_p.parts:
+            return "Error: Invalid output_path. Parent directory traversal is not permitted."
+        resolved_path = (PROJECT_ROOT / out_p).resolve()
+        try:
+            resolved_path.relative_to(PROJECT_ROOT)
+        except ValueError:
+            return "Error: Invalid output_path. Path must reside within the repository root."
+
     return council_run_fn(topic=topic, context=context, output_path=output_path, mode=mode, triad=triad)
 
 if __name__ == "__main__":
