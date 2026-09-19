@@ -2,7 +2,7 @@
 okf_version: 0.1
 type: dsom_state
 title: DSOM Current State
-timestamp: "2026-09-16T08:22:08Z"
+timestamp: "2026-09-19T10:47:28Z"
 topics: ["state", "memory", "compaction"]
 description: "Condensed, high-level operational state of the DSOM protocol and current projects. Updated automatically by the PR state sync workflow."
 ---
@@ -17,11 +17,12 @@ This file maintains a condensed, token-efficient representation of the project's
 
 ## Condensed History
 
+- [Auto-Sync] Modified files: .agents/brain/palace_registry.md (+1, -1), .agents/brain/task.md (+6, -1), .agents/brain/walkthrough.md (+20, -13), START-HERE.md (+11, -0), SUMMARY.md (+1, -0), docs/SUMMARY.md (+1, -0), docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md (+238, -0), docs/sitemap.txt (+6, -0), docs/sitemap.xml (+604, -580), llms.txt (+1, -0), mkdocs.yml (+1, -0), sitemap.txt (+6, -0), sitemap.xml (+604, -580), tests/test_readthedocs_ledger_sync.py (+1, -1).
 - [Auto-Sync] Modified files: .agents/brain/checkpoint_summary.txt (+7, -7), .agents/brain/jules_pr_history.md (+12, -0), .agents/brain/task.md (+7, -1), .agents/brain/walkthrough.md (+17, -0), .agents/skills/agent-plugin-packager/SKILL.md (+1, -1), .agents/skills/context7-indexer/SKILL.md (+1, -1), .agents/skills/dsom-knowledge-ingester/SKILL.md (+7, -12), .agents/skills/dsom-release-manager/SKILL.md (+1, -0), .agents/skills/dsom-state-sync/SKILL.md (+1, -0), .agents/skills/dsom-technical-book-compiler/SKILL.md (+1, -1), .agents/skills/dsom-token-calculator/SKILL.md (+1, -0), .agents/skills/eod-palace-sync/SKILL.md (+1, -0), .agents/skills/forensic-log-audit/SKILL.md (+1, -0), .agents/skills/hyperparameter-tuning-expert/SKILL.md (+1, -1), .agents/skills/initialize-gitops/SKILL.md (+1, -0), .agents/skills/jules-antigravity-sync/SKILL.md (+1, -1), .agents/skills/mintlify-docs-compiler/SKILL.md (+1, -1), .agents/skills/okf-frontmatter-injector/SKILL.md (+1, -0), .agents/skills/okf-v02-adoption-engineer/SKILL.md (+15, -32), .agents/skills/persona-injector/SKILL.md (+1, -0), .agents/skills/sod-palace-sync/SKILL.md (+1, -0), .agents/skills/ssh-passwordless-setup/SKILL.md (+1, -0), .github/workflows/docs-ci.yml (+0, -1), tests/test_okf_frontmatter_bom_reorder.py (+29, -0), tests/test_readthedocs_ledger_sync.py (+1, -1), tools/apply_okf_frontmatter.py (+16, -1).
 - [Auto-Sync] Modified files: package-lock.json (+57, -2815), package.json (+1, -1).
 - [Auto-Sync] Modified files: .agents/brain/task.md (+6, -0), .agents/brain/walkthrough.md (+17, -0), .agents/skills/okf-v02-adoption-engineer/SKILL.md (+2, -3), START-HERE.md (+1, -0), SUMMARY.md (+1, -0), docs/OKF-ADOPTION-GUIDE.md (+29, -0), docs/SUMMARY.md (+1, -0), docs/explanation/attested-computations-okf.md (+150, -0), docs/explanation/index.md (+1, -0), llms.txt (+1, -0), mkdocs.yml (+1, -0), references/OKF-ADOPTION-GUIDE.md (+29, -0), tests/test_attested_computations_okf.py (+87, -0), tests/test_okf_adoption_guide_cross_skill_sync.py (+0, -3), tests/test_readthedocs_ledger_sync.py (+0, -4).
 - [Auto-Sync] Modified files: package-lock.json (+193, -271), package.json (+1, -1).
-- [Auto-Sync] Modified files: .agents/brain/walkthrough.md (+28, -17), .agents/skills/dsom-knowledge-ingester/SKILL.md (+4, -0), .agents/skills/okf-v02-adoption-engineer/SKILL.md (+4, -2), tests/test_okf_adoption_guide_cross_skill_sync.py (+18, -2), tests/test_okf_quoting.py (+113, -1), tests/test_readthedocs_ledger_sync.py (+8, -3), tools/apply_okf_frontmatter.py (+139, -9).
+
 
 
 
