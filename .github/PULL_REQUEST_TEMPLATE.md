@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: PULL_REQUEST_TEMPLATE
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for PULL_REQUEST_TEMPLATE.md."
 resource: "file:///.github/PULL_REQUEST_TEMPLATE.md"
 ---

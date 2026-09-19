@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "How-To: Operate the OpenWiki Emulator"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "openwiki", "emulator"]
+spec_version: "0.2"
 ---
 # Operate the OpenWiki emulator
 

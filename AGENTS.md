@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "The Agent Registry & DSOM Gateway"
 timestamp: "2026-08-08T12:00:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Sovereign entry point instructing AI Agents to look up rules and memory under .agents/."
 resource: "file:///AGENTS.md"
 ---

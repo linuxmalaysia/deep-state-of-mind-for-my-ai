@@ -4,6 +4,7 @@ type: governance
 title: "Technical Book Design & PDF Compilation Master Prompt Guide"
 timestamp: "2026-09-04T21:15:00Z"
 topics: ["pandoc", "pdf", "handbook", "prompt", "print-optimized", "mermaid", "ebook", "diataxis"]
+spec_version: "0.2"
 description: "Master operational prompt and technical blueprint for compiling multi-file Markdown documentation suites into publication-grade, print-optimized PDF, HTML, EPUB, and ODT handbooks using Pandoc, Headless Chromium, and the Terminal & Cloud design framework."
 status: stable
 stale_after: "2027-09-04"

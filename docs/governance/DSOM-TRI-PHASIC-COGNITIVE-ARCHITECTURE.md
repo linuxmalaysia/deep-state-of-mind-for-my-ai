@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: governance_protocol
 title: "🧠 The Tri-Phasic Mind: DSOM Cognitive Architecture and Functional Subsystems"
 timestamp: "2026-08-09T01:15:00Z"
 topics: ["dsom", "governance", "protocol", "cognitive", "architecture"]
+spec_version: "0.2"
 description: "Production-ready blueprint detailing the Tri-Phasic Mind model and functional subsystems integrated within the DSOM framework."
 resource: "file:///docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"
 ---

@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "📚 Knowledge Base Templates Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Provides reusable templates and structural frameworks for generating comprehensive internal wikis, concept maps, and module documentation across single projects and monorepos."
 topics: ["knowledge-base", "wiki", "templates", "documentation-structure", "dsom"]
 name: knowledge-base-templates
+spec_version: "0.2"
 ---
 # 📚 Knowledge Base Templates Skill (`knowledge-base-templates`)
 

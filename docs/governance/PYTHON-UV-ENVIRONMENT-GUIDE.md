@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: Python uv Environment Guide
 timestamp: "2026-07-12T07:50:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Governance policy and operational standard for managing isolated Python environments using the uv package manager within the DSOM framework."
 resource: "file:///docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md"
 ---

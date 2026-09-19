@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "DSOM vs. LLM WIKI: Comparative Analysis & Adoption Strategy"
 timestamp: "2026-08-05T22:23:51Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Analysis of Andrej Karpathy's LLM WIKI concept and how it maps to DSOM architecture."
 ---
 # 🧠 DSOM vs. LLM WIKI: Comparative Analysis & Adoption Strategy

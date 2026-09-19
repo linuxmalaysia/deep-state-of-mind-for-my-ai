@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "🏛️ Architecture Decision Records Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Writes and maintains Architecture Decision Records (ADRs) following standard MADR formats to document significant technical choices, tradeoffs, and consequences."
 topics: ["adr", "architecture", "decision-records", "madr", "dsom"]
 name: architecture-decision-records
+spec_version: "0.2"
 ---
 # 🏛️ Architecture Decision Records Skill (`architecture-decision-records`)
 

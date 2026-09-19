@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: document
 title: DSOM Bootstrapping Guide
 timestamp: "2026-08-05T22:23:51Z"
 topics: ["bootstrap", "onboarding", "baseline", "dsom", "setup"]
+spec_version: "0.2"
 category: blueprint
 description: "Agent-readable instructions for porting the DSOM architecture from the baseline repository to a new or existing workspace."
 ---

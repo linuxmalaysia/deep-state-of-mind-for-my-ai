@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: node-proposal-formatter
 timestamp: "2026-08-05T22:23:51Z"
 description: "Compiles a markdown proposal document into a professionally formatted DOCX file using Node.js and the docx npm package."
 topics: ["node", "docx", "proposal", "document", "formatter"]
 name: node-proposal-formatter
+spec_version: "0.2"
 ---
 # node-proposal-formatter
 

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Explanation: Diátaxis Framework Adoption"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "explanation", "diataxis", "documentation"]
+spec_version: "0.2"
 ---
 # Diátaxis framework adoption in DSOM
 

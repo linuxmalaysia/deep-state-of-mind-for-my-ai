@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "📄 DOCX Document Processor Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Comprehensive document creation, editing, and analysis for .docx Word files with support for tracked changes, comments, formatting preservation, and text extraction."
 topics: ["docx", "word", "document-processing", "pandoc", "dsom"]
 name: docx
+spec_version: "0.2"
 ---
 # 📄 DOCX Document Processor Skill (`docx`)
 

@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: ssh-passwordless-setup
 timestamp: "2026-06-19T14:00:00Z"
 description: "Orchestrates SSH jump configurations for Linux servers."
 topics: ["ssh", "passwordless", "ansible", "keys", "setup"]
 name: ssh-passwordless-setup
+spec_version: "0.2"
 tags: ["ssh", "auth", "linux"]
 ---
 # ssh-passwordless-setup

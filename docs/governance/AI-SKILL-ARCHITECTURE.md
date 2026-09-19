@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "AI Skill Architecture: Progressive Disclosure & Semantic Routing"
 timestamp: "2026-07-11T23:28:03Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Governance policy defining how AI agents discover, trigger, and execute modular skills as operational manuals, utilising token optimisation."
 resource: "file:///docs/governance/AI-SKILL-ARCHITECTURE.md"
 ---

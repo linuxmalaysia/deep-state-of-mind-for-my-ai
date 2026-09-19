@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "The Deep State of Mind (DSOM) Framework: Defense-in-Depth Architecture"
 timestamp: "2026-07-12T06:52:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Architectural deconstruction of the DSOM repository mapping the file structure and payload signatures to its core Defense-in-Depth design principles and AIOps integration."
 resource: "file:///docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md"
 ---

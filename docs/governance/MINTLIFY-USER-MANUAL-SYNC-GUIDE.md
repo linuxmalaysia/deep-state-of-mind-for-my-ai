@@ -4,6 +4,7 @@ type: governance
 title: "Mintlify User Manual Architecture & One-Way Sync Guide"
 timestamp: "2026-08-23T07:02:00Z"
 topics: ["mintlify", "user-manual", "sync", "mdx", "safety-guards", "automation", "gitops"]
+spec_version: "0.2"
 sources: [{title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///tools/build_mintlify_mdx.py", "file:///scripts/sync_docs.py", "file:///.github/workflows/sync-docs.yml", "file:///.agents/skills/mintlify-docs-compiler/SKILL.md"]
 generated: human-and-ai
 verified: verified

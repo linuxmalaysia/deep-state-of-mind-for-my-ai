@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: Optimizing OKF for AI Agents - Deep Research
 timestamp: "2026-07-04T09:40:29Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for Optimising OKF for AI Agents - Deep Research - 20260704.md."
 resource: "file:///references/Optimizing OKF for AI Agents - Deep Research - 20260704.md"
 ---

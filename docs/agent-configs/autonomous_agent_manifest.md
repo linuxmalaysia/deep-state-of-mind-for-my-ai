@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "DSOM Autonomous Agent Manifest (v1.0)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for autonomous_agent_manifest.md."
 resource: "file:///docs/agent-configs/autonomous_agent_manifest.md"
 ---

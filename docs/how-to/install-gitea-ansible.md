@@ -4,6 +4,7 @@ type: documentation
 title: "How-To: Deploy Sovereign Gitea via Automated Ansible Playbook"
 timestamp: "2026-08-20T23:00:00Z"
 topics: ["dsom", "how-to", "gitea", "ansible", "playbook", "gitops", "https"]
+spec_version: "0.2"
 description: "Step-by-step instructions for automated deployment of Gitea over HTTPS using rootless Podman and Ansible playbooks with high-entropy credential vaulting and 5-year TLS certificate generation."
 resource: "file:///docs/how-to/install-gitea-ansible.md"
 sources: ["https://linuxmalaysia.github.io/podman-elastic-stack-ai/GITEA_GUIDE/"]

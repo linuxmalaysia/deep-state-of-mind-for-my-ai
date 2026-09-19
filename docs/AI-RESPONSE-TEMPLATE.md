@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🎭 DSOM AI Response Template (v1.1)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for AI-RESPONSE-TEMPLATE.md."
 resource: "file:///docs/AI-RESPONSE-TEMPLATE.md"
 ---

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: Instructions for AI agents and humans
 timestamp: "2026-09-06T03:26:13Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 ---
 # Instructions for AI agents and humans
 

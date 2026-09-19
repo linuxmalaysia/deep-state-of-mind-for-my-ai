@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: Explanation Index
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "documentation", "diataxis", "explanation"]
+spec_version: "0.2"
 ---
 # DSOM explanation and architecture
 

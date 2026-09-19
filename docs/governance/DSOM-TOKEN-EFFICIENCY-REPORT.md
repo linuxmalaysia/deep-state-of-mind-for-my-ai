@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "DSOM Token Efficiency & Integration Report"
 timestamp: "2026-07-18T09:15:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Comprehensive audit report detailing the 96% token reduction achieved by the DSOM Protocol and recent integration milestones."
 ---
 # DSOM Token Efficiency & Integration Report

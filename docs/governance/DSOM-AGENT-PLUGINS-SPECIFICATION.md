@@ -4,6 +4,7 @@ type: governance
 title: "Agent Plugins 1.0.0 Specification & DSOM Protocol Integration"
 timestamp: "2026-08-22T19:45:00Z"
 topics: ["agent-plugins", "specification", "mcp", "skills", "interoperability", "dsom"]
+spec_version: "0.2"
 sources: [{title: Agent Plugins Specification 1.0.0, url: 'https://agent-plugins.org/specification'}, {title: 'Google Developers Blog: Agent Plugins package your skills, tools, and more',
   url: 'https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/'}]
 generated: human-and-ai

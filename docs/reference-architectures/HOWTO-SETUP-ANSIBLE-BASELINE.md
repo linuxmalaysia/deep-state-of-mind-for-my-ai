@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🛠️ HOWTO: Set Up the Ansible Baseline for a DSOM Project (Example Elastic SOC)"
 timestamp: "2026-07-04T10:17:05Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for HOWTO-SETUP-ANSIBLE-BASELINE.md."
 resource: "file:///docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md"
 ---

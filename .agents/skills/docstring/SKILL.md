@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "🐍 Docstring & Function Reference Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Provides a structured approach for writing precise, maintainer-focussed Python docstrings and inline function documentation following standard Sphinx/reStructuredText and Google conventions."
 topics: ["python", "docstring", "api-reference", "code-documentation", "dsom"]
 name: docstring
+spec_version: "0.2"
 ---
 # 🐍 Docstring & Function Reference Skill (`docstring`)
 

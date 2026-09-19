@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: architecture_concept
 title: "🏛️ Palace Update Proposal"
 timestamp: "2026-08-05T22:23:51Z"
 topics: ["dsom", "brain", "concept"]
+spec_version: "0.2"
 ---
 # 🏛️ Palace Update Proposal
 

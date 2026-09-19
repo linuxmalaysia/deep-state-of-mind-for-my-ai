@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: rule
 title: Windows Git Execution Guardrail
 timestamp: "2026-08-18T06:00:00Z"
 topics: ["git", "windows", "execution", "guardrail"]
+spec_version: "0.2"
 description: "Forces all background Git commands to fail fast instead of hanging on credential prompts."
 ---
 # Windows Git Execution Guardrail

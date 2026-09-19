@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "✍️ Publish to Blogger Skill"
 timestamp: "2026-08-05T22:23:51Z"
 description: "Converts a markdown artefact into a clean HTML format suitable for publishing on Blogger.com, injecting the mandatory Human-AI Synergy Statement and Repository Links."
 topics: ["blogger", "html", "publish", "markdown", "blog"]
 name: publish-to-blogger
+spec_version: "0.2"
 ---
 # ✍️ Publish to Blogger Skill
 

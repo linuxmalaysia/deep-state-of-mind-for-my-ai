@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "✍️ Documentation Writer Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Assists users in creating and editing documentation that adheres to a clear, conversational, and user-focussed writing style with reader intent."
 topics: ["documentation", "writing", "markdown", "technical-writing", "dsom"]
 name: docs-write
+spec_version: "0.2"
 ---
 # ✍️ Documentation Writer Skill (`docs-write`)
 

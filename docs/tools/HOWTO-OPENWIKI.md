@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: operational_guide
 title: "🛠️ HOWTO: Operating OpenWiki & Native Python Zero-Binary Emulator"
 timestamp: "2026-08-09T10:32:00Z"
 topics: ["openwiki", "python", "emulator", "howto", "dsom", "zero-binary", "uv"]
+spec_version: "0.2"
 description: "Step-by-step operational guide for maintaining OpenWiki knowledge graphs natively via Python (uv) without Node.js binaries or external API rate limits."
 resource: "file:///docs/tools/HOWTO-OPENWIKI.md"
 ---

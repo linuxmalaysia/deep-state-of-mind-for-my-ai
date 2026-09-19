@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Tutorial: Getting Started with DSOM Tools"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "tutorial", "getting-started", "tools"]
+spec_version: "0.2"
 ---
 # Getting started with DSOM tools
 

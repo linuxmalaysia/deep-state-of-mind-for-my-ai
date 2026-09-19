@@ -6,6 +6,7 @@ timestamp: "2026-08-23T07:04:00Z"
 description: "Scaffolds a new DSOM project by copying the Sovereign Engine, Universal Gateway Matrix, Governance, and Ritual Tools to a target path, enforcing Downstream Asymmetry."
 topics: ["project", "scaffold", "clone", "dsom", "setup", "mintlify", "okf"]
 name: dsom-project-cloner
+spec_version: "0.2"
 sources: [{title: The Core AI Rulebook (DSOM), url: 'file:///.agents/AGENTS.md'}, {title: Mintlify User Manual Sync Guide, url: 'file:///docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md'}, {title: Team DSOM Masterclass Tutorial, url: 'file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md'}]
 generated: hybrid
 verified: true

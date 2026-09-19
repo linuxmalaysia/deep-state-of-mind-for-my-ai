@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: skill
 title: Universal Sovereign Signature Injector
 timestamp: "2026-07-12T07:08:35Z"
 description: "Automatically injects the standard DSOM ownership, timestamp, and GPL v3.0 licence signature into Markdown files and executable scripts based on the file's last modified date."
 topics: ["signature", "license", "gpl", "okf", "markdown"]
 name: dsom-signature-injector
+spec_version: "0.2"
 ---
 # DSOM Signature Injector
 

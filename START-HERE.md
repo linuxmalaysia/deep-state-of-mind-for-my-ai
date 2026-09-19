@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "START HERE: DSOM Project Benefits & Entry Points"
 timestamp: "2026-08-20T23:15:00Z"
 topics: ["onboarding", "entry-points", "dsom", "sovereign", "baseline", "benefits", "github-pages", "openwiki", "okf"]
+spec_version: "0.2"
 description: "The primary onboarding document for human operators and AI agents adopting the DSOM framework into new or existing projects via Git or direct GitHub Pages URLs."
 resource: "file:///START-HERE.md"
 ---

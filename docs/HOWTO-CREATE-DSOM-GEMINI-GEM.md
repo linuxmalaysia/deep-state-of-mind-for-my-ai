@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: How to Create a Gemini Gem for DSOM
 timestamp: "2026-07-18T08:56:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Step-by-step guide to configuring a permanent DSOM Cognitive Twin Gem inside the Google Gemini interface."
 ---
 # How to Create a Gemini Gem for DSOM

@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "📜 Changelog Automation Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Automates changelog generation from commits, pull requests, and release notes following Keep a Changelog standards and Conventional Commits."
 topics: ["changelog", "automation", "keep-a-changelog", "conventional-commits", "dsom"]
 name: changelog-automation
+spec_version: "0.2"
 ---
 # 📜 Changelog Automation Skill (`changelog-automation`)
 

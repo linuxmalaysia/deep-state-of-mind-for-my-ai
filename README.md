@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🧠 Deep State of Mind (DSOM) For My AI Protocol"
 timestamp: "2026-08-20T23:20:00Z"
 topics: ["dsom", "documentation", "okf"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for README.md."
 resource: "file:///README.md"
 ---

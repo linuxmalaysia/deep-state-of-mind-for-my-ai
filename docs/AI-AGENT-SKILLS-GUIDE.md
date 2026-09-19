@@ -4,6 +4,7 @@ type: documentation
 title: "🤖 AI Agent Skills Development Guide"
 timestamp: "2026-08-21T21:00:00Z"
 topics: ["dsom", "documentation", "skills", "okf"]
+spec_version: "0.2"
 description: "The central registry and learning guide for creating and using AI Agent Skills within the Deep State of Mind (DSOM) framework."
 resource: "file:///docs/AI-AGENT-SKILLS-GUIDE.md"
 sources: [".agents/AGENTS.md", "docs/OKF-ADOPTION-GUIDE.md"]

@@ -6,6 +6,7 @@ timestamp: "2026-08-23T06:57:00Z"
 description: "Compiles Sovereign Markdown Palace documents into Mintlify MDX trees and syncs to downstream docs repository under 5 strict safety guards."
 topics: ["mintlify", "docs", "sync", "mdx", "safety-guards", "user-manual-style"]
 name: mintlify-docs-compiler
+spec_version: "0.2"
 sources: [{title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///tools/build_mintlify_mdx.py", "file:///scripts/sync_docs.py", "file:///.github/workflows/sync-docs.yml"]
 generated: human-and-ai
 verified: verified

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "HOWTO: Upgrade Legacy DSOM Projects"
 timestamp: "2026-07-17T08:00:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for migrating older DSOM projects to the current architectural baseline."
 resource: "file:///docs/HOWTO-UPGRADE-LEGACY-DSOM.md"
 ---

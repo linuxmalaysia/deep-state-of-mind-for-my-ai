@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🕯️ DSOM Ritual of Transition (v6.1 + Palace v1.0)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for RITUAL-OF-TRANSITION.md."
 resource: "file:///docs/RITUAL-OF-TRANSITION.md"
 ---

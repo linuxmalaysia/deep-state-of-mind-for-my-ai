@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "GitHub Copilot Instructions (DSOM Template)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for copilot_instructions_template.md."
 resource: "file:///docs/agent-configs/copilot_instructions_template.md"
 ---

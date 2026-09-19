@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Explanation: OpenWiki & FastMCP Architecture"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "explanation", "architecture", "mcp", "openwiki"]
+spec_version: "0.2"
 ---
 # OpenWiki and FastMCP architecture
 

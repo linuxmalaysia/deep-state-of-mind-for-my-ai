@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Release Notes: v10.3.1-skills"
 timestamp: "2026-07-04T11:25:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant release notes for the DSOM v10.3.1-skills release."
 resource: "file:///RELEASE.md"
 ---
