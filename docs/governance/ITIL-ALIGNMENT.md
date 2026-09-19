@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: governance_protocol
 title: "🏥 DSOM ITIL 4 Alignment Strategy"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "governance", "protocol"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for ITIL-ALIGNMENT.md."
 resource: "file:///docs/governance/ITIL-ALIGNMENT.md"
 ---

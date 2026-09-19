@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "How-To: Run the FastMCP Server"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "mcp", "server"]
+spec_version: "0.2"
 ---
 # Run the FastMCP server
 

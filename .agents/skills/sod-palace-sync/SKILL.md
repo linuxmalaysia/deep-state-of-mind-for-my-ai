@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: sod-palace-sync
 timestamp: "2026-06-19T14:00:00Z"
 description: "The Reanimation (Start of Day) ritual to load the workspace context and establish the day's tasks."
 topics: ["sod", "palace", "sync", "git", "ritual"]
 name: sod-palace-sync
+spec_version: "0.2"
 ---
 # 🌅 SOD Palace Sync (Reanimation)
 

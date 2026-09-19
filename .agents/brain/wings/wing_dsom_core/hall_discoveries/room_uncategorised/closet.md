@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: discovery_log
 title: Uncategorised Discoveries
 timestamp: "2026-06-19T14:00:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: Distilled knowledge for Uncategorised Discoveries
 ---
 # 🚪 Closet: Room Uncategorised (The Discovery Hall)

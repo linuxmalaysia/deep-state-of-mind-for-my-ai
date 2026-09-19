@@ -4,6 +4,7 @@ type: architecture_concept
 title: "🛡️ Custom Validators in DSOM: Guardrails Architecture & Implementation Blueprint"
 timestamp: "2026-08-21T22:15:00Z"
 topics: ["guardrails", "validation", "ast", "mcp", "dsom", "twilight-state", "okf"]
+spec_version: "0.2"
 description: "Architectural blueprint and implementation guide detailing how to build custom deterministic and LLM-powered validators within the Deep State of Mind (DSOM) framework, inspired by Guardrails AI principles."
 resource: "file:///docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md"
 sources: ["https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", ".agents/AGENTS.md"]

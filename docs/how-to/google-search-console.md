@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "How-To: Verify and Monitor Site with Google Search Console"
 timestamp: "2026-08-22T10:00:00Z"
 topics: ["dsom", "how-to", "seo", "google-search-console", "okf"]
+spec_version: "0.2"
 ---
 # Verify and monitor site with Google Search Console
 

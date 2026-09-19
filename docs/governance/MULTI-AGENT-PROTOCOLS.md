@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: governance_protocol
 title: "🤖 DSOM Multi-Agent Protocols (v6.1)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "governance", "protocol"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for MULTI-AGENT-PROTOCOLS.md."
 resource: "file:///docs/governance/MULTI-AGENT-PROTOCOLS.md"
 ---

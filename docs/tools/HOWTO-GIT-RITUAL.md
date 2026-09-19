@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: automation_tool
 title: "HOWTO: git-ritual — Sovereign GitOps Hygiene"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for HOWTO-GIT-RITUAL.md."
 resource: "file:///docs/tools/HOWTO-GIT-RITUAL.md"
 ---

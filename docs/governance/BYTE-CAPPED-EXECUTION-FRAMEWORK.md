@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Procedural Automation: Byte-Capped Execution Framework"
 timestamp: "2026-07-18T14:54:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Technical layout and deployment model of the DSOM Token Calculator Skill."
 ---
 # Procedural Automation: Byte-Capped Execution Framework

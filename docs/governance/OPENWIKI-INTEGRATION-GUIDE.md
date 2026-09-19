@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: governance_protocol
 title: "🌐 OpenWiki Integration Blueprint & Native Python Emulator Architecture"
 timestamp: "2026-08-09T10:30:00Z"
 topics: ["openwiki", "dsom", "governance", "python", "emulator", "zero-binary", "uv"]
+spec_version: "0.2"
 description: "Production guide, architectural specification, and reusable implementation blueprint for native Python OpenWiki emulation."
 resource: "file:///docs/governance/OPENWIKI-INTEGRATION-GUIDE.md"
 ---

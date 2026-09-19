@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "[FEAT] "
 timestamp: "2026-08-05T22:23:51Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 name: "🚀 Feature Request"
 about: "Suggest an idea to enhance the Cognitive Digital Twin."
 labels: enhancement

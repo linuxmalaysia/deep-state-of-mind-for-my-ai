@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🎮 DSOM Ansible Control Node Protocol (Example Elastic SOC v1.0)"
 timestamp: "2026-07-04T10:17:05Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for ANSIBLE-CONTROL-NODE-PROTOCOL.md."
 resource: "file:///docs/reference-architectures/ANSIBLE-CONTROL-NODE-PROTOCOL.md"
 ---

@@ -4,6 +4,7 @@ type: onboarding
 title: "Start AI Agents Master Setup Prompt & Execution Protocol"
 timestamp: "2026-09-04T12:00:00Z"
 topics: ["onboarding", "dsom", "ai-agents", "setup"]
+spec_version: "0.2"
 sources: [{title: 'START HERE: DSOM Project Benefits & Entry Points', url: 'https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-HERE/'}, {title: Start AI Agents Prompt (GitBook), url: 'https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt'}, {title: The Agent Registry & DSOM Gateway, url: 'https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/AGENTS/'}, {title: The Full Core AI Rulebook, url: 'https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/AGENTS/'}]
 generated: human-and-ai
 verified: verified

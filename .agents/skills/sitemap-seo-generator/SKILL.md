@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "🗺️ Sitemap & SEO Asset Generator Skill"
 timestamp: "2026-08-12T12:00:00Z"
 description: "Configures and manages sitemap and robots.txt generation to optimize SEO indexation for GitHub Pages, Read the Docs, and GitBook."
 topics: ["sitemap", "seo", "automation", "gitbook", "readthedocs"]
 name: sitemap-seo-generator
+spec_version: "0.2"
 ---
 # 🗺️ Sitemap & SEO Asset Generator Skill
 

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "OpenWiki Quickstart & Repository Navigation Map"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "quickstart", "navigation", "dsom"]
+spec_version: "0.2"
 description: "Master entrypoint containing repository map, task-routing table, canonical links, and focused validation commands."
 ---
 # OpenWiki Quickstart & Repository Navigation Map

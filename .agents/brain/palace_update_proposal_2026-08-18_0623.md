@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🏛️ Palace Update Proposal"
 timestamp: "2026-08-18T06:23:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 ---
 # 🏛️ Palace Update Proposal
 

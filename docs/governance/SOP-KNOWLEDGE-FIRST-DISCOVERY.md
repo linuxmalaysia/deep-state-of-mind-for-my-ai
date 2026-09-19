@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: standard_operating_procedure
 title: "SOP: Knowledge-First Discovery & Context Preservation Protocol"
 timestamp: "2026-07-26T07:07:00Z"
 topics: ["okf", "discovery", "context-management", "brain", "dsom", "SOP"]
+spec_version: "0.2"
 description: "SOP detailing how AI agents and human operators leverage OKF YAML frontmatter (topics, description) in .agents/brain/ and docs/ to perform fast local discovery before terminal execution."
 ---
 # 📚 SOP: Local Knowledge-First Discovery & OKF Context Protocol

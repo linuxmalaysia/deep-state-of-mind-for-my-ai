@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "OpenWiki Documentation Skeleton & Subsystem Index"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "skeleton", "dsom", "inventory"]
+spec_version: "0.2"
 description: "Authoritative inventory ranking, planned page tree, and evidence briefs for the DSOM codebase."
 resource: "file:///app/openwiki/_skeleton.md"
 ---

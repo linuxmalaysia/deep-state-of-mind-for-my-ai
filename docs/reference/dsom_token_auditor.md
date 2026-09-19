@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Reference: dsom_token_auditor.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "tokens", "audit"]
+spec_version: "0.2"
 ---
 # dsom_token_auditor.py reference
 

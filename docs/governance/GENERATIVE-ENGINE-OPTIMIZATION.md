@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Generative Engine Optimisation (GEO)"
 timestamp: "2026-07-11T23:02:18Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Architectural policy for ensuring documentation is machine-readable and highly cited by AI Answer Engines."
 resource: "file:///docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md"
 ---

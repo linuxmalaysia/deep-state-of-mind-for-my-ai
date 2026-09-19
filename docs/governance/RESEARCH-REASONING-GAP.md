@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: governance_protocol
 title: "🧩 The Reasoning Gap: What DSOM Solves and What It Doesn't"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "governance", "protocol"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for RESEARCH-REASONING-GAP.md."
 resource: "file:///docs/governance/RESEARCH-REASONING-GAP.md"
 ---

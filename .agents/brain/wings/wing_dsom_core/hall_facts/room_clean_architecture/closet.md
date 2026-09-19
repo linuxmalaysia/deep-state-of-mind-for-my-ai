@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: architecture_concept
 title: Clean Architecture
 timestamp: "2026-06-19T14:00:00Z"
 topics: ["dsom", "brain", "concept"]
+spec_version: "0.2"
 description: Distilled knowledge for Clean Architecture
 ---
 # 🚪 Closet: Room Clean Architecture (The Skeleton)

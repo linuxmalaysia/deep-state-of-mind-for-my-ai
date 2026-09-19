@@ -4,6 +4,7 @@ type: governance_proposal
 title: "DSOM Cognitive State Preservation & Minimal Downstream Adoption Architecture"
 timestamp: "2026-08-21T20:18:00Z"
 topics: ["dsom", "governance", "proposal", "diataxis", "okf", "memory", "token-optimisation"]
+spec_version: "0.2"
 description: "A foundational human-to-Gemini proposal on preserving AI cognitive state across sessions, establishing minimal DSOM adoption for downstream projects without documentation bloat, and enforcing token minimization via Git-native memory storage."
 resource: "file:///docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md"
 sources: ["docs/OKF-ADOPTION-GUIDE.md", "START-HERE.md", ".agents/AGENTS.md"]

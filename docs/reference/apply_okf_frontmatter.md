@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Reference: apply_okf_frontmatter.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "okf", "frontmatter"]
+spec_version: "0.2"
 ---
 # apply_okf_frontmatter.py reference
 

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🐧 HOWTO: Setup AlmaLinux 10 WSL2 as DSOM Ansible Control Node"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for HOWTO-SETUP-WSL-ALMALINUX10.md."
 resource: "file:///docs/HOWTO-SETUP-WSL-ALMALINUX10.md"
 ---

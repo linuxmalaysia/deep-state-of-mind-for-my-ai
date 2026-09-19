@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: OKF-Based AI Agent Mind Optimisation
 timestamp: "2026-07-11T22:33:26Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Architectural policy codifying Progressive Disclosure, Artifact Pyramid, and Semantic Routing."
 resource: "file:///docs/governance/OKF-MIND-OPTIMIZATION.md"
 ---

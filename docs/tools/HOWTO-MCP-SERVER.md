@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: operational_guide
 title: "🛠️ HOWTO: Operating DSOM FastMCP Knowledge Server"
 timestamp: "2026-08-09T10:35:00Z"
 topics: ["mcp", "fastmcp", "howto", "dsom", "server", "cursor", "claude"]
+spec_version: "0.2"
 description: "Step-by-step operational guide for running, configuring, and connecting the DSOM FastMCP Server to Cursor, Claude Desktop, and IDE assistants."
 resource: "file:///docs/tools/HOWTO-MCP-SERVER.md"
 ---

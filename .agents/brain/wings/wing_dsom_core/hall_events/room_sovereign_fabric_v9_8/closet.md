@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: infrastructure_state
 title: "Sovereign Fabric v9.8"
 timestamp: "2026-06-19T14:00:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Distilled knowledge for Sovereign Fabric v9.8"
 ---
 # 🚪 Closet: Room Sovereign Fabric v9.8.0 (Current Phase)

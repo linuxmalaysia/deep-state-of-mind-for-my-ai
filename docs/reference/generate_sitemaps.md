@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Reference: generate_sitemaps.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "sitemaps", "seo"]
+spec_version: "0.2"
 ---
 # generate_sitemaps.py reference
 

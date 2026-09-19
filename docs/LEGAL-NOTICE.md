@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Legal Notice & Disclaimer — Deep State of Mind (DSOM)"
 timestamp: "2026-08-11T23:54:00Z"
 topics: ["legal", "disclaimer", "privacy", "governance"]
+spec_version: "0.2"
 description: "Legal notice, privacy statement, critical assumptions, and disclaimer of liability for the DSOM framework."
 resource: "file:///LEGAL-NOTICE.md"
 ---

@@ -291,7 +291,7 @@ class ReorderedFrontmatterFieldTests(unittest.TestCase):
             with self.subTest(path=relative):
                 content = _read_text_stripping_bom(REPO_ROOT / relative)
                 _, parsed = _extract_frontmatter_block(content)
-                self.assertEqual(parsed.get("okf_version"), 0.1)
+                self.assertEqual(parsed.get("okf_version"), 0.2)
                 self.assertEqual(parsed.get("type"), expected_type)
                 self.assertEqual(parsed.get("title"), expected_title)
                 self.assertEqual(parsed.get("timestamp"), expected_timestamp)
@@ -398,7 +398,7 @@ class NewMinimalFrontmatterFilesTests(unittest.TestCase):
             with self.subTest(path=relative):
                 content = _read_text_stripping_bom(REPO_ROOT / relative)
                 _, parsed = _extract_frontmatter_block(content)
-                self.assertEqual(parsed.get("okf_version"), 0.1)
+                self.assertEqual(parsed.get("okf_version"), 0.2)
                 self.assertEqual(parsed.get("type"), "architecture_concept")
                 self.assertEqual(parsed.get("title"), "🏛️ Palace Update Proposal")
                 self.assertEqual(parsed.get("timestamp"), expected_timestamp)
@@ -413,7 +413,7 @@ class NewMinimalFrontmatterFilesTests(unittest.TestCase):
                 self.assertNotIn("resource", parsed)
                 self.assertEqual(
                     set(parsed.keys()),
-                    {"okf_version", "type", "title", "timestamp", "topics"},
+                    {"okf_version", "type", "title", "timestamp", "topics", "spec_version"},
                 )
 
     def test_frontmatter_immediately_followed_by_original_heading(self):

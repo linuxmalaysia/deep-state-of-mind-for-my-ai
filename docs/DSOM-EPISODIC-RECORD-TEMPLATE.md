@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: Blank Episodic Ledger Markdown File
 timestamp: "2026-07-18T09:05:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "A standardised template for capturing, saving, and restoring Gemini DSOM cognitive states between sessions."
 ---
 # `[DSOM EPISODIC RECORD]` Template

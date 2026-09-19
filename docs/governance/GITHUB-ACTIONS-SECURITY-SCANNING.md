@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "GitHub Actions Security Scanning — CRDA Deprecation & Snyk Migration"
 timestamp: "2026-07-27T04:49:00Z"
 topics: ["snyk", "github-actions", "security", "crda", "ci-cd", "sarif", "governance"]
+spec_version: "0.2"
 description: "L2 analysis document capturing the CRDA deprecation, Snyk replacement pattern, and proven workflow template for DSOM GitHub repositories."
 resource: "file:///docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md"
 ---

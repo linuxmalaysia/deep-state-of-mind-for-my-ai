@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Reference: bench_brain.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "benchmark", "brain"]
+spec_version: "0.2"
 ---
 # bench_brain.py reference
 

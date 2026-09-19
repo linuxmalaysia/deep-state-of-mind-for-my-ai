@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: forensic-log-audit
 timestamp: "2026-06-19T14:00:00Z"
 description: "Scrapes raw JSONL transcripts to recover exact commands from historical conversations."
 topics: ["audit", "logs", "forensic", "security", "analysis"]
 name: forensic-log-audit
+spec_version: "0.2"
 tags: ["audit", "logs", "jsonl"]
 ---
 # forensic-log-audit

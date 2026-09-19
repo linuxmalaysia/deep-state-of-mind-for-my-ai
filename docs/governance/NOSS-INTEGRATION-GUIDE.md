@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "NOSS Integration Guide: Adopting National Standards into DSOM"
 timestamp: "2026-07-12T08:45:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "Governance protocol explaining how National Occupational Skills Standards (NOSS) are translated and adopted as modular AI skills under the master DSOM framework."
 resource: "file:///docs/governance/NOSS-INTEGRATION-GUIDE.md"
 ---

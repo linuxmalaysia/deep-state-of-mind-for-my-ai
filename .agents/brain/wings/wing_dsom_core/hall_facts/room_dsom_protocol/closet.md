@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: protocol
 title: DSOM Protocol
 timestamp: "2026-08-08T12:00:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: Distilled knowledge for DSOM Protocol
 ---
 # 🚪 Closet: Room DSOM Protocol (The Container)

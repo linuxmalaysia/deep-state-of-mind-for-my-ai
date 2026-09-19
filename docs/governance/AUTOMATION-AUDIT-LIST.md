@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Automation & Script Audit Ledger"
 timestamp: "2026-07-12T07:16:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "A comprehensive index of all executable scripts (.ps1, .sh) and Ansible playbooks/variables (.yml) currently active in the DSOM framework for human auditing purposes."
 resource: "file:///docs/governance/AUTOMATION-AUDIT-LIST.md"
 ---

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🌙 EOD-RITUAL.md — End-of-Day Ritual"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for EOD-RITUAL.md."
 resource: "file:///docs/EOD-RITUAL.md"
 ---

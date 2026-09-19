@@ -193,15 +193,13 @@ def normalise_metadata(
     okf_version = existing_frontmatter.get('okf_version')
     if require_okf_v02 and okf_version is not None and str(okf_version) != '0.2':
         raise ValueError(f"OKF v0.2 validation failed for {rel_path}: okf_version must be 0.2.")
-    if require_okf_v02:
+    if require_okf_v02 or okf_version is None or str(okf_version) in ('0.1', '0.2'):
         okf_version = 0.2
-    elif okf_version is None or str(okf_version) not in ('0.1', '0.2'):
-        okf_version = 0.1
     else:
         try:
             okf_version = float(okf_version)
         except (ValueError, TypeError):
-            okf_version = 0.1
+            okf_version = 0.2
 
     # 2. type
     okf_type = existing_frontmatter.get('type')
@@ -239,6 +237,10 @@ def normalise_metadata(
         'timestamp': timestamp,
         'topics': topics
     }
+    if 'spec_version' in existing_frontmatter:
+        updated_frontmatter['spec_version'] = str(existing_frontmatter['spec_version'])
+    else:
+        updated_frontmatter['spec_version'] = '0.2'
 
     # Always derive 'name' from the skill file's parent directory for skill files under .agents/skills
     if ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):

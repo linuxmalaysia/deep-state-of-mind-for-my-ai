@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "How-To: Generate SEO Assets and Sitemaps"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "seo", "sitemaps"]
+spec_version: "0.2"
 ---
 # Generate SEO assets and sitemaps
 

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: PR_history_ledger
 title: "🐙 Google Jules: Historic Pull Requests & Conversation Log"
 timestamp: "2026-08-14T12:00:00Z"
 topics: ["jules", "pull_requests", "gitops", "coderabbit", "ledger"]
+spec_version: "0.2"
 ---
 # 🐙 Google Jules: Historic Pull Requests & Conversation Log
 

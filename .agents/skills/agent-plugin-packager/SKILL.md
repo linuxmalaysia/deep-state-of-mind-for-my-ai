@@ -6,6 +6,7 @@ timestamp: "2026-08-22T19:45:00Z"
 description: "Packages, validates, and scaffolds DSOM skills and FastMCP servers into portable Agent Plugins 1.0.0 compliant bundles."
 topics: ["agent-plugins", "packaging", "mcp", "skills", "scaffolding"]
 name: agent-plugin-packager
+spec_version: "0.2"
 sources: [{title: Agent Plugins Specification 1.0.0, url: 'https://agent-plugins.org/specification'}]
 generated: human-and-ai
 verified: verified

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: DSOM Automated State Sync
 timestamp: "2026-07-27T00:00:00Z"
 topics: ["compaction", "state", "action", "github"]
+spec_version: "0.2"
 description: "Governance rules for Semantic Compaction via GitHub Actions."
 ---
 # DSOM Automated State Sync

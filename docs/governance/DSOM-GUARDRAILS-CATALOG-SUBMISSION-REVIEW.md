@@ -4,6 +4,7 @@ type: architecture_concept
 title: "🛡️ DSOM Guardrail Catalog & Guardrails AI Submission Review Document"
 timestamp: "2026-08-22T07:15:00Z"
 topics: ["guardrails", "guardrails-hub", "dsom", "validation", "pypi", "security", "okf", "ast"]
+spec_version: "0.2"
 description: "Comprehensive catalog and publication roadmap for the 10 DSOM Guardrails, prepared for human review and packaging as standalone PyPI packages under the Guardrails AI ecosystem."
 resource: "file:///docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md"
 sources: ["https://guardrailsai.com/guardrails/docs", "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", ".agents/AGENTS.md"]

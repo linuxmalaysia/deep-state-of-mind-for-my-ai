@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "How-To: Check and Apply OKF Compliance"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "how-to", "okf", "compliance"]
+spec_version: "0.2"
 ---
 # Check and apply OKF compliance
 

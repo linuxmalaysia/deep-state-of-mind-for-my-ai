@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Mirror of Knowledge: AI Persona Manifest (v2.0)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for MIRROR-OF-KNOWLEDGE.md."
 resource: "file:///docs/MIRROR-OF-KNOWLEDGE.md"
 ---

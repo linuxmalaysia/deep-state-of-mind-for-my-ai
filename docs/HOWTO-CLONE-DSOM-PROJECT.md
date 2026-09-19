@@ -4,6 +4,7 @@ type: documentation
 title: "HOWTO: Clone a DSOM Project"
 timestamp: "2026-08-21T21:00:00Z"
 topics: ["dsom", "documentation", "cloning", "scaffolding", "okf"]
+spec_version: "0.2"
 description: "Master engineering blueprint for replicating the Deep State of Mind (DSOM) architecture, agent skills, and persona into a new project."
 resource: "file:///docs/HOWTO-CLONE-DSOM-PROJECT.md"
 sources: ["START-HERE.md", "docs/OKF-ADOPTION-GUIDE.md", ".agents/AGENTS.md"]

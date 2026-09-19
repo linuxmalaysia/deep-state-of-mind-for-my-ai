@@ -4,6 +4,7 @@ type: tutorial
 title: "🎓 DSOM Team Masterclass: Project Creation, GitOps & Multi-Agent Collaboration"
 timestamp: "2026-08-22T14:30:00Z"
 topics: ["training", "tutorial", "onboarding", "antigravity", "jules", "gitops", "dsom", "okf"]
+spec_version: "0.2"
 description: "Step-by-step training curriculum and operational playbook teaching engineering teams how to create new projects, adopt the DSOM Sovereign Engine, pair program with Google Antigravity, and collaborate across AI agents like Google Jules."
 resource: "file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md"
 sources: ["START-HERE.md", "docs/HOWTO-CLONE-DSOM-PROJECT.md", "docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md", ".agents/skills/jules-antigravity-sync/SKILL.md"]

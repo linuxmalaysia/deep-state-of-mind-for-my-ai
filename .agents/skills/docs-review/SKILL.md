@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "🔍 Documentation Review Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Facilitates systematic review of documentation changes, pull requests, and diffs to protect the source of truth and ensure compliance with writing standards."
 topics: ["documentation", "review", "quality-assurance", "style-guide", "dsom"]
 name: docs-review
+spec_version: "0.2"
 ---
 # 🔍 Documentation Review Skill (`docs-review`)
 

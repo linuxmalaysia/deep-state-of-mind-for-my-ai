@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: history_log
 title: Project Ledger
 timestamp: "2026-06-19T14:00:00Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: Distilled knowledge for Project Ledger
 ---
 # 🚪 Closet: Room Ledger (The Universal Record)

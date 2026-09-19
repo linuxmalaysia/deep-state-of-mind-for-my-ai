@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "🚀 HOWTO: Port the AI Spatial Memory Palace to Other Projects"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for HOWTO-PORT-AI-PALACE.md."
 resource: "file:///docs/HOWTO-PORT-AI-PALACE.md"
 ---

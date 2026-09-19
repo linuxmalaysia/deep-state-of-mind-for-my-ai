@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: DSOM Efficiency Protocols
 timestamp: "2026-08-05T22:23:51Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "A comprehensive breakdown of how DSOM achieves perfect memory retention with maximum token efficiency via RAG-style mechanisms, Progressive Disclosure, and strict persona constraints."
 ---
 # 🧠 DSOM: The Engine of Persistent Memory & Efficiency

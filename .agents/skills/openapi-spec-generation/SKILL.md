@@ -1,11 +1,12 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: agent_skill
 title: "🔌 OpenAPI Spec Generation Skill"
 timestamp: "2026-09-02T12:00:00Z"
 description: "Generates, validates, and maintains OpenAPI 3.1+ specifications from code paths or design-first drafts to ensure API contract compliance."
 topics: ["openapi", "api", "rest", "swagger", "dsom"]
 name: openapi-spec-generation
+spec_version: "0.2"
 ---
 # 🔌 OpenAPI Spec Generation Skill (`openapi-spec-generation`)
 

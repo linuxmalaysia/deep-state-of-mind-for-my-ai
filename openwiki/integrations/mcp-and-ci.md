@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "FastMCP Server Integration & Continuous Integration Workflows"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "integrations", "mcp", "ci-cd", "workflows"]
+spec_version: "0.2"
 description: "FastMCP server contract, Context7 RAG endpoints, GitHub Actions workflows."
 ---
 # FastMCP Server Integration & Continuous Integration Workflows

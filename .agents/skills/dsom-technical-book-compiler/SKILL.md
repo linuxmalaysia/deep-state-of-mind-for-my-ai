@@ -6,6 +6,7 @@ timestamp: "2026-09-03T07:30:00Z"
 description: "Compiles complete Diataxis documentation suites and source code repositories into publication-grade technical handbooks (PDF, standalone HTML, EPUB, ODT) using Pandoc and the Terminal & Cloud design framework."
 topics: ["pandoc", "ebook", "pdf", "html", "epub", "terminal-theme"]
 name: dsom-technical-book-compiler
+spec_version: "0.2"
 status: stable
 stale_after: "2027-09-03"
 sources: [{id: dsom_agents_rulebook, path: .agents/AGENTS.md, title: The Core AI Rulebook (DSOM

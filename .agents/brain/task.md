@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: task_ledger
 title: "🗺️ DSOM Task List"
 timestamp: "2026-08-05T22:23:51Z"
 topics: ["readthedocs", "configuration", "testing"]
+spec_version: "0.2"
 ---
 - `[x]` Create deep research document: `docs/governance/DSOM-MCP-ARCHITECTURE.md`.
 - `[x]` Scaffold MCP Server: `tools/mcp/server.py`.

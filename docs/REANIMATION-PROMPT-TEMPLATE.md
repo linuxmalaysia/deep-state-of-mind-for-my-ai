@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "⚡ DSOM Reanimation Prompt Templates (v3.0)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "documentation"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for REANIMATION-PROMPT-TEMPLATE.md."
 resource: "file:///docs/REANIMATION-PROMPT-TEMPLATE.md"
 ---

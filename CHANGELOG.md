@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "📜 Changelog: Deep State of Mind (DSOM) For My AI"
 timestamp: "2026-08-20T23:25:00Z"
 topics: ["dsom", "documentation", "changelog", "okf"]
+spec_version: "0.2"
 description: "OKF-compliant documentation for CHANGELOG.md."
 resource: "file:///CHANGELOG.md"
 ---

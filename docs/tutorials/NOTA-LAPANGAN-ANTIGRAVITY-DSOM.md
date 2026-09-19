@@ -4,6 +4,7 @@ type: guide
 title: "Nota Lapangan: Panduan Praktikal Pasukan untuk AI Antigravity & DSOM Bersama Cikgu Haris"
 timestamp: "2026-08-22T17:54:00Z"
 topics: ["antigravity", "gemini", "dsom", "ansible", "gitops", "skills", "jules", "panduan-pasukan"]
+spec_version: "0.2"
 description: "Sintesis nota lapangan praktikal, Langkah 0 onboarding prompt, strategi model, automasi kemahiran (skills), dan disiplin GitOps DSOM untuk perkongsian bersama rakan sepasukan."
 resource: "file:///docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md"
 sources: ["docs/tutorials/TEAM-DSOM-MASTERCLASS.md", "START-HERE.md", ".agents/AGENTS.md"]

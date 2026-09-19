@@ -4,6 +4,7 @@ type: reference
 title: "CLI & Terminal Commands Quick Reference"
 timestamp: "2026-08-23T07:43:00Z"
 topics: ["cli", "reference", "commands", "cheatsheet", "context7", "ansible", "uv", "mcp"]
+spec_version: "0.2"
 sources: ["file:///references/llms-from-context7.txt", "file:///tools/mcp/server.py"]
 generated: hybrid
 verified: verified

@@ -1,9 +1,10 @@
 ---
-okf_version: 0.1
+okf_version: 0.2
 type: documentation
 title: "Quality Verification Framework & Regression Test Suites"
 timestamp: "2026-09-04T21:16:57Z"
 topics: ["openwiki", "quality", "verification", "testing", "assertions"]
+spec_version: "0.2"
 description: "Python test-suite map, OKF/BOM/quoting/symlink assertions."
 ---
 # Quality Verification Framework & Regression Test Suites
