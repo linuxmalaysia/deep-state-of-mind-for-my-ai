@@ -16,6 +16,7 @@ resource: "file:///docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PR
 ## Executive Summary & Feasibility Affirmation
 
 ### "Can we adopt this into DSOM?"
+
 **Yes, unequivocally.** Adopting the **Council of High Intelligence** framework ([`0xnyk/council-of-high-intelligence`](https://github.com/0xnyk/council-of-high-intelligence)) into Deep State of Mind (DSOM) is not only feasible, but represents a natural evolutionary step for DSOM's **Metacognition & Guardrails Subsystem** and **Tri-Phasic Mind Architecture**.
 
 While single-model outputs often suffer from overconfident hallucinations, vendor bias, and single-lens anchoring, DSOM is built on digital sovereignty, structured metacognition, and Git-native auditability. Incorporating an **18-member persona deliberation council** directly enhances DSOM's decision boundary for high-stakes architectural choices, infrastructure migrations, security posture reviews, and strategic trade-offs.
@@ -26,7 +27,7 @@ While single-model outputs often suffer from overconfident hallucinations, vendo
 
 The **Council of High Intelligence** is an open-source decision-making framework designed to replace single-model reasoning with structured, multi-perspective deliberation across multi-LLM provider backends.
 
-```
+```text
 +-----------------------------------------------------------------------------------+
 |                        COUNCIL OF HIGH INTELLIGENCE                               |
 |                                                                                   |
@@ -99,13 +100,13 @@ To balance decision depth against latency and token consumption, the framework p
 
 Integrating the Council framework into DSOM harmonises multi-perspective deliberation with DSOM's core pillars:
 
-```
+```text
 +-----------------------------------------------------------------------------------+
 |                        DSOM TRI-PHASIC MIND INTEGRATION                           |
 |                                                                                   |
 |  +---------------------------+   +---------------------------+                    |
 |  | Active State (MCP Server) |-->| Fast Triad Queries &      |                    |
-|  | (Low Latency < 50ms)      |   | Quick Decision Prompts    |                    |
+|  | (Target Latency < 50ms)   |   | Quick Decision Prompts    |                    |
 |  +---------------------------+   +---------------------------+                    |
 |                                                |                                  |
 |                                                v                                  |
@@ -125,14 +126,14 @@ Integrating the Council framework into DSOM harmonises multi-perspective deliber
 ### 2.1 Alignment with the Tri-Phasic Mind
 
 1. **Active State (MCP & Quick Query)**:
-   - Exposes lightweight `/council --triad <domain>` and `--duo` capabilities via FastMCP (`tools/mcp/server.py`).
+   - Plans exposure of lightweight `run_council` tool capabilities (supporting `--triad <domain>` and `--duo` parameters) via FastMCP (`tools/mcp/server.py`). Target latency for local `search_palace` dispatches is under 50ms for standard local payloads.
    - Allows AI IDEs (Cursor, Claude Desktop, Jules) to execute rapid multi-angle sanity checks during active coding sessions.
 2. **Twilight State (Safety & Verification)**:
    - Intercepts council executions via DSOM Guardrails & Byte-Capped Execution framework to prevent token runaway.
    - Enforces evidence labeling (`FACT`, `INFERENCE`, `ASSUMPTION`, `UNKNOWN`) before accepting conclusions.
 3. **Deep State (EOD Consolidation & Universal Ledger)**:
-   - Synthesises Full Council verdicts into spatial memory (`.agents/brain/`).
-   - Appends entries to DSOM's Universal Ledgers (`HISTORY.md`, `CHANGELOG.md`, `task.md`, `walkthrough.md`).
+   - Synthesises Full Council verdicts into spatial brain state files (`.agents/brain/task.md` and `.agents/brain/walkthrough.md`).
+   - Records universal audit trail milestones in project ledgers (`HISTORY.md`, `CHANGELOG.md`, `README.md`).
 
 ### 2.2 Proposed DSOM Skill Component (`.agents/skills/council-of-intelligence/SKILL.md`)
 
@@ -194,7 +195,7 @@ Running 18 distinct persona evaluations across multiple LLM calls introduces sig
 | Challenge / Risk | Impact | DSOM Mitigation Mechanism |
 | :--- | :--- | :--- |
 | **Token Inflation (18x Overhead)** | Heavy prompt token consumption in `--full` mode | Default to `--triad <domain>` (3 members) for daily development; limit `--full` to major architecture decision records (ADRs). |
-| **Local Latency** | Sequential LLM API calls delay execution | Multi-threading via Python `asyncio` across multi-provider endpoints + local Ollama acceleration. |
+| **Local Latency** | Sequential LLM API calls delay execution | Asynchronous concurrency via Python `asyncio` across multi-provider endpoints + local Ollama acceleration. |
 | **Vendor Anchoring** | Single model provider dominates both sides | Multi-provider routing splits polarity pairs across distinct LLM families (Claude vs. Gemini vs. OpenAI). |
 | **Context Window Rot** | Verbose raw discussion clutters chat context | Summary compaction via `tools/council_emulator.py` returning only the structured Verdict Blueprint to the active agent window. |
 
@@ -204,7 +205,7 @@ Running 18 distinct persona evaluations across multiple LLM calls introduces sig
 
 Before executing physical code changes, the following phased roadmap is submitted for human and agent review:
 
-```
+```text
 +-----------------------------------------------------------------------------------+
 |                            IMPLEMENTATION ROADMAP                                 |
 |                                                                                   |
@@ -228,7 +229,7 @@ Before executing physical code changes, the following phased roadmap is submitte
 ### Discussion Items for Community & Human Operator
 
 1. **Default Mode Selection**: Should DSOM default to `--triad strategy` for governance decisions and `--triad architecture` for coding decisions?
-2. **Local Provider Thresholds**: Should local Ollama / open-weights models be prioritized for routine seat assignments to guarantee zero-cost deliberation?
+2. **Local Provider Thresholds**: Should local Ollama / open-weights models be prioritised for routine seat assignments to guarantee zero-cost deliberation?
 3. **Outcome Ledger Integration**: Should outcome ledger checkpoints automatically generate GitHub Issues or task items when review dates arrive?
 
 ---
