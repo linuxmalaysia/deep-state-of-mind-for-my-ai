@@ -1,21 +1,15 @@
 ---
 okf_version: 0.2
-spec_version: "0.2"
 type: walkthrough_ledger
-concept_id: "dsom_session_walkthrough"
 title: "🗺️ DSOM Session Walkthrough"
-status: "stable"
-stale_after: "2027-03-06"
 timestamp: "2026-09-06T12:30:00Z"
 topics: ["readthedocs", "configuration", "testing"]
-sources:
-  - id: "dsom_task_ledger"
-    title: "DSOM Task List"
-    author: "Harisfazillah Jamel"
-    url: "file:///.agents/brain/task.md"
-generated:
-  by: "DSOM Session Workflow"
-  timestamp: "2026-09-06T12:30:00Z"
+spec_version: "0.2"
+concept_id: dsom_session_walkthrough
+status: stable
+stale_after: "2027-03-06"
+sources: [{author: Harisfazillah Jamel, id: dsom_task_ledger, title: DSOM Task List, url: 'file:///.agents/brain/task.md'}]
+generated: {by: DSOM Session Workflow, timestamp: '2026-09-06T12:30:00Z'}
 ---
 # DSOM Native MCP Architecture Complete
 

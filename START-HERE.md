@@ -38,6 +38,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **Technical Handbook Blueprint** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT/) | How-To Produce a Project Technical Handbook Blueprint |
 | **Mintlify Knowledge Brain (Live)** | [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site) | Auto-synced public Mintlify documentation portal |
 | **Start AI Agents Prompt** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/) (GitBook: [`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt`](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt)) | Universal copy-paste prompt for first-time AI agent setup |
+| **Council of High Intelligence Proposal** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/) | Master proposal for 18-member deliberation adoption |
 
 ---
 
@@ -276,6 +277,16 @@ To configure your AI client, point it to our `uv`-managed server script:
 **Read This First:** [`docs/START-AI-AGENTS-PROMPT.md`](docs/START-AI-AGENTS-PROMPT.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/) | GitBook Mirror: [`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt`](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt))
 
 **Why it matters:** Provides the universal, copy-pasteable prompt and execution checklist for humans to ask AI agents to set up dual `AGENTS.md` gateways, `.agents/brain/` spatial memory, OKF frontmatter, Universal Gateway Matrix, and 4-tier environment maps in a single interaction.
+
+---
+
+## 24. The Council of High Intelligence Deliberation Entry Point (Multi-Perspective Decision Boundary)
+
+*If you want to review the proposal and architectural design for adopting the 18-member Council of High Intelligence deliberation engine into DSOM.*
+
+**Read This First:** [`docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md`](docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/))
+
+**Why it matters:** Outlines the governance proposal, persona contracts, domain triad routing, zero-binary Python emulator (`tools/council_emulator.py`), FastMCP tool integration, and spatial memory ledgers for structured multi-perspective deliberation in DSOM.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-23*

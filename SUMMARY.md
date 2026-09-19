@@ -56,6 +56,7 @@ topics: ["dsom", "documentation"]
 * [📦 Agent Plugins 1.0.0 Specification & DSOM Integration](docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md)
 * [🌿 Mintlify One-Way Docs Sync & Safety Guards Specification](docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md)
 * [📖 Mintlify User Manual Architecture & One-Way Sync Guide](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md)
+* [🏛️ Council of High Intelligence DSOM Adoption Proposal](docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md)
 
 ## 🌅 2. Operational Rituals
 
