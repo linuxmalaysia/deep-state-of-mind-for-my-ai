@@ -1,8 +1,8 @@
 ---
-okf_version: 0.1
-type: documentation
+okf_version: "0.1"
+type: "documentation"
 title: "DSOM Scope & Three-Pillar Operational Model"
-timestamp: "2026-09-04T21:16:57Z"
+timestamp: "2026-09-19T12:20:55Z"
 topics: ["openwiki", "architecture", "overview", "pillars"]
 description: "DSOM scope, three-pillar operating model, component boundaries, and authoritative sources."
 ---
