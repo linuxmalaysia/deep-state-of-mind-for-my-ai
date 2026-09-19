@@ -100,6 +100,7 @@ Skills are OKF-compliant Standard Operating Procedures (SOPs) that govern how th
 | `knowledge-base-templates` | Provides reusable templates and structural frameworks for internal wikis, concept maps, and module docs. | Project/monorepo structure. | Structured KB wiki template. |
 | `architecture-decision-records` | Writes and maintains Architecture Decision Records (ADRs) following standard MADR format. | Architectural context and choices. | Formatted MADR ADR document. |
 | `changelog-automation` | Automates changelog generation following Keep a Changelog and Conventional Commits. | Git commits, PRs, releases. | Formatted Changelog. |
+| `council-of-high-intelligence` | Executes multi-perspective AI deliberation and consensus synthesis across specialized domain personas. | User prompt, issue or ADR. | Council Decision Record (CDR). |
 
 ### Document Output Skills
 
@@ -199,7 +200,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `.agents/brain/walkthrough.md` | Session history and Mental Anchors (resume context). |
 | `.agents/brain/palace_registry.md` | Spatial index of the Sovereign Markdown Palace. |
 | `.agents/brain/active_context_manifest.md` | Live list of files currently in scope. |
-| `.agents/skills/` | OKF-compliant executable skill SOPs (44 skills). |
+| `.agents/skills/` | OKF-compliant executable skill SOPs (46 skills). |
 | `.agents/workflows/` | Multi-agent orchestration governance workflows. |
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |

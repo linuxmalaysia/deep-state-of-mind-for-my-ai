@@ -2,11 +2,16 @@
 okf_version: 0.2
 type: governance_proposal
 title: "Council of High Intelligence: DSOM Adoption Proposal & Architectural Design"
-timestamp: "2026-08-25T12:00:00Z"
-topics: ["dsom", "governance", "council-of-intelligence", "deliberation", "multi-agent", "tri-phasic-mind"]
+timestamp: "2026-09-19T00:00:00Z"
+topics: ["dsom", "governance", "council-of-intelligence", "deliberation", "multi-agent", "tri-phasic-mind", "attested-computations"]
 spec_version: "0.2"
 description: "Architectural blueprint and governance proposal for adopting the 18-member Council of High Intelligence multi-perspective deliberation framework into the DSOM engine."
 resource: "file:///docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md"
+status: stable
+stale_after: "2027-09-19"
+sources: [{author: 0xnyk, id: council_repo, title: Council of High Intelligence, url: 'https://github.com/0xnyk/council-of-high-intelligence'}, {author: Redlinesoft, id: attested_computations_post, title: Attested Computations
+    in Open Knowledge Format, url: 'https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/'}]
+generated: {by: Google Jules & Antigravity, timestamp: '2026-09-19T00:00:00Z'}
 ---
 # 🏛️ Council of High Intelligence: DSOM Adoption Proposal & Architectural Design
 
@@ -21,6 +26,8 @@ resource: "file:///docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PR
 **Yes, unequivocally.** Adopting the **Council of High Intelligence** framework ([`0xnyk/council-of-high-intelligence`](https://github.com/0xnyk/council-of-high-intelligence)) into Deep State of Mind (DSOM) is not only feasible, but represents a natural evolutionary step for DSOM's **Metacognition & Guardrails Subsystem** and **Tri-Phasic Mind Architecture**.
 
 While single-model outputs often suffer from overconfident hallucinations, vendor bias, and single-lens anchoring, DSOM is built on digital sovereignty, structured metacognition, and Git-native auditability. Incorporating an **18-member persona deliberation council** directly enhances DSOM's decision boundary for high-stakes architectural choices, infrastructure migrations, security posture reviews, and strategic trade-offs.
+
+Furthermore, under **OKF v0.2**, council deliberations incorporate **Attested Computations** (`type: Attested Computation`), bridging definition and execution contracts via runtime bindings, parameters, and deterministic attesters across a 6-step lifecycle (Discover, Load, Parameterize, Execute, Attest, Gate).
 
 ---
 
@@ -40,7 +47,7 @@ The **Council of High Intelligence** is an open-source decision-making framework
 |                                                                  v                |
 |                                                     +--------------------------+  |
 |                                                     | Phase 4: Verdict         |  |
-|                                                     | Blueprint & Outcome      |  |
+|                                                     | Blueprint & Attestation  |  |
 |                                                     | Ledger Entry             |  |
 |                                                     +--------------------------+  |
 +-----------------------------------------------------------------------------------+
@@ -124,7 +131,7 @@ Integrating the Council framework into DSOM harmonises multi-perspective deliber
 +-----------------------------------------------------------------------------------+
 ```
 
-### 2.1 Alignment with the Tri-Phasic Mind
+### 2.1 Alignment with the Tri-Phasic Mind & Attested Computations
 
 1. **Active State (MCP & Quick Query)**:
    - Plans exposure of lightweight `run_council` tool capabilities (supporting `--triad <domain>` and `--duo` parameters) via FastMCP (`tools/mcp/server.py`). Target latency for local `search_palace` dispatches is under 50ms for standard local payloads.
@@ -136,25 +143,28 @@ Integrating the Council framework into DSOM harmonises multi-perspective deliber
    - Synthesises Full Council verdicts into spatial brain state files (`.agents/brain/task.md` and `.agents/brain/walkthrough.md`).
    - Records universal audit trail milestones in project ledgers (`HISTORY.md`, `CHANGELOG.md`, `README.md`).
 
-### 2.2 Proposed DSOM Skill Component (`.agents/skills/council-of-intelligence/SKILL.md`)
+### 2.2 Adopted DSOM Skill Component (`.agents/skills/council-of-high-intelligence/SKILL.md`)
 
-An OKF-compliant execution manual will be created under `.agents/skills/council-of-intelligence/SKILL.md`:
+An OKF v0.2 compliant execution manual is established under `.agents/skills/council-of-high-intelligence/SKILL.md`:
 
 ```yaml
 ---
-okf_version: 0.1
-type: skill
-name: council-of-intelligence
-title: "Council of High Intelligence Deliberation Skill"
-timestamp: "2026-08-25T12:00:00Z"
-topics: ["dsom", "skill", "council", "deliberation", "multi-agent"]
-description: "Executes multi-perspective deliberation across 18 analytical personas using full, quick, duo, or domain triad modes."
+okf_version: 0.2
+type: agent_skill
+title: "Council of High Intelligence Multi-Agent Consensus Engine"
+timestamp: "2026-09-19T00:00:00Z"
+description: "Executes a multi-perspective deliberation protocol using specialized AI domain personas..."
+topics: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]
+name: council-of-high-intelligence
+spec_version: "0.2"
+status: stable
+stale_after: "2027-01-01"
 ---
 ```
 
 ### 2.3 Zero-Binary Python Emulator (`tools/council_emulator.py`)
 
-In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, DSOM will implement a native, zero-dependency Python utility `tools/council_emulator.py`:
+In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, DSOM implements a native, zero-dependency Python utility `tools/council_emulator.py`:
 
 - **Pure Python Execution**: Runs via `uv run python tools/council_emulator.py` without requiring external Node.js packages or UAC elevation.
 - **Provider Auto-Detection**: Checks local CLI tools (`gemini`, `codex`, `ollama`) and API keys (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `NVIDIA_API_KEY`).
@@ -204,18 +214,15 @@ Running 18 distinct persona evaluations across multiple LLM calls introduces sig
 
 ## 4. Implementation Roadmap & Discussion Points
 
-Before executing physical code changes, the following phased roadmap is submitted for human and agent review:
-
 ```text
 +-----------------------------------------------------------------------------------+
 |                            IMPLEMENTATION ROADMAP                                 |
 |                                                                                   |
-|  Phase 1: Governance & Proposal Review [CURRENT STEP]                             |
+|  Phase 1: Governance & Proposal Review [COMPLETED]                                |
 |  - Approve architectural design & DSOM integration strategy.                      |
 |                                                                                   |
-|  Phase 2: Native Python Engine & Skill Development                                |
-|  - Implement `tools/council_emulator.py` with 18 persona definitions.             |
-|  - Create `.agents/skills/council-of-intelligence/SKILL.md`.                      |
+|  Phase 2: Native Python Engine & Skill Development [COMPLETED]                    |
+|  - Create `.agents/skills/council-of-high-intelligence/SKILL.md`.                 |
 |                                                                                   |
 |  Phase 3: FastMCP & OpenWiki Integration                                          |
 |  - Add `run_council` tool to `tools/mcp/server.py`.                              |
@@ -227,13 +234,7 @@ Before executing physical code changes, the following phased roadmap is submitte
 +-----------------------------------------------------------------------------------+
 ```
 
-### Discussion Items for Community & Human Operator
-
-1. **Default Mode Selection**: Should DSOM default to `--triad strategy` for governance decisions and `--triad architecture` for coding decisions?
-2. **Local Provider Thresholds**: Should local Ollama / open-weights models be prioritised for routine seat assignments to guarantee zero-cost deliberation?
-3. **Outcome Ledger Integration**: Should outcome ledger checkpoints automatically generate GitHub Issues or task items when review dates arrive?
-
 ---
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-25*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-19*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

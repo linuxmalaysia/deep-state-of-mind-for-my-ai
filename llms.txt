@@ -72,6 +72,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Knowledge Base Templates Skill](.agents/skills/knowledge-base-templates/SKILL.md): SOP for generating structured repository wikis and module documentation.
 - [Architecture Decision Records Skill](.agents/skills/architecture-decision-records/SKILL.md): SOP for authoring MADR-compliant Architecture Decision Records (ADRs).
 - [Changelog Automation Skill](.agents/skills/changelog-automation/SKILL.md): SOP for automating Keep a Changelog releases from Conventional Commits.
+- [Council of High Intelligence Skill](.agents/skills/council-of-high-intelligence/SKILL.md): SOP for multi-perspective AI deliberation and consensus synthesis.
 
 ## Strategy & Optimization
 - [GitOps/AIOps/Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Doctrine for integrating AI planning with Defensive GitOps.

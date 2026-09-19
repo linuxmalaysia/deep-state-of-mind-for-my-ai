@@ -178,6 +178,7 @@ spec_version: "0.2"
 * [📚 Knowledge Base Templates Skill](.agents/skills/knowledge-base-templates/SKILL.md)
 * [🏛️ Architecture Decision Records Skill](.agents/skills/architecture-decision-records/SKILL.md)
 * [📜 Changelog Automation Skill](.agents/skills/changelog-automation/SKILL.md)
+* [🏛️ Council of High Intelligence Skill](.agents/skills/council-of-high-intelligence/SKILL.md)
 
 ## 📚 9. References & Genesis Papers
 
