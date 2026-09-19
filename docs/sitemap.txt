@@ -105,6 +105,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/agent-configs/copi
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/agent-configs/cursorrules_template/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/agent-configs/windsurfrules_template/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/attested-computations-okf/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/diataxis/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/openwiki-mcp-architecture/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
@@ -116,6 +117,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-SKIL
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-SLASH-COMMANDS-GUIDE/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AUTOMATION-AUDIT-LIST/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/CRISP2-OPERATIONAL-STRATEGY/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
@@ -315,6 +317,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/agent-configs/copil
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/agent-configs/cursorrules_template/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/agent-configs/windsurfrules_template/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/attested-computations-okf/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/diataxis/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/openwiki-mcp-architecture/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
@@ -326,6 +329,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-SKILL
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-SLASH-COMMANDS-GUIDE/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AUTOMATION-AUDIT-LIST/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/CRISP2-OPERATIONAL-STRATEGY/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-MODEL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DIGITAL-SOVEREIGNTY-OPERATIONAL-MODEL-PALACE/
@@ -461,6 +465,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/copilot-setup
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/dsom-episodic-record-template
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/eod-ritual
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/attested-computations-okf
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/diataxis
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/index
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/openwiki-mcp-architecture
@@ -471,6 +476,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-master-protocol
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/automation-audit-list
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/byte-capped-execution-framework
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/council-of-high-intelligence-dsom-adoption-proposal
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/crisp2-operational-strategy
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-model
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/digital-sovereignty-operational-model-palace
