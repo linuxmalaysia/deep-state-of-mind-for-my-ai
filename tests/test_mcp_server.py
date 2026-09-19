@@ -55,6 +55,13 @@ class McpServerResourceTests(unittest.TestCase):
         res = server.write_palace_document("docs/test_secret.md", leak_content)
         self.assertIn("[ERROR: GUARDRAIL BLOCKED]", res)
 
+    def test_run_council_tool_executes(self):
+        topic = "Zero Binary Architecture Adoption"
+        res = server.run_council(topic=topic, mode="quick")
+        self.assertIsInstance(res, str)
+        self.assertIn("Council Decision Record", res)
+        self.assertIn(topic, res)
+
 
 if __name__ == "__main__":
     unittest.main()

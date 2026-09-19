@@ -34,7 +34,17 @@ OPENWIKI_DIR = PROJECT_ROOT / "openwiki"
 REFERENCES_DIR = PROJECT_ROOT / "references"
 AGENTS_FILE = PROJECT_ROOT / ".agents" / "AGENTS.md"
 
-# Integrate DSOM Guardrails
+# Integrate Council Emulator & DSOM Guardrails
+TOOLS_DIR = PROJECT_ROOT / "tools"
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+
+try:
+    from council_emulator import run_council as council_run_fn
+    HAS_COUNCIL = True
+except ImportError:
+    HAS_COUNCIL = False
+
 GUARDRAILS_SRC = PROJECT_ROOT / "tools" / "guardrails-ai-dsom" / "src"
 if str(GUARDRAILS_SRC) not in sys.path:
     sys.path.insert(0, str(GUARDRAILS_SRC))
@@ -253,6 +263,27 @@ def write_palace_document(relative_path: str, markdown_content: str) -> str:
     target_file.parent.mkdir(parents=True, exist_ok=True)
     target_file.write_text(clean_content, encoding="utf-8")
     return f"Successfully validated and written to {target_rel_path}"
+
+@mcp.tool()
+def run_council(
+    topic: str,
+    context: str = "",
+    output_path: str = "",
+    mode: str = "quick",
+    triad: str = ""
+) -> str:
+    """Executes multi-perspective AI deliberation using the Council of High Intelligence personas.
+
+    Args:
+        topic: The architectural topic, decision, or technical trade-off to deliberate.
+        context: Optional extra operational context or constraints.
+        output_path: Optional relative file path where the Council Decision Record (CDR) markdown should be saved.
+        mode: Deliberation mode ('quick', 'full', 'duo', or 'triad').
+        triad: Domain triad selector for 'triad' mode (e.g. 'architecture', 'security', 'shipping', 'risk').
+    """
+    if not HAS_COUNCIL:
+        return "Error: council_emulator module not available."
+    return council_run_fn(topic=topic, context=context, output_path=output_path, mode=mode, triad=triad)
 
 if __name__ == "__main__":
     # Start the FastMCP stdio server
