@@ -45,6 +45,7 @@ topics: ["dsom", "documentation", "diataxis", "summary"]
 * [Agent Plugins 1.0.0 Specification](governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md)
 * [Mintlify One-Way Sync Pipeline](governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md)
 * [Mintlify User Manual Sync Guide](governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md)
+* [Council of High Intelligence Proposal](governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md)
 
 ## 🧠 Explanation and Design
 

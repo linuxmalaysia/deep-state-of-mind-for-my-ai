@@ -1,21 +1,15 @@
 ---
 okf_version: 0.2
-spec_version: "0.2"
 type: walkthrough_ledger
-concept_id: "dsom_session_walkthrough"
 title: "🗺️ DSOM Session Walkthrough"
-status: "stable"
-stale_after: "2027-03-06"
 timestamp: "2026-09-06T12:30:00Z"
 topics: ["readthedocs", "configuration", "testing"]
-sources:
-  - id: "dsom_task_ledger"
-    title: "DSOM Task List"
-    author: "Harisfazillah Jamel"
-    url: "file:///.agents/brain/task.md"
-generated:
-  by: "DSOM Session Workflow"
-  timestamp: "2026-09-06T12:30:00Z"
+spec_version: "0.2"
+concept_id: dsom_session_walkthrough
+status: stable
+stale_after: "2027-03-06"
+sources: [{author: Harisfazillah Jamel, id: dsom_task_ledger, title: DSOM Task List, url: 'file:///.agents/brain/task.md'}]
+generated: {by: DSOM Session Workflow, timestamp: '2026-09-06T12:30:00Z'}
 ---
 # DSOM Native MCP Architecture Complete
 
@@ -333,8 +327,21 @@ To ensure complete compliance with OpenViking and Warp skill specifications acro
 
 > **EOD Hibernation Complete: Enforced kebab-case skill name frontmatter attribute across all 45 skills, updated apply_okf_frontmatter.py tooling and unit tests, resolved PR review comments, and verified 100% test suite pass rate.**
 
+## 🏁 Session Anchor: 2026-09-19 — Council of High Intelligence DSOM Adoption Proposal & EOD Hibernation
+
+- Authored master governance proposal and architectural design document `docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md` outlining the feasibility, deconstruction, and architectural integration of the 18-member Council of High Intelligence deliberation framework into DSOM.
+- Mapped the 18 analytical persona lenses to DSOM's Tri-Phasic Mind model (Active, Twilight, and Deep State), zero-binary Python emulator (`tools/council_emulator.py`), FastMCP tool binding (`tools/mcp/server.py`), and spatial memory ledgers under `.agents/brain/`.
+- Registered **Entry Point 24** across omni-documentation navigation manifests and indices (`START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `.agents/brain/palace_registry.md`).
+- Resolved all PR review comments (fixed UK English spelling, `asyncio` concurrency terminology, diagram Target Latency labels, audit ledger vs. spatial brain file classification, and markdown code block tags).
+- Verified 100% unit test suite pass rate (813 active tests passing with exit code 0).
+- Completed EOD Palace Sync hibernation ritual and updated spatial memory ledgers (`.agents/brain/task.md`, `walkthrough.md`, `palace_registry.md`).
+
+### Council of High Intelligence Adoption Mental Anchor
+
+> **EOD Palace Sync Complete: Authored Council of High Intelligence DSOM Adoption Proposal (Entry Point 24), registered across all index manifests, resolved all PR review feedback, enforced OKF v0.2 frontmatter and UK English spelling standards, and verified 100% test pass rate across all 813 unit test scenarios.**
+
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-06*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-19*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
 
 
