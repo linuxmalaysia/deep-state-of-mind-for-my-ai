@@ -62,7 +62,9 @@ jobs:
       - name: Install Dependencies
         run: |
           uv pip install --system pyyaml pytest ansible-core ansible-lint
-          ansible-galaxy collection install community.general community.crypto ansible.posix
+          for i in {1..3}; do
+            ansible-galaxy collection install community.general community.crypto ansible.posix && break || sleep 5
+          done
 
       - name: Run Ansible Lint Static Analysis
         run: |
