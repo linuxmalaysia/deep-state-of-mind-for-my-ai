@@ -26,6 +26,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/age
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/architecture-decision-records/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/changelog-automation/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/context7-indexer/SKILL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/council-of-high-intelligence/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/cross-platform-translator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/docs-review/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/docs-write/SKILL/
@@ -238,6 +239,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/agen
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/architecture-decision-records/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/changelog-automation/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/context7-indexer/SKILL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/council-of-high-intelligence/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/cross-platform-translator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/docs-review/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/docs-write/SKILL/
@@ -428,6 +430,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/brain/palace_registry
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/architecture-decision-records/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/changelog-automation/skill
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/council-of-high-intelligence/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/docs-review/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/docs-write/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/docstring/skill
