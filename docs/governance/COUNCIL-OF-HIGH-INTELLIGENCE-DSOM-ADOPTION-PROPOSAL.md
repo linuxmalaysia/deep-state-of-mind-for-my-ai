@@ -153,7 +153,7 @@ okf_version: 0.2
 type: agent_skill
 title: "Council of High Intelligence Multi-Agent Consensus Engine"
 timestamp: "2026-09-19T00:00:00Z"
-description: "Executes a multi-perspective deliberation protocol using specialized AI domain personas..."
+description: "Executes a multi-perspective deliberation protocol using specialised AI domain personas..."
 topics: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]
 name: council-of-high-intelligence
 spec_version: "0.2"
@@ -162,13 +162,13 @@ stale_after: "2027-01-01"
 ---
 ```
 
-### 2.3 Zero-Binary Python Emulator (`tools/council_emulator.py`)
+### 2.3 Planned Zero-Binary Python Emulator (`tools/council_emulator.py`)
 
-In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, DSOM implements a native, zero-dependency Python utility `tools/council_emulator.py`:
+In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, DSOM plans to implement a native, zero-dependency Python utility `tools/council_emulator.py`:
 
 - **Pure Python Execution**: Runs via `uv run python tools/council_emulator.py` without requiring external Node.js packages or UAC elevation.
 - **Provider Auto-Detection**: Checks local CLI tools (`gemini`, `codex`, `ollama`) and API keys (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `NVIDIA_API_KEY`).
-- **CLI Invocations**:
+- **Proposed CLI Invocations**:
   ```bash
   # Run a full 18-member council deliberation
   uv run python tools/council_emulator.py --full "Should we migrate from REST to FastMCP?"
@@ -180,9 +180,9 @@ In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**,
   uv run python tools/council_emulator.py --duo torvalds meadows "Is this abstraction layer worth maintaining?"
   ```
 
-### 2.4 FastMCP Server Tool Binding (`tools/mcp/server.py`)
+### 2.4 Proposed FastMCP Server Tool Binding (`tools/mcp/server.py`)
 
-The Council engine will be exposed directly as an MCP tool:
+The Council engine is planned for direct exposure as an MCP tool in `tools/mcp/server.py`:
 
 ```python
 @mcp.tool()
@@ -208,7 +208,7 @@ Running 18 distinct persona evaluations across multiple LLM calls introduces sig
 | **Token Inflation (18x Overhead)** | Heavy prompt token consumption in `--full` mode | Default to `--triad <domain>` (3 members) for daily development; limit `--full` to major architecture decision records (ADRs). |
 | **Local Latency** | Sequential LLM API calls delay execution | Asynchronous concurrency via Python `asyncio` across multi-provider endpoints + local Ollama acceleration. |
 | **Vendor Anchoring** | Single model provider dominates both sides | Multi-provider routing splits polarity pairs across distinct LLM families (Claude vs. Gemini vs. OpenAI). |
-| **Context Window Rot** | Verbose raw discussion clutters chat context | Summary compaction via `tools/council_emulator.py` returning only the structured Verdict Blueprint to the active agent window. |
+| **Context Window Rot** | Verbose raw discussion clutters chat context | Summary compaction via proposed `tools/council_emulator.py` returning only the structured Verdict Blueprint to the active agent window. |
 
 ---
 
@@ -221,14 +221,17 @@ Running 18 distinct persona evaluations across multiple LLM calls introduces sig
 |  Phase 1: Governance & Proposal Review [COMPLETED]                                |
 |  - Approve architectural design & DSOM integration strategy.                      |
 |                                                                                   |
-|  Phase 2: Native Python Engine & Skill Development [COMPLETED]                    |
+|  Phase 2: Antigravity Skill Specification [COMPLETED]                             |
 |  - Create `.agents/skills/council-of-high-intelligence/SKILL.md`.                 |
 |                                                                                   |
-|  Phase 3: FastMCP & OpenWiki Integration                                          |
+|  Phase 3: Native Python Engine Development [PLANNED]                              |
+|  - Implement `tools/council_emulator.py` zero-dependency runner.                  |
+|                                                                                   |
+|  Phase 4: FastMCP & OpenWiki Integration [PLANNED]                                |
 |  - Add `run_council` tool to `tools/mcp/server.py`.                              |
 |  - Integrate Council verdicts into OpenWiki knowledge graph.                      |
 |                                                                                   |
-|  Phase 4: Unit Testing & CI Verification                                          |
+|  Phase 5: Unit Testing & CI Verification [PLANNED]                                |
 |  - Add test suite `tests/test_council_emulator.py`.                               |
 |  - Verify navigation, links, and OKF frontmatter compliance.                      |
 +-----------------------------------------------------------------------------------+
