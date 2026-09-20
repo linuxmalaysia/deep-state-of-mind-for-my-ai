@@ -4544,6 +4544,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#13-council-emulator-zero-binary-cli-fastmcp-tool-integration-pr-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Council Emulator Zero-Binary CLI &amp; FastMCP Tool Integration (PR #100)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4734,6 +4745,20 @@
 <li><strong>CodeRabbit AI:</strong> Requested deriving skill <code>name</code> directly from <code>filepath</code> in <code>normalise_metadata</code> and scoping derivation strictly to <code>.agents/skills</code> paths.</li>
 <li><strong>Jules' Response:</strong> Updated <code>tools/apply_okf_frontmatter.py</code> accordingly and replied to all comments.</li>
 </ul>
+<h3 id="13-council-emulator-zero-binary-cli-fastmcp-tool-integration-pr-100">13. Council Emulator Zero-Binary CLI &amp; FastMCP Tool Integration (PR #100)</h3>
+<ul>
+<li><strong>Date:</strong> 2026-09-19</li>
+<li><strong>Branch:</strong> <code>jules-4116035378781165878-f4110d1e</code></li>
+<li><strong>Objective:</strong> Implement <code>tools/council_emulator.py</code> as a pure Python zero-binary CLI tool (Rule 27), expose <code>run_council</code> via FastMCP (<code>tools/mcp/server.py</code>), and add unit test suite <code>tests/test_council_emulator.py</code> and <code>tests/test_mcp_server.py</code>.</li>
+<li><strong>Technical Implementation:</strong></li>
+<li>Implemented zero-dependency <code>tools/council_emulator.py</code> supporting Council personas, deliberation modes (<code>quick</code>, <code>full</code>, <code>duo</code>, <code>triad</code>), evidence tagging (<code>[FACT]</code>, <code>[INFERENCE]</code>, <code>[ASSUMPTION]</code>), <code>yaml.safe_dump</code> OKF v0.2 frontmatter CDR generation, and <code>sys.stderr</code> log outputs.</li>
+<li>Exposed <code>run_council</code> as an MCP tool in <code>tools/mcp/server.py</code> with strict path traversal and containment guards for <code>output_path</code>.</li>
+<li>Added unit test suites <code>tests/test_council_emulator.py</code> and <code>tests/test_mcp_server.py</code> (100% pass rate).</li>
+<li>Updated <code>.github/workflows/docs-ci.yml</code> with retry loop and explicit exit code handling for <code>ansible-galaxy</code> installations.</li>
+<li><strong>Comments &amp; Reviews:</strong></li>
+<li><strong>CodeRabbit AI:</strong> Requested UK English spelling ('minimise'), mode validation (<code>ValueError</code>), <code>yaml.safe_dump</code> CDR frontmatter, <code>sys.stderr</code> log output, <code>--output</code>/<code>-o</code> <code>nargs='?'</code> sentinel behavior, and FastMCP path containment checks.</li>
+<li><strong>Jules' Response:</strong> Fully addressed all feedback, added test cases, and confirmed 100% test pass rate across all 71 local unit tests.</li>
+</ul>
 <hr />
 <h2 id="core-engineering-resolutions-algorithmic-milestones">🌗 Core Engineering Resolutions &amp; Algorithmic Milestones</h2>
 <h3 id="a-the-pyyaml-customloader-parser">A. The PyYAML CustomLoader Parser</h3>
@@ -4773,7 +4798,7 @@
   Upgraded the test discovery suites (<code>tests/test_okf_frontmatter_bom_reorder.py</code>, <code>tests/test_docs_symlinks.py</code>) to handle Windows native checkouts.</li>
 </ul>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-19</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 
