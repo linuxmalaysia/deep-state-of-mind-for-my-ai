@@ -2,7 +2,7 @@
 okf_version: 0.2
 type: PR_history_ledger
 title: "🐙 Google Jules: Historic Pull Requests & Conversation Log"
-timestamp: "2026-08-14T12:00:00Z"
+timestamp: "2026-09-19T23:30:00Z"
 topics: ["jules", "pull_requests", "gitops", "coderabbit", "ledger"]
 spec_version: "0.2"
 ---
@@ -113,6 +113,19 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
   - **CodeRabbit AI:** Requested deriving skill `name` directly from `filepath` in `normalise_metadata` and scoping derivation strictly to `.agents/skills` paths.
   - **Jules' Response:** Updated `tools/apply_okf_frontmatter.py` accordingly and replied to all comments.
 
+### 13. Council Emulator Zero-Binary CLI & FastMCP Tool Integration (PR #100)
+* **Date:** 2026-09-19
+* **Branch:** `jules-4116035378781165878-f4110d1e`
+* **Objective:** Implement `tools/council_emulator.py` as a pure Python zero-binary CLI tool (Rule 27), expose `run_council` via FastMCP (`tools/mcp/server.py`), and add unit test suite `tests/test_council_emulator.py` and `tests/test_mcp_server.py`.
+* **Technical Implementation:**
+  - Implemented zero-dependency `tools/council_emulator.py` supporting Council personas, deliberation modes (`quick`, `full`, `duo`, `triad`), evidence tagging (`[FACT]`, `[INFERENCE]`, `[ASSUMPTION]`), `yaml.safe_dump` OKF v0.2 frontmatter CDR generation, and `sys.stderr` log outputs.
+  - Exposed `run_council` as an MCP tool in `tools/mcp/server.py` with strict path traversal and containment guards for `output_path`.
+  - Added unit test suites `tests/test_council_emulator.py` and `tests/test_mcp_server.py` (100% pass rate).
+  - Updated `.github/workflows/docs-ci.yml` with retry loop and explicit exit code handling for `ansible-galaxy` installations.
+* **Comments & Reviews:**
+  - **CodeRabbit AI:** Requested UK English spelling ('minimise'), mode validation (`ValueError`), `yaml.safe_dump` CDR frontmatter, `sys.stderr` log output, `--output`/`-o` `nargs='?'` sentinel behavior, and FastMCP path containment checks.
+  - **Jules' Response:** Fully addressed all feedback, added test cases, and confirmed 100% test pass rate across all 71 local unit tests.
+
 ---
 
 ## 🌗 Core Engineering Resolutions & Algorithmic Milestones
@@ -160,5 +173,5 @@ Cloning the repository on native Windows workstations often converts symlinks to
   Upgraded the test discovery suites (`tests/test_okf_frontmatter_bom_reorder.py`, `tests/test_docs_symlinks.py`) to handle Windows native checkouts.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-14*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-19*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
