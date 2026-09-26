@@ -2,7 +2,7 @@
 okf_version: "0.1"
 type: "documentation"
 title: "Session Memory Stratification & Palace Synchronisation"
-timestamp: "2026-09-20T03:29:08Z"
+timestamp: "2026-09-26T12:46:49Z"
 topics: ["openwiki", "memory", "session", "palace", "stratification"]
 description: "Brain artifact ownership, active-context, SOD/reanimation, EOD/hibernation, Palace Sync."
 ---
