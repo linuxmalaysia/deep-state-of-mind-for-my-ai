@@ -338,7 +338,7 @@ class DocsSummaryMdTests(unittest.TestCase):
     def test_has_valid_okf_frontmatter(self):
         raw, _ = _extract_frontmatter(self.content)
         self.assertIsNotNone(raw)
-        self.assertRegex(raw, r"okf_version:\s*0\.1")
+        self.assertRegex(raw, r"okf_version:\s*0\.2")
         self.assertIn('title: "Table of Contents (GitBook Summary)"', raw)
 
     def test_declares_all_four_diataxis_sections(self):

@@ -4,9 +4,12 @@ type: governance_protocol
 title: "🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "governance", "protocol"]
+resource: "file:///docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "OKF-compliant documentation for GITOPS-AIOPS-ANSIBLE-STRATEGY.md."
-resource: "file:///docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md"
 ---
 # 🔄 DSOM Three-Pillar Strategy: GitOps · AIOps · Ansible (v1.0)
 

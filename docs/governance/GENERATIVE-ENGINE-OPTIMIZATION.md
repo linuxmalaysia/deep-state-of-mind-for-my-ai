@@ -4,9 +4,12 @@ type: documentation
 title: "Generative Engine Optimisation (GEO)"
 timestamp: "2026-07-11T23:02:18Z"
 topics: ["dsom", "documentation"]
+resource: "file:///docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "Architectural policy for ensuring documentation is machine-readable and highly cited by AI Answer Engines."
-resource: "file:///docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md"
 ---
 # Generative Engine Optimisation (GEO)
 

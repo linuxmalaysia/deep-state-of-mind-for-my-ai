@@ -6,8 +6,9 @@ timestamp: "2026-08-22T11:05:00Z"
 description: "Cuts a formal DSOM release, updates ledgers, tags the repository, and deploys to GitHub/GitLab."
 topics: ["release", "git", "tagging", "changelog", "deployment"]
 name: dsom-release-manager
-spec_version: "0.2"
+resource: "/.agents/skills/dsom-release-manager/SKILL.md"
 sources: [".agents/AGENTS.md", "CHANGELOG.md", "HISTORY.md"]
+spec_version: "0.2"
 verified: true
 status: active
 ---

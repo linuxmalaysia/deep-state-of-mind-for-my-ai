@@ -4,6 +4,10 @@ type: PR_history_ledger
 title: "🐙 Google Jules: Historic Pull Requests & Conversation Log"
 timestamp: "2026-09-19T23:30:00Z"
 topics: ["jules", "pull_requests", "gitops", "coderabbit", "ledger"]
+resource: "/.agents/brain/jules_pr_history.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🐙 Google Jules: Historic Pull Requests & Conversation Log
@@ -123,7 +127,7 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
   - Added unit test suites `tests/test_council_emulator.py` and `tests/test_mcp_server.py` (100% pass rate).
   - Updated `.github/workflows/docs-ci.yml` with retry loop and explicit exit code handling for `ansible-galaxy` installations.
 * **Comments & Reviews:**
-  - **CodeRabbit AI:** Requested UK English spelling ('minimise'), mode validation (`ValueError`), `yaml.safe_dump` CDR frontmatter, `sys.stderr` log output, `--output`/`-o` `nargs='?'` sentinel behavior, and FastMCP path containment checks.
+  - **CodeRabbit AI:** Requested UK English spelling ('minimise'), mode validation (`ValueError`), `yaml.safe_dump` CDR frontmatter, `sys.stderr` log output, `--output`/`-o` `nargs='?'` sentinel behaviour, and FastMCP path containment checks.
   - **Jules' Response:** Fully addressed all feedback, added test cases, and confirmed 100% test pass rate across all 71 local unit tests.
 
 ---

@@ -4,9 +4,12 @@ type: engineering_matrix
 title: Ingestion Latency and Contextual Mapping Velocities in DSOM
 timestamp: "2026-07-19T03:12:00Z"
 topics: ["dsom", "documentation"]
+resource: "file:///docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "Architectural analysis of DSOM local knowledge ingestion vs. remote RAG/vector pipelines, with empirical benchmarks and implementation guidance."
-resource: "file:///docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md"
 ---
 # Ingestion Latency and Contextual Mapping Velocities in DSOM
 

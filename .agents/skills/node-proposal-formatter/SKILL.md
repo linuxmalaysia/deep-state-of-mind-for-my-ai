@@ -6,6 +6,10 @@ timestamp: "2026-08-05T22:23:51Z"
 description: "Compiles a markdown proposal document into a professionally formatted DOCX file using Node.js and the docx npm package."
 topics: ["node", "docx", "proposal", "document", "formatter"]
 name: node-proposal-formatter
+resource: "/.agents/skills/node-proposal-formatter/SKILL.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # node-proposal-formatter
