@@ -4,6 +4,10 @@ type: standard_operating_procedure
 title: "SOP: Knowledge-First Discovery & Context Preservation Protocol"
 timestamp: "2026-07-26T07:07:00Z"
 topics: ["okf", "discovery", "context-management", "brain", "dsom", "SOP"]
+resource: "/docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "SOP detailing how AI agents and human operators leverage OKF YAML frontmatter (topics, description) in .agents/brain/ and docs/ to perform fast local discovery before terminal execution."
 ---

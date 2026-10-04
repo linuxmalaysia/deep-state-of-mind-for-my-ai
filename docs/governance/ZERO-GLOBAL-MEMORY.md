@@ -4,9 +4,12 @@ type: l2_analysis
 title: "Zero-Global Memory: The Sovereign AI Memory Architecture"
 timestamp: "2026-07-19T03:34:00Z"
 topics: ["memory", "sovereignty", "zero-global", "palace", "git-native"]
+resource: "file:///docs/governance/ZERO-GLOBAL-MEMORY.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "Comprehensive architectural analysis of the Zero-Global Memory mandate in DSOM. Covers the problem, the solution, the mechanics, and the operational procedures that make AI memory persistent, auditable, and vendor-independent."
-resource: "file:///docs/governance/ZERO-GLOBAL-MEMORY.md"
 ---
 # Zero-Global Memory: The Sovereign AI Memory Architecture
 

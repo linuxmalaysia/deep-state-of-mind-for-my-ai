@@ -4,11 +4,13 @@ type: walkthrough_ledger
 title: "🗺️ DSOM Session Walkthrough"
 timestamp: "2026-09-19T23:30:00Z"
 topics: ["council", "mcp", "testing", "ci"]
+resource: "/.agents/brain/walkthrough.md"
+sources: [{author: Harisfazillah Jamel, id: dsom_task_ledger, resource: 'file:///.agents/brain/task.md',
+  title: DSOM Task List, url: 'file:///.agents/brain/task.md'}]
 spec_version: "0.2"
 concept_id: dsom_session_walkthrough
 status: stable
 stale_after: "2027-03-19"
-sources: [{author: Harisfazillah Jamel, id: dsom_task_ledger, title: DSOM Task List, url: 'file:///.agents/brain/task.md'}]
 generated: {by: DSOM Session Workflow, timestamp: '2026-09-19T23:30:00Z'}
 ---
 # DSOM Native MCP Architecture Complete

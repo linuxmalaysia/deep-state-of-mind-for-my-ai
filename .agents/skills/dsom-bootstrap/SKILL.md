@@ -6,6 +6,10 @@ timestamp: "2026-08-20T23:30:00Z"
 description: "Executes the DSOM bootstrapping process for a new or existing project by reading the HOWTO-DSOM-BASELINE.md guide and pulling files from the permanent baseline repository."
 topics: ["bootstrap", "setup", "onboarding", "project-init", "dsom", "okf"]
 name: dsom-bootstrap
+resource: "/.agents/skills/dsom-bootstrap/SKILL.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🚀 DSOM Bootstrap Skill

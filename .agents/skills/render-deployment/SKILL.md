@@ -6,6 +6,10 @@ timestamp: "2026-08-06T12:00:00Z"
 description: "Configures and manages Render.com deployments via native Free Static Site pathways for the compiled DSOM MkDocs site."
 topics: ["render", "deployment", "static-site", "blueprint", "mkdocs"]
 name: render-deployment
+resource: "/.agents/skills/render-deployment/SKILL.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🚀 Render Deployment Skill

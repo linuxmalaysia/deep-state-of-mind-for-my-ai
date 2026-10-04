@@ -4,9 +4,12 @@ type: documentation
 title: "HOWTO: Upgrade Legacy DSOM Projects"
 timestamp: "2026-07-17T08:00:00Z"
 topics: ["dsom", "documentation"]
+resource: "file:///docs/HOWTO-UPGRADE-LEGACY-DSOM.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "OKF-compliant documentation for migrating older DSOM projects to the current architectural baseline."
-resource: "file:///docs/HOWTO-UPGRADE-LEGACY-DSOM.md"
 ---
 # HOWTO: Upgrade Legacy DSOM Projects
 

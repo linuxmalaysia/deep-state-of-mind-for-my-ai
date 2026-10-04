@@ -4,9 +4,12 @@ type: documentation
 title: "[CONSTRUCT] Ansible Inventory Architecture (Example Elastic SOC v1.0)"
 timestamp: "2026-07-04T10:17:05Z"
 topics: ["dsom", "documentation"]
+resource: "file:///docs/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "OKF-compliant documentation for ANSIBLE-INVENTORY-EXPLAINED.md."
-resource: "file:///docs/reference-architectures/ANSIBLE-INVENTORY-EXPLAINED.md"
 ---
 # [CONSTRUCT] Ansible Inventory Architecture (Example Elastic SOC v1.0)
 # docs/ANSIBLE-INVENTORY-EXPLAINED.md

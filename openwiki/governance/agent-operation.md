@@ -1,9 +1,14 @@
 ---
-okf_version: "0.1"
-type: "documentation"
+okf_version: 0.2
+type: documentation
 title: "Dual Agent Registry & Sovereign Operational Laws"
-timestamp: "2026-10-04T14:16:30Z"
+timestamp: "2026-09-20T03:29:08Z"
 topics: ["openwiki", "governance", "agents", "protocols", "rules"]
+resource: "/openwiki/governance/agent-operation.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+spec_version: "0.2"
 description: "Dual AGENTS.md registry, 27-rule operating constraints, mechanical boot and behaviour/discovery ordering."
 ---
 # Dual Agent Registry & Sovereign Operational Laws
