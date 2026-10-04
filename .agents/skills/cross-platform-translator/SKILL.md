@@ -6,10 +6,6 @@ timestamp: "2026-08-05T22:23:51Z"
 description: "Analyses a Windows PowerShell (.ps1) or Linux Bash (.sh) script and automatically generates its functional equivalent in the other shell language, enforcing the Cross-Platform Mandate."
 topics: ["bash", "powershell", "cross-platform", "translation", "scripting"]
 name: cross-platform-translator
-resource: "/.agents/skills/cross-platform-translator/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🔄 Cross-Platform Translator Skill

@@ -6,10 +6,6 @@ timestamp: "2026-09-02T12:00:00Z"
 description: "Writes and maintains Architecture Decision Records (ADRs) following standard MADR formats to document significant technical choices, tradeoffs, and consequences."
 topics: ["adr", "architecture", "decision-records", "madr", "dsom"]
 name: architecture-decision-records
-resource: "/.agents/skills/architecture-decision-records/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🏛️ Architecture Decision Records Skill (`architecture-decision-records`)

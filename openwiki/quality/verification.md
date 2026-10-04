@@ -1,14 +1,9 @@
 ---
-okf_version: 0.2
-type: documentation
+okf_version: "0.1"
+type: "documentation"
 title: "Quality Verification Framework & Regression Test Suites"
 timestamp: "2026-09-20T03:29:08Z"
 topics: ["openwiki", "quality", "verification", "testing", "assertions"]
-resource: "/openwiki/quality/verification.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
-spec_version: "0.2"
 description: "Python test-suite map, OKF/BOM/quoting/symlink assertions."
 ---
 # Quality Verification Framework & Regression Test Suites

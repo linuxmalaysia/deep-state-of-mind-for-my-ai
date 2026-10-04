@@ -4,12 +4,9 @@ type: documentation
 title: "GitHub Actions Security Scanning — CRDA Deprecation & Snyk Migration"
 timestamp: "2026-07-27T04:49:00Z"
 topics: ["snyk", "github-actions", "security", "crda", "ci-cd", "sarif", "governance"]
-resource: "file:///docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "L2 analysis document capturing the CRDA deprecation, Snyk replacement pattern, and proven workflow template for DSOM GitHub repositories."
+resource: "file:///docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md"
 ---
 # GitHub Actions Security Scanning — CRDA → Snyk Migration
 

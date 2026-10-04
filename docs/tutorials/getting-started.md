@@ -4,10 +4,6 @@ type: documentation
 title: "Tutorial: Getting Started with DSOM Tools"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "tutorial", "getting-started", "tools"]
-resource: "/docs/tutorials/getting-started.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # Getting started with DSOM tools

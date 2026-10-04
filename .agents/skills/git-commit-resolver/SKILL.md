@@ -6,10 +6,6 @@ timestamp: "2026-08-05T22:23:51Z"
 description: "Automatically resolves invalid or orphaned Git commit IDs referenced in the Agent Brain by searching the Git history for the matching commit message."
 topics: ["git", "commit", "history", "brain", "resolver"]
 name: git-commit-resolver
-resource: "/.agents/skills/git-commit-resolver/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🔍 Git Commit Resolver Skill

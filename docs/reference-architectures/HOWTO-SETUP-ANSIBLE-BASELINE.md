@@ -4,12 +4,9 @@ type: documentation
 title: "🛠️ HOWTO: Set Up the Ansible Baseline for a DSOM Project (Example Elastic SOC)"
 timestamp: "2026-07-04T10:17:05Z"
 topics: ["dsom", "documentation"]
-resource: "file:///docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "OKF-compliant documentation for HOWTO-SETUP-ANSIBLE-BASELINE.md."
+resource: "file:///docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md"
 ---
 # 🛠️ HOWTO: Set Up the Ansible Baseline for a DSOM Project (Example Elastic SOC)
 

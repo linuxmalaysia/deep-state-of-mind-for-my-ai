@@ -114,7 +114,7 @@ class SkillFileFrontmatterTests(unittest.TestCase):
         self.assertIsInstance(self.parsed, dict)
 
     def test_okf_version_is_correct(self):
-        self.assertEqual(self.parsed.get("okf_version"), 0.2)
+        self.assertEqual(self.parsed.get("okf_version"), 0.1)
 
     def test_type_is_agent_skill(self):
         self.assertEqual(self.parsed.get("type"), "agent_skill")
@@ -476,7 +476,7 @@ class ClosetDsomProtocolUpdateTests(unittest.TestCase):
 
     def test_okf_frontmatter_unaffected_by_body_changes(self):
         _, parsed = _extract_frontmatter_block(self.content)
-        self.assertEqual(parsed.get("okf_version"), 0.2)
+        self.assertEqual(parsed.get("okf_version"), 0.1)
         self.assertEqual(parsed.get("type"), "protocol")
         self.assertEqual(parsed.get("title"), "DSOM Protocol")
         self.assertEqual(parsed.get("timestamp"), "2026-08-08T12:00:00Z")
@@ -599,7 +599,7 @@ class ClosetToolingRegistryUpdateTests(unittest.TestCase):
 
     def test_okf_frontmatter_unaffected_by_body_changes(self):
         _, parsed = _extract_frontmatter_block(self.content)
-        self.assertEqual(parsed.get("okf_version"), 0.2)
+        self.assertEqual(parsed.get("okf_version"), 0.1)
         self.assertEqual(parsed.get("type"), "tooling_registry")
         self.assertEqual(parsed.get("title"), "Tooling Registry")
         self.assertEqual(parsed.get("timestamp"), "2026-06-19T14:00:00Z")

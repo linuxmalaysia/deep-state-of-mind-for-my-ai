@@ -54,7 +54,7 @@ This is the body content.
         self.assertEqual(len(parts), 3, f"Expected exactly one frontmatter block, got: {content1}")
 
         frontmatter = yaml.safe_load(parts[1])
-        self.assertEqual(frontmatter.get("okf_version"), 0.2)
+        self.assertEqual(frontmatter.get("okf_version"), 0.1)
         self.assertEqual(frontmatter.get("type"), "documentation")
         self.assertEqual(frontmatter.get("title"), "Second Block") # Second block takes precedence in updates
         self.assertEqual(frontmatter.get("topics"), ["testing", "regression"])

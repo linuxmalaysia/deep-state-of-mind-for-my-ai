@@ -4,10 +4,6 @@ type: documentation
 title: "How-To: Verify and Monitor Site with Google Search Console"
 timestamp: "2026-08-22T10:00:00Z"
 topics: ["dsom", "how-to", "seo", "google-search-console", "okf"]
-resource: "/docs/how-to/google-search-console.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # Verify and monitor site with Google Search Console

@@ -4,12 +4,9 @@ type: documentation
 title: "The Deep State of Mind (DSOM) Framework: Defense-in-Depth Architecture"
 timestamp: "2026-07-12T06:52:00Z"
 topics: ["dsom", "documentation"]
-resource: "file:///docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "Architectural deconstruction of the DSOM repository mapping the file structure and payload signatures to its core Defense-in-Depth design principles and AIOps integration."
+resource: "file:///docs/governance/DSOM-ARCHITECTURE-ANALYSIS.md"
 ---
 # The Deep State of Mind (DSOM) Framework: Defense-in-Depth Architecture
 

@@ -4,10 +4,6 @@ type: documentation
 title: "Deep State of Mind (DSOM) Instructions for Claude Code & Claude Desktop"
 timestamp: "2026-09-06T03:26:12Z"
 topics: ["dsom", "documentation"]
-resource: "/CLAUDE.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # Deep State of Mind (DSOM) Instructions for Claude Code & Claude Desktop

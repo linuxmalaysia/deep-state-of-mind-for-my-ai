@@ -4,10 +4,6 @@ type: active_context_manifest
 title: "Active Context Manifest — Template"
 timestamp: "2026-07-19T03:12:00Z"
 topics: ["dsom", "documentation"]
-resource: "/.agents/brain/active_context_manifest.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "OKF-compliant manifest declaring the exact file paths the agent must load for the current task session. Replace symlinks with this pattern for cross-platform portability."
 ---

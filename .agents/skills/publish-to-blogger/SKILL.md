@@ -6,10 +6,6 @@ timestamp: "2026-08-05T22:23:51Z"
 description: "Converts a markdown artefact into a clean HTML format suitable for publishing on Blogger.com, injecting the mandatory Human-AI Synergy Statement and Repository Links."
 topics: ["blogger", "html", "publish", "markdown", "blog"]
 name: publish-to-blogger
-resource: "/.agents/skills/publish-to-blogger/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # ✍️ Publish to Blogger Skill

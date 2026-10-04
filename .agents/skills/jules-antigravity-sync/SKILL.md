@@ -6,10 +6,8 @@ timestamp: "2026-08-22T23:20:00Z"
 description: "Procedural SOP for synchronising cognitive context, rule alignment, and historic code modifications between Google Jules and Google Antigravity."
 topics: ["collaboration", "sync", "jules", "antigravity", "git", "powershell", "mintlify", "agent-plugins"]
 name: jules-antigravity-sync
-resource: "/.agents/skills/jules-antigravity-sync/SKILL.md"
-sources: [{resource: 'file:///.agents/AGENTS.md', title: The Core AI Rulebook (DSOM), url: 'file:///.agents/AGENTS.md'}, {resource: 'file:///.agents/brain/jules_pr_history.md', title: Jules PR History Ledger,
-  url: 'file:///.agents/brain/jules_pr_history.md'}]
 spec_version: "0.2"
+sources: [{title: The Core AI Rulebook (DSOM), url: 'file:///.agents/AGENTS.md'}, {title: Jules PR History Ledger, url: 'file:///.agents/brain/jules_pr_history.md'}]
 generated: human-and-ai
 verified: verified
 status: authoritative

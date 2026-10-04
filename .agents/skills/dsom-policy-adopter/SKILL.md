@@ -6,10 +6,6 @@ timestamp: "2026-08-20T23:30:00Z"
 description: "Automatically ingests an external research paper or policy document (PDF/Markdown) and formally integrates it into the DSOM framework governance and core rules."
 topics: ["policy", "governance", "pdf", "ingestion", "compliance", "okf"]
 name: dsom-policy-adopter
-resource: "/.agents/skills/dsom-policy-adopter/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # DSOM Policy Adopter Skill

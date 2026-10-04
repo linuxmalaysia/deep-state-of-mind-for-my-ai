@@ -6,12 +6,10 @@ timestamp: "2026-09-19T00:00:00Z"
 description: "Executes a multi-perspective deliberation protocol using specialised AI domain personas (Domain Experts, Security Auditor, Systems Architect, Pragmatist) to review complex architectural decisions, evaluate trade-offs, and synthesize unified consensus decisions."
 topics: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]
 name: council-of-high-intelligence
-resource: "/.agents/skills/council-of-high-intelligence/SKILL.md"
-sources: [{author: 0xnyk, id: council_repo, resource: 'https://github.com/0xnyk/council-of-high-intelligence',
-  title: Council of High Intelligence, url: 'https://github.com/0xnyk/council-of-high-intelligence'}]
 spec_version: "0.2"
 status: stable
 stale_after: "2027-01-01"
+sources: [{author: 0xnyk, id: council_repo, title: Council of High Intelligence, url: 'https://github.com/0xnyk/council-of-high-intelligence'}]
 generated: {by: Google Jules & Antigravity, timestamp: '2026-09-19T00:00:00Z'}
 allowed_tools: ["file_system_write", "file_system_read", "bash"]
 tags: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]

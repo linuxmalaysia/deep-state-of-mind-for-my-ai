@@ -6,10 +6,6 @@ timestamp: "2026-07-04T10:00:00Z"
 description: "Guides a user to define their Sovereign Persona and safely injects it into the agent's core AGENTS.md rulebook."
 topics: ["persona", "profile", "identity", "dsom", "agent"]
 name: persona-injector
-resource: "/.agents/skills/persona-injector/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🎭 Persona Injector

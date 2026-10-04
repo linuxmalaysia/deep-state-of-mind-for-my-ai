@@ -4,12 +4,9 @@ type: documentation
 title: "Legal Notice & Disclaimer — Deep State of Mind (DSOM)"
 timestamp: "2026-08-11T23:54:00Z"
 topics: ["legal", "disclaimer", "privacy", "governance"]
-resource: "file:///LEGAL-NOTICE.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "Legal notice, privacy statement, critical assumptions, and disclaimer of liability for the DSOM framework."
+resource: "file:///LEGAL-NOTICE.md"
 ---
 # Legal Notice & Disclaimer
 

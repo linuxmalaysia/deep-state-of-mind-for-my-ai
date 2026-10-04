@@ -61,7 +61,7 @@ class TaskMdFrontmatterTests(unittest.TestCase):
         self.assertIsInstance(self.frontmatter, dict)
 
     def test_frontmatter_fields(self):
-        self.assertEqual(self.frontmatter.get("okf_version"), 0.2)
+        self.assertEqual(self.frontmatter.get("okf_version"), 0.1)
         self.assertEqual(self.frontmatter.get("type"), "task_ledger")
         self.assertEqual(self.frontmatter.get("title"), "🗺️ DSOM Task List")
         self.assertEqual(
@@ -134,7 +134,10 @@ class WalkthroughMdFrontmatterTests(unittest.TestCase):
         self.assertEqual(self.frontmatter.get("okf_version"), 0.2)
         self.assertEqual(self.frontmatter.get("type"), "walkthrough_ledger")
         self.assertEqual(self.frontmatter.get("title"), "🗺️ DSOM Session Walkthrough")
-        self.assertTrue(isinstance(self.frontmatter.get("topics"), list))
+        self.assertEqual(
+            self.frontmatter.get("topics"),
+            ["readthedocs", "configuration", "testing"],
+        )
 
     def test_frontmatter_precedes_heading_content(self):
         frontmatter_end = self.content.index("---\n", self.content.index("---\n") + 1) + len("---\n")

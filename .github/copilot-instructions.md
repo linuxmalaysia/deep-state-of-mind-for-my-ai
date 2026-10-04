@@ -4,10 +4,10 @@ type: documentation
 title: "🛡️ DSOM Sovereign Coding Instructions for GitHub Copilot"
 timestamp: "2026-08-22T11:00:00Z"
 topics: ["dsom", "copilot", "rules", "governance"]
-resource: "file:///.github/copilot-instructions.md"
-sources: [".agents/AGENTS.md", "START-HERE.md"]
 spec_version: "0.2"
 description: "Sovereign coding instructions instructing GitHub Copilot to strictly follow the DSOM protocol and spatial memory."
+resource: "file:///.github/copilot-instructions.md"
+sources: [".agents/AGENTS.md", "START-HERE.md"]
 verified: true
 status: active
 ---

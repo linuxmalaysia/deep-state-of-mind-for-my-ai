@@ -4,10 +4,10 @@ type: reference
 title: "🛡️ guardrails-ai-dsom: Sovereign AI Guardrails for DSOM"
 timestamp: "2026-08-22T07:25:00Z"
 topics: ["guardrails", "guardrails-ai", "dsom", "validation", "pypi", "security"]
-resource: "file:///tools/guardrails-ai-dsom/README.md"
-sources: ["docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md", ".agents/AGENTS.md"]
 spec_version: "0.2"
 description: "Documentation and usage reference for the guardrails-ai-dsom standalone Python package."
+resource: "file:///tools/guardrails-ai-dsom/README.md"
+sources: ["docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md", ".agents/AGENTS.md"]
 generated: google-antigravity
 verified: true
 status: approved

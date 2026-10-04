@@ -230,51 +230,12 @@ def normalise_metadata(
     if not topics or not isinstance(topics, list):
         topics = get_default_topics(okf_type)
 
-    # 6. resource
-    resource = existing_frontmatter.get('resource')
-    if not resource:
-        resource = f"/{rel_path}"
-
-    # 7. sources
-    sources = existing_frontmatter.get('sources')
-    if not sources or not isinstance(sources, list):
-        sources = [
-            {
-                'id': 'dsom-core-spec',
-                'title': 'Deep State of Mind (DSOM) Governance Architecture',
-                'resource': '/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md',
-                'type': 'architecture_spec',
-                'author': 'Harisfazillah Jamel (LinuxMalaysia)'
-            },
-            {
-                'id': 'google-okf-v02-spec',
-                'title': 'Google Cloud Open Knowledge Format (OKF) v0.2 Specification',
-                'resource': 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-                'type': 'external_spec',
-                'author': 'Google Cloud Platform'
-            }
-        ]
-    else:
-        # Ensure entries in sources have resource if url is present
-        normalized_sources = []
-        for src in sources:
-            if isinstance(src, dict):
-                src_copy = dict(src)
-                if 'resource' not in src_copy and 'url' in src_copy:
-                    src_copy['resource'] = src_copy['url']
-                normalized_sources.append(src_copy)
-            else:
-                normalized_sources.append(src)
-        sources = normalized_sources
-
     updated_frontmatter = {
         'okf_version': okf_version,
         'type': okf_type,
         'title': title,
         'timestamp': timestamp,
-        'topics': topics,
-        'resource': resource,
-        'sources': sources
+        'topics': topics
     }
     if 'spec_version' in existing_frontmatter:
         updated_frontmatter['spec_version'] = str(existing_frontmatter['spec_version'])
