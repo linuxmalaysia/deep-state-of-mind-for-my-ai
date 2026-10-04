@@ -6,13 +6,14 @@ timestamp: "2026-09-02T23:40:00Z"
 description: "Seamlessly converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
 topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
 name: okf-v02-adoption-engineer
+resource: "/.agents/skills/okf-v02-adoption-engineer/SKILL.md"
+sources: [{author: Google Cloud Platform, id: google_okf_spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Knowledge Catalog - OKF v0.2 Specification, url: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md'}]
 spec_version: "0.2"
 version: "1.2.0"
 author: AI Workspace Assistant
 status: stable
 stale_after: "2027-09-02"
-sources: [{author: Google Cloud Platform, id: google_okf_spec, title: Google Cloud Knowledge
-    Catalog - OKF v0.2 Specification, url: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md'}]
 generated: {by: Workspace AI Assistant, timestamp: '2026-09-02T23:40:00Z'}
 verified: {by: Repository Maintainer, timestamp: '2026-09-02T23:45:00Z'}
 inputs: {document_type: {default: guide, description: 'The OKF concept type mapping (e.g.

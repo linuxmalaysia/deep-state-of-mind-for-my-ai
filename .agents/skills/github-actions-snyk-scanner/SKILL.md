@@ -6,8 +6,11 @@ timestamp: "2026-07-27T04:49:00Z"
 description: "Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories, replacing the deprecated Red Hat CRDA action."
 topics: ["snyk", "github-actions", "security", "ci-cd", "sarif"]
 name: github-actions-snyk-scanner
-spec_version: "0.2"
 resource: "file:///.agents/skills/github-actions-snyk-scanner/SKILL.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+spec_version: "0.2"
 ---
 # Skill: GitHub Actions Snyk Security Scanner
 

@@ -6,6 +6,10 @@ timestamp: "2026-09-02T12:00:00Z"
 description: "Generates, validates, and maintains OpenAPI 3.1+ specifications from code paths or design-first drafts to ensure API contract compliance."
 topics: ["openapi", "api", "rest", "swagger", "dsom"]
 name: openapi-spec-generation
+resource: "/.agents/skills/openapi-spec-generation/SKILL.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🔌 OpenAPI Spec Generation Skill (`openapi-spec-generation`)

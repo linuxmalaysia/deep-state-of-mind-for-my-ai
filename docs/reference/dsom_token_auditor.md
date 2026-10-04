@@ -4,6 +4,10 @@ type: documentation
 title: "Reference: dsom_token_auditor.py"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "reference", "tokens", "audit"]
+resource: "/docs/reference/dsom_token_auditor.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # dsom_token_auditor.py reference

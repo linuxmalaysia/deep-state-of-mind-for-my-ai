@@ -4,8 +4,9 @@ type: governance
 title: "Mintlify One-Way Docs Sync & Safety Guards Specification"
 timestamp: "2026-08-22T22:42:00Z"
 topics: ["mintlify", "sync", "governance", "mdx", "safety-guards", "gitops"]
+resource: "/docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md"
+sources: [{resource: 'https://mintlify.com/docs', title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///scripts/sync_docs.py", "file:///tools/build_mintlify_mdx.py", "file:///.github/workflows/sync-docs.yml"]
 spec_version: "0.2"
-sources: [{title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///scripts/sync_docs.py", "file:///tools/build_mintlify_mdx.py", "file:///.github/workflows/sync-docs.yml"]
 generated: human-and-ai
 verified: verified
 status: authoritative

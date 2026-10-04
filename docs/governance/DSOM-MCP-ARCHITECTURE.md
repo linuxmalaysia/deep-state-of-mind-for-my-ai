@@ -4,6 +4,10 @@ type: documentation
 title: "DSOM-MCP-ARCHITECTURE.md — Model Context Protocol Native Server"
 timestamp: "2026-07-31T00:00:00Z"
 topics: ["mcp", "architecture", "rag", "context7", "server"]
+resource: "/docs/governance/DSOM-MCP-ARCHITECTURE.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "Research and architectural blueprint for converting the DSOM Palace into a native MCP server for AI clients."
 ---

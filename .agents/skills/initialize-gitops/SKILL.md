@@ -6,6 +6,10 @@ timestamp: "2026-06-19T14:00:00Z"
 description: "Establishes the foundational GitOps repository, configures the .gitignore, and commits the Genesis DSOM architecture for a new project."
 topics: ["gitops", "init", "git", "sovereign", "setup"]
 name: initialize-gitops
+resource: "/.agents/skills/initialize-gitops/SKILL.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 ---
 # 🐙 Initialize GitOps Skill

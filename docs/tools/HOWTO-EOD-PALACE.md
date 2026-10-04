@@ -4,9 +4,12 @@ type: automation_tool
 title: "HOWTO: eod-palace — End-of-Day Saves"
 timestamp: "2026-07-04T09:40:04Z"
 topics: ["dsom", "automation", "tool"]
+resource: "file:///docs/tools/HOWTO-EOD-PALACE.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "OKF-compliant documentation for HOWTO-EOD-PALACE.md."
-resource: "file:///docs/tools/HOWTO-EOD-PALACE.md"
 ---
 # HOWTO: eod-palace — End-of-Day Saves
 

@@ -6,8 +6,11 @@ timestamp: "2026-07-18T14:52:39Z"
 description: "Calculates token counts via tiktoken in isolated uv Python runspaces."
 topics: ["tokens", "tiktoken", "performance", "byte-cap", "context"]
 name: dsom-token-calculator
-spec_version: "0.2"
 resource: "file:///.agents/skills/dsom-token-calculator/SKILL.md"
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
+  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+spec_version: "0.2"
 ---
 # Operational Enforcements:
 
