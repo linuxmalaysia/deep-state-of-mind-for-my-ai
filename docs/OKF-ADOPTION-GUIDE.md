@@ -176,7 +176,7 @@ Run the automated compliance tool across your target documentation directory:
 uv run python tools/apply_okf_frontmatter.py docs/
 
 # Run zero-dependency POSIX bash validator
-bash tools/validate-okf.sh
+sh tools/validate-okf.sh
 ```
 
 ### Step 3: Implement Progressive Disclosure Directory Routers
@@ -202,7 +202,7 @@ Integrate automated OKF compliance testing into your GitHub Actions workflow (`.
 ```yaml
 - name: Verify OKF Frontmatter Compliance
   run: |
-    bash tools/validate-okf.sh
+    sh tools/validate-okf.sh
     uv run python tools/apply_okf_frontmatter.py docs/
     git diff --exit-code -- docs/
 ```
@@ -225,13 +225,13 @@ uv run python tools/openwiki_emulator.py --search "OKF"
 ```yaml
 ---
 okf_version: 0.2
-spec_version: "0.2"
 type: agent_skill
 title: audit-cluster-health
 timestamp: "2026-10-04T12:00:00Z"
 description: "Executes cluster health diagnostics and extracts node telemetry."
 topics: ["infrastructure", "telemetry", "health-check"]
 resource: "file:///.agents/skills/audit-cluster/SKILL.md"
+spec_version: "0.2"
 generated:
   by: "google-jules"
   at: "2026-10-04T12:00:00Z"
@@ -250,13 +250,13 @@ stale_after: "2027-10-04T00:00:00Z"
 ```yaml
 ---
 okf_version: 0.2
-spec_version: "0.2"
 type: governance_protocol
 title: "Zero-Trust Agent Hardening Policy"
 timestamp: "2026-10-04T12:00:00Z"
 topics: ["security", "zero-trust", "agent-hardening", "dsom", "okf"]
 description: "Codifies strict zero-trust sandbox rules and least-privilege token access for autonomous AI subagents."
 resource: "file:///docs/governance/SAMPLE-POLICY.md"
+spec_version: "0.2"
 sources:
   - id: "nist-sp-800-207"
     title: "NIST Special Publication 800-207: Zero Trust Architecture"

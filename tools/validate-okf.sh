@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================
 # Protocol    : Deep State of Mind (DSOM) For My AI
 # Author      : Harisfazillah Jamel (LinuxMalaysia)
@@ -9,53 +9,72 @@
 # OKF v0.2 Core Conformance Validator (POSIX-compliant)
 # Checks for:
 #   1. YAML frontmatter boundaries (---)
-#   2. Non-empty 'type' attribute
-#   3. Deprecation of legacy v0.1 fields (timestamp -> generated)
-#   4. Rejection of unparsed citations in body
+#   2. Closing '---' delimiter detection
+#   3. Non-empty 'type' attribute
+#   4. Deprecation of legacy v0.1 fields (timestamp -> generated)
+#   5. Rejection of unparsed citations in body
 # ==============================================================================
-set -euo pipefail
+set -eu
 
 FAILURES=0
 
 echo "[INFO] Commencing OKF v0.2 structural audit..."
 
-while IFS= read -r file; do
-    # Skip reserved index.md and log.md files
-    filename=$(basename "$file")
-    if [[ "$filename" == "index.md" || "$filename" == "log.md" ]]; then
+file_list=$(mktemp)
+find . -type f -name "*.md" ! -path "*/.git/*" ! -path "*/.venv/*" ! -path "*/node_modules/*" ! -path "*/.pytest_cache/*" > "$file_list"
+
+while read -r file; do
+    if [ -z "$file" ]; then
         continue
     fi
 
-    # 1. Assert frontmatter existence
-    first_line=$(head -n 1 "$file")
-    if [[ "$first_line" != "---" ]]; then
+    # Skip reserved index.md and log.md files
+    filename=$(basename "$file")
+    if [ "$filename" = "index.md" ] || [ "$filename" = "log.md" ]; then
+        continue
+    fi
+
+    # 1. Assert frontmatter existence (normalize carriage returns)
+    first_line=$(head -n 1 "$file" | tr -d '\r')
+    if [ "$first_line" != "---" ]; then
         echo "[ERROR] $file: Missing opening YAML frontmatter '---'"
         FAILURES=$((FAILURES + 1))
         continue
     fi
 
-    # Extract frontmatter lines
-    frontmatter=$(sed -n '1{p;d}; /^---$/q; p' "$file")
+    # 2. Extract frontmatter content (between line 1 and closing '---')
+    # Check if a closing '---' exists starting from line 2
+    closing_line=$(tail -n +2 "$file" | tr -d '\r' | grep -n '^---$' | head -n 1 | cut -d: -f1 || true)
+    if [ -z "$closing_line" ]; then
+        echo "[ERROR] $file: Missing closing YAML frontmatter '---'"
+        FAILURES=$((FAILURES + 1))
+        continue
+    fi
 
-    # 2. Assert 'type' field
+    # Extract lines between line 1 and closing line (excluding delimiters)
+    frontmatter=$(tail -n +2 "$file" | tr -d '\r' | head -n "$((closing_line - 1))")
+
+    # 3. Assert 'type' field
     if ! echo "$frontmatter" | grep -Eq "^type:[[:space:]]+.+"; then
         echo "[ERROR] $file: Missing or empty 'type' field in frontmatter"
         FAILURES=$((FAILURES + 1))
     fi
 
-    # 3. Check for deprecated v0.1 'timestamp'
+    # 4. Check for deprecated v0.1 'timestamp'
     if echo "$frontmatter" | grep -Eq "^timestamp:[[:space:]]+"; then
         echo "[WARN]  $file: Contains legacy v0.1 'timestamp'. Upgrade to 'generated: { by, at }'"
     fi
 
-    # 4. Check for legacy body citations header
+    # 5. Check for legacy body citations header
     if grep -Eq "^#[[:space:]]+(Citations|Sources)" "$file"; then
         echo "[WARN]  $file: Found '# Citations' in body. Migrate to frontmatter 'sources:'"
     fi
 
-done < <(find . -type f -name "*.md" ! -path "*/.git/*" ! -path "*/.venv/*" ! -path "*/node_modules/*" ! -path "*/.pytest_cache/*")
+done < "$file_list"
 
-if [[ $FAILURES -gt 0 ]]; then
+rm -f "$file_list"
+
+if [ "$FAILURES" -gt 0 ]; then
     echo "[FAIL] OKF v0.2 validation failed with $FAILURES hard errors."
     exit 1
 else
