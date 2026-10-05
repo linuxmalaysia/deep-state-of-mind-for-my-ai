@@ -11,7 +11,7 @@
 #   1. YAML frontmatter boundaries (---)
 #   2. Closing '---' delimiter detection
 #   3. Presence and non-empty status of okf_version, type, title, timestamp, topics
-#   4. Deprecation of legacy v0.1 fields (timestamp -> generated)
+#   4. Rejection of empty values, empty strings (""), and empty lists ([])
 #   5. Rejection of unparsed citations in body
 # ==============================================================================
 set -eu
@@ -22,6 +22,27 @@ echo "[INFO] Commencing OKF v0.2 structural audit..."
 
 file_list=$(mktemp)
 find . -type f -name "*.md" ! -path "*/.git/*" ! -path "*/.venv/*" ! -path "*/node_modules/*" ! -path "*/.pytest_cache/*" > "$file_list"
+
+check_field() {
+    file_path="$1"
+    field_name="$2"
+    fm_content="$3"
+
+    val=$(echo "$fm_content" | grep -E "^${field_name}:" | head -n 1 | sed "s/^${field_name}:[[:space:]]*//" | tr -d '\r')
+
+    if [ -z "$val" ]; then
+        echo "[ERROR] $file_path: Missing or empty '$field_name' field in frontmatter"
+        return 1
+    fi
+
+    # Reject quotes-only empty strings "" or '' or empty lists []
+    if [ "$val" = "\"\"" ] || [ "$val" = "''" ] || [ "$val" = "[]" ]; then
+        echo "[ERROR] $file_path: Field '$field_name' contains empty string or list in frontmatter"
+        return 1
+    fi
+
+    return 0
+}
 
 while read -r file; do
     if [ -z "$file" ]; then
@@ -43,7 +64,6 @@ while read -r file; do
     fi
 
     # 2. Extract frontmatter content (between line 1 and closing '---')
-    # Check if a closing '---' exists starting from line 2
     closing_line=$(tail -n +2 "$file" | tr -d '\r' | grep -n '^---$' | head -n 1 | cut -d: -f1 || true)
     if [ -z "$closing_line" ]; then
         echo "[ERROR] $file: Missing closing YAML frontmatter '---'"
@@ -55,38 +75,13 @@ while read -r file; do
     frontmatter=$(tail -n +2 "$file" | tr -d '\r' | head -n "$((closing_line - 1))")
 
     # 3. Assert mandatory frontmatter attributes
-    if ! echo "$frontmatter" | grep -Eq "^okf_version:[[:space:]]*[^[:space:]]+"; then
-        echo "[ERROR] $file: Missing or empty 'okf_version' field in frontmatter"
-        FAILURES=$((FAILURES + 1))
-    fi
+    check_field "$file" "okf_version" "$frontmatter" || FAILURES=$((FAILURES + 1))
+    check_field "$file" "type" "$frontmatter" || FAILURES=$((FAILURES + 1))
+    check_field "$file" "title" "$frontmatter" || FAILURES=$((FAILURES + 1))
+    check_field "$file" "timestamp" "$frontmatter" || FAILURES=$((FAILURES + 1))
+    check_field "$file" "topics" "$frontmatter" || FAILURES=$((FAILURES + 1))
 
-    if ! echo "$frontmatter" | grep -Eq "^type:[[:space:]]*[^[:space:]]+"; then
-        echo "[ERROR] $file: Missing or empty 'type' field in frontmatter"
-        FAILURES=$((FAILURES + 1))
-    fi
-
-    if ! echo "$frontmatter" | grep -Eq "^title:[[:space:]]*[^[:space:]]+"; then
-        echo "[ERROR] $file: Missing or empty 'title' field in frontmatter"
-        FAILURES=$((FAILURES + 1))
-    fi
-
-    if ! echo "$frontmatter" | grep -Eq "^timestamp:[[:space:]]*[^[:space:]]+"; then
-        echo "[ERROR] $file: Missing or empty 'timestamp' field in frontmatter"
-        FAILURES=$((FAILURES + 1))
-    fi
-
-    if ! echo "$frontmatter" | grep -Eq "^topics:[[:space:]]*[^[:space:]]+"; then
-        echo "[ERROR] $file: Missing or empty 'topics' field in frontmatter"
-        FAILURES=$((FAILURES + 1))
-    fi
-
-    # 4. Check for deprecated v0.1 'timestamp' vs v0.2 'generated' warning
-    # Note: timestamp is currently required in DSOM OKF profile alongside v0.2 generated
-    # if echo "$frontmatter" | grep -Eq "^timestamp:[[:space:]]+"; then
-    #     echo "[WARN]  $file: Contains legacy v0.1 'timestamp'. Upgrade to 'generated: { by, at }'"
-    # fi
-
-    # 5. Check for legacy body citations header
+    # 4. Check for legacy body citations header
     if grep -Eq "^#[[:space:]]+(Citations|Sources)" "$file"; then
         echo "[WARN]  $file: Found '# Citations' in body. Migrate to frontmatter 'sources:'"
     fi

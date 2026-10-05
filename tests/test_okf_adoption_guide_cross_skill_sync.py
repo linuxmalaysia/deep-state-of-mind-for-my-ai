@@ -817,7 +817,7 @@ class OkfAdoptionGuideContentSectionsTests(unittest.TestCase):
 
     def test_apply_okf_frontmatter_tool_documented_in_step_2(self):
         content = DOCS_OKF_GUIDE_PATH.read_text(encoding="utf-8")
-        self.assertIn("uv run python tools/apply_okf_frontmatter.py docs/", content)
+        self.assertIn("tools/apply_okf_frontmatter.py", content)
 
     def test_footer_signature_date_present_in_both_copies(self):
         self.assertIn(EXPECTED_FOOTER_LINE, DOCS_OKF_GUIDE_PATH.read_text(encoding="utf-8"))

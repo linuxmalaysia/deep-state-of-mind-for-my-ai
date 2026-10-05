@@ -172,8 +172,8 @@ Organise knowledge assets into distinct, logical directories alongside source co
 ### Step 2: Inject & Audit OKF Frontmatter
 Run the automated compliance tool across your target documentation directory:
 ```bash
-# Execute native Python OKF frontmatter injector
-uv run python tools/apply_okf_frontmatter.py docs/
+# Execute native Python OKF frontmatter injector (enforcing OKF v0.2 trust profile)
+uv run python tools/apply_okf_frontmatter.py --require-okf-v02 docs/
 
 # Run zero-dependency POSIX bash validator
 sh tools/validate-okf.sh
@@ -203,7 +203,7 @@ Integrate automated OKF compliance testing into your GitHub Actions workflow (`.
 - name: Verify OKF Frontmatter Compliance
   run: |
     sh tools/validate-okf.sh
-    uv run python tools/apply_okf_frontmatter.py docs/
+    uv run python tools/apply_okf_frontmatter.py --require-okf-v02 docs/
     git diff --exit-code -- docs/
 ```
 
