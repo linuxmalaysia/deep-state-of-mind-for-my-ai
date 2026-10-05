@@ -243,6 +243,7 @@ def normalise_metadata(
                 'id': 'dsom-core-spec',
                 'title': 'Deep State of Mind (DSOM) Governance Architecture',
                 'resource': '/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md',
+                'url': 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md',
                 'type': 'architecture_spec',
                 'author': 'Harisfazillah Jamel (LinuxMalaysia)'
             },
@@ -250,21 +251,44 @@ def normalise_metadata(
                 'id': 'google-okf-v02-spec',
                 'title': 'Google Cloud Open Knowledge Format (OKF) v0.2 Specification',
                 'resource': 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+                'url': 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
                 'type': 'external_spec',
                 'author': 'Google Cloud Platform'
             }
         ]
     else:
-        # Ensure entries in sources have resource if url is present
         normalized_sources = []
-        for src in sources:
+        for idx, src in enumerate(sources):
             if isinstance(src, dict):
                 src_copy = dict(src)
+                if 'resource' not in src_copy and 'path' in src_copy:
+                    src_copy['resource'] = src_copy['path']
                 if 'resource' not in src_copy and 'url' in src_copy:
                     src_copy['resource'] = src_copy['url']
+                if 'url' not in src_copy and 'resource' in src_copy:
+                    res = str(src_copy['resource'])
+                    if res.startswith('http://') or res.startswith('https://'):
+                        src_copy['url'] = res
+                    else:
+                        src_copy['url'] = f"https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/{res.lstrip('/')}"
+                if 'author' not in src_copy:
+                    src_copy['author'] = 'Harisfazillah Jamel (LinuxMalaysia)'
+                if 'id' not in src_copy:
+                    src_copy['id'] = f"source-{idx+1}"
+                if 'title' not in src_copy:
+                    src_copy['title'] = str(src_copy.get('resource', 'Source Reference'))
                 normalized_sources.append(src_copy)
-            else:
-                normalized_sources.append(src)
+            elif isinstance(src, str):
+                res = src
+                url_val = res if (res.startswith('http://') or res.startswith('https://')) else f"https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/{res.lstrip('/')}"
+                normalized_sources.append({
+                    'id': f"source-{idx+1}",
+                    'title': res,
+                    'resource': res,
+                    'url': url_val,
+                    'type': 'repository_file',
+                    'author': 'Harisfazillah Jamel (LinuxMalaysia)'
+                })
         sources = normalized_sources
 
     updated_frontmatter = {
@@ -274,8 +298,50 @@ def normalise_metadata(
         'timestamp': timestamp,
         'topics': topics,
         'resource': resource,
-        'sources': sources
+        'sources': sources,
     }
+
+    # 8. status (if present, normalise)
+    if 'status' in existing_frontmatter:
+        status = existing_frontmatter['status']
+        if not isinstance(status, str) or status not in {'draft', 'stable', 'deprecated'}:
+            status = 'stable'
+        updated_frontmatter['status'] = status
+
+    # 9. generated (if present, normalise)
+    if 'generated' in existing_frontmatter:
+        generated = existing_frontmatter['generated']
+        if not isinstance(generated, dict):
+            by_val = str(generated) if generated is not None else 'agent/dsom-subagent-01'
+            generated = {
+                'by': by_val,
+                'timestamp': timestamp
+            }
+        else:
+            gen_by = generated.get('by')
+            if not isinstance(gen_by, str) or not gen_by.strip():
+                gen_by = 'agent/dsom-subagent-01'
+            gen_ts = generated.get('timestamp') or generated.get('at') or timestamp
+            if not isinstance(gen_ts, str):
+                gen_ts = timestamp
+            generated = {
+                'by': gen_by,
+                'timestamp': gen_ts
+            }
+        updated_frontmatter['generated'] = generated
+
+    # 10. stale_after (if present, normalise)
+    if 'stale_after' in existing_frontmatter:
+        stale_after = existing_frontmatter['stale_after']
+        if isinstance(stale_after, datetime):
+            stale_after = stale_after.strftime('%Y-%m-%d')
+        else:
+            stale_after_str = str(stale_after).strip()
+            if 'T' in stale_after_str:
+                stale_after_str = stale_after_str.split('T')[0]
+            stale_after = stale_after_str
+        updated_frontmatter['stale_after'] = stale_after
+
     if 'spec_version' in existing_frontmatter:
         updated_frontmatter['spec_version'] = str(existing_frontmatter['spec_version'])
     else:
@@ -393,7 +459,7 @@ def validate_okf_v02_metadata(metadata, rel_path):
         raise ValueError(
             f"OKF v0.2 validation failed for {rel_path}: generated.by must be a non-empty string."
         )
-    generated_timestamp = generated.get('timestamp')
+    generated_timestamp = metadata['generated'].get('timestamp') or metadata['generated'].get('at')
     if not isinstance(generated_timestamp, str):
         raise ValueError(
             f"OKF v0.2 validation failed for {rel_path}: generated.timestamp must be an ISO 8601 UTC string."

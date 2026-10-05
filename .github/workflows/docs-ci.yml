@@ -91,6 +91,7 @@ jobs:
           python tools/apply_okf_frontmatter.py --require-okf-v02 docs/how-to/
           python tools/apply_okf_frontmatter.py --require-okf-v02 docs/tutorials/
           python tools/apply_okf_frontmatter.py --require-okf-v02 docs/explanation/
+          sh tools/validate-okf.sh
           git diff --exit-code -- docs
 
       - name: Run Unit Tests for Link Checker
