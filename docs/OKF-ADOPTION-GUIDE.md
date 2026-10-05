@@ -5,13 +5,14 @@ title: "Open Knowledge Format (OKF) Adoption Guide: The Foundational Context Eng
 timestamp: "2026-08-20T23:00:00Z"
 topics: ["okf", "dsom", "documentation", "context-engineering", "progressive-disclosure", "llm-wiki"]
 resource: "file:///docs/OKF-ADOPTION-GUIDE.md"
-sources: ["https://cloud.google.com/blog/products/databases/announcing-open-knowledge-format-for-gen-ai", ".agents/AGENTS.md"]
+sources: [{author: Google Cloud Data Analytics Engineering, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
-description: "The authoritative guide for human engineers and AI agents to understand, implement, and adopt the Open Knowledge Format (OKF v0.1 & v0.2) within the Deep State of Mind (DSOM) protocol."
-generated: google-antigravity
-verified: true
-status: approved
-stale_after: "2027-08-20T00:00:00Z"
+description: "The authoritative guide for human engineers and AI agents to understand, implement, and adopt the Open Knowledge Format (OKF v0.2) within the Deep State of Mind (DSOM) protocol."
+generated: {at: '2026-10-04T12:00:00Z', by: google-jules}
+verified: [{at: '2026-10-04T14:30:00Z', by: human/harisfazillah}]
+status: stable
+stale_after: "2027-10-04T00:00:00Z"
 ---
 # 🌐 Open Knowledge Format (OKF) Adoption Guide: The Foundational Context Engine for DSOM
 
@@ -86,7 +87,7 @@ Every non-reserved Markdown concept document inside an OKF knowledge bundle MUST
 
 | Field | Type | Required in DSOM Profile? | Description / Example |
 | :--- | :--- | :--- | :--- |
-| `okf_version` | `float` / `string` | **Yes** | Specification version (e.g., `0.1` or `"0.1"`). |
+| `okf_version` | `float` / `string` | **Yes** | Specification version (e.g., `0.2` or `"0.2"`). |
 | `type` | `string` | **Yes** | Semantic document category (`agent_skill`, `documentation`, `governance_protocol`, `architecture_concept`, `system_audit`). |
 | `title` | `string` | **Yes** | Human- and machine-readable title of the document. |
 | `timestamp` | `string` | **Yes** | ISO 8601 UTC timestamp of creation or last major revision (`"2026-08-20T23:00:00Z"`). |
@@ -104,20 +105,20 @@ Every non-reserved Markdown concept document inside an OKF knowledge bundle MUST
 ### Reserved Filenames
 
 The OKF specification reserves two explicit filenames at any hierarchical directory level:
-* **`index.md`:** Serves as a directory router and progressive disclosure listing. It contains no frontmatter (except the bundle-root `index.md`, which MAY declare `okf_version: "0.1"`).
+* **`index.md`:** Serves as a directory router and progressive disclosure listing. It contains no frontmatter (except the bundle-root `index.md`, which MAY declare `okf_version: "0.2"`).
 * **`log.md`:** Maintains a chronological ledger of updates organized in reverse-chronological order under ISO 8601 date headings (e.g., `## 2026-08-20`).
 
-### OKF v0.2 Trust Signals & Provenance Profile
+### OKF v0.2 Trust Signals & Provenance
 
 OKF v0.2 extends v0.1 by adding opt-in trust and provenance metadata fields in YAML frontmatter to allow autonomous agents to verify agent-generated content and maintain lifecycle hygiene:
 
 | OKF v0.2 Field | Type | Description | Example |
 | :--- | :--- | :--- | :--- |
-| `sources` | `list[string]` | Array of origin URLs, file paths, or ADRs used to synthesize this document. | `["docs/OKF-ADOPTION-GUIDE.md", ".agents/AGENTS.md"]` |
-| `generated` | `string` | Agent identifier, model name, or generation timestamp. | `"google-antigravity"`, `"gemini-2.5-pro"` |
-| `verified` | `boolean` / `string` | Verification flag or timestamp of human review. | `true`, `"2026-08-21T20:50:00Z"` |
-| `status` | `string` | Document lifecycle state (`draft`, `approved`, `deprecated`, `superseded`). | `"approved"` |
-| `stale_after` | `string` | ISO 8601 UTC date when this knowledge must be re-evaluated. | `"2027-08-21T00:00:00Z"` |
+| `sources` | `list[map]` / `list[string]` | Structured array of origin URLs, file paths, or specs used to synthesize this document. | `[{id: "google-okf-v02-spec", title: "OKF v0.2 Spec", resource: "https://..."}]` |
+| `generated` | `map` / `string` | Author, compiler, model identity and ISO 8601 UTC creation timestamp. | `{by: "google-jules", at: "2026-10-04T12:00:00Z"}` |
+| `verified` | `list[map]` / `boolean` | Independent audit assertions and timestamps of verification. | `[{by: "human/harisfazillah", at: "2026-10-04T14:30:00Z"}]` |
+| `status` | `string` | Document lifecycle state (`draft`, `stable`, `deprecated`). | `"stable"` |
+| `stale_after` | `string` | ISO 8601 UTC date when this knowledge must be re-evaluated. | `"2027-10-04T00:00:00Z"` |
 
 ### OKF v0.2 Attested Computations (Verifiable AI Knowledge)
 
@@ -137,7 +138,7 @@ An Attested Computation carries a sanctioned, deterministic way to compute a val
 OKF v0.2 separates specification from runtime execution in 6 clear steps:
 1. **Discover:** Agents locate the computation via `type: Attested Computation` or via links from narrative metric docs.
 2. **Load:** The agent reads the contract frontmatter and computation block.
-3. **Parameterize:** The agent supplies valid values for declared `parameters` (e.g., `year: 2026`).
+3. **Parameterize:** The agent supplies valid values for declared `parameters` (e.g., `cluster_id: "prod-01"`).
 4. **Execute:** The executor runs the bound computation and returns an evidence receipt (e.g., job ID, executed SQL/script, and result set).
 5. **Attest:** The agent or system runs the deterministic (no-LLM) attester script over the receipt to verify that the query executed matches the sanctioned computation without unauthorized modifications.
 6. **Gate:** The system surfaces the verified result or blocks stale/failing computations.
@@ -147,10 +148,6 @@ OKF v0.2 separates specification from runtime execution in 6 clear steps:
 It is crucial to distinguish between doc-level verification and runtime attestation:
 * **Doc-Level Verification (`verified`):** Confirms that the metric definition matches business policy (stored in the document bundle, updated periodically).
 * **Runtime Attestation (`attester`):** Confirms that a specific runtime execution produced the value correctly (per-call, evaluating an un-stored execution receipt).
-
-> [!TIP]
-> **Opportunistic v0.2 Upgrade (The Token Protection Rule):**
-> Downstream projects and baseline repositories should upgrade from `okf_version: 0.1` to `okf_version: 0.2` **opportunistically** (when modifying, verifying, or synthesizing files) rather than triggering mass corpus rewrites.
 
 ---
 
@@ -162,7 +159,7 @@ Follow this 6-step SOP to adopt OKF across any new or existing codebase:
 Organise knowledge assets into distinct, logical directories alongside source code:
 ```text
 .agents/
-├── brain/                   <-- Spatial Memory Palace (okf_version: 0.1 / 0.2)
+├── brain/                   <-- Spatial Memory Palace (okf_version: 0.2)
 │   ├── index.md             <-- Directory Router
 │   ├── log.md               <-- Chronological Update Ledger
 │   └── wings/               <-- Domain Closets
@@ -178,8 +175,8 @@ Run the automated compliance tool across your target documentation directory:
 # Execute native Python OKF frontmatter injector
 uv run python tools/apply_okf_frontmatter.py docs/
 
-# Or invoke the agent skill script directly
-python .agents/skills/okf-frontmatter-injector/scripts/apply_okf.py .
+# Run zero-dependency POSIX bash validator
+bash tools/validate-okf.sh
 ```
 
 ### Step 3: Implement Progressive Disclosure Directory Routers
@@ -196,7 +193,7 @@ When an AI agent or developer modifies knowledge nodes, append an entry to `log.
 ```markdown
 # Knowledge Bundle Change Log
 
-## 2026-08-21
+## 2026-10-04
 * **Updated:** `docs/OKF-ADOPTION-GUIDE.md` - Upgraded to OKF v0.2 trust profile with explicit examples.
 ```
 
@@ -205,6 +202,7 @@ Integrate automated OKF compliance testing into your GitHub Actions workflow (`.
 ```yaml
 - name: Verify OKF Frontmatter Compliance
   run: |
+    bash tools/validate-okf.sh
     uv run python tools/apply_okf_frontmatter.py docs/
     git diff --exit-code -- docs/
 ```
@@ -223,16 +221,22 @@ uv run python tools/openwiki_emulator.py --search "OKF"
 
 ## 💡 Concrete Code Examples & YAML Templates
 
-### Example 1: OKF v0.1 Baseline Agent Skill (`.agents/skills/audit-cluster/SKILL.md`)
+### Example 1: OKF v0.2 Agent Skill (`.agents/skills/audit-cluster/SKILL.md`)
 ```yaml
 ---
-okf_version: 0.1
+okf_version: 0.2
+spec_version: "0.2"
 type: agent_skill
 title: audit-cluster-health
-timestamp: "2026-08-20T12:00:00Z"
+timestamp: "2026-10-04T12:00:00Z"
 description: "Executes cluster health diagnostics and extracts node telemetry."
 topics: ["infrastructure", "telemetry", "health-check"]
 resource: "file:///.agents/skills/audit-cluster/SKILL.md"
+generated:
+  by: "google-jules"
+  at: "2026-10-04T12:00:00Z"
+status: "stable"
+stale_after: "2027-10-04T00:00:00Z"
 ---
 
 # 🔍 Cluster Health Audit Skill
@@ -246,44 +250,31 @@ resource: "file:///.agents/skills/audit-cluster/SKILL.md"
 ```yaml
 ---
 okf_version: 0.2
+spec_version: "0.2"
 type: governance_protocol
 title: "Zero-Trust Agent Hardening Policy"
-timestamp: "2026-08-21T20:00:00Z"
+timestamp: "2026-10-04T12:00:00Z"
 topics: ["security", "zero-trust", "agent-hardening", "dsom", "okf"]
 description: "Codifies strict zero-trust sandbox rules and least-privilege token access for autonomous AI subagents."
 resource: "file:///docs/governance/SAMPLE-POLICY.md"
-sources: ["docs/governance/AI-MASTER-PROTOCOL.md", "https://csrc.nist.gov/publications/detail/sp/800-207/final"]
-generated: "google-antigravity"
-verified: true
-status: "approved"
-stale_after: "2027-08-21T00:00:00Z"
+sources:
+  - id: "nist-sp-800-207"
+    title: "NIST Special Publication 800-207: Zero Trust Architecture"
+    resource: "https://csrc.nist.gov/publications/detail/sp/800-207/final"
+generated:
+  by: "google-jules"
+  at: "2026-10-04T12:00:00Z"
+verified:
+  - by: "human/harisfazillah"
+    at: "2026-10-04T14:30:00Z"
+status: "stable"
+stale_after: "2027-10-04T00:00:00Z"
 ---
 
 # 🛡️ Zero-Trust Agent Hardening Policy
 
 ## Policy Enforcement
 Autonomous subagents must operate under isolated Git worktrees and have read-only access to root credentials.
-```
-
-### Example 3: OKF v0.2 Spatial Memory Closet (`.agents/brain/wings/room_tooling/closet.md`)
-```yaml
----
-okf_version: 0.2
-type: architecture_concept
-title: "Room Tooling Memory Closet"
-timestamp: "2026-08-21T20:30:00Z"
-description: "Archived operational state and execution parameters for DSOM tooling scripts."
-topics: ["tooling", "python", "automation", "memory-palace", "okf"]
-resource: "file:///.agents/brain/wings/room_tooling/closet.md"
-sources: [".agents/brain/palace_registry.md", "tools/apply_okf_frontmatter.py"]
-generated: "google-antigravity"
-verified: true
-status: "approved"
-stale_after: "2026-11-21T00:00:00Z"
----
-
-# Room Tooling Distillation
-This closet tracks the execution parameters of `tools/openwiki_emulator.py`, `tools/apply_okf_frontmatter.py`, and `tools/generate_sitemaps.py`.
 ```
 
 ---
