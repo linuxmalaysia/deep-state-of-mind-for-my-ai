@@ -10,7 +10,7 @@
 # Checks for:
 #   1. YAML frontmatter boundaries (---)
 #   2. Closing '---' delimiter detection
-#   3. Non-empty 'type' attribute
+#   3. Presence and non-empty status of okf_version, type, title, timestamp, topics
 #   4. Deprecation of legacy v0.1 fields (timestamp -> generated)
 #   5. Rejection of unparsed citations in body
 # ==============================================================================
@@ -54,16 +54,37 @@ while read -r file; do
     # Extract lines between line 1 and closing line (excluding delimiters)
     frontmatter=$(tail -n +2 "$file" | tr -d '\r' | head -n "$((closing_line - 1))")
 
-    # 3. Assert 'type' field
-    if ! echo "$frontmatter" | grep -Eq "^type:[[:space:]]+.+"; then
+    # 3. Assert mandatory frontmatter attributes
+    if ! echo "$frontmatter" | grep -Eq "^okf_version:[[:space:]]*[^[:space:]]+"; then
+        echo "[ERROR] $file: Missing or empty 'okf_version' field in frontmatter"
+        FAILURES=$((FAILURES + 1))
+    fi
+
+    if ! echo "$frontmatter" | grep -Eq "^type:[[:space:]]*[^[:space:]]+"; then
         echo "[ERROR] $file: Missing or empty 'type' field in frontmatter"
         FAILURES=$((FAILURES + 1))
     fi
 
-    # 4. Check for deprecated v0.1 'timestamp'
-    if echo "$frontmatter" | grep -Eq "^timestamp:[[:space:]]+"; then
-        echo "[WARN]  $file: Contains legacy v0.1 'timestamp'. Upgrade to 'generated: { by, at }'"
+    if ! echo "$frontmatter" | grep -Eq "^title:[[:space:]]*[^[:space:]]+"; then
+        echo "[ERROR] $file: Missing or empty 'title' field in frontmatter"
+        FAILURES=$((FAILURES + 1))
     fi
+
+    if ! echo "$frontmatter" | grep -Eq "^timestamp:[[:space:]]*[^[:space:]]+"; then
+        echo "[ERROR] $file: Missing or empty 'timestamp' field in frontmatter"
+        FAILURES=$((FAILURES + 1))
+    fi
+
+    if ! echo "$frontmatter" | grep -Eq "^topics:[[:space:]]*[^[:space:]]+"; then
+        echo "[ERROR] $file: Missing or empty 'topics' field in frontmatter"
+        FAILURES=$((FAILURES + 1))
+    fi
+
+    # 4. Check for deprecated v0.1 'timestamp' vs v0.2 'generated' warning
+    # Note: timestamp is currently required in DSOM OKF profile alongside v0.2 generated
+    # if echo "$frontmatter" | grep -Eq "^timestamp:[[:space:]]+"; then
+    #     echo "[WARN]  $file: Contains legacy v0.1 'timestamp'. Upgrade to 'generated: { by, at }'"
+    # fi
 
     # 5. Check for legacy body citations header
     if grep -Eq "^#[[:space:]]+(Citations|Sources)" "$file"; then

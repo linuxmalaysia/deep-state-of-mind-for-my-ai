@@ -251,6 +251,7 @@ stale_after: "2027-10-04T00:00:00Z"
 ---
 okf_version: 0.2
 type: governance_protocol
+concept_id: "zero_trust_agent_hardening"
 title: "Zero-Trust Agent Hardening Policy"
 timestamp: "2026-10-04T12:00:00Z"
 topics: ["security", "zero-trust", "agent-hardening", "dsom", "okf"]
