@@ -117,6 +117,20 @@ This ledger documents the permanent history of all Pull Requests (PRs) completed
   - **CodeRabbit AI:** Requested deriving skill `name` directly from `filepath` in `normalise_metadata` and scoping derivation strictly to `.agents/skills` paths.
   - **Jules' Response:** Updated `tools/apply_okf_frontmatter.py` accordingly and replied to all comments.
 
+### 14. Open Knowledge Format (OKF) v0.2 Specification Adoption & Validation Tooling (PR #102)
+* **Date:** 2026-10-06
+* **Branch:** `jules-17985363753231462204-7cd16cd1`
+* **Objective:** Adopt the latest OKF 0.2 technical specification across documentation, tools, skills, and CI workflows.
+* **Technical Implementation:**
+  - Upgraded `docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md` to document OKF 0.2's 5 core pillars: Provenance (`sources`), Trust (`generated` vs. `verified`), Freshness (`stale_after`), Lifecycle (`status`), and Attestation (`type: Attested Computation`).
+  - Added zero-dependency POSIX validator `tools/validate-okf.sh` (`#!/bin/sh`) checking YAML fences, non-empty mandatory fields (`okf_version`, `type`, `title`, `timestamp`, `topics`), and flagging legacy deprecations.
+  - Aligned Python compliance tooling `tools/apply_okf_frontmatter.py` to normalise OKF v0.2 trust metadata (`okf_version: "0.2"`, `spec_version: "0.2"`, `status`, `generated: { by, at }`, `stale_after`, and structured `sources` maps).
+  - Updated `.github/workflows/docs-ci.yml` to execute `uv run python tools/apply_okf_frontmatter.py --require-okf-v02` across all four Diátaxis quadrants alongside `sh tools/validate-okf.sh`.
+  - Expanded test coverage across `tests/test_docs_ci_workflow.py`, `tests/test_okf_v02_normalisation.py`, `tests/test_validate_okf.py`, `tests/test_okf_adoption_guide_cross_skill_sync.py`, and `tests/test_okf_quoting.py` (877 passed, 72 skipped).
+* **Comments & Reviews:**
+  - **CodeRabbit AI:** Requested `uv run` command text in workflow assertions, double-quoting for inline flow map `url` strings, removal of `file:///` prefixes in `CLI-QUICK-REFERENCE.md`, isolated Step 2 assertions in `test_okf_adoption_guide_cross_skill_sync.py`, PyYAML `datetime` conversion to UTC string in `gen_ts`, invalid status error reporting when `--require-okf-v02` is enabled, and omitting author fallbacks for external sources.
+  - **Jules' Response:** Fully addressed all feedback, verified 100% test pass rate across all 877 local unit tests, and generated the EOD handover report.
+
 ### 13. Council Emulator Zero-Binary CLI & FastMCP Tool Integration (PR #100)
 * **Date:** 2026-09-19
 * **Branch:** `jules-4116035378781165878-f4110d1e`
