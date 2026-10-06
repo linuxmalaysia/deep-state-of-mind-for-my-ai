@@ -5,10 +5,12 @@ title: "Tutorial: Getting Started with DSOM Tools"
 timestamp: "2026-08-13T12:00:00Z"
 topics: ["dsom", "tutorial", "getting-started", "tools"]
 resource: "/docs/tutorials/getting-started.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec, url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"}]
+status: stable
+generated: {by: "agent/dsom-subagent-01", timestamp: "2026-08-13T12:00:00Z"}
+stale_after: "2027-01-01"
 spec_version: "0.2"
+concept_id: getting_started
 ---
 # Getting started with DSOM tools
 

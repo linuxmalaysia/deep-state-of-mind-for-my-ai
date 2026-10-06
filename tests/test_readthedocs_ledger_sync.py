@@ -66,7 +66,7 @@ class TaskMdFrontmatterTests(unittest.TestCase):
         self.assertEqual(self.frontmatter.get("title"), "🗺️ DSOM Task List")
         self.assertEqual(
             self.frontmatter.get("topics"),
-            ["readthedocs", "configuration", "testing"],
+            ["council", "mcp", "testing", "ci"],
         )
 
     def test_frontmatter_precedes_checklist_content(self):

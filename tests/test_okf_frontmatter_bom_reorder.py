@@ -119,7 +119,7 @@ REORDERED_FRONTMATTER_FILES = [
         "2026-07-19T03:12:00Z",
         ["dsom", "documentation"],
         True,
-        False,
+        True,
     ),
     (
         ".agents/brain/implementation_plan.md",
@@ -410,10 +410,9 @@ class NewMinimalFrontmatterFilesTests(unittest.TestCase):
                 content = _read_text_stripping_bom(REPO_ROOT / relative)
                 _, parsed = _extract_frontmatter_block(content)
                 self.assertNotIn("description", parsed)
-                self.assertNotIn("resource", parsed)
                 self.assertEqual(
                     set(parsed.keys()),
-                    {"okf_version", "type", "title", "timestamp", "topics", "spec_version"},
+                    {"okf_version", "type", "title", "timestamp", "topics", "spec_version", "sources", "resource"},
                 )
 
     def test_frontmatter_immediately_followed_by_original_heading(self):

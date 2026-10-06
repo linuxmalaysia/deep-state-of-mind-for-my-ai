@@ -148,7 +148,7 @@ class DocsCiWorkflowTextContentTests(unittest.TestCase):
         for quadrant in ("reference", "how-to", "tutorials", "explanation"):
             with self.subTest(quadrant=quadrant):
                 self.assertIn(
-                    f"python tools/apply_okf_frontmatter.py docs/{quadrant}/", self.content
+                    f"uv run python tools/apply_okf_frontmatter.py --require-okf-v02 docs/{quadrant}/", self.content
                 )
 
     def test_okf_frontmatter_step_fails_build_on_uncommitted_diff(self):
@@ -262,8 +262,20 @@ class DocsCiWorkflowStructureTests(unittest.TestCase):
         run_lines = frontmatter_step["run"]
         for quadrant in ("reference", "how-to", "tutorials", "explanation"):
             with self.subTest(quadrant=quadrant):
-                self.assertIn(f"python tools/apply_okf_frontmatter.py docs/{quadrant}/", run_lines)
+                self.assertIn(f"uv run python tools/apply_okf_frontmatter.py --require-okf-v02 docs/{quadrant}/", run_lines)
         self.assertIn("git diff --exit-code -- docs", run_lines)
+
+    def test_structural_audit_runs_after_migration_before_diff_guard(self):
+        steps = self.doc["jobs"]["validate-docs"]["steps"]
+        step = next(step for step in steps if step.get("name") == "Run OKF Frontmatter Compliance Check")
+        commands = [line.strip() for line in step["run"].splitlines() if line.strip()]
+        audit_index = commands.index("sh tools/validate-okf.sh")
+        for quadrant in ("reference", "how-to", "tutorials", "explanation"):
+            with self.subTest(quadrant=quadrant):
+                migration = f"uv run python tools/apply_okf_frontmatter.py --require-okf-v02 docs/{quadrant}/"
+                self.assertLess(commands.index(migration), audit_index)
+        self.assertLess(audit_index, commands.index("git diff --exit-code -- docs"))
+        self.assertFalse(step.get("continue-on-error", False))
 
     def test_unit_tests_step_command(self):
         steps = self.doc["jobs"]["validate-docs"]["steps"]

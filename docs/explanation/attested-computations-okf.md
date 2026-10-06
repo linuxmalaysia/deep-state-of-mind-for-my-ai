@@ -5,18 +5,14 @@ title: "Attested Computations in Open Knowledge Format (OKF v0.2): Ensuring Veri
 timestamp: "2026-09-06T12:00:00Z"
 topics: ["okf", "attested-computation", "data-governance", "ai-agents", "verification", "dsom"]
 resource: "/docs/explanation/attested-computations-okf.md"
-sources: [{author: RedLineSoft AI Engineering Blog, id: redlinesoft_okf_attested_computations,
-  resource: 'https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/',
-  title: 'Attested Computations in Open Knowledge Format (OKF): Ensuring Verifiable
-    AI Knowledge', url: 'https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/'}, {author: Google Cloud Platform, id: google_okf_spec, resource: 'https://cloud.google.com/blog/products/databases/announcing-open-knowledge-format-for-gen-ai',
-  title: Open Knowledge Format (OKF) Specification v0.2, url: 'https://cloud.google.com/blog/products/databases/announcing-open-knowledge-format-for-gen-ai'}]
+sources: [{author: RedLineSoft AI Engineering Blog, id: redlinesoft_okf_attested_computations, resource: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/", title: "Attested Computations in Open Knowledge Format (OKF): Ensuring Verifiable AI Knowledge", url: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/"}, {author: Google Cloud Platform, id: google_okf_spec, resource: "https://cloud.google.com/blog/products/databases/announcing-open-knowledge-format-for-gen-ai", title: "Open Knowledge Format (OKF) Specification v0.2", url: "https://cloud.google.com/blog/products/databases/announcing-open-knowledge-format-for-gen-ai"}]
+status: stable
+generated: {by: Google Jules, timestamp: "2026-09-06T12:00:00Z"}
+stale_after: "2027-03-06"
 spec_version: "0.2"
 concept_id: attested_computations_okf
-status: stable
-stale_after: "2027-03-06"
 description: "Explores Attested Computations in OKF v0.2, bridging metrics definitions and runnable queries so AI agents and consumers can mechanically verify AI-generated insights."
-generated: {by: Google Jules, timestamp: '2026-09-06T12:00:00Z'}
-verified: {by: DSOM Protocol Guild, timestamp: '2026-09-06T12:00:00Z'}
+verified: {by: DSOM Protocol Guild, timestamp: "2026-09-06T12:00:00Z"}
 ---
 # 🔐 Attested Computations in Open Knowledge Format (OKF v0.2): Ensuring Verifiable AI Knowledge
 

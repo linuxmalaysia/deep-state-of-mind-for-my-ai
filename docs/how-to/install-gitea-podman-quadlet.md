@@ -5,13 +5,14 @@ title: "How-To: Deploy Sovereign Gitea via Rootless Podman & Quadlet"
 timestamp: "2026-08-20T23:00:00Z"
 topics: ["dsom", "how-to", "gitea", "podman", "quadlet", "gitops", "https"]
 resource: "file:///docs/how-to/install-gitea-podman-quadlet.md"
-sources: ["https://linuxmalaysia.github.io/podman-elastic-stack-ai/GITEA_GUIDE/"]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-1, resource: "https://linuxmalaysia.github.io/podman-elastic-stack-ai/GITEA_GUIDE/", title: "https://linuxmalaysia.github.io/podman-elastic-stack-ai/GITEA_GUIDE/", type: repository_file, url: "https://linuxmalaysia.github.io/podman-elastic-stack-ai/GITEA_GUIDE/"}]
+status: stable
+generated: {by: google-jules, timestamp: "2026-08-20T23:00:00Z"}
+stale_after: "2027-08-20"
 spec_version: "0.2"
 description: "Step-by-step instructions for standalone deployment of Gitea over HTTPS using rootless Podman pods and Podman 5 systemd Quadlets with automated web installation bypass."
-generated: google-jules
 verified: true
-status: approved
-stale_after: "2027-08-20T00:00:00Z"
+concept_id: install_gitea_podman_quadlet
 ---
 # 🚀 How-To: Deploy Sovereign Gitea via Rootless Podman & Quadlet
 

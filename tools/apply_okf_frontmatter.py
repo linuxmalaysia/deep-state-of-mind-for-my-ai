@@ -94,6 +94,18 @@ def needs_double_quotes(s):
     return False
 
 def serialise_val(val, key):
+    """Return a YAML value, using flow syntax for lists and dictionaries.
+
+    List strings are always double-quoted; other strings are quoted as needed
+    to preserve their value. Dictionary keys are emitted verbatim and must
+    already be safe as unquoted YAML keys. The key argument does not affect
+    formatting. Cyclic lists and dictionaries are unsupported.
+
+    Raises:
+        yaml.representer.RepresenterError: If a fallback value cannot be
+            represented by PyYAML's safe dumper.
+        RecursionError: If nested lists or dictionaries exceed the recursion limit.
+    """
     # Format lists as inline arrays with double-quoted strings and recursive non-string serialisation
     if isinstance(val, list):
         formatted_elements = []
@@ -103,6 +115,11 @@ def serialise_val(val, key):
             else:
                 formatted_elements.append(serialise_val(item, key))
         return "[" + ", ".join(formatted_elements) + "]"
+
+    # Format dicts as inline flow maps
+    if isinstance(val, dict):
+        pairs = [f"{k}: {serialise_val(v, k)}" for k, v in val.items()]
+        return "{" + ", ".join(pairs) + "}"
 
     # Format strings, quoting if they contain emojis/special characters or are YAML-sensitive
     if isinstance(val, str):
@@ -186,8 +203,30 @@ def normalise_metadata(
     require_okf_v02=False,
     filepath=None,
 ):
-    """
-    Normalises the mandatory OKF metadata fields and returns updated_frontmatter.
+    """Return normalized OKF metadata without modifying the input mapping.
+
+    Missing core fields receive defaults, including the current UTC timestamp.
+    Source strings become mappings, source mappings receive missing reference
+    fields, and other source entries are dropped. Local source references receive
+    URLs under this repository's main branch. When present, generated metadata
+    is reduced to by and timestamp fields, accepting at as a timestamp fallback.
+    stale_after values are reduced to date text without checking date validity.
+    Other fields are preserved, with datetime values converted to UTC text.
+
+    Args:
+        existing_frontmatter: Parsed metadata to normalize.
+        rest_of_content: Markdown body used to derive a missing title.
+        rel_path: Relative document path used for defaults and error messages.
+        filename: Filename used when the body has no title heading.
+        require_okf_v02: Reject conflicting versions and invalid status values.
+            Full trust validation requires validate_okf_v02_metadata afterward.
+            Otherwise, an invalid status is replaced with stable.
+        filepath: Optional file path used to identify skills and derive their
+            name from the parent directory, even when rel_path omits .agents/skills.
+
+    Raises:
+        ValueError: In strict mode, an existing non-null version differs from
+            0.2, or a supplied status is not draft, stable, or deprecated.
     """
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
@@ -243,6 +282,7 @@ def normalise_metadata(
                 'id': 'dsom-core-spec',
                 'title': 'Deep State of Mind (DSOM) Governance Architecture',
                 'resource': '/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md',
+                'url': 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md',
                 'type': 'architecture_spec',
                 'author': 'Harisfazillah Jamel (LinuxMalaysia)'
             },
@@ -250,21 +290,49 @@ def normalise_metadata(
                 'id': 'google-okf-v02-spec',
                 'title': 'Google Cloud Open Knowledge Format (OKF) v0.2 Specification',
                 'resource': 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
+                'url': 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
                 'type': 'external_spec',
                 'author': 'Google Cloud Platform'
             }
         ]
     else:
-        # Ensure entries in sources have resource if url is present
         normalized_sources = []
-        for src in sources:
+        for idx, src in enumerate(sources):
             if isinstance(src, dict):
                 src_copy = dict(src)
+                if 'resource' not in src_copy and 'path' in src_copy:
+                    src_copy['resource'] = src_copy['path']
                 if 'resource' not in src_copy and 'url' in src_copy:
                     src_copy['resource'] = src_copy['url']
+                if 'url' not in src_copy and 'resource' in src_copy:
+                    res = str(src_copy['resource'])
+                    if res.startswith('http://') or res.startswith('https://'):
+                        src_copy['url'] = res
+                    else:
+                        src_copy['url'] = f"https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/{res.lstrip('/')}"
+                if 'author' not in src_copy:
+                    res = str(src_copy.get('resource', ''))
+                    if not (res.startswith('http://') or res.startswith('https://')):
+                        src_copy['author'] = 'Harisfazillah Jamel (LinuxMalaysia)'
+                if 'id' not in src_copy:
+                    src_copy['id'] = f"source-{idx+1}"
+                if 'title' not in src_copy:
+                    src_copy['title'] = str(src_copy.get('resource', 'Source Reference'))
                 normalized_sources.append(src_copy)
-            else:
-                normalized_sources.append(src)
+            elif isinstance(src, str):
+                res = src
+                is_ext = res.startswith('http://') or res.startswith('https://')
+                url_val = res if is_ext else f"https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/{res.lstrip('/')}"
+                src_dict = {
+                    'id': f"source-{idx+1}",
+                    'title': res,
+                    'resource': res,
+                    'url': url_val,
+                    'type': 'external_spec' if is_ext else 'repository_file',
+                }
+                if not is_ext:
+                    src_dict['author'] = 'Harisfazillah Jamel (LinuxMalaysia)'
+                normalized_sources.append(src_dict)
         sources = normalized_sources
 
     updated_frontmatter = {
@@ -274,8 +342,59 @@ def normalise_metadata(
         'timestamp': timestamp,
         'topics': topics,
         'resource': resource,
-        'sources': sources
+        'sources': sources,
     }
+
+    # 8. status (if present, normalise or validate)
+    if 'status' in existing_frontmatter:
+        status = existing_frontmatter['status']
+        if not isinstance(status, str) or status not in {'draft', 'stable', 'deprecated'}:
+            if require_okf_v02:
+                raise ValueError(
+                    f"OKF v0.2 validation failed for {rel_path}: "
+                    f"status must be draft, stable, or deprecated (got: {status})."
+                )
+            status = 'stable'
+        updated_frontmatter['status'] = status
+
+    # 9. generated (if present, normalise)
+    if 'generated' in existing_frontmatter:
+        generated = existing_frontmatter['generated']
+        if not isinstance(generated, dict):
+            by_val = str(generated) if generated is not None else 'agent/dsom-subagent-01'
+            generated = {
+                'by': by_val,
+                'timestamp': timestamp
+            }
+        else:
+            gen_by = generated.get('by')
+            if not isinstance(gen_by, str) or not gen_by.strip():
+                gen_by = 'agent/dsom-subagent-01'
+            gen_ts = generated.get('timestamp') or generated.get('at') or timestamp
+            if isinstance(gen_ts, datetime):
+                if gen_ts.tzinfo is None:
+                    gen_ts = gen_ts.replace(tzinfo=timezone.utc)
+                gen_ts = gen_ts.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+            elif not isinstance(gen_ts, str):
+                gen_ts = timestamp
+            generated = {
+                'by': gen_by,
+                'timestamp': gen_ts
+            }
+        updated_frontmatter['generated'] = generated
+
+    # 10. stale_after (if present, normalise)
+    if 'stale_after' in existing_frontmatter:
+        stale_after = existing_frontmatter['stale_after']
+        if isinstance(stale_after, datetime):
+            stale_after = stale_after.strftime('%Y-%m-%d')
+        else:
+            stale_after_str = str(stale_after).strip()
+            if 'T' in stale_after_str:
+                stale_after_str = stale_after_str.split('T')[0]
+            stale_after = stale_after_str
+        updated_frontmatter['stale_after'] = stale_after
+
     if 'spec_version' in existing_frontmatter:
         updated_frontmatter['spec_version'] = str(existing_frontmatter['spec_version'])
     else:
@@ -313,7 +432,22 @@ def normalise_metadata(
 
 
 def validate_okf_v02_metadata(metadata, rel_path):
-    """Reject incomplete or malformed OKF v0.2 trust metadata."""
+    """Reject incomplete or malformed OKF v0.2 trust metadata.
+
+    Check version fields, a snake_case concept_id, status, a YYYY-MM-DD
+    stale_after date, nonempty sources, and generated metadata. Source mappings
+    require nonempty id, title, author, and absolute URL strings. generated.by
+    must be nonempty, and its timestamp must parse with a zero UTC offset.
+    generated.at is accepted when generated.timestamp is absent or falsey.
+    Dates are checked for format and validity, not freshness.
+
+    Return None on success without modifying metadata. rel_path identifies
+    the document in error messages.
+
+    Raises:
+        ValueError: A required trust field is missing or invalid, including
+            source URLs rejected by the URL parser.
+    """
     required_fields = (
         'okf_version',
         'spec_version',
@@ -393,7 +527,7 @@ def validate_okf_v02_metadata(metadata, rel_path):
         raise ValueError(
             f"OKF v0.2 validation failed for {rel_path}: generated.by must be a non-empty string."
         )
-    generated_timestamp = generated.get('timestamp')
+    generated_timestamp = metadata['generated'].get('timestamp') or metadata['generated'].get('at')
     if not isinstance(generated_timestamp, str):
         raise ValueError(
             f"OKF v0.2 validation failed for {rel_path}: generated.timestamp must be an ISO 8601 UTC string."
