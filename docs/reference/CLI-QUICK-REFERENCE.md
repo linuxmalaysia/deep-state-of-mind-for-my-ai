@@ -5,9 +5,9 @@ title: "CLI & Terminal Commands Quick Reference"
 timestamp: "2026-08-23T07:43:00Z"
 topics: ["cli", "reference", "commands", "cheatsheet", "context7", "ansible", "uv", "mcp"]
 resource: "/docs/reference/CLI-QUICK-REFERENCE.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: source-1, resource: 'references/llms-from-context7.txt',
-  title: 'references/llms-from-context7.txt', type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/references/llms-from-context7.txt'}, {author: Harisfazillah Jamel (LinuxMalaysia), id: source-2, resource: 'tools/mcp/server.py',
-  title: 'tools/mcp/server.py', type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/mcp/server.py'}]
+sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: source-1, resource: references/llms-from-context7.txt,
+  title: references/llms-from-context7.txt, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/references/llms-from-context7.txt'}, {author: Harisfazillah Jamel (LinuxMalaysia), id: source-2, resource: tools/mcp/server.py,
+  title: tools/mcp/server.py, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/mcp/server.py'}]
 status: stable
 generated: {by: hybrid, timestamp: '2026-08-23T07:43:00Z'}
 stale_after: "2027-08-23"
