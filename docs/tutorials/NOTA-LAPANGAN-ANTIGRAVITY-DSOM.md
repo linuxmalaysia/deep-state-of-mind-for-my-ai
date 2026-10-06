@@ -5,12 +5,9 @@ title: "Nota Lapangan: Panduan Praktikal Pasukan untuk AI Antigravity & DSOM Ber
 timestamp: "2026-08-22T17:54:00Z"
 topics: ["antigravity", "gemini", "dsom", "ansible", "gitops", "skills", "jules", "panduan-pasukan"]
 resource: "file:///docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: source-1, resource: docs/tutorials/TEAM-DSOM-MASTERCLASS.md,
-  title: docs/tutorials/TEAM-DSOM-MASTERCLASS.md, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/tutorials/TEAM-DSOM-MASTERCLASS.md'}, {author: Harisfazillah Jamel (LinuxMalaysia), id: source-2, resource: START-HERE.md,
-  title: START-HERE.md, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/START-HERE.md'}, {author: Harisfazillah Jamel (LinuxMalaysia), id: source-3, resource: .agents/AGENTS.md,
-  title: .agents/AGENTS.md, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md'}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-1, resource: "docs/tutorials/TEAM-DSOM-MASTERCLASS.md", title: "docs/tutorials/TEAM-DSOM-MASTERCLASS.md", type: repository_file, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/tutorials/TEAM-DSOM-MASTERCLASS.md"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-2, resource: "START-HERE.md", title: "START-HERE.md", type: repository_file, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/START-HERE.md"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-3, resource: ".agents/AGENTS.md", title: ".agents/AGENTS.md", type: repository_file, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md"}]
 status: stable
-generated: {by: google-antigravity, timestamp: '2026-08-22T17:54:00Z'}
+generated: {by: google-antigravity, timestamp: "2026-08-22T17:54:00Z"}
 stale_after: "2027-08-22"
 spec_version: "0.2"
 description: "Sintesis nota lapangan praktikal, Langkah 0 onboarding prompt, strategi model, automasi kemahiran (skills), dan disiplin GitOps DSOM untuk perkongsian bersama rakan sepasukan."

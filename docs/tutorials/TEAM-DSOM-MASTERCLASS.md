@@ -5,14 +5,9 @@ title: "🎓 DSOM Team Masterclass: Project Creation, GitOps & Multi-Agent Colla
 timestamp: "2026-08-22T14:30:00Z"
 topics: ["training", "tutorial", "onboarding", "antigravity", "jules", "gitops", "dsom", "okf"]
 resource: "file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: source-1, resource: START-HERE.md,
-  title: START-HERE.md, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/START-HERE.md'}, {author: Harisfazillah Jamel (LinuxMalaysia), id: source-2, resource: docs/HOWTO-CLONE-DSOM-PROJECT.md,
-  title: docs/HOWTO-CLONE-DSOM-PROJECT.md, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/HOWTO-CLONE-DSOM-PROJECT.md'}, {author: Harisfazillah Jamel (LinuxMalaysia), id: source-3, resource: docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md,
-  title: docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md, type: repository_file,
-  url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md'}, {author: Harisfazillah Jamel (LinuxMalaysia), id: source-4, resource: .agents/skills/jules-antigravity-sync/SKILL.md,
-  title: .agents/skills/jules-antigravity-sync/SKILL.md, type: repository_file, url: 'https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/jules-antigravity-sync/SKILL.md'}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-1, resource: "START-HERE.md", title: "START-HERE.md", type: repository_file, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/START-HERE.md"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-2, resource: "docs/HOWTO-CLONE-DSOM-PROJECT.md", title: "docs/HOWTO-CLONE-DSOM-PROJECT.md", type: repository_file, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/HOWTO-CLONE-DSOM-PROJECT.md"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-3, resource: "docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md", title: "docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md", type: repository_file, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-4, resource: ".agents/skills/jules-antigravity-sync/SKILL.md", title: ".agents/skills/jules-antigravity-sync/SKILL.md", type: repository_file, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/jules-antigravity-sync/SKILL.md"}]
 status: stable
-generated: {by: google-antigravity, timestamp: '2026-08-22T14:30:00Z'}
+generated: {by: google-antigravity, timestamp: "2026-08-22T14:30:00Z"}
 stale_after: "2027-08-22"
 spec_version: "0.2"
 description: "Step-by-step training curriculum and operational playbook teaching engineering teams how to create new projects, adopt the DSOM Sovereign Engine, pair program with Google Antigravity, and collaborate across AI agents like Google Jules."

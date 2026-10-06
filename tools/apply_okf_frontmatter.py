@@ -104,6 +104,11 @@ def serialise_val(val, key):
                 formatted_elements.append(serialise_val(item, key))
         return "[" + ", ".join(formatted_elements) + "]"
 
+    # Format dicts as inline flow maps
+    if isinstance(val, dict):
+        pairs = [f"{k}: {serialise_val(v, k)}" for k, v in val.items()]
+        return "{" + ", ".join(pairs) + "}"
+
     # Format strings, quoting if they contain emojis/special characters or are YAML-sensitive
     if isinstance(val, str):
         if needs_double_quotes(val):
