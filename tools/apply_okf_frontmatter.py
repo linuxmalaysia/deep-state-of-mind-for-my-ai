@@ -272,7 +272,9 @@ def normalise_metadata(
                     else:
                         src_copy['url'] = f"https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/{res.lstrip('/')}"
                 if 'author' not in src_copy:
-                    src_copy['author'] = 'Harisfazillah Jamel (LinuxMalaysia)'
+                    res = str(src_copy.get('resource', ''))
+                    if not (res.startswith('http://') or res.startswith('https://')):
+                        src_copy['author'] = 'Harisfazillah Jamel (LinuxMalaysia)'
                 if 'id' not in src_copy:
                     src_copy['id'] = f"source-{idx+1}"
                 if 'title' not in src_copy:
@@ -280,15 +282,18 @@ def normalise_metadata(
                 normalized_sources.append(src_copy)
             elif isinstance(src, str):
                 res = src
-                url_val = res if (res.startswith('http://') or res.startswith('https://')) else f"https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/{res.lstrip('/')}"
-                normalized_sources.append({
+                is_ext = res.startswith('http://') or res.startswith('https://')
+                url_val = res if is_ext else f"https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/{res.lstrip('/')}"
+                src_dict = {
                     'id': f"source-{idx+1}",
                     'title': res,
                     'resource': res,
                     'url': url_val,
-                    'type': 'repository_file',
-                    'author': 'Harisfazillah Jamel (LinuxMalaysia)'
-                })
+                    'type': 'external_spec' if is_ext else 'repository_file',
+                }
+                if not is_ext:
+                    src_dict['author'] = 'Harisfazillah Jamel (LinuxMalaysia)'
+                normalized_sources.append(src_dict)
         sources = normalized_sources
 
     updated_frontmatter = {
@@ -301,10 +306,15 @@ def normalise_metadata(
         'sources': sources,
     }
 
-    # 8. status (if present, normalise)
+    # 8. status (if present, normalise or validate)
     if 'status' in existing_frontmatter:
         status = existing_frontmatter['status']
         if not isinstance(status, str) or status not in {'draft', 'stable', 'deprecated'}:
+            if require_okf_v02:
+                raise ValueError(
+                    f"OKF v0.2 validation failed for {rel_path}: "
+                    f"status must be draft, stable, or deprecated (got: {status})."
+                )
             status = 'stable'
         updated_frontmatter['status'] = status
 
@@ -322,7 +332,11 @@ def normalise_metadata(
             if not isinstance(gen_by, str) or not gen_by.strip():
                 gen_by = 'agent/dsom-subagent-01'
             gen_ts = generated.get('timestamp') or generated.get('at') or timestamp
-            if not isinstance(gen_ts, str):
+            if isinstance(gen_ts, datetime):
+                if gen_ts.tzinfo is None:
+                    gen_ts = gen_ts.replace(tzinfo=timezone.utc)
+                gen_ts = gen_ts.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+            elif not isinstance(gen_ts, str):
                 gen_ts = timestamp
             generated = {
                 'by': gen_by,

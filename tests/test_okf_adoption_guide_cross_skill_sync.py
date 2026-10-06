@@ -817,7 +817,9 @@ class OkfAdoptionGuideContentSectionsTests(unittest.TestCase):
 
     def test_apply_okf_frontmatter_tool_documented_in_step_2(self):
         content = DOCS_OKF_GUIDE_PATH.read_text(encoding="utf-8")
-        self.assertIn("tools/apply_okf_frontmatter.py", content)
+        self.assertIn("### Step 2: Inject & Audit OKF Frontmatter", content)
+        step_2_part = content.split("### Step 2: Inject & Audit OKF Frontmatter")[1].split("### Step 3:")[0]
+        self.assertIn("tools/apply_okf_frontmatter.py --require-okf-v02", step_2_part)
 
     def test_footer_signature_date_present_in_both_copies(self):
         self.assertIn(EXPECTED_FOOTER_LINE, DOCS_OKF_GUIDE_PATH.read_text(encoding="utf-8"))

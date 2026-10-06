@@ -148,7 +148,7 @@ class DocsCiWorkflowTextContentTests(unittest.TestCase):
         for quadrant in ("reference", "how-to", "tutorials", "explanation"):
             with self.subTest(quadrant=quadrant):
                 self.assertIn(
-                    f"python tools/apply_okf_frontmatter.py --require-okf-v02 docs/{quadrant}/", self.content
+                    f"uv run python tools/apply_okf_frontmatter.py --require-okf-v02 docs/{quadrant}/", self.content
                 )
 
     def test_okf_frontmatter_step_fails_build_on_uncommitted_diff(self):
@@ -262,7 +262,7 @@ class DocsCiWorkflowStructureTests(unittest.TestCase):
         run_lines = frontmatter_step["run"]
         for quadrant in ("reference", "how-to", "tutorials", "explanation"):
             with self.subTest(quadrant=quadrant):
-                self.assertIn(f"python tools/apply_okf_frontmatter.py --require-okf-v02 docs/{quadrant}/", run_lines)
+                self.assertIn(f"uv run python tools/apply_okf_frontmatter.py --require-okf-v02 docs/{quadrant}/", run_lines)
         self.assertIn("git diff --exit-code -- docs", run_lines)
 
     def test_unit_tests_step_command(self):
