@@ -94,6 +94,18 @@ def needs_double_quotes(s):
     return False
 
 def serialise_val(val, key):
+    """Return a YAML value, using flow syntax for lists and dictionaries.
+
+    List strings are always double-quoted; other strings are quoted as needed
+    to preserve their value. Dictionary keys are emitted verbatim and must
+    already be safe as unquoted YAML keys. The key argument does not affect
+    formatting. Cyclic lists and dictionaries are unsupported.
+
+    Raises:
+        yaml.representer.RepresenterError: If a fallback value cannot be
+            represented by PyYAML's safe dumper.
+        RecursionError: If nested lists or dictionaries exceed the recursion limit.
+    """
     # Format lists as inline arrays with double-quoted strings and recursive non-string serialisation
     if isinstance(val, list):
         formatted_elements = []
@@ -191,8 +203,30 @@ def normalise_metadata(
     require_okf_v02=False,
     filepath=None,
 ):
-    """
-    Normalises the mandatory OKF metadata fields and returns updated_frontmatter.
+    """Return normalized OKF metadata without modifying the input mapping.
+
+    Missing core fields receive defaults, including the current UTC timestamp.
+    Source strings become mappings, source mappings receive missing reference
+    fields, and other source entries are dropped. Local source references receive
+    URLs under this repository's main branch. When present, generated metadata
+    is reduced to by and timestamp fields, accepting at as a timestamp fallback.
+    stale_after values are reduced to date text without checking date validity.
+    Other fields are preserved, with datetime values converted to UTC text.
+
+    Args:
+        existing_frontmatter: Parsed metadata to normalize.
+        rest_of_content: Markdown body used to derive a missing title.
+        rel_path: Relative document path used for defaults and error messages.
+        filename: Filename used when the body has no title heading.
+        require_okf_v02: Reject conflicting versions and invalid status values.
+            Full trust validation requires validate_okf_v02_metadata afterward.
+            Otherwise, an invalid status is replaced with stable.
+        filepath: Optional file path used to identify skills and derive their
+            name from the parent directory, even when rel_path omits .agents/skills.
+
+    Raises:
+        ValueError: In strict mode, an existing non-null version differs from
+            0.2, or a supplied status is not draft, stable, or deprecated.
     """
     # 1. okf_version
     okf_version = existing_frontmatter.get('okf_version')
@@ -398,7 +432,22 @@ def normalise_metadata(
 
 
 def validate_okf_v02_metadata(metadata, rel_path):
-    """Reject incomplete or malformed OKF v0.2 trust metadata."""
+    """Reject incomplete or malformed OKF v0.2 trust metadata.
+
+    Check version fields, a snake_case concept_id, status, a YYYY-MM-DD
+    stale_after date, nonempty sources, and generated metadata. Source mappings
+    require nonempty id, title, author, and absolute URL strings. generated.by
+    must be nonempty, and its timestamp must parse with a zero UTC offset.
+    generated.at is accepted when generated.timestamp is absent or falsey.
+    Dates are checked for format and validity, not freshness.
+
+    Return None on success without modifying metadata. rel_path identifies
+    the document in error messages.
+
+    Raises:
+        ValueError: A required trust field is missing or invalid, including
+            source URLs rejected by the URL parser.
+    """
     required_fields = (
         'okf_version',
         'spec_version',

@@ -23,6 +23,11 @@ echo "[INFO] Commencing OKF v0.2 structural audit..."
 file_list=$(mktemp)
 find . -type f -name "*.md" ! -path "*/.git/*" ! -path "*/.venv/*" ! -path "*/node_modules/*" ! -path "*/.pytest_cache/*" > "$file_list"
 
+# Check the first matching field line in frontmatter text, without parsing YAML.
+# Arguments: diagnostic file path, field name, frontmatter text without delimiters.
+# Return 1 and print an error to stdout for a missing or empty value, including
+# exact values "", '', and []. Return 0 otherwise. Trailing spaces are preserved.
+# Overwrites the shell variables file_path, field_name, fm_content, and val.
 check_field() {
     file_path="$1"
     field_name="$2"
