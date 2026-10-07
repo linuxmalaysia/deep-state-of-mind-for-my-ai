@@ -79,16 +79,14 @@ All skills adhere to the following directory structure:
 
 ## 4. Declarative Repository Manifest (`.lola-req`)
 
-The root `.lola-req` manifest configures local vendored skill resolution and optional sovereign Git remotes:
+The root `.lola-req` manifest configures local vendored skill resolution with one module reference per line (`lola-ai>=0.1.0` CLI format):
 
-```yaml
-version: "1"
-skills:
-  - name: terminal-cloud-pdf-compiler
-    path: .agents/skills/terminal-cloud-pdf-compiler
-  - name: council-of-high-intelligence
-    git: https://git.internal.lan/infra/council-of-high-intelligence.git
-    version: main
+```
+# Declarative Lola Package Specification (.lola-req)
+# Lola CLI Version Pinned: lola-ai>=0.1.0
+
+.agents/skills/terminal-cloud-pdf-compiler
+.agents/skills/council-of-high-intelligence
 ```
 
 ---

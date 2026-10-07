@@ -40,34 +40,34 @@ class LolaRequirementsManifestTests(unittest.TestCase):
         self.assertTrue(self.LOLA_REQ_PATH.is_file())
         self.assertTrue(self.LOLA_REQ_PATH.read_text(encoding="utf-8").strip())
 
-    def test_lola_req_parses_as_valid_yaml(self):
+    def test_lola_req_contains_pinned_version_comment(self):
         content = self.LOLA_REQ_PATH.read_text(encoding="utf-8")
-        parsed = yaml.safe_load(content)
-        self.assertIsInstance(parsed, dict)
-        self.assertEqual(str(parsed.get("version")), "1")
-        self.assertIn("skills", parsed)
+        self.assertIn("lola-ai>=0.1.0", content)
 
     def test_lola_req_contains_all_46_skills(self):
         content = self.LOLA_REQ_PATH.read_text(encoding="utf-8")
-        parsed = yaml.safe_load(content)
-        skills_list = parsed.get("skills", [])
-        self.assertEqual(len(skills_list), 46)
+        lines = [
+            line.strip()
+            for line in content.splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        ]
+        self.assertEqual(len(lines), 46)
 
         skills_dir = REPO_ROOT / ".agents" / "skills"
         expected_skills = set(
-            d.name for d in skills_dir.iterdir() if d.is_dir()
+            f".agents/skills/{d.name}"
+            for d in skills_dir.iterdir()
+            if d.is_dir()
         )
 
-        declared_names = set(item["name"] for item in skills_list)
-        self.assertEqual(declared_names, expected_skills)
+        declared_paths = set(lines)
+        self.assertEqual(declared_paths, expected_skills)
 
-        for item in skills_list:
-            skill_name = item["name"]
-            rel_path = item["path"]
+        for rel_path in lines:
             target_dir = REPO_ROOT / rel_path
             self.assertTrue(
                 target_dir.is_dir(),
-                f"Declared path {rel_path} for skill {skill_name} does not exist.",
+                f"Declared path {rel_path} does not exist as a skill directory.",
             )
 
 

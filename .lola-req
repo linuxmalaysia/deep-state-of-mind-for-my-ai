@@ -6,103 +6,56 @@
 # Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
 # ==============================================================================
 # Declarative Lola Package Specification (.lola-req)
+# Lola CLI Version Pinned: lola-ai>=0.1.0
 #
-# Configures Lola AI Package Manager (lola-ai) for sovereign, air-gapped skill resolution.
+# Configures Lola AI Package Manager for sovereign, air-gapped skill resolution.
 # Local vendored paths under .agents/skills/ serve as primary resolution targets,
-# with sovereign Git remotes (self-hosted Gitea/GitLab) supported as fallbacks.
+# with one module reference per line.
 # ==============================================================================
 
-version: "1"
-skills:
-  - name: agent-plugin-packager
-    path: .agents/skills/agent-plugin-packager
-  - name: architecture-decision-records
-    path: .agents/skills/architecture-decision-records
-  - name: changelog-automation
-    path: .agents/skills/changelog-automation
-  - name: context7-indexer
-    path: .agents/skills/context7-indexer
-  - name: council-of-high-intelligence
-    path: .agents/skills/council-of-high-intelligence
-  - name: cross-platform-translator
-    path: .agents/skills/cross-platform-translator
-  - name: docs-review
-    path: .agents/skills/docs-review
-  - name: docs-write
-    path: .agents/skills/docs-write
-  - name: docstring
-    path: .agents/skills/docstring
-  - name: docx
-    path: .agents/skills/docx
-  - name: dsom-bootstrap
-    path: .agents/skills/dsom-bootstrap
-  - name: dsom-knowledge-ingester
-    path: .agents/skills/dsom-knowledge-ingester
-  - name: dsom-policy-adopter
-    path: .agents/skills/dsom-policy-adopter
-  - name: dsom-project-cloner
-    path: .agents/skills/dsom-project-cloner
-  - name: dsom-release-manager
-    path: .agents/skills/dsom-release-manager
-  - name: dsom-signature-injector
-    path: .agents/skills/dsom-signature-injector
-  - name: dsom-state-sync
-    path: .agents/skills/dsom-state-sync
-  - name: dsom-technical-book-compiler
-    path: .agents/skills/dsom-technical-book-compiler
-  - name: dsom-token-calculator
-    path: .agents/skills/dsom-token-calculator
-  - name: eod-palace-sync
-    path: .agents/skills/eod-palace-sync
-  - name: forensic-log-audit
-    path: .agents/skills/forensic-log-audit
-  - name: git-commit-resolver
-    path: .agents/skills/git-commit-resolver
-  - name: git-history-scrubber
-    path: .agents/skills/git-history-scrubber
-  - name: github-actions-snyk-scanner
-    path: .agents/skills/github-actions-snyk-scanner
-  - name: hyperparameter-tuning-expert
-    path: .agents/skills/hyperparameter-tuning-expert
-  - name: initialize-gitops
-    path: .agents/skills/initialize-gitops
-  - name: jules-antigravity-sync
-    path: .agents/skills/jules-antigravity-sync
-  - name: knowledge-base-templates
-    path: .agents/skills/knowledge-base-templates
-  - name: latex-proposal-compiler
-    path: .agents/skills/latex-proposal-compiler
-  - name: mintlify-docs-compiler
-    path: .agents/skills/mintlify-docs-compiler
-  - name: node-proposal-formatter
-    path: .agents/skills/node-proposal-formatter
-  - name: node-slide-generator
-    path: .agents/skills/node-slide-generator
-  - name: odp-slide-generator
-    path: .agents/skills/odp-slide-generator
-  - name: okf-frontmatter-injector
-    path: .agents/skills/okf-frontmatter-injector
-  - name: okf-v02-adoption-engineer
-    path: .agents/skills/okf-v02-adoption-engineer
-  - name: openapi-spec-generation
-    path: .agents/skills/openapi-spec-generation
-  - name: openwiki-compiler
-    path: .agents/skills/openwiki-compiler
-  - name: palace-auditor
-    path: .agents/skills/palace-auditor
-  - name: pdf-text-extractor
-    path: .agents/skills/pdf-text-extractor
-  - name: persona-injector
-    path: .agents/skills/persona-injector
-  - name: proposal-docx-formatter
-    path: .agents/skills/proposal-docx-formatter
-  - name: publish-to-blogger
-    path: .agents/skills/publish-to-blogger
-  - name: render-deployment
-    path: .agents/skills/render-deployment
-  - name: sitemap-seo-generator
-    path: .agents/skills/sitemap-seo-generator
-  - name: sod-palace-sync
-    path: .agents/skills/sod-palace-sync
-  - name: ssh-passwordless-setup
-    path: .agents/skills/ssh-passwordless-setup
+.agents/skills/agent-plugin-packager
+.agents/skills/architecture-decision-records
+.agents/skills/changelog-automation
+.agents/skills/context7-indexer
+.agents/skills/council-of-high-intelligence
+.agents/skills/cross-platform-translator
+.agents/skills/docs-review
+.agents/skills/docs-write
+.agents/skills/docstring
+.agents/skills/docx
+.agents/skills/dsom-bootstrap
+.agents/skills/dsom-knowledge-ingester
+.agents/skills/dsom-policy-adopter
+.agents/skills/dsom-project-cloner
+.agents/skills/dsom-release-manager
+.agents/skills/dsom-signature-injector
+.agents/skills/dsom-state-sync
+.agents/skills/dsom-technical-book-compiler
+.agents/skills/dsom-token-calculator
+.agents/skills/eod-palace-sync
+.agents/skills/forensic-log-audit
+.agents/skills/git-commit-resolver
+.agents/skills/git-history-scrubber
+.agents/skills/github-actions-snyk-scanner
+.agents/skills/hyperparameter-tuning-expert
+.agents/skills/initialize-gitops
+.agents/skills/jules-antigravity-sync
+.agents/skills/knowledge-base-templates
+.agents/skills/latex-proposal-compiler
+.agents/skills/mintlify-docs-compiler
+.agents/skills/node-proposal-formatter
+.agents/skills/node-slide-generator
+.agents/skills/odp-slide-generator
+.agents/skills/okf-frontmatter-injector
+.agents/skills/okf-v02-adoption-engineer
+.agents/skills/openapi-spec-generation
+.agents/skills/openwiki-compiler
+.agents/skills/palace-auditor
+.agents/skills/pdf-text-extractor
+.agents/skills/persona-injector
+.agents/skills/proposal-docx-formatter
+.agents/skills/publish-to-blogger
+.agents/skills/render-deployment
+.agents/skills/sitemap-seo-generator
+.agents/skills/sod-palace-sync
+.agents/skills/ssh-passwordless-setup
