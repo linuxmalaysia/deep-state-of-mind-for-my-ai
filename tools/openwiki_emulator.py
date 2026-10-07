@@ -20,8 +20,8 @@ import json
 import os
 import pathlib
 import subprocess
-import sys
 import tempfile
+
 import yaml
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -1003,11 +1003,7 @@ def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
             if line.startswith("%%") or line == "sequenceDiagram" or line.startswith("autonumber"):
                 continue
             # Arrows and participants
-            if "->" in line or "-->" in line or "-)" in line or "--)" in line:
-                pass
-            elif line.startswith("participant ") or line.startswith("actor ") or line.startswith("Note "):
-                pass
-            elif line.startswith("alt ") or line.startswith("else") or line.startswith("opt ") or line.startswith("loop ") or line.startswith("rect ") or line.startswith("end"):
+            if "->" in line or "-->" in line or "-)" in line or "--)" in line or line.startswith("participant ") or line.startswith("actor ") or line.startswith("Note ") or line.startswith("alt ") or line.startswith("else") or line.startswith("opt ") or line.startswith("loop ") or line.startswith("rect ") or line.startswith("end"):
                 pass
             else:
                 # Basic warning for unrecognized sequence line format

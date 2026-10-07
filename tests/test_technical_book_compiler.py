@@ -2,11 +2,11 @@
 Unit tests for Technical Ebook & Handbook Compiler skill and script.
 """
 
-import unittest
-import tempfile
-import shutil
-from pathlib import Path
 import importlib.util
+import shutil
+import tempfile
+import unittest
+from pathlib import Path
 
 spec = importlib.util.spec_from_file_location("compile_book", ".agents/skills/dsom-technical-book-compiler/scripts/compile-book.py")
 compile_book = importlib.util.module_from_spec(spec)

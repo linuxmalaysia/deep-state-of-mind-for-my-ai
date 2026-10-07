@@ -3,14 +3,16 @@ Guardrail 1: OKF Frontmatter & UTF-8 BOM Stripper
 Rule Reference: Rule 2 & Rule 25
 """
 
-from typing import Any, Dict, Optional
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsOKFBOMValidator(BaseDSOMValidator):
     name = "dsom/okf_bom_validator"
     on_fail = "fix"
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         text = str(value)
         action_taken = "pass"
         has_fix = False

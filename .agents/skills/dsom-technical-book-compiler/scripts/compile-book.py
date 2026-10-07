@@ -12,12 +12,11 @@ Compiles multi-file Markdown documentation suites and source code repositories
 into publication-grade PDF, standalone HTML, EPUB 3, and ODT handbooks.
 """
 
-import os
-import sys
+import argparse
 import re
 import shutil
 import subprocess
-import argparse
+import sys
 import zipfile
 from pathlib import Path
 

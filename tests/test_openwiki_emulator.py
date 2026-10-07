@@ -25,8 +25,7 @@ import yaml
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
-import openwiki_emulator  # type: ignore # noqa: E402
-
+import openwiki_emulator  # type: ignore
 
 EXPECTED_PLANNED_PAGE_PATHS = {
     "quickstart.md",

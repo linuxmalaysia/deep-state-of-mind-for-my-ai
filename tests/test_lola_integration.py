@@ -4,10 +4,10 @@ dual-compliant SKILL.md frontmatters, PEP 723 inline script metadata,
 and air-gapped Ansible automation in Deep State of Mind (DSOM).
 """
 
-import os
 import pathlib
 import re
 import unittest
+
 import yaml  # type: ignore
 
 

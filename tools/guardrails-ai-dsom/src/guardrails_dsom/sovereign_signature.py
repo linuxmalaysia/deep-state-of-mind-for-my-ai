@@ -5,8 +5,10 @@ Rule Reference: Rule 13
 
 import re
 from datetime import datetime, timezone
-from typing import Any, Dict, Optional
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsSovereignSignatureValidator(BaseDSOMValidator):
     name = "dsom/sovereign_signature"
@@ -16,7 +18,7 @@ class GuardrailsSovereignSignatureValidator(BaseDSOMValidator):
         r"\*Deep State of Mind \(DSOM\) For My AI Protocol \| Harisfazillah Jamel \(LinuxMalaysia\) \| (\d{4}-\d{2}-\d{2})\*"
     )
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         text = str(value)
         today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         expected_footer = (

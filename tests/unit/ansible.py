@@ -3,7 +3,9 @@ Ansible playbook compliance unit tests.
 """
 import pathlib
 import unittest
+
 import yaml
+
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
     current = start.resolve()

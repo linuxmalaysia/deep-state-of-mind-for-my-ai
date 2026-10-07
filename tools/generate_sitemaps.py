@@ -16,7 +16,6 @@ All generated files are written to the repository root, to the docs/ directory,
 and directly to the built site/ directory to ensure seamless deployment and SEO indexation.
 """
 import datetime
-import os
 import pathlib
 import re
 import subprocess

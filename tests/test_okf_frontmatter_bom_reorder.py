@@ -32,6 +32,7 @@ import unittest
 
 import yaml  # type: ignore
 
+
 def _discover_all_md_files() -> list[pathlib.Path]:
     root_dir = REPO_ROOT
     exclude_dirs = {'.git', 'node_modules', '.pytest_cache', '.venv', 'openwiki', 'openwiki_win', 'docs-source'}

@@ -14,9 +14,9 @@ from tests.unit.sitemaps import TestSitemapsAndContext7
 __all__ = [
     "TestAnsibleCompliance",
     "TestContainerfileSecurity",
-    "TestQuadletManifestSchema",
     "TestLlmsTxtParser",
     "TestMarkdownCompliance",
+    "TestQuadletManifestSchema",
     "TestSitemapsAndContext7",
 ]
 

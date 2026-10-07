@@ -1,5 +1,6 @@
 import tiktoken
 
+
 def count_tokens(text: str, model: str = "gpt-4") -> int:
     """Counts tokens using tiktoken (a proxy for modern LLMs)."""
     try:

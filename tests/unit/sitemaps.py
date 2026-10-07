@@ -4,8 +4,9 @@ Sitemaps consistency and Context7 configuration unit tests.
 import json
 import pathlib
 import tempfile
-import xml.etree.ElementTree as ET
 import unittest
+import xml.etree.ElementTree as ET
+
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
     current = start.resolve()

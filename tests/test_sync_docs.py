@@ -3,7 +3,6 @@ Unit and integration tests for scripts/sync_docs.py (Mintlify Safety Guards A-E)
 """
 
 import json
-import os
 import shutil
 import tempfile
 import unittest

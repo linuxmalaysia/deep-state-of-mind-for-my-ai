@@ -12,9 +12,10 @@ This test suite validates that:
 """
 import pathlib
 import re
+import unittest
 import urllib.parse
 import xml.etree.ElementTree as ET
-import unittest
+
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
     """

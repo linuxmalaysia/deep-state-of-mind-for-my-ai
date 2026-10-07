@@ -16,7 +16,6 @@ two layers of testing are used:
    which are skipped gracefully if PyYAML is not installed.
 """
 import pathlib
-import re
 import unittest
 
 try:

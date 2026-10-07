@@ -10,9 +10,7 @@ License : GNU General Public License v3.0
 """
 
 import json
-import os
 import re
-import shutil
 import sys
 from pathlib import Path
 

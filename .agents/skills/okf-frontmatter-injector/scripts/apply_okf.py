@@ -19,23 +19,15 @@ Scans a target directory and ensures all .md files use OKF v0.1 YAML frontmatter
 with the required fields (okf_version, type, title, timestamp, topics).
 This script imports the canonical implementations from tools/apply_okf_frontmatter.py.
 """
+import argparse
 import os
 import sys
-import argparse
 
 # Insert repository root to sys.path to allow importing from tools
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../')))
 
-from tools.apply_okf_frontmatter import (
-    FRONTMATTER_RE,
-    CustomLoader,
-    get_okf_type,
-    extract_title,
-    get_default_topics,
-    needs_double_quotes,
-    serialise_val,
-    process_file
-)
+from tools.apply_okf_frontmatter import process_file
+
 
 def main():
     parser = argparse.ArgumentParser(description="Ensure OKF v0.1 compliance on all Markdown files.")

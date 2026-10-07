@@ -12,6 +12,7 @@ import os
 import sys
 from pathlib import Path
 
+
 def install_hook():
     repo_root = Path(__file__).resolve().parent.parent
     hooks_dir = repo_root / ".git" / "hooks"

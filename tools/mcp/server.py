@@ -19,6 +19,7 @@ uv run tools/mcp/server.py
 import os
 import sys
 from pathlib import Path
+
 import yaml
 
 try:
@@ -51,10 +52,10 @@ if str(GUARDRAILS_SRC) not in sys.path:
 
 try:
     from guardrails_dsom import (
+        GuardrailsByteCapValidator,
         GuardrailsCredentialGuardian,
         GuardrailsOKFBOMValidator,
         GuardrailsOKFTrustValidator,
-        GuardrailsByteCapValidator,
         GuardrailsRootCleanlinessValidator,
     )
     _CRED_GUARDIAN = GuardrailsCredentialGuardian(on_fail="block")
@@ -211,7 +212,7 @@ def search_code_snippets(query: str, limit: int = 5) -> str:
         result.extend(matched[:limit])
         return "\n\n" + ("\n\n---\n\n".join(result))
     except Exception as e:
-        return f"Error reading code snippets: {str(e)}"
+        return f"Error reading code snippets: {e!s}"
 
 @mcp.tool()
 def fetch_context7_stream(tokens: int = 83688, return_offline_sample: bool = False) -> str:

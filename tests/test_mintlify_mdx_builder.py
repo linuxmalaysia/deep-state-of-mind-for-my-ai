@@ -3,17 +3,16 @@ Unit tests for tools/build_mintlify_mdx.py (Mintlify MDX Tree Builder).
 """
 
 import json
-import os
 import shutil
 import tempfile
 import unittest
 from pathlib import Path
 
 from tools.build_mintlify_mdx import (
+    build_mintlify_tree,
     convert_markdown_to_mdx,
     parse_frontmatter_and_content,
     to_title_case_sidebar,
-    build_mintlify_tree,
 )
 
 

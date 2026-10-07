@@ -14,7 +14,7 @@ import unittest
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "tools" / "mcp"))
 
-import server  # type: ignore # noqa: E402
+import server  # type: ignore
 
 
 class McpServerResourceTests(unittest.TestCase):

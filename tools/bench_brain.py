@@ -6,8 +6,9 @@ files to calibrate token and context performance multipliers for native OS and s
 mobile (Android Termux) environments.
 """
 import os
-import time
 import sys
+import time
+
 
 def get_files(directories, extension=".md"):
     """

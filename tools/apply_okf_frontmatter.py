@@ -12,16 +12,17 @@ OKF Frontmatter Compliance Script.
 Scans a target directory and ensures all .md files use OKF YAML frontmatter.
 The strict mode rejects incomplete or malformed OKF v0.2 trust metadata.
 """
-import os
-import sys
-import re
 import argparse
 import json
-import tempfile
+import os
+import re
 import stat
-import yaml
+import sys
+import tempfile
 from datetime import datetime, timezone
 from urllib.parse import urlparse
+
+import yaml
 
 FRONTMATTER_RE = re.compile(r'\A---\s*\r?\n(.*?)(?:\r?\n)?---\s*(?:\r?\n|\Z)', re.DOTALL)
 

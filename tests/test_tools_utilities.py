@@ -13,8 +13,8 @@ import unittest
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
-import bench_brain  # type: ignore # noqa: E402
-import mkdocs_hooks  # type: ignore # noqa: E402
+import bench_brain  # type: ignore
+import mkdocs_hooks  # type: ignore
 
 
 class BenchBrainTests(unittest.TestCase):

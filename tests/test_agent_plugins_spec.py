@@ -1,7 +1,6 @@
-import os
 import json
+import os
 import re
-import pytest
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

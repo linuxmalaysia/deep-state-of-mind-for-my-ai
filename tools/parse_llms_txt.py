@@ -8,10 +8,10 @@ Provides both a CLI and programmatic Python API.
 """
 import argparse
 import datetime
-import os
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
+
 
 # Find repository root
 def find_repo_root() -> Path:
@@ -100,7 +100,7 @@ def generate_llms_full_txt(files: list[tuple[str, Path]], output_path: Path, rep
             content = filepath.read_text(encoding="utf-8")
             parts.append(f"FILE: {rel_path}\nTITLE: {title}\n{'-' * 40}\n{content}")
         except Exception as e:
-            raise IOError(f"Failed to read file {rel_path} while compiling llms-full.txt: {e}") from e
+            raise OSError(f"Failed to read file {rel_path} while compiling llms-full.txt: {e}") from e
 
     output_path.write_text(separator.join(parts), encoding="utf-8")
     print(f"Wrote {len(files)} files to {output_path}")
@@ -136,7 +136,7 @@ def generate_llms_context_xml(files: list[tuple[str, Path]], output_path: Path, 
             # Preserve raw text structure inside CDATA or simple text
             content_elem.text = content
         except Exception as e:
-            raise IOError(f"Failed to read file {rel_path} while compiling llms-context.xml: {e}") from e
+            raise OSError(f"Failed to read file {rel_path} while compiling llms-context.xml: {e}") from e
 
     # Write tree to output
     tree = ET.ElementTree(root)

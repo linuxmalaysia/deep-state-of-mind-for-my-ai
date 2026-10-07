@@ -1,12 +1,11 @@
 """Exercise the POSIX validator against isolated Markdown fixtures."""
 
 import os
-from pathlib import Path
 import shutil
 import subprocess
 import tempfile
 import unittest
-
+from pathlib import Path
 
 VALIDATOR = Path(__file__).resolve().parents[1] / "tools" / "validate-okf.sh"
 FIELDS = {

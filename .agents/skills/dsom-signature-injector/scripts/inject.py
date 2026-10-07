@@ -5,14 +5,31 @@
 # ///
 import os
 import sys
-import glob
 from datetime import datetime
 
-def get_last_modified_date(filepath):
+
+def get_last_modified_date(filepath: str) -> str:
+    """Retrieves formatted last modified date for a file.
+
+    Args:
+        filepath: Path to the target file.
+
+    Returns:
+        ISO date string in YYYY-MM-DD format.
+    """
     timestamp = os.path.getmtime(filepath)
     return datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
 
-def get_sh_yml_header(date_str):
+
+def get_sh_yml_header(date_str: str) -> str:
+    """Generates standard DSOM header for Shell, YAML, and Python scripts.
+
+    Args:
+        date_str: ISO date string for header timestamp.
+
+    Returns:
+        Formatted multi-line comment header string.
+    """
     return f"""# ==============================================================================
 # Protocol    : Deep State of Mind (DSOM) For My AI
 # Author      : Harisfazillah Jamel (LinuxMalaysia)
@@ -22,7 +39,16 @@ def get_sh_yml_header(date_str):
 # ==============================================================================
 """
 
-def get_ps1_header(date_str):
+
+def get_ps1_header(date_str: str) -> str:
+    """Generates standard DSOM comment block header for PowerShell scripts.
+
+    Args:
+        date_str: ISO date string for header timestamp.
+
+    Returns:
+        Formatted multi-line PowerShell block comment header string.
+    """
     return f"""<#
 .SYNOPSIS
     Deep State of Mind (DSOM) For My AI Protocol
@@ -34,7 +60,16 @@ def get_ps1_header(date_str):
 #>
 """
 
-def inject_signature(target_path):
+
+def inject_signature(target_path: str) -> None:
+    """Injects DSOM copyright signature headers/footers into target files or directory trees.
+
+    Args:
+        target_path: Path to target file or directory.
+
+    Raises:
+        OSError: If reading or writing a file fails due to filesystem permissions.
+    """
     files_to_process = []
     
     if os.path.isfile(target_path):
