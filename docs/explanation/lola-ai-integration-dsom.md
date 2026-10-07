@@ -4,11 +4,13 @@ type: explanation
 title: "Lola AI Package Manager Integration in Deep State of Mind (DSOM)"
 timestamp: "2026-09-06T00:00:00Z"
 topics: ["lola-ai", "package-manager", "dsom", "air-gapped", "sovereign"]
-resource: "/lola-ai-integration-dsom.md"
+resource: "/docs/explanation/lola-ai-integration-dsom.md"
 sources: [{id: dsom-core-spec, title: "Deep State of Mind (DSOM) Governance Architecture", resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", type: architecture_spec, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: google-okf-v02-spec, title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", type: external_spec, author: Google Cloud Platform}]
 status: stable
+generated: {by: Google Jules, timestamp: "2026-09-06T00:00:00Z"}
 stale_after: "2027-10-01"
 spec_version: "0.2"
+concept_id: lola_ai_integration_dsom
 description: "Comprehensive 4W1H architectural guide on integrating Lola AI package manager into the Deep State of Mind framework for sovereign, air-gapped skill distribution."
 ---
 # Lola AI Package Manager Integration in Deep State of Mind (DSOM)
