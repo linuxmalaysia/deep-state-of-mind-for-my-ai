@@ -104,7 +104,18 @@ def _report_sections(text: str, enc, filename: str):
         print(f"           {sec_tokens:>6,} tok  {title[:70]}{flag}")
 
 def scan_path(target_path: str, verbose_sections: bool = False):
-    """Scan a file or directory tree and report token footprints with breach flags."""
+    """Print token totals and flag files at or above the token gate threshold.
+
+    A file is scanned regardless of extension. Directories are scanned
+    recursively for supported text extensions. verbose_sections enables section
+    reports for breached files in directories, and is always enabled for a
+    single file. File analysis errors contribute zero tokens and no breach.
+    Breaches do not change the exit status. Tokenizer setup errors propagate
+    if the fallback encoding also fails.
+
+    Raises:
+        SystemExit: With status 1 if target_path does not exist.
+    """
     if not os.path.exists(target_path):
         print(f"[ERROR] Target path '{target_path}' does not exist.")
         sys.exit(1)

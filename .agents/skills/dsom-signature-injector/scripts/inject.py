@@ -15,7 +15,11 @@ def get_last_modified_date(filepath: str) -> str:
         filepath: Path to the target file.
 
     Returns:
-        ISO date string in YYYY-MM-DD format.
+        Modification date in the local time zone, in YYYY-MM-DD format.
+
+    Raises:
+        OSError: If the file's modification time cannot be read.
+        OverflowError: If the timestamp is outside the platform's date range.
     """
     timestamp = os.path.getmtime(filepath)
     return datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
@@ -64,11 +68,17 @@ def get_ps1_header(date_str: str) -> str:
 def inject_signature(target_path: str) -> None:
     """Injects DSOM copyright signature headers/footers into target files or directory trees.
 
+    Modifies Markdown, shell, YAML, Python, and PowerShell files using their
+    local modification dates. Files containing the full protocol marker are
+    skipped. Missing paths and unsupported extensions are left unchanged.
+    Write errors are caught and processing continues with the next file.
+
     Args:
         target_path: Path to target file or directory.
 
     Raises:
-        OSError: If reading or writing a file fails due to filesystem permissions.
+        OSError: If reading a file or its modification time fails.
+        OverflowError: If a modification timestamp cannot be converted to a date.
     """
     files_to_process = []
     

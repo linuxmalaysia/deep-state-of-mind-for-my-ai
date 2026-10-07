@@ -30,6 +30,10 @@ class BaseDSOMValidator(ABC):
     on_fail: Literal["fix", "block", "reask", "exception"] = "block"
 
     def __init__(self, on_fail: str | None = None, **kwargs):
+        """Store extra options and replace the default action if on_fail is truthy.
+
+        Action names are not checked here. Subclasses determine their behavior.
+        """
         if on_fail:
             self.on_fail = on_fail
         self.kwargs = kwargs
@@ -39,4 +43,5 @@ class BaseDSOMValidator(ABC):
         """Validate input value and return ValidationResult."""
 
     def __call__(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
+        """Delegate to validate, returning its result and propagating its errors."""
         return self.validate(value, metadata)

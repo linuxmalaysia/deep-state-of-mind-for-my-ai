@@ -932,8 +932,11 @@ def process_markdown_file(filepath: pathlib.Path):
 
 def validate_mermaid_diagram(code: str) -> tuple[bool, str]:
     """
-    Validates a Mermaid diagram block code.
-    Returns (True, "") if valid, or (False, reason_message) if invalid.
+    Check Mermaid source without Markdown fences using basic syntax heuristics.
+
+    Checks cover recognized headers, quote and grouping balance, and selected
+    sequence/ER diagram rules. Passing does not guarantee Mermaid will render.
+    Returns (True, "") when checks pass, or (False, reason_message) otherwise.
     """
     lines = [line.strip() for line in code.splitlines() if line.strip()]
     if not lines:

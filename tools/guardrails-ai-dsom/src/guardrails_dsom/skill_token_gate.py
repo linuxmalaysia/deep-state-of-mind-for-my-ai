@@ -26,6 +26,14 @@ class GuardrailsSkillTokenGate(BaseDSOMValidator):
             return len(text) // 4
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
+        """Return blocked when the text token count exceeds max_tokens.
+
+        Counts use cl100k_base when tiktoken is available, or character count
+        divided by four and rounded down after an ImportError. Other tokenizer
+        setup and encoding errors propagate. Counts equal to the limit pass
+        with value converted to text. metadata and on_fail do not affect this
+        check.
+        """
         text = str(value)
         token_count = self._count_tokens(text)
 

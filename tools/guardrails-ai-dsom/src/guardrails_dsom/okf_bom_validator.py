@@ -13,6 +13,14 @@ class GuardrailsOKFBOMValidator(BaseDSOMValidator):
     on_fail = "fix"
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
+        """Strip leading BOM characters and check the opening frontmatter fence.
+
+        The fence must be followed by LF or CRLF. In fix mode, a missing fence
+        is prepended. Other modes return blocked for a missing fence. BOM
+        removal applies in every mode. Passing or fixed results contain the
+        resulting text. YAML contents and closing fences are not checked.
+        metadata is unused.
+        """
         text = str(value)
         action_taken = "pass"
         has_fix = False
