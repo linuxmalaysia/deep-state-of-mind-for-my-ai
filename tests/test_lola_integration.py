@@ -151,7 +151,10 @@ class RelativePathDecouplingTests(unittest.TestCase):
 
     def test_no_absolute_workstation_paths_in_skills(self):
         skills_dir = REPO_ROOT / ".agents" / "skills"
-        forbidden = ["file:///", "C:/", "D:/"]
+        forbidden_regexes = [
+            re.compile(r"file:///[a-zA-Z0-9_./-]+"),
+            re.compile(r"[C-Z]:/[a-zA-Z0-9_./-]+"),
+        ]
 
         for file_path in skills_dir.rglob("*"):
             if file_path.is_file() and not file_path.name.endswith(".pyc"):
@@ -159,14 +162,15 @@ class RelativePathDecouplingTests(unittest.TestCase):
                     content = file_path.read_text(
                         encoding="utf-8", errors="ignore"
                     )
-                    for pattern in forbidden:
-                        self.assertNotIn(
-                            pattern,
-                            content,
-                            f"Absolute path pattern '{pattern}' found in {file_path}",
-                        )
-                except Exception:
-                    pass
+                except (OSError, UnicodeDecodeError):
+                    continue
+                for reg in forbidden_regexes:
+                    matches = reg.findall(content)
+                    self.assertEqual(
+                        len(matches),
+                        0,
+                        f"Absolute path or URI leak matches {matches} found in {file_path}",
+                    )
 
 
 class LolaAnsiblePlaybookTests(unittest.TestCase):

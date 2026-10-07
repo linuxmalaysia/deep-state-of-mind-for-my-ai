@@ -59,6 +59,7 @@ def get_default_topics(okf_type):
     mapping = {
         'governance_protocol': ['dsom', 'governance', 'protocol'],
         'agent_skill': ['dsom', 'skill', 'agent'],
+        'skill': ['dsom', 'skill', 'agent'],
         'architecture_concept': ['dsom', 'brain', 'concept'],
         'automation_tool': ['dsom', 'automation', 'tool'],
         'infrastructure_playbook': ['dsom', 'infrastructure', 'playbook'],

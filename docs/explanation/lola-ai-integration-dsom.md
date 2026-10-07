@@ -112,8 +112,10 @@ skills:
 
     - name: "Lola | Execute lola sync against .lola-req (if lola is installed)"
       ansible.builtin.command: "lola sync"
+      args:
+        chdir: "{{ playbook_dir }}/.."
       register: lola_sync_output
-      changed_when: "'Synchronized' in lola_sync_output.stdout or 'Installed' in lola_sync_output.stdout"
+      changed_when: "lola_sync_output.rc == 0 and ('Synchronized' in lola_sync_output.stdout or 'Installed' in lola_sync_output.stdout)"
       when: lola_check.rc == 0
       failed_when: false
 
@@ -122,7 +124,9 @@ skills:
         msg: >
           {{
             'Lola CLI detected. Executed lola sync against .lola-req successfully.'
-            if lola_check.rc == 0
+            if (lola_check.rc == 0 and lola_sync_output is defined and lola_sync_output.rc == 0)
+            else ('Lola sync failed (exit code ' ~ (lola_sync_output.rc | default('unknown')) ~ '). Falling back to local vendored skills in .agents/skills/.')
+            if (lola_check.rc == 0 and lola_sync_output is defined and lola_sync_output.rc != 0)
             else 'Lola CLI not detected or air-gapped environment. Using local vendored skills in .agents/skills/.'
           }}
 ```
