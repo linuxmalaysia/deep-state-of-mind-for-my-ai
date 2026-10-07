@@ -2,11 +2,11 @@
 name: eod-palace-sync
 version: "1.0.0"
 description: "The Hibernation (End of Day) ritual to externalise memory into the Palace and push to Git."
+topics: ["eod", "palace", "sync", "git", "ritual"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["eod", "palace", "sync", "git", "ritual"]
 status: stable
 stale_after: "2027-10-01"
 title: eod-palace-sync

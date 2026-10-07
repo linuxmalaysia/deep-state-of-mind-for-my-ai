@@ -2,11 +2,11 @@
 name: pdf-text-extractor
 version: "1.0.0"
 description: "Safely download external PDF files and extract their text content using curl and an isolated uv Python environment."
+topics: ["pdf", "text", "extraction", "curl", "uv"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["pdf", "text", "extraction", "curl", "uv"]
 status: stable
 stale_after: "2027-10-01"
 title: pdf-text-extractor

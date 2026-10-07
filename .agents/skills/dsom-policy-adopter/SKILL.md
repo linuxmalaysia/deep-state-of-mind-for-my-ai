@@ -2,11 +2,11 @@
 name: dsom-policy-adopter
 version: "1.0.0"
 description: "Automatically ingests an external research paper or policy document (PDF/Markdown) and formally integrates it into the DSOM framework governance and core rules."
+topics: ["policy", "governance", "pdf", "ingestion", "compliance", "okf"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["policy", "governance", "pdf", "ingestion", "compliance", "okf"]
 status: stable
 stale_after: "2027-10-01"
 title: DSOM Policy Adopter

@@ -2,11 +2,11 @@
 name: initialize-gitops
 version: "1.0.0"
 description: "Establishes the foundational GitOps repository, configures the .gitignore, and commits the Genesis DSOM architecture for a new project."
+topics: ["gitops", "init", "git", "sovereign", "setup"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["gitops", "init", "git", "sovereign", "setup"]
 status: stable
 stale_after: "2027-10-01"
 title: initialize-gitops

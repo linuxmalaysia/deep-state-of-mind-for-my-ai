@@ -2,11 +2,11 @@
 name: render-deployment
 version: "1.0.0"
 description: "Configures and manages Render.com deployments via native Free Static Site pathways for the compiled DSOM MkDocs site."
+topics: ["render", "deployment", "static-site", "blueprint", "mkdocs"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["render", "deployment", "static-site", "blueprint", "mkdocs"]
 status: stable
 stale_after: "2027-10-01"
 title: "🚀 Render Deployment Skill"

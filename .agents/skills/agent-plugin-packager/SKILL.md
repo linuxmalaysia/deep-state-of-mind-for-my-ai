@@ -2,11 +2,11 @@
 name: agent-plugin-packager
 version: "1.0.0"
 description: "Packages, validates, and scaffolds DSOM skills and FastMCP servers into portable Agent Plugins 1.0.0 compliant bundles."
+topics: ["agent-plugins", "packaging", "mcp", "skills", "scaffolding"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill_sop
-topics: ["agent-plugins", "packaging", "mcp", "skills", "scaffolding"]
 status: stable
 stale_after: "2027-08-22"
 title: Agent Plugin Packager

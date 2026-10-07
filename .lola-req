@@ -6,7 +6,7 @@
 # Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
 # ==============================================================================
 # Declarative Lola Package Specification (.lola-req)
-# Lola CLI Version Pinned: lola-ai>=0.1.0
+# Lola CLI Minimum Version Supported: lola-ai>=0.1.0
 #
 # Configures Lola AI Package Manager for sovereign, air-gapped skill resolution.
 # Local vendored paths under .agents/skills/ serve as primary resolution targets,

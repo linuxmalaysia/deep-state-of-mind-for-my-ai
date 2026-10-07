@@ -2,11 +2,11 @@
 name: publish-to-blogger
 version: "1.0.0"
 description: "Converts a markdown artefact into a clean HTML format suitable for publishing on Blogger.com, injecting the mandatory Human-AI Synergy Statement and Repository Links."
+topics: ["blogger", "html", "publish", "markdown", "blog"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["blogger", "html", "publish", "markdown", "blog"]
 status: stable
 stale_after: "2027-10-01"
 title: "✍️ Publish to Blogger Skill"

@@ -2,11 +2,11 @@
 name: docs-write
 version: "1.0.0"
 description: "Assists users in creating and editing documentation that adheres to a clear, conversational, and user-focussed writing style with reader intent."
+topics: ["documentation", "writing", "markdown", "technical-writing", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["documentation", "writing", "markdown", "technical-writing", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "✍️ Documentation Writer Skill"

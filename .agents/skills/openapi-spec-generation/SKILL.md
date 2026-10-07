@@ -2,11 +2,11 @@
 name: openapi-spec-generation
 version: "1.0.0"
 description: "Generates, validates, and maintains OpenAPI 3.1+ specifications from code paths or design-first drafts to ensure API contract compliance."
+topics: ["openapi", "api", "rest", "swagger", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["openapi", "api", "rest", "swagger", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "🔌 OpenAPI Spec Generation Skill"

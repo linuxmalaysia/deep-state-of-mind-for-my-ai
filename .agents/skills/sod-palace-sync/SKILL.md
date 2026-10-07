@@ -2,11 +2,11 @@
 name: sod-palace-sync
 version: "1.0.0"
 description: "The Reanimation (Start of Day) ritual to load the workspace context and establish the day's tasks."
+topics: ["sod", "palace", "sync", "git", "ritual"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["sod", "palace", "sync", "git", "ritual"]
 status: stable
 stale_after: "2027-10-01"
 title: sod-palace-sync

@@ -2,11 +2,11 @@
 name: okf-frontmatter-injector
 version: "1.0.0"
 description: "Scans a target directory and automatically injects OKF (v0.1/v0.2) YAML frontmatter into any Markdown files missing it."
+topics: ["okf", "frontmatter", "yaml", "compliance", "markdown"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["okf", "frontmatter", "yaml", "compliance", "markdown"]
 status: stable
 stale_after: "2027-10-01"
 title: okf-frontmatter-injector

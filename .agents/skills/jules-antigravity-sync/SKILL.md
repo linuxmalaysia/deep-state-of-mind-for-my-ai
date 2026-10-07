@@ -2,11 +2,11 @@
 name: jules-antigravity-sync
 version: "1.0.0"
 description: "Procedural SOP for synchronising cognitive context, rule alignment, and historic code modifications between Google Jules and Google Antigravity."
+topics: ["collaboration", "sync", "jules", "antigravity", "git", "powershell", "mintlify", "agent-plugins"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill_sop
-topics: ["collaboration", "sync", "jules", "antigravity", "git", "powershell", "mintlify", "agent-plugins"]
 status: stable
 stale_after: "2027-08-22"
 title: "Google Jules & Google Antigravity Collaborative Sync"

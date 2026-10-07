@@ -2,11 +2,11 @@
 name: proposal-docx-formatter
 version: "1.0.0"
 description: "Compiles a markdown proposal document into a professionally formatted DOCX file using standard corporate document templates (Times New Roman, A4 page, grey-header tables, 0.5pt borders, proper heading hierarchy). Use when the user asks to compile, generate, or format the migration proposal document."
+topics: ["docx", "proposal", "document", "formatter"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["docx", "proposal", "document", "formatter"]
 status: stable
 stale_after: "2027-10-01"
 title: proposal-docx-formatter

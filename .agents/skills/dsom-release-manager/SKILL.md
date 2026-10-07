@@ -2,11 +2,11 @@
 name: dsom-release-manager
 version: "1.0.0"
 description: "Cuts a formal DSOM release, updates ledgers, tags the repository, and deploys to GitHub/GitLab."
+topics: ["release", "git", "tagging", "changelog", "deployment"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["release", "git", "tagging", "changelog", "deployment"]
 status: stable
 stale_after: "2027-10-01"
 title: dsom-release-manager

@@ -2,11 +2,11 @@
 name: docx
 version: "1.0.0"
 description: "Comprehensive document creation, editing, and analysis for .docx Word files with support for tracked changes, comments, formatting preservation, and text extraction."
+topics: ["docx", "word", "document-processing", "pandoc", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["docx", "word", "document-processing", "pandoc", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "📄 DOCX Document Processor Skill"

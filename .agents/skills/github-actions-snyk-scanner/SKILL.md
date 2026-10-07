@@ -2,11 +2,11 @@
 name: github-actions-snyk-scanner
 version: "1.0.0"
 description: "Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories, replacing the deprecated Red Hat CRDA action."
+topics: ["snyk", "github-actions", "security", "ci-cd", "sarif"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["snyk", "github-actions", "security", "ci-cd", "sarif"]
 status: stable
 stale_after: "2027-10-01"
 title: GitHub Actions Snyk Security Scanner

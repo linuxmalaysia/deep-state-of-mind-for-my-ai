@@ -2,11 +2,11 @@
 name: git-history-scrubber
 version: "1.0.0"
 description: "Safely purges sensitive data (IPs, credentials) from Git history using git-filter-repo, deletes old releases, and handles force-push protocols."
+topics: ["git", "security", "history", "scrub", "credentials"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["git", "security", "history", "scrub", "credentials"]
 status: stable
 stale_after: "2027-10-01"
 title: "🧹 Git History Scrubber Skill"

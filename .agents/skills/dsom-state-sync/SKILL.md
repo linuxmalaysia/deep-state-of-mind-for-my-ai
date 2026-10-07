@@ -2,11 +2,11 @@
 name: dsom-state-sync
 version: "1.0.0"
 description: "Executes Semantic Compaction locally by analyzing a Git diff and updating current_state.dsom using OpenAI."
+topics: ["compaction", "state", "sync", "openai", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["compaction", "state", "sync", "openai", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: DSOM State Sync Skill

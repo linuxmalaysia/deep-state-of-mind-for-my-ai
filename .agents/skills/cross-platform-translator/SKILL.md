@@ -2,11 +2,11 @@
 name: cross-platform-translator
 version: "1.0.0"
 description: "Analyses a Windows PowerShell (.ps1) or Linux Bash (.sh) script and automatically generates its functional equivalent in the other shell language, enforcing the Cross-Platform Mandate."
+topics: ["bash", "powershell", "cross-platform", "translation", "scripting"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["bash", "powershell", "cross-platform", "translation", "scripting"]
 status: stable
 stale_after: "2027-10-01"
 title: "🔄 Cross-Platform Translator Skill"

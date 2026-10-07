@@ -2,11 +2,11 @@
 name: docs-review
 version: "1.0.0"
 description: "Facilitates systematic review of documentation changes, pull requests, and diffs to protect the source of truth and ensure compliance with writing standards."
+topics: ["documentation", "review", "quality-assurance", "style-guide", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["documentation", "review", "quality-assurance", "style-guide", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "🔍 Documentation Review Skill"

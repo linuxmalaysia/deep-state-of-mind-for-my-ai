@@ -2,11 +2,11 @@
 name: persona-injector
 version: "1.0.0"
 description: "Guides a user to define their Sovereign Persona and safely injects it into the agent's core AGENTS.md rulebook."
+topics: ["persona", "profile", "identity", "dsom", "agent"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["persona", "profile", "identity", "dsom", "agent"]
 status: stable
 stale_after: "2027-10-01"
 title: persona-injector

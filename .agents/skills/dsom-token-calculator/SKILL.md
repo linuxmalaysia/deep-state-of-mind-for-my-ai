@@ -2,11 +2,11 @@
 name: dsom-token-calculator
 version: "1.0.0"
 description: "Calculates token counts via tiktoken in isolated uv Python runspaces."
+topics: ["tokens", "tiktoken", "performance", "byte-cap", "context"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: procedural_skill
-topics: ["tokens", "tiktoken", "performance", "byte-cap", "context"]
 status: stable
 stale_after: "2027-10-01"
 title: "Procedural Specification: DSOM Token Calculator"

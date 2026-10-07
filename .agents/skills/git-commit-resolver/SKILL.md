@@ -2,11 +2,11 @@
 name: git-commit-resolver
 version: "1.0.0"
 description: "Automatically resolves invalid or orphaned Git commit IDs referenced in the Agent Brain by searching the Git history for the matching commit message."
+topics: ["git", "commit", "history", "brain", "resolver"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["git", "commit", "history", "brain", "resolver"]
 status: stable
 stale_after: "2027-10-01"
 title: "🔍 Git Commit Resolver Skill"

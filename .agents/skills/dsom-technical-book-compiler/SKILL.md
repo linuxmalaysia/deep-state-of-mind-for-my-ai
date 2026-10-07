@@ -2,11 +2,11 @@
 name: dsom-technical-book-compiler
 version: "1.0.0"
 description: "Compiles complete Diataxis documentation suites and source code repositories into publication-grade technical handbooks (PDF, standalone HTML, EPUB, ODT) using Pandoc and the Terminal & Cloud design framework."
+topics: ["pandoc", "ebook", "pdf", "html", "epub", "terminal-theme"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["pandoc", "ebook", "pdf", "html", "epub", "terminal-theme"]
 status: stable
 stale_after: "2027-09-03"
 title: "Technical Ebook & Handbook Compiler (Pandoc / Print & Terminal Theme)"

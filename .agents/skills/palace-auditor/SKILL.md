@@ -2,11 +2,11 @@
 name: palace-auditor
 version: "1.0.0"
 description: "A diagnostic skill that crawls the workspace to verify index.md links, identify undocumented scripts in tools/, and propose structural cleanups to maintain the Sovereign Memory Palace."
+topics: ["palace", "audit", "brain", "index", "cleanup", "okf"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["palace", "audit", "brain", "index", "cleanup", "okf"]
 status: stable
 stale_after: "2027-10-01"
 title: "🕵️ Palace Auditor Skill"

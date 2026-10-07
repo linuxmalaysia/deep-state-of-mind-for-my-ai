@@ -2,11 +2,11 @@
 name: okf-v02-adoption-engineer
 version: "1.2.0"
 description: "Seamlessly converts, validates, and enforces OKF v0.2 standards across workspace Markdown files."
+topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
 author: AI Workspace Assistant
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["okf", "documentation", "diataxis", "metadata-integrity", "repository-governance"]
 status: stable
 stale_after: "2027-09-02"
 title: "🌐 OKF v0.2 Migration & Compliance Standard Skill"

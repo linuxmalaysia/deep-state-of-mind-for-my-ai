@@ -2,11 +2,11 @@
 name: dsom-project-cloner
 version: "1.0.0"
 description: "Scaffolds a new DSOM project by copying the Sovereign Engine, Universal Gateway Matrix, Governance, and Ritual Tools to a target path, enforcing Downstream Asymmetry."
+topics: ["project", "scaffold", "clone", "dsom", "setup", "mintlify", "okf"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["project", "scaffold", "clone", "dsom", "setup", "mintlify", "okf"]
 status: stable
 stale_after: "2027-08-23"
 title: DSOM Project Cloner Skill

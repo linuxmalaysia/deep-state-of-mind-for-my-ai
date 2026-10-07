@@ -2,11 +2,11 @@
 name: dsom-bootstrap
 version: "1.0.0"
 description: "Executes the DSOM bootstrapping process for a new or existing project by reading the HOWTO-DSOM-BASELINE.md guide and pulling files from the permanent baseline repository."
+topics: ["bootstrap", "setup", "onboarding", "project-init", "dsom", "okf"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["bootstrap", "setup", "onboarding", "project-init", "dsom", "okf"]
 status: stable
 stale_after: "2027-10-01"
 title: "🚀 DSOM Bootstrap Skill"

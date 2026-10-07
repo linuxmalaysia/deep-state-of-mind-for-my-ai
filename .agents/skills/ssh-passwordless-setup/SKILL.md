@@ -2,11 +2,11 @@
 name: ssh-passwordless-setup
 version: "1.0.0"
 description: "Orchestrates SSH jump configurations for Linux servers."
+topics: ["ssh", "passwordless", "ansible", "keys", "setup"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["ssh", "passwordless", "ansible", "keys", "setup"]
 status: stable
 stale_after: "2027-10-01"
 title: ssh-passwordless-setup

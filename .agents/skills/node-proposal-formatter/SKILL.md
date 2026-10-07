@@ -2,11 +2,11 @@
 name: node-proposal-formatter
 version: "1.0.0"
 description: "Compiles a markdown proposal document into a professionally formatted DOCX file using Node.js and the docx npm package."
+topics: ["node", "docx", "proposal", "document", "formatter"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["node", "docx", "proposal", "document", "formatter"]
 status: stable
 stale_after: "2027-10-01"
 title: node-proposal-formatter

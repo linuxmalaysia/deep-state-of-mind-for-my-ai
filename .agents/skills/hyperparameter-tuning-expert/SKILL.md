@@ -2,11 +2,11 @@
 name: hyperparameter-tuning-expert
 version: "1.0.0"
 description: "Analyses, optimises, and debugs learning rates and hyperparameters in deep learning models across PyTorch and TensorFlow frameworks."
+topics: ["machine-learning", "hyperparameters", "optimisation", "pytorch", "tensorflow"]
 author: AI Assistant
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["machine-learning", "hyperparameters", "optimisation", "pytorch", "tensorflow"]
 status: stable
 stale_after: "2027-10-01"
 title: "🧠 AI Hyperparameter Optimisation Expert Skill"

@@ -2,11 +2,11 @@
 name: dsom-knowledge-ingester
 version: "1.0.0"
 description: "Executes the Knowledge Ingestion protocol (/learn) inspired by the LLM WIKI concept."
+topics: ["knowledge", "ingestion", "okf", "palace", "markdown"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["knowledge", "ingestion", "okf", "palace", "markdown"]
 status: stable
 stale_after: "2027-03-06"
 title: "📥 DSOM Knowledge Ingester Skill"

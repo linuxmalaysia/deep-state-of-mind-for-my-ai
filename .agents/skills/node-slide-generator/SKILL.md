@@ -2,11 +2,11 @@
 name: node-slide-generator
 version: "1.0.0"
 description: "Generates a PowerPoint presentation from a markdown outline using Node.js and pptxgenjs."
+topics: ["node", "pptx", "slides", "presentation", "generator"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["node", "pptx", "slides", "presentation", "generator"]
 status: stable
 stale_after: "2027-10-01"
 title: node-slide-generator

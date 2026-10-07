@@ -2,11 +2,11 @@
 name: odp-slide-generator
 version: "1.0.0"
 description: "Generates highly styled 3-column Corporate Presentation slides (PPTX/ODP format) based on a specific HTML/CSS theme using python-pptx."
+topics: ["presentation", "pptx", "odp", "python-pptx", "slides"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["presentation", "pptx", "odp", "python-pptx", "slides"]
 status: stable
 stale_after: "2027-10-01"
 title: odp-slide-generator

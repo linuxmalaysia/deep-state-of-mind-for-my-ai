@@ -2,11 +2,11 @@
 name: council-of-high-intelligence
 version: "1.0.0"
 description: "Executes a multi-perspective deliberation protocol using specialised AI domain personas (Domain Experts, Security Auditor, Systems Architect, Pragmatist) to review complex architectural decisions, evaluate trade-offs, and synthesize unified consensus decisions."
+topics: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]
 status: stable
 stale_after: "2027-01-01"
 title: Council of High Intelligence Multi-Agent Consensus Engine

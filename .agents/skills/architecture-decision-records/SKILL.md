@@ -2,11 +2,11 @@
 name: architecture-decision-records
 version: "1.0.0"
 description: "Writes and maintains Architecture Decision Records (ADRs) following standard MADR formats to document significant technical choices, tradeoffs, and consequences."
+topics: ["adr", "architecture", "decision-records", "madr", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["adr", "architecture", "decision-records", "madr", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "🏛️ Architecture Decision Records Skill"

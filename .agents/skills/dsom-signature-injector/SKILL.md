@@ -2,11 +2,11 @@
 name: dsom-signature-injector
 version: "1.0.0"
 description: "Automatically injects the standard DSOM ownership, timestamp, and GPL v3.0 licence signature into Markdown files and executable scripts based on the file's last modified date."
+topics: ["signature", "license", "gpl", "okf", "markdown"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["signature", "license", "gpl", "okf", "markdown"]
 status: stable
 stale_after: "2027-10-01"
 title: Universal Sovereign Signature Injector

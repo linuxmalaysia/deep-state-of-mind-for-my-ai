@@ -2,11 +2,11 @@
 name: knowledge-base-templates
 version: "1.0.0"
 description: "Provides reusable templates and structural frameworks for generating comprehensive internal wikis, concept maps, and module documentation across single projects and monorepos."
+topics: ["knowledge-base", "wiki", "templates", "documentation-structure", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["knowledge-base", "wiki", "templates", "documentation-structure", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "📚 Knowledge Base Templates Skill"

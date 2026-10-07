@@ -2,11 +2,11 @@
 name: forensic-log-audit
 version: "1.0.0"
 description: "Scrapes raw JSONL transcripts to recover exact commands from historical conversations."
+topics: ["audit", "logs", "forensic", "security", "analysis"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["audit", "logs", "forensic", "security", "analysis"]
 status: stable
 stale_after: "2027-10-01"
 title: forensic-log-audit

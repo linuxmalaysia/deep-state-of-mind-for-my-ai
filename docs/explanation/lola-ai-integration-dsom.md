@@ -83,9 +83,9 @@ The root `.lola-req` manifest configures local vendored skill resolution with on
 
 ```
 # Declarative Lola Package Specification (.lola-req)
-# Lola CLI Version Pinned: lola-ai>=0.1.0
+# Lola CLI Minimum Version Supported: lola-ai>=0.1.0
 
-.agents/skills/terminal-cloud-pdf-compiler
+.agents/skills/agent-plugin-packager
 .agents/skills/council-of-high-intelligence
 ```
 

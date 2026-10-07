@@ -2,11 +2,11 @@
 name: mintlify-docs-compiler
 version: "1.0.0"
 description: "Compiles Sovereign Markdown Palace documents into Mintlify MDX trees and syncs to downstream docs repository under 5 strict safety guards."
+topics: ["mintlify", "docs", "sync", "mdx", "safety-guards", "user-manual-style"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill_sop
-topics: ["mintlify", "docs", "sync", "mdx", "safety-guards", "user-manual-style"]
 status: stable
 stale_after: "2027-08-23"
 title: "Mintlify MDX Compiler & One-Way Sync"

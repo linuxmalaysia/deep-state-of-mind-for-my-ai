@@ -2,11 +2,11 @@
 name: latex-proposal-compiler
 version: "1.0.0"
 description: "Compiles a markdown proposal document into a professionally formatted PDF using Pandoc and XeLaTeX. Contains crucial fixes for TOC generation, double-numbering, and table layout bugs."
+topics: ["latex", "pandoc", "pdf", "proposal", "document"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["latex", "pandoc", "pdf", "proposal", "document"]
 status: stable
 stale_after: "2027-10-01"
 title: latex-proposal-compiler

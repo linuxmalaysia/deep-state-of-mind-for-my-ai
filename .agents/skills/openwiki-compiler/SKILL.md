@@ -2,11 +2,11 @@
 name: openwiki-compiler
 version: "1.0.0"
 description: "Procedural SOP for executing the native Python OpenWiki Emulator to compile, update, and maintain codebase knowledge graphs within DSOM."
+topics: ["openwiki", "skill", "compilation", "knowledge", "graph", "dsom", "python", "okf"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-topics: ["openwiki", "skill", "compilation", "knowledge", "graph", "dsom", "python", "okf"]
 status: stable
 stale_after: "2027-10-01"
 title: OpenWiki Knowledge Graph Compiler Skill

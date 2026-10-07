@@ -2,11 +2,11 @@
 name: docstring
 version: "1.0.0"
 description: "Provides a structured approach for writing precise, maintainer-focussed Python docstrings and inline function documentation following standard Sphinx/reStructuredText and Google conventions."
+topics: ["python", "docstring", "api-reference", "code-documentation", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["python", "docstring", "api-reference", "code-documentation", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "🐍 Docstring & Function Reference Skill"

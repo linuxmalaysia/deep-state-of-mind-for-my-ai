@@ -2,11 +2,11 @@
 name: sitemap-seo-generator
 version: "1.0.0"
 description: "Configures and manages sitemap and robots.txt generation to optimize SEO indexation for GitHub Pages, Read the Docs, and GitBook."
+topics: ["sitemap", "seo", "automation", "gitbook", "readthedocs"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["sitemap", "seo", "automation", "gitbook", "readthedocs"]
 status: stable
 stale_after: "2027-10-01"
 title: "🗺️ Sitemap & SEO Asset Generator Skill"

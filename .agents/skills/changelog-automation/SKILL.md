@@ -2,11 +2,11 @@
 name: changelog-automation
 version: "1.0.0"
 description: "Automates changelog generation from commits, pull requests, and release notes following Keep a Changelog standards and Conventional Commits."
+topics: ["changelog", "automation", "keep-a-changelog", "conventional-commits", "dsom"]
 author: "Harisfazillah Jamel (LinuxMalaysia)"
 license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-topics: ["changelog", "automation", "keep-a-changelog", "conventional-commits", "dsom"]
 status: stable
 stale_after: "2027-10-01"
 title: "📜 Changelog Automation Skill"
