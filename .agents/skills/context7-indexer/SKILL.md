@@ -1,18 +1,21 @@
 ---
+name: context7-indexer
+version: "1.0.0"
+description: "Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context or local code snippets via MCP."
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill_sop
+topics: ["context7", "semantic", "index", "mcp", "rag", "code-snippets", "offline-snapshot"]
+status: stable
+stale_after: "2027-08-23"
 title: "Context7 Semantic Indexer & Local Snippet Search"
 timestamp: "2026-08-23T07:45:00Z"
-description: "Governs the use of Context7 for indexing the Sovereign Markdown Palace and retrieving semantic context or local code snippets via MCP."
-topics: ["context7", "semantic", "index", "mcp", "rag", "code-snippets", "offline-snapshot"]
-name: context7-indexer
 resource: "/.agents/skills/context7-indexer/SKILL.md"
-sources: [{resource: 'https://context7.com', title: Context7 Documentation, url: 'https://context7.com'}, "file:///tools/mcp/server.py", "file:///references/llms-from-context7.txt", "file:///docs/reference/CLI-QUICK-REFERENCE.md"]
+sources: [{resource: "https://context7.com", title: Context7 Documentation, url: "https://context7.com", id: source-1}, {id: source-2, title: "/tools/mcp/server.py", resource: "/tools/mcp/server.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main//tools/mcp/server.py", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: "/references/llms-from-context7.txt", resource: "/references/llms-from-context7.txt", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main//references/llms-from-context7.txt", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-4, title: "/docs/reference/CLI-QUICK-REFERENCE.md", resource: "/docs/reference/CLI-QUICK-REFERENCE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main//docs/reference/CLI-QUICK-REFERENCE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+generated: {by: human-and-ai, timestamp: "2026-08-23T07:45:00Z"}
 spec_version: "0.2"
-generated: human-and-ai
 verified: verified
-status: authoritative
-stale_after: "2027-08-23T07:45:00Z"
 ---
 # Context7 Semantic Indexer & Local Snippet Search
 

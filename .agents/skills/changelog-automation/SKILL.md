@@ -1,15 +1,18 @@
 ---
+name: changelog-automation
+version: "1.0.0"
+description: "Automates changelog generation from commits, pull requests, and release notes following Keep a Changelog standards and Conventional Commits."
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
+topics: ["changelog", "automation", "keep-a-changelog", "conventional-commits", "dsom"]
+status: stable
+stale_after: "2027-10-01"
 title: "📜 Changelog Automation Skill"
 timestamp: "2026-09-02T12:00:00Z"
-description: "Automates changelog generation from commits, pull requests, and release notes following Keep a Changelog standards and Conventional Commits."
-topics: ["changelog", "automation", "keep-a-changelog", "conventional-commits", "dsom"]
-name: changelog-automation
 resource: "/.agents/skills/changelog-automation/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec, url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"}]
 spec_version: "0.2"
 ---
 # 📜 Changelog Automation Skill (`changelog-automation`)

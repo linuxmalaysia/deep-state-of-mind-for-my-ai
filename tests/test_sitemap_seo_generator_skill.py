@@ -151,8 +151,8 @@ class SkillFileFrontmatterTests(unittest.TestCase):
         topics_index = self.raw.index("topics:")
         self.assertLess(description_index, topics_index)
 
-    def test_first_three_keys_are_okf_version_type_title(self):
-        self.assertEqual(list(self.parsed.keys())[:3], ["okf_version", "type", "title"])
+    def test_first_three_keys_are_lola_name_version_description(self):
+        self.assertEqual(list(self.parsed.keys())[:3], ["name", "version", "description"])
 
     def test_dsom_related_topic_keywords_present(self):
         topics = self.parsed.get("topics", [])

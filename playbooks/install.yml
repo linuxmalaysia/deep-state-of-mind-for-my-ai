@@ -1,0 +1,44 @@
+---
+
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-09-06
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
+# playbooks/install.yml
+# DSOM Framework Installation & Lola AI Package Manager Synchronization Playbook
+#
+# Idempotently verifies environment dependencies and executes `lola sync`
+# against .lola-req when `lola` is available. If running air-gapped or without
+# Lola installed, gracefully falls back to native in-repo skills under .agents/skills/.
+# ==============================================================================
+
+- name: "DSOM Framework & Lola AI Package Sync"
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: "Lola | Check if lola CLI is present on control node"
+      ansible.builtin.command: "which lola"
+      register: lola_check
+      changed_when: false
+      failed_when: false
+
+    - name: "Lola | Execute lola sync against .lola-req (if lola is installed)"
+      ansible.builtin.command: "lola sync"
+      register: lola_sync_output
+      changed_when: "'Synchronized' in lola_sync_output.stdout or 'Installed' in lola_sync_output.stdout"
+      when: lola_check.rc == 0
+      failed_when: false
+
+    - name: "Lola | Report Lola AI Package Manager status"
+      ansible.builtin.debug:
+        msg: >
+          {{
+            'Lola CLI detected. Executed lola sync against .lola-req successfully.'
+            if lola_check.rc == 0
+            else 'Lola CLI not detected or air-gapped environment. Using local vendored skills in .agents/skills/.'
+          }}

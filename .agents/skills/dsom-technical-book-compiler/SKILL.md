@@ -1,17 +1,19 @@
 ---
+name: dsom-technical-book-compiler
+version: "1.0.0"
+description: "Compiles complete Diataxis documentation suites and source code repositories into publication-grade technical handbooks (PDF, standalone HTML, EPUB, ODT) using Pandoc and the Terminal & Cloud design framework."
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill
-title: "Technical Ebook & Handbook Compiler (Pandoc / Print & Terminal Theme)"
-timestamp: "2026-09-03T07:30:00Z"
-description: "Compiles complete Diataxis documentation suites and source code repositories into publication-grade technical handbooks (PDF, standalone HTML, EPUB, ODT) using Pandoc and the Terminal & Cloud design framework."
 topics: ["pandoc", "ebook", "pdf", "html", "epub", "terminal-theme"]
-name: dsom-technical-book-compiler
-resource: "/.agents/skills/dsom-technical-book-compiler/SKILL.md"
-sources: [{id: dsom_agents_rulebook, path: .agents/AGENTS.md, title: The Core AI Rulebook (DSOM
-    Rule 11 & Rule 22)}]
-spec_version: "0.2"
 status: stable
 stale_after: "2027-09-03"
+title: "Technical Ebook & Handbook Compiler (Pandoc / Print & Terminal Theme)"
+timestamp: "2026-09-03T07:30:00Z"
+resource: "/.agents/skills/dsom-technical-book-compiler/SKILL.md"
+sources: [{id: dsom_agents_rulebook, path: ".agents/AGENTS.md", title: "The Core AI Rulebook (DSOM Rule 11 & Rule 22)", resource: ".agents/AGENTS.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md", author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+spec_version: "0.2"
 ---
 # Technical Ebook & Handbook Compiler
 
@@ -36,7 +38,7 @@ stale_after: "2027-09-03"
 7. **Mermaid Multi-Diagram Isolation Protocol:**
    - *Diagram-Scoped Namespace:* Prohibit reusing identical node IDs (e.g., `NODE1`, `CBE`, `PWP`) across diagrams. Prefix all node IDs with a unique diagram namespace (e.g., `TB_`, `PA_`, `PB_`, `PC_`) to prevent global symbol collisions.
    - *Sequential Headless DOM Replacement:* Headless Chromium renders in milliseconds, causing default `mermaid.run()` timestamp IDs (`Date.now()`) to collide and nest diagrams inside one container. Mandate sequential rendering via `mermaid.render(id, code)` with unique IDs (`diagram_svg_${i}`) replacing `<pre class="mermaid">` innerHTML sequentially.
-8. **Soft-Path Link Resolution Mandate (3-Tier Normalisation):** The compilation pipeline must dynamically map all chapters (`#chap-{slug}`) and ingested code blocks (`#code-{slug}`) and rewrite all markdown links via a **3-tier normalisation pipeline**: (1) *Exact match* — look up the raw target in `link_map` as-is; (2) *Normalised match* — strip `file:///`, Windows drive letters (`D:/`, `C:/`), the project root prefix, and the `build/` intermediate directory prefix, then retry; (3) *Basename-only match* — strip all directory components and retry with the filename only (skipping external-scheme targets and rejecting ambiguous duplicate basenames). Pre-index basename-only keys into `link_map` before rewriting. Preserve `#fragment` suffixes across all tiers. Run a post-compile link audit asserting zero absolute path leaks (`D:/`, `C:/`, `file:///`, `build/` prefixes) survive in any PDF, HTML, EPUB, or ODT link target.
+8. **Soft-Path Link Resolution Mandate (3-Tier Normalisation):** The compilation pipeline must dynamically map all chapters (`#chap-{slug}`) and ingested code blocks (`#code-{slug}`) and rewrite all markdown links via a **3-tier normalisation pipeline**: (1) *Exact match* — look up the raw target in `link_map` as-is; (2) *Normalised match* — strip `/`, Windows drive letters (`D:/`, `C:/`), the project root prefix, and the `build/` intermediate directory prefix, then retry; (3) *Basename-only match* — strip all directory components and retry with the filename only (skipping external-scheme targets and rejecting ambiguous duplicate basenames). Pre-index basename-only keys into `link_map` before rewriting. Preserve `#fragment` suffixes across all tiers. Run a post-compile link audit asserting zero absolute path leaks (`D:/`, `C:/`, `/`, `build/` prefixes) survive in any PDF, HTML, EPUB, or ODT link target.
 9. **Full-Spectrum Code Ingestion:** Ingest all production playbooks, Jinja2 templates, inventories, host/group variables, shell scripts, and candidate staging playbooks into dedicated book chapters to produce self-contained handbooks.
 10. **Developer Commentary Extraction Protocol:** For every YAML playbook, shell script, or INI file ingested, extract the leading `#` comment block (all contiguous comment lines before the first active code key, after any frontmatter fence) and render it as an HTML callout div above the code fence. Classify by keyword scan: comments containing `BUG`, `FIX`, `Confirmed`, `live`, `vendor`, `NEVER`, `destroy`, `destructive`, `ORA-\d+`, `crash`, `escalation`, or `hard way` render as `callout-warning` (⚠️ orange, label `Read Before Executing`); all others render as `callout-note` (💡 blue). Preserve original `#` lines inside the code fence unchanged. CSS must define `.callout-warning p`, `.callout-note p`, and `strong` selectors with explicit `padding: 12px 16px` and `page-break-inside: avoid` for clean print rendering.
 

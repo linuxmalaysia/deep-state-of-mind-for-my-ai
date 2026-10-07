@@ -1,19 +1,21 @@
 ---
+name: jules-antigravity-sync
+version: "1.0.0"
+description: "Procedural SOP for synchronising cognitive context, rule alignment, and historic code modifications between Google Jules and Google Antigravity."
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill_sop
+topics: ["collaboration", "sync", "jules", "antigravity", "git", "powershell", "mintlify", "agent-plugins"]
+status: stable
+stale_after: "2027-08-22"
 title: "Google Jules & Google Antigravity Collaborative Sync"
 timestamp: "2026-08-22T23:20:00Z"
-description: "Procedural SOP for synchronising cognitive context, rule alignment, and historic code modifications between Google Jules and Google Antigravity."
-topics: ["collaboration", "sync", "jules", "antigravity", "git", "powershell", "mintlify", "agent-plugins"]
-name: jules-antigravity-sync
 resource: "/.agents/skills/jules-antigravity-sync/SKILL.md"
-sources: [{resource: 'file:///.agents/AGENTS.md', title: The Core AI Rulebook (DSOM), url: 'file:///.agents/AGENTS.md'}, {resource: 'file:///.agents/brain/jules_pr_history.md', title: Jules PR History Ledger,
-  url: 'file:///.agents/brain/jules_pr_history.md'}]
+sources: [{resource: "/.agents/AGENTS.md", title: "The Core AI Rulebook (DSOM)", url: "/.agents/AGENTS.md", author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-1}, {resource: "/.agents/brain/jules_pr_history.md", title: Jules PR History Ledger, url: "/.agents/brain/jules_pr_history.md", author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-2}]
+generated: {by: human-and-ai, timestamp: "2026-08-22T23:20:00Z"}
 spec_version: "0.2"
-generated: human-and-ai
 verified: verified
-status: authoritative
-stale_after: "2027-08-22T23:20:00Z"
 ---
 # Google Jules & Google Antigravity Collaborative Sync Skill
 

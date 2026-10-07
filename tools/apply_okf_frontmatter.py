@@ -38,7 +38,7 @@ def get_okf_type(filepath):
     if 'docs' in path_parts and 'governance' in path_parts:
         return 'governance_protocol'
     elif '.agents' in path_parts and 'skills' in path_parts:
-        return 'agent_skill'
+        return 'skill'
     elif '.agents' in path_parts and 'brain' in path_parts:
         return 'architecture_concept'
     elif 'tools-and-automation' in path_parts or 'tools' in path_parts:
@@ -400,8 +400,8 @@ def normalise_metadata(
     else:
         updated_frontmatter['spec_version'] = '0.2'
 
-    # Always derive 'name' from the skill file's parent directory for skill files under .agents/skills
-    if ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):
+    # Always derive 'name' and Lola packaging fields for skill files under .agents/skills or SKILL.md
+    if filename == "SKILL.md" or ".agents/skills/" in rel_path or (filepath and ".agents/skills" in filepath.replace('\\', '/')):
         if filepath:
             name = os.path.basename(os.path.dirname(os.path.abspath(filepath)))
         else:
@@ -412,6 +412,23 @@ def normalise_metadata(
                 name = os.path.basename(os.path.dirname(os.path.abspath(rel_path)))
         if name:
             updated_frontmatter['name'] = name
+
+        if 'version' not in existing_frontmatter:
+            updated_frontmatter['version'] = '1.0.0'
+        else:
+            updated_frontmatter['version'] = str(existing_frontmatter['version'])
+
+        if 'author' not in existing_frontmatter:
+            updated_frontmatter['author'] = 'Harisfazillah Jamel (LinuxMalaysia)'
+
+        if 'license' not in existing_frontmatter:
+            updated_frontmatter['license'] = 'GPL-3.0-or-later'
+
+        if 'status' not in updated_frontmatter:
+            updated_frontmatter['status'] = 'stable'
+
+        if 'stale_after' not in updated_frontmatter:
+            updated_frontmatter['stale_after'] = '2027-10-01'
 
     # Preserve other fields
     for k, v in existing_frontmatter.items():
@@ -551,7 +568,20 @@ def serialise_frontmatter(updated_frontmatter, rel_path, filename):
     """
     special_reorder = filename == "SKILL.md"
     if special_reorder:
-        ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'description', 'topics', 'name']
+        ordered_keys = [
+            'name',
+            'version',
+            'description',
+            'author',
+            'license',
+            'okf_version',
+            'type',
+            'topics',
+            'status',
+            'stale_after',
+            'title',
+            'timestamp',
+        ]
     else:
         ordered_keys = ['okf_version', 'type', 'title', 'timestamp', 'topics']
 

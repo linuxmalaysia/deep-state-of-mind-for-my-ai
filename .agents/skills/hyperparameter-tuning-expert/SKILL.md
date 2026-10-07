@@ -1,24 +1,21 @@
 ---
+name: hyperparameter-tuning-expert
+version: "1.0.0"
+description: "Analyses, optimises, and debugs learning rates and hyperparameters in deep learning models across PyTorch and TensorFlow frameworks."
+author: AI Assistant
+license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
+topics: ["machine-learning", "hyperparameters", "optimisation", "pytorch", "tensorflow"]
+status: stable
+stale_after: "2027-10-01"
 title: "🧠 AI Hyperparameter Optimisation Expert Skill"
 timestamp: "2026-09-02T12:00:00Z"
-description: "Analyses, optimises, and debugs learning rates and hyperparameters in deep learning models across PyTorch and TensorFlow frameworks."
-topics: ["machine-learning", "hyperparameters", "optimisation", "pytorch", "tensorflow"]
-name: hyperparameter-tuning-expert
 resource: "/.agents/skills/hyperparameter-tuning-expert/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec, url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"}]
 spec_version: "0.2"
-version: "1.0.0"
-author: AI Assistant
-inputs: {framework: {default: PyTorch, description: 'The machine learning framework used (e.g.
-      PyTorch, TensorFlow).', type: string}, learning_rate: {default: 0.2, description: The
-      learning rate applied during model training., type: float}}
-outputs: {recommendation: {description: Actionable remediation steps if adjustments are needed.,
-    type: string}, status: {description: Safety assessment of the learning rate (Stable
-      / Risky)., type: string}}
+inputs: {framework: {default: PyTorch, description: "The machine learning framework used (e.g. PyTorch, TensorFlow).", type: string}, learning_rate: {default: 0.2, description: "The learning rate applied during model training.", type: float}}
+outputs: {recommendation: {description: "Actionable remediation steps if adjustments are needed.", type: string}, status: {description: "Safety assessment of the learning rate (Stable / Risky).", type: string}}
 ---
 # 🧠 AI Hyperparameter Optimisation Expert Skill (`hyperparameter-tuning-expert`)
 

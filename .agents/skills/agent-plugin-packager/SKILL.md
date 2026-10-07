@@ -1,19 +1,21 @@
 ---
+name: agent-plugin-packager
+version: "1.0.0"
+description: "Packages, validates, and scaffolds DSOM skills and FastMCP servers into portable Agent Plugins 1.0.0 compliant bundles."
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: skill_sop
+topics: ["agent-plugins", "packaging", "mcp", "skills", "scaffolding"]
+status: stable
+stale_after: "2027-08-22"
 title: Agent Plugin Packager
 timestamp: "2026-08-22T19:45:00Z"
-description: "Packages, validates, and scaffolds DSOM skills and FastMCP servers into portable Agent Plugins 1.0.0 compliant bundles."
-topics: ["agent-plugins", "packaging", "mcp", "skills", "scaffolding"]
-name: agent-plugin-packager
 resource: "/.agents/skills/agent-plugin-packager/SKILL.md"
-sources: [{resource: 'https://agent-plugins.org/specification', title: Agent Plugins Specification
-    1.0.0, url: 'https://agent-plugins.org/specification'}]
+sources: [{resource: "https://agent-plugins.org/specification", title: "Agent Plugins Specification 1.0.0", url: "https://agent-plugins.org/specification", id: source-1}]
+generated: {by: human-and-ai, timestamp: "2026-08-22T19:45:00Z"}
 spec_version: "0.2"
-generated: human-and-ai
 verified: verified
-status: approved
-stale_after: "2027-08-22T19:45:00Z"
 ---
 # Agent Plugin Packager Skill
 

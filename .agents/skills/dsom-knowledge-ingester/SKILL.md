@@ -1,19 +1,21 @@
 ---
+name: dsom-knowledge-ingester
+version: "1.0.0"
+description: "Executes the Knowledge Ingestion protocol (/learn) inspired by the LLM WIKI concept."
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
 okf_version: 0.2
 type: agent_skill
-title: "📥 DSOM Knowledge Ingester Skill"
-timestamp: "2026-08-25T18:52:00Z"
-description: "Executes the Knowledge Ingestion protocol (/learn) inspired by the LLM WIKI concept."
 topics: ["knowledge", "ingestion", "okf", "palace", "markdown"]
-name: dsom-knowledge-ingester
-resource: "/.agents/skills/dsom-knowledge-ingester/SKILL.md"
-sources: [{author: Google Cloud Platform & DSOM Protocol Guild, id: okf_v02_spec, resource: 'https://cloud.google.com/blog/products/data-analytics/okf-v0-2-adds-trust-signals',
-  title: Open Knowledge Format (OKF) v0.2 Specification, url: 'https://cloud.google.com/blog/products/data-analytics/okf-v0-2-adds-trust-signals'}]
-spec_version: "0.2"
-concept_id: dsom_knowledge_ingester
 status: stable
 stale_after: "2027-03-06"
-generated: {by: DSOM Knowledge Ingestion Agent v1.0, timestamp: '2026-08-25T18:52:00Z'}
+title: "📥 DSOM Knowledge Ingester Skill"
+timestamp: "2026-08-25T18:52:00Z"
+resource: "/.agents/skills/dsom-knowledge-ingester/SKILL.md"
+sources: [{author: "Google Cloud Platform & DSOM Protocol Guild", id: okf_v02_spec, resource: "https://cloud.google.com/blog/products/data-analytics/okf-v0-2-adds-trust-signals", title: "Open Knowledge Format (OKF) v0.2 Specification", url: "https://cloud.google.com/blog/products/data-analytics/okf-v0-2-adds-trust-signals"}]
+generated: {by: "DSOM Knowledge Ingestion Agent v1.0", timestamp: "2026-08-25T18:52:00Z"}
+spec_version: "0.2"
+concept_id: dsom_knowledge_ingester
 ---
 ## 📥 DSOM Knowledge Ingester Skill
 
