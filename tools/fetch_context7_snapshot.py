@@ -24,20 +24,6 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 
 
 def fetch_snapshot(tokens: int = 250000, target_path: Path = None, api_key: str = None) -> bool:
-    """Fetch a Context7 snapshot and overwrite the destination with UTF-8 text.
-
-    Args:
-        tokens: Token budget sent to Context7, without local size enforcement.
-        target_path: Destination file, defaulting to references/llms-from-context7.txt
-            under the repository root. Missing parent directories are created.
-        api_key: Bearer token. A falsey value falls back to CONTEXT7_API_KEY,
-            or an unauthenticated request when neither is set.
-
-    Returns:
-        True after saving an HTTP 200 response with at least 100 decoded
-        characters. False for other responses or caught request, read, and
-        write errors. The request uses a 60-second timeout.
-    """
     repo_root = Path(__file__).resolve().parent.parent
     if target_path is None:
         target_path = repo_root / "references" / "llms-from-context7.txt"

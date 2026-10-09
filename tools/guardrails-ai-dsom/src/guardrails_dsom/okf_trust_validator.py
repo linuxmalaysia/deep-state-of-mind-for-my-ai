@@ -27,14 +27,6 @@ class GuardrailsOKFTrustValidator(BaseDSOMValidator):
     ]
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Check frontmatter delimiters and required v0.2 field names in text.
-
-        Required fields are checked only when the header contains the literal
-        'okf_version: 0.2'. Field values and YAML syntax are not checked.
-        Return blocked for missing delimiters, missing required fields, or
-        caught header-check errors. Passing results contain the original text.
-        metadata is unused.
-        """
         text = str(value)
         if not text.startswith("---"):
             return ValidationResult(

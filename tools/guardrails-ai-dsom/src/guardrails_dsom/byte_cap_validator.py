@@ -17,16 +17,6 @@ class GuardrailsByteCapValidator(BaseDSOMValidator):
         self.max_bytes = max_bytes
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Check the UTF-8 byte length of value converted to text.
-
-        Text at or below max_bytes passes unchanged. Larger text is truncated
-        in fix mode, dropping any partial trailing character and appending a
-        notice outside the byte budget. Other modes return blocked. metadata
-        is unused.
-
-        Raises:
-            UnicodeEncodeError: If the text contains unpaired surrogates.
-        """
         text = str(value)
         encoded = text.encode("utf-8")
 

@@ -35,11 +35,6 @@ CustomLoader.yaml_implicit_resolvers = {
 }
 
 def get_okf_type(filepath):
-    """Infer the OKF type from path components, defaulting to documentation.
-
-    Both slash styles are accepted. Skill paths use the Lola-compatible skill
-    type. Governance takes precedence when multiple categories match.
-    """
     path_parts = filepath.replace('\\', '/').split('/')
     if 'docs' in path_parts and 'governance' in path_parts:
         return 'governance_protocol'
@@ -62,10 +57,6 @@ def extract_title(content, filename):
     return name_without_ext.replace('_', ' ').replace('-', ' ').title()
 
 def get_default_topics(okf_type):
-    """Return default topics, using documentation topics for an unknown type.
-
-    Both skill and the legacy agent_skill type receive the same skill topics.
-    """
     mapping = {
         'governance_protocol': ['dsom', 'governance', 'protocol'],
         'agent_skill': ['dsom', 'skill', 'agent'],
@@ -224,15 +215,11 @@ def normalise_metadata(
     stale_after values are reduced to date text without checking date validity.
     Other fields are preserved, with datetime values converted to UTC text.
 
-    SKILL.md files and paths identified under .agents/skills receive a
-    directory-derived name and missing Lola packaging defaults. Existing version
-    values become strings, while missing versions default to 1.0.0.
-
     Args:
         existing_frontmatter: Parsed metadata to normalize.
         rest_of_content: Markdown body used to derive a missing title.
         rel_path: Relative document path used for defaults and error messages.
-        filename: Filename used to identify SKILL.md and derive a missing title.
+        filename: Filename used when the body has no title heading.
         require_okf_v02: Reject conflicting versions and invalid status values.
             Full trust validation requires validate_okf_v02_metadata afterward.
             Otherwise, an invalid status is replaced with stable.
@@ -579,11 +566,7 @@ def validate_okf_v02_metadata(metadata, rel_path):
 
 def serialise_frontmatter(updated_frontmatter, rel_path, filename):
     """
-    Return YAML frontmatter with opening and closing fences and a trailing newline.
-
-    SKILL.md places Lola packaging keys first, with topics immediately after
-    description. Other files place core OKF keys first. Remaining keys retain
-    mapping order. rel_path is unused.
+    Serialises the frontmatter keeping the specific order of keys.
     """
     special_reorder = filename == "SKILL.md"
     if special_reorder:

@@ -13,13 +13,6 @@ class GuardrailsKnowledgeFirstValidator(BaseDSOMValidator):
     on_fail = "block"
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Check the caller's local-knowledge flags before terminal execution.
-
-        Return blocked when metadata.is_terminal_execution is truthy and
-        metadata.has_queried_local_knowledge is falsey. Missing keys default to
-        False. Otherwise, return pass with value unchanged. This trusts the
-        supplied flags without checking whether a search occurred.
-        """
         meta = metadata or {}
         has_queried_memory = meta.get("has_queried_local_knowledge", False)
         is_terminal_command = meta.get("is_terminal_execution", False)

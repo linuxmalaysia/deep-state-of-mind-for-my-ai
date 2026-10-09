@@ -186,14 +186,8 @@ def search_code_snippets(query: str, limit: int = 5) -> str:
     """Searches actionable code snippets, terminal commands, and configuration blocks from the Context7 indexed knowledge base.
     
     Args:
-        query: Case-insensitive substring (e.g. 'ansible', 'guardrails', 'uv add', 'mint dev').
-            An empty query matches every nonempty block in the local snapshot.
-        limit: Slice stop for matching blocks in snapshot order (default: 5).
-            Zero returns only the summary, and negative values omit trailing matches.
-
-    Returns:
-        Formatted matches, a no-match message, or an error message for a missing
-        snapshot or a caught read/search error.
+        query: Keyword or command phrase to match (e.g. 'ansible', 'guardrails', 'uv add', 'mint dev').
+        limit: Maximum number of snippet blocks to return (default: 5).
     """
     context7_file = REFERENCES_DIR / "llms-from-context7.txt"
     if not context7_file.exists():

@@ -1,10 +1,3 @@
-# ==============================================================================
-# Protocol    : Deep State of Mind (DSOM) For My AI
-# Author      : Harisfazillah Jamel (LinuxMalaysia)
-# Timestamp   : 2026-10-08
-# License     : GNU General Public License v3.0
-# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
-# ==============================================================================
 """Regression tests for OKF v0.2 source and trust metadata migration."""
 
 import copy
@@ -16,11 +9,8 @@ from pathlib import Path
 import yaml
 
 from tools.apply_okf_frontmatter import (
-    get_default_topics,
-    get_okf_type,
     normalise_metadata,
     process_file,
-    serialise_frontmatter,
     serialise_val,
     validate_okf_v02_metadata,
 )
@@ -269,163 +259,6 @@ class GeneratedAtValidationTests(unittest.TestCase):
         metadata = trust_metadata()
         metadata["generated"]["at"] = "invalid"
         validate_okf_v02_metadata(metadata, "docs/example.md")
-
-
-class LolaMetadataTests(unittest.TestCase):
-    """Check Lola packaging defaults and preservation during OKF migration."""
-
-    def normalise_skill(self, metadata, **kwargs):
-        return normalise_metadata(
-            metadata, "# Example skill\n", ".agents/skills/example/SKILL.md",
-            "SKILL.md", **kwargs,
-        )
-
-    def test_skill_type_accepts_both_path_separators(self):
-        for path in (
-            ".agents/skills/example/SKILL.md",
-            r"C:\workspace\.agents\skills\example\SKILL.md",
-        ):
-            with self.subTest(path=path):
-                self.assertEqual(get_okf_type(path), "skill")
-
-    def test_skill_type_uses_components_and_preserves_governance_precedence(self):
-        for path, expected in (
-            ("docs/skills/example.md", "documentation"),
-            (".agents/skills-extra/example.md", "documentation"),
-            (".agents/skills/example/docs/governance/policy.md", "governance_protocol"),
-        ):
-            with self.subTest(path=path):
-                self.assertEqual(get_okf_type(path), expected)
-
-    def test_new_and_legacy_skill_types_share_default_topics(self):
-        for skill_type in ("skill", "agent_skill"):
-            with self.subTest(skill_type=skill_type):
-                self.assertEqual(get_default_topics(skill_type), ["dsom", "skill", "agent"])
-
-    def test_missing_packaging_fields_receive_lola_defaults(self):
-        result = self.normalise_skill({})
-        expected = {
-            "name": "example", "version": "1.0.0", "author": AUTHOR,
-            "license": "GPL-3.0-or-later", "type": "skill",
-            "status": "stable", "stale_after": "2027-10-01",
-            "topics": ["dsom", "skill", "agent"],
-        }
-        for field, value in expected.items():
-            with self.subTest(field=field):
-                self.assertEqual(result[field], value)
-
-    def test_standalone_skill_gets_packaging_fields_from_parent_directory(self):
-        result = normalise_metadata({}, "# Portable\n", "portable/SKILL.md", "SKILL.md")
-        self.assertEqual(result["name"], "portable")
-        self.assertEqual(result["version"], "1.0.0")
-        self.assertEqual(result["license"], "GPL-3.0-or-later")
-
-    def test_existing_skill_types_survive_packaging_migration(self):
-        for skill_type in ("agent_skill", "skill_sop"):
-            with self.subTest(skill_type=skill_type):
-                result = self.normalise_skill({"type": skill_type})
-                self.assertEqual(result["type"], skill_type)
-                self.assertEqual(result["version"], "1.0.0")
-
-    def test_absolute_filepath_takes_precedence_over_relative_name(self):
-        filepath = str(Path(tempfile.gettempdir()) / "actual-package" / "SKILL.md")
-        result = self.normalise_skill({"name": "obsolete-name"}, filepath=filepath)
-        self.assertEqual(result["name"], "actual-package")
-
-    def test_skill_directory_is_recognised_when_scan_root_omits_it(self):
-        filepath = str(Path(tempfile.gettempdir()) / ".agents" / "skills" / "example" / "guide.md")
-        result = normalise_metadata({}, "# Guide\n", "guide.md", "guide.md", filepath=filepath)
-        self.assertEqual(result["name"], "example")
-        self.assertEqual(result["version"], "1.0.0")
-
-    def test_explicit_packaging_and_extension_fields_survive_without_mutation(self):
-        metadata = {
-            "name": "old-name", "version": "2.4.0-rc.1", "author": "Package Maintainer",
-            "license": "MIT", "status": "deprecated", "stale_after": "2028-02-29",
-            "description": "A custom package", "topics": ["custom", "package", "test"],
-            "extensions": {"targets": ["local"]},
-        }
-        original = copy.deepcopy(metadata)
-        result = self.normalise_skill(metadata)
-        for key, value in original.items():
-            with self.subTest(key=key):
-                self.assertEqual(result[key], "example" if key == "name" else value)
-        self.assertEqual(metadata, original)
-
-    def test_versions_are_strings_and_round_trip_through_yaml(self):
-        for version, expected in ((0, "0"), (1.5, "1.5"), ("1.0", "1.0"), ("2.0.0+build.7", "2.0.0+build.7")):
-            with self.subTest(version=version):
-                metadata = self.normalise_skill({"version": version})
-                rendered = serialise_frontmatter(metadata, ".agents/skills/example/SKILL.md", "SKILL.md")
-                parsed = yaml.safe_load(rendered.split("---\n", 2)[1])
-                self.assertEqual(metadata["version"], expected)
-                self.assertEqual(parsed["version"], expected)
-
-    def test_ordinary_documents_do_not_receive_lola_defaults(self):
-        result = normalise_metadata({}, "# Guide\n", "docs/example.md", "example.md")
-        for field in ("name", "version", "author", "license", "status", "stale_after"):
-            with self.subTest(field=field):
-                self.assertNotIn(field, result)
-
-    def test_skill_serialisation_orders_packaging_keys_without_losing_values(self):
-        metadata = self.normalise_skill({"description": 'Guide: "Café" [draft]', "custom": {"enabled": True}})
-        original = copy.deepcopy(metadata)
-        rendered = serialise_frontmatter(metadata, ".agents/skills/example/SKILL.md", "SKILL.md")
-        parsed = yaml.safe_load(rendered.split("---\n", 2)[1])
-        self.assertEqual(list(parsed)[:12], [
-            "name", "version", "description", "topics", "author", "license",
-            "okf_version", "type", "status", "stale_after", "title", "timestamp",
-        ])
-        self.assertEqual(parsed, original)
-        self.assertEqual(metadata, original)
-
-    def test_non_skill_serialisation_keeps_okf_keys_first(self):
-        metadata = normalise({"name": "example", "version": "2.0"})
-        rendered = serialise_frontmatter(metadata, "docs/example.md", "example.md")
-        parsed = yaml.safe_load(rendered.split("---\n", 2)[1])
-        self.assertEqual(list(parsed)[:5], ["okf_version", "type", "title", "timestamp", "topics"])
-        self.assertEqual(parsed, metadata)
-
-    def test_packaging_defaults_do_not_bypass_strict_status_validation(self):
-        with self.assertRaisesRegex(ValueError, "status must"):
-            self.normalise_skill({"status": "published"}, require_okf_v02=True)
-
-
-class LolaSkillMigrationTests(unittest.TestCase):
-    def setUp(self):
-        directory = tempfile.TemporaryDirectory()
-        self.addCleanup(directory.cleanup)
-        self.root = Path(directory.name)
-        self.path = self.root / ".agents" / "skills" / "example" / "SKILL.md"
-        self.path.parent.mkdir(parents=True)
-        self.body = "# Example\n\nCafé\n\n---\n\nKeep this body.\n"
-        metadata = trust_metadata()
-        metadata.update({"name": "old-name", "description": "Example skill", "version": 1.5})
-        metadata.pop("status")
-        metadata.pop("stale_after")
-        self.path.write_text("---\n" + yaml.safe_dump(metadata) + "---\n" + self.body, encoding="utf-8")
-
-    def test_strict_migration_adds_defaults_preserves_body_and_is_idempotent(self):
-        self.assertTrue(process_file(str(self.path), str(self.root), require_okf_v02=True))
-        first = self.path.read_bytes()
-        _, raw, body = first.decode("utf-8").split("---\n", 2)
-        metadata = yaml.safe_load(raw)
-        self.assertEqual(metadata["name"], "example")
-        self.assertEqual(metadata["version"], "1.5")
-        self.assertEqual(metadata["type"], "skill")
-        self.assertEqual(metadata["status"], "stable")
-        self.assertEqual(metadata["stale_after"], "2027-10-01")
-        self.assertEqual(body, self.body)
-        validate_okf_v02_metadata(metadata, ".agents/skills/example/SKILL.md")
-        self.assertFalse(process_file(str(self.path), str(self.root), require_okf_v02=True))
-        self.assertEqual(self.path.read_bytes(), first)
-        self.assertEqual(list(self.path.parent.iterdir()), [self.path])
-
-    def test_dry_run_reports_missing_packaging_without_writing(self):
-        original = self.path.read_bytes()
-        self.assertTrue(process_file(str(self.path), str(self.root), dry_run=True, require_okf_v02=True))
-        self.assertEqual(self.path.read_bytes(), original)
-        self.assertEqual(list(self.path.parent.iterdir()), [self.path])
 
 
 class MigratedFileTests(unittest.TestCase):

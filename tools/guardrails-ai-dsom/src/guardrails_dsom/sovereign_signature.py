@@ -19,13 +19,6 @@ class GuardrailsSovereignSignatureValidator(BaseDSOMValidator):
     )
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Check that the first matching DSOM signature has today's UTC date.
-
-        In fix mode, append a missing footer or update all matching signatures
-        when the first has a different date. Other modes return blocked for
-        these cases. Passing or fixed results contain the resulting text.
-        No files are modified, and metadata is unused.
-        """
         text = str(value)
         today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         expected_footer = (

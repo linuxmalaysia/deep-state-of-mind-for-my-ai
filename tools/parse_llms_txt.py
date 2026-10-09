@@ -84,12 +84,11 @@ def generate_llms_full_txt(files: list[tuple[str, Path]], output_path: Path, rep
     
     Parameters:
         files (list[tuple[str, Path]]): Markdown file titles and paths to include.
-        output_path (Path): File to create or overwrite. Its parent must exist.
+        output_path (Path): Destination path for the consolidated file.
         repo_root (Path): Repository root used to format file paths.
     
     Raises:
-        OSError: If a referenced file cannot be read or decoded, or output writing fails.
-        ValueError: If a file path is not relative to repo_root.
+        IOError: If a referenced Markdown file cannot be read.
     """
     print(f"Generating consolidated text catalog at {output_path}...")
     separator = "\n\n" + "=" * 80 + "\n"
@@ -112,12 +111,11 @@ def generate_llms_context_xml(files: list[tuple[str, Path]], output_path: Path, 
     
     Parameters:
         files (list[tuple[str, Path]]): File titles and paths to include.
-        output_path (Path): File to create or overwrite. Its parent must exist.
+        output_path (Path): Destination path for the generated XML file.
         repo_root (Path): Repository root used to calculate document-relative paths.
     
     Raises:
-        OSError: If a referenced file cannot be read or decoded, or output writing fails.
-        ValueError: If a file path is not relative to repo_root.
+        IOError: If a referenced file cannot be read.
     """
     print(f"Generating XML context file at {output_path}...")
 

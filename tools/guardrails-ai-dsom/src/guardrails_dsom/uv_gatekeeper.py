@@ -14,14 +14,6 @@ class GuardrailsUVExecutionValidator(BaseDSOMValidator):
     on_fail = "block"
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Check stripped command text for pip installs or Python script calls.
-
-        In fix mode, matching pip installs become uv add commands. If no pip
-        install matches, matching Python script calls trigger replacement with
-        uv run. Only one rule runs per call. Other modes return blocked on a
-        match. Passing or fixed results contain command text without executing
-        it. Matching uses text patterns, not shell parsing. metadata is unused.
-        """
         cmd = str(value).strip()
 
         # Check for prohibited commands

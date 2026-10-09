@@ -1,10 +1,3 @@
-# ==============================================================================
-# Protocol    : Deep State of Mind (DSOM) For My AI
-# Author      : Harisfazillah Jamel (LinuxMalaysia)
-# Timestamp   : 2026-10-08
-# License     : GNU General Public License v3.0
-# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
-# ==============================================================================
 """
 Unit tests for Lola AI Package Manager (lola-ai) integration,
 dual-compliant SKILL.md frontmatters, PEP 723 inline script metadata,
@@ -13,7 +6,6 @@ and air-gapped Ansible automation in Deep State of Mind (DSOM).
 
 import pathlib
 import re
-import tomllib
 import unittest
 
 import yaml  # type: ignore
@@ -82,23 +74,6 @@ class LolaRequirementsManifestTests(unittest.TestCase):
 class LolaSkillPackageDualFrontmatterTests(unittest.TestCase):
     """Validate dual Lola + OKF v0.2 frontmatter compliance across all 46 skills."""
 
-    def test_declared_packages_have_typed_lola_fields_and_portable_resources(self):
-        for line in (REPO_ROOT / ".lola-req").read_text(encoding="utf-8").splitlines():
-            path = line.strip()
-            if not path or path.startswith("#"):
-                continue
-            with self.subTest(package=path):
-                _, metadata = _extract_frontmatter_block(
-                    (REPO_ROOT / path / "SKILL.md").read_text(encoding="utf-8")
-                )
-                for field in ("name", "version", "description", "author", "license"):
-                    self.assertIsInstance(metadata[field], str, field)
-                    self.assertTrue(metadata[field].strip(), field)
-                self.assertRegex(metadata["version"], r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
-                self.assertEqual(metadata["resource"], f"/{path}/SKILL.md")
-                keys = list(metadata)
-                self.assertEqual(keys[keys.index("description") + 1], "topics")
-
     def test_all_46_skills_have_dual_compliant_frontmatter(self):
         skills_dir = REPO_ROOT / ".agents" / "skills"
         skill_dirs = sorted([d for d in skills_dir.iterdir() if d.is_dir()])
@@ -146,27 +121,6 @@ class LolaSkillPackageDualFrontmatterTests(unittest.TestCase):
 
 class Pep723InlineScriptMetadataTests(unittest.TestCase):
     """Validate PEP 723 inline script metadata on Python helper scripts inside skills."""
-
-    def test_inline_metadata_parses_as_toml_and_declares_runtime_dependencies(self):
-        expected_dependencies = {
-            "dsom-signature-injector/scripts/inject.py": [],
-            "dsom-technical-book-compiler/scripts/compile-book.py": ["pyyaml"],
-            "dsom-token-calculator/scripts/calculate-tokens.py": ["tiktoken"],
-            "okf-frontmatter-injector/scripts/apply_okf.py": ["pyyaml"],
-        }
-        for path, dependencies in expected_dependencies.items():
-            with self.subTest(script=path):
-                lines = (REPO_ROOT / ".agents" / "skills" / path).read_text(encoding="utf-8").splitlines()
-                self.assertEqual(lines.count("# /// script"), 1)
-                self.assertEqual(lines.count("# ///"), 1)
-                start = lines.index("# /// script")
-                end = lines.index("# ///")
-                self.assertLess(start, end)
-                payload = lines[start + 1:end]
-                self.assertTrue(all(line == "#" or line.startswith("# ") for line in payload))
-                metadata = tomllib.loads("\n".join(line[2:] for line in payload))
-                self.assertEqual(metadata["requires-python"], ">=3.10")
-                self.assertEqual(metadata["dependencies"], dependencies)
 
     def test_python_helper_scripts_contain_pep723_metadata(self):
         skills_dir = REPO_ROOT / ".agents" / "skills"

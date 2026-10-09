@@ -52,15 +52,11 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     Args:
         topic: The decision topic or architectural trade-off to evaluate.
         context: Optional operational context or constraints.
-        mode: Case-insensitive deliberation mode ('quick', 'full', 'duo', 'triad').
-            Empty values use 'quick'. 'quick' and 'full' select the same personas.
+        mode: Deliberation mode ('quick', 'full', 'duo', 'triad').
         triad: Optional domain triad selector ('architecture', 'security', 'shipping', 'risk').
 
     Returns:
         Structured evaluation dict with persona perspectives, trade-off debate, and consensus verdict.
-
-    Raises:
-        ValueError: If mode is not supported.
     """
     mode_clean = (mode or "quick").lower()
     if mode_clean not in VALID_MODES:

@@ -32,13 +32,6 @@ class GuardrailsAtomicCommitValidator(BaseDSOMValidator):
     )
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Check command text for blanket commits or a raw message for its prefix.
-
-        Returns blocked for a matching git commit short-option group containing
-        'a', or a raw message outside the supported Conventional Commits format.
-        Text starting with 'git ' bypasses message-format checks. Passing results
-        contain stripped text. Commands are not executed, and metadata is unused.
-        """
         cmd_or_msg = str(value).strip()
 
         # Check 1: Block blanket commit -a / -am

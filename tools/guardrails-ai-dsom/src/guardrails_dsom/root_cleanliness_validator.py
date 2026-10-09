@@ -33,15 +33,6 @@ class GuardrailsRootCleanlinessValidator(BaseDSOMValidator):
     }
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Check a path string against permitted root filenames without file I/O.
-
-        Backslashes become forward slashes. Only paths with one component,
-        excluding dot and root markers, receive the filename check. Names
-        starting with .well-known or context7 are also permitted. In fix mode,
-        rejected scripts are routed to tools/ and other files to docs/ in the
-        returned path. Other modes return blocked. Passing results retain the
-        slash-normalized path. metadata is unused.
-        """
         file_path_str = str(value).replace("\\", "/")
         path = Path(file_path_str)
         filename = path.name

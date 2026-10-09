@@ -23,11 +23,6 @@ class GuardrailsCredentialGuardian(BaseDSOMValidator):
     ]
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
-        """Return blocked on the first configured credential-pattern match.
-
-        Otherwise, return pass with value converted to text. This checks known
-        patterns only. No redaction is performed, and metadata is unused.
-        """
         text = str(value)
         for label, pattern in self.PATTERNS:
             if pattern.search(text):
