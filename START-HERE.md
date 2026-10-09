@@ -43,6 +43,7 @@ If you or your AI agent do **not** want to `git clone` or `git pull` this reposi
 | **Mintlify Knowledge Brain (Live)** | [`https://harisfazillah.mintlify.site`](https://harisfazillah.mintlify.site) | Auto-synced public Mintlify documentation portal |
 | **Start AI Agents Prompt** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/START-AI-AGENTS-PROMPT/) (GitBook: [`https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt`](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/start-ai-agents-prompt)) | Universal copy-paste prompt for first-time AI agent setup |
 | **Council of High Intelligence Proposal** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL/) | Master proposal for 18-member deliberation adoption |
+| **QMD Search How-To Guide** | [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-and-use-qmd-search/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-and-use-qmd-search/) | On-device QMD hybrid search setup & sync |
 
 ---
 

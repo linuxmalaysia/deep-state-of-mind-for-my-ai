@@ -27,6 +27,7 @@ How-To Guides provide **practical, problem-oriented directions** for completing 
 - **[Generate SEO Assets and Sitemaps](generate-sitemaps-seo.md):** How to generate unified XML/TXT sitemaps and robots.txt.
 - **[Operate the OpenWiki Emulator](use-openwiki-emulator.md):** How to initialise, update, and query the OpenWiki emulator.
 - **[Verify and Monitor Site with Google Search Console](google-search-console.md):** How to verify site ownership and monitor search performance with Google Search Console.
+- **[Install and Use QMD On-Device Search](install-and-use-qmd-search.md):** How to install QMD, manage multi-project collections, run incremental updates, set up hourly cron background sync, and configure MCP server integration.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-20*

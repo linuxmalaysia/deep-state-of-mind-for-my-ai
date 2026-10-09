@@ -183,6 +183,7 @@ spec_version: "0.2"
 * [🏛️ Architecture Decision Records Skill](.agents/skills/architecture-decision-records/SKILL.md)
 * [📜 Changelog Automation Skill](.agents/skills/changelog-automation/SKILL.md)
 * [🏛️ Council of High Intelligence Skill](.agents/skills/council-of-high-intelligence/SKILL.md)
+* [🔍 QMD On-Device Search Skill](.agents/skills/qmd-search/SKILL.md)
 
 ## 📚 9. References & Genesis Papers
 
@@ -203,6 +204,7 @@ spec_version: "0.2"
 * [🛠️ Operate OpenWiki Emulator](docs/how-to/use-openwiki-emulator.md)
 * [🛠️ Verify Google Search Console](docs/how-to/google-search-console.md)
 * [🛠️ How to Produce a Project Technical Handbook](docs/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT.md)
+* [🛠️ Install and Use QMD On-Device Search](docs/how-to/install-and-use-qmd-search.md)
 * [📋 Reference Material Overview](docs/reference/index.md)
 * [📋 generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md)
 * [📋 openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md)

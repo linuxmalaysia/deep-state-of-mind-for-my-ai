@@ -64,6 +64,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/pdf
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/persona-injector/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/proposal-docx-formatter/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/publish-to-blogger/SKILL/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/qmd-search/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/render-deployment/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/sitemap-seo-generator/SKILL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/skills/sod-palace-sync/SKILL/
@@ -160,6 +161,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/HOWTO-PRODU
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/audit-and-apply-frontmatter/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/generate-sitemaps-seo/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/google-search-console/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-and-use-qmd-search/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-gitea-ansible/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-gitea-podman-quadlet/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/run-fastmcp-server/
@@ -278,6 +280,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/pdf-
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/persona-injector/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/proposal-docx-formatter/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/publish-to-blogger/SKILL/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/qmd-search/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/render-deployment/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/sitemap-seo-generator/SKILL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/skills/sod-palace-sync/SKILL/
@@ -374,6 +377,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/HOWTO-PRODUC
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/audit-and-apply-frontmatter/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/generate-sitemaps-seo/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/google-search-console/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-and-use-qmd-search/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-ansible/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-podman-quadlet/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/run-fastmcp-server/
@@ -452,6 +456,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/openapi-spec-generation/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/openwiki-compiler/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/publish-to-blogger/skill
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/qmd-search/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/render-deployment/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/sitemap-seo-generator/skill
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/.agents/skills/sod-palace-sync/skill
@@ -520,6 +525,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/google-search-console
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/howto-produce-technical-handbook-blueprint
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/index
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-and-use-qmd-search
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-ansible
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-podman-quadlet
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/run-fastmcp-server
