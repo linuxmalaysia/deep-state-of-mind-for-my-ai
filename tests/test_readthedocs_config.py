@@ -16,6 +16,7 @@ This verifies that:
 """
 import pathlib
 import unittest
+
 import yaml  # type: ignore
 
 

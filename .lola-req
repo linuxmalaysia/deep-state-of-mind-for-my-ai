@@ -1,0 +1,61 @@
+# ==============================================================================
+# Protocol    : Deep State of Mind (DSOM) For My AI
+# Author      : Harisfazillah Jamel (LinuxMalaysia)
+# Timestamp   : 2026-09-06
+# License     : GNU General Public License v3.0
+# Standard    : UK English | DBP-standard Bahasa Melayu Malaysia (Piawai)
+# ==============================================================================
+# Declarative Lola Package Specification (.lola-req)
+# Lola CLI Minimum Version Supported: lola-ai>=0.1.0
+#
+# Configures Lola AI Package Manager for sovereign, air-gapped skill resolution.
+# Local vendored paths under .agents/skills/ serve as primary resolution targets,
+# with one module reference per line.
+# ==============================================================================
+
+.agents/skills/agent-plugin-packager
+.agents/skills/architecture-decision-records
+.agents/skills/changelog-automation
+.agents/skills/context7-indexer
+.agents/skills/council-of-high-intelligence
+.agents/skills/cross-platform-translator
+.agents/skills/docs-review
+.agents/skills/docs-write
+.agents/skills/docstring
+.agents/skills/docx
+.agents/skills/dsom-bootstrap
+.agents/skills/dsom-knowledge-ingester
+.agents/skills/dsom-policy-adopter
+.agents/skills/dsom-project-cloner
+.agents/skills/dsom-release-manager
+.agents/skills/dsom-signature-injector
+.agents/skills/dsom-state-sync
+.agents/skills/dsom-technical-book-compiler
+.agents/skills/dsom-token-calculator
+.agents/skills/eod-palace-sync
+.agents/skills/forensic-log-audit
+.agents/skills/git-commit-resolver
+.agents/skills/git-history-scrubber
+.agents/skills/github-actions-snyk-scanner
+.agents/skills/hyperparameter-tuning-expert
+.agents/skills/initialize-gitops
+.agents/skills/jules-antigravity-sync
+.agents/skills/knowledge-base-templates
+.agents/skills/latex-proposal-compiler
+.agents/skills/mintlify-docs-compiler
+.agents/skills/node-proposal-formatter
+.agents/skills/node-slide-generator
+.agents/skills/odp-slide-generator
+.agents/skills/okf-frontmatter-injector
+.agents/skills/okf-v02-adoption-engineer
+.agents/skills/openapi-spec-generation
+.agents/skills/openwiki-compiler
+.agents/skills/palace-auditor
+.agents/skills/pdf-text-extractor
+.agents/skills/persona-injector
+.agents/skills/proposal-docx-formatter
+.agents/skills/publish-to-blogger
+.agents/skills/render-deployment
+.agents/skills/sitemap-seo-generator
+.agents/skills/sod-palace-sync
+.agents/skills/ssh-passwordless-setup

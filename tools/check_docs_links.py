@@ -12,6 +12,7 @@ import re
 import sys
 from pathlib import Path
 
+
 def find_repo_root() -> Path:
     """
     Locate the repository root containing the `.git` directory.

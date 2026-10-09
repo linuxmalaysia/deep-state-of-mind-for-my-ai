@@ -1,16 +1,20 @@
 ---
-okf_version: 0.2
-type: skill
-title: dsom-release-manager
-timestamp: "2026-08-22T11:05:00Z"
+name: dsom-release-manager
+version: "1.0.0"
 description: "Cuts a formal DSOM release, updates ledgers, tags the repository, and deploys to GitHub/GitLab."
 topics: ["release", "git", "tagging", "changelog", "deployment"]
-name: dsom-release-manager
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
+okf_version: 0.2
+type: skill
+status: stable
+stale_after: "2027-10-01"
+title: dsom-release-manager
+timestamp: "2026-08-22T11:05:00Z"
 resource: "/.agents/skills/dsom-release-manager/SKILL.md"
-sources: [".agents/AGENTS.md", "CHANGELOG.md", "HISTORY.md"]
+sources: [{id: source-1, title: ".agents/AGENTS.md", resource: ".agents/AGENTS.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-2, title: "CHANGELOG.md", resource: "CHANGELOG.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/CHANGELOG.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: "HISTORY.md", resource: "HISTORY.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/HISTORY.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
 spec_version: "0.2"
 verified: true
-status: active
 ---
 # 🚀 DSOM Release Manager
 

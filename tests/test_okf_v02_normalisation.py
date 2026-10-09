@@ -1,10 +1,10 @@
 """Regression tests for OKF v0.2 source and trust metadata migration."""
 
 import copy
-from datetime import date, datetime, timedelta, timezone
-from pathlib import Path
 import tempfile
 import unittest
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
 
 import yaml
 
@@ -14,7 +14,6 @@ from tools.apply_okf_frontmatter import (
     serialise_val,
     validate_okf_v02_metadata,
 )
-
 
 TIMESTAMP = "2026-10-04T12:00:00Z"
 REPOSITORY_URL = (

@@ -1,15 +1,18 @@
 ---
-okf_version: 0.2
-type: skill
-title: GitHub Actions Snyk Security Scanner
-timestamp: "2026-07-27T04:49:00Z"
+name: github-actions-snyk-scanner
+version: "1.0.0"
 description: "Sets up a proven Snyk dependency vulnerability scan workflow for DSOM GitHub repositories, replacing the deprecated Red Hat CRDA action."
 topics: ["snyk", "github-actions", "security", "ci-cd", "sarif"]
-name: github-actions-snyk-scanner
-resource: "file:///.agents/skills/github-actions-snyk-scanner/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
+okf_version: 0.2
+type: skill
+status: stable
+stale_after: "2027-10-01"
+title: GitHub Actions Snyk Security Scanner
+timestamp: "2026-07-27T04:49:00Z"
+resource: "/.agents/skills/github-actions-snyk-scanner/SKILL.md"
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec, url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"}]
 spec_version: "0.2"
 ---
 # Skill: GitHub Actions Snyk Security Scanner

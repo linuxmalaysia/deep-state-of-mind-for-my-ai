@@ -1,15 +1,18 @@
 ---
-okf_version: 0.2
-type: skill
-title: DSOM State Sync Skill
-timestamp: "2026-07-27T00:00:00Z"
+name: dsom-state-sync
+version: "1.0.0"
 description: "Executes Semantic Compaction locally by analyzing a Git diff and updating current_state.dsom using OpenAI."
 topics: ["compaction", "state", "sync", "openai", "dsom"]
-name: dsom-state-sync
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
+okf_version: 0.2
+type: skill
+status: stable
+stale_after: "2027-10-01"
+title: DSOM State Sync Skill
+timestamp: "2026-07-27T00:00:00Z"
 resource: "/.agents/skills/dsom-state-sync/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec, url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"}]
 spec_version: "0.2"
 ---
 # DSOM State Sync Skill

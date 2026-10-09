@@ -11,8 +11,8 @@ License : GNU General Public License v3.0
 import argparse
 import os
 import sys
-import urllib.request
 import urllib.error
+import urllib.request
 from pathlib import Path
 
 # Enforce UTF-8 output encoding
@@ -66,7 +66,7 @@ def fetch_snapshot(tokens: int = 250000, target_path: Path = None, api_key: str 
         print(f"❌ [HTTP ERROR] {e.code}: {e.reason}")
         return False
     except Exception as e:
-        print(f"❌ [ERROR] {str(e)}")
+        print(f"❌ [ERROR] {e!s}")
         return False
 
 

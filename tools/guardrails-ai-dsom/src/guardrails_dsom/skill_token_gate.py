@@ -3,8 +3,10 @@ Guardrail 8: Skill Token Window Gatekeeper
 Rule Reference: Rule 19
 """
 
-from typing import Any, Dict, Optional
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsSkillTokenGate(BaseDSOMValidator):
     name = "dsom/skill_token_gate"
@@ -23,7 +25,7 @@ class GuardrailsSkillTokenGate(BaseDSOMValidator):
             # Approximate token count: ~4 characters per token
             return len(text) // 4
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         text = str(value)
         token_count = self._count_tokens(text)
 

@@ -23,7 +23,6 @@ current environment, following the convention already established in
 `tests/test_dsom_pr_sync_workflow.py`.
 """
 import importlib.util
-import json
 import os
 import pathlib
 import stat
@@ -33,8 +32,8 @@ import unittest
 from unittest import mock
 
 try:
-    import yaml  # type: ignore
     import requests  # type: ignore
+    import yaml  # type: ignore
     HAS_DEPS = True
 except ImportError:  # pragma: no cover - environment dependent
     HAS_DEPS = False

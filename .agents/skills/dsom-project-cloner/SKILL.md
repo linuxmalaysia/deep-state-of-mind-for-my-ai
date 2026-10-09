@@ -1,20 +1,21 @@
 ---
-okf_version: 0.2
-type: skill
-title: DSOM Project Cloner Skill
-timestamp: "2026-08-23T07:04:00Z"
+name: dsom-project-cloner
+version: "1.0.0"
 description: "Scaffolds a new DSOM project by copying the Sovereign Engine, Universal Gateway Matrix, Governance, and Ritual Tools to a target path, enforcing Downstream Asymmetry."
 topics: ["project", "scaffold", "clone", "dsom", "setup", "mintlify", "okf"]
-name: dsom-project-cloner
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
+okf_version: 0.2
+type: skill
+status: stable
+stale_after: "2027-08-23"
+title: DSOM Project Cloner Skill
+timestamp: "2026-08-23T07:04:00Z"
 resource: "/.agents/skills/dsom-project-cloner/SKILL.md"
-sources: [{resource: 'file:///.agents/AGENTS.md', title: The Core AI Rulebook (DSOM), url: 'file:///.agents/AGENTS.md'}, {resource: 'file:///docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md', title: Mintlify
-    User Manual Sync Guide, url: 'file:///docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md'}, {resource: 'file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md', title: Team DSOM Masterclass
-    Tutorial, url: 'file:///docs/tutorials/TEAM-DSOM-MASTERCLASS.md'}]
+sources: [{resource: "/.agents/AGENTS.md", title: "The Core AI Rulebook (DSOM)", url: "/.agents/AGENTS.md", author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-1}, {resource: "/docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md", title: Mintlify User Manual Sync Guide, url: "/docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md", author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-2}, {resource: "/docs/tutorials/TEAM-DSOM-MASTERCLASS.md", title: Team DSOM Masterclass Tutorial, url: "/docs/tutorials/TEAM-DSOM-MASTERCLASS.md", author: "Harisfazillah Jamel (LinuxMalaysia)", id: source-3}]
+generated: {by: hybrid, timestamp: "2026-08-23T07:04:00Z"}
 spec_version: "0.2"
-generated: hybrid
 verified: true
-status: active
-stale_after: "2027-08-23T07:04:00Z"
 ---
 # 🏗️ DSOM Project Cloner Skill
 

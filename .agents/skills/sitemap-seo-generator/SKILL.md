@@ -1,15 +1,18 @@
 ---
-okf_version: 0.2
-type: agent_skill
-title: "🗺️ Sitemap & SEO Asset Generator Skill"
-timestamp: "2026-08-12T12:00:00Z"
+name: sitemap-seo-generator
+version: "1.0.0"
 description: "Configures and manages sitemap and robots.txt generation to optimize SEO indexation for GitHub Pages, Read the Docs, and GitBook."
 topics: ["sitemap", "seo", "automation", "gitbook", "readthedocs"]
-name: sitemap-seo-generator
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
+okf_version: 0.2
+type: agent_skill
+status: stable
+stale_after: "2027-10-01"
+title: "🗺️ Sitemap & SEO Asset Generator Skill"
+timestamp: "2026-08-12T12:00:00Z"
 resource: "/.agents/skills/sitemap-seo-generator/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec, url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"}]
 spec_version: "0.2"
 ---
 # 🗺️ Sitemap & SEO Asset Generator Skill

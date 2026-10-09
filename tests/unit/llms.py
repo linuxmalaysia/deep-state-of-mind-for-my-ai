@@ -4,8 +4,9 @@ LLMs parser and compilation unit tests.
 import pathlib
 import sys
 import tempfile
-import xml.etree.ElementTree as ET
 import unittest
+import xml.etree.ElementTree as ET
+
 
 def _find_repo_root(start: pathlib.Path) -> pathlib.Path:
     current = start.resolve()
@@ -24,7 +25,7 @@ class TestLlmsTxtParser(unittest.TestCase):
         tools_dir = str(cls.repo_root / "tools")
         if tools_dir not in sys.path:
             sys.path.insert(0, tools_dir)
-        import parse_llms_txt  # type: ignore # noqa: E402
+        import parse_llms_txt  # type: ignore
         cls.parse_llms_txt = parse_llms_txt
 
     def test_llms_txt2ctx_parser_api(self):

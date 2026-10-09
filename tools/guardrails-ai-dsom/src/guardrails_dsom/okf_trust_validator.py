@@ -4,8 +4,10 @@ Rule Reference: Rule 6 & Rule 21
 """
 
 import re
-from typing import Any, Dict, Optional, List
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsOKFTrustValidator(BaseDSOMValidator):
     name = "dsom/okf_trust_validator"
@@ -24,7 +26,7 @@ class GuardrailsOKFTrustValidator(BaseDSOMValidator):
         "stale_after",
     ]
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         text = str(value)
         if not text.startswith("---"):
             return ValidationResult(
@@ -62,6 +64,6 @@ class GuardrailsOKFTrustValidator(BaseDSOMValidator):
         except Exception as exc:
             return ValidationResult(
                 is_valid=False,
-                error_message=f"Error validating OKF trust signals: {str(exc)}",
+                error_message=f"Error validating OKF trust signals: {exc!s}",
                 action_taken="blocked",
             )

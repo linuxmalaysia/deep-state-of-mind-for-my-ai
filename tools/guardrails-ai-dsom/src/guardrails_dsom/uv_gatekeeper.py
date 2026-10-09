@@ -4,14 +4,16 @@ Rule Reference: Rule 16
 """
 
 import re
-from typing import Any, Dict, Optional
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsUVExecutionValidator(BaseDSOMValidator):
     name = "dsom/uv_execution_gatekeeper"
     on_fail = "block"
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         cmd = str(value).strip()
 
         # Check for prohibited commands

@@ -24,7 +24,7 @@ import yaml
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
-import council_emulator  # type: ignore # noqa: E402
+import council_emulator  # type: ignore
 
 
 class CouncilEmulatorTimestampTests(unittest.TestCase):

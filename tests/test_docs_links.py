@@ -18,7 +18,8 @@ _repo_root = _current_dir.parent
 if str(_repo_root / "tools") not in sys.path:
     sys.path.insert(0, str(_repo_root / "tools"))
 
-import check_docs_links  # type: ignore # noqa: E402
+import check_docs_links  # type: ignore
+
 
 class TestDocsLinksValidation(unittest.TestCase):
     """Test the relative link verification logic in tools/check_docs_links.py."""

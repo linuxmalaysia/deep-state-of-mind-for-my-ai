@@ -3,10 +3,11 @@ Guardrail 10: Root Workspace Cleanliness & SaaS Isolation Guard
 Rule Reference: Rule 17
 """
 
-import os
 from pathlib import Path
-from typing import Any, Dict, Optional, List
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsRootCleanlinessValidator(BaseDSOMValidator):
     name = "dsom/root_cleanliness_validator"
@@ -31,7 +32,7 @@ class GuardrailsRootCleanlinessValidator(BaseDSOMValidator):
         "pyproject.toml",
     }
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         file_path_str = str(value).replace("\\", "/")
         path = Path(file_path_str)
         filename = path.name

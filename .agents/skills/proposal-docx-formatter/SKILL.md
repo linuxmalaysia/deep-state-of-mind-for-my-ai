@@ -1,15 +1,18 @@
 ---
-okf_version: 0.2
-type: agent_skill
-title: proposal-docx-formatter
-timestamp: "2026-08-05T22:23:51Z"
+name: proposal-docx-formatter
+version: "1.0.0"
 description: "Compiles a markdown proposal document into a professionally formatted DOCX file using standard corporate document templates (Times New Roman, A4 page, grey-header tables, 0.5pt borders, proper heading hierarchy). Use when the user asks to compile, generate, or format the migration proposal document."
 topics: ["docx", "proposal", "document", "formatter"]
-name: proposal-docx-formatter
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
+okf_version: 0.2
+type: agent_skill
+status: stable
+stale_after: "2027-10-01"
+title: proposal-docx-formatter
+timestamp: "2026-08-05T22:23:51Z"
 resource: "/.agents/skills/proposal-docx-formatter/SKILL.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec, url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"}]
 spec_version: "0.2"
 noss_section: Enterprise Database Migration
 target_format: docx

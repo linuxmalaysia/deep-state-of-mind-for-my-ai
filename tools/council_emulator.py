@@ -21,11 +21,10 @@ markdown artifact with OKF v0.2 frontmatter. Zero-binary pure Python implementat
 
 import argparse
 import datetime
-import json
-import os
 import pathlib
 import re
 import sys
+
 import yaml
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -98,7 +97,7 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
         },
         "Domain Specialist": {
             "title": domain_title,
-            "stance": f"Domain-specific excellence, data integrity, performance tuning, and practical robustness.",
+            "stance": "Domain-specific excellence, data integrity, performance tuning, and practical robustness.",
             "recommendation": f"Apply proven industry design patterns and strict schema validation tailored to '{topic}'.",
             "risk": "Domain-specific edge cases failing during unexpected traffic spikes or boundary transitions.",
         },
@@ -148,10 +147,10 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     verdict = {
         "summary": f"Unanimous council consensus achieved for '{topic}' under mode '{mode}'. The proposal is approved subject to zero-binary execution and OKF v0.2 frontmatter compliance.",
         "action_plan": [
-            f"1. Implement core logic using zero-dependency pure Python scripts in alignment with Rule 27.",
-            f"2. Integrate FastMCP tool contract in `tools/mcp/server.py` for direct AI client invocation.",
-            f"3. Add comprehensive regression tests under `tests/test_council_emulator.py`.",
-            f"4. Emit OKF v0.2 compliant Council Decision Record (CDR) artifact for spatial memory tracking.",
+            "1. Implement core logic using zero-dependency pure Python scripts in alignment with Rule 27.",
+            "2. Integrate FastMCP tool contract in `tools/mcp/server.py` for direct AI client invocation.",
+            "3. Add comprehensive regression tests under `tests/test_council_emulator.py`.",
+            "4. Emit OKF v0.2 compliant Council Decision Record (CDR) artifact for spatial memory tracking.",
         ],
         "kill_criteria": [
             "Requirement for third-party Node.js global binaries or elevated UAC privileges.",

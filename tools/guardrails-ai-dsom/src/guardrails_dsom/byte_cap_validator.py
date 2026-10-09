@@ -3,8 +3,10 @@ Guardrail 6: Byte-Capped Terminal Output Interceptor
 Rule Reference: Rule 10
 """
 
-from typing import Any, Dict, Optional
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsByteCapValidator(BaseDSOMValidator):
     name = "dsom/byte_cap_validator"
@@ -14,7 +16,7 @@ class GuardrailsByteCapValidator(BaseDSOMValidator):
         super().__init__(on_fail=on_fail, **kwargs)
         self.max_bytes = max_bytes
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         text = str(value)
         encoded = text.encode("utf-8")
 

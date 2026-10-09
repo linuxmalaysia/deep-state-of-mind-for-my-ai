@@ -1,18 +1,21 @@
 ---
-okf_version: 0.2
-type: skill_sop
-title: "Mintlify MDX Compiler & One-Way Sync"
-timestamp: "2026-08-23T06:57:00Z"
+name: mintlify-docs-compiler
+version: "1.0.0"
 description: "Compiles Sovereign Markdown Palace documents into Mintlify MDX trees and syncs to downstream docs repository under 5 strict safety guards."
 topics: ["mintlify", "docs", "sync", "mdx", "safety-guards", "user-manual-style"]
-name: mintlify-docs-compiler
+author: "Harisfazillah Jamel (LinuxMalaysia)"
+license: "GPL-3.0-or-later"
+okf_version: 0.2
+type: skill_sop
+status: stable
+stale_after: "2027-08-23"
+title: "Mintlify MDX Compiler & One-Way Sync"
+timestamp: "2026-08-23T06:57:00Z"
 resource: "/.agents/skills/mintlify-docs-compiler/SKILL.md"
-sources: [{resource: 'https://mintlify.com/docs', title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///tools/build_mintlify_mdx.py", "file:///scripts/sync_docs.py", "file:///.github/workflows/sync-docs.yml"]
+sources: [{resource: "https://mintlify.com/docs", title: Mintlify Documentation, url: "https://mintlify.com/docs", id: source-1}, {id: source-2, title: "/tools/build_mintlify_mdx.py", resource: "/tools/build_mintlify_mdx.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main//tools/build_mintlify_mdx.py", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: "/scripts/sync_docs.py", resource: "/scripts/sync_docs.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main//scripts/sync_docs.py", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-4, title: "/.github/workflows/sync-docs.yml", resource: "/.github/workflows/sync-docs.yml", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main//.github/workflows/sync-docs.yml", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+generated: {by: human-and-ai, timestamp: "2026-08-23T06:57:00Z"}
 spec_version: "0.2"
-generated: human-and-ai
 verified: verified
-status: authoritative
-stale_after: "2027-08-23T06:57:00Z"
 ---
 # Mintlify MDX Compiler & One-Way Sync
 

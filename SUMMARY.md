@@ -216,6 +216,7 @@ spec_version: "0.2"
 * [🧠 Explanation and Design Overview](docs/explanation/index.md)
 * [🧠 OpenWiki & FastMCP Architecture](docs/explanation/openwiki-mcp-architecture.md)
 * [🔒 Attested Computations in OKF v0.2](docs/explanation/attested-computations-okf.md)
+* [📦 Lola AI Package Manager Integration](docs/explanation/lola-ai-integration-dsom.md)
 * [🧠 Diátaxis Framework Adoption](docs/explanation/diataxis.md)
 
 

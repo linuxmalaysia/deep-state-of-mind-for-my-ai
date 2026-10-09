@@ -6,6 +6,7 @@ compilation to ensure smooth navigation across both GitHub web view and MkDocs H
 """
 import re
 
+
 def on_page_markdown(markdown, page, config, files):
     """
     Rewrite relative Markdown links for MkDocs-compatible paths.

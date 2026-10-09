@@ -2,11 +2,13 @@ import os
 import sys
 import tempfile
 import unittest
+
 import yaml
 
 # Add repo root to PYTHONPATH
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from tools.apply_okf_frontmatter import process_file
+
 
 class TestOkfMultipleFrontmatterRegression(unittest.TestCase):
     def setUp(self):

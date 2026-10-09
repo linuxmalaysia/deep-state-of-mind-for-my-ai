@@ -4,14 +4,16 @@ Rule Reference: Rule 24
 """
 
 import re
-from typing import Any, Dict, Optional, List
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsCredentialGuardian(BaseDSOMValidator):
     name = "dsom/credential_guardian"
     on_fail = "block"
 
-    PATTERNS: List[tuple[str, re.Pattern]] = [
+    PATTERNS: list[tuple[str, re.Pattern]] = [
         ("GitHub Classic PAT", re.compile(r"ghp_[a-zA-Z0-9]{36}")),
         ("GitHub Fine-grained PAT", re.compile(r"github_pat_[a-zA-Z0-9_]{82}")),
         ("GitLab PAT", re.compile(r"glpat-[a-zA-Z0-9\-]{20}")),
@@ -20,7 +22,7 @@ class GuardrailsCredentialGuardian(BaseDSOMValidator):
         ("Slack Bot Token", re.compile(r"xoxb-[0-9]{11}-[0-9]{11}-[a-zA-Z0-9]{24}")),
     ]
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         text = str(value)
         for label, pattern in self.PATTERNS:
             if pattern.search(text):

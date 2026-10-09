@@ -4,8 +4,10 @@ Rule Reference: Rule 4
 """
 
 import re
-from typing import Any, Dict, Optional
+from typing import Any
+
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
+
 
 class GuardrailsAtomicCommitValidator(BaseDSOMValidator):
     name = "dsom/atomic_commit_validator"
@@ -29,7 +31,7 @@ class GuardrailsAtomicCommitValidator(BaseDSOMValidator):
         r"^(" + "|".join(SEMANTIC_PREFIXES) + r")(\([a-zA-Z0-9_\-\.\/]+\))?!?: .+$"
     )
 
-    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+    def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         cmd_or_msg = str(value).strip()
 
         # Check 1: Block blanket commit -a / -am

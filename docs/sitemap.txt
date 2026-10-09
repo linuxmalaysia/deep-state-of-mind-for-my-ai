@@ -108,6 +108,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/agent-configs/wind
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/attested-computations-okf/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/diataxis/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/lola-ai-integration-dsom/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/explanation/openwiki-mcp-architecture/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/governance/AI-COGNITIVE-TWIN-PROTOCOL/
@@ -321,6 +322,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/agent-configs/winds
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/attested-computations-okf/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/diataxis/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/lola-ai-integration-dsom/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/explanation/openwiki-mcp-architecture/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-COGNITIVE-LOGGING-PROTOCOL/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/AI-COGNITIVE-TWIN-PROTOCOL/
@@ -471,6 +473,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/attested-computations-okf
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/diataxis
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/index
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/lola-ai-integration-dsom
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/explanation/openwiki-mcp-architecture
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-cognitive-logging-protocol
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/governance/ai-cognitive-twin-protocol
