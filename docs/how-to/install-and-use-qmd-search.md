@@ -5,9 +5,14 @@ title: "How to Install, Manage, and Query On-Device Documents with QMD Search"
 timestamp: "2026-10-09T00:00:00Z"
 topics: ["qmd", "search", "how-to", "mcp", "semantic-search"]
 resource: "file:///docs/how-to/install-and-use-qmd-search.md"
-sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: "dsom-core-spec", resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: "architecture_spec", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"}]
+status: stable
+generated: {by: google-jules, timestamp: "2026-10-09T00:00:00Z"}
+stale_after: "2027-10-09"
 spec_version: "0.2"
 description: "Step-by-step Diátaxis how-to guide for installing QMD, managing multi-project collections, performing incremental updates, setting up cron background synchronization, and integrating with Model Context Protocol (MCP)."
+verified: true
+concept_id: install_and_use_qmd_search
 ---
 # How to Install, Manage, and Query On-Device Documents with QMD Search
 
