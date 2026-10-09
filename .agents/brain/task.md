@@ -107,5 +107,12 @@ spec_version: "0.2"
 - `[x]` Created unit test suite `tests/test_council_emulator.py` and updated `tests/test_mcp_server.py`.
 - `[x]` Updated `.github/workflows/docs-ci.yml` with retry loop and explicit exit code handling for `ansible-galaxy` installations.
 - `[x]` Executed End-of-Day (EOD) Hibernation and spatial brain synchronization (`task.md`, `walkthrough.md`, `current_state.dsom`, `palace_registry.md`).
+- `[x]` Refactor all 46 existing agent skills under `.agents/skills/` to Lola-compatible packages (`lola-ai`) with dual Lola + OKF v0.2 frontmatter metadata.
+- `[x]` Add PEP 723 inline script metadata (`# /// script`) to Python helpers across skill `scripts/` directories for self-contained `uv run` execution.
+- `[x]` Generate root `.lola-req` declarative requirements file listing all 46 skills in plain-text format with pinned `lola-ai>=0.1.0` minimum supported version comment.
+- `[x]` Implement `playbooks/install.yml` checking `which lola`, setting `chdir: "{{ playbook_dir }}/.."`, and evaluating `lola_sync_output.rc` for graceful air-gapped fallback.
+- `[x]` Author 4W1H guide `docs/explanation/lola-ai-integration-dsom.md` with a complete 46-skill summary matrix, registered in `mkdocs.yml`, `SUMMARY.md`, `docs/SUMMARY.md`, and `llms.txt`.
+- `[x]` Add test suite `tests/test_lola_integration.py` validating `.lola-req`, dual frontmatters, PEP 723 metadata, relative path decoupling (zero `file:///` or Windows drive path leaks), Ansible playbook, and 4W1H documentation.
+- `[x]` Execute End-of-Day (EOD) Hibernation, spatial brain synchronization, and sitemap regeneration.
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-19*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-07*
