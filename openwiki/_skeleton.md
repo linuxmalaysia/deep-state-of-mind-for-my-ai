@@ -1,15 +1,11 @@
 ---
-okf_version: 0.2
+okf_version: "0.1"
 type: documentation
 title: "OpenWiki Documentation Skeleton & Subsystem Index"
-timestamp: "2026-09-20T03:29:08Z"
+timestamp: "2026-10-10T14:19:39Z"
 topics: ["openwiki", "skeleton", "dsom", "inventory"]
-resource: "file:///app/openwiki/_skeleton.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
-spec_version: "0.2"
 description: "Authoritative inventory ranking, planned page tree, and evidence briefs for the DSOM codebase."
+resource: "file:///home/runner/work/deep-state-of-mind-for-my-ai/deep-state-of-mind-for-my-ai/openwiki/_skeleton.md"
 ---
 # OpenWiki documentation skeleton
 
