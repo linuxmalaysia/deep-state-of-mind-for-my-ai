@@ -111,13 +111,13 @@ chmod +x ~/.local/bin/qmd-sync-hourly.sh
 ---
 
 ## 5. Model Context Protocol (MCP) Integration
-Configure `~/.gemini/config/mcp_config.json` or project `mcp.json`:
+Configure `~/.gemini/config/mcp_config.json` or project `mcp.json` using the executable path resolved during setup (e.g. `qmd` on `PATH` or `$HOME/.npm-global/bin/qmd`):
 
 ```json
 {
   "mcpServers": {
     "qmd": {
-      "command": "/home/haris/.npm-global/bin/qmd",
+      "command": "qmd",
       "args": ["mcp"]
     }
   }
@@ -153,6 +153,7 @@ Please execute the following phases:
 
 ### PHASE 2: CLEAN INSTALLATION (IF NOT INSTALLED)
 1. IF NOT INSTALLED:
+   - Verify Node.js version is v22+ (`node -v`).
    - Prepare root-conflict-free user directory:
      ```bash
      mkdir -p ~/.npm-global
@@ -187,12 +188,12 @@ Please execute the following phases:
    ```
 
 ### PHASE 4: MCP PROTOCOL REGISTRATION
-Add the `qmd` server to `~/.gemini/config/mcp_config.json`:
+Add the `qmd` server to `~/.gemini/config/mcp_config.json` using the executable path resolved during setup (e.g. `qmd` or `$HOME/.npm-global/bin/qmd`):
 ```json
 {
   "mcpServers": {
     "qmd": {
-      "command": "/home/haris/.npm-global/bin/qmd",
+      "command": "qmd",
       "args": ["mcp"]
     }
   }

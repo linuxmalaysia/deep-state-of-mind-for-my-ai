@@ -92,6 +92,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Run FastMCP Server](docs/how-to/run-fastmcp-server.md): How-to for running and configuring FastMCP.
 - [Generate SEO Assets and Sitemaps](docs/how-to/generate-sitemaps-seo.md): How-to for compiling SEO sitemaps and robots.
 - [Operate OpenWiki Emulator](docs/how-to/use-openwiki-emulator.md): How-to for initializing/searching the OpenWiki.
+- [Install and Use QMD On-Device Search](docs/how-to/install-and-use-qmd-search.md): Step-by-step guide for QMD installation, multi-project collections, incremental indexing, cron background sync, and MCP setup.
 - [Reference Material Overview](docs/reference/index.md): Structured key reference facts index.
 - [generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md): Factual reference for sitemap generator.
 - [openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md): Factual reference for OpenWiki emulator.

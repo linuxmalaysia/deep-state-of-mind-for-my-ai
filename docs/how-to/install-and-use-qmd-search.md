@@ -23,7 +23,7 @@ This guide details how to install, configure, and operate **QMD (Query Markup Do
 ## Prerequisites
 
 * Linux or WSL2 (Ubuntu / AlmaLinux) environment.
-* Node.js v20+ and `npm`.
+* Node.js v22+ and `npm`.
 * `crontab` utility for automated background synchronization.
 
 ---
