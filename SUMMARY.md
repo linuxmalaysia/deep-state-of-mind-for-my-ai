@@ -205,6 +205,7 @@ spec_version: "0.2"
 * [🛠️ Verify Google Search Console](docs/how-to/google-search-console.md)
 * [🛠️ How to Produce a Project Technical Handbook](docs/how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT.md)
 * [🛠️ Install and Use QMD On-Device Search](docs/how-to/install-and-use-qmd-search.md)
+* [🛠️ Panduan Pemasangan & Penggunaan QMD](docs/how-to/panduan-pemasangan-dan-penggunaan-qmd.md)
 * [📋 Reference Material Overview](docs/reference/index.md)
 * [📋 generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md)
 * [📋 openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md)

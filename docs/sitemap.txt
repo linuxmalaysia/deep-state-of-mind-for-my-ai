@@ -164,6 +164,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/google-sear
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-and-use-qmd-search/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-gitea-ansible/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/install-gitea-podman-quadlet/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/panduan-pemasangan-dan-penggunaan-qmd/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/run-fastmcp-server/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/how-to/use-openwiki-emulator/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/model-specifics/dsom-claude-initialiser/
@@ -380,6 +381,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/google-searc
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-and-use-qmd-search/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-ansible/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/install-gitea-podman-quadlet/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/panduan-pemasangan-dan-penggunaan-qmd/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/run-fastmcp-server/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/how-to/use-openwiki-emulator/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/model-specifics/dsom-claude-initialiser/
@@ -528,6 +530,7 @@ https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protoc
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-and-use-qmd-search
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-ansible
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/install-gitea-podman-quadlet
+https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/panduan-pemasangan-dan-penggunaan-qmd
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/run-fastmcp-server
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/how-to/use-openwiki-emulator
 https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai/docs/howto-adopt-dsom

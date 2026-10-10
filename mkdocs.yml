@@ -183,6 +183,7 @@ nav:
           - Verify Google Search Console: how-to/google-search-console.md
           - Produce a Project Technical Handbook: how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT.md
           - Install and Use QMD On-Device Search: how-to/install-and-use-qmd-search.md
+          - Panduan Pemasangan & Penggunaan QMD: how-to/panduan-pemasangan-dan-penggunaan-qmd.md
       - Reference Material:
           - Overview: reference/index.md
           - generate_sitemaps.py: reference/generate_sitemaps.md
