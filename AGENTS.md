@@ -203,7 +203,7 @@ The `tools/` directory contains cross-platform PowerShell (`.ps1`) and Bash (`.s
 | `.agents/brain/walkthrough.md` | Session history and Mental Anchors (resume context). |
 | `.agents/brain/palace_registry.md` | Spatial index of the Sovereign Markdown Palace. |
 | `.agents/brain/active_context_manifest.md` | Live list of files currently in scope. |
-| `.agents/skills/` | OKF-compliant executable skill SOPs (46 skills). |
+| `.agents/skills/` | OKF-compliant executable skill SOPs (47 skills). |
 | `.agents/workflows/` | Multi-agent orchestration governance workflows. |
 | `docs/governance/` | Theoretical blueprints, governance policies, and architectural guides. |
 | `docs/governance/AI-INITIALIZATION-SEQUENCE.md` | The 5-step Mechanical Boot Sequence. |

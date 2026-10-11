@@ -148,6 +148,7 @@ nav:
       - Architecture Decision Records Skill: .agents/skills/architecture-decision-records/SKILL.md
       - Changelog Automation Skill: .agents/skills/changelog-automation/SKILL.md
       - Council of High Intelligence Skill: .agents/skills/council-of-high-intelligence/SKILL.md
+      - QMD On-Device Search Skill: .agents/skills/qmd-search/SKILL.md
   - Ansible:
       - HOWTO Setup Baseline: HOWTO-SETUP-ANSIBLE-BASELINE.md
       - HOWTO Setup AlmaLinux 10 WSL2: HOWTO-SETUP-WSL-ALMALINUX10.md
@@ -181,6 +182,8 @@ nav:
           - Operate OpenWiki Emulator: how-to/use-openwiki-emulator.md
           - Verify Google Search Console: how-to/google-search-console.md
           - Produce a Project Technical Handbook: how-to/HOWTO-PRODUCE-TECHNICAL-HANDBOOK-BLUEPRINT.md
+          - Install and Use QMD On-Device Search: how-to/install-and-use-qmd-search.md
+          - Panduan Pemasangan & Penggunaan QMD: how-to/panduan-pemasangan-dan-penggunaan-qmd.md
       - Reference Material:
           - Overview: reference/index.md
           - generate_sitemaps.py: reference/generate_sitemaps.md
