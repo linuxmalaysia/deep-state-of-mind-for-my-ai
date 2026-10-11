@@ -129,13 +129,20 @@ chmod +x ~/.local/bin/qmd-sync-hourly.sh
 
 ## 5. Model Context Protocol (MCP) Server Setup
 
-Register QMD as an MCP tool server for AI agents in `~/.gemini/config/mcp_config.json` or workspace `mcp.json`:
+Register QMD as an MCP tool server for AI agents in `~/.gemini/config/mcp_config.json` or workspace `mcp.json`. Resolve the executable path dynamically via `command -v qmd` or fallback to `$HOME/.npm-global/bin/qmd`:
+
+```bash
+# Resolve executable location or use default user-global path
+QMD_PATH="$(command -v qmd || echo "$HOME/.npm-global/bin/qmd")"
+```
+
+In `mcp_config.json`, configure the server command with the resolved path (e.g. `"qmd"` if available on `PATH`, or the absolute path):
 
 ```json
 {
   "mcpServers": {
     "qmd": {
-      "command": "/home/user/.npm-global/bin/qmd",
+      "command": "qmd",
       "args": ["mcp"]
     }
   }
