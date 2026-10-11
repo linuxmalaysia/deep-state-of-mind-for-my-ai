@@ -50,7 +50,7 @@ npm config set prefix '~/.npm-global'
 export PATH="$HOME/.npm-global/bin:$PATH"
 
 # 3. Pasang pakej qmd secara global
-npm install -g @tobil/qmd
+npm install -g @tobilu/qmd
 
 # 4. Sahkan pemasangan
 qmd --help
@@ -141,6 +141,7 @@ set -euo pipefail
 export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 LOG_FILE="$HOME/.local/var/log/qmd-sync.log"
 
+mkdir -p "$HOME/.local/var/log"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] === Starting QMD incremental update ===" >> "$LOG_FILE"
 if command -v qmd >/dev/null 2>&1; then
     qmd update >> "$LOG_FILE" 2>&1 || true
@@ -184,7 +185,7 @@ qmd query "weasyprint pure white css"
 qmd get qmd://oss-docs/how-to/GITEA-POSTGRESQL-PODMAN-SETUP.md
 
 # Baca baris tertentu (contoh: baris 10 hingga 30)
-qmd get qmd://oss-docs/how-to/GITEA-POSTGRESQL-PODMAN-SETUP.md:10:20
+qmd get qmd://oss-docs/how-to/GITEA-POSTGRESQL-PODMAN-SETUP.md:10:21
 ```
 
 ---
@@ -198,7 +199,7 @@ QMD menyokong Model Context Protocol (MCP) secara terbina dalam melalui arahan `
 {
   "mcpServers": {
     "qmd": {
-      "command": "qmd",
+      "command": "$(command -v qmd || echo '$HOME/.npm-global/bin/qmd')",
       "args": ["mcp"]
     }
   }
