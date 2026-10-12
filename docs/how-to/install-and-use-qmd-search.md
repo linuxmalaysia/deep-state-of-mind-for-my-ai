@@ -136,13 +136,13 @@ Register QMD as an MCP tool server for AI agents in `~/.gemini/config/mcp_config
 QMD_PATH="$(command -v qmd || echo "$HOME/.npm-global/bin/qmd")"
 ```
 
-In `mcp_config.json`, configure the server command with the resolved path (e.g. `"qmd"` if available on `PATH`, or the absolute path):
+In `mcp_config.json`, configure the server command with the resolved path stored in `$QMD_PATH` (e.g. `/home/user/.npm-global/bin/qmd` or `/usr/local/bin/qmd`):
 
 ```json
 {
   "mcpServers": {
     "qmd": {
-      "command": "qmd",
+      "command": "/home/user/.npm-global/bin/qmd",
       "args": ["mcp"]
     }
   }
