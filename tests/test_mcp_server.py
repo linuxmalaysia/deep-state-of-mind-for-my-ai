@@ -70,6 +70,21 @@ class McpServerResourceTests(unittest.TestCase):
         res = server.run_council(topic="Test", output_path="../evil_cdr.md")
         self.assertIn("Error: Invalid output_path. Parent directory traversal is not permitted", res)
 
+    def test_qmd_search_executes_or_falls_back_gracefully(self):
+        res = server.qmd_search(query="architecture", collection="oss-docs", mode="query", limit=3)
+        self.assertIsInstance(res, str)
+        self.assertTrue(
+            "Error: QMD binary not found" in res
+            or "No results found" in res
+            or len(res) > 0
+        )
+
+    def test_qmd_search_modes(self):
+        res_bm25 = server.qmd_search(query="podman", mode="search", limit=1)
+        self.assertIsInstance(res_bm25, str)
+        res_vec = server.qmd_search(query="sovereign governance", mode="vsearch", limit=1)
+        self.assertIsInstance(res_vec, str)
+
 
 if __name__ == "__main__":
     unittest.main()

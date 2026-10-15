@@ -50,7 +50,9 @@ qmd pull --progress
 
 ---
 
-## 2. Multi-Project Collection Registration
+## 2. Multi-Project Collection Scoping (Query Latency Optimization)
+
+Utilize `-c <collection>` scoping **by default** in all local search scripts to minimize SQLite FTS5 query latency and restrict matches to the active workspace collection.
 
 Register unique collection names for each project workspace to prevent index collisions in `~/.cache/qmd/index.sqlite`.
 
@@ -127,9 +129,22 @@ chmod +x ~/.local/bin/qmd-sync-hourly.sh
 
 ---
 
-## 5. Model Context Protocol (MCP) Server Setup
+## 5. Model Context Protocol (MCP) & FastMCP Integration
 
-Register QMD as an MCP tool server for AI agents in `~/.gemini/config/mcp_config.json` or workspace `mcp.json`. Resolve the executable path dynamically via `command -v qmd` or fallback to `$HOME/.npm-global/bin/qmd`:
+QMD can be integrated with AI IDEs (Cursor / Claude / Gemini) through two mechanisms:
+
+### A. Direct FastMCP Server Integration (`tools/mcp/server.py`)
+
+The DSOM FastMCP server includes `qmd_search` directly, enabling AI IDEs to run on-device hybrid search queries with automatic collection scoping:
+
+```python
+# Executed via FastMCP server in tools/mcp/server.py
+qmd_search(query="gitea podman setup", collection="myproj-docs", mode="query", limit=5)
+```
+
+### B. Standalone Stdio MCP Server Configuration
+
+Register QMD as a standalone MCP tool server in `~/.gemini/config/mcp_config.json` or workspace `mcp.json`. Resolve the executable path dynamically via `command -v qmd` or fallback to `$HOME/.npm-global/bin/qmd`:
 
 ```bash
 # Resolve executable location or use default user-global path
@@ -161,10 +176,13 @@ chmod 600 ~/.gemini/config/mcp_config.json
 Execute verification queries to confirm proper indexation:
 
 ```bash
-# BM25 Lexical Keyword Search
+# Scoped Hybrid Query (Recommended Default)
+qmd query "architecture design" -c myproj-docs -n 2
+
+# Scoped BM25 Lexical Keyword Search
 qmd search "architecture" -c myproj-docs --json -n 2
 
-# Semantic Vector Search
+# Scoped Semantic Vector Search
 qmd vsearch "cognitive state preservation" -c myproj-docs -n 2
 
 # Check index health and status

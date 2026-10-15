@@ -43,14 +43,17 @@ qmd embed
 
 ---
 
-## 2. Targeted Querying (Avoiding Cross-Project Clutter)
-Target queries using `-c <collection>` when working within a specific project:
+## 2. Targeted Querying & Collection Scoping (Latency Optimization)
+Utilize QMD's `-c <collection>` scoping **by default** in local search scripts to minimize SQLite FTS5 query latency and eliminate cross-project search noise on large workspaces:
 
 ```bash
-# Lexical BM25 search
+# Hybrid + Reranking search with collection scoping (recommended default)
+qmd query "gitea podman setup" -c <proj>-docs
+
+# Lexical BM25 search restricted to collection
 qmd search "keyword" -c <proj>-docs
 
-# Semantic vector search
+# Semantic vector search restricted to collection
 qmd vsearch "conceptual description" -c <proj>-docs
 ```
 
@@ -110,8 +113,19 @@ chmod +x ~/.local/bin/qmd-sync-hourly.sh
 
 ---
 
-## 5. Model Context Protocol (MCP) Integration
-Configure `~/.gemini/config/mcp_config.json` or project `mcp.json` using the executable path resolved during setup (e.g. `qmd` on `PATH` or `$HOME/.npm-global/bin/qmd`):
+## 5. Model Context Protocol (MCP) & FastMCP Integration
+QMD provides two integration pathways for AI IDEs (Cursor / Claude Code / Gemini):
+
+### A. Direct FastMCP Tool Integration (`tools/mcp/server.py`)
+The DSOM FastMCP server exposes `qmd_search` directly to AI IDEs for seamless, on-device hybrid search across project collections:
+
+```python
+# Tool Signature in tools/mcp/server.py
+qmd_search(query="gitea podman setup", collection="oss-docs", mode="query", limit=5)
+```
+
+### B. Native QMD Stdio MCP Server
+Configure `~/.gemini/config/mcp_config.json` or workspace `mcp.json` using the resolved binary path:
 
 ```json
 {
