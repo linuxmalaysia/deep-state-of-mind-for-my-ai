@@ -1,17 +1,16 @@
 ---
-okf_version: 0.2
-type: walkthrough_ledger
+okf_version: "0.2"
+type: "walkthrough_ledger"
 title: "🗺️ DSOM Session Walkthrough"
-timestamp: "2026-09-19T23:30:00Z"
-topics: ["council", "mcp", "testing", "ci"]
-resource: "/.agents/brain/walkthrough.md"
-sources: [{author: Harisfazillah Jamel, id: dsom_task_ledger, resource: 'file:///.agents/brain/task.md',
-  title: DSOM Task List, url: 'file:///.agents/brain/task.md'}]
+timestamp: "2026-10-11T06:00:00Z"
+topics: ["qmd", "search", "mcp", "testing", "ci"]
+resource: "file:///.agents/brain/walkthrough.md"
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: "dsom_task_ledger", resource: "file:///.agents/brain/task.md", title: "DSOM Task List"}]
 spec_version: "0.2"
 concept_id: dsom_session_walkthrough
 status: stable
-stale_after: "2027-03-19"
-generated: {by: DSOM Session Workflow, timestamp: '2026-09-19T23:30:00Z'}
+stale_after: "2027-04-11"
+generated: {by: "DSOM Session Workflow", timestamp: "2026-10-11T06:00:00Z"}
 ---
 # DSOM Native MCP Architecture Complete
 
@@ -368,6 +367,22 @@ To ensure complete compliance with OpenViking and Warp skill specifications acro
 ### Lola AI Integration Mental Anchor
 
 > **EOD Palace Sync Complete: Refactored all 46 skills into Lola-compatible packages with dual Lola + OKF v0.2 frontmatter, PEP 723 script headers, root .lola-req manifest, air-gapped Ansible sync playbook, 4W1H documentation, and test suite. Verified 100% pass rate across 958 unit tests.**
+
+## 🏁 Session Anchor: 2026-10-11 — QMD Search Skill Adoption & Diátaxis How-To Guides
+
+- Adopted the `qmd-search` agent skill at `.agents/skills/qmd-search/SKILL.md` with dual Lola + OKF v0.2 frontmatter metadata.
+- Authored two Diátaxis How-To Guides:
+  - `docs/how-to/install-and-use-qmd-search.md` (English)
+  - `docs/how-to/panduan-pemasangan-dan-penggunaan-qmd.md` (Bahasa Melayu)
+- Registered the skill and guides across all navigation registries and manifests: `.lola-req`, `AGENTS.md`, `.agents/AGENTS.md`, `START-HERE.md`, `SUMMARY.md`, `llms.txt`, `mkdocs.yml`, `docs/how-to/index.md`, and regenerated sitemaps.
+- Bumped documented agent skill count from 46 to 47.
+- Addressed all PR review comments: parameterised MCP executable paths, enforced Node.js v22+ prerequisites, ensured log directory creation in cron sync scripts, and fixed line slice range parameters.
+- Confirmed 100% OKF v0.2 frontmatter compliance (`tools/validate-okf.sh`) and relative link integrity (`tools/check_docs_links.py`).
+- Completed spatial brain memory updates (`task.md`, `walkthrough.md`, `palace_registry.md`, `jules_pr_history.md`) and triple-ledger updates (`README.md`, `CHANGELOG.md`, `HISTORY.md`).
+
+### QMD Search Skill Adoption Mental Anchor
+
+> **EOD Palace Sync Complete: Adopted QMD search skill (47 skills total), authored English and Bahasa Melayu Diátaxis guides, updated all navigation manifests and sitemaps, addressed CodeRabbit review feedback, validated 100% OKF v0.2 compliance, and updated spatial brain memory ledgers.**
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-07*

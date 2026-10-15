@@ -55,6 +55,7 @@
 .agents/skills/persona-injector
 .agents/skills/proposal-docx-formatter
 .agents/skills/publish-to-blogger
+.agents/skills/qmd-search
 .agents/skills/render-deployment
 .agents/skills/sitemap-seo-generator
 .agents/skills/sod-palace-sync

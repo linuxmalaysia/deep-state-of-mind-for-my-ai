@@ -2,117 +2,23 @@
 okf_version: 0.2
 type: task_ledger
 title: "🗺️ DSOM Task List"
-timestamp: "2026-09-19T23:30:00Z"
-topics: ["council", "mcp", "testing", "ci"]
+timestamp: "2026-10-11T06:00:00Z"
+topics: ["qmd", "search", "mcp", "testing", "ci", "okf-v02"]
 resource: "/.agents/brain/task.md"
-sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
-  title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
-  title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
+sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: "architecture_spec"}]
 spec_version: "0.2"
 ---
-- `[x]` Create deep research document: `docs/governance/DSOM-MCP-ARCHITECTURE.md`.
-- `[x]` Scaffold MCP Server: `tools/mcp/server.py`.
-- `[x]` Update `START-HERE.md` with MCP setup instructions.
-- `[x]` Sync docs (SUMMARY.md, mkdocs.yml, llms.txt).
-- `[x]` Generate walkthrough summary.
-- `[x]` Complete End-of-Day (EOD) context saving and synchronization.
-- `[x]` Create and configure `.readthedocs.yaml` at the root for Read the Docs integration.
-- `[x]` Run `dsom-signature-injector` to sign `.readthedocs.yaml`.
-- `[x]` Add unit tests for Read the Docs configuration and verify them.
-- `[x]` Document Jules' historic merges/PRs and establish the Jules & Antigravity joint skill.
-- `[x]` Update brain artefacts (`task.md`, `walkthrough.md`) and ledgers (`CHANGELOG.md`, `HISTORY.md`).
-- `[x]` Pull latest Google Jules updates and review PR history.
-- `[x]` Reconcile merge conflicts in brain files (`checkpoint_summary.txt`, `walkthrough.md`).
-- `[x]` Fix frontmatter OKF schema on `.agents/rules/windows-git-execution.md`.
-- `[x]` Align Semantic Compaction (`action_update_dsom.py`) with test suite requirements.
-- `[x]` Verify 100% test pass rate (724 unit tests passing).
-- `[x]` Codify Bidirectional Handover Matrix in `jules-antigravity-sync` skill.
-- `[x]` Check and clear git stashes, verify multi-remote sync (`origin`, `gitlab`).
-- `[x]` Execute End of Day (EOD) Hibernation and palace synchronization.
-- `[x]` Pull and synchronize latest changes from Google Jules (PR #77 and PR #78).
-- `[x]` Update Jules PR history ledger (`.agents/brain/jules_pr_history.md`) with PR #74, #76, #77, and #78.
-- `[x]` Validate OKF Adoption Guide cross-skill compliance and update test assertions (`test_okf_adoption_guide_cross_skill_sync.py`).
-- `[x]` Verify 100% test pass rate across entire suite (841/841 unit tests passing).
-- `[x]` Synchronize spatial brain files (`walkthrough.md`, `checkpoint_summary.txt`, `task.md`).
-- `[x]` Integrate Diátaxis 4-Quadrant Navigation Compass into `START-HERE.md` and `docs/START-HERE.md`.
-- `[x]` Author Human-to-Gemini Architectural Proposal: `docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md`.
-- `[x]` Synchronize Omni-Documentation & Ledgers (`SUMMARY.md`, `mkdocs.yml`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`, `llms.txt`).
-- `[x]` Validate 100% unit test suite passing (841/841 tests).
-- `[x]` Enable OKF v0.2 trust profile in toolchain and test suites, and opportunistically upgrade edited documents.
-- `[x]` Reinforce Rule 2, Rule 6, Rule 13, and Rule 28 in the core AI constitution (`.agents/AGENTS.md`).
-- `[x]` Authored AI Guardrails Master Reference: `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` (Entry Point 18).
-- `[x]` Authored Pre-Submission Review Catalog: `docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md`.
-- `[x]` Built, packaged, and tested `guardrails-ai-dsom` package with 10 custom validators.
-- `[x]` Fully wired `guardrails-ai-dsom` into FastMCP server, privacy-guardian, and audit-pre-flight tools.
-- `[x]` Authored Downstream Compliance Mandate: `docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md`.
-- `[x]` Deployed Universal Gateway Matrix (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`) and Git Pre-Commit Guardrails installer (`tools/install_git_guardrails.py`).
-- `[x]` Added Entry Point 19 (`docs/DSOM-EPISODIC-RECORD-TEMPLATE.md`) for Episodic Memory across omni-documentation layers.
-- `[x]` Codified Rules 28 and 29 in `.agents/AGENTS.md` and root `AGENTS.md`.
-- `[x]` Tagged and published Release v10.4.0 on GitHub and GitLab.
-- `[x]` Authored Team DSOM Masterclass (`docs/tutorials/TEAM-DSOM-MASTERCLASS.md`) for team onboarding and multi-agent collaboration.
-- `[x]` Authored and improved Team Field Notes (`docs/tutorials/NOTA-LAPANGAN-ANTIGRAVITY-DSOM.md`) incorporating Step 0 Onboarding Prompt, Model Selection Strategy, and Ansible invariants.
-- `[x]` Upgraded `dsom-project-cloner` skill to OKF v0.2, aligned with Downstream Asymmetry 6-pillar footprint, and embedded Dual-Mode scaffolding references.
-- `[x]` Ingested and adopted Google & Open Agent Plugins 1.0.0 standard specification (`agent-plugins.org/specification`).
-- `[x]` Authored `docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md` (Entry Point 20).
-- `[x]` Created canonical root `plugin.json` (schema 1.0.0) and `mcp.json` with `${PLUGIN_ROOT}` variable expansion.
-- `[x]` Created `.agents/skills/agent-plugin-packager/SKILL.md` (OKF v0.2) to automate plugin packaging.
-- `[x]` Codified Rule 30 in `.agents/AGENTS.md` and root `AGENTS.md`.
-- `[x]` Appended DTS 0.1 concise output standard to Universal Gateways (`.cursorrules`, `CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`, `.agents/AGENTS.md`).
-- `[x]` Seeded `docs-source/` with verified full content of downstream Mintlify repository `linuxmalaysia/my-knowledge-brain`.
-- `[x]` Created `scripts/sync_docs.py` with 5 non-negotiable safety guards (Guards A–E) preventing destructive syncs.
-- `[x]` Created `.github/workflows/sync-docs.yml` with automated trigger on `docs-source/**` and `workflow_dispatch` dry-run controls.
-- `[x]` Authored automated test suite `tests/test_sync_docs.py` (5/5 unit tests passing).
-- `[x]` Built and deployed automated Markdown-to-MDX compiler `tools/build_mintlify_mdx.py`, compiling 156 MDX documents and building dynamic `docs.json`.
-- `[x]` Authored unit tests `tests/test_mintlify_mdx_builder.py` (3/3 unit tests passing).
-- `[x]` Created skill `.agents/skills/mintlify-docs-compiler/SKILL.md` (OKF v0.2, 1,115 tokens).
-- `[x]` Authored master governance specification `docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md` (Entry Point 21).
-- `[x]` Codified Rule 31 (Mintlify One-Way Docs Sync & Safety Guards Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
-- `[x]` Synchronised omni-documentation layers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `CHANGELOG.md`, `HISTORY.md`).
-- `[x]` Updated `dsom-project-cloner` skill to scaffold Mintlify compiler, sync scripts, and workflows into new downstream projects.
-- `[x]` Verified 100% test pass rate across entire suite (864/864 unit tests passing).
-- `[x]` Executed End-of-Day (EOD) Hibernation and synchronized with dual remotes (GitHub `origin` & GitLab `gitlab`).
+- `[x]` Adopt `qmd-search` skill (`.agents/skills/qmd-search/SKILL.md`) following dual Lola + OKF v0.2 frontmatter specifications.
+- `[x]` Author English Diátaxis How-To Guide (`docs/how-to/install-and-use-qmd-search.md`) detailing installation, multi-project collection scoping, incremental indexing, hourly cron background sync, and MCP integration.
+- `[x]` Author Bahasa Melayu Diátaxis How-To Guide (`docs/how-to/panduan-pemasangan-dan-penggunaan-qmd.md`) detailing installation, multi-project collection scoping, incremental indexing, hourly cron background sync, and MCP integration.
+- `[x]` Register `qmd-search` skill and Diátaxis guides across all navigation registries and manifests: `.lola-req`, `AGENTS.md`, `.agents/AGENTS.md`, `START-HERE.md`, `SUMMARY.md`, `llms.txt`, `mkdocs.yml`, and `docs/how-to/index.md`.
+- `[x]` Increment skill count from 46 to 47 agent skills in `AGENTS.md` and `.agents/AGENTS.md`.
+- `[x]` Address all CodeRabbit PR review comments: parameterise MCP path examples, enforce Node.js v22+ prerequisite, ensure log directory creation in cron sync script, and fix line slice parameters.
+- `[x]` Re-compile sitemaps (`sitemap.xml`, `sitemap.txt`, `robots.txt`) across root, `docs/`, and `site/` directories using `tools/generate_sitemaps.py`.
+- `[x]` Validate 100% OKF v0.2 frontmatter compliance using `tools/validate-okf.sh` and `tools/apply_okf_frontmatter.py --require-okf-v02`.
+- `[x]` Verify relative link integrity across all Diátaxis documentation using `tools/check_docs_links.py`.
+- `[x]` Execute test suite and verify zero test regressions locally (`uv run python -m unittest discover tests`).
+- `[x]` Complete spatial brain memory updates (`task.md`, `walkthrough.md`, `palace_registry.md`, `jules_pr_history.md`) and triple-ledger updates (`README.md`, `CHANGELOG.md`, `HISTORY.md`).
 
-- `[x]` Refined `tools/build_mintlify_mdx.py` compiler adhering to User Manual site style, 1-3 word `sidebarTitle`, 130-155 char descriptions, and em-dash stripping.
-- `[x]` Configured `docs-source/.mintignore` to filter `AGENTS.md`, `AGENTS-PROMPT.md`, and drafts.
-- `[x]` Enriched `.agents/skills/mintlify-docs-compiler/SKILL.md` (OKF v0.2, 1,233 tokens) with User Manual site style rules, component guidelines, and recovery procedures.
-- `[x]` Authored `docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md` (Entry Point 22) containing the 3-manual stratification model and universal drop-in AI agent prompt.
-- `[x]` Integrated Entry Point 22 across `START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `CHANGELOG.md`, and `HISTORY.md`.
-- `[x]` Updated `dsom-project-cloner` skill (OKF v0.2, 1,852 tokens) to scaffold User Manual architecture and sync toolkit into new projects.
-- `[x]` Ingested and snapshot Context7 RAG stream to `references/llms-from-context7.txt` (8,469 lines).
-- `[x]` Enhanced FastMCP server (`tools/mcp/server.py`) with `search_code_snippets` tool and offline Context7 fallback.
-- `[x]` Authored `docs/reference/CLI-QUICK-REFERENCE.md` and compiled it to Mintlify MDX.
-- `[x]` Created `tools/fetch_context7_snapshot.py` and scheduled weekly automation workflow `.github/workflows/context7-sync.yml`.
-- `[x]` Enriched `context7-indexer` skill (OKF v0.2, 1,085 tokens) and registered tools in `docs/governance/AUTOMATION-AUDIT-LIST.md`.
-- `[x]` Verified 100% unit test pass rate across builder, sync script, and FastMCP server (`16/16 tests passing`).
-- `[x]` Executed End-of-Day (EOD) Hibernation and synchronized with dual remotes (GitHub `origin` & GitLab `gitlab`).
-- `[x]` Authored Start AI Agents Master Setup Prompt & Execution Protocol (`docs/START-AI-AGENTS-PROMPT.md`) as Entry Point 23.
-- `[x]` Synchronized omni-documentation layers and ledgers (`START-HERE.md`, `docs/START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `docs/README.md`, `CHANGELOG.md`, `HISTORY.md`).
-- `[x]` Updated root `AGENTS.md`, `.agents/AGENTS.md`, and spatial brain files (`task.md`, `walkthrough.md`, `active_context_manifest.md`).
-- `[x]` Adopted OKF v0.2 trust signals, System Protocol `/learn` Knowledge Ingestion Command, and pinned `markdownlint-cli` 0.49.1.
-- `[x]` Adopted Attested Computations in OKF v0.2 (`type: Attested Computation`) across the DSOM framework and documentation corpus based on the RedLineSoft engineering specification.
-- `[x]` Authored dedicated Diátaxis Explanation guide `docs/explanation/attested-computations-okf.md`.
-- `[x]` Integrated Attested Computations into `docs/OKF-ADOPTION-GUIDE.md` and `references/OKF-ADOPTION-GUIDE.md`.
-- `[x]` Enhanced `.agents/skills/okf-v02-adoption-engineer/SKILL.md` to support `Attested Computation` concept classification.
-- `[x]` Registered Attested Computations across navigation layers (`mkdocs.yml`, `docs/SUMMARY.md`, `SUMMARY.md`, `llms.txt`, `START-HERE.md`, `docs/explanation/index.md`).
-- `[x]` Added unit test suite `tests/test_attested_computations_okf.py` (100% pass rate).
-- `[x]` Enforce kebab-case `name` attribute across all 45 `.agents/skills/*/SKILL.md` frontmatter headers.
-- `[x]` Update `tools/apply_okf_frontmatter.py` (`normalise_metadata` and `process_file`) to derive skill `name` directly from `.agents/skills` parent directory.
-- `[x]` Add `SkillNameFrontmatterTests` in `tests/test_okf_frontmatter_bom_reorder.py` to validate kebab-case skill names.
-- `[x]` Resolve PR review comments (#5679502188, #5680362256, #5680653968) on PR #94.
-- `[x]` Update Jules PR history ledger (`.agents/brain/jules_pr_history.md`) with PR #94.
-- `[x]` Authored Council of High Intelligence DSOM Adoption Proposal: `docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md` (Entry Point 24).
-- `[x]` Registered Entry Point 24 across omni-documentation layers (`START-HERE.md`, `SUMMARY.md`, `docs/SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `.agents/brain/palace_registry.md`).
-- `[x]` Implemented `tools/council_emulator.py` as a pure Python zero-binary CLI tool (Rule 27) with PEP-257 docstrings, mode validation (`quick`, `full`, `duo`, `triad`), UK English spelling, OKF v0.2 `yaml.safe_dump` CDR generation, and `sys.stderr` log output.
-- `[x]` Exposed `run_council` via FastMCP in `tools/mcp/server.py` with strict path traversal and containment guards.
-- `[x]` Created unit test suite `tests/test_council_emulator.py` and updated `tests/test_mcp_server.py`.
-- `[x]` Updated `.github/workflows/docs-ci.yml` with retry loop and explicit exit code handling for `ansible-galaxy` installations.
-- `[x]` Executed End-of-Day (EOD) Hibernation and spatial brain synchronization (`task.md`, `walkthrough.md`, `current_state.dsom`, `palace_registry.md`).
-- `[x]` Refactor all 46 existing agent skills under `.agents/skills/` to Lola-compatible packages (`lola-ai`) with dual Lola + OKF v0.2 frontmatter metadata.
-- `[x]` Add PEP 723 inline script metadata (`# /// script`) to Python helpers across skill `scripts/` directories for self-contained `uv run` execution.
-- `[x]` Generate root `.lola-req` declarative requirements file listing all 46 skills in plain-text format with pinned `lola-ai>=0.1.0` minimum supported version comment.
-- `[x]` Implement `playbooks/install.yml` checking `which lola`, setting `chdir: "{{ playbook_dir }}/.."`, and evaluating `lola_sync_output.rc` for graceful air-gapped fallback.
-- `[x]` Author 4W1H guide `docs/explanation/lola-ai-integration-dsom.md` with a complete 46-skill summary matrix, registered in `mkdocs.yml`, `SUMMARY.md`, `docs/SUMMARY.md`, and `llms.txt`.
-- `[x]` Add test suite `tests/test_lola_integration.py` validating `.lola-req`, dual frontmatters, PEP 723 metadata, relative path decoupling (zero `file:///` or Windows drive path leaks), Ansible playbook, and 4W1H documentation.
-- `[x]` Execute End-of-Day (EOD) Hibernation, spatial brain synchronization, and sitemap regeneration.
-
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-07*
+---
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-11*

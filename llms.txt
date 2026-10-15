@@ -73,6 +73,7 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Architecture Decision Records Skill](.agents/skills/architecture-decision-records/SKILL.md): SOP for authoring MADR-compliant Architecture Decision Records (ADRs).
 - [Changelog Automation Skill](.agents/skills/changelog-automation/SKILL.md): SOP for automating Keep a Changelog releases from Conventional Commits.
 - [Council of High Intelligence Skill](.agents/skills/council-of-high-intelligence/SKILL.md): SOP for multi-perspective AI deliberation and consensus synthesis.
+- [QMD On-Device Search Skill](.agents/skills/qmd-search/SKILL.md): SOP for setting up, managing collections, incremental updates, and querying on-device documents using QMD.
 
 ## Strategy & Optimization
 - [GitOps/AIOps/Ansible Strategy](docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md): Doctrine for integrating AI planning with Defensive GitOps.
@@ -91,6 +92,8 @@ Important non-obvious constraints: AI agents must never run commands directly on
 - [Run FastMCP Server](docs/how-to/run-fastmcp-server.md): How-to for running and configuring FastMCP.
 - [Generate SEO Assets and Sitemaps](docs/how-to/generate-sitemaps-seo.md): How-to for compiling SEO sitemaps and robots.
 - [Operate OpenWiki Emulator](docs/how-to/use-openwiki-emulator.md): How-to for initializing/searching the OpenWiki.
+- [Install and Use QMD On-Device Search](docs/how-to/install-and-use-qmd-search.md): Step-by-step guide for QMD installation, multi-project collections, incremental indexing, cron background sync, and MCP setup.
+- [Panduan Lengkap Enjin Carian QMD](docs/how-to/panduan-pemasangan-dan-penggunaan-qmd.md): Panduan lengkap pemasangan, seni bina berbilang projek, pengindeksan bertahap, automasi cron, dan integrasi MCP untuk enjin carian QMD (Bahasa Melayu).
 - [Reference Material Overview](docs/reference/index.md): Structured key reference facts index.
 - [generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md): Factual reference for sitemap generator.
 - [openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md): Factual reference for OpenWiki emulator.
