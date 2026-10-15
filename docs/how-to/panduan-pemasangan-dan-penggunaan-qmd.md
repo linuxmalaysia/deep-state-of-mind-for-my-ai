@@ -195,7 +195,7 @@ qmd get qmd://oss-docs/how-to/GITEA-POSTGRESQL-PODMAN-SETUP.md:10:21
 QMD boleh disepadukan dengan ejen AI (Cursor / Claude / Gemini) melalui dua kaedah:
 
 ### A. Integrasi Alatan FastMCP Terus (`tools/mcp/server.py`)
-Pelayan DSOM FastMCP menyepadukan alatan `qmd_search` secara terbina bagi carian hibrid tempatan dengan pengasingan skop koleksi automatik:
+Pelayan DSOM FastMCP menyepadukan alatan `qmd_search` secara terbina bagi carian hibrid tempatan (perlu diperhatikan bahawa pengasingan skop koleksi tidak dibuat secara automatik dan pemanggil perlu menyerahkan parameter koleksi aktif, contohnya `collection="oss-docs"`):
 
 ```python
 # Dipanggil menerusi FastMCP server di tools/mcp/server.py

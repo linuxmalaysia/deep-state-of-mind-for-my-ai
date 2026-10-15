@@ -135,7 +135,7 @@ QMD can be integrated with AI IDEs (Cursor / Claude / Gemini) through two mechan
 
 ### A. Direct FastMCP Server Integration (`tools/mcp/server.py`)
 
-The DSOM FastMCP server includes `qmd_search` directly, enabling AI IDEs to run on-device hybrid search queries with automatic collection scoping:
+The DSOM FastMCP server includes `qmd_search` directly, enabling AI IDEs to run on-device hybrid search queries (note that collection scoping is not automatic and callers must explicitly pass the active collection parameter, e.g. `collection="myproj-docs"`):
 
 ```python
 # Executed via FastMCP server in tools/mcp/server.py

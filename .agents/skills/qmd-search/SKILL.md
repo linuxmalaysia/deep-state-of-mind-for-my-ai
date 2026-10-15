@@ -117,7 +117,7 @@ chmod +x ~/.local/bin/qmd-sync-hourly.sh
 QMD provides two integration pathways for AI IDEs (Cursor / Claude Code / Gemini):
 
 ### A. Direct FastMCP Tool Integration (`tools/mcp/server.py`)
-The DSOM FastMCP server exposes `qmd_search` directly to AI IDEs for seamless, on-device hybrid search across project collections:
+The DSOM FastMCP server exposes `qmd_search` directly to AI IDEs for seamless, on-device hybrid search across project collections (callers must explicitly specify the target collection parameter, e.g. `collection="oss-docs"`, as scoping is not automatic):
 
 ```python
 # Tool Signature in tools/mcp/server.py
