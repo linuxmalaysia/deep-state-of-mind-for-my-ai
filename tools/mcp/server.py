@@ -17,6 +17,8 @@ uv run tools/mcp/server.py
 """
 
 import os
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -264,6 +266,62 @@ def write_palace_document(relative_path: str, markdown_content: str) -> str:
     target_file.parent.mkdir(parents=True, exist_ok=True)
     target_file.write_text(clean_content, encoding="utf-8")
     return f"Successfully validated and written to {target_rel_path}"
+
+@mcp.tool()
+def qmd_search(
+    query: str,
+    collection: str = "",
+    mode: str = "query",
+    limit: int = 5
+) -> str:
+    """Executes on-device search across project collections using QMD (BM25 + Vector + LLM Re-ranking).
+
+    Args:
+        query: The search term or natural language conceptual prompt.
+        collection: Optional target QMD collection name (e.g. 'oss-docs', 'oss-agents') for scoped query performance.
+        mode: Search mode: 'query' (hybrid + reranking, default), 'search' (lexical BM25), or 'vsearch' (vector semantic).
+        limit: Maximum number of search results to return (default: 5).
+    """
+    qmd_bin = shutil.which("qmd")
+    if not qmd_bin:
+        home = Path.home()
+        fallback_qmd = home / ".npm-global" / "bin" / "qmd"
+        if fallback_qmd.is_file() and os.access(fallback_qmd, os.X_OK):
+            qmd_bin = str(fallback_qmd)
+
+    if not qmd_bin:
+        return (
+            "Error: QMD binary not found on PATH or ~/.npm-global/bin/qmd. "
+            "Please install QMD via 'npm install -g @tobilu/qmd' and pull models with 'qmd pull'."
+        )
+
+    valid_modes = {"query", "search", "vsearch"}
+    cmd_sub = mode.lower() if mode.lower() in valid_modes else "query"
+
+    cmd = [qmd_bin, cmd_sub, query]
+    if collection.strip():
+        cmd.extend(["-c", collection.strip()])
+    if limit > 0:
+        cmd.extend(["-n", str(limit)])
+
+    try:
+        res = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=30,
+            check=False
+        )
+        if res.returncode != 0:
+            err = res.stderr.strip() or res.stdout.strip()
+            return f"QMD search error (exit code {res.returncode}): {err}"
+
+        output = res.stdout.strip()
+        if not output:
+            return f"No results found for query '{query}' in QMD (mode={cmd_sub}, collection={collection or 'all'})."
+        return output
+    except Exception as e:
+        return f"Error executing QMD search: {e!s}"
 
 @mcp.tool()
 def run_council(

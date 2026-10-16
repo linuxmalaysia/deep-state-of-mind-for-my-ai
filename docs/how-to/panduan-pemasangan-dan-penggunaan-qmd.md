@@ -160,8 +160,8 @@ Dijalankan pada minit ke-0 setiap jam:
 
 ## 6. Kaedah Penggunaan & Carian (Usage Workflows)
 
-### A. Carian Khusus Projek (Scoped Search - Disyorkan)
-Gunakan bendera `-c <koleksi>` untuk mengecilkan skop carian hanya pada projek semasa:
+### A. Carian Khusus Projek (Scoped Search secara Lalai untuk Optimasi Latensi)
+Gunakan bendera `-c <koleksi>` secara **lalai** dalam skrip carian tempatan untuk meminimumkan latensi query FTS5 SQLite dan mengelakkan carian bersilang projek:
 ```bash
 # 1. Carian Hibrid (Gabungan kata kunci + makna + penarafan semula):
 qmd query "gitea podman setup postgresql" -c oss-docs
@@ -190,8 +190,19 @@ qmd get qmd://oss-docs/how-to/GITEA-POSTGRESQL-PODMAN-SETUP.md:10:21
 
 ---
 
-## 7. Integrasi Ejen AI Melalui FastMCP (`mcp_config.json`)
+## 7. Integrasi Ejen AI Melalui FastMCP (`tools/mcp/server.py` & `mcp_config.json`)
 
+QMD boleh disepadukan dengan ejen AI (Cursor / Claude / Gemini) melalui dua kaedah:
+
+### A. Integrasi Alatan FastMCP Terus (`tools/mcp/server.py`)
+Pelayan DSOM FastMCP menyepadukan alatan `qmd_search` secara terbina bagi carian hibrid tempatan (perlu diperhatikan bahawa pengasingan skop koleksi tidak dibuat secara automatik dan pemanggil perlu menyerahkan parameter koleksi aktif, contohnya `collection="oss-docs"`):
+
+```python
+# Dipanggil menerusi FastMCP server di tools/mcp/server.py
+qmd_search(query="gitea podman setup", collection="oss-docs", mode="query", limit=5)
+```
+
+### B. Konfigurasi Pelayan Stdio MCP Standalone
 QMD menyokong Model Context Protocol (MCP) secara terbina dalam melalui arahan `qmd mcp` (stdio transport).
 
 ### Konfigurasi Ejen Antigravity (`~/.gemini/config/mcp_config.json`):
