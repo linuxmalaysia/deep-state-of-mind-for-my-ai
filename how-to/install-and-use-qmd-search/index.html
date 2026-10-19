@@ -4191,10 +4191,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-multi-project-collection-registration" class="md-nav__link">
+  <a href="#2-multi-project-collection-scoping-query-latency-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Multi-Project Collection Registration
+        2. Multi-Project Collection Scoping (Query Latency Optimization)
       
     </span>
   </a>
@@ -4252,13 +4252,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-model-context-protocol-mcp-server-setup" class="md-nav__link">
+  <a href="#5-model-context-protocol-mcp-fastmcp-integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Model Context Protocol (MCP) Server Setup
+        5. Model Context Protocol (MCP) &amp; FastMCP Integration
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Model Context Protocol (MCP) &amp; FastMCP Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-direct-fastmcp-server-integration-toolsmcpserverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Direct FastMCP Server Integration (tools/mcp/server.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-standalone-stdio-mcp-server-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Standalone Stdio MCP Server Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5020,10 +5048,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-multi-project-collection-registration" class="md-nav__link">
+  <a href="#2-multi-project-collection-scoping-query-latency-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Multi-Project Collection Registration
+        2. Multi-Project Collection Scoping (Query Latency Optimization)
       
     </span>
   </a>
@@ -5081,13 +5109,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-model-context-protocol-mcp-server-setup" class="md-nav__link">
+  <a href="#5-model-context-protocol-mcp-fastmcp-integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Model Context Protocol (MCP) Server Setup
+        5. Model Context Protocol (MCP) &amp; FastMCP Integration
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Model Context Protocol (MCP) &amp; FastMCP Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-direct-fastmcp-server-integration-toolsmcpserverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Direct FastMCP Server Integration (tools/mcp/server.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-standalone-stdio-mcp-server-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Standalone Stdio MCP Server Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5149,7 +5205,8 @@ grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">'~/.npm-g
 qmd<span class="w"> </span>pull<span class="w"> </span>--progress
 </code></pre></div>
 <hr />
-<h2 id="2-multi-project-collection-registration">2. Multi-Project Collection Registration</h2>
+<h2 id="2-multi-project-collection-scoping-query-latency-optimization">2. Multi-Project Collection Scoping (Query Latency Optimization)</h2>
+<p>Utilize <code>-c &lt;collection&gt;</code> scoping <strong>by default</strong> in all local search scripts to minimize SQLite FTS5 query latency and restrict matches to the active workspace collection.</p>
 <p>Register unique collection names for each project workspace to prevent index collisions in <code>~/.cache/qmd/index.sqlite</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Register project documentation and AI agent skill directories</span>
 qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/home/user/workspace/my-project/docs<span class="w"> </span>--name<span class="w"> </span>myproj-docs
@@ -5207,8 +5264,15 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <span class="o">(</span>crontab<span class="w"> </span>-l<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"qmd-sync-hourly.sh"</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"0 * * * * /home/</span><span class="nv">$USER</span><span class="s2">/.local/bin/qmd-sync-hourly.sh"</span><span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>crontab<span class="w"> </span>-
 </code></pre></div>
 <hr />
-<h2 id="5-model-context-protocol-mcp-server-setup">5. Model Context Protocol (MCP) Server Setup</h2>
-<p>Register QMD as an MCP tool server for AI agents in <code>~/.gemini/config/mcp_config.json</code> or workspace <code>mcp.json</code>. Resolve the executable path dynamically via <code>command -v qmd</code> or fallback to <code>$HOME/.npm-global/bin/qmd</code>:</p>
+<h2 id="5-model-context-protocol-mcp-fastmcp-integration">5. Model Context Protocol (MCP) &amp; FastMCP Integration</h2>
+<p>QMD can be integrated with AI IDEs (Cursor / Claude / Gemini) through two mechanisms:</p>
+<h3 id="a-direct-fastmcp-server-integration-toolsmcpserverpy">A. Direct FastMCP Server Integration (<code>tools/mcp/server.py</code>)</h3>
+<p>The DSOM FastMCP server includes <code>qmd_search</code> directly, enabling AI IDEs to run on-device hybrid search queries (note that collection scoping is not automatic and callers must explicitly pass the active collection parameter, e.g. <code>collection="myproj-docs"</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Executed via FastMCP server in tools/mcp/server.py</span>
+<span class="n">qmd_search</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">"gitea podman setup"</span><span class="p">,</span> <span class="n">collection</span><span class="o">=</span><span class="s2">"myproj-docs"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"query"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="b-standalone-stdio-mcp-server-configuration">B. Standalone Stdio MCP Server Configuration</h3>
+<p>Register QMD as a standalone MCP tool server in <code>~/.gemini/config/mcp_config.json</code> or workspace <code>mcp.json</code>. Resolve the executable path dynamically via <code>command -v qmd</code> or fallback to <code>$HOME/.npm-global/bin/qmd</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Resolve executable location or use default user-global path</span>
 <span class="nv">QMD_PATH</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>qmd<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.npm-global/bin/qmd"</span><span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
@@ -5228,10 +5292,13 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <hr />
 <h2 id="6-verification-and-querying">6. Verification and Querying</h2>
 <p>Execute verification queries to confirm proper indexation:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># BM25 Lexical Keyword Search</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Scoped Hybrid Query (Recommended Default)</span>
+qmd<span class="w"> </span>query<span class="w"> </span><span class="s2">"architecture design"</span><span class="w"> </span>-c<span class="w"> </span>myproj-docs<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span>
+
+<span class="c1"># Scoped BM25 Lexical Keyword Search</span>
 qmd<span class="w"> </span>search<span class="w"> </span><span class="s2">"architecture"</span><span class="w"> </span>-c<span class="w"> </span>myproj-docs<span class="w"> </span>--json<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span>
 
-<span class="c1"># Semantic Vector Search</span>
+<span class="c1"># Scoped Semantic Vector Search</span>
 qmd<span class="w"> </span>vsearch<span class="w"> </span><span class="s2">"cognitive state preservation"</span><span class="w"> </span>-c<span class="w"> </span>myproj-docs<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span>
 
 <span class="c1"># Check index health and status</span>

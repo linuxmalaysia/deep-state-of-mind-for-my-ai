@@ -2979,10 +2979,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-targeted-querying-avoiding-cross-project-clutter" class="md-nav__link">
+  <a href="#2-targeted-querying-collection-scoping-latency-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Targeted Querying (Avoiding Cross-Project Clutter)
+        2. Targeted Querying &amp; Collection Scoping (Latency Optimization)
       
     </span>
   </a>
@@ -3040,13 +3040,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-model-context-protocol-mcp-integration" class="md-nav__link">
+  <a href="#5-model-context-protocol-mcp-fastmcp-integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Model Context Protocol (MCP) Integration
+        5. Model Context Protocol (MCP) &amp; FastMCP Integration
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Model Context Protocol (MCP) &amp; FastMCP Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-direct-fastmcp-tool-integration-toolsmcpserverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Direct FastMCP Tool Integration (tools/mcp/server.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-native-qmd-stdio-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Native QMD Stdio MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5037,10 +5065,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-targeted-querying-avoiding-cross-project-clutter" class="md-nav__link">
+  <a href="#2-targeted-querying-collection-scoping-latency-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Targeted Querying (Avoiding Cross-Project Clutter)
+        2. Targeted Querying &amp; Collection Scoping (Latency Optimization)
       
     </span>
   </a>
@@ -5098,13 +5126,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-model-context-protocol-mcp-integration" class="md-nav__link">
+  <a href="#5-model-context-protocol-mcp-fastmcp-integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Model Context Protocol (MCP) Integration
+        5. Model Context Protocol (MCP) &amp; FastMCP Integration
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Model Context Protocol (MCP) &amp; FastMCP Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-direct-fastmcp-tool-integration-toolsmcpserverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Direct FastMCP Tool Integration (tools/mcp/server.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-native-qmd-stdio-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Native QMD Stdio MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5174,12 +5230,15 @@ qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </
 qmd<span class="w"> </span>embed
 </code></pre></div>
 <hr />
-<h2 id="2-targeted-querying-avoiding-cross-project-clutter">2. Targeted Querying (Avoiding Cross-Project Clutter)</h2>
-<p>Target queries using <code>-c &lt;collection&gt;</code> when working within a specific project:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Lexical BM25 search</span>
+<h2 id="2-targeted-querying-collection-scoping-latency-optimization">2. Targeted Querying &amp; Collection Scoping (Latency Optimization)</h2>
+<p>Utilize QMD's <code>-c &lt;collection&gt;</code> scoping <strong>by default</strong> in local search scripts to minimize SQLite FTS5 query latency and eliminate cross-project search noise on large workspaces:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Hybrid + Reranking search with collection scoping (recommended default)</span>
+qmd<span class="w"> </span>query<span class="w"> </span><span class="s2">"gitea podman setup"</span><span class="w"> </span>-c<span class="w"> </span>&lt;proj&gt;-docs
+
+<span class="c1"># Lexical BM25 search restricted to collection</span>
 qmd<span class="w"> </span>search<span class="w"> </span><span class="s2">"keyword"</span><span class="w"> </span>-c<span class="w"> </span>&lt;proj&gt;-docs
 
-<span class="c1"># Semantic vector search</span>
+<span class="c1"># Semantic vector search restricted to collection</span>
 qmd<span class="w"> </span>vsearch<span class="w"> </span><span class="s2">"conceptual description"</span><span class="w"> </span>-c<span class="w"> </span>&lt;proj&gt;-docs
 </code></pre></div>
 <hr />
@@ -5227,8 +5286,15 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <span class="o">(</span>crontab<span class="w"> </span>-l<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"qmd-sync-hourly.sh"</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"0 * * * * /home/</span><span class="nv">$USER</span><span class="s2">/.local/bin/qmd-sync-hourly.sh"</span><span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>crontab<span class="w"> </span>-
 </code></pre></div>
 <hr />
-<h2 id="5-model-context-protocol-mcp-integration">5. Model Context Protocol (MCP) Integration</h2>
-<p>Configure <code>~/.gemini/config/mcp_config.json</code> or project <code>mcp.json</code> using the executable path resolved during setup (e.g. <code>qmd</code> on <code>PATH</code> or <code>$HOME/.npm-global/bin/qmd</code>):</p>
+<h2 id="5-model-context-protocol-mcp-fastmcp-integration">5. Model Context Protocol (MCP) &amp; FastMCP Integration</h2>
+<p>QMD provides two integration pathways for AI IDEs (Cursor / Claude Code / Gemini):</p>
+<h3 id="a-direct-fastmcp-tool-integration-toolsmcpserverpy">A. Direct FastMCP Tool Integration (<code>tools/mcp/server.py</code>)</h3>
+<p>The DSOM FastMCP server exposes <code>qmd_search</code> directly to AI IDEs for seamless, on-device hybrid search across project collections (callers must explicitly specify the target collection parameter, e.g. <code>collection="oss-docs"</code>, as scoping is not automatic):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tool Signature in tools/mcp/server.py</span>
+<span class="n">qmd_search</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">"gitea podman setup"</span><span class="p">,</span> <span class="n">collection</span><span class="o">=</span><span class="s2">"oss-docs"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"query"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="b-native-qmd-stdio-mcp-server">B. Native QMD Stdio MCP Server</h3>
+<p>Configure <code>~/.gemini/config/mcp_config.json</code> or workspace <code>mcp.json</code> using the resolved binary path:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"qmd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

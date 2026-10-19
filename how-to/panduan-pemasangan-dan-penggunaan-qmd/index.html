@@ -4383,10 +4383,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-carian-khusus-projek-scoped-search-disyorkan" class="md-nav__link">
+  <a href="#a-carian-khusus-projek-scoped-search-secara-lalai-untuk-optimasi-latensi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Carian Khusus Projek (Scoped Search - Disyorkan)
+        A. Carian Khusus Projek (Scoped Search secara Lalai untuk Optimasi Latensi)
       
     </span>
   </a>
@@ -4421,16 +4421,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-integrasi-ejen-ai-melalui-fastmcp-mcp_configjson" class="md-nav__link">
+  <a href="#7-integrasi-ejen-ai-melalui-fastmcp-toolsmcpserverpy-mcp_configjson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Integrasi Ejen AI Melalui FastMCP (mcp_config.json)
+        7. Integrasi Ejen AI Melalui FastMCP (tools/mcp/server.py &amp; mcp_config.json)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7. Integrasi Ejen AI Melalui FastMCP (mcp_config.json)">
+    <nav class="md-nav" aria-label="7. Integrasi Ejen AI Melalui FastMCP (tools/mcp/server.py &amp; mcp_config.json)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-integrasi-alatan-fastmcp-terus-toolsmcpserverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Integrasi Alatan FastMCP Terus (tools/mcp/server.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-konfigurasi-pelayan-stdio-mcp-standalone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Konfigurasi Pelayan Stdio MCP Standalone
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#konfigurasi-ejen-antigravity-geminiconfigmcp_configjson" class="md-nav__link">
@@ -5317,10 +5339,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-carian-khusus-projek-scoped-search-disyorkan" class="md-nav__link">
+  <a href="#a-carian-khusus-projek-scoped-search-secara-lalai-untuk-optimasi-latensi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Carian Khusus Projek (Scoped Search - Disyorkan)
+        A. Carian Khusus Projek (Scoped Search secara Lalai untuk Optimasi Latensi)
       
     </span>
   </a>
@@ -5355,16 +5377,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-integrasi-ejen-ai-melalui-fastmcp-mcp_configjson" class="md-nav__link">
+  <a href="#7-integrasi-ejen-ai-melalui-fastmcp-toolsmcpserverpy-mcp_configjson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Integrasi Ejen AI Melalui FastMCP (mcp_config.json)
+        7. Integrasi Ejen AI Melalui FastMCP (tools/mcp/server.py &amp; mcp_config.json)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7. Integrasi Ejen AI Melalui FastMCP (mcp_config.json)">
+    <nav class="md-nav" aria-label="7. Integrasi Ejen AI Melalui FastMCP (tools/mcp/server.py &amp; mcp_config.json)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-integrasi-alatan-fastmcp-terus-toolsmcpserverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Integrasi Alatan FastMCP Terus (tools/mcp/server.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-konfigurasi-pelayan-stdio-mcp-standalone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Konfigurasi Pelayan Stdio MCP Standalone
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#konfigurasi-ejen-antigravity-geminiconfigmcp_configjson" class="md-nav__link">
@@ -5517,8 +5561,8 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 </code></pre></div></p>
 <hr />
 <h2 id="6-kaedah-penggunaan-carian-usage-workflows">6. Kaedah Penggunaan &amp; Carian (Usage Workflows)</h2>
-<h3 id="a-carian-khusus-projek-scoped-search-disyorkan">A. Carian Khusus Projek (Scoped Search - Disyorkan)</h3>
-<p>Gunakan bendera <code>-c &lt;koleksi&gt;</code> untuk mengecilkan skop carian hanya pada projek semasa:
+<h3 id="a-carian-khusus-projek-scoped-search-secara-lalai-untuk-optimasi-latensi">A. Carian Khusus Projek (Scoped Search secara Lalai untuk Optimasi Latensi)</h3>
+<p>Gunakan bendera <code>-c &lt;koleksi&gt;</code> secara <strong>lalai</strong> dalam skrip carian tempatan untuk meminimumkan latensi query FTS5 SQLite dan mengelakkan carian bersilang projek:
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. Carian Hibrid (Gabungan kata kunci + makna + penarafan semula):</span>
 qmd<span class="w"> </span>query<span class="w"> </span><span class="s2">"gitea podman setup postgresql"</span><span class="w"> </span>-c<span class="w"> </span>oss-docs
 
@@ -5540,7 +5584,14 @@ qmd<span class="w"> </span>get<span class="w"> </span>qmd://oss-docs/how-to/GITE
 qmd<span class="w"> </span>get<span class="w"> </span>qmd://oss-docs/how-to/GITEA-POSTGRESQL-PODMAN-SETUP.md:10:21
 </code></pre></div>
 <hr />
-<h2 id="7-integrasi-ejen-ai-melalui-fastmcp-mcp_configjson">7. Integrasi Ejen AI Melalui FastMCP (<code>mcp_config.json</code>)</h2>
+<h2 id="7-integrasi-ejen-ai-melalui-fastmcp-toolsmcpserverpy-mcp_configjson">7. Integrasi Ejen AI Melalui FastMCP (<code>tools/mcp/server.py</code> &amp; <code>mcp_config.json</code>)</h2>
+<p>QMD boleh disepadukan dengan ejen AI (Cursor / Claude / Gemini) melalui dua kaedah:</p>
+<h3 id="a-integrasi-alatan-fastmcp-terus-toolsmcpserverpy">A. Integrasi Alatan FastMCP Terus (<code>tools/mcp/server.py</code>)</h3>
+<p>Pelayan DSOM FastMCP menyepadukan alatan <code>qmd_search</code> secara terbina bagi carian hibrid tempatan (perlu diperhatikan bahawa pengasingan skop koleksi tidak dibuat secara automatik dan pemanggil perlu menyerahkan parameter koleksi aktif, contohnya <code>collection="oss-docs"</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Dipanggil menerusi FastMCP server di tools/mcp/server.py</span>
+<span class="n">qmd_search</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">"gitea podman setup"</span><span class="p">,</span> <span class="n">collection</span><span class="o">=</span><span class="s2">"oss-docs"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"query"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="b-konfigurasi-pelayan-stdio-mcp-standalone">B. Konfigurasi Pelayan Stdio MCP Standalone</h3>
 <p>QMD menyokong Model Context Protocol (MCP) secara terbina dalam melalui arahan <code>qmd mcp</code> (stdio transport).</p>
 <h3 id="konfigurasi-ejen-antigravity-geminiconfigmcp_configjson">Konfigurasi Ejen Antigravity (<code>~/.gemini/config/mcp_config.json</code>):</h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
