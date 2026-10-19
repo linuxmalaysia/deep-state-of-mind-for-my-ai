@@ -10,6 +10,7 @@ status: stable
 generated: {by: "Google Jules & Harisfazillah Jamel", timestamp: "2026-10-19T07:52:00+08:00"}
 stale_after: "2027-10-19"
 spec_version: "0.2"
+concept_id: dsom_protocol_evolution_and_upstream_harmonisation_specification
 description: "Authoritative technical specification synthesising DSOM Protocol v0.1 to v0.2 evolution, single-writer partitioned memory, FastMCP integrations, multi-tier genesis, and upstream synchronisation back to deep-state-of-mind-for-my-ai."
 ---
 # Deep State of Mind (DSOM) Protocol Evolution & Upstream Harmonisation Specification
@@ -32,7 +33,7 @@ description: "Authoritative technical specification synthesising DSOM Protocol v
 
 The **Deep State of Mind (DSOM)** protocol originated in `deep-state-of-mind-for-my-ai` as a metacognitive governance framework enforcing three core pillars: **AIOps (Mind)**, **GitOps (Record)**, and **Ansible (Executor)** with the Sovereign Markdown Palace spatial index.
 
-Over six months of continuous real-world execution across 19 production enterprise repositories (CyberSecurity Malaysia, Telekom Malaysia/MCMC, CGSO e-Vetting, SSM MySSM, Universiti Malaya, and PADU TM Cloud), the protocol has advanced significantly. It has transitioned from a theoretical template into an active, multi-agent, cross-platform operational standard.
+Over six months of continuous real-world execution across 19 production enterprise repositories (spanning telecommunications, public service e-vetting, national identity platforms, higher education institutes, and cloud security environments), the protocol has advanced significantly. It has transitioned from a theoretical template into an active, multi-agent, cross-platform operational standard.
 
 This document serves as the **formal upstream proposal and harmonisation specification**. It codifies all architectural upgrades, invariants, and battle-tested tooling created in the field, providing a clean merge blueprint for `deep-state-of-mind-for-my-ai`.
 
@@ -128,7 +129,8 @@ sequenceDiagram
     AGY->>UPSTREAM: Phase 2: Refactor Spatial Brain to Single-Writer v0.2
     AGY->>UPSTREAM: Phase 3: Port Pure Python FastMCP Tooling Suite
     AGY->>UPSTREAM: Phase 4: Upgrade Onboarding Engine (dsom-onboard.sh)
-    UPSTREAM->>SIBLINGS: Phase 5: Re-sync Updated Template to Sibling Fleet
+    AGY->>UPSTREAM: Phase 5: Ingest Publication-Grade Document Compilation
+    UPSTREAM->>SIBLINGS: Phase 6: Re-sync Updated Template to Sibling Fleet
 ```
 
 ### Phase 1: Core Rulebook & Gateway Alignment
@@ -149,6 +151,7 @@ sequenceDiagram
 1. Copy the native FastMCP suite:
    - `tools/mcp/gitlab_server.py`
    - `tools/mcp/inferens_council.py`
+   - `tools/mcp/qmd_server.py`
    - `tools/mcp/requirements.txt` (pinning `mcp<2`, `httpx`, `pydantic`)
    - `tools/mcp/README.md`
 2. Add workspace-scoped configuration template: `.agents/mcp_config.json.example`.
@@ -164,23 +167,26 @@ sequenceDiagram
    - Replaces legacy GitBook/mdBook reliance with pure Pandoc + WeasyPrint publication-grade compilation.
    - Produces zero-toner-waste, executive-ready A4 PDFs and EPUBs from Markdown suites.
 
+### Phase 6: Re-syncing Sibling Repository Fleet
+1. Cascade updated DSOM baseline template to all 18 sibling repositories across the enterprise matrix using `dsom-onboard.sh`.
+
 ---
 
-## 4. Multi-Project Synchronisation Checklist
+## 4. Multi-Project Synchronisation Checklist (Representative Sample)
 
-Once `deep-state-of-mind-for-my-ai` is upgraded to DSOM Protocol v0.2 / v11.0, use this matrix to cascade improvements across the 18 other sovereign projects:
+Once `deep-state-of-mind-for-my-ai` is upgraded to DSOM Protocol v0.2 / v11.0, use this representative checklist to cascade improvements across the 18 sibling sovereign repositories:
 
-| Target Repository | Current Baseline | High-Priority Upgrade to Pull from DSOM Core |
+| Target Repository (Anonymised Category) | Current Baseline | High-Priority Upgrade to Pull from DSOM Core |
 | :--- | :--- | :--- |
-| `padu-tmcloud-data-sanitization` | DSOM v0.2 | Already aligned with latest v0.2; pull FastMCP suite for audit logs. |
-| `cbc-mcmc` | DSOM v0.1 | Upgrade from monolithic `STATE.md` to Single-Writer `state-*.md`; add OKF v0.2 frontmatter. |
-| `elasticsearch-kibana-podman` | DSOM v0.2 | Already aligned with Quadlet v10.1; pull `compile_doc.py` for architecture reports. |
-| `dr-elasticsearch-kibana-podman` | DSOM v0.1 | Align memory brain with primary CSM repo; add dual AGENTS.md. |
-| `logstash-kafka-podman` | DSOM v0.1 | Implement OKF v0.2 frontmatter across playbooks and documentation. |
-| `myssm_v4-fusio-api` | DSOM v0.2 | Pull GitLab FastMCP server for automated API issue tracking. |
-| `cgso-evetting` | DSOM v0.2 | Ensure DR route swing documentation adheres to Diátaxis reference standard. |
-| `aws-3tier-deployment-for-php-infra` | DSOM v0.1 | Upgrade to DSOM v0.2; adopt OpenTelemetry vs Dynatrace decision records. |
-| `um-elastic-cluster` & `sb-soc` | DSOM v0.1 | Refactor legacy SOC playbooks to OKF v0.2; establish single-writer brain files. |
+| `sovereign-cloud-sanitisation` | DSOM v0.2 | Already aligned with latest v0.2; pull FastMCP suite for audit logs. |
+| `telecom-mcmc-sovereign-core` | DSOM v0.1 | Upgrade from monolithic `STATE.md` to Single-Writer `state-*.md`; add OKF v0.2 frontmatter. |
+| `elastic-kibana-podman-fabric` | DSOM v0.2 | Already aligned with Quadlet v10.1; pull `compile_doc.py` for architecture reports. |
+| `dr-elastic-kibana-podman-fabric` | DSOM v0.1 | Align memory brain with primary CSM repo; add dual AGENTS.md. |
+| `logstash-kafka-podman-pipeline` | DSOM v0.1 | Implement OKF v0.2 frontmatter across playbooks and documentation. |
+| `national-api-gateway` | DSOM v0.2 | Pull GitLab FastMCP server for automated API issue tracking. |
+| `evetting-sovereign-portal` | DSOM v0.2 | Ensure DR route swing documentation adheres to Diátaxis reference standard. |
+| `aws-3tier-cloud-infra` | DSOM v0.1 | Upgrade to DSOM v0.2; adopt OpenTelemetry vs Dynatrace decision records. |
+| `academic-elastic-cluster` & `secops-soc-fabric` | DSOM v0.1 | Refactor legacy SOC playbooks to OKF v0.2; establish single-writer brain files. |
 
 ---
 
@@ -190,7 +196,7 @@ The evolution of DSOM in `opensource-software-consultant-linuxmalaysia` has tran
 
 ### Immediate Action Plan:
 1. **Approve Specification:** Review this document as the master architectural directive.
-2. **Execute Upstream PR/Commit:** Package Phase 1–5 improvements into a dedicated branch `feature/dsom-v11-field-harmonisation` inside `/home/haris/kerja/deep-state-of-mind-for-my-ai`.
+2. **Execute Upstream PR/Commit:** Package Phase 1–6 improvements into a dedicated branch `feature/dsom-v11-field-harmonisation` inside `/home/haris/kerja/deep-state-of-mind-for-my-ai`.
 3. **Run Validation Suite:** Execute OKF validation and Ansible onboarding dry-runs.
 4. **Broadcast to Fleet:** Synchronise the 18 sibling repositories using the upgraded `dsom-onboard.sh` script.
 

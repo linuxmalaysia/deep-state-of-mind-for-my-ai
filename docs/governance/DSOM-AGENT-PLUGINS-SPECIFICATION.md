@@ -5,7 +5,7 @@ title: "Agent Plugins 1.0.0 Specification & DSOM Protocol Integration"
 timestamp: "2026-08-22T19:45:00Z"
 topics: ["agent-plugins", "specification", "mcp", "skills", "interoperability", "dsom"]
 resource: "file:///docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md"
-sources: [{resource: "https://agent-plugins.org/specification", title: "Agent Plugins Specification 1.0.0", url: "https://agent-plugins.org/specification", id: source-1}, {resource: "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/", title: "Google Developers Blog: Agent Plugins package your skills, tools, and more", url: "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/", id: source-2}]
+sources: [{author: Agent Plugins Community, resource: "https://agent-plugins.org/specification", title: "Agent Plugins Specification 1.0.0", url: "https://agent-plugins.org/specification", id: source-1}, {author: Google Developers, resource: "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/", title: "Google Developers Blog: Agent Plugins package your skills, tools, and more", url: "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/", id: source-2}]
 status: stable
 generated: {by: human-and-ai, timestamp: "2026-08-22T19:45:00Z"}
 stale_after: "2027-08-22"
