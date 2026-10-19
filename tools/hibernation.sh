@@ -177,15 +177,20 @@ if true; then
     echo ""
 
     # Stage brain artifacts selectively (never blindly stage everything)
-    git -C "$REPO_ROOT" add \
-        "$BRAIN_DIR/task.md" \
-        "$BRAIN_DIR/task-openhand.md" \
-        "$BRAIN_DIR/walkthrough.md" \
-        "$BRAIN_DIR/walkthrough-openhand.md" \
-        "$HIBFILE" 2>/dev/null || true
+    for bfile in "$BRAIN_DIR/task.md" "$BRAIN_DIR/task-openhand.md" "$BRAIN_DIR/walkthrough.md" "$BRAIN_DIR/walkthrough-openhand.md" "$HIBFILE"; do
+        if [ -f "$bfile" ]; then
+            git -C "$REPO_ROOT" add "$bfile" || {
+                echo -e "${RED}❌ Failed to stage $bfile${NC}"
+                exit 1
+            }
+        fi
+    done
 
     # Also stage any other modified tracked files (but not untracked)
-    git -C "$REPO_ROOT" add -u
+    git -C "$REPO_ROOT" add -u || {
+        echo -e "${RED}❌ Failed to stage modified tracked files${NC}"
+        exit 1
+    }
 
     # Only commit if there is something to commit
     if git -C "$REPO_ROOT" diff --cached --quiet; then

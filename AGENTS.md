@@ -24,8 +24,9 @@ Welcome to the **Deep State of Mind (DSOM)** Sovereign AI Agent Workspace. If yo
 1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 32 detailed rules governing this project. The file you are reading now is a summary gateway only.
 
 2. **Access Spatial Memory:** Extend your search to all brain files located in `.agents/brain/`. Read the following files to restore full operational context:
-   - `task.md` — Active and completed task list (present state).
-   - `walkthrough.md` — Session history and Mental Anchors (past state).
+   - `task.md` & `task-openhand.md` — Active and completed task lists across agent ledgers.
+   - `walkthrough.md` & `walkthrough-openhand.md` — Session histories and Mental Anchors.
+   - `state-antigravity.md` & `state-openhand.md` — Single-Writer agent state ledgers.
    - `palace_registry.md` — The Sovereign Markdown Palace spatial index.
    - `active_context_manifest.md` — Live list of files currently in scope.
 
@@ -67,7 +68,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **The Episodic Resume Protocol (Zero Amnesia)** | AI emits a serialized `[DSOM EPISODIC RECORD]` summary block containing live commit hashes, test metrics, and cognitive delta at major milestones to guarantee zero-loss session resumes. |
 | **Agent Plugins 1.0.0 Standard** | Adheres to the vendor-neutral directory standard (`agent-plugins.org/specification`) for packaging skills, MCP servers (`mcp.json`), and manifests (`plugin.json`) across AI tools. |
 | **Mintlify One-Way Docs Sync & Safety Guards** | Compiles `docs/` and `.agents/skills/` to `docs-source/` via `tools/build_mintlify_mdx.py` and governs one-way publishing to downstream Mintlify docs repositories (`my-knowledge-brain`) with 5 non-negotiable safety guards (A–E) preventing destruction. |
-| **Single-Writer Partitioned Memory & Upstream Harmonisation** | Partitions spatial memory into single-writer ledgers (`state-antigravity.md`, `state-openhand.md`) with Read-All / Write-Mine invariants, and defines the 5-phase upstream harmonisation blueprint back to `deep-state-of-mind-for-my-ai`. |
+| **Single-Writer Partitioned Memory & Upstream Harmonisation** | Partitions spatial memory into single-writer ledgers (`state-antigravity.md`, `state-openhand.md`) with Read-All / Write-Mine invariants, and defines the 6-phase upstream harmonisation blueprint back to `deep-state-of-mind-for-my-ai`. |
 
 ---
 
