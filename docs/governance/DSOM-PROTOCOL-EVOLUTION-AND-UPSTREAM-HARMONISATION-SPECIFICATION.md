@@ -33,7 +33,7 @@ description: "Authoritative technical specification synthesising DSOM Protocol v
 
 The **Deep State of Mind (DSOM)** protocol originated in `deep-state-of-mind-for-my-ai` as a metacognitive governance framework enforcing three core pillars: **AIOps (Mind)**, **GitOps (Record)**, and **Ansible (Executor)** with the Sovereign Markdown Palace spatial index.
 
-Over six months of continuous real-world execution across 19 production enterprise repositories (spanning telecommunications, public service e-vetting, national identity platforms, higher education institutes, and cloud security environments), the protocol has advanced significantly. It has transitioned from a theoretical template into an active, multi-agent, cross-platform operational standard.
+Over six months of continuous real-world execution across 19 production enterprise repositories (spanning critical infrastructure services, public service e-vetting, national identity platforms, higher education institutes, and cloud security environments), the protocol has advanced significantly. It has transitioned from a theoretical template into an active, multi-agent, cross-platform operational standard.
 
 This document serves as the **formal upstream proposal and harmonisation specification**. It codifies all architectural upgrades, invariants, and battle-tested tooling created in the field, providing a clean merge blueprint for `deep-state-of-mind-for-my-ai`.
 
@@ -179,7 +179,7 @@ Once `deep-state-of-mind-for-my-ai` is upgraded to DSOM Protocol v0.2 / v11.0, u
 | Target Repository (Anonymised Category) | Current Baseline | High-Priority Upgrade to Pull from DSOM Core |
 | :--- | :--- | :--- |
 | `sovereign-cloud-sanitisation` | DSOM v0.2 | Already aligned with latest v0.2; pull FastMCP suite for audit logs. |
-| `telecom-mcmc-sovereign-core` | DSOM v0.1 | Upgrade from monolithic `STATE.md` to Single-Writer `state-*.md`; add OKF v0.2 frontmatter. |
+| `public-warning-system-core` | DSOM v0.1 | Upgrade from monolithic `STATE.md` to Single-Writer `state-*.md`; add OKF v0.2 frontmatter. |
 | `elastic-kibana-podman-fabric` | DSOM v0.2 | Already aligned with Quadlet v10.1; pull `compile_doc.py` for architecture reports. |
 | `dr-elastic-kibana-podman-fabric` | DSOM v0.1 | Align memory brain with primary CSM repo; add dual AGENTS.md. |
 | `logstash-kafka-podman-pipeline` | DSOM v0.1 | Implement OKF v0.2 frontmatter across playbooks and documentation. |
