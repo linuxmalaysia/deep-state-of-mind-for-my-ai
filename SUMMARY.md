@@ -62,6 +62,7 @@ spec_version: "0.2"
 * [🌿 Mintlify One-Way Docs Sync & Safety Guards Specification](docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md)
 * [📖 Mintlify User Manual Architecture & One-Way Sync Guide](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md)
 * [🏛️ Council of High Intelligence DSOM Adoption Proposal](docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md)
+* [🔄 DSOM Protocol Evolution & Upstream Harmonisation Specification](docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md)
 
 ## 🌅 2. Operational Rituals
 

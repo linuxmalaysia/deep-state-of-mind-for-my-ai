@@ -563,6 +563,7 @@ Once Step 6 is complete, the AI knows:
 | [`docs/governance/NOSS-INTEGRATION-GUIDE.md`](docs/governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
 | [`docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md`](docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md) | 🌿 **Mintlify One-Way Sync Pipeline** — Safety-guarded automated publishing to downstream Mintlify documentation sites |
 | [`docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md`](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md) | 📖 **Mintlify User Manual Sync Guide** — Reusable 3-manual architecture and universal AI prompt for downstream repositories |
+| [`docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md`](docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md) | 🔄 **Upstream Harmonisation Specification** — Single-writer partitioned spatial memory, pure Python FastMCP suite, and 5-phase merge blueprint |
 | [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |

@@ -5,12 +5,12 @@ title: "Mintlify One-Way Docs Sync & Safety Guards Specification"
 timestamp: "2026-08-22T22:42:00Z"
 topics: ["mintlify", "sync", "governance", "mdx", "safety-guards", "gitops"]
 resource: "/docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md"
-sources: [{resource: 'https://mintlify.com/docs', title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///scripts/sync_docs.py", "file:///tools/build_mintlify_mdx.py", "file:///.github/workflows/sync-docs.yml"]
+sources: [{resource: "https://mintlify.com/docs", title: Mintlify Documentation, url: "https://mintlify.com/docs", id: source-1}, {id: source-2, title: "file:///scripts/sync_docs.py", resource: "file:///scripts/sync_docs.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/file:///scripts/sync_docs.py", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: "file:///tools/build_mintlify_mdx.py", resource: "file:///tools/build_mintlify_mdx.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/file:///tools/build_mintlify_mdx.py", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-4, title: "file:///.github/workflows/sync-docs.yml", resource: "file:///.github/workflows/sync-docs.yml", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/file:///.github/workflows/sync-docs.yml", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+status: stable
+generated: {by: human-and-ai, timestamp: "2026-08-22T22:42:00Z"}
+stale_after: "2027-08-22"
 spec_version: "0.2"
-generated: human-and-ai
 verified: verified
-status: authoritative
-stale_after: "2027-08-22T22:42:00Z"
 description: "Master governance specification for automated Markdown-to-MDX compilation and deterministic one-way sync to Mintlify downstream repositories under 5 non-negotiable safety guards."
 ---
 # Mintlify One-Way Docs Sync & Safety Guards Specification

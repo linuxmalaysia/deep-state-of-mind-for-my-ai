@@ -5,16 +5,13 @@ title: "Technical Book Design & PDF Compilation Master Prompt Guide"
 timestamp: "2026-09-04T21:15:00Z"
 topics: ["pandoc", "pdf", "handbook", "prompt", "print-optimized", "mermaid", "ebook", "diataxis"]
 resource: "/docs/governance/TECHNICAL-BOOK-DESIGN-AND-PDF-COMPILER-PROMPT-GUIDE.md"
-sources: [{id: dsom_agents_rulebook, path: .agents/AGENTS.md, title: The Core AI Rulebook (DSOM
-    Rule 11 & Rule 22)}, {id: dsom_technical_book_compiler_skill, path: .agents/skills/dsom-technical-book-compiler/SKILL.md,
-  title: Technical Ebook & Handbook Compiler Skill}, {id: build_mcmc_ansible_book_script, path: tools/build_mcmc_ansible_book.py, title: MCMC
-    Ansible Book Compiler Implementation}]
+sources: [{id: dsom_agents_rulebook, path: ".agents/AGENTS.md", title: "The Core AI Rulebook (DSOM Rule 11 & Rule 22)", resource: ".agents/AGENTS.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md", author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: dsom_technical_book_compiler_skill, path: ".agents/skills/dsom-technical-book-compiler/SKILL.md", title: "Technical Ebook & Handbook Compiler Skill", resource: ".agents/skills/dsom-technical-book-compiler/SKILL.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/dsom-technical-book-compiler/SKILL.md", author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: build_mcmc_ansible_book_script, path: "tools/build_mcmc_ansible_book.py", title: MCMC Ansible Book Compiler Implementation, resource: "tools/build_mcmc_ansible_book.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/build_mcmc_ansible_book.py", author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+status: stable
+generated: {by: Antigravity Cognitive Digital Twin, timestamp: "2026-09-04T21:15:00Z"}
+stale_after: "2027-09-04"
 spec_version: "0.2"
 description: "Master operational prompt and technical blueprint for compiling multi-file Markdown documentation suites into publication-grade, print-optimized PDF, HTML, EPUB, and ODT handbooks using Pandoc, Headless Chromium, and the Terminal & Cloud design framework."
-status: stable
-stale_after: "2027-09-04"
-generated: {by: Antigravity Cognitive Digital Twin, timestamp: '2026-09-04T21:15:00Z'}
-verified: {by: Harisfazillah Jamel (LinuxMalaysia), timestamp: '2026-09-04T21:15:00Z'}
+verified: {by: "Harisfazillah Jamel (LinuxMalaysia)", timestamp: "2026-09-04T21:15:00Z"}
 ---
 # Technical Book Design & PDF Compilation Master Prompt Guide
 

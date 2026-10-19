@@ -5,13 +5,13 @@ title: "🛡️ The Master Guide to AI Guardrails & Custom Validators (DSOM Prot
 timestamp: "2026-08-22T07:10:00Z"
 topics: ["guardrails", "validation", "ast", "mcp", "dsom", "twilight-state", "security", "okf"]
 resource: "file:///docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md"
-sources: ["https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", "docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md", "docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md", "docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md", ".agents/AGENTS.md"]
+sources: [{id: source-1, title: "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", resource: "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", url: "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", type: external_spec}, {id: source-2, title: "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", resource: "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", resource: "docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-4, title: "docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md", resource: "docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-5, title: "docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md", resource: "docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-6, title: "docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md", resource: "docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-7, title: ".agents/AGENTS.md", resource: ".agents/AGENTS.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+status: stable
+generated: {by: google-antigravity, timestamp: "2026-08-22T07:10:00Z"}
+stale_after: "2027-08-22"
 spec_version: "0.2"
 description: "The definitive, comprehensive master guide to AI guardrails and custom validator architectures in the Deep State of Mind (DSOM) framework, combining the Guardrails AI framework with DSOM's native lightweight runtime."
-generated: google-antigravity
 verified: true
-status: approved
-stale_after: "2027-08-22T00:00:00Z"
 ---
 # 🛡️ The Master Guide to AI Guardrails & Custom Validators (DSOM Protocol)
 

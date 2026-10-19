@@ -5,13 +5,13 @@ title: "🛡️ DSOM Guardrail Catalog & Guardrails AI Submission Review Documen
 timestamp: "2026-08-22T07:15:00Z"
 topics: ["guardrails", "guardrails-hub", "dsom", "validation", "pypi", "security", "okf", "ast"]
 resource: "file:///docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md"
-sources: ["https://guardrailsai.com/guardrails/docs", "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", ".agents/AGENTS.md"]
+sources: [{id: source-1, title: "https://guardrailsai.com/guardrails/docs", resource: "https://guardrailsai.com/guardrails/docs", url: "https://guardrailsai.com/guardrails/docs", type: external_spec}, {id: source-2, title: "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", resource: "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", url: "https://guardrailsai.com/guardrails/docs/how-to-guides/custom_validators", type: external_spec}, {id: source-3, title: "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", resource: "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-4, title: "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", resource: "docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-5, title: ".agents/AGENTS.md", resource: ".agents/AGENTS.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+status: stable
+generated: {by: google-antigravity, timestamp: "2026-08-22T07:15:00Z"}
+stale_after: "2027-08-22"
 spec_version: "0.2"
 description: "Comprehensive catalog and publication roadmap for the 10 DSOM Guardrails, prepared for human review and packaging as standalone PyPI packages under the Guardrails AI ecosystem."
-generated: google-antigravity
 verified: true
-status: approved
-stale_after: "2027-08-22T00:00:00Z"
 ---
 # 🛡️ DSOM Guardrail Catalog & Guardrails AI Submission Review Document
 

@@ -5,13 +5,13 @@ title: "Downstream DSOM Protocol Compliance & Cross-Agent Honor Mandate"
 timestamp: "2026-08-22T10:45:00Z"
 topics: ["dsom", "governance", "downstream", "ai-alignment", "compliance", "guardrails", "multi-agent"]
 resource: "file:///docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md"
-sources: ["docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md", "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", "START-HERE.md", ".agents/AGENTS.md"]
+sources: [{id: source-1, title: "docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md", resource: "docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-2, title: "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", resource: "docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: "START-HERE.md", resource: "START-HERE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/START-HERE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-4, title: ".agents/AGENTS.md", resource: ".agents/AGENTS.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+status: stable
+generated: {by: google-antigravity, timestamp: "2026-08-22T10:45:00Z"}
+stale_after: "2027-08-22"
 spec_version: "0.2"
 description: "Strategic blueprint and actionable mechanics for ensuring downstream repositories using DSOM as their cognitive brain compel external AI agents and human contributors to recognize, learn from, and strictly honor the DSOM protocol."
-generated: google-antigravity
 verified: true
-status: proposed
-stale_after: "2027-08-22T00:00:00Z"
 ---
 # Downstream DSOM Protocol Compliance & Cross-Agent Honor Mandate
 
