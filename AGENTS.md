@@ -68,7 +68,7 @@ The DSOM framework operates on digital sovereignty, structured metacognition, an
 | **The Episodic Resume Protocol (Zero Amnesia)** | AI emits a serialized `[DSOM EPISODIC RECORD]` summary block containing live commit hashes, test metrics, and cognitive delta at major milestones to guarantee zero-loss session resumes. |
 | **Agent Plugins 1.0.0 Standard** | Adheres to the vendor-neutral directory standard (`agent-plugins.org/specification`) for packaging skills, MCP servers (`mcp.json`), and manifests (`plugin.json`) across AI tools. |
 | **Mintlify One-Way Docs Sync & Safety Guards** | Compiles `docs/` and `.agents/skills/` to `docs-source/` via `tools/build_mintlify_mdx.py` and governs one-way publishing to downstream Mintlify docs repositories (`my-knowledge-brain`) with 5 non-negotiable safety guards (A–E) preventing destruction. |
-| **Single-Writer Partitioned Memory & Upstream Harmonisation** | Partitions spatial memory into single-writer ledgers (`state-antigravity.md`, `state-openhand.md`) with Read-All / Write-Mine invariants, and defines the 6-phase upstream harmonisation blueprint back to `deep-state-of-mind-for-my-ai`. |
+| **Single-Writer Partitioned Memory & Upstream Harmonisation** | Partitions spatial memory into single-writer ledgers (`state-antigravity.md`, `state-openhand.md`) with Read-All / Write-Mine invariants (Google Jules writes via PR branches and `.agents/brain/jules_pr_history.md`), and defines the 6-phase upstream harmonisation blueprint back to `deep-state-of-mind-for-my-ai`. |
 
 ---
 
