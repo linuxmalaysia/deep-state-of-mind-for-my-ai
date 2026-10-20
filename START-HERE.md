@@ -302,7 +302,7 @@ To configure your AI client, point it to our `uv`-managed server script:
 
 **Read This First:** [`docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md`](docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md) (Live URL: [`https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION/`](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION/))
 
-**Why it matters:** Codifies field breakthroughs from 19 enterprise production repositories including single-writer spatial memory ledgers (`state-antigravity.md`, `state-openhand.md`), pure Python FastMCP tools, OKF v0.2 discovery flow, multi-tier genesis, and the 5-phase upstream merge blueprint.
+**Why it matters:** Codifies field breakthroughs from 19 enterprise production repositories including single-writer spatial memory ledgers (`state-antigravity.md`, `state-openhand.md`), pure Python FastMCP tools, OKF v0.2 discovery flow, multi-tier genesis, and the 6-phase upstream merge blueprint.
 
 ---
 *Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-19*

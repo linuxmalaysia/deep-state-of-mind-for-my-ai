@@ -24,11 +24,12 @@ Welcome to the **Deep State of Mind (DSOM)** Sovereign AI Agent Workspace. If yo
 1. **Read the Full Rulebook:** Navigate immediately to [`.agents/AGENTS.md`](.agents/AGENTS.md). This is the **Cognitive Entry Point** — the Master Rulebook containing the absolute laws, operational persona, writing styles, and all 32 detailed rules governing this project. The file you are reading now is a summary gateway only.
 
 2. **Access Spatial Memory:** Extend your search to all brain files located in `.agents/brain/`. Read the following files to restore full operational context:
-   - `task.md` & `task-openhand.md` — Active and completed task lists across agent ledgers.
-   - `walkthrough.md` & `walkthrough-openhand.md` — Session histories and Mental Anchors.
+   - `task.md` & `task-openhand.md` — Active and completed task lists across agent ledgers (`task.md` owned by primary local lead).
+   - `walkthrough.md` & `walkthrough-openhand.md` — Session histories and Mental Anchors (`walkthrough.md` owned by primary local lead).
    - `state-antigravity.md` & `state-openhand.md` — Single-Writer agent state ledgers.
    - `palace_registry.md` — The Sovereign Markdown Palace spatial index.
    - `active_context_manifest.md` — Live list of files currently in scope.
+   *(Note: `.agents/brain/jules_pr_history.md` is an archival reference ledger excluded from the boot read set).*
 
 3. **Execute the Mechanical Boot Sequence:** Upon initialization, the AI must orient itself in this strict order:
    1. **Genesis Read:** `.agents/AGENTS.md` (Establish identity and laws).

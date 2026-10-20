@@ -83,7 +83,7 @@ class GuardrailsOKFBOMValidator(Validator):
 * **Threat Vector:** LLMs creating or updating documentation without provenance metadata, leading to unverified hallucinations and stale architectural drift.
 * **Validation Logic:**
   1. Parses YAML frontmatter into a dictionary.
-  2. If `okf_version: 0.2`, asserts all 6 trust fields exist: `sources` (list of mappings containing `id`, `title`, `author`, and `url`), `generated` (mapping containing `by` and `timestamp`), `verified` (bool), `status` (string restricted to `stable` or `draft`), `stale_after` (date-only `YYYY-MM-DD` string), `topics` (list of 3-5 tags).
+  2. If `okf_version: 0.2`, asserts all required OKF v0.2 fields exist matching `validate_okf_v02_metadata`: `spec_version`, snake_case `concept_id`, non-empty `sources` (list of mappings containing `id`, `title`, `author`, and `url`), `generated` (mapping containing non-empty `by` and UTC `timestamp` or `at`), `status` (restricted to `draft`, `stable`, or `deprecated`), and `stale_after` date string.
 * **Guardrails AI Class:** `GuardrailsOKFTrustValidator`
 * **On-Fail Actions:** `reask` (prompts LLM to supply missing source links and verification status).
 
