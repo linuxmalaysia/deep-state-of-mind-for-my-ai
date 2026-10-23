@@ -10,7 +10,7 @@ import pathlib
 import subprocess
 import sys
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 # Ensure tools/mcp is on Python path
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent

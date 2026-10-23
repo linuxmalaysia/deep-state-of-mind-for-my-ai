@@ -19,7 +19,7 @@ import re
 import stat
 import sys
 import tempfile
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from urllib.parse import urlparse
 
 import yaml
@@ -255,14 +255,14 @@ def normalise_metadata(
     # 4. timestamp
     timestamp = existing_frontmatter.get('timestamp')
     if not timestamp:
-        timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+        timestamp = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
     else:
         if isinstance(timestamp, str):
             pass
         elif isinstance(timestamp, datetime):
             if timestamp.tzinfo is None:
-                timestamp = timestamp.replace(tzinfo=timezone.utc)
-            timestamp = timestamp.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+                timestamp = timestamp.replace(tzinfo=UTC)
+            timestamp = timestamp.astimezone(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
         else:
             timestamp = str(timestamp)
 
@@ -375,8 +375,8 @@ def normalise_metadata(
             gen_ts = generated.get('timestamp') or generated.get('at') or timestamp
             if isinstance(gen_ts, datetime):
                 if gen_ts.tzinfo is None:
-                    gen_ts = gen_ts.replace(tzinfo=timezone.utc)
-                gen_ts = gen_ts.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+                    gen_ts = gen_ts.replace(tzinfo=UTC)
+                gen_ts = gen_ts.astimezone(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
             elif not isinstance(gen_ts, str):
                 gen_ts = timestamp
             generated = {
@@ -437,8 +437,8 @@ def normalise_metadata(
         if k not in updated_frontmatter:
             if isinstance(v, datetime):
                 if v.tzinfo is None:
-                    v = v.replace(tzinfo=timezone.utc)
-                v = v.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+                    v = v.replace(tzinfo=UTC)
+                v = v.astimezone(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
             updated_frontmatter[k] = v
 
     if require_okf_v02:

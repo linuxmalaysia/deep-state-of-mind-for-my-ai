@@ -29,7 +29,7 @@ OPENWIKI_DIR = REPO_ROOT / "openwiki"
 
 
 def get_timestamp() -> str:
-    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def ensure_openwiki_dirs():
