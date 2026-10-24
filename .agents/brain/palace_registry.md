@@ -45,7 +45,7 @@ This registry serves as the index (Open Knowledge Format (OKF) v0.1 compliant) f
 
 - **Room: `room_dsom_protocol`**
   *Path:* `hall_facts/room_dsom_protocol/closet.md`
-  *Context:* Core protocol docs — SOD/EOD rituals, RITUAL-OF-TRANSITION, AI-MASTER-PROTOCOL laws, README/SUMMARY evolution, Tri-Phasic Mind model, and Council of High Intelligence proposal.
+  *Context:* Core protocol docs — SOD/EOD rituals, RITUAL-OF-TRANSITION, AI-MASTER-PROTOCOL laws, README/SUMMARY evolution, Tri-Phasic Mind model, Council of High Intelligence proposal, and DSOM Protocol Evolution & Upstream Harmonisation Specification.
 
 - **Room: `room_tooling`** *(NEW — Backfill 2026-04-08)*
   *Path:* `hall_facts/room_tooling/closet.md`
