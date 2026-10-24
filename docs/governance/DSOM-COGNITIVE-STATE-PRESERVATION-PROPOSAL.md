@@ -5,13 +5,13 @@ title: "DSOM Cognitive State Preservation & Minimal Downstream Adoption Architec
 timestamp: "2026-08-21T20:18:00Z"
 topics: ["dsom", "governance", "proposal", "diataxis", "okf", "memory", "token-optimisation"]
 resource: "file:///docs/governance/DSOM-COGNITIVE-STATE-PRESERVATION-PROPOSAL.md"
-sources: ["docs/OKF-ADOPTION-GUIDE.md", "START-HERE.md", ".agents/AGENTS.md"]
+sources: [{id: source-1, title: "docs/OKF-ADOPTION-GUIDE.md", resource: "docs/OKF-ADOPTION-GUIDE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/OKF-ADOPTION-GUIDE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-2, title: "START-HERE.md", resource: "START-HERE.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/START-HERE.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: ".agents/AGENTS.md", resource: ".agents/AGENTS.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/AGENTS.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+status: stable
+generated: {by: google-antigravity, timestamp: "2026-08-21T20:18:00Z"}
+stale_after: "2027-08-21"
 spec_version: "0.2"
 description: "A foundational human-to-Gemini proposal on preserving AI cognitive state across sessions, establishing minimal DSOM adoption for downstream projects without documentation bloat, and enforcing token minimization via Git-native memory storage."
-generated: google-antigravity
 verified: true
-status: approved
-stale_after: "2027-08-21T00:00:00Z"
 ---
 # DSOM Cognitive State Preservation & Minimal Downstream Adoption Architecture
 

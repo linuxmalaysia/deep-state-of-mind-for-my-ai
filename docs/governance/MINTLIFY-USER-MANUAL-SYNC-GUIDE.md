@@ -5,12 +5,12 @@ title: "Mintlify User Manual Architecture & One-Way Sync Guide"
 timestamp: "2026-08-23T07:02:00Z"
 topics: ["mintlify", "user-manual", "sync", "mdx", "safety-guards", "automation", "gitops"]
 resource: "/docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md"
-sources: [{resource: 'https://mintlify.com/docs', title: Mintlify Documentation, url: 'https://mintlify.com/docs'}, "file:///tools/build_mintlify_mdx.py", "file:///scripts/sync_docs.py", "file:///.github/workflows/sync-docs.yml", "file:///.agents/skills/mintlify-docs-compiler/SKILL.md"]
+sources: [{author: Mintlify, resource: "https://mintlify.com/docs", title: Mintlify Documentation, url: "https://mintlify.com/docs", id: source-1}, {id: source-2, title: "tools/build_mintlify_mdx.py", resource: "tools/build_mintlify_mdx.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/tools/build_mintlify_mdx.py", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-3, title: "scripts/sync_docs.py", resource: "scripts/sync_docs.py", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/scripts/sync_docs.py", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-4, title: ".github/workflows/sync-docs.yml", resource: ".github/workflows/sync-docs.yml", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.github/workflows/sync-docs.yml", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}, {id: source-5, title: ".agents/skills/mintlify-docs-compiler/SKILL.md", resource: ".agents/skills/mintlify-docs-compiler/SKILL.md", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/.agents/skills/mintlify-docs-compiler/SKILL.md", type: repository_file, author: "Harisfazillah Jamel (LinuxMalaysia)"}]
+status: stable
+generated: {by: human-and-ai, timestamp: "2026-08-23T07:02:00Z"}
+stale_after: "2027-08-23"
 spec_version: "0.2"
-generated: human-and-ai
 verified: verified
-status: authoritative
-stale_after: "2027-08-23T07:02:00Z"
 description: "Comprehensive blueprint and universal AI agent prompt for producing user, admin, and developer manuals with automated MDX compilation and guarded one-way Mintlify sync."
 ---
 # Mintlify User Manual Architecture & One-Way Sync Guide

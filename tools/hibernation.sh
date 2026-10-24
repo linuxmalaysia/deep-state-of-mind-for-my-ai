@@ -48,6 +48,7 @@ fi
 BRAIN_DIR="$REPO_ROOT/.agents/brain"
 TASK_FILE="$BRAIN_DIR/task.md"
 WALKTHROUGH_FILE="$BRAIN_DIR/walkthrough.md"
+WALKTHROUGH_OPENHAND_FILE="$BRAIN_DIR/walkthrough-openhand.md"
 DATE_STAMP=$(date +"%Y-%m-%d")
 TIME_STAMP=$(date +"%Y-%m-%d_%H%M")
 HIBFILE="$BRAIN_DIR/hibernation-notes-${DATE_STAMP}.txt"
@@ -63,20 +64,27 @@ ABORT=0
 
 # 2. Safety Checks
 echo -e "${YELLOW}🔍 [1/4] Checking Task List...${NC}"
-if grep -q "\[x\]" "$TASK_FILE" 2>/dev/null; then
-    echo -e "${GREEN}  ✅ Progress detected in task.md.${NC}"
+if grep -q "\[x\]" "$TASK_FILE" 2>/dev/null || grep -q "\[x\]" "$BRAIN_DIR/task-openhand.md" 2>/dev/null; then
+    echo -e "${GREEN}  ✅ Progress detected in task ledgers.${NC}"
 else
-    echo -e "${YELLOW}  ⚠️  WARNING: No completed tasks found in task.md. Did you forget to update it?${NC}"
+    echo -e "${YELLOW}  ⚠️  WARNING: No completed tasks found in task.md or task-openhand.md. Did you forget to update it?${NC}"
 fi
 
 echo ""
-echo -e "${YELLOW}🔍 [2/4] Checking Session Anchor in walkthrough.md...${NC}"
+echo -e "${YELLOW}🔍 [2/4] Checking Session Anchor in walkthrough.md or walkthrough-openhand.md...${NC}"
+FOUND_ANCHOR=0
 if grep -q "$DATE_STAMP" "$WALKTHROUGH_FILE" 2>/dev/null; then
     echo -e "${GREEN}  ✅ Session Anchor for $DATE_STAMP found in walkthrough.md.${NC}"
-else
-    echo -e "${RED}  ❌ CRITICAL: No Session Anchor for $DATE_STAMP found in walkthrough.md!${NC}"
+    FOUND_ANCHOR=1
+elif grep -q "$DATE_STAMP" "$WALKTHROUGH_OPENHAND_FILE" 2>/dev/null; then
+    echo -e "${GREEN}  ✅ Session Anchor for $DATE_STAMP found in walkthrough-openhand.md.${NC}"
+    FOUND_ANCHOR=1
+fi
+
+if [ $FOUND_ANCHOR -eq 0 ]; then
+    echo -e "${RED}  ❌ CRITICAL: No Session Anchor for $DATE_STAMP found in walkthrough.md or walkthrough-openhand.md!${NC}"
     echo -e "${RED}     You MUST add today's Mental Anchor before hibernating.${NC}"
-    echo -e "${YELLOW}     Add a section like: '## Mental Anchor — $DATE_STAMP' to walkthrough.md.${NC}"
+    echo -e "${YELLOW}     Add a section like: '## Mental Anchor — $DATE_STAMP' to walkthrough.md or walkthrough-openhand.md.${NC}"
     ABORT=1
 fi
 
@@ -169,13 +177,20 @@ if true; then
     echo ""
 
     # Stage brain artifacts selectively (never blindly stage everything)
-    git -C "$REPO_ROOT" add \
-        "$BRAIN_DIR/task.md" \
-        "$BRAIN_DIR/walkthrough.md" \
-        "$HIBFILE" 2>/dev/null || true
+    for bfile in "$BRAIN_DIR/task.md" "$BRAIN_DIR/task-openhand.md" "$BRAIN_DIR/walkthrough.md" "$BRAIN_DIR/walkthrough-openhand.md" "$HIBFILE"; do
+        if [ -f "$bfile" ]; then
+            git -C "$REPO_ROOT" add "$bfile" || {
+                echo -e "${RED}❌ Failed to stage $bfile${NC}"
+                exit 1
+            }
+        fi
+    done
 
     # Also stage any other modified tracked files (but not untracked)
-    git -C "$REPO_ROOT" add -u
+    git -C "$REPO_ROOT" add -u || {
+        echo -e "${RED}❌ Failed to stage modified tracked files${NC}"
+        exit 1
+    }
 
     # Only commit if there is something to commit
     if git -C "$REPO_ROOT" diff --cached --quiet; then

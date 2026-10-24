@@ -120,7 +120,7 @@ def generate_llms_context_xml(files: list[tuple[str, Path]], output_path: Path, 
     print(f"Generating XML context file at {output_path}...")
 
     root = ET.Element("context")
-    current_utc_time = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    current_utc_time = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     root.set("timestamp", current_utc_time)
     root.set("total_files", str(len(files)))
 

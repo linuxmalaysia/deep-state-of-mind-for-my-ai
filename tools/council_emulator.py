@@ -34,7 +34,7 @@ VALID_MODES = {"quick", "full", "duo", "triad"}
 
 def get_timestamp() -> str:
     """Returns ISO 8601 UTC timestamp string ending with Z."""
-    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def _slugify(text: str) -> str:

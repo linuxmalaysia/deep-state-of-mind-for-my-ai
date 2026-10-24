@@ -5,7 +5,7 @@ Validates all 10 DSOM Sovereign Custom Validators.
 
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 # Add src to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
@@ -77,7 +77,7 @@ title: "Test"
 
 def test_guardrail_3_sovereign_signature():
     val = GuardrailsSovereignSignatureValidator(on_fail="fix")
-    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today_str = datetime.now(UTC).strftime("%Y-%m-%d")
 
     # Text with stale date
     stale_text = """# Header

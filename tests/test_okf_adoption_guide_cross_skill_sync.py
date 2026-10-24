@@ -31,6 +31,7 @@ import pathlib
 import re
 import unittest
 import xml.etree.ElementTree as ET
+from datetime import UTC
 
 import yaml  # type: ignore
 
@@ -186,7 +187,7 @@ class SkillFrontmatterTimestampTests(unittest.TestCase):
     """Every touched skill's frontmatter `timestamp` must be bumped."""
 
     def test_timestamp_valid_august_2026_range(self):
-        from datetime import datetime, timezone
+        from datetime import datetime
         for name, path in SKILL_PATHS.items():
             with self.subTest(skill=name):
                 content = path.read_text(encoding="utf-8")
@@ -195,8 +196,8 @@ class SkillFrontmatterTimestampTests(unittest.TestCase):
                 ts = parsed.get("timestamp")
                 self.assertIsInstance(ts, str)
                 parsed_dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
-                self.assertGreaterEqual(parsed_dt, datetime(2026, 8, 1, tzinfo=timezone.utc))
-                self.assertLessEqual(parsed_dt, datetime(2026, 8, 31, 23, 59, 59, tzinfo=timezone.utc))
+                self.assertGreaterEqual(parsed_dt, datetime(2026, 8, 1, tzinfo=UTC))
+                self.assertLessEqual(parsed_dt, datetime(2026, 8, 31, 23, 59, 59, tzinfo=UTC))
 
     def test_footer_signature_date_bumped(self):
         for name, path in SKILL_PATHS.items():

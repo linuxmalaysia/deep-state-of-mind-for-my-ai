@@ -5,14 +5,12 @@ title: "Council of High Intelligence: DSOM Adoption Proposal & Architectural Des
 timestamp: "2026-09-19T00:00:00Z"
 topics: ["dsom", "governance", "council-of-intelligence", "deliberation", "multi-agent", "tri-phasic-mind", "attested-computations"]
 resource: "file:///docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md"
-sources: [{author: 0xnyk, id: council_repo, resource: 'https://github.com/0xnyk/council-of-high-intelligence',
-  title: Council of High Intelligence, url: 'https://github.com/0xnyk/council-of-high-intelligence'}, {author: Redlinesoft, id: attested_computations_post, resource: 'https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/',
-  title: Attested Computations in Open Knowledge Format, url: 'https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/'}]
+sources: [{author: 0xnyk, id: council_repo, resource: "https://github.com/0xnyk/council-of-high-intelligence", title: Council of High Intelligence, url: "https://github.com/0xnyk/council-of-high-intelligence"}, {author: Redlinesoft, id: attested_computations_post, resource: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/", title: Attested Computations in Open Knowledge Format, url: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/"}]
+status: stable
+generated: {by: "Google Jules & Antigravity", timestamp: "2026-09-19T00:00:00Z"}
+stale_after: "2027-09-19"
 spec_version: "0.2"
 description: "Architectural blueprint and governance proposal for adopting the 18-member Council of High Intelligence multi-perspective deliberation framework into the DSOM engine."
-status: stable
-stale_after: "2027-09-19"
-generated: {by: Google Jules & Antigravity, timestamp: '2026-09-19T00:00:00Z'}
 ---
 # 🏛️ Council of High Intelligence: DSOM Adoption Proposal & Architectural Design
 

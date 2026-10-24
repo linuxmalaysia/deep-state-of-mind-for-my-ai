@@ -77,13 +77,13 @@ Bagi mengelakkan kekeliruan hasil carian (*cross-project clutter*), setiap proje
                                 │
         ┌───────────────────────┼───────────────────────┐
         ▼                       ▼                       ▼
-  [ oss-docs ]            [ cbc-mcmc-docs ]       [ aws-php-docs ]
-  qmd://oss-docs/         qmd://cbc-mcmc-docs/    qmd://aws-php-docs/
-  (Projek Ini)            (Projek CBC MCMC)       (Projek AWS PHP)
+  [ oss-docs ]            [ portal-docs ]         [ aws-php-docs ]
+  qmd://oss-docs/         qmd://portal-docs/      qmd://aws-php-docs/
+  (Projek Ini)            (Projek Portal)         (Projek AWS PHP)
         │                       │                       │
         ▼                       ▼                       ▼
-  [ oss-agents ]          [ cbc-mcmc-agents ]     [ aws-php-agents ]
-  qmd://oss-agents/       qmd://cbc-mcmc-agents/  qmd://aws-php-agents/
+  [ oss-agents ]          [ portal-agents ]       [ aws-php-agents ]
+  qmd://oss-agents/       qmd://portal-agents/    qmd://aws-php-agents/
 ```
 
 ### A. Mendaftarkan Koleksi Projek

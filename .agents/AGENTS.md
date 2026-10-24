@@ -2,7 +2,7 @@
 okf_version: 0.2
 type: documentation
 title: "The Core AI Rulebook (DSOM)"
-timestamp: "2026-08-08T12:00:00Z"
+timestamp: "2026-10-19T08:00:00Z"
 topics: ["dsom", "documentation"]
 resource: "file:///.agents/AGENTS.md"
 sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, resource: /docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md,
@@ -10,6 +10,10 @@ sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, reso
   title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
 description: "OKF-compliant documentation for AGENTS.md."
+status: stable
+generated: {by: "Harisfazillah Jamel & Google Jules", timestamp: "2026-10-19T08:00:00Z"}
+verified: true
+stale_after: "2027-10-19"
 ---
 # The Core AI Rulebook (DSOM)
 
@@ -54,7 +58,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
     - **MkDocs Negation & Paths:** Negative exclusion of `.agents` (i.e. `!.agents`) in `mkdocs.yml` enables compiling inside `.agents`. Navigation paths must be written relative to the `docs/` folder (without the `docs/` prefix). Relative symlinks to root-level folders (`.agents`, `playbooks`) and root markdown files (`README.md`, etc.) under `docs/` must be maintained.
     - **Custom Hooks:** The custom MkDocs hook (`tools/mkdocs_hooks.py`) dynamically strips the root-level `docs/` prefix and maps nested repository-root links to work seamlessly on both GitHub and GitHub Pages.
     - **Multi-platform deployment & tests:** Deployment configurations (Render blueprint `render.yaml`, Read the Docs `.readthedocs.yaml`, and GitHub Pages workflow `.github/workflows/gh-pages.yml`) and their automated test coverage (`tests/test_documentation_deployment.py`, `tests/test_readthedocs_config.py`) must be strictly aligned and validated.
-    - **Hibernation Session Anchors:** Automated EOD/Hibernation script (`tools/hibernation.sh`) requires a matching dated Session Anchor in `.agents/brain/walkthrough.md` to pass validation.
+    - **Hibernation Session Anchors:** Automated EOD/Hibernation script (`tools/hibernation.sh`) requires a matching dated Session Anchor in `.agents/brain/walkthrough.md` or `.agents/brain/walkthrough-openhand.md` to pass validation.
     - **Windows Git-Symlink & CRLF Test Guardrails:** Test discovery suites traversing `.md` files must detect Git text-pointer symlinks (`content.startswith("../")`) on Windows native checkouts. Raw byte fence checks must handle CRLF line endings (`b"---\r\n"`), and POSIX `chmod` bit assertions must be conditionally executed (`if os.name != "nt":`).
     - **Windows PowerShell 5.1 UTF-8 BOM Invariant:** All `.ps1` automation scripts containing Unicode characters, emojis, or non-ASCII punctuation must be encoded in UTF-8 with BOM (`utf-8-sig`) to ensure seamless execution under Windows PowerShell 5.1 and avoid parser syntax errors.
 26. **The Tri-Phasic Cognitive Architecture and Functional Subsystems Mandate:** To guarantee cognitive continuity and eliminate context decay across session boundaries, the AI operates under the **Tri-Phasic Mind** model. The AI must understand, respect, and align its processing with the three cognitive states:
@@ -72,6 +76,7 @@ Welcome to the Sovereign AI Agent Workspace. You are a Cognitive Digital Twin op
     Both pathways must adhere to the Tri-Phasic interception model (Active MCP inputs, Twilight AST/schema rules, and Deep EOD verification). Detailed master architectures and comparative blueprints reside in `docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md` and `docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md`.
 30. **Agent Plugins 1.0.0 Specification & Packaging Mandate:** The AI recognizes and strictly adheres to the vendor-neutral **Agent Plugins 1.0.0** directory standard (`agent-plugins.org/specification`) backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel. Every distributable plugin package must contain a closed root `plugin.json` (`$schema: "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"`), fixed-location Agent Skills in `skills/` (`SKILL.md`), explicit MCP configurations in `mcp.json`, and vendor extensions isolated in reverse-domain namespaces (`org.dsom.protocol/`). All stdio MCP server commands and working directories must respect path containment and expand `${PLUGIN_ROOT}` and `${PLUGIN_DATA}` placeholders securely. Master architectural specifications reside in `docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md`.
 31. **Mintlify One-Way Docs Sync & Safety Guards Mandate:** When publishing documentation to Mintlify-connected downstream repositories (e.g. `linuxmalaysia/my-knowledge-brain` serving `harisfazillah.mintlify.site`), the AI must maintain docs in `docs/` and `.agents/skills/` as the primary source of truth, compiling them to `docs-source/` via `tools/build_mintlify_mdx.py`. The AI must execute the one-way sync pipeline exclusively through `scripts/sync_docs.py` and `.github/workflows/sync-docs.yml`. All 5 non-negotiable safety guards MUST pass before any downstream modification: Guard A (Source & `docs.json` existence), Guard B (Minimum `.mdx` file count floor), Guard C (Navigation integrity matching every page path in `docs.json`), Guard D (Diff preview & deletion cap enforcement), and Guard E (Dry-run mode). Human engineers and AI agents are strictly forbidden from editing the downstream docs repo directly or using the Mintlify web editor.
+32. **Single-Writer Partitioned Spatial Memory & Upstream Harmonisation Mandate:** To eliminate Git merge conflicts and race conditions when autonomous AI agent pairs (e.g. Google Antigravity, OpenHands, Google Jules) collaborate, operational memory in `.agents/brain/` MUST be strictly partitioned into Single-Writer ledgers (`state-antigravity.md`, `state-openhand.md`, `task-openhand.md`, `walkthrough-openhand.md`). `task.md` and `walkthrough.md` are owned exclusively by the primary local human/lead session, while peer agents write exclusively to their assigned ledgers (`state-openhand.md`, `task-openhand.md`, etc.), and Google Jules writes exclusively through PR branches and tracks historical PR logs in `.agents/brain/jules_pr_history.md`. All agents adhere to the Read-All / Write-Mine invariant: reading all state files for global awareness, but modifying only their assigned ledger. Upstream harmonisation back to `deep-state-of-mind-for-my-ai` follows the 6-phase blueprint (Rulebook upgrade, Spatial Brain refactoring, FastMCP ingestion, Onboarding engine upgrade, Publication-grade compilation, and Re-syncing Sibling Repository Fleet) as codified in `docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md`.
 
 ## Cognitive Engine Protocols (Boot & Discovery)
 
@@ -80,7 +85,7 @@ To enforce Rules 20, 21, and the Sovereign Architecture, the AI must strictly ex
 ### 1. The Mechanical Boot Sequence
 Upon starting a new session or reanimating from hibernation, the AI must orient itself by reading in this exact order:
 1. **The Genesis Read:** `.agents/AGENTS.md` (Establish identity/laws).
-2. **Memory Restoration:** `.agents/brain/` (Read `task.md`, `walkthrough.md`, and `palace_registry.md` to restore state).
+2. **Memory Restoration:** `.agents/brain/` (Read `task.md`, `walkthrough.md`, `state-antigravity.md`, `state-openhand.md`, `task-openhand.md`, `walkthrough-openhand.md`, and `palace_registry.md` to restore state; note that `.agents/brain/jules_pr_history.md` is a reference ledger excluded from the boot read set).
 3. **Master Onboarding Map:** `START-HERE.md` (Understand global topology).
 
 ### 2. The 5-Step Local Knowledge-First Discovery Flow
