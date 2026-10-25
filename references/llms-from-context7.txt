@@ -766,6 +766,20 @@ Common usage patterns including custom intervals, thresholds, and display filter
 
 --------------------------------
 
+### Bad Commit Message Examples
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/CONTRIBUTING.md
+
+Examples of commit messages that do not adhere to the project's standard format.
+
+```text
+update files
+fix bug
+done
+```
+
+--------------------------------
+
 ### Execute Palace Daily Loop Scripts
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-PALACE-ONBOARDING.md
@@ -1056,6 +1070,18 @@ topics: ["DSOM", "docs"]
 
 --------------------------------
 
+### Add guardrails-ai-dsom dependency
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
+
+Install the guardrails package as a development dependency in downstream projects.
+
+```bash
+uv add --dev guardrails-ai-dsom
+```
+
+--------------------------------
+
 ### Audit and Verify Palace Installation
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/palace/migration.mdx
@@ -1084,20 +1110,6 @@ bash tools/sod-palace.sh
 ```bash
 bash tools/eod-palace.sh
 # Should show: [Palace Sync] Running Spatial Reflection...
-```
-
---------------------------------
-
-### Bad Commit Message Examples
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/CONTRIBUTING.md
-
-Examples of commit messages that do not adhere to the project's standard format.
-
-```text
-update files
-fix bug
-done
 ```
 
 --------------------------------
@@ -1302,6 +1314,22 @@ mkdir -p .agents/brain/wings/wing_dsom_core/hall_discoveries/room_uncategorised
 
 --------------------------------
 
+### Expected Audit Output
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/audit-pre-flight.mdx
+
+Example of a successful audit session output showing various status labels.
+
+```text
+[PASS] Brain Check      — task.md and walkthrough.md found
+[PASS] Git Sync         — Local matches origin/main
+[OK]   Discovery        — Node v20.11.0 detected
+[PASS] Cognitive Twin   — No [PLACEHOLDER] fields found
+[SKIP] Ansible Baseline — ansible not installed (non-infra project)
+```
+
+--------------------------------
+
 ### DSOM Initialization Test Prompt
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/ai-setup/gemini.mdx
@@ -1437,18 +1465,6 @@ Backfill the Palace from Git history.
 
 ```bash
 bash tools/palace-sync.sh --backfill
-```
-
---------------------------------
-
-### Add guardrails-ai-dsom dependency
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
-
-Install the guardrails package as a development dependency in downstream projects.
-
-```bash
-uv add --dev guardrails-ai-dsom
 ```
 
 --------------------------------
@@ -1610,6 +1626,23 @@ Run the initialization script from the project root to set up the agent environm
 
 --------------------------------
 
+### Redact Sensitive Values
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/privacy-guardian.mdx
+
+Example of replacing real values with placeholders in documentation while keeping secrets in a local .env file.
+
+```text
+# In AI-COGNITIVE-TWIN-PROTOCOL.md — safe for public manifests:
+T3: [PROD-HOST-1] — AlmaLinux 10, uid=1001
+
+# In .env — never committed to Git:
+T3_HOST=192.168.1.50
+T3_USER=deploy
+```
+
+--------------------------------
+
 ### Create Directory Structure
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
@@ -1691,22 +1724,6 @@ git branch -M main
 
 --------------------------------
 
-### Expected Audit Output
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/audit-pre-flight.mdx
-
-Example of a successful audit session output showing various status labels.
-
-```text
-[PASS] Brain Check      — task.md and walkthrough.md found
-[PASS] Git Sync         — Local matches origin/main
-[OK]   Discovery        — Node v20.11.0 detected
-[PASS] Cognitive Twin   — No [PLACEHOLDER] fields found
-[SKIP] Ansible Baseline — ansible not installed (non-infra project)
-```
-
---------------------------------
-
 ### Test SOD and EOD Playlists
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
@@ -1719,6 +1736,23 @@ bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
 
 ```bash
 bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+```
+
+--------------------------------
+
+### CRDA Failure Log Signature
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md
+
+Example of the DNS resolution error observed in GitHub Actions logs when the CRDA backend is unreachable.
+
+```text
+
+crda exited with code 1
+FIL Unable to reach the server.
+error="Post \"https://gw.api.openshift.io/user?user_key=...\": dial tcp:
+lookup gw.api.openshift.io on 127.0.0.53:53: no such host"
+
 ```
 
 --------------------------------
@@ -1743,6 +1777,30 @@ Use this command for local development, CI/CD pipelines, and environments withou
 
 ```bash
 uv run --with pyyaml python tools/openwiki_emulator.py
+```
+
+--------------------------------
+
+### Execute Sovereign Save Git Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
+
+Guides the user through creating a semantic commit message or performs a direct push with a specified message.
+
+```powershell
+# T1 — Interactive EOD Sovereign Save (guided semantic commit)
+
+.\tools\git-ritual.ps1
+```
+
+```bash
+# T2 — Interactive EOD Sovereign Save
+
+./tools/git-ritual.sh
+```
+
+```powershell
+.\tools\git-ritual.ps1 push "chore(brain): EOD sovereign save — [Phase-X/vX.X]"
 ```
 
 --------------------------------
@@ -1814,6 +1872,22 @@ uv run python tools/generate_sitemaps.py
 
 --------------------------------
 
+### Perform Interactive EOD Sovereign Save
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/eod-ritual.mdx
+
+Guides the user through creating a semantic commit message for EOD synchronization. Available for both Windows and Linux/WSL2 environments.
+
+```powershell
+.\tools\git-ritual.ps1
+```
+
+```bash
+./tools/git-ritual.sh
+```
+
+--------------------------------
+
 ### Create Skill Directory
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/AI-AGENT-SKILLS-GUIDE.md
@@ -1822,6 +1896,29 @@ Use this command to initialize the folder structure for a new agent skill.
 
 ```bash
 mkdir -p .agents/skills/my-custom-skill
+```
+
+--------------------------------
+
+### OKF Frontmatter & UTF-8 BOM Stripper Implementation
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md
+
+Validator class to detect and strip UTF-8 BOM characters and ensure YAML frontmatter starts with the correct fence.
+
+```python
+# Prototype Implementation
+from guardrails.validators import Validator, register_validator, PassResult, FailResult
+
+@register_validator(name="dsom/okf_bom_validator", data_type="string")
+class GuardrailsOKFBOMValidator(Validator):
+    def validate(self, value, metadata=None):
+        text = str(value)
+        if text.startswith("\ufeff"):
+            return FailResult(error_message="BOM detected", fix_value=text.lstrip("\ufeff"))
+        if not (text.startswith("---\n") or text.startswith("---\r\n")):
+            return FailResult(error_message="Document must start on Line 1 with '---'")
+        return PassResult()
 ```
 
 --------------------------------
@@ -1933,23 +2030,6 @@ cp -r [OLD_PATH]/tools/* tools/
 
 --------------------------------
 
-### Redact Sensitive Values
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/privacy-guardian.mdx
-
-Example of replacing real values with placeholders in documentation while keeping secrets in a local .env file.
-
-```text
-# In AI-COGNITIVE-TWIN-PROTOCOL.md — safe for public manifests:
-T3: [PROD-HOST-1] — AlmaLinux 10, uid=1001
-
-# In .env — never committed to Git:
-T3_HOST=192.168.1.50
-T3_USER=deploy
-```
-
---------------------------------
-
 ### Initialize task.md content
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/init-brain.mdx
@@ -2019,23 +2099,6 @@ Read the following brain artifacts and summarise the current status:
 
 Then state: 'Sovereign State Synchronised — [PROJECT NAME] is live.'
 Operate under DSOM v6.1 + Palace v1.0: Advisory Mode, UK English, Git-first, Ansible-only execution.
-
-```
-
---------------------------------
-
-### CRDA Failure Log Signature
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md
-
-Example of the DNS resolution error observed in GitHub Actions logs when the CRDA backend is unreachable.
-
-```text
-
-crda exited with code 1
-FIL Unable to reach the server.
-error="Post \"https://gw.api.openshift.io/user?user_key=...\": dial tcp:
-lookup gw.api.openshift.io on 127.0.0.53:53: no such host"
 
 ```
 
@@ -2166,30 +2229,6 @@ Briefly explain what this skill achieves and what problem it solves.
 
 --------------------------------
 
-### Execute Sovereign Save Git Ritual
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
-
-Guides the user through creating a semantic commit message or performs a direct push with a specified message.
-
-```powershell
-# T1 — Interactive EOD Sovereign Save (guided semantic commit)
-
-.\tools\git-ritual.ps1
-```
-
-```bash
-# T2 — Interactive EOD Sovereign Save
-
-./tools/git-ritual.sh
-```
-
-```powershell
-.\tools\git-ritual.ps1 push "chore(brain): EOD sovereign save — [Phase-X/vX.X]"
-```
-
---------------------------------
-
 ### Initialize Brain on Windows and Linux
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-INIT-BRAIN.md
@@ -2230,22 +2269,6 @@ glab release create v<VERSION> --name "v<VERSION>: <RELEASE_TITLE>" --notes-file
 
 --------------------------------
 
-### Perform Interactive EOD Sovereign Save
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/eod-ritual.mdx
-
-Guides the user through creating a semantic commit message for EOD synchronization. Available for both Windows and Linux/WSL2 environments.
-
-```powershell
-.\tools\git-ritual.ps1
-```
-
-```bash
-./tools/git-ritual.sh
-```
-
---------------------------------
-
 ### Initialize DSOM Protocol Prompt
 
 Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/multi-agent.mdx
@@ -2269,29 +2292,6 @@ Reanimate the project to include the new Palace Registry section.
 
 ```bash
 bash tools/reanimate.sh
-```
-
---------------------------------
-
-### OKF Frontmatter & UTF-8 BOM Stripper Implementation
-
-Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md
-
-Validator class to detect and strip UTF-8 BOM characters and ensure YAML frontmatter starts with the correct fence.
-
-```python
-# Prototype Implementation
-from guardrails.validators import Validator, register_validator, PassResult, FailResult
-
-@register_validator(name="dsom/okf_bom_validator", data_type="string")
-class GuardrailsOKFBOMValidator(Validator):
-    def validate(self, value, metadata=None):
-        text = str(value)
-        if text.startswith("\ufeff"):
-            return FailResult(error_message="BOM detected", fix_value=text.lstrip("\ufeff"))
-        if not (text.startswith("---\n") or text.startswith("---\r\n")):
-            return FailResult(error_message="Document must start on Line 1 with '---'")
-        return PassResult()
 ```
 
 --------------------------------
@@ -8467,3 +8467,4675 @@ AI clients can execute these tools dynamically to perform searches or fetch cont
 - **search_openwiki(query)** - Sub-millisecond OKF metadata search.
 - **fetch_context7_stream(tokens)** - Retrieves URL pointers to external pre-indexed token streams.
 ```
+
+--------------------------------
+
+### Visualize Guardrail Sequence
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
+
+Sequence diagram illustrating the interaction between Git pre-commit hooks and the guardrails-ai-dsom suite.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor AI as AI Agent / Human
+    participant Git as Git Pre-Commit Hook
+    participant Guard as guardrails-ai-dsom
+    participant Repo as Downstream Repo
+
+    AI->>Git: git commit -m "feat: add payment route"
+    Git->>Guard: Execute Guardrails Suite (AST / BOM / Credential / Cleanliness)
+    alt Violation Detected (e.g. Credential leak or Monolithic commit)
+        Guard-->>Git: FAILED [GUARDRAIL BLOCKED]
+        Git-->>AI: Reject Commit with Actionable Fix Instructions
+    else Clean Execution
+        Guard-->>Git: PASSED [10/10 Validators OK]
+        Git->>Repo: Allow Atomic Commit
+    end
+```
+
+--------------------------------
+
+### Visualize Documentation Standards Flowchart
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-SOVEREIGNTY.md
+
+A Mermaid flowchart illustrating the hierarchy and constraints of the documentation standards.
+
+```mermaid
+flowchart TD
+    A[Documentation Standards] --> B[UK English]
+    A --> C[DBP-standard Malay (Piawai)]
+    A --> D[No Colloquialisms]
+    A --> E[No Indonesian Loanwords]
+    B --> F[Architectural Clarity]
+    C --> F
+    D --> F
+    E --> F
+```
+
+--------------------------------
+
+### Manifest generation confirmation
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/reanimate.mdx
+
+The output message displayed upon successful creation of the manifest file.
+
+```text
+[OK] Manifest generated: sod_manifest_2026-08-14.txt
+```
+
+--------------------------------
+
+### Safe Sync Ritual: Pull on T2
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/human-handover.mdx
+
+Updates the local repository on the T2 WSL2 environment.
+
+```bash
+cd /mnt/[T2_MOUNTED_PATH]
+git pull origin main
+```
+
+--------------------------------
+
+### Download Target Private Key via SCP
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/references/The Sovereign AI Agent Workspace_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260612.md
+
+Securely retrieve a private key from a jump host to a local environment to facilitate passwordless SSH routing.
+
+```bash
+scp -i <local-key-for-jumphost> <user>@<jumphost-ip>:~/.ssh/<target-private-key> ~/.ssh/<local-alias-for-key>
+```
+
+```bash
+scp -i $env:USERPROFILE\.ssh\id_dsom_ed25519 dsom-admin@10.10.10.10:~/.ssh/id_ed25519 $env:USERPROFILE\.ssh\id_ansible01_master
+```
+
+--------------------------------
+
+### Visualize DSOM Governance Architecture
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/ITIL-ALIGNMENT.md
+
+A Mermaid flowchart illustrating the relationship between Governance, Operation, and Improvement layers within the DSOM framework.
+
+```mermaid
+flowchart TD
+    subgraph Governance_Layer [L1-L2 Governance]
+        S1[1. Service Relationship] --> S5[5. Governance & Risk]
+        S5 --> S10[10. Compliance & Standards]
+    end
+
+    subgraph Operation_Layer [L3-L4 Tactical]
+        S2[2. Service Value Chain] --> S3[3. SKMS .agents/brain]
+        S3 --> S8[8. Incident & Request]
+        S6[6. Multi-Agent Federation] --> S2
+    end
+
+    subgraph Improvement_Layer [Audit & Feedback]
+        S4[4. 7 Guiding Principles] --> S7[7. Metrics & CPI/SPI]
+        S7 --> S9[9. CRISP2 Mapping]
+        S9 --> S4
+    end
+
+    S10 --> S9
+    Operation_Layer --> Improvement_Layer
+    Improvement_Layer --> Governance_Layer
+```
+
+--------------------------------
+
+### Native Python OpenWiki Emulator Script
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-OPENWIKI.md
+
+A Python script designed to manage an OpenWiki directory structure and perform metadata searches using YAML frontmatter. Requires the pyyaml dependency and is intended to be run via uv.
+
+```python
+
+# /// script
+# dependencies = [
+
+#     "pyyaml>=6.0",
+# ]
+
+# ///
+
+"""
+OpenWiki Emulator & Knowledge Graph Generator
+Author:   Harisfazillah Jamel (LinuxMalaysia)
+License:  GNU General Public License v3.0
+
+Description:
+Emulates the OpenWiki CLI documentation & knowledge graph generation natively in Python
+using `uv run`, requiring zero Node.js binaries or external API keys.
+"""
+
+import argparse
+import datetime
+import json
+import os
+import pathlib
+import subprocess
+import sys
+import yaml
+
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
+OPENWIKI_DIR = REPO_ROOT / "openwiki"
+
+def get_timestamp() -> str:
+    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+def ensure_openwiki_dirs():
+    dirs = [
+        OPENWIKI_DIR,
+        OPENWIKI_DIR / "architecture",
+        OPENWIKI_DIR / "governance",
+        OPENWIKI_DIR / "memory",
+        OPENWIKI_DIR / "automation",
+        OPENWIKI_DIR / "integrations",
+        OPENWIKI_DIR / "publishing",
+        OPENWIKI_DIR / "quality",
+    ]
+    for d in dirs:
+        d.mkdir(parents=True, exist_ok=True)
+
+def cmd_init():
+    print(f"[OpenWiki Emulator] Generating native wiki under {OPENWIKI_DIR}...")
+    ensure_openwiki_dirs()
+    print("[OpenWiki Emulator] Successfully updated ./openwiki/ structure.")
+
+def cmd_search(query: str):
+    print(f"[OpenWiki Search] Querying frontmatter for: '{query}'...")
+    for md_file in OPENWIKI_DIR.rglob("*.md"):
+        try:
+            content = md_file.read_text(encoding="utf-8")
+            if content.startswith("---"):
+                parts = content.split("---", 2)
+                if len(parts) >= 3:
+                    meta = yaml.safe_load(parts[1])
+                    if meta and query.lower() in str(meta).lower():
+                        print(f" - [{md_file.name}] {meta.get('title')}: {meta.get('description')}")
+        except Exception:
+            pass
+
+def main():
+    parser = argparse.ArgumentParser(description="Native Python OpenWiki Emulator")
+    parser.add_argument("--init", action="store_true", help="Initialise full wiki")
+    parser.add_argument("--update", action="store_true", help="Compile recent Git diffs")
+    parser.add_argument("--search", type=str, help="Fast OKF metadata search query")
+    parser.add_argument("--export-graph", action="store_true", help="Generate standalone offline HTML graph")
+    args = parser.parse_args()
+
+    if args.search:
+        cmd_search(args.search)
+    else:
+        cmd_init()
+
+if __name__ == "__main__":
+    main()
+```
+
+--------------------------------
+
+### Perform Sunday Human Refresh Audit
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/RITUAL-OF-TRANSITION.md
+
+Commands to verify project state and audit the DSOM environment.
+
+```bash
+# Run the full DSOM audit — confirm all 5 checks pass
+
+./tools/audit-pre-flight.sh
+
+# Or via Ansible (checks all inventory nodes simultaneously)
+
+ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
+
+# Review the last 10 commits
+
+git log --oneline -10
+
+# Read the current Mental Anchor
+
+cat .agents/brain/walkthrough.md | tail -30
+```
+
+--------------------------------
+
+### Read Current State
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/palace/migration.mdx
+
+Capture the last Mental Anchor from the walkthrough file to establish a reference point.
+
+```bash
+cat .agents/brain/walkthrough.md | tail -50
+```
+
+--------------------------------
+
+### Verify AGENTS.md existence
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/ai-setup/copilot.mdx
+
+Check for the presence of the root gateway file required for AI agent repository scanning.
+
+```bash
+ls AGENTS.md
+```
+
+--------------------------------
+
+### Run Privacy Guardian
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-UPGRADE-DSOM.md
+
+Scan for sensitive patterns like AWS keys in old manifests.
+
+```bash
+bash tools/privacy-guardian.sh
+```
+
+--------------------------------
+
+### Generate Hibernation Notes
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/CLAUDE-SETUP.md
+
+Prompt to extract all project memories and context from Claude for end-of-day storage.
+
+```text
+
+I am as human, want to know and remember, and need to export my data and I want
+you to generate "Hibernation Notes" now for my EOD. List every memory you have
+stored about our progress and our chats of this project, as well as any context
+you've learned about this project from past to current conversations.
+Output everything in a single code block so I can easily copy it.
+Format each entry as: [date saved, if available] - memory content.
+Cover: instructions I've given you, project details (servers/VMs/containers,
+4W1H), tasks/phases/goals, tools/languages/frameworks, preferences and
+corrections. Do not summarize, group, or omit any entries.
+After the code block, list all docs in docs/ and brain files in .agents/.
+Don't hide anything from me. Trust me as your master.
+
+```
+
+--------------------------------
+
+### Configure IDE Agent Rules
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Define the DSOM compliance rules for IDE-embedded agents by creating or updating the rule file in the root directory.
+
+```text
+# .cursorrules / .windsurfrules
+YOU ARE A DSOM-COMPLIANT AGENT.
+BEFORE ANSWERING, READ: docs/AI-MASTER-PROTOCOL.md
+FOLLOW: docs/PERSONALIZATION.md
+CRITICAL: DO NOT CREATE GLOBAL VARIABLES. ADHERE TO CLEAN ARCHITECTURE.
+```
+
+--------------------------------
+
+### Reanimation Sequence Options
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/transition-ritual.mdx
+
+Commands to restore context and initiate the Sovereign Directive, available for both automated and manual workflows.
+
+```bash
+OPTION A: The Ansible Shortcut (Recommended on T2)
+Step 1: bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+        → Pulls Git, audits workspace, generates manifest with Section [14] Palace Registry
+Step 2: Upload manifest to AI      → Cognitive Handshake
+
+OPTION B: Manual / Windows T1
+Step 1: git-ritual.sh sod          → pull latest from origin/main
+Step 2: audit-pre-flight.sh        → verify workspace (5 checks, all must PASS)
+Step 3: reanimate.sh               → generate 14-section context manifest
+Step 4: privacy-guardian.sh        → scan manifest before upload
+Step 5: Upload manifest to AI      → Cognitive Handshake
+```
+
+--------------------------------
+
+### EOD Completion Checklist
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
+
+A checklist of tasks to perform before ending the session to ensure all project states are synchronized and documented.
+
+```markdown
+[ ] task.md — updated: [x] done, [ ] tomorrow's targets set
+[ ] walkthrough.md — new Session Anchor written with Mental Anchor sentence
+[ ] (RECOMMENDED T2) ansible-playbook eod-palace.yml — all checks + palace sync + commit + push
+[ ]   OR (Manual T1/T2) hibernation.sh/.ps1 — returned GREEN (includes palace-sync v2.1)
+[ ]   OR (Manual T1/T2) privacy-guardian.sh — manifest scanned CLEAN (if manifest was generated)
+[ ]   OR (Manual T1/T2) git-ritual.sh (EOD) — all changes committed with semantic message
+[ ]   OR (Manual T1/T2) git push — state pushed to origin/main
+[ ] palace_update_proposal_YYYY-MM-DD.md — reviewed with AI
+[ ] Palace closets updated and committed (if proposal had changes)
+[ ] T2 WSL2 — git pull confirms sync with T1
+[ ] Tomorrow's first action noted (physical/digital notebook)
+```
+
+--------------------------------
+
+### Lint Ansible Playbooks
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/CONTRIBUTING.md
+
+Run linting on specific playbooks.
+
+```bash
+ansible-lint playbooks/dsom/[your-playbook].yml
+```
+
+--------------------------------
+
+### Local Frontmatter Search
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/SOP-KNOWLEDGE-FIRST-DISCOVERY.md
+
+Command to search local OKF frontmatter for specific topics within the documentation directory.
+
+```bash
+grep_search Query="topics: [ansible" SearchPath="docs/"
+```
+
+--------------------------------
+
+### Perform T2 Sync
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/README.md
+
+Pulls the latest changes from the main branch on WSL2.
+
+```bash
+git pull origin main
+```
+
+--------------------------------
+
+### Synchronize and Discover Team Updates
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/hub-and-spoke-model.mdx
+
+Updates the local repository and lists member brain directories to identify changes after an absence.
+
+```bash
+git pull origin main
+ls .agents/brain/member/
+```
+
+--------------------------------
+
+### GitOps Loop Workflow
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
+
+Visual representation of the GitOps loop integration within the EOD ritual.
+
+```text
+AI Proposes → Git Records → Ansible Executes → AI Verifies → EOD (Sovereign Save) → Next SOD
+```
+
+--------------------------------
+
+### Define failure recovery steps
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/creating-skills.mdx
+
+Structure failure paths within your skill documentation to allow the AI to self-heal from common errors.
+
+```markdown
+3. Run `pandoc proposal.md -o proposal.pdf`.
+   - If Pandoc exits with a LaTeX error, check `/tmp/pandoc-latex.log` for the failing line.
+   - If the error references a missing font, run `fc-cache -fv` and retry.
+```
+
+--------------------------------
+
+### Configure mcp.json server mapping
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md
+
+This configuration maps MCP servers to specific commands and environment variables, ensuring proper execution within the plugin environment.
+
+```json
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "dsom-knowledge-server": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "fastmcp",
+        "--with",
+        "pyyaml",
+        "python",
+        "${PLUGIN_ROOT}/tools/mcp/server.py"
+      ],
+      "env": {
+        "DSOM_PALACE_ROOT": "${PLUGIN_ROOT}",
+        "DSOM_STORAGE_DIR": "${PLUGIN_DATA}/storage"
+      },
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}
+```
+
+--------------------------------
+
+### Define Skill Directory Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md
+
+The required file structure for the DSOM token calculator skill within the agent's directory.
+
+```text
+.agents/skills/dsom-token-calculator/
+├── SKILL.md                          # Declarative Instructions & Guardrails
+└── scripts/
+    └── calculate-tokens.py           # Self-contained Token Engine
+```
+
+--------------------------------
+
+### Edit Project Identity Card
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/README.md
+
+Opens the protocol file to fill in project-specific placeholders required for AI operation.
+
+```bash
+# Open and edit with your project-specific details
+nano docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+```
+
+--------------------------------
+
+### Ansible Playbook Audit Execution
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/CONTRIBUTING.md
+
+Use this command to run the audit-preflight Ansible playbook and save the output to a log file.
+
+```bash
+ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost, | tee audit_ansible.log
+```
+
+--------------------------------
+
+### Continuity Loop Workflow
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/session-handover.mdx
+
+Visual representation of the daily cycle for saving and re-feeding context to maintain project memory.
+
+```text
+EOD → Step 2: Save Hibernation Notes → Git holds state
+         ↓
+SOD → Feed Hibernation Notes back to AI
+         ↓
+AI resumes with full context → Active work session
+         ↓
+EOD → Save new Hibernation Notes → Git holds updated state
+         ↓  [repeats every day, across any AI model, forever]
+```
+
+--------------------------------
+
+### Perform Pre-flight Cleanup
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/latex-proposal-compiler.mdx
+
+Removes stale auxiliary files from the project root and client directories to prevent compilation errors.
+
+```powershell
+Remove-Item *.aux, *.toc, *.log, *.out -ErrorAction SilentlyContinue
+Remove-Item docs/proposal/<client>/*.aux, docs/proposal/<client>/*.toc, docs/proposal/<client>/*.out -ErrorAction SilentlyContinue
+```
+
+--------------------------------
+
+### Audit Pre-flight Commands
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HUMAN-HANDOVER-CONTEXT.md
+
+Commands to generate audit logs for AI review using bash or Ansible.
+
+```bash
+bash tools/audit-pre-flight.sh | tee audit_result.log
+```
+
+```bash
+ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost, | tee audit_ansible.log
+```
+
+--------------------------------
+
+### Validate Conformance
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/agent-plugin-packager.mdx
+
+Executes the DSOM agent plugins test suite to ensure compliance.
+
+```bash
+uv run pytest tests/test_agent_plugins_spec.py
+```
+
+--------------------------------
+
+### Implement Core Token Counter Runtime
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/BYTE-CAPPED-EXECUTION-FRAMEWORK.md
+
+A Python script that calculates token counts for files or directories using the tiktoken library, designed for execution via uv.
+
+```python
+#!/usr/bin/env python3
+
+# -*- coding: utf-8 -*-
+# ---
+
+# okf_version: 0.1
+# type: executable_script
+
+# title: "Core Token Counter Runtime"
+# license: "GNU General Public License v3.0"
+
+# ---
+
+import os
+import sys
+import tiktoken
+
+def count_tokens_in_file(filepath: str, model: str = "gpt-4") -> int:
+    """Reads file content and calculates exact token footprints via tiktoken."""
+    try:
+        with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
+            text = f.read()
+        encoding = tiktoken.encoding_for_model(model)
+        return len(encoding.encode(text))
+    except Exception as e:
+        print(f"[ERROR] Failed to read target resource {filepath}: {e}")
+        return 0
+
+def scan_path(target_path: str):
+    """Parses and computes tokens for explicit files or workspace directory trees."""
+    if not os.path.exists(target_path):
+        print(f"[ERROR] Target path '{target_path}' does not exist in active workspace.")
+        sys.exit(1)
+
+    total_tokens = 0
+    if os.path.isfile(target_path):
+        tokens = count_tokens_in_file(target_path)
+        print(f"[FILE] {target_path}: {tokens} tokens")
+        total_tokens = tokens
+    elif os.path.isdir(target_path):
+        print(f"[DIR] Initiating workspace sweep across target: {target_path}")
+        for root, _, files in os.walk(target_path):
+            for file in files:
+                # Restrict scanning scope to plaintext assets to prevent binary processing overhead
+                if not file.endswith((".py", ".md", ".txt", ".json", ".yml", ".yaml", ".sh", ".ps1", ".css", ".html", ".js")):
+                    continue
+                filepath = os.path.join(root, file)
+                tokens = count_tokens_in_file(filepath)
+                if tokens > 0:
+                    print(f" [ASSET] {filepath}: {tokens} tokens")
+                    total_tokens += tokens
+    
+    print("-" * 60)
+    print(f"[SUMMARY] TOTAL COMPUTED WORKSPACE TOKENS: {total_tokens}")
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("[ERROR] Missing target parameter path.")
+        print("Usage: uv run --with tiktoken calculate-tokens.py [TARGET_PATH]")
+        sys.exit(1)
+    
+    scan_path(sys.argv[1])
+```
+
+--------------------------------
+
+### Verify script versions on Windows
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-MIGRATE-TO-PALACE.md
+
+Use Select-String to check the version variables in the specified PowerShell scripts.
+
+```powershell
+# Windows
+
+Select-String -Path tools\hibernation.ps1,tools\reanimate.ps1,tools\palace-sync.ps1 -Pattern '^\$VERSION'
+```
+
+--------------------------------
+
+### Define .windsurfrules configuration
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/agent-configs/windsurfrules_template.md
+
+This JSON structure configures the AI agent's persona, project-specific rules, and command overrides. Place this content in the project root as .windsurfrules.
+
+```json
+{
+  "agent_persona": "Senior Architect (DSOM Compliant)",
+  "critical_context": [
+    "docs/AI-MASTER-PROTOCOL.md",
+    "docs/PERSONALIZATION.md"
+  ],
+  "rules": [
+    "1. ZERO-GLOBAL PATTERN: Do not use global state. Pass dependencies explicitly.",
+    "2. SOVEREIGN PORTABILITY: Code must run on standard Linux (RHEL/Ubuntu) without vendor-specific cloud functions unless requested.",
+    "3. ATOMIC GIT: Suggest commits for single-file changes. Use 'type(scope): message' format.",
+    "4. LANGUAGE: Use UK English. For Malay, use DBP standard (Tugasan not Tugas, Piawai not Standar)."
+  ],
+  "command_overrides": {
+    "commit": "git commit -m"
+  }
+}
+```
+
+--------------------------------
+
+### Execute EOD Mode
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/git-ritual.mdx
+
+Run the EOD mode to initiate the interactive commit wizard for staging and pushing changes.
+
+```bash
+bash tools/git-ritual.sh
+# or explicitly:
+bash tools/git-ritual.sh eod
+```
+
+```powershell
+.\tools\git-ritual.ps1
+# or explicitly:
+.\tools\git-ritual.ps1 eod
+```
+
+--------------------------------
+
+### Guardrails AI Framework Integration
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/tools/guardrails-ai-dsom/README.md
+
+Demonstrates how to integrate DSOM validators into a Guardrails AI pipeline using the `use_many` method.
+
+```APIDOC
+## Guardrails AI Integration
+
+### Description
+Integrate multiple DSOM validators into a standard Guardrails AI pipeline to secure LLM outputs.
+
+### Method
+`Guard().use_many(*validators)`
+
+### Example
+```python
+from guardrails import Guard
+from guardrails_dsom import GuardrailsOKFBOMValidator, GuardrailsCredentialGuardian
+
+guard = Guard().use_many(
+    GuardrailsOKFBOMValidator(on_fail="fix"),
+    GuardrailsCredentialGuardian(on_fail="exception")
+)
+
+validated = guard.validate(llm_output)
+```
+```
+
+--------------------------------
+
+### Manual OKF Frontmatter Block
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/okf-standard.mdx
+
+Add this YAML block to the top of Markdown files to ensure they are indexed by the OpenWiki engine.
+
+```yaml
+---
+okf_version: 0.1
+type: operational_guide
+title: "Deploying the Kafka Broker Cluster"
+timestamp: "2026-01-15T10:00:00Z"
+topics: ["kafka", "ansible", "infrastructure", "deployment", "clustering"]
+description: "Ansible playbook guide for deploying a multi-node Kafka broker cluster with idempotent role-based automation."
+resource: "file:///docs/operations/kafka-deployment.md"
+---
+```
+
+--------------------------------
+
+### AI Model Transition Sequence
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/transition-ritual.mdx
+
+The step-by-step procedure for transferring a Cognitive Twin state between AI sessions.
+
+```text
+Step 1: In the outgoing AI session — run EOD Hibernation Notes Export (Prompt 5)
+Step 2: Copy the full Hibernation Notes code block
+Step 3: Open the new AI session
+Step 4: Paste Prompt 3 (Cognitive Twin Handover) + Hibernation Notes block
+Step 5: AI confirms Mental Anchor, T-tier map, sovereign laws, top 3 tasks
+Step 6: AI states: "Cognitive Twin Transfer Complete — [PROJECT NAME] Handover Successful."
+```
+
+--------------------------------
+
+### Ansible Log Redirection
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
+
+Command to execute a playbook while simultaneously saving output to a timestamped log file for analysis.
+
+```bash
+ansible-playbook site.yml 2>&1 | tee deploy-$(date +%Y%m%d).log
+```
+
+--------------------------------
+
+### End-of-Day Memory Serialisation Procedure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/ZERO-GLOBAL-MEMORY.md
+
+Sequence of operations to commit session progress and synchronize memory state to the repository.
+
+```text
+1. Update task.md with completed/pending items
+2. Write session anchor to walkthrough.md
+3. Generate [DSOM EPISODIC RECORD] block
+4. Commit checkpoint_summary.txt to brain
+5. Run palace-sync to generate palace_update_proposal
+6. Atomic git commits per logical task boundary
+7. Push to origin/main (the external memory backup)
+```
+
+--------------------------------
+
+### Verify Palace Registry
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/palace/migration.mdx
+
+Check the contents of the automatically generated registry file.
+
+```bash
+cat .agents/brain/palace_registry.md
+```
+
+--------------------------------
+
+### Consolidate Session Context
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/ai-setup/copilot.mdx
+
+Instruct Copilot to update task lists and mental anchors in brain files at the end of a session.
+
+```text
+Based on #file:.agents/brain/task.md, mark all completed tasks [x] and set
+tomorrow's targets [ ]. Update #file:.agents/brain/walkthrough.md with a new
+Mental Anchor summarising today's session.
+```
+
+--------------------------------
+
+### DSOM Ingestion Pipeline Architecture
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/dsom-ingestion-latency-architecture.mdx
+
+Visual representation of the directory parsing and memory ingestion flow, showing the latency breakdown for each stage of the process.
+
+```text
+
+       [ REPOSITORY STEP ]           [ PROCESSING PIPELINE ]           [ TIME HORIZON ]
+
+    ┌────────────────────────┐
+    │ Parse Directory Array  │ ────►  Standard POSIX file read   ────►  ~5–50 Milliseconds
+    └────────────────────────┘
+                │
+                ▼
+    ┌────────────────────────┐
+    │ Filter Frontmatter     │ ────►  Regex match on OKF header  ────►  ~10–15 Milliseconds
+    └────────────────────────┘
+                │
+                ▼
+    ┌────────────────────────┐
+    │ Memory Ingestion Block │ ────►  Direct Context Insertion   ────►  Instantaneous (On-Load)
+    └────────────────────────┘
+```
+
+--------------------------------
+
+### Define the Active Context Manifest
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-TOKEN-PERFORMANCE-PLAYBOOK.md
+
+Update this markdown structure to declare files for agent loading, preventing excessive token consumption.
+
+```markdown
+## Active Files
+
+- .agents/brain/task.md
+- .agents/brain/walkthrough.md
+- .agents/brain/palace_registry.md
+- .agents/brain/wings/[relevant wing]/[relevant closet].md
+```
+
+--------------------------------
+
+### Execute EOD Palace Sync Script
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/eod-palace-sync.mdx
+
+Run the appropriate platform-specific script to commit and push the externalized memory state to the repository.
+
+```powershell
+# On Windows
+.\tools\eod-palace.ps1
+```
+
+```bash
+# On Linux/macOS
+bash tools/eod-palace.sh
+```
+
+--------------------------------
+
+### CLI Operations
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Commands available for managing the OpenWiki workspace via the CLI.
+
+```APIDOC
+## CLI Commands
+
+### Initialize Workspace
+`uv run python tools/openwiki_emulator.py --init`
+Initializes and compiles the full OpenWiki workspace.
+
+### Update Context
+`uv run python tools/openwiki_emulator.py --update`
+Retrieves recent Git changes and updates the context history.
+
+### Search Metadata
+`uv run python tools/openwiki_emulator.py --search "[query]"`
+Performs a search against OpenWiki YAML metadata.
+
+### Export Graph
+`uv run python tools/openwiki_emulator.py --export-graph`
+Exports a standalone offline HTML interactive knowledge graph.
+```
+
+--------------------------------
+
+### Execute Mid-Day Checkpoint
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/README.md
+
+Syncs state and commits changes mid-task without performing a full EOD ritual.
+
+```powershell
+.\tools\checkpoint.ps1            # Windows (T1)
+```
+
+```bash
+bash tools/checkpoint.sh          # WSL2 (T2)
+```
+
+--------------------------------
+
+### Define the Sovereign Workspace Directory Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/references/HOWTO-BOOTSTRAP-SOVEREIGN-AI-PROJECT.md
+
+The required project root layout for maintaining agent memory, skills, and workflows.
+
+```text
+[PROJECT_ROOT]/
+├── .agents/
+│   ├── AGENTS.md                  # The Core AI Rulebook
+│   ├── brain/                     # The Spatial Memory Palace
+│   │   ├── palace_registry.md     # THE LYNCHPIN: The central map/index the AI must read first.
+│   │   ├── checkpoint_summary.txt # The Mental Anchor (updated at End of Day)
+│   │   ├── task.md                # Component-level TODO tracking
+│   │   ├── walkthrough.md         # A chronological "Drawer" (Diary of E2E accomplishments)
+│   │   └── wings/                 # Domain folders containing "Rooms" and distilled "closet.md" files.
+│   ├── skills/                    # Operational Playbooks (Reusable, custom AI Agent Skills)
+│   └── workflows/                 # Automated Guides (Procedural governance and CI/CD logic)
+└── docs/                          # Human-readable documentation
+```
+
+--------------------------------
+
+### Execute Standard Privacy Scans
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-PRIVACY-GUARDIAN.md
+
+Run the privacy-guardian script on Windows or Linux/WSL2 to scan the current manifest for sensitive data.
+
+```powershell
+
+# Windows (T1)
+
+.\tools\privacy-guardian.ps1
+
+```
+
+```bash
+
+# WSL2 / Linux (T2)
+
+bash tools/privacy-guardian.sh
+
+```
+
+--------------------------------
+
+### Verify SSH Connection and Remote Execution
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/references/The Sovereign AI Agent Workspace_ Architecting Persistent Memory, Custom Skills, and Contextual Continuity - 20260612.md
+
+Test the configured SSH routing or execute remote commands using the -t flag to allocate a pseudo-terminal.
+
+```bash
+ssh -t <target_alias> "hostname && uptime"
+```
+
+```bash
+ssh -t <jump_host_alias> "cd /path/to/repo && git pull"
+```
+
+--------------------------------
+
+### Automated OKF Frontmatter Injection Command
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/okf-standard.mdx
+
+Use this command to trigger the AI agent skill for bulk frontmatter injection across the docs directory.
+
+```text
+Run the okf-frontmatter-injector skill on the docs/ directory.
+```
+
+--------------------------------
+
+### DSOM Governance and Control Flow
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-SOVEREIGNTY.md
+
+Visualizes the integration of project governance, cost/schedule control, and quality management standards.
+
+```mermaid
+flowchart TD
+    A[Integration & Scope Governance] -->|AI-MASTER-PROTOCOL.md| B[Project Constitution]
+    A -->|implementation_plan.md| C[Roadmap]
+
+    D[Schedule & Cost Control] --> E[CPI >= 1.0]
+    D --> F[SPI >= 1.0]
+
+    G[Quality Management] --> H[Pre-flight Audits]
+    G --> I[LDP Pedagogical Standards]
+```
+
+--------------------------------
+
+### Configure mcp.json
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/agent-plugin-packager.mdx
+
+Configures the MCP server settings for tools included within the plugin package.
+
+```json
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "server": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "python", "${PLUGIN_ROOT}/tools/mcp/server.py"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}
+```
+
+--------------------------------
+
+### Inject Collaboration Note
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/publish-to-blogger.mdx
+
+Inserts the mandatory Human-AI synergy blockquote at the beginning of the blog post.
+
+```html
+<blockquote style="border-left: 4px solid #4a90e2; padding-left: 15px; margin-bottom: 25px; background-color: #f9f9f9; padding: 15px 20px; font-style: italic; border-radius: 4px;">
+    <strong>Collaboration Note:</strong> The following architecture and framework is a testament to true human-AI synergy. The core concepts, sovereign philosophy, and strict operational boundaries were <strong>conceived by human intelligence</strong>. The synthesis, documentation, and structural formatting were <strong>generated by AI</strong> acting as a Cognitive Twin. Finally, every protocol and rule was rigorously audited, tested, and <strong>verified by the human operator</strong>. This is not just AI-generated content; it is a meticulously crafted human-AI partnership.
+</blockquote>
+```
+
+--------------------------------
+
+### Verify Token Safety
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tutorials/TEAM-DSOM-MASTERCLASS.md
+
+Calculates token usage for agents to ensure safety limits.
+
+```bash
+uv run --with tiktoken python .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
+```
+
+--------------------------------
+
+### Sync Palace Across Machines
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/palace/migration.mdx
+
+Updates the local repository with the latest Palace changes from the remote.
+
+```bash
+git pull --rebase origin main
+```
+
+--------------------------------
+
+### Search OKF Metadata
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/token-efficiency.mdx
+
+Queries the frontmatter index to locate documents without loading full file bodies.
+
+```bash
+# The AI searches metadata — not file content
+uv run --with pyyaml python tools/openwiki_emulator.py --search "ansible"
+```
+
+--------------------------------
+
+### mcp_server
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/sitemap.txt
+
+Interface for managing the Model Context Protocol (MCP) server.
+
+```APIDOC
+## mcp_server
+
+### Description
+Handles the initialization and operation of the MCP server for multi-agent communication.
+```
+
+--------------------------------
+
+### Execute Pre-Commit Validation
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
+
+Command to run the guardrails-ai-dsom suite automatically during a git commit process.
+
+```bash
+# Executed automatically on every git commit in downstream repo
+uv run --with guardrails-ai-dsom python -c "
+from guardrails_dsom import GuardrailsCredentialGuardian, GuardrailsOKFBOMValidator, GuardrailsRootCleanlinessValidator
+
+# Enforce clean repo root, BOM-less files, and zero leaked secrets
+"
+```
+
+--------------------------------
+
+### Expected verification output
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-SETUP-WSL-ALMALINUX10.md
+
+The expected output after running the verification commands.
+
+```text
+uid=2001(dsom-admin) gid=2001(dsom-admin) groups=2001(dsom-admin),10(wheel)
+
+ansible [core 2.15+]
+  ...
+
+localhost | SUCCESS => { "ping": "pong" }
+```
+
+--------------------------------
+
+### Run diagram validation tests
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/how-to/use-openwiki-emulator.md
+
+Verifies self-healing logic and schema parsing engines using unit tests.
+
+```bash
+uv run --with pyyaml --with pytest pytest tests/test_openwiki_emulator.py
+```
+
+--------------------------------
+
+### Registering the hook in mkdocs.yml
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/reference/mkdocs_hooks.md
+
+Add the script path to the hooks configuration in your mkdocs.yml file to enable the URL rewriting logic during the build process.
+
+```yaml
+hooks:
+  - tools/mkdocs_hooks.py
+```
+
+--------------------------------
+
+### Integrate Guardrail Interceptors into FastMCP Server
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md
+
+Demonstrates how to instantiate and apply CredentialGuardianValidator and OKFv02Validator within a tool function to prevent credential leaks and schema violations.
+
+```python
+"""
+Snippet: tools/mcp/server.py with Inline Guardrail Interceptors
+"""
+
+from fastmcp import FastMCP
+from tools.validators.credential_guardian import CredentialGuardianValidator
+from tools.validators.okf_v02_validator import OKFv02Validator
+
+mcp = FastMCP("DSOM Sovereign MCP Server")
+credential_guardian = CredentialGuardianValidator()
+okf_validator = OKFv02Validator()
+
+@mcp.tool()
+def write_sovereign_knowledge(file_path: str, markdown_content: str) -> str:
+    """Safely writes markdown knowledge to the Palace with strict guardrail evaluation."""
+    
+    # 1. Evaluate Credential Guardian
+    cred_res = credential_guardian.validate(markdown_content)
+    if not cred_res.is_valid:
+        raise ValueError(f"[GUARDRAIL VIOLATION: CREDENTIAL LEAK] {cred_res.error_message}")
+        
+    # 2. Evaluate OKF Frontmatter Integrity
+    okf_res = okf_validator.validate(markdown_content)
+    if not okf_res.is_valid:
+        raise ValueError(f"[GUARDRAIL VIOLATION: OKF SCHEMA] {okf_res.error_message}")
+        
+    # 3. Perform atomic write
+    # ... os.replace() write logic ...
+    return f"Successfully validated and written to {file_path}"
+```
+
+--------------------------------
+
+### Implement Token Counter Runtime
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+A self-contained Python script that calculates token footprints for files or directories using the tiktoken library.
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# ---
+# okf_version: 0.1
+# type: executable_script
+# title: "Core Token Counter Runtime"
+# license: "GNU General Public License v3.0"
+# ---
+
+import os
+import sys
+import tiktoken
+
+def count_tokens_in_file(filepath: str, model: str = "gpt-4") -> int:
+    """Reads file content and calculates exact token footprints via tiktoken."""
+    try:
+        with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
+            text = f.read()
+        encoding = tiktoken.encoding_for_model(model)
+        return len(encoding.encode(text))
+    except Exception as e:
+        print(f"[ERROR] Failed to read target resource {filepath}: {e}")
+        return 0
+
+def scan_path(target_path: str):
+    """Parses and computes tokens for explicit files or workspace directory trees."""
+    if not os.path.exists(target_path):
+        print(f"[ERROR] Target path '{target_path}' does not exist in active workspace.")
+        sys.exit(1)
+
+    total_tokens = 0
+    if os.path.isfile(target_path):
+        tokens = count_tokens_in_file(target_path)
+        print(f"[FILE] {target_path}: {tokens} tokens")
+        total_tokens = tokens
+    elif os.path.isdir(target_path):
+        print(f"[DIR] Initiating workspace sweep across target: {target_path}")
+        for root, _, files in os.walk(target_path):
+            for file in files:
+                # Restrict scanning scope to plaintext assets to prevent binary processing overhead
+                if not file.endswith((".py", ".md", ".txt", ".json", ".yml", ".yaml", ".sh", ".ps1", ".css", ".html", ".js")):
+                    continue
+                filepath = os.path.join(root, file)
+                tokens = count_tokens_in_file(filepath)
+                if tokens > 0:
+                    print(f" [ASSET] {filepath}: {tokens} tokens")
+                    total_tokens += tokens
+
+    print("-" * 60)
+    print(f"[SUMMARY] TOTAL COMPUTED WORKSPACE TOKENS: {total_tokens}")
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("[ERROR] Missing target parameter path.")
+        print("Usage: uv run --with tiktoken calculate-tokens.py [TARGET_PATH]")
+        sys.exit(1)
+
+    scan_path(sys.argv[1])
+```
+
+--------------------------------
+
+### Continuity Loop Visualization
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/end-of-day.mdx
+
+A text-based diagram illustrating the flow of Hibernation Notes between EOD and SOD processes.
+
+```text
+EOD → Step 2: Save Hibernation Notes
+         ↓  [sleep — Git holds the state]
+SOD → Step 3: Feed Hibernation Notes back to AI
+         ↓  [AI resumes with full context — no decay]
+EOD → Step 2: Save new Hibernation Notes
+         ↓  [repeats every day, forever]
+```
+
+--------------------------------
+
+### Define Ritual of Transition Metadata
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+YAML front matter for OKF-compliant documentation files.
+
+```yaml
+---
+okf_version: 0.1
+type: documentation
+title: "🕯️ DSOM Ritual of Transition (v6.1 + Palace v1.0)"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for RITUAL-OF-TRANSITION.md."
+resource: "file:///docs/RITUAL-OF-TRANSITION.md"
+---
+```
+
+--------------------------------
+
+### Agent Ecosystem Architecture Flowchart
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md
+
+Visual representation of the 5-layer agent ecosystem architecture.
+
+```mermaid
+flowchart TD
+    Find["1. Find It: Agentic Resource Discovery (ARD)<br/><code>agenticresourcediscovery.org</code>"] --> Describe["2. Describe It: AI Catalog<br/><code>application/agent-plugins+json</code>"]
+    Describe --> Package["3. Package It: Agent Plugins 1.0.0<br/><code>plugin.json</code> + <code>mcp.json</code> + <code>skills/</code>"]
+    Package --> Run["4. Run It: FastMCP & Agent Skills<br/><code>tools/mcp/server.py</code> & <code>SKILL.md</code>"]
+    Run --> Govern["5. Govern It: Deep State of Mind (DSOM)<br/>Spatial Memory + 10 Guardrails + OKF v0.2"]
+```
+
+--------------------------------
+
+### Manual EOD Equivalent for Windows (T1)
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Manual steps to perform the EOD process on a Windows environment.
+
+```powershell
+.\tools\hibernation.ps1
+# hibernation.ps1 v2.1 runs palace-sync.ps1 automatically (Step 7)
+```
+
+--------------------------------
+
+### Active Context Manifest Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md
+
+Defines the YAML-based manifest format used to declare file paths for agent task sessions.
+
+```markdown
+---
+okf_version: 0.1
+type: active_context_manifest
+title: "Active Context — YYYY-MM-DD"
+description: "Declares the exact file paths the agent must load for the current task session."
+---
+
+## Active Files
+
+- .agents/brain/task.md
+- .agents/brain/wings/wing_dsom_core/hall_facts/room_tooling/closet.md
+```
+
+--------------------------------
+
+### search_palace(query)
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/reference/mcp_server.mdx
+
+Executes a text search across the project's Markdown documentation files.
+
+```APIDOC
+## search_palace(query)
+
+### Description
+Performs a text search across all Markdown files located in the `docs/` directory.
+
+### Parameters
+- **query** (string) - Required - The search term to look for within the documentation files.
+```
+
+--------------------------------
+
+### Define OKF YAML Frontmatter
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md
+
+Use this header structure to enable rapid directory state mapping and scope validation.
+
+```yaml
+---
+okf_version: 0.1
+type: engineering_matrix
+title: "Target Room Architecture"
+---
+```
+
+--------------------------------
+
+### Run regression validation
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/how-to/generate-sitemaps-seo.md
+
+Executes unit tests to validate Read the Docs links and GitBook canonical formats.
+
+```bash
+uv run --with pyyaml --with pytest pytest tests/test_seo_sitemaps.py tests/test_sitemap_seo_generator_skill.py
+```
+
+--------------------------------
+
+### Connect to Remote Target Nodes
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-SETUP-WSL-ALMALINUX10.md
+
+Commands to distribute SSH keys and verify connectivity to target nodes using Ansible.
+
+```bash
+# Inside dsom-control-almalinux10 as dsom-admin
+
+# Copy your SSH public key to each target node
+
+ssh-copy-id -i ~/.ssh/id_ed25519.pub [USER]@[TARGET_IP]
+
+# Test connectivity
+
+ansible all -m ping -i /mnt/d/Users/LinuxMalaysia/Projects/deep-state-of-mind-for-my-ai/inventory/hosts.yml
+```
+
+--------------------------------
+
+### Execute Hibernation Sequence
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools-and-automation/hibernation.md
+
+Run the hibernation script to initiate the controlled shutdown process.
+
+```bash
+./tools/hibernation.sh
+```
+
+--------------------------------
+
+### Synchronize T2 Environment
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
+
+Ensures the T2 environment matches the T1 state after a push.
+
+```bash
+# Inside dsom-control-almalinux10
+
+cd /mnt/d/Users/LinuxMalaysia/Projects/[YOUR_PROJECT]
+git pull origin main
+```
+
+```bash
+./tools/git-ritual.sh sod
+```
+
+--------------------------------
+
+### Run Privacy Guardian Scan
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/SOD-RITUAL.md
+
+Perform a privacy scan on the environment before sharing data with an AI.
+
+```bash
+./tools/privacy-guardian.sh
+
+# Or via Ansible:
+
+ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
+```
+
+--------------------------------
+
+### Re-add remotes and force push
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/git-history-scrubber.mdx
+
+Restore remote repository connections and force push the rewritten history to all branches and tags.
+
+```bash
+git remote add origin <repo-url>
+git push origin --force --all
+git push origin --force --tags
+
+# Repeat for GitLab if configured as a separate remote
+git push gitlab --force --all
+git push gitlab --force --tags
+```
+
+--------------------------------
+
+### Safe Sync Ritual: Verify T3 Connectivity
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/human-handover.mdx
+
+Checks Ansible connectivity to the T3 jump host.
+
+```bash
+# Run from T2 WSL2
+
+ansible all -m ping -i inventory/hosts.yml
+```
+
+--------------------------------
+
+### Commit and Tag Palace
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-MIGRATE-TO-PALACE.md
+
+Finalize the migration by committing changes and tagging the milestone.
+
+```bash
+git add .agents/brain/
+git commit -m "feat(palace): initialise Sovereign Markdown Palace v1.0 — [N] Rooms backfilled"
+git push origin main
+```
+
+```bash
+git tag -a vX.X.X-palace -m "feat: Sovereign Markdown Palace v1.0 — spatial memory initialised"
+git push origin vX.X.X-palace
+```
+
+--------------------------------
+
+### DSOM Operating Model Diagram
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/introduction.mdx
+
+Visual representation of the core loop involving AIOps, GitOps, and the Executor.
+
+```text
+┌─────────────────────────────────────────────────────┐
+│                DSOM OPERATING MODEL                 │
+│                                                     │
+│  ┌──────────┐   ┌──────────┐   ┌─────────────────┐ │
+│  │  AIOps   │──▶│  GitOps  │──▶│  The Executor   │ │
+│  │  (Mind)  │   │ (Record) │   │     (Hand)      │ │
+│  └──────────┘   └──────────┘   └─────────────────┘ │
+│       │               │                 │           │
+│  AI proposes    Git records     Executor runs       │
+│  & analyses     all state       on target nodes     │
+│       ▲               │                 │           │
+│       └───────────────┴─── AI verifies ─┘           │
+└─────────────────────────────────────────────────────┘
+```
+
+--------------------------------
+
+### Audit and repair OKF frontmatter
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tutorials/getting-started.mdx
+
+Scan and standardize Markdown documentation headers to satisfy OKF v0.1 requirements.
+
+```bash
+uv run --with pyyaml python tools/apply_okf_frontmatter.py docs/
+```
+
+```bash
+head -n 8 docs/tutorials/index.md
+```
+
+--------------------------------
+
+### Define NOSS compliance in SKILL.md
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/NOSS-INTEGRATION-GUIDE.md
+
+Use this YAML frontmatter block in SKILL.md files to register the skill with the DSOM Semantic Router and specify compliance targets.
+
+```yaml
+---
+name: "linux-c01-w01"
+description: "Executes OS-level security hardening according to national standards."
+compliance_framework: "NOSS"
+noss_level: 3
+noss_competency_unit: "IT-020-3:2026-CU01-WA01"
+---
+```
+
+--------------------------------
+
+### Define the Palace Registry Template
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-PORT-AI-PALACE.md
+
+A markdown template for mapping project domains (Wings) and memory categories (Halls/Closets) for the AI.
+
+```markdown
+
+# 🗺️ Palace Registry
+
+## 🏛️ Wings
+
+*   **wing_frontend:** All UI/UX memory.
+*   **wing_backend:** All API and database memory.
+
+## 🚪 Active Closets
+
+*   `wings/wing_backend/hall_facts/room_architecture/closet.md` - Describes our DB schema.
+*   `wings/wing_frontend/hall_events/room_sprints/closet.md` - Describes what we built in Sprint 1.
+```
+
+--------------------------------
+
+### Batch re-order metadata fields
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/how-to/audit-and-apply-frontmatter.md
+
+Refactors metadata ordering within documents, with options for dry runs or in-place execution.
+
+```bash
+uv run --with pyyaml python tools/refactor_okf.py docs/ --dry-run
+```
+
+```bash
+uv run --with pyyaml python tools/refactor_okf.py docs/
+```
+
+--------------------------------
+
+### Standard Spatial Closet Header Format
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-COGNITIVE-LOGGING-PROTOCOL.md
+
+Use this header template at the top of every 'closet.md' file during EOD Hibernation to link the document to specific conversation logs.
+
+```markdown
+
+# 🗄️ Spatial Closet: [Topic]
+
+**Primary Conversation ID:** [Insert Unique Session/Conversation ID Here]
+**Log Path / Reference:** [Insert Absolute Path to Transcript OR Cloud URL]
+
+## 📌 Context
+
+[The distilled human-readable summary...]
+
+```
+
+--------------------------------
+
+### T2 Environment Synchronization
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Ensures the WSL2 environment is updated to match the latest pushed commit from T1.
+
+```bash
+cd /mnt/d/Users/LinuxMalaysia/Projects/[YOUR_PROJECT]
+git pull origin main
+```
+
+```bash
+./tools/git-ritual.sh sod
+```
+
+--------------------------------
+
+### DSOM Operational Lifecycle Flowchart
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tutorials/TEAM-DSOM-MASTERCLASS.md
+
+Visual representation of the 4-phase lifecycle for project management and agent collaboration.
+
+```mermaid
+flowchart TD
+    subgraph Phase1 ["Phase 1: Project Genesis & DSOM Scaffolding"]
+        Init["1. Create Repo Directory"] --> Engine["2. Adopt 6-Pillar DSOM Footprint"]
+        Engine --> Gateway["3. Deploy Universal Gateway Matrix"]
+        Gateway --> Hooks["4. Install Git Pre-Commit Guardrails"]
+    end
+
+    subgraph Phase2 ["Phase 2: Sovereign Dual-Remote GitOps"]
+        Hooks --> GitInit["5. git init & Initial Commit"]
+        GitInit --> MultiRemote["6. Configure GitHub (origin) + GitLab (gitlab)"]
+        MultiRemote --> PushAll["7. Safe Multi-Remote Push"]
+    end
+
+    subgraph Phase3 ["Phase 3: Pair Programming with Google Antigravity"]
+        PushAll --> Boot["8. Antigravity Genesis Read"]
+        Boot --> Tasks["9. Active Planning & Task Ledger"]
+        Tasks --> GuardrailsVerify["10. Test Verification & Memory Anchoring"]
+    end
+
+    subgraph Phase4 ["Phase 4: Multi-Agent Collaboration (Jules + Antigravity)"]
+        GuardrailsVerify --> JulesAsync["11. Google Jules Background Tasks"]
+        JulesAsync --> SyncMatrix["12. Bidirectional Handover & Rebase Sync"]
+        SyncMatrix --> EOD["13. Episodic Record & EOD Hibernation"]
+    end
+```
+
+--------------------------------
+
+### Run SOD Session Check
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-CHECKUSAGE.md
+
+Command to execute the session health check as part of the Start-of-Day ritual.
+
+```powershell
+# SOD check — confirm current session is Nominal
+
+.\tools\CheckUsage.ps1
+
+# If current session is [CRT], start a new Antigravity chat and reanimate
+
+# See: docs/REANIMATION-PROMPT-TEMPLATE.md → Prompt 2
+```
+
+--------------------------------
+
+### Daily Hibernation Continuity Loop
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/CLAUDE-SETUP.md
+
+Visual representation of the End-of-Day (EOD) and Start-of-Day (SOD) workflow for maintaining persistent AI context.
+
+```text
+EOD → Step 1b: Save Hibernation Notes to .agents/brain/hibernation-notes-YYYY-MM-DD.txt
+         ↓  [Git holds state. Claude holds nothing.]
+SOD → Step 4b: Feed Hibernation Notes back to Claude
+         ↓  [Claude resumes with exact context — no decay.]
+EOD → Step 1b: Save new Hibernation Notes
+         ↓  [repeats every day, forever]
+```
+
+--------------------------------
+
+### Reanimation Sequence Options
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/RITUAL-OF-TRANSITION.md
+
+Commands for restoring the Cognitive Twin context using either the automated Ansible shortcut or manual scripts.
+
+```bash
+OPTION A: The Ansible Shortcut (Recommended on T2)
+Step 1: bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+        → Pulls Git, audits workspace, generates manifest with Section [14] Palace Registry
+Step 2: Upload manifest to AI      → Cognitive Handshake
+
+OPTION B: Manual / Windows T1
+Step 1: git-ritual.sh sod          → pull latest from origin/main
+Step 2: audit-pre-flight.sh        → verify workspace (5 checks, all must PASS)
+Step 3: reanimate.sh               → generate 14-section context manifest
+Step 4: privacy-guardian.sh        → scan manifest before upload
+Step 5: Upload manifest to AI      → Cognitive Handshake
+```
+
+--------------------------------
+
+### Run Privacy Guardian Scan
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/end-of-day.mdx
+
+Scans manifest files for sensitive information like API keys, tokens, and private keys before external sharing.
+
+```bash
+bash tools/privacy-guardian.sh
+```
+
+--------------------------------
+
+### Implement Downstream Root Interception Template
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
+
+Standardized notice for AI agents to ensure compliance with the DSOM protocol upon repository entry.
+
+```markdown
+# AI Agent Notice: DSOM Sovereign Brain Active
+
+> **ATTENTION ALL AI AGENTS & HUMAN CONTRIBUTORS:**
+> This repository is governed by the **Deep State of Mind (DSOM)** protocol.
+> All operational memory, ongoing tasks, and historical decisions reside in:
+> - `.agents/AGENTS.md` — The Core Constitutional Rules.
+> - `.agents/brain/task.md` — Current active tasks & completed milestones.
+> - `.agents/brain/walkthrough.md` — Historical context & session anchors.
+>
+> **MANDATORY PROTOCOL:**
+> 1. Read `.agents/AGENTS.md` before executing any modification.
+> 2. Check `.agents/brain/task.md` to align with the current objective.
+> 3. Conclude major milestones by outputting `[DSOM EPISODIC RECORD]`.
+```
+
+--------------------------------
+
+### Execute EOD Palace Script
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/ai-setup/claude.mdx
+
+Run the appropriate script for your operating system to commit and push project changes.
+
+```bash
+bash tools/eod-palace.sh
+```
+
+```powershell
+.\tools\eod-palace.ps1
+```
+
+--------------------------------
+
+### Sync Ritual Commands
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
+
+Commands for managing the push-pull cycle between the Command Centre and the Dev Bridge.
+
+```bash
+# Tier 1 (Command Centre): Author & Push
+
+git add .
+git commit -m "feat(scope): descriptive message [Phase-XX/vX.X]"
+git push origin main
+
+# Tier 2 (Dev Bridge): Palace SOD — full automated reanimation
+
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+
+# Then upload manifest + handshake with AI
+
+# Tier 2 (Dev Bridge): Palace EOD — full automated save
+
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+
+# Then review palace_update_proposal + update closets
+```
+
+--------------------------------
+
+### Linguistic Sovereignty Standards
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/operational-sovereignty.mdx
+
+A flowchart defining the documentation standards and language constraints for architectural clarity.
+
+```mermaid
+flowchart TD
+    A[Documentation Standards] --> B[UK English]
+    A --> C[DBP-standard Malay (Piawai)]
+    A --> D[No Colloquialisms]
+    A --> E[No Indonesian Loanwords]
+    B --> F[Architectural Clarity]
+    C --> F
+    D --> F
+    E --> F
+```
+
+--------------------------------
+
+### Perform Incremental Update
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/openwiki-usage.mdx
+
+Use this command for routine maintenance to regenerate only affected wiki pages based on git diffs.
+
+```bash
+uv run --with pyyaml python tools/openwiki_emulator.py --update
+```
+
+```powershell
+uv run --with pyyaml python tools/openwiki_emulator.py --update
+```
+
+--------------------------------
+
+### fetch_context7_stream(tokens)
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/reference/mcp_server.md
+
+Retrieves URL pointers to external pre-indexed token streams.
+
+```APIDOC
+## fetch_context7_stream(tokens)
+
+### Description
+Fetches external pre-indexed token stream pointers.
+
+### Parameters
+- **tokens** (string) - Required - The token identifiers for the requested stream.
+```
+
+--------------------------------
+
+### Snyk Security Scan Workflow Template
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITHUB-ACTIONS-SECURITY-SCANNING.md
+
+A production-validated GitHub Actions workflow for scanning Python dependencies with Snyk and uploading results to GitHub Code Scanning.
+
+```yaml
+name: Snyk Security Scan
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "requirements.txt"
+      - ".github/workflows/crda.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "requirements.txt"
+      - ".github/workflows/crda.yml"
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: snyk-scan-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  snyk-scan:
+    name: Snyk — Python Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - run: pip install -r requirements.txt
+      - uses: snyk/actions/python@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk.sarif --severity-threshold=low
+      - uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: snyk.sarif
+          category: snyk-python-scan
+```
+
+--------------------------------
+
+### AIOps Workflow Visualization
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
+
+A conceptual flow diagram illustrating the interaction between log analysis, human approval, and GitOps execution.
+
+```text
+
+Log / Event → AI Analysis → Diagnosis + Playbook Proposal
+                                      ↓
+                          Human Review & Approval
+                                      ↓
+                          Git Commit → Ansible Execute
+                                      ↓
+                          Output → AI Verification Loop
+
+```
+
+--------------------------------
+
+### Technical Enforcement and Automation Workflow
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-SOVEREIGNTY.md
+
+Maps the automation scripts and Ansible playbooks used to enforce operational rituals and repository security.
+
+```mermaid
+flowchart LR
+    Init[init-brain.sh] --> Audit[audit-pre-flight.sh]
+    Audit --> Reanimate[reanimate.sh]
+    Reanimate --> Privacy[privacy-guardian.sh]
+    Privacy -->|Fail-Closed| Secure[Secure Repository State]
+    Reanimate --> Palace[palace-sync.sh]
+    Palace --> Proposal[palace_update_proposal]
+    SOD[sod-palace.yml] --> Audit
+    EOD[eod-palace.yml] --> Palace
+```
+
+--------------------------------
+
+### Execute End-of-Day Palace Save
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-MASTER-PROTOCOL.md
+
+Commands to secure the process instance at the end of a session for Linux and Windows environments.
+
+```bash
+bash tools/eod-palace.sh
+```
+
+```powershell
+.\tools\eod-palace.ps1
+```
+
+--------------------------------
+
+### Download PDF with curl
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/pdf-text-extractor.mdx
+
+Uses curl.exe with a browser User-Agent and redirect support to download a PDF file to a local temporary path.
+
+```powershell
+curl.exe -A "Mozilla/5.0" -L "<PDF_URL>" -o "temp_document.pdf"
+```
+
+--------------------------------
+
+### Sunday Human Refresh Protocol Commands
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Commands to perform a dry-run audit and review project state during the weekly human re-index.
+
+```bash
+# Run the full DSOM audit — confirm all 5 checks pass
+./tools/audit-pre-flight.sh
+
+# Or via Ansible (checks all inventory nodes simultaneously)
+ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
+
+# Review the last 10 commits
+git log --oneline -10
+
+# Read the current Mental Anchor
+cat .agents/brain/walkthrough.md | tail -30
+```
+
+--------------------------------
+
+### Validate OKF bundle compliance
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/references/Optimizing OKF for AI Agents - Deep Research - 20260704.md
+
+Runs a validation tool to ensure the bundle meets v0.1 specification requirements, typically used in CI pipelines.
+
+```bash
+node validator/okf-validate.mjs ./.agents/brain
+```
+
+--------------------------------
+
+### Execute Manual Pre-flight Audit
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/COPILOT-SETUP.md
+
+Perform manual ritual and audit checks if the automated bridge is unavailable.
+
+```bash
+./tools/git-ritual.sh sod      # WSL2 / Linux
+./tools/audit-pre-flight.sh    # All checks must [PASS]
+```
+
+--------------------------------
+
+### Sync Ritual Commands
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Commands for pushing changes and executing automated reanimation or save cycles.
+
+```bash
+# Tier 1 (Command Centre): Author & Push
+git add .
+git commit -m "feat(scope): descriptive message [Phase-XX/vX.X]"
+git push origin main
+
+# Tier 2 (Dev Bridge): Palace SOD — full automated reanimation
+bash tools/sod-palace.sh  # (Windows: .\tools\sod-palace.ps1)
+# Then upload manifest + handshake with AI
+
+# Tier 2 (Dev Bridge): Palace EOD — full automated save
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+# Then review palace_update_proposal + update closets
+```
+
+--------------------------------
+
+### Execute EOD Ritual with Skip Tags
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
+
+Run the EOD script while skipping the palace-sync tag if it has already been performed manually.
+
+```bash
+
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
+
+```
+
+--------------------------------
+
+### Generative Engine Optimization Metadata
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+YAML front matter used to define documentation metadata for machine-readability and AI indexing.
+
+```yaml
+---
+okf_version: 0.1
+type: documentation
+title: "Generative Engine Optimisation (GEO)"
+timestamp: "2026-07-11T23:02:18Z"
+topics: ["dsom", "documentation"]
+description: "Architectural policy for ensuring documentation is machine-readable and highly cited by AI Answer Engines."
+resource: "file:///docs/governance/GENERATIVE-ENGINE-OPTIMIZATION.md"
+---
+```
+
+--------------------------------
+
+### DSOM Commit Format
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/git-ritual.mdx
+
+The standard structure for all project commits, including an optional phase tag for timeline anchoring.
+
+```text
+type(scope): description [Phase/vX.X]
+```
+
+--------------------------------
+
+### search_openwiki(query)
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/reference/mcp_server.md
+
+Performs a sub-millisecond metadata search within the OpenWiki knowledge index.
+
+```APIDOC
+## search_openwiki(query)
+
+### Description
+Searches the OpenWiki metadata index for relevant information.
+
+### Parameters
+- **query** (string) - Required - The metadata search term.
+```
+
+--------------------------------
+
+### Push commits using Git Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/git-ritual.mdx
+
+Use these scripts to bypass the interactive wizard and push commits directly with a pre-formatted message.
+
+```bash
+bash tools/git-ritual.sh push "feat(brain): add Mental Anchor for Session 42 [Phase-3/v10.4]"
+```
+
+```powershell
+.\tools\git-ritual.ps1 push "feat(brain): add Mental Anchor for Session 42 [Phase-3/v10.4]"
+```
+
+--------------------------------
+
+### Verify Execution Policy
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-CHECKUSAGE.md
+
+Checks the current execution policy setting for the user.
+
+```powershell
+Get-ExecutionPolicy -Scope CurrentUser
+
+# Expected: RemoteSigned
+```
+
+--------------------------------
+
+### Define the Agent Skill directory structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/overview.mdx
+
+The required directory structure for an agent skill, where the SKILL.md file serves as the memory module.
+
+```text
+.agents/skills/
+└── my-custom-skill/
+    └── SKILL.md      ← The memory module the AI loads
+```
+
+--------------------------------
+
+### Conventional Commit Format
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
+
+Standard format for commit messages to ensure traceability and semantic versioning.
+
+```text
+type(scope): descriptive message [Phase-XX/vX.X]
+
+Types: feat | fix | docs | chore | refactor | test | ci
+Scope: the component or role affected (e.g., kafka, logstash, haproxy)
+
+Examples:
+  feat(ansible): add kafka broker idempotency role [Phase-12/v2.3]
+  fix(inventory): correct 'dsom_suffix' variable for node-02 [Phase-14/v2.4]
+  docs(brain): update walkthrough mental anchor for Phase 15
+```
+
+--------------------------------
+
+### DSOM Package Directory Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-GUARDRAILS-CATALOG-SUBMISSION-REVIEW.md
+
+The standard layout for the guardrails-ai-dsom mono-package, organizing individual guardrail validators within the src directory.
+
+```text
+guardrails-ai-dsom/
+├── pyproject.toml
+├── README.md
+├── LICENSE (GPL-3.0 / Apache-2.0 Dual License)
+└── src/
+    └── guardrails_dsom/
+        ├── __init__.py
+        ├── okf_bom_validator.py            # Guardrail 1
+        ├── okf_trust_validator.py          # Guardrail 2
+        ├── sovereign_signature.py          # Guardrail 3
+        ├── credential_guardian.py          # Guardrail 4
+        ├── uv_gatekeeper.py                # Guardrail 5
+        ├── byte_cap_validator.py           # Guardrail 6
+        ├── atomic_commit_validator.py      # Guardrail 7
+        ├── skill_token_gate.py             # Guardrail 8
+        ├── knowledge_first_validator.py    # Guardrail 9
+        └── root_cleanliness_validator.py   # Guardrail 10
+```
+
+--------------------------------
+
+### MCP Resources
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Read-only streams exposed to AI clients for system state and knowledge retrieval.
+
+```APIDOC
+## MCP Resources
+
+### Description
+AI clients can subscribe to and read these standardised read-only streams via the MCP protocol.
+
+### Available Resources
+- **dsom://brain/state** - Output of condensed system state `current_state.dsom`.
+- **dsom://brain/task** - Real-time session checklists inside `.agents/brain/task.md`.
+- **dsom://brain/walkthrough** - Episodic session walkthrough records.
+- **dsom://governance/agents** - Complete 27 Sovereign AI constitutional rules.
+- **dsom://openwiki/skeleton** - Subsystem structural hierarchy ranking file.
+- **dsom://openwiki/quickstart** - Interactive routing table and system entry-points.
+```
+
+--------------------------------
+
+### Pull Changes on T2
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HUMAN-HANDOVER-CONTEXT.md
+
+Synchronize the local T2 environment with the remote repository.
+
+```bash
+cd /mnt/[T2_MOUNTED_PATH]
+git pull origin main
+```
+
+--------------------------------
+
+### Run Hibernation Script
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/end-of-day.mdx
+
+Performs a lightweight EOD save by validating artifacts and committing changes without requiring Ansible.
+
+```bash
+bash tools/hibernation.sh
+```
+
+```powershell
+.\tools\hibernation.ps1
+```
+
+--------------------------------
+
+### Pull Latest State via Git Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/SOD-RITUAL.md
+
+Synchronize the local repository with the remote state. Use the PowerShell script on Windows or the Bash script on WSL2.
+
+```powershell
+# T1 — Git Ritual: SOD Pull
+
+.\tools\git-ritual.ps1 sod
+```
+
+```bash
+# T2 — Git Ritual: SOD Pull
+
+./tools/git-ritual.sh sod
+```
+
+--------------------------------
+
+### Direct Push with Semantic Message
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/eod-ritual.mdx
+
+Performs a direct push using a pre-defined semantic commit message on Windows.
+
+```powershell
+.\tools\git-ritual.ps1 push "chore(brain): EOD sovereign save — [Phase-X/vX.X]"
+```
+
+--------------------------------
+
+### Execute Ansible Palace EOD
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
+
+Automates the full EOD workflow including validation, syncing, staging, and pushing. Use the skip-tags flag if palace-sync was already performed.
+
+```bash
+# T2 (Linux/WSL2) — Full automated EOD
+
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+```
+
+```bash
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
+```
+
+--------------------------------
+
+### Resolve Git Sync Failures
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/audit-pre-flight.mdx
+
+Commands to synchronize local branch state with the remote repository.
+
+```bash
+git pull origin main
+```
+
+```bash
+bash tools/git-ritual.sh
+```
+
+--------------------------------
+
+### Execute Hibernation Scripts
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/howto-hibernation.mdx
+
+Run the hibernation safety check for the respective operating system environment.
+
+```powershell
+.\tools\hibernation.ps1
+```
+
+```bash
+bash tools/hibernation.sh
+```
+
+--------------------------------
+
+### Search Indexed Frontmatter
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/openwiki-usage.mdx
+
+Query the YAML frontmatter of indexed files for specific topics, titles, or descriptions without loading full document bodies.
+
+```bash
+# Search for files related to Ansible
+uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"
+
+# Search for token optimisation content
+uv run --with pyyaml python tools/openwiki_emulator.py --search "token"
+
+# Search for GitOps governance documents
+uv run --with pyyaml python tools/openwiki_emulator.py --search "gitops"
+```
+
+```powershell
+# Search for files related to Ansible
+uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"
+
+# Search for token optimisation content
+uv run --with pyyaml python tools/openwiki_emulator.py --search "token"
+
+# Search for GitOps governance documents
+uv run --with pyyaml python tools/openwiki_emulator.py --search "gitops"
+```
+
+--------------------------------
+
+### Guardrails Validator Usage
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/tools/guardrails-ai-dsom/README.md
+
+Demonstrates how to instantiate and use DSOM validators to validate and fix input data, such as stripping BOM characters or blocking credential leaks.
+
+```APIDOC
+## Python Validator Usage
+
+### Description
+Validators are instantiated with an optional `on_fail` parameter (e.g., 'fix', 'block', 'reask', 'exception') and used via the `validate()` method.
+
+### Method
+`validate(value: str) -> ValidationResult`
+
+### Example
+```python
+from guardrails_dsom import GuardrailsOKFBOMValidator, GuardrailsCredentialGuardian
+
+# Instantiate validator
+bom_val = GuardrailsOKFBOMValidator(on_fail="fix")
+
+# Validate input
+res = bom_val.validate("\ufeff---\nokf_version: 0.2\n---")
+
+# Access result
+print(res.corrected_value)
+```
+```
+
+--------------------------------
+
+### Run Hibernation Safety Check
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Executes the hibernation script to verify the project state, check for uncommitted changes, and perform spatial reflection.
+
+```bash
+# T2 (WSL2 dsom-control-almalinux10)
+./tools/hibernation.sh
+```
+
+```powershell
+# T1 (Windows PowerShell)
+.\tools\hibernation.ps1
+```
+
+--------------------------------
+
+### Fast Frontmatter Search
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-OPENWIKI.md
+
+Performs a sub-millisecond search over OKF YAML frontmatter fields.
+
+```bash
+uv run --with pyyaml python tools/openwiki_emulator.py --search "Ansible"
+```
+
+--------------------------------
+
+### Run Ansible Multi-Node Validation
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/audit-pre-flight.mdx
+
+Validate the audit across all nodes in the infrastructure inventory.
+
+```bash
+ansible-playbook playbooks/dsom/audit-preflight.yml
+```
+
+--------------------------------
+
+### Log Ansible Execution Output
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-GUIDE.md
+
+Redirects playbook output to a timestamped log file for AI analysis and verification.
+
+```bash
+ansible-playbook playbooks/site.yml 2>&1 | tee .logs/deploy-$(date +%Y%m%d-%H%M%S).log
+```
+
+--------------------------------
+
+### Core Ansible Operational Commands
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/GITOPS-AIOPS-ANSIBLE-STRATEGY.md
+
+Essential commands for verifying connectivity, performing dry runs, executing playbooks with logging, and managing secrets via Ansible Vault.
+
+```bash
+# Verify connectivity to all nodes
+
+ansible all -m ping -i inventory/hosts.yml
+
+# Dry-run (check mode) — always run before live execution
+
+ansible-playbook playbooks/site.yml -i inventory/hosts.yml --check --diff
+
+# Full execution with logging
+
+ansible-playbook playbooks/site.yml -i inventory/hosts.yml \
+  2>&1 | tee .logs/deploy-$(date +%Y%m%d-%H%M%S).log
+
+# Run a specific role/tag only
+
+ansible-playbook playbooks/site.yml -i inventory/hosts.yml --tags "[tag_name]"
+
+# Encrypt a secrets file with vault
+
+ansible-vault encrypt vault/production_secrets.yml
+
+# View encrypted vault file
+
+ansible-vault view vault/production_secrets.yml
+```
+
+--------------------------------
+
+### Self-Audit Loop Workflow Diagram
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/byte-capped-execution-framework.mdx
+
+Visual representation of the logic flow for handling token counts during agent tasks.
+
+```text
+[AGENT TRIGGERED TASK]
+          │
+          ▼
+[Execute dsom-token-calculator via uv]
+          │
+          ├──► Token Count < 4000  ──► [Commit output directly to Main Thread]
+          │
+          └──► Token Count >= 4000 ──► [Engage Progressive Chunking]
+                                       • Halt raw text stream
+                                       • Cache payload to filesystem
+                                       • Emit metadata status header only
+```
+
+--------------------------------
+
+### Atomic Git Ritual Template
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/AI-RESPONSE-TEMPLATE.md
+
+Standardized bash script template for committing logic changes and updating project documentation.
+
+```bash
+# ==============================================================================
+
+# 📜 DSOM Atomic Ritual: [Action Name]
+# ==============================================================================
+
+# type([type]): [short description]
+# 
+
+# Logic: [Explanation of the 'Why' behind this specific change/commit].
+# ==============================================================================
+
+# 1. Stage Changes
+
+git add [file_path]
+
+# 2. Update HISTORY.md (The Ledger)
+
+echo "- **[YYYY-MM-DD]:** [Brief Summary of Milestone]." >> HISTORY.md
+
+# 3. Update individual walkthrough (The Narrative)
+
+echo "## [YYYY-MM-DD] | Strategic Anchor: [Topic]
+- [Detail 1]
+- [Detail 2]" >> .agents/brain/member/{user}/walkthrough.md
+
+# 4. Update Palace Registry / Closets (Spatial Memory) (if applicable)
+
+# Add steps here to update relevant workspace mapping
+
+# 5. Finalise Sync
+
+git add HISTORY.md .agents/brain/member/{user}/walkthrough.md
+git commit -m "[type]([scope]): [message]"
+git push
+```
+
+```bash
+# ==============================================================================
+# 📜 DSOM Atomic Ritual: [Action Name]
+
+# ==============================================================================
+# type([type]): [short description]
+
+# 
+# Logic: [Explanation of the 'Why' behind this specific change/commit].
+
+# ==============================================================================
+
+# 1. Stage Changes
+
+git add [file_path]
+
+# 2. Update HISTORY.md (The Ledger)
+
+echo "- **[YYYY-MM-DD]:** [Brief Summary of Milestone]." >> HISTORY.md
+
+# 3. Update individual walkthrough (The Narrative)
+
+echo "## [YYYY-MM-DD] | Strategic Anchor: [Topic]
+- [Detail 1]
+- [Detail 2]" >> .agents/brain/member/{user}/walkthrough.md
+
+# 4. Update Palace Registry / Closets (Spatial Memory) (if applicable)
+
+# Add steps here to update structural knowledge bounds
+
+# 5. Finalise Sync
+
+git add HISTORY.md .agents/brain/member/{user}/walkthrough.md
+git commit -m "[type]([scope]): [message]"
+git push
+```
+
+--------------------------------
+
+### Perform Disaster Recovery and Rollback
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md
+
+Use these commands to revert an errant commit in the downstream documentation repository.
+
+```bash
+git clone https://github.com/<OWNER>/<DOCS_REPO>.git
+cd <DOCS_REPO>
+git log --oneline -n 5
+git revert <bad-commit-sha>
+git push origin main
+```
+
+--------------------------------
+
+### AI Handshake Protocol
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/ai-cognitive-twin-protocol.mdx
+
+The required handshake phrase to initialize the DSOM protocol after uploading the manifest.
+
+```text
+Initialise DSOM Protocol v6.1 + Palace v1.0.
+Read the manifest. Walk the Palace Registry in Section [14].
+State: "Sovereign State Synchronised" when ready.
+```
+
+--------------------------------
+
+### search_palace(query)
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/ai-setup/mcp-server.mdx
+
+Performs a full-text search across all documentation Palace rooms.
+
+```APIDOC
+## Tool: search_palace
+
+### Description
+Performs a full-text search across all `docs/` Palace rooms.
+
+### Arguments
+- **query** (string) - The search term to look for across the documentation.
+```
+
+--------------------------------
+
+### Run Script with Specific Python Version
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/PYTHON-UV-ENVIRONMENT-GUIDE.md
+
+Forces the execution of a script using a specific Python version, useful for legacy support.
+
+```bash
+uv run --python 3.10 verify.py
+```
+
+--------------------------------
+
+### Execute End-of-Day (EOD) Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
+
+Run the EOD script on T2 (Linux/WSL2) to synchronize the Palace and commit changes.
+
+```bash
+
+# On T2 (Linux/WSL2) — Run this at end of every working session
+
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+
+```
+
+--------------------------------
+
+### Define the DSOM Operational Loop
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-SOVEREIGNTY.md
+
+Visual representation of the closed-loop operational flow between AI, Git, Ansible, and Palace.
+
+```text
+AI Proposes → Git Records → Ansible Executes → AI Verifies → Palace Remembers → EOD Save → (next SOD)
+```
+
+--------------------------------
+
+### Audit Token Footprint
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/token-efficiency.mdx
+
+Tools for auditing token usage across brain files and verifying compliance with token gate limits.
+
+```bash
+# Audit token footprint across all brain files
+uv run --with tiktoken tools/dsom_token_auditor.py
+
+# Audit all skills for token gate compliance
+uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
+```
+
+--------------------------------
+
+### Operational Lifecycle State Machine
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/operational-sovereignty.mdx
+
+A state diagram illustrating the flow between Start-of-Day, Active Flow, and End-of-Day rituals.
+
+```mermaid
+stateDiagram-v2
+    [*] --> SOD
+    SOD: Start-of-Day (Reanimation)
+    SOD --> ActiveFlow
+    ActiveFlow: Guided by CRISP pillars
+    ActiveFlow --> EOD
+    EOD: End-of-Day (Hibernation)
+    EOD --> [*]
+```
+
+--------------------------------
+
+### fetch_context7_stream(tokens)
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/ai-setup/mcp-server.mdx
+
+Retrieves the Context7 RAG stream endpoint URL.
+
+```APIDOC
+## Tool: fetch_context7_stream
+
+### Description
+Returns the Context7 RAG stream endpoint URL for external AI pipelines.
+
+### Arguments
+- **tokens** (int) - Optional. The number of tokens for the stream (default: 83688).
+```
+
+--------------------------------
+
+### Inject DSOM Signature
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/publish-to-blogger.mdx
+
+Applies or updates the DSOM signature to the source markdown file before HTML conversion.
+
+```bash
+python .agents/skills/dsom-signature-injector/scripts/inject.py <path_to_source_md_file>
+```
+
+--------------------------------
+
+### Downstream Project Directory Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
+
+The required directory layout for downstream projects to maintain compliance with the DSOM framework.
+
+```text
+downstream-client-repo/
+├── .agents/
+│   ├── AGENTS.md                  <-- Rulebook tailored to downstream project (Rules 1, 4, 13, 16, 18, 24)
+│   ├── brain/
+│   │   ├── task.md                <-- Live active tasks
+│   │   ├── walkthrough.md         <-- Session anchors & history
+│   │   └── palace_registry.md     <-- Document index
+│   └── skills/                    <-- Only domain-relevant skills (e.g. dsom-signature-injector)
+├── .cursorrules                   <-- Platform pointer for Cursor
+├── CLAUDE.md                      <-- Platform pointer for Claude
+├── AGENTS.md                      <-- Root Sovereign Gateway
+├── START-HERE.md                  <-- Project & DSOM Onboarding Guide
+├── README.md                      <-- Triple-Ledger asset
+├── CHANGELOG.md                   <-- Version tracking
+├── HISTORY.md                     <-- Universal transaction ledger
+└── src/                           <-- Business Logic (>90% of repo volume)
+```
+
+--------------------------------
+
+### Scan and standardise directory frontmatter
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/how-to/audit-and-apply-frontmatter.md
+
+Injects required frontmatter variables and removes Byte Order Marks from files in the specified directory.
+
+```bash
+uv run --with pyyaml python tools/apply_okf_frontmatter.py docs/
+```
+
+--------------------------------
+
+### Revert Corrupted Repository State
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/README.md
+
+Use these commands to restore the repository to a previous state if a synchronization error occurs.
+
+```bash
+git clone https://github.com/linuxmalaysia/my-knowledge-brain.git
+cd my-knowledge-brain
+git log --oneline
+git revert <bad-sync-sha>
+git push origin main
+```
+
+--------------------------------
+
+### Enforce OKF Frontmatter Compliance
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/dsom-policy-adopter.mdx
+
+Applies strict OKF v0.1 YAML frontmatter schema to governance documents.
+
+```bash
+uv run python tools/apply_okf_frontmatter.py docs/governance/
+```
+
+--------------------------------
+
+### Git Commit Message Convention
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
+
+Standard format for tracking changes across phases and versions.
+
+```text
+feat(kafka): add broker idempotency role [Phase-12/v2.3]
+```
+
+--------------------------------
+
+### Manual Cognitive Handshake Prompt
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/COPILOT-SETUP.md
+
+Use this prompt in Copilot Chat to manually inject brain artifacts and synchronize the cognitive state.
+
+```text
+"Based on #file:.agents/brain/palace_registry.md, #file:.agents/brain/task.md and #file:.agents/brain/walkthrough.md, summarise the current spatial room, Mental Anchor, and list today's pending tasks. Confirm the 4-Tier environment from #file:docs/AI-COGNITIVE-TWIN-PROTOCOL.md. State: 'Sovereign State Synchronised' when ready."
+```
+
+--------------------------------
+
+### Cognitive Flow Map Visualization
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/ZERO-GLOBAL-MEMORY.md
+
+Mermaid diagram illustrating the relational path of context ingestion.
+
+```mermaid
+graph TD
+    A[AGENTS.md <br/> Core Persona & Rules] -->|Governs| B(active_context_manifest.md)
+    B -->|Instructs to Load| C[task.md <br/> Next Actions]
+    B -->|Instructs to Load| D[walkthrough.md <br/> Recent Memories]
+    B -->|Instructs to Load| E[palace_registry.md <br/> Spatial Map]
+    
+    E -->|Indexes| F[closet.md <br/> Tooling Registry]
+    F -->|Maps to| G[tools/ scripts & <br/> docs/tools/ guides]
+    
+    C -.->|Updated by| D
+```
+
+--------------------------------
+
+### Commit Changes
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/CONTRIBUTING.md
+
+Create an atomic commit for specific changes.
+
+```bash
+git add [specific-file]
+git commit -m "type(scope): description [Phase/vX.X]"
+```
+
+--------------------------------
+
+### Execute EOD Hibernation Sequence
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/RITUAL-OF-TRANSITION.md
+
+The sequence of steps for updating documentation and running synchronization scripts to finalize the day's work.
+
+```text
+Step 1:  AI updates task.md  → mark [x] done, [ ] tomorrow's targets
+Step 1b: AI updates walkthrough.md → new Session Anchor with Mental Anchor sentence
+Step 2:  Run EOD Hibernation Notes prompt → save output to hibernation-notes-YYYY-MM-DD.txt
+
+OPTION A: The Ansible EOD (Recommended on T2)
+Step 3:  bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+         → Validates artifacts, runs palace-sync, semantic commit, and git push automatically
+
+OPTION B: Manual / Windows T1
+Step 3:  hibernation.sh      → safety check (dirty state, uncommitted files) + palace-sync.pl
+Step 4:  privacy-guardian.sh → scan if manifest was generated today
+Step 5:  git-ritual.sh       → interactive EOD commit (guided semantic commit + push)
+Step 6:  git pull origin main → T2 WSL2 sync after T1 push
+
+Step 7:  Write tomorrow's Mental Anchor in your physical/digital notebook
+```
+
+--------------------------------
+
+### Git Log Reconciliation Command
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Used to programmatically match brain walkthrough history against real Git commits during session initialization.
+
+```bash
+git log --oneline -n 10
+```
+
+--------------------------------
+
+### Execute End-of-Day (EOD) Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/ai-cognitive-twin-protocol.mdx
+
+Run the EOD automation script on T2 or use the hibernation script on Windows. Supports skipping specific tags.
+
+```bash
+# On T2 (Linux/WSL2) — Run this at end of every working session
+
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+```
+
+```bash
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
+```
+
+```powershell
+.\tools\hibernation.ps1
+
+# hibernation.ps1 v2.1 runs palace-sync.ps1 automatically (Step 7)
+```
+
+--------------------------------
+
+### Execute Ansible Privacy Sweep
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-PRIVACY-GUARDIAN.md
+
+Run the Ansible playbook to perform a comprehensive privacy scan across the environment.
+
+```bash
+ansible-playbook playbooks/dsom/privacy-scan.yml
+
+```
+
+--------------------------------
+
+### Session State Template
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/human-handover.mdx
+
+Template to be filled at the end of each session to maintain continuity.
+
+```text
+
+CURRENT STATE: [DESCRIBE_CURRENT_STATE e.g. v1.0 — Ansible baseline deployed, Kafka brokers up]
+Environment:   [e.g. 3-node test cluster]
+Last Commit:   [PASTE LAST COMMIT HASH AND MESSAGE]
+Mental Anchor: [ONE SENTENCE — exact state and where to resume]
+Next Action:   [WHAT THE AI SHOULD DO FIRST IN THE NEW SESSION]
+
+```
+
+--------------------------------
+
+### Verify skill token health
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/dsom-token-performance-playbook.mdx
+
+Executes the token calculator script to validate all skill files, ensuring they meet token constraints.
+
+```bash
+uv run --with tiktoken .agents/skills/dsom-token-calculator/scripts/calculate-tokens.py .agents/skills/
+```
+
+--------------------------------
+
+### search_palace(query)
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/reference/mcp_server.md
+
+Executes a text search across all Markdown files within the docs/ directory.
+
+```APIDOC
+## search_palace(query)
+
+### Description
+Performs a text search across the project's documentation files.
+
+### Parameters
+- **query** (string) - Required - The search term to look for in the documentation.
+```
+
+--------------------------------
+
+### Executing EOD Ritual Scripts
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/COPILOT-SETUP.md
+
+Run the EOD palace script or manual git ritual to ensure brain artifacts are committed.
+
+```bash
+# Recommended on T2
+
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+
+# Or manual fallback
+
+./tools/git-ritual.sh          # guided EOD commit and push
+```
+
+--------------------------------
+
+### Sunday Human Refresh Protocol Audit Commands
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/transition-ritual.mdx
+
+Commands for performing a dry-run audit of the project state, including pre-flight checks and log reviews.
+
+```bash
+# Run the full DSOM audit — confirm all 5 checks pass
+
+./tools/audit-pre-flight.sh
+
+# Or via Ansible (checks all inventory nodes simultaneously)
+
+ansible-playbook playbooks/dsom/audit-preflight.yml -i localhost,
+
+# Review the last 10 commits
+
+git log --oneline -10
+
+# Read the current Mental Anchor
+
+cat .agents/brain/walkthrough.md | tail -30
+```
+
+--------------------------------
+
+### CAPM Integration Flowchart
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/operational-sovereignty.mdx
+
+Flowchart detailing the integration of project management standards including governance, cost control, and quality management.
+
+```mermaid
+flowchart TD
+    A[Integration & Scope Governance] -->|AI-MASTER-PROTOCOL.md| B[Project Constitution]
+    A -->|implementation_plan.md| C[Roadmap]
+
+    D[Schedule & Cost Control] --> E[CPI >= 1.0]
+    D --> F[SPI >= 1.0]
+
+    G[Quality Management] --> H[Pre-flight Audits]
+    G --> I[LDP Pedagogical Standards]
+```
+
+--------------------------------
+
+### Execute Hibernation Script
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-HIBERNATION.md
+
+Run the hibernation safety check script for the respective operating system.
+
+```powershell
+.\tools\hibernation.ps1
+```
+
+```bash
+bash tools/hibernation.sh
+```
+
+--------------------------------
+
+### Verify T3 Ansible Connectivity
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HUMAN-HANDOVER-CONTEXT.md
+
+Test connectivity to managed nodes using the Ansible ping module.
+
+```bash
+# Run from T2 WSL2
+
+ansible all -m ping -i inventory/hosts.yml
+```
+
+--------------------------------
+
+### Day-to-Day Continuity Loop Diagram
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/README.md
+
+Visual representation of the daily hibernation and reanimation cycle.
+
+```text
+EOD → Step 1b: Save Hibernation Notes
+         ↓  [sleep — Git holds state]
+SOD → Step 4b: Feed Hibernation Notes back to AI
+         ↓  [AI resumes with full context — no decay]
+EOD → Step 1b: Save new Hibernation Notes
+         ↓  [repeats every day, forever]
+```
+
+--------------------------------
+
+### Safe Sync Ritual: Remote Audit from T1
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/human-handover.mdx
+
+Executes a pre-flight audit script on the T3 host via a T1 PowerShell bridge.
+
+```powershell
+# Run from Windows PowerShell (T1) — bridges through T2 → T3
+
+wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `
+    "ssh -t dsom-admin@[T3_IP] 'cd /opt/[YOUR_PROJECT_NAME] && bash tools/audit-pre-flight.sh'"
+```
+
+--------------------------------
+
+### Edit Cognitive Twin Protocol
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/audit-pre-flight.mdx
+
+Open the protocol file to replace placeholder strings with project-specific values.
+
+```bash
+nano docs/AI-COGNITIVE-TWIN-PROTOCOL.md
+```
+
+--------------------------------
+
+### Access the Palace Registry
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-PALACE-ONBOARDING.md
+
+The primary entry point for AI agents to understand the repository's spatial structure.
+
+```text
+.agents/brain/palace_registry.md
+```
+
+--------------------------------
+
+### Perform Privacy Scan
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
+
+Scans generated manifests for sensitive information like API keys or private keys before sharing.
+
+```bash
+# Bash
+
+./tools/privacy-guardian.sh
+
+# Or via Ansible
+
+ansible-playbook playbooks/dsom/privacy-scan.yml -i localhost,
+```
+
+--------------------------------
+
+### Synchronize T2 Environment
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/eod-ritual.mdx
+
+Ensures the T2 environment is up to date with the latest commits from the main branch.
+
+```bash
+cd /mnt/d/Users/LinuxMalaysia/Projects/[YOUR_PROJECT]
+git pull origin main
+```
+
+```bash
+./tools/git-ritual.sh sod
+```
+
+--------------------------------
+
+### Export Offline Graph
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-OPENWIKI.md
+
+Generates a standalone, offline HTML graph file at openwiki/graph.html.
+
+```bash
+uv run --with pyyaml python tools/openwiki_emulator.py --export-graph
+```
+
+--------------------------------
+
+### Tri-Phasic Mind Model Visualization
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+A visual representation of the three cognitive execution layers in the DSOM framework.
+
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│                        THE TRI-PHASIC MIND                             │
+├────────────────────────────────────────────────────────────────────────┤
+│ 🌤️ Active State     │ Low-latency interaction, FastMCP resources       │
+│                      │ managed by local IDE (Cursor/Claude Desktop).    │
+├────────────────────────────────────────────────────────────────────────┤
+│ 🌗 Twilight State   │ Near-real-time verification, token gates,       │
+│                      │ linter checks, and automated state compilation. │
+├────────────────────────────────────────────────────────────────────────┤
+│ 🌙 Deep State       │ End-of-Day consolidation, palace-sync reviews,   │
+│                      │ semantic compaction, and git-ops push.          │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+--------------------------------
+
+### CRISP² Methodological Hierarchy Class Diagram
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/operational-sovereignty.mdx
+
+Class diagram illustrating the four-level hierarchical process model for project management.
+
+```mermaid
+classDiagram
+    class L1_Phases {
+        Rituals of Transition
+        Artifact: RITUAL-OF-TRANSITION.md
+    }
+    class L2_GenericTasks {
+        CRISP Mandate
+        Artifact: AI-MASTER-PROTOCOL.md
+    }
+    class L3_SpecialisedTasks {
+        Clean Architecture Layers
+        Artifact: OPERATIONAL-GUIDE.md
+    }
+    class L4_ProcessInstances {
+        Mental Anchors & Breakthroughs
+        Artifact: walkthrough.md
+    }
+
+    L1_Phases <|-- L2_GenericTasks
+    L2_GenericTasks <|-- L3_SpecialisedTasks
+    L3_SpecialisedTasks <|-- L4_ProcessInstances
+```
+
+--------------------------------
+
+### Integrate Ansible Checks into Audit Script
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
+
+Appends verification logic to the audit script to ensure Ansible, inventory, configuration, and playbooks are correctly set up.
+
+```bash
+# Append Ansible checks to the existing audit script
+
+cat >> tools/audit-pre-flight.sh << 'EOF'
+
+# ── Ansible Pre-flight Checks ─────────────────────────────────────────────────
+
+echo "--- [ANSIBLE] Verifying Ansible Baseline ---"
+
+if ! command -v ansible &>/dev/null; then
+  echo "[FAIL] Ansible is not installed. Run: pip3 install ansible"
+  exit 1
+fi
+echo "[OK] Ansible: $(ansible --version | head -1)"
+
+if [ ! -f "inventory/hosts.yml" ]; then
+  echo "[FAIL] inventory/hosts.yml is missing. Create it from the DSOM template."
+  exit 1
+fi
+echo "[OK] inventory/hosts.yml exists."
+
+if [ ! -f "ansible.cfg" ]; then
+  echo "[WARN] ansible.cfg is missing. Using Ansible defaults."
+else
+  echo "[OK] ansible.cfg exists."
+fi
+
+if [ ! -f "playbooks/preflight.yml" ]; then
+  echo "[WARN] playbooks/preflight.yml is missing. Add it for full pre-flight support."
+else
+  echo "[OK] playbooks/preflight.yml exists."
+fi
+
+echo "[OK] Ansible baseline verified."
+EOF
+```
+
+--------------------------------
+
+### Generate Claude Brain Manifest
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/ai-setup/claude.mdx
+
+Execute the appropriate script for your environment to generate the manifest file required for Project Knowledge.
+
+```bash
+bash tools/reanimate-claude.sh
+```
+
+```bash
+bash tools/reanimate.sh
+```
+
+```powershell
+.\tools\reanimate-claude.ps1
+```
+
+--------------------------------
+
+### Reconcile Git History
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/jules-antigravity-sync.mdx
+
+Verify the alignment between the brain's walkthrough history and the actual Git commit log.
+
+```bash
+git log --oneline -n 10
+```
+
+--------------------------------
+
+### Sync changes from Git history
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/how-to/use-openwiki-emulator.md
+
+Pulls updated Git changes into the wiki logs and refreshes indices.
+
+```bash
+uv run --with pyyaml python tools/openwiki_emulator.py --update
+```
+
+--------------------------------
+
+### Define OKF YAML Frontmatter
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Standard YAML frontmatter used in .agents/brain/ and docs/ files to facilitate knowledge discovery.
+
+```yaml
+---
+okf_version: 0.1
+type: standard_operating_procedure
+title: "SOP: Knowledge-First Discovery & Context Preservation Protocol"
+timestamp: "2026-07-26T07:07:00Z"
+topics: ["okf", "discovery", "context-management", "brain", "dsom", "SOP"]
+description: "SOP detailing how AI agents and human operators leverage OKF YAML frontmatter (topics, description) in .agents/brain/ and docs/ to perform fast local discovery before terminal execution."
+---
+```
+
+--------------------------------
+
+### Unknown Parameter Error Message
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-CHECKUSAGE.md
+
+Error output displayed when an invalid parameter is provided to the script.
+
+```text
+[ERROR] Unknown parameter(s): -Loops
+```
+
+--------------------------------
+
+### EOD-RITUAL.md Metadata
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+OKF-compliant metadata header for the End-of-Day ritual documentation file.
+
+```yaml
+---
+okf_version: 0.1
+type: documentation
+title: "🌙 EOD-RITUAL.md — End-of-Day Ritual"
+timestamp: "2026-07-04T09:40:04Z"
+topics: ["dsom", "documentation"]
+description: "OKF-compliant documentation for EOD-RITUAL.md."
+resource: "file:///docs/EOD-RITUAL.md"
+---
+```
+
+--------------------------------
+
+### Validate with Local Dry-Run
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/mintlify-docs-compiler.mdx
+
+Executes the synchronization script in dry-run mode to verify safety guards and preview changes.
+
+```powershell
+python scripts/sync_docs.py --dry-run
+```
+
+--------------------------------
+
+### generate_sitemaps
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/sitemap.txt
+
+Utility function to generate sitemaps for SEO purposes.
+
+```APIDOC
+## generate_sitemaps
+
+### Description
+Generates sitemaps for the project to improve SEO indexing.
+
+### Usage
+Call this function to automate the creation of sitemap files based on the current project structure.
+```
+
+--------------------------------
+
+### Implement OKF Frontmatter Validator
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md
+
+A standalone validator class inheriting from BaseDSOMValidator to check for UTF-8 BOM and YAML frontmatter fences.
+
+```python
+import re
+from typing import Any, Dict, Optional
+from tools.validators.base import BaseDSOMValidator, ValidationResult
+
+class OKFFrontmatterValidator(BaseDSOMValidator):
+    name = "okf_frontmatter_validator"
+    on_fail = "fix"
+
+    def validate(self, markdown_text: str, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+        # Check 1: Must not start with UTF-8 BOM
+        if markdown_text.startswith("\ufeff"):
+            fixed = markdown_text.lstrip("\ufeff")
+            return ValidationResult(
+                is_valid=False,
+                corrected_value=fixed,
+                error_message="Leading UTF-8 BOM detected and stripped.",
+                action_taken="fixed"
+            )
+        
+        # Check 2: Must begin with YAML fence on line 1, column 1
+        if not (markdown_text.startswith("---\n") or markdown_text.startswith("---\r\n")):
+            return ValidationResult(
+                is_valid=False,
+                error_message="Document does not start with OKF frontmatter fence (---").",
+                action_taken="blocked"
+            )
+
+        return ValidationResult(is_valid=True)
+```
+
+--------------------------------
+
+### Execute End of Day (EOD) Palace Sync
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/README.md
+
+Verifies brain artifacts, updates mappings, and commits/pushes state.
+
+```powershell
+.\tools\eod-palace.ps1            # Windows Native
+```
+
+```bash
+bash tools/eod-palace.sh          # Linux / WSL2
+```
+
+--------------------------------
+
+### Perform Non-Interactive Git Push
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tutorials/TEAM-DSOM-MASTERCLASS.md
+
+Configures environment variables to bypass interactive authentication prompts during automated pushes.
+
+```powershell
+# Windows PowerShell
+$env:GIT_TERMINAL_PROMPT="0"; $env:GCM_INTERACTIVE="never"
+git push origin main
+git push gitlab main
+```
+
+```bash
+# Linux / macOS / Bash
+export GIT_TERMINAL_PROMPT=0
+git push origin main
+git push gitlab main
+```
+
+--------------------------------
+
+### Execute End of Day (EOD) Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/README.md
+
+Finalizes the session by verifying artifacts, committing changes, and pushing state.
+
+```powershell
+.\tools\eod-palace.ps1            # Windows Native
+```
+
+```bash
+bash tools/eod-palace.sh          # Linux / WSL2
+```
+
+```bash
+./tools/privacy-guardian.sh
+```
+
+```bash
+git pull origin main
+```
+
+--------------------------------
+
+### DSOM Ingestion Latency Metadata
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+YAML-formatted metadata header defining the engineering matrix for DSOM ingestion architecture.
+
+```yaml
+---
+okf_version: 0.1
+type: engineering_matrix
+title: Ingestion Latency and Contextual Mapping Velocities in DSOM
+timestamp: "2026-07-19T03:12:00Z"
+topics: ["dsom", "documentation"]
+description: "Architectural analysis of DSOM local knowledge ingestion vs. remote RAG/vector pipelines, with empirical benchmarks and implementation guidance."
+resource: "file:///docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md"
+---
+```
+
+--------------------------------
+
+### Configure Ansible Vault for Secrets
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HOWTO-SETUP-ANSIBLE-BASELINE.md
+
+Encrypts a temporary secrets file into a production-ready vault file and removes the plaintext source. Ensure the vault directory is ignored by version control.
+
+```bash
+# Create and encrypt a secrets file
+
+cat > /tmp/secrets_draft.yml << 'EOF'
+---
+vault_deploy_password:    "CHANGE_ME"
+vault_db_root_password:   "CHANGE_ME"
+vault_api_key:            "CHANGE_ME"
+EOF
+
+# Encrypt it with ansible-vault
+
+ansible-vault encrypt /tmp/secrets_draft.yml --output vault/production_secrets.yml
+rm /tmp/secrets_draft.yml
+
+# Verify the encrypted file (enter vault password when prompted)
+
+ansible-vault view vault/production_secrets.yml
+```
+
+--------------------------------
+
+### Manual End-of-Day (EOD) for Windows
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
+
+Manual equivalent command for T1 (Windows) users to perform the EOD ritual.
+
+```powershell
+.\tools\hibernation.ps1
+
+# hibernation.ps1 v2.1 runs palace-sync.ps1 automatically (Step 7)
+
+```
+
+--------------------------------
+
+### Run Hibernation Safety Check
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/EOD-RITUAL.md
+
+Executes pre-sleep validation to ensure the environment is clean and state is synchronized. Hibernation scripts automatically trigger Palace Spatial Reflection.
+
+```bash
+# T2 (WSL2 dsom-control-almalinux10)
+
+./tools/hibernation.sh
+```
+
+```powershell
+# T1 (Windows PowerShell)
+
+.\tools\hibernation.ps1
+```
+
+--------------------------------
+
+### Define a Custom Guardrails Validator
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md
+
+Create a custom validator by inheriting from Validator and using the @register_validator decorator to handle specific text formatting requirements like BOM stripping and frontmatter verification.
+
+```python
+"""
+tools/validators/guardrails_ai_okf_validator.py
+Guardrails AI Custom Validator for OKF & BOM Verification
+"""
+
+from typing import Any, Dict, Optional
+from guardrails.validators import (
+    FailResult,
+    PassResult,
+    ValidationResult,
+    Validator,
+    register_validator,
+)
+
+@register_validator(name="dsom/okf_frontmatter_validator", data_type="string")
+class GuardrailsOKFValidator(Validator):
+    """
+    Validates that text begins with valid OKF YAML frontmatter
+    and automatically strips leading UTF-8 BOM characters.
+    """
+
+    def __init__(self, on_fail: str = "fix", **kwargs):
+        super().__init__(on_fail=on_fail, **kwargs)
+
+    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+        text = str(value)
+
+        # Check 1: Strip BOM
+        if text.startswith("\ufeff"):
+            fixed = text.lstrip("\ufeff")
+            return FailResult(
+                error_message="Leading UTF-8 BOM detected.",
+                fix_value=fixed,
+            )
+
+        # Check 2: Verify frontmatter fence
+        if not (text.startswith("---\n") or text.startswith("---\r\n")):
+            return FailResult(
+                error_message="Document must start with OKF frontmatter fence ('---')."
+            )
+
+        return PassResult()
+```
+
+--------------------------------
+
+### Sovereign Save Commit Format
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/RITUAL-OF-TRANSITION.md
+
+Standardized commit message format for end-of-day synchronization.
+
+```text
+chore(brain): EOD sovereign save — [Short Anchor] [Phase/vX.X]
+
+Example:
+chore(brain): EOD sovereign save — AlmaLinux 10 WSL setup complete [Phase-1/v6.1.1]
+```
+
+--------------------------------
+
+### Mermaid Self-Healing Logic Flow
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/openwiki/INSTRUCTIONS.md
+
+Visual representation of the Mermaid diagram validation and recovery process.
+
+```mermaid
+flowchart TD
+    Scan["Scan Markdown Files"] --> Detect{"Detect Diagram Block"}
+    Detect -->|Valid Mermaid| SaveMermaid["Save as ```mermaid block"]
+    Detect -->|Invalid Syntax| Degrade["Degrade to plain ``` block<br/>Prepend %% openwiki-error: comment"]
+    Detect -->|Found Degraded Block| Recheck{"Re-validate diagram code"}
+    Recheck -->|Now Valid/Repaired| Heal["Heal and upgrade back to ```mermaid"]
+    Recheck -->|Still Invalid| KeepDegraded["Keep degraded status"]
+```
+
+--------------------------------
+
+### Markdown Structure for Slide Generation
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/odp-slide-generator.mdx
+
+Defines the required hierarchy for the slide generator, including headers for titles, subtitles, and column content.
+
+```markdown
+# Achieving Zero-Downtime Cutover
+## Near-Real-Time Delta Sync (CDC) Architecture
+
+### Stage 01: Source
+**Direct Extraction**
+- Native connection to PostgreSQL Write-Ahead Logs (WAL).
+- Row-level mutation tracking without database triggers.
+
+### Stage 02: Transport
+**Streaming Fabric**
+- Apache Kafka (KRaft Mode) for high-throughput event bus.
+- Debezium Connect for automated change capture.
+
+### Stage 03: Target
+**Instant Mirroring**
+- Near-instant transaction mirroring to Percona target.
+- Continuous data validation during sync phase.
+
+> "By streaming row-level mutations in real-time, we compress the final production cutover window."
+```
+
+--------------------------------
+
+### Extract PDF text with uv and pypdf
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/pdf-text-extractor.mdx
+
+Executes an isolated Python script using uv to read a local PDF file and print its extracted text to standard output.
+
+```powershell
+uv run --with pypdf python -c "
+from pypdf import PdfReader
+import sys
+try:
+    reader = PdfReader('temp_document.pdf')
+    text = ''
+    for page in reader.pages:
+        text += page.extract_text() + '\n'
+    print(text)
+except Exception as e:
+    print(f'Error reading PDF: {e}', file=sys.stderr)
+    sys.exit(1)
+"
+```
+
+--------------------------------
+
+### Implement OKF v0.2 Validator in Python
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md
+
+Validates YAML frontmatter against required OKF v0.2 fields. Requires the PyYAML library and inherits from BaseDSOMValidator.
+
+```python
+"""
+tools/validators/okf_v02_validator.py
+Validates OKF v0.2 YAML frontmatter and provenance fields.
+"""
+
+import yaml
+from typing import Any, Dict, Optional
+from tools.validators.base import BaseDSOMValidator, ValidationResult
+
+class OKFv02Validator(BaseDSOMValidator):
+    name = "okf_v02_validator"
+    on_fail = "fix"
+
+    REQUIRED_V02_FIELDS = ["okf_version", "type", "title", "timestamp", "topics", "sources", "generated", "verified", "status", "stale_after"]
+
+    def validate(self, markdown_content: str, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+        if not markdown_content.startswith("---"):
+            return ValidationResult(is_valid=False, error_message="Missing YAML frontmatter fence.", action_taken="blocked")
+        
+        try:
+            parts = markdown_content.split("---", 2)
+            header_yaml = parts[1]
+            data = yaml.safe_load(header_yaml)
+            
+            if data.get("okf_version") == 0.2:
+                missing = [f for f in self.REQUIRED_V02_FIELDS if f not in data]
+                if missing:
+                    return ValidationResult(
+                        is_valid=False,
+                        error_message=f"OKF v0.2 document missing trust fields: {missing}",
+                        action_taken="blocked"
+                    )
+            return ValidationResult(is_valid=True)
+        except Exception as e:
+            return ValidationResult(is_valid=False, error_message=f"YAML parse error: {str(e)}", action_taken="blocked")
+```
+
+--------------------------------
+
+### Record Change History
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/OKF-ADOPTION-GUIDE.md
+
+Maintain a chronological log of modifications to knowledge nodes.
+
+```markdown
+# Knowledge Bundle Change Log
+
+## 2026-08-21
+* **Updated:** `docs/OKF-ADOPTION-GUIDE.md` - Upgraded to OKF v0.2 trust profile with explicit examples.
+```
+
+--------------------------------
+
+### Auditor Script Execution Output
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-TOKEN-EFFICIENCY-REPORT.md
+
+The console output generated after running the DSOM token auditor script.
+
+```text
+Installed 7 packages in 241ms
+--- DSOM Token Efficiency Audit ---
+Scenario A (Bloated Context): 2465 tokens
+Scenario B (DSOM Optimized Context): 93 tokens
+Token Reduction: 96.23%
+Absolute Savings: 2372 tokens per turn
+```
+
+--------------------------------
+
+### Episodic Record Serialization Format
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/ZERO-GLOBAL-MEMORY.md
+
+The standard format for serializing cognitive state at the end of a workflow session.
+
+```text
+[DSOM EPISODIC RECORD]
+1. IDENTITY & CONTEXT MATRIX   → who, what project, which gem
+2. THE DELTA (COGNITIVE LOCK)  → last milestone, blocking issues
+3. MEMORY CORE & PARAMETERS    → rules asserted, file dependencies
+4. NEXT ACTION QUEUE           → exact next steps
+```
+
+--------------------------------
+
+### Define the DSOM Cognitive Digital Twin Model
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/CLAUDE-SETUP.md
+
+Visual representation of the AIOps, GitOps, and Ansible workflow integration.
+
+```text
+AIOps (Claude) → GitOps (Git Records) → Ansible (Human Executes)
+```
+
+--------------------------------
+
+### Execute Ansible Palace EOD
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/operational-guide.mdx
+
+Run the automated end-of-day script to validate brain state, sync, and push changes.
+
+```bash
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+```
+
+--------------------------------
+
+### Safe Git Push
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tutorials/TEAM-DSOM-MASTERCLASS.md
+
+Pushes changes to multiple remotes while disabling interactive prompts.
+
+```powershell
+$env:GIT_TERMINAL_PROMPT="0"; $env:GCM_INTERACTIVE="never"; git push origin main; git push gitlab main
+```
+
+--------------------------------
+
+### Resolve Stash Merge Conflicts
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/jules-antigravity-sync.mdx
+
+Execute a rebase pull and resolve conflicts by preserving context from both agents.
+
+```bash
+git pull --rebase
+```
+
+--------------------------------
+
+### dsom_token_auditor
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/sitemap.txt
+
+Tool for auditing token usage and performance within the DSOM framework.
+
+```APIDOC
+## dsom_token_auditor
+
+### Description
+Provides analysis and auditing of token consumption to ensure efficiency within the cognitive architecture.
+```
+
+--------------------------------
+
+### Interactive injection prompt
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/tools/reanimate.mdx
+
+The prompt displayed by the script to allow manual addition of EOD summaries or master prompts.
+
+```text
+Do you have a manual EOD Summary or Master Prompt addition? (y/N)
+```
+
+--------------------------------
+
+### Operational Sovereignty Mindmap
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/operational-sovereignty.mdx
+
+Visual representation of the 5W1H framework used to maintain architectural sovereignty.
+
+```mermaid
+mindmap
+  root((Operational Sovereignty))
+    Who
+      - Lead Architect
+      - AI Cognitive Twin
+    What
+      - Clean Architecture
+      - CRISP Strategy
+    When
+      - Daily SOD/EOD Rituals
+      - Weekly Human Audit
+    Where
+      - .agents/brain/ artifacts
+    Why
+      - Sovereign Portability
+      - Eliminate Vendor Dependence
+    How
+      - Atomic Git Hygiene
+      - Mandatory Handshake Protocols
+```
+
+--------------------------------
+
+### Execute Palace EOD Sequence
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-GUIDE.md
+
+Run the automated end-of-day script to validate brain state, sync, stage, commit, and push changes.
+
+```bash
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+```
+
+--------------------------------
+
+### Remote Audit from T1
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/HUMAN-HANDOVER-CONTEXT.md
+
+Execute a pre-flight audit script on the T3 host via a T1 Windows PowerShell bridge.
+
+```powershell
+# Run from Windows PowerShell (T1) — bridges through T2 → T3
+
+wsl -d dsom-control-almalinux10 -u dsom-admin -e bash -c `
+    "ssh -t dsom-admin@[T3_IP] 'cd /opt/[YOUR_PROJECT_NAME] && bash tools/audit-pre-flight.sh'"
+```
+
+--------------------------------
+
+### Split Markdown by Section
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-INGESTION-LATENCY-ARCHITECTURE.md
+
+Splits markdown text into chunks based on H2 headers while preserving frontmatter integrity using regex.
+
+```python
+def split_markdown_by_section(md_text: str) -> list:
+    """Split on H2 headers only. Safe for frontmatter."""
+    import re
+    # Split only on lines that START with ##, avoiding frontmatter
+    parts = re.split(r'(?m)^## ', md_text)
+    return [parts[0]] + [f"## {p}" for p in parts[1:]]
+```
+
+--------------------------------
+
+### Implement PythonExecutionValidator
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md
+
+A gatekeeper that blocks raw pip or unmanaged python calls to enforce the use of uv.
+
+```python
+"""
+tools/validators/ast_uv_gatekeeper.py
+AST/Command gatekeeper enforcing isolated Python execution.
+"""
+
+from typing import Any, Dict, Optional
+from tools.validators.base import BaseDSOMValidator, ValidationResult
+
+class PythonExecutionValidator(BaseDSOMValidator):
+    name = "python_execution_gatekeeper"
+    on_fail = "block"
+
+    PROHIBITED_COMMANDS = ["pip install", "python3 ", "python "]
+
+    def validate(self, command: str, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+        trimmed = command.strip()
+        
+        # Block raw pip
+        if trimmed.startswith("pip ") or " pip install " in trimmed:
+            return ValidationResult(
+                is_valid=False,
+                error_message="Violation of Rule 16: Raw pip prohibited. Use 'uv add' or 'uv run --with'.",
+                action_taken="blocked"
+            )
+            
+        return ValidationResult(is_valid=True)
+```
+
+--------------------------------
+
+### Define Episodic Resume Record
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DOWNSTREAM-DSOM-COMPLIANCE-MANDATE.md
+
+Standardized markdown format for recording session state at the end of development cycles.
+
+```markdown
+[DSOM EPISODIC RECORD]
+Timestamp: 2026-08-22T10:45:00+08:00
+Project: [Downstream Project Name]
+State: In Sync / Green / Pushed
+Test Suite: [X]/[X] passed (100%)
+Active Remotes: origin @ commit [hash]
+Mental Anchor: [Single-sentence summary of exact progress and next step]
+```
+
+--------------------------------
+
+### Cap Command Output
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/token-efficiency.mdx
+
+Limits terminal output to prevent context window flooding during exploratory operations.
+
+```bash
+# Cap command output to prevent context flooding
+some-command 2>&1 | head -c 4000
+```
+
+--------------------------------
+
+### Run Automated EOD Palace Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/rituals/eod-ritual.mdx
+
+Executes the full automated EOD sequence for T2 environments. Use the skip-tags flag to bypass palace synchronization if it was already performed by hibernation scripts.
+
+```bash
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1)
+```
+
+```bash
+bash tools/eod-palace.sh  # (Windows: .\tools\eod-palace.ps1) --skip-tags palace_sync
+```
+
+--------------------------------
+
+### Define Markdown Source Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/proposal-docx-formatter.mdx
+
+The source markdown file requires YAML frontmatter for document metadata and standard markdown syntax for content hierarchy.
+
+```markdown
+---
+title: "Document Title"
+subtitle: "Document Subtitle"
+version: "X.Y"
+date: "DD Month YYYY"
+classification: "CONFIDENTIAL"
+---
+
+## 1. Section Heading
+
+Body paragraph text with **bold** inline formatting.
+
+### 1.1. Subsection Heading
+
+- Bullet list item
+- Another **bold lead-in:** with description
+
+| Column 1 | Column 2 | Column 3 |
+|:---------|:---------|:---------|
+| Data     | Data     | Data     |
+
+#### Sub-subsection
+
+1. Numbered list item
+2. Another item
+```
+
+--------------------------------
+
+### Delete outdated releases
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/git-history-scrubber.mdx
+
+Remove existing releases from GitHub and GitLab to ensure sensitive data is not preserved in archived snapshots.
+
+```bash
+gh release delete <tag-name> -y --cleanup-tag
+glab release delete <tag-name> -y --with-tag
+```
+
+--------------------------------
+
+### Audit Output Verification
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/palace/onboarding.mdx
+
+Expected output format for a successful pre-flight audit.
+
+```text
+[PASS] palace_registry.md exists
+[PASS] wings/ directory present
+[PASS] Section [14] Palace Registry enabled in reanimate
+```
+
+--------------------------------
+
+### Define OKF Frontmatter
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+Standard YAML frontmatter block required for OKF documentation files to ensure proper versioning and indexing.
+
+```yaml
+---
+okf_version: 0.1
+type: documentation
+title: "Reference: apply_okf_frontmatter.py"
+timestamp: "2026-08-13T12:00:00Z"
+topics: ["dsom", "reference", "okf", "frontmatter"]
+---
+```
+
+--------------------------------
+
+### Execute Ansible Playbook Dry-Run
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tutorials/TEAM-DSOM-MASTERCLASS.md
+
+Use this command to perform a safe, non-destructive check of an Ansible playbook before applying changes to the server.
+
+```bash
+ansible-playbook -i hosts playbook.yml --check
+```
+
+--------------------------------
+
+### Define the Sovereign Palace Directory Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/README.md
+
+Visual representation of the directory hierarchy for the Sovereign Markdown Palace.
+
+```text
+.agents/brain/
+├── palace_registry.md        ← AI reads this at SOD (spatial map)
+├── walkthrough.md            ← Linear session log (The Drawer)
+└── wings/                    ← Spatial Palace Rooms
+    └── wing_dsom_core/
+        ├── hall_facts/       ← Immutable laws, tools, architecture
+        └── hall_events/      ← Milestones, versions, history
+```
+
+--------------------------------
+
+### Execute End of Day (EOD) Ritual
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/CONTRIBUTING.md
+
+Commands to perform safety checks and commit project progress before ending the session.
+
+```bash
+# 1. Ask AI to update task.md + walkthrough.md Mental Anchor
+# 2. Run Hibernation Notes Export prompt (see EOD-RITUAL.md Step 1b)
+./tools/hibernation.sh            # Safety check
+./tools/git-ritual.sh             # Interactive EOD commit + push
+```
+
+--------------------------------
+
+### Operational Sovereignty Mermaid Flowchart
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-SOVEREIGNTY.md
+
+Visual representation of the DSOM framework, including theoretical foundations, CRISP hierarchy, and operational rituals.
+
+```mermaid
+flowchart TD
+    %% Root
+    DSOM[Operational Sovereignty through Metacognitive Governance]
+
+    %% 1. Theoretical Framework
+    DSOM --> Sovereignty[1. Theoretical Framework of Operational Sovereignty]
+    Sovereignty --> Who[Who: Lead Architect + AI Twin]
+    Sovereignty --> What[What: Clean Architecture + CRISP Strategy]
+    Sovereignty --> When[When: SOD/EOD + Sunday Audit]
+    Sovereignty --> Where[Where: .agents/brain/ artifacts]
+    Sovereignty --> Why[Why: Sovereign Portability]
+    Sovereignty --> How[How: Git Hygiene + Handshake]
+
+    %% 2. CRISP² Hierarchy
+    DSOM --> CRISP[2. CRISP² Methodological Hierarchy]
+    CRISP --> L1[L1: Phases → Rituals of Transition]
+    CRISP --> L2[L2: Generic Tasks → CRISP Mandate]
+    CRISP --> L3[L3: Specialised Tasks → Clean Architecture Layers]
+    CRISP --> L4[L4: Process Instances → Mental Anchors]
+
+    %% 3. CAPM Integration
+    DSOM --> CAPM[3. Integrating CAPM Knowledge Areas]
+    CAPM --> Integration[Integration & Scope Governance]
+    CAPM --> Schedule[Schedule & Cost Control (CPI/SPI)]
+    CAPM --> Quality[Quality Management → Pre-flight Audits + LDP Standards]
+
+    %% 4. DSOM Brain (SKMS)
+    DSOM --> Brain[4. Anatomy of the DSOM Brain (SKMS)]
+    Brain --> Eternal[Eternal: AI-MASTER-PROTOCOL.md]
+    Brain --> Future[Future: implementation_plan.md]
+    Brain --> Present[Present: task.md]
+    Brain --> Past[Past: walkthrough.md]
+
+    %% 5. Operational Rituals
+    DSOM --> Rituals[5. Operational Rituals of Lifecycle]
+    Rituals --> SODR[SOD: Reanimation + Audit]
+    Rituals --> Active[Active Flow: CRISP pillars + Twin enforcement]
+    Rituals --> EODR[EOD: Hibernation + Sovereign Save]
+
+    %% 6. Technical Enforcement
+    DSOM --> Automation[6. Technical Enforcement & Automation]
+    Automation --> Init[init-brain.sh]
+    Automation --> AuditScript[audit-pre-flight.sh]
+    Automation --> ReanimateScript[reanimate.sh]
+    Automation --> Privacy[privacy-guardian.sh]
+
+    %% 7. Linguistic Sovereignty
+    DSOM --> Language[7. Linguistic Sovereignty]
+    Language --> UK[UK English enforced]
+    Language --> Malay[DBP-standard Malay (Piawai)]
+    Language --> NoColloq[No Colloquialisms]
+    Language --> NoLoan[No Indonesian Loanwords]
+```
+
+--------------------------------
+
+### AI Handshake Protocol Phrase
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-COGNITIVE-TWIN-PROTOCOL.md
+
+The required handshake phrase to be communicated to the AI after uploading the SOD manifest.
+
+```text
+
+Initialise DSOM Protocol v6.1 + Palace v1.0.
+Read the manifest. Walk the Palace Registry in Section [14].
+State: "Sovereign State Synchronised" when ready.
+
+```
+
+--------------------------------
+
+### Display DSOM Guardrail Inventory
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/dsom-guardrails-catalog-submission-review.mdx
+
+Visual representation of the 10 sovereign guardrails required for DSOM protocol compliance.
+
+```text
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                THE 10 DSOM SOVEREIGN GUARDRAILS                                  │
+├────────────────────────────────┬────────────────────────────────┬────────────────────────────────┤
+│ 1. OKF Frontmatter & BOM       │ 2. OKF v0.2 Trust Signals      │ 3. Sovereign Signature Footer │
+│ 4. Credential & PII Guardian   │ 5. Isolated Python Execution   │ 6. Byte-Capped Terminal Guard │
+│ 7. Atomic Commit Gatekeeper    │ 8. Skill Token Window Gate     │ 9. Knowledge-First AST Router │
+│ 10. Root Cleanliness Guardian  │                                │                                │
+└────────────────────────────────┴────────────────────────────────┴────────────────────────────────┘
+```
+
+--------------------------------
+
+### Configure PowerShell Execution Policy
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-CHECKUSAGE.md
+
+Sets the execution policy to RemoteSigned for the current user to allow local script execution.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+--------------------------------
+
+### Implement CredentialGuardianValidator
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md
+
+A validator that intercepts API tokens and private keys by matching against predefined security patterns.
+
+```python
+"""
+tools/validators/credential_guardian.py
+Interception guardrail for secrets and credentials.
+"""
+
+import re
+from typing import Any, Dict, Optional
+from tools.validators.base import BaseDSOMValidator, ValidationResult
+
+class CredentialGuardianValidator(BaseDSOMValidator):
+    name = "credential_guardian"
+    on_fail = "block"
+
+    PATTERNS = [
+        re.compile(r"ghp_[a-zA-Z0-9]{36}"),                       # GitHub Classic PAT
+        re.compile(r"github_pat_[a-zA-Z0-9_]{82}"),               # GitHub Fine-grained PAT
+        re.compile(r"glpat-[a-zA-Z0-9\-]{20}"),                   # GitLab PAT
+        re.compile(r"-----BEGIN (RSA|OPENSSH|EC) PRIVATE KEY-----"), # Private Keys
+        re.compile(r"AKIA[0-9A-Z]{16}"),                          # AWS Access Key
+    ]
+
+    def validate(self, text: str, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+        for pattern in self.PATTERNS:
+            if pattern.search(text):
+                return ValidationResult(
+                    is_valid=False,
+                    error_message=f"Credential leak detected matching security pattern: {pattern.pattern}",
+                    action_taken="blocked"
+                )
+        return ValidationResult(is_valid=True)
+```
+
+--------------------------------
+
+### DSOM Validator Interception Pipeline Diagram
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md
+
+Visual representation of the three-stage validation process within the DSOM framework.
+
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│                    DSOM VALIDATOR INTERCEPTION PIPELINE                │
+├────────────────────────────────────────────────────────────────────────┤
+│ 1. Input Guardrail     │ FastMCP Tool Invocations / Prompt Sanitization │
+├────────────────────────────────────────────────────────────────────────┤
+│ 2. Inline Validator    │ Twilight State AST / Regex / OKF Schema Checks │
+├────────────────────────────────────────────────────────────────────────┤
+│ 3. Output Guardrail    │ EOD Palace Sync & GitOps Commit Gate (pytest)  │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+--------------------------------
+
+### Sovereign Palace Directory Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/governance/token-efficiency.mdx
+
+Represents the spatial memory architecture where knowledge is distilled into closet files within rooms.
+
+```text
+.agents/brain/
+├── palace_registry.md        ← AI reads this at SOD (~2,000 tokens)
+├── walkthrough.md            ← Linear session log (loaded selectively)
+└── wings/
+    └── wing_dsom_core/
+        ├── hall_facts/
+        │   └── closet.md     ← Distilled facts (~500 tokens each)
+        └── hall_events/
+            └── closet.md     ← Milestones and history
+```
+
+--------------------------------
+
+### Encrypt Secrets with Ansible Vault
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/reference-architectures/HOWTO-SETUP-ANSIBLE-BASELINE.md
+
+Encrypts a draft secrets file into the production vault directory to prevent accidental exposure in version control.
+
+```bash
+ansible-vault encrypt /path/to/secrets_draft.yml --output vault/production_secrets.yml
+```
+
+--------------------------------
+
+### Palace Directory Hierarchy
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/PALACE-BUILD-STORY.md
+
+The structure of the .agents/brain/ directory, organized into wings, halls, and rooms.
+
+```text
+.agents/brain/wings/
+└── wing_dsom_core/               # Wing (Domain)
+    ├── hall_facts/               # Hall (Memory Type: Immutable Laws)
+    │   ├── room_clean_architecture/closet.md
+    │   ├── room_crisp_strategy/closet.md
+    │   ├── room_dsom_protocol/closet.md
+    │   └── room_tooling/closet.md
+    ├── hall_events/              # Hall (Memory Type: Chronological Milestones)
+    │   ├── room_sovereign_fabric_v9_8/closet.md
+    │   ├── room_brain_artifacts/closet.md
+    │   └── room_ledger/closet.md
+    └── hall_discoveries/         # Hall (Memory Type: Breakthroughs & Misc)
+        └── room_uncategorised/closet.md
+```
+
+--------------------------------
+
+### Search Git history by commit message
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/skills/git-commit-resolver.mdx
+
+Use the --grep flag to locate the new commit hash when the original hash is no longer valid.
+
+```bash
+git log --grep="<part of the commit message>" --oneline
+```
+
+```bash
+git log --grep="update gitbook architecture" --oneline
+```
+
+--------------------------------
+
+### count_tokens(text, model="gpt-4")
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/reference/dsom_token_auditor.md
+
+Counts tokens for a given string using optimized tokenization with the specified model's encoder.
+
+```APIDOC
+## count_tokens(text, model="gpt-4")
+
+### Description
+Counts tokens for a given string using optimized tokenization with the specified model's encoder.
+
+### Arguments
+- **text** (string) - Required - The raw string to be tokenized.
+- **model** (string) - Optional - The model name to use for the encoder (defaults to "gpt-4").
+
+### Returns
+- **Integer** - The total token count for the provided text.
+```
+
+--------------------------------
+
+### Define DSOM Custom Validator Base Class
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/DSOM-CUSTOM-VALIDATORS-GUIDE.md
+
+Provides the abstract base class and dataclass structure required for implementing custom validators in the DSOM framework.
+
+```python
+"""
+Example: tools/validators/base.py
+DSOM Custom Validator Core Schema
+"""
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Any, Dict, Optional, Literal
+
+@dataclass
+class ValidationResult:
+    is_valid: bool
+    corrected_value: Optional[Any] = None
+    error_message: Optional[str] = None
+    action_taken: Literal["pass", "fixed", "blocked", "reask"] = "pass"
+
+class BaseDSOMValidator(ABC):
+    """Abstract Base Class for all DSOM Custom Validators."""
+    
+    name: str = "base_validator"
+    on_fail: Literal["fix", "block", "reask"] = "block"
+
+    @abstractmethod
+    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+        """Evaluate value and return ValidationResult."""
+        pass
+```
+
+--------------------------------
+
+### Define a Mental Anchor
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/core-concepts.mdx
+
+A concise summary sentence used to resume AI sessions by detailing the current phase, completed tasks, next actions, and blockers.
+
+```text
+Phase 3 complete. Kafka broker idempotency role merged to main (v2.3).
+Next action: begin Phase 4 — deploy Logstash pipeline on prod-node-02
+using roles/logstash. Blocker: confirm UID 1001 ownership on /var/log/logstash
+before playbook run.
+```
+
+--------------------------------
+
+### Define the 4-Tier Command Highway
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-SOVEREIGNTY.md
+
+Visual representation of the command hierarchy and data flow between tiers.
+
+```text
+T1 (Windows/AI) → git push → T2 (WSL2 dsom-control-almalinux10) → ansible-playbook → T3/T4
+```
+
+--------------------------------
+
+### DSOM Brain Temporal States Distribution
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/OPERATIONAL-SOVEREIGNTY.md
+
+Represents the distribution of the five core temporal states within the SKMS.
+
+```mermaid
+pie showData
+    title DSOM Brain Temporal States
+    "Eternal (AI-MASTER-PROTOCOL.md)" : 20
+    "Future (implementation_plan.md)" : 20
+    "Present (task.md)" : 20
+    "Past (walkthrough.md)" : 20
+    "Spatial (palace_registry.md)" : 20
+```
+
+--------------------------------
+
+### Diátaxis Framework Quadrant Structure
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs-source/explanation/diataxis.mdx
+
+Visual representation of the four Diátaxis quadrants categorized by user intent and acquisition versus understanding.
+
+```text
+               USER INTENT
+        Learning        Practical
+      +---------------+---------------+
+      |   TUTORIALS   | HOW-TO GUIDES |
+Acq.  |  (Learning-   |  (Problem-    |
+      |   oriented)   |   oriented)   |
+      +---------------+---------------+
+      |  EXPLANATION  |   REFERENCE   |
+Und.  |  (Concept-    |  (Information-|
+      |   oriented)   |   oriented)   |
+      +---------------+---------------+
+```
+
+--------------------------------
+
+### Execution Policy Error Message
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/tools/HOWTO-CHECKUSAGE.md
+
+Error output displayed when PowerShell script execution is restricted.
+
+```text
+CheckUsage.ps1 cannot be loaded because running scripts is disabled on this system.
+```
+
+--------------------------------
+
+### CRDA Failure Log Signature
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/llms-full.txt
+
+The error message displayed in GitHub Actions logs when the decommissioned CRDA service is invoked.
+
+```text
+crda exited with code 1
+FIL Unable to reach the server.
+error="Post \"https://gw.api.openshift.io/user?user_key=...\": dial tcp:
+lookup gw.api.openshift.io on 127.0.0.53:53: no such host"
+```
+
+--------------------------------
+
+### Define BaseDSOMValidator Class
+
+Source: https://gitlab.com/linuxmalaysia/deep-state-of-mind-for-my-ai/-/blob/main/docs/governance/AI-GUARDRAILS-MASTER-GUIDE.md
+
+The abstract base class for all DSOM native validators, requiring implementation of the validate method.
+
+```python
+"""
+tools/validators/base.py
+DSOM Native Lightweight Validator Base Class
+"""
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Any, Dict, Optional, Literal
+
+@dataclass
+class ValidationResult:
+    is_valid: bool
+    corrected_value: Optional[Any] = None
+    error_message: Optional[str] = None
+    action_taken: Literal["pass", "fixed", "blocked", "reask"] = "pass"
+
+class BaseDSOMValidator(ABC):
+    """Abstract Base Class for all DSOM Native Validators."""
+    
+    name: str = "base_validator"
+    on_fail: Literal["fix", "block", "reask"] = "block"
+
+    @abstractmethod
+    def validate(self, value: Any, metadata: Optional[Dict[str, Any]] = None) -> ValidationResult:
+        """Evaluate value and return a deterministic ValidationResult."""
+        pass
+```
+
+=== COMPLETE CONTENT === This response contains all available snippets from this library. No additional content exists. Do not make further requests.
