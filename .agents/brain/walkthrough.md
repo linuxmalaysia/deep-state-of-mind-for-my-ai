@@ -384,6 +384,21 @@ To ensure complete compliance with OpenViking and Warp skill specifications acro
 
 > **EOD Palace Sync Complete: Adopted QMD search skill (47 skills total), authored English and Bahasa Melayu Diátaxis guides, updated all navigation manifests and sitemaps, addressed CodeRabbit review feedback, validated 100% OKF v0.2 compliance, and updated spatial brain memory ledgers.**
 
+## Mental Anchor — 2026-10-19 — DSOM Protocol Evolution & Upstream Harmonisation Specification
+
+- Adopted `docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md` synthesising DSOM v0.1 to v0.2 evolution, single-writer partitioned memory, FastMCP tools, OKF v0.2 discovery flow, multi-tier genesis, and 6-phase upstream merge blueprint.
+- Codified Rule 32 (Single-Writer Partitioned Spatial Memory & Upstream Harmonisation Mandate) in `.agents/AGENTS.md` and root `AGENTS.md`.
+- Completely anonymised all specific project/client repository names across all documentation and Diátaxis guides to maintain strict confidentiality.
+- Registered Entry Point 25 in `START-HERE.md` and mapped specification across `SUMMARY.md`, `mkdocs.yml`, `llms.txt`, `README.md`, `CHANGELOG.md`, and `HISTORY.md`.
+- Updated `tools/hibernation.sh` staging logic for dual walkthrough ledgers (`walkthrough.md` and `walkthrough-openhand.md`) with safe error handling.
+- Aligned OKF v0.2 frontmatter metadata across governance documents (`sources`, `generated`, `status`, `stale_after`).
+- Verified 100% pass rates across test suites (`test_docs_links.py`, `test_validate_okf.py`, `test_mkdocs_nav.py`, `ansible.py`, `containers.py`) and `sh tools/validate-okf.sh`.
+- Completed EOD Palace spatial memory reconciliation (`task.md`, `walkthrough.md`, `palace_registry.md`, `jules_pr_history.md`) and regenerated publication sitemaps.
+
+### Upstream Harmonisation Mental Anchor
+
+> **EOD Palace Sync Complete: Adopted DSOM Protocol Evolution & Upstream Harmonisation Specification (Rule 32 & Entry Point 25), anonymised sensitive project names, updated hibernation staging logic, enforced OKF v0.2 trust signals, achieved 100% test pass rate, and synchronized spatial memory.**
+
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-07*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-19*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

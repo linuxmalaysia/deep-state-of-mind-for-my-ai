@@ -4,7 +4,7 @@ Rule Reference: Rule 13
 """
 
 import re
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from guardrails_dsom.base import BaseDSOMValidator, ValidationResult
@@ -20,7 +20,7 @@ class GuardrailsSovereignSignatureValidator(BaseDSOMValidator):
 
     def validate(self, value: Any, metadata: dict[str, Any] | None = None) -> ValidationResult:
         text = str(value)
-        today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        today_str = datetime.now(UTC).strftime("%Y-%m-%d")
         expected_footer = (
             f"*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | {today_str}*\n"
             f"*Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*"

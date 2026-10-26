@@ -544,7 +544,7 @@ Once Step 6 is complete, the AI knows:
 | [Official Live Documentation (GitHub Pages)](https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/) | 🌐 **Web-Based Sovereign Book** — Official compiled, searchable documentation on GitHub Pages. |
 | [Official Live Documentation (GitBook)](https://malaysia-open-source-community.gitbook.io/deep-state-of-mind-dsom-protocol-for-my-ai) | 📖 **Cloud Sovereign Book** — Official compiled, searchable documentation hosted on GitBook. |
 | [Official Live Documentation (Read the Docs)](https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/) | 📚 **Cloud Sovereign Book** — Official compiled, searchable documentation on Read the Docs. |
-| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 23 primary onboarding entry points. Read this first! |
+| [`START-HERE.md`](START-HERE.md) | 🚀 **New to DSOM?** The 25 primary onboarding entry points. Read this first! |
 | [`docs/START-AI-AGENTS-PROMPT.md`](docs/START-AI-AGENTS-PROMPT.md) | 🤖 **Start AI Agents Prompt** — Universal setup prompt for first-time AI agent onboarding. |
 | [`docs/OKF-ADOPTION-GUIDE.md`](docs/OKF-ADOPTION-GUIDE.md) | 🌐 **Open Knowledge Format (OKF) Guide** — Authoritative guide to OKF v0.1/v0.2 context engine. |
 | [`docs/governance/AI-INITIALIZATION-SEQUENCE.md`](docs/governance/AI-INITIALIZATION-SEQUENCE.md) | 🤖 **AI Initialisation Sequence** — Essential read for both humans and AI on how governance, persona, and memory are established upon boot. |
@@ -563,6 +563,7 @@ Once Step 6 is complete, the AI knows:
 | [`docs/governance/NOSS-INTEGRATION-GUIDE.md`](docs/governance/NOSS-INTEGRATION-GUIDE.md) | 🏛️ NOSS Integration Guide — Adopting National Standards into DSOM skills |
 | [`docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md`](docs/governance/MINTLIFY-ONE-WAY-SYNC-PIPELINE.md) | 🌿 **Mintlify One-Way Sync Pipeline** — Safety-guarded automated publishing to downstream Mintlify documentation sites |
 | [`docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md`](docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md) | 📖 **Mintlify User Manual Sync Guide** — Reusable 3-manual architecture and universal AI prompt for downstream repositories |
+| [`docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md`](docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md) | 🔄 **Upstream Harmonisation Specification** — Single-writer partitioned spatial memory, pure Python FastMCP suite, and 6-phase merge blueprint |
 | [`llms.txt`](llms.txt) | 🗺️ Official AI Crawler Sitemap & Ingestion Constraints |
 | [`docs/HOWTO-PALACE-ONBOARDING.md`](docs/HOWTO-PALACE-ONBOARDING.md) | 🏛️ First-time guide for users and AI agents |
 | [`docs/HOWTO-CLONE-DSOM-PROJECT.md`](docs/HOWTO-CLONE-DSOM-PROJECT.md) | 🏗️ **Master Blueprint** — Scaffolding a new DSOM project |
