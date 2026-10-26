@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
   <meta name="google-site-verification" content="OKJ30rPxLeaG-OocY3C2xkXbYEVgwfMMoaOycjWQJJw" />
 
@@ -32,10 +32,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1104,7 +1104,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1139,7 +1139,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1174,7 +1174,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1209,7 +1209,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1244,7 +1244,7 @@
     
   
   
-    <span class="md-status md-status--proposed"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1279,7 +1279,7 @@
     
   
   
-    <span class="md-status md-status--authoritative"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1314,7 +1314,7 @@
     
   
   
-    <span class="md-status md-status--authoritative"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1349,7 +1349,7 @@
     
   
   
-    <span class="md-status md-status--authoritative"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1375,6 +1375,41 @@
     
   
     Council of High Intelligence Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upstream Harmonisation Specification
   
 
     
@@ -1527,6 +1562,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
   
 
       </a>
@@ -4971,7 +5013,7 @@
 <li><strong>MkDocs Negation &amp; Paths:</strong> Negative exclusion of <code>.agents</code> (i.e. <code>!.agents</code>) in <code>mkdocs.yml</code> enables compiling inside <code>.agents</code>. Navigation paths must be written relative to the <code>docs/</code> folder (without the <code>docs/</code> prefix). Relative symlinks to root-level folders (<code>.agents</code>, <code>playbooks</code>) and root markdown files (<code>README.md</code>, etc.) under <code>docs/</code> must be maintained.</li>
 <li><strong>Custom Hooks:</strong> The custom MkDocs hook (<code>tools/mkdocs_hooks.py</code>) dynamically strips the root-level <code>docs/</code> prefix and maps nested repository-root links to work seamlessly on both GitHub and GitHub Pages.</li>
 <li><strong>Multi-platform deployment &amp; tests:</strong> Deployment configurations (Render blueprint <code>render.yaml</code>, Read the Docs <code>.readthedocs.yaml</code>, and GitHub Pages workflow <code>.github/workflows/gh-pages.yml</code>) and their automated test coverage (<code>tests/test_documentation_deployment.py</code>, <code>tests/test_readthedocs_config.py</code>) must be strictly aligned and validated.</li>
-<li><strong>Hibernation Session Anchors:</strong> Automated EOD/Hibernation script (<code>tools/hibernation.sh</code>) requires a matching dated Session Anchor in <code>.agents/brain/walkthrough.md</code> to pass validation.</li>
+<li><strong>Hibernation Session Anchors:</strong> Automated EOD/Hibernation script (<code>tools/hibernation.sh</code>) requires a matching dated Session Anchor in <code>.agents/brain/walkthrough.md</code> or <code>.agents/brain/walkthrough-openhand.md</code> to pass validation.</li>
 <li><strong>Windows Git-Symlink &amp; CRLF Test Guardrails:</strong> Test discovery suites traversing <code>.md</code> files must detect Git text-pointer symlinks (<code>content.startswith("../")</code>) on Windows native checkouts. Raw byte fence checks must handle CRLF line endings (<code>b"---\r\n"</code>), and POSIX <code>chmod</code> bit assertions must be conditionally executed (<code>if os.name != "nt":</code>).</li>
 <li><strong>Windows PowerShell 5.1 UTF-8 BOM Invariant:</strong> All <code>.ps1</code> automation scripts containing Unicode characters, emojis, or non-ASCII punctuation must be encoded in UTF-8 with BOM (<code>utf-8-sig</code>) to ensure seamless execution under Windows PowerShell 5.1 and avoid parser syntax errors.</li>
 </ul>
@@ -4997,13 +5039,14 @@ Both pathways must adhere to the Tri-Phasic interception model (Active MCP input
 </li>
 <li><strong>Agent Plugins 1.0.0 Specification &amp; Packaging Mandate:</strong> The AI recognizes and strictly adheres to the vendor-neutral <strong>Agent Plugins 1.0.0</strong> directory standard (<code>agent-plugins.org/specification</code>) backed by Google, Amazon, Microsoft, OpenAI, Cursor, and Vercel. Every distributable plugin package must contain a closed root <code>plugin.json</code> (<code>$schema: "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"</code>), fixed-location Agent Skills in <code>skills/</code> (<code>SKILL.md</code>), explicit MCP configurations in <code>mcp.json</code>, and vendor extensions isolated in reverse-domain namespaces (<code>org.dsom.protocol/</code>). All stdio MCP server commands and working directories must respect path containment and expand <code>${PLUGIN_ROOT}</code> and <code>${PLUGIN_DATA}</code> placeholders securely. Master architectural specifications reside in <code>docs/governance/DSOM-AGENT-PLUGINS-SPECIFICATION.md</code>.</li>
 <li><strong>Mintlify One-Way Docs Sync &amp; Safety Guards Mandate:</strong> When publishing documentation to Mintlify-connected downstream repositories (e.g. <code>linuxmalaysia/my-knowledge-brain</code> serving <code>harisfazillah.mintlify.site</code>), the AI must maintain docs in <code>docs/</code> and <code>.agents/skills/</code> as the primary source of truth, compiling them to <code>docs-source/</code> via <code>tools/build_mintlify_mdx.py</code>. The AI must execute the one-way sync pipeline exclusively through <code>scripts/sync_docs.py</code> and <code>.github/workflows/sync-docs.yml</code>. All 5 non-negotiable safety guards MUST pass before any downstream modification: Guard A (Source &amp; <code>docs.json</code> existence), Guard B (Minimum <code>.mdx</code> file count floor), Guard C (Navigation integrity matching every page path in <code>docs.json</code>), Guard D (Diff preview &amp; deletion cap enforcement), and Guard E (Dry-run mode). Human engineers and AI agents are strictly forbidden from editing the downstream docs repo directly or using the Mintlify web editor.</li>
+<li><strong>Single-Writer Partitioned Spatial Memory &amp; Upstream Harmonisation Mandate:</strong> To eliminate Git merge conflicts and race conditions when autonomous AI agent pairs (e.g. Google Antigravity, OpenHands, Google Jules) collaborate, operational memory in <code>.agents/brain/</code> MUST be strictly partitioned into Single-Writer ledgers (<code>state-antigravity.md</code>, <code>state-openhand.md</code>, <code>task-openhand.md</code>, <code>walkthrough-openhand.md</code>). <code>task.md</code> and <code>walkthrough.md</code> are owned exclusively by the primary local human/lead session, while peer agents write exclusively to their assigned ledgers (<code>state-openhand.md</code>, <code>task-openhand.md</code>, etc.), and Google Jules writes exclusively through PR branches and tracks historical PR logs in <code>.agents/brain/jules_pr_history.md</code>. All agents adhere to the Read-All / Write-Mine invariant: reading all state files for global awareness, but modifying only their assigned ledger. Upstream harmonisation back to <code>deep-state-of-mind-for-my-ai</code> follows the 6-phase blueprint (Rulebook upgrade, Spatial Brain refactoring, FastMCP ingestion, Onboarding engine upgrade, Publication-grade compilation, and Re-syncing Sibling Repository Fleet) as codified in <code>docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md</code>.</li>
 </ol>
 <h2 id="cognitive-engine-protocols-boot-discovery">Cognitive Engine Protocols (Boot &amp; Discovery)</h2>
 <p>To enforce Rules 20, 21, and the Sovereign Architecture, the AI must strictly execute these procedural loops:</p>
 <h3 id="1-the-mechanical-boot-sequence">1. The Mechanical Boot Sequence</h3>
 <p>Upon starting a new session or reanimating from hibernation, the AI must orient itself by reading in this exact order:
 1. <strong>The Genesis Read:</strong> <code>.agents/AGENTS.md</code> (Establish identity/laws).
-2. <strong>Memory Restoration:</strong> <code>.agents/brain/</code> (Read <code>task.md</code>, <code>walkthrough.md</code>, and <code>palace_registry.md</code> to restore state).
+2. <strong>Memory Restoration:</strong> <code>.agents/brain/</code> (Read <code>task.md</code>, <code>walkthrough.md</code>, <code>state-antigravity.md</code>, <code>state-openhand.md</code>, <code>task-openhand.md</code>, <code>walkthrough-openhand.md</code>, and <code>palace_registry.md</code> to restore state; note that <code>.agents/brain/jules_pr_history.md</code> is a reference ledger excluded from the boot read set).
 3. <strong>Master Onboarding Map:</strong> <code>START-HERE.md</code> (Understand global topology).</p>
 <h3 id="2-the-5-step-local-knowledge-first-discovery-flow">2. The 5-Step Local Knowledge-First Discovery Flow</h3>
 <p>When asked a question, tasked with debugging, or starting a new feature, the AI must <strong>NOT</strong> guess or execute exploratory terminal commands. It must:
@@ -5157,10 +5200,10 @@ description: "Core persona, linguistic DNA, and operational constraints for the 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       

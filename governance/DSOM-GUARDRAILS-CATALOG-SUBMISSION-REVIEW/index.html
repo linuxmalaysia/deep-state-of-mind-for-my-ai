@@ -26,7 +26,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
   <meta name="google-site-verification" content="OKJ30rPxLeaG-OocY3C2xkXbYEVgwfMMoaOycjWQJJw" />
 
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1108,7 +1108,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1143,7 +1143,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1187,7 +1187,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1212,7 +1212,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1494,7 +1494,7 @@
     
   
   
-    <span class="md-status md-status--approved"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1529,7 +1529,7 @@
     
   
   
-    <span class="md-status md-status--proposed"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1564,7 +1564,7 @@
     
   
   
-    <span class="md-status md-status--authoritative"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1599,7 +1599,7 @@
     
   
   
-    <span class="md-status md-status--authoritative"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1634,7 +1634,7 @@
     
   
   
-    <span class="md-status md-status--authoritative"></span>
+    <span class="md-status md-status--stable"></span>
   
 
   
@@ -1660,6 +1660,41 @@
     
   
     Council of High Intelligence Proposal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upstream Harmonisation Specification
   
 
     
@@ -1812,6 +1847,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--stable"></span>
+  
+
   
 
       </a>
@@ -5425,7 +5467,7 @@
 <li><strong>Threat Vector:</strong> LLMs creating or updating documentation without provenance metadata, leading to unverified hallucinations and stale architectural drift.</li>
 <li><strong>Validation Logic:</strong></li>
 <li>Parses YAML frontmatter into a dictionary.</li>
-<li>If <code>okf_version: 0.2</code>, asserts all 6 trust fields exist: <code>sources</code> (list), <code>generated</code> (string), <code>verified</code> (bool), <code>status</code> (string), <code>stale_after</code> (ISO timestamp), <code>topics</code> (list of 3-5 tags).</li>
+<li>If <code>okf_version: 0.2</code>, asserts all required OKF v0.2 fields exist matching <code>validate_okf_v02_metadata</code>: <code>spec_version</code>, snake_case <code>concept_id</code>, non-empty <code>sources</code> (list of mappings containing <code>id</code>, <code>title</code>, <code>author</code>, and <code>url</code>), <code>generated</code> (mapping containing non-empty <code>by</code> and UTC <code>timestamp</code> or <code>at</code>), <code>status</code> (restricted to <code>draft</code>, <code>stable</code>, or <code>deprecated</code>), and <code>stale_after</code> date string.</li>
 <li><strong>Guardrails AI Class:</strong> <code>GuardrailsOKFTrustValidator</code></li>
 <li><strong>On-Fail Actions:</strong> <code>reask</code> (prompts LLM to supply missing source links and verification status).</li>
 </ul>
@@ -5669,10 +5711,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       
