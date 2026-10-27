@@ -29,13 +29,15 @@ This skill governs setting up, managing document collections, executing incremen
 Always register unique, project-scoped collection names to prevent collisions in `~/.cache/qmd/index.sqlite`:
 
 ```bash
-# Register documentation and agent rules
+# Register documentation, agent skills, and brain episodic memory
 qmd collection add /path/to/project/docs --name <proj>-docs
-qmd collection add /path/to/project/.agents --name <proj>-agents
+qmd collection add /path/to/project/.agents/skills --name <proj>-agents
+qmd collection add /path/to/project/.agents/brain --name brain
 
 # Add human context summaries
 qmd context add qmd://<proj>-docs "Technical documentation and architecture"
-qmd context add qmd://<proj>-agents "AI constitution, palace brain, and skills"
+qmd context add qmd://<proj>-agents "AI constitution and operational skills"
+qmd context add qmd://brain "Persistent AI memory, state history, task lists, and hibernation notes"
 
 # Generate embeddings
 qmd embed
@@ -117,11 +119,14 @@ chmod +x ~/.local/bin/qmd-sync-hourly.sh
 QMD provides two integration pathways for AI IDEs (Cursor / Claude Code / Gemini):
 
 ### A. Direct FastMCP Tool Integration (`tools/mcp/server.py`)
-The DSOM FastMCP server exposes `qmd_search` directly to AI IDEs for seamless, on-device hybrid search across project collections (callers must explicitly specify the target collection parameter, e.g. `collection="oss-docs"`, as scoping is not automatic):
+The DSOM FastMCP server exposes `qmd_search` and `search_brain` directly to AI IDEs for seamless, on-device hybrid search across project collections (such as `brain`, `oss-docs`, `oss-agents`):
 
 ```python
-# Tool Signature in tools/mcp/server.py
-qmd_search(query="gitea podman setup", collection="oss-docs", mode="query", limit=5)
+# Search persistent AI brain memory via QMD vector/hybrid search
+qmd_search(query="episodic walkthrough anchor", collection="brain", mode="query", limit=5)
+
+# Fast direct text search over .agents/brain/ memory files
+search_brain(query="hibernation notes", limit=5)
 ```
 
 ### B. Native QMD Stdio MCP Server

@@ -157,6 +157,36 @@ def search_palace(query: str) -> str:
     return output
 
 @mcp.tool()
+def search_brain(query: str, limit: int = 5) -> str:
+    """Searches long-term AI memory files (.agents/brain/) for episodic context, state history, tasks, proposals, and hibernation notes."""
+    if not BRAIN_DIR.exists():
+        return "Brain directory not found."
+
+    results = []
+    valid_exts = {".md", ".dsom", ".txt"}
+    for filepath in BRAIN_DIR.rglob("*"):
+        if filepath.is_file() and filepath.suffix.lower() in valid_exts:
+            try:
+                content = filepath.read_text(encoding="utf-8")
+                lines = content.splitlines()
+                for i, line in enumerate(lines):
+                    if query.lower() in line.lower():
+                        start = max(0, i - 1)
+                        end = min(len(lines), i + 2)
+                        context = "\n".join(lines[start:end])
+                        results.append(f"--- Memory File: {filepath.relative_to(PROJECT_ROOT)} ---\n{context}\n")
+            except Exception:
+                continue
+
+    if not results:
+        return f"No results found for '{query}' in AI Brain memory."
+
+    output = "\n".join(results[:limit * 3])
+    if len(output) > 8000:
+        return output[:8000] + "\n...[TRUNCATED]"
+    return output
+
+@mcp.tool()
 def search_openwiki(query: str) -> str:
     """Performs sub-millisecond search over OpenWiki OKF frontmatter metadata (title, topics, description)."""
     if not OPENWIKI_DIR.exists():
@@ -274,11 +304,11 @@ def qmd_search(
     mode: str = "query",
     limit: int = 5
 ) -> str:
-    """Executes on-device search across project collections using QMD (BM25 + Vector + LLM Re-ranking).
+    """Executes on-device search across project collections (e.g. 'brain', 'oss-docs', 'oss-agents') using QMD (BM25 + Vector + LLM Re-ranking).
 
     Args:
         query: The search term or natural language conceptual prompt.
-        collection: Optional target QMD collection name (e.g. 'oss-docs', 'oss-agents') for scoped query performance.
+        collection: Optional target QMD collection name (e.g. 'brain', 'oss-docs', 'oss-agents') for scoped query performance.
         mode: Search mode: 'query' (hybrid + reranking, default), 'search' (lexical BM25), or 'vsearch' (vector semantic).
         limit: Maximum number of search results to return (default: 5).
     """

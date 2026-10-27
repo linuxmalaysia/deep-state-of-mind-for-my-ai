@@ -49,6 +49,8 @@ AI clients can subscribe to and read these standardised read-only streams:
 
 AI clients can execute these tools dynamically:
 - **search_palace(query):** Text search across `docs/` Markdown files.
+- **search_brain(query, limit):** Direct text search over `.agents/brain/` persistent long-term AI memory files (`.md`, `.dsom`, `.txt`).
+- **qmd_search(query, collection, mode, limit):** On-device hybrid vector/lexical search with QMD across project collections (`brain`, `oss-docs`, `oss-agents`).
 - **search_openwiki(query):** Sub-millisecond OKF metadata search.
 - **fetch_context7_stream(tokens):** Retrieves URL pointers to external pre-indexed token streams.
 

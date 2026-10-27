@@ -42,6 +42,12 @@ class McpServerResourceTests(unittest.TestCase):
         self.assertIsInstance(results, str)
         self.assertGreater(len(results), 0)
 
+    def test_search_brain_tool_executes(self):
+        results = server.search_brain("dsom")
+        self.assertIsInstance(results, str)
+        self.assertGreater(len(results), 0)
+        self.assertIn("Memory File:", results)
+
     def test_search_code_snippets(self):
         results = server.search_code_snippets("ansible", limit=2)
         self.assertIsInstance(results, str)
@@ -103,6 +109,10 @@ class McpServerResourceTests(unittest.TestCase):
         res_vec = server.qmd_search(query="sovereign governance", collection="oss-agents", mode="vsearch", limit=2)
         self.assertEqual(res_vec, "Result")
         self.assertEqual(mock_run.call_args_list[1].args[0], ["/usr/bin/qmd", "vsearch", "sovereign governance", "-c", "oss-agents", "-n", "2"])
+
+        res_brain = server.qmd_search(query="episodic memory", collection="brain", mode="query", limit=3)
+        self.assertEqual(res_brain, "Result")
+        self.assertEqual(mock_run.call_args_list[2].args[0], ["/usr/bin/qmd", "query", "episodic memory", "-c", "brain", "-n", "3"])
 
     @patch("shutil.which", return_value="/usr/bin/qmd")
     @patch("subprocess.run")
