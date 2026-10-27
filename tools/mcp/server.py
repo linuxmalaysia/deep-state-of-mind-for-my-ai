@@ -163,8 +163,14 @@ def search_brain(query: str, limit: int = 5) -> str:
         return "Brain directory not found."
 
     results = []
+    total_chars = 0
+    max_results = max(1, limit)
+    max_bytes = 8000
     valid_exts = {".md", ".dsom", ".txt"}
+
     for filepath in BRAIN_DIR.rglob("*"):
+        if len(results) >= max_results or total_chars >= max_bytes:
+            break
         if filepath.is_file() and filepath.suffix.lower() in valid_exts:
             try:
                 content = filepath.read_text(encoding="utf-8")
@@ -174,16 +180,20 @@ def search_brain(query: str, limit: int = 5) -> str:
                         start = max(0, i - 1)
                         end = min(len(lines), i + 2)
                         context = "\n".join(lines[start:end])
-                        results.append(f"--- Memory File: {filepath.relative_to(PROJECT_ROOT)} ---\n{context}\n")
+                        block = f"--- Memory File: {filepath.relative_to(PROJECT_ROOT)} ---\n{context}\n"
+                        results.append(block)
+                        total_chars += len(block)
+                        if len(results) >= max_results or total_chars >= max_bytes:
+                            break
             except Exception:
                 continue
 
     if not results:
         return f"No results found for '{query}' in AI Brain memory."
 
-    output = "\n".join(results[:limit * 3])
-    if len(output) > 8000:
-        return output[:8000] + "\n...[TRUNCATED]"
+    output = "\n".join(results)
+    if len(output) > max_bytes:
+        return output[:max_bytes] + "\n...[TRUNCATED]"
     return output
 
 @mcp.tool()

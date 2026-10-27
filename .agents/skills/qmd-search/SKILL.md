@@ -32,12 +32,12 @@ Always register unique, project-scoped collection names to prevent collisions in
 # Register documentation, agent skills, and brain episodic memory
 qmd collection add /path/to/project/docs --name <proj>-docs
 qmd collection add /path/to/project/.agents/skills --name <proj>-agents
-qmd collection add /path/to/project/.agents/brain --name brain
+qmd collection add /path/to/project/.agents/brain --name <proj>-brain
 
 # Add human context summaries
 qmd context add qmd://<proj>-docs "Technical documentation and architecture"
 qmd context add qmd://<proj>-agents "AI constitution and operational skills"
-qmd context add qmd://brain "Persistent AI memory, state history, task lists, and hibernation notes"
+qmd context add qmd://<proj>-brain "Persistent AI memory, state history, task lists, and hibernation notes"
 
 # Generate embeddings
 qmd embed
@@ -123,7 +123,7 @@ The DSOM FastMCP server exposes `qmd_search` and `search_brain` directly to AI I
 
 ```python
 # Search persistent AI brain memory via QMD vector/hybrid search
-qmd_search(query="episodic walkthrough anchor", collection="brain", mode="query", limit=5)
+qmd_search(query="episodic walkthrough anchor", collection="oss-brain", mode="query", limit=5)
 
 # Fast direct text search over .agents/brain/ memory files
 search_brain(query="hibernation notes", limit=5)

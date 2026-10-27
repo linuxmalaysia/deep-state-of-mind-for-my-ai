@@ -43,10 +43,19 @@ class McpServerResourceTests(unittest.TestCase):
         self.assertGreater(len(results), 0)
 
     def test_search_brain_tool_executes(self):
-        results = server.search_brain("dsom")
-        self.assertIsInstance(results, str)
-        self.assertGreater(len(results), 0)
-        self.assertIn("Memory File:", results)
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            tmp_brain = tmp_root / ".agents" / "brain"
+            tmp_brain.mkdir(parents=True, exist_ok=True)
+            (tmp_brain / "memory.md").write_text("# Memory\nThis file contains dsom state history.\n", encoding="utf-8")
+
+            with patch.object(server, "PROJECT_ROOT", tmp_root), patch.object(server, "BRAIN_DIR", tmp_brain):
+                results = server.search_brain("dsom")
+                self.assertIsInstance(results, str)
+                self.assertGreater(len(results), 0)
+                self.assertIn("Memory File:", results)
+                self.assertIn("dsom state history", results)
 
     def test_search_code_snippets(self):
         results = server.search_code_snippets("ansible", limit=2)
