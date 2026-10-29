@@ -158,7 +158,15 @@ def search_palace(query: str) -> str:
 
 @mcp.tool()
 def search_brain(query: str, limit: int = 5) -> str:
-    """Searches long-term AI memory files (.agents/brain/) for episodic context, state history, tasks, proposals, and hibernation notes."""
+    """Searches long-term AI memory files (.agents/brain/) for episodic context, state history, tasks, proposals, and hibernation notes.
+
+    Args:
+        query: Keyword or conceptual phrase to match within memory files.
+        limit: Maximum number of snippet blocks to collect (default: 5).
+
+    Returns:
+        Formatted string containing matching context snippets or error message.
+    """
     if not BRAIN_DIR.exists():
         return "Brain directory not found."
 
