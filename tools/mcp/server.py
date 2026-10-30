@@ -322,11 +322,11 @@ def qmd_search(
     mode: str = "query",
     limit: int = 5
 ) -> str:
-    """Executes on-device search across project collections (e.g. 'brain', 'oss-docs', 'oss-agents') using QMD (BM25 + Vector + LLM Re-ranking).
+    """Executes on-device search across project collections (e.g. '<proj>-brain', '<proj>-docs', '<proj>-agents') using QMD (BM25 + Vector + LLM Re-ranking).
 
     Args:
         query: The search term or natural language conceptual prompt.
-        collection: Optional target QMD collection name (e.g. 'brain', 'oss-docs', 'oss-agents') for scoped query performance.
+        collection: Optional target QMD collection name (e.g. '<proj>-brain', '<proj>-docs', '<proj>-agents') for scoped query performance.
         mode: Search mode: 'query' (hybrid + reranking, default), 'search' (lexical BM25), or 'vsearch' (vector semantic).
         limit: Maximum number of search results to return (default: 5).
     """
