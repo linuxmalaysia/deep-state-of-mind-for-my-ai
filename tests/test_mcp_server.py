@@ -42,6 +42,24 @@ class McpServerResourceTests(unittest.TestCase):
         self.assertIsInstance(results, str)
         self.assertGreater(len(results), 0)
 
+    def test_search_brain_tool_executes(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = pathlib.Path(tmpdir)
+            tmp_brain = tmp_root / ".agents" / "brain"
+            tmp_brain.mkdir(parents=True, exist_ok=True)
+            (tmp_brain / "memory.md").write_text("# Memory\nThis file contains dsom state history.\n", encoding="utf-8")
+
+            with patch.object(server, "PROJECT_ROOT", tmp_root), patch.object(server, "BRAIN_DIR", tmp_brain):
+                results = server.search_brain("dsom")
+                self.assertIsInstance(results, str)
+                self.assertGreater(len(results), 0)
+                self.assertIn("Memory File:", results)
+                self.assertIn("dsom state history", results)
+
+                results_zero = server.search_brain("dsom", limit=0)
+                self.assertIn("No results found", results_zero)
+
     def test_search_code_snippets(self):
         results = server.search_code_snippets("ansible", limit=2)
         self.assertIsInstance(results, str)
@@ -103,6 +121,10 @@ class McpServerResourceTests(unittest.TestCase):
         res_vec = server.qmd_search(query="sovereign governance", collection="oss-agents", mode="vsearch", limit=2)
         self.assertEqual(res_vec, "Result")
         self.assertEqual(mock_run.call_args_list[1].args[0], ["/usr/bin/qmd", "vsearch", "sovereign governance", "-c", "oss-agents", "-n", "2"])
+
+        res_brain = server.qmd_search(query="episodic memory", collection="oss-brain", mode="query", limit=3)
+        self.assertEqual(res_brain, "Result")
+        self.assertEqual(mock_run.call_args_list[2].args[0], ["/usr/bin/qmd", "query", "episodic memory", "-c", "oss-brain", "-n", "3"])
 
     @patch("shutil.which", return_value="/usr/bin/qmd")
     @patch("subprocess.run")
