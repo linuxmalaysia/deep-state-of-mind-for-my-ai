@@ -122,9 +122,10 @@ This file serves as the project's permanent archival record. It tracks the evolu
 - [2026-08-23]: **Mintlify User Manual Architecture & Reusable Agent Prompt.** Authored `docs/governance/MINTLIFY-USER-MANUAL-SYNC-GUIDE.md` (Entry Point 22) establishing the 3-manual stratification model (User/Admin/Developer Manuals), User Manual Site Style standards, and the universal drop-in AI agent prompt for external projects. Enriched `.agents/skills/mintlify-docs-compiler` and updated all navigation ledgers.
 - [2026-09-04]: **Start AI Agents Setup Prompt & Execution Protocol.** Authored Entry Point 23 (`docs/START-AI-AGENTS-PROMPT.md`), delivering a universal, copy-pasteable setup prompt and execution protocol for human operators to onboard any AI agent (Google Jules, Antigravity, Claude, Cursor, Copilot, Gemini) into full DSOM Protocol compliance for first-time project setup.
 - [2026-10-19]: **DSOM Protocol Evolution & Upstream Harmonisation Specification.** Authored `docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md` (Entry Point 25 & Rule 32) synthesising DSOM Protocol v0.1 to v0.2 field breakthroughs, zero-global single-writer partitioned memory (`state-antigravity.md`, `state-openhand.md`), pure Python FastMCP tools, OKF v0.2 discovery, multi-tier genesis, and the 6-phase upstream merge blueprint for `deep-state-of-mind-for-my-ai`.
+- [2026-10-26]: **FastMCP Brain Memory Search & QMD Collection Scoping.** Integrated `search_brain` tool in `tools/mcp/server.py` enabling direct bounded text search across persistent memory files (`.agents/brain/`), standardising project-scoped memory collections (`<proj>-brain`, `<proj>-docs`, `<proj>-agents`) in `.agents/skills/qmd-search/SKILL.md` and reference documentation.
 
 ---
 *End of Current Ledger | Standard: DSOM Protocol v10.4.0-governance | Harisfazillah Jamel*
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-26*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

@@ -21,7 +21,12 @@ description: "DSOM task ledger tracking session progress and completed deliverab
 - `[x]` Re-compile sitemaps (`sitemap.xml`, `sitemap.txt`, `robots.txt`) using `tools/generate_sitemaps.py`.
 - `[x]` Execute multi-tier test suite (`test_docs_links.py`, `test_validate_okf.py`, `test_mkdocs_nav.py`, `test_docs_ci_workflow.py`, `ansible.py`, `containers.py`) with 100% pass rate (82 passed).
 - `[x]` Complete EOD Palace spatial memory reconciliation (`task.md`, `walkthrough.md`, `palace_registry.md`, `jules_pr_history.md`) and triple-ledger updates (`README.md`, `CHANGELOG.md`, `HISTORY.md`).
+- `[x]` Integrate `search_brain` FastMCP tool and `qmd_search` long-term AI memory retrieval over `.agents/brain/`.
+- `[x]` Enforce early termination and result/size budgets during memory file traversal in `tools/mcp/server.py`.
+- `[x]` Standardise project-scoped collection names (`<proj>-brain`, `<proj>-docs`, `<proj>-agents`) in `.agents/skills/qmd-search/SKILL.md` and `docs/reference/mcp_server.md`.
+- `[x]` Isolate `test_search_brain_tool_executes` with temporary brain fixtures and assert `oss-brain` command parameters in `tests/test_mcp_server.py`.
+- `[x]` Complete EOD spatial memory updates and session closure report.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-19*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-26*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

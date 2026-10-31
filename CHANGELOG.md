@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **FastMCP Brain Memory Search & QMD Collection Scoping:** Added `search_brain` tool in `tools/mcp/server.py` enabling direct bounded text search across persistent memory files (`.agents/brain/`), and updated `qmd_search` tool collection guidance to support project-scoped memory collections (`<proj>-brain`, `<proj>-docs`, `<proj>-agents`).
+- **QMD Project-Scoped Memory Collections:** Standardised `<proj>-brain` collection registration and context descriptions in `.agents/skills/qmd-search/SKILL.md` and reference docs `docs/reference/mcp_server.md`.
 - **DSOM Protocol Evolution & Upstream Harmonisation Specification (Rule 32 & Entry Point 25):** Authored `docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md` synthesising DSOM v0.1 to v0.2 evolution, single-writer partitioned spatial memory ledgers (`state-antigravity.md`, `state-openhand.md`), pure Python FastMCP tools, OKF v0.2 discovery flow, multi-tier genesis, and 6-phase upstream merge blueprint back to `deep-state-of-mind-for-my-ai`.
 - **Single-Writer Partitioned Spatial Memory Rule (Rule 32):** Codified Rule 32 in `.agents/AGENTS.md` and root `AGENTS.md`, establishing the Read-All / Write-Mine invariant for autonomous agent pairs collaborating in `.agents/brain/`.
 - **Start AI Agents Setup Prompt & Execution Protocol (Entry Point 23):** Authored `docs/START-AI-AGENTS-PROMPT.md` providing a universal, copy-pasteable setup prompt and execution protocol for human operators to initialize any AI agent (Google Jules, Antigravity, Claude, Cursor, Copilot, Gemini) into full DSOM Protocol compliance for first-time project setup.

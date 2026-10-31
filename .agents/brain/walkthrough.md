@@ -399,6 +399,18 @@ To ensure complete compliance with OpenViking and Warp skill specifications acro
 
 > **EOD Palace Sync Complete: Adopted DSOM Protocol Evolution & Upstream Harmonisation Specification (Rule 32 & Entry Point 25), anonymised sensitive project names, updated hibernation staging logic, enforced OKF v0.2 trust signals, achieved 100% test pass rate, and synchronized spatial memory.**
 
+## 🏁 Session Anchor: 2026-10-26 — FastMCP Local Long-Term Memory Retrieval & QMD Brain Collection Scoping
+
+- Added `search_brain(query, limit)` to FastMCP server (`tools/mcp/server.py`) for direct bounded text search across `.agents/brain/` memory files (`.md`, `.dsom`, `.txt`), with result-count and output-byte limit enforcement during traversal.
+- Updated `qmd_search` tool docstring and reference docs (`docs/reference/mcp_server.md`) to standardise project-scoped collection names (`<proj>-brain`, `<proj>-docs`, `<proj>-agents`).
+- Updated `qmd-search` agent skill (`.agents/skills/qmd-search/SKILL.md`) with `<proj>-brain` collection setup, MD031-compliant blank line spacing, and operational skills context descriptions.
+- Added comprehensive unit tests in `tests/test_mcp_server.py` using isolated temporary directory fixtures and mock command assertions for `oss-brain`.
+- All 15 tests in `tests/test_mcp_server.py` passed cleanly (100% pass rate) and `tools/validate-okf.sh` confirmed 100% OKF v0.2 compliance.
+
+### Long-Term Memory Retrieval Mental Anchor
+
+> **EOD Palace Sync Complete: Integrated search_brain and qmd_search brain collection scoping for local long-term memory retrieval, enforced result limits during traversal, isolated test fixtures, and verified 100% OKF v0.2 compliance.**
+
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-19*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-26*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
