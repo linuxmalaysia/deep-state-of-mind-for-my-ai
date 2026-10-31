@@ -2,14 +2,15 @@
 okf_version: 0.2
 type: task_ledger
 title: "🗺️ DSOM Task List"
-timestamp: "2026-10-19T08:30:00Z"
+timestamp: "2026-10-26T12:00:00Z"
 topics: ["dsom", "upstream-harmonisation", "single-writer", "okf-v02", "governance"]
 resource: "/.agents/brain/task.md"
 sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: "architecture_spec"}]
 spec_version: "0.2"
 status: stable
-generated: {by: "Google Jules", timestamp: "2026-10-19T08:30:00Z"}
-stale_after: "2027-10-19"
+generated: {by: "Google Jules", timestamp: "2026-10-26T12:00:00Z"}
+verified: [{by: "Google Jules", timestamp: "2026-10-26T12:00:00Z"}]
+stale_after: "2027-10-26"
 description: "DSOM task ledger tracking session progress and completed deliverables."
 ---
 - `[x]` Adopt DSOM Protocol Evolution & Upstream Harmonisation Specification (`docs/governance/DSOM-PROTOCOL-EVOLUTION-AND-UPSTREAM-HARMONISATION-SPECIFICATION.md`).

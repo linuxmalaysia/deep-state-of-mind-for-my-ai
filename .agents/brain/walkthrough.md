@@ -9,8 +9,9 @@ sources: [{author: "Harisfazillah Jamel (LinuxMalaysia)", id: "dsom_task_ledger"
 spec_version: "0.2"
 concept_id: dsom_session_walkthrough
 status: stable
-stale_after: "2027-04-11"
+stale_after: "2027-10-26"
 generated: {by: "DSOM Session Workflow", timestamp: "2026-10-11T06:00:00Z"}
+verified: [{by: "Google Jules", timestamp: "2026-10-26T12:00:00Z"}]
 ---
 # DSOM Native MCP Architecture Complete
 

@@ -9,6 +9,10 @@ sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, reso
   title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
   title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
+status: stable
+stale_after: "2027-10-26"
+generated: {by: "Google Jules", timestamp: "2026-10-26T12:00:00Z"}
+verified: [{by: "Google Jules", timestamp: "2026-10-26T12:00:00Z"}]
 description: "OKF-compliant documentation for HISTORY.md."
 ---
 # 📜 Universal Ledger: Deep State of Mind (DSOM)

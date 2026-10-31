@@ -9,6 +9,10 @@ sources: [{author: Harisfazillah Jamel (LinuxMalaysia), id: dsom-core-spec, reso
   title: Deep State of Mind (DSOM) Governance Architecture, type: architecture_spec}, {author: Google Cloud Platform, id: google-okf-v02-spec, resource: 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md',
   title: Google Cloud Open Knowledge Format (OKF) v0.2 Specification, type: external_spec}]
 spec_version: "0.2"
+status: stable
+stale_after: "2027-10-26"
+generated: {by: "Google Jules", timestamp: "2026-10-26T12:00:00Z"}
+verified: [{by: "Google Jules", timestamp: "2026-10-26T12:00:00Z"}]
 ---
 # 🐙 Google Jules: Historic Pull Requests & Conversation Log
 
@@ -219,6 +223,7 @@ Cloning the repository on native Windows workstations often converts symlinks to
 - Achieved 100% test pass rate across multi-tier test suites (`test_docs_links.py`, `test_validate_okf.py`, `test_mkdocs_nav.py`, `ansible.py`, `containers.py`).
 
 ### 16. FastMCP Local Long-Term Memory Retrieval & QMD Brain Collection Scoping
+
 * **Date:** 2026-10-26
 * **Branch:** `feat/mcp-qmd-brain-retrieval-395159821945741315`
 * **Objective:** Enable persistent offline/on-premise long-term AI memory retrieval over `.agents/brain/` via FastMCP (`search_brain`) and QMD hybrid vector retrieval (`qmd_search`).

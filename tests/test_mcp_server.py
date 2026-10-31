@@ -57,6 +57,9 @@ class McpServerResourceTests(unittest.TestCase):
                 self.assertIn("Memory File:", results)
                 self.assertIn("dsom state history", results)
 
+                results_zero = server.search_brain("dsom", limit=0)
+                self.assertIn("No results found", results_zero)
+
     def test_search_code_snippets(self):
         results = server.search_code_snippets("ansible", limit=2)
         self.assertIsInstance(results, str)
