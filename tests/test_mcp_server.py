@@ -119,9 +119,9 @@ class McpServerResourceTests(unittest.TestCase):
         self.assertEqual(res_vec, "Result")
         self.assertEqual(mock_run.call_args_list[1].args[0], ["/usr/bin/qmd", "vsearch", "sovereign governance", "-c", "oss-agents", "-n", "2"])
 
-        res_brain = server.qmd_search(query="episodic memory", collection="brain", mode="query", limit=3)
+        res_brain = server.qmd_search(query="episodic memory", collection="oss-brain", mode="query", limit=3)
         self.assertEqual(res_brain, "Result")
-        self.assertEqual(mock_run.call_args_list[2].args[0], ["/usr/bin/qmd", "query", "episodic memory", "-c", "brain", "-n", "3"])
+        self.assertEqual(mock_run.call_args_list[2].args[0], ["/usr/bin/qmd", "query", "episodic memory", "-c", "oss-brain", "-n", "3"])
 
     @patch("shutil.which", return_value="/usr/bin/qmd")
     @patch("subprocess.run")

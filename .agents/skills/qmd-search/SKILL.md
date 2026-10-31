@@ -36,7 +36,7 @@ qmd collection add /path/to/project/.agents/brain --name <proj>-brain
 
 # Add human context summaries
 qmd context add qmd://<proj>-docs "Technical documentation and architecture"
-qmd context add qmd://<proj>-agents "AI constitution and operational skills"
+qmd context add qmd://<proj>-agents "AI operational skills"
 qmd context add qmd://<proj>-brain "Persistent AI memory, state history, task lists, and hibernation notes"
 
 # Generate embeddings
@@ -194,18 +194,23 @@ Please execute the following phases:
 ### PHASE 3: COLLECTION SETTING
 1. Identify documentation, agent skill, and brain memory folders (`docs/`, `.agents/skills/`, `.agents/brain/`).
 2. Register collections:
+
    ```bash
    qmd collection add /path/to/project/docs --name <proj>-docs
    qmd collection add /path/to/project/.agents/skills --name <proj>-agents
    qmd collection add /path/to/project/.agents/brain --name <proj>-brain
    ```
+
 3. Add human context summaries:
+
    ```bash
    qmd context add qmd://<proj>-docs "Technical documentation and architecture notes"
-   qmd context add qmd://<proj>-agents "AI constitution and operational skills"
+   qmd context add qmd://<proj>-agents "AI operational skills"
    qmd context add qmd://<proj>-brain "Persistent AI memory, state history, task lists, and hibernation notes"
    ```
+
 4. Generate embeddings:
+
    ```bash
    qmd embed
    ```
