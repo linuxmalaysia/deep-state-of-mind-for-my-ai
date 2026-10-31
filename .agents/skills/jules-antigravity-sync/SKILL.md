@@ -116,5 +116,5 @@ A comprehensive log of all Jules historic PRs, reviews, CodeRabbit comments, and
 7. **Strict OKF Frontmatter Invariant**: All `.md` documents must have valid OKF v0.1/v0.2 frontmatter with `topics` placed immediately after `description` in `SKILL.md` files.
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-08-22*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-31*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
