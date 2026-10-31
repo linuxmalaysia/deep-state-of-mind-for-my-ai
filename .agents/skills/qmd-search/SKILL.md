@@ -45,7 +45,7 @@ qmd embed
 
 ---
 
-## 2. Targeted Querying & Collection Scoping (Latency Optimization)
+## 2. Targeted Querying & Collection Scoping (Latency Optimisation)
 Utilize QMD's `-c <collection>` scoping **by default** in local search scripts to minimize SQLite FTS5 query latency and eliminate cross-project search noise on large workspaces:
 
 ```bash
