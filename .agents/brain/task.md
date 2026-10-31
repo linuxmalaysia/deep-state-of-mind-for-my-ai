@@ -27,7 +27,10 @@ description: "DSOM task ledger tracking session progress and completed deliverab
 - `[x]` Standardise project-scoped collection names (`<proj>-brain`, `<proj>-docs`, `<proj>-agents`) in `.agents/skills/qmd-search/SKILL.md` and `docs/reference/mcp_server.md`.
 - `[x]` Isolate `test_search_brain_tool_executes` with temporary brain fixtures and assert `oss-brain` command parameters in `tests/test_mcp_server.py`.
 - `[x]` Complete EOD spatial memory updates and session closure report.
+- `[x]` Process Jules turndown notice and operational data export schema into sovereign records.
+- `[x]` Author Google Jules to Google Antigravity cognitive handover ledger (`.agents/brain/jules_to_antigravity_migration.md`).
+- `[x]` Reconcile spatial memory ledgers (`jules_pr_history.md`, `walkthrough.md`, `jules-antigravity-sync/SKILL.md`, `palace_registry.md`).
 
 ---
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-26*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-31*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*

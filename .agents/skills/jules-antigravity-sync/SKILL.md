@@ -89,6 +89,7 @@ A comprehensive log of all Jules historic PRs, reviews, CodeRabbit comments, and
 - **Atomic Writes**: Enforced unique sibling tempfile replacement via `os.replace()`.
 - **Windows Test Guardrails**: Handled Git symlink text-pointers, CRLF byte fences, and conditional `chmod` assertions.
 - **PR #74 & PR #76**: Modularised unit test package into `tests/unit/` (`ansible.py`, `markdown.py`, etc.).
+- **Jules Turndown & Succession Handover**: Full operational data export and permanent cognitive handover to Google Antigravity documented in `.agents/brain/jules_to_antigravity_migration.md`.
 
 ---
 
