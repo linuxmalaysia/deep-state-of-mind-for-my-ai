@@ -5260,13 +5260,15 @@
 <hr />
 <h2 id="1-multi-project-collection-registration">1. Multi-Project Collection Registration</h2>
 <p>Always register unique, project-scoped collection names to prevent collisions in <code>~/.cache/qmd/index.sqlite</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Register documentation and agent rules</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Register documentation, agent skills, and brain episodic memory</span>
 qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/path/to/project/docs<span class="w"> </span>--name<span class="w"> </span>&lt;proj&gt;-docs
-qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/path/to/project/.agents<span class="w"> </span>--name<span class="w"> </span>&lt;proj&gt;-agents
+qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/path/to/project/.agents/skills<span class="w"> </span>--name<span class="w"> </span>&lt;proj&gt;-agents
+qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/path/to/project/.agents/brain<span class="w"> </span>--name<span class="w"> </span>&lt;proj&gt;-brain
 
 <span class="c1"># Add human context summaries</span>
 qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://&lt;proj&gt;-docs<span class="w"> </span><span class="s2">"Technical documentation and architecture"</span>
-qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://&lt;proj&gt;-agents<span class="w"> </span><span class="s2">"AI constitution, palace brain, and skills"</span>
+qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://&lt;proj&gt;-agents<span class="w"> </span><span class="s2">"AI operational skills"</span>
+qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://&lt;proj&gt;-brain<span class="w"> </span><span class="s2">"Persistent AI memory, state history, task lists, and hibernation notes"</span>
 
 <span class="c1"># Generate embeddings</span>
 qmd<span class="w"> </span>embed
@@ -5331,9 +5333,12 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <h2 id="5-model-context-protocol-mcp-fastmcp-integration">5. Model Context Protocol (MCP) &amp; FastMCP Integration</h2>
 <p>QMD provides two integration pathways for AI IDEs (Cursor / Claude Code / Gemini):</p>
 <h3 id="a-direct-fastmcp-tool-integration-toolsmcpserverpy">A. Direct FastMCP Tool Integration (<code>tools/mcp/server.py</code>)</h3>
-<p>The DSOM FastMCP server exposes <code>qmd_search</code> directly to AI IDEs for seamless, on-device hybrid search across project collections (callers must explicitly specify the target collection parameter, e.g. <code>collection="oss-docs"</code>, as scoping is not automatic):</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Tool Signature in tools/mcp/server.py</span>
-<span class="n">qmd_search</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">"gitea podman setup"</span><span class="p">,</span> <span class="n">collection</span><span class="o">=</span><span class="s2">"oss-docs"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"query"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<p>The DSOM FastMCP server exposes <code>qmd_search</code> and <code>search_brain</code> directly to AI IDEs for seamless, on-device hybrid search across project collections (such as <code>&lt;proj&gt;-brain</code>, <code>&lt;proj&gt;-docs</code>, <code>&lt;proj&gt;-agents</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Search persistent AI brain memory via QMD vector/hybrid search</span>
+<span class="n">qmd_search</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">"episodic walkthrough anchor"</span><span class="p">,</span> <span class="n">collection</span><span class="o">=</span><span class="s2">"&lt;proj&gt;-brain"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"query"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Fast direct text search over .agents/brain/ memory files</span>
+<span class="n">search_brain</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">"hibernation notes"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="b-native-qmd-stdio-mcp-server">B. Native QMD Stdio MCP Server</h3>
 <p>Configure <code>~/.gemini/config/mcp_config.json</code> or workspace <code>mcp.json</code> using the resolved binary path:</p>
@@ -5391,16 +5396,25 @@ Please execute the following phases:
 <span class="sb">     ```</span>
 
 <span class="gu">### PHASE 3: COLLECTION SETTING</span>
-<span class="k">1.</span> Identify documentation and rule folders (<span class="sb">`docs/`</span>, <span class="sb">`.agents/`</span>, <span class="sb">`notes/`</span>).
+<span class="k">1.</span> Identify documentation, agent skill, and brain memory folders (<span class="sb">`docs/`</span>, <span class="sb">`.agents/skills/`</span>, <span class="sb">`.agents/brain/`</span>).
 <span class="k">2.</span> Register collections:
+
 <span class="sb">   ```bash</span>
-<span class="w">   </span>qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>&lt;ABSOLUTE_PATH&gt;<span class="w"> </span>--name<span class="w"> </span>docs
+<span class="w">   </span>qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/path/to/project/docs<span class="w"> </span>--name<span class="w"> </span>&lt;proj&gt;-docs
+<span class="w">   </span>qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/path/to/project/.agents/skills<span class="w"> </span>--name<span class="w"> </span>&lt;proj&gt;-agents
+<span class="w">   </span>qmd<span class="w"> </span>collection<span class="w"> </span>add<span class="w"> </span>/path/to/project/.agents/brain<span class="w"> </span>--name<span class="w"> </span>&lt;proj&gt;-brain
 <span class="sb">   ```</span>
-<span class="k">3.</span> Add human context summary:
+
+<span class="k">3.</span> Add human context summaries:
+
 <span class="sb">   ```bash</span>
-<span class="w">   </span>qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://docs<span class="w"> </span><span class="s2">"Technical documentation and architecture notes"</span>
+<span class="w">   </span>qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://&lt;proj&gt;-docs<span class="w"> </span><span class="s2">"Technical documentation and architecture notes"</span>
+<span class="w">   </span>qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://&lt;proj&gt;-agents<span class="w"> </span><span class="s2">"AI operational skills"</span>
+<span class="w">   </span>qmd<span class="w"> </span>context<span class="w"> </span>add<span class="w"> </span>qmd://&lt;proj&gt;-brain<span class="w"> </span><span class="s2">"Persistent AI memory, state history, task lists, and hibernation notes"</span>
 <span class="sb">   ```</span>
+
 <span class="k">4.</span> Generate embeddings:
+
 <span class="sb">   ```bash</span>
 <span class="w">   </span>qmd<span class="w"> </span>embed
 <span class="sb">   ```</span>

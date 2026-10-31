@@ -5131,6 +5131,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#16-fastmcp-local-long-term-memory-retrieval-qmd-brain-collection-scoping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. FastMCP Local Long-Term Memory Retrieval &amp; QMD Brain Collection Scoping
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5366,8 +5377,22 @@
 <li>Reconciled 6-phase merge blueprint summaries across all gateway rulebooks, README, CHANGELOG, and HISTORY ledgers.</li>
 <li>Achieved 100% test pass rate across multi-tier test suites (<code>test_docs_links.py</code>, <code>test_validate_okf.py</code>, <code>test_mkdocs_nav.py</code>, <code>ansible.py</code>, <code>containers.py</code>).</li>
 </ul>
+<h3 id="16-fastmcp-local-long-term-memory-retrieval-qmd-brain-collection-scoping">16. FastMCP Local Long-Term Memory Retrieval &amp; QMD Brain Collection Scoping</h3>
+<ul>
+<li><strong>Date:</strong> 2026-10-26</li>
+<li><strong>Branch:</strong> <code>feat/mcp-qmd-brain-retrieval-395159821945741315</code></li>
+<li><strong>Objective:</strong> Enable persistent offline/on-premise long-term AI memory retrieval over <code>.agents/brain/</code> via FastMCP (<code>search_brain</code>) and QMD hybrid vector retrieval (<code>qmd_search</code>).</li>
+<li><strong>Technical Implementation:</strong></li>
+<li>Added <code>search_brain</code> tool in <code>tools/mcp/server.py</code> with result-count and output-byte budget enforcement during traversal.</li>
+<li>Updated <code>qmd_search</code> tool docstring and reference docs (<code>docs/reference/mcp_server.md</code>) to standardise project-scoped collection names (<code>&lt;proj&gt;-brain</code>, <code>&lt;proj&gt;-docs</code>, <code>&lt;proj&gt;-agents</code>).</li>
+<li>Updated <code>qmd-search</code> agent skill (<code>.agents/skills/qmd-search/SKILL.md</code>) with <code>&lt;proj&gt;-brain</code> collection setup, MD031-compliant blank line spacing, and operational skills context descriptions.</li>
+<li>Implemented unit tests in <code>tests/test_mcp_server.py</code> using isolated temporary directory fixtures and mock command assertions for <code>oss-brain</code>.</li>
+<li><strong>Comments &amp; Reviews:</strong></li>
+<li><strong>CodeRabbit AI:</strong> Requested project-scoped collection names (<code>&lt;proj&gt;-brain</code>), test isolation using temporary directories, early budget termination during traversal, MD031 blank line spacing, and operational skills scoping.</li>
+<li><strong>Jules' Response:</strong> Fully addressed all feedback, confirmed 100% test pass rate across <code>test_mcp_server.py</code> (15/15) and OKF v0.2 validation (<code>sh tools/validate-okf.sh</code>).</li>
+</ul>
 <hr />
-<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-19</em>
+<p><em>Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-10-26</em>
 <em>Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0</em></p>
 
 

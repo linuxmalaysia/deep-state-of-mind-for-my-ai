@@ -5132,6 +5132,8 @@
 <h2 id="tools-registered">Tools registered</h2>
 <p>AI clients can execute these tools dynamically:
 - <strong>search_palace(query):</strong> Text search across <code>docs/</code> Markdown files.
+- <strong>search_brain(query, limit):</strong> Direct text search over <code>.agents/brain/</code> persistent long-term AI memory files (<code>.md</code>, <code>.dsom</code>, <code>.txt</code>).
+- <strong>qmd_search(query, collection, mode, limit):</strong> On-device hybrid vector/lexical search with QMD across project collections (<code>&lt;proj&gt;-brain</code>, <code>&lt;proj&gt;-docs</code>, <code>&lt;proj&gt;-agents</code>).
 - <strong>search_openwiki(query):</strong> Sub-millisecond OKF metadata search.
 - <strong>fetch_context7_stream(tokens):</strong> Retrieves URL pointers to external pre-indexed token streams.</p>
 <h2 id="dependencies">Dependencies</h2>
