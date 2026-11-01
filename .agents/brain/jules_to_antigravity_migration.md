@@ -4,7 +4,25 @@ type: migration_handover_ledger
 title: "🛸 Google Jules to Google Antigravity: Cognitive Handover & Turndown Migration Architecture"
 timestamp: "2026-10-31T17:15:00Z"
 resource: "/.agents/brain/jules_to_antigravity_migration.md"
-sources: [{author: "Google Jules Team", id: jules-turndown-notice, resource: "https://jules.google/docs/changelog/2026-10-29", title: "Jules Turndown Notice (2026-10-29)", type: external_spec}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec}, {author: "Google Cloud Platform", id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec}]
+sources:
+  - id: jules-turndown-notice
+    title: "Jules Turndown Notice (2026-10-29)"
+    author: "Google Jules Team"
+    resource: "https://jules.google/docs/changelog/2026-10-29"
+    url: "https://jules.google/docs/changelog/2026-10-29"
+    type: external_spec
+  - id: dsom-core-spec
+    title: "Deep State of Mind (DSOM) Governance Architecture"
+    author: "Harisfazillah Jamel (LinuxMalaysia)"
+    resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md"
+    url: "https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE/"
+    type: architecture_spec
+  - id: google-okf-v02-spec
+    title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification"
+    author: "Google Cloud Platform"
+    resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"
+    url: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"
+    type: external_spec
 spec_version: "0.2"
 concept_id: jules_to_antigravity_migration
 status: stable
