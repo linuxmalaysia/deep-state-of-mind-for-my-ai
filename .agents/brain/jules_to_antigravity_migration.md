@@ -6,6 +6,7 @@ timestamp: "2026-10-31T17:15:00Z"
 resource: "/.agents/brain/jules_to_antigravity_migration.md"
 sources: [{author: "Google Jules Team", id: jules-turndown-notice, resource: "https://jules.google/docs/changelog/2026-10-29", title: "Jules Turndown Notice (2026-10-29)", type: external_spec}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "/docs/governance/DSOM-TRI-PHASIC-COGNITIVE-ARCHITECTURE.md", title: "Deep State of Mind (DSOM) Governance Architecture", type: architecture_spec}, {author: "Google Cloud Platform", id: google-okf-v02-spec, resource: "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md", title: "Google Cloud Open Knowledge Format (OKF) v0.2 Specification", type: external_spec}]
 spec_version: "0.2"
+concept_id: jules_to_antigravity_migration
 status: stable
 stale_after: "2027-10-31"
 generated: {by: "Google Jules", timestamp: "2026-10-31T17:15:00Z"}

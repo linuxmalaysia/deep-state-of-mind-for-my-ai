@@ -4,6 +4,7 @@ https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/DSOM
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/active_context_manifest/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/implementation_plan/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/jules_pr_history/
+https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/jules_to_antigravity_migration/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/member/haris/walkthrough/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/palace_registry/
 https://deep-state-of-mind-for-my-ai.readthedocs.io/en/latest/.agents/brain/software/GOVERNANCE/
@@ -222,6 +223,7 @@ https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/DSOM_
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/active_context_manifest/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/implementation_plan/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/jules_pr_history/
+https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/jules_to_antigravity_migration/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/member/haris/walkthrough/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/palace_registry/
 https://linuxmalaysia.github.io/deep-state-of-mind-for-my-ai/.agents/brain/software/GOVERNANCE/

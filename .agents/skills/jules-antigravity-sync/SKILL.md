@@ -97,8 +97,8 @@ A comprehensive log of all Jules historic PRs, reviews, CodeRabbit comments, and
 
 | Handover File | Purpose | Read Priority | Update Moment |
 | :--- | :--- | :--- | :--- |
-| `.agents/brain/task.md` | **Live Task Board & Immediate Next Steps** | **High** (Step 1) | Check off `[x]` upon task completion; append `[ ]` for pending actions. |
-| `.agents/brain/walkthrough.md` | **Chronological Session Anchors** | **High** (Step 2) | Append `## 🏁 Session Anchor: YYYY-MM-DD` detailing rationale and mental anchor. |
+| `.agents/brain/task.md` | **Live Task Board & Immediate Next Steps** | **High** (Step 1) | Read-only for peer agents; updates permitted only when Rule 32 authorizes the agent as primary local/lead writer. |
+| `.agents/brain/walkthrough.md` | **Chronological Session Anchors** | **High** (Step 2) | Read-only for peer agents; route Antigravity updates to its assigned ledger per Rule 32 unless authorized as lead writer. |
 | `.agents/brain/current_state.dsom` | **Machine-Compacted Sovereign State** | **Medium** (Step 3) | Auto-compacted via CI PR sync (`dsom-pr-sync.yml`) or EOD rituals. |
 | `.agents/brain/hibernation-notes-*.txt` | **EOD Handshake Memory Dump** | **Medium** (Step 4) | Generated at EOD containing session summary and next steps. |
 | `.agents/brain/jules_pr_history.md` | **Jules' PR & Review History Ledger** | **Reference** | Updated whenever new PRs and CodeRabbit reviews are merged. |
