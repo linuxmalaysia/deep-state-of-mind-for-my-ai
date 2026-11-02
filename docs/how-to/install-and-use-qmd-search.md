@@ -50,7 +50,7 @@ qmd pull --progress
 
 ---
 
-## 2. Multi-Project Collection Scoping (Query Latency Optimization)
+## 2. Multi-Project Collection Scoping (Query Latency Optimisation)
 
 Utilize `-c <collection>` scoping **by default** in all local search scripts to minimize SQLite FTS5 query latency and restrict matches to the active workspace collection.
 

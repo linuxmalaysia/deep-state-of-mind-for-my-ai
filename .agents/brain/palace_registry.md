@@ -61,7 +61,7 @@ This registry serves as the index (Open Knowledge Format (OKF) v0.1 compliant) f
 
 - **Room: `room_brain_artifacts`** *(NEW — Backfill 2026-04-08)*
   *Path:* `hall_events/room_brain_artifacts/closet.md`
-  *Context:* Evolution of `.agents/brain/` — task.md, walkthrough.md, Palace structure, hibernation notes.
+  *Context:* Evolution of `.agents/brain/` — task.md, walkthrough.md, Palace structure, hibernation notes, jules_pr_history.md, and jules_to_antigravity_migration.md.
 
 - **Room: `room_ledger`** *(NEW — Backfill 2026-04-08)*
   *Path:* `hall_events/room_ledger/closet.md`
