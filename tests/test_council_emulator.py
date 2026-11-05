@@ -63,6 +63,36 @@ class EvaluateTopicTests(unittest.TestCase):
         self.assertEqual(len(res["perspectives"]), 3)
         self.assertEqual(res["perspectives"]["Domain Specialist"]["title"], "Cybersecurity Specialist")
 
+    def test_evaluate_topic_custom_sovereignty_triad(self):
+        res = council_emulator.evaluate_topic("On-Prem Self-Hosted LLM", mode="triad", triad="sovereignty")
+        self.assertEqual(res["mode"], "triad")
+        self.assertEqual(res["triad"], "sovereignty")
+        self.assertEqual(len(res["perspectives"]), 3)
+        self.assertIn("Sovereign FOSS Architect", res["perspectives"])
+        self.assertIn("Harisfazillah Jamel", res["perspectives"]["Sovereign FOSS Architect"]["title"])
+
+    def test_evaluate_topic_custom_enterprise_infrastructure_triad(self):
+        res = council_emulator.evaluate_topic("PostgreSQL Patroni Cluster", mode="triad", triad="enterprise-infrastructure")
+        self.assertEqual(res["triad"], "enterprise-infrastructure")
+        self.assertEqual(len(res["perspectives"]), 3)
+        self.assertIn("Sovereign FOSS Architect", res["perspectives"])
+        self.assertIn("Systems Architect", res["perspectives"])
+        self.assertIn("Pragmatic Engineer", res["perspectives"])
+
+    def test_evaluate_topic_custom_public_sector_tech_triad(self):
+        res = council_emulator.evaluate_topic("Statutory Compliance Platform", mode="triad", triad="public-sector-tech")
+        self.assertEqual(res["triad"], "public-sector-tech")
+        self.assertEqual(len(res["perspectives"]), 3)
+        self.assertIn("Sovereign FOSS Architect", res["perspectives"])
+        self.assertIn("Chief Security Officer", res["perspectives"])
+        self.assertIn("Domain Specialist", res["perspectives"])
+
+    def test_evaluate_topic_full_mode_includes_harisfazillah(self):
+        res = council_emulator.evaluate_topic("Cloud Exit & Data Sovereignty Strategy", mode="full")
+        self.assertEqual(res["mode"], "full")
+        self.assertEqual(len(res["perspectives"]), 5)
+        self.assertIn("Sovereign FOSS Architect", res["perspectives"])
+
     def test_evaluate_topic_invalid_mode_raises_value_error(self):
         with self.assertRaises(ValueError) as cm:
             council_emulator.evaluate_topic("Invalid Mode Test", mode="unsupported_mode")

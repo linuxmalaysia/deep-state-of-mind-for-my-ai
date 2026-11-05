@@ -187,6 +187,7 @@ nav:
           - Panduan Pemasangan & Penggunaan QMD: how-to/panduan-pemasangan-dan-penggunaan-qmd.md
       - Reference Material:
           - Overview: reference/index.md
+          - Council Persona (Harisfazillah Jamel): reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md
           - generate_sitemaps.py: reference/generate_sitemaps.md
           - openwiki_emulator.py: reference/openwiki_emulator.md
           - tools/mcp/server.py: reference/mcp_server.md

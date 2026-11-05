@@ -208,6 +208,7 @@ spec_version: "0.2"
 * [🛠️ Install and Use QMD On-Device Search](docs/how-to/install-and-use-qmd-search.md)
 * [🛠️ Panduan Pemasangan & Penggunaan QMD](docs/how-to/panduan-pemasangan-dan-penggunaan-qmd.md)
 * [📋 Reference Material Overview](docs/reference/index.md)
+* [🏛️ Council Persona: Harisfazillah Jamel](docs/reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md)
 * [📋 generate_sitemaps.py Reference](docs/reference/generate_sitemaps.md)
 * [📋 openwiki_emulator.py Reference](docs/reference/openwiki_emulator.md)
 * [📋 mcp_server.py Reference](docs/reference/mcp_server.md)
