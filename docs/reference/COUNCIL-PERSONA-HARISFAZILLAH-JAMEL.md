@@ -1,18 +1,18 @@
 ---
-okf_version: "0.2"
-type: "reference"
+okf_version: 0.2
+type: reference
 title: "Council Persona Specification & Multi-Agent Integration Guide: Harisfazillah Jamel (LinuxMalaysia)"
 timestamp: "2026-11-01T00:08:30Z"
 topics: ["council", "persona", "linuxmalaysia", "digital-sovereignty", "foss-governance"]
-description: "Comprehensive specification of Harisfazillah Jamel's Council persona, mental models, polarity dynamics, and portable integration prompts for foreign AI agents."
 resource: "file:///docs/reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md"
-sources: [{author: "0xnyk", id: "council_repo", resource: "https://github.com/0xnyk/council-of-high-intelligence", title: "Council of High Intelligence", url: "https://github.com/0xnyk/council-of-high-intelligence"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: "dsom-core-spec", resource: "docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md", title: "Council of High Intelligence DSOM Adoption Proposal", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md"}]
+sources: [{author: 0xnyk, id: council_repo, resource: "https://github.com/0xnyk/council-of-high-intelligence", title: Council of High Intelligence, url: "https://github.com/0xnyk/council-of-high-intelligence"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: dsom-core-spec, resource: "docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md", title: Council of High Intelligence DSOM Adoption Proposal, url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md"}]
 status: stable
 generated: {by: "Google Jules & Antigravity", timestamp: "2026-11-01T00:08:30Z"}
 stale_after: "2027-11-01"
 spec_version: "0.2"
+description: "Comprehensive specification of Harisfazillah Jamel's Council persona, mental models, polarity dynamics, and portable integration prompts for foreign AI agents."
+concept_id: council_persona_harisfazillah_jamel
 ---
-
 # Council Persona Specification & Multi-Agent Integration Guide: Harisfazillah Jamel (LinuxMalaysia)
 
 > **Universal Persona Blueprint:** This document formalises the cognitive architecture, philosophical stance, grounding protocols, and implementation prompts for **Harisfazillah Jamel (`LinuxMalaysia`)** as a permanent member of the **Council of High Intelligence**. It enables human operators and autonomous AI agents (Google Antigravity, Nous Hermes, Claude Code, Cursor, OpenHands) to induct this persona into any project or skill framework.
