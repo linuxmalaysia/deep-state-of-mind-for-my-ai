@@ -61,7 +61,16 @@ class EvaluateTopicTests(unittest.TestCase):
         self.assertEqual(res["mode"], "triad")
         self.assertEqual(res["triad"], "security")
         self.assertEqual(len(res["perspectives"]), 3)
-        self.assertEqual(res["perspectives"]["Domain Specialist"]["title"], "Cybersecurity Specialist")
+        self.assertIn("Systems Architect", res["perspectives"])
+        self.assertIn("Chief Security Officer", res["perspectives"])
+        self.assertIn("Sovereign FOSS Architect", res["perspectives"])
+
+    def test_evaluate_topic_custom_public_sector_tech_triad_without_keyword(self):
+        res = council_emulator.evaluate_topic("Digital Services Portal", mode="triad", triad="public-sector-tech")
+        self.assertEqual(res["triad"], "public-sector-tech")
+        self.assertEqual(len(res["perspectives"]), 3)
+        self.assertIn("Domain Specialist", res["perspectives"])
+        self.assertEqual(res["perspectives"]["Domain Specialist"]["title"], "Risk & Compliance Officer")
 
     def test_evaluate_topic_custom_sovereignty_triad(self):
         res = council_emulator.evaluate_topic("On-Prem Self-Hosted LLM", mode="triad", triad="sovereignty")

@@ -176,13 +176,13 @@ In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**,
 - **Proposed CLI Invocations**:
   ```bash
   # Run a full council deliberation
-  uv run python tools/council_emulator.py --full "Should we migrate from REST to FastMCP?"
+  uv run python tools/council_emulator.py --mode full --topic "Should we migrate from REST to FastMCP?"
 
   # Run a sovereignty domain triad deliberation
-  uv run python tools/council_emulator.py --triad sovereignty "Should we adopt Quadlets or Ansible?"
+  uv run python tools/council_emulator.py --mode triad --triad sovereignty --topic "Should we adopt Quadlets or Ansible?"
 
   # Run a two-member dialectic
-  uv run python tools/council_emulator.py --duo torvalds harisfazillah "Is this abstraction layer worth maintaining?"
+  uv run python tools/council_emulator.py --mode duo --topic "Is this abstraction layer worth maintaining?"
   ```
 
 ### 2.4 Proposed FastMCP Server Tool Binding (`tools/mcp/server.py`)
@@ -233,9 +233,9 @@ Running distinct persona evaluations across multiple LLM calls introduces signif
 |  Phase 3: Native Python Engine Development [COMPLETED]                            |
 |  - Implement `tools/council_emulator.py` zero-dependency runner.                  |
 |                                                                                   |
-|  Phase 4: FastMCP & OpenWiki Integration [COMPLETED]                              |
-|  - Add `run_council` tool to `tools/mcp/server.py`.                              |
-|  - Integrate Council verdicts into OpenWiki knowledge graph.                      |
+|  Phase 4: FastMCP & OpenWiki Integration [IN PROGRESS]                            |
+|  - Add `run_council` tool to `tools/mcp/server.py` [COMPLETED].                  |
+|  - Integrate Council verdicts into OpenWiki knowledge graph [PLANNED].            |
 |                                                                                   |
 |  Phase 5: Unit Testing & CI Verification [COMPLETED]                              |
 |  - Add test suite `tests/test_council_emulator.py`.                               |

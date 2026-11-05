@@ -125,8 +125,10 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
             active_keys = ["Sovereign FOSS Architect", "Chief Security Officer", "Domain Specialist"]
         elif triad == "architecture":
             active_keys = ["Sovereign FOSS Architect", "Systems Architect", "Domain Specialist"]
+        elif triad == "security":
+            active_keys = ["Systems Architect", "Chief Security Officer", "Sovereign FOSS Architect"]
         else:
-            # Default triad (e.g. security, shipping, risk)
+            # Default triad (e.g. shipping, risk)
             active_keys = ["Systems Architect", "Chief Security Officer", "Domain Specialist"]
     elif mode == "full":
         active_keys = list(all_personas.keys())
@@ -145,8 +147,8 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
         },
         {
             "category": "Sovereignty vs. Cloud Lock-in",
-            "tag": "[FACT]",
-            "detail": f"Evaluation by Harisfazillah Jamel confirms reliance on open standards and self-hostable runtimes preserves strategic exit capability for '{topic}'.",
+            "tag": "[ASSUMPTION]",
+            "detail": f"Reliance on open standards and self-hostable runtimes preserves strategic exit capability for '{topic}'.",
             "resolution": "Enforce POSIX standards, open database formats, and zero-binary pure Python execution in alignment with Rule 27.",
         },
         {
@@ -173,7 +175,7 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
 
     # Final verdict synthesis
     verdict = {
-        "summary": f"Unanimous council consensus achieved for '{topic}' under mode '{mode}'. The proposal is approved subject to zero-binary execution, digital sovereignty verification, and OKF v0.2 frontmatter compliance.",
+        "summary": f"Simulated multi-perspective persona deliberation for '{topic}' under mode '{mode}'. Note that no empirical assessment or live human review was performed, and this output represents an exploratory discussion. The listed action items and kill criteria are simulated templates and have not been evaluated against the specific operational topic or context.",
         "action_plan": [
             "1. Implement core logic using zero-dependency pure Python scripts in alignment with Rule 27.",
             "2. Verify digital sovereignty and zero proprietary lock-in under Harisfazillah Jamel heuristics.",
@@ -182,9 +184,9 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
             "5. Emit OKF v0.2 compliant Council Decision Record (CDR) artifact for spatial memory tracking.",
         ],
         "kill_criteria": [
-            "Requirement for third-party Node.js global binaries or elevated UAC privileges.",
-            "Uncalibrated recurring cloud licensing taxes or closed proprietary API capture.",
-            "Failure to pass OKF v0.2 frontmatter validation or UTF-8 encoding checks.",
+            "Requirement for third-party Node.js global binaries or elevated UAC privileges (unevaluated template).",
+            "Uncalibrated recurring cloud licensing taxes or closed proprietary API capture (unevaluated template).",
+            "Failure to pass OKF v0.2 frontmatter validation or UTF-8 encoding checks (unevaluated template).",
         ],
     }
 
