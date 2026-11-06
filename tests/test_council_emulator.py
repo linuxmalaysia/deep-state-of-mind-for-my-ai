@@ -72,6 +72,14 @@ class EvaluateTopicTests(unittest.TestCase):
         self.assertIn("Domain Specialist", res["perspectives"])
         self.assertEqual(res["perspectives"]["Domain Specialist"]["title"], "Risk & Compliance Officer")
 
+    def test_evaluate_topic_triad_precedence_over_conflicting_topic_keyword(self):
+        # Explicit triad 'public-sector-tech' must take precedence over 'authentication' keyword in topic
+        res = council_emulator.evaluate_topic("Statutory User Authentication Subsystem", mode="triad", triad="public-sector-tech")
+        self.assertEqual(res["triad"], "public-sector-tech")
+        self.assertEqual(len(res["perspectives"]), 3)
+        self.assertIn("Domain Specialist", res["perspectives"])
+        self.assertEqual(res["perspectives"]["Domain Specialist"]["title"], "Risk & Compliance Officer")
+
     def test_evaluate_topic_custom_sovereignty_triad(self):
         res = council_emulator.evaluate_topic("On-Prem Self-Hosted LLM", mode="triad", triad="sovereignty")
         self.assertEqual(res["mode"], "triad")

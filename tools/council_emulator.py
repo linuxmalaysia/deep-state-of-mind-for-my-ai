@@ -66,18 +66,26 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     mode = mode_clean
     triad = (triad or "").lower()
 
-    # Determine domain specialist title based on topic / triad
+    # Determine domain specialist title based on explicit triad, falling back to topic keywords
     domain_title = "Domain Specialist"
-    if triad == "security" or "security" in topic.lower() or "auth" in topic.lower():
+    if triad == "security":
         domain_title = "Cybersecurity Specialist"
-    elif triad in {"architecture", "enterprise-infrastructure"} or "microservice" in topic.lower() or "database" in topic.lower():
+    elif triad in {"architecture", "enterprise-infrastructure"}:
         domain_title = "Data Infrastructure Engineer"
-    elif triad == "shipping" or "ci" in topic.lower() or "deploy" in topic.lower():
+    elif triad == "shipping":
         domain_title = "DevOps & Release Engineer"
-    elif triad in {"risk", "public-sector-tech"} or "compliance" in topic.lower():
+    elif triad in {"risk", "public-sector-tech"}:
         domain_title = "Risk & Compliance Officer"
     elif triad == "sovereignty":
         domain_title = "Digital Sovereignty Auditor"
+    elif "security" in topic.lower() or "auth" in topic.lower():
+        domain_title = "Cybersecurity Specialist"
+    elif "microservice" in topic.lower() or "database" in topic.lower():
+        domain_title = "Data Infrastructure Engineer"
+    elif "ci" in topic.lower() or "deploy" in topic.lower():
+        domain_title = "DevOps & Release Engineer"
+    elif "compliance" in topic.lower():
+        domain_title = "Risk & Compliance Officer"
 
     # Define council personas
     all_personas = {
@@ -141,8 +149,8 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     debate_points = [
         {
             "category": "Security vs. Velocity",
-            "tag": "[FACT]",
-            "detail": f"Direct codebase verification confirms zero external binary dependencies reduce attack surface for '{topic}'.",
+            "tag": "[ASSUMPTION]",
+            "detail": f"Zero external binary dependencies reduce operational attack surface for '{topic}'.",
             "resolution": "Adopt automated pre-commit guardrail checks to balance speed with security gate enforcing.",
         },
         {
