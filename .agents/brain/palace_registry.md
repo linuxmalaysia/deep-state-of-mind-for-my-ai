@@ -88,6 +88,7 @@ This registry serves as the index (Open Knowledge Format (OKF) v0.1 compliant) f
 
 | If working on... | Walk to... |
 | :--- | :--- |
+| Council Deliberation & Personas | `hall_facts/room_council_governance` |
 | Governance & Protocol laws | `hall_facts/room_dsom_protocol` |
 | Shell scripts & tools | `hall_facts/room_tooling` |
 | Architecture decisions | `hall_facts/room_clean_architecture` |
