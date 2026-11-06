@@ -38,6 +38,7 @@ spec_version: "0.2"
 ## 📋 Reference Material
 
 * [Overview](reference/index.md)
+* [Council Persona: Harisfazillah Jamel](reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md)
 * [generate_sitemaps.py Reference](reference/generate_sitemaps.md)
 * [openwiki_emulator.py Reference](reference/openwiki_emulator.md)
 * [mcp_server.py Reference](reference/mcp_server.md)

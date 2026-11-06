@@ -10,11 +10,12 @@ Author:   Harisfazillah Jamel (LinuxMalaysia)
 License:  GNU General Public License v3.0
 
 Description:
-Executes multi-perspective AI deliberation across four specialized domain personas:
+Executes multi-perspective AI deliberation across specialized domain personas:
 1. Senior Systems Architect
 2. Chief Security Officer (CSO)
 3. Pragmatic Staff Engineer
 4. Domain Specialist
+5. Sovereign FOSS Systems Architect (Harisfazillah Jamel / LinuxMalaysia)
 Synthesizes trade-offs, evidence tags, and produces a Council Decision Record (CDR)
 markdown artifact with OKF v0.2 frontmatter. Zero-binary pure Python implementation (Rule 27).
 """
@@ -53,7 +54,8 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
         topic: The decision topic or architectural trade-off to evaluate.
         context: Optional operational context or constraints.
         mode: Deliberation mode ('quick', 'full', 'duo', 'triad').
-        triad: Optional domain triad selector ('architecture', 'security', 'shipping', 'risk').
+        triad: Optional domain triad selector ('architecture', 'security', 'shipping', 'risk',
+               'sovereignty', 'enterprise-infrastructure', 'public-sector-tech').
 
     Returns:
         Structured evaluation dict with persona perspectives, trade-off debate, and consensus verdict.
@@ -64,15 +66,25 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     mode = mode_clean
     triad = (triad or "").lower()
 
-    # Determine domain specialist title based on topic / triad
+    # Determine domain specialist title based on explicit triad, falling back to topic keywords
     domain_title = "Domain Specialist"
-    if triad == "security" or "security" in topic.lower() or "auth" in topic.lower():
+    if triad == "security":
         domain_title = "Cybersecurity Specialist"
-    elif triad == "architecture" or "microservice" in topic.lower() or "database" in topic.lower():
+    elif triad in {"architecture", "enterprise-infrastructure"}:
         domain_title = "Data Infrastructure Engineer"
-    elif triad == "shipping" or "ci" in topic.lower() or "deploy" in topic.lower():
+    elif triad == "shipping":
         domain_title = "DevOps & Release Engineer"
-    elif triad == "risk" or "compliance" in topic.lower():
+    elif triad in {"risk", "public-sector-tech"}:
+        domain_title = "Risk & Compliance Officer"
+    elif triad == "sovereignty":
+        domain_title = "Digital Sovereignty Auditor"
+    elif "security" in topic.lower() or "auth" in topic.lower():
+        domain_title = "Cybersecurity Specialist"
+    elif "microservice" in topic.lower() or "database" in topic.lower():
+        domain_title = "Data Infrastructure Engineer"
+    elif "ci" in topic.lower() or "deploy" in topic.lower():
+        domain_title = "DevOps & Release Engineer"
+    elif "compliance" in topic.lower():
         domain_title = "Risk & Compliance Officer"
 
     # Define council personas
@@ -101,15 +113,35 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
             "recommendation": f"Apply proven industry design patterns and strict schema validation tailored to '{topic}'.",
             "risk": "Domain-specific edge cases failing during unexpected traffic spikes or boundary transitions.",
         },
+        "Sovereign FOSS Architect": {
+            "title": "Sovereign FOSS Systems Architect (Harisfazillah Jamel / LinuxMalaysia)",
+            "stance": "Digital sovereignty over proprietary lock-in, open standards (POSIX), enterprise Linux HA, and COO realism.",
+            "recommendation": f"Ensure full compute and data ownership for '{topic}' using battle-tested open-source components and calibrated 5-year TCO.",
+            "risk": "Potential velocity dampening during initial prototype exploration if bare-metal or self-hosting constraints are over-indexed.",
+        },
     }
 
-    # Select active personas based on mode
+    # Select active personas based on mode and triad
     if mode == "duo":
         active_keys = ["Systems Architect", "Chief Security Officer"]
     elif mode == "triad":
-        active_keys = ["Systems Architect", "Chief Security Officer", "Domain Specialist"]
-    else:  # quick or full
+        if triad == "sovereignty":
+            active_keys = ["Sovereign FOSS Architect", "Pragmatic Engineer", "Chief Security Officer"]
+        elif triad == "enterprise-infrastructure":
+            active_keys = ["Sovereign FOSS Architect", "Systems Architect", "Pragmatic Engineer"]
+        elif triad == "public-sector-tech":
+            active_keys = ["Sovereign FOSS Architect", "Chief Security Officer", "Domain Specialist"]
+        elif triad == "architecture":
+            active_keys = ["Sovereign FOSS Architect", "Systems Architect", "Domain Specialist"]
+        elif triad == "security":
+            active_keys = ["Systems Architect", "Chief Security Officer", "Sovereign FOSS Architect"]
+        else:
+            # Default triad (e.g. shipping, risk)
+            active_keys = ["Systems Architect", "Chief Security Officer", "Domain Specialist"]
+    elif mode == "full":
         active_keys = list(all_personas.keys())
+    else:  # quick mode defaults to the four classic council pillars
+        active_keys = ["Systems Architect", "Chief Security Officer", "Pragmatic Engineer", "Domain Specialist"]
 
     perspectives = {k: all_personas[k] for k in active_keys}
 
@@ -117,9 +149,15 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     debate_points = [
         {
             "category": "Security vs. Velocity",
-            "tag": "[FACT]",
-            "detail": f"Direct codebase verification confirms zero external binary dependencies reduce attack surface for '{topic}'.",
+            "tag": "[ASSUMPTION]",
+            "detail": f"Zero external binary dependencies reduce operational attack surface for '{topic}'.",
             "resolution": "Adopt automated pre-commit guardrail checks to balance speed with security gate enforcing.",
+        },
+        {
+            "category": "Sovereignty vs. Cloud Lock-in",
+            "tag": "[ASSUMPTION]",
+            "detail": f"Reliance on open standards and self-hostable runtimes preserves strategic exit capability for '{topic}'.",
+            "resolution": "Enforce POSIX standards, open database formats, and zero-binary pure Python execution in alignment with Rule 27.",
         },
         {
             "category": "Architecture vs. Complexity",
@@ -145,16 +183,18 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
 
     # Final verdict synthesis
     verdict = {
-        "summary": f"Unanimous council consensus achieved for '{topic}' under mode '{mode}'. The proposal is approved subject to zero-binary execution and OKF v0.2 frontmatter compliance.",
+        "summary": f"Simulated multi-perspective persona deliberation for '{topic}' under mode '{mode}'. Note that no empirical assessment or live human review was performed, and this output represents an exploratory discussion. The listed action items and kill criteria are simulated templates and have not been evaluated against the specific operational topic or context.",
         "action_plan": [
             "1. Implement core logic using zero-dependency pure Python scripts in alignment with Rule 27.",
-            "2. Integrate FastMCP tool contract in `tools/mcp/server.py` for direct AI client invocation.",
-            "3. Add comprehensive regression tests under `tests/test_council_emulator.py`.",
-            "4. Emit OKF v0.2 compliant Council Decision Record (CDR) artifact for spatial memory tracking.",
+            "2. Verify digital sovereignty and zero proprietary lock-in under Harisfazillah Jamel heuristics.",
+            "3. Integrate FastMCP tool contract in `tools/mcp/server.py` for direct AI client invocation.",
+            "4. Add comprehensive regression tests under `tests/test_council_emulator.py`.",
+            "5. Emit OKF v0.2 compliant Council Decision Record (CDR) artifact for spatial memory tracking.",
         ],
         "kill_criteria": [
-            "Requirement for third-party Node.js global binaries or elevated UAC privileges.",
-            "Failure to pass OKF v0.2 frontmatter validation or UTF-8 encoding checks.",
+            "Requirement for third-party Node.js global binaries or elevated UAC privileges (unevaluated template).",
+            "Uncalibrated recurring cloud licensing taxes or closed proprietary API capture (unevaluated template).",
+            "Failure to pass OKF v0.2 frontmatter validation or UTF-8 encoding checks (unevaluated template).",
         ],
     }
 
@@ -259,7 +299,8 @@ def run_council(topic: str, context: str = "", output_path: str = "", mode: str 
         context: Optional extra operational context.
         output_path: Optional output file path. If provided, writes the CDR markdown artifact.
         mode: Deliberation mode ('quick', 'full', 'duo', 'triad').
-        triad: Domain triad selector ('architecture', 'security', 'shipping', 'risk').
+        triad: Domain triad selector ('architecture', 'security', 'shipping', 'risk',
+               'sovereignty', 'enterprise-infrastructure', 'public-sector-tech').
 
     Returns:
         The generated OKF v0.2 CDR markdown string.

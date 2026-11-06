@@ -2,15 +2,15 @@
 okf_version: 0.2
 type: governance_proposal
 title: "Council of High Intelligence: DSOM Adoption Proposal & Architectural Design"
-timestamp: "2026-09-19T00:00:00Z"
+timestamp: "2026-11-01T00:08:30Z"
 topics: ["dsom", "governance", "council-of-intelligence", "deliberation", "multi-agent", "tri-phasic-mind", "attested-computations"]
 resource: "file:///docs/governance/COUNCIL-OF-HIGH-INTELLIGENCE-DSOM-ADOPTION-PROPOSAL.md"
-sources: [{author: 0xnyk, id: council_repo, resource: "https://github.com/0xnyk/council-of-high-intelligence", title: Council of High Intelligence, url: "https://github.com/0xnyk/council-of-high-intelligence"}, {author: Redlinesoft, id: attested_computations_post, resource: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/", title: Attested Computations in Open Knowledge Format, url: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/"}]
+sources: [{author: 0xnyk, id: council_repo, resource: "https://github.com/0xnyk/council-of-high-intelligence", title: Council of High Intelligence, url: "https://github.com/0xnyk/council-of-high-intelligence"}, {author: Redlinesoft, id: attested_computations_post, resource: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/", title: Attested Computations in Open Knowledge Format, url: "https://blog.redlinesoft.net/posts/attested-computations-in-open-knowledge-format/"}, {author: "Harisfazillah Jamel (LinuxMalaysia)", id: council_persona_harisfazillah, resource: "docs/reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md", title: "Council Persona Specification & Multi-Agent Integration Guide: Harisfazillah Jamel", url: "https://github.com/linuxmalaysia/deep-state-of-mind-for-my-ai/blob/main/docs/reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md"}]
 status: stable
-generated: {by: "Google Jules & Antigravity", timestamp: "2026-09-19T00:00:00Z"}
-stale_after: "2027-09-19"
+generated: {by: "Google Jules & Antigravity", timestamp: "2026-11-01T00:08:30Z"}
+stale_after: "2027-11-01"
 spec_version: "0.2"
-description: "Architectural blueprint and governance proposal for adopting the 18-member Council of High Intelligence multi-perspective deliberation framework into the DSOM engine."
+description: "Architectural blueprint and governance proposal for adopting the 19-member Council of High Intelligence multi-perspective deliberation framework into the DSOM engine."
 ---
 # 🏛️ Council of High Intelligence: DSOM Adoption Proposal & Architectural Design
 
@@ -24,7 +24,7 @@ description: "Architectural blueprint and governance proposal for adopting the 1
 
 **Yes, unequivocally.** Adopting the **Council of High Intelligence** framework ([`0xnyk/council-of-high-intelligence`](https://github.com/0xnyk/council-of-high-intelligence)) into Deep State of Mind (DSOM) is not only feasible, but represents a natural evolutionary step for DSOM's **Metacognition & Guardrails Subsystem** and **Tri-Phasic Mind Architecture**.
 
-While single-model outputs often suffer from overconfident hallucinations, vendor bias, and single-lens anchoring, DSOM is built on digital sovereignty, structured metacognition, and Git-native auditability. Incorporating an **18-member persona deliberation council** directly enhances DSOM's decision boundary for high-stakes architectural choices, infrastructure migrations, security posture reviews, and strategic trade-offs.
+While single-model outputs often suffer from overconfident hallucinations, vendor bias, and single-lens anchoring, DSOM is built on digital sovereignty, structured metacognition, and Git-native auditability. Incorporating an **expanded 19-member persona deliberation council** directly enhances DSOM's decision boundary for high-stakes architectural choices, infrastructure migrations, security posture reviews, and strategic trade-offs.
 
 Furthermore, under **OKF v0.2**, council deliberations incorporate **Attested Computations** (`type: Attested Computation`), bridging definition and execution contracts via runtime bindings, parameters, and deterministic attesters across a 6-step lifecycle (Discover, Load, Parameterize, Execute, Attest, Gate).
 
@@ -52,7 +52,7 @@ The **Council of High Intelligence** is an open-source decision-making framework
 +-----------------------------------------------------------------------------------+
 ```
 
-### 1.1 The 18 Analytical Persona Lenses
+### 1.1 The Analytical Persona Lenses (19 Members)
 
 Rather than broad impersonation, personas serve as grounded analytical instruments with specific methods, counterweights, and blind spots:
 
@@ -76,15 +76,21 @@ Rather than broad impersonation, personas serve as grounded analytical instrumen
 | **Charlie Munger** | Inversion & Mental Model Lattices | Aristotle (Single Classification) | Latticework inversion & multi-disciplinary fit |
 | **Nassim Taleb** | Antifragility, Tail Risk & Asymmetry | Andrej Karpathy (Empirical Trends) | Convex payoff analysis & fragility tests |
 | **Dieter Rams** | User Clarity, Essentialism & Restraint | Ada Lovelace (Formal Abstraction) | Less, but better; clutter removal |
+| **Harisfazillah Jamel** (`LinuxMalaysia`) | Sovereign Autonomy, Enterprise Linux HA & DevSecOps | Ilya Sutskever / Machiavelli / Karpathy | Empirical operational sovereignty, POSIX compliance, Patroni HA, COO fiscal realism |
+
+For the complete standalone specification of Harisfazillah Jamel's Council persona, polarity dynamics, and portable multi-agent prompt blueprints, see [docs/reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md](../reference/COUNCIL-PERSONA-HARISFAZILLAH-JAMEL.md).
 
 ### 1.2 Deliberation Modes & Domain Triads
 
 To balance decision depth against latency and token consumption, the framework provides four modes:
 
-1. **Full Mode (`--full`)**: 4-phase adversarial protocol across all 18 members. Reserved for high-stakes, irreversible architectural choices.
+1. **Full Mode (`--full`)**: 4-phase adversarial protocol across roster members. Reserved for high-stakes, irreversible architectural choices.
 2. **Quick Mode (`--quick`)**: Rapid 3-phase restate-analyze-stance sequence without an explicit cross-examination round.
-3. **Duo Mode (`--duo`)**: Direct 2-member dialectic highlighting one core tension (e.g. `Torvalds` vs. `Meadows`).
-4. **Triad Mode (`--triad <domain>`)**: Specialized 3-member sub-panels routed dynamically across 17 domain presets:
+3. **Duo Mode (`--duo`)**: Direct 2-member dialectic highlighting one core tension (e.g. `Torvalds` vs. `Meadows` or `Torvalds` vs. `Harisfazillah`).
+4. **Triad Mode (`--triad <domain>`)**: Specialized 3-member sub-panels routed dynamically across domain presets:
+   - `sovereignty`: `harisfazillah`, `torvalds`, `taleb` (Digital sovereignty over vendor lock-in).
+   - `enterprise-infrastructure`: `harisfazillah`, `torvalds`, `munger` (High availability, bare metal, and operational toil elimination).
+   - `public-sector-tech`: `harisfazillah`, `machiavelli`, `meadows` (Statutory compliance, auditability, and governance).
    - `architecture`, `strategy`, `ethics`, `debugging`, `risk`, `shipping`, `product`, `founder`, `ai`, `ai-product`, `ai-safety`, `decision`, `systems`, `uncertainty`, `design`, `economics`, `bias`.
 
 ### 1.3 Protocol Protections & Output Standards
@@ -124,7 +130,7 @@ Integrating the Council framework into DSOM harmonises multi-perspective deliber
 |                                                |                                  |
 |                                                v                                  |
 |  +---------------------------+   +---------------------------+                    |
-|  | Deep State                |-->| Full 18-Member Deliberation|                    |
+|  | Deep State                |-->| Full Council Deliberation |                    |
 |  | (EOD Consolidation)       |   | & Outcome Ledger Sync     |                    |
 |  +---------------------------+   +---------------------------+                    |
 +-----------------------------------------------------------------------------------+
@@ -151,7 +157,7 @@ An OKF v0.2 compliant execution manual is established under `.agents/skills/coun
 okf_version: 0.2
 type: agent_skill
 title: "Council of High Intelligence Multi-Agent Consensus Engine"
-timestamp: "2026-09-19T00:00:00Z"
+timestamp: "2026-11-01T00:08:30Z"
 description: "Executes a multi-perspective deliberation protocol using specialised AI domain personas..."
 topics: ["council", "multi-agent", "consensus", "deliberation", "antigravity"]
 name: council-of-high-intelligence
@@ -163,20 +169,20 @@ stale_after: "2027-01-01"
 
 ### 2.3 Planned Zero-Binary Python Emulator (`tools/council_emulator.py`)
 
-In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, DSOM plans to implement a native, zero-dependency Python utility `tools/council_emulator.py`:
+In compliance with **Rule 27 (Native OpenWiki Emulator & Zero-Binary Mandate)**, DSOM implements a native, zero-dependency Python utility `tools/council_emulator.py`:
 
 - **Pure Python Execution**: Runs via `uv run python tools/council_emulator.py` without requiring external Node.js packages or UAC elevation.
 - **Provider Auto-Detection**: Checks local CLI tools (`gemini`, `codex`, `ollama`) and API keys (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `NVIDIA_API_KEY`).
 - **Proposed CLI Invocations**:
   ```bash
-  # Run a full 18-member council deliberation
-  uv run python tools/council_emulator.py --full "Should we migrate from REST to FastMCP?"
+  # Run a full council deliberation
+  uv run python tools/council_emulator.py --mode full --topic "Should we migrate from REST to FastMCP?"
 
-  # Run a domain triad deliberation
-  uv run python tools/council_emulator.py --triad architecture "Should we adopt Quadlets or Ansible?"
+  # Run a sovereignty domain triad deliberation
+  uv run python tools/council_emulator.py --mode triad --triad sovereignty --topic "Should we adopt Quadlets or Ansible?"
 
   # Run a two-member dialectic
-  uv run python tools/council_emulator.py --duo torvalds meadows "Is this abstraction layer worth maintaining?"
+  uv run python tools/council_emulator.py --mode duo --topic "Is this abstraction layer worth maintaining?"
   ```
 
 ### 2.4 Proposed FastMCP Server Tool Binding (`tools/mcp/server.py`)
@@ -200,11 +206,11 @@ def run_council(question: str, mode: str = "quick", triad: str = None, members: 
 
 ## 3. Token Efficiency, Trade-Offs & Mitigation Strategies
 
-Running 18 distinct persona evaluations across multiple LLM calls introduces significant context and token overhead. DSOM mitigates this through three token-conservation layers:
+Running distinct persona evaluations across multiple LLM calls introduces significant context and token overhead. DSOM mitigates this through three token-conservation layers:
 
 | Challenge / Risk | Impact | DSOM Mitigation Mechanism |
 | :--- | :--- | :--- |
-| **Token Inflation (18x Overhead)** | Heavy prompt token consumption in `--full` mode | Default to `--triad <domain>` (3 members) for daily development; limit `--full` to major architecture decision records (ADRs). |
+| **Token Inflation Overhead** | Heavy prompt token consumption in `--full` mode | Default to `--triad <domain>` (3 members) for daily development; limit `--full` to major architecture decision records (ADRs). |
 | **Local Latency** | Sequential LLM API calls delay execution | Asynchronous concurrency via Python `asyncio` across multi-provider endpoints + local Ollama acceleration. |
 | **Vendor Anchoring** | Single model provider dominates both sides | Multi-provider routing splits polarity pairs across distinct LLM families (Claude vs. Gemini vs. OpenAI). |
 | **Context Window Rot** | Verbose raw discussion clutters chat context | Summary compaction via proposed `tools/council_emulator.py` returning only the structured Verdict Blueprint to the active agent window. |
@@ -222,15 +228,16 @@ Running 18 distinct persona evaluations across multiple LLM calls introduces sig
 |                                                                                   |
 |  Phase 2: Antigravity Skill Specification [COMPLETED]                             |
 |  - Create `.agents/skills/council-of-high-intelligence/SKILL.md`.                 |
+|  - Induct `harisfazillah` Council persona specification and agent file.           |
 |                                                                                   |
-|  Phase 3: Native Python Engine Development [PLANNED]                              |
+|  Phase 3: Native Python Engine Development [COMPLETED]                            |
 |  - Implement `tools/council_emulator.py` zero-dependency runner.                  |
 |                                                                                   |
-|  Phase 4: FastMCP & OpenWiki Integration [PLANNED]                                |
-|  - Add `run_council` tool to `tools/mcp/server.py`.                              |
-|  - Integrate Council verdicts into OpenWiki knowledge graph.                      |
+|  Phase 4: FastMCP & OpenWiki Integration [IN PROGRESS]                            |
+|  - Add `run_council` tool to `tools/mcp/server.py` [COMPLETED].                  |
+|  - Integrate Council verdicts into OpenWiki knowledge graph [PLANNED].            |
 |                                                                                   |
-|  Phase 5: Unit Testing & CI Verification [PLANNED]                                |
+|  Phase 5: Unit Testing & CI Verification [COMPLETED]                              |
 |  - Add test suite `tests/test_council_emulator.py`.                               |
 |  - Verify navigation, links, and OKF frontmatter compliance.                      |
 +-----------------------------------------------------------------------------------+
@@ -238,5 +245,5 @@ Running 18 distinct persona evaluations across multiple LLM calls introduces sig
 
 ---
 
-*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-09-19*
+*Deep State of Mind (DSOM) For My AI Protocol | Harisfazillah Jamel (LinuxMalaysia) | 2026-11-01*
 *Standard: UK English | DBP-standard Bahasa Melayu Malaysia (Piawai) | GNU General Public License v3.0*
