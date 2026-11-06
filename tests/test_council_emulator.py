@@ -27,6 +27,78 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 import council_emulator  # type: ignore
 
 
+class CouncilEmulatorCachingTests(unittest.TestCase):
+    """Test caching behaviour for evaluate_topic, generate_cdr, and slugify."""
+
+    def setUp(self):
+        council_emulator.clear_cache()
+
+    def tearDown(self):
+        council_emulator.clear_cache()
+
+    def test_evaluate_topic_caching_returns_consistent_results(self):
+        topic = "Zero Trust Token Revocation Architecture"
+        res1 = council_emulator.evaluate_topic(topic, mode="quick")
+        res2 = council_emulator.evaluate_topic(topic, mode="quick")
+
+        self.assertEqual(res1, res2)
+        info = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info["hits"], 1)
+        self.assertEqual(info["misses"], 1)
+
+    def test_evaluate_topic_defensive_copy_protects_cache(self):
+        topic = "Defensive Mutation Isolation Test"
+        res1 = council_emulator.evaluate_topic(topic, mode="duo")
+        # Mutate the returned dictionary in-place
+        res1["perspectives"]["Systems Architect"]["title"] = "Corrupted Architect Title"
+        res1["verdict"]["action_plan"].append("Corrupted Step 99")
+
+        # Second call should return pristine cached structure without caller mutation
+        res2 = council_emulator.evaluate_topic(topic, mode="duo")
+        self.assertNotEqual(
+            res2["perspectives"]["Systems Architect"]["title"],
+            "Corrupted Architect Title",
+        )
+        self.assertEqual(
+            res2["perspectives"]["Systems Architect"]["title"],
+            "Senior Systems Architect",
+        )
+        self.assertNotIn("Corrupted Step 99", res2["verdict"]["action_plan"])
+
+    def test_clear_cache_resets_cache_statistics(self):
+        council_emulator.evaluate_topic("Patroni High Availability", mode="full")
+        council_emulator.evaluate_topic("Patroni High Availability", mode="full")
+        info_before = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertGreater(info_before["hits"], 0)
+
+        council_emulator.clear_cache()
+        info_after = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info_after["hits"], 0)
+        self.assertEqual(info_after["misses"], 0)
+        self.assertEqual(info_after["currsize"], 0)
+
+    def test_generate_cdr_caches_yaml_frontmatter(self):
+        topic = "Frontmatter YAML Serialization Caching Test"
+        eval_dict = council_emulator.evaluate_topic(topic)
+        ts = "2026-09-19T10:00:00Z"
+
+        cdr1 = council_emulator.generate_cdr(topic, eval_dict, timestamp=ts)
+        cdr2 = council_emulator.generate_cdr(topic, eval_dict, timestamp=ts)
+
+        self.assertEqual(cdr1, cdr2)
+        yaml_info = council_emulator.get_cache_info()["yaml_frontmatter"]
+        self.assertEqual(yaml_info["hits"], 1)
+        self.assertEqual(yaml_info["misses"], 1)
+
+    def test_slugify_caching(self):
+        text = "Batch Evaluation Performance Testing!"
+        slug1 = council_emulator._slugify(text)
+        slug2 = council_emulator._slugify(text)
+        self.assertEqual(slug1, slug2)
+        slug_info = council_emulator.get_cache_info()["slugify"]
+        self.assertEqual(slug_info["hits"], 1)
+
+
 class CouncilEmulatorTimestampTests(unittest.TestCase):
     """Test timestamp utility formatting."""
 
