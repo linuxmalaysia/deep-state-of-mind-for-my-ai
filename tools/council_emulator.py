@@ -34,6 +34,7 @@ import yaml
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 DECISIONS_DIR = REPO_ROOT / "docs" / "decisions"
 VALID_MODES = {"quick", "full", "duo", "triad"}
+MAX_CACHEABLE_CONTEXT_BYTES = 8000
 
 
 def get_timestamp() -> str:
@@ -76,13 +77,8 @@ def _dump_yaml_frontmatter_cached(
     return yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
 
 
-@functools.lru_cache(maxsize=128)
-def _evaluate_topic_cached(topic: str, context: str, mode: str, triad: Optional[str]) -> dict:
-    """Internal memoized evaluation builder."""
-    mode_clean = (mode or "quick").lower()
-    if mode_clean not in VALID_MODES:
-        raise ValueError(f"Invalid mode '{mode}'. Supported modes are: {', '.join(sorted(VALID_MODES))}")
-    mode = mode_clean
+def _build_evaluation(topic: str, context: str, mode: str, triad: str) -> dict:
+    """Core evaluation logic for council personas and consensus verdict."""
     triad = (triad or "").lower()
 
     # Determine domain specialist title based on explicit triad, falling back to topic keywords
@@ -228,6 +224,12 @@ def _evaluate_topic_cached(topic: str, context: str, mode: str, triad: Optional[
     }
 
 
+@functools.lru_cache(maxsize=128)
+def _evaluate_topic_cached(topic: str, context: str, mode: str, triad: str) -> dict:
+    """Internal memoized evaluation builder."""
+    return _build_evaluation(topic=topic, context=context, mode=mode, triad=triad)
+
+
 def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: str = None) -> dict:
     """
     Simulates multi-perspective assessment across council personas and modes.
@@ -242,7 +244,19 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     Returns:
         Structured evaluation dict with persona perspectives, trade-off debate, and consensus verdict.
     """
-    result = _evaluate_topic_cached(topic=topic, context=context, mode=mode, triad=triad)
+    mode_clean = (mode or "quick").lower()
+    if mode_clean not in VALID_MODES:
+        raise ValueError(f"Invalid mode '{mode}'. Supported modes are: {', '.join(sorted(VALID_MODES))}")
+    mode_norm = mode_clean
+    triad_norm = (triad or "").lower()
+    context_str = context or ""
+
+    # Check byte size of context to avoid caching huge payloads in LRU memory
+    context_bytes = len(context_str.encode("utf-8"))
+    if context_bytes > MAX_CACHEABLE_CONTEXT_BYTES:
+        return _build_evaluation(topic=topic, context=context_str, mode=mode_norm, triad=triad_norm)
+
+    result = _evaluate_topic_cached(topic=topic, context=context_str, mode=mode_norm, triad=triad_norm)
     return copy.deepcopy(result)
 
 
