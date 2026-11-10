@@ -21,16 +21,20 @@ markdown artifact with OKF v0.2 frontmatter. Zero-binary pure Python implementat
 """
 
 import argparse
+import copy
 import datetime
+import functools
 import pathlib
 import re
 import sys
+from typing import Any, Dict, Optional, Tuple
 
 import yaml
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 DECISIONS_DIR = REPO_ROOT / "docs" / "decisions"
 VALID_MODES = {"quick", "full", "duo", "triad"}
+MAX_CACHEABLE_CONTEXT_BYTES = 8000
 
 
 def get_timestamp() -> str:
@@ -38,6 +42,7 @@ def get_timestamp() -> str:
     return datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+@functools.lru_cache(maxsize=256)
 def _slugify(text: str) -> str:
     """Converts a topic string into a clean filename slug."""
     text = text.lower().strip()
@@ -46,24 +51,96 @@ def _slugify(text: str) -> str:
     return text[:50].strip("-") or "decision"
 
 
-def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: str = None) -> dict:
-    """
-    Simulates multi-perspective assessment across council personas and modes.
+def _serialize_yaml_frontmatter(
+    okf_version: str,
+    doc_type: str,
+    title: str,
+    timestamp: str,
+    topics: Tuple[str, ...],
+    spec_version: str,
+    description: str,
+) -> str:
+    """Serializes frontmatter mapping into YAML string."""
+    meta = {
+        "okf_version": okf_version,
+        "type": doc_type,
+        "title": title,
+        "timestamp": timestamp,
+        "topics": list(topics),
+        "spec_version": spec_version,
+        "description": description,
+    }
+    return yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
 
-    Args:
-        topic: The decision topic or architectural trade-off to evaluate.
-        context: Optional operational context or constraints.
-        mode: Deliberation mode ('quick', 'full', 'duo', 'triad').
-        triad: Optional domain triad selector ('architecture', 'security', 'shipping', 'risk',
-               'sovereignty', 'enterprise-infrastructure', 'public-sector-tech').
 
-    Returns:
-        Structured evaluation dict with persona perspectives, trade-off debate, and consensus verdict.
+@functools.lru_cache(maxsize=256)
+def _dump_yaml_frontmatter_cached(
+    okf_version: str,
+    doc_type: str,
+    title: str,
+    timestamp: str,
+    topics: Tuple[str, ...],
+    spec_version: str,
+    description: str,
+) -> str:
     """
-    mode_clean = (mode or "quick").lower()
-    if mode_clean not in VALID_MODES:
-        raise ValueError(f"Invalid mode '{mode}'. Supported modes are: {', '.join(sorted(VALID_MODES))}")
-    mode = mode_clean
+    Serializes frontmatter mapping into YAML string with LRU caching.
+    Prevents repeated AST serialization and PyYAML dumping overhead.
+    """
+    return _serialize_yaml_frontmatter(
+        okf_version=okf_version,
+        doc_type=doc_type,
+        title=title,
+        timestamp=timestamp,
+        topics=topics,
+        spec_version=spec_version,
+        description=description,
+    )
+
+
+def dump_yaml_frontmatter(
+    okf_version: str,
+    doc_type: str,
+    title: str,
+    timestamp: str,
+    topics: Tuple[str, ...],
+    spec_version: str,
+    description: str,
+) -> str:
+    """
+    Serializes frontmatter mapping into YAML string, bypassing LRU cache if payload is oversized.
+    """
+    # Calculate byte size of frontmatter payload elements
+    est_bytes = (
+        len(title.encode("utf-8"))
+        + len(description.encode("utf-8"))
+        + len(timestamp.encode("utf-8"))
+        + sum(len(t.encode("utf-8")) for t in topics)
+    )
+    if est_bytes > MAX_CACHEABLE_CONTEXT_BYTES:
+        return _serialize_yaml_frontmatter(
+            okf_version=okf_version,
+            doc_type=doc_type,
+            title=title,
+            timestamp=timestamp,
+            topics=topics,
+            spec_version=spec_version,
+            description=description,
+        )
+
+    return _dump_yaml_frontmatter_cached(
+        okf_version=okf_version,
+        doc_type=doc_type,
+        title=title,
+        timestamp=timestamp,
+        topics=topics,
+        spec_version=spec_version,
+        description=description,
+    )
+
+
+def _build_evaluation(topic: str, context: str, mode: str, triad: str) -> dict:
+    """Core evaluation logic for council personas and consensus verdict."""
     triad = (triad or "").lower()
 
     # Determine domain specialist title based on explicit triad, falling back to topic keywords
@@ -209,6 +286,59 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     }
 
 
+@functools.lru_cache(maxsize=128)
+def _evaluate_topic_cached(topic: str, context: str, mode: str, triad: str) -> dict:
+    """Internal memoized evaluation builder."""
+    return _build_evaluation(topic=topic, context=context, mode=mode, triad=triad)
+
+
+def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: str = None) -> dict:
+    """
+    Simulates multi-perspective assessment across council personas and modes.
+
+    Args:
+        topic: The decision topic or architectural trade-off to evaluate.
+        context: Optional operational context or constraints.
+        mode: Deliberation mode ('quick', 'full', 'duo', 'triad').
+        triad: Optional domain triad selector ('architecture', 'security', 'shipping', 'risk',
+               'sovereignty', 'enterprise-infrastructure', 'public-sector-tech').
+
+    Returns:
+        Structured evaluation dict with persona perspectives, trade-off debate, and consensus verdict.
+    """
+    mode_clean = (mode or "quick").lower()
+    if mode_clean not in VALID_MODES:
+        raise ValueError(f"Invalid mode '{mode}'. Supported modes are: {', '.join(sorted(VALID_MODES))}")
+    mode_norm = mode_clean
+    triad_norm = (triad or "").lower()
+    context_str = context or ""
+
+    # Check byte size of topic and context to avoid caching huge payloads in LRU memory
+    topic_bytes = len(topic.encode("utf-8"))
+    context_bytes = len(context_str.encode("utf-8"))
+    if topic_bytes > MAX_CACHEABLE_CONTEXT_BYTES or context_bytes > MAX_CACHEABLE_CONTEXT_BYTES:
+        return _build_evaluation(topic=topic, context=context_str, mode=mode_norm, triad=triad_norm)
+
+    result = _evaluate_topic_cached(topic=topic, context=context_str, mode=mode_norm, triad=triad_norm)
+    return copy.deepcopy(result)
+
+
+def clear_cache() -> None:
+    """Clears all internal caches in council_emulator."""
+    _evaluate_topic_cached.cache_clear()
+    _dump_yaml_frontmatter_cached.cache_clear()
+    _slugify.cache_clear()
+
+
+def get_cache_info() -> Dict[str, Any]:
+    """Returns cache diagnostic statistics for test inspection and profiling."""
+    return {
+        "evaluate_topic": _evaluate_topic_cached.cache_info()._asdict(),
+        "yaml_frontmatter": _dump_yaml_frontmatter_cached.cache_info()._asdict(),
+        "slugify": _slugify.cache_info()._asdict(),
+    }
+
+
 def generate_cdr(topic: str, evaluation: dict, timestamp: str = None) -> str:
     """
     Formats the evaluation into an OKF v0.2 Council Decision Record (CDR) markdown document.
@@ -251,16 +381,15 @@ def generate_cdr(topic: str, evaluation: dict, timestamp: str = None) -> str:
     action_plan_rows = "\n".join(verdict.get("action_plan", []))
     kill_criteria_rows = "\n".join(f"- {item}" for item in verdict.get("kill_criteria", []))
 
-    meta = {
-        "okf_version": "0.2",
-        "type": "documentation",
-        "title": f"Council Decision Record: {topic}",
-        "timestamp": timestamp,
-        "topics": ["council", "decision", "architecture"],
-        "spec_version": "0.2",
-        "description": f"Council Decision Record (CDR) produced by Council of High Intelligence multi-agent deliberation engine for {topic}."
-    }
-    yaml_frontmatter = yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
+    yaml_frontmatter = dump_yaml_frontmatter(
+        okf_version="0.2",
+        doc_type="documentation",
+        title=f"Council Decision Record: {topic}",
+        timestamp=timestamp,
+        topics=("council", "decision", "architecture"),
+        spec_version="0.2",
+        description=f"Council Decision Record (CDR) produced by Council of High Intelligence multi-agent deliberation engine for {topic}.",
+    )
 
     body_markdown = f"""# Council Decision Record (CDR): {topic}
 

@@ -27,6 +27,176 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 import council_emulator  # type: ignore
 
 
+class CouncilEmulatorCachingTests(unittest.TestCase):
+    """Test caching behaviour for evaluate_topic, generate_cdr, and slugify."""
+
+    def setUp(self):
+        council_emulator.clear_cache()
+
+    def tearDown(self):
+        council_emulator.clear_cache()
+
+    def test_evaluate_topic_caching_returns_consistent_results(self):
+        topic = "Zero Trust Token Revocation Architecture"
+        res1 = council_emulator.evaluate_topic(topic, mode="quick")
+        res2 = council_emulator.evaluate_topic(topic, mode="quick")
+
+        self.assertEqual(res1, res2)
+        info = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info["hits"], 1)
+        self.assertEqual(info["misses"], 1)
+
+    def test_evaluate_topic_defensive_copy_protects_cache(self):
+        topic = "Defensive Mutation Isolation Test"
+        res1 = council_emulator.evaluate_topic(topic, mode="duo")
+        # Mutate the returned dictionary in-place
+        res1["perspectives"]["Systems Architect"]["title"] = "Corrupted Architect Title"
+        res1["verdict"]["action_plan"].append("Corrupted Step 99")
+
+        # Second call should return pristine cached structure without caller mutation
+        res2 = council_emulator.evaluate_topic(topic, mode="duo")
+        self.assertNotEqual(
+            res2["perspectives"]["Systems Architect"]["title"],
+            "Corrupted Architect Title",
+        )
+        self.assertEqual(
+            res2["perspectives"]["Systems Architect"]["title"],
+            "Senior Systems Architect",
+        )
+        self.assertNotIn("Corrupted Step 99", res2["verdict"]["action_plan"])
+
+    def test_clear_cache_resets_cache_statistics(self):
+        council_emulator.evaluate_topic("Patroni High Availability", mode="full")
+        council_emulator.evaluate_topic("Patroni High Availability", mode="full")
+        info_before = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertGreater(info_before["hits"], 0)
+
+        council_emulator.clear_cache()
+        info_after = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info_after["hits"], 0)
+        self.assertEqual(info_after["misses"], 0)
+        self.assertEqual(info_after["currsize"], 0)
+
+    def test_evaluate_topic_caching_normalizes_mode_and_triad(self):
+        # Different casing and None vs "" should share the exact same cache entry
+        res1 = council_emulator.evaluate_topic("Normalization Test", mode="QUICK", triad=None)
+        res2 = council_emulator.evaluate_topic("Normalization Test", mode="quick", triad="")
+        self.assertEqual(res1, res2)
+        info = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info["hits"], 1)
+        self.assertEqual(info["misses"], 1)
+
+    def test_evaluate_topic_oversized_context_bypasses_cache(self):
+        topic = "Oversized Context Ingestion Test"
+        large_context = "x" * (council_emulator.MAX_CACHEABLE_CONTEXT_BYTES + 50)
+        res1 = council_emulator.evaluate_topic(topic, context=large_context, mode="quick")
+        res2 = council_emulator.evaluate_topic(topic, context=large_context, mode="quick")
+
+        self.assertEqual(res1, res2)
+        # Neither call should touch the LRU cache
+        info = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info["hits"], 0)
+        self.assertEqual(info["misses"], 0)
+
+    def test_evaluate_topic_oversized_topic_bypasses_cache(self):
+        large_topic = "T" * (council_emulator.MAX_CACHEABLE_CONTEXT_BYTES + 100)
+        res1 = council_emulator.evaluate_topic(large_topic, mode="quick")
+        res2 = council_emulator.evaluate_topic(large_topic, mode="quick")
+
+        self.assertEqual(res1, res2)
+        info = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info["hits"], 0)
+        self.assertEqual(info["misses"], 0)
+
+    def test_dump_yaml_frontmatter_oversized_bypasses_cache(self):
+        large_desc = "D" * (council_emulator.MAX_CACHEABLE_CONTEXT_BYTES + 50)
+        fm1 = council_emulator.dump_yaml_frontmatter(
+            okf_version="0.2",
+            doc_type="documentation",
+            title="Oversized Title",
+            timestamp="2026-09-19T10:00:00Z",
+            topics=("council",),
+            spec_version="0.2",
+            description=large_desc,
+        )
+        fm2 = council_emulator.dump_yaml_frontmatter(
+            okf_version="0.2",
+            doc_type="documentation",
+            title="Oversized Title",
+            timestamp="2026-09-19T10:00:00Z",
+            topics=("council",),
+            spec_version="0.2",
+            description=large_desc,
+        )
+        self.assertEqual(fm1, fm2)
+        info = council_emulator.get_cache_info()["yaml_frontmatter"]
+        self.assertEqual(info["hits"], 0)
+        self.assertEqual(info["misses"], 0)
+
+    def test_generate_cdr_caches_yaml_frontmatter(self):
+        topic = "Frontmatter YAML Serialization Caching Test"
+        eval_dict = council_emulator.evaluate_topic(topic)
+        ts1 = "2026-09-19T10:00:00Z"
+        ts2 = "2026-09-19T11:00:00Z"
+
+        cdr1 = council_emulator.generate_cdr(topic, eval_dict, timestamp=ts1)
+        cdr2 = council_emulator.generate_cdr(topic, eval_dict, timestamp=ts1)
+
+        self.assertEqual(cdr1, cdr2)
+        yaml_info = council_emulator.get_cache_info()["yaml_frontmatter"]
+        self.assertEqual(yaml_info["hits"], 1)
+        self.assertEqual(yaml_info["misses"], 1)
+
+        # Generate CDR with changed timestamp and verify frontmatter reflects it
+        cdr_ts = council_emulator.generate_cdr(topic, eval_dict, timestamp=ts2)
+        self.assertIn(f"timestamp: '{ts2}'", cdr_ts)
+        meta_ts = yaml.safe_load(cdr_ts.split("---", 2)[1])
+        self.assertEqual(meta_ts["timestamp"], ts2)
+
+        # Generate CDR with changed topic and verify frontmatter reflects it
+        other_topic = "Changed Topic For CDR Testing"
+        other_eval = council_emulator.evaluate_topic(other_topic)
+        cdr_topic = council_emulator.generate_cdr(other_topic, other_eval, timestamp=ts1)
+        self.assertIn(f"title: 'Council Decision Record: {other_topic}'", cdr_topic)
+        meta_topic = yaml.safe_load(cdr_topic.split("---", 2)[1])
+        self.assertEqual(meta_topic["title"], f"Council Decision Record: {other_topic}")
+
+        # Focused check of _dump_yaml_frontmatter_cached varying only title
+        fm1 = council_emulator._dump_yaml_frontmatter_cached(
+            okf_version="0.2",
+            doc_type="documentation",
+            title="Title A",
+            timestamp=ts1,
+            topics=("council",),
+            spec_version="0.2",
+            description="Fixed Description",
+        )
+        fm2 = council_emulator._dump_yaml_frontmatter_cached(
+            okf_version="0.2",
+            doc_type="documentation",
+            title="Title B",
+            timestamp=ts1,
+            topics=("council",),
+            spec_version="0.2",
+            description="Fixed Description",
+        )
+        self.assertNotEqual(fm1, fm2)
+        parsed_fm1 = yaml.safe_load(fm1)
+        parsed_fm2 = yaml.safe_load(fm2)
+        self.assertEqual(parsed_fm1["title"], "Title A")
+        self.assertEqual(parsed_fm2["title"], "Title B")
+        self.assertEqual(parsed_fm1["description"], "Fixed Description")
+        self.assertEqual(parsed_fm2["description"], "Fixed Description")
+
+    def test_slugify_caching(self):
+        text = "Batch Evaluation Performance Testing!"
+        slug1 = council_emulator._slugify(text)
+        slug2 = council_emulator._slugify(text)
+        self.assertEqual(slug1, slug2)
+        slug_info = council_emulator.get_cache_info()["slugify"]
+        self.assertEqual(slug_info["hits"], 1)
+
+
 class CouncilEmulatorTimestampTests(unittest.TestCase):
     """Test timestamp utility formatting."""
 
