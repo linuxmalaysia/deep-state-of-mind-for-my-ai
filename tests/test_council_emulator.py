@@ -98,6 +98,41 @@ class CouncilEmulatorCachingTests(unittest.TestCase):
         self.assertEqual(info["hits"], 0)
         self.assertEqual(info["misses"], 0)
 
+    def test_evaluate_topic_oversized_topic_bypasses_cache(self):
+        large_topic = "T" * (council_emulator.MAX_CACHEABLE_CONTEXT_BYTES + 100)
+        res1 = council_emulator.evaluate_topic(large_topic, mode="quick")
+        res2 = council_emulator.evaluate_topic(large_topic, mode="quick")
+
+        self.assertEqual(res1, res2)
+        info = council_emulator.get_cache_info()["evaluate_topic"]
+        self.assertEqual(info["hits"], 0)
+        self.assertEqual(info["misses"], 0)
+
+    def test_dump_yaml_frontmatter_oversized_bypasses_cache(self):
+        large_desc = "D" * (council_emulator.MAX_CACHEABLE_CONTEXT_BYTES + 50)
+        fm1 = council_emulator.dump_yaml_frontmatter(
+            okf_version="0.2",
+            doc_type="documentation",
+            title="Oversized Title",
+            timestamp="2026-09-19T10:00:00Z",
+            topics=("council",),
+            spec_version="0.2",
+            description=large_desc,
+        )
+        fm2 = council_emulator.dump_yaml_frontmatter(
+            okf_version="0.2",
+            doc_type="documentation",
+            title="Oversized Title",
+            timestamp="2026-09-19T10:00:00Z",
+            topics=("council",),
+            spec_version="0.2",
+            description=large_desc,
+        )
+        self.assertEqual(fm1, fm2)
+        info = council_emulator.get_cache_info()["yaml_frontmatter"]
+        self.assertEqual(info["hits"], 0)
+        self.assertEqual(info["misses"], 0)
+
     def test_generate_cdr_caches_yaml_frontmatter(self):
         topic = "Frontmatter YAML Serialization Caching Test"
         eval_dict = council_emulator.evaluate_topic(topic)

@@ -51,6 +51,28 @@ def _slugify(text: str) -> str:
     return text[:50].strip("-") or "decision"
 
 
+def _serialize_yaml_frontmatter(
+    okf_version: str,
+    doc_type: str,
+    title: str,
+    timestamp: str,
+    topics: Tuple[str, ...],
+    spec_version: str,
+    description: str,
+) -> str:
+    """Serializes frontmatter mapping into YAML string."""
+    meta = {
+        "okf_version": okf_version,
+        "type": doc_type,
+        "title": title,
+        "timestamp": timestamp,
+        "topics": list(topics),
+        "spec_version": spec_version,
+        "description": description,
+    }
+    return yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
+
+
 @functools.lru_cache(maxsize=256)
 def _dump_yaml_frontmatter_cached(
     okf_version: str,
@@ -65,16 +87,56 @@ def _dump_yaml_frontmatter_cached(
     Serializes frontmatter mapping into YAML string with LRU caching.
     Prevents repeated AST serialization and PyYAML dumping overhead.
     """
-    meta = {
-        "okf_version": okf_version,
-        "type": doc_type,
-        "title": title,
-        "timestamp": timestamp,
-        "topics": list(topics),
-        "spec_version": spec_version,
-        "description": description,
-    }
-    return yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
+    return _serialize_yaml_frontmatter(
+        okf_version=okf_version,
+        doc_type=doc_type,
+        title=title,
+        timestamp=timestamp,
+        topics=topics,
+        spec_version=spec_version,
+        description=description,
+    )
+
+
+def dump_yaml_frontmatter(
+    okf_version: str,
+    doc_type: str,
+    title: str,
+    timestamp: str,
+    topics: Tuple[str, ...],
+    spec_version: str,
+    description: str,
+) -> str:
+    """
+    Serializes frontmatter mapping into YAML string, bypassing LRU cache if payload is oversized.
+    """
+    # Calculate byte size of frontmatter payload elements
+    est_bytes = (
+        len(title.encode("utf-8"))
+        + len(description.encode("utf-8"))
+        + len(timestamp.encode("utf-8"))
+        + sum(len(t.encode("utf-8")) for t in topics)
+    )
+    if est_bytes > MAX_CACHEABLE_CONTEXT_BYTES:
+        return _serialize_yaml_frontmatter(
+            okf_version=okf_version,
+            doc_type=doc_type,
+            title=title,
+            timestamp=timestamp,
+            topics=topics,
+            spec_version=spec_version,
+            description=description,
+        )
+
+    return _dump_yaml_frontmatter_cached(
+        okf_version=okf_version,
+        doc_type=doc_type,
+        title=title,
+        timestamp=timestamp,
+        topics=topics,
+        spec_version=spec_version,
+        description=description,
+    )
 
 
 def _build_evaluation(topic: str, context: str, mode: str, triad: str) -> dict:
@@ -251,9 +313,10 @@ def evaluate_topic(topic: str, context: str = "", mode: str = "quick", triad: st
     triad_norm = (triad or "").lower()
     context_str = context or ""
 
-    # Check byte size of context to avoid caching huge payloads in LRU memory
+    # Check byte size of topic and context to avoid caching huge payloads in LRU memory
+    topic_bytes = len(topic.encode("utf-8"))
     context_bytes = len(context_str.encode("utf-8"))
-    if context_bytes > MAX_CACHEABLE_CONTEXT_BYTES:
+    if topic_bytes > MAX_CACHEABLE_CONTEXT_BYTES or context_bytes > MAX_CACHEABLE_CONTEXT_BYTES:
         return _build_evaluation(topic=topic, context=context_str, mode=mode_norm, triad=triad_norm)
 
     result = _evaluate_topic_cached(topic=topic, context=context_str, mode=mode_norm, triad=triad_norm)
@@ -318,7 +381,7 @@ def generate_cdr(topic: str, evaluation: dict, timestamp: str = None) -> str:
     action_plan_rows = "\n".join(verdict.get("action_plan", []))
     kill_criteria_rows = "\n".join(f"- {item}" for item in verdict.get("kill_criteria", []))
 
-    yaml_frontmatter = _dump_yaml_frontmatter_cached(
+    yaml_frontmatter = dump_yaml_frontmatter(
         okf_version="0.2",
         doc_type="documentation",
         title=f"Council Decision Record: {topic}",
